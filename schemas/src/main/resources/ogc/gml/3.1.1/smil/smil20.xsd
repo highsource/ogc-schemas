@@ -28,7 +28,7 @@ Author: Aaron Michael Cohen (Intel)
 Revision: 2001/07/31
 -->
 <schema targetNamespace="http://www.w3.org/2001/SMIL20/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:smil20="http://www.w3.org/2001/SMIL20/" xmlns:smil20lang="http://www.w3.org/2001/SMIL20/Language" elementFormDefault="qualified">
-	<import namespace="http://www.w3.org/2001/SMIL20/Language" schemaLocation="smil20-language.xsd"/>
+	<import namespace="http://www.w3.org/2001/SMIL20/Language" schemaLocation="http://schemas.opengis.net/gml/3.1.1/smil/smil20-language.xsd"/>
 	<!-- ============================================================= 
 	struct.xsd
 	============================================================== -->

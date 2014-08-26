@@ -76,12 +76,43 @@
 						<phase>generate-resources</phase>
 						<configuration>
 							<tasks>
-								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources/ogc"/>
+								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources/ogc">
+									<patternset>
+										<exclude name="**/*.zip"/>
+									</patternset>
+								</unzip>
 							</tasks>
 						</configuration>
 						<goals>
 							<goal>run</goal>
 						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-patch-plugin</artifactId>
+				<version>1.1.1</version>
+				<configuration>
+					<skipApplication>false</skipApplication>
+				</configuration>
+				<executions>
+					<execution>
+						<id>patch-resources</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>apply</goal>
+						</goals>
+						<configuration>
+							<patchDirectory>src/main/patches/</patchDirectory>
+							<targetDirectory>src/main/resources</targetDirectory>
+							<!--patches>
+								<patch>WikiTemplateManagerScript.patch</patch>
+							</patches-->
+							<patchTrackingFile>${project.build.directory}/patch-log.txt</patchTrackingFile>
+							<naturalOrderProcessing>true</naturalOrderProcessing>
+							<ignoreWhitespace>true</ignoreWhitespace>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>

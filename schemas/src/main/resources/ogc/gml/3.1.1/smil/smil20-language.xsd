@@ -30,7 +30,7 @@ between substitutionGroups and wildcard content.
 -->
 <schema targetNamespace="http://www.w3.org/2001/SMIL20/Language" xmlns:smil20lang="http://www.w3.org/2001/SMIL20/Language" xmlns:smil20="http://www.w3.org/2001/SMIL20/" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 	<!-- import the smil20 namespaces -->
-	<import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="smil20.xsd"/>
+	<import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="http://schemas.opengis.net/gml/3.1.1/smil/smil20.xsd"/>
 	<element name="animate" type="smil20lang:animateType"/>
 	<complexType name="animateType">
 		<complexContent>
