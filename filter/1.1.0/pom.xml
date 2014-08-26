@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.jvnet.ogc</groupId>
-	<artifactId>ows-v_1_0_0</artifactId>
+	<artifactId>filter-v_1_1_0</artifactId>
 	<packaging>jar</packaging>
-	<name>OGC OWS 1.0.0</name>
+	<name>OGC Filter 1.1.0</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
-		<artifactId>ows</artifactId>
+		<artifactId>filter</artifactId>
 		<version>2.0.0-SNAPSHOT</version>
 	</parent>
 	<dependencies>
@@ -23,6 +23,11 @@
 		<dependency>
 			<groupId>org.hisrc.w3c</groupId>
 			<artifactId>xlink-v_1_0</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jvnet.ogc</groupId>
+			<artifactId>gml-v_3_1_1</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -53,7 +58,7 @@
 									<type>jar</type>
 									<overWrite>false</overWrite>
 									<outputDirectory>src/main/resources</outputDirectory>
-									<includes>ogc/ows/1.0.0/**/*.*</includes>
+									<includes>ogc/filter/1.1.0/**/*.*,ogc/gml/3.1.1/**/*.*,</includes>
 								 </artifactItem>
 							 </artifactItems>
 						</configuration>
@@ -65,9 +70,25 @@
 				<artifactId>maven-jaxb2-plugin</artifactId>
 				<configuration>
 					<schemaIncludes>
-						<value>ogc/ows/*/owsAll.xsd</value>
+						<value>ogc/filter/*/filterAll.xsd</value>
 					</schemaIncludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>process-sources</phase>
+						<configuration>
+							<tasks>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

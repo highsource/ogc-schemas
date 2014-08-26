@@ -74,6 +74,8 @@
 		<!-- Schemas -->
 		<module>schemas</module>
 		<module>ows</module>
+		<module>gml</module>
+		<module>filter</module>
 	</modules>
 	<properties> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
@@ -202,7 +204,7 @@
 							<arg>-Xinject-code</arg>
 							<arg>-Xinheritance</arg>
 							<arg>-Xfluent-api</arg>
-							<arg>-Xvisitor</arg>
+							<!--arg>-Xvisitor</arg-->
 						</args>
 						<plugins>
 							<plugin>
@@ -253,7 +255,7 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
-			<plugin>
+			<!--plugin>
 				<inherited>true</inherited>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -266,8 +268,8 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
+			</plugin-->
+			<!--plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
 				<executions>
@@ -286,7 +288,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin-->
 		</plugins>
 	</build>
 

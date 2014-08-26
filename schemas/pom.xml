@@ -87,7 +87,7 @@
 							<patchDirectory>src/main/patches/</patchDirectory>
 							<targetDirectory>src/main/resources</targetDirectory>
 							<!--patches>
-								<patch>WikiTemplateManagerScript.patch</patch>
+								<patch>ogc.patch</patch>
 							</patches-->
 							<patchTrackingFile>${project.build.directory}/patch-log.txt</patchTrackingFile>
 							<naturalOrderProcessing>true</naturalOrderProcessing>
