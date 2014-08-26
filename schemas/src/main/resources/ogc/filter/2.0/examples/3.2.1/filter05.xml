@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<fes:Filter
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/fes/2.0
+   http://schemas.opengis.net/filter/2.0/filterAll.xsd">
+   <fes:ResourceId rid="TREESA_1M.1234"/>
+   <fes:ResourceId rid="TREESA_1M.5678"/>
+   <fes:ResourceId rid="TREESA_1M.9012"/>
+   <fes:ResourceId rid="INWATERA_1M.3456"/>
+   <fes:ResourceId rid="INWATERA_1M.7890"/>
+   <fes:ResourceId rid="BUILTUPA_1M.4321"/>
+</fes:Filter>

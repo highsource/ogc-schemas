@@ -1,0 +1,220 @@
+<wsdl:definitions targetNamespace="http://www.opengis.net/sps/2.0/wsdl" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:spsw="http://www.opengis.net/sps/2.0/wsdl" xmlns:ows="http://www.opengis.net/ows/1.1">
+  <wsdl:documentation>spsWsdl11.wsdl 2.0.0
+      
+      SPS is an OGC Standard.
+      Copyright (c) 2010, 2011 Open Geospatial Consortium. 
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.opengis.net/sps/2.0">
+      <xsd:include schemaLocation="http://schemas.opengis.net/sps/2.0/sps.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <!-- ====================================================== -->
+  <!-- ==================== SPS Messages ==================== -->
+  <!-- ====================================================== -->
+  <wsdl:message name="CancelRequestMessage">
+    <wsdl:part name="body" element="sps:Cancel"/>
+  </wsdl:message>
+  <wsdl:message name="CancelResponseMessage">
+    <wsdl:part name="body" element="sps:CancelResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ConfirmRequestMessage">
+    <wsdl:part name="body" element="sps:Confirm"/>
+  </wsdl:message>
+  <wsdl:message name="ConfirmResponseMessage">
+    <wsdl:part name="body" element="sps:ConfirmResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DescribeResultAccessRequestMessage">
+    <wsdl:part name="body" element="sps:DescribeResultAccess"/>
+  </wsdl:message>
+  <wsdl:message name="DescribeResultAccessResponseMessage">
+    <wsdl:part name="body" element="sps:DescribeResultAccessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DescribeTaskingRequestMessage">
+    <wsdl:part name="body" element="sps:DescribeTasking"/>
+  </wsdl:message>
+  <wsdl:message name="DescribeTaskingResponseMessage">
+    <wsdl:part name="body" element="sps:DescribeTaskingResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetCapabilitiesRequestMessage">
+    <wsdl:part name="body" element="sps:GetCapabilities"/>
+  </wsdl:message>
+  <wsdl:message name="GetCapabilitiesResponseMessage">
+    <wsdl:part name="body" element="sps:Capabilities"/>
+  </wsdl:message>
+  <wsdl:message name="GetFeasibilityRequestMessage">
+    <wsdl:part name="body" element="sps:GetFeasibility"/>
+  </wsdl:message>
+  <wsdl:message name="GetFeasibilityResponseMessage">
+    <wsdl:part name="body" element="sps:GetFeasibilityResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetStatusRequestMessage">
+    <wsdl:part name="body" element="sps:GetStatus"/>
+  </wsdl:message>
+  <wsdl:message name="GetStatusResponseMessage">
+    <wsdl:part name="body" element="sps:GetStatusResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetTaskRequestMessage">
+    <wsdl:part name="body" element="sps:GetTask"/>
+  </wsdl:message>
+  <wsdl:message name="GetTaskResponseMessage">
+    <wsdl:part name="body" element="sps:GetTaskResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ReserveRequestMessage">
+    <wsdl:part name="body" element="sps:Reserve"/>
+  </wsdl:message>
+  <wsdl:message name="ReserveResponseMessage">
+    <wsdl:part name="body" element="sps:ReserveResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SubmitRequestMessage">
+    <wsdl:part name="body" element="sps:Submit"/>
+  </wsdl:message>
+  <wsdl:message name="SubmitResponseMessage">
+    <wsdl:part name="body" element="sps:SubmitResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateRequestMessage">
+    <wsdl:part name="body" element="sps:Update"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateResponseMessage">
+    <wsdl:part name="body" element="sps:UpdateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ExceptionMessage">
+    <wsdl:part name="fault" element="ows:Exception"/>
+  </wsdl:message>
+  <!-- ==================================================== -->
+  <!-- ==================== SPS PortTypes ==================== -->
+  <!-- ==================================================== -->
+  <wsdl:portType name="BasicSensorPlannerInterface">
+    <wsdl:operation name="GetCapabilities">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/GetCapabilities" message="spsw:GetCapabilitiesRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/GetCapabilitiesResponse" message="spsw:GetCapabilitiesResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="VersionNegotiationFailedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidUpdateSequenceException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DescribeTasking">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/DescribeTasking" message="spsw:DescribeTaskingRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/DescribeTaskingResponse" message="spsw:DescribeTaskingResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Submit">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/Submit" message="spsw:SubmitRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/SubmitResponse" message="spsw:SubmitResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/GetStatus" message="spsw:GetStatusRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/GetStatusResponse" message="spsw:GetStatusResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="StatusInformationExpiredException" wsam:Action="http://www.opengis.net/sps/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/GetTask" message="spsw:GetTaskRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/GetTaskResponse" message="spsw:GetTaskResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="StatusInformationExpiredException" wsam:Action="http://www.opengis.net/sps/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DescribeResultAccess">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/DescribeResultAccess" message="spsw:DescribeResultAccessRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/DescribeResultAccessResponse" message="spsw:DescribeResultAccessResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ReservationManagerInterface">
+    <wsdl:operation name="Reserve">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/Reserve" message="spsw:ReserveRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/ReserveResponse" message="spsw:ReserveResponseMessage"/>
+      <wsdl:fault name="OperationNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Confirm">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/Confirm" message="spsw:ConfirmRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/ConfirmResponse" message="spsw:ConfirmResponseMessage"/>
+      <wsdl:fault name="OperationNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="ModificationOfFinalizedTaskException" wsam:Action="http://www.opengis.net/sps/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FeasibilityControllerInterface">
+    <wsdl:operation name="GetFeasibility">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/GetFeasibility" message="spsw:GetFeasibilityRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/GetFeasibilityResponse" message="spsw:GetFeasibilityResponseMessage"/>
+      <wsdl:fault name="OperationNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TaskUpdaterInterface">
+    <wsdl:operation name="Update">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/Update" message="spsw:UpdateRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/UpdateResponse" message="spsw:UpdateResponseMessage"/>
+      <wsdl:fault name="OperationNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="ModificationOfFinalizedTaskException" wsam:Action="http://www.opengis.net/sps/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TaskCancellerInterface">
+    <wsdl:operation name="Cancel">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/Cancel" message="spsw:CancelRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/CancelResponse" message="spsw:CancelResponseMessage"/>
+      <wsdl:fault name="OperationNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="ModificationOfFinalizedTaskException" wsam:Action="http://www.opengis.net/sps/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

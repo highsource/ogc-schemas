@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sps="http://www.opengis.net/sps/1.0"
+    xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.opengis.net/sps/1.0"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0.2">
+    
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+    <xs:include schemaLocation="./spsAll.xsd"/>
+    <xs:include schemaLocation="./spsCommon.xsd"/>
+    <xs:annotation>
+        <xs:documentation>
+            <copyright>
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+            </copyright> 
+        </xs:documentation>
+    </xs:annotation>
+    <!--Schema of the sps:DescribeResultAccessResponse-->
+    <xs:element name="DescribeResultAccessRequestResponse">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="service" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ServiceType" type="xs:string"/>
+                            <xs:element name="ServiceURL" type="xs:anyURI"/>
+                            <xs:element name="request" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:any namespace="##any"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="DataNotAvailable">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="reason">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="not yet available"/>
+                                        <xs:enumeration value="data currently unavailable"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element ref="gml:description" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

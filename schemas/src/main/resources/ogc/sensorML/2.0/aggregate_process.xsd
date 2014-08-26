@@ -1,0 +1,110 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" targetNamespace="http://www.opengis.net/sensorml/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+    <annotation>
+        <documentation>The elements of a concrete aggregate non-physical process derived from the core process model.
+        
+        SensorML is an OGC Standard.
+        Copyright (c) 2014 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+    <include schemaLocation="simple_process.xsd"/><!-- ================================================= -->
+    <element name="AggregateProcess" substitutionGroup="sml:AbstractProcess" type="sml:AggregateProcessType">
+        <annotation>
+            <documentation>A process that consist of a collection of linked component processes resulting in a specified output.</documentation>
+        </annotation>
+    </element>
+    <complexType name="AggregateProcessType">
+        <complexContent>
+            <extension base="sml:AbstractProcessType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="components" type="sml:ComponentListPropertyType"/>
+                    <element maxOccurs="1" minOccurs="0" name="connections" type="sml:ConnectionListPropertyType">
+                        <annotation>
+                            <documentation>The explicit definition of data links between outputs, inputs, and parameters of the components within an aggregate process.</documentation>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="AggregateProcessPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:AggregateProcess"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="ConnectionList" substitutionGroup="swe:AbstractSWE" type="sml:ConnectionListType"/>
+    <complexType name="ConnectionListType">
+        <complexContent>
+            <extension base="swe:AbstractSWEType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="connection">
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:Link"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="ConnectionListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:ConnectionList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="ComponentList" substitutionGroup="swe:AbstractSWE" type="sml:ComponentListType"/>
+    <complexType name="ComponentListType">
+        <complexContent>
+            <extension base="swe:AbstractSWEType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="component">
+                        <annotation>
+                            <documentation>A description of a component of the aggregate process. If by reference, the uniqueID of the referenced process must be provided using the xlink:title attribute while the URL to the process description must be provided by the xlink:href attribute.</documentation>
+                        </annotation>
+                        <complexType>
+                            <complexContent>
+                                <extension base="sml:AbstractProcessPropertyType">
+                                    <attribute name="name" type="NCName" use="required"/>
+                                </extension>
+                            </complexContent>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="ComponentListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:ComponentList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="Link" substitutionGroup="gml:AbstractObject" type="sml:LinkType"/>
+    <complexType name="LinkType">
+        <sequence>
+            <element name="source" type="sml:DataComponentRefPropertyType">
+                <annotation>
+                    <documentation>The output from which the link originates.</documentation>
+                </annotation>
+            </element>
+            <element name="destination" type="sml:DataComponentRefPropertyType">
+                <annotation>
+                    <documentation>The input or parameter into which the data flows.</documentation>
+                </annotation>
+            </element>
+        </sequence>
+        <attribute ref="gml:id" use="optional"/>
+    </complexType>
+    <complexType name="LinkPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:Link"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType>
+</schema>

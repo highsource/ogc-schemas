@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example Response for GetResult operation request which contains filters for offering and observedProperty. The response contains a template containing the observation metadata as well as information about the type and structure of the result elements which will be returned in later GetResult responses.
+
+
+In this example, the sequence of operations for retrieving results is as follows:
+1. GetResultTemplate1.xml request is sent to SOS.
+2. GetResultTemplate1_response.xml is returned from SOS.
+3. GetResult1.xml is sent to SOS
+4. GetResult1_response is returned from SOS
+=======================================================================-->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+ http://www.opengis.net/sos/2.0
+http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<soap12:Header>
+		<wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/resultRetrieval/2.0/GetResultTemplateResponse</wsa:Action>
+		<wsa:RelatesTo>http://my.client.com/uid/msg-0010</wsa:RelatesTo>
+	</soap12:Header>
+	<soap12:Body>
+		<sos:GetResultTemplateResponse>
+			<!--information about structure of observation results-->
+			<sos:resultStructure>
+				<swe:DataRecord>
+					<swe:field name="phenomenonTime">
+						<swe:Time definition="http://www.opengis.net/def/property/OGC/0/PhenomenonTime">
+							<swe:uom code="ms"/>
+						</swe:Time>
+					</swe:field>
+					<swe:field name="waterlevel">
+						<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/hydroSurface.owl#WaterHeight">
+							<swe:uom code="cm"/>
+						</swe:Quantity>
+					</swe:field>
+				</swe:DataRecord>
+			</sos:resultStructure>
+			<!--information about encoding of results-->
+			<sos:resultEncoding>
+				<!--results are encoded as text with token- and blockseperator as specified here-->
+				<swe:TextEncoding tokenSeparator="," blockSeparator="@@"/>
+			</sos:resultEncoding>
+		</sos:GetResultTemplateResponse>
+	</soap12:Body>
+</soap12:Envelope>

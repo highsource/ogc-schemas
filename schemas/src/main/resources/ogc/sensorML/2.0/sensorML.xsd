@@ -1,0 +1,15 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://www.opengis.net/sensorml/2.0" targetNamespace="http://www.opengis.net/sensorml/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+    <annotation>
+        <documentation>All-components schema for the Sensor Model Language (SensorML) namespace. See Conformance Class urn:ogc:spec:SensorML:2.0:XXX of the Sensor Model Language 2.0 specification.
+        
+        SensorML is an OGC Standard.
+        Copyright (c) 2014 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    <include schemaLocation="simple_process.xsd"/>
+    <include schemaLocation="configuration.xsd"/>
+    <include schemaLocation="physical_system.xsd"/>
+    <include schemaLocation="physical_component.xsd"/>
+    <include schemaLocation="aggregate_process.xsd"/>
+</schema>

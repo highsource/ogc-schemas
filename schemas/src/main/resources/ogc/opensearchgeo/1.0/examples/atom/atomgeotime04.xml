@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" 
+      xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/"
+      xmlns:georss="http://www.georss.org/georss"
+      xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/"
+      xmlns:echo="http://www.echo.nasa.gov/esip"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+  <updated>2011-02-09T22:15:15.397Z</updated>
+  <id>https://api.echo.nasa.gov:443/echo-esip/search/granule.atom</id>
+  <author><name>ECHO</name><email>echo@echo.nasa.gov</email></author>
+  <title type="text">ECHO granule search results</title>
+  <os:startIndex>1</os:startIndex>
+  <os:totalResults>2</os:totalResults>
+  <os:itemsPerPage>10</os:itemsPerPage>
+  <os:Query role="request" echo:shortName="MOD02QKM" echo:versionId="5" echo:dataCenter="LAADS" time:start="2009-05-01T00:00:00-04:00" time:end="2009-05-04T00:00:00-04:00" ></os:Query>
+  <subtitle type="text">Granule search for MOD02QKM.5 and the data center: LAADS with start time: 2009-05-01T00:00:00-04:00 with end time: 2009-05-04T00:00:00-04:00</subtitle>
+  <entry> <id>laads:250798497</id>
+  	<dc:identifier>laads:250798497</dc:identifier>
+    <title type="text">LAADS:250798497</title>
+    <updated>2010-09-03T05:09:24.104Z</updated>
+    <link title="" rel="enclosure" href="ftp://ladsftp.nascom.nasa.gov/allData/5/MOD02QKM/2009/121/MOD02QKM.A2009121.0020.005.2010241162125.hdf" hreflang="en-US" type="application/x-hdfeos" />
+    <link rel="icon" length="660988" href="ftp://ladsftp.nascom.nasa.gov/allData/5/MOBRGB/2009/121/MOBRGB.A2009121.0020.005.2009126214738.jpg" hreflang="en-US" type="image/jpeg" title="" />
+    <echo:datasetId>MODIS/Terra Calibrated Radiances 5-Min L1B Swath 250m V005</echo:datasetId>
+    <dc:date>2009-05-01T00:20:00.000Z/2009-05-01T00:25:00.000Z</dc:date>
+    <georss:polygon>53.803143 -20.003695 49.0732 -53.81698 63.68175 -74.32202 72.10222 -19.447964</georss:polygon>
+    <content type="html">&lt;p&gt;&lt;b&gt;Dataset ID : &lt;/b&gt;MODIS/Terra Calibrated Radiances 5-Min L1B Swath 250m V005&lt;/p&gt;&lt;p&gt;&lt;b&gt;Temporal Extent&lt;/b&gt;&lt;/p&gt;&lt;p&gt; &lt;b&gt;Start Time : &lt;/b&gt;2009-05-01T00:20:00.000Z &lt;b&gt;End Time : &lt;/b&gt;2009-05-01T00:25:00.000Z&lt;p&gt;&lt;b</content>
+  </entry>
+  <entry><id>laads:250797839</id>
+  	<dc:identifier>laads:250797839</dc:identifier>
+    <title type="text">LAADS:250797839</title>
+    <updated>2010-09-03T05:09:24.797Z</updated>
+    <link hreflang="en-US" type="application/x-hdfeos" rel="enclosure" href="ftp://ladsftp.nascom.nasa.gov/allData/5/MOD02QKM/2009/121/MOD02QKM.A2009121.0025.005.2010241162738.hdf" title="" />
+    <link hreflang="en-US" type="image/jpeg" rel="icon" length="726966" href="ftp://ladsftp.nascom.nasa.gov/allData/5/MOBRGB/2009/121/MOBRGB.A2009121.0025.005.2009126222233.jpg" title="" />
+    <echo:datasetId>MODIS/Terra Calibrated Radiances 5-Min L1B Swath 250m V005</echo:datasetId>
+    <dc:date>2009-05-01T00:25:00.000Z/2009-05-01T00:30:00.000Z</dc:date>
+    <georss:polygon>71.581665 -18.330479 63.81684 -73.79089 70.95812 -119.12558 87.56117 64.28039</georss:polygon>
+    <content type="html">&lt;p&gt;&lt;b&gt;Dataset ID : &lt;/b&gt;MODIS/Terra Calibrated Radiances 5-Min L1B Swath 250m V005&lt;/p&gt;&lt;p&gt; &lt;b&gt;Temporal Extent&lt;/b&gt;&lt;/p&gt;&lt;p&gt; &lt;b&gt;Start Time : &lt;/b&gt;2009-05-01T00:25:00.000Z &lt;b&gt;End Time : &lt;/b&gt;2009-05-01T00:30:00.000Z&lt;p&gt;&lt;b&gt; </content>
+  </entry>
+</feed>

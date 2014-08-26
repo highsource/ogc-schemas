@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!-- D.9.5.1Example 1 -->
+<wfs:TransactionResponse
+   version="2.0.0"
+   xmlns:wfs="http://www.opengis.net/wfs/2.0"
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/wfs/2.0
+                       http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+   <wfs:TransactionSummary>
+      <wfs:totalInserted>5</wfs:totalInserted>
+   </wfs:TransactionSummary>
+   <wfs:InsertResults>
+      <wfs:Feature handle="STMT1">
+         <fes:ResourceId rid="SomeFeature.4567"/>
+      </wfs:Feature>
+      <wfs:Feature handle="STMT1">
+         <fes:ResourceId rid="SomeFeature.4568"/>
+      </wfs:Feature>
+      <wfs:Feature handle="STMT1">
+         <fes:ResourceId rid="SomeFeature.4569"/>
+      </wfs:Feature>
+      <wfs:Feature handle="STMT2">
+         <fes:ResourceId rid="Feature1.4569"/>
+      </wfs:Feature>
+      <wfs:Feature handle="STMT3">
+         <fes:ResourceId rid="Feature2.389345"/>
+      </wfs:Feature>
+   </wfs:InsertResults>
+</wfs:TransactionResponse>

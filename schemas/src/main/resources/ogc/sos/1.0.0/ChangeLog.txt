@@ -1,0 +1,57 @@
+OpenGIS(r) SOS ChangeLog.txt
+============================
+
+Note: See the ReadMe.txt for additional information
+
+===============================================================================
+
+Updates/corrections to convert SOS v0.0 to SOS v1.0
+
+changes (Kevin Stegemoller: 2007-12-21):
+(1) all imports of OWS now import the "all components" schema (owsAll.xsd)
+(2) all imports of O&M now import the "all components" schema (om.xsd)
+(3) fix om/1.0.0 namespace
+(4) fix sampling/1.0.0 namespace
+
+changes (Johannes Echterhoff: 2007-11-05):
+(1) ogc4sos.xsd: changed temporal operation element names to begin with 'TM_' instead of 'T_'
+(2) ogc4sos.xsd: added missing TM_Ends to enumeration in TemporalOperatorNameType
+(3) updated examples to reflect changes
+
+changes (Johannes Echterhoff: 2007-10-25):
+(1) sosContents.xsd: fixed import of SweCommon (pointed to 1.0.0, now points to 1.0.1)
+(2) sosContents.xsd: fixed import of OWSCommon (pointed to 1.0.0, now points to 1.1.0)
+(3) sosAll.xsd: added include for sosGetObservationById.xsd
+(4) sosRegisterSensor.xsd: changed processContents setting on SensorDescription element from 'strict' to 'lax'
+
+changes (JohannesEchterhoff: 2007-10-20):
+(1) ogc4sos.xsd: Made ogc:PropertyName in element "BinaryTemporalOps" mandatory to comply with unique particle rule
+(2) ogc4sos.xsd: changed import of temporal.xsd (from GML 3.1.1) to gml.xsd and placed it before the include statement for filter.xsd
+(3) ogc4sos.xsd: readded the include of filterCapabilities.xsd
+
+changes (Mike Botts and JohannesEchterhoff: 2007-10-19):
+(1) Added temporal ops and filtering into ogc4sos.xsd to support missing operators in filters v1.1.0. (Took the temporal element definitions from v1.2.0 filter.xsd and filterCapabilities.xsd). We expect this to be replaced when an approved version of filter.xsd includes temporal filtering.
+(2) changed relevant imports from pointing to the filter.xsd to now point to the ogc4sos.xsd.
+(3) created a new FilterCapabilities element within the "sos" namespace in order to add Temporal_Capabilities to the existing three Filter_Capabilities components and  in the Capabilities element replace the ogc:FilterCapabilities with the sos:Filter_Capabilities element.
+
+changes (Mike Botts: 2007-10-10):
+(1) all references to SOS updated to v1.0.0
+(2) all references to SWE Common (swe) updated to reference v1.0.0
+(3) all references to O&M updated to reference v1.0.0
+(4) all paths of imported OGC schema changed to relative paths according to http://schemas.opengis.net conventions
+(5) all referenced namespaces for OGC schemas changed to http://schemas.opengis.net (instead of http://schemas.opengeospatial.net)
+(6) in sosCommon, changed "version" attribute in "RequestedBaseType" from 0.0.0 to 1.0.0
+(7) changed owsCommon namespace from "http://schemas.opengis.net/ows" to "http://schemas.opengis.net/ows/1.1" 
+(8) changed owsCommon schema location from 1.0.30 (non existing) to v1.1.0
+(9) put import for "http://schemas.opengis.net/ows/1.1.0/owsGetCapabilities.xsd" directly into appropriate dependent schema and removed ows4sos.xsd
+(10) put import for "http://schemas.opengis.net/filter/1.1.0/filter.xsd" directly into appropriate dependent schema and removed ogc4sos.xsd
+(11) DID NOT correct any of the example instances ... these do not belong in http://schemas.opengis.net anyway.
+
+problems (Mike Botts: 2007-10-10):
+
+(1) sosGetResult.xsd, sosGetObservation.xsd, and sosGetFeatureOfInterest.xsd all reference a "ogc:temporalOps" element that doesn't exist in either filter V1.0.2 or V1.1.0.  This apparently existed in some intermediate version 1.0.30 that existed in the OWS4 svn but was never incorporated into an approved version of filter.xsd. This element needs to either be put into the SOS schema or the functionality needs to be supported by some other approved OGC schema.
+
+note:
+(1)  if you try to validate with a version of om:Observation that uses absolute import paths, you WILL receive errors of the type "element gml:* is already defined ... blah, blah"
+(2)  ows:owsExceptionReport.xsd has import that does not have schema location
+(3)  http://www.w3c.org/XML/1998/namespace - has an unclosed LI element

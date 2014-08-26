@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<!-- -->
+	<swe:field name="category_field_with_constraints">
+		<swe:Category definition="http://www.opengis.net/def/property/OGC/0/SensorType">
+			<swe:label>Instrument Type</swe:label>
+			<swe:codeSpace xlink:href="http://mmisw.org/ont/bodc/instrument"/>
+			<swe:constraint>
+				<swe:AllowedTokens>
+					<swe:value>Multi beam echosounder</swe:value>
+					<swe:value>Temperature sensor</swe:value>
+					<swe:value>Underwater camera</swe:value>
+				</swe:AllowedTokens>
+			</swe:constraint>
+		</swe:Category>
+	</swe:field>
+	<!-- -->
+	<swe:field name="text_field_with_constraints">
+		<swe:Text definition="http://mmisw.org/ont/mmi/device/ModelID">
+			<swe:label>Model Number</swe:label>
+			<swe:constraint>
+				<swe:AllowedTokens>
+					<swe:pattern>^[0-9][A-Z]{3}[0-9]{2}S1$</swe:pattern>
+				</swe:AllowedTokens>
+			</swe:constraint>
+		</swe:Text>
+	</swe:field>
+	<!-- -->
+	<swe:field name="quantity_field_with_constraints">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/atmoWind.owl#WindSpeed">
+			<swe:label>Wind Speed</swe:label>
+			<swe:uom code="km/h"/>
+			<swe:constraint>
+				<swe:AllowedValues>
+					<swe:interval>0 250</swe:interval>
+				</swe:AllowedValues>
+			</swe:constraint>			
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="quantity_field_with_constraints2">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceDirection.owl#Angle">
+			<swe:label>Planar Angle</swe:label>
+			<swe:uom code="deg"/>
+			<swe:constraint>
+				<swe:AllowedValues>
+					<swe:interval>-180 +180</swe:interval>
+				</swe:AllowedValues>
+			</swe:constraint>			
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="quantity_field_with_interval_constraints">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceExtent.owl#Distance">
+			<swe:uom code="m"/>
+			<swe:constraint>
+				<swe:AllowedValues>
+					<swe:interval>-INF -20</swe:interval>
+					<swe:interval>20 50</swe:interval>
+				  <swe:interval>60 INF</swe:interval>
+				</swe:AllowedValues>
+			</swe:constraint>			
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="count_field_with_enumeration">
+		<swe:Count definition="http://www.opengis.net/def/property/OGC/0/NumberOfPixels">
+			<swe:label>Image Width</swe:label>
+			<swe:constraint>
+				<swe:AllowedValues>
+					<swe:value>256</swe:value>
+					<swe:value>512</swe:value>
+					<swe:value>1024</swe:value>
+				</swe:AllowedValues>
+			</swe:constraint>
+		</swe:Count>		
+	</swe:field>
+	<!-- -->
+	<swe:field name="time_field_with_constraint">
+		<swe:Time definition="http://www.opengis.net/def/property/OGC/0/SamplingTime">
+		  <swe:label>Acquisition Time</swe:label>
+			<swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+			<swe:constraint>
+				<swe:AllowedTimes>
+					<swe:interval>2009-01-01 INF</swe:interval>
+				</swe:AllowedTimes>
+			</swe:constraint>
+		</swe:Time>
+	</swe:field>
+	<!-- -->
+</swe:DataRecord>

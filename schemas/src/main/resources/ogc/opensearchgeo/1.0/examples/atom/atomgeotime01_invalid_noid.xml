@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:georss="http://www.georss.org/georss" 
+xmlns:gml="http://www.opengis.net/gml" 
+xmlns:os="http://a9.com/-/spec/opensearch/1.1/"
+xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/"
+xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" >
+  <title>Discovery feed for Search Services</title>
+  <subtitle type="html">
+       One result found for &lt;i&gt;Wide Swath&lt;/i&gt;
+	</subtitle>
+  <generator uri="http://www.terradue.com" version="1.4.0">Terradue CAS</generator>
+  <author><name>GEOSS Supersites</name></author>
+  <updated>2012-05-30T15:41:15Z</updated>
+  <id>http://eo-virtual-archive4.esa.int/search/atom/</id>
+  <link rel="self" type="application/atom+xml" href="http://eo-virtual-archive4.esa.int/search/atom//?count=&amp;startIndex=0&amp;q=Wide Swath&amp;bbox=138,35,143,41&amp;start=1992-01-01&amp;stop=2013-05-30"/>
+  <link rel="search" type="application/opensearchdescription+xml" href="http://eo-virtual-archive4.esa.int/search/description"/>
+  <os:totalResults>1</os:totalResults>
+  <os:startIndex>0</os:startIndex>
+  <os:itemsPerPage>20</os:itemsPerPage>
+  <os:Query role="request" searchTerms="Wide Swath" geo:box="138,35,143,41" time:start="1992-01-01" time:end="2013-05-30" />
+  <georss:polygon>35 138 41 138 41 143 35 143 35 143 35 138</georss:polygon>
+  <entry>
+    <title>ASAR Wide Swath Level 0 product (ASA_WS__0P)</title>
+    <dc:identifier>ASA_WS__0P</dc:identifier>
+    <published>2011-06-10T11:05:29.511Z</published>
+    <updated>2013-05-16T22:25:57.124Z</updated>
+    <dc:date>2004-02-19T03:03:23.736Z/2010-09-12T15:57:36.072Z</dc:date>    
+    <link rel="alternate" type="text/html" title="HTML web age" href="http://eo-virtual-archive4.esa.int/search/ASA_WS__0P/html" />
+    <link rel="search" type="application/opensearchdescription+xml" href="http://eo-virtual-archive4.esa.int/search/ASA_WS__0P/description/" title="Search the ASA_WS__0P" />
+    <link rel="via" type="application/rdf+xml" title="RDF metadata entry" href="http://eo-virtual-archive4.esa.int/search/ASA_WS__0P/rdf?count=0" />
+    <content type="html">
+			&lt;b&gt; Search Feed  &lt;/b&gt;&lt;ul&gt;
+			&lt;li&gt; Title: ASAR Wide Swath Level 0 product (ASA_WS__0P) &lt;/li&gt;&lt;li&gt; Abstract: The WS Mode Level 0 product consists of time-ordered AISPs collected while the instrument is in WS Mode. The echo samples in the AISPs have been compressed to 4 bits/sample using FBAQ. This is a high-rate, wide swath (ScanSAR) mode so data is only acquired for partial orbit segments and is composed of data from five image swaths (SS1 to SS5). The Level 0 product is produced systematically for all data acquired within this mode. &lt;/li&gt;
+&lt;li&gt; Subject: Radar Imagery, Solid Earth (Tectonics/Seismic Activity), Water (Water Management), Natural Disasters (Oil Slick), Land (Topography/Mapping,Soil,Vegetation) Ocean and Coast (Ocean Currents and Topography,Ocean Waves,Coastal Geomorphology) &lt;/li&gt;
+	</content>
+  </entry>
+</feed>

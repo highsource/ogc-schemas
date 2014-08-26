@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection timeStamp="2010-02-01T22:56:09" numberMatched="10"
+   numberReturned="10" xmlns="http://www.someserver.com/myns"
+   xmlns:myns="http://www.someserver.com/myns"
+   xmlns:abc="http://www.someserver.com/anc"
+   xmlns:wfs="http://www.opengis.net/wfs/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.someserver.com/myns ./myns.xsd
+                       http://www.someserver.com/abc ./abc.xsd
+                       http://www.opengis.net/wfs/2.0
+                       http://schemas.opengis.net/wfs/2.0/wfs.xsd
+                       http://www.opengis.net/gml/3.2
+                       http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+   <wfs:member>
+      <myns:Person gml:id="p4456">
+         <gml:identifier codeSpace="http://www.canadaSIN.com">424679374</gml:identifier>
+         <myns:lastName>Smith</myns:lastName>
+         <myns:firstName>Fred</myns:firstName>
+         <myns:age>35</myns:age>
+         <myns:sex>Male</myns:sex>
+         <myns:spouse xlink:href="#p4467"/>
+         <myns:location xlink:href="#p102"/>
+         <myns:mailAddress>
+            <myns:Address gml:id="a201">
+               <myns:streetName>Main St.</myns:streetName>
+               <myns:streetNumber>5</myns:streetNumber>
+               <myns:city>SomeCity</myns:city>
+               <myns:province>Someprovince</myns:province>
+               <myns:postalCode>X1X 1X1</myns:postalCode>
+               <myns:country>Canada</myns:country>
+            </myns:Address>
+         </myns:mailAddress>
+         <myns:phone>416-123-4567</myns:phone>
+         <myns:phone>416-890-1234</myns:phone>
+      </myns:Person>
+   </wfs:member>
+   <wfs:member>
+      <myns:Car gml:id="r1432">
+         <gml:identifier codeSpace="http://www.carserial.org">51465243</gml:identifier>
+         <myns:model>Ford Pinto</myns:model>
+         <myns:age>4</myns:age>
+         <myns:colour>red</myns:colour>
+         <myns:location>
+            <gml:Point gml:id="p102">
+               <gml:pos>15 15</gml:pos>
+            </gml:Point>
+         </myns:location>
+      </myns:Car>
+   </wfs:member>
+   <wfs:member>
+      <myns:House gml:id="h32">
+         <gml:identifier codeSpace="http://www.google.org/houses.xml">654365143</gml:identifier>
+         <myns:numFloors>2</myns:numFloors>
+         <myns:area uom="sqm">200</myns:area>
+         <myns:location>
+            <gml:Point gml:id="p101">
+               <gml:pos>16 18</gml:pos>
+            </gml:Point>
+         </myns:location>
+         <myns:frontsOn xlink:href="#rs11"/>
+         <myns:address xlink:href="#a201"/>
+      </myns:House>
+   </wfs:member>
+   <wfs:member>
+      <abc:Road gml:id="rs11">
+         <abc:numLanes>3</abc:numLanes>
+         <abc:centerline>
+            <gml:LineString gml:id="l123">?</gml:LineString>
+         </abc:centerline>
+      </abc:Road>
+   </wfs:member>
+   <wfs:member>
+      <abc:RoadNetwork gml:id="rn202">
+         <abc:operator>RTA</abc:operator>
+         <abc:members xlink:href="#rs11"/>
+         <abc:topology>
+            <gml:TopoComplex>
+               <gml:Edge gml:id="e1">
+                  <gml:pointProperty xlink:href="#l123"/>
+               </gml:Edge>
+            </gml:TopoComplex>
+         </abc:topology>
+      </abc:RoadNetwork>
+   </wfs:member>
+   <wfs:member>
+      <myns:Person gml:id="p4467">
+         <gml:identifier codeSpace="http://www.canadaSIN.com">424679360</gml:identifier>
+         <myns:lastName>Smith</myns:lastName>
+         <myns:firstName>Mary</myns:firstName>
+         <myns:age>31</myns:age>
+         <myns:sex>Female</myns:sex>
+         <myns:spouse xlink:href="#p4456"/>
+         <myns:location xlink:href="#p101"/>
+         <myns:mailAddress xlink:href="#a201"/>
+         <myns:phone>416-123-4567</myns:phone>
+         <myns:phone>416-890-1234</myns:phone>
+         <myns:livesIn xlink:href="#h32"/>
+         <myns:isDriving xlink:href="r1432"/>
+      </myns:Person>
+   </wfs:member>
+</wfs:FeatureCollection>

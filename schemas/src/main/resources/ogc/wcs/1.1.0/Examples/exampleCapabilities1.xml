@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Capabilities xmlns="http://www.opengis.net/wcs/1.1" 
+xmlns:ows="http://www.opengis.net/ows" 
+xmlns:owcs="http://www.opengis.net/wcs/1.1/ows" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.opengis.net/wcs/1.1 ../wcsGetCapabilities.xsd http://www.opengis.net/wcs/1.1/ows ../owsDataIdentification.xsd" 
+version="1.1.0" updateSequence="ABC123">
+	<!-- Partial example for WCS. Primary editor: Arliss Whiteside. Last updated 2006-07-26 -->
+	<owcs:ServiceIdentification>
+		<ows:Title>Acme Corp. Coverage Server</ows:Title>
+		<ows:Abstract>Web Coverage Server maintained by Acme Corporation. </ows:Abstract>
+		<ows:Keywords>
+			<ows:Keyword>USA</ows:Keyword>
+		</ows:Keywords>
+		<owcs:ServiceType>OGC WCS</owcs:ServiceType>
+		<owcs:ServiceTypeVersion>1.0.0</owcs:ServiceTypeVersion>
+		<owcs:ServiceTypeVersion>0.8.3</owcs:ServiceTypeVersion>
+		<owcs:Fees>NONE</owcs:Fees>
+		<owcs:AccessConstraints>NONE</owcs:AccessConstraints>
+	</owcs:ServiceIdentification>
+	<ows:ServiceProvider>
+		<ows:ProviderName>Acme Corporation</ows:ProviderName>
+		<ows:ProviderSite xlink:href="http://hostname/"/>
+		<ows:ServiceContact>
+			<ows:IndividualName>Jeff Smith, Server Administrator</ows:IndividualName>
+			<ows:PositionName>Computer Scientist</ows:PositionName>
+			<ows:ContactInfo>
+				<ows:Phone>
+					<ows:Voice>+1 301 555-1212</ows:Voice>
+					<ows:Facsimile>+1 301 555-1212</ows:Facsimile>
+				</ows:Phone>
+				<ows:Address>
+					<ows:DeliveryPoint>NASA Goddard Space Flight Center</ows:DeliveryPoint>
+					<ows:City>Greenbelt</ows:City>
+					<ows:AdministrativeArea>MD</ows:AdministrativeArea>
+					<ows:PostalCode>20771</ows:PostalCode>
+					<ows:Country>USA</ows:Country>
+					<ows:ElectronicMailAddress>user@host.com</ows:ElectronicMailAddress>
+				</ows:Address>
+			</ows:ContactInfo>
+			<ows:Role>TBD</ows:Role>
+		</ows:ServiceContact>
+	</ows:ServiceProvider>
+	<owcs:OperationsMetadata>
+		<owcs:Operation name="GetCapabilities">
+			<owcs:DCP>
+				<owcs:HTTP>
+					<owcs:Get xlink:href="http://hostname:port/path?"/>
+					<owcs:Post xlink:href="http://hostname:port/path?"/>
+				</owcs:HTTP>
+			</owcs:DCP>
+		</owcs:Operation>
+		<owcs:Operation name="GetCoverage">
+			<owcs:DCP>
+				<owcs:HTTP>
+					<owcs:Post xlink:href="http://hostname:port/path?"/>
+				</owcs:HTTP>
+			</owcs:DCP>
+			<owcs:Parameter name="Format">
+				<owcs:AllowedValues>
+					<owcs:Value>image/gif</owcs:Value>
+					<owcs:Value>image/png</owcs:Value>
+					<owcs:Value>image/jpeg</owcs:Value>
+				</owcs:AllowedValues>
+			</owcs:Parameter>
+		</owcs:Operation>
+		<owcs:Operation name="DescribeCoverage">
+			<owcs:DCP>
+				<owcs:HTTP>
+					<owcs:Get xlink:href="http://hostname:port/path?"/>
+				</owcs:HTTP>
+			</owcs:DCP>
+			<owcs:Parameter name="Format">
+				<owcs:AllowedValues>
+					<owcs:Value>text/xml</owcs:Value>
+				</owcs:AllowedValues>
+			</owcs:Parameter>
+		</owcs:Operation>
+	</owcs:OperationsMetadata>
+	<Contents>
+		<CoverageSummary>
+			<ows:Title>TBD</ows:Title>
+			<ows:Abstract>TBD</ows:Abstract>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>-9999 9999</ows:LowerCorner>
+				<ows:UpperCorner>9999 9999</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<Identifier>TBD</Identifier>
+		</CoverageSummary>
+	</Contents>
+</Capabilities>

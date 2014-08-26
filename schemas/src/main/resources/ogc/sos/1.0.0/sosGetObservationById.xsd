@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/sos/1.0" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+	<annotation>
+		<documentation>
+			<description>
+				This XML Schema defines the GetObservation request XML elements and types.
+				
+				SOS is an OGC Standard.
+				Copyright (c) 2006,2010 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</description>
+		</documentation>
+	</annotation>
+	<!-- ==============================================================
+		includes and imports
+	============================================================== -->
+	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+	<import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd"/>
+	<include schemaLocation="sosAll.xsd"/>
+	<include schemaLocation="sosCommon.xsd"/>
+	<!-- ==============================================================
+		request
+	============================================================== -->
+	<element name="GetObservationById">
+		<annotation>
+			<documentation>Request to a SOS to perform the GetObservation operation using an Observation ID.</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="sos:RequestBaseType">
+					<sequence>
+						<element name="ObservationId" type="anyURI">
+							<annotation>
+								<documentation>ID of the observation to obtain.  This could have been obtained by the client via a URL in a feed, alert, or some other notification
+								</documentation>
+							</annotation>
+						</element>
+						<element name="responseFormat" type="ows:MimeType" minOccurs="0">
+							<annotation>
+								<documentation>ID of the output format to be used for the requested data. The supported output formats are listed in the selected offering capabilities.
+								</documentation>
+							</annotation>
+						</element>
+						<element name="resultModel" type="QName" minOccurs="0"/>
+						<element name="responseMode" type="sos:responseModeType" minOccurs="0">
+							<annotation>
+								<documentation>This element allows the client to request the form of the response.  The value of resultTemplate is used to retrieve an observation template 
+							that will later be used in calls to GetResult.  The other options allow results to appear inline in a resultTag (inline), external to the observation element (out-of-band)
+							or as a MIME attachment (attached)</documentation>
+							</annotation>
+						</element>
+					</sequence>
+					<attribute name="srsName" type="anyURI" use="optional"/>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+</schema>

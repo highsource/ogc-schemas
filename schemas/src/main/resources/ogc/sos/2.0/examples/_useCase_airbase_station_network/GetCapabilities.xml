@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/1.1">
+	<soap12:Header>
+		<wsa:To>http://www.ogc.org/SOS</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/core/2.0/GetCapabilities</wsa:Action>
+		<wsa:ReplyTo>
+			<wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
+		</wsa:ReplyTo>
+		<wsa:MessageID>http://my.client.com/uid/msg-0010</wsa:MessageID>
+	</soap12:Header>
+	<soap12:Body>
+		<GetCapabilities service="SOS">
+			<ows:AcceptVersions>
+				<ows:Version>2.0.0</ows:Version>
+			</ows:AcceptVersions>
+			<ows:Sections>
+				<ows:Section>OperationsMetadata</ows:Section>
+				<ows:Section>ServiceIdentification</ows:Section>
+				<ows:Section>ServiceProvider</ows:Section>
+				<ows:Section>Filter_Capabilities</ows:Section>
+				<ows:Section>InsertionCapabilities</ows:Section>
+				<ows:Section>Contents</ows:Section>
+			</ows:Sections>
+		</GetCapabilities>
+	</soap12:Body>
+</soap12:Envelope>

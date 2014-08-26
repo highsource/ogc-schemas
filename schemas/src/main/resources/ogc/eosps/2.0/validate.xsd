@@ -1,0 +1,66 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:eosps="http://www.opengis.net/eosps/2.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" targetNamespace="http://www.opengis.net/eosps/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+    <annotation>
+        <documentation>EO SPS schema for the optional Validate operation.
+        
+        OGC EO SPS 2.0 is an OGC Standard.
+        Copyright (c) 2011 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <import namespace="http://www.opengis.net/sps/2.0" schemaLocation="http://schemas.opengis.net/sps/2.0/sps.xsd"/>  
+    <import namespace="http://www.opengis.net/swes/2.0" schemaLocation="http://schemas.opengis.net/swes/2.0/swes.xsd"/>
+	<!-- ================================================= -->
+    <element name="Validate" substitutionGroup="swes:ExtensibleRequest" type="eosps:ValidateType"/>
+    <complexType name="ValidateType">
+        <complexContent>
+            <extension base="swes:ExtensibleRequestType">
+                <sequence>
+                    <element name="task" type="anyURI">
+                        <annotation>
+                            <documentation>Identifier of the task that contains the segment to be validated</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="1" name="segmentID" type="NCName">
+                        <annotation>
+                            <documentation>Identifier of the acquisition segment to be validated. All segments selected for validation shall have the status ACQUIRED</documentation>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="ValidatePropertyType">
+        <sequence minOccurs="0">
+            <element ref="eosps:Validate"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    </complexType>
+    <!-- ================================================= -->
+    <element name="ValidateResponse" substitutionGroup="swes:ExtensibleResponse" type="eosps:ValidateResponseType"/>
+    <complexType name="ValidateResponseType">
+        <complexContent>
+            <extension base="swes:ExtensibleResponseType">
+                <sequence>
+                    <element name="result" type="sps:StatusReportPropertyType">
+                        <annotation>
+                            <documentation>Current status report eventually reflecting validation of the selected segments</documentation>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="ValidateResponsePropertyType">
+        <sequence minOccurs="0">
+            <element ref="eosps:ValidateResponse"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    </complexType>
+    <!-- ================================================= -->
+    <element name="ManualValidation" type="boolean">
+      <annotation>
+        <documentation>Element inserted in Submit requests with a value of 'true' to specify that the client will validate acquired segments</documentation>
+      </annotation>
+    </element>
+</schema>

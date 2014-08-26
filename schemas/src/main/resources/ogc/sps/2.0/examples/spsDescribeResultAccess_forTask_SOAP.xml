@@ -1,0 +1,10 @@
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/1.1">
+  <soap12:Body>
+    <sps:DescribeResultAccess service="SPS" version="2.0.0">
+      <sps:target>
+        <sps:task>http://www.ogc.org/procedure/camera/1/tasks/6</sps:task>
+      </sps:target>
+    </sps:DescribeResultAccess>
+  </soap12:Body>
+</soap12:Envelope>

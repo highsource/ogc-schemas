@@ -1,0 +1,195 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" targetNamespace="http://www.opengis.net/sensorml/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+    <annotation>
+        <documentation>The elements of a concrete simple physical process derived from the core process model.
+        
+        SensorML is an OGC Standard.
+        Copyright (c) 2014 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    <import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <include schemaLocation="simple_process.xsd"/><!-- ================================================= -->
+    <element name="PhysicalComponent" substitutionGroup="sml:AbstractPhysicalProcess" type="sml:PhysicalComponentType">
+        <annotation>
+            <documentation>A PhysicalComponent is a physical process that will not be further divided into smaller components.</documentation>
+        </annotation>
+    </element>
+    <complexType name="PhysicalComponentType">
+        <complexContent>
+            <extension base="sml:AbstractPhysicalProcessType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="method" type="sml:ProcessMethodPropertyType">
+                        <annotation>
+                            <documentation>The method describes (as an algorithm or text) how the process takes the input and, based on the parameter values, generates output values.</documentation>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="PhysicalComponentPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:PhysicalComponent"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element abstract="true" name="AbstractPhysicalProcess" substitutionGroup="sml:AbstractProcess" type="sml:AbstractPhysicalProcessType">
+        <annotation>
+            <documentation>A physical process where the spatial and temporal state of the process is relevant.</documentation>
+        </annotation>
+    </element>
+    <complexType abstract="true" name="AbstractPhysicalProcessType">
+        <complexContent>
+            <extension base="sml:AbstractProcessType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="attachedTo" type="gml:ReferenceType">
+                        <annotation>
+                            <appinfo>
+                                <gml:targetElement>sml:AbstractPhysicalProcess</gml:targetElement>
+                            </appinfo>
+                            <documentation>References the physical component or system (e.g. platform) to which to which this component or system is attached.</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="localReferenceFrame">
+                        <annotation>
+                            <documentation>A spatial reference frame of the physical component itself; this reference frame is absolute and defines the relationship of the reference frame to the physical body of the component; position of the component relates this reference frame to some external reference frame. Note that units are specified in the position so they are not specified as part of the SpatialFrame.</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:SpatialFrame"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="localTimeFrame">
+                        <annotation>
+                            <documentation>Supports local time reference frames such as "time past mission start". Note that units are handled in timePosition so they are not specified in the TemporalFrame.</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:TemporalFrame"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="position" type="sml:PositionUnionPropertyType">
+                        <annotation>
+                            <documentation>Provides positional information relating the component's spatial reference frame to an external spatial reference frame. Positional information can be given by location, by full body state, by a time-tagged trajectory, or by a measuring or computational process.</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="timePosition" type="swe:TimePropertyType">
+                        <annotation>
+                            <documentation>Provides Time positions typically reference a local time frame to an external time frame. For example, a timer-start-time might be given relative to an "absolute" GPS time.</documentation>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="AbstractPhysicalProcessPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:AbstractPhysicalProcess"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="TemporalFrame" substitutionGroup="swe:AbstractSWEIdentifiable" type="sml:TemporalFrameType">
+        <annotation>
+            <documentation>A general temporal frame such as a mission start time or timer start time. The origin should just describe context of the start of time (e.g. start of local timer).</documentation>
+        </annotation>
+    </element>
+    <complexType name="TemporalFrameType">
+        <complexContent>
+            <extension base="swe:AbstractSWEIdentifiableType">
+                <sequence>
+                    <element name="origin" type="string"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="TemporalFramePropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:TemporalFrame"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="SpatialFrame" substitutionGroup="swe:AbstractSWEIdentifiable" type="sml:SpatialFrameType">
+        <annotation>
+            <documentation>A general spatial Cartesian Reference Frame where the axes and origin will be defined textually relative to a physical component.</documentation>
+        </annotation>
+    </element>
+    <complexType name="SpatialFrameType">
+        <complexContent>
+            <extension base="swe:AbstractSWEIdentifiableType">
+                <sequence>
+                    <element name="origin" type="string">
+                        <annotation>
+                            <documentation>A textual description of the origin of the reference frame relative to the physical device (e.g. "the origin is at the point of attachment of the sensor to the platform").</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="1" name="axis">
+                        <annotation>
+                            <documentation>Axis with name attribute and a textual description of the relationship of the axis to the physical device; the order of the axes listed determines their relationship according to the right-handed rule (e.g. axis 1 cross axis 2 = axis 3).</documentation>
+                        </annotation>
+                        <complexType>
+                            <simpleContent>
+                                <extension base="string">
+                                    <attribute name="name" type="NCName" use="required"/>
+                                </extension>
+                            </simpleContent>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="SpatialFramePropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:SpatialFrame"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <group name="PositionUnion">
+        <annotation>
+            <documentation>A choice of elements for defining spatial state (e.g. location, orientation, linear/angular velocity and linear/angular acceleration.</documentation>
+        </annotation>
+        <choice>
+            <element ref="swe:Text">
+                <annotation>
+                    <documentation>Provides positional information in textual form (e.g. "located on the intake line before the catalytic converter"); shall only be used when a more precise location is unknown or irrelevant.</documentation>
+                </annotation>
+            </element>
+            <element ref="gml:Point">
+                <annotation>
+                    <documentation>Provides static location only using a gml:Point element.</documentation>
+                </annotation>
+            </element>
+            <element ref="swe:Vector">
+                <annotation>
+                    <documentation>Provides a static location using a swe:Vector.</documentation>
+                </annotation>
+            </element>
+            <element ref="swe:DataRecord">
+                <annotation>
+                    <documentation>Provides location and orientation as a DataRecord consisting of one or two Vector elements.</documentation>
+                </annotation>
+            </element>
+            <element ref="swe:DataArray">
+                <annotation>
+                    <documentation>Provides time-tagged dynamic state information that can include, for instance, location, orientation, velocity, acceleration, angular velocity, angular acceleration; shall be a DataArray consisting of a DataRecord element of multiple Vector fields.</documentation>
+                </annotation>
+            </element>
+            <element ref="sml:AbstractProcess">
+                <annotation>
+                    <documentation>Provides for positional information to be provided by a process; example processes could include a physical sensor such as a GPS, a computational process such as an orbital propagation model, a specific web service such as a SOS, or any process who's output provides positional information.</documentation>
+                </annotation>
+            </element>
+        </choice>
+    </group>
+    <complexType name="PositionUnionPropertyType">
+        <sequence minOccurs="0">
+            <group ref="sml:PositionUnion"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType>
+</schema>

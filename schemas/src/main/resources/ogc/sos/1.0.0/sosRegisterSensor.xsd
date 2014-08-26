@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:om="http://www.opengis.net/om/1.0" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opengis.net/sos/1.0" elementFormDefault="qualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+  <annotation>
+    <documentation>
+      <description>
+        This XML Schema defines the registerSenor request and response XML elements and types.
+        
+        SOS is an OGC Standard.
+        Copyright (c) 2006,2010 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+      </description>
+    </documentation>
+  </annotation>
+  <!-- ==============================================================
+		includes and imports
+	============================================================== -->
+  <import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+  <import namespace="http://www.opengis.net/om/1.0" schemaLocation="http://schemas.opengis.net/om/1.0.0/om.xsd"/>
+  <include schemaLocation="sosAll.xsd"/>
+  <include schemaLocation="sosCommon.xsd"/>
+  <!-- ==============================================================
+		request
+	============================================================== -->
+  <element name="RegisterSensor">
+    <annotation>
+      <documentation>Request to a SOS to perform the registerSensor operation. This operation is designed to register new sensors at the SOS.</documentation>
+    </annotation>
+    <complexType>
+      <complexContent>
+        <extension base="sos:RequestBaseType">
+          <sequence>
+            <element name="SensorDescription">
+              <complexType>
+                <sequence>
+                  <any namespace="##other" processContents="lax"/>
+                </sequence>
+              </complexType>
+            </element>
+            <element ref="sos:ObservationTemplate"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="ObservationTemplate">
+    <annotation>
+      <documentation>A template of the observations that will be inserted into the SOS.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element ref="om:Observation"/>
+      </sequence>
+    </complexType>
+  </element>
+  <!-- ====================================================
+	response
+	=======================================================-->
+  <element name="RegisterSensorResponse">
+    <annotation>
+      <documentation>returns the Id that is used in the insert operation to link the sensor to an Observation</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="AssignedSensorId" type="anyURI"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

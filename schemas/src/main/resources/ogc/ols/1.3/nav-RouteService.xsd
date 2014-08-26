@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:gml="http://www.opengis.net/gml" xmlns:xls="http://www.opengis.net/xls" xmlns:nav="http://www.opengis.net/ols/nav" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opengis.net/ols/nav" elementFormDefault="qualified" version="1.3.0">
+	<annotation>
+		<documentation>
+			OLS is an OGC Standard.
+			Copyright (c) 2005,2010,2014 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
+	</annotation>
+	<include schemaLocation="nav-All.xsd"/>
+	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/ols/1.2/gml4xls.xsd"/>
+	<import namespace="http://www.opengis.net/xls" schemaLocation="http://schemas.opengis.net/ols/1.2/XLS.xsd"/>
+	<import namespace="http://www.opengis.net/xls" schemaLocation="http://schemas.opengis.net/ols/1.2/RouteService.xsd"/>
+	<include schemaLocation="nav-Positioning.xsd"/>
+	<include schemaLocation="nav-CursorUtil.xsd"/>
+	<include schemaLocation="nav-UOM.xsd"/>
+
+	<!-- ====================================== -->
+	<!--	DetermineRouteRequest										   -->
+	<!-- ====================================== -->
+	<element name="DetermineRouteRequest" type="nav:DetermineRouteRequestType" substitutionGroup="xls:_RequestParameters"/>
+	<complexType name="DetermineRouteRequestType">
+		<complexContent>
+			<extension base="xls:AbstractRequestParametersType">
+				<sequence>
+					<choice>
+						<element name="RouteHandle" type="xls:RouteHandleType"/>
+						<element name="ExtendedRoutePlan" type="nav:RoutePlanType"/>
+					</choice>
+					<element name="BoundingBox" type="gml:EnvelopeType" minOccurs="0">
+						<annotation>
+							<documentation>Rectangular area of route for which the answer is requested.  If not specified, defaults to full route.</documentation>
+						</annotation>
+					</element>
+					<element name="RouteGuidanceRequest" type="xls:RouteInstructionsRequestType" minOccurs="0"/>
+					<element name="FirstBucketSize" type="integer" minOccurs="0">
+						<annotation>
+							<documentation>If not there, or zero, then don't get first bucket, Else if some positive integer, then get that many objects in the first bucket.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+				<attribute name="priority" type="nav:PriorityType" use="required"/>
+				<attribute name="provideRouteHandle" type="boolean" use="optional" default="false">
+					<annotation>
+						<documentation>Requests the return of a route handle.</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="distanceUnit" type="xls:DistanceUnitType" use="optional" default="M">
+					<annotation>
+						<documentation>Specifies the unit for measuring distance.</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RoutePlanType">
+		<sequence>
+			<element name="WayPointList" type="nav:RoutePointSequenceType">
+				<annotation>
+					<documentation>There must be at least two points, one for the origin and one for the destination. They are the first and the last point in this sequence.  Intermediate waypoints, if there are any, are defined in the middle of the sequence.</documentation>
+				</annotation>
+			</element>
+			<element name="AvoidList" type="xls:AvoidListType" minOccurs="0"/>
+			<element name="ExtendedRouteControl" type="nav:RouteControlType">
+				<annotation>
+					<documentation>The criteria upon which a route is determined.</documentation>
+				</annotation>
+			</element>
+		</sequence>
+		<attribute name="useRealTimeTraffic" type="boolean" use="optional" default="false"/>
+		<attribute name="RelaxConstraint" type="boolean" use="required">
+			<annotation>
+				<documentation>The RelaxConstraint input parameter allows the caller to specify whether all the specified RoutePlan values must be met, or whether the called "agent" has permission to relax one or more. If the specified RoutePlan values would result in no route being found because highways or toll roads are prohibited, then if RelaxConstraint is TRUE, the function may relax one or more RoutePlan prameters so that a route can be found. If the specified RoutePlan values do allow a result to be found, then RelaxConstraint has no effect.</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+	<complexType name="RoutePointSequenceType">
+		<annotation>
+			<documentation>Defines a list of waypoints along a route.</documentation>
+		</annotation>
+		<sequence>
+			<element name="StartPoint" type="nav:RoutePointType">
+				<annotation>
+					<documentation>Starting point of the route.</documentation>
+				</annotation>
+			</element>
+			<element name="ViaPoint" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Intermediate waypoints along the route.</documentation>
+				</annotation>
+				<complexType>
+					<complexContent>
+						<extension base="nav:RoutePointType">
+							<attribute name="ordered" type="boolean" use="optional" default="true">
+								<annotation>
+									<documentation>Unless otherwise specified, the ViaPoints are meant to be supplied in order</documentation>
+								</annotation>
+							</attribute>
+						</extension>
+					</complexContent>
+				</complexType>
+			</element>
+			<element name="EndPoint" type="nav:RoutePointType">
+				<annotation>
+					<documentation>Ending point of the route (i.e. the destination)</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="RoutePointType">
+		<annotation>
+			<documentation>contains a set of link loci  associated with a single route point.</documentation>
+		</annotation>
+		<sequence>
+			<element name="LinkLoci" type="nav:LocusType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="RouteControlType">
+		<annotation>
+			<documentation>This structure contains the criteria to be used by the DetermineRoute request: 
+The cost criteria includes the following information:
+-- Should travel time or travel distance be minimized?
+-- Should highways be used?
+-- Should toll roads be used?
+-- Should a scenic route be preferred?
+	For which vehicle type(s)?
+	For what starting time?</documentation>
+		</annotation>
+		<sequence>
+			<element name="CostCriteria" type="nav:RouteCostModelType">
+				<annotation>
+					<documentation>Cost criteria</documentation>
+				</annotation>
+			</element>
+			<element name="Vehicle" type="nav:VehicleType.N" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Vehicle type(s)</documentation>
+				</annotation>
+			</element>
+			<element name="VehicleCompositionLogic" minOccurs="0">
+				<annotation>
+					<documentation>If more then one vehicle listed, should they be considered as disjuncts or conjuncts</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="AND"/>
+						<enumeration value="OR"/>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="RouteStartDateTime" type="nav:DateTimeType" minOccurs="0">
+				<annotation>
+					<documentation>Route start date and time.</documentation>
+				</annotation>
+			</element>
+			<element name="RouteEndDateTime" type="nav:DateTimeType" minOccurs="0"/>
+		</sequence>
+		<attribute name="useRealTimeTraffic" type="boolean" default="false">
+			<annotation>
+				<documentation>Specifies whether to use real time traffic information when determining the best route.</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+	<complexType name="RouteCostModelType">
+		<annotation>
+			<documentation>This structure contains information about the cost criteria. It contains information about how to assign "exchange rate" cost to:
+-- Road distance
+-- Road travel time
+-- Highway usage preference
+-- Toll road usage preference
+-- Scenic route preference</documentation>
+		</annotation>
+		<sequence>
+			<element name="MinimizerGoal" type="nav:RouteMinimizeOptionEnum"/>
+			<element name="HighwayAffinity" type="nav:RouteHighwayUsageEnum" minOccurs="0"/>
+			<element name="TollroadAffinity" type="nav:RouteTollUsageEnum" minOccurs="0"/>
+			<!--<element name="ScenicRoute" type="boolean" minOccurs="0"/>-->
+		</sequence>
+		<attribute name="ScenicRoute" type="boolean" use="optional"/>
+	</complexType>
+	<!-- ====================================== -->
+	<!--	DetermineRouteResponse				-->
+	<!-- ====================================== -->
+	<element name="DetermineRouteResponse" type="nav:DetermineRouteResponseType" substitutionGroup="xls:_ResponseParameters"/>
+	<complexType name="DetermineRouteResponseType">
+		<annotation>
+			<documentation>Reference to the route stored at the Route Determination Service server.</documentation>
+			<documentation>Response for requested route summary.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="xls:AbstractResponseParametersType">
+				<sequence>
+					<element name="RouteLinkAndCost" type="nav:CursorType">
+						<annotation>
+							<documentation>Here is returned an ordered list of links and node travel costs for the computed path.  The computed path is the path for the specified compute control values in the request call.</documentation>
+						</annotation>
+					</element>
+					<element name="FirstBucket" type="nav:CursorFetchResponse" minOccurs="0"/>
+					<element ref="xls:RouteHandle" minOccurs="0"/>
+					<element ref="xls:RouteSummary" minOccurs="0"/>
+					<element name="ConstraintRelaxed" type="boolean" minOccurs="0">
+						<annotation>
+							<documentation>The ConstraintRelaxed output parameter shows whether one or more RoutePlan (input parameter) values has been relaxed.  </documentation>
+						</annotation>
+					</element>
+					<element name="WhichConstrainWasRelaxed" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RouteLinkAndCost">
+		<sequence>
+			<element name="Link" type="nav:AbstractIDType"/>
+			<element name="EstLinkTravelTime" type="unsignedLong">
+				<annotation>
+					<documentation>Link traversal time, in tenths of seconds.</documentation>
+				</annotation>
+			</element>
+			<element name="NodeTravelTime" type="unsignedShort">
+				<annotation>
+					<documentation>Estimated node travel cost to the link above, units of measurement are in tenths of seconds.</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+</schema>
+

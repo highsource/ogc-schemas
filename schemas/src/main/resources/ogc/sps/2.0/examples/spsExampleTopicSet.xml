@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wstop:TopicSet xmlns:wstop="http://docs.oasis-open.org/wsn/t-1" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/wsn/t-1 http://docs.oasis-open.org/wsn/t-1.xsd">
+  <sps:TaskEvent>
+    <sps:TaskFailure wstop:topic="true"/>
+    <sps:TaskCompletion wstop:topic="true"/>
+    <sps:DataPublication wstop:topic="true"/>
+    <sps:TaskReservation wstop:topic="true"/>
+    <sps:TaskSubmission wstop:topic="true"/>
+    <sps:ReservationExpiration wstop:topic="true"/>
+  </sps:TaskEvent>
+  <sps:TaskingRequestEvent>
+    <sps:TaskingRequestExpiration wstop:topic="true"/>
+  </sps:TaskingRequestEvent>
+  <swes:CapabilitiesChange>
+    <swes:OfferingAddition wstop:topic="true"/>
+    <swes:OfferingDeletion wstop:topic="true"/>
+  </swes:CapabilitiesChange>
+</wstop:TopicSet>

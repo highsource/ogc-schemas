@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xls="http://www.opengis.net/xls" xmlns:nav="http://www.opengis.net/ols/nav" targetNamespace="http://www.opengis.net/ols/nav" elementFormDefault="qualified" version="1.3.0">
+	<annotation>
+		<documentation>
+			OLS is an OGC Standard.
+			Copyright (c) 2005,2010,2014 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
+	</annotation>
+	<include schemaLocation="nav-All.xsd"/>
+	<import namespace="http://www.opengis.net/xls" schemaLocation="http://schemas.opengis.net/ols/1.2/XLS.xsd"/>
+	<!-- ====================================== -->
+	<!--	UOM for navigation									 -->
+	<!-- ====================================== -->
+	<complexType name="DateTimeType">
+		<sequence>
+			<element name="StartDate" type="nav:DateType" minOccurs="0"/>
+			<element name="EndDate" type="nav:DateType" minOccurs="0"/>
+			<element name="StartTime" type="unsignedShort" minOccurs="0"/>
+			<element name="EndTime" type="unsignedShort" minOccurs="0"/>
+			<element name="TimeZone" type="nav:TimeZoneType" minOccurs="0"/>
+			<element name="DaylightSavingsTimeCode" type="unsignedShort" minOccurs="0"/>
+		</sequence>
+		<attribute name="Exclusionary" type="boolean" use="optional" default="false"/>
+		<attribute name="Spring" type="boolean" use="optional"/>
+		<attribute name="Summer" type="boolean" use="optional"/>
+		<attribute name="Fall" type="boolean" use="optional"/>
+		<attribute name="Winter" type="boolean" use="optional"/>
+		<attribute name="Holiday" type="boolean" use="optional"/>
+		<attribute name="DawnToDusk" type="boolean" use="optional"/>
+		<attribute name="DuskToDawn" type="boolean" use="optional"/>
+	</complexType>
+	<complexType name="DateType">
+		<choice>
+			<element name="AbsoluteDateType" type="nav:AbsoluteDateType" minOccurs="0"/>
+			<element name="ExtendedDate" type="nav:ExtendedDateType" minOccurs="0"/>
+		</choice>
+	</complexType>
+	<complexType name="ExtendedDateType">
+		<choice>
+			<element name="DayOfWeek" type="nav:DayOfWeekEnum" minOccurs="0"/>
+			<element name="DayOfYear" type="unsignedShort" minOccurs="0"/>
+			<element name="DayOfMonth" type="unsignedShort" minOccurs="0"/>
+			<element name="DayOfWeekOfMonthType" type="nav:DayOfWeekOfMonthType" minOccurs="0"/>
+			<element name="DayOfWeekOfYearType" type="nav:DayOfWeekOfYearType" minOccurs="0"/>
+			<element name="WeekOfMonth" type="unsignedShort" minOccurs="0"/>
+			<element name="WeekOfYear" type="unsignedShort" minOccurs="0"/>
+			<element name="MonthOfYear" type="unsignedShort" minOccurs="0"/>
+			<element name="DayOfMonthOfYearType" type="nav:DayOfMonthOfYearType" minOccurs="0"/>
+			<element name="DayOfWeekOfMonthOfYearType" type="nav:DayOfMonthOfYearType" minOccurs="0"/>
+		</choice>
+	</complexType>
+	<complexType name="TimeZoneType">
+		<sequence>
+			<element name="Code" type="long"/>
+			<element name="MinutesFromGMT" type="short"/>
+			<element name="Description">
+				<simpleType>
+					<restriction base="string">
+						<length value="4"/>
+					</restriction>
+				</simpleType>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="AbsoluteDateType">
+		<sequence>
+			<element name="MonthOfYear" type="unsignedShort"/>
+			<element name="DayOfMonth" type="unsignedShort"/>
+			<element name="Year" type="unsignedShort"/>
+		</sequence>
+	</complexType>
+	<complexType name="DayOfWeekOfMonthType">
+		<sequence>
+			<element name="DayOfWeek" type="nav:DayOfWeekEnum"/>
+			<element name="WeekOfMonth" type="unsignedShort"/>
+		</sequence>
+	</complexType>
+	<complexType name="DayOfWeekOfYearType">
+		<sequence>
+			<element name="DayOfWeek" type="nav:DayOfWeekEnum"/>
+			<element name="WeekOfYear" type="unsignedShort"/>
+		</sequence>
+	</complexType>
+	<complexType name="DayOfMonthOfYearType">
+		<sequence>
+			<element name="DayOfMonth" type="unsignedShort"/>
+			<element name="MonthOfYear" type="unsignedShort"/>
+		</sequence>
+	</complexType>
+	<complexType name="DayOfWeekOfMonthOfYearType">
+		<sequence>
+			<element name="DayOfWeek" type="nav:DayOfWeekEnum"/>
+			<element name="WeekOfMonth" type="unsignedShort"/>
+			<element name="MonthOfYear" type="unsignedShort"/>
+		</sequence>
+	</complexType>
+	<complexType name="AbstractIDType">
+		<annotation>
+			<documentation>This is an entity's full ID. This type must provide a unique ID across all databases accessible by a service during any open session.</documentation>
+		</annotation>
+		<sequence>
+			<element name="ID" type="xsd:integer"/>
+		</sequence>
+	</complexType>
+	<simpleType name="RouteMinimizeOptionEnum">
+		<annotation>
+			<documentation>This enumeration is used for route minimization option.</documentation>
+			<documentation>shortest road distance.</documentation>
+			<documentation>shortest road travel time.</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<enumeration value="SHORTEST_DISTANCE"/>
+			<enumeration value="SHORTEST_TIME"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="RouteHighwayUsageEnum">
+		<annotation>
+			<documentation>This enumeration is used for route minimization option.</documentation>
+			<documentation>shortest road distance.</documentation>
+			<documentation>shortest road travel time.</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<enumeration value="PROHIBIT_HIGHWAYS"/>
+			<enumeration value="AVOID_HIGHWAYS"/>
+			<enumeration value="PREFER_HIGHWAYS"/>
+			<enumeration value="NO_PREFERENCE"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="PriorityType">
+		<annotation>
+			<documentation>Priority of this request (as there may be other ones invoked at the same time).</documentation>
+		</annotation>
+		<restriction base="unsignedShort">
+			<minInclusive value="0"/>
+			<maxExclusive value="256"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="RouteTollUsageEnum">
+		<restriction base="xsd:string">
+			<enumeration value="PROHIBIT_TOLLROADS"/>
+			<enumeration value="AVOID_TOLLROADS"/>
+			<enumeration value="NO_PREFERENCE"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="DateTimeEnum">
+		<restriction base="xsd:string">
+			<enumeration value="MAP_DAY_OF_WEEK"/>
+			<enumeration value="MAP_ABSOLUTE_DATE"/>
+			<enumeration value="MAP_DAY_OF_YEAR"/>
+			<enumeration value="MAP_DAY_OF_MONTH"/>
+			<enumeration value="MAP_DAY_OF_WEEK_OF_MONTH"/>
+			<enumeration value="MAP_DAY_OF_WEEK_OF_YEAR"/>
+			<enumeration value="MAP_WEEK_OF_MONTH"/>
+			<enumeration value="MAP_WEEK_OF_YEAR"/>
+			<enumeration value="MAP_MONTH_OF_YEAR"/>
+			<enumeration value="MAP_DAY_OF_MONTH_OF_YEAR"/>
+			<enumeration value="MAP_DAY_OF_WEEK_OF_MONTH_OF_YEAR"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="DayOfWeekEnum">
+		<restriction base="xsd:string">
+			<enumeration value="Monday = 0x1"/>
+			<enumeration value="Tuesday = 0x2"/>
+			<enumeration value="Wednesday = 0x4"/>
+			<enumeration value="Thursday = 0x8"/>
+			<enumeration value="Friday = 0x10"/>
+			<enumeration value="Saturday = 0x20"/>
+			<enumeration value="Sunday = 0x40"/>
+		</restriction>
+	</simpleType>
+	<complexType name="VehicleType.N">
+		<sequence>
+			<element name="VehicleValue" type="nav:VehicleTypeValue"/>
+			<element name="VehicleName" type="nav:VehicleTypeName" minOccurs="0"/>
+		</sequence>
+		<attribute name="Exclusionary" type="boolean" use="optional" default="false"/>
+	</complexType>
+	<simpleType name="VehicleTypeValue">
+		<restriction base="xsd:integer">
+			<enumeration value="0"/>
+			<enumeration value="11"/>
+			<enumeration value="12"/>
+			<enumeration value="13"/>
+			<enumeration value="14"/>
+			<enumeration value="15"/>
+			<enumeration value="16"/>
+			<enumeration value="17"/>
+			<enumeration value="18"/>
+			<enumeration value="19"/>
+			<enumeration value="20"/>
+			<enumeration value="21"/>
+			<enumeration value="22"/>
+			<enumeration value="23"/>
+			<enumeration value="24"/>
+			<enumeration value="25"/>
+			<enumeration value="26"/>
+			<enumeration value="28"/>
+			<enumeration value="29"/>
+			<enumeration value="30"/>
+			<enumeration value="31"/>
+			<enumeration value="32"/>
+			<enumeration value="33"/>
+			<enumeration value="34"/>
+			<enumeration value="35"/>
+			<enumeration value="36"/>
+			<enumeration value="37"/>
+			<enumeration value="38"/>
+			<enumeration value="39"/>
+			<enumeration value="40"/>
+			<enumeration value="90"/>
+			<enumeration value="91"/>
+			<enumeration value="92"/>
+			<enumeration value="93"/>
+			<enumeration value="94"/>
+			<enumeration value="95"/>
+			<enumeration value="96"/>
+			<enumeration value="97"/>
+			<enumeration value="98"/>
+			<enumeration value="99"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="VehicleTypeName">
+		<restriction base="xsd:string">
+			<enumeration value="All Vehicles">
+				<annotation>
+					<documentation>0</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Passenger Cars">
+				<annotation>
+					<documentation>11</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Residential Vehicle">
+				<annotation>
+					<documentation>12</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="High Occupancy Vehicle">
+				<annotation>
+					<documentation>13</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Car with Trailer">
+				<annotation>
+					<documentation>14</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Emergency Vehicle">
+				<annotation>
+					<documentation>15</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Taxi">
+				<annotation>
+					<documentation>16</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Public Bus">
+				<annotation>
+					<documentation>17</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Private Bus">
+				<annotation>
+					<documentation>18</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Military vehicle">
+				<annotation>
+					<documentation>19</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Delivery Truck">
+				<annotation>
+					<documentation>20</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Transport Truck">
+				<annotation>
+					<documentation>21</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Motorcycle">
+				<annotation>
+					<documentation>22</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Moped">
+				<annotation>
+					<documentation>23</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Bicycle">
+				<annotation>
+					<documentation>24</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Pedestrian">
+				<annotation>
+					<documentation>25</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Farm Vehicle">
+				<annotation>
+					<documentation>26</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Vehicle with water polluting load">
+				<annotation>
+					<documentation>28</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Vehicle with explosive load">
+				<annotation>
+					<documentation>29</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Vehicle with other dangerous load">
+				<annotation>
+					<documentation>30</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Trolley Bus">
+				<annotation>
+					<documentation>31</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Employee Vehicle">
+				<annotation>
+					<documentation>32</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Light Rail">
+				<annotation>
+					<documentation>33</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Facility Vehicle">
+				<annotation>
+					<documentation>34</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="School Bus">
+				<annotation>
+					<documentation>35</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="4 Wheel Drive Vehicle">
+				<annotation>
+					<documentation>36</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Vehicle carrying snow chains">
+				<annotation>
+					<documentation>37</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Mail Vehicle">
+				<annotation>
+					<documentation>38</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Tanker">
+				<annotation>
+					<documentation>39</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Vehicle for disabled persons">
+				<annotation>
+					<documentation>40</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="User defined 00">
+				<annotation>
+					<documentation>90</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="User defined 01">
+				<annotation>
+					<documentation>91</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="User defined 02">
+				<annotation>
+					<documentation>92</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="User defined 03">
+				<annotation>
+					<documentation>93</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="User defined 04">
+				<annotation>
+					<documentation>94</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="User defined 05">
+				<annotation>
+					<documentation>95</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="User defined 06">
+				<annotation>
+					<documentation>96</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="User defined 07">
+				<annotation>
+					<documentation>97</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="User defined 08">
+				<annotation>
+					<documentation>98</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="User defined 09">
+				<annotation>
+					<documentation>99</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<simpleType name="FractionType">
+		<restriction base="xsd:decimal">
+			<maxInclusive value="1.0"/>
+			<minInclusive value="0.0"/>
+		</restriction>
+	</simpleType>
+</schema>
+

@@ -1,0 +1,28 @@
+# -*- rnc -*-
+   # RELAX NG Compact Syntax Grammar 
+   # OpenSearch Query Element as defined in OGC 10-032 for the geo extension
+   #
+   # OGC OpenSearch Geo and Time Extensions 1.0 is an OGC Standard.
+   # Copyright (c) 2014 Open Geospatial Consortium.
+   # To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+   #
+   # Version: 1.0.0
+   #
+
+namespace geo = "http://a9.com/-/opensearch/extensions/geo/1.0/"
+
+osQueryAttr &= attribute geo:box { geobox }? 
+            & attribute geo:geometry { text }?
+            & attribute geo:uid { text }?
+            & attribute geo:lat {xsd:double}?
+            & attribute geo:lon {xsd:double}?
+            & attribute geo:radius {xsd:double}?
+            & attribute geo:relation { relation }?
+            & attribute geo:name {text}?
+            
+geobox = xsd:string { pattern ="[\+\-]?[\d]*(.[\d]+)?(,[\+\-]?[\d]*(.[\d]+)?){3}" }
+
+relation = "intersects" | "contains" | "disjoint"
+
+
+# EOF

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetFeature version="1.1.0" service="WFS" handle="Example Query"
+  xmlns="http://www.opengis.net/wfs"
+  xmlns:ogc="http://www.opengis.net/ogc"
+  xmlns:gml="http://www.opengis.net/gml"
+  xmlns:tds="http://metadata.dod.mil/mdr/ns/GSIP/2.0/tds/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/wfs
+                      http://schemas.opengis.net/wfs/1.1.0/wfs.xsd
+                      http://www.opengis.net/gml
+                      http://schemas.opengis.net/gml/3.1.1/base/gml.xsd">
+  <Query typeName="tds:RoadGeocurve" handle="Q01">
+    <ogc:Filter>
+      <ogc:BBOX>
+        <ogc:PropertyName>geometry</ogc:PropertyName>
+        <gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+           <gml:lowerCorner>17.4906 -75.0396</gml:lowerCorner>
+           <gml:upperCorner>20.0306 -70.8064</gml:upperCorner>
+        </gml:Envelope>
+      </ogc:BBOX>
+    </ogc:Filter>
+  </Query>
+</GetFeature>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<!-- -->
+	<swe:field name="quantity_field_with_nil">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#IonizingRadiation">
+		  <swe:label>Radiation Dose</swe:label>
+		  <swe:description>Radiation dose measured by Gamma detector</swe:description>
+			<swe:nilValues>
+				<swe:NilValues>
+					<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">-INF</swe:nilValue>
+					<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/AboveDetectionRange">INF</swe:nilValue>
+				</swe:NilValues>
+			</swe:nilValues>
+			<swe:uom code="uR"/>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="band1_radiance_with_nil">
+		<swe:Count definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance">
+			<swe:label>Band 1</swe:label>
+			<swe:nilValues>
+				<swe:NilValues id="NIL_VALUES">
+					<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">0</swe:nilValue>
+					<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/AboveDetectionRange">255</swe:nilValue>
+				</swe:NilValues>
+			</swe:nilValues>
+		</swe:Count>
+	</swe:field>
+	<!-- -->
+	<swe:field name="band2_radiance_with_nil">
+		<swe:Count definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance">
+			<swe:label>Band 2</swe:label>
+			<swe:nilValues xlink:href="#NIL_VALUES"/>
+		</swe:Count>
+	</swe:field>
+	<!-- -->
+	<swe:field name="band33_radiance_with_nil">
+		<swe:Count definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance">
+			<swe:label>Band 33</swe:label>
+			<swe:nilValues xlink:href="#NIL_VALUES"/>
+		</swe:Count>
+	</swe:field>
+	<!-- -->
+</swe:DataRecord>

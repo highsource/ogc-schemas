@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.igsi.eu/sps" xmlns:igsi="http://www.igsi.eu/sps" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl-soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:spsw="http://www.opengis.net/sps/2.0/wsdl" xmlns:swesw="http://www.opengis.net/swes/2.0/wsdl" name="igsi">
+  <!-- ========================== WSDL Imports =========================== -->
+  <wsdl:import namespace="http://www.opengis.net/sps/2.0/wsdl" location="http://schemas.opengis.net/sps/2.0/wsdl/spsWsdl11.wsdl"/>
+  <wsdl:import namespace="http://www.opengis.net/swes/2.0/wsdl" location="http://schemas.opengis.net/swes/2.0/wsdl/swesWsdl11.wsdl"/>
+  <!-- ============= MESSAGES ============= -->
+  <!-- SPS specific messages imported from sps.wsdl -->
+  <!-- ========================================================== -->
+  <!-- ==================== example sps PortType ==================== -->
+  <!-- ========================================================== -->
+  <wsdl:portType name="ExampleSpsPortType">
+    <!-- ============= implements BasicSensorPlanner operations ============= -->
+    <wsdl:operation name="GetCapabilities">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/GetCapabilities" message="spsw:GetCapabilitiesRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/GetCapabilitiesResponse" message="spsw:GetCapabilitiesResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="VersionNegotiationFailedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidUpdateSequenceException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DescribeTasking">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/DescribeTasking" message="spsw:DescribeTaskingRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/DescribeTaskingResponse" message="spsw:DescribeTaskingResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/GetStatus" message="spsw:GetStatusRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/GetStatusResponse" message="spsw:GetStatusResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="StatusInformationExpiredException" wsam:Action="http://www.opengis.net/sps/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/GetTask" message="spsw:GetTaskRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/GetTaskResponse" message="spsw:GetTaskResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="StatusInformationExpiredException" wsam:Action="http://www.opengis.net/sps/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Submit">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/Submit" message="spsw:SubmitRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/SubmitResponse" message="spsw:SubmitResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DescribeResultAccess">
+      <wsdl:input wsam:Action="http://www.opengis.net/sps/2.0/DescribeResultAccess" message="spsw:DescribeResultAccessRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sps/2.0/DescribeResultAccessResponse" message="spsw:DescribeResultAccessResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="spsw:ExceptionMessage"/>
+    </wsdl:operation>
+    <!-- ============= implements SensorProvider operation  ============= -->
+    <wsdl:operation name="DescribeSensor">
+      <wsdl:input wsam:Action="http://www.opengis.net/swes/2.0/DescribeSensor" message="swesw:DescribeSensorRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/swes/2.0/DescribeSensorResponse" message="swesw:DescribeSensorResponseMessage"/>
+      <wsdl:fault name="OperationNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="swesw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <!-- ============================= ========================= -->
+  <!-- ====================== BINDING ========================= -->
+  <!-- ======================================================= -->
+  <wsdl:binding name="ExampleSpsBinding" type="igsi:ExampleSpsPortType">
+    <wsdl-soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <!-- Subject supports WS-Addressing -->
+    <wsp:Policy>
+      <wsam:Addressing wsp:Optional="true">
+        <wsp:Policy/>
+      </wsam:Addressing>
+    </wsp:Policy>
+    <wsdl:operation name="GetCapabilities">
+      <wsdl-soap12:operation soapAction="http://www.opengis.net/sps/2.0/GetCapabilities"/>
+      <wsdl:input>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="MissingParameterValueException">
+        <wsdl-soap12:fault use="literal" name="MissingParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterValueException">
+        <wsdl-soap12:fault use="literal" name="InvalidParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="VersionNegotiationFailedException">
+        <wsdl-soap12:fault use="literal" name="VersionNegotiationFailedException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidUpdateSequenceException">
+        <wsdl-soap12:fault use="literal" name="InvalidUpdateSequenceException"/>
+      </wsdl:fault>
+      <wsdl:fault name="OptionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="OptionNotSupportedException"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoApplicableCodeException">
+        <wsdl-soap12:fault use="literal" name="NoApplicableCodeException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidRequestException">
+        <wsdl-soap12:fault use="literal" name="InvalidRequestException"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequestExtensionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="RequestExtensionNotSupportedException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DescribeTasking">
+      <wsdl-soap12:operation soapAction="http://www.opengis.net/sps/2.0/DescribeTasking"/>
+      <wsdl:input>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="MissingParameterValueException">
+        <wsdl-soap12:fault use="literal" name="MissingParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterValueException">
+        <wsdl-soap12:fault use="literal" name="InvalidParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="OptionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="OptionNotSupportedException"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoApplicableCodeException">
+        <wsdl-soap12:fault use="literal" name="NoApplicableCodeException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidRequestException">
+        <wsdl-soap12:fault use="literal" name="InvalidRequestException"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequestExtensionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="RequestExtensionNotSupportedException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Submit">
+      <wsdl-soap12:operation soapAction="http://www.opengis.net/sps/2.0/Submit"/>
+      <wsdl:input>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="MissingParameterValueException">
+        <wsdl-soap12:fault use="literal" name="MissingParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterValueException">
+        <wsdl-soap12:fault use="literal" name="InvalidParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="OptionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="OptionNotSupportedException"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoApplicableCodeException">
+        <wsdl-soap12:fault use="literal" name="NoApplicableCodeException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidRequestException">
+        <wsdl-soap12:fault use="literal" name="InvalidRequestException"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequestExtensionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="RequestExtensionNotSupportedException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl-soap12:operation soapAction="http://www.opengis.net/sps/2.0/GetStatus"/>
+      <wsdl:input>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="MissingParameterValueException">
+        <wsdl-soap12:fault use="literal" name="MissingParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterValueException">
+        <wsdl-soap12:fault use="literal" name="InvalidParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="OptionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="OptionNotSupportedException"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoApplicableCodeException">
+        <wsdl-soap12:fault use="literal" name="NoApplicableCodeException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidRequestException">
+        <wsdl-soap12:fault use="literal" name="InvalidRequestException"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequestExtensionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="RequestExtensionNotSupportedException"/>
+      </wsdl:fault>
+      <wsdl:fault name="StatusInformationExpiredException">
+        <wsdl-soap12:fault use="literal" name="StatusInformationExpiredException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <wsdl-soap12:operation soapAction="http://www.opengis.net/sps/2.0/GetTask"/>
+      <wsdl:input>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="MissingParameterValueException">
+        <wsdl-soap12:fault use="literal" name="MissingParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterValueException">
+        <wsdl-soap12:fault use="literal" name="InvalidParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="OptionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="OptionNotSupportedException"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoApplicableCodeException">
+        <wsdl-soap12:fault use="literal" name="NoApplicableCodeException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidRequestException">
+        <wsdl-soap12:fault use="literal" name="InvalidRequestException"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequestExtensionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="RequestExtensionNotSupportedException"/>
+      </wsdl:fault>
+      <wsdl:fault name="StatusInformationExpiredException">
+        <wsdl-soap12:fault use="literal" name="StatusInformationExpiredException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DescribeResultAccess">
+      <wsdl-soap12:operation soapAction="http://www.opengis.net/sps/2.0/DescribeResultAccess"/>
+      <wsdl:input>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="MissingParameterValueException">
+        <wsdl-soap12:fault use="literal" name="MissingParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterValueException">
+        <wsdl-soap12:fault use="literal" name="InvalidParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="OptionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="OptionNotSupportedException"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoApplicableCodeException">
+        <wsdl-soap12:fault use="literal" name="NoApplicableCodeException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidRequestException">
+        <wsdl-soap12:fault use="literal" name="InvalidRequestException"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequestExtensionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="RequestExtensionNotSupportedException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DescribeSensor">
+      <wsdl-soap12:operation soapAction="http://www.opengis.net/sps/2.0/DescribeSensor"/>
+      <wsdl:input>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdl-soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="OperationNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="OperationNotSupportedException"/>
+      </wsdl:fault>
+      <wsdl:fault name="MissingParameterValueException">
+        <wsdl-soap12:fault use="literal" name="MissingParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterValueException">
+        <wsdl-soap12:fault use="literal" name="InvalidParameterValueException"/>
+      </wsdl:fault>
+      <wsdl:fault name="OptionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="OptionNotSupportedException"/>
+      </wsdl:fault>
+      <wsdl:fault name="NoApplicableCodeException">
+        <wsdl-soap12:fault use="literal" name="NoApplicableCodeException"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidRequestException">
+        <wsdl-soap12:fault use="literal" name="InvalidRequestException"/>
+      </wsdl:fault>
+      <wsdl:fault name="RequestExtensionNotSupportedException">
+        <wsdl-soap12:fault use="literal" name="RequestExtensionNotSupportedException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="igsiExampleSpsService">
+    <wsdl:port name="igsiExampleSpsPort" binding="igsi:ExampleSpsBinding">
+      <wsdl-soap12:address location="http://www.igsi.eu:8080/services/sps"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

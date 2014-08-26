@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example Response for InsertObservation operation which contains the assigned observation identifier.
+=======================================================================-->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/swes/2.0 http://schemas.opengis.net/swes/2.0/swes.xsd" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+<soap12:Header>
+		<wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/obsInsertion/2.0/InsertObservationResponse</wsa:Action>
+		<wsa:RelatesTo>http://my.client.com/uid/msg-0010</wsa:RelatesTo>
+	</soap12:Header>
+	<soap12:Body>
+<sos:InsertObservationResponse>
+
+
+	<!--identifier of the observation assigned by the SOS-->
+	<sos:observation>http://www.my_namespace.org/water_gage_1_observations/obs1
+	</sos:observation>
+
+</sos:InsertObservationResponse>
+	</soap12:Body>
+</soap12:Envelope>

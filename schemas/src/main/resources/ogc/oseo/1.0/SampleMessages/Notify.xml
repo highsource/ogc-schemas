@@ -1,0 +1,19 @@
+<wsn-b:Notify xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:wsn-b="http://docs.oasis-open.org/wsn/b-2"
+xmlns:wsa="http://www.w3.org/2005/08/addressing"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:os="http://www.opengis.net/oseo/1.0"
+xsi:schemaLocation="http://docs.oasis-open.org/wsn/b-2 http://docs.oasis-open.org/wsn/b-2.xsd">
+<wsn-b:NotificationMessage>
+	<wsn-b:Topic Dialect="http://docs.oasis-open.org/wsn/2004/06/TopicExpression/Simple">
+		os:OrderFailed
+	</wsn-b:Topic>
+	<wsn-b:ProducerReference>
+		<wsa:Address>http://www.opengis.net/oseo/1.0</wsa:Address>
+	</wsn-b:ProducerReference>
+	<wsn-b:Message>
+		<os:OrderFailure>
+			<os:code codeSpace="http://www.opengis.net/oseo/1.0#EventCode">ORDERING_FAILED</os:code>
+			<os:orderId>urn:ESA:EECF:order_id_0001</os:orderId>
+		</os:OrderFailure>
+	</wsn-b:Message>
+</wsn-b:NotificationMessage>
+</wsn-b:Notify>

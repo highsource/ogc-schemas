@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<wfs:TransactionResponse
+   version="2.0.0"
+   xmlns:wfs="http://www.opengis.net/wfs/2.0"
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/wfs/2.0
+                       http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+   <wfs:TransactionSummary>
+      <wfs:totalInserted>3</wfs:totalInserted>
+      <wfs:totalUpdated>3</wfs:totalUpdated>
+      <wfs:totalReplaced>1</wfs:totalReplaced>
+      <wfs:totalDeleted>2</wfs:totalDeleted>
+   </wfs:TransactionSummary>
+   <wfs:InsertResults>
+      <wfs:Feature handle="Statement 1">
+         <fes:ResourceId rid="ElevP_1M.1001"/>
+      </wfs:Feature>
+      <wfs:Feature handle="ComplexInsert">
+         <fes:ResourceId rid="RoadL_1M.1553"/>
+      </wfs:Feature>
+      <wfs:Feature handle="Statement 2">
+         <fes:ResourceId rid="BuiltUpA_1M.509876"/>
+         <fes:ResourceId rid="BuiltUpA_1M.509877"/>
+      </wfs:Feature>
+   </wfs:InsertResults>
+</wfs:TransactionResponse>

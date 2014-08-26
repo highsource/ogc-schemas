@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<fes:Filter
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:gml="http://www.opengis.net/gml"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/fes/2.0
+   http://schemas.opengis.net/filter/2.0/filterAll.xsd
+   http://www.opengis.net/gml
+   http://schemas.opengis.net/gml/2.1.2/geometry.xsd">
+   <fes:And>
+      <fes:PropertyIsLessThan>
+         <fes:ValueReference>DEPTH</fes:ValueReference>
+         <fes:Literal>30</fes:Literal>
+      </fes:PropertyIsLessThan>
+      <fes:Not>
+         <fes:Disjoint>
+            <fes:ValueReference>Geometry</fes:ValueReference>
+               <gml:Box srsName="urn:fes:def:crs:EPSG::4326">
+                  <gml:coordinates>13.0983,31.5899 35.5472,42.8143</gml:coordinates>
+               </gml:Box>
+         </fes:Disjoint>
+      </fes:Not>
+   </fes:And>
+</fes:Filter>

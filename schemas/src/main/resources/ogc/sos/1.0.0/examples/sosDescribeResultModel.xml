@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeResultModel xmlns="http://www.opengis.net/sos/1.0" xmlns:gml="http://www.opengis.net/gml"
+  xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:om="http://www.opengis.net/om/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/sos/1.0   http://schemas.opengis.net/sos/1.0.0/sosAll.xsd"
+  service="SOS" version="1.0.0">
+  <ResultName>gml:MeasureType</ResultName>
+</DescribeResultModel>

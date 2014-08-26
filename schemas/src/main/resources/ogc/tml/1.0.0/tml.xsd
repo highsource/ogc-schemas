@@ -1,0 +1,1856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 U (http://www.altova.com) by Steve Havens (IRIS Corporation) -->
+<xs:schema xmlns:tml="http://www.opengis.net/tml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ism="urn:us:gov:ic:ism:v2" targetNamespace="http://www.opengis.net/tml" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn:us:gov:ic:ism:v2" schemaLocation="IC-ISM-v2.xsd"/>
+	<xs:element name="tml">
+		<xs:annotation>
+			<xs:documentation>Root Element.  Also contains attributes to indicate the overall security classification of this TML stream or file.  If needed individual data clusters can be labeled with a security class.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="tml:system"/>
+				<xs:element ref="tml:subject"/>
+				<xs:element ref="tml:transducer"/>
+				<xs:element ref="tml:process"/>
+				<xs:element name="extSysRelations">
+					<xs:annotation>
+						<xs:documentation>for relating external subject to external  subject or transducer data to external subject.  An external subject (object) is external to the system.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="tml:objToObjRelation" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="tml:objToDataRelation" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="otherRelations" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="tml:data"/>
+			</xs:choice>
+			<xs:attributeGroup ref="tml:uid_uidRef"/>
+			<xs:attribute name="version" type="xs:string" use="required" fixed="1.0">
+				<xs:annotation>
+					<xs:documentation>fixed version 1.0</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attributeGroup ref="ism:SecurityAttributesOptionGroup"/>
+		</xs:complexType>
+	</xs:element>
+	<!--Base Types-->
+	<xs:complexType name="BindType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="bindUid" type="xs:string" use="optional"/>
+				<xs:attribute name="bindUidRef" type="xs:string" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ValueType">
+		<xs:annotation>
+			<xs:documentation>contains a value or a set of values for describing models and functions</xs:documentation>
+		</xs:annotation>
+		<xs:sequence minOccurs="0">
+			<xs:element name="numValues" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>number of points, or ranges in values element.   Allowed values: positive integer. Default is 0.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="arrayType" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Allowed Values: fcn, charFrame. singleValue.  Default is fcn.   the value element can contain one or multiple values. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="fcnInterpol" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Allowed Values: continuous, discrete, lastValue, returnToZero, </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="valueDataType" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>data type of the value. Allowed values: text, number.  Default number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="values" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>values can contain a single value or a string of values separated by a comma.  Each value can contain text,  number, or a range of numbers. Each range value shall contain two numbers separated by three decimal points (...), the first number identifies the closed end of the range and the second number identifies the open end of the range.  Values in the range may be integer or real numbers. Reals may use E for exponent.   In addition to numbers in the range the text -inf and inf can be used to represent -infinity and plus infinity respectively.  For arrayType of function interpolation between values should be handled as indicated in the fcnInterpolate element.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mult" type="tml:BindType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>default 1. if multiple values of mult, then each value corresponds to the corresponding Characteristic Frame position or interval. Can have a set of mult or offset equalization values and a sensor modifying those values through a bindUID.  The bindUID sensor value will multiply with the values in the mult element.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="offset" type="tml:BindType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>default 0. if multiple values of offset, then each value corresponds to the corresponding Characteristic Frame  position or interval.  Can have a set of mult or offset equalization values and a sensor modifying those values through a bindUID.  The bindUID sensor value will add with the values in the offset element.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="tml:accuracy" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="tml:uid_uidRef"/>
+	</xs:complexType>
+	<!--Element Types-->
+	<xs:complexType name="ProcessType">
+		<xs:sequence>
+			<xs:element name="identification" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>contains security of process description</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="tml:IdentificationType">
+							<xs:sequence>
+								<xs:element name="manufacture" type="tml:BindType" minOccurs="0"/>
+								<xs:element name="modelNumber" type="tml:BindType" minOccurs="0"/>
+								<xs:element name="serialNumber" type="tml:BindType" minOccurs="0"/>
+								<xs:element name="processVersion" type="tml:BindType" minOccurs="0"/>
+								<xs:element name="ownedBy" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="organization" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="email" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="phone" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="date" type="tml:BindType" minOccurs="0">
+												<xs:annotation>
+													<xs:documentation>ISO8601 dateTime stamp</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="input" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>a process can have zero or more inputs. This describes a single input process cycle, initiated by an input trigger</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:annotation>
+							<xs:documentation>  </xs:documentation>
+						</xs:annotation>
+						<xs:element name="inputIdent" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="uid" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>uid of input</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="description" type="tml:BindType" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="tml:logicalDataStructure" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="dataValue" type="tml:BindType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>fixed or forced input value not.  single value or array defined by logical data structure </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attributeGroup ref="tml:uid_uidRef"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="output" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>a process can have one or more outputs.  This describes a single output processing cycle, initiated by an output trigger </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="outputIdent" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="uid" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>uid of output</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="description" type="tml:BindType" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="tml:logicalDataStructure" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="tml:responseModels" minOccurs="0"/>
+						<xs:element ref="tml:spatialModel" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="tml:temporalModel" minOccurs="0"/>
+						<xs:element name="other" type="xs:anyType" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="tml:uid_uidRef"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="otherProperties" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="property" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="tml:uid_uidRef"/>
+		<xs:attributeGroup ref="ism:SecurityAttributesOptionGroup"/>
+	</xs:complexType>
+	<xs:complexType name="SystemType">
+		<xs:sequence>
+			<xs:element name="identification" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Identification of the system</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="tml:IdentificationType">
+							<xs:sequence>
+								<xs:element name="manufacture" type="tml:BindType" minOccurs="0"/>
+								<xs:element name="modelNumber" type="tml:BindType" minOccurs="0"/>
+								<xs:element name="serialNumber" type="tml:BindType" minOccurs="0"/>
+								<xs:element name="owner" minOccurs="0">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="organization" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="email" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="phone" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="date" type="tml:BindType" minOccurs="0">
+												<xs:annotation>
+													<xs:documentation>ISO8601 dateTime stamp</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="operator" minOccurs="0">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="organization" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="email" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="phone" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="date" type="tml:BindType" minOccurs="0">
+												<xs:annotation>
+													<xs:documentation>ISO8601 dateTime stamp</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="sysClk" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>clock counter.  </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="uid" type="tml:BindType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>sysClk UID same as the system UID.  There is only one clock per system.  Subsystems may have clocks</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+						<xs:element name="period" type="tml:ValueType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Period in seconds</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="countNumBase" type="tml:BindType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>number base in which clock characters increment.  Allowed values are: 2, 8, 10, 16.  Default is 10</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="min" type="tml:BindType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>counter starting point after rollover.  default 0</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="max" type="tml:BindType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>max counter count which roll over occurs</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="systems" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="tml:system" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="subjects" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="tml:subject" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="transducers" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="tml:transducer" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="processes" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="tml:process" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="relations" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>relationships of objects within the system.  characterized at the time of the system characterization.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:element name="positionRelation" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>For describing positional relations of subjects external to a system.  An empty posRelation tag in a data indicates that this uidRef relation is no longer exist</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="tml:SpatialCoordType">
+										<xs:sequence>
+											<xs:element name="objUidRef" type="tml:BindType" minOccurs="0" maxOccurs="unbounded">
+												<xs:annotation>
+													<xs:documentation>uid of the obj being positioned. multiples allowed if in same position and orientation</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="timeRelation" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Identifies the absolute time reference for each sysClk.  Default is any time reference in a cluster represents absolute time relating to the corresponding clock value.  An empty timeRelation tag in a data stream indicates that this uidRef relation is no longer a part of the system</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="sysClkUidRef" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>UID of the sysClk.  Default: Uid of system clock which transducer is contained in.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="timeReference" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>time Datum.  Allowed Values: UTC, other,  Default UTC.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="timeCoordinate" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="timeCoordType" type="tml:BindType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>Allowed values: dateTime,  year, mo, day, hour, min, sec. Default: dateTime (ISO 8601)</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="absTimeUidRef" type="tml:BindType" minOccurs="0" maxOccurs="unbounded">
+													<xs:annotation>
+														<xs:documentation>dataUid reference of the sensor measurements providing the absolute time reference.</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attributeGroup ref="tml:uid_uidRef"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="tml:objToObjRelation" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="tml:objToDataRelation" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="dataToDataRelation" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Connects bindUIDs to processes. connects outputs to inputs. transducer data to processes and processes to processes.  An empty connect tag in a data stream indicates that this UID relation is no longer a part of the system. Example of data to data relation.  attaching a process to monitor the state of the gain parameter on the steady state response through a bindUID point.  </xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="relationDescription" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>longer description of the signal or the property relation</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="uid" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>connection or node UID of the connection signal data relationship</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="dataSource" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>data source</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:choice>
+												<xs:sequence>
+													<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+													<xs:element name="dataUidRef" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>UID of the data (live or archived).  Archived data streams will have a UID indicative of the data source, time, and clk count of the start. </xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="tml:BindType"/>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:element name="value" type="tml:BindType" minOccurs="0"/>
+											</xs:choice>
+											<xs:attributeGroup ref="tml:uid_uidRef"/>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="dataSink" minOccurs="0" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>data sink</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+												<xs:element name="dataUidRef" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>UID of the data reference.  Archived data streams will have a UID indicative of the data source, time, and clk count of the start. </xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:simpleContent>
+															<xs:extension base="tml:BindType"/>
+														</xs:simpleContent>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+											<xs:attributeGroup ref="tml:uid_uidRef"/>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attributeGroup ref="tml:uid_uidRef"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="propToPropRelation" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Property to property relation or phenomenon to phenomenon relation. transmitter to receiver, Ambient to receiver, Example: thermal to voltage transducer connected to a voltage to data transducer.  example optical filter on the front of an optical camera lens</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="relationDescription" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>longer description of  the property relation</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="uid" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>connection or node UID of the property relationship</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="propUidRef" type="tml:BindType" minOccurs="0" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>uidRef of the property or phenomenon</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="propagationMedium" type="tml:BindType" minOccurs="0" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>If the P-to-P interface has a distance between them, then this describes the medium in which the energy propagates.  Allowed values: vacuum, air, water.  default air</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="propagationMechanism" type="tml:BindType" minOccurs="0" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>If the P-to-P interface has a distance between them, then this describes the mechanism in which the energy propagates.  Allowed values: radiation, conduction, convection, osmosis.  default radiation</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+								<xs:attributeGroup ref="tml:uid_uidRef"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="clusterDescriptions" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="tml:clusterDesc" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="otherProperties" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="property" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="tml:uid_uidRef"/>
+		<xs:attributeGroup ref="ism:SecurityAttributesOptionGroup"/>
+	</xs:complexType>
+	<xs:complexType name="TransducerType">
+		<xs:sequence minOccurs="0">
+			<xs:element name="identification" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>bind types on most elements enables the description of transducers in the initialization data stream of data elements.  </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="tml:IdentificationType">
+							<xs:sequence>
+								<xs:element name="manufacture" type="tml:BindType" minOccurs="0"/>
+								<xs:element name="modelNumber" type="tml:BindType" minOccurs="0"/>
+								<xs:element name="serialNumber" type="tml:BindType" minOccurs="0"/>
+								<xs:element name="ownedBy" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="organization" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="email" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="phone" type="tml:BindType" minOccurs="0"/>
+											<xs:element name="date" type="tml:BindType" minOccurs="0">
+												<xs:annotation>
+													<xs:documentation>ISO8601 dateTime stamp</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="transducerClass" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Top level transducer classification</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="transmitterReceiver" type="tml:BindType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>allowed values: transmitter, receiver, transceiver.  default is receiver.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="insituRemote" type="tml:BindType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>allowed values: insitu, remote.  Default is insitu.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="spatialDependancy" type="tml:BindType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Allowed values: attitudeIndependent (default), locationIndependent, positionalIndependent, positionalDependent</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="tml:logicalDataStructure" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="tml:responseModels" minOccurs="0"/>
+			<xs:element ref="tml:spatialModel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="tml:temporalModel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="otherProperties" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="property" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="tml:uid_uidRef"/>
+		<xs:attributeGroup ref="ism:SecurityAttributesOptionGroup"/>
+	</xs:complexType>
+	<!--Support Types-->
+	<xs:complexType name="DataArrayType">
+		<xs:sequence>
+			<xs:element name="uid" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>uid of dataArray</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>name of dataArray</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="variableName" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Name of mathematical term used in the transformation equations.  Index of component is same as order sequence in the lds.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="arrayOf" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Allowed values: columns, rows, planes default is columns</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="numObjInArray" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The chosen object (dataSet or dataArray) repeats this many time.   default 1</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a dataArrays contain a homogeneous collection of either subordinate dataArrays or dataSets. </xs:documentation>
+				</xs:annotation>
+				<xs:element name="dataSet">
+					<xs:annotation>
+						<xs:documentation>data Sets contain a heterogeneous collection of one or more dataUnits</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="uid" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>uid of dataSet. </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="name" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>name of dataSet</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="variableName" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Name of mathematical term used in the transformation equations.  Index of component is the order in the sequence in the LDS structure.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="numObjInSet" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>number of subordinate sets and/or arrays.  default 1</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:choice minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A dataSet contains a collection of one or more heterogeneous data units or data arrays.  dataArray are discouraged from being used within a dataSet when defining the logical data structure.</xs:documentation>
+								</xs:annotation>
+								<xs:element ref="tml:dataUnit"/>
+								<xs:element name="dataArray" type="tml:DataArrayType"/>
+							</xs:choice>
+						</xs:sequence>
+						<xs:attributeGroup ref="tml:uid_uidRef"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="dataArray" type="tml:DataArrayType">
+					<xs:annotation>
+						<xs:documentation>a dataArray contains a homogeneous collection of one or more dataSets or dataArrays</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attributeGroup ref="tml:uid_uidRef"/>
+	</xs:complexType>
+	<xs:complexType name="IdentificationType">
+		<xs:sequence>
+			<xs:element name="uid" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>uid of registry object</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+			<xs:element name="description" type="tml:BindType" minOccurs="0"/>
+			<xs:element ref="tml:complexity" minOccurs="0"/>
+			<xs:element name="characterization" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Do the tml descriptions comply with the TML Compliance Rules</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="characterizedBy" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="organization" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="email" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="phone" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="date" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>ISO8601 dateTime stamp</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="validatedBy" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="organization" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="email" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="phone" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="date" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>ISO8601 dateTime stamp</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="calibration" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Do the TML descriptions accurately reflect actual performance specifications</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="calibratedBy" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="organization" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="email" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="phone" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="date" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>ISO8601 dateTime stamp</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="validatedBy" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="organization" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="email" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="phone" type="tml:BindType" minOccurs="0"/>
+									<xs:element name="date" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>ISO8601 dateTime stamp</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SpatialCoordType">
+		<xs:sequence>
+			<xs:element ref="tml:spaceCoordSystem" minOccurs="0"/>
+			<xs:element name="spaceRefSystem" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>which spatial reference system (i.e. spatial datum) are spatial coordinates referenced (relative) to.   Allowed values: transducer, earthCentered, earthLocal, subject. If ref system is transducer or subject then the uid of the transducer or subject must be identified in the refObjUidRef element.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="refObjUidRef" type="tml:BindType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If the spaceRefSystem element is a transducer or a Sunbect, then this element will identify the particular Transducer or Subject.  This is the UID reference of the object which position coordinates are referenced (relative) to.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="spaceCoords" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>TCF set of positional (translations and rotations) coordinates for each shape,  space separated real numbers.  Order of coordinates shall be from lowest frequency to highest frequency, same as lds. Default locations and orientations are zero</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="posVelAccel" type="tml:BindType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Allowed Values: pos, vel, accel,  Default is pos.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="coordName" type="tml:BindType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Allowed Values: x, y, z, Alpha, beta, rho, latitude, longitude, altitude, omega, phi, kappa,</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="coords" type="tml:ValueType" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="tml:uid_uidRef"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="tml:uid_uidRef"/>
+	</xs:complexType>
+	<!--Global Elements-->
+	<xs:element name="accuracy">
+		<xs:annotation>
+			<xs:documentation>accuracy is in terms of the data value before adjustment by mult and offset.   if a characteristic frame (i.e. number of values) of values of accuracy, then each value corresponds to the corresponding Characteristic Frame  position or interval</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="type" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Allowed values: relative, absolute, systematic, random. default is absolute</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="errorDistribution" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Allowed Values: gaussian, chi, chi2, possion,  gamma.  default is gaussian</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="factor" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>allowed values: 1sigma, 2sigma, 3sigma, 4sigma, 5sigma, 6sigma, percent, range. RMS, RSS, Default is 1sigma</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="accyValues" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>A single accyValue relates to whole range of parent coordinates (e.g. data or prop). If accyValue is variable over the parent coordinates then there shall be a one-to-one correspondence between the accyValues and the parent coordinates.  use mult and offset to describe variances over CF</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="cfSubSampling">
+		<xs:annotation>
+			<xs:documentation>the CFSubSampling can be used for chipping part of a large dataArry out and for reducing the number of points within an array for which to associate modeling parameters.  there is one sub sampling element set of points for each component structure (col, row, plane).    index numbers of col, row or plane position within the CFs are listed for which corresponding modeling points will be associated.  sample points are separated by commas, ranges are indicated by ... between numbers which indicates a continuous interval for a single sample. interpolation between samples uses logical structure.  </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="cfStructComp" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Allowed values: column, row, plane.  default is column.  One cfSubSampling element for each cfStructComp required.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="numOfSubSampleIndexPoints" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Allowed values: positive integers from 1 to the number of columns, rows, or planes in the data structure.  This number indicates the number of samples in the cfSubSampleIndexPts.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="subSampleCfIndexPts" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>use same rules as points under value</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="tml:uid_uidRef"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="clusterDesc">
+		<xs:annotation>
+			<xs:documentation>An empty clusterdesc tag in a data stream indicates that this cluster is no longer contained in the data stream.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0">
+				<xs:element name="description" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>description of the data cluster</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="idMapping" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="tapPointUidRef" type="tml:BindType" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>dataUidRef of the tap point in the system to which this cluster corresponds.  UID of the transducer, process input process output, or connection node from which or to which this cluster relates.  This is the UID used in the data header (i.e. reference attribute in data start tag).  Is some cases a data in a single cluster may come from multiple dataUid tap points.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="localID" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>short ID used in the data header (i.e. ref attribute in data start tag)</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="clusterProperties" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="direction" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Allowed Values: fromSystem, toSystem.  default fromSystem</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="tml:complexity" minOccurs="0"/>
+							<xs:element name="clusterType" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Allowed values: binary, packedXML.  verboseXML. default binary</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="clusterSize" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Integer number of bytes in Cluster</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="binHeaderEncode" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>If cluster type is binary this field describes the encoding of the header attributes. binary files will contain only the contents of the attributes and not the attribute tag.  The binary header will not contain the left carrot and the letters "data" at the beginning of the header either, nor the right carrot at the end of the header.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="headerAttrib" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>ref, reference, dateTime, contents and ismClass attributes will be encoded and handled as "string" type</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="headerAttribName" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Allowed values: ref, clk, reference, dateTime, contents, seq, total, ismClass. Default ref</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="dataType" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Allowed values: text, number.  Default is number. </xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="dataUnitFieldSize" minOccurs="0">
+											<xs:complexType>
+												<xs:choice>
+													<xs:sequence>
+														<xs:annotation>
+															<xs:documentation>if fixed field size.  Default is fixed size.</xs:documentation>
+														</xs:annotation>
+														<xs:element name="numBits" type="tml:BindType" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>number of bits. default 8 </xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="numSigBits" type="tml:BindType" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>number of significant bits. default 8</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="justification" type="tml:BindType" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>if numSigBits is less than numBits this element indicates how sigbit are justified.  Allowed values: left, right. Default: right</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:sequence>
+													<xs:sequence>
+														<xs:annotation>
+															<xs:documentation>if field is variable size. </xs:documentation>
+														</xs:annotation>
+														<xs:element name="beginTextDelimiter" type="tml:BindType" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>delimiter used to separate variable size dataUnits in cluster when encode is text (utf or ucs). default delimiter is none. empty tag means none.</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="endTextDelimiter" type="tml:BindType" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>delimiter used to separate variable size dataUnits in cluster when encode is text (utf or ucs). default delimiter is none. Empty tag means none</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:sequence>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="endian" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Allowed values: big, little.  default little</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="encode" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Allowed values: ucs16, utf8, signInt, unsignInt, real,  bcd.  default unsignInt. </xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="numBase" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>when numbers are encoded as text the number base must be understood.  Allowed values: 2, 8, 10, 16, 32, 64, 128.  default 10</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="handleAsType" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>how should the text or number be handled in the client application.  Allowed values: anuURI, boolean, byte, double, float, short, string, int, integer, long, nonNegativeInteger, nonPositiveInteger, positiveInteger,  unsignedByte, unsignedInt, unsignedShort, unsignedLong.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+									<xs:attributeGroup ref="tml:uid_uidRef"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="timeTag" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>describes what time tag is used for the cluster.  Useful when parent systems normalize clocks from child components.  This element also describes how accurately the sysClk value is applied to the cluster start instant.  This is different from the accuracy of the system clock.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="sysClkUidRef" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>if clk is used in the start tag and multiple clocks are used in a system.  Default is the first parent system clock</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="tml:accuracy" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="dataUnitEncoding" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>This unit describes the encoding of the dataUnit identified in the dataUnitUidRef child element.  Some clusters which represent only an event from a source or a trigger are empty and may not contain any dataUnits.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="dataUnitUidRef" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>UID of the dataUnit from the logical structure.  </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="dataType" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Allowed values: text, number, binBlob.  Default is text. </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="dataUnitFieldSize" minOccurs="0">
+								<xs:complexType>
+									<xs:choice>
+										<xs:sequence>
+											<xs:annotation>
+												<xs:documentation>if fixed field size</xs:documentation>
+											</xs:annotation>
+											<xs:element name="numBits" type="tml:BindType" minOccurs="0">
+												<xs:annotation>
+													<xs:documentation>default  8</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element name="numSigBits" type="tml:BindType" minOccurs="0">
+												<xs:annotation>
+													<xs:documentation>default</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element name="justification" type="tml:BindType" minOccurs="0">
+												<xs:annotation>
+													<xs:documentation>if numSigBits is less than numBits this element indicates how sigbit are justified.  Allowed values: left, right. Default: right</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:annotation>
+												<xs:documentation>if field is variable size. Default is variable size.</xs:documentation>
+											</xs:annotation>
+											<xs:element name="beginTextDelimiter" type="tml:BindType" minOccurs="0">
+												<xs:annotation>
+													<xs:documentation>delimiter used to separate variable size dataUnits in cluster when encode is text (utf or ucs). default delimiter is none.  Empty tag means none.</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element name="endTextDelimiter" type="tml:BindType" minOccurs="0">
+												<xs:annotation>
+													<xs:documentation>default delimiter is none. Empty tag means none.</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+									</xs:choice>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="endian" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Allowed values: big, little.  default little</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="encode" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Allowed values: ucs16, utf8, signInt, unsignInt, real, complex, bcd.  default utf8.  When clusterType is not binary only utf8 is allowed in cluster.  All types are allowed when clusterType is binary. Complex values are exchanged as two phenomenon (mag and phase or real and imaginary components) or as a single complex number.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="numBase" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>when numbers are encoded as text the number base must be understood.  Allowed values: 2, 8, 10, 16, 32, 64, 128.  default 10</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="handleAsType" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>how should the text or number be handled in the client application.  Allowed values: anuURI, boolean, byte, double, float, short, string, int, integer, long, nonNegativeInteger, nonPositiveInteger, positiveInteger,  unsignedByte, unsignedInt, unsignedShort, unsignedLong.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="tml:uid_uidRef"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="numCfInCluster" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>number of characteristic frames in a cluster or the number of clusters which comprise a large characteristic frame.  default = 1.  example: 2 means 2 CF per cluster, -2 means 2 clusters per CF.  Allowed values: signed integer.  zero not allowed.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="transSeq" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>This is the order in which data is sent in the cluster or CF (whichever is larger) relative to the logical data structure.  The order of structure components are listed from lowest freq to highest frequency order.   If transport sequence is blank then the sequence is the same as the logical order (sequence) for that structure component.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="seqOfThisDataStruct" type="tml:BindType" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Sequence of (in this element - seqOfThisDataStruct) in the data structure identified in the next element (inThisDataStruct). seqOfBitsInUnit,  seqOfUnitsInSets, seqOfSetsInCf, seqOfCfInClust. Identify the dataStructComponent in this element by dataUidRef.  dataUid of the cluster is "cluster"</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="inThisDataStruct" type="tml:BindType" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Sequence of the data structure components identified in the previous element (seqOfThisDataStruct) in the data structure identified in this element (inThisDataStruct). seqOfBitsInUnit,  seqOfUnitsInSets, seqOfSetsInCf, seqOfCfInClust. Identify the dataStructComponent in this element by dataUidRef.  dataUid of the cluster is "cluster"</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="sequence" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Allowed values; The sequence shall contain a string of value separated by a comma.  Each value can be a positive integer or a range.  ranges shall be indicated by two integer numbers separated by three sequential decimal points (....) to indicate a run from the first number to the second</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="tml:BindType">
+											<xs:attributeGroup ref="tml:uid_uidRef"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="tml:uid_uidRef"/>
+			<xs:attributeGroup ref="ism:SecurityAttributesOptionGroup"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="data">
+		<xs:annotation>
+			<xs:documentation>this element carries the date to or from transducer systems.  The data element will carry a single instance or a continuous stream of a condition or set of synchronous conditions time tag to the precise instant of creation.   There is no XML markup of data within the data tag.  A system description will describe the decoding and understanding of the data within the data tag.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="ref" type="xs:string" use="optional">
+						<xs:annotation>
+							<xs:documentation>alias or short id reference of transducer or process producing this data</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="clk" type="xs:integer" use="optional">
+						<xs:annotation>
+							<xs:documentation>sys clock state at trigger point to data cluster.  For low sampling frequency transducers this high frequency clock state may not be required.  A full dateTime attribute may suffice for time synchronization of data.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="reference" type="xs:anyURI" use="optional">
+						<xs:annotation>
+							<xs:documentation>this is the full UID reference to the cluster description</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="dateTime" type="xs:dateTime" use="optional">
+						<xs:annotation>
+							<xs:documentation>Full qualified date and time of transducer or process producing this data. For low sampling frequency transducers this high frequency clock state may not be required.  A full dateTime attribute may suffice for time synchronization of data.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="contents" use="optional">
+						<xs:annotation>
+							<xs:documentation>If a binary stream header does not contain a contents field then the data cluster is by default explicit data.  This field is encoded as a binary (2-bits) "00" in a binary file if the field is contained.</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="exp"/>
+								<xs:enumeration value="imp"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="seq" type="xs:integer" use="optional">
+						<xs:annotation>
+							<xs:documentation>if no "total" attribute exist then this attribute can be used to number the data elements like a count, this enables the receipt end to determine if any data clusters were lost.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="total" type="xs:integer" use="optional">
+						<xs:annotation>
+							<xs:documentation>total in sequence e.g. 1 of 4, 2 of 4.  1 and 2 being the seq number and 4 being the total</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="ismclass" type="ism:ClassificationType">
+						<xs:annotation>
+							<xs:documentation>security classification of each data cluster. Overall data classification of  transducer data in clusterDescription.  Overall classification of file or stream in tml start tag.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="dataUnit">
+		<xs:annotation>
+			<xs:documentation>an elemental unit of data.  one description for each unit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="uid" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>uid of dataUnit</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="name" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>name of dataUnit</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="variableName" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Name of mathematical term used in the transformation equations.  Index of component is the order in the sequence in the LDS structure.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="dataType" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Allowed values: number, complexNumber, text, or binaryBlob.  default is number</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="bytesInBlob" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>If dataType is binaryBlob then number of bytes in the binary blob.  Not used for transducer structures, only for process structures.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="tml:uid_uidRef"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="logicalDataStructure">
+		<xs:annotation>
+			<xs:documentation>the logical structure of data (i.e. of the characteristic frame).  This is not necessarily the structure or order that data is communicated in.  The transmission order is defined in the cluster description.  The transmission order is defined relative to the logical order.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="uid" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>uid of lds</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="name" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>name of lds</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ldsDimensionality" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Allowed values: 0, 1, 2, 3.  Default is 0.  dimensionality of the logical data structure (lds).  number of structure components used for giving hints for data representation.  0 dim is a single value, 1 dim is a series of columns, rows or planes, 2 dim is any order of  two structure components (col-row, col-plane, or row-plane), and a 3 dim is any order of three structure components col-row-plane</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="numOfDataSetsInCf" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Number of dataSets or dataArrays in the Characteristic Frame.  Allowed Value: positive integer.  Default:1</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="cfDataArray" type="tml:DataArrayType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>logical data structure of the characteristic frame.  Lowest frequency array first.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="tml:uid_uidRef"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="objToDataRelation">
+		<xs:annotation>
+			<xs:documentation>Connects transducer to bindUids.  Associate transducer data to a (remote) object.  This may occur after data acquisition. An object is either a transducer, subject or their properties.    Many subjects may be related to data in a dataArray. The objects can be related to data units, sets and arrays to subjects.  </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="relationDescription" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>description of the signal or the property relation</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="tml:BindType"/>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="uid" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>connection or node UID of the connection signal data or property relationship</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="object" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Object can be a single transducer (dangle relation), a single dataUID, or many subjects can be related to a single data unit.  probabilities can be assigned to each relation.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>name of the object</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="objType" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>identify object as a transducer or a subject. Allowed Values: subject, transducer. Default: subject</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="tml:cfSubSampling" minOccurs="0"/>
+							<xs:element name="objUidRef" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>UID of the object (subject or transducer, or probable subject).  local id of the subject if multiple ids are used to associate with each cell of  the logical structure.  </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="objLocalID" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>if localId assigned to objUidRef for building CF of obj to data (i.e.CF) relationships. Sequence of values is the same as the sequence in the data (logical data structure or subsampled data structure, if present)</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="confidence" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Value range -1 to 1.  -1 is 100% no confidence.  confidence values match same sequence as logical data structure or subsampled data structure, if present (if multiple objects in data structure)</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="tml:uid_uidRef"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:choice>
+					<xs:sequence>
+						<xs:element name="name" type="tml:BindType" minOccurs="0"/>
+						<xs:element name="dataUidRef" type="tml:BindType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>UID of the data reference.  Archived data streams will have a UID indicative of the data source, time, and clk count of the start. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:element name="value" type="tml:BindType" minOccurs="0"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attributeGroup ref="tml:uid_uidRef"/>
+			<xs:attributeGroup ref="ism:SecurityAttributesOptionGroup"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="objToObjRelation">
+		<xs:annotation>
+			<xs:documentation>This relation describes object to object relations. Attaching a transducer to an object (object is a subject or a transducer) (i.e. dangle, where the only thing the transducer interfaces to is that subject. (cant different individual data many measures with many individual subjects, see objToData). The transducer to transducers relation does not include phenomenon to phenomenon connections, see dataToData</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="relationDescription" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>description of the  relation</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="uid" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>uid of the relationship</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="object" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>many objects can be related to a many objects.  probabilities can be assigned to each relation</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>name of the object</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="objType" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>identify object as a transducer or a subject. Allowed Values: subject, transducer. Default: subject</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="dirIndirSubj" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>if objType is subject then identify if direct or indirect subject.  Allowed values: direct, indirect.  Default is direct.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="objUidRef" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>UID of the subject (or probable subject).  local id of the subject if multiple ids are used to associate with each cell of  the logical structure.  Sequence of values is the same as the sequence in the data (logical data structure)</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="tml:uid_uidRef"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="confidence" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>confidence of relationship (-1 to 1). -1 is 100% no confidence. confidence values match same sequence as logical data structure (if multiple values in data structure)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="ism:SecurityAttributesOptionGroup"/>
+			<xs:attributeGroup ref="tml:uid_uidRef"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="process" type="tml:ProcessType">
+		<xs:annotation>
+			<xs:documentation>A transducer can be a stand alone object or part of a system. Describes derivation of output dataUnits relative to input dataUnits or constants.  An empty process tag in a data stream indicates that this process is no longer a part of the system</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="responseModels">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tml:cfSubSampling" minOccurs="0"/>
+				<xs:element name="steadyStateResponse" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>input to output  mapping.  one or more mappings for each dataUnit.  Can have property-property, property-data, or data-property mappings.  property-property-property and property-property-data mappings are also allowed as long as independent property values can be found somewhere.  Separate mappings can be used for different hystersis directions or for non-continuous or broken functions.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="responseParameters" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="codePlot" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Allowed values code, plot. Default: plot</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="hysteresisDirection" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>allowed values: increasing, decreasing, both.  default both</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="calibrated" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Is response calibrated, or is response a relative reading? true of false. Default: true</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="proportional" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>For uncalibrated responses is the output proportional to the input? true of false. Mult factors can also reflect prop or inversely prop for calibrated responses. Default: true.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="invertability" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>a process input can be determined from its output. Allowed Values: true, false.  default true</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="timeInvariant" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>a time shift in the input only results in a time shift in the output. Allowed Values: true, false.  default true</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="linear" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>allowed values: true or false.  do not need explicit Phen plot values if linear is true. Phen and data mult and offset can be used if there are no limits.  default true</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="interCfInterpolate" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Allowed values: continuous, discrete, lastValue, returnToZero.  how to interpolate between corresponding data values between adjacent CF's.  default is continuous</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="intraCfInterpolate" type="tml:BindType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Allowed values: continuous, discrete, lastValue, returnToZero.  how to interpolate between data values within a CF.  default continuous</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="propValues" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>values for the physical property (phenomenon) axis of the input output transfer function</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="tml:ValueType">
+											<xs:sequence>
+												<xs:element name="inputOutput" type="tml:BindType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>Is the physical property (phenomenon) the input or output for this dataUnit.  Allowed values: input, output.  Default: input</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="propName" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>from Physical Property (Phenomenon) Dictionary</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:simpleContent>
+															<xs:extension base="tml:BindType">
+																<xs:attributeGroup ref="tml:uid_uidRef"/>
+															</xs:extension>
+														</xs:simpleContent>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="propQualifier" type="tml:BindType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>Qualifier for the property.  From Qualifier Dictionary.  e.g. aveValue, rmsValue, rssValue, instValue, accumulatedValue, rateOfChange, range, min, max...</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="UOM" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>From Units Of Measure Dictionary (SI Units)</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:simpleContent>
+															<xs:extension base="tml:BindType">
+																<xs:attributeGroup ref="tml:uid_uidRef"/>
+															</xs:extension>
+														</xs:simpleContent>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="direction" type="tml:BindType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>if the physical property (phenomenon) had a direction associated with it such as torque or force. direction relative to the transducer reference system.  Allowed Values: horizontal, vertical, +xTranslation, -xTranslation, +yTranslation, -yTranslation, +zTranslation, -zTranslation, +alpha, -alpha, +beta, -beta, +rhoTranslation, -rhoTranslation, +latTranslation, -latTranslation, +longTranslation
+-longTranslation, +altTranslation, -altTranslation, +omegaRotation, -omegaRotation, +phiRotation, -phiRotation, +kappaRotation, -kappaRotation, none Default: none</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="variableName" type="tml:BindType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>Name of mathematical term used in the transformation equations.  </xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="calibProp" type="tml:BindType" minOccurs="0" maxOccurs="unbounded">
+													<xs:annotation>
+														<xs:documentation>If a calibrated source is available this elements identifies the calibration level or points (bindUID) to the calibrated sensor measuring the source.  This is used for post correcting relative readings Default: none</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dataValues" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>values for the data axis of the input output transfer function</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="tml:ValueType">
+											<xs:sequence>
+												<xs:element name="inputOutput" type="tml:BindType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>Is the data an input or an output for this dataUnit.  Allowed values: input, output.  Default: output</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="dataUidRef" type="tml:BindType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>uid of the data form the logical data structure (dataUnit) to which this response model corresponds</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="variableName" type="tml:BindType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>Name of mathematical term used in the transformation equations.  </xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="calibData" type="tml:BindType" minOccurs="0" maxOccurs="unbounded">
+													<xs:annotation>
+														<xs:documentation>data resulting from calibrated source. or bindUID points to sensor measurement measuring calib source. Default: none</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="code" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>computer code of the transfer process from input to output</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="properties" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="codeType" type="tml:BindType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Allowed Values: source, exe default: source</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="codeLanguage" type="tml:BindType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Allowed Values: C, C++, Java, Fortran, C Sharp, Basic, Visual Basic. Default: C</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="listing" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Listing of code. Base64 encoded executable or source code with unallowed XML characters escaped out</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="tml:BindType"/>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attributeGroup ref="tml:uid_uidRef"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="tml:uid_uidRef"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="impulseResponse" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>time domain or frequency domain impulse characteristics for linear time invariant transforms. May have a separate response for each dataUnit and for each type (freq and time).  Or dataUnits within a data Set may share the same response.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="dataUidRef" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>same as uidRef in attributes</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="freqTime" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Allowed values: freq, time.  default is time.  indicates if frequency of time domain descriptions.  </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="amplitude" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>amplitude dependent axis.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="tml:ValueType"/>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="time" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>time domain independent axis.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="tml:ValueType"/>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="frequency" type="tml:ValueType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>frequency domain independent axis.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="tml:uid_uidRef"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="frequencyResponse" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>one for each dataUnit and for each type of freqResp (carrier, modulation, and powerSpectrialDensity) and each type of plot amp vs freq and phase vs freq (can combine plots onto one as well)</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="dataUidRef" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>same as uidRef in attributes</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="freqRespType" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Allowed values: carried, modulation, PSD  (pwrSpectralDensity).  default carrier</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="amplitude" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Set of point coordinates describing amplitude dependent axis</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="tml:ValueType"/>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="phase" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Set of point coordinates describing phase dependent axis</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="tml:ValueType"/>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="frequency" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Set of point coordinates describing frequency independent axis</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="tml:ValueType"/>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="tml:uid_uidRef"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="tml:uid_uidRef"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="spaceCoordSystem" type="tml:BindType">
+		<xs:annotation>
+			<xs:documentation>Allowed values: spherical,  rectangular, cylindrical, wgs84elliptical.  default is spherical.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="spatialModel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="dataUidRef" type="tml:BindType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>corresponding UID of dataUnit, dataSet,  or data Array.  If data array then all subordinate data structures share same model (row, col, or plane), if dataSet then all data units share same model (cf), if dataUnit then only that units model is described (cf). </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="tml:cfSubSampling" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="ambiguitySpace" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Multiple AS are combined as spatial intersections.  e.g. one for columns and one for rows.  Typically every cell within a multiple cell CF will share the same shape but have unique positions.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="shape" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>This is the shape of the AS for the power profile indicated.  May also have multiple shapes to define multiple lobes of energy fields.  Multiple shapes within an AS are combined as a spatial unions.   The position elements defines the position of each shape.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="pwrProfile" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>The equi-power surface power level compared to the point of transmission or reception.   default is -3db beam pattern, pwrProfile="-3".</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="tml:BindType"/>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element ref="tml:spaceCoordSystem" minOccurs="0"/>
+										<xs:element name="spaceLocCoords" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>one set of coordinates for each spatial axes.  Each shape is defined relative to an arbitrary data spatial reference system. </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="coordName" type="tml:BindType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Allowed values: x, y, z, alpha, beta, rho.  </xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="coords" type="tml:ValueType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>values contains a string of real numbers.  The mult and offset are single values, unless the shape varies over the Characteristic Frame then the mult and offset may contain a Characteristic Frame array of values. simple IFOV alpha=0, beta=0.  (ray where rho is infinite)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+												<xs:attributeGroup ref="tml:uid_uidRef"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attributeGroup ref="tml:uid_uidRef"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="position" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>location and attitude of ambiguity shape</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="tml:SpatialCoordType"/>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="tml:uid_uidRef"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="tml:uid_uidRef"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subject">
+		<xs:annotation>
+			<xs:documentation>This is the subject (object, thing) that relates to the phenomenon (property) that is affected or detected by the transducer. The relation between a subject and transducer data or subject and subject is described in the relationship element. An empty subject tag in a data stream indicates that this object is no longer a part of the system</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="xs:anyType">
+					<xs:attributeGroup ref="tml:uid_uidRef"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="system" type="tml:SystemType">
+		<xs:annotation>
+			<xs:documentation>An empty system tag (with id) in a data stream indicates that the system is no longer available in the stream, or if system was not previously part of the parent system it will be added to the parent system.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="temporalModel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="cfTrigger" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="trigType" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Allowed Values: private, privateOnDataRecipt, privateOnInputTrig, pvtOnChgOutput.   publicOnTrigReciept.   public trigger: controllable by external commands. private trigger: uncontrollable by external commands.  Virtual trig sensor puts sysClk time in data tag.  If public a bindUid is made available.  default trigger is privatePeriodic.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="publicTrigger" type="tml:BindType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>if trigger is public then this identifies the uidRef of trigger source (command).  Whenever a data cluster is sent to this UID or to the uid of a process that is bound to this uid then this transducer or process cycle will trigger.  The bindUid enables late binding of the trigger source</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="period" type="tml:ValueType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>if private trigger is periodic then,  trigger period in seconds</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="tml:uid_uidRef"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="cfDuration" type="tml:ValueType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>time duration of the CF in seconds.  Can also be determined by the CF offset time values by subtracting the smallest offset time from the largest offset time.  Duration does not vary over the CF.  Only one value.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="latencyTime" type="tml:ValueType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>latency time in seconds (real number).  Time between the input and the output.  Transducer time tags should be corrected to reflect correct input time for receivers and output time for transmitters.  Latency for processes reflects the process delay.  Latency time does not vary over the CF.  Only one value. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ambiguityTime" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>data integration time for each sample in the CF. Each dataunit may have a different time.   This element contains the number of samples in a CF or the number indicated by the noOfSubSampledIndexPoints element in the CFsubSamplingSequence or just one time.  If just one time then the same time applies to all sample in the CF.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="tml:ValueType">
+								<xs:sequence>
+									<xs:element name="dataUidRef" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>corresponding UID of dataUnit or dataSet. Duplicate of uid in identification element Default: Uid of dataSet</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element ref="tml:cfSubSampling" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="cfOffsetTime" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>cfOffSetTime contains time offsets for each dataUnit or dataSet in the CF relative to the clock attribute (clk or dateTime) in the data start tag.  contains the number of time values indicated by the numSubSampledIndexPoints in the cfSubSampling child element. or num</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="tml:ValueType">
+								<xs:sequence>
+									<xs:element name="dataUidRef" type="tml:BindType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>corresponding UID of dataUnit or dataSet. Duplicate of uid in identification element Default: Uid of dataSet</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element ref="tml:cfSubSampling" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="tml:uid_uidRef"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="transducer" type="tml:TransducerType">
+		<xs:annotation>
+			<xs:documentation>A transducer can be a stand alone object or part of a system.  An empty transducer tag in a data stream indicates that this transducer is no longer a part of the system</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:attributeGroup name="uid_uidRef">
+		<xs:attribute name="name" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>short descriptive name of element</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="uid" type="xs:anyURI" use="optional">
+			<xs:annotation>
+				<xs:documentation>unique ID for this element</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="uidRef" type="xs:anyURI" use="optional">
+			<xs:annotation>
+				<xs:documentation>the contents of this element are exactly the same as the contents of the uidRef element. no need repeating it. (similar to xlink)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:element name="complexity" type="tml:BindType">
+		<xs:annotation>
+			<xs:documentation>indication of the complexity of handling this data. Allowed Values: 1A - 1F, 2A -2F, 3A - 3F, 4A - 4F, 5A - 5F.  default 1A</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

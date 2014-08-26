@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sps:Capabilities xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/1.1" version="2.0.0" xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd">
+  <!-- -->
+  <ows:ServiceIdentification>
+    <ows:Title>Spot Image EO Sensor Planning Service Prototype</ows:Title>
+    <ows:Abstract>OGC SPS developed by Spot Image for HMA-FO project</ows:Abstract>
+    <ows:ServiceType>SPS</ows:ServiceType>
+    <ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+    <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/BasicPubSub</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/ChannelBasedPubSub</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/FeasibilityController</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/ReservationManager</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/SOAP</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/StateLogger</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/TaskCanceller</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/TaskUpdater</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/SWES/2.0/conf/SensorProvider</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/uml-simple-components</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/uml-record-components</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/uml-choice-components</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/uml-simple-encodings</ows:Profile>
+    <ows:Fees>none</ows:Fees>
+    <ows:AccessConstraints>none</ows:AccessConstraints>
+  </ows:ServiceIdentification>
+  <!-- -->
+  <ows:ServiceProvider>
+    <ows:ProviderName>Spot Image</ows:ProviderName>
+    <ows:ProviderSite xlink:href="http://www.spotimage.com"/>
+    <ows:ServiceContact>
+			<ows:IndividualName>Alexandre Robin</ows:IndividualName>
+			<ows:PositionName>Earth Observation Specialist</ows:PositionName>
+			<ows:ContactInfo>
+				<ows:Phone>
+					<ows:Voice>+33 5 62 19 43 62</ows:Voice>
+					<ows:Facsimile>+33 5 62 19 43 43</ows:Facsimile>
+				</ows:Phone>
+				<ows:Address>
+					<ows:DeliveryPoint>5, Rue des Satellites</ows:DeliveryPoint>
+					<ows:City>Toulouse</ows:City>
+					<ows:PostalCode>31000</ows:PostalCode>
+					<ows:Country>France</ows:Country>
+					<ows:ElectronicMailAddress>alexandre.robin@spotimage.com</ows:ElectronicMailAddress>
+				</ows:Address>
+				<ows:HoursOfService>8am - 18pm ET</ows:HoursOfService>
+			</ows:ContactInfo>
+		</ows:ServiceContact>
+  </ows:ServiceProvider>
+  <!-- -->
+  <ows:OperationsMetadata>
+    <ows:Operation name="GetCapabilities">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+          <ows:Post xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="Sections">
+        <ows:AllowedValues>
+          <ows:Value>All</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="DescribeSensor">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+          <ows:Post xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="DescribeTasking">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+          <ows:Post xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="GetFeasibility">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Post xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="Submit">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Post xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="Update">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Post xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="GetStatus">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+          <ows:Post xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="DescribeResultAccess">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+          <ows:Post xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="Cancel">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Post xlink:href="http://ws.spotimage.com/axis2/services/SPS_v2.0.4"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Constraint name="PostEncoding">
+      <ows:AllowedValues>
+        <ows:Value>XML</ows:Value>
+        <ows:Value>SOAP</ows:Value>
+      </ows:AllowedValues>
+    </ows:Constraint>
+  </ows:OperationsMetadata>
+  <!-- -->
+  <sps:notifications>
+    <swes:NotificationProducerMetadata>
+      <swes:producerEndpoint xmlns:wsa="http://www.w3.org/2005/08/addressing">
+        <wsa:EndpointReference>
+          <wsa:Address>http://ws.spotimage.com/axis2/services/SPS_v2.0.4</wsa:Address>
+        </wsa:EndpointReference>        
+      </swes:producerEndpoint>
+      <swes:supportedDialects>
+        <swes:FilterDialectMetadata>
+          <swes:topicExpressionDialect>http://docs.oasis-open.org/wsn/t-1/TopicExpression/Simple</swes:topicExpressionDialect>
+          <swes:topicExpressionDialect>http://docs.oasis-open.org/wsn/t-1/TopicExpression/Concrete</swes:topicExpressionDialect>
+          <swes:messageContentDialect>http://www.w3.org/TR/1999/REC-xpath-19991116</swes:messageContentDialect>
+        </swes:FilterDialectMetadata>
+      </swes:supportedDialects>
+      <swes:fixedTopicSet>true</swes:fixedTopicSet>
+      <swes:servedTopics>
+        <wstop:TopicSet xmlns:wstop="http://docs.oasis-open.org/wsn/t-1" xmlns:eo="http://www.opengis.net/eosps/2.0">
+          <sps:TaskEvent>
+            <sps:TaskFailure wstop:topic="true"/>
+            <sps:TaskCancellation wstop:topic="true"/>
+            <sps:TaskCompletion wstop:topic="true"/>
+            <sps:TaskUpdate wstop:topic="true"/>
+            <sps:DataPublication wstop:topic="true"/>
+            <sps:TaskSubmission wstop:topic="true"/>
+          </sps:TaskEvent>
+          <sps:TaskingRequestEvent>
+            <sps:TaskingRequestAcceptance wstop:topic="true"/>
+            <sps:TaskingRequestRejection wstop:topic="true"/>
+          </sps:TaskingRequestEvent>
+          <eo:EOEvent>
+            <eo:SegmentPlanned wstop:topic="true"/>
+            <eo:SegmentAcquired wstop:topic="true"/>
+            <eo:SegmentValidated wstop:topic="true"/>
+            <eo:SegmentCancelled wstop:topic="true"/>
+            <eo:SegmentFailed wstop:topic="true"/>
+          </eo:EOEvent>          
+        </wstop:TopicSet>
+      </swes:servedTopics>
+    </swes:NotificationProducerMetadata>
+  </sps:notifications>
+  <!-- -->
+  <sps:contents>
+    <sps:SPSContents>
+      <swes:procedureDescriptionFormat>http://www.opengis.net/sensorML/1.0</swes:procedureDescriptionFormat>
+      <swes:observableProperty>http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance</swes:observableProperty>      
+      <!-- -->
+      <swes:offering>
+        <sps:SensorOffering>
+          <swes:description>Programming service for SPOT5 satellite only</swes:description>
+          <swes:identifier>SPOT5</swes:identifier>
+          <swes:procedure>urn:spot:sensors:SPOT5:HRG</swes:procedure>
+          <sps:observableArea>
+            <sps:byPolygon>
+              <gml:Polygon gml:id="gid01">
+                <gml:exterior>
+                  <gml:LinearRing>
+                    <gml:posList srsName="urn:ogc:def:crs:EPSG:6.17:4326">-180 -80 +180 -80 +180 +80 -180 +80</gml:posList>
+                  </gml:LinearRing>
+                </gml:exterior>
+              </gml:Polygon>
+            </sps:byPolygon>
+          </sps:observableArea>
+        </sps:SensorOffering>
+      </swes:offering>
+      <!-- -->
+      <swes:offering>
+        <sps:SensorOffering>
+          <swes:description>Programming service for the SPOT constellation</swes:description>
+          <swes:identifier>SPOT Constellation</swes:identifier>
+          <swes:procedure>urn:spot:sensors:SPOT</swes:procedure>
+          <sps:observableArea>
+            <sps:byPolygon>
+              <gml:Polygon gml:id="gid02">
+                <gml:exterior>
+                  <gml:LinearRing>
+                    <gml:posList srsName="urn:ogc:def:crs:EPSG:6.17:4326">-180 -80 +180 -80 +180 +80 -180 +80</gml:posList>
+                  </gml:LinearRing>
+                </gml:exterior>
+              </gml:Polygon>
+            </sps:byPolygon>
+          </sps:observableArea>          
+        </sps:SensorOffering>
+      </swes:offering>
+      <!-- -->
+      <swes:offering>
+        <sps:SensorOffering>
+          <swes:description>Programming service for FORMOSAT-2 RSI Instrument</swes:description>
+          <swes:identifier>FORMOSAT-2</swes:identifier>
+          <swes:procedure>urn:ogc:id:CEOS:instrument:FORMOSAT2:RSI</swes:procedure>
+          <sps:observableArea>
+            <sps:byPolygon>
+              <gml:Polygon gml:id="gid03">
+                <gml:exterior>
+                  <gml:LinearRing>
+                    <gml:posList srsName="urn:ogc:def:crs:EPSG:6.17:4326">-180 -80 +180 -80 +180 +80 -180 +80</gml:posList>
+                  </gml:LinearRing>
+                </gml:exterior>
+              </gml:Polygon>
+            </sps:byPolygon>
+          </sps:observableArea>          
+        </sps:SensorOffering>
+      </swes:offering>
+      <!-- -->
+      <swes:offering>
+        <sps:SensorOffering>
+          <swes:description>Programming service for KOMPSAT-2 MSC Instrument</swes:description>
+          <swes:identifier>KOMPSAT-2</swes:identifier>
+          <swes:procedure>urn:ogc:id:CEOS:instrument:KOMPSAT2:MSC</swes:procedure>
+          <sps:observableArea>
+            <sps:byPolygon>
+              <gml:Polygon gml:id="gid04">
+                <gml:exterior>
+                  <gml:LinearRing>
+                    <gml:posList srsName="urn:ogc:def:crs:EPSG:6.17:4326">-180 -80 +180 -80 +180 +80 -180 +80</gml:posList>
+                  </gml:LinearRing>
+                </gml:exterior>
+              </gml:Polygon>
+            </sps:byPolygon>
+          </sps:observableArea>          
+        </sps:SensorOffering>
+      </swes:offering>
+      <!-- -->
+      <sps:minStatusTime>PT48H</sps:minStatusTime>
+      <sps:supportedEncoding>http://www.opengis.net/swe/2.0/TextEncoding</sps:supportedEncoding>
+      <sps:supportedEncoding>http://www.opengis.net/swe/2.0/XMLEncoding</sps:supportedEncoding>
+    </sps:SPSContents>
+  </sps:contents>
+</sps:Capabilities>

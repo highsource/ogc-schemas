@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/wcs/1.1" 
+	xmlns:wcs="http://www.opengis.net/wcs/1.1" 
+	xmlns:ows="http://www.opengis.net/ows/1.1" 
+	xmlns="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified" xml:lang="en"
+	version="1.1.3">
+	<annotation>
+		<appinfo>wcsGetCoverage.xsd 2010-02-02</appinfo>
+		<documentation>This XML Schema Document defines the GetCoverage operation request elements and types, for the OGC Web Coverage Service (WCS).
+			
+			WCS is an OGC Standard.
+			Copyright (c) 2006,2010 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
+	</annotation>
+	<!-- ==============================================================  
+        includes and imports	
+	============================================================== -->
+	<include schemaLocation="wcsCommon.xsd"/>
+	<include schemaLocation="wcsGridCRS.xsd"/>
+	<include schemaLocation="wcsCoverages.xsd"/>
+	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+	<!-- ==============================================================	
+		elements and types	
+	============================================================== -->
+	<element name="GetCoverage">
+		<annotation>
+			<documentation>Request to a WCS to perform the GetCoverage operation. This operation allows a client to retrieve a subset of one coverage. In this XML encoding, no "request" parameter is included, since the element name specifies the specific operation. </documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="wcs:RequestBaseType">
+					<sequence>
+						<element ref="ows:Identifier">
+							<annotation>
+								<documentation>Identifier of the coverage that this GetCoverage operation request shall draw from. </documentation>
+							</annotation>
+						</element>
+						<element name="DomainSubset" type="wcs:DomainSubsetType"/>
+						<element name="RangeSubset" type="wcs:RangeSubsetType" minOccurs="0">
+							<annotation>
+								<documentation>Optional selection of a subset of the coverage's range. </documentation>
+							</annotation>
+						</element>
+						<element name="Output" type="wcs:OutputType"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ======================================================= -->
+	<complexType name="OutputType">
+		<annotation>
+			<documentation>Asks for the GetCoverage response to be expressed in a particular CRS and encoded in a particular format. Can also ask for the response coverage to be stored remotely from the client at a URL, instead of being returned in the operation response. </documentation>
+		</annotation>
+		<sequence>
+			<element ref="wcs:GridCRS" minOccurs="0">
+				<annotation>
+					<documentation>Optional definition of the GridCRS in which the GetCoverage response shall be expressed. When this GridCRS is not included, the output coverage shall use the gml:ImageCRS or wcs:GridCRS of the offered coverage, normally with the origin at a different grid point. When included, this wcs:GridCRS specifies the desired grid for the output coverage, including the desired grid spacings, one of many possible origin locations, optional rotation, and optional skewing (angle between the axes) in a base GridBaseCRS. This wcs:GridCRS is NOT required or expected to specify the actual position of the origin in the GetCoverage operation output, so it shall not be interpreted as being different than the origin directly or indirectly specified by the BoundingBox in the DomainSubset. </documentation>
+				</annotation>
+			</element>
+		</sequence>
+		<attribute name="format" type="ows:MimeType" use="required">
+			<annotation>
+				<documentation>Identifier of the format in which GetCoverage response shall be encoded. This identifier value shall be among those listed as SupportedFormats in the DescribeCoverage operation response. </documentation>
+			</annotation>
+		</attribute>
+		<attribute name="store" type="boolean" use="optional" default="false">
+			<annotation>
+				<documentation>Specifies if the output coverage should be stored, remotely from the client at a network URL, instead of being returned with the operation response. This parameter should be included only if this operation parameter is supported by server, as encoded in the OperationsMetadata section of the Capabilities document. </documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+	<!-- ======================================================= -->
+	<!-- Domain subset types and elements -->
+	<!-- ======================================================= -->
+	<complexType name="DomainSubsetType">
+		<annotation>
+			<documentation>Definition of the desired subset of the domain of the coverage. Contains a spatial BoundingBox and optionally a TemporalSubset. </documentation>
+		</annotation>
+		<sequence>
+			<element ref="ows:BoundingBox">
+				<annotation>
+					<documentation>Definition of desired spatial subset of a coverage domain. To request coverage values at all available spatial locations, use the first BoundingBox supplied in the CoverageDescription for the chosen coverage. WCS use of a BoundingBox is further specified in Subclause 7.5.4. </documentation>
+				</annotation>
+			</element>
+			<element ref="wcs:TemporalSubset" minOccurs="0">
+				<annotation>
+					<documentation>Optional definition of desired temporal subset of a coverage domain. If this data structure is omitted, the entire Temporal domain shall be output. If a server does not provide a temporal domain in an offered coverage’s CoverageDescription, and the server receives a TemporalSubset parameter, the server shall raise an InvalidParameterValue exception. </documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<!-- ======================================================= -->
+	<element name="TemporalSubset" type="wcs:TimeSequenceType">
+		<annotation>
+			<documentation>Definition of subset of coverage temporal domain. </documentation>
+		</annotation>
+	</element>
+	<!-- ======================================================= -->
+	<!-- Range subset types and elements -->
+	<!-- ======================================================= -->
+	<complexType name="RangeSubsetType">
+		<annotation>
+			<documentation>Selection of desired subset of the coverage's range fields, (optionally) the interpolation method applied to each field, and (optionally) field subsets. </documentation>
+		</annotation>
+		<sequence>
+			<element name="FieldSubset" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Unordered list of one or more desired subsets of range fields. TBD. </documentation>
+				</annotation>
+				<complexType>
+					<sequence>
+						<element ref="ows:Identifier">
+							<annotation>
+								<documentation>Identifier of this requested Field. This identifier must be unique for this Coverage. </documentation>
+							</annotation>
+						</element>
+						<element name="InterpolationType" type="string" minOccurs="0">
+							<annotation>
+								<documentation>Optional identifier of the spatial interpolation type to be applied to this range field. This interpolation type shall be one that is identified for this Field in the CoverageDescription. When this parameter is omitted, the interpolation method used shall be the default method specified for this Field, if any. </documentation>
+							</annotation>
+						</element>
+						<element ref="wcs:AxisSubset" minOccurs="0" maxOccurs="unbounded">
+							<annotation>
+								<documentation>Unordered list of zero or more axis subsets for this field. TBD. </documentation>
+							</annotation>
+						</element>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	<!-- ======================================================= -->
+	<element name="AxisSubset">
+		<annotation>
+			<documentation>List of selected Keys for this axis, to be used for selecting values in a vector range field. TBD. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="wcs:Identifier">
+					<annotation>
+						<documentation>Identifier of this Axis. This identifier must be unique for this Field. </documentation>
+					</annotation>
+				</element>
+				<element name="Key" type="wcs:IdentifierType" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Unordered list of (at least one) Key, to be used for selecting values in a range vector field. The Keys within this list shall be unique. </documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- ======================================================= -->
+</schema>

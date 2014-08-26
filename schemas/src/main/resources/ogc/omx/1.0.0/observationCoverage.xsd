@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema         
+xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:om="http://www.opengis.net/om/1.0" xmlns:omx="http://www.opengis.net/omx/1.0"
+xmlns:cv="http://www.opengis.net/cv/0.2.1" 
+		  targetNamespace="http://www.opengis.net/omx/1.0"
+        elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.2">
+	<annotation>
+		<appinfo source="urn:ogc:specification:om:doc-is(07-022r3):1.0.0">
+			<sch:title>Schematron validation</sch:title>
+			<sch:ns prefix="omx" uri="http://www.opengis.net/omx/1.0"/>
+			<sch:ns prefix="om" uri="http://www.opengis.net/om/1.0"/>
+			<sch:ns prefix="cv" uri="http://www.opengis.net/cv/0.2.1"/>
+		</appinfo>
+		<documentation>observationCoverage.xsd
+
+An implementation of the OandM model for SWE
+This document contains specializations of the basic observation pattern, fixing the type of the result to be various discrete coverage types. 
+
+Observation Extensions is an OGC Standard.
+Copyright (c) 2007,2008,2010 Open Geospatial Consortium.
+To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
+	</annotation>
+	<!-- ====================================================================== -->
+	<!-- bring in other schemas -->
+	<include schemaLocation="om_extended.xsd"/>
+	<import namespace="http://www.opengis.net/cv/0.2.1" schemaLocation="http://bp.schemas.opengis.net/06-188r1/cv/0.2.1/cv.xsd"/>	
+	<import namespace="http://www.opengis.net/om/1.0"  schemaLocation="http://schemas.opengis.net/om/1.0.0/om.xsd"/>
+	<!-- ====================================================================== -->
+	<!-- ====================================================================== -->
+	<!-- ===== Coverage Observations = sampling a phenomenon that varies on the feature of interest ====== -->
+	<!-- ====================================================================== -->
+	<!-- ====================================================================== -->
+	<element name="DiscreteCoverageObservation" type="om:ObservationType" substitutionGroup="om:Observation">
+		<annotation>
+			<appinfo>
+				<sch:pattern name="result must contain a cv:CV_DiscreteCoverage and nothing else">
+					<sch:rule context="//omx:DiscreteCoverageObservation">
+						<sch:assert test="om:result/cv:CV_DiscreteCoverage">cv:CV_DiscreteCoverage must be present as child of om:result</sch:assert>
+						<sch:assert test="count(om:result/*) = 1">one and only one child element must be present</sch:assert>
+				</sch:rule>
+				</sch:pattern>
+			</appinfo>
+			<documentation>Specialized Observation, in which the result is a generalized discrete coverage</documentation>
+		</annotation>
+	</element>
+	<!-- ====================================================================== -->
+	<element name="PointCoverageObservation" type="om:ObservationType" substitutionGroup="om:Observation">
+		<annotation>
+			<appinfo>
+				<sch:pattern name="result must contain a cv:CV_DiscretePointCoverage and nothing else">
+					<sch:rule context="//omx:PointCoverageObservation">
+						<sch:assert test="om:result/cv:CV_DiscretePointCoverage">cv:CV_DiscretePointCoverage must be present as child of om:result</sch:assert>
+						<sch:assert test="count(om:result/*) = 1">one and only one child element must be present</sch:assert>
+				</sch:rule>
+				</sch:pattern>
+			</appinfo>
+			<documentation>Specialized Observation, in which the result is a point coverage which samples a property at points in the feature of interest</documentation>
+		</annotation>
+	</element>
+	<!-- ====================================================================== -->
+	<element name="TimeSeriesObservation" type="om:ObservationType" substitutionGroup="om:Observation">
+		<annotation>
+			<appinfo>
+				<sch:pattern name="result must contain a cv:CV_DiscreteTimeInstantCoverage and nothing else">
+					<sch:rule context="//omx:TimeSeriesObservation">
+						<sch:assert test="om:result/cv:CV_DiscreteTimeInstantCoverage">cv:CV_DiscreteTimeInstantCoverage must be present as child of om:result</sch:assert>
+						<sch:assert test="count(om:result/*) = 1">one and only one child element must be present</sch:assert>
+				</sch:rule>
+				</sch:pattern>
+			</appinfo>
+			<documentation>Specialized Observation, in which the result is a time-instant coverage which samples a property of the feature of interest at different times</documentation>
+		</annotation>
+	</element>
+	<!-- ====================================================================== -->
+	<element name="ElementCoverageObservation" type="om:ObservationType"
+	         substitutionGroup="om:Observation">
+		<annotation>
+			<appinfo>
+				<sch:pattern name="result must contain a cv:CV_DiscreteElementCoverage and nothing else">
+					<sch:rule context="//omx:ElementCoverageObservation">
+						<sch:assert test="om:result/cv:CV_DiscreteElementCoverage">cv:CV_DiscreteElementCoverage must be present as child of om:result</sch:assert>
+						<sch:assert test="count(om:result/*) = 1">one and only one child element must be present</sch:assert>
+				</sch:rule>
+				</sch:pattern>
+			</appinfo>
+			<documentation>Specialized Observation, in which the result is a coverage whose domain elements contain references to objects encoded elsewhere, which provide the sampling geometry of the feature of interest</documentation>
+		</annotation>
+	</element>
+	<!-- ====================================================================== -->
+</schema>

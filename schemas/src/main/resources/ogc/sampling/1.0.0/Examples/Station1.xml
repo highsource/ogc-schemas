@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<sa:SamplingPoint gml:id="st1" xmlns:sa="http://www.opengis.net/sampling/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml"
+            xsi:schemaLocation="http://www.opengis.net/sampling/1.0 http://schemas.opengis.net/sampling/1.0.0/sampling.xsd">
+	<sa:sampledFeature xlink:href="http://my.hydrology.custodian.org/storages/aquifer/abc345"/>
+	<sa:position>
+		<gml:Point gml:id="st1p">
+			<gml:pos srsName="urn:ogc:def:crs:EPSG:6.8:4283">-30.702 134.199</gml:pos>
+		</gml:Point>
+	</sa:position>
+</sa:SamplingPoint>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<fes:Filter
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:gml="http://www.opengis.net/gml"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/fes/2.0
+   http://schemas.opengis.net/filter/2.0/filterAll.xsd
+   http://www.opengis.net/gml
+   http://schemas.opengis.net/gml/2.1.2/geometry.xsd">
+   <fes:Overlaps>
+      <fes:ValueReference>Geometry</fes:ValueReference>
+      <gml:Polygon srsName="urn:fes:def:crs:EPSG::4326">
+         <gml:outerBoundaryIs>
+            <gml:LinearRing>
+               <gml:coordinates>10,10 20,20 30,30 40,40 10,10</gml:coordinates>
+            </gml:LinearRing>
+         </gml:outerBoundaryIs>
+      </gml:Polygon>
+   </fes:Overlaps>
+</fes:Filter>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Body>
+    <GetFeasibilityResponse xmlns:sps="http://www.opengis.net/sps/2.0">
+      <sps:result>
+        <sps:StatusReport>
+          <swes:description xmlns:swes="http://www.opengis.net/swes/2.0">Task feasible. The percentage chance of weather affecting the acquisition is: 0.0 for segment SEG_001. Sensor OPT-2 available for segment: SEG_001. Station North, South available for segment: SEG_001. The percentage chance of weather affecting the acquisition is: 0.0 for segment SEG_002. Sensor OPT-2 available for segment: SEG_002. Station North, South available for segment: SEG_002. </swes:description>
+          <swes:name xmlns:swes="http://www.opengis.net/swes/2.0">CFI based Feasibility Study</swes:name>
+          <swes:extension xmlns:swes="http://www.opengis.net/swes/2.0">
+            <eot:FeasibilityStudy xmlns:eot="http://www.opengis.net/eosps/2.0">
+              <eot:expirationDate>2011-05-27T11:10:34.024Z</eot:expirationDate>
+              <eot:estimatedCost uom="http://www.opengis.net/def/unit/OGC/0/currency/EUR">0.0</eot:estimatedCost>
+              <eot:successRate>1.0</eot:successRate>
+              <eot:informationUsed>KINEMATIC MODEL</eot:informationUsed>
+              <eot:informationUsed>ESTIMATED WORKLOAD</eot:informationUsed>
+              <eot:segment>
+                <eot:Segment xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="SEG_001">
+                  <eot:footprint>
+                    <gml:Polygon gml:id="FSEG_001" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                      <gml:exterior>
+                        <gml:LinearRing>
+                          <gml:posList>59.70370144832263 59.21853461572769 60.19872950443799 62.2881003713227 61.25315422352994 61.64511612539111 60.745434378383415 58.4823442453325 59.70370144832263 59.21853461572769</gml:posList>
+                        </gml:LinearRing>
+                      </gml:exterior>
+                    </gml:Polygon>
+                  </eot:footprint>
+                  <eot:acquisitionStartTime>2011-05-13T13:06:32Z</eot:acquisitionStartTime>
+                  <eot:acquisitionStopTime>2011-05-13T13:10:34Z</eot:acquisitionStopTime>
+                  <eot:acquisitionMethod>
+                    <eop:EarthObservationEquipment xmlns:eop="http://earth.esa.int/eop" gml:id="MSEG_001">
+                      <eop:platform>
+                        <eop:Platform>
+                          <eop:shortName>HMA</eop:shortName>
+                        </eop:Platform>
+                      </eop:platform>
+                      <eop:instrument>
+                        <eop:Instrument>
+                          <eop:shortName>OPT-2</eop:shortName>
+                        </eop:Instrument>
+                      </eop:instrument>
+                      <eop:sensor>
+                        <eop:Sensor>
+                          <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                        </eop:Sensor>
+                      </eop:sensor>
+                    </eop:EarthObservationEquipment>
+                  </eot:acquisitionMethod>
+                  <eot:status>POTENTIAL</eot:status>
+                </eot:Segment>
+              </eot:segment>
+              <eot:segment>
+                <eot:Segment xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="SEG_002">
+                  <eot:footprint>
+                    <gml:Polygon gml:id="FSEG_002" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                      <gml:exterior>
+                        <gml:LinearRing>
+                          <gml:posList>59.70370144832263 59.21853461572769 60.19872950443799 62.2881003713227 61.25315422352994 61.64511612539111 60.745434378383415 58.4823442453325 59.70370144832263 59.21853461572769</gml:posList>
+                        </gml:LinearRing>
+                      </gml:exterior>
+                    </gml:Polygon>
+                  </eot:footprint>
+                  <eot:acquisitionStartTime>2011-05-27T13:06:32Z</eot:acquisitionStartTime>
+                  <eot:acquisitionStopTime>2011-05-27T13:10:34Z</eot:acquisitionStopTime>
+                  <eot:acquisitionMethod>
+                    <eop:EarthObservationEquipment xmlns:eop="http://earth.esa.int/eop" gml:id="MSEG_002">
+                      <eop:platform>
+                        <eop:Platform>
+                          <eop:shortName>HMA</eop:shortName>
+                        </eop:Platform>
+                      </eop:platform>
+                      <eop:instrument>
+                        <eop:Instrument>
+                          <eop:shortName>OPT-2</eop:shortName>
+                        </eop:Instrument>
+                      </eop:instrument>
+                      <eop:sensor>
+                        <eop:Sensor>
+                          <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                        </eop:Sensor>
+                      </eop:sensor>
+                    </eop:EarthObservationEquipment>
+                  </eot:acquisitionMethod>
+                  <eot:status>POTENTIAL</eot:status>
+                </eot:Segment>
+              </eot:segment>
+            </eot:FeasibilityStudy>
+          </swes:extension>
+          <sps:task>http://www.deimos-space.com/sps/2011-01-19T15:25:50.937Z</sps:task>
+          <sps:estimatedToC>2011-05-27T13:10:34Z</sps:estimatedToC>
+          <sps:percentCompletion>0.0</sps:percentCompletion>
+          <sps:procedure>urn:ogc:object:feature:Sensor:deimos-space:HMA:OPT-2</sps:procedure>
+          <sps:requestStatus>Accepted</sps:requestStatus>
+          <sps:updateTime>2011-01-19T15:25:51.463Z</sps:updateTime>
+        </sps:StatusReport>
+      </sps:result>
+    </GetFeasibilityResponse>
+  </soapenv:Body>
+</soapenv:Envelope>
+

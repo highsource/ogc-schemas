@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:georss="http://www.georss.org/georss" 
+    xmlns:os="http://a9.com/-/spec/opensearch/1.1/"
+    xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/"
+    xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" >
+  <title>Catalogue Search Feed for ERS-2 SAR Image Mode Level 0</title>
+  <subtitle type="html">
+    Found 66 results. Showing the first 20 results 
+  </subtitle>
+  <generator uri="http://www.terradue.com" version="1.4.0">Terradue CAS</generator>
+  <author><name>GEOSS Supersites</name></author>
+  <updated>2013-05-30T18:05:09Z</updated>
+  <id>http://eo-virtual-archive4.esa.int/search/ER02_SAR_IM__0P/atom/</id>
+  <dc:identifier>ER02_SAR_IM__0P</dc:identifier>
+  <link rel="self" type="application/atom+xml" href="http://eo-virtual-archive4.esa.int/search/ER02_SAR_IM__0P/atom/?startIndex=0&amp;start=1992-01-01&amp;stop=2013-05-30&amp;bbox=126.6,40.8,132,43.5"/>
+  <link rel="first" type="application/atom+xml" href="http://eo-virtual-archive4.esa.int/search/ER02_SAR_IM__0P/atom/?startIndex=0&amp; start=1992-01-01&amp;stop=2013-05-30&amp;bbox=126.6,40.8,132,43.5"/>  
+  <link rel="next" type="application/atom+xml" href="http://eo-virtual-archive4.esa.int/search/ER02_SAR_IM__0P/atom/?startIndex=1&amp;start=1992-01-01&amp;stop=2013-05-30&amp;bbox=126.6,40.8,132,43.5"/>
+  <link rel="last" type="application/atom+xml" href="http://eo-virtual-archive4.esa.int/search/ER02_SAR_IM__0P/atom/?startIndex=60&amp;start=1992-01-01&amp;stop=2013-05-30&amp;bbox=126.6,40.8,132,43.5"/>
+  <link rel="search" type="application/opensearchdescription+xml" href="http://eo-virtual-archive4.esa.int/search/ER02_SAR_IM__0P/description"/>
+  <os:totalResults>66</os:totalResults>
+  <os:startIndex>0</os:startIndex>
+  <os:itemsPerPage>1</os:itemsPerPage>
+  <os:Query role="request" startIndex="0" time:start="1992-01-01" time:end="2013-05-30" geo:box="126.6,40.8,132,43.5"/>
+  <georss:polygon>40.8 126.6 43.5 126.6 43.5 132 40.8 132 40.8 132</georss:polygon>
+  <entry>
+   <id>http://eo-virtual-archive4.esa.int/search/ER02_SAR_IM__0P/ER02_ SAR_IM__0P_20110107T021611_20110107T021628_DPA_82164_0000/atom</id>
+   <dc:identifier>ER02_ SAR_IM__0P_20110107T021611_20110107T021628_DPA_82164_0000</dc:identifier>
+   <title>ER02_ SAR_IM__0P_20110107T021611_20110107T021628_DPA_82164_0000</title>
+   <published>2012-03-02T23:50:07.000Z</published>
+   <updated>2013-05-16T22:25:57.124Z</updated>
+   <dc:date>2011-01-07T02:16:11.481Z/2011-01-07T02:16:28.864Z</dc:date>
+   <georss:polygon>42.3599 128.7932 42.5625 127.5283 41.4319 127.2083 41.2386 128.4171 42.3599 128.7932</georss:polygon>
+   <link rel="alternate" type="text/html" title="HTML page" href="http://eo-virtual-archive4.esa.int/search/ER02_SAR_IM__0P/ ER02_SAR_IM__0P_20110107T021611_20110107T021628_DPA_82164_0000/html"/>
+   <link rel="via" type="application/rdf+xml" title="RDF metadata entry" href="http://eo-virtual-archive4.esa.int/search/ER02_SAR_IM__0P/ ER02_SAR_IM__0P_20110107T021611_20110107T021628_DPA_82164_0000/rdf"/>
+   <link rel="enclosure" length="141898780" type="application/binary" title="ER02_SAR_IM__0P_20110107T021611_20110107T021628_DPA_82164_0000.CEOS.tar.gz" href="https://eo-virtual-archive4.esa.int/supersites/ER02_S AR_IM__0P_20110107T021611_20110107T021628_DPA_82164_0000.CEOS.tar.gz"/>
+   <content type="html">
+	&lt;ul&gt;&lt;li&gt; &lt;b&gt;Date&lt;/b&gt;: 2011-01-07 &lt;br/&gt;
+	(2011-01-07T02:16:11.481Z / 2011-01-07T02:16:28.864Z) &lt;/li&gt;
+	&lt;li&gt; &lt;b&gt;Orbit Number&lt;/b&gt;: 82164 &lt;/li&gt;
+	&lt;li&gt; &lt;b&gt;Processing Center&lt;/b&gt;: D-PAF &lt;/li&gt;&lt;/ul&gt;
+    </content>
+  </entry>
+
+</feed>

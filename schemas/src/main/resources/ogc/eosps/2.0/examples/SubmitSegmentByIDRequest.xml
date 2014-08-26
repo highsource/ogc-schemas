@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubmitSegmentByID
+  xmlns="http://www.opengis.net/eosps/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/eosps/2.0 http://schemas.opengis.net/eosps/2.0/eosps.xsd"
+  service="EOSPS" version="2.0">
+  <!-- -->
+  <task>http://earth.esa.int/sps/feasibility/F45EF36C23D4C89AB</task>
+  <!-- -->
+  <segmentID>S05</segmentID>
+  <segmentID>S06</segmentID>
+  <segmentID>S07</segmentID>
+  <!-- -->
+</SubmitSegmentByID>

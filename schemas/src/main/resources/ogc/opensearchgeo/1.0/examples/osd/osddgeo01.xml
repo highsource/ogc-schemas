@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+	xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/">
+	<ShortName>Web Search</ShortName>
+	<Description>Use Example.com to search the Web.</Description>
+	<Tags>example web</Tags>
+	<Contact>admin@example.com</Contact>
+	<Url type="application/atom+xml"
+		template="http://example.com/myatom/?q={searchTerms}&amp;pw={startPage?}&amp;box={geo:box?}" />
+	<Url type="application/rdf+xml"
+		template="http://example.com/myrdf/?q={searchTerms}&amp;pp={startPage?}&amp;bbx={geo:box?}" />
+	<Url type="application/geojson"
+		template="http://example.com/geojson/?q={searchTerms}&amp;page={startPage?}&amp;ox={geo:box?}" />
+	<Url type="text/html"
+		template="http://example.com/?q={searchTerms}&amp;bbox={geo:box?}&amp;pw={startPage?}" />
+	<LongName>Example.com Web Search</LongName>
+	<Query role="example" searchTerms="cat" geo:box="121,12,1,-23"/>
+	<Attribution>Copyright 2005, Example.com, Inc.</Attribution>
+	<SyndicationRight>open</SyndicationRight>
+</OpenSearchDescription>

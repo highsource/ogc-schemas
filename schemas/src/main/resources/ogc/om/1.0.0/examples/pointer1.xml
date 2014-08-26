@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<om:Observation gml:id="OPTest1" 
+xmlns:om="http://www.opengis.net/om/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:gml="http://www.opengis.net/gml"
+xsi:schemaLocation="http://www.opengis.net/om/1.0 ../om.xsd">
+	<gml:description>Observation instance with remote result</gml:description>
+	<gml:name>Observation Pointer 1</gml:name>
+	<om:samplingTime>
+		<gml:TimePeriod gml:id="op1t">
+			<gml:beginPosition>2005-01-11T17:22:25.00</gml:beginPosition>
+			<gml:endPosition>2005-01-11T18:22:25.00</gml:endPosition>
+		</gml:TimePeriod>
+	</om:samplingTime>
+	<om:procedure xlink:href="urn:ogc:object:feature:Sensor:3eti:abc45"/>
+	<om:observedProperty xlink:href="urn:ogc:def:phenomenon:OGC:RelativeHumidity"/>
+	<om:featureOfInterest xlink:href="http://my.modest.org/wfs%26request=getFeature%26;featureid=789002" xlink:role="urn:ogc:def:featureType:NWS:station"/>
+	<om:result xlink:href="http://my.modest.org/results%3f798002%26property=RH" xlink:role="application/xmpp" xsi:type="gml:ReferenceType"/>
+</om:Observation>

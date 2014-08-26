@@ -1,0 +1,30 @@
+<sps:DescribeResultAccessResponse xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <sps:availability>
+    <sps:available>
+      <sps:DataAvailable>
+        <sps:dataReference>
+          <ows:ReferenceGroup>
+            <ows:Identifier>http://www.ogc.org/procedure/camera/1/accessReferenceGroups/1</ows:Identifier>
+            <ows:Reference xlink:href="http://www.ogc.org/SOS" xlink:role="http://www.opengis.net/spec/SPS/2.0/referenceType/ServiceURL">
+              <ows:Identifier>http://www.ogc.org/procedure/camera/1/accessReferenceGroups/1/references/1</ows:Identifier>
+              <ows:Metadata>
+                <sps:SPSMetadata>
+                  <sps:dataAccessType>http://www.opengis.net/sos/2.0</sps:dataAccessType>
+                </sps:SPSMetadata>
+              </ows:Metadata>
+            </ows:Reference>
+          </ows:ReferenceGroup>
+        </sps:dataReference>
+        <sps:dataReference>
+          <ows:ReferenceGroup>
+            <ows:Identifier>http://www.ogc.org/procedure/camera/1/accessReferenceGroups/2</ows:Identifier>
+            <ows:Reference xlink:href="http://www.ogc.org/SOS/procedure/camera/1/videos" xlink:role="http://www.opengis.net/spec/SPS/2.0/referenceType/Folder">
+              <ows:Identifier>http://www.ogc.org/procedure/camera/1/accessReferenceGroups/2/references/1</ows:Identifier>
+              <ows:Format>video/mj2</ows:Format>
+            </ows:Reference>
+          </ows:ReferenceGroup>
+        </sps:dataReference>
+      </sps:DataAvailable>
+    </sps:available>
+  </sps:availability>
+</sps:DescribeResultAccessResponse>

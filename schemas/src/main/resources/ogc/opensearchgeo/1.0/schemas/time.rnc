@@ -1,0 +1,23 @@
+# -*- rnc -*-
+   # RELAX NG Compact Syntax Grammar 
+   # OpenSearch Query Elements as defined in OGC 10-032 for the time extension
+   #
+   # OGC OpenSearch Geo and Time Extensions 1.0 is an OGC Standard.
+   # Copyright (c) 2014 Open Geospatial Consortium.
+   # To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+   #
+   # Version: 1.0.0
+   #
+
+namespace time = "http://a9.com/-/opensearch/extensions/time/1.0/" 
+
+osQueryAttr &= attribute time:start { dateTimeString }? 
+                & attribute time:end { dateTimeString }?
+				& attribute time:relation { timerelation } ? 
+
+timerelation = "intersects" | "contains" | "during" | "disjoint" | "equals"
+
+dateTimeString = xsd:string { pattern ="[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[\+\-][0-9]{2}:[0-9]{2}))?" }
+
+
+# EOF

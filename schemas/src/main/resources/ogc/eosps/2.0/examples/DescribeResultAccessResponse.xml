@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sps:DescribeResultAccessResponse
+  xmlns:ows="http://www.opengis.net/ows/1.1"
+  xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <sps:availability>
+    <sps:available>
+      <sps:DataAvailable>
+        <sps:dataReference>
+          <ows:ReferenceGroup>
+            <ows:Title>Acquired Image #SCENE_001</ows:Title>
+            <ows:Identifier>SCENE_001</ows:Identifier>
+            <ows:Reference xlink:href="http://yourimageserver.com/WcsLevel1A?service=WCS&amp;version=1.0&amp;request=GetCoverage&amp;coverage=SCENE_001&amp;crs=urn:ogc:def:crs:OGC:0.0:ImageCRSPixelCenter:SCENE_001&amp;bbox=3000,4000,4000,5000&amp;width=1000&amp;height=1000&amp;format=image/tiff">
+              <ows:Format>image/tiff</ows:Format>
+            </ows:Reference>
+            <ows:Reference xlink:href="http://yourimageserver/WcsLevel1A?service=WCS&amp;version=1.0&amp;request=GetCoverage&amp;coverage=SCENE_001&amp;crs=urn:ogc:def:crs:OGC:0.0:ImageCRSPixelCenter:SCENE_001&amp;bbox=3000,4000,4000,5000&amp;width=1000&amp;height=1000&amp;format=image/jp2">
+              <ows:Format>image/jp2</ows:Format>
+            </ows:Reference>
+          </ows:ReferenceGroup>
+        </sps:dataReference>
+        <sps:dataReference>
+          <ows:ReferenceGroup>
+            <ows:Title>Acquired Image #SCENE_002</ows:Title>
+            <ows:Identifier>SCENE_002</ows:Identifier>
+            <ows:Reference xlink:href="http://yourimageserver/WcsLevel1A?service=WCS&amp;version=1.0&amp;request=GetCoverage&amp;coverage=SCENE_002&amp;crs=urn:ogc:def:crs:OGC:0.0:ImageCRSPixelCenter:SCENE_002&amp;bbox=3000,4000,4000,5000&amp;width=1000&amp;height=1000&amp;format=image/tiff">
+              <ows:Format>image/tiff</ows:Format>
+            </ows:Reference>
+            <ows:Reference xlink:href="http://yourimageserver/WcsLevel1A?service=WCS&amp;version=1.0&amp;request=GetCoverage&amp;coverage=SCENE_002&amp;crs=urn:ogc:def:crs:OGC:0.0:ImageCRSPixelCenter:SCENE_002&amp;bbox=3000,4000,4000,5000&amp;width=1000&amp;height=1000&amp;format=image/jp2">
+              <ows:Format>image/jp2</ows:Format>
+            </ows:Reference>
+          </ows:ReferenceGroup>
+        </sps:dataReference>
+        <sps:dataReference>
+          <ows:ReferenceGroup>
+            <ows:Title>Acquired Image #SCENE_003</ows:Title>
+            <ows:Identifier>SCENE_003</ows:Identifier>
+            <ows:Reference xlink:href="http://yourimageserver/WcsLevel1A?service=WCS&amp;version=1.0&amp;request=GetCoverage&amp;coverage=SCENE_003&amp;crs=urn:ogc:def:crs:OGC:0.0:ImageCRSPixelCenter:SCENE_003&amp;bbox=3000,4000,4000,5000&amp;width=1000&amp;height=1000&amp;format=image/tiff">
+              <ows:Format>image/tiff</ows:Format>
+            </ows:Reference>
+            <ows:Reference xlink:href="http://yourimageserver/WcsLevel1A?service=WCS&amp;version=1.0&amp;request=GetCoverage&amp;coverage=SCENE_003&amp;crs=urn:ogc:def:crs:OGC:0.0:ImageCRSPixelCenter:SCENE_003&amp;bbox=3000,4000,4000,5000&amp;width=1000&amp;height=1000&amp;format=image/jp2">
+              <ows:Format>image/jp2</ows:Format>
+            </ows:Reference>
+          </ows:ReferenceGroup>
+        </sps:dataReference>
+        <sps:dataReference>
+          <ows:ReferenceGroup>
+            <ows:Title>Acquired Image #SCENE_004</ows:Title>
+            <ows:Identifier>SCENE_004</ows:Identifier>
+            <ows:Reference xlink:href="http://yourimageserver/WcsLevel1A?service=WCS&amp;version=1.0&amp;request=GetCoverage&amp;coverage=SCENE_004&amp;crs=urn:ogc:def:crs:OGC:0.0:ImageCRSPixelCenter:SCENE_004&amp;bbox=3000,4000,4000,5000&amp;width=1000&amp;height=1000&amp;format=image/tiff">
+              <ows:Format>image/tiff</ows:Format>
+            </ows:Reference>
+            <ows:Reference xlink:href="http://yourimageserver/WcsLevel1A?service=WCS&amp;version=1.0&amp;request=GetCoverage&amp;coverage=SCENE_004&amp;crs=urn:ogc:def:crs:OGC:0.0:ImageCRSPixelCenter:SCENE_004&amp;bbox=3000,4000,4000,5000&amp;width=1000&amp;height=1000&amp;format=image/jp2">
+              <ows:Format>image/jp2</ows:Format>
+            </ows:Reference>
+          </ows:ReferenceGroup>
+        </sps:dataReference>
+      </sps:DataAvailable>
+    </sps:available>
+  </sps:availability>
+</sps:DescribeResultAccessResponse>

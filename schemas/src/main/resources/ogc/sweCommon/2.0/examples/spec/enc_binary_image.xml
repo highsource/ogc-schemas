@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataArray definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Raster" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<swe:elementCount>
+		<swe:Count>
+			<swe:value>256</swe:value>
+		</swe:Count>
+	</swe:elementCount>
+	<swe:elementType name="row">
+		<swe:DataArray definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Row">
+			<swe:elementCount>
+				<swe:Count>
+					<swe:value>256</swe:value>
+				</swe:Count>
+			</swe:elementCount>
+			<swe:elementType name="pixel">
+				<swe:DataRecord definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Cell">
+					<swe:field name="red">
+						<swe:Count definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance">
+							<swe:description>Radiance count on band1</swe:description>
+						</swe:Count>
+					</swe:field>
+					<swe:field name="green">
+						<swe:Count definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance">
+							<swe:description>Radiance count on band2</swe:description>
+						</swe:Count>
+					</swe:field>
+					<swe:field name="blue">
+						<swe:Count definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance">
+							<swe:description>Radiance count on band3</swe:description>
+						</swe:Count>
+					</swe:field>
+				</swe:DataRecord>
+			</swe:elementType>
+			<swe:encoding>
+				<swe:BinaryEncoding byteOrder="bigEndian" byteEncoding="base64">
+					<swe:member>
+						<swe:Component dataType="http://www.opengis.net/def/dataType/OGC/0/unsignedByte" ref="row/pixel/red"/>
+					</swe:member>
+					<swe:member>
+						<swe:Component dataType="http://www.opengis.net/def/dataType/OGC/0/unsignedByte" ref="row/pixel/green"/>
+					</swe:member>
+					<swe:member>
+						<swe:Component dataType="http://www.opengis.net/def/dataType/OGC/0/unsignedByte" ref="row/pixel/blue"/>
+					</swe:member>
+				</swe:BinaryEncoding>
+			</swe:encoding>
+			<swe:values>
+				FZEFZE564864HGZ6RG54Z684F86R7H4Z84FR8Z4685E468GTA4E8G4A6
+			</swe:values>
+		</swe:DataArray>
+	</swe:elementType>
+</swe:DataArray>
+

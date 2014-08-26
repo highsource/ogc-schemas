@@ -1,0 +1,28 @@
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd http://docs.oasis-open.org/wsn/b-2 http://docs.oasis-open.org/wsn/b-2.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsn-b="http://docs.oasis-open.org/wsn/b-2">
+  <soap12:Header>
+    <wsa:To>http://my.client.com/client/myNotificationConsumer</wsa:To>
+    <wsa:Action>http://docs.oasis-open.org/wsn/bw-2/NotificationConsumer/Notify</wsa:Action>
+  </soap12:Header>
+  <soap12:Body>
+    <wsn-b:Notify>
+      <wsn-b:NotificationMessage>
+        <wsn-b:SubscriptionReference>
+          <wsa:Address>http://www.ogc.org/SPS/Producer/subscriptions/792</wsa:Address>
+        </wsn-b:SubscriptionReference>
+        <wsn-b:Topic Dialect="http://docs.oasis-open.org/wsn/t-1/TopicExpression/Concrete">sps:TaskEvent/TaskSubmission</wsn-b:Topic>
+        <wsn-b:Message>
+          <sps:StatusReport>
+            <sps:task>http://www.ogc.org/procedure/camera/1/tasks/6</sps:task>
+            <sps:event>TaskSubmitted</sps:event>
+            <sps:percentCompletion>0</sps:percentCompletion>
+            <sps:procedure>http://www.ogc.org/procedure/camera/1</sps:procedure>
+            <sps:requestStatus>Accepted</sps:requestStatus>
+            <sps:taskStatus>InExecution</sps:taskStatus>
+            <sps:updateTime>2010-08-20T11:12:04+02:00</sps:updateTime>
+          </sps:StatusReport>
+        </wsn-b:Message>
+      </wsn-b:NotificationMessage>
+    </wsn-b:Notify>
+  </soap12:Body>
+</soap12:Envelope>

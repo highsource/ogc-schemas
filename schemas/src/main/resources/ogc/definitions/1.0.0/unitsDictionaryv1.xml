@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dictionary xmlns="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/gml ../../gml/3.1.1/base/coordinateReferenceSystems.xsd" gml:id="UnitsDictionary">
+	<!-- Primary editor: Arliss Whiteside. Last updated 2005-09-12 -->
+	<description>Example GML Dictinary of unit definitions.</description>
+	<name>Units Dictionary</name>
+	<dictionaryEntry>
+		<ConventionalUnit gml:id="degree">
+			<name>degree</name>
+			<name codeSpace="urn:ogc:def:parameter:EPSG:6.3:">9102</name>
+			<name codeSpace="urn:ogc:def:uom:OGC:1.0:">degree</name>
+			<quantityType>angle</quantityType>
+			<conversionToPreferredUnit uom="#radian">
+				<factor>1.74532925199433E-02</factor>
+			</conversionToPreferredUnit>
+		</ConventionalUnit>
+	</dictionaryEntry>
+	<dictionaryEntry>
+		<BaseUnit gml:id="radian">
+			<name>radian</name>
+			<quantityType>angle</quantityType>
+			<unitsSystem xlink:href="urn:ogc:ToBeSupplied"/>
+		</BaseUnit>
+	</dictionaryEntry>
+	<dictionaryEntry>
+		<BaseUnit gml:id="metre">
+			<name>metre</name>
+			<name codeSpace="urn:ogc:def:parameter:EPSG:6.3:">9001</name>
+			<name codeSpace="urn:ogc:def:uom:OGC:1.0:">metre</name>
+			<quantityType>length</quantityType>
+			<unitsSystem xlink:href="urn:ogc:SI"/>
+		</BaseUnit>
+	</dictionaryEntry>
+	<dictionaryEntry>
+		<BaseUnit gml:id="unity">
+			<name>unity</name>
+			<name codeSpace="urn:ogc:def:uom:EPSG:6.3:">8805</name>
+			<name codeSpace="urn:ogc:def:uom:OGC:1.0:">unity</name>
+			<quantityType>scale factor</quantityType>
+			<unitsSystem xlink:href="urn:ogc:ToBeSupplied"/>
+		</BaseUnit>
+	</dictionaryEntry>
+</Dictionary>

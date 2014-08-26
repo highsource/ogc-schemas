@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+ http://www.opengis.net/sos/2.0
+http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<soap12:Header>
+		<wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/core/2.0/GetObservationResponse</wsa:Action>
+		<wsa:RelatesTo>http://my.client.com/uid/msg-0010</wsa:RelatesTo>
+	</soap12:Header>
+	<soap12:Body>
+	
+		<sos:GetObservationResponse xmlns="http://www.opengis.net/sos/2.0">
+			<!-- 1. measurements of procedure 'http://myServer.org/sensors/AQ_0001'-->
+			<observationData>
+				<om:OM_Observation gml:id="o1">
+					<om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"/>
+					<om:phenomenonTime>
+						<gml:TimeInstant gml:id="p1">
+							<gml:timePosition>2008-01-01T17:45:00.000+00:00</gml:timePosition>
+						</gml:TimeInstant>
+					</om:phenomenonTime>
+					<om:resultTime xlink:href="#p1"/>
+					<om:procedure xlink:href="http://myServer.org/sensors/AQ_0001"/>
+					<om:observedProperty xlink:href="http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[NH3]"/>
+					<om:featureOfInterest xlink:href="http://myServer.org/features/SamplingPointAtMoersbach"/>
+					<om:result xsi:type="gml:MeasureType" uom="%">0.28</om:result>
+				</om:OM_Observation>
+			</observationData>
+			<observationData>
+				<om:OM_Observation gml:id="o2">
+					<om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"/>
+					<om:phenomenonTime>
+						<gml:TimeInstant gml:id="p2">
+							<gml:timePosition>2008-01-02T17:45:00.000+00:00</gml:timePosition>
+						</gml:TimeInstant>
+					</om:phenomenonTime>
+					<om:resultTime xlink:href="#p2"/>
+					<om:procedure xlink:href="http://myServer.org/sensors/AQ_0001"/>
+					<om:observedProperty xlink:href="http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[NH3]"/>
+					<om:featureOfInterest xlink:href="http://myServer.org/features/SamplingPointAtMoersbach"/>
+					<om:result xsi:type="gml:MeasureType" uom="%">0.25</om:result>
+				</om:OM_Observation>
+			</observationData>
+			<observationData>
+				<om:OM_Observation gml:id="o3">
+					<om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"/>
+					<om:phenomenonTime>
+						<gml:TimeInstant gml:id="p3">
+							<gml:timePosition>2008-01-01T17:45:00.000+00:00</gml:timePosition>
+						</gml:TimeInstant>
+					</om:phenomenonTime>
+					<om:resultTime xlink:href="#p3"/>
+					<om:procedure xlink:href="http://myServer.org/sensors/AQ_0001"/>
+					<om:observedProperty xlink:href="http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[CO]"/>
+					<om:featureOfInterest xlink:href="http://myServer.org/features/SamplingPointAtMoersbach"/>
+					<om:result xsi:type="gml:MeasureType" uom="%">0.13</om:result>
+				</om:OM_Observation>
+			</observationData>
+			<!-- ... -->
+			<!-- 2. measurements of procedure 'http://myServer.org/sensors/AQ_0002'-->
+			<observationData>
+				<om:OM_Observation gml:id="o4">
+					<om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"/>
+					<om:phenomenonTime>
+						<gml:TimeInstant gml:id="p4">
+							<gml:timePosition>2008-01-01T10:15:00.000+00:00</gml:timePosition>
+						</gml:TimeInstant>
+					</om:phenomenonTime>
+					<om:resultTime xlink:href="#p4"/>
+					<om:procedure xlink:href="http://myServer.org/sensors/AQ_0002"/>
+					<om:observedProperty xlink:href="http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[NH3]"/>
+					<om:featureOfInterest xlink:href="http://myServer.org/features/SamplingPointAtHoheMark"/>
+					<om:result xsi:type="gml:MeasureType" uom="%">0.19</om:result>
+				</om:OM_Observation>
+			</observationData>
+			<observationData>
+				<om:OM_Observation gml:id="o5">
+					<om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"/>
+					<om:phenomenonTime>
+						<gml:TimeInstant gml:id="p5">
+							<gml:timePosition>2008-01-02T10:15:00.000+00:00</gml:timePosition>
+						</gml:TimeInstant>
+					</om:phenomenonTime>
+					<om:resultTime xlink:href="#p5"/>
+					<om:procedure xlink:href="http://myServer.org/sensors/AQ_0002"/>
+					<om:observedProperty xlink:href="http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[NH3]"/>
+					<om:featureOfInterest xlink:href="http://myServer.org/features/SamplingPointAtHoheMark"/>
+					<om:result xsi:type="gml:MeasureType" uom="%">0.17</om:result>
+				</om:OM_Observation>
+			</observationData>
+			<observationData>
+				<om:OM_Observation gml:id="o6">
+					<om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"/>
+					<om:phenomenonTime>
+						<gml:TimeInstant gml:id="p6">
+							<gml:timePosition>2008-01-01T10:15:00.000+00:00</gml:timePosition>
+						</gml:TimeInstant>
+					</om:phenomenonTime>
+					<om:resultTime xlink:href="#p6"/>
+					<om:procedure xlink:href="http://myServer.org/sensors/AQ_0002"/>
+					<om:observedProperty xlink:href="http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[CO]"/>
+					<om:featureOfInterest xlink:href="http://myServer.org/features/SamplingPointAtHoheMark"/>
+					<om:result xsi:type="gml:MeasureType" uom="%">0.18</om:result>
+				</om:OM_Observation>
+			</observationData>
+			<!-- ... -->
+		</sos:GetObservationResponse>
+	</soap12:Body>
+</soap12:Envelope>

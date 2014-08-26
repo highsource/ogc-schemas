@@ -1,0 +1,32 @@
+<GetQuotationAck xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/oseo/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd">
+	<status>success</status>
+	<quotation>
+		<quotationId>urn:ESA:EECF:quotationId_0001</quotationId>
+		<validityTime>2007-05-01T00:00:00.00Z</validityTime>
+		<price>
+			<value>15</value>
+			<currency>QUOTA</currency>
+		</price>
+		<orderItemGroupPrice>
+			<provider>
+				<serviceName>ESA_ORDER_SERVICE</serviceName>
+				<organization>ESA</organization>
+			</provider>
+			<price>
+				<value>15</value>
+				<currency>QUOTA</currency>
+			</price>
+			<balance>
+				<value>20</value>
+				<currency>QUOTA</currency>
+			</balance>
+			<orderItemPrice>
+				<itemId>item_0001</itemId>
+				<productId>
+					<identifier>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS/EN1-05121921114570-3322.XI</identifier>
+					<collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS</collectionId>
+				</productId>
+			</orderItemPrice>
+		</orderItemGroupPrice>
+	</quotation>
+</GetQuotationAck>

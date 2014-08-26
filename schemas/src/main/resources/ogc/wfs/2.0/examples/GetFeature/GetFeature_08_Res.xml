@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection
+   timeStamp="2008-08-01T22:47:02"
+   numberMatched="unknown"
+   numberReturned="200"
+   xmlns="http://www.someserver.com/myns"
+   xmlns:wfs="http://www.opengis.net/wfs/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.someserver.com/myns ./RoadRail.xsd
+                       http://www.opengis.net/wfs/2.0
+                       http://schemas.opengis.net/wfs/2.0/wfs.xsd
+                       http://www.opengis.net/gml/3.2
+                       http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+
+   <wfs:boundedBy>
+      <gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+         <gml:lowerCorner>-32.7638053894043 104.1429748535156</gml:lowerCorner>
+         <gml:upperCorner>0 133.3553924560547</gml:upperCorner>
+      </gml:Envelope>
+   </wfs:boundedBy>
+
+   <!-- Road collection -->
+   <wfs:member>
+      <wfs:FeatureCollection
+         timeStamp="2008-08-01T22:47:02"
+         numberMatched="unknown"
+         numberReturned="167">
+         <wfs:member>
+            <Road gml:id="Road.100">
+               <centerLine>
+                  <gml:LineString gml:id="LS1" srsName="urn:ogc:def:crs:EPSG::4326">
+                     <gml:posList>-24.90258407592773 113.6248092651367 -24.90200042724609 113.6278305053711 -24.89602851867676 113.6336364746094 -24.89147186279297 113.6345825195312 -24.8884449005127 113.6405029296875 -24.87958335876465 113.6336669921875 -24.8785285949707 113.6328582763672 -24.87274932861328 113.6313323974609 -24.87163925170898 113.6195526123047 -24.87466621398926 113.614387512207 -24.87716674804688 113.6137771606445 -24.88877868652344 113.6236114501953 -24.89338874816895 113.6241683959961 -24.89838981628418 113.622444152832 -24.90258407592773 113.6248092651367</gml:posList>
+                  </gml:LineString>
+               </centerLine>
+               <surfaceType>ASPHALT</surfaceType>
+               <nLanes>4</nLanes>
+            </Road>
+         </wfs:member>
+         <wfs:member>
+            <Road gml:id="Road.105">
+               <centerLine>
+                  <gml:LineString gml:id="LS2" srsName="urn:ogc:def:crs:EPSG::4326">
+                     <gml:posList>-0.3605277836322785 104.2599411010742 -0.3567777872085571 104.2643585205078 -0.3565555512905121 104.2669982910156 -0.3578888773918152 104.2689743041992 -0.3623055517673492 104.2698364257812 -0.3702777922153473 104.2678298950195 -0.3751111030578613 104.2592468261719 -0.3728888928890228 104.2574996948242 -0.3664722144603729 104.2566375732422 -0.3605277836322785 104.2599411010742</gml:posList>
+                  </gml:LineString>
+               </centerLine>
+               <surfaceType>GRAVEL</surfaceType>
+               <nLanes>2</nLanes>
+            </Road>
+         </wfs:member>
+         <!-- ... more Road instances ... -->
+      </wfs:FeatureCollection>
+   </wfs:member>
+   <!-- Rail collection -->
+   <wfs:member>
+      <wfs:FeatureCollection
+         timeStamp="2008-08-01T22:47:02"
+         numberMatched="unknown"
+         numberReturned="33">
+         <wfs:member>
+            <Rail gml:id="Rail.119">
+               <track>
+                  <gml:LineString gml:id="LS3" srsName="urn:ogc:def:crs:EPSG::4326">
+                     <gml:posList>-15.34877777099609 124.3914184570313 -15.34572219848633 124.3990859985352 -15.34027767181396 124.39111328125 -15.34066677093506 124.3884963989258 -15.34805583953857 124.3888320922852 -15.34877777099609 124.3914184570313</gml:posList>
+                  </gml:LineString>
+               </track>
+               <gauge>24</gauge>
+            </Rail>
+         </wfs:member>
+         <!-- ... more Rail instances ... -->
+      </wfs:FeatureCollection>
+   </wfs:member>
+</wfs:FeatureCollection>

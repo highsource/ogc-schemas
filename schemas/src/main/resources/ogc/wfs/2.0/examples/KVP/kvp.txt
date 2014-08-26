@@ -1,0 +1,363 @@
+D.11KVP examples
+D.11.1Conventions
+In general, URL-encoding requires that certain characters, such as '&', be escaped (see IETF RFC 2396) when they are not used in their intended manner. In this section, however, such characters are not be escaped for the sake of clarity.
+In addition, many of the examples in this section include a FILTER parameter whose value is an XML encoded filter as specified in ISO 19143. To be rigorously correct, these examples should include namespace and schema location information in the root element <Filter>, such that the XML may be validated. Thus the parameter:
+FILTER=<Filter><Within><PropertyName>InWaterA_1M/wkbGeom<PropertyName>    <gml:Envelope><gml:lowerCorner>10 10</gml:lowerCorner><gml:upperCorner>20 20</gml:upperCorner></gml:Envelope></Within></Filter>
+
+should more correctly be specified as:
+FILTER=<Filter xmlns="http://www.opengis.net/ogc/2.0" 
+               xmlns:gml="http://www.opengis.net/gml/3.2"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.opengis.net/ogc/2.0
+                                   ../filter/2.0.0/filter.xsd
+                                   http://www.opengis.net/gml/3.2
+                                   ../gml/3.2.1/base/gml.xsd">
+       <Within><PropertyName>InWaterA_1M/wkbGeom<PropertyName>
+       <gml:Envelope><gml:lowerCorner>10 10</lowerCorner>
+       <gml:upperCorner>20,20</gml:upperCorner></gml:Envelope>
+       </Within></Filter>
+
+In order to not obfuscate the essential information, however, the namespace and schema location attribute tags have been omitted from the examples in this section. In addition, the schema locations shown are only example locations and the correct schema locations would need to be substituted.
+Finally, the values of the FILTER and other parameters are broken up over several lines again for clarities sake. A FILTER parameter's value, in practice, would be composed of a single long string.
+D.11.2DescribeFeatureType examples
+Example 1
+The following example requests the schema description of the feature type TreesA_1M. 
+http://www.someserver.com/wfs.cgi?
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       NAMESPACE=xmlns(myns=http://www.myserver.com/myns)
+       REQUEST=DescribeFeatureType&
+       TYPENAME=myns:TreesA_1M
+
+Example 2
+The following example requests the schema description of the feature types InWaterA_1M and BuiltUpA_1M. 
+http://www.someserver.com/wfs.cgi?
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       NAMESPACE=xmlns(ns1=http://www.someserver.com/ns1),xmlns(ns2=http://someserver.com/ns2)&
+       REQUEST=DescribeFeatureType&
+       TYPENAME=ns1:TreesA_1M,ns2:BuiltUpA_1M
+
+D.11.3GetFeature  and GetFeatureWithLock examples
+Many of the examples in this section include a FILTER parameter whose value is an XML encoded filter as specified in ISO 19143. To be rigorously correct, these examples should include namespace and schema location information in the root element <Filter>, such that the XML may be validated. Thus the parameter:
+FILTER=<Filter><Within><PropertyName>InWaterA_1M/wkbGeom<PropertyName>
+       <gml:Envelope><gml:lowerCorner>10 10</gml:lowerCorner>
+       <gml:upperCorner>20 20</gml:upperCorner></gml:Envelope>
+       </Within></Filter>
+
+should more correctly be:
+FILTER=<Filter xmlns="http://www.opengis.net/ogc/2.0" 
+               xmlns:gml="http://www.opengis.net/gml/3.2"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.opengis.net/ogc/2.0
+                                   ../filter/2.0.0/filter.xsd
+                                   http://www.opengis.net/gml/3.2
+                                   ../gml/3.2.1/base/gml.xsd">
+       <Within><PropertyName>InWaterA_1M/wkbGeom<PropertyName>
+       <gml:Envelope><gml:lowerCorner>10 10</gml:lowerCorner>
+       <gml:upperCorner>20 20</gml:upperCorner></gml:Envelope>
+       </Within></Filter>
+
+For the sake of clarify, however, the namespace and schema location attribute tags have been omitted from the examples in this section. In addition, the schema locations shown are only example locations and the correct schema locations would need to be specified.
+Finally, the value of the FILTER parameter is broken up over several lines again for clarities sake. An actual FILTER parameter would have a single long string as its argument. 
+Example 1
+Query all properties of all instances of type InWaterA_1M.
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       TYPENAME=InWaterA_1M
+
+Example 2
+Query some properties of all instances of type InWaterA_1M.
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       PROPERTYNAME=InWaterA_1M/wkbGeom,InWaterA_1M/tileId&
+       TYPENAME=InWaterA_1M
+
+Example 3
+Query all properties of the feature instance identified by the feature identifier "InWaterA_1M.1013". 
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       FEATUREID=InWaterA_1M.1013
+
+Example 4
+Query some properties of the feature instance identified by the feature identifier "InWaterA_1M.1013".
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       PROPERTYNAME=InWaterA_1M/wkbGeom,InWaterA_1M/tileId&
+       FEATUREID=InWaterA_1M.1013
+
+Example 5
+Query all properties of an enumerated set of feature instances of type InWaterA_1M. 
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       FEATUREID=InWaterA_1M.1013,InWaterA_1M.1014,InWaterA_1M.1015
+
+Example 6
+Query some properties of an enumerated set of feature instances of type InWaterA_1M. In this example, the wkbGeom and tileId properties are selected for each feature instance. 
+http://www.someserver.com/wfs.cgi&
+     SERVICE=WFS&
+     VERSION=2.0.0&
+     REQUEST=GetFeature&
+     PROPERTYNAME=(InWaterA_1M/wkbGeom,InWaterA_1M/tileId)
+                  (InWaterA_1M/wkbGeom,InWaterA_1M/tileId)
+                  (InWaterA_1M/wkbGeom,InWaterA_1M/tileId)&
+     FEATUREID=InWaterA_1M.1013,InWaterA_1M.1014,InWaterA_1M.1015
+
+Example 7
+Query all properties of a constrained set of feature instances of type InWaterA_1M.
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       TYPENAME=InWaterA_1M&
+       FILTER=<Filter><Within><PropertyName>InWaterA_1M/wkbGeom<PropertyName>
+              <gml:Envelope><gml:lowerCorner>10 10<gml:lowerCorner>
+              <gml:upperCorner>20 20</gml:upperCorner></gml:Envelope>
+              </Within></Filter>
+
+Example 8
+Query some properties of a constrained set of features instances of type InWaterA_1M.
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       PROPERTYNAME=InWaterA_1M/wkbGeom,InWaterA_1M/tileId&
+       TYPENAME=InWaterA_1M&
+       FILTER=<Filter><Within><PropertyName>InWaterA_1M/wkbGeom<PropertyName>
+       <gml:Envelope><gml:lowerCorner>10,10</gml:lowerCorner>
+       <gml:upperCorner>20 20</gml:upperCorner></gml:Envelope></Within></Filter>
+
+Example 9
+Query all properties of a list of feature types in different namespaces: 
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       NAMESPACE=xmlns(myns=http://www.someserver.com),
+                 xmlns(yourns=http://www.someotherserver.com)
+       TYPENAME=myns:InWaterA_1M,your:BuiltUpA_1M
+
+Example 10
+Query some properties of a list of feature types. In this case, the attributes wkbGeom and tileId are fetched for the InWaterA_1M feature type and all the attributes of feature type BuiltUpA_1M are fetched. 
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       PROPERTY=(InWaterA_1M/wkbGeom,InWaterA_1M/tileId)(BuiltUpA_1M/*)&
+       TYPENAME=InWaterA_1M,BuiltUpA_1M
+
+Example 11
+Query all properties of an enumerated set of feature instances. 
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       FEATUREID=InWaterA_1M.1013,BUILTUP_1M.3456
+
+Example 12
+Query some properties of an enumerated set of feature instances. In this case, the wkbGeom and tileId attributes are fetched for feature instance "InWaterA_1M.1013". The attribute wkbGeom is fetched for feature instance "BuiltUpA_1M.3456". 
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       PROPERTYNAME=InWaterA_1M/wkbGeom,InWaterA_1M/tileId,BuiltUpA_1M/wkbGeom)&
+       FEATUREID=InWaterA_1M.1013,BuiltUpA_1M.3456
+
+Example 13
+Query all properties of all feature instances of the feature type InWaterA_1M and BuiltUpA_1M that lie within the specified box.
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       TYPENAME=InWaterA_1M,BuiltUpA_1M&
+       FILTER=(<Filter><Within><PropertyName>InWaterA_1M/wkbGeom
+              <PropertyName><gml:Envelope><gml:lowerCorner>10 10</gml:lowerCorner>
+              <gml:upperCorner>20 20</gml:upperCorner></gml:Envelope>
+              </Within></Filter>)(<Filter><Within><PropertyName>
+              BuiltUpA_1M/wkbGeom<PropertyName><gml:Envelope><gml:lowerCorner>10 10
+              </gml:lowerCorner><gml:upperCorner>20 20</gml:upperCorner>
+              </gml:Envelope></Within></Filter>)
+
+Example 14
+Query some properties of a constrained set of feature instances of types InWaterA_1M and BuiltUpA_1M.
+http://www.SiriusCyberneticsCorp.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       PROPERTYNAME=(InWaterA_1M/wkbGeom,InWaterA_1MtileId)(BuiltUpA_1M/wkbGeom)&
+       TYPENAME=InWaterA_1M,BuiltUpA_1M&
+       FILTER=(<Filter><Within><PropertyName>InWaterA_1M/wkbGeom|InWaterA_1M/wkbGeom
+              <PropertyName><gml:Envelope><gml:lowerCorner>10 10</gml:lowerCorner>
+              <gml:upperCorner>20,20</gml:upperCorner>
+              </gml:Envelope></Within></Filter>)(<Filter><Within><PropertyName>
+              InWaterA_1M/wkbGeom<PropertyName><gml:Envelope><gml:lowerCorner>10 10
+              </gml:lowerCorner><gml:upperCorner>20 20</gml:upperCorner>
+              </gml:Envelope></Within></Filter>)
+
+Example 15
+This example illustrates a GetFeature request using PROPERTYNAME components that serves as a base for comparison with Examples 16 and 17 . The request:
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       PROPERTYNAME=uk:Town/gml:name,uk:Town/gml:directedNode&
+       TYPENAME=uk:Town& 
+       FEATUREID=t1
+
+The response contains an xlink:href, but it is returned as-is:
+<?xml version="1.0" ?>
+<wfs:FeatureCollection
+   xmlns="http://www.someserver.com/myns" 
+   xmlns:wfs="http://www.opengis.net/wfs" 
+   xmlns:gml="http://www.opengis.net/gml/3.2" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:schemaLocation="http://www.someserver.com/myns Hydrography.xsd
+                       http://www.opengis.net/wfs ../wfs/2.0.0/Wfs.xsd">
+   <gml:boundedBy>
+      <gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+         <gml:lowerCorner>10 10</gml:lowerCorner>
+         <gml:upperCorner>20 20</gml:upperCorner>
+      </gml:Envelope>
+   </gml:boundedBy>
+   <gml:featureMember>
+      <Town gml:id="t1">
+         <gml:name>Bedford</gml:name>
+         <gml:directedNode orientation="+" xlink:href="#n1"/>
+      </Town>
+   </gml:featureMember>
+</wfs:FeatureCollection>
+
+Example 16
+This example illustrates the use of the TRAVERSEXLINKDEPTH and TRAVERSEXLINKEXPIRY components on the GetFeature request from Example 15. 
+The request:
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       PROPERTYNAME=uk:Town/gml:name,uk:Town/gml:directedNode&
+       TRAVERSEXLINKDEPTH=1&
+       EXPIRY=1&
+       TYPENAME=uk:Town& 
+       FEATUREID=t1
+
+In the response, the first level xlink:href has been traversed, and its contents returned as described for the GetGmlObject operation:   
+<?xml version="1.0" ?>
+<wfs:FeatureCollection
+   xmlns="http://www.someserver.com/myns" 
+   xmlns:wfs="http://www.opengis.net/wfs" 
+   xmlns:gml="http://www.opengis.net/gml/3.2" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:schemaLocation="http://www.someserver.com/myns Hydrography.xsd
+                       http://www.opengis.net/wfs ../wfs/2.0.0/Wfs.xsd">
+   <gml:boundedBy>
+      <gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+         <gml:lowerCorner>10 10</gml:lowerCorner>
+         <gml:upperCorner>20 20</gml:upperCorner>
+      </gml:Envelope>
+   </gml:boundedBy>
+   <gml:featureMember>
+      <Town gml:id="t1">
+         <gml:name>Bedford</gml:name>
+         <gml:directedNode orientation="+"> <!-- xlink:href="#n1" ?
+            <gml:Node gml:id="n1">
+               <gml:pointProperty  
+                    xlink:href="http://www.bedford.town.uk/civilworks/gps.gml#townHall"/>
+            </gml:Node>
+         </gml:directedNode>
+      </Town>
+   </gml:featureMember>
+</wfs:FeatureCollection>
+
+Example 17
+This example illustrates the use of the PROPTRAVXLINKDEPTH and PROPTRAVXLINKEXPIRY components on the GetFeature request from Example 16. 
+The request:
+http://www.someserver.com/wfs.cgi&
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=GetFeature&
+       PROPERTYNAME=uk:Town/gml:name,uk:Town/gml:directedNode&
+       PROPTRAVXLINKDEPTH=0,2&
+       PROPERTYEXPIRY=0,2&
+       TYPENAME=uk:Town& 
+       FEATUREID=t1
+
+In the response,  the first and second level xlink:hrefs in the gml:directedNode property  have been traversed, and their contents returned as described for the GetGmlObject operation:  
+<?xml version="1.0" ?>
+<wfs:FeatureCollection
+   xmlns="http://www.someserver.com/myns" 
+   xmlns:wfs="http://www.opengis.net/wfs" 
+   xmlns:gml="http://www.opengis.net/gml/3.2" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:schemaLocation="http://www.someserver.com/myns Hydrography.xsd
+                       http://www.opengis.net/wfs ../wfs/2.0.0/Wfs.xsd">
+   <gml:boundedBy>
+      <gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+         <gml:lowerCorner>10 10</gml:lowerCorner>
+         <gml:upperCorner>20 20</gml:upperCorner>
+      </gml:Envelope>
+   </gml:boundedBy>
+   <gml:featureMember>
+      <Town gml:id="t1">
+         <gml:name>Bedford</gml:name>
+         <gml:directedNode orientation="+"> <!-- xlink:href="#n1" ?
+            <gml:Node gml:id="n1">
+               <gml:pointProperty> 
+<!--  xlink:href="http://www.bedford.town.uk/civilworks/gps.gml#townHall" -->
+                  <gml:Point gml:id="townHall">
+                     <gml:pos>-47 34</gml:pos>
+                  </gml:Point>
+               </gml:pointProperty>
+            </gml:Node>
+         </gml:directedNode>
+      </Town>
+   </gml:featureMember>
+</wfs:FeatureCollection>
+
+D.11.4LockFeature examples
+Example 1
+The following example locks all instances of feature type InWaterA_1M. 
+http://www.someserver.com/wfs.cgi?
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=LockFeature&
+       TYPENAME=InWaterA_1M
+Example 2
+The following example locks the feature identified by "RoadL_1M.1013". 
+http://www.someserver.com/wfs.cgi?
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=LockFeature&
+       FEATUREID=RoadL_1M.1013
+Example 3
+The following example locks all feature instances of feature type InWaterA_1M and BuiltUpA_1M.
+http://www.someserver.com/wfs.cgi?
+       SERVICE=WFS&
+       VERSION=2.0.0&
+       REQUEST=LockFeature&
+       TYPENAME=InWaterA_1M,BuiltUpA_1M
+Example 4
+The following example locks all features of feature type InWaterA_1M and BuiltUpA_1M that lie INSIDE a user specified region of interest.
+http://www.someserver.com/wfs.cgi?
+     SERVICE=WFS&
+     VERSION=2.0.0&
+     REQUEST=LockFeature&
+     LOCKACTION=ALL&
+     TYPENAME=INWATER_1M,BuiltUpA_1M&   
+     FILTER=(<Filter><Within><PropertyName>wkbGeom</PropertyName><gml:Envelope>
+             <gml:lowerCorner>10 10</gml:lowerCorner>
+             <gml:upperCorner>20 20</gml:upperCorner></gml:Envelope></Within>
+             </Filter>)
+             (<Filter><Within><PropertyName>wkbGeom</PropertyName><gml:Envelope>
+             <gml:lowerCorner>10 10</gml:lowerCorner>
+             <gml:upperCorner>20 20</gml:upperCorner></gml:Envelope></Within>
+             </Filter>)

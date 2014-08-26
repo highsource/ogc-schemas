@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This sample file contains the list of scene selection options identified for the following products: Envisat ASAR GM-->
+<!-- The reported values are just examples and are not the actual values. -->
+<GetOptionsResponse xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" xmlns="http://www.opengis.net/oseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<status>success</status>
+	<orderOptions>
+		<productOrderOptionsId>options_001</productOrderOptionsId>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="XXX1">
+					<swe:Count optional="false" updatable="false" definition="def:property:OGC::XXX1">
+						<swe:identifier>XXX1</swe:identifier>
+						<swe:description>XXXXX</swe:description>
+						<swe:constraint>
+							<swe:AllowedValues>
+								<swe:interval>1 10</swe:interval>
+							</swe:AllowedValues>
+						</swe:constraint>
+					</swe:Count>
+				</swe:field>
+			</swe:DataRecord>
+		</option> 
+		<productDeliveryOptions>
+			<mediaDelivery>
+				<packageMedium>DVD</packageMedium>
+			</mediaDelivery>
+		</productDeliveryOptions>
+		<!-- ###################################################-->
+		<!--No scene selection options possible for ASAR GM-->
+		<!-- ###################################################-->
+	</orderOptions>
+</GetOptionsResponse>

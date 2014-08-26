@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:Dictionary xmlns="http://www.opengis.net/gml"
+				xmlns:gml="http://www.opengis.net/gml"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:schemaLocation="http://www.opengis.net/gml http://schemas.opengis.net/gml/3.1.1/profiles/SimpleDictionary/1.0.0/gmlSimpleDictionaryProfile.xsd"
+				gml:id="JointTypeType">
+	<name>JointTypeType</name>
+
+	<dictionaryEntry>
+		<gml:Definition gml:id="JointType0">
+			<gml:description/>
+			<gml:name codeSpace="urn:hitachi_crl/ade/urn">1</gml:name>
+			<gml:name>なし</gml:name>
+		</gml:Definition>
+	</dictionaryEntry>
+	<dictionaryEntry>
+		<gml:Definition gml:id="JointType1">
+			<gml:description/>
+			<gml:name codeSpace="urn:hitachi_crl/ade/urn">2</gml:name>
+			<gml:name>幅なし</gml:name>
+		</gml:Definition>
+	</dictionaryEntry>
+	<dictionaryEntry>
+		<gml:Definition gml:id="JointType2">
+			<gml:description/>
+			<gml:name codeSpace="urn:hitachi_crl/ade/urn">3</gml:name>
+			<gml:name>平型</gml:name>
+		</gml:Definition>
+	</dictionaryEntry>
+	<dictionaryEntry>
+		<gml:Definition gml:id="JointType3">
+			<gml:description/>
+			<gml:name codeSpace="urn:hitachi_crl/ade/urn">4</gml:name>
+			<gml:name>凸型</gml:name>
+		</gml:Definition>
+	</dictionaryEntry>
+	<dictionaryEntry>
+		<gml:Definition gml:id="JointType4">
+			<gml:description/>
+			<gml:name codeSpace="urn:hitachi_crl/ade/urn">5</gml:name>
+			<gml:name>凹型</gml:name>
+		</gml:Definition>
+	</dictionaryEntry>
+	<dictionaryEntry>
+		<gml:Definition gml:id="JointType5">
+			<gml:description/>
+			<gml:name codeSpace="urn:hitachi_crl/ade/urn">50000</gml:name>
+			<gml:name>その他</gml:name>
+		</gml:Definition>
+	</dictionaryEntry>
+	<dictionaryEntry>
+		<gml:Definition gml:id="JointType6">
+			<gml:description/>
+			<gml:name codeSpace="urn:hitachi_crl/ade/urn">50001</gml:name>
+			<gml:name>不明</gml:name>
+		</gml:Definition>
+	</dictionaryEntry>
+
+</gml:Dictionary>

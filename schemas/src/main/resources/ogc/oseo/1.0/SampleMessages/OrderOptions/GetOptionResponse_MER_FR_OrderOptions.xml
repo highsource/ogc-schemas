@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This sample file contains the list of order options identified for the following products: Envisat MERIS FR -->
+<!-- The reported values are just examples and are not the actual values. -->
+<GetOptionsResponse xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" xmlns="http://www.opengis.net/oseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<status>success</status>
+	<orderOptions>
+		<productOrderOptionsId>options_001</productOrderOptionsId>
+		<description>Order Options for producing MERIS FR</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="productType">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/productType">
+						<swe:identifier>productType</swe:identifier>
+						<swe:description>productType for ENVISAT MERIS FR</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>MER_FR__1P</swe:value>
+								<swe:value>MER_FR__2P</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+			<mediaDelivery>
+				<packageMedium>DVD</packageMedium>
+			</mediaDelivery>
+		</productDeliveryOptions>
+		<productDeliveryOptions>
+			<onlineDataDelivery>
+				<protocol>ftp</protocol>
+			</onlineDataDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+	<orderOptions>
+		<productOrderOptionsId>options_002</productOrderOptionsId>
+		<description>Order Options for producing MERIS FR_0P</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="productType">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/productType">
+						<swe:identifier>productType</swe:identifier>
+						<swe:description>productType for ENVISAT MERIS FR</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>MER_FR__0P</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+			<mediaDelivery>
+				<packageMedium>DVD</packageMedium>
+			</mediaDelivery>
+		</productDeliveryOptions>
+		<productDeliveryOptions>
+			<onlineDataDelivery>
+				<protocol>ftp</protocol>
+			</onlineDataDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+</GetOptionsResponse>

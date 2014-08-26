@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<fes:Filter
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:myops="http://www.someserver.com/myops/1.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/fes/2.0
+                     http://schemas.opengis.net/filter/2.0/filterAll.xsd
+                     http://www.someserver.com/myops/1.0 ./filter23.xsd">
+   <fes:And>
+      <myops:PropertyExists>
+         <fes:ValueReference>Person/age</fes:ValueReference>
+      </myops:PropertyExists>
+      <fes:PropertyIsBetween>
+         <fes:ValueReference>Person/age</fes:ValueReference>
+         <fes:LowerBoundary>
+            <fes:Literal>18</fes:Literal>
+         </fes:LowerBoundary>
+         <fes:UpperBoundary>
+            <fes:Literal>200</fes:Literal>
+         </fes:UpperBoundary>
+      </fes:PropertyIsBetween>
+   </fes:And>
+</fes:Filter>

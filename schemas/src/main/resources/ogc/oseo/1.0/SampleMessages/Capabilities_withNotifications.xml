@@ -1,0 +1,114 @@
+<Capabilities xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.opengis.net/oseo/1.0"  xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:wstop="http://docs.oasis-open.org/wsn/t-1" xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" version="1.0.0">
+	<ows:ServiceProvider>
+		<ows:ProviderName>ESA EECF</ows:ProviderName>
+		<ows:ProviderSite/>
+		<ows:ServiceContact>
+			<ows:IndividualName>John Smith</ows:IndividualName>
+			<ows:PositionName>EO Help Desk Operator</ows:PositionName>
+			<ows:ContactInfo>
+				<ows:Phone>
+					<ows:Voice>+39 06 90 180 999</ows:Voice>
+				</ows:Phone>
+			</ows:ContactInfo>
+			<ows:Role codeSpace="http://www.xmlspy.com">String</ows:Role>
+		</ows:ServiceContact>
+	</ows:ServiceProvider>
+	<ows:OperationsMetadata>
+		<ows:Operation name="GetCapabilities">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Post xlink:href="http://earth.esa.int"/>
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+		<ows:Operation name="GetOptions">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Post xlink:href="http://earth.esa.int"/>
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+		<ows:Operation name="GetQuotation">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Post xlink:href="http://earth.esa.int"/>
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+		<ows:Operation name="Submit">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Post xlink:href="http://earth.esa.int"/>
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+		<ows:Operation name="GetStatus">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Post xlink:href="http://earth.esa.int"/>
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+		<ows:Operation name="Cancel">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Post xlink:href="http://earth.esa.int"/>
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+		<ows:Operation name="DescribeResultAccess">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Post xlink:href="http://earth.esa.int"/>
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+	</ows:OperationsMetadata>
+	<Contents>
+		<ProductOrders supported="true"/>
+		<SubscriptionOrders supported="true"/>
+		<ProgrammingOrders supported="true"/>
+		<GetQuotationCapabilities asynchronous="true" monitoring="false" off-line="false" supported="true" synchronous="true"/>
+		<SubmitCapabilities localDeliveryOptions="true" localOrderOptions="true" globalOrderOptions="true" globalDeliveryOptions="true" asynchronous="true"/>
+		<GetStatusCapabilities orderSearch="true" full="true" orderRetrieve="true"/>
+		<DescribeResultAccessCapabilities supported="true"/>
+		<CancelCapabilities supported="false" asynchronous="false"/>
+		<SupportedCollection>
+			<collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS</collectionId>
+			<DescribeResultAccessCapabilities supported="false"/>
+		</SupportedCollection>
+		<SupportedCollection>
+			<collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xF</collectionId>
+			<DescribeResultAccessCapabilities supported="false"/>
+		</SupportedCollection>
+		<ContentsType>
+			<supportedEncoding>XMLEncoding</supportedEncoding>
+			<supportedEncoding>TextEncoding</supportedEncoding>
+		</ContentsType>
+	</Contents>
+	<Notifications>
+	<swes:NotificationProducerMetadata>
+		<swes:producerEndpoint xmlns:wstop="http://docs.oasis-open.org/wsn/t-1" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+			<wsa:EndpointReference>
+				<wsa:Address>http://example.com/OrderingConsumer</wsa:Address>
+			</wsa:EndpointReference>
+		</swes:producerEndpoint>
+		<swes:supportedDialects>
+			<swes:FilterDialectMetadata>
+				<swes:topicExpressionDialect/>
+			</swes:FilterDialectMetadata>
+		</swes:supportedDialects>
+		<swes:fixedTopicSet>true</swes:fixedTopicSet>
+		<swes:servedTopics >
+			<wstop:TopicSet>
+				<wstop:documentation>
+					<wstop:TopicNamespace targetNamespace="http://www.opengis.net/oseo/1.0">
+					<wstop:Topic name="OrderFailure" messageTypes="sps:StatusReport"/>
+					<wstop:Topic name="OrderCompletion" messageTypes="sps:StatusReport"/>
+					</wstop:TopicNamespace>
+				</wstop:documentation>
+			</wstop:TopicSet>
+		</swes:servedTopics>
+	</swes:NotificationProducerMetadata>
+	</Notifications>
+</Capabilities>

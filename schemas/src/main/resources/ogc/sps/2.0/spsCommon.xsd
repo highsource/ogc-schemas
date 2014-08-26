@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" targetNamespace="http://www.opengis.net/sps/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+  <annotation>
+    <documentation>
+      SPS is an OGC Standard.
+      Copyright (c) 2010, 2011 Open Geospatial Consortium. 
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    </documentation>
+  </annotation>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+  <import namespace="http://www.opengis.net/swes/2.0" schemaLocation="http://schemas.opengis.net/swes/2.0/swes.xsd"/>
+  <import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+  <include schemaLocation="sps.xsd"/>
+  <!-- ================================================= -->
+  <element name="StatusReport" type="sps:StatusReportType" substitutionGroup="swes:AbstractSWES">
+    <annotation>
+      <documentation>provides information about the status of a given task / tasking request / request</documentation>
+    </annotation>
+  </element>
+  <complexType name="StatusReportType">
+    <complexContent>
+      <extension base="swes:AbstractSWESType">
+        <sequence>
+          <element name="task" type="anyURI">
+            <annotation>
+              <appinfo>
+                <gml:targetElement>sps:Task</gml:targetElement>
+              </appinfo>
+              <documentation>Pointer to the task that this status report belongs to.</documentation>
+            </annotation>
+          </element>
+          <element name="estimatedToC" type="dateTime" minOccurs="0">
+            <annotation>
+              <documentation>estimated completion time of the task</documentation>
+            </annotation>
+          </element>
+          <element name="event" type="sps:EventCodeType" minOccurs="0">
+            <annotation>
+              <documentation>signifies the event that caused the transition into the new state/status</documentation>
+            </annotation>
+          </element>
+          <element name="percentCompletion" type="double" minOccurs="0">
+            <annotation>
+              <documentation>indicates the progress made in executing the task</documentation>
+            </annotation>
+          </element>
+          <element name="procedure" type="anyURI">
+            <annotation>
+              <appinfo>
+                <gml:targetElement>unknown</gml:targetElement>
+              </appinfo>
+              <documentation>Pointer to the process that is the subject of the task for which the report was generated.</documentation>
+            </annotation>
+          </element>
+          <element name="requestStatus" type="sps:TaskingRequestStatusCodeType">
+            <annotation>
+              <documentation>identifies the state of the request (that may have led to the scheduling of the task)</documentation>
+            </annotation>
+          </element>
+          <element name="statusMessage" type="ows:LanguageStringType" minOccurs="0" maxOccurs="unbounded">
+            <annotation>
+              <documentation>Server defined free text that further describes the status.</documentation>
+            </annotation>
+          </element>
+          <element name="taskStatus" type="sps:TaskStatusCodeType" minOccurs="0">
+            <annotation>
+              <documentation>identifies the state of a scheduled task</documentation>
+            </annotation>
+          </element>
+          <element name="updateTime" type="dateTime">
+            <annotation>
+              <documentation>point in time at which the task entered the reported state</documentation>
+            </annotation>
+          </element>
+          <element name="alternative" minOccurs="0" maxOccurs="unbounded">
+            <annotation>
+              <documentation>alternative set of tasking parameters that would be feasible at the time of report generation</documentation>
+            </annotation>
+            <complexType>
+              <sequence>
+                <element ref="sps:Alternative"/>
+              </sequence>
+            </complexType>
+          </element>
+          <element name="taskingParameters" type="sps:ParameterDataPropertyType" minOccurs="0">
+            <annotation>
+              <documentation>Parameters used in a tasking request that led to the current status.</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="StatusReportPropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:StatusReport"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="Task" type="sps:TaskType" substitutionGroup="swes:AbstractSWES">
+    <annotation>
+      <documentation>represents the complete information about a task</documentation>
+    </annotation>
+  </element>
+  <complexType name="TaskType">
+    <complexContent>
+      <extension base="swes:AbstractSWESType">
+        <sequence>
+          <element name="status" type="sps:StatusReportPropertyType" maxOccurs="unbounded">
+            <annotation>
+              <documentation>Status information of the task.</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TaskPropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:Task"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="Alternative" type="sps:AlternativeType" substitutionGroup="swes:AbstractSWES">
+    <annotation>
+      <documentation>represents the suggestion of a set of alternative tasking parameter values</documentation>
+    </annotation>
+  </element>
+  <complexType name="AlternativeType">
+    <complexContent>
+      <extension base="swes:AbstractSWESType">
+        <sequence>
+          <element name="description" type="ows:LanguageStringType" minOccurs="0" maxOccurs="unbounded">
+            <annotation>
+              <documentation>human readable description of the alternative</documentation>
+            </annotation>
+          </element>
+          <element name="taskingParameters">
+            <annotation>
+              <documentation>block of encoded values together with a description of the encoding</documentation>
+            </annotation>
+            <complexType>
+              <sequence>
+                <element ref="sps:ParameterData"/>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AlternativePropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:Alternative"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="TaskingResponse" type="sps:TaskingResponseType" abstract="true" substitutionGroup="swes:ExtensibleResponse">
+    <annotation>
+      <documentation>response to a tasking request</documentation>
+    </annotation>
+  </element>
+  <complexType name="TaskingResponseType" abstract="true">
+    <complexContent>
+      <extension base="swes:ExtensibleResponseType">
+        <sequence>
+          <element name="latestResponseTime" type="dateTime" minOccurs="0">
+            <annotation>
+              <documentation>Point in time at which the definite decision about the tasking request (the requested action being accepted or rejected) will be provided by the SPS. The parameter allows clients to understand how long the decision process (accept or reject the tasking request) might take.</documentation>
+            </annotation>
+          </element>
+          <element name="result">
+            <annotation>
+              <documentation>provides the outcome of the tasking request</documentation>
+            </annotation>
+            <complexType>
+              <sequence>
+                <element ref="sps:StatusReport"/>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TaskingResponsePropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:TaskingResponse"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="TaskingRequest" type="sps:TaskingRequestType" abstract="true" substitutionGroup="swes:ExtensibleRequest">
+    <annotation>
+      <documentation>serves as the super class for all tasking requests such as GetFeasibility, Reserve, Submit and Update requests</documentation>
+    </annotation>
+  </element>
+  <complexType name="TaskingRequestType" abstract="true">
+    <complexContent>
+      <extension base="swes:ExtensibleRequestType">
+        <sequence>
+          <element name="procedure" type="anyURI">
+            <annotation>
+              <appinfo>
+                <gml:targetElement>unknown</gml:targetElement>
+              </appinfo>
+              <documentation>Pointer to the procedure that is to be tasked.</documentation>
+            </annotation>
+          </element>
+          <element name="taskingParameters">
+            <annotation>
+              <documentation>parameter values required to task the sensor</documentation>
+            </annotation>
+            <complexType>
+              <sequence>
+                <element ref="sps:ParameterData"/>
+              </sequence>
+            </complexType>
+          </element>
+          <element name="latestResponseTime" type="dateTime" minOccurs="0">
+            <annotation>
+              <documentation>Point in time at which the definite decision about the tasking request (the requested tasking action being accepted or rejected) has to be provided by the SPS.</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TaskingRequestPropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:TaskingRequest"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="ParameterData" type="sps:ParameterDataType">
+    <annotation>
+      <documentation>stores (tasking) parameter values and a description of the encoding being used</documentation>
+    </annotation>
+  </element>
+  <complexType name="ParameterDataType">
+    <sequence>
+      <element name="encoding">
+        <annotation>
+          <documentation>description of the encoding used to encode the given values</documentation>
+        </annotation>
+        <complexType>
+          <sequence>
+            <element ref="swe:AbstractEncoding"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="values" type="anyType">
+        <annotation>
+          <documentation>block of values encoded as specified by the encoding (description)</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="ParameterDataPropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:ParameterData"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <simpleType name="TaskingRequestStatusCodeType">
+    <union memberTypes="sps:TaskingRequestStatusCodeEnumerationType sps:TaskingRequestStatusCodeOtherType"/>
+  </simpleType>
+  <simpleType name="TaskingRequestStatusCodeEnumerationType">
+    <restriction base="string">
+      <enumeration value="Accepted">
+        <annotation>
+          <documentation>Tasking request was accepted; this is a final state for a tasking request.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Pending">
+        <annotation>
+          <documentation>Tasking request is pending.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Rejected">
+        <annotation>
+          <documentation>Tasking request was rejected; this is a final state for a tasking request.</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <simpleType name="TaskingRequestStatusCodeOtherType">
+    <restriction base="string">
+      <pattern value="other: [A-Za-z0-9_]{2,}"/>
+    </restriction>
+  </simpleType>
+  <!-- ================================================= -->
+  <simpleType name="TaskStatusCodeType">
+    <union memberTypes="sps:TaskStatusCodeEnumerationType sps:TaskStatusCodeOtherType"/>
+  </simpleType>
+  <simpleType name="TaskStatusCodeEnumerationType">
+    <restriction base="string">
+      <enumeration value="Cancelled">
+        <annotation>
+          <documentation>Task was cancelled; this code identifies a subcategory of the final state in the task state machine.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Completed">
+        <annotation>
+          <documentation>Task was completed as planned; this code identifies a subcategory of the final state in the task state machine.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Expired">
+        <annotation>
+          <documentation>Task reservation expired; this code identifies a subcategory of the final state in the task state machine.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Failed">
+        <annotation>
+          <documentation>Task failed; this code identifies a subcategory of the final state in the task state machine.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="InExecution">
+        <annotation>
+          <documentation>Task is executed by the service.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Reserved">
+        <annotation>
+          <documentation>Task is reserved at the service.</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <simpleType name="TaskStatusCodeOtherType">
+    <restriction base="string">
+      <pattern value="other: [A-Za-z0-9_]{2,}"/>
+    </restriction>
+  </simpleType>
+  <!-- ================================================= -->
+  <simpleType name="EventCodeType">
+    <union memberTypes="sps:EventCodeEnumerationType sps:EventCodeOtherType"/>
+  </simpleType>
+  <simpleType name="EventCodeEnumerationType">
+    <restriction base="string">
+      <enumeration value="DataPublished">
+        <annotation>
+          <documentation>New data was published for a task that is 'InExecution'.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ReservationExpired">
+        <annotation>
+          <documentation>A reserved task has expired (the expiration time set by the service is before now - "now" being the time measured by the service).</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TaskCancelled">
+        <annotation>
+          <documentation>A scheduled task has been cancelled.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TaskCompleted">
+        <annotation>
+          <documentation>A task that was 'InExecution' was completed as planned.&lt;b&gt; &lt;/b&gt;Implies that all data gathered for the task has been published.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TaskConfirmed">
+        <annotation>
+          <documentation>A reserved task was confirmed.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TaskFailed">
+        <annotation>
+          <documentation>A scheduled task has failed.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TaskingRequestExpired">
+        <annotation>
+          <documentation>A pending tasking request has expired.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TaskReserved">
+        <annotation>
+          <documentation>A task was reserved.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TaskSubmitted">
+        <annotation>
+          <documentation>A task was submitted.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TaskUpdated">
+        <annotation>
+          <documentation>A task was updated.</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <simpleType name="EventCodeOtherType">
+    <restriction base="string">
+      <pattern value="other: [A-Za-z0-9_]{2,}"/>
+    </restriction>
+  </simpleType>
+</schema>

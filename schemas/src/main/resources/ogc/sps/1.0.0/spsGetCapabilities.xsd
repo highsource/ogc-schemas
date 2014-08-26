@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sps="http://www.opengis.net/sps/1.0" xmlns:ows="http://www.opengis.net/ows"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opengis.net/sps/1.0"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" xml:lang="en" version="1.0.0.2">
+    
+    <xs:annotation>
+        <xs:appinfo>spsGetCapabilities.xsd 2005/05/11</xs:appinfo>
+        <xs:documentation>
+            <description>This XML Schema encodes the SPS GetCapabilities operation request and
+                response.</description>
+            <copyright> Copyright (c) 2007 Open Geospatial Consortium. 
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+            </copyright>
+        </xs:documentation>
+    </xs:annotation>
+    <!-- ==============================================================
+        imports
+        ============================================================== -->
+    <xs:import namespace="http://www.opengis.net/ows" schemaLocation="http://schemas.opengis.net/ows/1.0.0/owsGetCapabilities.xsd"/>
+    <xs:include schemaLocation="./spsAll.xsd"/>
+    <xs:include schemaLocation="./spsContents.xsd"/>
+    <!-- ==============================================================
+        elements and types
+        ============================================================== -->
+    <xs:element name="GetCapabilities">
+        <xs:annotation>
+            <xs:documentation>Request to a SPS to perform the GetCapabilities operation. This
+                operation allows a client to retrieve service metadata (capabilities XML) providing
+                metadata for the specific SPS server. In this XML encoding, no "request" parameter
+                is included, since the element name specifies the specific operation.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ows:GetCapabilitiesType">
+                    <xs:attribute name="service" type="ows:ServiceType" use="required" fixed="SPS"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- =========================================================== -->
+    <xs:element name="Capabilities">
+        <xs:annotation>
+            <xs:documentation>XML encoded SPS GetCapabilities operation response. This document
+                provides clients with service metadata about a specific service instance. If the
+                server does not implement the updateSequence parameter, the server shall always
+                return the complete Capabilities document, without the updateSequence parameter.
+                When the server implements the updateSequence parameter and the GetCapabilities
+                operation request included the updateSequence parameter with the current value, the
+                server shall return this element with only the "version" and "updateSequence"
+                attributes. Otherwise, all optional elements shall be included or not depending on
+                the actual value of the Sections parameter in the GetCapabilities operation request.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ows:CapabilitiesBaseType">
+                    <xs:sequence>
+                        <xs:element ref="sps:Contents" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

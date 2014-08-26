@@ -1,0 +1,202 @@
+<?xml version="1.0" ?>
+<wfs:FeatureCollection
+   timeStamp="2010-02-01T22:56:09"
+   numberMatched="10"
+   numberReturned="10"
+   xmlns="http://www.someserver.com/myns"
+   xmlns:myns="http://www.someserver.com/myns"
+   xmlns:wfs="http://www.opengis.net/wfs/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.someserver.com/myns ./GetFeature_05.xsd
+                       http://www.opengis.net/wfs/2.0
+                       http://schemas.opengis.net/wfs/2.0/wfs.xsd
+                       http://www.opengis.net/gml/3.2
+                       http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+   <wfs:boundedBy>
+      <gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+         <gml:lowerCorner>-31.27141761779785 115.001335144043</gml:lowerCorner>
+         <gml:upperCorner>-30.10202789306641 117.9325866699219</gml:upperCorner>
+      </gml:Envelope>
+   </wfs:boundedBy>
+   <wfs:member>
+      <InWaterA_1M gml:id="InWaterA_1M.490">
+         <wkbGeom>
+            <gml:Polygon srsName="urn:ogc:def:crs:EPSG::4326" gml:id="P1">
+               <gml:exterior>
+                  <gml:LinearRing>
+                     <gml:posList>-30.93597221374512 117.6290588378906 -30.94830513000489 117.6447219848633 -30.95219421386719 117.6465530395508 -30.95219421386719 117.6431121826172 -30.94802856445312 117.6386108398438 -30.94799995422363 117.6314163208008 -30.946138381958 117.62850189209 -30.94430541992188 117.6295852661133 -30.93280601501464 117.6240539550781 -30.92869377136231 117.624641418457 -30.92386054992676 117.6201400756836 -30.92111206054688 117.6206970214844 -30.92458343505859 117.6275863647461 -30.93597221374512 117.6290588378906</gml:posList>
+                  </gml:LinearRing>
+               </gml:exterior>
+            </gml:Polygon>
+         </wkbGeom>
+         <id>28022</id>
+         <fCode>BH000</fCode>
+         <hyc>6</hyc>
+         <tileId>177</tileId>
+         <facId>132</facId>
+      </InWaterA_1M>
+   </wfs:member>
+   <wfs:member>
+      <InWaterA_1M gml:id="InWaterA_1M.491">
+         <wkbGeom>
+            <gml:Polygon srsName="urn:ogc:def:crs:EPSG::4326" gml:id="P2">
+               <gml:exterior>
+                  <gml:LinearRing>
+                     <gml:posList>-30.92013931274414 117.6552810668945 -30.92383384704589 117.661361694336 -30.93005561828613 117.6666412353516 -30.93280601501464 117.6663589477539 -30.93186187744141 117.6594467163086 -30.93780517578125 117.6541137695312 -30.94397163391114 117.6519470214844 -30.94255638122559 117.6455535888672 -30.93402862548828 117.6336364746094 -30.92874908447266 117.6355285644531 -30.92138862609864 117.6326370239258 -30.92236137390137 117.6395568847656 -30.91708374023438 117.6433029174805 -30.91711044311523 117.6454467773437 -30.92061042785645 117.6484985351563 -30.92061042785645 117.6504135131836 -30.91638946533203 117.6504440307617 -30.92013931274414 117.6552810668945</gml:posList>
+                  </gml:LinearRing>
+               </gml:exterior>
+            </gml:Polygon>
+         </wkbGeom>
+         <id>28021</id>
+         <fCode>BH000</fCode>
+         <hyc>6</hyc>
+         <tileId>177</tileId>
+         <facId>131</facId>
+      </InWaterA_1M>
+   </wfs:member>
+   <wfs:member>
+      <InWaterA_1M gml:id="InWaterA_1M.492">
+         <wkbGeom>
+            <gml:Polygon srsName="urn:ogc:def:crs:EPSG::4326" gml:id="P3">
+               <gml:exterior>
+                  <gml:LinearRing>
+                     <gml:posList>-31.27141761779785 117.9237747192383 -31.2668342590332 117.9219131469727 -31.26474952697754 117.9165802001953 -31.26177787780761 117.9173889160156 -31.25813865661621 117.9240798950195 -31.25927734375 117.928337097168 -31.26297187805175 117.9320526123047 -31.26572227478028 117.9325866699219 -31.27097129821777 117.9283065795898 -31.27141761779785 117.9237747192383</gml:posList>
+                  </gml:LinearRing>
+               </gml:exterior>
+            </gml:Polygon>
+         </wkbGeom>
+         <id>28074</id>
+         <fCode>BH000</fCode>
+         <hyc>6</hyc>
+         <tileId>177</tileId>
+         <facId>184</facId>
+      </InWaterA_1M>
+   </wfs:member>
+   <wfs:member>
+      <InWaterA_1M gml:id="InWaterA_1M.493">
+         <wkbGeom>
+            <gml:Polygon srsName="urn:ogc:def:crs:EPSG::4326" gml:id="P4">
+               <gml:exterior>
+                  <gml:LinearRing>
+                     <gml:posList>-31.07797241210938 117.8491363525391 -31.07880592346192 117.8551635742188 -31.07744407653809 117.8562469482422 -31.07294464111328 117.8540267944336 -31.07424926757813 117.858642578125 -31.07791709899902 117.8604965209961 -31.08741760253907 117.8601913452148 -31.08486175537109 117.855972290039 -31.08291625976562 117.8466415405274 -31.07797241210938 117.8491363525391</gml:posList>
+                  </gml:LinearRing>
+               </gml:exterior>
+            </gml:Polygon>
+         </wkbGeom>
+         <id>28046</id>
+         <fCode>BH000</fCode>
+         <hyc>6</hyc>
+         <tileId>177</tileId>
+         <facId>156</facId>
+      </InWaterA_1M>
+   </wfs:member>
+   <wfs:member>
+      <InWaterA_1M gml:id="InWaterA_1M.494">
+         <wkbGeom>
+            <gml:Polygon srsName="urn:ogc:def:crs:EPSG::4326" gml:id="P5">
+               <gml:exterior>
+                  <gml:LinearRing>
+                     <gml:posList>-30.60838890075684 115.3353576660156 -30.60463905334473 115.3314971923828 -30.60572242736816 115.3290863037109 -30.60486030578613 115.321662902832 -30.60022163391113 115.3188858032227 -30.60036087036133 115.3143920898438 -30.59755516052246 115.3120803833008 -30.59283256530762 115.3169708251953 -30.59294509887695 115.3222808837891 -30.59647178649903 115.3253631591797 -30.59491729736328 115.3280563354492 -30.59588813781738 115.3312225341797 -30.60497283935547 115.3373336791992 -30.60838890075684 115.3353576660156</gml:posList>
+                  </gml:LinearRing>
+               </gml:exterior>
+            </gml:Polygon>
+         </wkbGeom>
+         <id>27979</id>
+         <fCode>BH000</fCode>
+         <hyc>6</hyc>
+         <tileId>177</tileId>
+         <facId>89</facId>
+      </InWaterA_1M>
+   </wfs:member>
+   <wfs:member>
+      <InWaterA_1M gml:id="InWaterA_1M.495">
+         <wkbGeom>
+            <gml:Polygon srsName="urn:ogc:def:crs:EPSG::4326" gml:id="P6">
+               <gml:exterior>
+                  <gml:LinearRing>
+                     <gml:posList>-30.52594375610352 115.0985870361328 -30.52494430541993 115.0959701538086 -30.52008247375488 115.0942535400391 -30.51141738891602 115.0955810546875 -30.51149940490723 115.0995559692383 -30.51313972473144 115.1005554199219 -30.5181941986084 115.1011962890625 -30.52594375610352 115.0985870361328</gml:posList>
+                  </gml:LinearRing>
+               </gml:exterior>
+            </gml:Polygon>
+         </wkbGeom>
+         <id>27973</id>
+         <fCode>BH000</fCode>
+         <hyc>6</hyc>
+         <tileId>177</tileId>
+         <facId>83</facId>
+      </InWaterA_1M>
+   </wfs:member>
+   <wfs:member>
+      <InWaterA_1M gml:id="InWaterA_1M.496">
+         <wkbGeom>
+            <gml:Polygon srsName="urn:ogc:def:crs:EPSG::4326" gml:id="P7">
+               <gml:exterior>
+                  <gml:LinearRing>
+                     <gml:posList>-30.21141624450684 115.0097198486328 -30.21013832092286 115.0044708251953 -30.20063972473144 115.001335144043 -30.1970272064209 115.0040817260742 -30.19361114501953 115.0041961669922 -30.18958282470703 115.0090866088867 -30.19516754150391 115.012336730957 -30.21141624450684 115.0097198486328</gml:posList>
+                  </gml:LinearRing>
+               </gml:exterior>
+            </gml:Polygon>
+         </wkbGeom>
+         <id>27933</id>
+         <fCode>BH000</fCode>
+         <hyc>6</hyc>
+         <tileId>177</tileId>
+         <facId>43</facId>
+      </InWaterA_1M>
+   </wfs:member>
+   <wfs:member>
+      <InWaterA_1M gml:id="InWaterA_1M.497">
+         <wkbGeom>
+            <gml:Polygon srsName="urn:ogc:def:crs:EPSG::4326" gml:id="P8">
+               <gml:exterior>
+                  <gml:LinearRing>
+                     <gml:posList>-30.2104434967041 115.0351943969727 -30.2055835723877 115.0319747924805 -30.20302772521972 115.0322494506836 -30.20158386230469 115.0333633422851 -30.20219421386718 115.0354690551758 -30.20352745056152 115.037109375 -30.20644378662109 115.0370254516602 -30.21088981628418 115.0383605957031 -30.21658325195312 115.0439147949219 -30.22216606140137 115.046142578125 -30.227388381958 115.0436096191406 -30.23197174072266 115.043441772461 -30.23286056518555 115.0428924560547 -30.22927856445312 115.0364151000977 -30.22005462646484 115.0345840454102 -30.21144485473633 115.0300827026367 -30.2104434967041 115.0351943969727</gml:posList>
+                  </gml:LinearRing>
+               </gml:exterior>
+            </gml:Polygon>
+         </wkbGeom>
+         <id>27936</id>
+         <fCode>BH000</fCode>
+         <hyc>6</hyc>
+         <tileId>177</tileId>
+         <facId>46</facId>
+      </InWaterA_1M>
+   </wfs:member>
+   <wfs:member>
+      <InWaterA_1M gml:id="InWaterA_1M.498">
+         <wkbGeom>
+            <gml:Polygon srsName="urn:ogc:def:crs:EPSG::4326" gml:id="P9">
+               <gml:exterior>
+                  <gml:LinearRing>
+                     <gml:posList>-30.15600013732911 115.0352249145508 -30.17819404602051 115.0252532958984 -30.16072273254395 115.021614074707 -30.1563892364502 115.0222473144531 -30.15555572509765 115.0259704589844 -30.1512508392334 115.0282211303711 -30.14588928222656 115.0344696044922 -30.15600013732911 115.0352249145508</gml:posList>
+                  </gml:LinearRing>
+               </gml:exterior>
+            </gml:Polygon>
+         </wkbGeom>
+         <id>27924</id>
+         <fCode>BH000</fCode>
+         <hyc>6</hyc>
+         <tileId>177</tileId>
+         <facId>34</facId>
+      </InWaterA_1M>
+   </wfs:member>
+   <wfs:member>
+      <InWaterA_1M gml:id="InWaterA_1M.499">
+         <wkbGeom>
+            <gml:Polygon srsName="urn:ogc:def:crs:EPSG::4326" gml:id="P10">
+               <gml:exterior>
+                  <gml:LinearRing>
+                     <gml:posList>-30.13902854919434 115.0354690551758 -30.13813972473145 115.02783203125 -30.13333320617676 115.0182189941406 -30.1291675567627 115.0165023803711 -30.12369537353516 115.0182495117188 -30.12008285522461 115.0217742919922 -30.11727714538574 115.0282211303711 -30.11163902282715 115.022834777832 -30.1028881072998 115.0220565795898 -30.10202789306641 115.0250015258789 -30.10505485534668 115.0357208251953 -30.108304977417 115.0380020141602 -30.11455535888672 115.0391082763672 -30.13308334350586 115.0367202758789 -30.13655471801758 115.038444519043 -30.13902854919434 115.0354690551758</gml:posList>
+                  </gml:LinearRing>
+               </gml:exterior>
+            </gml:Polygon>
+         </wkbGeom>
+         <id>27912</id>
+         <fCode>BH000</fCode>
+         <hyc>6</hyc>
+         <tileId>177</tileId>
+         <facId>22</facId>
+      </InWaterA_1M>
+   </wfs:member>
+</wfs:FeatureCollection>

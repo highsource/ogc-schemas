@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<wfs:FeatureCollection
+   timeStamp="2009-02-14T01:27:44"
+   numberMatched="1"
+   numberReturned="1"
+   xmlns="http://www.someserver.com/myns"
+   xmlns:wfs="http://www.opengis.net/wfs/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/wfs/2.0
+                       http://schemas.opengis.net/wfs/2.0/wfs.xsd
+                       http://www.opengis.net/gml/3.2
+                       http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+   <wfs:boundedBy>
+      <gml:Envelope srsName="urn:fes:def:crs:EPSG::4326">
+         <gml:lowerCorner>10 10</gml:lowerCorner>
+         <gml:upperCorner>20 20</gml:upperCorner>
+      </gml:Envelope>
+   </wfs:boundedBy>
+   <wfs:member>
+      <Town gml:id="t1">
+         <gml:name>Bedford</gml:name>
+         <gml:directedNode orientation="+" xlink:href="#n1"/>
+         <!-- xlink:href="#n1"/> -->
+         <gml:directedNode orientation="+">
+            <gml:Node gml:id="n1">
+               <gml:pointProperty xlink:href="http://www.bedford.town.uk/civilworks/gps.gml#townHall"/>
+            </gml:Node>
+         </gml:directedNode>
+      </Town>
+   </wfs:member>
+</wfs:FeatureCollection>

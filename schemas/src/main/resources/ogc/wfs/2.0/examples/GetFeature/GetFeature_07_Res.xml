@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection
+  timeStamp="2009-11-04T11:05:00"
+  numberMatched="3"
+  numberReturned="3"
+  xmlns="http://www.someserver.com/myns"
+  xmlns:wfs="http://www.opengis.net/wfs/2.0"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.someserver.com/myns  ./GetFeature_07.xsd
+                      http://www.opengis.net/wfs/2.0
+                      http://schemas.opengis.net/wfs/2.0/wfs.xsd
+                      http://www.opengis.net/gml/3.2
+                      http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+  <wfs:member>
+    <Hydrography gml:id="HydrographyHydrography.450">
+      <geoTemp>
+        <gml:Point gml:id="GID_3" srsName="urn:ogc:def:crs:EPSG::4326">
+          <gml:pos>47.2002 -56.314</gml:pos>
+        </gml:Point>
+      </geoTemp>
+      <depth uom="mm">565</depth>
+      <temperature uom="C">10</temperature>
+    </Hydrography>
+  </wfs:member>
+  <wfs:member>
+    <Hydrography gml:id="HydrographyHydrography.451">
+      <geoTemp>
+        <gml:Point gml:id="GID_4" srsName="urn:ogc:def:crs:EPSG::4326">
+          <gml:pos>47.2003 -56.313</gml:pos>
+        </gml:Point>
+      </geoTemp>
+      <depth uom="mm">1015</depth>
+      <temperature uom="C">7</temperature>
+    </Hydrography>
+  </wfs:member>
+  <wfs:member>
+    <Hydrography gml:id="HydrographyHydrography.452">
+      <geoTemp>
+        <gml:Point gml:id="GID_5" srsName="urn:ogc:def:crs:EPSG::4326">
+          <gml:pos>47.2003 -56.313</gml:pos>
+        </gml:Point>
+      </geoTemp>
+      <depth uom="mm">2456</depth>
+      <temperature uom="C">4</temperature>
+    </Hydrography>
+  </wfs:member>
+</wfs:FeatureCollection>

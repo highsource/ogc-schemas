@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:xls="http://www.opengis.net/xls" xmlns:nav="http://www.opengis.net/ols/nav" targetNamespace="http://www.opengis.net/ols/nav" elementFormDefault="qualified" version="1.3.0">
+	<xsd:annotation>
+		<xsd:documentation>
+			OLS is an OGC Standard.
+			Copyright (c) 2005,2010,2014 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="nav-All.xsd"/>
+	<xsd:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/ols/1.2/gml4xls.xsd"/>
+	<xsd:import namespace="http://www.opengis.net/xls" schemaLocation="http://schemas.opengis.net/ols/1.2/XLS.xsd"/>
+	<xsd:include schemaLocation="nav-CursorUtil.xsd"/>
+	<xsd:include schemaLocation="nav-UOM.xsd"/>
+	<!--  ====================================== -->
+	<!-- 	       Positioning functions	    -->
+	<!--  ====================================== -->
+	<xsd:element name="GetPositionRequest" type="nav:GetPositionRequestType" substitutionGroup="xls:_RequestParameters"/>
+	<xsd:element name="GetPositionResponse" type="nav:GetPositionResponseType" substitutionGroup="xls:_ResponseParameters"/>
+	<xsd:element name="GetNearbyMapObjRequest" type="nav:GetNearbyMapObjRequestType" substitutionGroup="xls:_RequestParameters"/>
+	<xsd:element name="GetNearbyMapObjResponse" type="nav:GetNearbyMapObjResponseType" substitutionGroup="xls:_ResponseParameters"/>
+	<xsd:complexType name="GetPositionRequestType">
+		<xsd:complexContent>
+			<xsd:extension base="xls:AbstractRequestParametersType">
+				<xsd:sequence>
+					<xsd:element name="UseHistory" type="xsd:boolean"/>
+					<xsd:element name="CurrentPosition" type="xls:PositionType"/>
+				</xsd:sequence>
+				<xsd:attribute name="priority" type="nav:PriorityType" use="required"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="GetPositionResponseType">
+		<xsd:complexContent>
+			<xsd:extension base="xls:AbstractResponseParametersType">
+				<xsd:sequence>
+					<xsd:element name="Locus" type="nav:LocusType"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="GetNearbyMapObjRequestType">
+		<xsd:complexContent>
+			<xsd:extension base="xls:AbstractRequestParametersType">
+				<xsd:sequence>
+					<xsd:element name="CurrentPosition" type="xls:PositionType"/>
+					<xsd:element name="Delta" type="xsd:unsignedLong"/>
+					<xsd:element name="GetFirstBucket" type="xsd:integer" default="0" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>If not there, or zero, then don't get first bucket, Else if some positive integer, then get that many objects in the first bucket.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:attribute name="priority" type="nav:PriorityType" use="required"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="GetNearbyMapObjResponseType">
+		<xsd:complexContent>
+			<xsd:extension base="xls:AbstractResponseParametersType">
+				<xsd:sequence>
+					<xsd:element name="MapObj" type="nav:MapObjType"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MapObjType">
+		<xsd:sequence>
+			<xsd:element name="Cursor" type="nav:CursorType"/>
+			<xsd:element name="FirstBucket" type="nav:CursorFetchResponse" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LocusType">
+		<xsd:complexContent>
+			<xsd:extension base="xls:AbstractWayPointType">
+				<xsd:sequence>
+					<xsd:element name="Link" type="nav:AbstractIDType"/>
+					<xsd:element name="PositionAlongLink" minOccurs="0">
+						<xsd:simpleType>
+							<xsd:restriction base="nav:FractionType">
+								<xsd:minInclusive value="0"/>
+								<xsd:maxInclusive value="1"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="Side" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>
+

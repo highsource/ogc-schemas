@@ -1,0 +1,249 @@
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd http://www.w3.org/2005/08/addressing http://www.w3.org/2005/08/addressing/ws-addr.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:wstop="http://docs.oasis-open.org/wsn/t-1">
+  <soap12:Header>
+    <wsa:To>http://my.client.com/client/myReceiver</wsa:To>
+    <wsa:Action>http://www.opengis.net/sps/2.0/GetCapabilitiesResponse</wsa:Action>
+    <wsa:RelatesTo>http://my.client.com/uid/msg-0010</wsa:RelatesTo>
+  </soap12:Header>
+  <soap12:Body>
+    <sps:Capabilities version="2.0.0">
+      <ows:ServiceIdentification>
+        <ows:Title xml:lang="en-us">SPS Specification Service</ows:Title>
+        <ows:ServiceType>SPS</ows:ServiceType>
+        <ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+        <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/BasicPubSub</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/ChannelBasedPubSub</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/Core</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/FeasibilityController</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/ReservationManager</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/SOAP</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/StateLogger</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/TaskCanceller</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/TaskUpdater</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SPS/2.0/conf/XMLEncoding</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWES/2.0/conf/BasicSWEServiceMetadata</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWES/2.0/conf/SensorProvider</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWES/2.0/conf/SensorHistoryProvider</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWES/2.0/conf/XMLEncoding</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWES/2.0/conf/SOAPBinding</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWES/2.0/conf/PublishSubscribe</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/core</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/uml-simple-components</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/uml-record-components</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/uml-choice-components</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/uml-simple-encodings</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/xsd-simple-components</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/xsd-record-components</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/xsd-choice-components</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/xsd-simple-encodings</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/general-encoding-rules</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/text-encoding-rules</ows:Profile>
+      </ows:ServiceIdentification>
+      <ows:ServiceProvider>
+        <ows:ProviderName>SWE SPS 2.0 SWG</ows:ProviderName>
+        <ows:ProviderSite xlink:href="http://www.opengeospatial.org/swe/sps"/>
+        <ows:ServiceContact>
+          <ows:IndividualName>Johannes Echterhoff</ows:IndividualName>
+          <ows:ContactInfo>
+            <ows:Phone>
+              <ows:Voice>0049...</ows:Voice>
+            </ows:Phone>
+          </ows:ContactInfo>
+        </ows:ServiceContact>
+      </ows:ServiceProvider>
+      <ows:OperationsMetadata>
+        <ows:Operation name="GetCapabilities">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Post xlink:href="http://www.ogc.org/SPS"/>
+            </ows:HTTP>
+          </ows:DCP>
+          <ows:Parameter name="Sections">
+            <ows:AllowedValues>
+              <ows:Value>All</ows:Value>
+              <ows:Value>ServiceIdentification</ows:Value>
+              <ows:Value>ServiceProvider</ows:Value>
+              <ows:Value>OperationsMetadata</ows:Value>
+              <ows:Value>Contents</ows:Value>
+              <ows:Value>Notifications</ows:Value>
+            </ows:AllowedValues>
+          </ows:Parameter>
+        </ows:Operation>
+        <ows:Operation name="DescribeTasking">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Post xlink:href="http://www.ogc.org/SPS"/>
+            </ows:HTTP>
+          </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="Submit">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Post xlink:href="http://www.ogc.org/SPS"/>
+            </ows:HTTP>
+          </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="DescribeResultAccess">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Post xlink:href="http://www.ogc.org/SPS"/>
+            </ows:HTTP>
+          </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="GetFeasibility">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Post xlink:href="http://www.ogc.org/SPS"/>
+            </ows:HTTP>
+          </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="Update">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Post xlink:href="http://www.ogc.org/SPS"/>
+            </ows:HTTP>
+          </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="GetStatus">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Post xlink:href="http://www.ogc.org/SPS"/>
+            </ows:HTTP>
+          </ows:DCP>
+          <ows:Parameter name="since">
+            <ows:AnyValue/>
+          </ows:Parameter>
+        </ows:Operation>
+        <ows:Operation name="GetTask">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Post xlink:href="http://www.ogc.org/SPS"/>
+            </ows:HTTP>
+          </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="Cancel">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Post xlink:href="http://www.ogc.org/SPS"/>
+            </ows:HTTP>
+          </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="Reserve">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Post xlink:href="http://www.ogc.org/SPS"/>
+            </ows:HTTP>
+          </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="Confirm">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Post xlink:href="http://www.ogc.org/SPS"/>
+            </ows:HTTP>
+          </ows:DCP>
+        </ows:Operation>
+        <ows:Constraint name="PostEncoding">
+          <ows:AllowedValues>
+            <ows:Value>SOAP</ows:Value>
+          </ows:AllowedValues>
+        </ows:Constraint>
+      </ows:OperationsMetadata>
+      <sps:notifications>
+        <swes:NotificationProducerMetadata>
+          <swes:producerEndpoint>
+            <wsa:EndpointReference>
+              <wsa:Address>http://www.ogc.org/SPS/Producer</wsa:Address>
+            </wsa:EndpointReference>
+          </swes:producerEndpoint>
+          <swes:supportedDialects>
+            <swes:FilterDialectMetadata>
+              <swes:topicExpressionDialect>http://docs.oasis-open.org/wsn/t-1/TopicExpression/Simple</swes:topicExpressionDialect>
+              <swes:topicExpressionDialect>http://docs.oasis-open.org/wsn/t-1/TopicExpression/Concrete</swes:topicExpressionDialect>
+              <swes:topicExpressionDialect>http://docs.oasis-open.org/wsn/t-1/TopicExpression/Full</swes:topicExpressionDialect>
+              <swes:topicExpressionDialect>http://www.w3.org/TR/1999/REC-xpath-19991116</swes:topicExpressionDialect>
+              <swes:messageContentDialect>http://www.w3.org/TR/1999/REC-xpath-19991116</swes:messageContentDialect>
+            </swes:FilterDialectMetadata>
+          </swes:supportedDialects>
+          <swes:fixedTopicSet>false</swes:fixedTopicSet>
+          <swes:servedTopics>
+            <wstop:TopicSet>
+              <sps:TaskEvent>
+                <sps:TaskFailure wstop:topic="true"/>
+                <sps:TaskCancellation wstop:topic="true"/>
+                <sps:TaskCompletion wstop:topic="true"/>
+                <sps:TaskConfirmation wstop:topic="true"/>
+                <sps:TaskUpdate wstop:topic="true"/>
+                <sps:DataPublication wstop:topic="true"/>
+                <sps:TaskReservation wstop:topic="true"/>
+                <sps:TaskSubmission wstop:topic="true"/>
+                <sps:ReservationExpiration wstop:topic="true"/>
+              </sps:TaskEvent>
+              <sps:TaskingRequestEvent>
+                <sps:TaskingRequestExpiration wstop:topic="true"/>
+              </sps:TaskingRequestEvent>
+              <swes:CapabilitiesChange>
+                <swes:OfferingAddition wstop:topic="true"/>
+                <swes:OfferingDeletion wstop:topic="true"/>
+              </swes:CapabilitiesChange>
+            </wstop:TopicSet>
+          </swes:servedTopics>
+          <swes:usedTopicNamespace targetNamespace="http://www.opengis.net/sps/2.0" final="true">
+            <wstop:Topic name="TaskEvent">
+              <wstop:Topic name="TaskFailure" messageTypes="sps:StatusReport"/>
+              <wstop:Topic name="TaskCancellation" messageTypes="sps:StatusReport"/>
+              <wstop:Topic name="TaskCompletion" messageTypes="sps:StatusReport"/>
+              <wstop:Topic name="TaskConfirmation" messageTypes="sps:StatusReport"/>
+              <wstop:Topic name="TaskUpdate" messageTypes="sps:StatusReport"/>
+              <wstop:Topic name="DataPublication" messageTypes="sps:StatusReport"/>
+              <wstop:Topic name="TaskReservation" messageTypes="sps:ReservationReport"/>
+              <wstop:Topic name="TaskSubmission" messageTypes="sps:StatusReport"/>
+              <wstop:Topic name="ReservationExpiration" messageTypes="sps:ReservationReport"/>
+            </wstop:Topic>
+            <wstop:Topic name="TaskingRequestEvent">
+              <wstop:Topic name="TaskingRequestExpiration" messageTypes="sps:StatusReport"/>
+              <wstop:Topic name="TaskingRequestRejection" messageTypes="sps:StatusReport"/>
+              <wstop:Topic name="TaskingRequestAcceptance" messageTypes="sps:StatusReport"/>
+              <wstop:Topic name="TaskingRequestPending" messageTypes="sps:StatusReport"/>
+            </wstop:Topic>
+          </swes:usedTopicNamespace>
+          <swes:usedTopicNamespace targetNamespace="http://www.opengis.net/swes/2.0" final="true">
+            <wstop:Topic name="CapabilitiesChange" messageTypes="swes:SWESEvent">
+              <wstop:Topic name="OfferingAddition" messageTypes="swes:OfferingChanged"/>
+              <wstop:Topic name="OfferingDeletion" messageTypes="swes:OfferingChanged"/>
+            </wstop:Topic>
+            <wstop:Topic name="SensorInsertion" messageTypes="swes:SensorChanged"/>
+            <wstop:Topic name="SensorDescriptionUpdate" messageTypes="swes:SensorDescriptionUpdated"/>
+          </swes:usedTopicNamespace>
+        </swes:NotificationProducerMetadata>
+      </sps:notifications>
+      <sps:contents>
+        <sps:SPSContents>
+          <swes:procedureDescriptionFormat>http://www.opengis.net/sensorML/1.0.1</swes:procedureDescriptionFormat>
+          <swes:observableProperty>http://www.opengis.net/def/propertyType/x-radiance</swes:observableProperty>
+          <swes:offering>
+            <sps:SensorOffering>
+              <swes:identifier>http://www.ogc.org/sps/offering1</swes:identifier>
+              <swes:procedure>http://www.ogc.org/procedure/camera/1</swes:procedure>
+              <sps:observableArea>
+                <sps:byPolygon>
+                  <gml:Polygon gml:id="gid01">
+                    <gml:exterior>
+                      <gml:LinearRing>
+                        <gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">51.9 8.186</gml:pos>
+                        <gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">51.9005 8.186</gml:pos>
+                        <gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">51.9005 8.199</gml:pos>
+                        <gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">51.9 8.199</gml:pos>
+                      </gml:LinearRing>
+                    </gml:exterior>
+                  </gml:Polygon>
+                </sps:byPolygon>
+              </sps:observableArea>
+            </sps:SensorOffering>
+          </swes:offering>
+          <sps:minStatusTime>PT12H</sps:minStatusTime>
+          <sps:supportedEncoding>http://www.opengis.net/swe/2.0/TextEncoding</sps:supportedEncoding>
+        </sps:SPSContents>
+      </sps:contents>
+    </sps:Capabilities>
+  </soap12:Body>
+</soap12:Envelope>

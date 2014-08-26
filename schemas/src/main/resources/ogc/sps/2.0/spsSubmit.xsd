@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sps="http://www.opengis.net/sps/2.0" targetNamespace="http://www.opengis.net/sps/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+  <annotation>
+    <documentation>
+      SPS is an OGC Standard.
+      Copyright (c) 2010, 2011 Open Geospatial Consortium. 
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    </documentation>
+  </annotation>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <include schemaLocation="sps.xsd"/>
+  <include schemaLocation="spsCommon.xsd"/>
+  <!-- ================================================= -->
+  <element name="SubmitResponse" type="sps:SubmitResponseType" substitutionGroup="sps:TaskingResponse"/>
+  <complexType name="SubmitResponseType">
+    <complexContent>
+      <extension base="sps:TaskingResponseType"/>
+    </complexContent>
+  </complexType>
+  <complexType name="SubmitResponsePropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:SubmitResponse"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="Submit" type="sps:SubmitType" substitutionGroup="sps:TaskingRequest"/>
+  <complexType name="SubmitType">
+    <complexContent>
+      <extension base="sps:TaskingRequestType"/>
+    </complexContent>
+  </complexType>
+  <complexType name="SubmitPropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:Submit"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+</schema>

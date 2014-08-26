@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sps:SubmitResponse xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swes="http://www.opengis.net/swes/2.0">
+  <sps:result>
+    <sps:StatusReport>
+      <swes:name>Tasking Report</swes:name>
+      <sps:task>http://ws.spotimage.com/sps/PR-decbbda4-4071-45f5-845d-c167c30fc515</sps:task>
+      <sps:estimatedToC>2011-01-19T15:05:30.891Z</sps:estimatedToC>
+      <sps:procedure>urn:spot:sensors:SPOT5:HRG</sps:procedure>
+      <sps:requestStatus>Pending</sps:requestStatus>
+      <sps:updateTime>2011-01-19T15:03:29.515Z</sps:updateTime>
+    </sps:StatusReport>
+  </sps:result>
+</sps:SubmitResponse>

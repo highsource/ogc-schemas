@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<!-- ============================================================== --> 
+<!--        G e o g r a p h y                                       --> 
+<!--        M a r k u p                                             --> 
+<!--        L a n g u a g e                                         --> 
+<!--                                                                --> 
+<!--        ( G M L )                                               --> 
+<!--                                                                --> 
+<!--        F E A T U R E     D T D                                 --> 
+<!--                                                                --> 
+<!--        Copyright (c) 2000 Open Geospatial Consortium.          --> 
+<!-- ============================================================== --> 
+
+<!-- The GML Feature DTD includes the GML Geometry DTD as an external entity
+reference. --> 
+
+<!ENTITY % GMLGEOMETRYDTD SYSTEM "gmlgeometry.dtd"> 
+%GMLGEOMETRYDTD; 
+
+<!-- A feature contains a set of properties (simple and/or geometric). In addition a
+feature can optionally contain a description. A feature must specify its feature
+type by name (typeName). It may optionally provide an identifier for use within its
+containing feature collection (identifier) --> 
+
+<!ELEMENT Feature (  
+ description?, name?, boundedBy?, 
+ property*, geometricProperty* )> 
+
+<!ATTLIST Feature  
+   typeName   CDATA #REQUIRED 
+   identifier CDATA #IMPLIED > 
+
+<!-- A feature collection has the same definition as a feature, but in addition a
+feature collection may contain featureMembers. The boundedBy element is mandatory
+for feature collections. --> 
+
+<!ELEMENT FeatureCollection ( 
+ description?, name?, boundedBy, 
+ property*, geometricProperty*, 
+ featureMember* )> 
+
+<!ATTLIST FeatureCollection  
+   typeName   CDATA #REQUIRED 
+   identifier CDATA #IMPLIED > 
+
+<!-- A featureMember can be a Feature or a FeatureCollection. The name of the 
+relationship between the containing FeatureCollection and contained Features is 
+specified by the typeName attribute. -->
+ 
+<!ELEMENT featureMember ( Feature | FeatureCollection )>
+
+<!ATTLIST featureMember
+   typeName   CDATA #REQUIRED > 
+
+<!-- Simple properties hold the property value as parsed character data. The type of
+the value is specified by the type attribute, which defaults to the 'string' type.
+The name of the property is specified by the typeName attribute. --> 
+
+<!ELEMENT property (#PCDATA)> 
+<!ATTLIST property  
+   typeName   CDATA #REQUIRED 
+   type ( boolean | integer | real | string ) "string" > 
+
+<!-- Geometric properties hold the property value as a contained geometry element.
+The name of the property is specified by the typeName attribute. --> 
+
+<!ELEMENT geometricProperty (%GeometryClasses;)> 
+<!ATTLIST geometricProperty  
+   typeName   CDATA #REQUIRED >

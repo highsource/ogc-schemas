@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataStream xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<swe:elementType name="profileData">
+		<swe:DataRecord>
+			<swe:field name="time">
+				<swe:Time definition="http://www.opengis.net/def/property/OGC/0/SamplingTime">
+					<swe:label>Sampling Time</swe:label>
+					<swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+				</swe:Time>
+			</swe:field>
+			<swe:field name="profilePoints">
+				<swe:DataArray definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Profile">
+					<swe:elementCount>
+						<swe:Count definition="http://www.opengis.net/def/property/OGC/0/NumberOfPoints"/>
+					</swe:elementCount>
+					<swe:elementType name="point">
+						<swe:DataRecord>
+							<swe:field name="depth">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/depth">
+									<swe:label>Sampling Point Vertical Location</swe:label>
+									<swe:uom code="m"/>
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="salinity">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter#sea_water_salinity">
+									<swe:label>Salinity</swe:label>
+									<swe:uom code="[ppth]"/>
+								</swe:Quantity>
+							</swe:field>
+						</swe:DataRecord>
+					</swe:elementType>
+				</swe:DataArray>
+			</swe:field>
+		</swe:DataRecord>
+	</swe:elementType>
+	<swe:encoding>
+		<swe:XMLEncoding/>
+	</swe:encoding>
+	<swe:values xmlns:ns="urn:myorg:dataset:PS3658">
+		<ns:profileData>
+			<ns:time>2005-05-16T21:47:12Z</ns:time>
+			<ns:profilePoints elementCount="5">
+				<ns:point>
+					<ns:depth>0</ns:depth>
+					<ns:salinity>45</ns:salinity>
+				</ns:point>
+				<ns:point>
+					<ns:depth>10</ns:depth>
+					<ns:salinity>20</ns:salinity>
+				</ns:point>
+				<ns:point>
+					<ns:depth>20</ns:depth>
+					<ns:salinity>30</ns:salinity>
+				</ns:point>
+				<ns:point>
+					<ns:depth>30</ns:depth>
+					<ns:salinity>35</ns:salinity>
+				</ns:point>
+				<ns:point>
+					<ns:depth>40</ns:depth>
+					<ns:salinity>40</ns:salinity>
+				</ns:point>
+			</ns:profilePoints>
+		</ns:profileData>
+		<ns:profileData>
+			<ns:time>2005-05-16T22:43:05Z</ns:time>
+			<ns:profilePoints elementCount="4">
+				<ns:point>
+					<ns:depth>0</ns:depth>
+					<ns:salinity>45</ns:salinity>
+				</ns:point>
+				<ns:point>
+					<ns:depth>10</ns:depth>
+					<ns:salinity>20</ns:salinity>
+				</ns:point>
+				<ns:point>
+					<ns:depth>20</ns:depth>
+					<ns:salinity>30</ns:salinity>
+				</ns:point>
+				<ns:point>
+					<ns:depth>30</ns:depth>
+					<ns:salinity>35</ns:salinity>
+				</ns:point>
+			</ns:profilePoints>
+		</ns:profileData>
+				...
+  </swe:values>
+</swe:DataStream>

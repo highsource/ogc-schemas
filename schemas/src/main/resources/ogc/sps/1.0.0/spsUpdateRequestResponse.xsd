@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sps="http://www.opengis.net/sps/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.opengis.net/sps/1.0"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0.2">
+    
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+    <xs:include schemaLocation="./spsAll.xsd"/>
+    <xs:include schemaLocation="./spsCommon.xsd"/>
+    <xs:annotation>
+        <xs:documentation>
+            <copyright>
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+            </copyright> 
+        </xs:documentation>
+    </xs:annotation>
+    <!--Schema of the sps:UpdateRequestResponse-->
+    <xs:element name="UpdateRequestResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="sps:taskID"/>
+                <xs:element name="status">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="confirmed"/>
+                            <xs:enumeration value="rejected"/>
+                            <xs:enumeration value="request incomplete"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element ref="gml:description" minOccurs="0"/>
+                <xs:element name="estimatedToC" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Estimated Time of Completion gives a hint when a requested
+                            operation might be completed.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="gml:TimeInstant"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="missingParameters" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>in case that an update request was incomplete,
+                            missingParameters describe the kind of further input necessary to
+                            process the required update. Necessary due to possible indenpendencies
+                            of parameters.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="sps:InputDescriptor"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

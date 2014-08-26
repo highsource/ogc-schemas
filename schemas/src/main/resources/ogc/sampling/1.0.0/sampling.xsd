@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+xmlns:sa="http://www.opengis.net/sampling/1.0" 
+targetNamespace="http://www.opengis.net/sampling/1.0" 
+elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.3">
+	<annotation>
+		<documentation>sampling.xsd
+
+The complete sampling schema
+
+Sampling is an OGC Standard.
+Copyright (c) 2007,2010 Open Geospatial Consortium.
+To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
+	</annotation>
+	<!-- ====================================================================== -->
+	<include schemaLocation="./samplingManifold.xsd"/>
+	<include schemaLocation="./specimen.xsd"/>
+	<include schemaLocation="./samplingBase.xsd"/>
+	<include schemaLocation="./surveyProcedure.xsd"/> 
+	<include schemaLocation="./LUTgeodesy.xsd"/> 
+	<!-- ====================================================================== -->
+</schema>

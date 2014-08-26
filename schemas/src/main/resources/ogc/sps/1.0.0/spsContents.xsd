@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:gml="http://www.opengis.net/gml" xmlns:sps="http://www.opengis.net/sps/1.0"
+    xmlns:ows="http://www.opengis.net/ows" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opengis.net/sps/1.0"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" xml:lang="en" version="1.0.0.2">
+    
+    <xs:annotation>
+        <xs:documentation>
+            <description>This XML Schema encodes the Contents section of the SPS GetCapabilities
+                operation response.</description>
+            <copyright>
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+            </copyright> 
+        </xs:documentation>
+    </xs:annotation>
+    <!-- ==============================================================
+        includes and imports
+        ============================================================== -->
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+    <xs:import namespace="http://www.opengis.net/ows" schemaLocation="http://schemas.opengis.net/ows/1.0.0/owsCommon.xsd"/>
+    <xs:include schemaLocation="./spsAll.xsd"/>
+    <xs:include schemaLocation="./spsCommon.xsd"/>
+    <!-- ==============================================================
+        elements and types
+        ============================================================== -->
+    <xs:element name="Contents" type="sps:SPSContentsType">
+        <xs:annotation>
+            <xs:documentation>A SPS supports the discovery of itself through a registry by two
+                different views. A registry could identify suitable SPSs by either searching the
+                capabilities for a certain type of Phenomenon (that can be sensed by at least one
+                sensor managed by the SPS under investigation) in a certain target-area or by
+                searching for sensors with a certain ID and / or certain characteristics which are
+                able to sense a phenomenon in a certain target-area.</xs:documentation>
+        </xs:annotation>
+        <!-- ==========================================================================
+            CONSTRAINTS FOR CONTENTS
+            1) All SensorOfferings must have different SensorIDs.
+            2) All PhenomenonOfferings must have different Phenomena.
+            3) Each Phenomenon referenced by a SensorOffering must be declared in a PhenomenonOffering.
+            4) Each SensorID referenced by a PhenomenonOffering must be declared in a SensorOffering.
+            5) There may not be two identical SensorIDs in the same PhenomenonOffering.
+            ============================================================================-->
+        <xs:unique name="sensorOfferingKey">
+            <xs:selector xpath="./sps:SensorOfferingList/sps:SensorOffering/sps:SensorID"/>
+            <xs:field xpath="."/>
+        </xs:unique>
+        <xs:key name="phenomenonOfferingKey">
+            <xs:selector xpath="./sps:PhenomenonOfferingList/sps:PhenomenonOffering"/>
+            <xs:field xpath="sps:Phenomenon"/>
+        </xs:key>
+        <xs:keyref name="phenomenonOfferingKeyRef" refer="sps:phenomenonOfferingKey">
+            <xs:selector xpath="./sps:SensorOfferingList/sps:SensorOffering"/>
+            <xs:field xpath="sps:Phenomenon"/>
+        </xs:keyref>
+        <xs:keyref name="sensorOfferingKeyRef" refer="sps:sensorOfferingKey">
+            <xs:selector xpath="./sps:PhenomenonOfferingList/sps:PhenomenonOffering/sps:SensorID"/>
+            <xs:field xpath="."/>
+        </xs:keyref>
+    </xs:element>
+    <xs:complexType name="SPSContentsType">
+        <xs:annotation>
+            <xs:documentation>A SPS supports the discovery of itself through a registry by two
+                different views. A registry could identify suitable SPSs by either searching the
+                capabilities for a certain type of Phenomenon (that can be sensed by at least one
+                sensor managed by the SPS under investigation) in a certain target-area or by
+                searching for sensors with a certain ID and / or certain characteristics which are
+                able to sense a phenomenon in a certain target-area.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="SensorOfferingList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="SensorOffering" type="sps:SensorOfferingType"
+                            maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation>Contains information necessary to discover the
+                                    abilities of the sensors managed by this SPS.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="PhenomenonOfferingList">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="PhenomenonOffering" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Phenomenon" type="xs:anyURI">
+                                        <xs:annotation>
+                                            <xs:documentation>Links to a URI that holds the
+                                                description of the phenomenon.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="SensorID" type="xs:token"
+                                        maxOccurs="unbounded">
+                                        <xs:annotation>
+                                            <xs:documentation>References the sensor that is capable
+                                                of sensing the specific
+                                            phenomenon.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                            <xs:unique name="internalSensorIdKey">
+                                <xs:selector xpath="./sps:SensorID"/>
+                                <xs:field xpath="."/>
+                            </xs:unique>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AreaOfServiceType">
+        <xs:annotation>
+            <xs:documentation>Contains the geometry of the area that a certain sensor is
+                theoretically able to collect data from. As it is not possible to declare the exact
+                geometry of such an area at any time (at least for mobile sensors), this geometry
+                should be treated as a hint for discovering sensors that can be tasked to collect
+                data from a certain position or area.</xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:element ref="ows:BoundingBox"/>
+            <xs:element ref="gml:pos"/>
+            <xs:element ref="gml:Polygon"/>
+            <xs:element ref="gml:Solid"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="SensorOfferingType">
+        <xs:annotation>
+            <xs:documentation>Contains information necessary to discover the abilities of the
+                sensors managed by this SPS.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="AreaOfService" type="sps:AreaOfServiceType">
+                <xs:annotation>
+                    <xs:documentation>Contains the geometry of the area that a certain sensor is
+                        theoretically able to collect data from. As it is not possible to declare
+                        the exact geometry of such an area at any time (at least for mobile
+                        sensors), this geometry should be treated as a hint for discovering sensors
+                        that can be tasked to collect data from a certain position or
+                    area.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Phenomenon" type="xs:anyURI">
+                <xs:annotation>
+                    <xs:documentation>Links to a URI that holds the description of the
+                    phenomenon.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SensorDefinition" type="xs:anyURI">
+                <xs:annotation>
+                    <xs:documentation>Links to the SensorML-document of the associated
+                    sensor.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SensorID" type="xs:token"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

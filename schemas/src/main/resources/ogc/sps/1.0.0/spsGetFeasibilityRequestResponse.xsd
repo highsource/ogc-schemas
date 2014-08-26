@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:gml="http://www.opengis.net/gml" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:sps="http://www.opengis.net/sps/1.0" targetNamespace="http://www.opengis.net/sps/1.0"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0.2">
+    
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+    <xs:include schemaLocation="./spsAll.xsd"/>
+    <xs:include schemaLocation="./spsCommon.xsd"/>
+    <xs:annotation>
+        <xs:documentation>
+            <copyright>
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+            </copyright> 
+        </xs:documentation>
+    </xs:annotation>
+    <!--Response to a sps:GetFeasibilityRequest-->
+    <xs:element name="GetFeasibilityRequestResponse">
+        <xs:annotation>
+            <xs:documentation>Reponse to a GetFeasibilityRequest</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="sps:feasibilityID"/>
+                <xs:element name="feasibility">
+                    <xs:annotation>
+                        <xs:documentation>describes if a request is feasible or
+                        not</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="feasible"/>
+                            <xs:enumeration value="not feasible"/>
+                            <xs:enumeration value="response delayed. Notification will be sent."/>
+                            <xs:enumeration value="request incomplete"/>
+                            <xs:enumeration value="not feasible, alternatives available"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element ref="gml:description" minOccurs="0"/>
+                <xs:element ref="sps:LatestResponseTime"/>
+                <xs:element name="alternative" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>in case that the feasibility study results in
+                            not-feasible, this elemet provides some alternative
+                        values.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="sps:InputParameter" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

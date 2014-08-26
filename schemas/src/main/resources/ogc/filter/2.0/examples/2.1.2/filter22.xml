@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<fes:Filter
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:myops="http://www.someserver.com/myops/1.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/fes/2.0 http://schemas.opengis.net/filter/2.0/filterAll.xsd http://www.someserver.com/myops/1.0 ./myOps.xsd">
+   <fes:And>
+      <fes:PropertyIsGreaterThan>
+         <fes:ValueReference>Person/age</fes:ValueReference>
+         <fes:Literal>50</fes:Literal>
+      </fes:PropertyIsGreaterThan>
+      <fes:PropertyIsEqualTo>
+         <fes:ValueReference>mailAddress/Address/city</fes:ValueReference>
+         <fes:Literal>Toronto</fes:Literal>
+      </fes:PropertyIsEqualTo>
+      <myops:MyNewOperator>
+         <myops:Arg1>Value1</myops:Arg1>
+         <myops:Arg2>Value1</myops:Arg2>
+         <myops:Arg3>Value1</myops:Arg3>
+      </myops:MyNewOperator>
+   </fes:And>
+</fes:Filter>

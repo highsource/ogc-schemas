@@ -1,0 +1,16 @@
+<wsn-b:Subscribe xmlns:tns="http://www.opengis.net/swes/2.0" xmlns:wsn-b="http://docs.oasis-open.org/wsn/b-2"
+xmlns:os="http://www.opengis.net/oseo/1.0"
+xmlns:wsa="http://www.w3.org/2005/08/addressing"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://docs.oasis-open.org/wsn/b-2 http://docs.oasis-open.org/wsn/b-2.xsd">
+<wsn-b:ConsumerReference>
+	<wsa:Address>http://www.opengis.net/oseo/1.0/OrderingConsumer</wsa:Address>
+</wsn-b:ConsumerReference>
+<wsn-b:Filter>
+	<wsn-b:TopicExpression Dialect="http://docs.oasis-open.org/wsn/2004/06/TopicExpression/Simple">
+		os:OrderFailure
+	</wsn-b:TopicExpression>
+</wsn-b:Filter>
+<wsn-b:SubscriptionPolicy>
+	<wsn-b:FixedTopicSet>true</wsn-b:FixedTopicSet>
+</wsn-b:SubscriptionPolicy>
+</wsn-b:Subscribe>

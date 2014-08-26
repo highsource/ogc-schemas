@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sps:DescribeResultAccessResponse xmlns:sps="http://www.opengis.net/sps/2.0">
+  <sps:availability>
+    <sps:unavailable>
+      <sps:DataNotAvailable>
+        <sps:unavailableCode>DataNotAvailable</sps:unavailableCode>
+        <sps:message>No segments have been acquired yet</sps:message>
+      </sps:DataNotAvailable>
+    </sps:unavailable>
+  </sps:availability>
+</sps:DescribeResultAccessResponse>

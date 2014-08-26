@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Validate
+  xmlns="http://www.opengis.net/eosps/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/eosps/2.0 http://schemas.opengis.net/eosps/2.0/eosps.xsd"
+  service="EOSPS" version="2.0">
+  <!-- -->
+  <task>http://ws.spotimage.com/sps/tasks/T45EF36C23D4C89AB</task>
+  <!-- -->
+  <segmentID>S02</segmentID>
+  <segmentID>S03</segmentID>
+  <segmentID>S04</segmentID>
+  <!-- -->
+</Validate>

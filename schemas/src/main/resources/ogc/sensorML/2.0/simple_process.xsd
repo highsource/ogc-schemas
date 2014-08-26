@@ -1,0 +1,67 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" targetNamespace="http://www.opengis.net/sensorml/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+    <annotation>
+        <documentation>The elements of a concrete simple non-physical process derived from the core process model.
+        
+        SensorML is an OGC Standard.
+        Copyright (c) 2014 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+    <include schemaLocation="core.xsd"/><!-- ================================================= -->
+    <element name="SimpleProcess" substitutionGroup="sml:AbstractProcess" type="sml:SimpleProcessType"/>
+    <complexType name="SimpleProcessType">
+        <complexContent>
+            <extension base="sml:AbstractProcessType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="method" type="sml:ProcessMethodPropertyType"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="SimpleProcessPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:SimpleProcess"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="ProcessMethod" substitutionGroup="swe:AbstractSWEIdentifiable" type="sml:ProcessMethodType">
+        <annotation>
+            <documentation>The method describes (as an algorithm or text) how the process takes the input and parameter values and generates output values.</documentation>
+        </annotation>
+    </element>
+    <complexType name="ProcessMethodType">
+        <complexContent>
+            <extension base="swe:AbstractSWEIdentifiableType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="algorithm">
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:AbstractAlgorithm"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="ProcessMethodPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:ProcessMethod"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element abstract="true" name="AbstractAlgorithm" substitutionGroup="gml:AbstractObject" type="sml:AbstractAlgorithmType"/>
+    <complexType abstract="true" name="AbstractAlgorithmType">
+        <sequence/>
+        <attribute ref="gml:id" use="optional"/>
+    </complexType>
+    <complexType name="AbstractAlgorithmPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:AbstractAlgorithm"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType>
+</schema>

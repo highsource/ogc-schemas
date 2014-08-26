@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sps:DescribeTasking service="SPS" version="2.0.0" xmlns:sps="http://www.opengis.net/sps/2.0">
+  <sps:procedure>urn:spot:sensors:SPOT5:HRG</sps:procedure>
+</sps:DescribeTasking>

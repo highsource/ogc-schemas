@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<!-- -->
+	<swe:field name="boolean_field">
+		<swe:Boolean definition="http://sweet.jpl.nasa.gov/2.0/physDynamics.owl#Motion">
+		  <swe:label>Motion Detected</swe:label>
+		  <swe:description>True when motion was detected in the room</swe:description>
+			<swe:value>true</swe:value>
+		</swe:Boolean>
+	</swe:field>
+	<!-- -->
+	<swe:field name="boolean_field_no_value">
+		<swe:Boolean definition="http://mmisw.org/ont/q2o/test/timeContinuityTest">
+		  <swe:label>Time Continuity Test</swe:label>
+		  <swe:description>Set to true to enable time continuity test</swe:description>			
+		</swe:Boolean>
+	</swe:field>
+	<!-- -->
+	<swe:field name="text_field">
+		<swe:Text definition="http://mmisw.org/ont/mmi/device/Manufacturer">
+			<swe:label>Manufacturer</swe:label>  
+			<swe:value>Ocean Devices, Inc.</swe:value>
+		</swe:Text>		
+	</swe:field>
+	<!-- -->
+	<swe:field name="category_field">
+		<swe:Category definition="http://sweet.jpl.nasa.gov/2.0/timeGeologic.owl#GeologicTime">
+		  <swe:label>Geological Period</swe:label>		  
+		  <swe:description>Name of the geological period according to the nomenclature of the International Commission on Stratigraphy</swe:description>
+			<swe:codeSpace xlink:href="http://sweet.jpl.nasa.gov/2.0/timeGeologic.owl#Period"/>
+			<swe:value>Jurassic</swe:value>
+		</swe:Category>
+	</swe:field>
+	<!-- -->
+	<swe:field name="category_field_no_value">
+		<swe:Category definition="http://sweet.jpl.nasa.gov/2.0/biol.owl#Species">
+		  <swe:label>Bird Species</swe:label>
+		  <swe:description>Bird species according to the classification of the World Bird Database (WBDB)</swe:description>
+			<swe:codeSpace xlink:href="http://www.birdlife.org/datazone/species/index.html"/>
+		</swe:Category>
+	</swe:field>
+	<!-- -->
+	<swe:field name="category_field_no_codespace">
+		<swe:Category definition="http://www.opengis.net/def/property/OGC/0/SensorStatus">
+		  <swe:label>Sensor Status</swe:label>		  
+		  <swe:description>Current status of the sensor</swe:description>
+			<swe:constraint>
+				<swe:AllowedTokens>
+					<swe:value>Off</swe:value>
+					<swe:value>Stand-by</swe:value>
+					<swe:value>Ready</swe:value>					
+					<swe:value>Busy</swe:value>
+				</swe:AllowedTokens>
+			</swe:constraint>
+			<swe:value>Ready</swe:value>
+		</swe:Category>
+	</swe:field>
+	<!-- -->
+	<swe:field name="count_field">
+		<swe:Count definition="http://www.opengis.net/def/property/OGC/0/NumberOfPixels">
+		  <swe:label>Row Size</swe:label>		  
+		  <swe:description>Number of pixels in each row of the image</swe:description>
+			<swe:value>1024</swe:value>
+		</swe:Count>
+	</swe:field>
+	<!-- -->
+	<swe:field name="quantity_field">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/physThermo.owl#Temperature">
+		  <swe:label>Outside Temperature</swe:label>	  
+		  <swe:description>Outside temperature taken at the top of the antenna</swe:description>
+			<swe:uom code="Cel"/>
+			<swe:value>21.5</swe:value>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="quantity_field_complex_unit">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#SpectralRadiance">
+		  <swe:label>Radiance</swe:label> 
+		  <swe:description>Radiance measured on band1</swe:description>
+			<swe:uom code="W.m-2.Sr-1.um-1"/>
+			<swe:value>1.32e3</swe:value>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="quantity_field_with_axis">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceExtent.owl#Height" axisID="H" referenceFrame="http://www.opengis.net/def/crs/EPSG/0/5714">
+		  <swe:label>MSL Height</swe:label>  
+		  <swe:description>Height above mean sea level</swe:description>
+			<swe:uom code="m"/>
+			<swe:value>1.32e3</swe:value>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="time_field_iso">
+		<swe:Time definition="http://www.opengis.net/def/property/OGC/0/SamplingTime" referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+		  <swe:label>Sampling Time</swe:label>	  
+		  <swe:description>Time at which the measurement was made</swe:description>
+			<swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+			<swe:value>2009-11-05T16:29:26Z</swe:value>
+		</swe:Time>
+	</swe:field>
+	<!-- -->
+	<swe:field name="time_field_decimal">
+		<swe:Time definition="http://www.opengis.net/def/property/OGC/0/RunTime" referenceTime="1970-01-01T00:00:00Z">
+		  <swe:label>Run Time</swe:label>		  
+		  <swe:description>Run time of the model expressed as a Unix time</swe:description>
+			<swe:uom code="s"/>
+			<swe:value>1257415633</swe:value>
+		</swe:Time>
+	</swe:field>
+  <!-- -->
+	<swe:field name="time_field_decimal_with_local_frame">
+		<swe:Time definition="http://www.opengis.net/def/property/OGC-EO/0/MissionStartTime" localFrame="#MISSION-START-TIME" referenceFrame="http://www.opengis.net/def/trs/OGC/0/UTC">
+		  <swe:label>Flight Time</swe:label>
+		  <swe:description>Time at take-off in UTC</swe:description>
+			<swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+			<swe:value>2009-01-26T10:21:45+01:00</swe:value>
+		</swe:Time>
+	</swe:field>
+	<!-- -->
+	<swe:field name="time_field_decimal_relative_to_local_frame">
+		<swe:Time definition="http://www.opengis.net/def/property/OGC-EO/0/ScanStartTime" localFrame="#SCAN-START-TIME" referenceFrame="#MISSION-START-TIME">
+		  <swe:label>Scanline Time</swe:label>  
+		  <swe:description>Acquisition time of the scan line</swe:description>
+			<swe:uom code="s"/>
+			<swe:value>1256.235</swe:value>
+		</swe:Time>
+	</swe:field>
+	<!-- -->
+</swe:DataRecord>

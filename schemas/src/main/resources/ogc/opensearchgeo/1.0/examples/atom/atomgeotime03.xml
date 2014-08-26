@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:georss="http://www.georss.org/georss" 
+    
+    xmlns:os="http://a9.com/-/spec/opensearch/1.1/"
+    xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/"
+    xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" >
+
+  <title>Feed for ENVISAT ASAR Wide Swath Mode (ASA_WSM_1P)</title>
+
+  <subtitle type="html">Found 2 results.</subtitle>
+  <author><name>GEOSS Supersites</name></author>
+
+  <generator uri="http://www.terradue.com" version="1.4.0">
+Terradue CAS
+  </generator>
+
+  <updated>2012-05-30T17:27:57Z</updated>
+  <id>http://eo-virtual-archive4.esa.int/search/ASA_WSM_1P/atom/</id>
+  <dc:identifier>ASA_WSM_1P</dc:identifier>
+  <link rel="self" type="application/atom+xml" 
+href="http://eo-virtual-archive4.esa.int/search/ASA_WSM_1P/atom/? startIndex=0&amp;start=1992-01-01&amp;stop=2013-05-30&amp;bbox=138,35,143,41"/>
+
+  <link rel="search" type="application/opensearchdescription+xml" 
+href="http://eo-virtual-archive4.esa.int/search/ASA_WSM_1P/description"/>
+
+  <os:totalResults>2</os:totalResults>
+  <os:startIndex>0</os:startIndex>
+  <os:itemsPerPage>20</os:itemsPerPage>
+  <os:Query role="request" startIndex="0" time:start="1992-01-01" 
+ time:end="2013-05-30" geo:box="138,35,143,41"/>
+
+  <georss:polygon>35 138 41 138 41 143 35 143 35 143</georss:polygon>
+
+  <entry>
+    <id>http://eo-virtual-archive4.esa.int/search/ASA_WSM_1P/ASA_WSM_1CNPDK20110320_123008_000000673100_00340_47337_9284.N1/atom</id>
+  	<title>
+        ASA_WSM_1CNPDK20110320_123008_000000673100_00340_47337_9284.N1
+  	</title>
+	<dc:identifier>ASA_WSM_1CNPDK20110320_123008_000000673100_00340_47337_9284.N1</dc:identifier>
+    <published>2012-04-19T23:27:01.000Z</published>
+<updated>2013-05-16T22:25:57.124Z</updated>
+    <dc:date>2011-03-20T12:30:08.155Z/2011-03-20T12:31:15.451Z</dc:date>
+
+    <georss:polygon>37.6925 138.984 38.4046 143.598 38.7665 143.52 39.1284 143.442 39.4902 143.364 39.852 143.286 40.2137 143.207 40.5754 143.128 40.937 143.049 41.2987 142.97 41.6603 142.89 42.0218 142.81 41.3083 137.948 40.947 138.055 40.5857 138.161 40.2243 138.266 39.8628 138.371 39.5013 138.475 39.1397 138.578 38.778 138.68 38.4162 138.782 38.0544 138.883 37.6925 138.984</georss:polygon>
+
+    <link rel="alternate" type="text/html" title="HTML page" 
+        href="http://eo-virtual-archive4.esa.int/search/ASA_WSM_1P/ ASA_WSM_1CNPDK20110320_123008_000000673100_00340_47337_9284.N1/html" />
+    <link rel="via" type="application/rdf+xml" title="RDF metadata entry" 
+     href="http://eo-virtual-archive4.esa.int/search/ASA_WSM_1P/ ASA_WSM_1CNPDK20110320_123008_000000673100_00340_47337_9284.N1/rdf" />
+    <link rel="enclosure" type="application/binary" length="65660258" 
+     title="ASA_WSM_1CNPDK20110320_123008_000000673100_00340_47337_9284.N1" 
+     href="https://eo-virtual-archive4.esa.int/supersites/ASA_WSM_1CNPDK2011 0320_123008_000000673100_00340_47337_9284.N1" />   
+
+    <content type="html">
+	&lt;ul&gt;&lt;li&gt; Sensor: ASAR &lt;/li&gt;
+	&lt;li&gt; &lt;b&gt;Date&lt;/b&gt;: 2011-03-20 
+	&lt;br/&gt;
+	(2011-03-20T12:30:08.155Z / 2011-03-20T12:31:15.451Z) &lt;/li&gt;
+	&lt;li&gt; &lt;b&gt;Orbit Number&lt;/b&gt;: 47337 &lt;/li&gt;
+	&lt;li&gt; &lt;b&gt;Processing Center&lt;/b&gt;: PDHS-K &lt;/li&gt;         
+	&lt;li&gt; &lt;b&gt;Processing Date&lt;/b&gt;: 2011-03-20 &lt;/li&gt;
+	&lt;/ul&gt;
+    </content>
+  </entry>
+
+  <entry>
+    <id>http://eo-virtual-archive4.esa.int/search/ASA_WSM_1P/ASA_WSM_1CNPDK20110320_122913_000000673100_00340_47337_9284.N1/atom</id>
+	<dc:identifier>ASA_WSM_1CNPDK20110320_122913_000000673100_00340_47337_9284.N1</dc:identifier>
+<title>
+ASA_WSM_1CNPDK20110320_122913_000000673100_00340_47337_9284.N1
+</title>
+    <published>2012-04-19T23:38:54.000Z</published>
+    <updated>2013-05-16T22:25:57.124Z</updated>
+    <dc:date>2011-03-20T12:29:13.095Z/2011-03-20T12:30:20.391Z</dc:date>
+    <georss:polygon>34.4328 139.862 35.1461 144.287 35.5083 144.211 35.8705 144.135 36.2326 144.059 36.5947 143.982 36.9568 143.906 37.3188 143.829 37.6808 143.752 38.0427 143.675 38.4046 143.598 38.7665 143.52 38.0544 138.883 37.6925 138.984 37.3306 139.084 36.9686 139.183 36.6065 139.282 36.2444 139.38 35.8822 139.478 35.5199 139.575 35.1576 139.671 34.7952 139.767 34.4328 139.862</georss:polygon >
+
+    <link rel="alternate" type="text/html" title="HTML page" 
+         href="http://eo-virtual-archive4.esa.int/search/ASA_WSM_1P/ASA_WSM_1C NPDK20110320_122913_000000673100_00340_47337_9284.N1/html"/>
+    <link rel="via" type="application/rdf+xml" title="RDF metadata entry"
+         href="http://eo-virtual-archive4.esa.int/search/ASA_WSM_1P/ASA_WSM_1C NPDK20110320_122913_000000673100_00340_47337_9284.N1/rdf"/>
+    <link rel="enclosure" type="application/binary" length="65651223" 
+         title="ASA_WSM_1CNPDK20110320_122913_000000673100_00340_47337_9284.N1"
+         href="https://eo-virtual-archive4.esa.int/supersites/ASA_WSM_1CNPDK20 110320_122913_000000673100_00340_47337_9284.N1" />
+ 
+   <content type="html">
+	&lt;ul&gt;&lt;li&gt; Sensor: ASAR &lt;/li&gt;
+	&lt;li&gt; &lt;b&gt;Date&lt;/b&gt;: 2011-03-20 
+	&lt;br/&gt;
+	(2011-03-20T12:29:13.095Z / 2011-03-20T12:30:20.391Z) &lt;/li&gt;
+	&lt;li&gt; &lt;b&gt;Orbit Number&lt;/b&gt;: 47337 &lt;/li&gt;
+	&lt;li&gt; &lt;b&gt;Processing Center&lt;/b&gt;: PDHS-K &lt;/li&gt;         
+	&lt;li&gt; &lt;b&gt;Processing Date&lt;/b&gt;: 2011-03-20 &lt;/li&gt;
+	&lt;/ul&gt;
+    </content>
+  </entry>
+</feed>

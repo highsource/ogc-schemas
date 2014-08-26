@@ -1,0 +1,37 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:eosps="http://www.opengis.net/eosps/2.0" xmlns:eop="http://earth.esa.int/eop" targetNamespace="http://www.opengis.net/eosps/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+  <annotation>
+    <documentation>EO SPS schema for feasibility and task status report extensions.
+      
+      OGC EO SPS 2.0 is an OGC Standard.
+      Copyright (c) 2011 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    </documentation>
+  </annotation>
+  <!-- ================================================= -->
+  <element name="FeasibilityLevel" type="eosps:FeasibilityLevelType">
+    <annotation>
+      <documentation>Inserted in GetFeasibility requests to specify the desired level of details of the requested feasibility study</documentation>
+    </annotation>
+  </element>
+  <simpleType name="FeasibilityLevelType">
+    <union memberTypes="eosps:FeasibilityLevelEnumerationType eosps:FeasibilityLevelOtherType"/>
+  </simpleType>
+  <simpleType name="FeasibilityLevelEnumerationType">
+    <restriction base="string">
+      <enumeration value="SIMPLE"/>
+      <enumeration value="COMPLETE"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="FeasibilityLevelOtherType">
+    <restriction base="string">
+      <pattern value="other: \w{2,}"/>
+    </restriction>
+  </simpleType>
+  <!-- ================================================= -->
+  <element name="ReferenceFeasibilityID" type="anyURI">
+    <annotation>
+      <documentation>Inserted in Submit requests to reference previously generated feasibility studies</documentation>
+    </annotation>
+  </element>
+  <!-- ================================================= -->
+</schema>

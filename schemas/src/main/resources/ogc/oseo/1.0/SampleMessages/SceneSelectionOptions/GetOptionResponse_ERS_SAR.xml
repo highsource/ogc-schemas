@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This sample file contains the list of scene selection options identified for the following products: ERS SAR -->
+<!-- The reported values are just examples and are not the actual values. -->
+<GetOptionsResponse xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" xmlns="http://www.opengis.net/oseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<status>success</status>
+	<orderOptions>
+		<productOrderOptionsId>options_001</productOrderOptionsId>
+		<orderType>PRODUCT_ORDER</orderType>
+			<option>
+			<swe:DataRecord>
+				<swe:field name="XXX1">
+					<swe:Count optional="false" updatable="false" definition="def:property:OGC::XXX1">
+						<swe:identifier>XXX1</swe:identifier>
+						<swe:description>XXXXX</swe:description>
+						<swe:constraint>
+							<swe:AllowedValues>
+								<swe:interval>1 10</swe:interval>
+							</swe:AllowedValues>
+						</swe:constraint>
+					</swe:Count>
+				</swe:field>
+			</swe:DataRecord>
+		</option> 
+		<productDeliveryOptions>
+			<mediaDelivery>
+				<packageMedium>DVD</packageMedium>
+			</mediaDelivery>
+		</productDeliveryOptions>
+		<sceneSelectionOption>
+			<name>ERS SAR Floating Scene (orbit and frame)</name>
+			<description>Scene Selection Options for ERS SAR Floating Scenes (by orbit and frame)</description>
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="sceneType">
+					<swe:Category optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/sceneType" >
+						<swe:identifier>sceneType</swe:identifier>
+						<swe:description>First and last column on the parent product for scene extraction</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>FloatingScene</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+			</sceneSelectionParameter>
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="frame">
+						<swe:Count optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/frame">
+							<swe:identifier>frame</swe:identifier>
+							<swe:description>Frame Number</swe:description>
+						</swe:Count>
+					</swe:field>
+				</swe:DataRecord>
+				<!-- WRS Parameters definition -->
+				<!-- Definition taken from EOLI SA configuration file -->
+				<sceneRestriction>
+					<swe:DataArray optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/WRSInformation">
+						<swe:identifier>WRSInformation</swe:identifier>
+						<swe:elementCount>
+							<swe:Count>
+								<swe:value>2</swe:value>
+							</swe:Count>
+						</swe:elementCount>
+						<swe:elementType name="WRSInformation">
+							<swe:DataRecord>
+								<swe:field name="FromOrbit">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="ToOrbit">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="TimePerFrame">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+										<swe:constraint></swe:constraint>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="TimeBetweenFrameCenter">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="FrameNumberStep">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="FirstFrameNumber">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="FirstFrameCenterTime">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="LastFrameNumber">
+									<swe:Count></swe:Count>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:elementType>
+						<swe:encoding>
+							<swe:TextEncoding blockSeparator="&#10;" tokenSeparator=","/>
+						</swe:encoding>
+						<swe:values>
+					126,2104,15069.767,837.209,1,0,0.0000,7199
+					2354,3713,15069.767,837.209,1,0,0.0000,7199
+					</swe:values>
+					</swe:DataArray>
+				</sceneRestriction>
+			</sceneSelectionParameter>
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="orbit">
+						<swe:Count optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/orbit">
+							<swe:identifier>orbit</swe:identifier>
+							<swe:description>orbit number of the selected scene</swe:description>
+							<swe:constraint>
+								<swe:AllowedValues>
+											<swe:interval>1000 1000</swe:interval>
+								</swe:AllowedValues>
+							</swe:constraint>
+						</swe:Count>
+					</swe:field>
+				</swe:DataRecord>
+			</sceneSelectionParameter>
+		</sceneSelectionOption>
+		<sceneSelectionOption>
+			<name>ERS SAR Floating Scene (time and frame)</name>
+			<description>Scene Selection Options for ERS SAR Floating Scenes (by time and Frame)</description>
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="sceneType">
+					<swe:Category optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/sceneType" >
+						<swe:identifier>sceneType</swe:identifier>
+						<swe:description>First and last column on the parent product for scene extraction</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>FloatingScene</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+			</sceneSelectionParameter>
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="frame">
+						<swe:Count optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/frame">
+							<swe:identifier>frame</swe:identifier>
+							<swe:description>Frame Number</swe:description>
+						</swe:Count>
+					</swe:field>
+				</swe:DataRecord>
+				<!-- WRS Parameters definition -->
+				<!-- Definition taken from EOLI SA configuration file -->
+				<sceneRestriction>
+					<swe:DataArray optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/WRSInformation">
+						<swe:identifier>WRSInformation</swe:identifier>
+						<swe:elementCount>
+							<swe:Count>
+								<swe:value>2</swe:value>
+							</swe:Count>
+						</swe:elementCount>
+						<swe:elementType name="WRSInformation">
+							<swe:DataRecord>
+								<swe:field name="FromOrbit">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="ToOrbit">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="TimePerFrame">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+										<swe:constraint></swe:constraint>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="TimeBetweenFrameCenter">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="FrameNumberStep">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="FirstFrameNumber">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="FirstFrameCenterTime">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="LastFrameNumber">
+									<swe:Count></swe:Count>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:elementType>
+						<swe:encoding>
+							<swe:TextEncoding blockSeparator="&#10;" tokenSeparator=","/>
+						</swe:encoding>
+						<swe:values>
+					126,2104,15069.767,837.209,1,0,0.0000,7199
+					2354,3713,15069.767,837.209,1,0,0.0000,7199
+					</swe:values>
+					</swe:DataArray>
+				</sceneRestriction>
+			</sceneSelectionParameter>
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="sceneStartStopTime">
+						<swe:TimeRange optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/sceneStartStopTime">
+							<swe:identifier>sceneStartStopTime</swe:identifier>
+							<swe:description>Start and Stop time of the selected scene within the parent product</swe:description>
+							<swe:uom code="s"/>
+							<swe:constraint>
+								<swe:AllowedTimes>
+									<swe:interval>2010-01-01T11:55:00.00Z 2010-01-01T12:00:00.00Z</swe:interval>
+								</swe:AllowedTimes>
+							</swe:constraint>
+						</swe:TimeRange>
+					</swe:field>
+				</swe:DataRecord>
+				<!-- WRS Parameters definition -->
+				<!-- Definition taken from EOLI SA configuration file -->
+				<sceneRestriction>
+					<swe:DataArray optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/WRSInformation">
+						<swe:identifier>WRSInformation</swe:identifier>
+						<swe:elementCount>
+							<swe:Count>
+								<swe:value>2</swe:value>
+							</swe:Count>
+						</swe:elementCount>
+						<swe:elementType name="WRSInformation">
+							<swe:DataRecord>
+								<swe:field name="FromOrbit">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="ToOrbit">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="TimePerFrame">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+										<swe:constraint></swe:constraint>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="TimeBetweenFrameCenter">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="FrameNumberStep">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="FirstFrameNumber">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="FirstFrameCenterTime">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="LastFrameNumber">
+									<swe:Count></swe:Count>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:elementType>
+						<swe:encoding>
+							<swe:TextEncoding blockSeparator="&#10;" tokenSeparator=","/>
+						</swe:encoding>
+						<swe:values>
+					126,2104,15069.767,837.209,1,0,0.0000,7199
+					2354,3713,15069.767,837.209,1,0,0.0000,7199
+					</swe:values>
+					</swe:DataArray>
+				</sceneRestriction>
+			</sceneSelectionParameter>
+		</sceneSelectionOption>
+		<sceneSelectionOption>
+			<name>ERS SAR Floating Scene (scene centre coordinates)</name>
+			<description>Scene Selection Options for ERS SAR (by scene centre)</description>
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="sceneType">
+					<swe:Category optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/sceneType" >
+						<swe:identifier>sceneType</swe:identifier>
+						<swe:description>First and last column on the parent product for scene extraction</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>FloatingScene</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+			</sceneSelectionParameter>
+			<sceneSelectionParameter>
+				<swe:DataArray definition="http://www.opengis.net/def/parameter/ESA/1.0/sceneCentreCoordinates" optional="false" updatable="false">
+					<swe:identifier>sceneCentreCoordinates</swe:identifier>
+					<swe:description>Scene Center coordiantes</swe:description>
+					<swe:elementCount>
+						<swe:Count definition="http://www.opengis.net/def/parameter/ESA/1.0/SpatialDimension"/>
+					</swe:elementCount>
+					<swe:elementType name="point">
+						<swe:Vector definition="http://www.opengis.net/def/parameter/ESA/1.0/LocationVector" referenceFrame="http://www.opengis.net/def/crs/EPSG/7.1/4326">
+						<swe:identifier>Location Point</swe:identifier>
+						<swe:coordinate name="lat">
+							<swe:Quantity definition="http://www.opengis.net/def/parameter/ESA/1.0/GeodeticLatitude" axisID="Lat">
+								<swe:identifier>Latitude</swe:identifier>
+								<swe:uom code="deg"/>
+							</swe:Quantity>
+						</swe:coordinate>
+						<swe:coordinate name="lon">
+							<swe:Quantity definition="http://www.opengis.net/def/parameter/ESA/1.0/Longitude" axisID="Long">
+								<swe:identifier>Longitude</swe:identifier>
+								<swe:uom code="deg"/>
+							</swe:Quantity>
+						</swe:coordinate>
+						</swe:Vector>
+					</swe:elementType>
+				</swe:DataArray>
+				<!-- WRS Parameters definition -->
+				<!-- Definition taken from EOLI SA configuration file -->
+					<sceneRestriction>
+					<swe:DataArray optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/WRSInformation">
+						<swe:identifier>WRSInformation</swe:identifier>
+						<swe:elementCount>
+							<swe:Count>
+								<swe:value>2</swe:value>
+							</swe:Count>
+						</swe:elementCount>
+						<swe:elementType name="WRSInformation">
+							<swe:DataRecord>
+								<swe:field name="FromOrbit">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="ToOrbit">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="TimePerFrame">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+										<swe:constraint></swe:constraint>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="TimeBetweenFrameCenter">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="FrameNumberStep">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="FirstFrameNumber">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="FirstFrameCenterTime">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="LastFrameNumber">
+									<swe:Count></swe:Count>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:elementType>
+						<swe:encoding>
+							<swe:TextEncoding blockSeparator="&#10;" tokenSeparator=","/>
+						</swe:encoding>
+						<swe:values>
+					126,2104,15069.767,837.209,1,0,0.0000,7199
+					2354,3713,15069.767,837.209,1,0,0.0000,7199
+					</swe:values>
+					</swe:DataArray>
+				</sceneRestriction>
+			</sceneSelectionParameter>
+		</sceneSelectionOption>
+	</orderOptions>
+</GetOptionsResponse>

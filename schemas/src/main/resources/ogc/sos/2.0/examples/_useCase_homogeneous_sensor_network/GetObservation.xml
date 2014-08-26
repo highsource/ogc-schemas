@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:om="http://www.opengis.net/om/1.0">
+	<soap12:Header>
+		<wsa:To>http://www.ogc.org/SOS</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/core/2.0/GetObservation</wsa:Action>
+		<wsa:ReplyTo>
+			<wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
+		</wsa:ReplyTo>
+		<wsa:MessageID>http://my.client.com/uid/msg-0010</wsa:MessageID>
+	</soap12:Header>
+	<soap12:Body>
+	
+		<GetObservation service="SOS" version="2.0.0">
+			<observedProperty>http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[NH3]</observedProperty>
+			<observedProperty>http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[CO]</observedProperty>
+			<observedProperty>http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[H2S]</observedProperty>
+			<observedProperty>http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[SO2]</observedProperty>
+			<temporalFilter>
+				<fes:After>
+					<fes:ValueReference>phenomenonTime</fes:ValueReference>
+					<gml:TimePeriod gml:id="tp1">
+						<gml:beginPosition>2008-01-01</gml:beginPosition>
+						<gml:endPosition>2011-05-01T17:44:15+00:00</gml:endPosition>
+					</gml:TimePeriod>
+				</fes:After>
+			</temporalFilter>
+			<featureOfInterest>http://myServer.org/features/SamplingPointAtMoersbach</featureOfInterest>
+		</GetObservation>
+		
+	</soap12:Body>
+</soap12:Envelope>

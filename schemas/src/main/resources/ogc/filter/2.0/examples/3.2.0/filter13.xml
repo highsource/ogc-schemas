@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<fes:Filter
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:gml="http://www.opengis.net/gml"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/fes/2.0
+   http://schemas.opengis.net/filter/2.0/filterAll.xsd
+   http://www.opengis.net/gml
+   http://schemas.opengis.net/gml/3.2.0/base/gml.xsd">
+   <fes:And>
+      <fes:Within>
+         <fes:ValueReference>WKB_GEOM</fes:ValueReference>
+         <gml:Polygon gml:id="P1" srsName="urn:fes:def:crs:EPSG::4326">
+            <gml:exterior>
+               <gml:LinearRing>
+                  <gml:posList>10 10 20 20 30 30 40 40 10 10</gml:posList>
+               </gml:LinearRing>
+            </gml:exterior>
+         </gml:Polygon>
+      </fes:Within>
+      <fes:PropertyIsBetween>
+         <fes:ValueReference>DEPTH</fes:ValueReference>
+         <fes:LowerBoundary>
+            <fes:Literal>400</fes:Literal>
+         </fes:LowerBoundary>
+         <fes:UpperBoundary>
+            <fes:Literal>800</fes:Literal>
+         </fes:UpperBoundary>
+      </fes:PropertyIsBetween>
+   </fes:And>
+</fes:Filter>

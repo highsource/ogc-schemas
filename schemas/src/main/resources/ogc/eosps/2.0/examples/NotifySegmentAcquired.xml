@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsnt:NotificationMessage
+  xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2"
+  xmlns:eo="http://www.opengis.net/eosps/2.0"
+  xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <wsnt:SubscriptionReference>
+    <wsa:Address xmlns:wsa="http://www.w3.org/2005/08/addressing">http://ws.spotimage.com/sps/notifier/dbd7db8d-2a33-4c7e-aac7-fcd9876fe03d</wsa:Address>
+  </wsnt:SubscriptionReference>
+  <wsnt:Topic
+    Dialect="http://docs.oasis-open.org/wsn/t-1/TopicExpression/Concrete" xmlns:sps="http://www.opengis.net/sps/2.0">eo:SegmentAcquired</wsnt:Topic>
+  <wsnt:ProducerReference>
+    <wsa:Address xmlns:wsa="http://www.w3.org/2005/08/addressing">http://ws.spotimage.com/sps/notifier/</wsa:Address>
+  </wsnt:ProducerReference>
+  <wsnt:Message>
+    <sps:StatusReport xmlns:sps="http://www.opengis.net/sps/2.0">
+      <sps:task>http://ws.spotimage.com/sps/PR-decbbda4-4071-45f5-845d-c167c30fc515</sps:task>
+      <sps:procedure>urn:spot:sensors:SPOT5:HRG</sps:procedure>
+      <sps:taskStatus>InExecution</sps:taskStatus>
+      <sps:updateTime>2011-01-19T15:03:54.593Z</sps:updateTime>
+    </sps:StatusReport>
+  </wsnt:Message>
+</wsnt:NotificationMessage>

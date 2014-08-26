@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example SOAP Respone for GetObservation operation which contains filters for offering, observedProperty and the phenomenonTime (GetObservation1_SOAP.xml). The response contains observations for the observed property and with phenomenonTime matching the temporalFilter.
+=======================================================================-->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+ http://www.opengis.net/sos/2.0
+http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<soap12:Header>
+		<wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/core/2.0/GetObservationResponse</wsa:Action>
+		<wsa:RelatesTo>http://my.client.com/uid/msg-0010</wsa:RelatesTo>
+	</soap12:Header>
+	<soap12:Body>
+		<sos:GetObservationResponse>
+			<sos:observationData>
+				<!-- observations -->
+				<om:OM_Observation gml:id="obsTest1">
+					<om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"/>
+					<om:phenomenonTime>
+						<gml:TimeInstant gml:id="phenomenonTime">
+							<gml:timePosition>2008-03-01T17:45:15.000+00:00</gml:timePosition>
+						</gml:TimeInstant>
+					</om:phenomenonTime>
+					<om:resultTime xlink:href="#phenomenonTime"/>
+					<!-- link to DescribeSensor operation of SOS which is providing the sensor description -->
+					<om:procedure xlink:href="http://www.my_namespace.org/sensors/Water_Gage_1"/>
+					<!-- a notional URN identifying the observed property -->
+					<om:observedProperty xlink:href="http://sweet.jpl.nasa.gov/2.0/hydroSurface.owl#WaterHeight"/>
+					<!-- a notional WFS call identifying the object regarding which the observation was made -->
+					<om:featureOfInterest xlink:href="http://wfs.example.org?request=getFeature&amp;featureid=river1"/>
+					<om:result xsi:type="gml:MeasureType" uom="urn:ogc:def:uom:OGC:m">0.28</om:result>
+				</om:OM_Observation>
+			</sos:observationData>
+		</sos:GetObservationResponse>
+	</soap12:Body>
+</soap12:Envelope>

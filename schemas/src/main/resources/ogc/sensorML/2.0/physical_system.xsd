@@ -1,0 +1,44 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" targetNamespace="http://www.opengis.net/sensorml/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+    <annotation>
+        <documentation>The elements of a concrete aggregate physical process derived from the core process model.
+        
+        SensorML is an OGC Standard.
+        Copyright (c) 2014 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    <import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <include schemaLocation="physical_component.xsd"/>
+    <include schemaLocation="aggregate_process.xsd"/><!-- ================================================= -->
+    <element name="PhysicalSystem" substitutionGroup="sml:AbstractPhysicalProcess" type="sml:PhysicalSystemType">
+        <annotation>
+            <documentation>A PhysicalSystem is an aggregate system that can include multiple components (both physical and non-physical) with explicit links between the outputs, inputs, and parameters of the individual components. In a PhysicalSystem, the spatial position of the System itself is relevant to its application.</documentation>
+        </annotation>
+    </element>
+    <complexType name="PhysicalSystemType">
+        <complexContent>
+            <extension base="sml:AbstractPhysicalProcessType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="components" type="sml:ComponentListPropertyType">
+                        <annotation>
+                            <documentation>The collection of processes that make up a process aggregation.</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="connections" type="sml:ConnectionListPropertyType">
+                        <annotation>
+                            <documentation>The explicit definition of data links between outputs, inputs, and parameters of the components within an aggregate process.</documentation>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="PhysicalSystemPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:PhysicalSystem"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType>
+</schema>

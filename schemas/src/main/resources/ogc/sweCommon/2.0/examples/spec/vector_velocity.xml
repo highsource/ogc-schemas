@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:Vector definition="http://sweet.jpl.nasa.gov/2.0/physDynamics.owl#Velocity" referenceFrame="http://www.opengis.net/def/crs/OGC/0/ECI_WGS84" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<swe:coordinate name="Vx">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/physDynamics.owl#Speed" axisID="X">
+			<swe:label>Velocity X</swe:label>
+			<swe:uom xlink:href="m/s"/>
+		</swe:Quantity>
+	</swe:coordinate>
+	<swe:coordinate name="Vy">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/physDynamics.owl#Speed" axisID="Y">
+			<swe:label>Velocity Y</swe:label>
+			<swe:uom code="m/s"/>
+		</swe:Quantity>
+	</swe:coordinate>
+	<swe:coordinate name="Vz">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/physDynamics.owl#Speed" axisID="Z">
+			<swe:label>Velocity Z</swe:label>
+			<swe:uom code="m/s"/>
+		</swe:Quantity>
+	</swe:coordinate>
+</swe:Vector>

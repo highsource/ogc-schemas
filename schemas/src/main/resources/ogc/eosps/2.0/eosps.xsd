@@ -1,0 +1,15 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:eosps="http://www.opengis.net/eosps/2.0" targetNamespace="http://www.opengis.net/eosps/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+    <annotation>
+        <documentation>All component schema for the EO Satellite Tasking Extension of SPS 2.0 .
+            
+            OGC EO SPS 2.0 is an OGC Standard.
+            Copyright (c) 2011 Open Geospatial Consortium.
+            To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    <include schemaLocation="eoTaskingExtensions.xsd"/>
+    <include schemaLocation="getSensorAvailability.xsd"/>
+    <include schemaLocation="submitSegmentByID.xsd"/>
+    <include schemaLocation="validate.xsd"/>
+    <include schemaLocation="spsRequestsExtensions.xsd"/>
+</schema>

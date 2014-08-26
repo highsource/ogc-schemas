@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/sos/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:gml="http://www.opengis.net/gml" elementFormDefault="qualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+	<annotation>
+		<documentation>
+			<description>
+				This XML Schema defines the GetFeatureOfInterestTime request and response XML elements and types.
+				
+				
+				SOS is an OGC Standard.
+				Copyright (c) 2006,2010 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</description>
+		</documentation>
+	</annotation>
+	<!-- ==============================================================
+		includes and imports
+	============================================================== -->
+	<import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd"/>
+	<include schemaLocation="sosAll.xsd"/>
+	<include schemaLocation="sosCommon.xsd"/>
+	<!-- ==============================================================
+		request
+	============================================================== -->
+	<element name="GetFeatureOfInterestTime">
+		<annotation>
+			<documentation>Request to a SOS to perform the GetTargetTime operation. 
+			This operation is designed to request the time that specified target feature instances or target locations are available</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="sos:RequestBaseType">
+					<sequence>
+						<element name="FeatureOfInterestId" type="anyURI">
+							<annotation>
+								<documentation>Identifier of the feature of interest, for which detailed information is requested. These identifiers are usually listed in the Contents section of the service metadata (Capabilities) document. </documentation>
+							</annotation>
+						</element>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ====================================================
+	response
+	=======================================================-->
+	<!-- The response is an GML time primitive.-->
+</schema>

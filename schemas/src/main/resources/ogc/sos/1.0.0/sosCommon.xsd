@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/sos/1.0" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+	<annotation>
+		<documentation>
+			<description>
+				This XML Schema encodes the elements and types that are shared by muliple SOS operations./
+				
+				SOS is an OGC Standard.
+				Copyright (c) 2006,2010 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</description>
+		</documentation>
+	</annotation>
+	<!-- ==============================================================
+		includes and imports
+	============================================================== -->
+	<include schemaLocation="sosAll.xsd"/>
+	<!-- ==============================================================
+		elements and types
+	============================================================== -->
+	<complexType name="RequestBaseType">
+		<annotation>
+			<documentation>XML encoded SOS operation request base, for all operations except Get Capabilities. In this XML encoding, no "request" parameter is included, since the element name specifies the specific operation. </documentation>
+		</annotation>
+		<attribute name="service" type="string" use="required" fixed="SOS">
+			<annotation>
+				<documentation>Service type identifier. </documentation>
+			</annotation>
+		</attribute>
+		<attribute name="version" type="string" use="required" fixed="1.0.0">
+			<annotation>
+				<documentation>Specification version for SOS version and operation.</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+	<simpleType name="responseModeType">
+		<restriction base="string">
+			<enumeration value="inline"/>
+			<enumeration value="attached"/>
+			<enumeration value="out-of-band"/>
+			<enumeration value="resultTemplate"/>
+		</restriction>
+	</simpleType>
+</schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+    targetNamespace="http://www.opengis.net/xls"
+    xmlns="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified" version="1.1.0.2">
+    <annotation>
+        <!-- This version of ols/1.1.0 was previously labeled as 1.1.1 . -->
+        <documentation>
+            OLS version 1.1
+                
+            This 'all-components' schema document includes and imports, directly or indirectly,
+            all the XML Schema defined by OLS.            
+            
+            OLS is an OGC Standard.
+            Copyright (c) 2005,2010 Open Geospatial Consortium.
+            To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    
+    <include schemaLocation="./ADT.xsd"/>
+    <include schemaLocation="./DirectoryService.xsd"/>
+    <include schemaLocation="./GatewayService.xsd"/>
+    <include schemaLocation="./LocationUtilityService.xsd"/>
+    <include schemaLocation="./PresentationService.xsd"/>
+    <include schemaLocation="./RouteService.xsd"/>
+    <include schemaLocation="./UOM.xsd"/>
+    
+</schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.opengis.net/wcps/1.0"
+	targetNamespace="http://www.opengis.net/wcps/1.0"
+	xmlns:wcs="http://www.opengis.net/wcs/1.1"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0" xml:lang="en">
+	<xs:annotation>
+		<xs:appinfo>wcps.xsd 2009-03-09</xs:appinfo>
+		<xs:documentation>
+			This XML Schema Document includes, directly and indirectly, all the XML Schema Documents defined by
+			the OGC Web Coverage Service (WCS) Processing Extension, see OGC 08-059r3.  
+			
+			WCPS query can be sent either as XML tree or as a string encoded in the Abstract Syntax defined in 
+			OGC Web Coverage Processing Service (WCPS), see OGC 08-068r2.
+			
+			Copyright (c) 2008 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</xs:documentation>
+	</xs:annotation>
+	<!-- =============================================================
+	includes and imports
+	============================================================== -->
+	<xs:include schemaLocation="wcpsProcessCoverages.xsd"/>
+</xs:schema>

@@ -1,0 +1,21 @@
+<sps:SubmitResponse xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0">
+  <sps:result>
+    <sps:StatusReport>
+      <sps:task>http://www.ogc.org/procedure/camera/1/tasks/6</sps:task>
+      <sps:event>TaskSubmitted</sps:event>
+      <sps:percentCompletion>0</sps:percentCompletion>
+      <sps:procedure>http://www.ogc.org/procedure/camera/1</sps:procedure>
+      <sps:requestStatus>Accepted</sps:requestStatus>
+      <sps:taskStatus>InExecution</sps:taskStatus>
+      <sps:updateTime>2010-08-20T11:12:04+02:00</sps:updateTime>
+      <sps:taskingParameters>
+        <sps:ParameterData>
+          <sps:encoding>
+            <swe:TextEncoding tokenSeparator="," blockSeparator="@@"/>
+          </sps:encoding>
+          <sps:values>2010-08-20T12:37:00+02:00,2010-08-20T14:30:00+02:00,Y,pointToLookAt,51.902112,8.192728,0,Y,3.5</sps:values>
+        </sps:ParameterData>
+      </sps:taskingParameters>
+    </sps:StatusReport>
+  </sps:result>
+</sps:SubmitResponse>

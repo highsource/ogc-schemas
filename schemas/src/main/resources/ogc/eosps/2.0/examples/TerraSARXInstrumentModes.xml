@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xml:base="http://www.dlr.de/ogc-def/TerraSARX/Modes/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+	<!-- ================================================= -->
+	<rdfs:comment>This ontology defines TerraSAR-X instrument modes</rdfs:comment>
+	<!-- ================================================= -->
+	<rdf:Description rdf:about="http://www.dlr.de/ogc-def/TerraSARX/Modes/SpotLight">
+		<dc:creator>Deutsches Zentrum für Luft- und Raumfahrt e.V. (DLR)</dc:creator>
+		<dc:title>SpotLight</dc:title>
+		<dc:description>***</dc:description>
+		<skos:prefLabel>Spot Light</skos:prefLabel>
+		<skos:broader rdf:resource="http://www.opengis.net/def/property/OGC-EO/0/InstrumentMode"/>
+	</rdf:Description>
+	<!-- -->
+	<rdf:Description rdf:about="http://www.dlr.de/ogc-def/TerraSARX/Modes/StripMap">
+		<dc:creator>Deutsches Zentrum für Luft- und Raumfahrt e.V. (DLR)</dc:creator>
+		<dc:title>StripMap</dc:title>
+		<dc:description>***</dc:description>
+		<skos:prefLabel>Strip Map</skos:prefLabel>
+		<skos:broader rdf:resource="http://www.opengis.net/def/property/OGC-EO/0/InstrumentMode"/>
+	</rdf:Description>
+	<!-- -->
+	<rdf:Description rdf:about="http://www.dlr.de/ogc-def/TerraSARX/Modes/ScanSAR">
+		<dc:creator>Deutsches Zentrum für Luft- und Raumfahrt e.V. (DLR)</dc:creator>
+		<dc:title>ScanSAR</dc:title>
+		<dc:description>***</dc:description>
+		<skos:prefLabel>Scan SAR</skos:prefLabel>
+		<skos:broader rdf:resource="http://www.opengis.net/def/property/OGC-EO/0/InstrumentMode"/>
+	</rdf:Description>
+</rdf:RDF>
+

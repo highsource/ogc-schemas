@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:gml="http://www.opengis.net/gml" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:sps="http://www.opengis.net/sps/1.0" targetNamespace="http://www.opengis.net/sps/1.0"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0.2">
+    
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+    <xs:include schemaLocation="./spsAll.xsd"/>
+    <xs:include schemaLocation="./spsCommon.xsd"/>
+    <xs:annotation>
+        <xs:documentation>
+            <copyright>
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+            </copyright> 
+        </xs:documentation>
+    </xs:annotation>
+    <!--Schema of the sps:SubmitRequestResponse-->
+    <xs:element name="SubmitRequestResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="sps:taskID"/>
+                <xs:element name="status">
+                    <xs:annotation>
+                        <xs:documentation>defines if the request is being processed, rejected or
+                            failed to process due to insuffiencent
+                        parametrization.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="confirmed"/>
+                            <xs:enumeration value="rejected"/>
+                            <xs:enumeration value="incomplete request"/>
+                            <xs:enumeration value="pending"/>
+                            <xs:enumeration value="rejected, alternatives available"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element ref="gml:description" minOccurs="0"/>
+                <xs:element ref="sps:LatestResponseTime"/>
+                <xs:element ref="sps:estimatedToC" minOccurs="0"/>
+                <xs:element name="alternative" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>in case a request is rejected, ths element may provide
+                            some alternative values.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="sps:InputParameter" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

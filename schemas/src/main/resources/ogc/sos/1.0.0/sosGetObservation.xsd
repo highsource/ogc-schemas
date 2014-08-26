@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/sos/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" xmlns:om="http://www.opengis.net/om/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" elementFormDefault="qualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+	<annotation>
+		<documentation>
+			<dc:description>
+				This XML Schema defines the GetObservation request XML elements and types.
+				
+				SOS is an OGC Standard.
+				Copyright (c) 2006,2010 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</dc:description>
+		</documentation>
+	</annotation>
+	<!-- ==============================================================
+		includes and imports
+	============================================================== -->
+	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+	<import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd"/>
+	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<include schemaLocation="sosAll.xsd"/>
+	<include schemaLocation="sosCommon.xsd"/>
+	<!-- ==============================================================
+		request
+	============================================================== -->
+	<element name="GetObservation">
+		<annotation>
+			<documentation>Request to a SOS to perform the GetObservation operation. This operation is designed to request sensor data from live sensors as well as sensor data archives.</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="sos:RequestBaseType">
+					<sequence minOccurs="0">
+						<element name="offering" type="anyURI">
+							<annotation>
+								<documentation>ID of an offering advertised in the capabilities.
+									All following parameters are depending on the selected offering.
+								</documentation>
+							</annotation>
+						</element>
+						<element name="eventTime" minOccurs="0" maxOccurs="unbounded">
+							<annotation>
+								<documentation>Allows a client to request observations from a specific instant, multiple instances or periods of time in the past, present and future. The supported range is listed in the selected offering capabilities.
+								</documentation>
+							</annotation>
+							<complexType>
+								<sequence>
+									<element ref="ogc:temporalOps"/>
+								</sequence>
+							</complexType>
+						</element>
+						<element name="procedure" type="anyURI" minOccurs="0" maxOccurs="unbounded">
+							<annotation>
+								<documentation>Index of a particular sensor if offering procedure is a Sensor Array. Allows client to request data from one or more sensors in the array. The size of the array should be specified in the selected offering capabilities. This is to support scenarios with sensor grids (we don't want to have one offering for each sensor in that case). Note that sensorML can describe Sensor Arrays too. 										</documentation>
+							</annotation>
+						</element>
+						<element name="observedProperty" type="anyURI" maxOccurs="unbounded">
+							<annotation>
+								<documentation>ID of a phenomenon advertised in capabilities document.
+									All possible phenomena are listed in the selected offering capabilities.
+								</documentation>
+							</annotation>
+						</element>
+						<element name="featureOfInterest" minOccurs="0">
+							<annotation>
+								<documentation>Specifies target feature for which observations are requested. Mostly a hepler for in-situ sensors, since geo-location has to be done on the server side. The supported area should be listed in the selected offering capabilities.
+								</documentation>
+							</annotation>
+							<complexType>
+								<choice>
+									<element ref="ogc:spatialOps"/>
+									<element name="ObjectID" type="anyURI" maxOccurs="unbounded">
+										<annotation>
+											<documentation>Unordered list of zero or more object identifiers. These identifiers are usually listed in the Contents section of the service metadata (Capabilities) document. If no ObjectID value is included, and if only one category of objects is allowed for this operation, the server shall return all objects of that category. NOTE: Although retention of this ability is allowed by a specific OWS that uses this operation, such retention is discouraged due to possible problems. Making this ability optional implementation by servers reduces interoperability. Requiring implementation of this ability can require a server to return a huge response, when there are a large number of items in that category. </documentation>
+										</annotation>
+									</element>
+								</choice>
+							</complexType>
+						</element>
+						<element name="result" minOccurs="0">
+							<annotation>
+								<documentation>Only report observations where the result matches this expression.
+								</documentation>
+							</annotation>
+							<complexType>
+								<sequence>
+									<element ref="ogc:comparisonOps"/>
+								</sequence>
+							</complexType>
+						</element>
+						<element name="responseFormat" type="ows:MimeType">
+							<annotation>
+								<documentation>ID of the output format to be used for the requested data. The supported output formats are listed in the selected offering capabilities.
+								</documentation>
+							</annotation>
+						</element>
+						<element name="resultModel" type="QName" minOccurs="0">
+							<annotation>
+								<documentation>Identifier of the result model to be used for the requested data. The resultModel values supported by a SOS server are listed in the contents section of the service metadata, identified as QName values.  If the requested resultModel is not supported by the SOS server, an exception message shall be returned.
+							</documentation>
+							</annotation>
+						</element>
+						<element name="responseMode" type="sos:responseModeType" minOccurs="0">
+							<annotation>
+								<documentation>This element allows the client to request the form of the response.  The value of resultTemplate is used to retrieve an observation template 
+							that will later be used in calls to GetResult.  The other options allow results to appear inline in a resultTag (inline), external to the observation element (out-of-band)
+							or as a MIME attachment (attached)</documentation>
+							</annotation>
+						</element>
+					</sequence>
+					<attribute name="srsName" type="anyURI" use="optional"/>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+</schema>

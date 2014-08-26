@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<sa:LocatedSpecimen gml:id="pr1_s2" xmlns:sa="http://www.opengis.net/sampling/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml"
+                    xsi:schemaLocation="http://www.opengis.net/sampling/1.0 ../sampling.xsd">
+	<gml:description>Rock sample collected on traverse</gml:description>
+	<gml:name codeSpace="http://my.geology.custodian.org/samples/2007">pr1_s2</gml:name>
+	<sa:sampledFeature xlink:href="http://my.geology.custodian.org/unit/g345"/>
+	<sa:relatedSamplingFeature>
+		<sa:SamplingFeatureRelation>
+			<sa:role>parent specimen</sa:role>
+			<sa:target xlink:href="http://my.geology.custodian.org/projects/2007/pr1_s1"/>
+		</sa:SamplingFeatureRelation>
+	</sa:relatedSamplingFeature>
+	<sa:materialClass>rock</sa:materialClass>
+	<sa:currentLocation xlink:href="urn:ogc:def:nil:SWE:destroyed"/>
+	<sa:samplingMethod xlink:href="http://geochemistry.lab.org/splits/biased/density/greaterThan/2.9"/>
+	<sa:samplingTime>
+		<gml:TimeInstant gml:id="pr1_s2_t">
+			<gml:timePosition>2007-01-29T12:19:55.00+09:00</gml:timePosition>
+		</gml:TimeInstant>
+	</sa:samplingTime>
+	<sa:samplingLocation>
+		<gml:Point gml:id="pr1_s2_p">
+			<gml:pos srsName="urn:ogc:def:crs:EPSG:6.8:4347">-30.706 134.196 272.</gml:pos>
+		</gml:Point>
+	</sa:samplingLocation>
+</sa:LocatedSpecimen>

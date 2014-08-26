@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:sps="http://www.opengis.net/sps/2.0" targetNamespace="http://www.opengis.net/sps/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+  <annotation>
+    <documentation>
+      SPS is an OGC Standard.
+      Copyright (c) 2010, 2011 Open Geospatial Consortium. 
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    </documentation>
+  </annotation>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.opengis.net/swes/2.0" schemaLocation="http://schemas.opengis.net/swes/2.0/swes.xsd"/>
+  <include schemaLocation="sps.xsd"/>
+  <include schemaLocation="spsCommon.xsd"/>
+  <include schemaLocation="spsReserve.xsd"/>
+  <!-- ================================================= -->
+  <element name="GetStatusResponse" type="sps:GetStatusResponseType" substitutionGroup="swes:ExtensibleResponse"/>
+  <complexType name="GetStatusResponseType">
+    <complexContent>
+      <extension base="swes:ExtensibleResponseType">
+        <sequence>
+          <element name="status" minOccurs="0" maxOccurs="unbounded">
+            <annotation>
+              <documentation>status report providing information about the current or - if requested via the since parameter - a previous state of the requested task</documentation>
+            </annotation>
+            <complexType>
+              <sequence>
+                <element ref="sps:StatusReport"/>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GetStatusResponsePropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:GetStatusResponse"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="GetStatus" type="sps:GetStatusType" substitutionGroup="swes:ExtensibleRequest"/>
+  <complexType name="GetStatusType">
+    <complexContent>
+      <extension base="swes:ExtensibleRequestType">
+        <sequence>
+          <element name="task" type="anyURI">
+            <annotation>
+              <appinfo>
+                <gml:targetElement>sps:Task</gml:targetElement>
+              </appinfo>
+              <documentation>Pointer to the task for which status information is requested.</documentation>
+            </annotation>
+          </element>
+          <element name="since" type="dateTime" minOccurs="0">
+            <annotation>
+              <documentation>point in time in the past that denotes the begin of the time period - ended by the time when the request was received by the service - for which status reports of the identified task are requested</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GetStatusPropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:GetStatus"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+</schema>

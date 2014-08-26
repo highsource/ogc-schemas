@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<LockFeatureResponse
+   lockId="LOCK1A"
+   xmlns="http://www.opengis.net/wfs/2.0"
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/wfs/2.0
+                       http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+   <FeaturesLocked>
+      <fes:ResourceId rid="BuiltUpA_1M.1"/>
+      <fes:ResourceId rid="BuiltUpA_1M.10"/>
+      <fes:ResourceId rid="BuiltUpA_1M.34"/>
+      <fes:ResourceId rid="BuiltUpA_1M.786"/>
+      <fes:ResourceId rid="BuiltUpA_1M.3"/> 
+      <fes:ResourceId rid="BuiltUpA_1M.13"/>
+      <fes:ResourceId rid="BuiltUpA_1M.47563"/>
+      <fes:ResourceId rid="InWaterA_1M.1212"/>
+      <fes:ResourceId rid="InWaterA_1M.1213"/>
+      <fes:ResourceId rid="InWaterA_1M.10"/>
+   </FeaturesLocked>
+</LockFeatureResponse>

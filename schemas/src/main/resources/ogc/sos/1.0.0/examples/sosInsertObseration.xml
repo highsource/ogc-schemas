@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InsertObservation xmlns="http://www.opengis.net/sos/1.0" xmlns:om="http://www.opengis.net/om/1.0"
+  xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:gml="http://www.opengis.net/gml"
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosAll.xsd"
+  service="SOS" version="1.0.0">
+  <AssignedSensorId>urn:ogc:object:Sensor:MyOrg:12349</AssignedSensorId>
+  <om:Observation>
+    <om:samplingTime>
+      <gml:TimeInstant>
+        <gml:timePosition>2005-08-05T12:21:13Z</gml:timePosition>
+      </gml:TimeInstant>
+    </om:samplingTime>
+    <om:procedure xlink:href="urn:ogc:object:Sensor:MyOrg:12349"/>
+    <om:observedProperty>
+      <swe:CompositePhenomenon gml:id="composite1" dimension="3">
+        <gml:name codeSpace="urn:MyOrg">urn:ogc:def:property:MyOrg:AggregateChemicalPresence</gml:name>
+        <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirDPM"/>
+        <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirMS"/>
+        <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirGA"/>
+      </swe:CompositePhenomenon>
+    </om:observedProperty>
+    <om:featureOfInterest xlink:href="urn:ogc:def:feature:OGC-SWE:3:transient"/>
+    <om:result>
+      <swe:SimpleDataRecord>
+        <swe:field name="time">
+          <swe:Time definition="urn:ogc:property:time:iso8601">
+            <swe:value>2005-08-05T12:21:13Z</swe:value>
+          </swe:Time>
+        </swe:field>
+        <swe:field name="longitude">
+          <swe:Quantity definition="urn:ogc:property:location:EPSG:4326:longitude">
+            <swe:uom code="deg"/>
+            <swe:value>-77.8912</swe:value>
+          </swe:Quantity>
+        </swe:field>
+        <swe:field name="latitude">
+          <swe:Quantity definition="urn:ogc:property:location:EPSG:4326:latitude">
+            <swe:uom code="deg"/>
+            <swe:value>38.512</swe:value>
+          </swe:Quantity>
+        </swe:field>
+        <swe:field name="DPM">
+          <swe:Quantity definition="urn:ogc:def:property:OGC:ChemicalPresenceInAirDPM">
+            <swe:uom code="ppm"/>
+            <swe:value>20.1</swe:value>
+          </swe:Quantity>
+        </swe:field>
+        <swe:field name="MS">
+          <swe:Quantity definition="urn:ogc:def:property:OGC:ChemicalPresenceInAirMS">
+            <swe:uom code="ppm"/>
+            <swe:value>0.0</swe:value>
+          </swe:Quantity>
+        </swe:field>
+      </swe:SimpleDataRecord>
+    </om:result>
+  </om:Observation>
+</InsertObservation>

@@ -1,0 +1,104 @@
+<wsdl:definitions targetNamespace="http://www.opengis.net/swes/2.0/wsdl" 
+  xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" 
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:swes="http://www.opengis.net/swes/2.0" 
+  xmlns:swesw="http://www.opengis.net/swes/2.0/wsdl"
+  xmlns:ows="http://www.opengis.net/ows/1.1">
+  <wsdl:documentation>swesWsdl11.wsdl 2.0.0
+      
+      SWES is an OGC Standard.
+      Copyright (c) 2010, 2011 Open Geospatial Consortium. 
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.opengis.net/swes/2.0">
+      <xsd:include schemaLocation="http://schemas.opengis.net/swes/2.0/swes.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <!-- ====================================================== -->
+  <!-- ==================== SWES Messages ==================== -->
+  <!-- ====================================================== -->
+  <wsdl:message name="DeleteSensorRequestMessage">
+    <wsdl:part name="body" element="swes:DeleteSensor"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteSensorResponseMessage">
+    <wsdl:part name="body" element="swes:DeleteSensorResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DescribeSensorRequestMessage">
+    <wsdl:part name="body" element="swes:DescribeSensor"/>
+  </wsdl:message>
+  <wsdl:message name="DescribeSensorResponseMessage">
+    <wsdl:part name="body" element="swes:DescribeSensorResponse"/>
+  </wsdl:message>
+  <wsdl:message name="InsertSensorRequestMessage">
+    <wsdl:part name="body" element="swes:InsertSensor"/>
+  </wsdl:message>
+  <wsdl:message name="InsertSensorResponseMessage">
+    <wsdl:part name="body" element="swes:InsertSensorResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateSensorDescriptionRequestMessage">
+    <wsdl:part name="body" element="swes:UpdateSensorDescription"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateSensorDescriptionResponseMessage">
+    <wsdl:part name="body" element="swes:UpdateSensorDescriptionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ExceptionMessage">
+    <wsdl:part name="fault" element="ows:Exception"/>
+  </wsdl:message>
+  <!-- ====================================================== -->
+  <!-- ==================== SWES PortType ==================== -->
+  <!-- ====================================================== -->
+  <wsdl:portType name="SensorProviderInterface">
+    <wsdl:operation name="DescribeSensor">
+      <wsdl:input wsam:Action="http://www.opengis.net/swes/2.0/DescribeSensor" message="swesw:DescribeSensorRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/swes/2.0/DescribeSensorResponse" message="swesw:DescribeSensorResponseMessage"/>
+      <wsdl:fault name="OperationNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="swesw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SensorDescriptionManagerInterface">
+    <wsdl:operation name="UpdateSensorDescription">
+      <wsdl:input wsam:Action="http://www.opengis.net/swes/2.0/UpdateSensorDescription" message="swesw:UpdateSensorDescriptionRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/swes/2.0/UpdateSensorDescriptionResponse" message="swesw:UpdateSensorDescriptionResponseMessage"/>
+      <wsdl:fault name="OperationNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="swesw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SensorInsertionInterface">
+    <wsdl:operation name="InsertSensor">
+      <wsdl:input wsam:Action="http://www.opengis.net/swes/2.0/InsertSensor" message="swesw:InsertSensorRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/swes/2.0/InsertSensorResponse" message="swesw:InsertSensorResponseMessage"/>
+      <wsdl:fault name="OperationNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="swesw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SensorDeletionInterface">
+    <wsdl:operation name="DeleteSensor">
+      <wsdl:input wsam:Action="http://www.opengis.net/swes/2.0/DeleteSensor" message="swesw:DeleteSensorRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/swes/2.0/DeleteSensorResponse" message="swesw:DeleteSensorResponseMessage"/>
+      <wsdl:fault name="OperationNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="swesw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="swesw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

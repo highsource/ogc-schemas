@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example Request for InsertObservation operation which contains the identifier of the observation for which the observation shall be inserted as well as the observation which shall be inserted. The response contains the assigned observation ID.
+=======================================================================-->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<soap12:Header>
+		<wsa:To>http://www.ogc.org/SOS</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/obsInsertion/2.0/InsertObservation</wsa:Action>
+		<wsa:ReplyTo>
+			<wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
+		</wsa:ReplyTo>
+		<wsa:MessageID>http://my.client.com/uid/msg-0010</wsa:MessageID>
+	</soap12:Header>
+	<soap12:Body>
+		<sos:InsertObservation service="SOS" version="2.0.0">
+
+	<!--identifier of offering for which the observation shall be inserted-->
+	<sos:offering>http://www.my_namespace.org/water_gage_2_observations</sos:offering>
+
+	<!--observation which shall be inserted-->
+	<sos:observation>
+
+		<om:OM_Observation gml:id="obsTest1">
+			<om:type
+		xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"/>
+			<om:phenomenonTime>
+				<gml:TimeInstant gml:id="phenomenonTime">
+					<gml:timePosition>2010-08-31T17:45:15.000+00:00</gml:timePosition>
+				</gml:TimeInstant>
+			</om:phenomenonTime>
+			<om:resultTime xlink:href="#phenomenonTime"/>
+			<!-- link to DescribeSensor operation of SOS which is providing the sensor description -->
+			<om:procedure xlink:href="http://www.my_namespace.org/sensors/Water_Gage_2"/>
+			<!-- parameter containing samplingPoint as defined in SOS 2.0 Extension - Data Encoding Restriction-->
+			<om:parameter>
+				<om:NamedValue>
+					<om:name xlink:href="http://www.opengis.net/req/omxml/2.0/data/samplingGeometry"/>
+					<om:value>
+						<gml:Point gml:id="SamplingPoint2">
+							<gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">54.9 10.52</gml:pos>
+						</gml:Point>
+					</om:value>
+				</om:NamedValue>
+			</om:parameter>
+			<!-- a notional URN identifying the observed property -->
+			<om:observedProperty xlink:href="http://sweet.jpl.nasa.gov/2.0/hydroSurface.owl#WaterHeight"/>
+			<!-- a notional WFS call identifying the object regarding which the observation was made -->
+			<om:featureOfInterest xlink:href="http://wfs.example.org?request=getFeature&amp;featureid=river1"/>
+			<om:result xsi:type="gml:MeasureType" uom="urn:ogc:def:uom:OGC:m">0.28</om:result>
+		</om:OM_Observation>
+		
+	</sos:observation>
+
+</sos:InsertObservation>
+</soap12:Body>
+</soap12:Envelope>

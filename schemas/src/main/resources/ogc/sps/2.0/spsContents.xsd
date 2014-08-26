@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:sps="http://www.opengis.net/sps/2.0" targetNamespace="http://www.opengis.net/sps/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+  <annotation>
+    <documentation>
+      SPS is an OGC Standard.
+      Copyright (c) 2010, 2011 Open Geospatial Consortium. 
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    </documentation>
+  </annotation>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.opengis.net/swes/2.0" schemaLocation="http://schemas.opengis.net/swes/2.0/swes.xsd"/>
+  <include schemaLocation="sps.xsd"/>
+  <!-- ================================================= -->
+  <element name="SensorOffering" type="sps:SensorOfferingType" substitutionGroup="swes:AbstractOffering">
+    <annotation>
+      <documentation>contains metadata about a sensor provided by the service</documentation>
+    </annotation>
+  </element>
+  <complexType name="SensorOfferingType">
+    <complexContent>
+      <extension base="swes:AbstractOfferingType">
+        <sequence>
+          <element name="observableArea">
+            <annotation>
+              <documentation>the area that the sensor can observe</documentation>
+            </annotation>
+            <complexType>
+              <sequence>
+                <group ref="sps:PointOrPolygon"/>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SensorOfferingPropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:SensorOffering"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="SPSContents" type="sps:SPSContentsType" substitutionGroup="swes:AbstractContents"/>
+  <complexType name="SPSContentsType">
+    <complexContent>
+      <extension base="swes:AbstractContentsType">
+        <sequence>
+          <element name="minStatusTime" type="duration">
+            <annotation>
+              <documentation>duration in which the service provides status information about a task or tasking request after it has been finalized</documentation>
+            </annotation>
+          </element>
+          <element name="supportedEncoding" type="anyURI" maxOccurs="unbounded">
+            <annotation>
+              <appinfo>
+                <gml:targetElement>unknown</gml:targetElement>
+              </appinfo>
+              <documentation>encoding supported by the service that can be used to encode tasking parameter values</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SPSContentsPropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:SPSContents"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <group name="PointOrPolygon">
+    <annotation>
+      <documentation>represents a choice between a point or a polygon</documentation>
+    </annotation>
+    <choice>
+      <element name="byPoint">
+        <complexType>
+          <sequence>
+            <element ref="gml:Point"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="byPolygon">
+        <complexType>
+          <sequence>
+            <element ref="gml:Polygon"/>
+          </sequence>
+        </complexType>
+      </element>
+    </choice>
+  </group>
+  <complexType name="PointOrPolygonPropertyType">
+    <sequence minOccurs="0">
+      <group ref="sps:PointOrPolygon"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attribute name="unionSemantics" type="sps:PointOrPolygonUnionSemantics"/>
+  </complexType>
+  <simpleType name="PointOrPolygonUnionSemantics">
+    <restriction base="string">
+      <enumeration value="byPoint"/>
+      <enumeration value="byPolygon"/>
+    </restriction>
+  </simpleType>
+</schema>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<om:Observation gml:id="shapeTest2" 
+xmlns:om="http://www.opengis.net/om/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:gml="http://www.opengis.net/gml" 
+xsi:schemaLocation="http://www.opengis.net/om/1.0 ../om.xsd">
+	<gml:description>Observation test instance</gml:description>
+	<gml:name>Shape observation test</gml:name>
+	<om:samplingTime>
+		<gml:TimeInstant gml:id="ot2t">
+			<gml:timePosition>2005-01-11T17:22:25.00</gml:timePosition>
+		</gml:TimeInstant>
+	</om:samplingTime>
+	<om:resultTime>
+		<gml:TimeInstant gml:id="ot2ts">
+			<gml:timePosition>2005-01-12T09:25:00.00</gml:timePosition>
+		</gml:TimeInstant>
+	</om:resultTime>
+	<om:procedure xlink:href=" http://www.flakey.org/register/process/triangulation987"/>
+	<om:observedProperty xlink:href="urn:ogc:def:phenomenon:OGC:Shape"/>
+    <om:featureOfInterest xlink:href="http://wfs.flakey.org?request=getFeature&#38;featureid=fruit37f "/>
+	<om:result>
+		<gml:Solid gml:id="bs">
+			<gml:description>An explicit description of a solid. The details of the description of the exterior surface omitted here for brevity.</gml:description>
+			<gml:exterior>
+				<gml:Surface gml:id="be">
+					<gml:patches>
+					</gml:patches>
+				</gml:Surface>
+			</gml:exterior>
+		</gml:Solid>
+	</om:result>
+</om:Observation>

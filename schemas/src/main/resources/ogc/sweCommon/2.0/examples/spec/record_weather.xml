@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<!-- -->
+  <swe:label>Weather Data Record</swe:label>
+  <swe:description>Record of synchronous weather measurements</swe:description>
+	<!-- -->
+	<swe:field name="time">
+		<swe:Time definition="http://www.opengis.net/def/property/OGC/0/SamplingTime" referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+			<swe:label>Sampling Time</swe:label>
+			<swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+		</swe:Time>
+	</swe:field>
+	<!-- -->
+	<swe:field name="temperature">
+		<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/air_temperature">
+			<swe:label>Air Temperature</swe:label>
+			<swe:uom code="Cel"/>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="pressure">
+		<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/air_pressure_at_sea_level">
+			<swe:label>Air Pressure</swe:label>
+			<swe:uom code="mbar"/>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="windSpeed">
+		<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/wind_speed">
+			<swe:label>Wind Speed</swe:label>
+			<swe:uom code="km/h"/>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="windDirection">
+		<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/wind_to_direction">
+			<swe:label>Wind Direction</swe:label>
+			<swe:uom code="deg"/>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+</swe:DataRecord>

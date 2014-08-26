@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:Dictionary xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd" gml:id="EventCode">
+    <gml:identifier codeSpace="http://earth.esa.int/hma/ordering/">SWES_Event_CodeList</gml:identifier>
+    <gml:name>EventCode</gml:name>
+    <gml:dictionaryEntry>
+        <gml:Definition gml:id="ORDERING_COMPLETED">
+            <gml:description>The ordering is completed</gml:description>
+            <gml:identifier codeSpace="http://earth.esa.int/hma/ordering">ORDERING_COMPLETED</gml:identifier>
+            <gml:name>ORDERING_COMPLETED</gml:name>
+        </gml:Definition>
+    </gml:dictionaryEntry>
+    <gml:dictionaryEntry>
+        <gml:Definition gml:id="ORDERING_DELETED">
+            <gml:description>The ordering has been deleted</gml:description>
+            <gml:identifier codeSpace="http://earth.esa.int/hma/ordering">ORDERING_DELETED</gml:identifier>
+            <gml:name>ORDERING_DELETED</gml:name>
+        </gml:Definition>
+    </gml:dictionaryEntry>
+     <gml:dictionaryEntry>
+        <gml:Definition gml:id="ORDERING_FAILED">
+            <gml:description>The ordering is failed</gml:description>
+            <gml:identifier codeSpace="http://earth.esa.int/hma/ordering">ORDERING_FAILED</gml:identifier>
+            <gml:name>ORDERING_FAILED</gml:name>
+        </gml:Definition>
+    </gml:dictionaryEntry>
+</gml:Dictionary>

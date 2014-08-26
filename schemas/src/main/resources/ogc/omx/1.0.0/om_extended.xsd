@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opengis.net/omx/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.2">
+	<annotation>
+		<documentation>om_extended.xsd
+
+The Observations Schema Extensions schema. 
+This document includes  the 
+   * the extensions to define specialized observations with constrained result types
+   * specialized procedure types
+   * coverage-observations
+
+Observation Extensions is an OGC Standard.
+Copyright (c) 2007,2008,2010 Open Geospatial Consortium.
+To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
+	</annotation>
+	<!-- ====================================================================== -->
+	<include schemaLocation="./observationSpecialization.xsd"/>
+	<include schemaLocation="./observationCoverage.xsd"/>
+	<include schemaLocation="./observationCoverageCompact.xsd"/>
+	<include schemaLocation="./procedureSpecialization.xsd"/>
+	<!-- ====================================================================== -->
+</schema>

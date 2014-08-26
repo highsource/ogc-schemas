@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by John D Evans (Global Science & Technology, Inc) -->
+<CoverageDescriptions xmlns="http://www.opengis.net/wcs/1.1" xmlns:ows="http://www.opengis.net/ows" xmlns:owcs="http://www.opengis.net/wcs/1.1/ows" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wcs/1.1 ../wcsDescribeCoverage.xsd http://www.opengis.net/wcs/1.1/ows ../owsDataIdentification.xsd">
+	<!-- Primary editor: Arliss Whiteside. Last updated 2006-09-01-->
+	<CoverageDescription>
+		<ows:Title>TBD</ows:Title>
+		<ows:Abstract>TBD</ows:Abstract>
+		<Identifier>TBD</Identifier>
+		<Domain>
+			<SpatialDomain>
+				<ows:BoundingBox>
+					<ows:LowerCorner>-30.00 -30.00</ows:LowerCorner>
+					<ows:UpperCorner>30.00 30.00</ows:UpperCorner>
+				</ows:BoundingBox>
+			</SpatialDomain>
+		</Domain>
+		<Range>
+			<Field>
+				<ows:Title>TBD</ows:Title>
+				<ows:Abstract>TBD</ows:Abstract>
+				<Identifier>TBD</Identifier>
+				<Definition>
+					<owcs:AnyValue/>
+				</Definition>
+				<owcs:InterpolationMethods>
+					<owcs:DefaultMethod>cubic</owcs:DefaultMethod>
+					<owcs:OtherMethod>linear</owcs:OtherMethod>
+				</owcs:InterpolationMethods>
+			</Field>
+		</Range>
+		<SupportedCRS>urn:ogc:def:crs:EPSG::XXXX</SupportedCRS>
+		<SupportedCRS>urn:ogc:def:crs:EPSG::YYYY</SupportedCRS>
+		<SupportedFormat>text/xml</SupportedFormat>
+	</CoverageDescription>
+</CoverageDescriptions>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetCapabilities xmlns="http://www.opengis.net/wcs/1.1" 
+xmlns:ows="http://www.opengis.net/ows" 
+xmlns:owcs="http://www.opengis.net/wcs/1.1/ows" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.opengis.net/wcs/1.1 ../wcsGetCapabilities.xsd" 
+service="WCS" updateSequence="XYZ123">
+	<!-- Maximum example for WCS. Primary editor: Arliss Whiteside. Last updated 2006-07-26-->
+	<owcs:AcceptVersions>
+		<owcs:Version>1.0.0</owcs:Version>
+		<owcs:Version>0.8.3</owcs:Version>
+	</owcs:AcceptVersions>
+	<owcs:Sections>
+		<owcs:Section>Contents</owcs:Section>
+	</owcs:Sections>
+	<owcs:AcceptFormats>
+		<owcs:OutputFormat>text/xml</owcs:OutputFormat>
+	</owcs:AcceptFormats>
+</GetCapabilities>

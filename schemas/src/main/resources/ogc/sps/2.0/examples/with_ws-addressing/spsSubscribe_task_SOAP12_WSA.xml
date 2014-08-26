@@ -1,0 +1,22 @@
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd http://docs.oasis-open.org/wsn/b-2 http://docs.oasis-open.org/wsn/b-2.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsn-b="http://docs.oasis-open.org/wsn/b-2">
+  <soap12:Header>
+    <wsa:To>http://www.ogc.org/SPS/Producer</wsa:To>
+    <wsa:Action>http://docs.oasis-open.org/wsn/bw-2/NotificationProducer/SubscribeRequest</wsa:Action>
+    <wsa:ReplyTo>
+      <wsa:Address>http://my.client.com/client/myReceiver</wsa:Address>
+    </wsa:ReplyTo>
+    <wsa:MessageID>http://my.client.com/uid/msg-Sub1</wsa:MessageID>
+  </soap12:Header>
+  <soap12:Body>
+    <wsn-b:Subscribe>
+      <wsn-b:ConsumerReference>
+        <wsa:Address>http://my.client.com/client/myNotificationConsumer</wsa:Address>
+      </wsn-b:ConsumerReference>
+      <wsn-b:Filter>
+        <wsn-b:TopicExpression Dialect="http://www.w3.org/TR/1999/REC-xpath-19991116">//sps:TaskEvent/*[@wstop:topic='true']</wsn-b:TopicExpression>
+        <wsn-b:MessageContent Dialect="http://www.w3.org/TR/1999/REC-xpath-19991116">boolean(//*[sps:task = 'http://www.ogc.org/procedure/camera/1/tasks/6'])</wsn-b:MessageContent>
+      </wsn-b:Filter>
+    </wsn-b:Subscribe>
+  </soap12:Body>
+</soap12:Envelope>

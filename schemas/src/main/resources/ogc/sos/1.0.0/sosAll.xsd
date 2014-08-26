@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/1.0" targetNamespace="http://www.opengis.net/sos/1.0" elementFormDefault="qualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+  <annotation>
+    <documentation>
+      <description>
+        This XML Schema includes and imports, directly and indirectly, 
+        all the XML Schemas defined by the OGC Sensor Observation Service (SOS).
+        
+        SOS is an OGC Standard.
+        Copyright (c) 2006,2010 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+      </description>
+    </documentation>
+  </annotation>
+  <!-- ==============================================================
+		includes and imports
+	============================================================== -->
+  <include schemaLocation="sosCommon.xsd"/>
+  <include schemaLocation="sosGetCapabilities.xsd"/>
+  <include schemaLocation="sosDescribeFeatureType.xsd"/>
+  <include schemaLocation="sosDescribeSensor.xsd"/>
+  <include schemaLocation="sosDescribeObservationType.xsd"/>
+  <include schemaLocation="sosDescribeResultModel.xsd"/>
+  <include schemaLocation="sosGetObservation.xsd"/>
+  <include schemaLocation="sosGetResult.xsd"/>
+  <include schemaLocation="sosGetFeatureOfInterest.xsd"/>
+  <include schemaLocation="sosGetFeatureOfInterestTime.xsd"/>
+  <include schemaLocation="sosInsert.xsd"/>
+  <include schemaLocation="sosRegisterSensor.xsd"/>
+  <include schemaLocation="sosGetObservationById.xsd"/>
+</schema>

@@ -1,0 +1,19 @@
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:swes="http://www.opengis.net/swes/2.0">
+  <soap12:Body>
+    <soap12:Fault>
+      <soap12:Code>
+        <soap12:Value>soap12:Sender</soap12:Value>
+        <soap12:Subcode>
+          <soap12:Value>swes:InvalidRequest</soap12:Value>
+        </soap12:Subcode>
+      </soap12:Code>
+      <soap12:Reason>
+        <soap12:Text xml:lang="en">The request did not conform to its XML Schema definition.</soap12:Text>
+      </soap12:Reason>
+      <soap12:Detail>
+        <ows:Exception exceptionCode="InvalidRequest" locator="element sps:extension is not expected after element sps:GetStatus/sps:task"/>
+      </soap12:Detail>
+    </soap12:Fault>
+  </soap12:Body>
+</soap12:Envelope>

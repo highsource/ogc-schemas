@@ -1,0 +1,65 @@
+<Submit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/oseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" service="OS" version="1.0.0">
+	<orderSpecification>
+		<orderReference>example_0001</orderReference>
+		<orderRemark>example</orderRemark>
+		<deliveryInformation>
+			<mailAddress>
+				<firstName>John</firstName>
+				<lastName>Smith</lastName>
+				<companyRef>DTMT</companyRef>
+				<postalAddress>
+					<streetAddress>Esrin Esa No. 1</streetAddress>
+					<city>Frascati</city>
+					<state>-</state>
+					<postalCode>00100</postalCode>
+					<country>IT</country>
+					<postBox>-</postBox>
+				</postalAddress>
+				<telephoneNumber>00390694180999</telephoneNumber>
+			</mailAddress>
+		</deliveryInformation>
+		<orderType>PRODUCT_ORDER</orderType>
+		<orderItem>
+			<itemId>item_0001</itemId>
+			<productOrderOptionsId>Level 1,Product SLC (ASA_IMS)</productOrderOptionsId>
+			<orderItemRemark>First product</orderItemRemark>
+			<option>
+				<ParameterData>
+					<encoding>XMLEncoding</encoding>
+					<values xmlns:ns="http://www.opengis.net/oseo/1.0/dataset">
+						<ns:processingLevel>1B</ns:processingLevel>
+						<ns:productType>ASA_IMS_1P</ns:productType>
+						<ns:qualityOfService>STANDARD</ns:qualityOfService>
+					</values>
+				</ParameterData>
+			</option>
+			<sceneSelection>
+				<ParameterData>
+					<encoding>XMLEncoding</encoding>
+					<values xmlns:ns="http://www.opengis.net/oseo/1.0/dataset">
+						<ns:sceneType>FloatingScene</ns:sceneType>
+						<ns:sceneStartStopTime>
+							<ns:min>2010-01-01T11:55:00.00Z</ns:min>
+							<ns:max>2010-01-01T12:00:00.00Z</ns:max>
+						</ns:sceneStartStopTime>
+						<ns:frame>7191</ns:frame>
+					</values>
+				</ParameterData>
+			</sceneSelection>
+			<deliveryOptions>
+				<mediaDelivery>
+					<packageMedium>CD-ROM</packageMedium>
+				</mediaDelivery>
+			</deliveryOptions>
+			<payment>
+				<paymentMethod>quota</paymentMethod>
+				<orderAccount>project_10000</orderAccount>
+			</payment>
+			<productId>
+				<identifier>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS/EN1-05121921114570-3322.XI</identifier>
+				<collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS</collectionId>
+			</productId>
+		</orderItem>
+	</orderSpecification>
+	<statusNotification>Final</statusNotification>
+</Submit>

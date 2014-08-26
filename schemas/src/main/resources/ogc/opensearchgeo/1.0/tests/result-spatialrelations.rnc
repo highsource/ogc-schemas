@@ -1,0 +1,31 @@
+# -*- rnc -*-
+#Test Purpose:	Verify that the server conforms to the Spatial Operators conformance class.   
+
+namespace os = "http://a9.com/-/spec/opensearch/1.1/"
+namespace s = "http://purl.oclc.org/dsdl/schematron"
+namespace local = ""
+namespace geo = "http://a9.com/-/opensearch/extensions/geo/1.0/"
+
+include "../schemas/geo.rnc"
+
+include "../schemas/osdd.rnc"{
+
+	undefinedAttribute = attribute * - (local:* | geo:* ) { text }
+
+	osDocument = [ 
+	 	s:pattern [  name="Check for Atom Url template" 
+	 		s:rule [ context = "os:OpenSearchDescription"
+              s:assert [ test = "os:Url[@type='application/atom+xml']"
+               "An OpenSearch Description Document must have a Url template with "
+               ~ " type of ATOM document." ]]]
+               
+        s:pattern [  name="Check for relation parameter"    
+                s:rule [ context = "os:OpenSearchDescription"
+              s:assert [ test = "os:Url[@type='application/atom+xml'][substring-before(@template,'{geo:relation')!='']"
+               "An OpenSearch Description Document must have at least a geo:relation parameter "
+               ~ " in the ATOM response." ]]]
+               
+               ]
+     		element os:OpenSearchDescription { osDocumentConstruct } 	
+}
+# EOF
