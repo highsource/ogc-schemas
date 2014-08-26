@@ -17,26 +17,6 @@
 		<defaultGoal>install</defaultGoal>
 		<plugins>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>add-unpacked-resources</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>add-resource</goal>
-						</goals>
-						<configuration>
-							<resources>
-								<resource>
-									<directory>${project.build.directory}/schema-archives</directory>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<!--dependencies>
 					<dependency>
@@ -61,7 +41,7 @@
 				<executions>
 					<execution>
 						<id>download-schemas</id>
-						<phase>initialize</phase>
+						<phase>generate-sources</phase>
 						<configuration>
 							<tasks>
 								<get src="http://schemas.opengis.net/${schemas.zip}" dest="src/main/etc/${schemas.zip}" usetimestamp="true"/>
@@ -73,7 +53,7 @@
 					</execution>
 					<execution>
 						<id>unpack</id>
-						<phase>generate-resources</phase>
+						<phase>generate-sources</phase>
 						<configuration>
 							<tasks>
 								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources/ogc">
@@ -98,8 +78,8 @@
 				</configuration>
 				<executions>
 					<execution>
-						<id>patch-resources</id>
-						<phase>process-resources</phase>
+						<id>patch-sources</id>
+						<phase>process-sources</phase>
 						<goals>
 							<goal>apply</goal>
 						</goals>

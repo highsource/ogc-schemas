@@ -1,26 +1,13 @@
-diff --git ogc/gml/3.1.1/smil/smil20-language.xsd ogc/gml/3.1.1/smil/smil20-language.xsd
-index 6608c90..bee118b 100644
---- ogc/gml/3.1.1/smil/smil20-language.xsd
-+++ ogc/gml/3.1.1/smil/smil20-language.xsd
-@@ -30,7 +30,7 @@ between substitutionGroups and wildcard content.
- -->
- <schema targetNamespace="http://www.w3.org/2001/SMIL20/Language" xmlns:smil20lang="http://www.w3.org/2001/SMIL20/Language" xmlns:smil20="http://www.w3.org/2001/SMIL20/" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
- 	<!-- import the smil20 namespaces -->
--	<import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="smil20.xsd"/>
-+	<import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="http://schemas.opengis.net/gml/3.1.1/smil/smil20.xsd"/>
- 	<element name="animate" type="smil20lang:animateType"/>
- 	<complexType name="animateType">
- 		<complexContent>
-diff --git ogc/gml/3.1.1/smil/smil20.xsd ogc/gml/3.1.1/smil/smil20.xsd
-index 293f89a..5ce6070 100644
---- ogc/gml/3.1.1/smil/smil20.xsd
-+++ ogc/gml/3.1.1/smil/smil20.xsd
-@@ -28,7 +28,7 @@ Author: Aaron Michael Cohen (Intel)
- Revision: 2001/07/31
- -->
- <schema targetNamespace="http://www.w3.org/2001/SMIL20/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:smil20="http://www.w3.org/2001/SMIL20/" xmlns:smil20lang="http://www.w3.org/2001/SMIL20/Language" elementFormDefault="qualified">
--	<import namespace="http://www.w3.org/2001/SMIL20/Language" schemaLocation="smil20-language.xsd"/>
-+	<import namespace="http://www.w3.org/2001/SMIL20/Language" schemaLocation="http://schemas.opengis.net/gml/3.1.1/smil/smil20-language.xsd"/>
- 	<!-- ============================================================= 
- 	struct.xsd
+diff --git ogc/gml/3.1.1/base/defaultStyle.xsd ogc/gml/3.1.1/base/defaultStyle.xsd
+index a5ebeb7..0a0899f 100644
+--- ogc/gml/3.1.1/base/defaultStyle.xsd
++++ ogc/gml/3.1.1/base/defaultStyle.xsd
+@@ -15,7 +15,7 @@
+ 	============================================================== -->
+ 	<include schemaLocation="gml.xsd"/>
+ 	<include schemaLocation="measures.xsd"/>
+-	<import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="http://schemas.opengis.net/gml/3.1.1/smil/smil20.xsd"/>
++	<import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="../smil/smil20.xsd"/>
+ 	<!-- ==============================================================
+       the Style property
  	============================================================== -->
