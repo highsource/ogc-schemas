@@ -58,7 +58,7 @@
 									<type>jar</type>
 									<overWrite>false</overWrite>
 									<outputDirectory>src/main/resources</outputDirectory>
-									<includes>ogc/filter/1.1.0/**/*.*,ogc/gml/3.1.1/**/*.*,</includes>
+									<includes>ogc/filter/1.1.0/**/*.*,ogc/gml/3.1.1/**/*.*</includes>
 								 </artifactItem>
 							 </artifactItems>
 						</configuration>
