@@ -17,7 +17,7 @@
 		</jaxb:globalBindings>
 
 		<jaxb:schemaBindings>
-			<jaxb:package name="net.opengis.filter.v_1_1"/>
+			<jaxb:package name="net.opengis.filter.v_1_1_0"/>
 		</jaxb:schemaBindings>
 	</jaxb:bindings>
 </jaxb:bindings>
