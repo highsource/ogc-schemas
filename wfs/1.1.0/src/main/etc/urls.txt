@@ -1,0 +1,4 @@
+http://cgns.nrcan.gc.ca/wfs/cubeserv.cgi?datastore=cgns&REQUEST=GetCapabilities&SERVICE=WFS
+http://cgns.nrcan.gc.ca/wfs/cubeserv.cgi?datastore=cgns&REQUEST=DescribeFeatureType&SERVICE=WFS&TYPENAME=cw:GEONAMES
+http://cgns.nrcan.gc.ca/wfs/cubeserv.cgi?datastore=cgns&REQUEST=GetFeature&SERVICE=WFS&TYPENAME=cw:GEONAMES&MAXFEATURES=100
+http://cgns.nrcan.gc.ca/wfs/cubeserv.cgi?service=WFS&version=1.1.0&request=DescribeFeatureType&outputFormat=GML3&typeName=cw:GEONAMES&DATASTORE=cgns
