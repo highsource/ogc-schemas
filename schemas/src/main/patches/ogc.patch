@@ -24,3 +24,53 @@ index a5ebeb7..0a0899f 100644
  	<!-- ==============================================================
        the Style property
  	============================================================== -->
+diff --git ogc/ows/2.0/owsAdditionalParameters.xsd ogc/ows/2.0/owsAdditionalParameters.xsd
+index 8e91265..1f534a3 100644
+--- ogc/ows/2.0/owsAdditionalParameters.xsd
++++ ogc/ows/2.0/owsAdditionalParameters.xsd
+@@ -53,13 +53,13 @@
+   <!-- ========================================================== -->
+   <complexType name="AdditionalParametersType">
+     <complexContent>
+-      <extension base="ows:AdditionalParametersBaseType">
++      <restriction base="ows:AdditionalParametersBaseType">
+         <sequence>
+           <element ref="ows:AdditionalParameter"
+                    minOccurs="0"
+                    maxOccurs="unbounded" />
+         </sequence>
+-      </extension>
++      </restriction>
+     </complexContent>
+   </complexType>
+   <!-- ========================================================== -->
+diff --git ogc/ows/2.0/owsCommon.xsd ogc/ows/2.0/owsCommon.xsd
+index 0139647..9bd628e 100644
+--- ogc/ows/2.0/owsCommon.xsd
++++ ogc/ows/2.0/owsCommon.xsd
+@@ -71,7 +71,7 @@
+     </annotation>
+     <sequence>
+       <element ref="ows:AbstractMetaData"
+-               minOccurs="0" />
++               minOccurs="0" maxOccurs="unbounded"/>
+     </sequence>
+     <attributeGroup ref="xlink:simpleAttrs">
+       <annotation>
+diff --git ogc/wfs/1.1.0/wfs.xsd ogc/wfs/1.1.0/wfs.xsd
+index 1b90d26..87ac05e 100644
+--- ogc/wfs/1.1.0/wfs.xsd
++++ ogc/wfs/1.1.0/wfs.xsd
+@@ -18,9 +18,9 @@
+    <!-- ==============================================================
+         Includes and Imports
+         ============================================================== -->
+-   <xsd:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+-   <xsd:import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/filter/1.1.0/filter.xsd"/>
+-   <xsd:import namespace="http://www.opengis.net/ows" schemaLocation="http://schemas.opengis.net/ows/1.0.0/owsAll.xsd"/>
++   <xsd:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
++   <xsd:import namespace="http://www.opengis.net/ogc" schemaLocation="../../filter/1.1.0/filter.xsd"/>
++   <xsd:import namespace="http://www.opengis.net/ows" schemaLocation="../../ows/1.0.0/owsAll.xsd"/>
+ 
+    <!-- ================================================================== -->
+    <!-- =   BASE REQUEST TYPE                                            = -->

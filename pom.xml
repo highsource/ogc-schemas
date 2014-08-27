@@ -76,6 +76,7 @@
 		<module>ows</module>
 		<module>gml</module>
 		<module>filter</module>
+		<module>wfs</module>
 	</modules>
 	<properties> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
