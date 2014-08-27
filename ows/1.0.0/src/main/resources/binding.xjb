@@ -13,7 +13,7 @@
 			<xjc:noValidatingUnmarshaller />
 		</jaxb:globalBindings>
 		<jaxb:schemaBindings>
-			<jaxb:package name="net.opengis.ows.v_1_0"/>
+			<jaxb:package name="net.opengis.ows.v_1_0_0"/>
 		</jaxb:schemaBindings>
 	</jaxb:bindings>
 </jaxb:bindings>
