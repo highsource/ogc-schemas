@@ -1,3 +1,16 @@
+diff --git ogc/filter/1.0.0/filter.xsd ogc/filter/1.0.0/filter.xsd
+index f31a3b0..3a1394c 100644
+--- ogc/filter/1.0.0/filter.xsd
++++ ogc/filter/1.0.0/filter.xsd
+@@ -6,7 +6,7 @@
+     To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+ -->
+ 	<xsd:include schemaLocation="expr.xsd"/>
+-	<xsd:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/2.1.2/geometry.xsd"/>
++	<xsd:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/2.1.2/geometry.xsd"/>
+ 	<!-- ============================================= -->
+ 	<!-- FILTER EXPRESSION                             -->
+ 	<!-- ============================================= -->
 diff --git ogc/filter/1.1.0/filter.xsd ogc/filter/1.1.0/filter.xsd
 index 0eb97d2..5708362 100644
 --- ogc/filter/1.1.0/filter.xsd
@@ -11,6 +24,19 @@ index 0eb97d2..5708362 100644
  
     <xsd:element name="_Id" type="ogc:AbstractIdType" abstract="true"/>
     <xsd:element name="FeatureId"
+diff --git ogc/filter/2.0/filterCapabilities.xsd ogc/filter/2.0/filterCapabilities.xsd
+index a7368b4..c10f712 100644
+--- ogc/filter/2.0/filterCapabilities.xsd
++++ ogc/filter/2.0/filterCapabilities.xsd
+@@ -23,7 +23,7 @@
+                schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+ 
+    <xsd:import namespace="http://www.opengis.net/ows/1.1"
+-               schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++               schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 
+    <xsd:element name="Filter_Capabilities">
+       <xsd:complexType>
 diff --git ogc/gml/3.1.1/base/defaultStyle.xsd ogc/gml/3.1.1/base/defaultStyle.xsd
 index a5ebeb7..0a0899f 100644
 --- ogc/gml/3.1.1/base/defaultStyle.xsd
