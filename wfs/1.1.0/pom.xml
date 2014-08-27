@@ -84,7 +84,7 @@
 					</schemaIncludes>
 				</configuration>
 			</plugin>
-			<!--plugin>
+			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
 					<execution>
@@ -92,6 +92,8 @@
 						<configuration>
 							<tasks>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/filter"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/ows"/>
 							</tasks>
 						</configuration>
 						<goals>
@@ -99,7 +101,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin-->
+			</plugin>
 		</plugins>
 	</build>
 </project>
