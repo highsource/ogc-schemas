@@ -1,7 +1,8 @@
 <jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
-	jaxb:extensionBindingPrefixes="xjc">
+	xmlns:jsonix="http://jsonix.highsource.org/customizations"
+	jaxb:extensionBindingPrefixes="xjc jsonix">
 
 	<jaxb:bindings schemaLocation="ogc/gml/2.1.2/gml.xsd" 
 		node="/xs:schema">
@@ -20,6 +21,8 @@
 				<jaxb:elementName suffix="Element"/>
 			</jaxb:nameXmlTransform>
 		</jaxb:schemaBindings>
+		<jsonix:packageMapping packageName="org.hisrc.w3c.xlink.v_1_0" spaceName="XLink_1_0"/>
+		<jsonix:packageMapping packageName="net.opengis.gml.v_2_1_2" spaceName="GML_2_1_2"/>
 	</jaxb:bindings>
 	<jaxb:bindings schemaLocation="ogc/gml/2.1.2/feature.xsd" 
 		node="/xs:schema">

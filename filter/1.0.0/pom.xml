@@ -83,6 +83,7 @@
 						<configuration>
 							<tasks>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="GML*.*"/>
 							</tasks>
 						</configuration>
 						<goals>
