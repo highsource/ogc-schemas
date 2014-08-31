@@ -159,3 +159,133 @@ index 299a6a0..636037a 100644
     <!-- ================================================================== -->
     <!-- =   BASE REQUEST TYPE                                            = -->
     <!-- ================================================================== -->
+diff --git ogc/wps/1.0.0/common/DescriptionType.xsd ogc/wps/1.0.0/common/DescriptionType.xsd
+index 7413109..ba87d64 100644
+--- ogc/wps/1.0.0/common/DescriptionType.xsd
++++ ogc/wps/1.0.0/common/DescriptionType.xsd
+@@ -14,7 +14,7 @@
+ 	<!-- ==============================================================
+ 		Import or include schema
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../../ows/1.1.0/owsAll.xsd"/>
+ 	<!-- ==============================================================
+ 		elements and types
+ 	============================================================== -->
+diff --git ogc/wps/1.0.0/common/ProcessBriefType.xsd ogc/wps/1.0.0/common/ProcessBriefType.xsd
+index e783a43..2303c3a 100644
+--- ogc/wps/1.0.0/common/ProcessBriefType.xsd
++++ ogc/wps/1.0.0/common/ProcessBriefType.xsd
+@@ -14,7 +14,7 @@
+ 	<!-- ==============================================================
+ 		Import or include schema
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../../ows/1.1.0/owsAll.xsd"/>
+ 	<include schemaLocation="DescriptionType.xsd"/>
+ 	<include schemaLocation="ProcessVersion.xsd"/>
+ 	<include schemaLocation="WSDL.xsd"/>
+diff --git ogc/wps/1.0.0/common/RequestBaseType.xsd ogc/wps/1.0.0/common/RequestBaseType.xsd
+index 071b0df..c98294b 100644
+--- ogc/wps/1.0.0/common/RequestBaseType.xsd
++++ ogc/wps/1.0.0/common/RequestBaseType.xsd
+@@ -14,7 +14,7 @@
+ 	<!-- ==============================================================
+ 		Import or include schema
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../../ows/1.1.0/owsAll.xsd"/>
+ 	<!-- ==============================================================
+ 		elements and types
+ 	============================================================== -->
+diff --git ogc/wps/1.0.0/common/ResponseBaseType.xsd ogc/wps/1.0.0/common/ResponseBaseType.xsd
+index b721bc6..0f5a95e 100644
+--- ogc/wps/1.0.0/common/ResponseBaseType.xsd
++++ ogc/wps/1.0.0/common/ResponseBaseType.xsd
+@@ -14,7 +14,7 @@
+ 	<!-- ==============================================================
+ 		Import or include schema
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../../ows/1.1.0/owsAll.xsd"/>
+ 	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+ 	<!-- ==============================================================
+ 		elements and types
+diff --git ogc/wps/1.0.0/wpsDescribeProcess_request.xsd ogc/wps/1.0.0/wpsDescribeProcess_request.xsd
+index 0f5e37a..2df7127 100644
+--- ogc/wps/1.0.0/wpsDescribeProcess_request.xsd
++++ ogc/wps/1.0.0/wpsDescribeProcess_request.xsd
+@@ -14,7 +14,7 @@
+ 	<!-- =============================================================
+ 		includes and imports
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 	<include schemaLocation="wpsAll.xsd"/>
+ 	<include schemaLocation="common/RequestBaseType.xsd"/>
+ 	<!-- =============================================================
+diff --git ogc/wps/1.0.0/wpsDescribeProcess_response.xsd ogc/wps/1.0.0/wpsDescribeProcess_response.xsd
+index 4cdb7a7..dfb7e86 100644
+--- ogc/wps/1.0.0/wpsDescribeProcess_response.xsd
++++ ogc/wps/1.0.0/wpsDescribeProcess_response.xsd
+@@ -18,7 +18,7 @@
+ 	<include schemaLocation="common/ResponseBaseType.xsd"/>
+ 	<include schemaLocation="common/DescriptionType.xsd"/>
+ 	<include schemaLocation="common/ProcessBriefType.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 	<!-- =============================================================
+ 		elements and types
+ 	============================================================== -->
+diff --git ogc/wps/1.0.0/wpsExecute_request.xsd ogc/wps/1.0.0/wpsExecute_request.xsd
+index 38f137f..b75ca69 100644
+--- ogc/wps/1.0.0/wpsExecute_request.xsd
++++ ogc/wps/1.0.0/wpsExecute_request.xsd
+@@ -16,7 +16,7 @@
+ 	============================================================== -->
+ 	<include schemaLocation="wpsAll.xsd"/>
+ 	<include schemaLocation="common/RequestBaseType.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+ 	<!-- =============================================================
+ 		elements and types
+diff --git ogc/wps/1.0.0/wpsExecute_response.xsd ogc/wps/1.0.0/wpsExecute_response.xsd
+index eade869..f407d64 100644
+--- ogc/wps/1.0.0/wpsExecute_response.xsd
++++ ogc/wps/1.0.0/wpsExecute_response.xsd
+@@ -18,7 +18,7 @@
+ 	<include schemaLocation="common/ResponseBaseType.xsd"/>
+ 	<include schemaLocation="common/ProcessBriefType.xsd"/>
+ 	<include schemaLocation="wpsExecute_request.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 	<!-- =============================================================
+ 		elements and types
+ 	============================================================== -->
+diff --git ogc/wps/1.0.0/wpsGetCapabilities_request.xsd ogc/wps/1.0.0/wpsGetCapabilities_request.xsd
+index 718b250..c278d76 100644
+--- ogc/wps/1.0.0/wpsGetCapabilities_request.xsd
++++ ogc/wps/1.0.0/wpsGetCapabilities_request.xsd
+@@ -15,7 +15,7 @@
+ 		includes and imports
+ 	============================================================== -->
+ 	<include schemaLocation="wpsAll.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 	<!-- =============================================================
+ 		elements and types
+ 	============================================================== -->
+diff --git ogc/wps/1.0.0/wpsGetCapabilities_response.xsd ogc/wps/1.0.0/wpsGetCapabilities_response.xsd
+index 300ba15..b2de275 100644
+--- ogc/wps/1.0.0/wpsGetCapabilities_response.xsd
++++ ogc/wps/1.0.0/wpsGetCapabilities_response.xsd
+@@ -17,7 +17,7 @@
+ 	<include schemaLocation="wpsAll.xsd"/>
+ 	<include schemaLocation="common/WSDL.xsd"/>
+ 	<include schemaLocation="common/ProcessBriefType.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+ 	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+ 	<!-- ==============================================================

@@ -73,10 +73,11 @@
 	<modules>
 		<!-- Schemas -->
 		<module>schemas</module>
-		<module>ows</module>
-		<module>gml</module>
 		<module>filter</module>
+		<module>gml</module>
+		<module>ows</module>
 		<module>wfs</module>
+		<module>wps</module>
 	</modules>
 	<properties> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
@@ -260,9 +261,49 @@
 					<version>1.9</version>
 				</plugin>
 				<plugin>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>1.7</version>
+					<executions>
+						<execution>
+							<id>package-scripts</id>
+							<phase>package</phase>
+							<configuration>
+								<tasks>
+									<zip basedir="${project.build.directory}/generated-sources/xjc" destfile="${project.build.directory}/${project.artifactId}-${project.version}-scripts.zip">
+										<patternset>
+											<include name="**/*.js"/>
+										</patternset>
+									</zip>
+								</tasks>
+							</configuration>
+							<goals>
+								<goal>run</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>build-helper-maven-plugin</artifactId>
 					<version>1.8</version>
+					<executions>
+						<execution>
+							<id>attach-scripts</id>
+							<phase>package</phase>
+							<goals>
+								<goal>attach-artifact</goal>
+							</goals>
+							<configuration>
+								<artifacts>
+									<artifact>
+										<file>${project.build.directory}/${project.artifactId}-${project.version}-scripts.zip</file>
+										<type>zip</type>
+										<classifier>scripts</classifier>
+									</artifact>
+								</artifacts>
+							</configuration>
+						</execution>
+					</executions>
 				</plugin>
 			</plugins>
 		</pluginManagement>
