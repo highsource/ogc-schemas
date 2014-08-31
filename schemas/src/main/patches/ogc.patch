@@ -50,6 +50,45 @@ index a5ebeb7..0a0899f 100644
  	<!-- ==============================================================
        the Style property
  	============================================================== -->
+diff --git ogc/gml/3.2.1/coordinateOperations.xsd ogc/gml/3.2.1/coordinateOperations.xsd
+index 5eaacaf..7f03e51 100644
+--- ogc/gml/3.2.1/coordinateOperations.xsd
++++ ogc/gml/3.2.1/coordinateOperations.xsd
+@@ -19,7 +19,7 @@ To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+ 	<include schemaLocation="gml.xsd"/>
+ 	<include schemaLocation="referenceSystems.xsd"/>
+ 	<include schemaLocation="measures.xsd"/>
+-	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
++	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../../iso/19139/20070417/gmd/gmd.xsd"/>
+ 	<element name="AbstractCoordinateOperation" type="gml:AbstractCoordinateOperationType" abstract="true" substitutionGroup="gml:Definition">
+ 		<annotation>
+ 			<documentation>gml:AbstractCoordinateOperation is a mathematical operation on coordinates that transforms or converts coordinates to another coordinate reference system. Many but not all coordinate operations (from CRS A to CRS B) also uniquely define the inverse operation (from CRS B to CRS A). In some cases, the operation method algorithm for the inverse operation is the same as for the forward algorithm, but the signs of some operation parameter values shall be reversed. In other cases, different algorithms are required for the forward and inverse operations, but the same operation parameter values are used. If (some) entirely different parameter values are needed, a different coordinate operation shall be defined.
+diff --git ogc/gml/3.2.1/defaultStyle.xsd ogc/gml/3.2.1/defaultStyle.xsd
+index 3a4635d..8419f54 100644
+--- ogc/gml/3.2.1/defaultStyle.xsd
++++ ogc/gml/3.2.1/defaultStyle.xsd
+@@ -13,7 +13,7 @@
+ 	============================================================== -->
+ 	<include schemaLocation="gml.xsd"/>
+ 	<include schemaLocation="measures.xsd"/>
+-	<import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="http://schemas.opengis.net/gml/3.1.1/smil/smil20.xsd"/>
++	<import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="../../gml/3.1.1/smil/smil20.xsd"/>
+ 	<!-- ==============================================================
+       the Style property
+ 	============================================================== -->
+diff --git ogc/gml/3.2.1/referenceSystems.xsd ogc/gml/3.2.1/referenceSystems.xsd
+index fb7e897..2d701a8 100644
+--- ogc/gml/3.2.1/referenceSystems.xsd
++++ ogc/gml/3.2.1/referenceSystems.xsd
+@@ -15,7 +15,7 @@ To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+ 	</annotation>
+ 	<include schemaLocation="gml.xsd"/>
+ 	<include schemaLocation="dictionary.xsd"/>
+-	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
++	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../../iso/19139/20070417/gmd/gmd.xsd"/>
+ 	<complexType name="IdentifiedObjectType" abstract="true">
+ 		<annotation>
+ 			<documentation>gml:IdentifiedObjectType provides identification properties of a CRS-related object. In gml:DefinitionType, the gml:identifier element shall be the primary name by which this object is identified, encoding the "name" attribute in the UML model.
 diff --git ogc/ows/2.0/owsAdditionalParameters.xsd ogc/ows/2.0/owsAdditionalParameters.xsd
 index 8e91265..1f534a3 100644
 --- ogc/ows/2.0/owsAdditionalParameters.xsd
