@@ -108,16 +108,6 @@ var SMIL_2_0_Module_Factory = function () {
         type: 'classInfo',
         localName: 'AnimatePrototype',
         propertyInfos: [{
-            name: 'attributeName',
-            typeInfo: 'String',
-            attributeName: 'attributeName',
-            type: 'attribute'
-          }, {
-            name: 'attributeType',
-            typeInfo: 'String',
-            attributeName: 'attributeType',
-            type: 'attribute'
-          }, {
             name: 'from',
             typeInfo: 'String',
             attributeName: 'from',
@@ -136,6 +126,16 @@ var SMIL_2_0_Module_Factory = function () {
             name: 'to',
             typeInfo: 'String',
             attributeName: 'to',
+            type: 'attribute'
+          }, {
+            name: 'attributeName',
+            typeInfo: 'String',
+            attributeName: 'attributeName',
+            type: 'attribute'
+          }, {
+            name: 'attributeType',
+            typeInfo: 'String',
+            attributeName: 'attributeType',
             type: 'attribute'
           }, {
             name: 'additive',

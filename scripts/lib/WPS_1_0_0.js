@@ -90,6 +90,7 @@ var WPS_1_0_0_Module_Factory = function () {
       }, {
         type: 'classInfo',
         localName: 'WPSCapabilitiesType',
+        baseTypeInfo: 'OWS_1_1_0.CapabilitiesBaseType',
         propertyInfos: [{
             type: 'element',
             name: 'processOfferings',

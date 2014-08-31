@@ -31,14 +31,14 @@ var Filter_1_1_0_Module_Factory = function () {
                 },
                 typeInfo: 'GML_3_1_1.AbstractGeometryType'
               }, {
-                elementName: 'PropertyName',
-                typeInfo: 'Filter_1_1_0.PropertyNameType'
-              }, {
                 elementName: {
                   localPart: 'Envelope',
                   namespaceURI: 'http:\/\/www.opengis.net\/gml'
                 },
                 typeInfo: 'GML_3_1_1.EnvelopeType'
+              }, {
+                elementName: 'PropertyName',
+                typeInfo: 'Filter_1_1_0.PropertyNameType'
               }],
             type: 'elementRefs'
           }]
@@ -54,17 +54,17 @@ var Filter_1_1_0_Module_Factory = function () {
             name: 'comparisonOpsOrSpatialOpsOrLogicOps',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'Function',
-                typeInfo: 'Filter_1_1_0.FunctionType'
-              }, {
                 elementName: 'spatialOps',
                 typeInfo: 'Filter_1_1_0.SpatialOpsType'
+              }, {
+                elementName: 'comparisonOps',
+                typeInfo: 'Filter_1_1_0.ComparisonOpsType'
               }, {
                 elementName: 'logicOps',
                 typeInfo: 'Filter_1_1_0.LogicOpsType'
               }, {
-                elementName: 'comparisonOps',
-                typeInfo: 'Filter_1_1_0.ComparisonOpsType'
+                elementName: 'Function',
+                typeInfo: 'Filter_1_1_0.FunctionType'
               }],
             type: 'elementRefs'
           }]

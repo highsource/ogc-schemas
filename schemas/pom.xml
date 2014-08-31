@@ -20,18 +20,6 @@
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>mkdir-scripts</id>
-						<phase>initialize</phase>
-						<configuration>
-							<tasks>
-								<mkdir dir="${project.build.directory}/generated-sources/xjc"/>
-							</tasks>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-					<execution>
 						<id>download-schemas</id>
 						<phase>generate-sources</phase>
 						<configuration>

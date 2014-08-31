@@ -5,6 +5,7 @@ var WFS_2_0_Module_Factory = function () {
     typeInfos: [{
         type: 'classInfo',
         localName: 'StoredQueryType',
+        baseTypeInfo: 'Filter_2_0.AbstractQueryExpressionType',
         propertyInfos: [{
             type: 'element',
             name: 'parameter',
@@ -73,6 +74,7 @@ var WFS_2_0_Module_Factory = function () {
       }, {
         type: 'classInfo',
         localName: 'QueryType',
+        baseTypeInfo: 'Filter_2_0.AbstractAdhocQueryExpressionType',
         propertyInfos: [{
             name: 'srsName',
             typeInfo: 'String',
@@ -385,6 +387,7 @@ var WFS_2_0_Module_Factory = function () {
       }, {
         type: 'classInfo',
         localName: 'GetCapabilitiesType',
+        baseTypeInfo: 'OWS_1_1_0.GetCapabilitiesType',
         propertyInfos: [{
             name: 'service',
             typeInfo: 'String',
@@ -743,6 +746,7 @@ var WFS_2_0_Module_Factory = function () {
       }, {
         type: 'classInfo',
         localName: 'WFSCapabilitiesType',
+        baseTypeInfo: 'OWS_1_1_0.CapabilitiesBaseType',
         propertyInfos: [{
             type: 'element',
             name: 'wsdl',

@@ -248,6 +248,7 @@ var WFS_1_1_0_Module_Factory = function () {
       }, {
         type: 'classInfo',
         localName: 'WFSCapabilitiesType',
+        baseTypeInfo: 'OWS_1_0_0.CapabilitiesBaseType',
         propertyInfos: [{
             type: 'element',
             name: 'featureTypeList',
@@ -449,6 +450,7 @@ var WFS_1_1_0_Module_Factory = function () {
       }, {
         type: 'classInfo',
         localName: 'FeatureCollectionType',
+        baseTypeInfo: 'GML_3_1_1.AbstractFeatureCollectionType',
         propertyInfos: [{
             name: 'lockId',
             typeInfo: 'String',
@@ -468,6 +470,7 @@ var WFS_1_1_0_Module_Factory = function () {
       }, {
         type: 'classInfo',
         localName: 'GetCapabilitiesType',
+        baseTypeInfo: 'OWS_1_0_0.GetCapabilitiesType',
         propertyInfos: [{
             name: 'service',
             typeInfo: 'String',

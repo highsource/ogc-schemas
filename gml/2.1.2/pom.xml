@@ -8,8 +8,9 @@
 	<name>OGC GML 2.1.2</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
-		<artifactId>gml</artifactId>
+		<artifactId>ogc-schema-parent</artifactId>
 		<version>2.0.0-SNAPSHOT</version>
+		<relativePath>../../schema-parent/pom.xml</relativePath>
 	</parent>
 	<dependencies>
 		<dependency>

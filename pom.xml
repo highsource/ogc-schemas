@@ -73,20 +73,22 @@
 	<modules>
 		<!-- Schemas -->
 		<module>schemas</module>
+		<module>schema-parent</module>
 		<module>filter</module>
 		<module>gml</module>
 		<module>ows</module>
 		<module>wfs</module>
 		<module>wps</module>
+		<module>scripts</module>
 	</modules>
 	<properties> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
-		<jaxb2-basics.version>0.7.1-SNAPSHOT</jaxb2-basics.version>
+		<jaxb2-basics.version>0.8.0</jaxb2-basics.version>
 		<jaxb-ri.version>2.1.13</jaxb-ri.version>
 		<jaxb-api.version>2.1</jaxb-api.version>
 		<maven-jaxb2-plugin.version>0.9.0</maven-jaxb2-plugin.version>
-		<w3c-schemas.version>1.0.0-SNAPSHOT</w3c-schemas.version>
-		<jsonix-schema-compiler.version>2.0.12-SNAPSHOT</jsonix-schema-compiler.version>
+		<w3c-schemas.version>1.0.0</w3c-schemas.version>
+		<jsonix-schema-compiler.version>2.1.0</jsonix-schema-compiler.version>
 	</properties> 
 	<dependencies>
 		<dependency>
@@ -179,61 +181,14 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<configuration>
-						<source>1.5</source>
-						<target>1.5</target>
+						<source>1.6</source>
+						<target>1.6</target>
 					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.jvnet.jaxb2.maven2</groupId>
 					<artifactId>maven-jaxb2-plugin</artifactId>
 					<version>${maven-jaxb2-plugin.version}</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>generate</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<!--schemaDirectory>${project.build.directory}/unpacked-resources</schemaDirectory>
-						<bindingDirectory>src/main/resources</bindingDirectory-->
-						<catalog>src/main/resources/catalog.cat</catalog>
-						<useDependenciesAsEpisodes>true</useDependenciesAsEpisodes>
-						<strict>false</strict>
-						<extension>true</extension>
-						<args>
-							<arg>-XtoString</arg>
-							<arg>-Xequals</arg>
-							<arg>-XhashCode</arg>
-							<arg>-Xcopyable</arg>
-							<arg>-Xmergeable</arg>
-							<arg>-Xsetters</arg>
-							<arg>-Xwildcard</arg>
-							<arg>-Xinject-code</arg>
-							<arg>-Xinheritance</arg>
-							<arg>-Xfluent-api</arg>
-							<!--arg>-Xvisitor</arg-->
-							<arg>-Xjsonix</arg>
-						</args>
-						<plugins>
-							<plugin>
-								<groupId>org.jvnet.jaxb2_commons</groupId>
-								<artifactId>jaxb2-basics</artifactId>
-							</plugin>
-							<plugin>
-								<groupId>org.jvnet.jaxb2_commons</groupId>
-								<artifactId>jaxb2-fluent-api</artifactId>
-							</plugin>
-							<plugin>
-								<groupId>com.massfords</groupId>
-								<artifactId>jaxb-visitor</artifactId>
-							</plugin>
-							<dependency>
-								<groupId>org.hisrc.jsonix</groupId>
-								<artifactId>jsonix-schema-compiler</artifactId>
-							</dependency>
-						</plugins>
-					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -263,47 +218,11 @@
 				<plugin>
 					<artifactId>maven-antrun-plugin</artifactId>
 					<version>1.7</version>
-					<executions>
-						<execution>
-							<id>package-scripts</id>
-							<phase>package</phase>
-							<configuration>
-								<tasks>
-									<zip basedir="${project.build.directory}/generated-sources/xjc" destfile="${project.build.directory}/${project.artifactId}-${project.version}-scripts.zip">
-										<patternset>
-											<include name="**/*.js"/>
-										</patternset>
-									</zip>
-								</tasks>
-							</configuration>
-							<goals>
-								<goal>run</goal>
-							</goals>
-						</execution>
-					</executions>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>build-helper-maven-plugin</artifactId>
 					<version>1.8</version>
-					<executions>
-						<execution>
-							<id>attach-scripts</id>
-							<phase>package</phase>
-							<goals>
-								<goal>attach-artifact</goal>
-							</goals>
-							<configuration>
-								<artifacts>
-									<artifact>
-										<file>${project.build.directory}/${project.artifactId}-${project.version}-scripts.zip</file>
-										<type>zip</type>
-										<classifier>scripts</classifier>
-									</artifact>
-								</artifacts>
-							</configuration>
-						</execution>
-					</executions>
 				</plugin>
 			</plugins>
 		</pluginManagement>

@@ -322,6 +322,7 @@ var WFS_1_0_0_Module_Factory = function () {
       }, {
         type: 'classInfo',
         localName: 'FeatureCollectionType',
+        baseTypeInfo: 'GML_2_1_2.AbstractFeatureCollectionType',
         propertyInfos: [{
             name: 'lockId',
             typeInfo: 'String',

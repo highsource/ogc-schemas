@@ -55,14 +55,14 @@ var Filter_1_0_0_Module_Factory = function () {
             name: 'comparisonOpsOrSpatialOpsOrLogicOps',
             collection: true,
             elementTypeInfos: [{
+                elementName: 'spatialOps',
+                typeInfo: 'Filter_1_0_0.SpatialOpsType'
+              }, {
                 elementName: 'logicOps',
                 typeInfo: 'Filter_1_0_0.LogicOpsType'
               }, {
                 elementName: 'comparisonOps',
                 typeInfo: 'Filter_1_0_0.ComparisonOpsType'
-              }, {
-                elementName: 'spatialOps',
-                typeInfo: 'Filter_1_0_0.SpatialOpsType'
               }],
             type: 'elementRefs'
           }]
