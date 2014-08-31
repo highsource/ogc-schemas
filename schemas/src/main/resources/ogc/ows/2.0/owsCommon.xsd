@@ -71,7 +71,7 @@
     </annotation>
     <sequence>
       <element ref="ows:AbstractMetaData"
-               minOccurs="0" maxOccurs="unbounded"/>
+               minOccurs="0" />
     </sequence>
     <attributeGroup ref="xlink:simpleAttrs">
       <annotation>

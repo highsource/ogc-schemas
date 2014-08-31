@@ -24,7 +24,7 @@
    <!-- ==============================================================
         Imports ...
         ============================================================== -->
-   <xsd:import namespace="http://www.opengis.net/ogc" schemaLocation="../../filter/1.0.0/filterCapabilities.xsd" />
+   <xsd:import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/filter/1.0.0/filterCapabilities.xsd" />
 
    <!-- ==============================================================
         Global elements and attributes

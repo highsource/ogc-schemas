@@ -4,37 +4,8 @@ var SMIL_2_0_Module_Factory = function () {
     defaultElementNamespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/',
     typeInfos: [{
         type: 'classInfo',
-        localName: 'SetPrototype',
-        propertyInfos: [{
-            name: 'attributeName',
-            typeInfo: 'String',
-            attributeName: 'attributeName',
-            type: 'attribute'
-          }, {
-            name: 'attributeType',
-            typeInfo: 'String',
-            attributeName: 'attributeType',
-            type: 'attribute'
-          }, {
-            name: 'to',
-            typeInfo: 'String',
-            attributeName: 'to',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
         localName: 'AnimateColorPrototype',
         propertyInfos: [{
-            name: 'additive',
-            typeInfo: 'String',
-            attributeName: 'additive',
-            type: 'attribute'
-          }, {
-            name: 'accumulate',
-            typeInfo: 'String',
-            attributeName: 'accumulate',
-            type: 'attribute'
-          }, {
             name: 'from',
             typeInfo: 'String',
             attributeName: 'from',
@@ -63,6 +34,35 @@ var SMIL_2_0_Module_Factory = function () {
             name: 'attributeType',
             typeInfo: 'String',
             attributeName: 'attributeType',
+            type: 'attribute'
+          }, {
+            name: 'additive',
+            typeInfo: 'String',
+            attributeName: 'additive',
+            type: 'attribute'
+          }, {
+            name: 'accumulate',
+            typeInfo: 'String',
+            attributeName: 'accumulate',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'SetPrototype',
+        propertyInfos: [{
+            name: 'attributeName',
+            typeInfo: 'String',
+            attributeName: 'attributeName',
+            type: 'attribute'
+          }, {
+            name: 'attributeType',
+            typeInfo: 'String',
+            attributeName: 'attributeType',
+            type: 'attribute'
+          }, {
+            name: 'to',
+            typeInfo: 'String',
+            attributeName: 'to',
             type: 'attribute'
           }]
       }, {
@@ -128,16 +128,6 @@ var SMIL_2_0_Module_Factory = function () {
             attributeName: 'to',
             type: 'attribute'
           }, {
-            name: 'attributeName',
-            typeInfo: 'String',
-            attributeName: 'attributeName',
-            type: 'attribute'
-          }, {
-            name: 'attributeType',
-            typeInfo: 'String',
-            attributeName: 'attributeType',
-            type: 'attribute'
-          }, {
             name: 'additive',
             typeInfo: 'String',
             attributeName: 'additive',
@@ -147,27 +137,22 @@ var SMIL_2_0_Module_Factory = function () {
             typeInfo: 'String',
             attributeName: 'accumulate',
             type: 'attribute'
+          }, {
+            name: 'attributeName',
+            typeInfo: 'String',
+            attributeName: 'attributeName',
+            type: 'attribute'
+          }, {
+            name: 'attributeType',
+            typeInfo: 'String',
+            attributeName: 'attributeType',
+            type: 'attribute'
           }]
       }, {
         type: 'enumInfo',
-        localName: 'RestartDefaultType',
+        localName: 'SyncBehaviorDefaultType',
         baseTypeInfo: 'String',
-        values: ['never', 'always', 'whenNotActive', 'inherit']
-      }, {
-        type: 'enumInfo',
-        localName: 'FillDefaultType',
-        baseTypeInfo: 'String',
-        values: ['remove', 'freeze', 'hold', 'auto', 'inherit', 'transition']
-      }, {
-        type: 'enumInfo',
-        localName: 'FillTimingAttrsType',
-        baseTypeInfo: 'String',
-        values: ['remove', 'freeze', 'hold', 'auto', 'default', 'transition']
-      }, {
-        type: 'enumInfo',
-        localName: 'RestartTimingType',
-        baseTypeInfo: 'String',
-        values: ['never', 'always', 'whenNotActive', 'default']
+        values: ['canSlip', 'locked', 'independent', 'inherit']
       }, {
         type: 'enumInfo',
         localName: 'SyncBehaviorType',
@@ -175,18 +160,26 @@ var SMIL_2_0_Module_Factory = function () {
         values: ['canSlip', 'locked', 'independent', 'default']
       }, {
         type: 'enumInfo',
-        localName: 'SyncBehaviorDefaultType',
+        localName: 'FillTimingAttrsType',
         baseTypeInfo: 'String',
-        values: ['canSlip', 'locked', 'independent', 'inherit']
+        values: ['remove', 'freeze', 'hold', 'auto', 'default', 'transition']
+      }, {
+        type: 'enumInfo',
+        localName: 'RestartDefaultType',
+        baseTypeInfo: 'String',
+        values: ['never', 'always', 'whenNotActive', 'inherit']
+      }, {
+        type: 'enumInfo',
+        localName: 'RestartTimingType',
+        baseTypeInfo: 'String',
+        values: ['never', 'always', 'whenNotActive', 'default']
+      }, {
+        type: 'enumInfo',
+        localName: 'FillDefaultType',
+        baseTypeInfo: 'String',
+        values: ['remove', 'freeze', 'hold', 'auto', 'inherit', 'transition']
       }],
     elementInfos: [{
-        elementName: 'animate',
-        typeInfo: 'SMIL_2_0_Language.AnimateType',
-        substitutionHead: {
-          localPart: 'animate',
-          namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
-        }
-      }, {
         elementName: 'animateMotion',
         typeInfo: 'SMIL_2_0_Language.AnimateMotionType',
         substitutionHead: {
@@ -194,10 +187,10 @@ var SMIL_2_0_Module_Factory = function () {
           namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
         }
       }, {
-        elementName: 'set',
-        typeInfo: 'SMIL_2_0_Language.SetType',
+        elementName: 'animate',
+        typeInfo: 'SMIL_2_0_Language.AnimateType',
         substitutionHead: {
-          localPart: 'set',
+          localPart: 'animate',
           namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
         }
       }, {
@@ -205,6 +198,13 @@ var SMIL_2_0_Module_Factory = function () {
         typeInfo: 'SMIL_2_0_Language.AnimateColorType',
         substitutionHead: {
           localPart: 'animateColor',
+          namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
+        }
+      }, {
+        elementName: 'set',
+        typeInfo: 'SMIL_2_0_Language.SetType',
+        substitutionHead: {
+          localPart: 'set',
           namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
         }
       }]
