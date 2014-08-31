@@ -358,14 +358,14 @@ var Filter_1_1_0_Module_Factory = function () {
                 elementName: 'spatialOps',
                 typeInfo: 'Filter_1_1_0.SpatialOpsType'
               }, {
+                elementName: 'logicOps',
+                typeInfo: 'Filter_1_1_0.LogicOpsType'
+              }, {
                 elementName: 'comparisonOps',
                 typeInfo: 'Filter_1_1_0.ComparisonOpsType'
               }, {
                 elementName: 'Function',
                 typeInfo: 'Filter_1_1_0.FunctionType'
-              }, {
-                elementName: 'logicOps',
-                typeInfo: 'Filter_1_1_0.LogicOpsType'
               }],
             type: 'elementRefs'
           }]

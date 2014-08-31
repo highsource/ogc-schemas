@@ -26,16 +26,6 @@ var SMIL_2_0_Module_Factory = function () {
             attributeName: 'to',
             type: 'attribute'
           }, {
-            name: 'attributeName',
-            typeInfo: 'String',
-            attributeName: 'attributeName',
-            type: 'attribute'
-          }, {
-            name: 'attributeType',
-            typeInfo: 'String',
-            attributeName: 'attributeType',
-            type: 'attribute'
-          }, {
             name: 'additive',
             typeInfo: 'String',
             attributeName: 'additive',
@@ -44,6 +34,16 @@ var SMIL_2_0_Module_Factory = function () {
             name: 'accumulate',
             typeInfo: 'String',
             attributeName: 'accumulate',
+            type: 'attribute'
+          }, {
+            name: 'attributeName',
+            typeInfo: 'String',
+            attributeName: 'attributeName',
+            type: 'attribute'
+          }, {
+            name: 'attributeType',
+            typeInfo: 'String',
+            attributeName: 'attributeType',
             type: 'attribute'
           }]
       }, {
@@ -74,16 +74,6 @@ var SMIL_2_0_Module_Factory = function () {
             attributeName: 'origin',
             type: 'attribute'
           }, {
-            name: 'additive',
-            typeInfo: 'String',
-            attributeName: 'additive',
-            type: 'attribute'
-          }, {
-            name: 'accumulate',
-            typeInfo: 'String',
-            attributeName: 'accumulate',
-            type: 'attribute'
-          }, {
             name: 'from',
             typeInfo: 'String',
             attributeName: 'from',
@@ -102,6 +92,16 @@ var SMIL_2_0_Module_Factory = function () {
             name: 'to',
             typeInfo: 'String',
             attributeName: 'to',
+            type: 'attribute'
+          }, {
+            name: 'additive',
+            typeInfo: 'String',
+            attributeName: 'additive',
+            type: 'attribute'
+          }, {
+            name: 'accumulate',
+            typeInfo: 'String',
+            attributeName: 'accumulate',
             type: 'attribute'
           }]
       }, {

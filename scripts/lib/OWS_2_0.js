@@ -1108,6 +1108,14 @@ var OWS_2_0_Module_Factory = function () {
         elementName: 'NoValues',
         typeInfo: 'OWS_2_0.NoValues'
       }, {
+        elementName: 'Post',
+        typeInfo: 'OWS_2_0.RequestMethodType',
+        scope: 'OWS_2_0.HTTP'
+      }, {
+        elementName: 'Get',
+        typeInfo: 'OWS_2_0.RequestMethodType',
+        scope: 'OWS_2_0.HTTP'
+      }, {
         elementName: 'MaximumValue',
         typeInfo: 'OWS_2_0.ValueType'
       }, {
@@ -1254,14 +1262,6 @@ var OWS_2_0_Module_Factory = function () {
       }, {
         elementName: 'DefaultValue',
         typeInfo: 'OWS_2_0.ValueType'
-      }, {
-        elementName: 'Post',
-        typeInfo: 'OWS_2_0.RequestMethodType',
-        scope: 'OWS_2_0.HTTP'
-      }, {
-        elementName: 'Get',
-        typeInfo: 'OWS_2_0.RequestMethodType',
-        scope: 'OWS_2_0.HTTP'
       }]
   };
   return {
