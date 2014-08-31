@@ -1,0 +1,58 @@
+{
+	"name": "ogc-schemas",
+	"version": "2.0.0",
+	"description": "Jsonix mappings for OGC Schemas.",
+	"keywords": [
+		"json",
+		"xml",
+		"unmarshal",
+		"unmarshalling",
+		"marshal",
+		"marshalling",
+		"parse",
+		"parsing",
+		"serialize",
+		"serializing",
+		"javascript",
+		"objects",
+		"dom",
+		"util",
+		"utility",
+		"jaxb",
+		"jsonix",
+		"mapping",
+		"OGC",
+		"OWS",
+		"GML",
+		"Filter", "Filter Encoding",
+		"WFS"
+	],
+	"homepage": "https://github.com/highsource/ogc-schemas",
+	"bugs" : {
+		"url" : "http://github.com/highsource/ogc-schemas/issues"
+	},
+	"licenses" : [ {
+		"type" : "BSD-2-Clause",
+		"url" : "http://github.com/highsource/ogc-schemas/raw/master/LICENSE"
+	} ],
+	"author" : {
+		"name" : "Alexey Valikov",
+		"url" : "http://confluence.highsource.org"
+	},
+	"main": "ogc-schemas.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/highsource/ogc-schemas"
+	},
+	"scripts" : {
+		"test" : "nodeunit tests/tests.js"
+	},
+	"dependencies": {
+		"jsonix": "~2.0.12",
+		"w3c-schemas": "~1.0.0"
+	},
+	"devDependencies" : {
+		"nodeunit" : "~0.8.6",
+		"node-static" : "~0.7.3"
+	}
+}
