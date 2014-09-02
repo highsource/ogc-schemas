@@ -195,6 +195,112 @@ index 5997a13..ade4e0c 100644
      <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
      <!-- ==============================================================       elements and types	============================================================== -->
      <xs:element name="GetCapabilities">
+diff --git ogc/wcs/1.1/wcsCommon.xsd ogc/wcs/1.1/wcsCommon.xsd
+index fe35a4c..645ae30 100644
+--- ogc/wcs/1.1/wcsCommon.xsd
++++ ogc/wcs/1.1/wcsCommon.xsd
+@@ -20,7 +20,7 @@ version="1.1.3">
+ 	<!-- ==============================================================
+  	includes and imports	
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<!-- ==============================================================		
+ 	elements and types	
+ 	============================================================== -->
+diff --git ogc/wcs/1.1/wcsContents.xsd ogc/wcs/1.1/wcsContents.xsd
+index d58b9e4..578de13 100644
+--- ogc/wcs/1.1/wcsContents.xsd
++++ ogc/wcs/1.1/wcsContents.xsd
+@@ -18,7 +18,7 @@ version="1.1.3">
+        includes and imports
+ 	============================================================== -->
+ 	<include schemaLocation="wcsCommon.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 	<!-- ==============================================================
+        elements and types
+ 	============================================================== -->
+diff --git ogc/wcs/1.1/wcsCoverages.xsd ogc/wcs/1.1/wcsCoverages.xsd
+index d6670f7..546a6b7 100644
+--- ogc/wcs/1.1/wcsCoverages.xsd
++++ ogc/wcs/1.1/wcsCoverages.xsd
+@@ -17,7 +17,7 @@
+ 	<!-- ==============================================================
+ 		includes and imports
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 	<!-- ==========================================================
+ 		Types and elements
+ 	    ========================================================== -->
+diff --git ogc/wcs/1.1/wcsDescribeCoverage.xsd ogc/wcs/1.1/wcsDescribeCoverage.xsd
+index 29c4bfe..d026fd2 100644
+--- ogc/wcs/1.1/wcsDescribeCoverage.xsd
++++ ogc/wcs/1.1/wcsDescribeCoverage.xsd
+@@ -24,8 +24,8 @@ version="1.1.3">
+ 	<include schemaLocation="wcsCommon.xsd"></include>
+ 	<include schemaLocation="wcsGridCRS.xsd"></include>
+ 	<include schemaLocation="wcsInterpolationMethod.xsd"></include>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"></import>
+-	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"></import>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"></import>
++	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"></import>
+ 	<!-- ==============================================================    
+ 	   elements and types	
+ 	============================================================== -->
+diff --git ogc/wcs/1.1/wcsGetCapabilities.xsd ogc/wcs/1.1/wcsGetCapabilities.xsd
+index c439f2d..043867e 100644
+--- ogc/wcs/1.1/wcsGetCapabilities.xsd
++++ ogc/wcs/1.1/wcsGetCapabilities.xsd
+@@ -18,7 +18,7 @@ version="1.1.3">
+        includes and imports
+ 	============================================================== -->
+ 	<include schemaLocation="wcsContents.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 	<!-- ==============================================================
+        elements and types
+ 	============================================================== -->
+diff --git ogc/wcs/1.1/wcsGetCoverage.xsd ogc/wcs/1.1/wcsGetCoverage.xsd
+index 5cca02a..bb9eb43 100644
+--- ogc/wcs/1.1/wcsGetCoverage.xsd
++++ ogc/wcs/1.1/wcsGetCoverage.xsd
+@@ -20,7 +20,7 @@
+ 	<include schemaLocation="wcsCommon.xsd"/>
+ 	<include schemaLocation="wcsGridCRS.xsd"/>
+ 	<include schemaLocation="wcsCoverages.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 	<!-- ==============================================================	
+ 		elements and types	
+ 	============================================================== -->
+diff --git ogc/wcs/1.1/wcsGridCRS.xsd ogc/wcs/1.1/wcsGridCRS.xsd
+index 18d96b7..b5c6e97 100644
+--- ogc/wcs/1.1/wcsGridCRS.xsd
++++ ogc/wcs/1.1/wcsGridCRS.xsd
+@@ -21,7 +21,7 @@
+ 	<!-- ========================================================
+            includes and imports
+ 	======================================================== -->
+-	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<!-- ========================================================
+ 		elements and types
+ 	======================================================== -->
+diff --git ogc/wcs/1.1/wcsInterpolationMethod.xsd ogc/wcs/1.1/wcsInterpolationMethod.xsd
+index c6288d0..3a6b829 100644
+--- ogc/wcs/1.1/wcsInterpolationMethod.xsd
++++ ogc/wcs/1.1/wcsInterpolationMethod.xsd
+@@ -17,7 +17,7 @@ version="1.1.3">
+ 	<!-- ==============================================================
+  	includes and imports	
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 	<!-- ==============================================================    
+ 	   elements and types	
+ 	============================================================== -->
 diff --git ogc/wfs/1.0.0/WFS-basic.xsd ogc/wfs/1.0.0/WFS-basic.xsd
 index 4797ba3..ddfe0c8 100644
 --- ogc/wfs/1.0.0/WFS-basic.xsd

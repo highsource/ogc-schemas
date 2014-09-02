@@ -24,8 +24,8 @@ version="1.1.3">
 	<include schemaLocation="wcsCommon.xsd"></include>
 	<include schemaLocation="wcsGridCRS.xsd"></include>
 	<include schemaLocation="wcsInterpolationMethod.xsd"></include>
-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"></import>
-	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"></import>
+	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"></import>
+	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"></import>
 	<!-- ==============================================================    
 	   elements and types	
 	============================================================== -->
