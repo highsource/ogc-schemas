@@ -81,10 +81,10 @@ var OWS_1_1_0_Module_Factory = function () {
             name: 'getOrPost',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'Post',
+                elementName: 'Get',
                 typeInfo: 'OWS_1_1_0.RequestMethodType'
               }, {
-                elementName: 'Get',
+                elementName: 'Post',
                 typeInfo: 'OWS_1_1_0.RequestMethodType'
               }],
             type: 'elementRefs'

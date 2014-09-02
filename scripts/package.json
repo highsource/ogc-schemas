@@ -25,6 +25,7 @@
 		"Filter", "Filter Encoding",
 		"GML",
 		"OWS",
+		"WCS",
 		"WMS",
 		"WFS",
 		"WPS"

@@ -33,14 +33,11 @@ var Filter_2_0_Module_Factory = function () {
             name: 'comparisonOpsOrSpatialOpsOrTemporalOps',
             collection: true,
             elementTypeInfos: [{
+                elementName: 'Function',
+                typeInfo: 'Filter_2_0.FunctionType'
+              }, {
                 elementName: 'spatialOps',
                 typeInfo: 'Filter_2_0.SpatialOpsType'
-              }, {
-                elementName: 'extensionOps',
-                typeInfo: 'Filter_2_0.ExtensionOpsType'
-              }, {
-                elementName: 'logicOps',
-                typeInfo: 'Filter_2_0.LogicOpsType'
               }, {
                 elementName: '_Id',
                 typeInfo: 'Filter_2_0.AbstractIdType'
@@ -48,11 +45,14 @@ var Filter_2_0_Module_Factory = function () {
                 elementName: 'comparisonOps',
                 typeInfo: 'Filter_2_0.ComparisonOpsType'
               }, {
-                elementName: 'Function',
-                typeInfo: 'Filter_2_0.FunctionType'
-              }, {
                 elementName: 'temporalOps',
                 typeInfo: 'Filter_2_0.TemporalOpsType'
+              }, {
+                elementName: 'logicOps',
+                typeInfo: 'Filter_2_0.LogicOpsType'
+              }, {
+                elementName: 'extensionOps',
+                typeInfo: 'Filter_2_0.ExtensionOpsType'
               }],
             type: 'elementRefs'
           }]
