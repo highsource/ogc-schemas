@@ -78,6 +78,7 @@
 		<module>gml</module>
 		<module>ows</module>
 		<module>wfs</module>
+		<module>wms</module>
 		<module>wps</module>
 		<module>scripts</module>
 	</modules>
