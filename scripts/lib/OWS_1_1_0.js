@@ -5,37 +5,30 @@ var OWS_1_1_0_Module_Factory = function () {
     defaultAttributeNamespaceURI: 'http:\/\/www.w3.org\/1999\/xlink',
     typeInfos: [{
         type: 'classInfo',
-        localName: 'DatasetDescriptionSummaryBaseType',
-        baseTypeInfo: 'OWS_1_1_0.DescriptionType',
+        localName: 'OperationsMetadata',
         propertyInfos: [{
             type: 'element',
-            name: 'wgs84BoundingBox',
+            name: 'operation',
             collection: true,
-            elementName: 'WGS84BoundingBox',
-            typeInfo: 'OWS_1_1_0.WGS84BoundingBoxType'
+            elementName: 'Operation',
+            typeInfo: 'OWS_1_1_0.Operation'
           }, {
             type: 'element',
-            name: 'identifier',
-            elementName: 'Identifier',
-            typeInfo: 'OWS_1_1_0.CodeType'
-          }, {
-            name: 'boundingBox',
+            name: 'parameter',
             collection: true,
-            elementName: 'BoundingBox',
-            typeInfo: 'OWS_1_1_0.BoundingBoxType',
-            type: 'elementRef'
+            elementName: 'Parameter',
+            typeInfo: 'OWS_1_1_0.DomainType'
           }, {
             type: 'element',
-            name: 'metadata',
+            name: 'constraint',
             collection: true,
-            elementName: 'Metadata',
-            typeInfo: 'OWS_1_1_0.MetadataType'
+            elementName: 'Constraint',
+            typeInfo: 'OWS_1_1_0.DomainType'
           }, {
             type: 'element',
-            name: 'datasetDescriptionSummary',
-            collection: true,
-            elementName: 'DatasetDescriptionSummary',
-            typeInfo: 'OWS_1_1_0.DatasetDescriptionSummaryBaseType'
+            name: 'extendedCapabilities',
+            elementName: 'ExtendedCapabilities',
+            typeInfo: 'AnyType'
           }]
       }, {
         type: 'classInfo',
@@ -88,10 +81,10 @@ var OWS_1_1_0_Module_Factory = function () {
             name: 'getOrPost',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'Get',
+                elementName: 'Post',
                 typeInfo: 'OWS_1_1_0.RequestMethodType'
               }, {
-                elementName: 'Post',
+                elementName: 'Get',
                 typeInfo: 'OWS_1_1_0.RequestMethodType'
               }],
             type: 'elementRefs'
@@ -172,222 +165,8 @@ var OWS_1_1_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'DomainMetadataType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
-          }, {
-            name: 'reference',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'reference',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ValueType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ManifestType',
-        baseTypeInfo: 'OWS_1_1_0.BasicIdentificationType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'referenceGroup',
-            collection: true,
-            elementName: 'ReferenceGroup',
-            typeInfo: 'OWS_1_1_0.ReferenceGroupType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'OperationsMetadata',
-        propertyInfos: [{
-            type: 'element',
-            name: 'operation',
-            collection: true,
-            elementName: 'Operation',
-            typeInfo: 'OWS_1_1_0.Operation'
-          }, {
-            type: 'element',
-            name: 'parameter',
-            collection: true,
-            elementName: 'Parameter',
-            typeInfo: 'OWS_1_1_0.DomainType'
-          }, {
-            type: 'element',
-            name: 'constraint',
-            collection: true,
-            elementName: 'Constraint',
-            typeInfo: 'OWS_1_1_0.DomainType'
-          }, {
-            type: 'element',
-            name: 'extendedCapabilities',
-            elementName: 'ExtendedCapabilities',
-            typeInfo: 'AnyType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'CodeType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
-          }, {
-            name: 'codeSpace',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'codeSpace'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'KeywordsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'keyword',
-            collection: true,
-            elementName: 'Keyword',
-            typeInfo: 'OWS_1_1_0.LanguageStringType'
-          }, {
-            type: 'element',
-            name: 'type',
-            elementName: 'Type',
-            typeInfo: 'OWS_1_1_0.CodeType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ResponsiblePartyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'individualName',
-            elementName: 'IndividualName',
-            typeInfo: 'String'
-          }, {
-            type: 'element',
-            name: 'organisationName',
-            elementName: 'OrganisationName',
-            typeInfo: 'String'
-          }, {
-            type: 'element',
-            name: 'positionName',
-            elementName: 'PositionName',
-            typeInfo: 'String'
-          }, {
-            type: 'element',
-            name: 'contactInfo',
-            elementName: 'ContactInfo',
-            typeInfo: 'OWS_1_1_0.ContactType'
-          }, {
-            type: 'element',
-            name: 'role',
-            elementName: 'Role',
-            typeInfo: 'OWS_1_1_0.CodeType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'AllowedValues',
-        propertyInfos: [{
-            name: 'valueOrRange',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'Value',
-                typeInfo: 'OWS_1_1_0.ValueType'
-              }, {
-                elementName: 'Range',
-                typeInfo: 'OWS_1_1_0.RangeType'
-              }],
-            type: 'elements'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'RangeType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'minimumValue',
-            elementName: 'MinimumValue',
-            typeInfo: 'OWS_1_1_0.ValueType'
-          }, {
-            type: 'element',
-            name: 'maximumValue',
-            elementName: 'MaximumValue',
-            typeInfo: 'OWS_1_1_0.ValueType'
-          }, {
-            type: 'element',
-            name: 'spacing',
-            elementName: 'Spacing',
-            typeInfo: 'OWS_1_1_0.ValueType'
-          }, {
-            name: 'rangeClosure',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
-            },
-            attributeName: {
-              localPart: 'rangeClosure',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ExceptionReport',
-        propertyInfos: [{
-            type: 'element',
-            name: 'exception',
-            collection: true,
-            elementName: 'Exception',
-            typeInfo: 'OWS_1_1_0.ExceptionType'
-          }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'version'
-            },
-            type: 'attribute'
-          }, {
-            name: 'lang',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'lang',
-              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ExceptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'exceptionText',
-            collection: true,
-            elementName: 'ExceptionText',
-            typeInfo: 'String'
-          }, {
-            name: 'exceptionCode',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'exceptionCode'
-            },
-            type: 'attribute'
-          }, {
-            name: 'locator',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'locator'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'AnyValue',
+        localName: 'WGS84BoundingBoxType',
+        baseTypeInfo: 'OWS_1_1_0.BoundingBoxType',
         propertyInfos: []
       }, {
         type: 'classInfo',
@@ -425,6 +204,53 @@ var OWS_1_1_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
+        localName: 'DomainMetadataType',
+        propertyInfos: [{
+            name: 'value',
+            typeInfo: 'String',
+            type: 'value'
+          }, {
+            name: 'reference',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'reference',
+              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'CodeType',
+        propertyInfos: [{
+            name: 'value',
+            typeInfo: 'String',
+            type: 'value'
+          }, {
+            name: 'codeSpace',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'codeSpace'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ValuesReference',
+        propertyInfos: [{
+            name: 'value',
+            typeInfo: 'String',
+            type: 'value'
+          }, {
+            name: 'reference',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'reference',
+              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
         localName: 'ContactType',
         propertyInfos: [{
             type: 'element',
@@ -454,13 +280,46 @@ var OWS_1_1_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'ReferenceType',
-        baseTypeInfo: 'OWS_1_1_0.AbstractReferenceBaseType',
+        localName: 'ServiceIdentification',
+        baseTypeInfo: 'OWS_1_1_0.DescriptionType',
         propertyInfos: [{
             type: 'element',
-            name: 'identifier',
-            elementName: 'Identifier',
+            name: 'serviceType',
+            elementName: 'ServiceType',
             typeInfo: 'OWS_1_1_0.CodeType'
+          }, {
+            type: 'element',
+            name: 'serviceTypeVersion',
+            collection: true,
+            elementName: 'ServiceTypeVersion',
+            typeInfo: 'String'
+          }, {
+            type: 'element',
+            name: 'profile',
+            collection: true,
+            elementName: 'Profile',
+            typeInfo: 'String'
+          }, {
+            type: 'element',
+            name: 'fees',
+            elementName: 'Fees',
+            typeInfo: 'String'
+          }, {
+            type: 'element',
+            name: 'accessConstraints',
+            collection: true,
+            elementName: 'AccessConstraints',
+            typeInfo: 'String'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'DescriptionType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'title',
+            collection: true,
+            elementName: 'Title',
+            typeInfo: 'OWS_1_1_0.LanguageStringType'
           }, {
             type: 'element',
             name: '_abstract',
@@ -469,15 +328,134 @@ var OWS_1_1_0_Module_Factory = function () {
             typeInfo: 'OWS_1_1_0.LanguageStringType'
           }, {
             type: 'element',
-            name: 'format',
-            elementName: 'Format',
+            name: 'keywords',
+            collection: true,
+            elementName: 'Keywords',
+            typeInfo: 'OWS_1_1_0.KeywordsType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'LanguageStringType',
+        propertyInfos: [{
+            name: 'value',
+            typeInfo: 'String',
+            type: 'value'
+          }, {
+            name: 'lang',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'lang',
+              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'KeywordsType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'keyword',
+            collection: true,
+            elementName: 'Keyword',
+            typeInfo: 'OWS_1_1_0.LanguageStringType'
+          }, {
+            type: 'element',
+            name: 'type',
+            elementName: 'Type',
+            typeInfo: 'OWS_1_1_0.CodeType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ReferenceGroupType',
+        baseTypeInfo: 'OWS_1_1_0.BasicIdentificationType',
+        propertyInfos: [{
+            name: 'abstractReferenceBase',
+            collection: true,
+            elementName: 'AbstractReferenceBase',
+            typeInfo: 'OWS_1_1_0.AbstractReferenceBaseType',
+            type: 'elementRef'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'GetResourceByIdType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'resourceID',
+            collection: true,
+            elementName: 'ResourceID',
             typeInfo: 'String'
           }, {
             type: 'element',
-            name: 'metadata',
+            name: 'outputFormat',
+            elementName: 'OutputFormat',
+            typeInfo: 'String'
+          }, {
+            name: 'service',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'service'
+            },
+            type: 'attribute'
+          }, {
+            name: 'version',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'version'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'AllowedValues',
+        propertyInfos: [{
+            name: 'valueOrRange',
             collection: true,
-            elementName: 'Metadata',
-            typeInfo: 'OWS_1_1_0.MetadataType'
+            elementTypeInfos: [{
+                elementName: 'Value',
+                typeInfo: 'OWS_1_1_0.ValueType'
+              }, {
+                elementName: 'Range',
+                typeInfo: 'OWS_1_1_0.RangeType'
+              }],
+            type: 'elements'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ValueType',
+        propertyInfos: [{
+            name: 'value',
+            typeInfo: 'String',
+            type: 'value'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'RangeType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'minimumValue',
+            elementName: 'MinimumValue',
+            typeInfo: 'OWS_1_1_0.ValueType'
+          }, {
+            type: 'element',
+            name: 'maximumValue',
+            elementName: 'MaximumValue',
+            typeInfo: 'OWS_1_1_0.ValueType'
+          }, {
+            type: 'element',
+            name: 'spacing',
+            elementName: 'Spacing',
+            typeInfo: 'OWS_1_1_0.ValueType'
+          }, {
+            name: 'rangeClosure',
+            typeInfo: {
+              type: 'list',
+              typeInfo: 'String'
+            },
+            attributeName: {
+              localPart: 'rangeClosure',
+              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            type: 'attribute'
           }]
       }, {
         type: 'classInfo',
@@ -520,6 +498,48 @@ var OWS_1_1_0_Module_Factory = function () {
             typeInfo: 'XLink_1_0.ActuateType',
             attributeName: 'actuate',
             type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ServiceReferenceType',
+        baseTypeInfo: 'OWS_1_1_0.ReferenceType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'requestMessage',
+            elementName: 'RequestMessage',
+            typeInfo: 'AnyType'
+          }, {
+            type: 'element',
+            name: 'requestMessageReference',
+            elementName: 'RequestMessageReference',
+            typeInfo: 'String'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ReferenceType',
+        baseTypeInfo: 'OWS_1_1_0.AbstractReferenceBaseType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'identifier',
+            elementName: 'Identifier',
+            typeInfo: 'OWS_1_1_0.CodeType'
+          }, {
+            type: 'element',
+            name: '_abstract',
+            collection: true,
+            elementName: 'Abstract',
+            typeInfo: 'OWS_1_1_0.LanguageStringType'
+          }, {
+            type: 'element',
+            name: 'format',
+            elementName: 'Format',
+            typeInfo: 'String'
+          }, {
+            type: 'element',
+            name: 'metadata',
+            collection: true,
+            elementName: 'Metadata',
+            typeInfo: 'OWS_1_1_0.MetadataType'
           }]
       }, {
         type: 'classInfo',
@@ -605,6 +625,55 @@ var OWS_1_1_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
+        localName: 'ExceptionReport',
+        propertyInfos: [{
+            type: 'element',
+            name: 'exception',
+            collection: true,
+            elementName: 'Exception',
+            typeInfo: 'OWS_1_1_0.ExceptionType'
+          }, {
+            name: 'version',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'version'
+            },
+            type: 'attribute'
+          }, {
+            name: 'lang',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'lang',
+              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ExceptionType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'exceptionText',
+            collection: true,
+            elementName: 'ExceptionText',
+            typeInfo: 'String'
+          }, {
+            name: 'exceptionCode',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'exceptionCode'
+            },
+            type: 'attribute'
+          }, {
+            name: 'locator',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'locator'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
         localName: 'GetCapabilitiesType',
         propertyInfos: [{
             type: 'element',
@@ -631,51 +700,152 @@ var OWS_1_1_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'ReferenceGroupType',
+        localName: 'NoValues',
+        propertyInfos: []
+      }, {
+        type: 'classInfo',
+        localName: 'ManifestType',
         baseTypeInfo: 'OWS_1_1_0.BasicIdentificationType',
         propertyInfos: [{
-            name: 'abstractReferenceBase',
+            type: 'element',
+            name: 'referenceGroup',
             collection: true,
-            elementName: 'AbstractReferenceBase',
-            typeInfo: 'OWS_1_1_0.AbstractReferenceBaseType',
+            elementName: 'ReferenceGroup',
+            typeInfo: 'OWS_1_1_0.ReferenceGroupType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'DatasetDescriptionSummaryBaseType',
+        baseTypeInfo: 'OWS_1_1_0.DescriptionType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'wgs84BoundingBox',
+            collection: true,
+            elementName: 'WGS84BoundingBox',
+            typeInfo: 'OWS_1_1_0.WGS84BoundingBoxType'
+          }, {
+            type: 'element',
+            name: 'identifier',
+            elementName: 'Identifier',
+            typeInfo: 'OWS_1_1_0.CodeType'
+          }, {
+            name: 'boundingBox',
+            collection: true,
+            elementName: 'BoundingBox',
+            typeInfo: 'OWS_1_1_0.BoundingBoxType',
             type: 'elementRef'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ServiceReferenceType',
-        baseTypeInfo: 'OWS_1_1_0.ReferenceType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'requestMessage',
-            elementName: 'RequestMessage',
-            typeInfo: 'AnyType'
           }, {
             type: 'element',
-            name: 'requestMessageReference',
-            elementName: 'RequestMessageReference',
-            typeInfo: 'String'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'GetResourceByIdType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'resourceID',
+            name: 'metadata',
             collection: true,
-            elementName: 'ResourceID',
+            elementName: 'Metadata',
+            typeInfo: 'OWS_1_1_0.MetadataType'
+          }, {
+            type: 'element',
+            name: 'datasetDescriptionSummary',
+            collection: true,
+            elementName: 'DatasetDescriptionSummary',
+            typeInfo: 'OWS_1_1_0.DatasetDescriptionSummaryBaseType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ResponsiblePartyType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'individualName',
+            elementName: 'IndividualName',
             typeInfo: 'String'
           }, {
             type: 'element',
-            name: 'outputFormat',
-            elementName: 'OutputFormat',
+            name: 'organisationName',
+            elementName: 'OrganisationName',
             typeInfo: 'String'
           }, {
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'service'
-            },
-            type: 'attribute'
+            type: 'element',
+            name: 'positionName',
+            elementName: 'PositionName',
+            typeInfo: 'String'
+          }, {
+            type: 'element',
+            name: 'contactInfo',
+            elementName: 'ContactInfo',
+            typeInfo: 'OWS_1_1_0.ContactType'
+          }, {
+            type: 'element',
+            name: 'role',
+            elementName: 'Role',
+            typeInfo: 'OWS_1_1_0.CodeType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'AnyValue',
+        propertyInfos: []
+      }, {
+        type: 'classInfo',
+        localName: 'BasicIdentificationType',
+        baseTypeInfo: 'OWS_1_1_0.DescriptionType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'identifier',
+            elementName: 'Identifier',
+            typeInfo: 'OWS_1_1_0.CodeType'
+          }, {
+            type: 'element',
+            name: 'metadata',
+            collection: true,
+            elementName: 'Metadata',
+            typeInfo: 'OWS_1_1_0.MetadataType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'TelephoneType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'voice',
+            collection: true,
+            elementName: 'Voice',
+            typeInfo: 'String'
+          }, {
+            type: 'element',
+            name: 'facsimile',
+            collection: true,
+            elementName: 'Facsimile',
+            typeInfo: 'String'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ContentsBaseType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'datasetDescriptionSummary',
+            collection: true,
+            elementName: 'DatasetDescriptionSummary',
+            typeInfo: 'OWS_1_1_0.DatasetDescriptionSummaryBaseType'
+          }, {
+            type: 'element',
+            name: 'otherSource',
+            collection: true,
+            elementName: 'OtherSource',
+            typeInfo: 'OWS_1_1_0.MetadataType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'CapabilitiesBaseType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'serviceIdentification',
+            elementName: 'ServiceIdentification',
+            typeInfo: 'OWS_1_1_0.ServiceIdentification'
+          }, {
+            type: 'element',
+            name: 'serviceProvider',
+            elementName: 'ServiceProvider',
+            typeInfo: 'OWS_1_1_0.ServiceProvider'
+          }, {
+            type: 'element',
+            name: 'operationsMetadata',
+            elementName: 'OperationsMetadata',
+            typeInfo: 'OWS_1_1_0.OperationsMetadata'
           }, {
             name: 'version',
             typeInfo: 'String',
@@ -683,112 +853,13 @@ var OWS_1_1_0_Module_Factory = function () {
               localPart: 'version'
             },
             type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ServiceIdentification',
-        baseTypeInfo: 'OWS_1_1_0.DescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'serviceType',
-            elementName: 'ServiceType',
-            typeInfo: 'OWS_1_1_0.CodeType'
           }, {
-            type: 'element',
-            name: 'serviceTypeVersion',
-            collection: true,
-            elementName: 'ServiceTypeVersion',
-            typeInfo: 'String'
-          }, {
-            type: 'element',
-            name: 'profile',
-            collection: true,
-            elementName: 'Profile',
-            typeInfo: 'String'
-          }, {
-            type: 'element',
-            name: 'fees',
-            elementName: 'Fees',
-            typeInfo: 'String'
-          }, {
-            type: 'element',
-            name: 'accessConstraints',
-            collection: true,
-            elementName: 'AccessConstraints',
-            typeInfo: 'String'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'DescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'title',
-            collection: true,
-            elementName: 'Title',
-            typeInfo: 'OWS_1_1_0.LanguageStringType'
-          }, {
-            type: 'element',
-            name: '_abstract',
-            collection: true,
-            elementName: 'Abstract',
-            typeInfo: 'OWS_1_1_0.LanguageStringType'
-          }, {
-            type: 'element',
-            name: 'keywords',
-            collection: true,
-            elementName: 'Keywords',
-            typeInfo: 'OWS_1_1_0.KeywordsType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'LanguageStringType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
-          }, {
-            name: 'lang',
+            name: 'updateSequence',
             typeInfo: 'String',
             attributeName: {
-              localPart: 'lang',
-              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+              localPart: 'updateSequence'
             },
             type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ValuesReference',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
-          }, {
-            name: 'reference',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'reference',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'NoValues',
-        propertyInfos: []
-      }, {
-        type: 'classInfo',
-        localName: 'WGS84BoundingBoxType',
-        baseTypeInfo: 'OWS_1_1_0.BoundingBoxType',
-        propertyInfos: []
-      }, {
-        type: 'classInfo',
-        localName: 'AcceptFormatsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'outputFormat',
-            collection: true,
-            elementName: 'OutputFormat',
-            typeInfo: 'String'
           }]
       }, {
         type: 'classInfo',
@@ -847,61 +918,13 @@ var OWS_1_1_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'SectionsType',
+        localName: 'AcceptVersionsType',
         propertyInfos: [{
             type: 'element',
-            name: 'section',
+            name: 'version',
             collection: true,
-            elementName: 'Section',
+            elementName: 'Version',
             typeInfo: 'String'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ContentsBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'datasetDescriptionSummary',
-            collection: true,
-            elementName: 'DatasetDescriptionSummary',
-            typeInfo: 'OWS_1_1_0.DatasetDescriptionSummaryBaseType'
-          }, {
-            type: 'element',
-            name: 'otherSource',
-            collection: true,
-            elementName: 'OtherSource',
-            typeInfo: 'OWS_1_1_0.MetadataType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'TelephoneType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'voice',
-            collection: true,
-            elementName: 'Voice',
-            typeInfo: 'String'
-          }, {
-            type: 'element',
-            name: 'facsimile',
-            collection: true,
-            elementName: 'Facsimile',
-            typeInfo: 'String'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'BasicIdentificationType',
-        baseTypeInfo: 'OWS_1_1_0.DescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'identifier',
-            elementName: 'Identifier',
-            typeInfo: 'OWS_1_1_0.CodeType'
-          }, {
-            type: 'element',
-            name: 'metadata',
-            collection: true,
-            elementName: 'Metadata',
-            typeInfo: 'OWS_1_1_0.MetadataType'
           }]
       }, {
         type: 'classInfo',
@@ -928,12 +951,22 @@ var OWS_1_1_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'AcceptVersionsType',
+        localName: 'AcceptFormatsType',
         propertyInfos: [{
             type: 'element',
-            name: 'version',
+            name: 'outputFormat',
             collection: true,
-            elementName: 'Version',
+            elementName: 'OutputFormat',
+            typeInfo: 'String'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'SectionsType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'section',
+            collection: true,
+            elementName: 'Section',
             typeInfo: 'String'
           }]
       }, {
@@ -972,41 +1005,11 @@ var OWS_1_1_0_Module_Factory = function () {
             elementName: 'ElectronicMailAddress',
             typeInfo: 'String'
           }]
-      }, {
-        type: 'classInfo',
-        localName: 'CapabilitiesBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'serviceIdentification',
-            elementName: 'ServiceIdentification',
-            typeInfo: 'OWS_1_1_0.ServiceIdentification'
-          }, {
-            type: 'element',
-            name: 'serviceProvider',
-            elementName: 'ServiceProvider',
-            typeInfo: 'OWS_1_1_0.ServiceProvider'
-          }, {
-            type: 'element',
-            name: 'operationsMetadata',
-            elementName: 'OperationsMetadata',
-            typeInfo: 'OWS_1_1_0.OperationsMetadata'
-          }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'version'
-            },
-            type: 'attribute'
-          }, {
-            name: 'updateSequence',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'updateSequence'
-            },
-            type: 'attribute'
-          }]
       }],
     elementInfos: [{
+        elementName: 'OperationsMetadata',
+        typeInfo: 'OWS_1_1_0.OperationsMetadata'
+      }, {
         elementName: 'Operation',
         typeInfo: 'OWS_1_1_0.Operation'
       }, {
@@ -1016,80 +1019,84 @@ var OWS_1_1_0_Module_Factory = function () {
         elementName: 'HTTP',
         typeInfo: 'OWS_1_1_0.HTTP'
       }, {
-        elementName: 'OperationsMetadata',
-        typeInfo: 'OWS_1_1_0.OperationsMetadata'
-      }, {
-        elementName: 'AllowedValues',
-        typeInfo: 'OWS_1_1_0.AllowedValues'
-      }, {
-        elementName: 'ExceptionReport',
-        typeInfo: 'OWS_1_1_0.ExceptionReport'
-      }, {
-        elementName: 'AnyValue',
-        typeInfo: 'OWS_1_1_0.AnyValue'
-      }, {
-        elementName: 'ServiceProvider',
-        typeInfo: 'OWS_1_1_0.ServiceProvider'
+        elementName: 'ValuesReference',
+        typeInfo: 'OWS_1_1_0.ValuesReference'
       }, {
         elementName: 'ServiceIdentification',
         typeInfo: 'OWS_1_1_0.ServiceIdentification'
       }, {
-        elementName: 'ValuesReference',
-        typeInfo: 'OWS_1_1_0.ValuesReference'
+        elementName: 'AllowedValues',
+        typeInfo: 'OWS_1_1_0.AllowedValues'
+      }, {
+        elementName: 'ServiceProvider',
+        typeInfo: 'OWS_1_1_0.ServiceProvider'
+      }, {
+        elementName: 'ExceptionReport',
+        typeInfo: 'OWS_1_1_0.ExceptionReport'
       }, {
         elementName: 'NoValues',
         typeInfo: 'OWS_1_1_0.NoValues'
       }, {
-        elementName: 'OperationResponse',
-        typeInfo: 'OWS_1_1_0.ManifestType'
+        elementName: 'AnyValue',
+        typeInfo: 'OWS_1_1_0.AnyValue'
       }, {
-        elementName: 'Abstract',
-        typeInfo: 'OWS_1_1_0.LanguageStringType'
+        elementName: 'Metadata',
+        typeInfo: 'OWS_1_1_0.MetadataType'
       }, {
-        elementName: 'AbstractReferenceBase',
-        typeInfo: 'OWS_1_1_0.AbstractReferenceBaseType'
-      }, {
-        elementName: 'AvailableCRS',
-        typeInfo: 'String'
+        elementName: 'MaximumValue',
+        typeInfo: 'OWS_1_1_0.ValueType'
       }, {
         elementName: 'WGS84BoundingBox',
         typeInfo: 'OWS_1_1_0.WGS84BoundingBoxType',
         substitutionHead: 'BoundingBox'
       }, {
-        elementName: 'Metadata',
-        typeInfo: 'OWS_1_1_0.MetadataType'
+        elementName: 'ReferenceSystem',
+        typeInfo: 'OWS_1_1_0.DomainMetadataType'
       }, {
-        elementName: 'Language',
+        elementName: 'Keywords',
+        typeInfo: 'OWS_1_1_0.KeywordsType'
+      }, {
+        elementName: 'OrganisationName',
         typeInfo: 'String'
       }, {
-        elementName: 'Reference',
-        typeInfo: 'OWS_1_1_0.ReferenceType',
-        substitutionHead: 'AbstractReferenceBase'
-      }, {
-        elementName: 'Role',
-        typeInfo: 'OWS_1_1_0.CodeType'
-      }, {
-        elementName: 'UOM',
+        elementName: 'DataType',
         typeInfo: 'OWS_1_1_0.DomainMetadataType'
       }, {
         elementName: 'ContactInfo',
         typeInfo: 'OWS_1_1_0.ContactType'
       }, {
+        elementName: 'InputData',
+        typeInfo: 'OWS_1_1_0.ManifestType'
+      }, {
+        elementName: 'AbstractMetaData',
+        typeInfo: 'AnyType'
+      }, {
         elementName: 'IndividualName',
         typeInfo: 'String'
+      }, {
+        elementName: 'DefaultValue',
+        typeInfo: 'OWS_1_1_0.ValueType'
+      }, {
+        elementName: 'OtherSource',
+        typeInfo: 'OWS_1_1_0.MetadataType'
+      }, {
+        elementName: 'Identifier',
+        typeInfo: 'OWS_1_1_0.CodeType'
+      }, {
+        elementName: 'Language',
+        typeInfo: 'String'
+      }, {
+        elementName: 'GetCapabilities',
+        typeInfo: 'OWS_1_1_0.GetCapabilitiesType'
       }, {
         elementName: 'BoundingBox',
         typeInfo: 'OWS_1_1_0.BoundingBoxType'
       }, {
-        elementName: 'MaximumValue',
-        typeInfo: 'OWS_1_1_0.ValueType'
-      }, {
-        elementName: 'ExtendedCapabilities',
+        elementName: 'Resource',
         typeInfo: 'AnyType'
       }, {
-        elementName: 'SupportedCRS',
-        typeInfo: 'String',
-        substitutionHead: 'AvailableCRS'
+        elementName: 'OutputFormat',
+        typeInfo: 'String'
       }, {
         elementName: 'Title',
         typeInfo: 'OWS_1_1_0.LanguageStringType'
@@ -1097,8 +1104,20 @@ var OWS_1_1_0_Module_Factory = function () {
         elementName: 'Spacing',
         typeInfo: 'OWS_1_1_0.ValueType'
       }, {
-        elementName: 'GetResourceByID',
-        typeInfo: 'OWS_1_1_0.GetResourceByIdType'
+        elementName: 'Fees',
+        typeInfo: 'String'
+      }, {
+        elementName: 'Range',
+        typeInfo: 'OWS_1_1_0.RangeType'
+      }, {
+        elementName: 'Manifest',
+        typeInfo: 'OWS_1_1_0.ManifestType'
+      }, {
+        elementName: 'Exception',
+        typeInfo: 'OWS_1_1_0.ExceptionType'
+      }, {
+        elementName: 'AbstractReferenceBase',
+        typeInfo: 'OWS_1_1_0.AbstractReferenceBaseType'
       }, {
         elementName: 'ServiceReference',
         typeInfo: 'OWS_1_1_0.ServiceReferenceType',
@@ -1107,80 +1126,61 @@ var OWS_1_1_0_Module_Factory = function () {
         elementName: 'ReferenceGroup',
         typeInfo: 'OWS_1_1_0.ReferenceGroupType'
       }, {
-        elementName: 'GetCapabilities',
-        typeInfo: 'OWS_1_1_0.GetCapabilitiesType'
-      }, {
-        elementName: 'OtherSource',
-        typeInfo: 'OWS_1_1_0.MetadataType'
-      }, {
-        elementName: 'Resource',
-        typeInfo: 'AnyType'
-      }, {
         elementName: 'AccessConstraints',
         typeInfo: 'String'
       }, {
-        elementName: 'Value',
-        typeInfo: 'OWS_1_1_0.ValueType'
+        elementName: 'ExtendedCapabilities',
+        typeInfo: 'AnyType'
       }, {
-        elementName: 'Range',
-        typeInfo: 'OWS_1_1_0.RangeType'
-      }, {
-        elementName: 'PositionName',
-        typeInfo: 'String'
-      }, {
-        elementName: 'PointOfContact',
-        typeInfo: 'OWS_1_1_0.ResponsiblePartyType'
-      }, {
-        elementName: 'Keywords',
-        typeInfo: 'OWS_1_1_0.KeywordsType'
-      }, {
-        elementName: 'MinimumValue',
-        typeInfo: 'OWS_1_1_0.ValueType'
-      }, {
-        elementName: 'Identifier',
-        typeInfo: 'OWS_1_1_0.CodeType'
-      }, {
-        elementName: 'Meaning',
-        typeInfo: 'OWS_1_1_0.DomainMetadataType'
-      }, {
-        elementName: 'Manifest',
-        typeInfo: 'OWS_1_1_0.ManifestType'
-      }, {
-        elementName: 'Fees',
-        typeInfo: 'String'
-      }, {
-        elementName: 'InputData',
-        typeInfo: 'OWS_1_1_0.ManifestType'
-      }, {
-        elementName: 'DefaultValue',
-        typeInfo: 'OWS_1_1_0.ValueType'
-      }, {
-        elementName: 'OutputFormat',
-        typeInfo: 'String'
-      }, {
-        elementName: 'OrganisationName',
-        typeInfo: 'String'
-      }, {
-        elementName: 'DataType',
-        typeInfo: 'OWS_1_1_0.DomainMetadataType'
+        elementName: 'GetResourceByID',
+        typeInfo: 'OWS_1_1_0.GetResourceByIdType'
       }, {
         elementName: 'DatasetDescriptionSummary',
         typeInfo: 'OWS_1_1_0.DatasetDescriptionSummaryBaseType'
       }, {
-        elementName: 'AbstractMetaData',
-        typeInfo: 'AnyType'
+        elementName: 'PositionName',
+        typeInfo: 'String'
       }, {
-        elementName: 'Exception',
-        typeInfo: 'OWS_1_1_0.ExceptionType'
+        elementName: 'Abstract',
+        typeInfo: 'OWS_1_1_0.LanguageStringType'
       }, {
-        elementName: 'ReferenceSystem',
+        elementName: 'Reference',
+        typeInfo: 'OWS_1_1_0.ReferenceType',
+        substitutionHead: 'AbstractReferenceBase'
+      }, {
+        elementName: 'Value',
+        typeInfo: 'OWS_1_1_0.ValueType'
+      }, {
+        elementName: 'AvailableCRS',
+        typeInfo: 'String'
+      }, {
+        elementName: 'MinimumValue',
+        typeInfo: 'OWS_1_1_0.ValueType'
+      }, {
+        elementName: 'OperationResponse',
+        typeInfo: 'OWS_1_1_0.ManifestType'
+      }, {
+        elementName: 'Meaning',
         typeInfo: 'OWS_1_1_0.DomainMetadataType'
       }, {
-        elementName: 'Get',
+        elementName: 'SupportedCRS',
+        typeInfo: 'String',
+        substitutionHead: 'AvailableCRS'
+      }, {
+        elementName: 'Role',
+        typeInfo: 'OWS_1_1_0.CodeType'
+      }, {
+        elementName: 'UOM',
+        typeInfo: 'OWS_1_1_0.DomainMetadataType'
+      }, {
+        elementName: 'PointOfContact',
+        typeInfo: 'OWS_1_1_0.ResponsiblePartyType'
+      }, {
+        elementName: 'Post',
         typeInfo: 'OWS_1_1_0.RequestMethodType',
         scope: 'OWS_1_1_0.HTTP'
       }, {
-        elementName: 'Post',
+        elementName: 'Get',
         typeInfo: 'OWS_1_1_0.RequestMethodType',
         scope: 'OWS_1_1_0.HTTP'
       }]

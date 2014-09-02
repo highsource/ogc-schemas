@@ -4,29 +4,81 @@ var Filter_2_0_Module_Factory = function () {
     defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0',
     typeInfos: [{
         type: 'classInfo',
-        localName: 'BinaryComparisonOpType',
-        baseTypeInfo: 'Filter_2_0.ComparisonOpsType',
+        localName: 'BinaryTemporalOpType',
+        baseTypeInfo: 'Filter_2_0.TemporalOpsType',
         propertyInfos: [{
+            type: 'element',
+            name: 'valueReference',
+            elementName: 'ValueReference',
+            typeInfo: 'String'
+          }, {
             name: 'expression',
-            collection: true,
             elementName: 'expression',
             typeInfo: 'AnyType',
             type: 'elementRef'
           }, {
-            name: 'matchCase',
-            typeInfo: 'Boolean',
-            attributeName: 'matchCase',
-            type: 'attribute'
-          }, {
-            name: 'matchAction',
-            typeInfo: 'String',
-            attributeName: 'matchAction',
-            type: 'attribute'
+            name: 'any',
+            typedObjectAllowed: true,
+            type: 'anyElement'
           }]
+      }, {
+        type: 'classInfo',
+        localName: 'TemporalOpsType',
+        propertyInfos: []
+      }, {
+        type: 'classInfo',
+        localName: 'BinaryLogicOpType',
+        baseTypeInfo: 'Filter_2_0.LogicOpsType',
+        propertyInfos: [{
+            name: 'comparisonOpsOrSpatialOpsOrTemporalOps',
+            collection: true,
+            elementTypeInfos: [{
+                elementName: 'spatialOps',
+                typeInfo: 'Filter_2_0.SpatialOpsType'
+              }, {
+                elementName: 'extensionOps',
+                typeInfo: 'Filter_2_0.ExtensionOpsType'
+              }, {
+                elementName: 'logicOps',
+                typeInfo: 'Filter_2_0.LogicOpsType'
+              }, {
+                elementName: '_Id',
+                typeInfo: 'Filter_2_0.AbstractIdType'
+              }, {
+                elementName: 'comparisonOps',
+                typeInfo: 'Filter_2_0.ComparisonOpsType'
+              }, {
+                elementName: 'Function',
+                typeInfo: 'Filter_2_0.FunctionType'
+              }, {
+                elementName: 'temporalOps',
+                typeInfo: 'Filter_2_0.TemporalOpsType'
+              }],
+            type: 'elementRefs'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'LogicOpsType',
+        propertyInfos: []
       }, {
         type: 'classInfo',
         localName: 'ComparisonOpsType',
         propertyInfos: []
+      }, {
+        type: 'classInfo',
+        localName: 'LiteralType',
+        propertyInfos: [{
+            name: 'content',
+            collection: true,
+            typedObjectAllowed: true,
+            mixed: true,
+            type: 'anyElement'
+          }, {
+            name: 'type',
+            typeInfo: 'String',
+            attributeName: 'type',
+            type: 'attribute'
+          }]
       }, {
         type: 'classInfo',
         localName: 'BinarySpatialOpType',
@@ -52,14 +104,99 @@ var Filter_2_0_Module_Factory = function () {
         propertyInfos: []
       }, {
         type: 'classInfo',
-        localName: 'BinaryTemporalOpType',
-        baseTypeInfo: 'Filter_2_0.TemporalOpsType',
+        localName: 'AbstractQueryExpressionType',
         propertyInfos: [{
-            type: 'element',
-            name: 'valueReference',
-            elementName: 'ValueReference',
-            typeInfo: 'String'
+            name: 'handle',
+            typeInfo: 'String',
+            attributeName: 'handle',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'PropertyIsLikeType',
+        baseTypeInfo: 'Filter_2_0.ComparisonOpsType',
+        propertyInfos: [{
+            name: 'expression',
+            collection: true,
+            elementName: 'expression',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
           }, {
+            name: 'wildCard',
+            typeInfo: 'String',
+            attributeName: 'wildCard',
+            type: 'attribute'
+          }, {
+            name: 'singleChar',
+            typeInfo: 'String',
+            attributeName: 'singleChar',
+            type: 'attribute'
+          }, {
+            name: 'escapeChar',
+            typeInfo: 'String',
+            attributeName: 'escapeChar',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'LogicalOperators',
+        propertyInfos: []
+      }, {
+        type: 'classInfo',
+        localName: 'UnaryLogicOpType',
+        baseTypeInfo: 'Filter_2_0.LogicOpsType',
+        propertyInfos: [{
+            name: 'comparisonOps',
+            elementName: 'comparisonOps',
+            typeInfo: 'Filter_2_0.ComparisonOpsType',
+            type: 'elementRef'
+          }, {
+            name: 'spatialOps',
+            elementName: 'spatialOps',
+            typeInfo: 'Filter_2_0.SpatialOpsType',
+            type: 'elementRef'
+          }, {
+            name: 'temporalOps',
+            elementName: 'temporalOps',
+            typeInfo: 'Filter_2_0.TemporalOpsType',
+            type: 'elementRef'
+          }, {
+            name: 'logicOps',
+            elementName: 'logicOps',
+            typeInfo: 'Filter_2_0.LogicOpsType',
+            type: 'elementRef'
+          }, {
+            type: 'element',
+            name: 'extensionOps',
+            elementName: 'extensionOps',
+            typeInfo: 'Filter_2_0.ExtensionOpsType'
+          }, {
+            type: 'element',
+            name: 'function',
+            elementName: 'Function',
+            typeInfo: 'Filter_2_0.FunctionType'
+          }, {
+            name: 'id',
+            collection: true,
+            elementName: '_Id',
+            typeInfo: 'Filter_2_0.AbstractIdType',
+            type: 'elementRef'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'PropertyIsNullType',
+        baseTypeInfo: 'Filter_2_0.ComparisonOpsType',
+        propertyInfos: [{
+            name: 'expression',
+            elementName: 'expression',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'BBOXType',
+        baseTypeInfo: 'Filter_2_0.SpatialOpsType',
+        propertyInfos: [{
             name: 'expression',
             elementName: 'expression',
             typeInfo: 'AnyType',
@@ -71,7 +208,111 @@ var Filter_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'TemporalOpsType',
+        localName: 'PropertyIsNilType',
+        baseTypeInfo: 'Filter_2_0.ComparisonOpsType',
+        propertyInfos: [{
+            name: 'expression',
+            elementName: 'expression',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }, {
+            name: 'nilReason',
+            typeInfo: 'String',
+            attributeName: 'nilReason',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'BinaryComparisonOpType',
+        baseTypeInfo: 'Filter_2_0.ComparisonOpsType',
+        propertyInfos: [{
+            name: 'expression',
+            collection: true,
+            elementName: 'expression',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }, {
+            name: 'matchCase',
+            typeInfo: 'Boolean',
+            attributeName: 'matchCase',
+            type: 'attribute'
+          }, {
+            name: 'matchAction',
+            typeInfo: 'String',
+            attributeName: 'matchAction',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'SortByType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'sortProperty',
+            collection: true,
+            elementName: 'SortProperty',
+            typeInfo: 'Filter_2_0.SortPropertyType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'DistanceBufferType',
+        baseTypeInfo: 'Filter_2_0.SpatialOpsType',
+        propertyInfos: [{
+            name: 'expression',
+            elementName: 'expression',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }, {
+            name: 'any',
+            typedObjectAllowed: true,
+            type: 'anyElement'
+          }, {
+            type: 'element',
+            name: 'distance',
+            elementName: 'Distance',
+            typeInfo: 'Filter_2_0.MeasureType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ExtensionOpsType',
+        propertyInfos: []
+      }, {
+        type: 'classInfo',
+        localName: 'FunctionType',
+        propertyInfos: [{
+            name: 'expression',
+            collection: true,
+            elementName: 'expression',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }, {
+            name: 'name',
+            typeInfo: 'String',
+            attributeName: 'name',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'PropertyIsBetweenType',
+        baseTypeInfo: 'Filter_2_0.ComparisonOpsType',
+        propertyInfos: [{
+            name: 'expression',
+            elementName: 'expression',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }, {
+            type: 'element',
+            name: 'lowerBoundary',
+            elementName: 'LowerBoundary',
+            typeInfo: 'Filter_2_0.LowerBoundaryType'
+          }, {
+            type: 'element',
+            name: 'upperBoundary',
+            elementName: 'UpperBoundary',
+            typeInfo: 'Filter_2_0.UpperBoundaryType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'AbstractIdType',
         propertyInfos: []
       }, {
         type: 'classInfo',
@@ -195,55 +436,39 @@ var Filter_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'DistanceBufferType',
-        baseTypeInfo: 'Filter_2_0.SpatialOpsType',
+        localName: 'AbstractAdhocQueryExpressionType',
+        baseTypeInfo: 'Filter_2_0.AbstractQueryExpressionType',
         propertyInfos: [{
-            name: 'expression',
-            elementName: 'expression',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }, {
-            name: 'any',
-            typedObjectAllowed: true,
-            type: 'anyElement'
-          }, {
             type: 'element',
-            name: 'distance',
-            elementName: 'Distance',
-            typeInfo: 'Filter_2_0.MeasureType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'LogicalOperators',
-        propertyInfos: []
-      }, {
-        type: 'classInfo',
-        localName: 'LiteralType',
-        propertyInfos: [{
-            name: 'content',
+            name: 'abstractProjectionClause',
             collection: true,
-            typedObjectAllowed: true,
-            mixed: true,
-            type: 'anyElement'
+            elementName: 'AbstractProjectionClause',
+            typeInfo: 'AnyType'
           }, {
-            name: 'type',
-            typeInfo: 'String',
-            attributeName: 'type',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'PropertyIsNilType',
-        baseTypeInfo: 'Filter_2_0.ComparisonOpsType',
-        propertyInfos: [{
-            name: 'expression',
-            elementName: 'expression',
+            name: 'abstractSelectionClause',
+            elementName: 'AbstractSelectionClause',
             typeInfo: 'AnyType',
             type: 'elementRef'
           }, {
-            name: 'nilReason',
-            typeInfo: 'String',
-            attributeName: 'nilReason',
+            name: 'abstractSortingClause',
+            elementName: 'AbstractSortingClause',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }, {
+            name: 'typeNames',
+            typeInfo: {
+              type: 'list',
+              typeInfo: 'String'
+            },
+            attributeName: 'typeNames',
+            type: 'attribute'
+          }, {
+            name: 'aliases',
+            typeInfo: {
+              type: 'list',
+              typeInfo: 'String'
+            },
+            attributeName: 'aliases',
             type: 'attribute'
           }]
       }, {
@@ -289,75 +514,6 @@ var Filter_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'BinaryLogicOpType',
-        baseTypeInfo: 'Filter_2_0.LogicOpsType',
-        propertyInfos: [{
-            name: 'comparisonOpsOrSpatialOpsOrTemporalOps',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'logicOps',
-                typeInfo: 'Filter_2_0.LogicOpsType'
-              }, {
-                elementName: 'temporalOps',
-                typeInfo: 'Filter_2_0.TemporalOpsType'
-              }, {
-                elementName: 'Function',
-                typeInfo: 'Filter_2_0.FunctionType'
-              }, {
-                elementName: 'extensionOps',
-                typeInfo: 'Filter_2_0.ExtensionOpsType'
-              }, {
-                elementName: 'comparisonOps',
-                typeInfo: 'Filter_2_0.ComparisonOpsType'
-              }, {
-                elementName: '_Id',
-                typeInfo: 'Filter_2_0.AbstractIdType'
-              }, {
-                elementName: 'spatialOps',
-                typeInfo: 'Filter_2_0.SpatialOpsType'
-              }],
-            type: 'elementRefs'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'LogicOpsType',
-        propertyInfos: []
-      }, {
-        type: 'classInfo',
-        localName: 'PropertyIsBetweenType',
-        baseTypeInfo: 'Filter_2_0.ComparisonOpsType',
-        propertyInfos: [{
-            name: 'expression',
-            elementName: 'expression',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }, {
-            type: 'element',
-            name: 'lowerBoundary',
-            elementName: 'LowerBoundary',
-            typeInfo: 'Filter_2_0.LowerBoundaryType'
-          }, {
-            type: 'element',
-            name: 'upperBoundary',
-            elementName: 'UpperBoundary',
-            typeInfo: 'Filter_2_0.UpperBoundaryType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ExtensionOpsType',
-        propertyInfos: []
-      }, {
-        type: 'classInfo',
-        localName: 'PropertyIsNullType',
-        baseTypeInfo: 'Filter_2_0.ComparisonOpsType',
-        propertyInfos: [{
-            name: 'expression',
-            elementName: 'expression',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }]
-      }, {
-        type: 'classInfo',
         localName: 'ResourceIdType',
         baseTypeInfo: 'Filter_2_0.AbstractIdType',
         propertyInfos: [{
@@ -388,166 +544,6 @@ var Filter_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'AbstractIdType',
-        propertyInfos: []
-      }, {
-        type: 'classInfo',
-        localName: 'AbstractQueryExpressionType',
-        propertyInfos: [{
-            name: 'handle',
-            typeInfo: 'String',
-            attributeName: 'handle',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'PropertyIsLikeType',
-        baseTypeInfo: 'Filter_2_0.ComparisonOpsType',
-        propertyInfos: [{
-            name: 'expression',
-            collection: true,
-            elementName: 'expression',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }, {
-            name: 'wildCard',
-            typeInfo: 'String',
-            attributeName: 'wildCard',
-            type: 'attribute'
-          }, {
-            name: 'singleChar',
-            typeInfo: 'String',
-            attributeName: 'singleChar',
-            type: 'attribute'
-          }, {
-            name: 'escapeChar',
-            typeInfo: 'String',
-            attributeName: 'escapeChar',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'BBOXType',
-        baseTypeInfo: 'Filter_2_0.SpatialOpsType',
-        propertyInfos: [{
-            name: 'expression',
-            elementName: 'expression',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }, {
-            name: 'any',
-            typedObjectAllowed: true,
-            type: 'anyElement'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'AbstractAdhocQueryExpressionType',
-        baseTypeInfo: 'Filter_2_0.AbstractQueryExpressionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'abstractProjectionClause',
-            collection: true,
-            elementName: 'AbstractProjectionClause',
-            typeInfo: 'AnyType'
-          }, {
-            name: 'abstractSelectionClause',
-            elementName: 'AbstractSelectionClause',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }, {
-            name: 'abstractSortingClause',
-            elementName: 'AbstractSortingClause',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }, {
-            name: 'typeNames',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
-            },
-            attributeName: 'typeNames',
-            type: 'attribute'
-          }, {
-            name: 'aliases',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
-            },
-            attributeName: 'aliases',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'SortByType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'sortProperty',
-            collection: true,
-            elementName: 'SortProperty',
-            typeInfo: 'Filter_2_0.SortPropertyType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'FunctionType',
-        propertyInfos: [{
-            name: 'expression',
-            collection: true,
-            elementName: 'expression',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'UnaryLogicOpType',
-        baseTypeInfo: 'Filter_2_0.LogicOpsType',
-        propertyInfos: [{
-            name: 'comparisonOps',
-            elementName: 'comparisonOps',
-            typeInfo: 'Filter_2_0.ComparisonOpsType',
-            type: 'elementRef'
-          }, {
-            name: 'spatialOps',
-            elementName: 'spatialOps',
-            typeInfo: 'Filter_2_0.SpatialOpsType',
-            type: 'elementRef'
-          }, {
-            name: 'temporalOps',
-            elementName: 'temporalOps',
-            typeInfo: 'Filter_2_0.TemporalOpsType',
-            type: 'elementRef'
-          }, {
-            name: 'logicOps',
-            elementName: 'logicOps',
-            typeInfo: 'Filter_2_0.LogicOpsType',
-            type: 'elementRef'
-          }, {
-            type: 'element',
-            name: 'extensionOps',
-            elementName: 'extensionOps',
-            typeInfo: 'Filter_2_0.ExtensionOpsType'
-          }, {
-            type: 'element',
-            name: 'function',
-            elementName: 'Function',
-            typeInfo: 'Filter_2_0.FunctionType'
-          }, {
-            name: 'id',
-            collection: true,
-            elementName: '_Id',
-            typeInfo: 'Filter_2_0.AbstractIdType',
-            type: 'elementRef'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'AbstractProjectionClauseType',
-        propertyInfos: []
-      }, {
-        type: 'classInfo',
         localName: 'ArgumentType',
         propertyInfos: [{
             type: 'element',
@@ -570,32 +566,46 @@ var Filter_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'AdditionalOperatorsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'operator',
-            collection: true,
-            elementName: 'Operator',
-            typeInfo: 'Filter_2_0.ExtensionOperatorType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'SortPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'valueReference',
-            elementName: 'ValueReference',
-            typeInfo: 'String'
-          }, {
-            type: 'element',
-            name: 'sortOrder',
-            elementName: 'SortOrder',
-            typeInfo: 'String'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'AbstractSelectionClauseType',
+        localName: 'AbstractSortingClauseType',
         propertyInfos: []
+      }, {
+        type: 'classInfo',
+        localName: 'SpatialOperatorsType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'spatialOperator',
+            collection: true,
+            elementName: 'SpatialOperator',
+            typeInfo: 'Filter_2_0.SpatialOperatorType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'TemporalOperatorsType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'temporalOperator',
+            collection: true,
+            elementName: 'TemporalOperator',
+            typeInfo: 'Filter_2_0.TemporalOperatorType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ComparisonOperatorType',
+        propertyInfos: [{
+            name: 'name',
+            typeInfo: 'String',
+            attributeName: 'name',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ExtensionOperatorType',
+        propertyInfos: [{
+            name: 'name',
+            typeInfo: 'String',
+            attributeName: 'name',
+            type: 'attribute'
+          }]
       }, {
         type: 'classInfo',
         localName: 'SpatialOperatorType',
@@ -609,6 +619,43 @@ var Filter_2_0_Module_Factory = function () {
             typeInfo: 'String',
             attributeName: 'name',
             type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'UpperBoundaryType',
+        propertyInfos: [{
+            name: 'expression',
+            elementName: 'expression',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'TemporalOperatorType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'temporalOperands',
+            elementName: 'TemporalOperands',
+            typeInfo: 'Filter_2_0.TemporalOperandsType'
+          }, {
+            name: 'name',
+            typeInfo: 'String',
+            attributeName: 'name',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'AbstractSelectionClauseType',
+        propertyInfos: []
+      }, {
+        type: 'classInfo',
+        localName: 'TemporalOperandsType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'temporalOperand',
+            collection: true,
+            elementName: 'TemporalOperand',
+            typeInfo: 'Filter_2_0.TemporalOperandsType.TemporalOperand'
           }]
       }, {
         type: 'classInfo',
@@ -639,22 +686,16 @@ var Filter_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'LowerBoundaryType',
+        localName: 'MeasureType',
         propertyInfos: [{
-            name: 'expression',
-            elementName: 'expression',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'TemporalOperandsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'temporalOperand',
-            collection: true,
-            elementName: 'TemporalOperand',
-            typeInfo: 'Filter_2_0.TemporalOperandsType.TemporalOperand'
+            name: 'value',
+            typeInfo: 'Double',
+            type: 'value'
+          }, {
+            name: 'uom',
+            typeInfo: 'String',
+            attributeName: 'uom',
+            type: 'attribute'
           }]
       }, {
         type: 'classInfo',
@@ -675,34 +716,37 @@ var Filter_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'ComparisonOperatorType',
+        localName: 'AdditionalOperatorsType',
         propertyInfos: [{
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+            type: 'element',
+            name: 'operator',
+            collection: true,
+            elementName: 'Operator',
+            typeInfo: 'Filter_2_0.ExtensionOperatorType'
           }]
       }, {
         type: 'classInfo',
-        localName: 'MeasureType',
+        localName: 'GeometryOperandsType',
         propertyInfos: [{
-            name: 'value',
-            typeInfo: 'Double',
-            type: 'value'
+            type: 'element',
+            name: 'geometryOperand',
+            collection: true,
+            elementName: 'GeometryOperand',
+            typeInfo: 'Filter_2_0.GeometryOperandsType.GeometryOperand'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'SortPropertyType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'valueReference',
+            elementName: 'ValueReference',
+            typeInfo: 'String'
           }, {
-            name: 'uom',
-            typeInfo: 'String',
-            attributeName: 'uom',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ExtensionOperatorType',
-        propertyInfos: [{
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+            type: 'element',
+            name: 'sortOrder',
+            elementName: 'SortOrder',
+            typeInfo: 'String'
           }]
       }, {
         type: 'classInfo',
@@ -716,6 +760,10 @@ var Filter_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
+        localName: 'AbstractProjectionClauseType',
+        propertyInfos: []
+      }, {
+        type: 'classInfo',
         localName: 'ComparisonOperatorsType',
         propertyInfos: [{
             type: 'element',
@@ -726,60 +774,12 @@ var Filter_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'UpperBoundaryType',
+        localName: 'LowerBoundaryType',
         propertyInfos: [{
             name: 'expression',
             elementName: 'expression',
             typeInfo: 'AnyType',
             type: 'elementRef'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'TemporalOperatorType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'temporalOperands',
-            elementName: 'TemporalOperands',
-            typeInfo: 'Filter_2_0.TemporalOperandsType'
-          }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'TemporalOperatorsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'temporalOperator',
-            collection: true,
-            elementName: 'TemporalOperator',
-            typeInfo: 'Filter_2_0.TemporalOperatorType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'SpatialOperatorsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'spatialOperator',
-            collection: true,
-            elementName: 'SpatialOperator',
-            typeInfo: 'Filter_2_0.SpatialOperatorType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'AbstractSortingClauseType',
-        propertyInfos: []
-      }, {
-        type: 'classInfo',
-        localName: 'GeometryOperandsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'geometryOperand',
-            collection: true,
-            elementName: 'GeometryOperand',
-            typeInfo: 'Filter_2_0.GeometryOperandsType.GeometryOperand'
           }]
       }, {
         type: 'classInfo',
@@ -801,6 +801,11 @@ var Filter_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'enumInfo',
+        localName: 'MatchActionType',
+        baseTypeInfo: 'String',
+        values: ['All', 'Any', 'One']
+      }, {
+        type: 'enumInfo',
         localName: 'SortOrderType',
         baseTypeInfo: 'String',
         values: ['DESC', 'ASC']
@@ -809,164 +814,60 @@ var Filter_2_0_Module_Factory = function () {
         localName: 'VersionActionTokens',
         baseTypeInfo: 'String',
         values: ['FIRST', 'LAST', 'PREVIOUS', 'NEXT', 'ALL']
-      }, {
-        type: 'enumInfo',
-        localName: 'MatchActionType',
-        baseTypeInfo: 'String',
-        values: ['All', 'Any', 'One']
       }],
     elementInfos: [{
-        elementName: 'Filter_Capabilities',
-        typeInfo: 'Filter_2_0.FilterCapabilities'
-      }, {
         elementName: 'LogicalOperators',
         typeInfo: 'Filter_2_0.LogicalOperators'
       }, {
-        elementName: 'Ends',
-        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
-        substitutionHead: 'temporalOps'
+        elementName: 'Filter_Capabilities',
+        typeInfo: 'Filter_2_0.FilterCapabilities'
+      }, {
+        elementName: 'AbstractProjectionClause',
+        typeInfo: 'AnyType'
+      }, {
+        elementName: 'expression',
+        typeInfo: 'AnyType'
       }, {
         elementName: 'TOverlaps',
         typeInfo: 'Filter_2_0.BinaryTemporalOpType',
         substitutionHead: 'temporalOps'
       }, {
-        elementName: 'AbstractProjectionClause',
+        elementName: 'EndedBy',
+        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
+        substitutionHead: 'temporalOps'
+      }, {
+        elementName: 'AbstractSelectionClause',
         typeInfo: 'AnyType'
       }, {
-        elementName: 'PropertyIsGreaterThan',
-        typeInfo: 'Filter_2_0.BinaryComparisonOpType',
-        substitutionHead: 'comparisonOps'
-      }, {
-        elementName: 'comparisonOps',
-        typeInfo: 'Filter_2_0.ComparisonOpsType'
+        elementName: 'AnyInteracts',
+        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
+        substitutionHead: 'temporalOps'
       }, {
         elementName: 'TContains',
         typeInfo: 'Filter_2_0.BinaryTemporalOpType',
         substitutionHead: 'temporalOps'
       }, {
-        elementName: 'Meets',
-        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
-        substitutionHead: 'temporalOps'
-      }, {
-        elementName: 'PropertyIsNotEqualTo',
-        typeInfo: 'Filter_2_0.BinaryComparisonOpType',
-        substitutionHead: 'comparisonOps'
-      }, {
-        elementName: 'spatialOps',
-        typeInfo: 'Filter_2_0.SpatialOpsType'
-      }, {
-        elementName: 'ResourceId',
-        typeInfo: 'Filter_2_0.ResourceIdType',
-        substitutionHead: '_Id'
-      }, {
-        elementName: 'PropertyIsLessThanOrEqualTo',
-        typeInfo: 'Filter_2_0.BinaryComparisonOpType',
-        substitutionHead: 'comparisonOps'
-      }, {
-        elementName: 'MetBy',
-        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
-        substitutionHead: 'temporalOps'
-      }, {
-        elementName: 'logicOps',
-        typeInfo: 'Filter_2_0.LogicOpsType'
-      }, {
-        elementName: '_Id',
-        typeInfo: 'Filter_2_0.AbstractIdType'
-      }, {
-        elementName: 'AbstractQueryExpression',
-        typeInfo: 'Filter_2_0.AbstractQueryExpressionType'
-      }, {
-        elementName: 'Contains',
-        typeInfo: 'Filter_2_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
-      }, {
-        elementName: 'PropertyIsLike',
-        typeInfo: 'Filter_2_0.PropertyIsLikeType',
-        substitutionHead: 'comparisonOps'
-      }, {
-        elementName: 'PropertyIsEqualTo',
-        typeInfo: 'Filter_2_0.BinaryComparisonOpType',
-        substitutionHead: 'comparisonOps'
-      }, {
-        elementName: 'Begins',
-        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
-        substitutionHead: 'temporalOps'
+        elementName: 'AbstractAdhocQueryExpression',
+        typeInfo: 'Filter_2_0.AbstractAdhocQueryExpressionType',
+        substitutionHead: 'AbstractQueryExpression'
       }, {
         elementName: 'Equals',
         typeInfo: 'Filter_2_0.BinarySpatialOpType',
         substitutionHead: 'spatialOps'
       }, {
-        elementName: 'During',
-        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
-        substitutionHead: 'temporalOps'
+        elementName: 'Filter',
+        typeInfo: 'Filter_2_0.FilterType',
+        substitutionHead: 'AbstractSelectionClause'
       }, {
-        elementName: 'ValueReference',
-        typeInfo: 'String',
-        substitutionHead: 'expression'
+        elementName: 'ResourceId',
+        typeInfo: 'Filter_2_0.ResourceIdType',
+        substitutionHead: '_Id'
       }, {
-        elementName: 'BBOX',
-        typeInfo: 'Filter_2_0.BBOXType',
-        substitutionHead: 'spatialOps'
-      }, {
-        elementName: 'AbstractAdhocQueryExpression',
-        typeInfo: 'Filter_2_0.AbstractAdhocQueryExpressionType',
-        substitutionHead: 'AbstractQueryExpression'
-      }, {
-        elementName: 'Function',
-        typeInfo: 'Filter_2_0.FunctionType',
-        substitutionHead: 'expression'
-      }, {
-        elementName: 'SortBy',
-        typeInfo: 'Filter_2_0.SortByType',
-        substitutionHead: 'AbstractSortingClause'
-      }, {
-        elementName: 'Not',
-        typeInfo: 'Filter_2_0.UnaryLogicOpType',
-        substitutionHead: 'logicOps'
-      }, {
-        elementName: 'Disjoint',
-        typeInfo: 'Filter_2_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
-      }, {
-        elementName: 'temporalOps',
-        typeInfo: 'Filter_2_0.TemporalOpsType'
-      }, {
-        elementName: 'Overlaps',
-        typeInfo: 'Filter_2_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
-      }, {
-        elementName: 'Beyond',
-        typeInfo: 'Filter_2_0.DistanceBufferType',
-        substitutionHead: 'spatialOps'
-      }, {
-        elementName: 'OverlappedBy',
-        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
-        substitutionHead: 'temporalOps'
-      }, {
-        elementName: 'BegunBy',
-        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
-        substitutionHead: 'temporalOps'
-      }, {
-        elementName: 'DWithin',
-        typeInfo: 'Filter_2_0.DistanceBufferType',
-        substitutionHead: 'spatialOps'
-      }, {
-        elementName: 'expression',
-        typeInfo: 'AnyType'
-      }, {
-        elementName: 'PropertyIsLessThan',
+        elementName: 'PropertyIsNotEqualTo',
         typeInfo: 'Filter_2_0.BinaryComparisonOpType',
         substitutionHead: 'comparisonOps'
       }, {
-        elementName: 'Crosses',
-        typeInfo: 'Filter_2_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
-      }, {
-        elementName: 'EndedBy',
-        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
-        substitutionHead: 'temporalOps'
-      }, {
-        elementName: 'PropertyIsGreaterThanOrEqualTo',
+        elementName: 'PropertyIsLessThan',
         typeInfo: 'Filter_2_0.BinaryComparisonOpType',
         substitutionHead: 'comparisonOps'
       }, {
@@ -974,66 +875,165 @@ var Filter_2_0_Module_Factory = function () {
         typeInfo: 'Filter_2_0.BinarySpatialOpType',
         substitutionHead: 'spatialOps'
       }, {
-        elementName: 'Before',
-        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
-        substitutionHead: 'temporalOps'
-      }, {
         elementName: 'After',
         typeInfo: 'Filter_2_0.BinaryTemporalOpType',
         substitutionHead: 'temporalOps'
       }, {
-        elementName: 'Filter',
-        typeInfo: 'Filter_2_0.FilterType',
-        substitutionHead: 'AbstractSelectionClause'
+        elementName: 'logicOps',
+        typeInfo: 'Filter_2_0.LogicOpsType'
       }, {
-        elementName: 'Intersects',
+        elementName: 'Before',
+        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
+        substitutionHead: 'temporalOps'
+      }, {
+        elementName: 'Overlaps',
         typeInfo: 'Filter_2_0.BinarySpatialOpType',
         substitutionHead: 'spatialOps'
       }, {
-        elementName: 'Or',
-        typeInfo: 'Filter_2_0.BinaryLogicOpType',
-        substitutionHead: 'logicOps'
+        elementName: 'PropertyIsLessThanOrEqualTo',
+        typeInfo: 'Filter_2_0.BinaryComparisonOpType',
+        substitutionHead: 'comparisonOps'
+      }, {
+        elementName: 'spatialOps',
+        typeInfo: 'Filter_2_0.SpatialOpsType'
+      }, {
+        elementName: 'SortBy',
+        typeInfo: 'Filter_2_0.SortByType',
+        substitutionHead: 'AbstractSortingClause'
+      }, {
+        elementName: 'Beyond',
+        typeInfo: 'Filter_2_0.DistanceBufferType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'extensionOps',
+        typeInfo: 'Filter_2_0.ExtensionOpsType'
+      }, {
+        elementName: 'AbstractSortingClause',
+        typeInfo: 'AnyType'
+      }, {
+        elementName: 'During',
+        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
+        substitutionHead: 'temporalOps'
+      }, {
+        elementName: 'Function',
+        typeInfo: 'Filter_2_0.FunctionType',
+        substitutionHead: 'expression'
+      }, {
+        elementName: 'PropertyIsGreaterThanOrEqualTo',
+        typeInfo: 'Filter_2_0.BinaryComparisonOpType',
+        substitutionHead: 'comparisonOps'
+      }, {
+        elementName: 'Crosses',
+        typeInfo: 'Filter_2_0.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'Begins',
+        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
+        substitutionHead: 'temporalOps'
+      }, {
+        elementName: 'PropertyIsEqualTo',
+        typeInfo: 'Filter_2_0.BinaryComparisonOpType',
+        substitutionHead: 'comparisonOps'
+      }, {
+        elementName: 'DWithin',
+        typeInfo: 'Filter_2_0.DistanceBufferType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'Disjoint',
+        typeInfo: 'Filter_2_0.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: '_Id',
+        typeInfo: 'Filter_2_0.AbstractIdType'
       }, {
         elementName: 'PropertyIsBetween',
         typeInfo: 'Filter_2_0.PropertyIsBetweenType',
         substitutionHead: 'comparisonOps'
       }, {
-        elementName: 'extensionOps',
-        typeInfo: 'Filter_2_0.ExtensionOpsType'
+        elementName: 'MetBy',
+        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
+        substitutionHead: 'temporalOps'
+      }, {
+        elementName: 'BegunBy',
+        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
+        substitutionHead: 'temporalOps'
+      }, {
+        elementName: 'PropertyIsLike',
+        typeInfo: 'Filter_2_0.PropertyIsLikeType',
+        substitutionHead: 'comparisonOps'
       }, {
         elementName: 'PropertyIsNull',
         typeInfo: 'Filter_2_0.PropertyIsNullType',
         substitutionHead: 'comparisonOps'
       }, {
-        elementName: 'And',
-        typeInfo: 'Filter_2_0.BinaryLogicOpType',
+        elementName: 'Not',
+        typeInfo: 'Filter_2_0.UnaryLogicOpType',
         substitutionHead: 'logicOps'
-      }, {
-        elementName: 'AnyInteracts',
-        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
-        substitutionHead: 'temporalOps'
-      }, {
-        elementName: 'AbstractSortingClause',
-        typeInfo: 'AnyType'
-      }, {
-        elementName: 'Touches',
-        typeInfo: 'Filter_2_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
       }, {
         elementName: 'PropertyIsNil',
         typeInfo: 'Filter_2_0.PropertyIsNilType',
         substitutionHead: 'comparisonOps'
       }, {
-        elementName: 'Literal',
-        typeInfo: 'Filter_2_0.LiteralType',
-        substitutionHead: 'expression'
+        elementName: 'BBOX',
+        typeInfo: 'Filter_2_0.BBOXType',
+        substitutionHead: 'spatialOps'
       }, {
-        elementName: 'AbstractSelectionClause',
-        typeInfo: 'AnyType'
+        elementName: 'And',
+        typeInfo: 'Filter_2_0.BinaryLogicOpType',
+        substitutionHead: 'logicOps'
+      }, {
+        elementName: 'Ends',
+        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
+        substitutionHead: 'temporalOps'
+      }, {
+        elementName: 'Contains',
+        typeInfo: 'Filter_2_0.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'PropertyIsGreaterThan',
+        typeInfo: 'Filter_2_0.BinaryComparisonOpType',
+        substitutionHead: 'comparisonOps'
+      }, {
+        elementName: 'Meets',
+        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
+        substitutionHead: 'temporalOps'
+      }, {
+        elementName: 'Or',
+        typeInfo: 'Filter_2_0.BinaryLogicOpType',
+        substitutionHead: 'logicOps'
+      }, {
+        elementName: 'comparisonOps',
+        typeInfo: 'Filter_2_0.ComparisonOpsType'
       }, {
         elementName: 'TEquals',
         typeInfo: 'Filter_2_0.BinaryTemporalOpType',
         substitutionHead: 'temporalOps'
+      }, {
+        elementName: 'Literal',
+        typeInfo: 'Filter_2_0.LiteralType',
+        substitutionHead: 'expression'
+      }, {
+        elementName: 'Intersects',
+        typeInfo: 'Filter_2_0.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'temporalOps',
+        typeInfo: 'Filter_2_0.TemporalOpsType'
+      }, {
+        elementName: 'Touches',
+        typeInfo: 'Filter_2_0.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'OverlappedBy',
+        typeInfo: 'Filter_2_0.BinaryTemporalOpType',
+        substitutionHead: 'temporalOps'
+      }, {
+        elementName: 'AbstractQueryExpression',
+        typeInfo: 'Filter_2_0.AbstractQueryExpressionType'
+      }, {
+        elementName: 'ValueReference',
+        typeInfo: 'String',
+        substitutionHead: 'expression'
       }]
   };
   return {

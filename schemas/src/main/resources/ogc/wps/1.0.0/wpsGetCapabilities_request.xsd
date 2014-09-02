@@ -15,7 +15,7 @@
 		includes and imports
 	============================================================== -->
 	<include schemaLocation="wpsAll.xsd"/>
-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
 	<!-- =============================================================
 		elements and types
 	============================================================== -->

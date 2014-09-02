@@ -4,15 +4,53 @@ var WFS_2_0_Module_Factory = function () {
     defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/wfs\/2.0',
     typeInfos: [{
         type: 'classInfo',
-        localName: 'TruncatedResponse',
+        localName: 'StoredQueryType',
+        baseTypeInfo: 'Filter_2_0.AbstractQueryExpressionType',
         propertyInfos: [{
             type: 'element',
-            name: 'exceptionReport',
+            name: 'parameter',
+            collection: true,
+            elementName: 'Parameter',
+            typeInfo: 'WFS_2_0.ParameterType'
+          }, {
+            name: 'id',
+            typeInfo: 'String',
+            attributeName: 'id',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'DescribeFeatureTypeType',
+        baseTypeInfo: 'WFS_2_0.BaseRequestType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'typeName',
+            collection: true,
+            elementName: 'TypeName',
+            typeInfo: 'String'
+          }, {
+            name: 'outputFormat',
+            typeInfo: 'String',
+            attributeName: 'outputFormat',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'DeleteType',
+        baseTypeInfo: 'WFS_2_0.AbstractTransactionActionType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'filter',
             elementName: {
-              localPart: 'ExceptionReport',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+              localPart: 'Filter',
+              namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
             },
-            typeInfo: 'OWS_1_1_0.ExceptionReport'
+            typeInfo: 'Filter_2_0.FilterType'
+          }, {
+            name: 'typeName',
+            typeInfo: 'String',
+            attributeName: 'typeName',
+            type: 'attribute'
           }]
       }, {
         type: 'classInfo',
@@ -25,63 +63,109 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'FeatureCollectionType',
-        baseTypeInfo: 'WFS_2_0.SimpleFeatureCollectionType',
+        localName: 'DescribeStoredQueriesResponseType',
         propertyInfos: [{
             type: 'element',
-            name: 'additionalObjects',
-            elementName: 'additionalObjects',
-            typeInfo: 'WFS_2_0.AdditionalObjects'
+            name: 'storedQueryDescription',
+            collection: true,
+            elementName: 'StoredQueryDescription',
+            typeInfo: 'WFS_2_0.StoredQueryDescriptionType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'QueryType',
+        baseTypeInfo: 'Filter_2_0.AbstractAdhocQueryExpressionType',
+        propertyInfos: [{
+            name: 'srsName',
+            typeInfo: 'String',
+            attributeName: 'srsName',
+            type: 'attribute'
+          }, {
+            name: 'featureVersion',
+            typeInfo: 'String',
+            attributeName: 'featureVersion',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ValueListType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'value',
+            collection: true,
+            elementName: 'Value',
+            typeInfo: 'AnyType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ListStoredQueriesType',
+        baseTypeInfo: 'WFS_2_0.BaseRequestType',
+        propertyInfos: []
+      }, {
+        type: 'classInfo',
+        localName: 'ElementType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'metadata',
+            elementName: {
+              localPart: 'Metadata',
+              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            typeInfo: 'OWS_1_1_0.MetadataType'
           }, {
             type: 'element',
-            name: 'truncatedResponse',
-            elementName: 'truncatedResponse',
-            typeInfo: 'WFS_2_0.TruncatedResponse'
+            name: 'valueList',
+            elementName: 'ValueList',
+            typeInfo: 'WFS_2_0.ValueListType'
+          }, {
+            name: 'name',
+            typeInfo: 'String',
+            attributeName: 'name',
+            type: 'attribute'
+          }, {
+            name: 'type',
+            typeInfo: 'String',
+            attributeName: 'type',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'LockFeatureType',
+        baseTypeInfo: 'WFS_2_0.BaseRequestType',
+        propertyInfos: [{
+            name: 'abstractQueryExpression',
+            collection: true,
+            elementName: {
+              localPart: 'AbstractQueryExpression',
+              namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            typeInfo: 'Filter_2_0.AbstractQueryExpressionType',
+            type: 'elementRef'
           }, {
             name: 'lockId',
             typeInfo: 'String',
             attributeName: 'lockId',
             type: 'attribute'
           }, {
-            name: 'timeStamp',
-            typeInfo: 'Calendar',
-            attributeName: 'timeStamp',
-            type: 'attribute'
-          }, {
-            name: 'numberMatched',
-            typeInfo: 'String',
-            attributeName: 'numberMatched',
-            type: 'attribute'
-          }, {
-            name: 'numberReturned',
+            name: 'expiry',
             typeInfo: 'Integer',
-            attributeName: 'numberReturned',
+            attributeName: 'expiry',
             type: 'attribute'
           }, {
-            name: 'next',
+            name: 'lockAction',
             typeInfo: 'String',
-            attributeName: 'next',
-            type: 'attribute'
-          }, {
-            name: 'previous',
-            typeInfo: 'String',
-            attributeName: 'previous',
+            attributeName: 'lockAction',
             type: 'attribute'
           }]
       }, {
         type: 'classInfo',
-        localName: 'SimpleFeatureCollectionType',
+        localName: 'FeatureTypeListType',
         propertyInfos: [{
             type: 'element',
-            name: 'boundedBy',
-            elementName: 'boundedBy',
-            typeInfo: 'WFS_2_0.EnvelopePropertyType'
-          }, {
-            type: 'element',
-            name: 'member',
+            name: 'featureType',
             collection: true,
-            elementName: 'member',
-            typeInfo: 'WFS_2_0.MemberPropertyType'
+            elementName: 'FeatureType',
+            typeInfo: 'WFS_2_0.FeatureTypeType'
           }]
       }, {
         type: 'classInfo',
@@ -139,32 +223,176 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'QueryType',
-        baseTypeInfo: 'Filter_2_0.AbstractAdhocQueryExpressionType',
+        localName: 'AdditionalValues',
         propertyInfos: [{
-            name: 'srsName',
-            typeInfo: 'String',
-            attributeName: 'srsName',
+            type: 'element',
+            name: 'valueCollection',
+            elementName: 'ValueCollection',
+            typeInfo: 'WFS_2_0.ValueCollectionType'
+          }, {
+            name: 'simpleFeatureCollection',
+            elementName: 'SimpleFeatureCollection',
+            typeInfo: 'WFS_2_0.SimpleFeatureCollectionType',
+            type: 'elementRef'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ValueCollectionType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'member',
+            collection: true,
+            elementName: 'member',
+            typeInfo: 'WFS_2_0.MemberPropertyType'
+          }, {
+            type: 'element',
+            name: 'additionalValues',
+            elementName: 'additionalValues',
+            typeInfo: 'WFS_2_0.AdditionalValues'
+          }, {
+            type: 'element',
+            name: 'truncatedResponse',
+            elementName: 'truncatedResponse',
+            typeInfo: 'WFS_2_0.TruncatedResponse'
+          }, {
+            name: 'timeStamp',
+            typeInfo: 'Calendar',
+            attributeName: 'timeStamp',
             type: 'attribute'
           }, {
-            name: 'featureVersion',
+            name: 'numberMatched',
             typeInfo: 'String',
-            attributeName: 'featureVersion',
+            attributeName: 'numberMatched',
+            type: 'attribute'
+          }, {
+            name: 'numberReturned',
+            typeInfo: 'Integer',
+            attributeName: 'numberReturned',
+            type: 'attribute'
+          }, {
+            name: 'next',
+            typeInfo: 'String',
+            attributeName: 'next',
+            type: 'attribute'
+          }, {
+            name: 'previous',
+            typeInfo: 'String',
+            attributeName: 'previous',
             type: 'attribute'
           }]
       }, {
         type: 'classInfo',
-        localName: 'PropertyType',
+        localName: 'SimpleFeatureCollectionType',
         propertyInfos: [{
             type: 'element',
-            name: 'valueReference',
-            elementName: 'ValueReference',
-            typeInfo: 'WFS_2_0.PropertyType.ValueReference'
+            name: 'boundedBy',
+            elementName: 'boundedBy',
+            typeInfo: 'WFS_2_0.EnvelopePropertyType'
           }, {
             type: 'element',
-            name: 'value',
-            elementName: 'Value',
-            typeInfo: 'AnyType'
+            name: 'member',
+            collection: true,
+            elementName: 'member',
+            typeInfo: 'WFS_2_0.MemberPropertyType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ListStoredQueriesResponseType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'storedQuery',
+            collection: true,
+            elementName: 'StoredQuery',
+            typeInfo: 'WFS_2_0.StoredQueryListItemType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'DropStoredQuery',
+        baseTypeInfo: 'WFS_2_0.BaseRequestType',
+        propertyInfos: [{
+            name: 'id',
+            typeInfo: 'String',
+            attributeName: 'id',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'BaseRequestType',
+        propertyInfos: [{
+            name: 'service',
+            typeInfo: 'String',
+            attributeName: 'service',
+            type: 'attribute'
+          }, {
+            name: 'version',
+            typeInfo: 'String',
+            attributeName: 'version',
+            type: 'attribute'
+          }, {
+            name: 'handle',
+            typeInfo: 'String',
+            attributeName: 'handle',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'NativeType',
+        propertyInfos: [{
+            name: 'content',
+            collection: true,
+            domAllowed: true,
+            typedObjectAllowed: true,
+            mixed: true,
+            type: 'anyElement'
+          }, {
+            name: 'vendorId',
+            typeInfo: 'String',
+            attributeName: 'vendorId',
+            type: 'attribute'
+          }, {
+            name: 'safeToIgnore',
+            typeInfo: 'Boolean',
+            attributeName: 'safeToIgnore',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'TransactionResponseType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'transactionSummary',
+            elementName: 'TransactionSummary',
+            typeInfo: 'WFS_2_0.TransactionSummaryType'
+          }, {
+            type: 'element',
+            name: 'insertResults',
+            elementName: 'InsertResults',
+            typeInfo: 'WFS_2_0.ActionResultsType'
+          }, {
+            type: 'element',
+            name: 'updateResults',
+            elementName: 'UpdateResults',
+            typeInfo: 'WFS_2_0.ActionResultsType'
+          }, {
+            type: 'element',
+            name: 'replaceResults',
+            elementName: 'ReplaceResults',
+            typeInfo: 'WFS_2_0.ActionResultsType'
+          }, {
+            name: 'version',
+            typeInfo: 'String',
+            attributeName: 'version',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'GetCapabilitiesType',
+        baseTypeInfo: 'OWS_1_1_0.GetCapabilitiesType',
+        propertyInfos: [{
+            name: 'service',
+            typeInfo: 'String',
+            attributeName: 'service',
+            type: 'attribute'
           }]
       }, {
         type: 'classInfo',
@@ -179,116 +407,6 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'GetPropertyValueType',
-        baseTypeInfo: 'WFS_2_0.BaseRequestType',
-        propertyInfos: [{
-            name: 'abstractQueryExpression',
-            elementName: {
-              localPart: 'AbstractQueryExpression',
-              namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            typeInfo: 'Filter_2_0.AbstractQueryExpressionType',
-            type: 'elementRef'
-          }, {
-            name: 'valueReference',
-            typeInfo: 'String',
-            attributeName: 'valueReference',
-            type: 'attribute'
-          }, {
-            name: 'resolvePath',
-            typeInfo: 'String',
-            attributeName: 'resolvePath',
-            type: 'attribute'
-          }, {
-            name: 'resolve',
-            typeInfo: 'String',
-            attributeName: 'resolve',
-            type: 'attribute'
-          }, {
-            name: 'resolveDepth',
-            typeInfo: 'String',
-            attributeName: 'resolveDepth',
-            type: 'attribute'
-          }, {
-            name: 'resolveTimeout',
-            typeInfo: 'Integer',
-            attributeName: 'resolveTimeout',
-            type: 'attribute'
-          }, {
-            name: 'startIndex',
-            typeInfo: 'Integer',
-            attributeName: 'startIndex',
-            type: 'attribute'
-          }, {
-            name: 'count',
-            typeInfo: 'Integer',
-            attributeName: 'count',
-            type: 'attribute'
-          }, {
-            name: 'resultType',
-            typeInfo: 'String',
-            attributeName: 'resultType',
-            type: 'attribute'
-          }, {
-            name: 'outputFormat',
-            typeInfo: 'String',
-            attributeName: 'outputFormat',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'TupleType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'member',
-            collection: true,
-            elementName: 'member',
-            typeInfo: 'WFS_2_0.MemberPropertyType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ExecutionStatusType',
-        propertyInfos: [{
-            name: 'status',
-            typeInfo: 'String',
-            attributeName: 'status',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'CreateStoredQueryResponseType',
-        baseTypeInfo: 'WFS_2_0.ExecutionStatusType',
-        propertyInfos: []
-      }, {
-        type: 'classInfo',
-        localName: 'DeleteType',
-        baseTypeInfo: 'WFS_2_0.AbstractTransactionActionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'filter',
-            elementName: {
-              localPart: 'Filter',
-              namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            typeInfo: 'Filter_2_0.FilterType'
-          }, {
-            name: 'typeName',
-            typeInfo: 'String',
-            attributeName: 'typeName',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'DescribeStoredQueriesResponseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'storedQueryDescription',
-            collection: true,
-            elementName: 'StoredQueryDescription',
-            typeInfo: 'WFS_2_0.StoredQueryDescriptionType'
-          }]
-      }, {
-        type: 'classInfo',
         localName: 'MemberPropertyType',
         propertyInfos: [{
             name: 'content',
@@ -297,11 +415,11 @@ var WFS_2_0_Module_Factory = function () {
             domAllowed: true,
             typedObjectAllowed: true,
             elementTypeInfos: [{
-                elementName: 'Tuple',
-                typeInfo: 'WFS_2_0.TupleType'
-              }, {
                 elementName: 'SimpleFeatureCollection',
                 typeInfo: 'WFS_2_0.SimpleFeatureCollectionType'
+              }, {
+                elementName: 'Tuple',
+                typeInfo: 'WFS_2_0.TupleType'
               }],
             type: 'elementRefs'
           }, {
@@ -368,60 +486,75 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'ListStoredQueriesResponseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'storedQuery',
-            collection: true,
-            elementName: 'StoredQuery',
-            typeInfo: 'WFS_2_0.StoredQueryListItemType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'DescribeStoredQueriesType',
+        localName: 'GetPropertyValueType',
         baseTypeInfo: 'WFS_2_0.BaseRequestType',
         propertyInfos: [{
-            type: 'element',
-            name: 'storedQueryId',
-            collection: true,
-            elementName: 'StoredQueryId',
-            typeInfo: 'String'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'TransactionType',
-        baseTypeInfo: 'WFS_2_0.BaseRequestType',
-        propertyInfos: [{
-            name: 'abstractTransactionAction',
-            collection: true,
-            elementName: 'AbstractTransactionAction',
-            typeInfo: 'WFS_2_0.AbstractTransactionActionType',
+            name: 'abstractQueryExpression',
+            elementName: {
+              localPart: 'AbstractQueryExpression',
+              namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            typeInfo: 'Filter_2_0.AbstractQueryExpressionType',
             type: 'elementRef'
           }, {
-            name: 'lockId',
+            name: 'valueReference',
             typeInfo: 'String',
-            attributeName: 'lockId',
+            attributeName: 'valueReference',
             type: 'attribute'
           }, {
-            name: 'releaseAction',
+            name: 'resolvePath',
             typeInfo: 'String',
-            attributeName: 'releaseAction',
+            attributeName: 'resolvePath',
             type: 'attribute'
           }, {
-            name: 'srsName',
+            name: 'resolve',
             typeInfo: 'String',
-            attributeName: 'srsName',
+            attributeName: 'resolve',
+            type: 'attribute'
+          }, {
+            name: 'resolveDepth',
+            typeInfo: 'String',
+            attributeName: 'resolveDepth',
+            type: 'attribute'
+          }, {
+            name: 'resolveTimeout',
+            typeInfo: 'Integer',
+            attributeName: 'resolveTimeout',
+            type: 'attribute'
+          }, {
+            name: 'startIndex',
+            typeInfo: 'Integer',
+            attributeName: 'startIndex',
+            type: 'attribute'
+          }, {
+            name: 'count',
+            typeInfo: 'Integer',
+            attributeName: 'count',
+            type: 'attribute'
+          }, {
+            name: 'resultType',
+            typeInfo: 'String',
+            attributeName: 'resultType',
+            type: 'attribute'
+          }, {
+            name: 'outputFormat',
+            typeInfo: 'String',
+            attributeName: 'outputFormat',
             type: 'attribute'
           }]
       }, {
         type: 'classInfo',
-        localName: 'GetCapabilitiesType',
-        baseTypeInfo: 'OWS_1_1_0.GetCapabilitiesType',
+        localName: 'PropertyType',
         propertyInfos: [{
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+            type: 'element',
+            name: 'valueReference',
+            elementName: 'ValueReference',
+            typeInfo: 'WFS_2_0.PropertyType.ValueReference'
+          }, {
+            type: 'element',
+            name: 'value',
+            elementName: 'Value',
+            typeInfo: 'AnyType'
           }]
       }, {
         type: 'classInfo',
@@ -439,106 +572,14 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'ValueCollectionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'member',
-            collection: true,
-            elementName: 'member',
-            typeInfo: 'WFS_2_0.MemberPropertyType'
-          }, {
-            type: 'element',
-            name: 'additionalValues',
-            elementName: 'additionalValues',
-            typeInfo: 'WFS_2_0.AdditionalValues'
-          }, {
-            type: 'element',
-            name: 'truncatedResponse',
-            elementName: 'truncatedResponse',
-            typeInfo: 'WFS_2_0.TruncatedResponse'
-          }, {
-            name: 'timeStamp',
-            typeInfo: 'Calendar',
-            attributeName: 'timeStamp',
-            type: 'attribute'
-          }, {
-            name: 'numberMatched',
-            typeInfo: 'String',
-            attributeName: 'numberMatched',
-            type: 'attribute'
-          }, {
-            name: 'numberReturned',
-            typeInfo: 'Integer',
-            attributeName: 'numberReturned',
-            type: 'attribute'
-          }, {
-            name: 'next',
-            typeInfo: 'String',
-            attributeName: 'next',
-            type: 'attribute'
-          }, {
-            name: 'previous',
-            typeInfo: 'String',
-            attributeName: 'previous',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'TransactionResponseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'transactionSummary',
-            elementName: 'TransactionSummary',
-            typeInfo: 'WFS_2_0.TransactionSummaryType'
-          }, {
-            type: 'element',
-            name: 'insertResults',
-            elementName: 'InsertResults',
-            typeInfo: 'WFS_2_0.ActionResultsType'
-          }, {
-            type: 'element',
-            name: 'updateResults',
-            elementName: 'UpdateResults',
-            typeInfo: 'WFS_2_0.ActionResultsType'
-          }, {
-            type: 'element',
-            name: 'replaceResults',
-            elementName: 'ReplaceResults',
-            typeInfo: 'WFS_2_0.ActionResultsType'
-          }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'LockFeatureType',
+        localName: 'DescribeStoredQueriesType',
         baseTypeInfo: 'WFS_2_0.BaseRequestType',
         propertyInfos: [{
-            name: 'abstractQueryExpression',
+            type: 'element',
+            name: 'storedQueryId',
             collection: true,
-            elementName: {
-              localPart: 'AbstractQueryExpression',
-              namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            typeInfo: 'Filter_2_0.AbstractQueryExpressionType',
-            type: 'elementRef'
-          }, {
-            name: 'lockId',
-            typeInfo: 'String',
-            attributeName: 'lockId',
-            type: 'attribute'
-          }, {
-            name: 'expiry',
-            typeInfo: 'Integer',
-            attributeName: 'expiry',
-            type: 'attribute'
-          }, {
-            name: 'lockAction',
-            typeInfo: 'String',
-            attributeName: 'lockAction',
-            type: 'attribute'
+            elementName: 'StoredQueryId',
+            typeInfo: 'String'
           }]
       }, {
         type: 'classInfo',
@@ -619,36 +660,6 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'Title',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
-          }, {
-            name: 'lang',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'lang',
-              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'AdditionalValues',
-        propertyInfos: [{
-            type: 'element',
-            name: 'valueCollection',
-            elementName: 'ValueCollection',
-            typeInfo: 'WFS_2_0.ValueCollectionType'
-          }, {
-            name: 'simpleFeatureCollection',
-            elementName: 'SimpleFeatureCollection',
-            typeInfo: 'WFS_2_0.SimpleFeatureCollectionType',
-            type: 'elementRef'
-          }]
-      }, {
-        type: 'classInfo',
         localName: 'LockFeatureResponseType',
         propertyInfos: [{
             type: 'element',
@@ -695,16 +706,6 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'FeatureTypeListType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureType',
-            collection: true,
-            elementName: 'FeatureType',
-            typeInfo: 'WFS_2_0.FeatureTypeType'
-          }]
-      }, {
-        type: 'classInfo',
         localName: 'GetFeatureWithLockType',
         baseTypeInfo: 'WFS_2_0.GetFeatureType',
         propertyInfos: [{
@@ -720,61 +721,27 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
+        localName: 'Abstract',
+        propertyInfos: [{
+            name: 'value',
+            typeInfo: 'String',
+            type: 'value'
+          }, {
+            name: 'lang',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'lang',
+              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
         localName: 'EnvelopePropertyType',
         propertyInfos: [{
             name: 'any',
             typedObjectAllowed: true,
             type: 'anyElement'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'StoredQueryType',
-        baseTypeInfo: 'Filter_2_0.AbstractQueryExpressionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'parameter',
-            collection: true,
-            elementName: 'Parameter',
-            typeInfo: 'WFS_2_0.ParameterType'
-          }, {
-            name: 'id',
-            typeInfo: 'String',
-            attributeName: 'id',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ListStoredQueriesType',
-        baseTypeInfo: 'WFS_2_0.BaseRequestType',
-        propertyInfos: []
-      }, {
-        type: 'classInfo',
-        localName: 'DropStoredQuery',
-        baseTypeInfo: 'WFS_2_0.BaseRequestType',
-        propertyInfos: [{
-            name: 'id',
-            typeInfo: 'String',
-            attributeName: 'id',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'BaseRequestType',
-        propertyInfos: [{
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
-          }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
-          }, {
-            name: 'handle',
-            typeInfo: 'String',
-            attributeName: 'handle',
-            type: 'attribute'
           }]
       }, {
         type: 'classInfo',
@@ -801,67 +768,285 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'ValueListType',
+        localName: 'CreateStoredQueryResponseType',
+        baseTypeInfo: 'WFS_2_0.ExecutionStatusType',
+        propertyInfos: []
+      }, {
+        type: 'classInfo',
+        localName: 'Title',
         propertyInfos: [{
-            type: 'element',
             name: 'value',
-            collection: true,
-            elementName: 'Value',
-            typeInfo: 'AnyType'
+            typeInfo: 'String',
+            type: 'value'
+          }, {
+            name: 'lang',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'lang',
+              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            type: 'attribute'
           }]
       }, {
         type: 'classInfo',
-        localName: 'DescribeFeatureTypeType',
+        localName: 'TransactionType',
         baseTypeInfo: 'WFS_2_0.BaseRequestType',
         propertyInfos: [{
-            type: 'element',
-            name: 'typeName',
+            name: 'abstractTransactionAction',
             collection: true,
-            elementName: 'TypeName',
+            elementName: 'AbstractTransactionAction',
+            typeInfo: 'WFS_2_0.AbstractTransactionActionType',
+            type: 'elementRef'
+          }, {
+            name: 'lockId',
+            typeInfo: 'String',
+            attributeName: 'lockId',
+            type: 'attribute'
+          }, {
+            name: 'releaseAction',
+            typeInfo: 'String',
+            attributeName: 'releaseAction',
+            type: 'attribute'
+          }, {
+            name: 'srsName',
+            typeInfo: 'String',
+            attributeName: 'srsName',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'FeatureCollectionType',
+        baseTypeInfo: 'WFS_2_0.SimpleFeatureCollectionType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'additionalObjects',
+            elementName: 'additionalObjects',
+            typeInfo: 'WFS_2_0.AdditionalObjects'
+          }, {
+            type: 'element',
+            name: 'truncatedResponse',
+            elementName: 'truncatedResponse',
+            typeInfo: 'WFS_2_0.TruncatedResponse'
+          }, {
+            name: 'lockId',
+            typeInfo: 'String',
+            attributeName: 'lockId',
+            type: 'attribute'
+          }, {
+            name: 'timeStamp',
+            typeInfo: 'Calendar',
+            attributeName: 'timeStamp',
+            type: 'attribute'
+          }, {
+            name: 'numberMatched',
+            typeInfo: 'String',
+            attributeName: 'numberMatched',
+            type: 'attribute'
+          }, {
+            name: 'numberReturned',
+            typeInfo: 'Integer',
+            attributeName: 'numberReturned',
+            type: 'attribute'
+          }, {
+            name: 'next',
+            typeInfo: 'String',
+            attributeName: 'next',
+            type: 'attribute'
+          }, {
+            name: 'previous',
+            typeInfo: 'String',
+            attributeName: 'previous',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ExecutionStatusType',
+        propertyInfos: [{
+            name: 'status',
+            typeInfo: 'String',
+            attributeName: 'status',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'TruncatedResponse',
+        propertyInfos: [{
+            type: 'element',
+            name: 'exceptionReport',
+            elementName: {
+              localPart: 'ExceptionReport',
+              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            typeInfo: 'OWS_1_1_0.ExceptionReport'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'TupleType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'member',
+            collection: true,
+            elementName: 'member',
+            typeInfo: 'WFS_2_0.MemberPropertyType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ExtendedDescriptionType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'element',
+            collection: true,
+            elementName: 'Element',
+            typeInfo: 'WFS_2_0.ElementType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'StoredQueryListItemType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'title',
+            collection: true,
+            elementName: 'Title',
+            typeInfo: 'WFS_2_0.Title'
+          }, {
+            type: 'element',
+            name: 'returnFeatureType',
+            collection: true,
+            elementName: 'ReturnFeatureType',
             typeInfo: 'String'
           }, {
-            name: 'outputFormat',
+            name: 'id',
             typeInfo: 'String',
-            attributeName: 'outputFormat',
+            attributeName: 'id',
             type: 'attribute'
           }]
       }, {
         type: 'classInfo',
-        localName: 'NativeType',
+        localName: 'MetadataURLType',
         propertyInfos: [{
-            name: 'content',
-            collection: true,
-            domAllowed: true,
-            typedObjectAllowed: true,
-            mixed: true,
-            type: 'anyElement'
-          }, {
-            name: 'vendorId',
+            name: 'about',
             typeInfo: 'String',
-            attributeName: 'vendorId',
+            attributeName: 'about',
             type: 'attribute'
           }, {
-            name: 'safeToIgnore',
-            typeInfo: 'Boolean',
-            attributeName: 'safeToIgnore',
+            name: 'type',
+            typeInfo: 'XLink_1_0.TypeType',
+            attributeName: {
+              localPart: 'type',
+              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            type: 'attribute'
+          }, {
+            name: 'href',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'href',
+              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            type: 'attribute'
+          }, {
+            name: 'role',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'role',
+              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            type: 'attribute'
+          }, {
+            name: 'arcrole',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'arcrole',
+              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            type: 'attribute'
+          }, {
+            name: 'title',
+            typeInfo: 'String',
+            attributeName: {
+              localPart: 'title',
+              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            type: 'attribute'
+          }, {
+            name: 'show',
+            typeInfo: 'XLink_1_0.ShowType',
+            attributeName: {
+              localPart: 'show',
+              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            type: 'attribute'
+          }, {
+            name: 'actuate',
+            typeInfo: 'XLink_1_0.ActuateType',
+            attributeName: {
+              localPart: 'actuate',
+              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
             type: 'attribute'
           }]
       }, {
         type: 'classInfo',
-        localName: 'ElementType',
+        localName: 'ActionResultsType',
         propertyInfos: [{
             type: 'element',
+            name: 'feature',
+            collection: true,
+            elementName: 'Feature',
+            typeInfo: 'WFS_2_0.CreatedOrModifiedFeatureType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'OutputFormatListType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'format',
+            collection: true,
+            elementName: 'Format',
+            typeInfo: 'String'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'CreatedOrModifiedFeatureType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'resourceId',
+            collection: true,
+            elementName: {
+              localPart: 'ResourceId',
+              namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            typeInfo: 'Filter_2_0.ResourceIdType'
+          }, {
+            name: 'handle',
+            typeInfo: 'String',
+            attributeName: 'handle',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ParameterExpressionType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'title',
+            collection: true,
+            elementName: 'Title',
+            typeInfo: 'WFS_2_0.Title'
+          }, {
+            type: 'element',
+            name: '_abstract',
+            collection: true,
+            elementName: 'Abstract',
+            typeInfo: 'WFS_2_0.Abstract'
+          }, {
+            type: 'element',
             name: 'metadata',
+            collection: true,
             elementName: {
               localPart: 'Metadata',
               namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
             typeInfo: 'OWS_1_1_0.MetadataType'
-          }, {
-            type: 'element',
-            name: 'valueList',
-            elementName: 'ValueList',
-            typeInfo: 'WFS_2_0.ValueListType'
           }, {
             name: 'name',
             typeInfo: 'String',
@@ -875,18 +1060,72 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'Abstract',
+        localName: 'FeaturesNotLockedType',
         propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
-          }, {
-            name: 'lang',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'lang',
-              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            type: 'element',
+            name: 'resourceId',
+            collection: true,
+            elementName: {
+              localPart: 'ResourceId',
+              namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
             },
+            typeInfo: 'Filter_2_0.ResourceIdType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'EmptyType',
+        propertyInfos: []
+      }, {
+        type: 'classInfo',
+        localName: 'FeaturesLockedType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'resourceId',
+            collection: true,
+            elementName: {
+              localPart: 'ResourceId',
+              namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            typeInfo: 'Filter_2_0.ResourceIdType'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'TransactionSummaryType',
+        propertyInfos: [{
+            type: 'element',
+            name: 'totalInserted',
+            elementName: 'totalInserted',
+            typeInfo: 'Integer'
+          }, {
+            type: 'element',
+            name: 'totalUpdated',
+            elementName: 'totalUpdated',
+            typeInfo: 'Integer'
+          }, {
+            type: 'element',
+            name: 'totalReplaced',
+            elementName: 'totalReplaced',
+            typeInfo: 'Integer'
+          }, {
+            type: 'element',
+            name: 'totalDeleted',
+            elementName: 'totalDeleted',
+            typeInfo: 'Integer'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'ParameterType',
+        propertyInfos: [{
+            name: 'content',
+            collection: true,
+            domAllowed: true,
+            typedObjectAllowed: true,
+            mixed: true,
+            type: 'anyElement'
+          }, {
+            name: 'name',
+            typeInfo: 'String',
+            attributeName: 'name',
             type: 'attribute'
           }]
       }, {
@@ -962,170 +1201,6 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'QueryExpressionTextType',
-        propertyInfos: [{
-            name: 'content',
-            collection: true,
-            domAllowed: true,
-            mixed: true,
-            type: 'anyElement'
-          }, {
-            name: 'returnFeatureTypes',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
-            },
-            attributeName: 'returnFeatureTypes',
-            type: 'attribute'
-          }, {
-            name: 'language',
-            typeInfo: 'String',
-            attributeName: 'language',
-            type: 'attribute'
-          }, {
-            name: 'isPrivate',
-            typeInfo: 'Boolean',
-            attributeName: 'isPrivate',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'OutputFormatListType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: 'Format',
-            typeInfo: 'String'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ActionResultsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'feature',
-            collection: true,
-            elementName: 'Feature',
-            typeInfo: 'WFS_2_0.CreatedOrModifiedFeatureType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ParameterExpressionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'title',
-            collection: true,
-            elementName: 'Title',
-            typeInfo: 'WFS_2_0.Title'
-          }, {
-            type: 'element',
-            name: '_abstract',
-            collection: true,
-            elementName: 'Abstract',
-            typeInfo: 'WFS_2_0.Abstract'
-          }, {
-            type: 'element',
-            name: 'metadata',
-            collection: true,
-            elementName: {
-              localPart: 'Metadata',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            typeInfo: 'OWS_1_1_0.MetadataType'
-          }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
-          }, {
-            name: 'type',
-            typeInfo: 'String',
-            attributeName: 'type',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'MetadataURLType',
-        propertyInfos: [{
-            name: 'about',
-            typeInfo: 'String',
-            attributeName: 'about',
-            type: 'attribute'
-          }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: {
-              localPart: 'type',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            type: 'attribute'
-          }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'href',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            type: 'attribute'
-          }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'role',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            type: 'attribute'
-          }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'arcrole',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            type: 'attribute'
-          }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'title',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            type: 'attribute'
-          }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: {
-              localPart: 'show',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            type: 'attribute'
-          }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: {
-              localPart: 'actuate',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ParameterType',
-        propertyInfos: [{
-            name: 'content',
-            collection: true,
-            domAllowed: true,
-            typedObjectAllowed: true,
-            mixed: true,
-            type: 'anyElement'
-          }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
         localName: 'StoredQueryDescriptionType',
         propertyInfos: [{
             type: 'element',
@@ -1168,106 +1243,31 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'classInfo',
-        localName: 'ExtendedDescriptionType',
+        localName: 'QueryExpressionTextType',
         propertyInfos: [{
-            type: 'element',
-            name: 'element',
+            name: 'content',
             collection: true,
-            elementName: 'Element',
-            typeInfo: 'WFS_2_0.ElementType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'EmptyType',
-        propertyInfos: []
-      }, {
-        type: 'classInfo',
-        localName: 'CreatedOrModifiedFeatureType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'resourceId',
-            collection: true,
-            elementName: {
-              localPart: 'ResourceId',
-              namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            typeInfo: 'Filter_2_0.ResourceIdType'
+            domAllowed: true,
+            mixed: true,
+            type: 'anyElement'
           }, {
-            name: 'handle',
-            typeInfo: 'String',
-            attributeName: 'handle',
+            name: 'returnFeatureTypes',
+            typeInfo: {
+              type: 'list',
+              typeInfo: 'String'
+            },
+            attributeName: 'returnFeatureTypes',
             type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'FeaturesLockedType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'resourceId',
-            collection: true,
-            elementName: {
-              localPart: 'ResourceId',
-              namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            typeInfo: 'Filter_2_0.ResourceIdType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'StoredQueryListItemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'title',
-            collection: true,
-            elementName: 'Title',
-            typeInfo: 'WFS_2_0.Title'
           }, {
-            type: 'element',
-            name: 'returnFeatureType',
-            collection: true,
-            elementName: 'ReturnFeatureType',
-            typeInfo: 'String'
-          }, {
-            name: 'id',
+            name: 'language',
             typeInfo: 'String',
-            attributeName: 'id',
+            attributeName: 'language',
             type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'TransactionSummaryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'totalInserted',
-            elementName: 'totalInserted',
-            typeInfo: 'Integer'
           }, {
-            type: 'element',
-            name: 'totalUpdated',
-            elementName: 'totalUpdated',
-            typeInfo: 'Integer'
-          }, {
-            type: 'element',
-            name: 'totalReplaced',
-            elementName: 'totalReplaced',
-            typeInfo: 'Integer'
-          }, {
-            type: 'element',
-            name: 'totalDeleted',
-            elementName: 'totalDeleted',
-            typeInfo: 'Integer'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'FeaturesNotLockedType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'resourceId',
-            collection: true,
-            elementName: {
-              localPart: 'ResourceId',
-              namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            typeInfo: 'Filter_2_0.ResourceIdType'
+            name: 'isPrivate',
+            typeInfo: 'Boolean',
+            attributeName: 'isPrivate',
+            type: 'attribute'
           }]
       }, {
         type: 'classInfo',
@@ -1348,14 +1348,9 @@ var WFS_2_0_Module_Factory = function () {
           }]
       }, {
         type: 'enumInfo',
-        localName: 'ResultTypeType',
+        localName: 'ResolveValueType',
         baseTypeInfo: 'String',
-        values: ['results', 'hits']
-      }, {
-        type: 'enumInfo',
-        localName: 'AllSomeType',
-        baseTypeInfo: 'String',
-        values: ['ALL', 'SOME']
+        values: ['local', 'remote', 'all', 'none']
       }, {
         type: 'enumInfo',
         localName: 'StarStringType',
@@ -1363,9 +1358,14 @@ var WFS_2_0_Module_Factory = function () {
         values: ['*']
       }, {
         type: 'enumInfo',
-        localName: 'ResolveValueType',
+        localName: 'AllSomeType',
         baseTypeInfo: 'String',
-        values: ['local', 'remote', 'all', 'none']
+        values: ['ALL', 'SOME']
+      }, {
+        type: 'enumInfo',
+        localName: 'ResultTypeType',
+        baseTypeInfo: 'String',
+        values: ['results', 'hits']
       }, {
         type: 'enumInfo',
         localName: 'UpdateActionType',
@@ -1373,79 +1373,51 @@ var WFS_2_0_Module_Factory = function () {
         values: ['replace', 'insertBefore', 'insertAfter', 'remove']
       }],
     elementInfos: [{
-        elementName: 'truncatedResponse',
-        typeInfo: 'WFS_2_0.TruncatedResponse'
-      }, {
-        elementName: 'additionalObjects',
-        typeInfo: 'WFS_2_0.AdditionalObjects'
-      }, {
-        elementName: 'Title',
-        typeInfo: 'WFS_2_0.Title'
-      }, {
         elementName: 'additionalValues',
         typeInfo: 'WFS_2_0.AdditionalValues'
       }, {
         elementName: 'DropStoredQuery',
         typeInfo: 'WFS_2_0.DropStoredQuery'
       }, {
+        elementName: 'additionalObjects',
+        typeInfo: 'WFS_2_0.AdditionalObjects'
+      }, {
         elementName: 'Abstract',
         typeInfo: 'WFS_2_0.Abstract'
       }, {
-        elementName: 'Property',
-        typeInfo: 'WFS_2_0.PropertyType'
+        elementName: 'Title',
+        typeInfo: 'WFS_2_0.Title'
       }, {
-        elementName: 'GetPropertyValue',
-        typeInfo: 'WFS_2_0.GetPropertyValueType'
+        elementName: 'truncatedResponse',
+        typeInfo: 'WFS_2_0.TruncatedResponse'
       }, {
-        elementName: 'CreateStoredQuery',
-        typeInfo: 'WFS_2_0.CreateStoredQueryType'
+        elementName: 'AbstractTransactionAction',
+        typeInfo: 'WFS_2_0.AbstractTransactionActionType'
+      }, {
+        elementName: 'ValueCollection',
+        typeInfo: 'WFS_2_0.ValueCollectionType'
+      }, {
+        elementName: 'DropStoredQueryResponse',
+        typeInfo: 'WFS_2_0.ExecutionStatusType'
+      }, {
+        elementName: 'Transaction',
+        typeInfo: 'WFS_2_0.TransactionType'
       }, {
         elementName: 'FeatureCollection',
         typeInfo: 'WFS_2_0.FeatureCollectionType',
         substitutionHead: 'SimpleFeatureCollection'
       }, {
-        elementName: 'AbstractTransactionAction',
-        typeInfo: 'WFS_2_0.AbstractTransactionActionType'
-      }, {
-        elementName: 'Insert',
-        typeInfo: 'WFS_2_0.InsertType',
-        substitutionHead: 'AbstractTransactionAction'
-      }, {
-        elementName: 'Query',
-        typeInfo: 'WFS_2_0.QueryType',
-        substitutionHead: {
-          localPart: 'AbstractAdhocQueryExpression',
-          namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
-        }
-      }, {
-        elementName: 'Update',
-        typeInfo: 'WFS_2_0.UpdateType',
-        substitutionHead: 'AbstractTransactionAction'
-      }, {
-        elementName: 'Delete',
-        typeInfo: 'WFS_2_0.DeleteType',
-        substitutionHead: 'AbstractTransactionAction'
-      }, {
-        elementName: 'SimpleFeatureCollection',
-        typeInfo: 'WFS_2_0.SimpleFeatureCollectionType'
+        elementName: 'Value',
+        typeInfo: 'AnyType'
       }, {
         elementName: 'Tuple',
         typeInfo: 'WFS_2_0.TupleType'
       }, {
-        elementName: 'DropStoredQueryResponse',
-        typeInfo: 'WFS_2_0.ExecutionStatusType'
-      }, {
-        elementName: 'CreateStoredQueryResponse',
-        typeInfo: 'WFS_2_0.CreateStoredQueryResponseType'
+        elementName: 'DescribeStoredQueries',
+        typeInfo: 'WFS_2_0.DescribeStoredQueriesType'
       }, {
         elementName: 'GetFeature',
         typeInfo: 'WFS_2_0.GetFeatureType'
-      }, {
-        elementName: 'TransactionResponse',
-        typeInfo: 'WFS_2_0.TransactionResponseType'
-      }, {
-        elementName: 'LockFeature',
-        typeInfo: 'WFS_2_0.LockFeatureType'
       }, {
         elementName: 'PropertyName',
         typeInfo: 'WFS_2_0.PropertyName',
@@ -1457,58 +1429,49 @@ var WFS_2_0_Module_Factory = function () {
         elementName: 'LockFeatureResponse',
         typeInfo: 'WFS_2_0.LockFeatureResponseType'
       }, {
-        elementName: 'DescribeStoredQueriesResponse',
-        typeInfo: 'WFS_2_0.DescribeStoredQueriesResponseType'
+        elementName: 'Replace',
+        typeInfo: 'WFS_2_0.ReplaceType',
+        substitutionHead: 'AbstractTransactionAction'
       }, {
-        elementName: 'member',
-        typeInfo: 'WFS_2_0.MemberPropertyType'
+        elementName: 'boundedBy',
+        typeInfo: 'WFS_2_0.EnvelopePropertyType'
       }, {
-        elementName: 'ListStoredQueriesResponse',
-        typeInfo: 'WFS_2_0.ListStoredQueriesResponseType'
+        elementName: 'GetFeatureWithLock',
+        typeInfo: 'WFS_2_0.GetFeatureWithLockType'
       }, {
-        elementName: 'DescribeStoredQueries',
-        typeInfo: 'WFS_2_0.DescribeStoredQueriesType'
+        elementName: 'WFS_Capabilities',
+        typeInfo: 'WFS_2_0.WFSCapabilitiesType'
       }, {
-        elementName: 'Value',
-        typeInfo: 'AnyType'
+        elementName: 'CreateStoredQueryResponse',
+        typeInfo: 'WFS_2_0.CreateStoredQueryResponseType'
       }, {
-        elementName: 'Transaction',
-        typeInfo: 'WFS_2_0.TransactionType'
+        elementName: 'SimpleFeatureCollection',
+        typeInfo: 'WFS_2_0.SimpleFeatureCollectionType'
       }, {
-        elementName: 'GetCapabilities',
-        typeInfo: 'WFS_2_0.GetCapabilitiesType'
-      }, {
-        elementName: 'ValueList',
-        typeInfo: 'WFS_2_0.ValueListType'
-      }, {
-        elementName: 'DescribeFeatureType',
-        typeInfo: 'WFS_2_0.DescribeFeatureTypeType'
+        elementName: 'TransactionResponse',
+        typeInfo: 'WFS_2_0.TransactionResponseType'
       }, {
         elementName: 'Native',
         typeInfo: 'WFS_2_0.NativeType',
         substitutionHead: 'AbstractTransactionAction'
       }, {
-        elementName: 'Element',
-        typeInfo: 'WFS_2_0.ElementType'
+        elementName: 'GetCapabilities',
+        typeInfo: 'WFS_2_0.GetCapabilitiesType'
       }, {
-        elementName: 'FeatureTypeList',
-        typeInfo: 'WFS_2_0.FeatureTypeListType'
+        elementName: 'CreateStoredQuery',
+        typeInfo: 'WFS_2_0.CreateStoredQueryType'
       }, {
-        elementName: 'Replace',
-        typeInfo: 'WFS_2_0.ReplaceType',
-        substitutionHead: 'AbstractTransactionAction'
+        elementName: 'member',
+        typeInfo: 'WFS_2_0.MemberPropertyType'
       }, {
-        elementName: 'GetFeatureWithLock',
-        typeInfo: 'WFS_2_0.GetFeatureWithLockType'
+        elementName: 'GetPropertyValue',
+        typeInfo: 'WFS_2_0.GetPropertyValueType'
       }, {
-        elementName: 'ValueCollection',
-        typeInfo: 'WFS_2_0.ValueCollectionType'
+        elementName: 'Property',
+        typeInfo: 'WFS_2_0.PropertyType'
       }, {
-        elementName: 'boundedBy',
-        typeInfo: 'WFS_2_0.EnvelopePropertyType'
-      }, {
-        elementName: 'ListStoredQueries',
-        typeInfo: 'WFS_2_0.ListStoredQueriesType'
+        elementName: 'DescribeStoredQueriesResponse',
+        typeInfo: 'WFS_2_0.DescribeStoredQueriesResponseType'
       }, {
         elementName: 'StoredQuery',
         typeInfo: 'WFS_2_0.StoredQueryType',
@@ -1517,8 +1480,45 @@ var WFS_2_0_Module_Factory = function () {
           namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
         }
       }, {
-        elementName: 'WFS_Capabilities',
-        typeInfo: 'WFS_2_0.WFSCapabilitiesType'
+        elementName: 'DescribeFeatureType',
+        typeInfo: 'WFS_2_0.DescribeFeatureTypeType'
+      }, {
+        elementName: 'Delete',
+        typeInfo: 'WFS_2_0.DeleteType',
+        substitutionHead: 'AbstractTransactionAction'
+      }, {
+        elementName: 'ListStoredQueries',
+        typeInfo: 'WFS_2_0.ListStoredQueriesType'
+      }, {
+        elementName: 'Element',
+        typeInfo: 'WFS_2_0.ElementType'
+      }, {
+        elementName: 'LockFeature',
+        typeInfo: 'WFS_2_0.LockFeatureType'
+      }, {
+        elementName: 'Query',
+        typeInfo: 'WFS_2_0.QueryType',
+        substitutionHead: {
+          localPart: 'AbstractAdhocQueryExpression',
+          namespaceURI: 'http:\/\/www.opengis.net\/fes\/2.0'
+        }
+      }, {
+        elementName: 'ValueList',
+        typeInfo: 'WFS_2_0.ValueListType'
+      }, {
+        elementName: 'FeatureTypeList',
+        typeInfo: 'WFS_2_0.FeatureTypeListType'
+      }, {
+        elementName: 'Insert',
+        typeInfo: 'WFS_2_0.InsertType',
+        substitutionHead: 'AbstractTransactionAction'
+      }, {
+        elementName: 'Update',
+        typeInfo: 'WFS_2_0.UpdateType',
+        substitutionHead: 'AbstractTransactionAction'
+      }, {
+        elementName: 'ListStoredQueriesResponse',
+        typeInfo: 'WFS_2_0.ListStoredQueriesResponseType'
       }]
   };
   return {
