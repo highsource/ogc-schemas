@@ -13,6 +13,8 @@ Jsonix mappings for OGC Schemas:
 * OWS_1_0_0
 * OWS_1_1_0
 * OWS_2_0
+* WCS_1_0_0
+* WCS_1_1
 * WFS_1_0_0
 * WFS_1_1_0
 * WFS_2_0
