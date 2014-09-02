@@ -12,6 +12,10 @@ var schemas = [
 	"WFS_1_0_0",
 	"WFS_1_1_0",
 	"WFS_2_0",
+	"WMS_1_0_0",
+	"WMS_1_1_0",
+	"WMS_1_1_1",
+	"WMS_1_3_0",
 	"WPS_1_0_0"
 ];
 for (var index = 0; index < schemas.length; index++)
