@@ -22,10 +22,12 @@
 		"jsonix",
 		"mapping",
 		"OGC",
-		"OWS",
-		"GML",
 		"Filter", "Filter Encoding",
-		"WFS"
+		"GML",
+		"OWS",
+		"WMS",
+		"WFS",
+		"WPS"
 	],
 	"homepage": "https://github.com/highsource/ogc-schemas",
 	"bugs" : {
