@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<owc:OWSContext version="0.3.1" id="ows-context-ex-1-v3"
+	xmlns:owc="http://www.opengis.net/ows-context"
+	xmlns="http://www.opengis.net/ows-context" xmlns:gml="http://www.opengis.net/gml"
+	xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:ogc="http://www.opengis.net/ogc"
+	xmlns:ows="http://www.opengis.net/ows" xmlns:sld="http://www.opengis.net/sld"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.opengis.net/ows-context http://www.ogcnetwork.net/schemas/owc/0.3.1/owsContext.xsd">
+	<owc:General>
+		<ows:BoundingBox crs="EPSG:4326">
+			<ows:LowerCorner>-117 32</ows:LowerCorner>
+			<ows:UpperCorner>-116 33</ows:UpperCorner>
+		</ows:BoundingBox>
+		<ows:Title>OWS Context version 0.3.1 showing nested layers</ows:Title>
+	</owc:General>
+	<owc:ResourceList>
+		<!-- WMS Example -->
+		<owc:Layer name="topp:major_roads" queryable="1" hidden="1">
+			<ows:Title>Tiger 2005fe major roads/railways</ows:Title>
+			<ows:OutputFormat>image/png</ows:OutputFormat>
+			<owc:Server service="urn:ogc:serviceType:WMS" version="1.1.1">
+				<owc:OnlineResource
+					xlink:href="http://sigma.openplans.org:8080/geoserver/wms?SERVICE=WMS" />
+			</owc:Server>
+			<!-- WFS Example -->
+			<owc:Layer name="topp:gnis_pop" hidden="0">
+				<ows:Title>GNIS Population</ows:Title>
+				<owc:Server service="urn:ogc:serviceType:WFS" version="1.0.0">
+					<owc:OnlineResource xlink:href="geoserver/wfs?" />
+				</owc:Server>
+			</owc:Layer>
+		</owc:Layer>
+	</owc:ResourceList>
+</owc:OWSContext>

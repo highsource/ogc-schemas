@@ -9,6 +9,7 @@ var schemas = [
 	"KML_2_2_0",
 		"Atom_1_0",
 		"xAL_2_0",
+	"OWC_0_3_1",
 	"OWS_1_0_0",
 	"OWS_1_1_0",
 	"OWS_2_0",
