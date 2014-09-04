@@ -94,14 +94,11 @@ var OWC_0_3_1_Module_Factory = function () {
             elementName: 'InlineGeometry',
             typeInfo: 'OWC_0_3_1.InlineFeatureCollectionType'
           }, {
-            type: 'element',
             name: 'document',
             collection: true,
-            elementName: {
-              localPart: 'Document',
-              namespaceURI: 'http:\/\/www.opengis.net\/kml\/2.2'
-            },
-            typeInfo: 'KML_2_2_0.DocumentType'
+            domAllowed: true,
+            typedObjectAllowed: true,
+            type: 'anyElement'
           }, {
             type: 'element',
             name: 'vendorExtension',
@@ -550,11 +547,11 @@ var OWC_0_3_1_Module_Factory = function () {
         values: ['GET', 'POST']
       }],
     elementInfos: [{
-        elementName: 'Layer',
-        typeInfo: 'OWC_0_3_1.LayerType'
-      }, {
         elementName: 'OWSContext',
         typeInfo: 'OWC_0_3_1.OWSContextType'
+      }, {
+        elementName: 'Layer',
+        typeInfo: 'OWC_0_3_1.LayerType'
       }, {
         elementName: 'ResourceList',
         typeInfo: 'OWC_0_3_1.ResourceListType'

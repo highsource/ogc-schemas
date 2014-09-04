@@ -2,7 +2,8 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
 	xmlns:jsonix="http://jsonix.highsource.org/customizations"
-	jaxb:extensionBindingPrefixes="xjc jsonix">
+	xmlns:wildcard="http://jaxb2-commons.dev.java.net/basic/wildcard"
+	jaxb:extensionBindingPrefixes="xjc jsonix wildcard">
 
 	<jaxb:bindings 
 		schemaLocation="ogc/owc/0.3.1/owsContext.xsd" 
@@ -29,5 +30,26 @@
 		<jsonix:packageMapping packageName="net.opengis.filter.v_1_0_0" spaceName="Filter_1_0_0"/>
 		<jsonix:packageMapping packageName="net.opengis.gml.v_2_1_2" spaceName="GML_2_1_2"/>
 		<jsonix:packageMapping packageName="net.opengis.owc.v_0_3_1" spaceName="OWC_0_3_1"/>
+
+		<jaxb:bindings node="xs:complexType[@name='LayerType']//xs:element[@ref='kml:Document']">
+			<xjc:dom/>
+			<wildcard:lax/>
+		</jaxb:bindings>
+		<!--jaxb:bindings node="xs:complexType[@name='LayerType']//xs:element[@ref='ogc:Filter']">
+			<xjc:dom/>
+			<wildcard:lax/>
+		</jaxb:bindings-->
+		<!--jaxb:bindings node="xs:complexType[@name='SLDType']//xs:element[@ref='sld:StyledLayerDescriptor']">
+			<xjc:dom/>
+			<wildcard:lax/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='SLDType']//xs:element[@ref='sld:FeatureTypeStyle']">
+			<xjc:dom/>
+			<wildcard:lax/>
+		</jaxb:bindings-->
+		<!--jaxb:bindings node="xs:complexType[@name='InlineFeatureCollectionType']">
+			<xjc:dom/>
+			<wildcard:lax/>
+		</jaxb:bindings-->
 	</jaxb:bindings>
 </jaxb:bindings>
