@@ -87,12 +87,12 @@
 	</modules>
 	<properties> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
-		<jaxb2-basics.version>0.8.0</jaxb2-basics.version>
+		<jaxb2-basics.version>0.8.1-SNAPSHOT</jaxb2-basics.version>
 		<jaxb-ri.version>2.1.13</jaxb-ri.version>
 		<jaxb-api.version>2.1</jaxb-api.version>
 		<maven-jaxb2-plugin.version>0.9.0</maven-jaxb2-plugin.version>
 		<w3c-schemas.version>1.0.1-SNAPSHOT</w3c-schemas.version>
-		<jsonix-schema-compiler.version>2.1.0</jsonix-schema-compiler.version>
+		<jsonix-schema-compiler.version>2.1.1-SNAPSHOT</jsonix-schema-compiler.version>
 	</properties> 
 	<dependencies>
 		<dependency>

@@ -36,6 +36,7 @@
 						<phase>generate-sources</phase>
 						<configuration>
 							<tasks>
+								<delete dir="src/main/resources/ogc"/>
 								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources/ogc">
 									<patternset>
 										<exclude name="**/*.zip"/>

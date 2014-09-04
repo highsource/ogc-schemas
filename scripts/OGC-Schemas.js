@@ -1,4 +1,7 @@
 var schemas = [
+	"CSW_2_0_2",
+		"DC_1_1",
+		"DCT",
 	"Filter_1_0_0",
 	"Filter_1_1_0",
 	"Filter_2_0",
