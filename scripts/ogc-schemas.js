@@ -9,6 +9,7 @@ var schemas = [
 	"GML_3_1_1",
 	"SMIL_2_0",
 	"SMIL_2_0_Language",
+	"IC_2_0",
 	"KML_2_2_0",
 		"Atom_1_0",
 		"xAL_2_0",

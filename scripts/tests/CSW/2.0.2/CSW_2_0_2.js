@@ -11,7 +11,7 @@ var CSW_2_0_2 = require('../../../ogc-schemas').CSW_2_0_2;
 
 var roundtrip = require('../../roundtrip').roundtrip;
 
-var mappings = [XLink_1_0, OWS_1_0_0, DC_1_1, DCT,, CSW_2_0_2];
+var mappings = [XLink_1_0, OWS_1_0_0, DC_1_1, DCT, CSW_2_0_2];
 
 module.exports = {
 	"Context": function(test) {
