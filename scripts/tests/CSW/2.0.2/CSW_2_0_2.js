@@ -10,7 +10,9 @@ var DCT = require('../../../ogc-schemas').DCT;
 var CSW_2_0_2 = require('../../../ogc-schemas').CSW_2_0_2;
 
 var roundtrip = require('../../roundtrip').roundtrip;
-var mappings = [XLink_1_0, OWS_1_0_0, Filter_1_1_0, SMIL_2_0, SMIL_2_0_Language, GML_3_1_1, DC_1_1, DCT, CSW_2_0_2];
+
+var mappings = [XLink_1_0, OWS_1_0_0, DC_1_1, DCT, CSW_2_0_2];
+
 module.exports = {
 	"Context": function(test) {
 		var context = new Jsonix.Context(mappings);

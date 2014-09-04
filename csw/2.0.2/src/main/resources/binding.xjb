@@ -48,6 +48,27 @@
 
 	</jaxb:bindings>
 
+	<jaxb:bindings 
+		schemaLocation="ogc/csw/2.0.2/CSW-discovery.xsd" 
+		node="/xs:schema">
+
+		<jaxb:bindings node="xs:complexType[@name='CapabilitiesType']//xs:element[@ref='ogc:Filter_Capabilities']">
+			<xjc:dom/>
+			<!--wildcard:lax/-->
+		</jaxb:bindings>
+
+		<jaxb:bindings node="xs:complexType[@name='QueryType']//xs:element[@ref='ogc:SortBy']">
+			<xjc:dom/>
+			<!--wildcard:lax/-->
+		</jaxb:bindings>
+
+		<jaxb:bindings node="xs:complexType[@name='QueryConstraintType']//xs:element[@ref='ogc:Filter']">
+			<xjc:dom/>
+			<!--wildcard:lax/-->
+		</jaxb:bindings>
+
+	</jaxb:bindings>
+
 	<jaxb:bindings
 		schemaLocation="ogc/csw/2.0.2/rec-dcmes.xsd"
 		node="/xs:schema">

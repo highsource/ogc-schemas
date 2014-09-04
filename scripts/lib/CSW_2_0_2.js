@@ -23,13 +23,9 @@ var CSW_2_0_2_Module_Factory = function () {
             elementName: 'Constraint',
             typeInfo: 'CSW_2_0_2.QueryConstraintType'
           }, {
-            type: 'element',
             name: 'sortBy',
-            elementName: {
-              localPart: 'SortBy',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
-            },
-            typeInfo: 'Filter_1_1_0.SortByType'
+            allowDom: true,
+            type: 'anyElement'
           }, {
             name: 'typeNames',
             typeInfo: {
@@ -47,13 +43,9 @@ var CSW_2_0_2_Module_Factory = function () {
         type: 'classInfo',
         localName: 'QueryConstraintType',
         propertyInfos: [{
-            type: 'element',
             name: 'filter',
-            elementName: {
-              localPart: 'Filter',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
-            },
-            typeInfo: 'Filter_1_1_0.FilterType'
+            allowDom: true,
+            type: 'anyElement'
           }, {
             type: 'element',
             name: 'cqlText',
@@ -531,13 +523,9 @@ var CSW_2_0_2_Module_Factory = function () {
         localName: 'CapabilitiesType',
         baseTypeInfo: 'OWS_1_0_0.CapabilitiesBaseType',
         propertyInfos: [{
-            type: 'element',
             name: 'filterCapabilities',
-            elementName: {
-              localPart: 'Filter_Capabilities',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
-            },
-            typeInfo: 'Filter_1_1_0.FilterCapabilities'
+            allowDom: true,
+            type: 'anyElement'
           }]
       }, {
         type: 'classInfo',
