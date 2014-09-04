@@ -1,6 +1,6 @@
 var Jsonix = require('jsonix').Jsonix;
-module.exports = {
-	roundtrip: function (test, mappings, resource) {
+var fs = require('fs');
+var roundtrip = function (test, mappings, resource) {
 		var context = new Jsonix.Context(mappings);
 		var unmarshallerOne = context.createUnmarshaller();
 		var unmarshallerTwo = context.createUnmarshaller();
@@ -22,5 +22,23 @@ module.exports = {
 				test.done();
 			}
 		);
+	};
+module.exports = {
+	roundtrip: roundtrip,
+	roundtrips: function(mappings, directory)
+	{
+		var files = fs.readdirSync(directory);
+		var result = {};
+		for (var index = 0; index < files.length; index++)
+		{
+			var file = files[index];
+			if (!!file.match(/xml$/))
+			{
+				result[file] = function(test) {roundtrip(test, mappings, directory + '/' + file);};
+			}
+		}
+		return result
 	}
+//		"SML-DescribeSensor-Station.xml" : function(test) {roundtrip(test, mappings, "tests/SensorML/1.0.1/SML-DescribeSensor-Station.xml");}
+
 }

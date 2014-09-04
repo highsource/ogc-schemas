@@ -81,6 +81,7 @@
 		<module>kml</module>
 		<module>owc</module>
 		<module>ows</module>
+		<module>sensorML</module>
 		<module>sld</module>
 		<module>sweCommon</module>
 		<module>wcs</module>

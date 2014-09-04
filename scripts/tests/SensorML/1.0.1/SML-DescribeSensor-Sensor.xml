@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:SensorML xmlns:sml="http://www.opengis.net/sensorML/1.0.1" xmlns:gml="http://www.opengis.net/gml" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.1">
+  <sml:capabilities name="ioosServiceMetadata">
+    <swe:SimpleDataRecord>
+      <swe:field name="ioosTemplateVersion">
+        <swe:Text definition="http://code.google.com/p/ioostech/source/browse/#svn%2Ftrunk%2Ftemplates%2FMilestone1.0">
+          <swe:value>1.0</swe:value>
+        </swe:Text>
+      </swe:field>
+    </swe:SimpleDataRecord>
+  </sml:capabilities>
+  <sml:member>
+    <sml:System xmlns:ns="http://www.opengis.net/sensorML/1.0.1">
+      <gml:description>MTU 45023, Portage CanalMTU 45023, Portage Canal, null</gml:description>
+      <gml:name>urn:ioos:sensor:us.glos:45023:sea_water_temperature</gml:name>
+      <ns:keywords>
+        <ns:KeywordList>
+          <ns:keyword>urn:ioos:network:glos:all</ns:keyword>
+          <ns:keyword>urn:ioos:station:us.glos:45023</ns:keyword>
+          <ns:keyword>urn:ioos:sensor:us.glos:45023:sea_water_temperature</ns:keyword>
+          <ns:keyword>http://mmisw.org/ont/cf/parameter/sea_water_temperature</ns:keyword>
+        </ns:KeywordList>
+      </ns:keywords>
+      <sml:identification>
+        <ns:IdentifierList>
+          <ns:identifier name="sensorID">
+            <ns:Term definition="http://mmisw.org/ont/ioos/definition/sensorID">
+              <ns:value>urn:ioos:sensor:us.glos:45023:sea_water_temperature</ns:value>
+            </ns:Term>
+          </ns:identifier>
+          <ns:identifier name="longName">
+            <ns:Term definition="urn:ogc:def:identifier:OGC:1.0:longname">
+              <ns:value>urn:ioos:sensor:us.glos:45023:sea_water_temperature</ns:value>
+            </ns:Term>
+          </ns:identifier>
+          <ns:identifier name="shortName">
+            <ns:Term definition="urn:ogc:def:identifier:OGC:1.0:shortname">
+              <ns:value>urn:ioos:sensor:us.glos:45023:sea_water_temperature</ns:value>
+            </ns:Term>
+          </ns:identifier>
+        </ns:IdentifierList>
+      </sml:identification>
+      <ns:capabilities name="observedBBOX">
+        <swe:DataRecord>
+          <swe:field name="observedBBOX">
+            <swe:Envelope referenceFrame="4326">
+              <swe:lowerCorner>
+                <swe:Vector>
+                  <swe:coordinate name="easting">
+                    <swe:Quantity axisID="x">
+                      <swe:uom code="degree"/>
+                      <swe:value>41.983</swe:value>
+                    </swe:Quantity>
+                  </swe:coordinate>
+                  <swe:coordinate name="northing">
+                    <swe:Quantity axisID="y">
+                      <swe:uom code="degree"/>
+                      <swe:value>-91.929</swe:value>
+                    </swe:Quantity>
+                  </swe:coordinate>
+                </swe:Vector>
+              </swe:lowerCorner>
+              <swe:upperCorner>
+                <swe:Vector>
+                  <swe:coordinate name="easting">
+                    <swe:Quantity>
+                      <swe:uom code="degree"/>
+                      <swe:value>47.279</swe:value>
+                    </swe:Quantity>
+                  </swe:coordinate>
+                  <swe:coordinate name="northing">
+                    <swe:Quantity axisID="y">
+                      <swe:uom code="degree"/>
+                      <swe:value>-83.599</swe:value>
+                    </swe:Quantity>
+                  </swe:coordinate>
+                </swe:Vector>
+              </swe:upperCorner>
+            </swe:Envelope>
+          </swe:field>
+        </swe:DataRecord>
+      </ns:capabilities>
+      <ns:capabilities name="offerings">
+        <swe:SimpleDataRecord>
+          <swe:field name="Offering for urn:ioos:network:glos:all">
+            <swe:Text definition="http://www.opengis.net/def/offering/identifier">
+              <swe:value>urn:ioos:network:glos:all</swe:value>
+            </swe:Text>
+          </swe:field>
+          <swe:field name="Offering for urn:ioos:station:us.glos:45023">
+            <swe:Text definition="http://www.opengis.net/def/offering/identifier">
+              <swe:value>urn:ioos:station:us.glos:45023</swe:value>
+            </swe:Text>
+          </swe:field>
+        </swe:SimpleDataRecord>
+      </ns:capabilities>
+      <ns:capabilities name="stationProcedure">
+        <swe:SimpleDataRecord>
+          <swe:field name="station">
+            <swe:Text definition="http://mmisw.org/ont/ioos/definition/stationID">
+              <swe:value>urn:ioos:station:us.glos:45023</swe:value>
+            </swe:Text>
+          </swe:field>
+        </swe:SimpleDataRecord>
+      </ns:capabilities>
+      <ns:capabilities name="observationTimeRange">
+        <swe:DataRecord>
+          <swe:field name="observationTimeRange">
+            <swe:TimeRange definition="http://mmisw.org/ont/ioos/swe_element_type/observationTimeRange">
+              <swe:value>2013-08-26T18:10:00.000Z 2013-08-26T18:10:00.000Z</swe:value>
+            </swe:TimeRange>
+          </swe:field>
+        </swe:DataRecord>
+      </ns:capabilities>
+      <sml:inputs>
+        <ns:InputList>
+          <ns:input name="Sea Water Temperature">
+            <swe:ObservableProperty definition="http://mmisw.org/ont/cf/parameter/sea_water_temperature"/>
+          </ns:input>
+        </ns:InputList>
+      </sml:inputs>
+      <sml:outputs>
+        <ns:OutputList>
+          <ns:output name="Sea Water Temperature">
+            <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/sea_water_temperature"/>
+          </ns:output>
+        </ns:OutputList>
+      </sml:outputs>
+    </sml:System>
+  </sml:member>
+</sml:SensorML>

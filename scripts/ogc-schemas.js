@@ -17,6 +17,7 @@ var schemas = [
 	"OWS_1_0_0",
 	"OWS_1_1_0",
 	"OWS_2_0",
+	"SensorML_1_0_1",
 	"SLD_1_0_0",
 	"SWE_1_0_1",
 	"WCS_1_0_0",

@@ -761,6 +761,85 @@ index 0139647..9bd628e 100644
      </sequence>
      <attributeGroup ref="xlink:simpleAttrs">
        <annotation>
+diff --git ogc/sensorML/1.0.1/base.xsd ogc/sensorML/1.0.1/base.xsd
+index 85a0a3c..60913ee 100644
+--- ogc/sensorML/1.0.1/base.xsd
++++ ogc/sensorML/1.0.1/base.xsd
+@@ -11,11 +11,11 @@
+ 	</xs:annotation>
+ 	<!-- ================================================= -->
+ 	<!-- import GML 3.1.1 -->
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<!-- import SWE Common Data Types 1.0.1 -->
+-	<xs:import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd"/>
++	<xs:import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="../../sweCommon/1.0.1/swe.xsd"/>
+ 	<!-- import US Intelligence Community schema for security speciifications-->
+-	<xs:import namespace="urn:us:gov:ic:ism:v2" schemaLocation="http://schemas.opengis.net/ic/2.0/IC-ISM-v2.xsd"/>
++	<xs:import namespace="urn:us:gov:ic:ism:v2" schemaLocation="../../ic/2.0/IC-ISM-v2.xsd"/>
+ 	<xs:include schemaLocation="./sensorML.xsd"/>
+ 	<!-- ================================================= -->
+ 	<xs:complexType name="AbstractSMLType" abstract="true">
+diff --git ogc/sensorML/1.0.1/method.xsd ogc/sensorML/1.0.1/method.xsd
+index 6840f0f..c17a3aa 100644
+--- ogc/sensorML/1.0.1/method.xsd
++++ ogc/sensorML/1.0.1/method.xsd
+@@ -9,8 +9,8 @@
+ 		</xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================================= -->
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+-	<xs:import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
++	<xs:import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="../../sweCommon/1.0.1/swe.xsd"/>
+ 	<xs:include schemaLocation="./sensorML.xsd"/>
+ 	<xs:include schemaLocation="./base.xsd"/>
+ 	<xs:include schemaLocation="./process.xsd"/>
+diff --git ogc/sensorML/1.0.1/process.xsd ogc/sensorML/1.0.1/process.xsd
+index b5fca95..793ddd5 100644
+--- ogc/sensorML/1.0.1/process.xsd
++++ ogc/sensorML/1.0.1/process.xsd
+@@ -9,8 +9,8 @@
+ 		</xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================================= -->
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+-	<xs:import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
++	<xs:import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="../../sweCommon/1.0.1/swe.xsd"/>
+ 	<xs:include schemaLocation="./sensorML.xsd"/>
+ 	<xs:include schemaLocation="./method.xsd"/>
+ 	<!-- ================================================= -->
+diff --git ogc/sensorML/1.0.1/sensorML.xsd ogc/sensorML/1.0.1/sensorML.xsd
+index 3370676..c96aa60 100644
+--- ogc/sensorML/1.0.1/sensorML.xsd
++++ ogc/sensorML/1.0.1/sensorML.xsd
+@@ -9,8 +9,8 @@
+ 		</xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================================= -->
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+-	<xs:import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
++	<xs:import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="../../sweCommon/1.0.1/swe.xsd"/>
+ 	<xs:include schemaLocation="./system.xsd"/>
+ 	<!-- ================================================= -->
+ 	<xs:element name="SensorML">
+diff --git ogc/sensorML/1.0.1/system.xsd ogc/sensorML/1.0.1/system.xsd
+index 7811316..c807258 100644
+--- ogc/sensorML/1.0.1/system.xsd
++++ ogc/sensorML/1.0.1/system.xsd
+@@ -9,8 +9,8 @@
+ 		</xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================================= -->
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+-	<xs:import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
++	<xs:import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="../../sweCommon/1.0.1/swe.xsd"/>
+ 	<xs:include schemaLocation="./sensorML.xsd"/>
+ 	<xs:include schemaLocation="./process.xsd"/>
+ 	<!-- ================================================= -->
 diff --git ogc/sld/1.0.0/StyledLayerDescriptor.xsd ogc/sld/1.0.0/StyledLayerDescriptor.xsd
 index 5a80fcd..84502fb 100644
 --- ogc/sld/1.0.0/StyledLayerDescriptor.xsd
