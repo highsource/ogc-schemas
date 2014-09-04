@@ -50,17 +50,41 @@ var KML_2_2_0_Module_Factory = function () {
             name: 'rest',
             collection: true,
             elementTypeInfos: [{
+                elementName: 'styleUrl',
+                typeInfo: 'String'
+              }, {
+                elementName: 'snippet',
+                typeInfo: 'String'
+              }, {
+                elementName: 'open',
+                typeInfo: 'Boolean'
+              }, {
+                elementName: 'Snippet',
+                typeInfo: 'KML_2_2_0.SnippetType'
+              }, {
+                elementName: 'AbstractTimePrimitiveGroup',
+                typeInfo: 'KML_2_2_0.AbstractTimePrimitiveType'
+              }, {
+                elementName: 'Region',
+                typeInfo: 'KML_2_2_0.RegionType'
+              }, {
                 elementName: {
                   localPart: 'AddressDetails',
                   namespaceURI: 'urn:oasis:names:tc:ciq:xsdschema:xAL:2.0'
                 },
                 typeInfo: 'xAL_2_0.AddressDetails'
               }, {
-                elementName: 'phoneNumber',
+                elementName: 'name',
                 typeInfo: 'String'
+              }, {
+                elementName: 'Metadata',
+                typeInfo: 'KML_2_2_0.MetadataType'
               }, {
                 elementName: 'ExtendedData',
                 typeInfo: 'KML_2_2_0.ExtendedDataType'
+              }, {
+                elementName: 'AbstractFeatureObjectExtensionGroup',
+                typeInfo: 'KML_2_2_0.AbstractObjectType'
               }, {
                 elementName: {
                   localPart: 'author',
@@ -68,23 +92,8 @@ var KML_2_2_0_Module_Factory = function () {
                 },
                 typeInfo: 'Atom_1_0.AtomPersonConstruct'
               }, {
-                elementName: 'styleUrl',
+                elementName: 'address',
                 typeInfo: 'String'
-              }, {
-                elementName: 'Metadata',
-                typeInfo: 'KML_2_2_0.MetadataType'
-              }, {
-                elementName: 'AbstractFeatureSimpleExtensionGroup',
-                typeInfo: 'AnyType'
-              }, {
-                elementName: 'AbstractViewGroup',
-                typeInfo: 'KML_2_2_0.AbstractViewType'
-              }, {
-                elementName: 'name',
-                typeInfo: 'String'
-              }, {
-                elementName: 'Region',
-                typeInfo: 'KML_2_2_0.RegionType'
               }, {
                 elementName: {
                   localPart: 'link',
@@ -92,32 +101,23 @@ var KML_2_2_0_Module_Factory = function () {
                 },
                 typeInfo: 'Atom_1_0.Link'
               }, {
-                elementName: 'AbstractStyleSelectorGroup',
-                typeInfo: 'KML_2_2_0.AbstractStyleSelectorType'
-              }, {
-                elementName: 'open',
-                typeInfo: 'Boolean'
-              }, {
-                elementName: 'AbstractTimePrimitiveGroup',
-                typeInfo: 'KML_2_2_0.AbstractTimePrimitiveType'
-              }, {
-                elementName: 'snippet',
-                typeInfo: 'String'
-              }, {
-                elementName: 'description',
-                typeInfo: 'String'
-              }, {
-                elementName: 'address',
-                typeInfo: 'String'
-              }, {
-                elementName: 'AbstractFeatureObjectExtensionGroup',
-                typeInfo: 'KML_2_2_0.AbstractObjectType'
+                elementName: 'AbstractViewGroup',
+                typeInfo: 'KML_2_2_0.AbstractViewType'
               }, {
                 elementName: 'visibility',
                 typeInfo: 'Boolean'
               }, {
-                elementName: 'Snippet',
-                typeInfo: 'KML_2_2_0.SnippetType'
+                elementName: 'description',
+                typeInfo: 'String'
+              }, {
+                elementName: 'phoneNumber',
+                typeInfo: 'String'
+              }, {
+                elementName: 'AbstractStyleSelectorGroup',
+                typeInfo: 'KML_2_2_0.AbstractStyleSelectorType'
+              }, {
+                elementName: 'AbstractFeatureSimpleExtensionGroup',
+                typeInfo: 'AnyType'
               }],
             type: 'elementRefs'
           }]
@@ -400,8 +400,8 @@ var KML_2_2_0_Module_Factory = function () {
         propertyInfos: [{
             name: 'any',
             collection: true,
-            domAllowed: true,
-            typedObjectAllowed: true,
+            allowDom: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }]
       }, {
@@ -1503,8 +1503,8 @@ var KML_2_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            domAllowed: true,
-            typedObjectAllowed: true,
+            allowDom: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }]
       }, {

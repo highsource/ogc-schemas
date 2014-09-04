@@ -96,8 +96,8 @@ var OWC_0_3_1_Module_Factory = function () {
           }, {
             name: 'document',
             collection: true,
-            domAllowed: true,
-            typedObjectAllowed: true,
+            allowDom: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             type: 'element',
@@ -355,8 +355,8 @@ var OWC_0_3_1_Module_Factory = function () {
         localName: 'ExtensionType',
         propertyInfos: [{
             name: 'any',
-            domAllowed: true,
-            typedObjectAllowed: true,
+            allowDom: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }]
       }, {

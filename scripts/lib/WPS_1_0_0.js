@@ -655,7 +655,7 @@ var WPS_1_0_0_Module_Factory = function () {
           }, {
             name: 'content',
             collection: true,
-            domAllowed: true,
+            allowDom: true,
             mixed: true,
             type: 'anyElement'
           }, {

@@ -199,11 +199,11 @@ var WCS_1_0_0_Module_Factory = function () {
             name: 'content',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'temporalDomain',
-                typeInfo: 'WCS_1_0_0.TimeSequenceType'
-              }, {
                 elementName: 'spatialDomain',
                 typeInfo: 'WCS_1_0_0.SpatialDomainType'
+              }, {
+                elementName: 'temporalDomain',
+                typeInfo: 'WCS_1_0_0.TimeSequenceType'
               }],
             type: 'elementRefs'
           }]
@@ -560,11 +560,11 @@ var WCS_1_0_0_Module_Factory = function () {
             name: 'content',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'temporalSubset',
-                typeInfo: 'WCS_1_0_0.TimeSequenceType'
-              }, {
                 elementName: 'spatialSubset',
                 typeInfo: 'WCS_1_0_0.SpatialSubsetType'
+              }, {
+                elementName: 'temporalSubset',
+                typeInfo: 'WCS_1_0_0.TimeSequenceType'
               }],
             type: 'elementRefs'
           }]
@@ -721,16 +721,16 @@ var WCS_1_0_0_Module_Factory = function () {
             name: 'content',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'positionName',
-                typeInfo: 'String'
-              }, {
                 elementName: 'contactInfo',
                 typeInfo: 'WCS_1_0_0.ContactType'
               }, {
-                elementName: 'organisationName',
+                elementName: 'positionName',
                 typeInfo: 'String'
               }, {
                 elementName: 'individualName',
+                typeInfo: 'String'
+              }, {
+                elementName: 'organisationName',
                 typeInfo: 'String'
               }],
             type: 'elementRefs'
@@ -1020,7 +1020,7 @@ var WCS_1_0_0_Module_Factory = function () {
         localName: 'WCSCapabilityType.VendorSpecificCapabilities',
         propertyInfos: [{
             name: 'any',
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }]
       }, {

@@ -91,7 +91,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -437,7 +437,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -511,7 +511,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -615,7 +615,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -913,7 +913,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -958,7 +958,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -991,7 +991,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -1031,7 +1031,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -1156,7 +1156,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -1231,7 +1231,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -1310,7 +1310,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -1394,7 +1394,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -1533,7 +1533,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -1582,7 +1582,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -1673,7 +1673,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -1696,7 +1696,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'version',
@@ -1748,7 +1748,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'addressType',
@@ -1838,7 +1838,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -1882,7 +1882,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }]
       }, {
@@ -1946,7 +1946,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'type',
@@ -2017,7 +2017,7 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }]
       }, {
@@ -2698,14 +2698,14 @@ var xAL_2_0_Module_Factory = function () {
                 elementName: 'ThoroughfareNumberPrefix',
                 typeInfo: 'xAL_2_0.ThoroughfareNumberPrefix'
               }, {
-                elementName: 'ThoroughfareNumber',
-                typeInfo: 'xAL_2_0.ThoroughfareNumber'
-              }, {
                 elementName: 'ThoroughfareNumberSuffix',
                 typeInfo: 'xAL_2_0.ThoroughfareNumberSuffix'
               }, {
                 elementName: 'AddressLine',
                 typeInfo: 'xAL_2_0.AddressLine'
+              }, {
+                elementName: 'ThoroughfareNumber',
+                typeInfo: 'xAL_2_0.ThoroughfareNumber'
               }],
             type: 'elementRefs'
           }, {
@@ -2728,14 +2728,14 @@ var xAL_2_0_Module_Factory = function () {
                 elementName: 'ThoroughfareNumberPrefix',
                 typeInfo: 'xAL_2_0.ThoroughfareNumberPrefix'
               }, {
-                elementName: 'ThoroughfareNumber',
-                typeInfo: 'xAL_2_0.ThoroughfareNumber'
-              }, {
                 elementName: 'ThoroughfareNumberSuffix',
                 typeInfo: 'xAL_2_0.ThoroughfareNumberSuffix'
               }, {
                 elementName: 'AddressLine',
                 typeInfo: 'xAL_2_0.AddressLine'
+              }, {
+                elementName: 'ThoroughfareNumber',
+                typeInfo: 'xAL_2_0.ThoroughfareNumber'
               }],
             type: 'elementRefs'
           }, {

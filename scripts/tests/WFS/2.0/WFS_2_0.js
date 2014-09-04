@@ -1,8 +1,8 @@
 var Jsonix = require('jsonix').Jsonix;
-var XLink_1_0 = require('W3C-Schemas').XLink_1_0;
-var OWS_1_1_0 = require('../../../OGC-Schemas').OWS_1_1_0;
-var Filter_2_0 = require('../../../OGC-Schemas').Filter_2_0;
-var WFS_2_0 = require('../../../OGC-Schemas').WFS_2_0;
+var XLink_1_0 = require('w3c-schemas').XLink_1_0;
+var OWS_1_1_0 = require('../../../ogc-schemas').OWS_1_1_0;
+var Filter_2_0 = require('../../../ogc-schemas').Filter_2_0;
+var WFS_2_0 = require('../../../ogc-schemas').WFS_2_0;
 
 var roundtrip = require('../../roundtrip').roundtrip;
 var mappings = [XLink_1_0, OWS_1_1_0, Filter_2_0, WFS_2_0];

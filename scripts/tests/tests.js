@@ -3,5 +3,5 @@ process.on('uncaughtException', function(err) {
 });
 module.exports = 
 {
-	"OGC-Schemas": require('./OGC-Schemas')
+	"ogc-schemas": require('./ogc-schemas')
 };

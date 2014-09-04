@@ -18,7 +18,7 @@ var Filter_2_0_Module_Factory = function () {
             type: 'elementRef'
           }, {
             name: 'any',
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }]
       }, {
@@ -33,26 +33,26 @@ var Filter_2_0_Module_Factory = function () {
             name: 'comparisonOpsOrSpatialOpsOrTemporalOps',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'Function',
-                typeInfo: 'Filter_2_0.FunctionType'
+                elementName: 'spatialOps',
+                typeInfo: 'Filter_2_0.SpatialOpsType'
               }, {
                 elementName: 'comparisonOps',
                 typeInfo: 'Filter_2_0.ComparisonOpsType'
               }, {
-                elementName: 'logicOps',
-                typeInfo: 'Filter_2_0.LogicOpsType'
-              }, {
                 elementName: 'extensionOps',
                 typeInfo: 'Filter_2_0.ExtensionOpsType'
               }, {
-                elementName: '_Id',
-                typeInfo: 'Filter_2_0.AbstractIdType'
-              }, {
-                elementName: 'spatialOps',
-                typeInfo: 'Filter_2_0.SpatialOpsType'
+                elementName: 'Function',
+                typeInfo: 'Filter_2_0.FunctionType'
               }, {
                 elementName: 'temporalOps',
                 typeInfo: 'Filter_2_0.TemporalOpsType'
+              }, {
+                elementName: 'logicOps',
+                typeInfo: 'Filter_2_0.LogicOpsType'
+              }, {
+                elementName: '_Id',
+                typeInfo: 'Filter_2_0.AbstractIdType'
               }],
             type: 'elementRefs'
           }]
@@ -70,7 +70,7 @@ var Filter_2_0_Module_Factory = function () {
         propertyInfos: [{
             name: 'content',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             mixed: true,
             type: 'anyElement'
           }, {
@@ -95,7 +95,7 @@ var Filter_2_0_Module_Factory = function () {
             type: 'elementRef'
           }, {
             name: 'any',
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }]
       }, {
@@ -203,7 +203,7 @@ var Filter_2_0_Module_Factory = function () {
             type: 'elementRef'
           }, {
             name: 'any',
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }]
       }, {
@@ -263,7 +263,7 @@ var Filter_2_0_Module_Factory = function () {
             type: 'elementRef'
           }, {
             name: 'any',
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             type: 'element',

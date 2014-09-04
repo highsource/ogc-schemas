@@ -174,7 +174,7 @@ var WFS_2_0_Module_Factory = function () {
         propertyInfos: [{
             name: 'any',
             collection: true,
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'inputFormat',
@@ -340,8 +340,8 @@ var WFS_2_0_Module_Factory = function () {
         propertyInfos: [{
             name: 'content',
             collection: true,
-            domAllowed: true,
-            typedObjectAllowed: true,
+            allowDom: true,
+            allowTypedObject: true,
             mixed: true,
             type: 'anyElement'
           }, {
@@ -412,14 +412,14 @@ var WFS_2_0_Module_Factory = function () {
             name: 'content',
             collection: true,
             mixed: true,
-            domAllowed: true,
-            typedObjectAllowed: true,
+            allowDom: true,
+            allowTypedObject: true,
             elementTypeInfos: [{
-                elementName: 'SimpleFeatureCollection',
-                typeInfo: 'WFS_2_0.SimpleFeatureCollectionType'
-              }, {
                 elementName: 'Tuple',
                 typeInfo: 'WFS_2_0.TupleType'
+              }, {
+                elementName: 'SimpleFeatureCollection',
+                typeInfo: 'WFS_2_0.SimpleFeatureCollectionType'
               }],
             type: 'elementRefs'
           }, {
@@ -507,21 +507,6 @@ var WFS_2_0_Module_Factory = function () {
             attributeName: 'resolvePath',
             type: 'attribute'
           }, {
-            name: 'resolve',
-            typeInfo: 'String',
-            attributeName: 'resolve',
-            type: 'attribute'
-          }, {
-            name: 'resolveDepth',
-            typeInfo: 'String',
-            attributeName: 'resolveDepth',
-            type: 'attribute'
-          }, {
-            name: 'resolveTimeout',
-            typeInfo: 'Integer',
-            attributeName: 'resolveTimeout',
-            type: 'attribute'
-          }, {
             name: 'startIndex',
             typeInfo: 'Integer',
             attributeName: 'startIndex',
@@ -540,6 +525,21 @@ var WFS_2_0_Module_Factory = function () {
             name: 'outputFormat',
             typeInfo: 'String',
             attributeName: 'outputFormat',
+            type: 'attribute'
+          }, {
+            name: 'resolve',
+            typeInfo: 'String',
+            attributeName: 'resolve',
+            type: 'attribute'
+          }, {
+            name: 'resolveDepth',
+            typeInfo: 'String',
+            attributeName: 'resolveDepth',
+            type: 'attribute'
+          }, {
+            name: 'resolveTimeout',
+            typeInfo: 'Integer',
+            attributeName: 'resolveTimeout',
             type: 'attribute'
           }]
       }, {
@@ -683,7 +683,7 @@ var WFS_2_0_Module_Factory = function () {
         baseTypeInfo: 'WFS_2_0.AbstractTransactionActionType',
         propertyInfos: [{
             name: 'any',
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             type: 'element',
@@ -740,7 +740,7 @@ var WFS_2_0_Module_Factory = function () {
         localName: 'EnvelopePropertyType',
         propertyInfos: [{
             name: 'any',
-            typedObjectAllowed: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }]
       }, {
@@ -1118,8 +1118,8 @@ var WFS_2_0_Module_Factory = function () {
         propertyInfos: [{
             name: 'content',
             collection: true,
-            domAllowed: true,
-            typedObjectAllowed: true,
+            allowDom: true,
+            allowTypedObject: true,
             mixed: true,
             type: 'anyElement'
           }, {
@@ -1247,7 +1247,7 @@ var WFS_2_0_Module_Factory = function () {
         propertyInfos: [{
             name: 'content',
             collection: true,
-            domAllowed: true,
+            allowDom: true,
             mixed: true,
             type: 'anyElement'
           }, {

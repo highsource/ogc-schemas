@@ -1,8 +1,8 @@
 var Jsonix = require('jsonix').Jsonix;
-var XLink_1_0 = require('W3C-Schemas').XLink_1_0;
-var Filter_1_0_0 = require('../../../OGC-Schemas').Filter_1_0_0;
-var GML_2_1_2 = require('../../../OGC-Schemas').GML_2_1_2;
-var SLD_1_0_0 = require('../../../OGC-Schemas').SLD_1_0_0;
+var XLink_1_0 = require('w3c-schemas').XLink_1_0;
+var Filter_1_0_0 = require('../../../ogc-schemas').Filter_1_0_0;
+var GML_2_1_2 = require('../../../ogc-schemas').GML_2_1_2;
+var SLD_1_0_0 = require('../../../ogc-schemas').SLD_1_0_0;
 
 var roundtrip = require('../../roundtrip').roundtrip;
 var mappings = [XLink_1_0, Filter_1_0_0, GML_2_1_2, SLD_1_0_0];

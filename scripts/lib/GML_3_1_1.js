@@ -259,10 +259,10 @@ var GML_3_1_1_Module_Factory = function () {
             name: 'posOrPointPropertyOrPointRep',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'pointRep',
+                elementName: 'pointProperty',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointProperty',
+                elementName: 'pointRep',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
                 elementName: 'pos',
@@ -1757,10 +1757,10 @@ var GML_3_1_1_Module_Factory = function () {
             name: 'posOrPointPropertyOrPointRep',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'pointRep',
+                elementName: 'pointProperty',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointProperty',
+                elementName: 'pointRep',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
                 elementName: 'pos',
@@ -2060,10 +2060,10 @@ var GML_3_1_1_Module_Factory = function () {
             name: 'posOrPointPropertyOrPointRep',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'pointRep',
+                elementName: 'pointProperty',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointProperty',
+                elementName: 'pointRep',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
                 elementName: 'pos',
@@ -3186,10 +3186,10 @@ var GML_3_1_1_Module_Factory = function () {
             name: 'posOrPointPropertyOrPointRep',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'pointRep',
+                elementName: 'pointProperty',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointProperty',
+                elementName: 'pointRep',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
                 elementName: 'pos',
@@ -4232,23 +4232,20 @@ var GML_3_1_1_Module_Factory = function () {
             name: 'value',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'QuantityExtent',
-                typeInfo: 'GML_3_1_1.QuantityExtentType'
-              }, {
-                elementName: 'Count',
-                typeInfo: 'Integer'
-              }, {
-                elementName: 'Boolean',
-                typeInfo: 'Boolean'
-              }, {
-                elementName: 'QuantityList',
-                typeInfo: 'GML_3_1_1.MeasureOrNullListType'
-              }, {
-                elementName: 'CategoryList',
-                typeInfo: 'GML_3_1_1.CodeOrNullListType'
+                elementName: 'Category',
+                typeInfo: 'GML_3_1_1.CodeType'
               }, {
                 elementName: 'Quantity',
                 typeInfo: 'GML_3_1_1.MeasureType'
+              }, {
+                elementName: 'BooleanList',
+                typeInfo: {
+                  type: 'list',
+                  typeInfo: 'String'
+                }
+              }, {
+                elementName: 'CategoryList',
+                typeInfo: 'GML_3_1_1.CodeOrNullListType'
               }, {
                 elementName: 'CountList',
                 typeInfo: {
@@ -4256,10 +4253,19 @@ var GML_3_1_1_Module_Factory = function () {
                   typeInfo: 'String'
                 }
               }, {
-                elementName: 'Category',
-                typeInfo: 'GML_3_1_1.CodeType'
+                elementName: 'Boolean',
+                typeInfo: 'Boolean'
               }, {
-                elementName: 'BooleanList',
+                elementName: 'Count',
+                typeInfo: 'Integer'
+              }, {
+                elementName: 'CountExtent',
+                typeInfo: {
+                  type: 'list',
+                  typeInfo: 'String'
+                }
+              }, {
+                elementName: 'Null',
                 typeInfo: {
                   type: 'list',
                   typeInfo: 'String'
@@ -4268,23 +4274,17 @@ var GML_3_1_1_Module_Factory = function () {
                 elementName: 'CompositeValue',
                 typeInfo: 'GML_3_1_1.CompositeValueType'
               }, {
-                elementName: '_Object',
-                typeInfo: 'AnyType'
-              }, {
-                elementName: 'CountExtent',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'String'
-                }
-              }, {
                 elementName: 'CategoryExtent',
                 typeInfo: 'GML_3_1_1.CategoryExtentType'
               }, {
-                elementName: 'Null',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'String'
-                }
+                elementName: 'QuantityList',
+                typeInfo: 'GML_3_1_1.MeasureOrNullListType'
+              }, {
+                elementName: 'QuantityExtent',
+                typeInfo: 'GML_3_1_1.QuantityExtentType'
+              }, {
+                elementName: '_Object',
+                typeInfo: 'AnyType'
               }],
             type: 'elementRefs'
           }]
@@ -6671,7 +6671,7 @@ var GML_3_1_1_Module_Factory = function () {
         propertyInfos: [{
             name: 'any',
             collection: true,
-            domAllowed: true,
+            allowDom: true,
             type: 'anyElement'
           }, {
             name: 'symbolType',
@@ -6779,10 +6779,10 @@ var GML_3_1_1_Module_Factory = function () {
             name: 'posOrPointPropertyOrPointRep',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'pointRep',
+                elementName: 'pointProperty',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointProperty',
+                elementName: 'pointRep',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
                 elementName: 'pos',
@@ -7000,8 +7000,8 @@ var GML_3_1_1_Module_Factory = function () {
         localName: 'MetaDataPropertyType',
         propertyInfos: [{
             name: 'any',
-            domAllowed: true,
-            typedObjectAllowed: true,
+            allowDom: true,
+            allowTypedObject: true,
             type: 'anyElement'
           }, {
             name: 'about',
@@ -7352,17 +7352,17 @@ var GML_3_1_1_Module_Factory = function () {
             name: 'posOrPointPropertyOrPointRep',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'pointRep',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+                elementName: 'coord',
+                typeInfo: 'GML_3_1_1.CoordType'
               }, {
                 elementName: 'pointProperty',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
+                elementName: 'pointRep',
+                typeInfo: 'GML_3_1_1.PointPropertyType'
+              }, {
                 elementName: 'pos',
                 typeInfo: 'GML_3_1_1.DirectPositionType'
-              }, {
-                elementName: 'coord',
-                typeInfo: 'GML_3_1_1.CoordType'
               }],
             type: 'elementRefs'
           }, {
@@ -7418,11 +7418,11 @@ var GML_3_1_1_Module_Factory = function () {
                   typeInfo: 'String'
                 }
               }, {
-                elementName: 'QuantityList',
-                typeInfo: 'GML_3_1_1.MeasureOrNullListType'
-              }, {
                 elementName: 'CategoryList',
                 typeInfo: 'GML_3_1_1.CodeOrNullListType'
+              }, {
+                elementName: 'QuantityList',
+                typeInfo: 'GML_3_1_1.MeasureOrNullListType'
               }, {
                 elementName: 'CountList',
                 typeInfo: {
@@ -8331,10 +8331,10 @@ var GML_3_1_1_Module_Factory = function () {
             name: 'posOrPointPropertyOrPointRep',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'pointRep',
+                elementName: 'pointProperty',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointProperty',
+                elementName: 'pointRep',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
                 elementName: 'pos',

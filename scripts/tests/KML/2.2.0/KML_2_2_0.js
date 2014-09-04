@@ -1,7 +1,7 @@
 var Jsonix = require('jsonix').Jsonix;
-var Atom_1_0 = require('../../../OGC-Schemas').Atom_1_0;
-var xAL_2_0 = require('../../../OGC-Schemas').xAL_2_0;
-var KML_2_2_0 = require('../../../OGC-Schemas').KML_2_2_0;
+var Atom_1_0 = require('../../../ogc-schemas').Atom_1_0;
+var xAL_2_0 = require('../../../ogc-schemas').xAL_2_0;
+var KML_2_2_0 = require('../../../ogc-schemas').KML_2_2_0;
 
 var roundtrip = require('../../roundtrip').roundtrip;
 var mappings = [Atom_1_0, xAL_2_0, KML_2_2_0];

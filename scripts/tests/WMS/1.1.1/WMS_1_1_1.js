@@ -1,5 +1,5 @@
 var Jsonix = require('jsonix').Jsonix;
-var WMS_1_1_1 = require('../../../OGC-Schemas').WMS_1_1_1;
+var WMS_1_1_1 = require('../../../ogc-schemas').WMS_1_1_1;
 
 var roundtrip = require('../../roundtrip').roundtrip;
 var mappings = [WMS_1_1_1];
