@@ -110,6 +110,24 @@ index fb7e897..2d701a8 100644
  	<complexType name="IdentifiedObjectType" abstract="true">
  		<annotation>
  			<documentation>gml:IdentifiedObjectType provides identification properties of a CRS-related object. In gml:DefinitionType, the gml:identifier element shall be the primary name by which this object is identified, encoding the "name" attribute in the UML model.
+diff --git ogc/kml/2.2.0/ogckml22.xsd ogc/kml/2.2.0/ogckml22.xsd
+index d1e6faa..0797a56 100644
+--- ogc/kml/2.2.0/ogckml22.xsd
++++ ogc/kml/2.2.0/ogckml22.xsd
+@@ -16,11 +16,11 @@
+ 
+   <!-- import atom:author and atom:link -->
+   <import namespace="http://www.w3.org/2005/Atom"
+-    schemaLocation="atom-author-link.xsd"/>
++    schemaLocation="../../../w3c/2005/atom-author-link.xsd"/>
+ 
+   <!-- import xAL:Address -->
+   <import namespace="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"
+-    schemaLocation="http://docs.oasis-open.org/election/external/xAL.xsd"/>
++    schemaLocation="../../../oasis/election/external/xAL.xsd"/>
+ 
+   <!-- KML field types (simple content) -->
+ 
 diff --git ogc/ows/2.0/owsAdditionalParameters.xsd ogc/ows/2.0/owsAdditionalParameters.xsd
 index 8e91265..1f534a3 100644
 --- ogc/ows/2.0/owsAdditionalParameters.xsd
@@ -143,6 +161,19 @@ index 0139647..9bd628e 100644
      </sequence>
      <attributeGroup ref="xlink:simpleAttrs">
        <annotation>
+diff --git ogc/sld/1.0.0/StyledLayerDescriptor.xsd ogc/sld/1.0.0/StyledLayerDescriptor.xsd
+index 5a80fcd..84502fb 100644
+--- ogc/sld/1.0.0/StyledLayerDescriptor.xsd
++++ ogc/sld/1.0.0/StyledLayerDescriptor.xsd
+@@ -2,7 +2,7 @@
+ <xsd:schema targetNamespace="http://www.opengis.net/sld" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xmlns:sld="http://www.opengis.net/sld" elementFormDefault="qualified" version="1.0.0.2">
+ 	
+ 	<xsd:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+-	<xsd:import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/filter/1.0.0/filter.xsd"/>
++	<xsd:import namespace="http://www.opengis.net/ogc" schemaLocation="../../filter/1.0.0/filter.xsd"/>
+ 	<!-- *********************************************************************** -->
+ 	<xsd:annotation>
+ 		<xsd:documentation>
 diff --git ogc/wcs/1.0.0/describeCoverage.xsd ogc/wcs/1.0.0/describeCoverage.xsd
 index 0a544c4..d1ab75d 100644
 --- ogc/wcs/1.0.0/describeCoverage.xsd

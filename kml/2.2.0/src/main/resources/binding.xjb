@@ -1,0 +1,37 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	xmlns:jsonix="http://jsonix.highsource.org/customizations"
+	jaxb:extensionBindingPrefixes="xjc jsonix">
+
+	<jaxb:bindings schemaLocation="ogc/kml/2.2.0/ogckml22.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.kml.v_2_2_0"/>
+		</jaxb:schemaBindings>
+		<jaxb:bindings node="xs:element[@name='scale']">
+			<jaxb:factoryMethod name="AbstractScaleElement"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:element[@name='snippet']">
+			<jaxb:factoryMethod name="AbstractSnippetElement"/>
+		</jaxb:bindings>
+		<jsonix:packageMapping packageName="org.hisrc.w3c.atom.v_1_0" spaceName="Atom_1_0"/>
+		<jsonix:packageMapping packageName="org.hisrc.w3c.oasis.xal.v_2_0" spaceName="xAL_2_0"/>
+		<jsonix:packageMapping packageName="net.opengis.kml.v_2_2_0" spaceName="KML_2_2_0"/>
+	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="w3c/2005/atom-author-link.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.hisrc.w3c.atom.v_1_0"/>
+		</jaxb:schemaBindings>
+		<!--jaxb:bindings node="xs:element[@name='name']">
+			<jaxb:class name="AtomName"/>
+		</jaxb:bindings-->
+	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="oasis/election/external/xAL.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.hisrc.w3c.oasis.xal.v_2_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+</jaxb:bindings>
