@@ -81,6 +81,8 @@
 		<module>kml</module>
 		<module>owc</module>
 		<module>ows</module>
+		<module>sld</module>
+		<module>sweCommon</module>
 		<module>wcs</module>
 		<module>wfs</module>
 		<module>wms</module>

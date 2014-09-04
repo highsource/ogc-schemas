@@ -774,6 +774,123 @@ index 5a80fcd..84502fb 100644
  	<!-- *********************************************************************** -->
  	<xsd:annotation>
  		<xsd:documentation>
+diff --git ogc/sweCommon/1.0.1/aggregateTypes.xsd ogc/sweCommon/1.0.1/aggregateTypes.xsd
+index cc0a7a1..5b91f64 100644
+--- ogc/sweCommon/1.0.1/aggregateTypes.xsd
++++ ogc/sweCommon/1.0.1/aggregateTypes.xsd
+@@ -9,7 +9,7 @@
+ 	</xs:annotation>
+ 	<!-- ================================================= -->
+ 	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<xs:include schemaLocation="./swe.xsd"/>
+ 	<xs:include schemaLocation="./simpleTypes.xsd"/>
+ 	<xs:include schemaLocation="./encoding.xsd"/>
+diff --git ogc/sweCommon/1.0.1/basicTypes.xsd ogc/sweCommon/1.0.1/basicTypes.xsd
+index 2645253..c726f41 100644
+--- ogc/sweCommon/1.0.1/basicTypes.xsd
++++ ogc/sweCommon/1.0.1/basicTypes.xsd
+@@ -10,7 +10,7 @@
+ 	</xs:annotation>
+ 	<!-- ====================================================================== -->
+ 	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<xs:include schemaLocation="./swe.xsd"/>
+ 	<!-- ====================================================================== -->
+ 	<!-- === Units of Measure === -->
+diff --git ogc/sweCommon/1.0.1/curveTypes.xsd ogc/sweCommon/1.0.1/curveTypes.xsd
+index 2fd9e62..2457ba9 100644
+--- ogc/sweCommon/1.0.1/curveTypes.xsd
++++ ogc/sweCommon/1.0.1/curveTypes.xsd
+@@ -8,7 +8,7 @@
+ 		</xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================================= -->
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<xs:include schemaLocation="./swe.xsd"/>
+ 	<xs:include schemaLocation="./aggregateTypes.xsd"/>
+ 	<!-- ================================================= -->
+diff --git ogc/sweCommon/1.0.1/data.xsd ogc/sweCommon/1.0.1/data.xsd
+index 6cea4c1..15c9504 100644
+--- ogc/sweCommon/1.0.1/data.xsd
++++ ogc/sweCommon/1.0.1/data.xsd
+@@ -8,7 +8,7 @@
+ 		</xs:documentation>
+ 	</xs:annotation>
+    <!-- ================================================= -->
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<xs:include schemaLocation="./swe.xsd"/>
+ 	<xs:include schemaLocation="./aggregateTypes.xsd"/>
+    <!-- ================================================= -->
+diff --git ogc/sweCommon/1.0.1/encoding.xsd ogc/sweCommon/1.0.1/encoding.xsd
+index 31d4a0a..6818cf8 100644
+--- ogc/sweCommon/1.0.1/encoding.xsd
++++ ogc/sweCommon/1.0.1/encoding.xsd
+@@ -8,7 +8,7 @@
+ 		</xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================================= -->
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<xs:include schemaLocation="./swe.xsd"/>
+ 	<!-- ================================================= -->
+ 	<xs:complexType name="BlockEncodingPropertyType">
+diff --git ogc/sweCommon/1.0.1/phenomenon.xsd ogc/sweCommon/1.0.1/phenomenon.xsd
+index 2126692..a6e6cee 100644
+--- ogc/sweCommon/1.0.1/phenomenon.xsd
++++ ogc/sweCommon/1.0.1/phenomenon.xsd
+@@ -12,7 +12,7 @@
+ 	</annotation>
+ 	<!-- ====================================================================== -->
+ 	<!-- bring in other schemas -->
+-	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<include schemaLocation="./swe.xsd"/>
+ 	<include schemaLocation="./aggregateTypes.xsd"/>
+ 	<!-- ====================================================================== -->
+diff --git ogc/sweCommon/1.0.1/positionTypes.xsd ogc/sweCommon/1.0.1/positionTypes.xsd
+index 037236b..c57a2a0 100644
+--- ogc/sweCommon/1.0.1/positionTypes.xsd
++++ ogc/sweCommon/1.0.1/positionTypes.xsd
+@@ -8,7 +8,7 @@
+ 		</xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================================= -->
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<xs:include schemaLocation="./swe.xsd"/>
+ 	<xs:include schemaLocation="./aggregateTypes.xsd"/>
+ 	<!-- ================================================= -->
+diff --git ogc/sweCommon/1.0.1/simpleTypes.xsd ogc/sweCommon/1.0.1/simpleTypes.xsd
+index e462af3..8e27561 100644
+--- ogc/sweCommon/1.0.1/simpleTypes.xsd
++++ ogc/sweCommon/1.0.1/simpleTypes.xsd
+@@ -15,7 +15,7 @@ Note: In general, content model definition using composition is more easily acco
+ 	</xs:annotation>
+ 	<!-- ================================================= -->
+ 	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<xs:include schemaLocation="./swe.xsd"/>
+ 	<xs:include schemaLocation="./basicTypes.xsd"/>
+ 	<!-- ================================================= -->
+diff --git ogc/sweCommon/1.0.1/temporalAggregates.xsd ogc/sweCommon/1.0.1/temporalAggregates.xsd
+index 093df59..bf9b952 100644
+--- ogc/sweCommon/1.0.1/temporalAggregates.xsd
++++ ogc/sweCommon/1.0.1/temporalAggregates.xsd
+@@ -11,7 +11,7 @@
+ 	</annotation>
+ 	<!-- ====================================================================== -->
+ 	<!-- bring in other schemas -->
+-	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<include schemaLocation="./swe.xsd"/>
+ 	<!-- ================================================================== -->
+ 	<!-- =========================================================== -->
 diff --git ogc/wcs/1.0.0/describeCoverage.xsd ogc/wcs/1.0.0/describeCoverage.xsd
 index 0a544c4..d1ab75d 100644
 --- ogc/wcs/1.0.0/describeCoverage.xsd
