@@ -34,11 +34,11 @@ module.exports = {
 			var file = files[index];
 			if (!!file.match(/xml$/))
 			{
-				result[file] = function(test) {roundtrip(test, mappings, directory + '/' + file);};
+				var resourceName = directory + '/' + file;
+				console.log('Adding roundtrip test ['+ resourceName + ']');
+				result[file] = function(test) {roundtrip(test, mappings, resourceName);};
 			}
 		}
 		return result
 	}
-//		"SML-DescribeSensor-Station.xml" : function(test) {roundtrip(test, mappings, "tests/SensorML/1.0.1/SML-DescribeSensor-Station.xml");}
-
 }
