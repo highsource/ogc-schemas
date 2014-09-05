@@ -36,7 +36,10 @@ module.exports = {
 			{
 				var resourceName = directory + '/' + file;
 				console.log('Adding roundtrip test ['+ resourceName + ']');
-				result[file] = function(test) {roundtrip(test, mappings, resourceName);};
+				result[file] = function(test) {
+					console.log('Testing [' + resourceName + '].');
+					roundtrip(test, mappings, resourceName);
+				};
 			}
 		}
 		return result

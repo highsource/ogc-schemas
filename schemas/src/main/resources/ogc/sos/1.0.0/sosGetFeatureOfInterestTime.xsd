@@ -16,7 +16,7 @@
 	<!-- ==============================================================
 		includes and imports
 	============================================================== -->
-	<import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd"/>
+	<import namespace="http://www.opengis.net/ogc" schemaLocation="../../sos/1.0.0/ogc4sos.xsd"/>
 	<include schemaLocation="sosAll.xsd"/>
 	<include schemaLocation="sosCommon.xsd"/>
 	<!-- ==============================================================

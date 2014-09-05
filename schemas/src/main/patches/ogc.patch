@@ -873,6 +873,167 @@ index 5a80fcd..84502fb 100644
  	<!-- *********************************************************************** -->
  	<xsd:annotation>
  		<xsd:documentation>
+diff --git ogc/sos/1.0.0/ogc4sos.xsd ogc/sos/1.0.0/ogc4sos.xsd
+index 7727b83..f2b5d66 100644
+--- ogc/sos/1.0.0/ogc4sos.xsd
++++ ogc/sos/1.0.0/ogc4sos.xsd
+@@ -13,8 +13,8 @@
+   <!-- ==============================================================
+        includes and imports
+        ============================================================== -->
+-  <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+-  <xs:include schemaLocation="http://schemas.opengis.net/filter/1.1.0/filter.xsd"/>
++  <xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
++  <xs:include schemaLocation="../../filter/1.1.0/filter.xsd"/>
+   <!-- =================================================================== -->
+   <!-- TEMPORAL OPERATORS                                                  -->
+   <!-- =================================================================== -->
+diff --git ogc/sos/1.0.0/sosContents.xsd ogc/sos/1.0.0/sosContents.xsd
+index 3b11808..2d6d0be 100644
+--- ogc/sos/1.0.0/sosContents.xsd
++++ ogc/sos/1.0.0/sosContents.xsd
+@@ -15,9 +15,9 @@
+ 	<!-- ==============================================================
+ 		includes and imports
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+-	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd"/>
+-	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="../../sweCommon/1.0.1/swe.xsd"/>
++	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<include schemaLocation="sosAll.xsd"/>
+ 	<include schemaLocation="sosCommon.xsd"/>
+ 	<!-- ==============================================================
+diff --git ogc/sos/1.0.0/sosDescribeSensor.xsd ogc/sos/1.0.0/sosDescribeSensor.xsd
+index 5bbda7f..3cadf68 100644
+--- ogc/sos/1.0.0/sosDescribeSensor.xsd
++++ ogc/sos/1.0.0/sosDescribeSensor.xsd
+@@ -15,7 +15,7 @@
+ 	<!-- ==============================================================
+ 		includes and imports
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+ 	<include schemaLocation="sosAll.xsd"/>
+ 	<include schemaLocation="sosCommon.xsd"/>
+ 	<!-- ==============================================================
+diff --git ogc/sos/1.0.0/sosGetCapabilities.xsd ogc/sos/1.0.0/sosGetCapabilities.xsd
+index 291df65..84948b1 100644
+--- ogc/sos/1.0.0/sosGetCapabilities.xsd
++++ ogc/sos/1.0.0/sosGetCapabilities.xsd
+@@ -17,8 +17,8 @@
+ 	============================================================== -->
+ 	<include schemaLocation="sosAll.xsd"/>
+ 	<include schemaLocation="sosContents.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+-	<import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ogc" schemaLocation="../../sos/1.0.0/ogc4sos.xsd"/>
+ 	<!-- ==============================================================
+ 		elements and types
+ 	============================================================== -->
+diff --git ogc/sos/1.0.0/sosGetFeatureOfInterest.xsd ogc/sos/1.0.0/sosGetFeatureOfInterest.xsd
+index 13941dc..3213296 100644
+--- ogc/sos/1.0.0/sosGetFeatureOfInterest.xsd
++++ ogc/sos/1.0.0/sosGetFeatureOfInterest.xsd
+@@ -15,7 +15,7 @@
+ 	<!-- ==============================================================
+ 		includes and imports
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd"/>
++	<import namespace="http://www.opengis.net/ogc" schemaLocation="../../sos/1.0.0/ogc4sos.xsd"/>
+ 	<include schemaLocation="sosAll.xsd"/>
+ 	<include schemaLocation="sosCommon.xsd"/>
+ 	<!-- ==============================================================
+diff --git ogc/sos/1.0.0/sosGetFeatureOfInterestTime.xsd ogc/sos/1.0.0/sosGetFeatureOfInterestTime.xsd
+index 21c1978..54c766c 100644
+--- ogc/sos/1.0.0/sosGetFeatureOfInterestTime.xsd
++++ ogc/sos/1.0.0/sosGetFeatureOfInterestTime.xsd
+@@ -16,7 +16,7 @@
+ 	<!-- ==============================================================
+ 		includes and imports
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd"/>
++	<import namespace="http://www.opengis.net/ogc" schemaLocation="../../sos/1.0.0/ogc4sos.xsd"/>
+ 	<include schemaLocation="sosAll.xsd"/>
+ 	<include schemaLocation="sosCommon.xsd"/>
+ 	<!-- ==============================================================
+diff --git ogc/sos/1.0.0/sosGetObservation.xsd ogc/sos/1.0.0/sosGetObservation.xsd
+index e792276..0d5f8e5 100644
+--- ogc/sos/1.0.0/sosGetObservation.xsd
++++ ogc/sos/1.0.0/sosGetObservation.xsd
+@@ -15,9 +15,9 @@
+ 	<!-- ==============================================================
+ 		includes and imports
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+-	<import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd"/>
+-	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ogc" schemaLocation="../../sos/1.0.0/ogc4sos.xsd"/>
++	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+ 	<include schemaLocation="sosAll.xsd"/>
+ 	<include schemaLocation="sosCommon.xsd"/>
+ 	<!-- ==============================================================
+diff --git ogc/sos/1.0.0/sosGetObservationById.xsd ogc/sos/1.0.0/sosGetObservationById.xsd
+index faec131..d6b66bd 100644
+--- ogc/sos/1.0.0/sosGetObservationById.xsd
++++ ogc/sos/1.0.0/sosGetObservationById.xsd
+@@ -15,8 +15,8 @@
+ 	<!-- ==============================================================
+ 		includes and imports
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+-	<import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ogc" schemaLocation="../../sos/1.0.0/ogc4sos.xsd"/>
+ 	<include schemaLocation="sosAll.xsd"/>
+ 	<include schemaLocation="sosCommon.xsd"/>
+ 	<!-- ==============================================================
+diff --git ogc/sos/1.0.0/sosGetResult.xsd ogc/sos/1.0.0/sosGetResult.xsd
+index de2bd52..a4469eb 100644
+--- ogc/sos/1.0.0/sosGetResult.xsd
++++ ogc/sos/1.0.0/sosGetResult.xsd
+@@ -15,7 +15,7 @@
+ 	<!-- ==============================================================
+ 		includes and imports
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd"/>
++	<import namespace="http://www.opengis.net/ogc" schemaLocation="../../sos/1.0.0/ogc4sos.xsd"/>
+ 	<include schemaLocation="sosAll.xsd"/>
+ 	<include schemaLocation="sosCommon.xsd"/>
+ 	<!-- ==============================================================
+diff --git ogc/sos/1.0.0/sosInsert.xsd ogc/sos/1.0.0/sosInsert.xsd
+index ad8792e..c935ad3 100644
+--- ogc/sos/1.0.0/sosInsert.xsd
++++ ogc/sos/1.0.0/sosInsert.xsd
+@@ -16,8 +16,8 @@
+ 	<!-- ==============================================================
+ 		includes and imports
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+-	<import namespace="http://www.opengis.net/om/1.0" schemaLocation="http://schemas.opengis.net/om/1.0.0/om.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/om/1.0" schemaLocation="../../om/1.0.0/om.xsd"/>
+ 	<include schemaLocation="sosAll.xsd"/>
+ 	<include schemaLocation="sosCommon.xsd"/>
+ 	<!-- ==============================================================
+diff --git ogc/sos/1.0.0/sosRegisterSensor.xsd ogc/sos/1.0.0/sosRegisterSensor.xsd
+index cfc1fca..84b9848 100644
+--- ogc/sos/1.0.0/sosRegisterSensor.xsd
++++ ogc/sos/1.0.0/sosRegisterSensor.xsd
+@@ -15,8 +15,8 @@
+   <!-- ==============================================================
+ 		includes and imports
+ 	============================================================== -->
+-  <import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+-  <import namespace="http://www.opengis.net/om/1.0" schemaLocation="http://schemas.opengis.net/om/1.0.0/om.xsd"/>
++  <import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
++  <import namespace="http://www.opengis.net/om/1.0" schemaLocation="../../om/1.0.0/om.xsd"/>
+   <include schemaLocation="sosAll.xsd"/>
+   <include schemaLocation="sosCommon.xsd"/>
+   <!-- ==============================================================
 diff --git ogc/sweCommon/1.0.1/aggregateTypes.xsd ogc/sweCommon/1.0.1/aggregateTypes.xsd
 index cc0a7a1..5b91f64 100644
 --- ogc/sweCommon/1.0.1/aggregateTypes.xsd
