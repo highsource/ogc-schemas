@@ -1,0 +1,24 @@
+<OWSContext xmlns="http://www.opengis.net/ows-context" version="0.3.1" id="foo" xsi:schemaLocation="http://www.opengis.net/ows-context http://www.ogcnetwork.net/schemas/owc/0.3.1/owsContext.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <General>
+        <ows:BoundingBox xmlns:ows="http://www.opengis.net/ows" crs="EPSG:4326">
+            <ows:LowerCorner>-5.986328125 27.9150390625</ows:LowerCorner>
+            <ows:UpperCorner>15.986328125 52.0849609375</ows:UpperCorner>
+        </ows:BoundingBox>
+        <ows:Title xmlns:ows="http://www.opengis.net/ows">OpenLayers OWSContext</ows:Title>
+    </General>
+    <ResourceList>
+        <Layer name="basic" queryable="0" hidden="0" opacity="1">
+            <ows:Title xmlns:ows="http://www.opengis.net/ows">OpenLayers WMS</ows:Title>
+            <ows:OutputFormat xmlns:ows="http://www.opengis.net/ows">image/jpeg</ows:OutputFormat>
+            <Server version="1.1.1" service="urn:ogc:serviceType:WMS">
+                <OnlineResource xlink:href="http://labs.metacarta.com/wms/vmap0" xmlns:xlink="http://www.w3.org/1999/xlink" />
+            </Server>
+        </Layer>
+        <Layer>
+            <ows:Title xmlns:ows="http://www.opengis.net/ows">KML</ows:Title>
+            <Server version="2.2" service="urn:ogc:serviceType:KML">
+                <OnlineResource xlink:href="foo/sundials.kml" xmlns:xlink="http://www.w3.org/1999/xlink" />
+            </Server>
+        </Layer>
+    </ResourceList>
+</OWSContext>
