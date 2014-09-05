@@ -24,10 +24,5 @@ module.exports = {
 			test.done();
 		});
 	},
-//	"Roundtrips" : {
-//		"SML-DescribeSensor-Network.xml" : function(test) {roundtrip(test, mappings, "tests/SensorML/1.0.1/SML-DescribeSensor-Network.xml");},
-//		"SML-DescribeSensor-Sensor.xml" : function(test) {roundtrip(test, mappings, "tests/SensorML/1.0.1/SML-DescribeSensor-Sensor.xml");},
-//		"SML-DescribeSensor-Station.xml" : function(test) {roundtrip(test, mappings, "tests/SensorML/1.0.1/SML-DescribeSensor-Station.xml");}
-//	}
 	"Roundtrips" : roundtrips(mappings, __dirname)
 };
