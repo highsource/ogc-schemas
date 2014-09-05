@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord gml:id="TM7c" 
+xmlns:swe="http://www.opengis.net/swe/1.0.1" 
+xmlns:gml="http://www.opengis.net/gml" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xsi:schemaLocation="http://www.opengis.net/swe/1.0.1 http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd">
+	<swe:field name="TMBand1">
+		<swe:Quantity definition="urn:ogc:def:phenomenon:OGC:TMBand1">
+			<swe:uom xlink:href="urn:ogc:def:uom:OGC:count"/>
+			<swe:constraint>
+				<swe:AllowedValues id="SINGLE_BYTE">
+					<swe:interval>0 255</swe:interval>
+				</swe:AllowedValues>
+			</swe:constraint>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="TMBand2">
+		<swe:Quantity definition="urn:ogc:def:phenomenon:OGC:TMBand2">
+			<swe:uom xlink:href="urn:ogc:def:uom:OGC:count"/>
+			<swe:constraint xlink:href="#SINGLE_BYTE"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="TMBand3">
+		<swe:Quantity definition="urn:ogc:def:phenomenon:OGC:TMBand3">
+			<swe:uom xlink:href="urn:ogc:def:uom:OGC:count"/>
+			<swe:constraint xlink:href="#SINGLE_BYTE"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="TMBand4">
+		<swe:Quantity definition="urn:ogc:def:phenomenon:OGC:TMBand4">
+			<swe:uom xlink:href="urn:ogc:def:uom:OGC:count"/>
+			<swe:constraint xlink:href="#SINGLE_BYTE"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="TMBand5">
+		<swe:Quantity definition="urn:ogc:def:phenomenon:OGC:TMBand5">
+			<swe:uom xlink:href="urn:ogc:def:uom:OGC:count"/>
+			<swe:constraint xlink:href="#SINGLE_BYTE"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="TMBand6">
+		<swe:Quantity definition="urn:ogc:def:phenomenon:OGC:TMBand6">
+			<swe:uom xlink:href="urn:ogc:def:uom:OGC:count"/>
+			<swe:constraint xlink:href="#SINGLE_BYTE"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="TMBand7">
+		<swe:Quantity definition="urn:ogc:def:phenomenon:OGC:TMBand7">
+			<swe:uom xlink:href="urn:ogc:def:uom:OGC:count"/>
+			<swe:constraint xlink:href="#SINGLE_BYTE"/>
+		</swe:Quantity>
+	</swe:field>
+</swe:DataRecord>

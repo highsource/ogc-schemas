@@ -507,6 +507,21 @@ var WFS_2_0_Module_Factory = function () {
             attributeName: 'resolvePath',
             type: 'attribute'
           }, {
+            name: 'resolve',
+            typeInfo: 'String',
+            attributeName: 'resolve',
+            type: 'attribute'
+          }, {
+            name: 'resolveDepth',
+            typeInfo: 'String',
+            attributeName: 'resolveDepth',
+            type: 'attribute'
+          }, {
+            name: 'resolveTimeout',
+            typeInfo: 'Integer',
+            attributeName: 'resolveTimeout',
+            type: 'attribute'
+          }, {
             name: 'startIndex',
             typeInfo: 'Integer',
             attributeName: 'startIndex',
@@ -525,21 +540,6 @@ var WFS_2_0_Module_Factory = function () {
             name: 'outputFormat',
             typeInfo: 'String',
             attributeName: 'outputFormat',
-            type: 'attribute'
-          }, {
-            name: 'resolve',
-            typeInfo: 'String',
-            attributeName: 'resolve',
-            type: 'attribute'
-          }, {
-            name: 'resolveDepth',
-            typeInfo: 'String',
-            attributeName: 'resolveDepth',
-            type: 'attribute'
-          }, {
-            name: 'resolveTimeout',
-            typeInfo: 'Integer',
-            attributeName: 'resolveTimeout',
             type: 'attribute'
           }]
       }, {

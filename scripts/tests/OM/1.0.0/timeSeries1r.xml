@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<om:Observation gml:id="timeSeries1" xmlns:om="http://www.opengis.net/om/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:swe="http://www.opengis.net/swe/1.0.1" xsi:schemaLocation="http://www.opengis.net/om/1.0 ../om.xsd">
+	<gml:description>Observation test instance - time series</gml:description>
+	<gml:name>Time series 1</gml:name>
+	<om:samplingTime>
+		<gml:TimePeriod gml:id="ts1t">
+			<gml:beginPosition>2005-06-17T09:00:00+08:00</gml:beginPosition>
+			<gml:endPosition>2005-06-21T09:00:00+08:00</gml:endPosition>
+		</gml:TimePeriod>
+	</om:samplingTime>
+	<om:procedure xlink:href="urn:ogc:object:feature:Sensor:BOM:t_2a"/>
+	<om:observedProperty xlink:href="http://sweet.jpl.nasa.gov/ontology/property.owl#Temperature"/>
+	<om:featureOfInterest xlink:role="urn:ogc:def:featureType:OGC:Station" xlink:href="http://my.big.org/feature?type=station%26name=st1"/>
+	<om:parameter>
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/ontology/property.owl#Elevation">
+			<swe:uom xlink:href="urn:ogc:def:uom:UCUM:m"/>
+			<swe:value>3.45</swe:value>
+		</swe:Quantity>
+	</om:parameter>
+	<om:result xlink:href="http://www.flakey.org/opendap/378.cdf"/>
+</om:Observation>

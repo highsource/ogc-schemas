@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<om:Observation gml:id="timeSeries1" xmlns:cv="http://www.opengis.net/cv/0.2.1" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:om="http://www.opengis.net/om/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.opengis.net/om/1.0 ../om.xsd  http://www.opengis.net/cv/0.2.1 http://bp.schemas.opengis.net/06-188r1/cv/0.2.1/cv.xsd">
+	<gml:description>Observation test instance - time series</gml:description>
+	<gml:name>Time series 1</gml:name>
+	<om:samplingTime>
+		<gml:TimePeriod gml:id="ts1t">
+			<gml:beginPosition>2005-06-17T09:00:00+08:00</gml:beginPosition>
+			<gml:endPosition>2005-06-21T09:00:00+08:00</gml:endPosition>
+		</gml:TimePeriod>
+	</om:samplingTime>
+	<om:procedure xlink:href="urn:ogc:object:feature:Sensor:BOM:t_2a"/>
+	<om:observedProperty xlink:href="http://sweet.jpl.nasa.gov/ontology/property.owl#Temperature"/>
+	<om:featureOfInterest xlink:role="urn:ogc:def:featureType:OGC:Station" xlink:href="http://my.big.org/feature?type=station%26name=st1"/>
+	<om:parameter>
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/ontology/property.owl#Elevation">
+			<swe:uom xlink:href="urn:ogc:def:uom:UCUM:m"/>
+			<swe:value>3.45</swe:value>
+		</swe:Quantity>
+	</om:parameter>
+	<om:result>
+		<cv:CompactDiscreteTimeCoverage>
+			<cv:domainExtent xlink:href="http://my.big.org/feature?type=station%26name=st1#xpointer(./boundedBy)"/>
+			<cv:rangeType xlink:href="http://sweet.jpl.nasa.gov/ontology/property.owl#Temperature"/>
+			<cv:element>
+				<cv:CompactTimeValuePair>
+					<cv:geometry>2005-06-17T09:00:00+08:00</cv:geometry>
+					<cv:value xsi:type="gml:MeasureType" uom="Cel">19.3</cv:value>
+				</cv:CompactTimeValuePair>
+			</cv:element>
+			<cv:element>
+				<cv:CompactTimeValuePair>
+					<cv:geometry>2005-06-18T09:00:00+08:00</cv:geometry>
+					<cv:value xsi:type="gml:MeasureType" uom="Cel">17.1</cv:value>
+				</cv:CompactTimeValuePair>
+			</cv:element>
+			<cv:element>
+				<cv:CompactTimeValuePair>
+					<cv:geometry>2005-06-19T09:00:00+08:00</cv:geometry>
+					<cv:value xsi:type="gml:MeasureType" uom="Cel">16.5</cv:value>
+				</cv:CompactTimeValuePair>
+			</cv:element>
+			<cv:element>
+				<cv:CompactTimeValuePair>
+					<cv:geometry>2005-06-20T09:00:00+08:00</cv:geometry>
+					<cv:value xsi:type="gml:MeasureType" uom="Cel">25.8</cv:value>
+				</cv:CompactTimeValuePair>
+			</cv:element>
+			<cv:element>
+				<cv:CompactTimeValuePair>
+					<cv:geometry>2005-06-21T09:00:00+08:00</cv:geometry>
+					<cv:value xsi:type="gml:MeasureType" uom="Cel">29.2</cv:value>
+				</cv:CompactTimeValuePair>
+			</cv:element>
+		</cv:CompactDiscreteTimeCoverage>
+	</om:result>
+</om:Observation>

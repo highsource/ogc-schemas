@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<om:ObservationCollection gml:id="coll1" 
+xmlns:om="http://www.opengis.net/om/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:gml="http://www.opengis.net/gml"                          
+xsi:schemaLocation="http://www.opengis.net/om/1.0 ../om.xsd">
+	<gml:description>Collection of observations</gml:description>
+	<gml:name>Observation Collection 1</gml:name>
+	<om:member>
+		<om:Observation gml:id="o1">
+			<om:samplingTime>
+				<gml:TimeInstant gml:id="ot1t">
+					<gml:timePosition>2005-01-11T17:22:25.00</gml:timePosition>
+				</gml:TimeInstant>
+			</om:samplingTime>
+    <om:procedure xlink:href="http://www.flakey.org/register/process/scales34.xml"/>
+			<om:observedProperty xlink:href="urn:ogc:def:phenomenon:OGC:mass"/>
+    <om:featureOfInterest xlink:href="http://wfs.flakey.org?request=getFeature&#38;featureid=fruit37f "/>
+			<om:result xsi:type="gml:MeasureType" uom="urn:ogc:def:uom:OGC:kg">0.28</om:result>
+		</om:Observation>
+	</om:member>
+	<om:member>
+		<om:Observation gml:id="o2">
+			<om:samplingTime>
+				<gml:TimeInstant gml:id="ot2t">
+					<gml:timePosition>2005-01-11T17:24:25.00</gml:timePosition>
+				</gml:TimeInstant>
+			</om:samplingTime>
+    <om:procedure xlink:href="http://www.flakey.org/register/process/scales34.xml"/>
+			<om:observedProperty xlink:href="urn:ogc:def:phenomenon:OGC:mass"/>
+    <om:featureOfInterest xlink:href="http://wfs.flakey.org?request=getFeature&#38;featureid=fruit35d "/>
+			<om:result xsi:type="gml:MeasureType" uom="urn:ogc:def:uom:OGC:kg">0.27</om:result>
+		</om:Observation>
+	</om:member>
+</om:ObservationCollection>

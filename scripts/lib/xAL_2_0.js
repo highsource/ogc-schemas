@@ -2695,17 +2695,17 @@ var xAL_2_0_Module_Factory = function () {
             collection: true,
             mixed: true,
             elementTypeInfos: [{
+                elementName: 'ThoroughfareNumber',
+                typeInfo: 'xAL_2_0.ThoroughfareNumber'
+              }, {
                 elementName: 'ThoroughfareNumberPrefix',
                 typeInfo: 'xAL_2_0.ThoroughfareNumberPrefix'
-              }, {
-                elementName: 'ThoroughfareNumberSuffix',
-                typeInfo: 'xAL_2_0.ThoroughfareNumberSuffix'
               }, {
                 elementName: 'AddressLine',
                 typeInfo: 'xAL_2_0.AddressLine'
               }, {
-                elementName: 'ThoroughfareNumber',
-                typeInfo: 'xAL_2_0.ThoroughfareNumber'
+                elementName: 'ThoroughfareNumberSuffix',
+                typeInfo: 'xAL_2_0.ThoroughfareNumberSuffix'
               }],
             type: 'elementRefs'
           }, {
@@ -2725,17 +2725,17 @@ var xAL_2_0_Module_Factory = function () {
             collection: true,
             mixed: true,
             elementTypeInfos: [{
+                elementName: 'ThoroughfareNumber',
+                typeInfo: 'xAL_2_0.ThoroughfareNumber'
+              }, {
                 elementName: 'ThoroughfareNumberPrefix',
                 typeInfo: 'xAL_2_0.ThoroughfareNumberPrefix'
-              }, {
-                elementName: 'ThoroughfareNumberSuffix',
-                typeInfo: 'xAL_2_0.ThoroughfareNumberSuffix'
               }, {
                 elementName: 'AddressLine',
                 typeInfo: 'xAL_2_0.AddressLine'
               }, {
-                elementName: 'ThoroughfareNumber',
-                typeInfo: 'xAL_2_0.ThoroughfareNumber'
+                elementName: 'ThoroughfareNumberSuffix',
+                typeInfo: 'xAL_2_0.ThoroughfareNumberSuffix'
               }],
             type: 'elementRefs'
           }, {

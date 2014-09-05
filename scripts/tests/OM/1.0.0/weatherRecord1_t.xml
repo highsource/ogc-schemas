@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord xmlns:gml="http://www.opengis.net/gml" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xsi:schemaLocation="http://www.opengis.net/swe/1.0.1 http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd">
+	<swe:field name="time">
+		<swe:Time definition="urn:ogc:def:phenomenon:time:iso8601"/>
+	</swe:field>
+	<swe:field name="AirTemperature">
+		<swe:Quantity definition="urn:ogc:def:phenomenon:OGC:AirTemperature">
+			<swe:uom xlink:href="urn:ogc:def:uom:OGC:degC"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="WindSpeed">
+		<swe:Quantity definition="urn:ogc:def:phenomenon:OGC:WindSpeed">
+			<swe:uom xlink:href="urn:ogc:def:uom:OGC:m_s"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="WindDirection">
+		<swe:Quantity definition="urn:ogc:def:phenomenon:OGC:WindDirectionToNorth">
+			<swe:uom xlink:href="urn:ogc:def:uom:OGC:deg"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="AtmosphericPressure">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/ontology/property.owl#AtmosphericPressure">
+			<swe:uom xlink:href="urn:ogc:def:uom:OGC:hPa"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="RelativeHumidity">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/ontology/property.owl#RelativeHumidity">
+			<swe:uom xlink:href="urn:ogc:def:uom:OGC:percent"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="Visibility">
+		<swe:Category definition="http://sweet.jpl.nasa.gov/ontology/property.owl#Visibility">
+		</swe:Category>
+	</swe:field>
+</swe:DataRecord>

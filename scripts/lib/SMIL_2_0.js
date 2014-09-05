@@ -35,6 +35,16 @@ var SMIL_2_0_Module_Factory = function () {
             attributeName: 'attributeType',
             type: 'attribute'
           }, {
+            name: 'additive',
+            typeInfo: 'String',
+            attributeName: 'additive',
+            type: 'attribute'
+          }, {
+            name: 'accumulate',
+            typeInfo: 'String',
+            attributeName: 'accumulate',
+            type: 'attribute'
+          }, {
             name: 'from',
             typeInfo: 'String',
             attributeName: 'from',
@@ -53,16 +63,6 @@ var SMIL_2_0_Module_Factory = function () {
             name: 'to',
             typeInfo: 'String',
             attributeName: 'to',
-            type: 'attribute'
-          }, {
-            name: 'additive',
-            typeInfo: 'String',
-            attributeName: 'additive',
-            type: 'attribute'
-          }, {
-            name: 'accumulate',
-            typeInfo: 'String',
-            attributeName: 'accumulate',
             type: 'attribute'
           }]
       }, {
@@ -74,6 +74,40 @@ var SMIL_2_0_Module_Factory = function () {
             attributeName: 'origin',
             type: 'attribute'
           }, {
+            name: 'additive',
+            typeInfo: 'String',
+            attributeName: 'additive',
+            type: 'attribute'
+          }, {
+            name: 'accumulate',
+            typeInfo: 'String',
+            attributeName: 'accumulate',
+            type: 'attribute'
+          }, {
+            name: 'from',
+            typeInfo: 'String',
+            attributeName: 'from',
+            type: 'attribute'
+          }, {
+            name: 'by',
+            typeInfo: 'String',
+            attributeName: 'by',
+            type: 'attribute'
+          }, {
+            name: 'values',
+            typeInfo: 'String',
+            attributeName: 'values',
+            type: 'attribute'
+          }, {
+            name: 'to',
+            typeInfo: 'String',
+            attributeName: 'to',
+            type: 'attribute'
+          }]
+      }, {
+        type: 'classInfo',
+        localName: 'AnimatePrototype',
+        propertyInfos: [{
             name: 'from',
             typeInfo: 'String',
             attributeName: 'from',
@@ -94,20 +128,6 @@ var SMIL_2_0_Module_Factory = function () {
             attributeName: 'to',
             type: 'attribute'
           }, {
-            name: 'additive',
-            typeInfo: 'String',
-            attributeName: 'additive',
-            type: 'attribute'
-          }, {
-            name: 'accumulate',
-            typeInfo: 'String',
-            attributeName: 'accumulate',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'AnimatePrototype',
-        propertyInfos: [{
             name: 'additive',
             typeInfo: 'String',
             attributeName: 'additive',
@@ -126,26 +146,6 @@ var SMIL_2_0_Module_Factory = function () {
             name: 'attributeType',
             typeInfo: 'String',
             attributeName: 'attributeType',
-            type: 'attribute'
-          }, {
-            name: 'from',
-            typeInfo: 'String',
-            attributeName: 'from',
-            type: 'attribute'
-          }, {
-            name: 'by',
-            typeInfo: 'String',
-            attributeName: 'by',
-            type: 'attribute'
-          }, {
-            name: 'values',
-            typeInfo: 'String',
-            attributeName: 'values',
-            type: 'attribute'
-          }, {
-            name: 'to',
-            typeInfo: 'String',
-            attributeName: 'to',
             type: 'attribute'
           }]
       }, {

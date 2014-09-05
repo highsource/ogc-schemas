@@ -4235,14 +4235,17 @@ var GML_3_1_1_Module_Factory = function () {
                 elementName: 'Category',
                 typeInfo: 'GML_3_1_1.CodeType'
               }, {
+                elementName: 'Boolean',
+                typeInfo: 'Boolean'
+              }, {
                 elementName: 'Quantity',
                 typeInfo: 'GML_3_1_1.MeasureType'
               }, {
-                elementName: 'BooleanList',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'String'
-                }
+                elementName: 'Count',
+                typeInfo: 'Integer'
+              }, {
+                elementName: 'CompositeValue',
+                typeInfo: 'GML_3_1_1.CompositeValueType'
               }, {
                 elementName: 'CategoryList',
                 typeInfo: 'GML_3_1_1.CodeOrNullListType'
@@ -4253,17 +4256,8 @@ var GML_3_1_1_Module_Factory = function () {
                   typeInfo: 'String'
                 }
               }, {
-                elementName: 'Boolean',
-                typeInfo: 'Boolean'
-              }, {
-                elementName: 'Count',
-                typeInfo: 'Integer'
-              }, {
-                elementName: 'CountExtent',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'String'
-                }
+                elementName: 'CategoryExtent',
+                typeInfo: 'GML_3_1_1.CategoryExtentType'
               }, {
                 elementName: 'Null',
                 typeInfo: {
@@ -4271,17 +4265,23 @@ var GML_3_1_1_Module_Factory = function () {
                   typeInfo: 'String'
                 }
               }, {
-                elementName: 'CompositeValue',
-                typeInfo: 'GML_3_1_1.CompositeValueType'
-              }, {
-                elementName: 'CategoryExtent',
-                typeInfo: 'GML_3_1_1.CategoryExtentType'
-              }, {
                 elementName: 'QuantityList',
                 typeInfo: 'GML_3_1_1.MeasureOrNullListType'
               }, {
                 elementName: 'QuantityExtent',
                 typeInfo: 'GML_3_1_1.QuantityExtentType'
+              }, {
+                elementName: 'BooleanList',
+                typeInfo: {
+                  type: 'list',
+                  typeInfo: 'String'
+                }
+              }, {
+                elementName: 'CountExtent',
+                typeInfo: {
+                  type: 'list',
+                  typeInfo: 'String'
+                }
               }, {
                 elementName: '_Object',
                 typeInfo: 'AnyType'
@@ -4970,11 +4970,11 @@ var GML_3_1_1_Module_Factory = function () {
             name: 'dictionaryEntryOrIndirectEntry',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'dictionaryEntry',
-                typeInfo: 'GML_3_1_1.DictionaryEntryType'
-              }, {
                 elementName: 'indirectEntry',
                 typeInfo: 'GML_3_1_1.IndirectEntryType'
+              }, {
+                elementName: 'dictionaryEntry',
+                typeInfo: 'GML_3_1_1.DictionaryEntryType'
               }],
             type: 'elementRefs'
           }]
@@ -7352,9 +7352,6 @@ var GML_3_1_1_Module_Factory = function () {
             name: 'posOrPointPropertyOrPointRep',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'coord',
-                typeInfo: 'GML_3_1_1.CoordType'
-              }, {
                 elementName: 'pointProperty',
                 typeInfo: 'GML_3_1_1.PointPropertyType'
               }, {
@@ -7363,6 +7360,9 @@ var GML_3_1_1_Module_Factory = function () {
               }, {
                 elementName: 'pos',
                 typeInfo: 'GML_3_1_1.DirectPositionType'
+              }, {
+                elementName: 'coord',
+                typeInfo: 'GML_3_1_1.CoordType'
               }],
             type: 'elementRefs'
           }, {
@@ -7412,6 +7412,9 @@ var GML_3_1_1_Module_Factory = function () {
             name: 'scalarValueList',
             collection: true,
             elementTypeInfos: [{
+                elementName: 'QuantityList',
+                typeInfo: 'GML_3_1_1.MeasureOrNullListType'
+              }, {
                 elementName: 'BooleanList',
                 typeInfo: {
                   type: 'list',
@@ -7420,9 +7423,6 @@ var GML_3_1_1_Module_Factory = function () {
               }, {
                 elementName: 'CategoryList',
                 typeInfo: 'GML_3_1_1.CodeOrNullListType'
-              }, {
-                elementName: 'QuantityList',
-                typeInfo: 'GML_3_1_1.MeasureOrNullListType'
               }, {
                 elementName: 'CountList',
                 typeInfo: {

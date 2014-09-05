@@ -16,14 +16,84 @@ var SMIL_2_0_Language_Module_Factory = function () {
             allowTypedObject: true,
             type: 'anyElement'
           }, {
-            name: 'alt',
+            name: 'restartDefault',
             typeInfo: 'String',
-            attributeName: 'alt',
+            attributeName: 'restartDefault',
             type: 'attribute'
           }, {
-            name: 'longdesc',
+            name: 'fill',
             typeInfo: 'String',
-            attributeName: 'longdesc',
+            attributeName: 'fill',
+            type: 'attribute'
+          }, {
+            name: 'syncBehaviorDefault',
+            typeInfo: 'String',
+            attributeName: 'syncBehaviorDefault',
+            type: 'attribute'
+          }, {
+            name: 'syncToleranceDefault',
+            typeInfo: 'String',
+            attributeName: 'syncToleranceDefault',
+            type: 'attribute'
+          }, {
+            name: 'fillDefault',
+            typeInfo: 'String',
+            attributeName: 'fillDefault',
+            type: 'attribute'
+          }, {
+            name: 'restart',
+            typeInfo: 'String',
+            attributeName: 'restart',
+            type: 'attribute'
+          }, {
+            name: 'min',
+            typeInfo: 'String',
+            attributeName: 'min',
+            type: 'attribute'
+          }, {
+            name: 'max',
+            typeInfo: 'String',
+            attributeName: 'max',
+            type: 'attribute'
+          }, {
+            name: 'dur',
+            typeInfo: 'String',
+            attributeName: 'dur',
+            type: 'attribute'
+          }, {
+            name: 'repeat',
+            typeInfo: 'Integer',
+            attributeName: 'repeat',
+            type: 'attribute'
+          }, {
+            name: 'begin',
+            typeInfo: 'String',
+            attributeName: 'begin',
+            type: 'attribute'
+          }, {
+            name: 'end',
+            typeInfo: 'String',
+            attributeName: 'end',
+            type: 'attribute'
+          }, {
+            name: 'repeatDur',
+            typeInfo: 'String',
+            attributeName: 'repeatDur',
+            type: 'attribute'
+          }, {
+            name: 'repeatCount',
+            typeInfo: 'Decimal',
+            attributeName: 'repeatCount',
+            type: 'attribute'
+          }, {
+            name: 'syncBehavior',
+            typeInfo: 'String',
+            attributeName: 'syncBehavior',
+            type: 'attribute'
+          }, {
+            name: 'syncTolerance',
+            typeInfo: 'String',
+            attributeName: 'syncTolerance',
             type: 'attribute'
           }, {
             name: 'id',
@@ -44,94 +114,24 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             type: 'attribute'
           }, {
-            name: 'skipContent',
-            typeInfo: 'Boolean',
-            attributeName: 'skip-content',
-            type: 'attribute'
-          }, {
-            name: 'fillDefault',
+            name: 'alt',
             typeInfo: 'String',
-            attributeName: 'fillDefault',
+            attributeName: 'alt',
             type: 'attribute'
           }, {
-            name: 'restart',
+            name: 'longdesc',
             typeInfo: 'String',
-            attributeName: 'restart',
-            type: 'attribute'
-          }, {
-            name: 'fill',
-            typeInfo: 'String',
-            attributeName: 'fill',
-            type: 'attribute'
-          }, {
-            name: 'syncBehaviorDefault',
-            typeInfo: 'String',
-            attributeName: 'syncBehaviorDefault',
-            type: 'attribute'
-          }, {
-            name: 'syncToleranceDefault',
-            typeInfo: 'String',
-            attributeName: 'syncToleranceDefault',
-            type: 'attribute'
-          }, {
-            name: 'repeatDur',
-            typeInfo: 'String',
-            attributeName: 'repeatDur',
-            type: 'attribute'
-          }, {
-            name: 'repeatCount',
-            typeInfo: 'Decimal',
-            attributeName: 'repeatCount',
-            type: 'attribute'
-          }, {
-            name: 'repeat',
-            typeInfo: 'Integer',
-            attributeName: 'repeat',
-            type: 'attribute'
-          }, {
-            name: 'dur',
-            typeInfo: 'String',
-            attributeName: 'dur',
-            type: 'attribute'
-          }, {
-            name: 'min',
-            typeInfo: 'String',
-            attributeName: 'min',
-            type: 'attribute'
-          }, {
-            name: 'max',
-            typeInfo: 'String',
-            attributeName: 'max',
-            type: 'attribute'
-          }, {
-            name: 'begin',
-            typeInfo: 'String',
-            attributeName: 'begin',
-            type: 'attribute'
-          }, {
-            name: 'end',
-            typeInfo: 'String',
-            attributeName: 'end',
-            type: 'attribute'
-          }, {
-            name: 'syncBehavior',
-            typeInfo: 'String',
-            attributeName: 'syncBehavior',
-            type: 'attribute'
-          }, {
-            name: 'syncTolerance',
-            typeInfo: 'String',
-            attributeName: 'syncTolerance',
-            type: 'attribute'
-          }, {
-            name: 'restartDefault',
-            typeInfo: 'String',
-            attributeName: 'restartDefault',
+            attributeName: 'longdesc',
             type: 'attribute'
           }, {
             name: 'targetElement',
             typeInfo: 'IDREF',
             attributeName: 'targetElement',
+            type: 'attribute'
+          }, {
+            name: 'skipContent',
+            typeInfo: 'Boolean',
+            attributeName: 'skip-content',
             type: 'attribute'
           }]
       }, {
@@ -148,14 +148,9 @@ var SMIL_2_0_Language_Module_Factory = function () {
             allowTypedObject: true,
             type: 'anyElement'
           }, {
-            name: 'alt',
+            name: 'calcMode',
             typeInfo: 'String',
-            attributeName: 'alt',
-            type: 'attribute'
-          }, {
-            name: 'longdesc',
-            typeInfo: 'String',
-            attributeName: 'longdesc',
+            attributeName: 'calcMode',
             type: 'attribute'
           }, {
             name: 'id',
@@ -176,14 +171,19 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             type: 'attribute'
           }, {
-            name: 'fillDefault',
+            name: 'alt',
             typeInfo: 'String',
-            attributeName: 'fillDefault',
+            attributeName: 'alt',
             type: 'attribute'
           }, {
-            name: 'restart',
+            name: 'longdesc',
             typeInfo: 'String',
-            attributeName: 'restart',
+            attributeName: 'longdesc',
+            type: 'attribute'
+          }, {
+            name: 'restartDefault',
+            typeInfo: 'String',
+            attributeName: 'restartDefault',
             type: 'attribute'
           }, {
             name: 'fill',
@@ -201,24 +201,14 @@ var SMIL_2_0_Language_Module_Factory = function () {
             attributeName: 'syncToleranceDefault',
             type: 'attribute'
           }, {
-            name: 'repeatDur',
+            name: 'fillDefault',
             typeInfo: 'String',
-            attributeName: 'repeatDur',
+            attributeName: 'fillDefault',
             type: 'attribute'
           }, {
-            name: 'repeatCount',
-            typeInfo: 'Decimal',
-            attributeName: 'repeatCount',
-            type: 'attribute'
-          }, {
-            name: 'repeat',
-            typeInfo: 'Integer',
-            attributeName: 'repeat',
-            type: 'attribute'
-          }, {
-            name: 'dur',
+            name: 'restart',
             typeInfo: 'String',
-            attributeName: 'dur',
+            attributeName: 'restart',
             type: 'attribute'
           }, {
             name: 'min',
@@ -231,6 +221,16 @@ var SMIL_2_0_Language_Module_Factory = function () {
             attributeName: 'max',
             type: 'attribute'
           }, {
+            name: 'dur',
+            typeInfo: 'String',
+            attributeName: 'dur',
+            type: 'attribute'
+          }, {
+            name: 'repeat',
+            typeInfo: 'Integer',
+            attributeName: 'repeat',
+            type: 'attribute'
+          }, {
             name: 'begin',
             typeInfo: 'String',
             attributeName: 'begin',
@@ -239,6 +239,16 @@ var SMIL_2_0_Language_Module_Factory = function () {
             name: 'end',
             typeInfo: 'String',
             attributeName: 'end',
+            type: 'attribute'
+          }, {
+            name: 'repeatDur',
+            typeInfo: 'String',
+            attributeName: 'repeatDur',
+            type: 'attribute'
+          }, {
+            name: 'repeatCount',
+            typeInfo: 'Decimal',
+            attributeName: 'repeatCount',
             type: 'attribute'
           }, {
             name: 'syncBehavior',
@@ -251,24 +261,14 @@ var SMIL_2_0_Language_Module_Factory = function () {
             attributeName: 'syncTolerance',
             type: 'attribute'
           }, {
-            name: 'restartDefault',
-            typeInfo: 'String',
-            attributeName: 'restartDefault',
+            name: 'skipContent',
+            typeInfo: 'Boolean',
+            attributeName: 'skip-content',
             type: 'attribute'
           }, {
             name: 'targetElement',
             typeInfo: 'IDREF',
             attributeName: 'targetElement',
-            type: 'attribute'
-          }, {
-            name: 'calcMode',
-            typeInfo: 'String',
-            attributeName: 'calcMode',
-            type: 'attribute'
-          }, {
-            name: 'skipContent',
-            typeInfo: 'Boolean',
-            attributeName: 'skip-content',
             type: 'attribute'
           }]
       }, {
@@ -285,104 +285,14 @@ var SMIL_2_0_Language_Module_Factory = function () {
             allowTypedObject: true,
             type: 'anyElement'
           }, {
-            name: 'fillDefault',
+            name: 'calcMode',
             typeInfo: 'String',
-            attributeName: 'fillDefault',
-            type: 'attribute'
-          }, {
-            name: 'restart',
-            typeInfo: 'String',
-            attributeName: 'restart',
-            type: 'attribute'
-          }, {
-            name: 'fill',
-            typeInfo: 'String',
-            attributeName: 'fill',
-            type: 'attribute'
-          }, {
-            name: 'syncBehaviorDefault',
-            typeInfo: 'String',
-            attributeName: 'syncBehaviorDefault',
-            type: 'attribute'
-          }, {
-            name: 'syncToleranceDefault',
-            typeInfo: 'String',
-            attributeName: 'syncToleranceDefault',
-            type: 'attribute'
-          }, {
-            name: 'repeatDur',
-            typeInfo: 'String',
-            attributeName: 'repeatDur',
-            type: 'attribute'
-          }, {
-            name: 'repeatCount',
-            typeInfo: 'Decimal',
-            attributeName: 'repeatCount',
-            type: 'attribute'
-          }, {
-            name: 'repeat',
-            typeInfo: 'Integer',
-            attributeName: 'repeat',
-            type: 'attribute'
-          }, {
-            name: 'dur',
-            typeInfo: 'String',
-            attributeName: 'dur',
-            type: 'attribute'
-          }, {
-            name: 'min',
-            typeInfo: 'String',
-            attributeName: 'min',
-            type: 'attribute'
-          }, {
-            name: 'max',
-            typeInfo: 'String',
-            attributeName: 'max',
-            type: 'attribute'
-          }, {
-            name: 'begin',
-            typeInfo: 'String',
-            attributeName: 'begin',
-            type: 'attribute'
-          }, {
-            name: 'end',
-            typeInfo: 'String',
-            attributeName: 'end',
-            type: 'attribute'
-          }, {
-            name: 'syncBehavior',
-            typeInfo: 'String',
-            attributeName: 'syncBehavior',
-            type: 'attribute'
-          }, {
-            name: 'syncTolerance',
-            typeInfo: 'String',
-            attributeName: 'syncTolerance',
-            type: 'attribute'
-          }, {
-            name: 'restartDefault',
-            typeInfo: 'String',
-            attributeName: 'restartDefault',
-            type: 'attribute'
-          }, {
-            name: 'targetElement',
-            typeInfo: 'IDREF',
-            attributeName: 'targetElement',
+            attributeName: 'calcMode',
             type: 'attribute'
           }, {
             name: 'skipContent',
             typeInfo: 'Boolean',
             attributeName: 'skip-content',
-            type: 'attribute'
-          }, {
-            name: 'alt',
-            typeInfo: 'String',
-            attributeName: 'alt',
-            type: 'attribute'
-          }, {
-            name: 'longdesc',
-            typeInfo: 'String',
-            attributeName: 'longdesc',
             type: 'attribute'
           }, {
             name: 'id',
@@ -403,9 +313,99 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             type: 'attribute'
           }, {
-            name: 'calcMode',
+            name: 'alt',
             typeInfo: 'String',
-            attributeName: 'calcMode',
+            attributeName: 'alt',
+            type: 'attribute'
+          }, {
+            name: 'longdesc',
+            typeInfo: 'String',
+            attributeName: 'longdesc',
+            type: 'attribute'
+          }, {
+            name: 'restartDefault',
+            typeInfo: 'String',
+            attributeName: 'restartDefault',
+            type: 'attribute'
+          }, {
+            name: 'fill',
+            typeInfo: 'String',
+            attributeName: 'fill',
+            type: 'attribute'
+          }, {
+            name: 'syncBehaviorDefault',
+            typeInfo: 'String',
+            attributeName: 'syncBehaviorDefault',
+            type: 'attribute'
+          }, {
+            name: 'syncToleranceDefault',
+            typeInfo: 'String',
+            attributeName: 'syncToleranceDefault',
+            type: 'attribute'
+          }, {
+            name: 'fillDefault',
+            typeInfo: 'String',
+            attributeName: 'fillDefault',
+            type: 'attribute'
+          }, {
+            name: 'restart',
+            typeInfo: 'String',
+            attributeName: 'restart',
+            type: 'attribute'
+          }, {
+            name: 'min',
+            typeInfo: 'String',
+            attributeName: 'min',
+            type: 'attribute'
+          }, {
+            name: 'max',
+            typeInfo: 'String',
+            attributeName: 'max',
+            type: 'attribute'
+          }, {
+            name: 'dur',
+            typeInfo: 'String',
+            attributeName: 'dur',
+            type: 'attribute'
+          }, {
+            name: 'repeat',
+            typeInfo: 'Integer',
+            attributeName: 'repeat',
+            type: 'attribute'
+          }, {
+            name: 'begin',
+            typeInfo: 'String',
+            attributeName: 'begin',
+            type: 'attribute'
+          }, {
+            name: 'end',
+            typeInfo: 'String',
+            attributeName: 'end',
+            type: 'attribute'
+          }, {
+            name: 'repeatDur',
+            typeInfo: 'String',
+            attributeName: 'repeatDur',
+            type: 'attribute'
+          }, {
+            name: 'repeatCount',
+            typeInfo: 'Decimal',
+            attributeName: 'repeatCount',
+            type: 'attribute'
+          }, {
+            name: 'syncBehavior',
+            typeInfo: 'String',
+            attributeName: 'syncBehavior',
+            type: 'attribute'
+          }, {
+            name: 'syncTolerance',
+            typeInfo: 'String',
+            attributeName: 'syncTolerance',
+            type: 'attribute'
+          }, {
+            name: 'targetElement',
+            typeInfo: 'IDREF',
+            attributeName: 'targetElement',
             type: 'attribute'
           }]
       }, {
@@ -422,24 +422,14 @@ var SMIL_2_0_Language_Module_Factory = function () {
             allowTypedObject: true,
             type: 'anyElement'
           }, {
-            name: 'targetElement',
-            typeInfo: 'IDREF',
-            attributeName: 'targetElement',
-            type: 'attribute'
-          }, {
             name: 'skipContent',
             typeInfo: 'Boolean',
             attributeName: 'skip-content',
             type: 'attribute'
           }, {
-            name: 'alt',
+            name: 'calcMode',
             typeInfo: 'String',
-            attributeName: 'alt',
-            type: 'attribute'
-          }, {
-            name: 'longdesc',
-            typeInfo: 'String',
-            attributeName: 'longdesc',
+            attributeName: 'calcMode',
             type: 'attribute'
           }, {
             name: 'id',
@@ -460,14 +450,24 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             type: 'attribute'
           }, {
-            name: 'fillDefault',
+            name: 'alt',
             typeInfo: 'String',
-            attributeName: 'fillDefault',
+            attributeName: 'alt',
             type: 'attribute'
           }, {
-            name: 'restart',
+            name: 'longdesc',
             typeInfo: 'String',
-            attributeName: 'restart',
+            attributeName: 'longdesc',
+            type: 'attribute'
+          }, {
+            name: 'targetElement',
+            typeInfo: 'IDREF',
+            attributeName: 'targetElement',
+            type: 'attribute'
+          }, {
+            name: 'restartDefault',
+            typeInfo: 'String',
+            attributeName: 'restartDefault',
             type: 'attribute'
           }, {
             name: 'fill',
@@ -485,24 +485,14 @@ var SMIL_2_0_Language_Module_Factory = function () {
             attributeName: 'syncToleranceDefault',
             type: 'attribute'
           }, {
-            name: 'repeatDur',
+            name: 'fillDefault',
             typeInfo: 'String',
-            attributeName: 'repeatDur',
+            attributeName: 'fillDefault',
             type: 'attribute'
           }, {
-            name: 'repeatCount',
-            typeInfo: 'Decimal',
-            attributeName: 'repeatCount',
-            type: 'attribute'
-          }, {
-            name: 'repeat',
-            typeInfo: 'Integer',
-            attributeName: 'repeat',
-            type: 'attribute'
-          }, {
-            name: 'dur',
+            name: 'restart',
             typeInfo: 'String',
-            attributeName: 'dur',
+            attributeName: 'restart',
             type: 'attribute'
           }, {
             name: 'min',
@@ -515,6 +505,16 @@ var SMIL_2_0_Language_Module_Factory = function () {
             attributeName: 'max',
             type: 'attribute'
           }, {
+            name: 'dur',
+            typeInfo: 'String',
+            attributeName: 'dur',
+            type: 'attribute'
+          }, {
+            name: 'repeat',
+            typeInfo: 'Integer',
+            attributeName: 'repeat',
+            type: 'attribute'
+          }, {
             name: 'begin',
             typeInfo: 'String',
             attributeName: 'begin',
@@ -525,6 +525,16 @@ var SMIL_2_0_Language_Module_Factory = function () {
             attributeName: 'end',
             type: 'attribute'
           }, {
+            name: 'repeatDur',
+            typeInfo: 'String',
+            attributeName: 'repeatDur',
+            type: 'attribute'
+          }, {
+            name: 'repeatCount',
+            typeInfo: 'Decimal',
+            attributeName: 'repeatCount',
+            type: 'attribute'
+          }, {
             name: 'syncBehavior',
             typeInfo: 'String',
             attributeName: 'syncBehavior',
@@ -533,16 +543,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             name: 'syncTolerance',
             typeInfo: 'String',
             attributeName: 'syncTolerance',
-            type: 'attribute'
-          }, {
-            name: 'restartDefault',
-            typeInfo: 'String',
-            attributeName: 'restartDefault',
-            type: 'attribute'
-          }, {
-            name: 'calcMode',
-            typeInfo: 'String',
-            attributeName: 'calcMode',
             type: 'attribute'
           }]
       }],

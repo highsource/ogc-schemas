@@ -560,11 +560,11 @@ var WCS_1_0_0_Module_Factory = function () {
             name: 'content',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'spatialSubset',
-                typeInfo: 'WCS_1_0_0.SpatialSubsetType'
-              }, {
                 elementName: 'temporalSubset',
                 typeInfo: 'WCS_1_0_0.TimeSequenceType'
+              }, {
+                elementName: 'spatialSubset',
+                typeInfo: 'WCS_1_0_0.SpatialSubsetType'
               }],
             type: 'elementRefs'
           }]
@@ -721,16 +721,16 @@ var WCS_1_0_0_Module_Factory = function () {
             name: 'content',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'contactInfo',
-                typeInfo: 'WCS_1_0_0.ContactType'
-              }, {
-                elementName: 'positionName',
-                typeInfo: 'String'
-              }, {
                 elementName: 'individualName',
                 typeInfo: 'String'
               }, {
                 elementName: 'organisationName',
+                typeInfo: 'String'
+              }, {
+                elementName: 'contactInfo',
+                typeInfo: 'WCS_1_0_0.ContactType'
+              }, {
+                elementName: 'positionName',
                 typeInfo: 'String'
               }],
             type: 'elementRefs'

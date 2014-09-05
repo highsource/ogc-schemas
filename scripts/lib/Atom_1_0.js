@@ -9,10 +9,10 @@ var Atom_1_0_Module_Factory = function () {
             name: 'nameOrUriOrEmail',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'email',
+                elementName: 'uri',
                 typeInfo: 'String'
               }, {
-                elementName: 'uri',
+                elementName: 'email',
                 typeInfo: 'String'
               }, {
                 elementName: 'name',

@@ -79,6 +79,7 @@
 		<module>gml</module>
 		<module>ic</module>
 		<module>kml</module>
+		<module>om</module>
 		<module>owc</module>
 		<module>ows</module>
 		<module>sensorML</module>

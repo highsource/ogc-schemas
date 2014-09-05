@@ -14,12 +14,12 @@ To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 	<include schemaLocation="om.xsd"/>
 	<!-- ====================================================================== -->
 	<!-- bring in other schemas -->
-	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
 	<!-- can't use ISO Metadata schema with GML 3.1.1
 		<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
 	-->
-	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd"/>
-	<import namespace="http://www.opengis.net/sensorML/1.0.1" schemaLocation="http://schemas.opengis.net/sensorML/1.0.1/sensorML.xsd"/>
+	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="../../sweCommon/1.0.1/swe.xsd"/>
+	<import namespace="http://www.opengis.net/sensorML/1.0.1" schemaLocation="../../sensorML/1.0.1/sensorML.xsd"/>
 	<!-- ====================================================================== -->
 	<!-- ====================================================================== -->
 	<!-- ===== Object types for Observations ====== -->

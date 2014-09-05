@@ -20,7 +20,6 @@ module.exports = {
 		var context =  new Jsonix.Context([XLink_1_0, OWS_1_0_0, Filter_1_0_0, GML_2_1_2, SLD_1_0_0, OWC_0_3_1]);
 		var unmarshaller = context.createUnmarshaller();
 		unmarshaller.unmarshalFile("tests/OWC/0.3.1/example-owcContext.xml", function(result) {
-			console.log(result.value.resourceList.layer[0].server[0].onlineResource[0].href);
 			test.equal("http://sigma.openplans.org:8080/geoserver/wms?SERVICE=WMS", result.value.resourceList.layer[0].server[0].onlineResource[0].href);
 			test.done();
 		});

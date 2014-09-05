@@ -1182,13 +1182,13 @@ var SWE_1_0_1_Module_Factory = function () {
             name: 'intervalOrValueList',
             collection: true,
             elementTypeInfos: [{
-                elementName: 'interval',
+                elementName: 'valueList',
                 typeInfo: {
                   type: 'list',
                   typeInfo: 'String'
                 }
               }, {
-                elementName: 'valueList',
+                elementName: 'interval',
                 typeInfo: {
                   type: 'list',
                   typeInfo: 'String'
