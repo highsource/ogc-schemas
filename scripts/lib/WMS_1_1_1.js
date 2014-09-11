@@ -1,1164 +1,892 @@
 var WMS_1_1_1_Module_Factory = function () {
   var WMS_1_1_1 = {
-    name: 'WMS_1_1_1',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'DCPType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'http',
-            elementName: 'HTTP',
-            typeInfo: 'WMS_1_1_1.HTTP'
+    n: 'WMS_1_1_1',
+    tis: [{
+        ln: 'DCPType',
+        ps: [{
+            n: 'http',
+            en: 'HTTP',
+            ti: 'WMS_1_1_1.HTTP'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'HTTP',
-        propertyInfos: [{
-            name: 'getOrPost',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'Get',
-                typeInfo: 'WMS_1_1_1.Get'
+        ln: 'HTTP',
+        ps: [{
+            n: 'getOrPost',
+            col: true,
+            etis: [{
+                en: 'Get',
+                ti: 'WMS_1_1_1.Get'
               }, {
-                elementName: 'Post',
-                typeInfo: 'WMS_1_1_1.Post'
+                en: 'Post',
+                ti: 'WMS_1_1_1.Post'
               }],
-            type: 'elements'
+            t: 'es'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureListURL',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+        ln: 'FeatureListURL',
+        ps: [{
+            n: 'format',
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WMS_1_1_1.OnlineResource'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WMS_1_1_1.OnlineResource'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Format',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'Format',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OnlineResource',
-        propertyInfos: [{
-            name: 'xmlnsXlink',
-            typeInfo: 'String',
-            attributeName: 'xmlns:xlink',
-            type: 'attribute'
+        ln: 'OnlineResource',
+        ps: [{
+            n: 'xmlnsXlink',
+            an: 'xmlns:xlink',
+            t: 'a'
           }, {
-            name: 'xlinkType',
-            typeInfo: 'String',
-            attributeName: 'xlink:type',
-            type: 'attribute'
+            n: 'xlinkType',
+            an: 'xlink:type',
+            t: 'a'
           }, {
-            name: 'xlinkHref',
-            typeInfo: 'String',
-            attributeName: 'xlink:href',
-            type: 'attribute'
+            n: 'xlinkHref',
+            an: 'xlink:href',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WMTMSCapabilities',
-        propertyInfos: [{
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+        ln: 'WMTMSCapabilities',
+        ps: [{
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'updateSequence',
-            typeInfo: 'String',
-            attributeName: 'updateSequence',
-            type: 'attribute'
+            n: 'updateSequence',
+            t: 'a'
           }, {
-            type: 'element',
-            name: 'service',
-            elementName: 'Service',
-            typeInfo: 'WMS_1_1_1.Service'
+            n: 'service',
+            en: 'Service',
+            ti: 'WMS_1_1_1.Service'
           }, {
-            type: 'element',
-            name: 'capability',
-            elementName: 'Capability',
-            typeInfo: 'WMS_1_1_1.Capability'
+            n: 'capability',
+            en: 'Capability',
+            ti: 'WMS_1_1_1.Capability'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Service',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'Service',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            type: 'element',
-            name: 'keywordList',
-            elementName: 'KeywordList',
-            typeInfo: 'WMS_1_1_1.KeywordList'
+            n: 'keywordList',
+            en: 'KeywordList',
+            ti: 'WMS_1_1_1.KeywordList'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WMS_1_1_1.OnlineResource'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WMS_1_1_1.OnlineResource'
           }, {
-            type: 'element',
-            name: 'contactInformation',
-            elementName: 'ContactInformation',
-            typeInfo: 'WMS_1_1_1.ContactInformation'
+            n: 'contactInformation',
+            en: 'ContactInformation',
+            ti: 'WMS_1_1_1.ContactInformation'
           }, {
-            type: 'element',
-            name: 'fees',
-            elementName: 'Fees',
-            typeInfo: 'String'
+            n: 'fees',
+            en: 'Fees'
           }, {
-            type: 'element',
-            name: 'accessConstraints',
-            elementName: 'AccessConstraints',
-            typeInfo: 'String'
+            n: 'accessConstraints',
+            en: 'AccessConstraints'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Capability',
-        propertyInfos: [{
-            type: 'element',
-            name: 'request',
-            elementName: 'Request',
-            typeInfo: 'WMS_1_1_1.Request'
+        ln: 'Capability',
+        ps: [{
+            n: 'request',
+            en: 'Request',
+            ti: 'WMS_1_1_1.Request'
           }, {
-            type: 'element',
-            name: 'exception',
-            elementName: 'Exception',
-            typeInfo: 'WMS_1_1_1.Exception'
+            n: 'exception',
+            en: 'Exception',
+            ti: 'WMS_1_1_1.Exception'
           }, {
-            type: 'element',
-            name: 'vendorSpecificCapabilities',
-            elementName: 'VendorSpecificCapabilities',
-            typeInfo: 'WMS_1_1_1.VendorSpecificCapabilities'
+            n: 'vendorSpecificCapabilities',
+            en: 'VendorSpecificCapabilities',
+            ti: 'WMS_1_1_1.VendorSpecificCapabilities'
           }, {
-            type: 'element',
-            name: 'userDefinedSymbolization',
-            elementName: 'UserDefinedSymbolization',
-            typeInfo: 'WMS_1_1_1.UserDefinedSymbolization'
+            n: 'userDefinedSymbolization',
+            en: 'UserDefinedSymbolization',
+            ti: 'WMS_1_1_1.UserDefinedSymbolization'
           }, {
-            type: 'element',
-            name: 'layer',
-            elementName: 'Layer',
-            typeInfo: 'WMS_1_1_1.Layer'
+            n: 'layer',
+            en: 'Layer',
+            ti: 'WMS_1_1_1.Layer'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Query',
-        propertyInfos: [{
-            name: 'typeName',
-            typeInfo: 'String',
-            attributeName: 'typeName',
-            type: 'attribute'
+        ln: 'Query',
+        ps: [{
+            n: 'typeName',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LogoURL',
-        propertyInfos: [{
-            name: 'width',
-            typeInfo: 'String',
-            attributeName: 'width',
-            type: 'attribute'
+        ln: 'LogoURL',
+        ps: [{
+            n: 'width',
+            t: 'a'
           }, {
-            name: 'height',
-            typeInfo: 'String',
-            attributeName: 'height',
-            type: 'attribute'
+            n: 'height',
+            t: 'a'
           }, {
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+            n: 'format',
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WMS_1_1_1.OnlineResource'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WMS_1_1_1.OnlineResource'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ContactPersonPrimary',
-        propertyInfos: [{
-            type: 'element',
-            name: 'contactPerson',
-            elementName: 'ContactPerson',
-            typeInfo: 'String'
+        ln: 'ContactPersonPrimary',
+        ps: [{
+            n: 'contactPerson',
+            en: 'ContactPerson'
           }, {
-            type: 'element',
-            name: 'contactOrganization',
-            elementName: 'ContactOrganization',
-            typeInfo: 'String'
+            n: 'contactOrganization',
+            en: 'ContactOrganization'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DescribeLayer',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+        ln: 'DescribeLayer',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WMS_1_1_1.DCPType'
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WMS_1_1_1.DCPType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Identifier',
-        propertyInfos: [{
-            name: 'authority',
-            typeInfo: 'String',
-            attributeName: 'authority',
-            type: 'attribute'
+        ln: 'Identifier',
+        ps: [{
+            n: 'authority',
+            t: 'a'
           }, {
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+            n: 'value',
+            t: 'v'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UserDefinedSymbolization',
-        propertyInfos: [{
-            name: 'supportSLD',
-            typeInfo: 'String',
-            attributeName: 'SupportSLD',
-            type: 'attribute'
+        ln: 'UserDefinedSymbolization',
+        ps: [{
+            n: 'supportSLD',
+            an: 'SupportSLD',
+            t: 'a'
           }, {
-            name: 'userLayer',
-            typeInfo: 'String',
-            attributeName: 'UserLayer',
-            type: 'attribute'
+            n: 'userLayer',
+            an: 'UserLayer',
+            t: 'a'
           }, {
-            name: 'userStyle',
-            typeInfo: 'String',
-            attributeName: 'UserStyle',
-            type: 'attribute'
+            n: 'userStyle',
+            an: 'UserStyle',
+            t: 'a'
           }, {
-            name: 'remoteWFS',
-            typeInfo: 'String',
-            attributeName: 'RemoteWFS',
-            type: 'attribute'
+            n: 'remoteWFS',
+            an: 'RemoteWFS',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ContactAddress',
-        propertyInfos: [{
-            type: 'element',
-            name: 'addressType',
-            elementName: 'AddressType',
-            typeInfo: 'String'
+        ln: 'ContactAddress',
+        ps: [{
+            n: 'addressType',
+            en: 'AddressType'
           }, {
-            type: 'element',
-            name: 'address',
-            elementName: 'Address',
-            typeInfo: 'String'
+            n: 'address',
+            en: 'Address'
           }, {
-            type: 'element',
-            name: 'city',
-            elementName: 'City',
-            typeInfo: 'String'
+            n: 'city',
+            en: 'City'
           }, {
-            type: 'element',
-            name: 'stateOrProvince',
-            elementName: 'StateOrProvince',
-            typeInfo: 'String'
+            n: 'stateOrProvince',
+            en: 'StateOrProvince'
           }, {
-            type: 'element',
-            name: 'postCode',
-            elementName: 'PostCode',
-            typeInfo: 'String'
+            n: 'postCode',
+            en: 'PostCode'
           }, {
-            type: 'element',
-            name: 'country',
-            elementName: 'Country',
-            typeInfo: 'String'
+            n: 'country',
+            en: 'Country'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Request',
-        propertyInfos: [{
-            type: 'element',
-            name: 'getCapabilities',
-            elementName: 'GetCapabilities',
-            typeInfo: 'WMS_1_1_1.GetCapabilities'
+        ln: 'Request',
+        ps: [{
+            n: 'getCapabilities',
+            en: 'GetCapabilities',
+            ti: 'WMS_1_1_1.GetCapabilities'
           }, {
-            type: 'element',
-            name: 'getMap',
-            elementName: 'GetMap',
-            typeInfo: 'WMS_1_1_1.GetMap'
+            n: 'getMap',
+            en: 'GetMap',
+            ti: 'WMS_1_1_1.GetMap'
           }, {
-            type: 'element',
-            name: 'getFeatureInfo',
-            elementName: 'GetFeatureInfo',
-            typeInfo: 'WMS_1_1_1.GetFeatureInfo'
+            n: 'getFeatureInfo',
+            en: 'GetFeatureInfo',
+            ti: 'WMS_1_1_1.GetFeatureInfo'
           }, {
-            type: 'element',
-            name: 'describeLayer',
-            elementName: 'DescribeLayer',
-            typeInfo: 'WMS_1_1_1.DescribeLayer'
+            n: 'describeLayer',
+            en: 'DescribeLayer',
+            ti: 'WMS_1_1_1.DescribeLayer'
           }, {
-            type: 'element',
-            name: 'getLegendGraphic',
-            elementName: 'GetLegendGraphic',
-            typeInfo: 'WMS_1_1_1.GetLegendGraphic'
+            n: 'getLegendGraphic',
+            en: 'GetLegendGraphic',
+            ti: 'WMS_1_1_1.GetLegendGraphic'
           }, {
-            type: 'element',
-            name: 'getStyles',
-            elementName: 'GetStyles',
-            typeInfo: 'WMS_1_1_1.GetStyles'
+            n: 'getStyles',
+            en: 'GetStyles',
+            ti: 'WMS_1_1_1.GetStyles'
           }, {
-            type: 'element',
-            name: 'putStyles',
-            elementName: 'PutStyles',
-            typeInfo: 'WMS_1_1_1.PutStyles'
+            n: 'putStyles',
+            en: 'PutStyles',
+            ti: 'WMS_1_1_1.PutStyles'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Exception',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+        ln: 'Exception',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'VendorSpecificCapabilities',
-        propertyInfos: []
+        ln: 'VendorSpecificCapabilities'
       }, {
-        type: 'classInfo',
-        localName: 'Layer',
-        propertyInfos: [{
-            name: 'queryable',
-            typeInfo: 'String',
-            attributeName: 'queryable',
-            type: 'attribute'
+        ln: 'Layer',
+        ps: [{
+            n: 'queryable',
+            t: 'a'
           }, {
-            name: 'cascaded',
-            typeInfo: 'String',
-            attributeName: 'cascaded',
-            type: 'attribute'
+            n: 'cascaded',
+            t: 'a'
           }, {
-            name: 'opaque',
-            typeInfo: 'String',
-            attributeName: 'opaque',
-            type: 'attribute'
+            n: 'opaque',
+            t: 'a'
           }, {
-            name: 'noSubsets',
-            typeInfo: 'String',
-            attributeName: 'noSubsets',
-            type: 'attribute'
+            n: 'noSubsets',
+            t: 'a'
           }, {
-            name: 'fixedWidth',
-            typeInfo: 'String',
-            attributeName: 'fixedWidth',
-            type: 'attribute'
+            n: 'fixedWidth',
+            t: 'a'
           }, {
-            name: 'fixedHeight',
-            typeInfo: 'String',
-            attributeName: 'fixedHeight',
-            type: 'attribute'
+            n: 'fixedHeight',
+            t: 'a'
           }, {
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            type: 'element',
-            name: 'keywordList',
-            elementName: 'KeywordList',
-            typeInfo: 'WMS_1_1_1.KeywordList'
+            n: 'keywordList',
+            en: 'KeywordList',
+            ti: 'WMS_1_1_1.KeywordList'
           }, {
-            type: 'element',
-            name: 'srs',
-            collection: true,
-            elementName: 'SRS',
-            typeInfo: 'WMS_1_1_1.SRS'
+            n: 'srs',
+            col: true,
+            en: 'SRS',
+            ti: 'WMS_1_1_1.SRS'
           }, {
-            type: 'element',
-            name: 'latLonBoundingBox',
-            elementName: 'LatLonBoundingBox',
-            typeInfo: 'WMS_1_1_1.LatLonBoundingBox'
+            n: 'latLonBoundingBox',
+            en: 'LatLonBoundingBox',
+            ti: 'WMS_1_1_1.LatLonBoundingBox'
           }, {
-            type: 'element',
-            name: 'boundingBox',
-            collection: true,
-            elementName: 'BoundingBox',
-            typeInfo: 'WMS_1_1_1.BoundingBox'
+            n: 'boundingBox',
+            col: true,
+            en: 'BoundingBox',
+            ti: 'WMS_1_1_1.BoundingBox'
           }, {
-            type: 'element',
-            name: 'dimension',
-            collection: true,
-            elementName: 'Dimension',
-            typeInfo: 'WMS_1_1_1.Dimension'
+            n: 'dimension',
+            col: true,
+            en: 'Dimension',
+            ti: 'WMS_1_1_1.Dimension'
           }, {
-            type: 'element',
-            name: 'extent',
-            collection: true,
-            elementName: 'Extent',
-            typeInfo: 'WMS_1_1_1.Extent'
+            n: 'extent',
+            col: true,
+            en: 'Extent',
+            ti: 'WMS_1_1_1.Extent'
           }, {
-            type: 'element',
-            name: 'attribution',
-            elementName: 'Attribution',
-            typeInfo: 'WMS_1_1_1.Attribution'
+            n: 'attribution',
+            en: 'Attribution',
+            ti: 'WMS_1_1_1.Attribution'
           }, {
-            type: 'element',
-            name: 'authorityURL',
-            collection: true,
-            elementName: 'AuthorityURL',
-            typeInfo: 'WMS_1_1_1.AuthorityURL'
+            n: 'authorityURL',
+            col: true,
+            en: 'AuthorityURL',
+            ti: 'WMS_1_1_1.AuthorityURL'
           }, {
-            type: 'element',
-            name: 'identifier',
-            collection: true,
-            elementName: 'Identifier',
-            typeInfo: 'WMS_1_1_1.Identifier'
+            n: 'identifier',
+            col: true,
+            en: 'Identifier',
+            ti: 'WMS_1_1_1.Identifier'
           }, {
-            type: 'element',
-            name: 'metadataURL',
-            collection: true,
-            elementName: 'MetadataURL',
-            typeInfo: 'WMS_1_1_1.MetadataURL'
+            n: 'metadataURL',
+            col: true,
+            en: 'MetadataURL',
+            ti: 'WMS_1_1_1.MetadataURL'
           }, {
-            type: 'element',
-            name: 'dataURL',
-            collection: true,
-            elementName: 'DataURL',
-            typeInfo: 'WMS_1_1_1.DataURL'
+            n: 'dataURL',
+            col: true,
+            en: 'DataURL',
+            ti: 'WMS_1_1_1.DataURL'
           }, {
-            type: 'element',
-            name: 'featureListURL',
-            collection: true,
-            elementName: 'FeatureListURL',
-            typeInfo: 'WMS_1_1_1.FeatureListURL'
+            n: 'featureListURL',
+            col: true,
+            en: 'FeatureListURL',
+            ti: 'WMS_1_1_1.FeatureListURL'
           }, {
-            type: 'element',
-            name: 'style',
-            collection: true,
-            elementName: 'Style',
-            typeInfo: 'WMS_1_1_1.Style'
+            n: 'style',
+            col: true,
+            en: 'Style',
+            ti: 'WMS_1_1_1.Style'
           }, {
-            type: 'element',
-            name: 'scaleHint',
-            elementName: 'ScaleHint',
-            typeInfo: 'WMS_1_1_1.ScaleHint'
+            n: 'scaleHint',
+            en: 'ScaleHint',
+            ti: 'WMS_1_1_1.ScaleHint'
           }, {
-            type: 'element',
-            name: 'layer',
-            collection: true,
-            elementName: 'Layer',
-            typeInfo: 'WMS_1_1_1.Layer'
+            n: 'layer',
+            col: true,
+            en: 'Layer',
+            ti: 'WMS_1_1_1.Layer'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Get',
-        propertyInfos: [{
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WMS_1_1_1.OnlineResource'
+        ln: 'Get',
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WMS_1_1_1.OnlineResource'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Post',
-        propertyInfos: [{
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WMS_1_1_1.OnlineResource'
+        ln: 'Post',
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WMS_1_1_1.OnlineResource'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetMap',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+        ln: 'GetMap',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WMS_1_1_1.DCPType'
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WMS_1_1_1.DCPType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ScaleHint',
-        propertyInfos: [{
-            name: 'min',
-            typeInfo: 'String',
-            attributeName: 'min',
-            type: 'attribute'
+        ln: 'ScaleHint',
+        ps: [{
+            n: 'min',
+            t: 'a'
           }, {
-            name: 'max',
-            typeInfo: 'String',
-            attributeName: 'max',
-            type: 'attribute'
+            n: 'max',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Attribution',
-        propertyInfos: [{
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+        ln: 'Attribution',
+        ps: [{
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WMS_1_1_1.OnlineResource'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WMS_1_1_1.OnlineResource'
           }, {
-            type: 'element',
-            name: 'logoURL',
-            elementName: 'LogoURL',
-            typeInfo: 'WMS_1_1_1.LogoURL'
+            n: 'logoURL',
+            en: 'LogoURL',
+            ti: 'WMS_1_1_1.LogoURL'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetFeatureInfo',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+        ln: 'GetFeatureInfo',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WMS_1_1_1.DCPType'
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WMS_1_1_1.DCPType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ServiceException',
-        propertyInfos: [{
-            name: 'code',
-            typeInfo: 'String',
-            attributeName: 'code',
-            type: 'attribute'
+        ln: 'ServiceException',
+        ps: [{
+            n: 'code',
+            t: 'a'
           }, {
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+            n: 'value',
+            t: 'v'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LayerDescription',
-        propertyInfos: [{
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+        ln: 'LayerDescription',
+        ps: [{
+            n: 'name',
+            t: 'a'
           }, {
-            name: 'wfs',
-            typeInfo: 'String',
-            attributeName: 'wfs',
-            type: 'attribute'
+            n: 'wfs',
+            t: 'a'
           }, {
-            name: 'owsType',
-            typeInfo: 'String',
-            attributeName: 'owsType',
-            type: 'attribute'
+            n: 'owsType',
+            t: 'a'
           }, {
-            name: 'owsURL',
-            typeInfo: 'String',
-            attributeName: 'owsURL',
-            type: 'attribute'
+            n: 'owsURL',
+            t: 'a'
           }, {
-            type: 'element',
-            name: 'query',
-            collection: true,
-            elementName: 'Query',
-            typeInfo: 'WMS_1_1_1.Query'
+            n: 'query',
+            col: true,
+            en: 'Query',
+            ti: 'WMS_1_1_1.Query'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MetadataURL',
-        propertyInfos: [{
-            name: 'type',
-            typeInfo: 'String',
-            attributeName: 'type',
-            type: 'attribute'
+        ln: 'MetadataURL',
+        ps: [{
+            n: 'type',
+            t: 'a'
           }, {
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+            n: 'format',
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WMS_1_1_1.OnlineResource'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WMS_1_1_1.OnlineResource'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Extent',
-        propertyInfos: [{
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+        ln: 'Extent',
+        ps: [{
+            n: 'name',
+            t: 'a'
           }, {
-            name: '_default',
-            typeInfo: 'String',
-            attributeName: 'default',
-            type: 'attribute'
+            n: '_default',
+            an: 'default',
+            t: 'a'
           }, {
-            name: 'nearestValue',
-            typeInfo: 'String',
-            attributeName: 'nearestValue',
-            type: 'attribute'
+            n: 'nearestValue',
+            t: 'a'
           }, {
-            name: 'multipleValues',
-            typeInfo: 'String',
-            attributeName: 'multipleValues',
-            type: 'attribute'
+            n: 'multipleValues',
+            t: 'a'
           }, {
-            name: 'current',
-            typeInfo: 'String',
-            attributeName: 'current',
-            type: 'attribute'
+            n: 'current',
+            t: 'a'
           }, {
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+            n: 'value',
+            t: 'v'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetLegendGraphic',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+        ln: 'GetLegendGraphic',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WMS_1_1_1.DCPType'
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WMS_1_1_1.DCPType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LatLonBoundingBox',
-        propertyInfos: [{
-            name: 'minx',
-            typeInfo: 'String',
-            attributeName: 'minx',
-            type: 'attribute'
+        ln: 'LatLonBoundingBox',
+        ps: [{
+            n: 'minx',
+            t: 'a'
           }, {
-            name: 'miny',
-            typeInfo: 'String',
-            attributeName: 'miny',
-            type: 'attribute'
+            n: 'miny',
+            t: 'a'
           }, {
-            name: 'maxx',
-            typeInfo: 'String',
-            attributeName: 'maxx',
-            type: 'attribute'
+            n: 'maxx',
+            t: 'a'
           }, {
-            name: 'maxy',
-            typeInfo: 'String',
-            attributeName: 'maxy',
-            type: 'attribute'
+            n: 'maxy',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WMSDescribeLayerResponse',
-        propertyInfos: [{
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+        ln: 'WMSDescribeLayerResponse',
+        ps: [{
+            n: 'version',
+            t: 'a'
           }, {
-            type: 'element',
-            name: 'layerDescription',
-            collection: true,
-            elementName: 'LayerDescription',
-            typeInfo: 'WMS_1_1_1.LayerDescription'
+            n: 'layerDescription',
+            col: true,
+            en: 'LayerDescription',
+            ti: 'WMS_1_1_1.LayerDescription'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SRS',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'SRS',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetCapabilities',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+        ln: 'GetCapabilities',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WMS_1_1_1.DCPType'
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WMS_1_1_1.DCPType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BoundingBox',
-        propertyInfos: [{
-            name: 'srs',
-            typeInfo: 'String',
-            attributeName: 'SRS',
-            type: 'attribute'
+        ln: 'BoundingBox',
+        ps: [{
+            n: 'srs',
+            an: 'SRS',
+            t: 'a'
           }, {
-            name: 'minx',
-            typeInfo: 'String',
-            attributeName: 'minx',
-            type: 'attribute'
+            n: 'minx',
+            t: 'a'
           }, {
-            name: 'miny',
-            typeInfo: 'String',
-            attributeName: 'miny',
-            type: 'attribute'
+            n: 'miny',
+            t: 'a'
           }, {
-            name: 'maxx',
-            typeInfo: 'String',
-            attributeName: 'maxx',
-            type: 'attribute'
+            n: 'maxx',
+            t: 'a'
           }, {
-            name: 'maxy',
-            typeInfo: 'String',
-            attributeName: 'maxy',
-            type: 'attribute'
+            n: 'maxy',
+            t: 'a'
           }, {
-            name: 'resx',
-            typeInfo: 'String',
-            attributeName: 'resx',
-            type: 'attribute'
+            n: 'resx',
+            t: 'a'
           }, {
-            name: 'resy',
-            typeInfo: 'String',
-            attributeName: 'resy',
-            type: 'attribute'
+            n: 'resy',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetStyles',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+        ln: 'GetStyles',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WMS_1_1_1.DCPType'
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WMS_1_1_1.DCPType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Style',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'Style',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            type: 'element',
-            name: 'legendURL',
-            collection: true,
-            elementName: 'LegendURL',
-            typeInfo: 'WMS_1_1_1.LegendURL'
+            n: 'legendURL',
+            col: true,
+            en: 'LegendURL',
+            ti: 'WMS_1_1_1.LegendURL'
           }, {
-            type: 'element',
-            name: 'styleSheetURL',
-            elementName: 'StyleSheetURL',
-            typeInfo: 'WMS_1_1_1.StyleSheetURL'
+            n: 'styleSheetURL',
+            en: 'StyleSheetURL',
+            ti: 'WMS_1_1_1.StyleSheetURL'
           }, {
-            type: 'element',
-            name: 'styleURL',
-            elementName: 'StyleURL',
-            typeInfo: 'WMS_1_1_1.StyleURL'
+            n: 'styleURL',
+            en: 'StyleURL',
+            ti: 'WMS_1_1_1.StyleURL'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LegendURL',
-        propertyInfos: [{
-            name: 'width',
-            typeInfo: 'String',
-            attributeName: 'width',
-            type: 'attribute'
+        ln: 'LegendURL',
+        ps: [{
+            n: 'width',
+            t: 'a'
           }, {
-            name: 'height',
-            typeInfo: 'String',
-            attributeName: 'height',
-            type: 'attribute'
+            n: 'height',
+            t: 'a'
           }, {
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+            n: 'format',
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WMS_1_1_1.OnlineResource'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WMS_1_1_1.OnlineResource'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'StyleSheetURL',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+        ln: 'StyleSheetURL',
+        ps: [{
+            n: 'format',
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WMS_1_1_1.OnlineResource'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WMS_1_1_1.OnlineResource'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'StyleURL',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+        ln: 'StyleURL',
+        ps: [{
+            n: 'format',
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WMS_1_1_1.OnlineResource'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WMS_1_1_1.OnlineResource'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Keyword',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'Keyword',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PutStyles',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+        ln: 'PutStyles',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WMS_1_1_1.DCPType'
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WMS_1_1_1.DCPType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ServiceExceptionReport',
-        propertyInfos: [{
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+        ln: 'ServiceExceptionReport',
+        ps: [{
+            n: 'version',
+            t: 'a'
           }, {
-            type: 'element',
-            name: 'serviceException',
-            collection: true,
-            elementName: 'ServiceException',
-            typeInfo: 'WMS_1_1_1.ServiceException'
+            n: 'serviceException',
+            col: true,
+            en: 'ServiceException',
+            ti: 'WMS_1_1_1.ServiceException'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'KeywordList',
-        propertyInfos: [{
-            type: 'element',
-            name: 'keyword',
-            collection: true,
-            elementName: 'Keyword',
-            typeInfo: 'WMS_1_1_1.Keyword'
+        ln: 'KeywordList',
+        ps: [{
+            n: 'keyword',
+            col: true,
+            en: 'Keyword',
+            ti: 'WMS_1_1_1.Keyword'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ContactInformation',
-        propertyInfos: [{
-            type: 'element',
-            name: 'contactPersonPrimary',
-            elementName: 'ContactPersonPrimary',
-            typeInfo: 'WMS_1_1_1.ContactPersonPrimary'
+        ln: 'ContactInformation',
+        ps: [{
+            n: 'contactPersonPrimary',
+            en: 'ContactPersonPrimary',
+            ti: 'WMS_1_1_1.ContactPersonPrimary'
           }, {
-            type: 'element',
-            name: 'contactPosition',
-            elementName: 'ContactPosition',
-            typeInfo: 'String'
+            n: 'contactPosition',
+            en: 'ContactPosition'
           }, {
-            type: 'element',
-            name: 'contactAddress',
-            elementName: 'ContactAddress',
-            typeInfo: 'WMS_1_1_1.ContactAddress'
+            n: 'contactAddress',
+            en: 'ContactAddress',
+            ti: 'WMS_1_1_1.ContactAddress'
           }, {
-            type: 'element',
-            name: 'contactVoiceTelephone',
-            elementName: 'ContactVoiceTelephone',
-            typeInfo: 'String'
+            n: 'contactVoiceTelephone',
+            en: 'ContactVoiceTelephone'
           }, {
-            type: 'element',
-            name: 'contactFacsimileTelephone',
-            elementName: 'ContactFacsimileTelephone',
-            typeInfo: 'String'
+            n: 'contactFacsimileTelephone',
+            en: 'ContactFacsimileTelephone'
           }, {
-            type: 'element',
-            name: 'contactElectronicMailAddress',
-            elementName: 'ContactElectronicMailAddress',
-            typeInfo: 'String'
+            n: 'contactElectronicMailAddress',
+            en: 'ContactElectronicMailAddress'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AuthorityURL',
-        propertyInfos: [{
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+        ln: 'AuthorityURL',
+        ps: [{
+            n: 'name',
+            t: 'a'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WMS_1_1_1.OnlineResource'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WMS_1_1_1.OnlineResource'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Dimension',
-        propertyInfos: [{
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+        ln: 'Dimension',
+        ps: [{
+            n: 'name',
+            t: 'a'
           }, {
-            name: 'units',
-            typeInfo: 'String',
-            attributeName: 'units',
-            type: 'attribute'
+            n: 'units',
+            t: 'a'
           }, {
-            name: 'unitSymbol',
-            typeInfo: 'String',
-            attributeName: 'unitSymbol',
-            type: 'attribute'
+            n: 'unitSymbol',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataURL',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'WMS_1_1_1.Format'
+        ln: 'DataURL',
+        ps: [{
+            n: 'format',
+            en: 'Format',
+            ti: 'WMS_1_1_1.Format'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WMS_1_1_1.OnlineResource'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WMS_1_1_1.OnlineResource'
           }]
       }],
-    elementInfos: [{
-        elementName: 'DCPType',
-        typeInfo: 'WMS_1_1_1.DCPType'
+    eis: [{
+        en: 'DCPType',
+        ti: 'WMS_1_1_1.DCPType'
       }, {
-        elementName: 'HTTP',
-        typeInfo: 'WMS_1_1_1.HTTP'
+        en: 'HTTP',
+        ti: 'WMS_1_1_1.HTTP'
       }, {
-        elementName: 'FeatureListURL',
-        typeInfo: 'WMS_1_1_1.FeatureListURL'
+        en: 'FeatureListURL',
+        ti: 'WMS_1_1_1.FeatureListURL'
       }, {
-        elementName: 'Format',
-        typeInfo: 'WMS_1_1_1.Format'
+        en: 'Format',
+        ti: 'WMS_1_1_1.Format'
       }, {
-        elementName: 'OnlineResource',
-        typeInfo: 'WMS_1_1_1.OnlineResource'
+        en: 'OnlineResource',
+        ti: 'WMS_1_1_1.OnlineResource'
       }, {
-        elementName: 'WMT_MS_Capabilities',
-        typeInfo: 'WMS_1_1_1.WMTMSCapabilities'
+        en: 'WMT_MS_Capabilities',
+        ti: 'WMS_1_1_1.WMTMSCapabilities'
       }, {
-        elementName: 'Service',
-        typeInfo: 'WMS_1_1_1.Service'
+        en: 'Service',
+        ti: 'WMS_1_1_1.Service'
       }, {
-        elementName: 'Capability',
-        typeInfo: 'WMS_1_1_1.Capability'
+        en: 'Capability',
+        ti: 'WMS_1_1_1.Capability'
       }, {
-        elementName: 'Query',
-        typeInfo: 'WMS_1_1_1.Query'
+        en: 'Query',
+        ti: 'WMS_1_1_1.Query'
       }, {
-        elementName: 'LogoURL',
-        typeInfo: 'WMS_1_1_1.LogoURL'
+        en: 'LogoURL',
+        ti: 'WMS_1_1_1.LogoURL'
       }, {
-        elementName: 'ContactPersonPrimary',
-        typeInfo: 'WMS_1_1_1.ContactPersonPrimary'
+        en: 'ContactPersonPrimary',
+        ti: 'WMS_1_1_1.ContactPersonPrimary'
       }, {
-        elementName: 'DescribeLayer',
-        typeInfo: 'WMS_1_1_1.DescribeLayer'
+        en: 'DescribeLayer',
+        ti: 'WMS_1_1_1.DescribeLayer'
       }, {
-        elementName: 'Identifier',
-        typeInfo: 'WMS_1_1_1.Identifier'
+        en: 'Identifier',
+        ti: 'WMS_1_1_1.Identifier'
       }, {
-        elementName: 'UserDefinedSymbolization',
-        typeInfo: 'WMS_1_1_1.UserDefinedSymbolization'
+        en: 'UserDefinedSymbolization',
+        ti: 'WMS_1_1_1.UserDefinedSymbolization'
       }, {
-        elementName: 'ContactAddress',
-        typeInfo: 'WMS_1_1_1.ContactAddress'
+        en: 'ContactAddress',
+        ti: 'WMS_1_1_1.ContactAddress'
       }, {
-        elementName: 'Request',
-        typeInfo: 'WMS_1_1_1.Request'
+        en: 'Request',
+        ti: 'WMS_1_1_1.Request'
       }, {
-        elementName: 'Exception',
-        typeInfo: 'WMS_1_1_1.Exception'
+        en: 'Exception',
+        ti: 'WMS_1_1_1.Exception'
       }, {
-        elementName: 'VendorSpecificCapabilities',
-        typeInfo: 'WMS_1_1_1.VendorSpecificCapabilities'
+        en: 'VendorSpecificCapabilities',
+        ti: 'WMS_1_1_1.VendorSpecificCapabilities'
       }, {
-        elementName: 'Layer',
-        typeInfo: 'WMS_1_1_1.Layer'
+        en: 'Layer',
+        ti: 'WMS_1_1_1.Layer'
       }, {
-        elementName: 'Get',
-        typeInfo: 'WMS_1_1_1.Get'
+        en: 'Get',
+        ti: 'WMS_1_1_1.Get'
       }, {
-        elementName: 'Post',
-        typeInfo: 'WMS_1_1_1.Post'
+        en: 'Post',
+        ti: 'WMS_1_1_1.Post'
       }, {
-        elementName: 'GetMap',
-        typeInfo: 'WMS_1_1_1.GetMap'
+        en: 'GetMap',
+        ti: 'WMS_1_1_1.GetMap'
       }, {
-        elementName: 'ScaleHint',
-        typeInfo: 'WMS_1_1_1.ScaleHint'
+        en: 'ScaleHint',
+        ti: 'WMS_1_1_1.ScaleHint'
       }, {
-        elementName: 'Attribution',
-        typeInfo: 'WMS_1_1_1.Attribution'
+        en: 'Attribution',
+        ti: 'WMS_1_1_1.Attribution'
       }, {
-        elementName: 'GetFeatureInfo',
-        typeInfo: 'WMS_1_1_1.GetFeatureInfo'
+        en: 'GetFeatureInfo',
+        ti: 'WMS_1_1_1.GetFeatureInfo'
       }, {
-        elementName: 'ServiceException',
-        typeInfo: 'WMS_1_1_1.ServiceException'
+        en: 'ServiceException',
+        ti: 'WMS_1_1_1.ServiceException'
       }, {
-        elementName: 'LayerDescription',
-        typeInfo: 'WMS_1_1_1.LayerDescription'
+        en: 'LayerDescription',
+        ti: 'WMS_1_1_1.LayerDescription'
       }, {
-        elementName: 'MetadataURL',
-        typeInfo: 'WMS_1_1_1.MetadataURL'
+        en: 'MetadataURL',
+        ti: 'WMS_1_1_1.MetadataURL'
       }, {
-        elementName: 'Extent',
-        typeInfo: 'WMS_1_1_1.Extent'
+        en: 'Extent',
+        ti: 'WMS_1_1_1.Extent'
       }, {
-        elementName: 'GetLegendGraphic',
-        typeInfo: 'WMS_1_1_1.GetLegendGraphic'
+        en: 'GetLegendGraphic',
+        ti: 'WMS_1_1_1.GetLegendGraphic'
       }, {
-        elementName: 'LatLonBoundingBox',
-        typeInfo: 'WMS_1_1_1.LatLonBoundingBox'
+        en: 'LatLonBoundingBox',
+        ti: 'WMS_1_1_1.LatLonBoundingBox'
       }, {
-        elementName: 'WMS_DescribeLayerResponse',
-        typeInfo: 'WMS_1_1_1.WMSDescribeLayerResponse'
+        en: 'WMS_DescribeLayerResponse',
+        ti: 'WMS_1_1_1.WMSDescribeLayerResponse'
       }, {
-        elementName: 'SRS',
-        typeInfo: 'WMS_1_1_1.SRS'
+        en: 'SRS',
+        ti: 'WMS_1_1_1.SRS'
       }, {
-        elementName: 'GetCapabilities',
-        typeInfo: 'WMS_1_1_1.GetCapabilities'
+        en: 'GetCapabilities',
+        ti: 'WMS_1_1_1.GetCapabilities'
       }, {
-        elementName: 'BoundingBox',
-        typeInfo: 'WMS_1_1_1.BoundingBox'
+        en: 'BoundingBox',
+        ti: 'WMS_1_1_1.BoundingBox'
       }, {
-        elementName: 'GetStyles',
-        typeInfo: 'WMS_1_1_1.GetStyles'
+        en: 'GetStyles',
+        ti: 'WMS_1_1_1.GetStyles'
       }, {
-        elementName: 'Style',
-        typeInfo: 'WMS_1_1_1.Style'
+        en: 'Style',
+        ti: 'WMS_1_1_1.Style'
       }, {
-        elementName: 'LegendURL',
-        typeInfo: 'WMS_1_1_1.LegendURL'
+        en: 'LegendURL',
+        ti: 'WMS_1_1_1.LegendURL'
       }, {
-        elementName: 'StyleSheetURL',
-        typeInfo: 'WMS_1_1_1.StyleSheetURL'
+        en: 'StyleSheetURL',
+        ti: 'WMS_1_1_1.StyleSheetURL'
       }, {
-        elementName: 'StyleURL',
-        typeInfo: 'WMS_1_1_1.StyleURL'
+        en: 'StyleURL',
+        ti: 'WMS_1_1_1.StyleURL'
       }, {
-        elementName: 'Keyword',
-        typeInfo: 'WMS_1_1_1.Keyword'
+        en: 'Keyword',
+        ti: 'WMS_1_1_1.Keyword'
       }, {
-        elementName: 'PutStyles',
-        typeInfo: 'WMS_1_1_1.PutStyles'
+        en: 'PutStyles',
+        ti: 'WMS_1_1_1.PutStyles'
       }, {
-        elementName: 'ServiceExceptionReport',
-        typeInfo: 'WMS_1_1_1.ServiceExceptionReport'
+        en: 'ServiceExceptionReport',
+        ti: 'WMS_1_1_1.ServiceExceptionReport'
       }, {
-        elementName: 'KeywordList',
-        typeInfo: 'WMS_1_1_1.KeywordList'
+        en: 'KeywordList',
+        ti: 'WMS_1_1_1.KeywordList'
       }, {
-        elementName: 'ContactInformation',
-        typeInfo: 'WMS_1_1_1.ContactInformation'
+        en: 'ContactInformation',
+        ti: 'WMS_1_1_1.ContactInformation'
       }, {
-        elementName: 'AuthorityURL',
-        typeInfo: 'WMS_1_1_1.AuthorityURL'
+        en: 'AuthorityURL',
+        ti: 'WMS_1_1_1.AuthorityURL'
       }, {
-        elementName: 'Dimension',
-        typeInfo: 'WMS_1_1_1.Dimension'
+        en: 'Dimension',
+        ti: 'WMS_1_1_1.Dimension'
       }, {
-        elementName: 'DataURL',
-        typeInfo: 'WMS_1_1_1.DataURL'
+        en: 'DataURL',
+        ti: 'WMS_1_1_1.DataURL'
       }]
   };
   return {

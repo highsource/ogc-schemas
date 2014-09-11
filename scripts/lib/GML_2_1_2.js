@@ -1,635 +1,519 @@
 var GML_2_1_2_Module_Factory = function () {
   var GML_2_1_2 = {
-    name: 'GML_2_1_2',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/gml',
-    defaultAttributeNamespaceURI: 'http:\/\/www.w3.org\/1999\/xlink',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'MultiPointType',
-        baseTypeInfo: 'GML_2_1_2.GeometryCollectionType',
-        propertyInfos: []
+    n: 'GML_2_1_2',
+    dens: 'http:\/\/www.opengis.net\/gml',
+    dans: 'http:\/\/www.w3.org\/1999\/xlink',
+    tis: [{
+        ln: 'MultiPointType',
+        bti: 'GML_2_1_2.GeometryCollectionType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGeometryType',
-        propertyInfos: [{
-            name: 'gid',
-            typeInfo: 'ID',
-            attributeName: {
-              localPart: 'gid'
+        ln: 'AbstractGeometryType',
+        ps: [{
+            n: 'gid',
+            ti: 'ID',
+            an: {
+              lp: 'gid'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'srsName',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'srsName'
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiLineStringType',
-        baseTypeInfo: 'GML_2_1_2.GeometryCollectionType',
-        propertyInfos: []
+        ln: 'MultiLineStringType',
+        bti: 'GML_2_1_2.GeometryCollectionType'
       }, {
-        type: 'classInfo',
-        localName: 'LinearRingMemberType',
-        baseTypeInfo: 'GML_2_1_2.GeometryAssociationType',
-        propertyInfos: []
+        ln: 'LinearRingMemberType',
+        bti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        type: 'classInfo',
-        localName: 'GeometryAssociationType',
-        propertyInfos: [{
-            name: 'geometry',
-            elementName: '_Geometry',
-            typeInfo: 'GML_2_1_2.AbstractGeometryType',
-            type: 'elementRef'
+        ln: 'GeometryAssociationType',
+        ps: [{
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Geometry',
+            ti: 'GML_2_1_2.AbstractGeometryType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LineStringMemberType',
-        baseTypeInfo: 'GML_2_1_2.GeometryAssociationType',
-        propertyInfos: []
+        ln: 'LineStringMemberType',
+        bti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractFeatureCollectionType',
-        baseTypeInfo: 'GML_2_1_2.AbstractFeatureCollectionBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureMember',
-            collection: true,
-            elementName: 'featureMember',
-            typeInfo: 'GML_2_1_2.FeatureAssociationType'
+        ln: 'AbstractFeatureCollectionType',
+        bti: 'GML_2_1_2.AbstractFeatureCollectionBaseType',
+        ps: [{
+            n: 'featureMember',
+            col: true,
+            ti: 'GML_2_1_2.FeatureAssociationType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractFeatureType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'description',
-            elementName: 'description',
-            typeInfo: 'String'
+        ln: 'AbstractFeatureType',
+        ps: [{
+            n: 'description'
           }, {
-            type: 'element',
-            name: 'name',
-            elementName: 'name',
-            typeInfo: 'String'
+            n: 'name'
           }, {
-            type: 'element',
-            name: 'boundedBy',
-            elementName: 'boundedBy',
-            typeInfo: 'GML_2_1_2.BoundingShapeType'
+            n: 'boundedBy',
+            ti: 'GML_2_1_2.BoundingShapeType'
           }, {
-            name: 'fid',
-            typeInfo: 'ID',
-            attributeName: {
-              localPart: 'fid'
+            n: 'fid',
+            ti: 'ID',
+            an: {
+              lp: 'fid'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CoordType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'x',
-            elementName: 'X',
-            typeInfo: 'Decimal'
+        ln: 'CoordType',
+        ps: [{
+            n: 'x',
+            en: 'X',
+            ti: 'Decimal'
           }, {
-            type: 'element',
-            name: 'y',
-            elementName: 'Y',
-            typeInfo: 'Decimal'
+            n: 'y',
+            en: 'Y',
+            ti: 'Decimal'
           }, {
-            type: 'element',
-            name: 'z',
-            elementName: 'Z',
-            typeInfo: 'Decimal'
+            n: 'z',
+            en: 'Z',
+            ti: 'Decimal'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeometryCollectionType',
-        baseTypeInfo: 'GML_2_1_2.AbstractGeometryCollectionBaseType',
-        propertyInfos: [{
-            name: 'geometryMember',
-            collection: true,
-            elementName: 'geometryMember',
-            typeInfo: 'GML_2_1_2.GeometryAssociationType',
-            type: 'elementRef'
+        ln: 'GeometryCollectionType',
+        bti: 'GML_2_1_2.AbstractGeometryCollectionBaseType',
+        ps: [{
+            n: 'geometryMember',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_2_1_2.GeometryAssociationType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PolygonPropertyType',
-        baseTypeInfo: 'GML_2_1_2.GeometryAssociationType',
-        propertyInfos: []
+        ln: 'PolygonPropertyType',
+        bti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        type: 'classInfo',
-        localName: 'MultiLineStringPropertyType',
-        baseTypeInfo: 'GML_2_1_2.GeometryAssociationType',
-        propertyInfos: []
+        ln: 'MultiLineStringPropertyType',
+        bti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        type: 'classInfo',
-        localName: 'MultiPolygonPropertyType',
-        baseTypeInfo: 'GML_2_1_2.GeometryAssociationType',
-        propertyInfos: []
+        ln: 'MultiPolygonPropertyType',
+        bti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        type: 'classInfo',
-        localName: 'PolygonType',
-        baseTypeInfo: 'GML_2_1_2.AbstractGeometryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'outerBoundaryIs',
-            elementName: 'outerBoundaryIs',
-            typeInfo: 'GML_2_1_2.LinearRingMemberType'
+        ln: 'PolygonType',
+        bti: 'GML_2_1_2.AbstractGeometryType',
+        ps: [{
+            n: 'outerBoundaryIs',
+            ti: 'GML_2_1_2.LinearRingMemberType'
           }, {
-            type: 'element',
-            name: 'innerBoundaryIs',
-            collection: true,
-            elementName: 'innerBoundaryIs',
-            typeInfo: 'GML_2_1_2.LinearRingMemberType'
+            n: 'innerBoundaryIs',
+            col: true,
+            ti: 'GML_2_1_2.LinearRingMemberType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiPointPropertyType',
-        baseTypeInfo: 'GML_2_1_2.GeometryAssociationType',
-        propertyInfos: []
+        ln: 'MultiPointPropertyType',
+        bti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        type: 'classInfo',
-        localName: 'PointPropertyType',
-        baseTypeInfo: 'GML_2_1_2.GeometryAssociationType',
-        propertyInfos: []
+        ln: 'PointPropertyType',
+        bti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        type: 'classInfo',
-        localName: 'MultiGeometryPropertyType',
-        baseTypeInfo: 'GML_2_1_2.GeometryAssociationType',
-        propertyInfos: []
+        ln: 'MultiGeometryPropertyType',
+        bti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        type: 'classInfo',
-        localName: 'LineStringPropertyType',
-        baseTypeInfo: 'GML_2_1_2.GeometryAssociationType',
-        propertyInfos: []
+        ln: 'LineStringPropertyType',
+        bti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        type: 'classInfo',
-        localName: 'BoundingShapeType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'box',
-            elementName: 'Box',
-            typeInfo: 'GML_2_1_2.BoxType'
+        ln: 'BoundingShapeType',
+        ps: [{
+            n: 'box',
+            en: 'Box',
+            ti: 'GML_2_1_2.BoxType'
           }, {
-            type: 'element',
-            name: '_null',
-            elementName: 'null',
-            typeInfo: 'String'
+            n: '_null',
+            en: 'null'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CoordinatesType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'CoordinatesType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'decimal',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'decimal'
+            n: 'decimal',
+            an: {
+              lp: 'decimal'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'cs',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'cs'
+            n: 'cs',
+            an: {
+              lp: 'cs'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'ts',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'ts'
+            n: 'ts',
+            an: {
+              lp: 'ts'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BoxType',
-        baseTypeInfo: 'GML_2_1_2.AbstractGeometryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'coord',
-            collection: true,
-            elementName: 'coord',
-            typeInfo: 'GML_2_1_2.CoordType'
+        ln: 'BoxType',
+        bti: 'GML_2_1_2.AbstractGeometryType',
+        ps: [{
+            n: 'coord',
+            col: true,
+            ti: 'GML_2_1_2.CoordType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_2_1_2.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_2_1_2.CoordinatesType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PointType',
-        baseTypeInfo: 'GML_2_1_2.AbstractGeometryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'coord',
-            elementName: 'coord',
-            typeInfo: 'GML_2_1_2.CoordType'
+        ln: 'PointType',
+        bti: 'GML_2_1_2.AbstractGeometryType',
+        ps: [{
+            n: 'coord',
+            ti: 'GML_2_1_2.CoordType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_2_1_2.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_2_1_2.CoordinatesType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureAssociationType',
-        propertyInfos: [{
-            name: 'feature',
-            elementName: '_Feature',
-            typeInfo: 'GML_2_1_2.AbstractFeatureType',
-            type: 'elementRef'
+        ln: 'FeatureAssociationType',
+        ps: [{
+            n: 'feature',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Feature',
+            ti: 'GML_2_1_2.AbstractFeatureType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LineStringType',
-        baseTypeInfo: 'GML_2_1_2.AbstractGeometryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'coord',
-            collection: true,
-            elementName: 'coord',
-            typeInfo: 'GML_2_1_2.CoordType'
+        ln: 'LineStringType',
+        bti: 'GML_2_1_2.AbstractGeometryType',
+        ps: [{
+            n: 'coord',
+            col: true,
+            ti: 'GML_2_1_2.CoordType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_2_1_2.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_2_1_2.CoordinatesType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiPolygonType',
-        baseTypeInfo: 'GML_2_1_2.GeometryCollectionType',
-        propertyInfos: []
+        ln: 'MultiPolygonType',
+        bti: 'GML_2_1_2.GeometryCollectionType'
       }, {
-        type: 'classInfo',
-        localName: 'PointMemberType',
-        baseTypeInfo: 'GML_2_1_2.GeometryAssociationType',
-        propertyInfos: []
+        ln: 'PointMemberType',
+        bti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        type: 'classInfo',
-        localName: 'LinearRingType',
-        baseTypeInfo: 'GML_2_1_2.AbstractGeometryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'coord',
-            collection: true,
-            elementName: 'coord',
-            typeInfo: 'GML_2_1_2.CoordType'
+        ln: 'LinearRingType',
+        bti: 'GML_2_1_2.AbstractGeometryType',
+        ps: [{
+            n: 'coord',
+            col: true,
+            ti: 'GML_2_1_2.CoordType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_2_1_2.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_2_1_2.CoordinatesType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PolygonMemberType',
-        baseTypeInfo: 'GML_2_1_2.GeometryAssociationType',
-        propertyInfos: []
+        ln: 'PolygonMemberType',
+        bti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractFeatureCollectionBaseType',
-        baseTypeInfo: 'GML_2_1_2.AbstractFeatureType',
-        propertyInfos: []
+        ln: 'AbstractFeatureCollectionBaseType',
+        bti: 'GML_2_1_2.AbstractFeatureType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGeometryCollectionBaseType',
-        baseTypeInfo: 'GML_2_1_2.AbstractGeometryType',
-        propertyInfos: []
+        ln: 'AbstractGeometryCollectionBaseType',
+        bti: 'GML_2_1_2.AbstractGeometryType'
       }, {
-        type: 'classInfo',
-        localName: 'GeometryPropertyType',
-        propertyInfos: [{
-            name: 'geometry',
-            elementName: '_Geometry',
-            typeInfo: 'GML_2_1_2.AbstractGeometryType',
-            type: 'elementRef'
+        ln: 'GeometryPropertyType',
+        ps: [{
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Geometry',
+            ti: 'GML_2_1_2.AbstractGeometryType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'enumInfo',
-        localName: 'NullType',
-        baseTypeInfo: 'String',
-        values: ['inapplicable', 'unknown', 'unavailable', 'missing']
+        t: 'enum',
+        ln: 'NullType',
+        vs: ['inapplicable', 'unknown', 'unavailable', 'missing']
       }],
-    elementInfos: [{
-        elementName: 'multiPointProperty',
-        typeInfo: 'GML_2_1_2.MultiPointPropertyType',
-        substitutionHead: '_geometryProperty'
+    eis: [{
+        en: 'multiPointProperty',
+        ti: 'GML_2_1_2.MultiPointPropertyType',
+        sh: '_geometryProperty'
       }, {
-        elementName: 'coverage',
-        typeInfo: 'GML_2_1_2.PolygonPropertyType',
-        substitutionHead: 'polygonProperty'
+        en: 'coverage',
+        ti: 'GML_2_1_2.PolygonPropertyType',
+        sh: 'polygonProperty'
       }, {
-        elementName: 'geometryMember',
-        typeInfo: 'GML_2_1_2.GeometryAssociationType'
+        en: 'geometryMember',
+        ti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        elementName: 'pointProperty',
-        typeInfo: 'GML_2_1_2.PointPropertyType',
-        substitutionHead: '_geometryProperty'
+        en: 'pointProperty',
+        ti: 'GML_2_1_2.PointPropertyType',
+        sh: '_geometryProperty'
       }, {
-        elementName: 'multiGeometryProperty',
-        typeInfo: 'GML_2_1_2.MultiGeometryPropertyType',
-        substitutionHead: '_geometryProperty'
+        en: 'multiGeometryProperty',
+        ti: 'GML_2_1_2.MultiGeometryPropertyType',
+        sh: '_geometryProperty'
       }, {
-        elementName: 'boundedBy',
-        typeInfo: 'GML_2_1_2.BoundingShapeType'
+        en: 'boundedBy',
+        ti: 'GML_2_1_2.BoundingShapeType'
       }, {
-        elementName: 'multiCenterLineOf',
-        typeInfo: 'GML_2_1_2.MultiLineStringPropertyType',
-        substitutionHead: 'multiLineStringProperty'
+        en: 'multiCenterLineOf',
+        ti: 'GML_2_1_2.MultiLineStringPropertyType',
+        sh: 'multiLineStringProperty'
       }, {
-        elementName: 'centerLineOf',
-        typeInfo: 'GML_2_1_2.LineStringPropertyType',
-        substitutionHead: 'lineStringProperty'
+        en: 'centerLineOf',
+        ti: 'GML_2_1_2.LineStringPropertyType',
+        sh: 'lineStringProperty'
       }, {
-        elementName: 'coordinates',
-        typeInfo: 'GML_2_1_2.CoordinatesType'
+        en: 'coordinates',
+        ti: 'GML_2_1_2.CoordinatesType'
       }, {
-        elementName: 'Point',
-        typeInfo: 'GML_2_1_2.PointType',
-        substitutionHead: '_Geometry'
+        en: 'Point',
+        ti: 'GML_2_1_2.PointType',
+        sh: '_Geometry'
       }, {
-        elementName: 'Box',
-        typeInfo: 'GML_2_1_2.BoxType'
+        en: 'Box',
+        ti: 'GML_2_1_2.BoxType'
       }, {
-        elementName: '_geometryProperty',
-        typeInfo: 'GML_2_1_2.GeometryAssociationType'
+        en: '_geometryProperty',
+        ti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        elementName: 'multiCoverage',
-        typeInfo: 'GML_2_1_2.MultiPolygonPropertyType',
-        substitutionHead: 'multiPolygonProperty'
+        en: 'multiCoverage',
+        ti: 'GML_2_1_2.MultiPolygonPropertyType',
+        sh: 'multiPolygonProperty'
       }, {
-        elementName: 'featureMember',
-        typeInfo: 'GML_2_1_2.FeatureAssociationType'
+        en: 'featureMember',
+        ti: 'GML_2_1_2.FeatureAssociationType'
       }, {
-        elementName: 'multiPolygonProperty',
-        typeInfo: 'GML_2_1_2.MultiPolygonPropertyType',
-        substitutionHead: '_geometryProperty'
+        en: 'multiPolygonProperty',
+        ti: 'GML_2_1_2.MultiPolygonPropertyType',
+        sh: '_geometryProperty'
       }, {
-        elementName: 'LineString',
-        typeInfo: 'GML_2_1_2.LineStringType',
-        substitutionHead: '_Geometry'
+        en: 'LineString',
+        ti: 'GML_2_1_2.LineStringType',
+        sh: '_Geometry'
       }, {
-        elementName: 'MultiPolygon',
-        typeInfo: 'GML_2_1_2.MultiPolygonType',
-        substitutionHead: '_Geometry'
+        en: 'MultiPolygon',
+        ti: 'GML_2_1_2.MultiPolygonType',
+        sh: '_Geometry'
       }, {
-        elementName: '_Geometry',
-        typeInfo: 'GML_2_1_2.AbstractGeometryType'
+        en: '_Geometry',
+        ti: 'GML_2_1_2.AbstractGeometryType'
       }, {
-        elementName: 'multiLocation',
-        typeInfo: 'GML_2_1_2.MultiPointPropertyType',
-        substitutionHead: 'multiPointProperty'
+        en: 'multiLocation',
+        ti: 'GML_2_1_2.MultiPointPropertyType',
+        sh: 'multiPointProperty'
       }, {
-        elementName: 'pointMember',
-        typeInfo: 'GML_2_1_2.PointMemberType',
-        substitutionHead: 'geometryMember'
+        en: 'pointMember',
+        ti: 'GML_2_1_2.PointMemberType',
+        sh: 'geometryMember'
       }, {
-        elementName: 'multiPosition',
-        typeInfo: 'GML_2_1_2.MultiPointPropertyType',
-        substitutionHead: 'multiPointProperty'
+        en: 'multiPosition',
+        ti: 'GML_2_1_2.MultiPointPropertyType',
+        sh: 'multiPointProperty'
       }, {
-        elementName: 'name',
-        typeInfo: 'String'
+        en: 'name'
       }, {
-        elementName: 'MultiGeometry',
-        typeInfo: 'GML_2_1_2.GeometryCollectionType',
-        substitutionHead: '_Geometry'
+        en: 'MultiGeometry',
+        ti: 'GML_2_1_2.GeometryCollectionType',
+        sh: '_Geometry'
       }, {
-        elementName: 'position',
-        typeInfo: 'GML_2_1_2.PointPropertyType',
-        substitutionHead: 'pointProperty'
+        en: 'position',
+        ti: 'GML_2_1_2.PointPropertyType',
+        sh: 'pointProperty'
       }, {
-        elementName: 'multiEdgeOf',
-        typeInfo: 'GML_2_1_2.MultiLineStringPropertyType',
-        substitutionHead: 'multiLineStringProperty'
+        en: 'multiEdgeOf',
+        ti: 'GML_2_1_2.MultiLineStringPropertyType',
+        sh: 'multiLineStringProperty'
       }, {
-        elementName: 'location',
-        typeInfo: 'GML_2_1_2.PointPropertyType',
-        substitutionHead: 'pointProperty'
+        en: 'location',
+        ti: 'GML_2_1_2.PointPropertyType',
+        sh: 'pointProperty'
       }, {
-        elementName: '_Feature',
-        typeInfo: 'GML_2_1_2.AbstractFeatureType'
+        en: '_Feature',
+        ti: 'GML_2_1_2.AbstractFeatureType'
       }, {
-        elementName: 'polygonProperty',
-        typeInfo: 'GML_2_1_2.PolygonPropertyType',
-        substitutionHead: '_geometryProperty'
+        en: 'polygonProperty',
+        ti: 'GML_2_1_2.PolygonPropertyType',
+        sh: '_geometryProperty'
       }, {
-        elementName: 'centerOf',
-        typeInfo: 'GML_2_1_2.PointPropertyType',
-        substitutionHead: 'pointProperty'
+        en: 'centerOf',
+        ti: 'GML_2_1_2.PointPropertyType',
+        sh: 'pointProperty'
       }, {
-        elementName: 'LinearRing',
-        typeInfo: 'GML_2_1_2.LinearRingType',
-        substitutionHead: '_Geometry'
+        en: 'LinearRing',
+        ti: 'GML_2_1_2.LinearRingType',
+        sh: '_Geometry'
       }, {
-        elementName: 'lineStringProperty',
-        typeInfo: 'GML_2_1_2.LineStringPropertyType',
-        substitutionHead: '_geometryProperty'
+        en: 'lineStringProperty',
+        ti: 'GML_2_1_2.LineStringPropertyType',
+        sh: '_geometryProperty'
       }, {
-        elementName: 'polygonMember',
-        typeInfo: 'GML_2_1_2.PolygonMemberType',
-        substitutionHead: 'geometryMember'
+        en: 'polygonMember',
+        ti: 'GML_2_1_2.PolygonMemberType',
+        sh: 'geometryMember'
       }, {
-        elementName: 'outerBoundaryIs',
-        typeInfo: 'GML_2_1_2.LinearRingMemberType'
+        en: 'outerBoundaryIs',
+        ti: 'GML_2_1_2.LinearRingMemberType'
       }, {
-        elementName: 'multiCenterOf',
-        typeInfo: 'GML_2_1_2.MultiPointPropertyType',
-        substitutionHead: 'multiPointProperty'
+        en: 'multiCenterOf',
+        ti: 'GML_2_1_2.MultiPointPropertyType',
+        sh: 'multiPointProperty'
       }, {
-        elementName: 'edgeOf',
-        typeInfo: 'GML_2_1_2.LineStringPropertyType',
-        substitutionHead: 'lineStringProperty'
+        en: 'edgeOf',
+        ti: 'GML_2_1_2.LineStringPropertyType',
+        sh: 'lineStringProperty'
       }, {
-        elementName: 'MultiLineString',
-        typeInfo: 'GML_2_1_2.MultiLineStringType',
-        substitutionHead: '_Geometry'
+        en: 'MultiLineString',
+        ti: 'GML_2_1_2.MultiLineStringType',
+        sh: '_Geometry'
       }, {
-        elementName: 'MultiPoint',
-        typeInfo: 'GML_2_1_2.MultiPointType',
-        substitutionHead: '_Geometry'
+        en: 'MultiPoint',
+        ti: 'GML_2_1_2.MultiPointType',
+        sh: '_Geometry'
       }, {
-        elementName: 'innerBoundaryIs',
-        typeInfo: 'GML_2_1_2.LinearRingMemberType'
+        en: 'innerBoundaryIs',
+        ti: 'GML_2_1_2.LinearRingMemberType'
       }, {
-        elementName: 'geometryProperty',
-        typeInfo: 'GML_2_1_2.GeometryAssociationType'
+        en: 'geometryProperty',
+        ti: 'GML_2_1_2.GeometryAssociationType'
       }, {
-        elementName: 'description',
-        typeInfo: 'String'
+        en: 'description'
       }, {
-        elementName: 'lineStringMember',
-        typeInfo: 'GML_2_1_2.LineStringMemberType',
-        substitutionHead: 'geometryMember'
+        en: 'lineStringMember',
+        ti: 'GML_2_1_2.LineStringMemberType',
+        sh: 'geometryMember'
       }, {
-        elementName: '_FeatureCollection',
-        typeInfo: 'GML_2_1_2.AbstractFeatureCollectionType',
-        substitutionHead: '_Feature'
+        en: '_FeatureCollection',
+        ti: 'GML_2_1_2.AbstractFeatureCollectionType',
+        sh: '_Feature'
       }, {
-        elementName: 'coord',
-        typeInfo: 'GML_2_1_2.CoordType'
+        en: 'coord',
+        ti: 'GML_2_1_2.CoordType'
       }, {
-        elementName: '_GeometryCollection',
-        typeInfo: 'GML_2_1_2.GeometryCollectionType',
-        substitutionHead: '_Geometry'
+        en: '_GeometryCollection',
+        ti: 'GML_2_1_2.GeometryCollectionType',
+        sh: '_Geometry'
       }, {
-        elementName: 'multiLineStringProperty',
-        typeInfo: 'GML_2_1_2.MultiLineStringPropertyType',
-        substitutionHead: '_geometryProperty'
+        en: 'multiLineStringProperty',
+        ti: 'GML_2_1_2.MultiLineStringPropertyType',
+        sh: '_geometryProperty'
       }, {
-        elementName: 'extentOf',
-        typeInfo: 'GML_2_1_2.PolygonPropertyType',
-        substitutionHead: 'polygonProperty'
+        en: 'extentOf',
+        ti: 'GML_2_1_2.PolygonPropertyType',
+        sh: 'polygonProperty'
       }, {
-        elementName: 'multiExtentOf',
-        typeInfo: 'GML_2_1_2.MultiPolygonPropertyType',
-        substitutionHead: 'multiPolygonProperty'
+        en: 'multiExtentOf',
+        ti: 'GML_2_1_2.MultiPolygonPropertyType',
+        sh: 'multiPolygonProperty'
       }, {
-        elementName: 'Polygon',
-        typeInfo: 'GML_2_1_2.PolygonType',
-        substitutionHead: '_Geometry'
+        en: 'Polygon',
+        ti: 'GML_2_1_2.PolygonType',
+        sh: '_Geometry'
       }]
   };
   return {

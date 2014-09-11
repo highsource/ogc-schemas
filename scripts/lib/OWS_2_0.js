@@ -1,1267 +1,1055 @@
 var OWS_2_0_Module_Factory = function () {
   var OWS_2_0 = {
-    name: 'OWS_2_0',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/ows\/2.0',
-    defaultAttributeNamespaceURI: 'http:\/\/www.w3.org\/1999\/xlink',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'OperationsMetadata',
-        propertyInfos: [{
-            type: 'element',
-            name: 'operation',
-            collection: true,
-            elementName: 'Operation',
-            typeInfo: 'OWS_2_0.Operation'
+    n: 'OWS_2_0',
+    dens: 'http:\/\/www.opengis.net\/ows\/2.0',
+    dans: 'http:\/\/www.w3.org\/1999\/xlink',
+    tis: [{
+        ln: 'OperationsMetadata',
+        ps: [{
+            n: 'operation',
+            col: true,
+            en: 'Operation',
+            ti: 'OWS_2_0.Operation'
           }, {
-            type: 'element',
-            name: 'parameter',
-            collection: true,
-            elementName: 'Parameter',
-            typeInfo: 'OWS_2_0.DomainType'
+            n: 'parameter',
+            col: true,
+            en: 'Parameter',
+            ti: 'OWS_2_0.DomainType'
           }, {
-            type: 'element',
-            name: 'constraint',
-            collection: true,
-            elementName: 'Constraint',
-            typeInfo: 'OWS_2_0.DomainType'
+            n: 'constraint',
+            col: true,
+            en: 'Constraint',
+            ti: 'OWS_2_0.DomainType'
           }, {
-            type: 'element',
-            name: 'extendedCapabilities',
-            elementName: 'ExtendedCapabilities',
-            typeInfo: 'AnyType'
+            n: 'extendedCapabilities',
+            en: 'ExtendedCapabilities',
+            ti: 'AnyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Operation',
-        propertyInfos: [{
-            type: 'element',
-            name: 'dcp',
-            collection: true,
-            elementName: 'DCP',
-            typeInfo: 'OWS_2_0.DCP'
+        ln: 'Operation',
+        ps: [{
+            n: 'dcp',
+            col: true,
+            en: 'DCP',
+            ti: 'OWS_2_0.DCP'
           }, {
-            type: 'element',
-            name: 'parameter',
-            collection: true,
-            elementName: 'Parameter',
-            typeInfo: 'OWS_2_0.DomainType'
+            n: 'parameter',
+            col: true,
+            en: 'Parameter',
+            ti: 'OWS_2_0.DomainType'
           }, {
-            type: 'element',
-            name: 'constraint',
-            collection: true,
-            elementName: 'Constraint',
-            typeInfo: 'OWS_2_0.DomainType'
+            n: 'constraint',
+            col: true,
+            en: 'Constraint',
+            ti: 'OWS_2_0.DomainType'
           }, {
-            name: 'metadata',
-            collection: true,
-            elementName: 'Metadata',
-            typeInfo: 'OWS_2_0.MetadataType',
-            type: 'elementRef'
+            n: 'metadata',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'Metadata',
+            ti: 'OWS_2_0.MetadataType',
+            t: 'er'
           }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'name'
+            n: 'name',
+            an: {
+              lp: 'name'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DCP',
-        propertyInfos: [{
-            type: 'element',
-            name: 'http',
-            elementName: 'HTTP',
-            typeInfo: 'OWS_2_0.HTTP'
+        ln: 'DCP',
+        ps: [{
+            n: 'http',
+            en: 'HTTP',
+            ti: 'OWS_2_0.HTTP'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'HTTP',
-        propertyInfos: [{
-            name: 'getOrPost',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'Post',
-                typeInfo: 'OWS_2_0.RequestMethodType'
+        ln: 'HTTP',
+        ps: [{
+            n: 'getOrPost',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'Get',
+                ti: 'OWS_2_0.RequestMethodType'
               }, {
-                elementName: 'Get',
-                typeInfo: 'OWS_2_0.RequestMethodType'
+                en: 'Post',
+                ti: 'OWS_2_0.RequestMethodType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RequestMethodType',
-        baseTypeInfo: 'OWS_2_0.OnlineResourceType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'constraint',
-            collection: true,
-            elementName: 'Constraint',
-            typeInfo: 'OWS_2_0.DomainType'
+        ln: 'RequestMethodType',
+        bti: 'OWS_2_0.OnlineResourceType',
+        ps: [{
+            n: 'constraint',
+            col: true,
+            en: 'Constraint',
+            ti: 'OWS_2_0.DomainType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DomainType',
-        baseTypeInfo: 'OWS_2_0.UnNamedDomainType',
-        propertyInfos: [{
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'name'
+        ln: 'DomainType',
+        bti: 'OWS_2_0.UnNamedDomainType',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MetadataType',
-        propertyInfos: [{
-            name: 'abstractMetaData',
-            collection: true,
-            elementName: 'AbstractMetaData',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+        ln: 'MetadataType',
+        ps: [{
+            n: 'abstractMetaData',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractMetaData',
+            ti: 'AnyType',
+            t: 'er'
           }, {
-            name: 'about',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'about'
+            n: 'about',
+            an: {
+              lp: 'about'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'NilValueType',
-        baseTypeInfo: 'OWS_2_0.CodeType',
-        propertyInfos: [{
-            name: 'nilReason',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'nilReason'
+        ln: 'NilValueType',
+        bti: 'OWS_2_0.CodeType',
+        ps: [{
+            n: 'nilReason',
+            an: {
+              lp: 'nilReason'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WGS84BoundingBoxType',
-        baseTypeInfo: 'OWS_2_0.BoundingBoxType',
-        propertyInfos: []
+        ln: 'WGS84BoundingBoxType',
+        bti: 'OWS_2_0.BoundingBoxType'
       }, {
-        type: 'classInfo',
-        localName: 'BoundingBoxType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'lowerCorner',
-            elementName: 'LowerCorner',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Double'
+        ln: 'BoundingBoxType',
+        ps: [{
+            n: 'lowerCorner',
+            en: 'LowerCorner',
+            ti: {
+              t: 'l',
+              ti: 'Double'
             }
           }, {
-            type: 'element',
-            name: 'upperCorner',
-            elementName: 'UpperCorner',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Double'
+            n: 'upperCorner',
+            en: 'UpperCorner',
+            ti: {
+              t: 'l',
+              ti: 'Double'
             }
           }, {
-            name: 'crs',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'crs'
+            n: 'crs',
+            an: {
+              lp: 'crs'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'dimensions',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'dimensions'
+            n: 'dimensions',
+            ti: 'Integer',
+            an: {
+              lp: 'dimensions'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DomainMetadataType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'DomainMetadataType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'reference',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'reference',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/2.0'
+            n: 'reference',
+            an: {
+              lp: 'reference',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CodeType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'CodeType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'codeSpace',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'codeSpace'
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ValuesReference',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'ValuesReference',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'reference',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'reference',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/2.0'
+            n: 'reference',
+            an: {
+              lp: 'reference',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ContactType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'phone',
-            elementName: 'Phone',
-            typeInfo: 'OWS_2_0.TelephoneType'
+        ln: 'ContactType',
+        ps: [{
+            n: 'phone',
+            en: 'Phone',
+            ti: 'OWS_2_0.TelephoneType'
           }, {
-            type: 'element',
-            name: 'address',
-            elementName: 'Address',
-            typeInfo: 'OWS_2_0.AddressType'
+            n: 'address',
+            en: 'Address',
+            ti: 'OWS_2_0.AddressType'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'OWS_2_0.OnlineResourceType'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'OWS_2_0.OnlineResourceType'
           }, {
-            type: 'element',
-            name: 'hoursOfService',
-            elementName: 'HoursOfService',
-            typeInfo: 'String'
+            n: 'hoursOfService',
+            en: 'HoursOfService'
           }, {
-            type: 'element',
-            name: 'contactInstructions',
-            elementName: 'ContactInstructions',
-            typeInfo: 'String'
+            n: 'contactInstructions',
+            en: 'ContactInstructions'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ServiceIdentification',
-        baseTypeInfo: 'OWS_2_0.DescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'serviceType',
-            elementName: 'ServiceType',
-            typeInfo: 'OWS_2_0.CodeType'
+        ln: 'ServiceIdentification',
+        bti: 'OWS_2_0.DescriptionType',
+        ps: [{
+            n: 'serviceType',
+            en: 'ServiceType',
+            ti: 'OWS_2_0.CodeType'
           }, {
-            type: 'element',
-            name: 'serviceTypeVersion',
-            collection: true,
-            elementName: 'ServiceTypeVersion',
-            typeInfo: 'String'
+            n: 'serviceTypeVersion',
+            col: true,
+            en: 'ServiceTypeVersion'
           }, {
-            type: 'element',
-            name: 'profile',
-            collection: true,
-            elementName: 'Profile',
-            typeInfo: 'String'
+            n: 'profile',
+            col: true,
+            en: 'Profile'
           }, {
-            type: 'element',
-            name: 'fees',
-            elementName: 'Fees',
-            typeInfo: 'String'
+            n: 'fees',
+            en: 'Fees'
           }, {
-            type: 'element',
-            name: 'accessConstraints',
-            collection: true,
-            elementName: 'AccessConstraints',
-            typeInfo: 'String'
+            n: 'accessConstraints',
+            col: true,
+            en: 'AccessConstraints'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'title',
-            collection: true,
-            elementName: 'Title',
-            typeInfo: 'OWS_2_0.LanguageStringType'
+        ln: 'DescriptionType',
+        ps: [{
+            n: 'title',
+            col: true,
+            en: 'Title',
+            ti: 'OWS_2_0.LanguageStringType'
           }, {
-            type: 'element',
-            name: '_abstract',
-            collection: true,
-            elementName: 'Abstract',
-            typeInfo: 'OWS_2_0.LanguageStringType'
+            n: '_abstract',
+            col: true,
+            en: 'Abstract',
+            ti: 'OWS_2_0.LanguageStringType'
           }, {
-            type: 'element',
-            name: 'keywords',
-            collection: true,
-            elementName: 'Keywords',
-            typeInfo: 'OWS_2_0.KeywordsType'
+            n: 'keywords',
+            col: true,
+            en: 'Keywords',
+            ti: 'OWS_2_0.KeywordsType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LanguageStringType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'LanguageStringType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'lang',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'lang',
-              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            n: 'lang',
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'KeywordsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'keyword',
-            collection: true,
-            elementName: 'Keyword',
-            typeInfo: 'OWS_2_0.LanguageStringType'
+        ln: 'KeywordsType',
+        ps: [{
+            n: 'keyword',
+            col: true,
+            en: 'Keyword',
+            ti: 'OWS_2_0.LanguageStringType'
           }, {
-            type: 'element',
-            name: 'type',
-            elementName: 'Type',
-            typeInfo: 'OWS_2_0.CodeType'
+            n: 'type',
+            en: 'Type',
+            ti: 'OWS_2_0.CodeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ReferenceGroupType',
-        baseTypeInfo: 'OWS_2_0.BasicIdentificationType',
-        propertyInfos: [{
-            name: 'abstractReferenceBase',
-            collection: true,
-            elementName: 'AbstractReferenceBase',
-            typeInfo: 'OWS_2_0.AbstractReferenceBaseType',
-            type: 'elementRef'
+        ln: 'ReferenceGroupType',
+        bti: 'OWS_2_0.BasicIdentificationType',
+        ps: [{
+            n: 'abstractReferenceBase',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractReferenceBase',
+            ti: 'OWS_2_0.AbstractReferenceBaseType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetResourceByIdType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'resourceID',
-            collection: true,
-            elementName: 'ResourceID',
-            typeInfo: 'String'
+        ln: 'GetResourceByIdType',
+        ps: [{
+            n: 'resourceID',
+            col: true,
+            en: 'ResourceID'
           }, {
-            type: 'element',
-            name: 'outputFormat',
-            elementName: 'OutputFormat',
-            typeInfo: 'String'
+            n: 'outputFormat',
+            en: 'OutputFormat'
           }, {
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'service'
+            n: 'service',
+            an: {
+              lp: 'service'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'version'
+            n: 'version',
+            an: {
+              lp: 'version'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AllowedValues',
-        propertyInfos: [{
-            name: 'valueOrRange',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'Value',
-                typeInfo: 'OWS_2_0.ValueType'
+        ln: 'AllowedValues',
+        ps: [{
+            n: 'valueOrRange',
+            col: true,
+            etis: [{
+                en: 'Value',
+                ti: 'OWS_2_0.ValueType'
               }, {
-                elementName: 'Range',
-                typeInfo: 'OWS_2_0.RangeType'
+                en: 'Range',
+                ti: 'OWS_2_0.RangeType'
               }],
-            type: 'elements'
+            t: 'es'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ValueType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'ValueType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RangeType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'minimumValue',
-            elementName: 'MinimumValue',
-            typeInfo: 'OWS_2_0.ValueType'
+        ln: 'RangeType',
+        ps: [{
+            n: 'minimumValue',
+            en: 'MinimumValue',
+            ti: 'OWS_2_0.ValueType'
           }, {
-            type: 'element',
-            name: 'maximumValue',
-            elementName: 'MaximumValue',
-            typeInfo: 'OWS_2_0.ValueType'
+            n: 'maximumValue',
+            en: 'MaximumValue',
+            ti: 'OWS_2_0.ValueType'
           }, {
-            type: 'element',
-            name: 'spacing',
-            elementName: 'Spacing',
-            typeInfo: 'OWS_2_0.ValueType'
+            n: 'spacing',
+            en: 'Spacing',
+            ti: 'OWS_2_0.ValueType'
           }, {
-            name: 'rangeClosure',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'rangeClosure',
+            ti: {
+              t: 'l'
             },
-            attributeName: {
-              localPart: 'rangeClosure',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/2.0'
+            an: {
+              lp: 'rangeClosure',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AdditionalParameter',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'OWS_2_0.CodeType'
+        ln: 'AdditionalParameter',
+        ps: [{
+            n: 'name',
+            en: 'Name',
+            ti: 'OWS_2_0.CodeType'
           }, {
-            type: 'element',
-            name: 'value',
-            collection: true,
-            elementName: 'Value',
-            typeInfo: 'AnyType'
+            n: 'value',
+            col: true,
+            en: 'Value',
+            ti: 'AnyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractReferenceBaseType',
-        propertyInfos: [{
-            name: 'type',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'type',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/2.0'
+        ln: 'AbstractReferenceBaseType',
+        ps: [{
+            n: 'type',
+            an: {
+              lp: 'type',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ServiceReferenceType',
-        baseTypeInfo: 'OWS_2_0.ReferenceType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'requestMessage',
-            elementName: 'RequestMessage',
-            typeInfo: 'AnyType'
+        ln: 'ServiceReferenceType',
+        bti: 'OWS_2_0.ReferenceType',
+        ps: [{
+            n: 'requestMessage',
+            en: 'RequestMessage',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'requestMessageReference',
-            elementName: 'RequestMessageReference',
-            typeInfo: 'String'
+            n: 'requestMessageReference',
+            en: 'RequestMessageReference'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ReferenceType',
-        baseTypeInfo: 'OWS_2_0.AbstractReferenceBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'identifier',
-            elementName: 'Identifier',
-            typeInfo: 'OWS_2_0.CodeType'
+        ln: 'ReferenceType',
+        bti: 'OWS_2_0.AbstractReferenceBaseType',
+        ps: [{
+            n: 'identifier',
+            en: 'Identifier',
+            ti: 'OWS_2_0.CodeType'
           }, {
-            type: 'element',
-            name: '_abstract',
-            collection: true,
-            elementName: 'Abstract',
-            typeInfo: 'OWS_2_0.LanguageStringType'
+            n: '_abstract',
+            col: true,
+            en: 'Abstract',
+            ti: 'OWS_2_0.LanguageStringType'
           }, {
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'String'
+            n: 'format',
+            en: 'Format'
           }, {
-            name: 'metadata',
-            collection: true,
-            elementName: 'Metadata',
-            typeInfo: 'OWS_2_0.MetadataType',
-            type: 'elementRef'
+            n: 'metadata',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'Metadata',
+            ti: 'OWS_2_0.MetadataType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ServiceProvider',
-        propertyInfos: [{
-            type: 'element',
-            name: 'providerName',
-            elementName: 'ProviderName',
-            typeInfo: 'String'
+        ln: 'ServiceProvider',
+        ps: [{
+            n: 'providerName',
+            en: 'ProviderName'
           }, {
-            type: 'element',
-            name: 'providerSite',
-            elementName: 'ProviderSite',
-            typeInfo: 'OWS_2_0.OnlineResourceType'
+            n: 'providerSite',
+            en: 'ProviderSite',
+            ti: 'OWS_2_0.OnlineResourceType'
           }, {
-            type: 'element',
-            name: 'serviceContact',
-            elementName: 'ServiceContact',
-            typeInfo: 'OWS_2_0.ResponsiblePartySubsetType'
+            n: 'serviceContact',
+            en: 'ServiceContact',
+            ti: 'OWS_2_0.ResponsiblePartySubsetType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OnlineResourceType',
-        propertyInfos: [{
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+        ln: 'OnlineResourceType',
+        ps: [{
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ResponsiblePartySubsetType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'individualName',
-            elementName: 'IndividualName',
-            typeInfo: 'String'
+        ln: 'ResponsiblePartySubsetType',
+        ps: [{
+            n: 'individualName',
+            en: 'IndividualName'
           }, {
-            type: 'element',
-            name: 'positionName',
-            elementName: 'PositionName',
-            typeInfo: 'String'
+            n: 'positionName',
+            en: 'PositionName'
           }, {
-            type: 'element',
-            name: 'contactInfo',
-            elementName: 'ContactInfo',
-            typeInfo: 'OWS_2_0.ContactType'
+            n: 'contactInfo',
+            en: 'ContactInfo',
+            ti: 'OWS_2_0.ContactType'
           }, {
-            type: 'element',
-            name: 'role',
-            elementName: 'Role',
-            typeInfo: 'OWS_2_0.CodeType'
+            n: 'role',
+            en: 'Role',
+            ti: 'OWS_2_0.CodeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AdditionalParametersType',
-        baseTypeInfo: 'OWS_2_0.AdditionalParametersBaseType',
-        propertyInfos: []
+        ln: 'AdditionalParametersType',
+        bti: 'OWS_2_0.AdditionalParametersBaseType'
       }, {
-        type: 'classInfo',
-        localName: 'ExceptionReport',
-        propertyInfos: [{
-            type: 'element',
-            name: 'exception',
-            collection: true,
-            elementName: 'Exception',
-            typeInfo: 'OWS_2_0.ExceptionType'
+        ln: 'ExceptionReport',
+        ps: [{
+            n: 'exception',
+            col: true,
+            en: 'Exception',
+            ti: 'OWS_2_0.ExceptionType'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'version'
+            n: 'version',
+            an: {
+              lp: 'version'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'lang',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'lang',
-              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            n: 'lang',
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ExceptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'exceptionText',
-            collection: true,
-            elementName: 'ExceptionText',
-            typeInfo: 'String'
+        ln: 'ExceptionType',
+        ps: [{
+            n: 'exceptionText',
+            col: true,
+            en: 'ExceptionText'
           }, {
-            name: 'exceptionCode',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'exceptionCode'
+            n: 'exceptionCode',
+            an: {
+              lp: 'exceptionCode'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'locator',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'locator'
+            n: 'locator',
+            an: {
+              lp: 'locator'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetCapabilitiesType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'acceptVersions',
-            elementName: 'AcceptVersions',
-            typeInfo: 'OWS_2_0.AcceptVersionsType'
+        ln: 'GetCapabilitiesType',
+        ps: [{
+            n: 'acceptVersions',
+            en: 'AcceptVersions',
+            ti: 'OWS_2_0.AcceptVersionsType'
           }, {
-            type: 'element',
-            name: 'sections',
-            elementName: 'Sections',
-            typeInfo: 'OWS_2_0.SectionsType'
+            n: 'sections',
+            en: 'Sections',
+            ti: 'OWS_2_0.SectionsType'
           }, {
-            type: 'element',
-            name: 'acceptFormats',
-            elementName: 'AcceptFormats',
-            typeInfo: 'OWS_2_0.AcceptFormatsType'
+            n: 'acceptFormats',
+            en: 'AcceptFormats',
+            ti: 'OWS_2_0.AcceptFormatsType'
           }, {
-            type: 'element',
-            name: 'acceptLanguages',
-            elementName: 'AcceptLanguages',
-            typeInfo: 'OWS_2_0.GetCapabilitiesType.AcceptLanguages'
+            n: 'acceptLanguages',
+            en: 'AcceptLanguages',
+            ti: 'OWS_2_0.GetCapabilitiesType.AcceptLanguages'
           }, {
-            name: 'updateSequence',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'updateSequence'
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'NoValues',
-        propertyInfos: []
+        ln: 'NoValues'
       }, {
-        type: 'classInfo',
-        localName: 'ManifestType',
-        baseTypeInfo: 'OWS_2_0.BasicIdentificationType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'referenceGroup',
-            collection: true,
-            elementName: 'ReferenceGroup',
-            typeInfo: 'OWS_2_0.ReferenceGroupType'
+        ln: 'ManifestType',
+        bti: 'OWS_2_0.BasicIdentificationType',
+        ps: [{
+            n: 'referenceGroup',
+            col: true,
+            en: 'ReferenceGroup',
+            ti: 'OWS_2_0.ReferenceGroupType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DatasetDescriptionSummaryBaseType',
-        baseTypeInfo: 'OWS_2_0.DescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'wgs84BoundingBox',
-            collection: true,
-            elementName: 'WGS84BoundingBox',
-            typeInfo: 'OWS_2_0.WGS84BoundingBoxType'
+        ln: 'DatasetDescriptionSummaryBaseType',
+        bti: 'OWS_2_0.DescriptionType',
+        ps: [{
+            n: 'wgs84BoundingBox',
+            col: true,
+            en: 'WGS84BoundingBox',
+            ti: 'OWS_2_0.WGS84BoundingBoxType'
           }, {
-            type: 'element',
-            name: 'identifier',
-            elementName: 'Identifier',
-            typeInfo: 'OWS_2_0.CodeType'
+            n: 'identifier',
+            en: 'Identifier',
+            ti: 'OWS_2_0.CodeType'
           }, {
-            name: 'boundingBox',
-            collection: true,
-            elementName: 'BoundingBox',
-            typeInfo: 'OWS_2_0.BoundingBoxType',
-            type: 'elementRef'
+            n: 'boundingBox',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'BoundingBox',
+            ti: 'OWS_2_0.BoundingBoxType',
+            t: 'er'
           }, {
-            name: 'metadata',
-            collection: true,
-            elementName: 'Metadata',
-            typeInfo: 'OWS_2_0.MetadataType',
-            type: 'elementRef'
+            n: 'metadata',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'Metadata',
+            ti: 'OWS_2_0.MetadataType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'datasetDescriptionSummary',
-            collection: true,
-            elementName: 'DatasetDescriptionSummary',
-            typeInfo: 'OWS_2_0.DatasetDescriptionSummaryBaseType'
+            n: 'datasetDescriptionSummary',
+            col: true,
+            en: 'DatasetDescriptionSummary',
+            ti: 'OWS_2_0.DatasetDescriptionSummaryBaseType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ResponsiblePartyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'individualName',
-            elementName: 'IndividualName',
-            typeInfo: 'String'
+        ln: 'ResponsiblePartyType',
+        ps: [{
+            n: 'individualName',
+            en: 'IndividualName'
           }, {
-            type: 'element',
-            name: 'organisationName',
-            elementName: 'OrganisationName',
-            typeInfo: 'String'
+            n: 'organisationName',
+            en: 'OrganisationName'
           }, {
-            type: 'element',
-            name: 'positionName',
-            elementName: 'PositionName',
-            typeInfo: 'String'
+            n: 'positionName',
+            en: 'PositionName'
           }, {
-            type: 'element',
-            name: 'contactInfo',
-            elementName: 'ContactInfo',
-            typeInfo: 'OWS_2_0.ContactType'
+            n: 'contactInfo',
+            en: 'ContactInfo',
+            ti: 'OWS_2_0.ContactType'
           }, {
-            type: 'element',
-            name: 'role',
-            elementName: 'Role',
-            typeInfo: 'OWS_2_0.CodeType'
+            n: 'role',
+            en: 'Role',
+            ti: 'OWS_2_0.CodeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AnyValue',
-        propertyInfos: []
+        ln: 'AnyValue'
       }, {
-        type: 'classInfo',
-        localName: 'BasicIdentificationType',
-        baseTypeInfo: 'OWS_2_0.DescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'identifier',
-            elementName: 'Identifier',
-            typeInfo: 'OWS_2_0.CodeType'
+        ln: 'BasicIdentificationType',
+        bti: 'OWS_2_0.DescriptionType',
+        ps: [{
+            n: 'identifier',
+            en: 'Identifier',
+            ti: 'OWS_2_0.CodeType'
           }, {
-            name: 'metadata',
-            collection: true,
-            elementName: 'Metadata',
-            typeInfo: 'OWS_2_0.MetadataType',
-            type: 'elementRef'
+            n: 'metadata',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'Metadata',
+            ti: 'OWS_2_0.MetadataType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TelephoneType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'voice',
-            collection: true,
-            elementName: 'Voice',
-            typeInfo: 'String'
+        ln: 'TelephoneType',
+        ps: [{
+            n: 'voice',
+            col: true,
+            en: 'Voice'
           }, {
-            type: 'element',
-            name: 'facsimile',
-            collection: true,
-            elementName: 'Facsimile',
-            typeInfo: 'String'
+            n: 'facsimile',
+            col: true,
+            en: 'Facsimile'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ContentsBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'datasetDescriptionSummary',
-            collection: true,
-            elementName: 'DatasetDescriptionSummary',
-            typeInfo: 'OWS_2_0.DatasetDescriptionSummaryBaseType'
+        ln: 'ContentsBaseType',
+        ps: [{
+            n: 'datasetDescriptionSummary',
+            col: true,
+            en: 'DatasetDescriptionSummary',
+            ti: 'OWS_2_0.DatasetDescriptionSummaryBaseType'
           }, {
-            type: 'element',
-            name: 'otherSource',
-            collection: true,
-            elementName: 'OtherSource',
-            typeInfo: 'OWS_2_0.MetadataType'
+            n: 'otherSource',
+            col: true,
+            en: 'OtherSource',
+            ti: 'OWS_2_0.MetadataType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CapabilitiesBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'serviceIdentification',
-            elementName: 'ServiceIdentification',
-            typeInfo: 'OWS_2_0.ServiceIdentification'
+        ln: 'CapabilitiesBaseType',
+        ps: [{
+            n: 'serviceIdentification',
+            en: 'ServiceIdentification',
+            ti: 'OWS_2_0.ServiceIdentification'
           }, {
-            type: 'element',
-            name: 'serviceProvider',
-            elementName: 'ServiceProvider',
-            typeInfo: 'OWS_2_0.ServiceProvider'
+            n: 'serviceProvider',
+            en: 'ServiceProvider',
+            ti: 'OWS_2_0.ServiceProvider'
           }, {
-            type: 'element',
-            name: 'operationsMetadata',
-            elementName: 'OperationsMetadata',
-            typeInfo: 'OWS_2_0.OperationsMetadata'
+            n: 'operationsMetadata',
+            en: 'OperationsMetadata',
+            ti: 'OWS_2_0.OperationsMetadata'
           }, {
-            type: 'element',
-            name: 'languages',
-            elementName: 'Languages',
-            typeInfo: 'OWS_2_0.CapabilitiesBaseType.Languages'
+            n: 'languages',
+            en: 'Languages',
+            ti: 'OWS_2_0.CapabilitiesBaseType.Languages'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'version'
+            n: 'version',
+            an: {
+              lp: 'version'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'updateSequence',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'updateSequence'
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AdditionalParametersBaseType',
-        baseTypeInfo: 'OWS_2_0.MetadataType',
-        propertyInfos: []
+        ln: 'AdditionalParametersBaseType',
+        bti: 'OWS_2_0.MetadataType'
       }, {
-        type: 'classInfo',
-        localName: 'UnNamedDomainType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'allowedValues',
-            elementName: 'AllowedValues',
-            typeInfo: 'OWS_2_0.AllowedValues'
+        ln: 'UnNamedDomainType',
+        ps: [{
+            n: 'allowedValues',
+            en: 'AllowedValues',
+            ti: 'OWS_2_0.AllowedValues'
           }, {
-            type: 'element',
-            name: 'anyValue',
-            elementName: 'AnyValue',
-            typeInfo: 'OWS_2_0.AnyValue'
+            n: 'anyValue',
+            en: 'AnyValue',
+            ti: 'OWS_2_0.AnyValue'
           }, {
-            type: 'element',
-            name: 'noValues',
-            elementName: 'NoValues',
-            typeInfo: 'OWS_2_0.NoValues'
+            n: 'noValues',
+            en: 'NoValues',
+            ti: 'OWS_2_0.NoValues'
           }, {
-            type: 'element',
-            name: 'valuesReference',
-            elementName: 'ValuesReference',
-            typeInfo: 'OWS_2_0.ValuesReference'
+            n: 'valuesReference',
+            en: 'ValuesReference',
+            ti: 'OWS_2_0.ValuesReference'
           }, {
-            type: 'element',
-            name: 'defaultValue',
-            elementName: 'DefaultValue',
-            typeInfo: 'OWS_2_0.ValueType'
+            n: 'defaultValue',
+            en: 'DefaultValue',
+            ti: 'OWS_2_0.ValueType'
           }, {
-            type: 'element',
-            name: 'meaning',
-            elementName: 'Meaning',
-            typeInfo: 'OWS_2_0.DomainMetadataType'
+            n: 'meaning',
+            en: 'Meaning',
+            ti: 'OWS_2_0.DomainMetadataType'
           }, {
-            type: 'element',
-            name: 'dataType',
-            elementName: 'DataType',
-            typeInfo: 'OWS_2_0.DomainMetadataType'
+            n: 'dataType',
+            en: 'DataType',
+            ti: 'OWS_2_0.DomainMetadataType'
           }, {
-            type: 'element',
-            name: 'uom',
-            elementName: 'UOM',
-            typeInfo: 'OWS_2_0.DomainMetadataType'
+            n: 'uom',
+            en: 'UOM',
+            ti: 'OWS_2_0.DomainMetadataType'
           }, {
-            type: 'element',
-            name: 'referenceSystem',
-            elementName: 'ReferenceSystem',
-            typeInfo: 'OWS_2_0.DomainMetadataType'
+            n: 'referenceSystem',
+            en: 'ReferenceSystem',
+            ti: 'OWS_2_0.DomainMetadataType'
           }, {
-            name: 'metadata',
-            collection: true,
-            elementName: 'Metadata',
-            typeInfo: 'OWS_2_0.MetadataType',
-            type: 'elementRef'
+            n: 'metadata',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'Metadata',
+            ti: 'OWS_2_0.MetadataType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AcceptVersionsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'version',
-            collection: true,
-            elementName: 'Version',
-            typeInfo: 'String'
+        ln: 'AcceptVersionsType',
+        ps: [{
+            n: 'version',
+            col: true,
+            en: 'Version'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'IdentificationType',
-        baseTypeInfo: 'OWS_2_0.BasicIdentificationType',
-        propertyInfos: [{
-            name: 'boundingBox',
-            collection: true,
-            elementName: 'BoundingBox',
-            typeInfo: 'OWS_2_0.BoundingBoxType',
-            type: 'elementRef'
+        ln: 'IdentificationType',
+        bti: 'OWS_2_0.BasicIdentificationType',
+        ps: [{
+            n: 'boundingBox',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'BoundingBox',
+            ti: 'OWS_2_0.BoundingBoxType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'outputFormat',
-            collection: true,
-            elementName: 'OutputFormat',
-            typeInfo: 'String'
+            n: 'outputFormat',
+            col: true,
+            en: 'OutputFormat'
           }, {
-            name: 'availableCRS',
-            collection: true,
-            elementName: 'AvailableCRS',
-            typeInfo: 'String',
-            type: 'elementRef'
+            n: 'availableCRS',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AvailableCRS',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AcceptFormatsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'outputFormat',
-            collection: true,
-            elementName: 'OutputFormat',
-            typeInfo: 'String'
+        ln: 'AcceptFormatsType',
+        ps: [{
+            n: 'outputFormat',
+            col: true,
+            en: 'OutputFormat'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SectionsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'section',
-            collection: true,
-            elementName: 'Section',
-            typeInfo: 'String'
+        ln: 'SectionsType',
+        ps: [{
+            n: 'section',
+            col: true,
+            en: 'Section'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AddressType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'deliveryPoint',
-            collection: true,
-            elementName: 'DeliveryPoint',
-            typeInfo: 'String'
+        ln: 'AddressType',
+        ps: [{
+            n: 'deliveryPoint',
+            col: true,
+            en: 'DeliveryPoint'
           }, {
-            type: 'element',
-            name: 'city',
-            elementName: 'City',
-            typeInfo: 'String'
+            n: 'city',
+            en: 'City'
           }, {
-            type: 'element',
-            name: 'administrativeArea',
-            elementName: 'AdministrativeArea',
-            typeInfo: 'String'
+            n: 'administrativeArea',
+            en: 'AdministrativeArea'
           }, {
-            type: 'element',
-            name: 'postalCode',
-            elementName: 'PostalCode',
-            typeInfo: 'String'
+            n: 'postalCode',
+            en: 'PostalCode'
           }, {
-            type: 'element',
-            name: 'country',
-            elementName: 'Country',
-            typeInfo: 'String'
+            n: 'country',
+            en: 'Country'
           }, {
-            type: 'element',
-            name: 'electronicMailAddress',
-            collection: true,
-            elementName: 'ElectronicMailAddress',
-            typeInfo: 'String'
+            n: 'electronicMailAddress',
+            col: true,
+            en: 'ElectronicMailAddress'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CapabilitiesBaseType.Languages',
-        propertyInfos: [{
-            type: 'element',
-            name: 'language',
-            collection: true,
-            elementName: 'Language',
-            typeInfo: 'String'
+        ln: 'CapabilitiesBaseType.Languages',
+        ps: [{
+            n: 'language',
+            col: true,
+            en: 'Language'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetCapabilitiesType.AcceptLanguages',
-        propertyInfos: [{
-            type: 'element',
-            name: 'language',
-            collection: true,
-            elementName: 'Language',
-            typeInfo: 'String'
+        ln: 'GetCapabilitiesType.AcceptLanguages',
+        ps: [{
+            n: 'language',
+            col: true,
+            en: 'Language'
           }]
       }],
-    elementInfos: [{
-        elementName: 'OperationsMetadata',
-        typeInfo: 'OWS_2_0.OperationsMetadata'
+    eis: [{
+        en: 'OperationsMetadata',
+        ti: 'OWS_2_0.OperationsMetadata'
       }, {
-        elementName: 'Operation',
-        typeInfo: 'OWS_2_0.Operation'
+        en: 'Operation',
+        ti: 'OWS_2_0.Operation'
       }, {
-        elementName: 'DCP',
-        typeInfo: 'OWS_2_0.DCP'
+        en: 'DCP',
+        ti: 'OWS_2_0.DCP'
       }, {
-        elementName: 'HTTP',
-        typeInfo: 'OWS_2_0.HTTP'
+        en: 'HTTP',
+        ti: 'OWS_2_0.HTTP'
       }, {
-        elementName: 'ValuesReference',
-        typeInfo: 'OWS_2_0.ValuesReference'
+        en: 'ValuesReference',
+        ti: 'OWS_2_0.ValuesReference'
       }, {
-        elementName: 'ServiceIdentification',
-        typeInfo: 'OWS_2_0.ServiceIdentification'
+        en: 'ServiceIdentification',
+        ti: 'OWS_2_0.ServiceIdentification'
       }, {
-        elementName: 'AllowedValues',
-        typeInfo: 'OWS_2_0.AllowedValues'
+        en: 'AllowedValues',
+        ti: 'OWS_2_0.AllowedValues'
       }, {
-        elementName: 'ServiceProvider',
-        typeInfo: 'OWS_2_0.ServiceProvider'
+        en: 'ServiceProvider',
+        ti: 'OWS_2_0.ServiceProvider'
       }, {
-        elementName: 'ExceptionReport',
-        typeInfo: 'OWS_2_0.ExceptionReport'
+        en: 'ExceptionReport',
+        ti: 'OWS_2_0.ExceptionReport'
       }, {
-        elementName: 'NoValues',
-        typeInfo: 'OWS_2_0.NoValues'
+        en: 'NoValues',
+        ti: 'OWS_2_0.NoValues'
       }, {
-        elementName: 'AnyValue',
-        typeInfo: 'OWS_2_0.AnyValue'
+        en: 'AnyValue',
+        ti: 'OWS_2_0.AnyValue'
       }, {
-        elementName: 'Metadata',
-        typeInfo: 'OWS_2_0.MetadataType'
+        en: 'Metadata',
+        ti: 'OWS_2_0.MetadataType'
       }, {
-        elementName: 'MaximumValue',
-        typeInfo: 'OWS_2_0.ValueType'
+        en: 'MaximumValue',
+        ti: 'OWS_2_0.ValueType'
       }, {
-        elementName: 'WGS84BoundingBox',
-        typeInfo: 'OWS_2_0.WGS84BoundingBoxType',
-        substitutionHead: 'BoundingBox'
+        en: 'WGS84BoundingBox',
+        ti: 'OWS_2_0.WGS84BoundingBoxType',
+        sh: 'BoundingBox'
       }, {
-        elementName: 'ReferenceSystem',
-        typeInfo: 'OWS_2_0.DomainMetadataType'
+        en: 'ReferenceSystem',
+        ti: 'OWS_2_0.DomainMetadataType'
       }, {
-        elementName: 'AdditionalParameters',
-        typeInfo: 'OWS_2_0.AdditionalParametersType',
-        substitutionHead: 'Metadata'
+        en: 'AdditionalParameters',
+        ti: 'OWS_2_0.AdditionalParametersType',
+        sh: 'Metadata'
       }, {
-        elementName: 'Keywords',
-        typeInfo: 'OWS_2_0.KeywordsType'
+        en: 'Keywords',
+        ti: 'OWS_2_0.KeywordsType'
       }, {
-        elementName: 'nilValue',
-        typeInfo: 'OWS_2_0.NilValueType'
+        en: 'nilValue',
+        ti: 'OWS_2_0.NilValueType'
       }, {
-        elementName: 'OrganisationName',
-        typeInfo: 'String'
+        en: 'OrganisationName'
       }, {
-        elementName: 'DataType',
-        typeInfo: 'OWS_2_0.DomainMetadataType'
+        en: 'DataType',
+        ti: 'OWS_2_0.DomainMetadataType'
       }, {
-        elementName: 'ContactInfo',
-        typeInfo: 'OWS_2_0.ContactType'
+        en: 'ContactInfo',
+        ti: 'OWS_2_0.ContactType'
       }, {
-        elementName: 'InputData',
-        typeInfo: 'OWS_2_0.ManifestType'
+        en: 'InputData',
+        ti: 'OWS_2_0.ManifestType'
       }, {
-        elementName: 'AbstractMetaData',
-        typeInfo: 'AnyType'
+        en: 'AbstractMetaData',
+        ti: 'AnyType'
       }, {
-        elementName: 'IndividualName',
-        typeInfo: 'String'
+        en: 'IndividualName'
       }, {
-        elementName: 'DefaultValue',
-        typeInfo: 'OWS_2_0.ValueType'
+        en: 'DefaultValue',
+        ti: 'OWS_2_0.ValueType'
       }, {
-        elementName: 'OtherSource',
-        typeInfo: 'OWS_2_0.MetadataType'
+        en: 'OtherSource',
+        ti: 'OWS_2_0.MetadataType'
       }, {
-        elementName: 'Identifier',
-        typeInfo: 'OWS_2_0.CodeType'
+        en: 'Identifier',
+        ti: 'OWS_2_0.CodeType'
       }, {
-        elementName: 'Language',
-        typeInfo: 'String'
+        en: 'Language'
       }, {
-        elementName: 'GetCapabilities',
-        typeInfo: 'OWS_2_0.GetCapabilitiesType'
+        en: 'GetCapabilities',
+        ti: 'OWS_2_0.GetCapabilitiesType'
       }, {
-        elementName: 'BoundingBox',
-        typeInfo: 'OWS_2_0.BoundingBoxType'
+        en: 'BoundingBox',
+        ti: 'OWS_2_0.BoundingBoxType'
       }, {
-        elementName: 'Resource',
-        typeInfo: 'AnyType'
+        en: 'Resource',
+        ti: 'AnyType'
       }, {
-        elementName: 'AdditionalParameter',
-        typeInfo: 'OWS_2_0.AdditionalParameter',
-        substitutionHead: 'AbstractMetaData'
+        en: 'AdditionalParameter',
+        ti: 'OWS_2_0.AdditionalParameter',
+        sh: 'AbstractMetaData'
       }, {
-        elementName: 'OutputFormat',
-        typeInfo: 'String'
+        en: 'OutputFormat'
       }, {
-        elementName: 'Title',
-        typeInfo: 'OWS_2_0.LanguageStringType'
+        en: 'Title',
+        ti: 'OWS_2_0.LanguageStringType'
       }, {
-        elementName: 'Spacing',
-        typeInfo: 'OWS_2_0.ValueType'
+        en: 'Spacing',
+        ti: 'OWS_2_0.ValueType'
       }, {
-        elementName: 'Fees',
-        typeInfo: 'String'
+        en: 'Fees'
       }, {
-        elementName: 'Range',
-        typeInfo: 'OWS_2_0.RangeType'
+        en: 'Range',
+        ti: 'OWS_2_0.RangeType'
       }, {
-        elementName: 'Manifest',
-        typeInfo: 'OWS_2_0.ManifestType'
+        en: 'Manifest',
+        ti: 'OWS_2_0.ManifestType'
       }, {
-        elementName: 'Exception',
-        typeInfo: 'OWS_2_0.ExceptionType'
+        en: 'Exception',
+        ti: 'OWS_2_0.ExceptionType'
       }, {
-        elementName: 'AbstractReferenceBase',
-        typeInfo: 'OWS_2_0.AbstractReferenceBaseType'
+        en: 'AbstractReferenceBase',
+        ti: 'OWS_2_0.AbstractReferenceBaseType'
       }, {
-        elementName: 'ServiceReference',
-        typeInfo: 'OWS_2_0.ServiceReferenceType',
-        substitutionHead: 'Reference'
+        en: 'ServiceReference',
+        ti: 'OWS_2_0.ServiceReferenceType',
+        sh: 'Reference'
       }, {
-        elementName: 'ReferenceGroup',
-        typeInfo: 'OWS_2_0.ReferenceGroupType'
+        en: 'ReferenceGroup',
+        ti: 'OWS_2_0.ReferenceGroupType'
       }, {
-        elementName: 'AccessConstraints',
-        typeInfo: 'String'
+        en: 'AccessConstraints'
       }, {
-        elementName: 'ExtendedCapabilities',
-        typeInfo: 'AnyType'
+        en: 'ExtendedCapabilities',
+        ti: 'AnyType'
       }, {
-        elementName: 'GetResourceByID',
-        typeInfo: 'OWS_2_0.GetResourceByIdType'
+        en: 'GetResourceByID',
+        ti: 'OWS_2_0.GetResourceByIdType'
       }, {
-        elementName: 'DatasetDescriptionSummary',
-        typeInfo: 'OWS_2_0.DatasetDescriptionSummaryBaseType'
+        en: 'DatasetDescriptionSummary',
+        ti: 'OWS_2_0.DatasetDescriptionSummaryBaseType'
       }, {
-        elementName: 'PositionName',
-        typeInfo: 'String'
+        en: 'PositionName'
       }, {
-        elementName: 'Abstract',
-        typeInfo: 'OWS_2_0.LanguageStringType'
+        en: 'Abstract',
+        ti: 'OWS_2_0.LanguageStringType'
       }, {
-        elementName: 'Reference',
-        typeInfo: 'OWS_2_0.ReferenceType',
-        substitutionHead: 'AbstractReferenceBase'
+        en: 'Reference',
+        ti: 'OWS_2_0.ReferenceType',
+        sh: 'AbstractReferenceBase'
       }, {
-        elementName: 'Value',
-        typeInfo: 'OWS_2_0.ValueType'
+        en: 'Value',
+        ti: 'OWS_2_0.ValueType'
       }, {
-        elementName: 'AvailableCRS',
-        typeInfo: 'String'
+        en: 'AvailableCRS'
       }, {
-        elementName: 'MinimumValue',
-        typeInfo: 'OWS_2_0.ValueType'
+        en: 'MinimumValue',
+        ti: 'OWS_2_0.ValueType'
       }, {
-        elementName: 'OperationResponse',
-        typeInfo: 'OWS_2_0.ManifestType'
+        en: 'OperationResponse',
+        ti: 'OWS_2_0.ManifestType'
       }, {
-        elementName: 'Meaning',
-        typeInfo: 'OWS_2_0.DomainMetadataType'
+        en: 'Meaning',
+        ti: 'OWS_2_0.DomainMetadataType'
       }, {
-        elementName: 'SupportedCRS',
-        typeInfo: 'String',
-        substitutionHead: 'AvailableCRS'
+        en: 'SupportedCRS',
+        sh: 'AvailableCRS'
       }, {
-        elementName: 'Role',
-        typeInfo: 'OWS_2_0.CodeType'
+        en: 'Role',
+        ti: 'OWS_2_0.CodeType'
       }, {
-        elementName: 'UOM',
-        typeInfo: 'OWS_2_0.DomainMetadataType'
+        en: 'UOM',
+        ti: 'OWS_2_0.DomainMetadataType'
       }, {
-        elementName: 'PointOfContact',
-        typeInfo: 'OWS_2_0.ResponsiblePartyType'
+        en: 'PointOfContact',
+        ti: 'OWS_2_0.ResponsiblePartyType'
       }, {
-        elementName: 'Post',
-        typeInfo: 'OWS_2_0.RequestMethodType',
-        scope: 'OWS_2_0.HTTP'
+        en: 'Post',
+        ti: 'OWS_2_0.RequestMethodType',
+        sc: 'OWS_2_0.HTTP'
       }, {
-        elementName: 'Get',
-        typeInfo: 'OWS_2_0.RequestMethodType',
-        scope: 'OWS_2_0.HTTP'
+        en: 'Get',
+        ti: 'OWS_2_0.RequestMethodType',
+        sc: 'OWS_2_0.HTTP'
       }]
   };
   return {

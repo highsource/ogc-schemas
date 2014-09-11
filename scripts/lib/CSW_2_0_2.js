@@ -1,967 +1,815 @@
 var CSW_2_0_2_Module_Factory = function () {
   var CSW_2_0_2 = {
-    name: 'CSW_2_0_2',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/cat\/csw\/2.0.2',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'QueryType',
-        baseTypeInfo: 'CSW_2_0_2.AbstractQueryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'elementSetName',
-            elementName: 'ElementSetName',
-            typeInfo: 'CSW_2_0_2.ElementSetNameType'
+    n: 'CSW_2_0_2',
+    dens: 'http:\/\/www.opengis.net\/cat\/csw\/2.0.2',
+    tis: [{
+        ln: 'QueryType',
+        bti: 'CSW_2_0_2.AbstractQueryType',
+        ps: [{
+            n: 'elementSetName',
+            en: 'ElementSetName',
+            ti: 'CSW_2_0_2.ElementSetNameType'
           }, {
-            type: 'element',
-            name: 'elementName',
-            collection: true,
-            elementName: 'ElementName',
-            typeInfo: 'String'
+            n: 'elementName',
+            col: true,
+            en: 'ElementName'
           }, {
-            type: 'element',
-            name: 'constraint',
-            elementName: 'Constraint',
-            typeInfo: 'CSW_2_0_2.QueryConstraintType'
+            n: 'constraint',
+            en: 'Constraint',
+            ti: 'CSW_2_0_2.QueryConstraintType'
           }, {
-            name: 'sortBy',
-            allowDom: true,
-            type: 'anyElement'
+            n: 'sortBy',
+            typed: false,
+            mx: false,
+            t: 'ae'
           }, {
-            name: 'typeNames',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'typeNames',
+            ti: {
+              t: 'l'
             },
-            attributeName: 'typeNames',
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractQueryType',
-        propertyInfos: []
+        ln: 'AbstractQueryType'
       }, {
-        type: 'classInfo',
-        localName: 'QueryConstraintType',
-        propertyInfos: [{
-            name: 'filter',
-            allowDom: true,
-            type: 'anyElement'
+        ln: 'QueryConstraintType',
+        ps: [{
+            n: 'filter',
+            typed: false,
+            mx: false,
+            t: 'ae'
           }, {
-            type: 'element',
-            name: 'cqlText',
-            elementName: 'CqlText',
-            typeInfo: 'String'
+            n: 'cqlText',
+            en: 'CqlText'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetDomainResponseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'domainValues',
-            collection: true,
-            elementName: 'DomainValues',
-            typeInfo: 'CSW_2_0_2.DomainValuesType'
+        ln: 'GetDomainResponseType',
+        ps: [{
+            n: 'domainValues',
+            col: true,
+            en: 'DomainValues',
+            ti: 'CSW_2_0_2.DomainValuesType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetRecordsType',
-        baseTypeInfo: 'CSW_2_0_2.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'distributedSearch',
-            elementName: 'DistributedSearch',
-            typeInfo: 'CSW_2_0_2.DistributedSearchType'
+        ln: 'GetRecordsType',
+        bti: 'CSW_2_0_2.RequestBaseType',
+        ps: [{
+            n: 'distributedSearch',
+            en: 'DistributedSearch',
+            ti: 'CSW_2_0_2.DistributedSearchType'
           }, {
-            type: 'element',
-            name: 'responseHandler',
-            collection: true,
-            elementName: 'ResponseHandler',
-            typeInfo: 'String'
+            n: 'responseHandler',
+            col: true,
+            en: 'ResponseHandler'
           }, {
-            name: 'abstractQuery',
-            elementName: 'AbstractQuery',
-            typeInfo: 'CSW_2_0_2.AbstractQueryType',
-            type: 'elementRef'
+            n: 'abstractQuery',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractQuery',
+            ti: 'CSW_2_0_2.AbstractQueryType',
+            t: 'er'
           }, {
-            name: 'any',
-            allowTypedObject: true,
-            type: 'anyElement'
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
           }, {
-            name: 'requestId',
-            typeInfo: 'String',
-            attributeName: 'requestId',
-            type: 'attribute'
+            n: 'requestId',
+            t: 'a'
           }, {
-            name: 'resultType',
-            typeInfo: 'String',
-            attributeName: 'resultType',
-            type: 'attribute'
+            n: 'resultType',
+            t: 'a'
           }, {
-            name: 'outputFormat',
-            typeInfo: 'String',
-            attributeName: 'outputFormat',
-            type: 'attribute'
+            n: 'outputFormat',
+            t: 'a'
           }, {
-            name: 'outputSchema',
-            typeInfo: 'String',
-            attributeName: 'outputSchema',
-            type: 'attribute'
+            n: 'outputSchema',
+            t: 'a'
           }, {
-            name: 'startPosition',
-            typeInfo: 'Integer',
-            attributeName: 'startPosition',
-            type: 'attribute'
+            n: 'startPosition',
+            ti: 'Integer',
+            t: 'a'
           }, {
-            name: 'maxRecords',
-            typeInfo: 'Integer',
-            attributeName: 'maxRecords',
-            type: 'attribute'
+            n: 'maxRecords',
+            ti: 'Integer',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'HarvestType',
-        baseTypeInfo: 'CSW_2_0_2.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'source',
-            elementName: 'Source',
-            typeInfo: 'String'
+        ln: 'HarvestType',
+        bti: 'CSW_2_0_2.RequestBaseType',
+        ps: [{
+            n: 'source',
+            en: 'Source'
           }, {
-            type: 'element',
-            name: 'resourceType',
-            elementName: 'ResourceType',
-            typeInfo: 'String'
+            n: 'resourceType',
+            en: 'ResourceType'
           }, {
-            type: 'element',
-            name: 'resourceFormat',
-            elementName: 'ResourceFormat',
-            typeInfo: 'String'
+            n: 'resourceFormat',
+            en: 'ResourceFormat'
           }, {
-            type: 'element',
-            name: 'harvestInterval',
-            elementName: 'HarvestInterval',
-            typeInfo: 'String'
+            n: 'harvestInterval',
+            en: 'HarvestInterval'
           }, {
-            type: 'element',
-            name: 'responseHandler',
-            collection: true,
-            elementName: 'ResponseHandler',
-            typeInfo: 'String'
+            n: 'responseHandler',
+            col: true,
+            en: 'ResponseHandler'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DescribeRecordType',
-        baseTypeInfo: 'CSW_2_0_2.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'typeName',
-            collection: true,
-            elementName: 'TypeName',
-            typeInfo: 'String'
+        ln: 'DescribeRecordType',
+        bti: 'CSW_2_0_2.RequestBaseType',
+        ps: [{
+            n: 'typeName',
+            col: true,
+            en: 'TypeName'
           }, {
-            name: 'outputFormat',
-            typeInfo: 'String',
-            attributeName: 'outputFormat',
-            type: 'attribute'
+            n: 'outputFormat',
+            t: 'a'
           }, {
-            name: 'schemaLanguage',
-            typeInfo: 'String',
-            attributeName: 'schemaLanguage',
-            type: 'attribute'
+            n: 'schemaLanguage',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AcknowledgementType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'echoedRequest',
-            elementName: 'EchoedRequest',
-            typeInfo: 'CSW_2_0_2.EchoedRequestType'
+        ln: 'AcknowledgementType',
+        ps: [{
+            n: 'echoedRequest',
+            en: 'EchoedRequest',
+            ti: 'CSW_2_0_2.EchoedRequestType'
           }, {
-            type: 'element',
-            name: 'requestId',
-            elementName: 'RequestId',
-            typeInfo: 'String'
+            n: 'requestId',
+            en: 'RequestId'
           }, {
-            name: 'timeStamp',
-            typeInfo: 'Calendar',
-            attributeName: 'timeStamp',
-            type: 'attribute'
+            n: 'timeStamp',
+            ti: 'Calendar',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TransactionResponseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'transactionSummary',
-            elementName: 'TransactionSummary',
-            typeInfo: 'CSW_2_0_2.TransactionSummaryType'
+        ln: 'TransactionResponseType',
+        ps: [{
+            n: 'transactionSummary',
+            en: 'TransactionSummary',
+            ti: 'CSW_2_0_2.TransactionSummaryType'
           }, {
-            type: 'element',
-            name: 'insertResult',
-            collection: true,
-            elementName: 'InsertResult',
-            typeInfo: 'CSW_2_0_2.InsertResultType'
+            n: 'insertResult',
+            col: true,
+            en: 'InsertResult',
+            ti: 'CSW_2_0_2.InsertResultType'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetCapabilitiesType',
-        baseTypeInfo: 'OWS_1_0_0.GetCapabilitiesType',
-        propertyInfos: [{
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+        ln: 'GetCapabilitiesType',
+        bti: 'OWS_1_0_0.GetCapabilitiesType',
+        ps: [{
+            n: 'service',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RecordPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'RecordPropertyType',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'value',
-            elementName: 'Value',
-            typeInfo: 'AnyType'
+            n: 'value',
+            en: 'Value',
+            ti: 'AnyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RecordType',
-        baseTypeInfo: 'CSW_2_0_2.DCMIRecordType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'anyText',
-            collection: true,
-            elementName: 'AnyText',
-            typeInfo: 'CSW_2_0_2.EmptyType'
+        ln: 'RecordType',
+        bti: 'CSW_2_0_2.DCMIRecordType',
+        ps: [{
+            n: 'anyText',
+            col: true,
+            en: 'AnyText',
+            ti: 'CSW_2_0_2.EmptyType'
           }, {
-            name: 'boundingBox',
-            collection: true,
-            elementName: {
-              localPart: 'BoundingBox',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows'
+            n: 'boundingBox',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'BoundingBox',
+              ns: 'http:\/\/www.opengis.net\/ows'
             },
-            typeInfo: 'OWS_1_0_0.BoundingBoxType',
-            type: 'elementRef'
+            ti: 'OWS_1_0_0.BoundingBoxType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractRecordType',
-        propertyInfos: []
+        ln: 'AbstractRecordType'
       }, {
-        type: 'classInfo',
-        localName: 'GetRecordByIdResponseType',
-        propertyInfos: [{
-            name: 'abstractRecord',
-            collection: true,
-            elementName: 'AbstractRecord',
-            typeInfo: 'CSW_2_0_2.AbstractRecordType',
-            type: 'elementRef'
+        ln: 'GetRecordByIdResponseType',
+        ps: [{
+            n: 'abstractRecord',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractRecord',
+            ti: 'CSW_2_0_2.AbstractRecordType',
+            t: 'er'
           }, {
-            name: 'any',
-            collection: true,
-            allowTypedObject: true,
-            type: 'anyElement'
+            n: 'any',
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DescribeRecordResponseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'schemaComponent',
-            collection: true,
-            elementName: 'SchemaComponent',
-            typeInfo: 'CSW_2_0_2.SchemaComponentType'
+        ln: 'DescribeRecordResponseType',
+        ps: [{
+            n: 'schemaComponent',
+            col: true,
+            en: 'SchemaComponent',
+            ti: 'CSW_2_0_2.SchemaComponentType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ElementSetNameType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'ElementSetNameType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'typeNames',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'typeNames',
+            ti: {
+              t: 'l'
             },
-            attributeName: 'typeNames',
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetDomainType',
-        baseTypeInfo: 'CSW_2_0_2.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'propertyName',
-            elementName: 'PropertyName',
-            typeInfo: 'String'
+        ln: 'GetDomainType',
+        bti: 'CSW_2_0_2.RequestBaseType',
+        ps: [{
+            n: 'propertyName',
+            en: 'PropertyName'
           }, {
-            type: 'element',
-            name: 'parameterName',
-            elementName: 'ParameterName',
-            typeInfo: 'String'
+            n: 'parameterName',
+            en: 'ParameterName'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetRecordsResponseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'requestId',
-            elementName: 'RequestId',
-            typeInfo: 'String'
+        ln: 'GetRecordsResponseType',
+        ps: [{
+            n: 'requestId',
+            en: 'RequestId'
           }, {
-            type: 'element',
-            name: 'searchStatus',
-            elementName: 'SearchStatus',
-            typeInfo: 'CSW_2_0_2.RequestStatusType'
+            n: 'searchStatus',
+            en: 'SearchStatus',
+            ti: 'CSW_2_0_2.RequestStatusType'
           }, {
-            type: 'element',
-            name: 'searchResults',
-            elementName: 'SearchResults',
-            typeInfo: 'CSW_2_0_2.SearchResultsType'
+            n: 'searchResults',
+            en: 'SearchResults',
+            ti: 'CSW_2_0_2.SearchResultsType'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'HarvestResponseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'acknowledgement',
-            elementName: 'Acknowledgement',
-            typeInfo: 'CSW_2_0_2.AcknowledgementType'
+        ln: 'HarvestResponseType',
+        ps: [{
+            n: 'acknowledgement',
+            en: 'Acknowledgement',
+            ti: 'CSW_2_0_2.AcknowledgementType'
           }, {
-            type: 'element',
-            name: 'transactionResponse',
-            elementName: 'TransactionResponse',
-            typeInfo: 'CSW_2_0_2.TransactionResponseType'
+            n: 'transactionResponse',
+            en: 'TransactionResponse',
+            ti: 'CSW_2_0_2.TransactionResponseType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BriefRecordType',
-        baseTypeInfo: 'CSW_2_0_2.AbstractRecordType',
-        propertyInfos: [{
-            name: 'identifier',
-            collection: true,
-            elementName: {
-              localPart: 'identifier',
-              namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        ln: 'BriefRecordType',
+        bti: 'CSW_2_0_2.AbstractRecordType',
+        ps: [{
+            n: 'identifier',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'identifier',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral',
-            type: 'elementRef'
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
           }, {
-            name: 'title',
-            collection: true,
-            elementName: {
-              localPart: 'title',
-              namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            n: 'title',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'title',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral',
-            type: 'elementRef'
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'type',
-            elementName: {
-              localPart: 'type',
-              namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            n: 'type',
+            en: {
+              lp: 'type',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral'
+            ti: 'DC_1_1.SimpleLiteral'
           }, {
-            name: 'boundingBox',
-            collection: true,
-            elementName: {
-              localPart: 'BoundingBox',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows'
+            n: 'boundingBox',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'BoundingBox',
+              ns: 'http:\/\/www.opengis.net\/ows'
             },
-            typeInfo: 'OWS_1_0_0.BoundingBoxType',
-            type: 'elementRef'
+            ti: 'OWS_1_0_0.BoundingBoxType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TransactionType',
-        baseTypeInfo: 'CSW_2_0_2.RequestBaseType',
-        propertyInfos: [{
-            name: 'insertOrUpdateOrDelete',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'Insert',
-                typeInfo: 'CSW_2_0_2.InsertType'
+        ln: 'TransactionType',
+        bti: 'CSW_2_0_2.RequestBaseType',
+        ps: [{
+            n: 'insertOrUpdateOrDelete',
+            col: true,
+            etis: [{
+                en: 'Insert',
+                ti: 'CSW_2_0_2.InsertType'
               }, {
-                elementName: 'Update',
-                typeInfo: 'CSW_2_0_2.UpdateType'
+                en: 'Update',
+                ti: 'CSW_2_0_2.UpdateType'
               }, {
-                elementName: 'Delete',
-                typeInfo: 'CSW_2_0_2.DeleteType'
+                en: 'Delete',
+                ti: 'CSW_2_0_2.DeleteType'
               }],
-            type: 'elements'
+            t: 'es'
           }, {
-            name: 'verboseResponse',
-            typeInfo: 'Boolean',
-            attributeName: 'verboseResponse',
-            type: 'attribute'
+            n: 'verboseResponse',
+            ti: 'Boolean',
+            t: 'a'
           }, {
-            name: 'requestId',
-            typeInfo: 'String',
-            attributeName: 'requestId',
-            type: 'attribute'
+            n: 'requestId',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SummaryRecordType',
-        baseTypeInfo: 'CSW_2_0_2.AbstractRecordType',
-        propertyInfos: [{
-            name: 'identifier',
-            collection: true,
-            elementName: {
-              localPart: 'identifier',
-              namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        ln: 'SummaryRecordType',
+        bti: 'CSW_2_0_2.AbstractRecordType',
+        ps: [{
+            n: 'identifier',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'identifier',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral',
-            type: 'elementRef'
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
           }, {
-            name: 'title',
-            collection: true,
-            elementName: {
-              localPart: 'title',
-              namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            n: 'title',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'title',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral',
-            type: 'elementRef'
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'type',
-            elementName: {
-              localPart: 'type',
-              namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            n: 'type',
+            en: {
+              lp: 'type',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral'
+            ti: 'DC_1_1.SimpleLiteral'
           }, {
-            type: 'element',
-            name: 'subject',
-            collection: true,
-            elementName: {
-              localPart: 'subject',
-              namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            n: 'subject',
+            col: true,
+            en: {
+              lp: 'subject',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral'
+            ti: 'DC_1_1.SimpleLiteral'
           }, {
-            name: 'format',
-            collection: true,
-            elementName: {
-              localPart: 'format',
-              namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            n: 'format',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'format',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral',
-            type: 'elementRef'
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
           }, {
-            name: 'relation',
-            collection: true,
-            elementName: {
-              localPart: 'relation',
-              namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            n: 'relation',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'relation',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral',
-            type: 'elementRef'
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'modified',
-            collection: true,
-            elementName: {
-              localPart: 'modified',
-              namespaceURI: 'http:\/\/purl.org\/dc\/terms\/'
+            n: 'modified',
+            col: true,
+            en: {
+              lp: 'modified',
+              ns: 'http:\/\/purl.org\/dc\/terms\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral'
+            ti: 'DC_1_1.SimpleLiteral'
           }, {
-            type: 'element',
-            name: '_abstract',
-            collection: true,
-            elementName: {
-              localPart: 'abstract',
-              namespaceURI: 'http:\/\/purl.org\/dc\/terms\/'
+            n: '_abstract',
+            col: true,
+            en: {
+              lp: 'abstract',
+              ns: 'http:\/\/purl.org\/dc\/terms\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral'
+            ti: 'DC_1_1.SimpleLiteral'
           }, {
-            type: 'element',
-            name: 'spatial',
-            collection: true,
-            elementName: {
-              localPart: 'spatial',
-              namespaceURI: 'http:\/\/purl.org\/dc\/terms\/'
+            n: 'spatial',
+            col: true,
+            en: {
+              lp: 'spatial',
+              ns: 'http:\/\/purl.org\/dc\/terms\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral'
+            ti: 'DC_1_1.SimpleLiteral'
           }, {
-            name: 'boundingBox',
-            collection: true,
-            elementName: {
-              localPart: 'BoundingBox',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows'
+            n: 'boundingBox',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'BoundingBox',
+              ns: 'http:\/\/www.opengis.net\/ows'
             },
-            typeInfo: 'OWS_1_0_0.BoundingBoxType',
-            type: 'elementRef'
+            ti: 'OWS_1_0_0.BoundingBoxType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CapabilitiesType',
-        baseTypeInfo: 'OWS_1_0_0.CapabilitiesBaseType',
-        propertyInfos: [{
-            name: 'filterCapabilities',
-            allowDom: true,
-            type: 'anyElement'
+        ln: 'CapabilitiesType',
+        bti: 'OWS_1_0_0.CapabilitiesBaseType',
+        ps: [{
+            n: 'filterCapabilities',
+            typed: false,
+            mx: false,
+            t: 'ae'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DCMIRecordType',
-        baseTypeInfo: 'CSW_2_0_2.AbstractRecordType',
-        propertyInfos: [{
-            name: 'dcElement',
-            collection: true,
-            elementName: {
-              localPart: 'DC-element',
-              namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        ln: 'DCMIRecordType',
+        bti: 'CSW_2_0_2.AbstractRecordType',
+        ps: [{
+            n: 'dcElement',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'DC-element',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
             },
-            typeInfo: 'DC_1_1.SimpleLiteral',
-            type: 'elementRef'
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetRecordByIdType',
-        baseTypeInfo: 'CSW_2_0_2.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'id',
-            collection: true,
-            elementName: 'Id',
-            typeInfo: 'String'
+        ln: 'GetRecordByIdType',
+        bti: 'CSW_2_0_2.RequestBaseType',
+        ps: [{
+            n: 'id',
+            col: true,
+            en: 'Id'
           }, {
-            type: 'element',
-            name: 'elementSetName',
-            elementName: 'ElementSetName',
-            typeInfo: 'CSW_2_0_2.ElementSetNameType'
+            n: 'elementSetName',
+            en: 'ElementSetName',
+            ti: 'CSW_2_0_2.ElementSetNameType'
           }, {
-            name: 'outputFormat',
-            typeInfo: 'String',
-            attributeName: 'outputFormat',
-            type: 'attribute'
+            n: 'outputFormat',
+            t: 'a'
           }, {
-            name: 'outputSchema',
-            typeInfo: 'String',
-            attributeName: 'outputSchema',
-            type: 'attribute'
+            n: 'outputSchema',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DomainValuesType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'propertyName',
-            elementName: 'PropertyName',
-            typeInfo: 'String'
+        ln: 'DomainValuesType',
+        ps: [{
+            n: 'propertyName',
+            en: 'PropertyName'
           }, {
-            type: 'element',
-            name: 'parameterName',
-            elementName: 'ParameterName',
-            typeInfo: 'String'
+            n: 'parameterName',
+            en: 'ParameterName'
           }, {
-            type: 'element',
-            name: 'listOfValues',
-            elementName: 'ListOfValues',
-            typeInfo: 'CSW_2_0_2.ListOfValuesType'
+            n: 'listOfValues',
+            en: 'ListOfValues',
+            ti: 'CSW_2_0_2.ListOfValuesType'
           }, {
-            type: 'element',
-            name: 'conceptualScheme',
-            elementName: 'ConceptualScheme',
-            typeInfo: 'CSW_2_0_2.ConceptualSchemeType'
+            n: 'conceptualScheme',
+            en: 'ConceptualScheme',
+            ti: 'CSW_2_0_2.ConceptualSchemeType'
           }, {
-            type: 'element',
-            name: 'rangeOfValues',
-            elementName: 'RangeOfValues',
-            typeInfo: 'CSW_2_0_2.RangeOfValuesType'
+            n: 'rangeOfValues',
+            en: 'RangeOfValues',
+            ti: 'CSW_2_0_2.RangeOfValuesType'
           }, {
-            name: 'type',
-            typeInfo: 'String',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            t: 'a'
           }, {
-            name: 'uom',
-            typeInfo: 'String',
-            attributeName: 'uom',
-            type: 'attribute'
+            n: 'uom',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EmptyType',
-        propertyInfos: []
+        ln: 'EmptyType'
       }, {
-        type: 'classInfo',
-        localName: 'RangeOfValuesType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'minValue',
-            elementName: 'MinValue',
-            typeInfo: 'AnyType'
+        ln: 'RangeOfValuesType',
+        ps: [{
+            n: 'minValue',
+            en: 'MinValue',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'maxValue',
-            elementName: 'MaxValue',
-            typeInfo: 'AnyType'
+            n: 'maxValue',
+            en: 'MaxValue',
+            ti: 'AnyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TransactionSummaryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'totalInserted',
-            elementName: 'totalInserted',
-            typeInfo: 'Integer'
+        ln: 'TransactionSummaryType',
+        ps: [{
+            n: 'totalInserted',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'totalUpdated',
-            elementName: 'totalUpdated',
-            typeInfo: 'Integer'
+            n: 'totalUpdated',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'totalDeleted',
-            elementName: 'totalDeleted',
-            typeInfo: 'Integer'
+            n: 'totalDeleted',
+            ti: 'Integer'
           }, {
-            name: 'requestId',
-            typeInfo: 'String',
-            attributeName: 'requestId',
-            type: 'attribute'
+            n: 'requestId',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SchemaComponentType',
-        propertyInfos: [{
-            name: 'content',
-            collection: true,
-            allowDom: true,
-            allowTypedObject: true,
-            mixed: true,
-            type: 'anyElement'
+        ln: 'SchemaComponentType',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
           }, {
-            name: 'targetNamespace',
-            typeInfo: 'String',
-            attributeName: 'targetNamespace',
-            type: 'attribute'
+            n: 'targetNamespace',
+            t: 'a'
           }, {
-            name: 'parentSchema',
-            typeInfo: 'String',
-            attributeName: 'parentSchema',
-            type: 'attribute'
+            n: 'parentSchema',
+            t: 'a'
           }, {
-            name: 'schemaLanguage',
-            typeInfo: 'String',
-            attributeName: 'schemaLanguage',
-            type: 'attribute'
+            n: 'schemaLanguage',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConceptualSchemeType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'ConceptualSchemeType',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'document',
-            elementName: 'Document',
-            typeInfo: 'String'
+            n: 'document',
+            en: 'Document'
           }, {
-            type: 'element',
-            name: 'authority',
-            elementName: 'Authority',
-            typeInfo: 'String'
+            n: 'authority',
+            en: 'Authority'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DistributedSearchType',
-        propertyInfos: [{
-            name: 'hopCount',
-            typeInfo: 'Integer',
-            attributeName: 'hopCount',
-            type: 'attribute'
+        ln: 'DistributedSearchType',
+        ps: [{
+            n: 'hopCount',
+            ti: 'Integer',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DeleteType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'constraint',
-            elementName: 'Constraint',
-            typeInfo: 'CSW_2_0_2.QueryConstraintType'
+        ln: 'DeleteType',
+        ps: [{
+            n: 'constraint',
+            en: 'Constraint',
+            ti: 'CSW_2_0_2.QueryConstraintType'
           }, {
-            name: 'typeName',
-            typeInfo: 'String',
-            attributeName: 'typeName',
-            type: 'attribute'
+            n: 'typeName',
+            t: 'a'
           }, {
-            name: 'handle',
-            typeInfo: 'ID',
-            attributeName: 'handle',
-            type: 'attribute'
+            n: 'handle',
+            ti: 'ID',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'InsertType',
-        propertyInfos: [{
-            name: 'any',
-            collection: true,
-            allowDom: true,
-            type: 'anyElement'
+        ln: 'InsertType',
+        ps: [{
+            n: 'any',
+            col: true,
+            typed: false,
+            mx: false,
+            t: 'ae'
           }, {
-            name: 'typeName',
-            typeInfo: 'String',
-            attributeName: 'typeName',
-            type: 'attribute'
+            n: 'typeName',
+            t: 'a'
           }, {
-            name: 'handle',
-            typeInfo: 'ID',
-            attributeName: 'handle',
-            type: 'attribute'
+            n: 'handle',
+            ti: 'ID',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'InsertResultType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'briefRecord',
-            collection: true,
-            elementName: 'BriefRecord',
-            typeInfo: 'CSW_2_0_2.BriefRecordType'
+        ln: 'InsertResultType',
+        ps: [{
+            n: 'briefRecord',
+            col: true,
+            en: 'BriefRecord',
+            ti: 'CSW_2_0_2.BriefRecordType'
           }, {
-            name: 'handleRef',
-            typeInfo: 'String',
-            attributeName: 'handleRef',
-            type: 'attribute'
+            n: 'handleRef',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SearchResultsType',
-        propertyInfos: [{
-            name: 'abstractRecord',
-            collection: true,
-            elementName: 'AbstractRecord',
-            typeInfo: 'CSW_2_0_2.AbstractRecordType',
-            type: 'elementRef'
+        ln: 'SearchResultsType',
+        ps: [{
+            n: 'abstractRecord',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractRecord',
+            ti: 'CSW_2_0_2.AbstractRecordType',
+            t: 'er'
           }, {
-            name: 'any',
-            collection: true,
-            allowTypedObject: true,
-            type: 'anyElement'
+            n: 'any',
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
           }, {
-            name: 'resultSetId',
-            typeInfo: 'String',
-            attributeName: 'resultSetId',
-            type: 'attribute'
+            n: 'resultSetId',
+            t: 'a'
           }, {
-            name: 'elementSet',
-            typeInfo: 'String',
-            attributeName: 'elementSet',
-            type: 'attribute'
+            n: 'elementSet',
+            t: 'a'
           }, {
-            name: 'recordSchema',
-            typeInfo: 'String',
-            attributeName: 'recordSchema',
-            type: 'attribute'
+            n: 'recordSchema',
+            t: 'a'
           }, {
-            name: 'numberOfRecordsMatched',
-            typeInfo: 'Integer',
-            attributeName: 'numberOfRecordsMatched',
-            type: 'attribute'
+            n: 'numberOfRecordsMatched',
+            ti: 'Integer',
+            t: 'a'
           }, {
-            name: 'numberOfRecordsReturned',
-            typeInfo: 'Integer',
-            attributeName: 'numberOfRecordsReturned',
-            type: 'attribute'
+            n: 'numberOfRecordsReturned',
+            ti: 'Integer',
+            t: 'a'
           }, {
-            name: 'nextRecord',
-            typeInfo: 'Integer',
-            attributeName: 'nextRecord',
-            type: 'attribute'
+            n: 'nextRecord',
+            ti: 'Integer',
+            t: 'a'
           }, {
-            name: 'expires',
-            typeInfo: 'Calendar',
-            attributeName: 'expires',
-            type: 'attribute'
+            n: 'expires',
+            ti: 'Calendar',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EchoedRequestType',
-        propertyInfos: [{
-            name: 'any',
-            allowDom: true,
-            allowTypedObject: true,
-            type: 'anyElement'
+        ln: 'EchoedRequestType',
+        ps: [{
+            n: 'any',
+            mx: false,
+            t: 'ae'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UpdateType',
-        propertyInfos: [{
-            name: 'any',
-            allowDom: true,
-            type: 'anyElement'
+        ln: 'UpdateType',
+        ps: [{
+            n: 'any',
+            typed: false,
+            mx: false,
+            t: 'ae'
           }, {
-            type: 'element',
-            name: 'recordProperty',
-            collection: true,
-            elementName: 'RecordProperty',
-            typeInfo: 'CSW_2_0_2.RecordPropertyType'
+            n: 'recordProperty',
+            col: true,
+            en: 'RecordProperty',
+            ti: 'CSW_2_0_2.RecordPropertyType'
           }, {
-            type: 'element',
-            name: 'constraint',
-            elementName: 'Constraint',
-            typeInfo: 'CSW_2_0_2.QueryConstraintType'
+            n: 'constraint',
+            en: 'Constraint',
+            ti: 'CSW_2_0_2.QueryConstraintType'
           }, {
-            name: 'handle',
-            typeInfo: 'ID',
-            attributeName: 'handle',
-            type: 'attribute'
+            n: 'handle',
+            ti: 'ID',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RequestBaseType',
-        propertyInfos: [{
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+        ln: 'RequestBaseType',
+        ps: [{
+            n: 'service',
+            t: 'a'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ListOfValuesType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'value',
-            collection: true,
-            elementName: 'Value',
-            typeInfo: 'AnyType'
+        ln: 'ListOfValuesType',
+        ps: [{
+            n: 'value',
+            col: true,
+            en: 'Value',
+            ti: 'AnyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RequestStatusType',
-        propertyInfos: [{
-            name: 'timestamp',
-            typeInfo: 'Calendar',
-            attributeName: 'timestamp',
-            type: 'attribute'
+        ln: 'RequestStatusType',
+        ps: [{
+            n: 'timestamp',
+            ti: 'Calendar',
+            t: 'a'
           }]
       }, {
-        type: 'enumInfo',
-        localName: 'ResultType',
-        baseTypeInfo: 'String',
-        values: ['results', 'hits', 'validate']
+        t: 'enum',
+        ln: 'ResultType',
+        vs: ['results', 'hits', 'validate']
       }, {
-        type: 'enumInfo',
-        localName: 'ElementSetType',
-        baseTypeInfo: 'String',
-        values: ['brief', 'summary', 'full']
+        t: 'enum',
+        ln: 'ElementSetType',
+        vs: ['brief', 'summary', 'full']
       }],
-    elementInfos: [{
-        elementName: 'AbstractRecord',
-        typeInfo: 'CSW_2_0_2.AbstractRecordType'
+    eis: [{
+        en: 'AbstractRecord',
+        ti: 'CSW_2_0_2.AbstractRecordType'
       }, {
-        elementName: 'GetRecordByIdResponse',
-        typeInfo: 'CSW_2_0_2.GetRecordByIdResponseType'
+        en: 'GetRecordByIdResponse',
+        ti: 'CSW_2_0_2.GetRecordByIdResponseType'
       }, {
-        elementName: 'GetRecordById',
-        typeInfo: 'CSW_2_0_2.GetRecordByIdType'
+        en: 'GetRecordById',
+        ti: 'CSW_2_0_2.GetRecordByIdType'
       }, {
-        elementName: 'BriefRecord',
-        typeInfo: 'CSW_2_0_2.BriefRecordType',
-        substitutionHead: 'AbstractRecord'
+        en: 'BriefRecord',
+        ti: 'CSW_2_0_2.BriefRecordType',
+        sh: 'AbstractRecord'
       }, {
-        elementName: 'Transaction',
-        typeInfo: 'CSW_2_0_2.TransactionType'
+        en: 'Transaction',
+        ti: 'CSW_2_0_2.TransactionType'
       }, {
-        elementName: 'GetRecords',
-        typeInfo: 'CSW_2_0_2.GetRecordsType'
+        en: 'GetRecords',
+        ti: 'CSW_2_0_2.GetRecordsType'
       }, {
-        elementName: 'Harvest',
-        typeInfo: 'CSW_2_0_2.HarvestType'
+        en: 'Harvest',
+        ti: 'CSW_2_0_2.HarvestType'
       }, {
-        elementName: 'Constraint',
-        typeInfo: 'CSW_2_0_2.QueryConstraintType'
+        en: 'Constraint',
+        ti: 'CSW_2_0_2.QueryConstraintType'
       }, {
-        elementName: 'Query',
-        typeInfo: 'CSW_2_0_2.QueryType',
-        substitutionHead: 'AbstractQuery'
+        en: 'Query',
+        ti: 'CSW_2_0_2.QueryType',
+        sh: 'AbstractQuery'
       }, {
-        elementName: 'AbstractQuery',
-        typeInfo: 'CSW_2_0_2.AbstractQueryType'
+        en: 'AbstractQuery',
+        ti: 'CSW_2_0_2.AbstractQueryType'
       }, {
-        elementName: 'GetRecordsResponse',
-        typeInfo: 'CSW_2_0_2.GetRecordsResponseType'
+        en: 'GetRecordsResponse',
+        ti: 'CSW_2_0_2.GetRecordsResponseType'
       }, {
-        elementName: 'HarvestResponse',
-        typeInfo: 'CSW_2_0_2.HarvestResponseType'
+        en: 'HarvestResponse',
+        ti: 'CSW_2_0_2.HarvestResponseType'
       }, {
-        elementName: 'ElementSetName',
-        typeInfo: 'CSW_2_0_2.ElementSetNameType'
+        en: 'ElementSetName',
+        ti: 'CSW_2_0_2.ElementSetNameType'
       }, {
-        elementName: 'DescribeRecordResponse',
-        typeInfo: 'CSW_2_0_2.DescribeRecordResponseType'
+        en: 'DescribeRecordResponse',
+        ti: 'CSW_2_0_2.DescribeRecordResponseType'
       }, {
-        elementName: 'GetDomain',
-        typeInfo: 'CSW_2_0_2.GetDomainType'
+        en: 'GetDomain',
+        ti: 'CSW_2_0_2.GetDomainType'
       }, {
-        elementName: 'DCMIRecord',
-        typeInfo: 'CSW_2_0_2.DCMIRecordType',
-        substitutionHead: 'AbstractRecord'
+        en: 'DCMIRecord',
+        ti: 'CSW_2_0_2.DCMIRecordType',
+        sh: 'AbstractRecord'
       }, {
-        elementName: 'SummaryRecord',
-        typeInfo: 'CSW_2_0_2.SummaryRecordType',
-        substitutionHead: 'AbstractRecord'
+        en: 'SummaryRecord',
+        ti: 'CSW_2_0_2.SummaryRecordType',
+        sh: 'AbstractRecord'
       }, {
-        elementName: 'Capabilities',
-        typeInfo: 'CSW_2_0_2.CapabilitiesType'
+        en: 'Capabilities',
+        ti: 'CSW_2_0_2.CapabilitiesType'
       }, {
-        elementName: 'GetDomainResponse',
-        typeInfo: 'CSW_2_0_2.GetDomainResponseType'
+        en: 'GetDomainResponse',
+        ti: 'CSW_2_0_2.GetDomainResponseType'
       }, {
-        elementName: 'DescribeRecord',
-        typeInfo: 'CSW_2_0_2.DescribeRecordType'
+        en: 'DescribeRecord',
+        ti: 'CSW_2_0_2.DescribeRecordType'
       }, {
-        elementName: 'Record',
-        typeInfo: 'CSW_2_0_2.RecordType',
-        substitutionHead: 'AbstractRecord'
+        en: 'Record',
+        ti: 'CSW_2_0_2.RecordType',
+        sh: 'AbstractRecord'
       }, {
-        elementName: 'Acknowledgement',
-        typeInfo: 'CSW_2_0_2.AcknowledgementType'
+        en: 'Acknowledgement',
+        ti: 'CSW_2_0_2.AcknowledgementType'
       }, {
-        elementName: 'TransactionResponse',
-        typeInfo: 'CSW_2_0_2.TransactionResponseType'
+        en: 'TransactionResponse',
+        ti: 'CSW_2_0_2.TransactionResponseType'
       }, {
-        elementName: 'GetCapabilities',
-        typeInfo: 'CSW_2_0_2.GetCapabilitiesType'
+        en: 'GetCapabilities',
+        ti: 'CSW_2_0_2.GetCapabilitiesType'
       }, {
-        elementName: 'RecordProperty',
-        typeInfo: 'CSW_2_0_2.RecordPropertyType'
+        en: 'RecordProperty',
+        ti: 'CSW_2_0_2.RecordPropertyType'
       }]
   };
   return {

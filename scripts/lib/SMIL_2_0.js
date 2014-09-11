@@ -1,211 +1,149 @@
 var SMIL_2_0_Module_Factory = function () {
   var SMIL_2_0 = {
-    name: 'SMIL_2_0',
-    defaultElementNamespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'SetPrototype',
-        propertyInfos: [{
-            name: 'attributeName',
-            typeInfo: 'String',
-            attributeName: 'attributeName',
-            type: 'attribute'
+    n: 'SMIL_2_0',
+    dens: 'http:\/\/www.w3.org\/2001\/SMIL20\/',
+    tis: [{
+        ln: 'SetPrototype',
+        ps: [{
+            n: 'attributeName',
+            t: 'a'
           }, {
-            name: 'attributeType',
-            typeInfo: 'String',
-            attributeName: 'attributeType',
-            type: 'attribute'
+            n: 'attributeType',
+            t: 'a'
           }, {
-            name: 'to',
-            typeInfo: 'String',
-            attributeName: 'to',
-            type: 'attribute'
+            n: 'to',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AnimateColorPrototype',
-        propertyInfos: [{
-            name: 'attributeName',
-            typeInfo: 'String',
-            attributeName: 'attributeName',
-            type: 'attribute'
+        ln: 'AnimateColorPrototype',
+        ps: [{
+            n: 'from',
+            t: 'a'
           }, {
-            name: 'attributeType',
-            typeInfo: 'String',
-            attributeName: 'attributeType',
-            type: 'attribute'
+            n: 'by',
+            t: 'a'
           }, {
-            name: 'additive',
-            typeInfo: 'String',
-            attributeName: 'additive',
-            type: 'attribute'
+            n: 'values',
+            t: 'a'
           }, {
-            name: 'accumulate',
-            typeInfo: 'String',
-            attributeName: 'accumulate',
-            type: 'attribute'
+            n: 'to',
+            t: 'a'
           }, {
-            name: 'from',
-            typeInfo: 'String',
-            attributeName: 'from',
-            type: 'attribute'
+            n: 'additive',
+            t: 'a'
           }, {
-            name: 'by',
-            typeInfo: 'String',
-            attributeName: 'by',
-            type: 'attribute'
+            n: 'accumulate',
+            t: 'a'
           }, {
-            name: 'values',
-            typeInfo: 'String',
-            attributeName: 'values',
-            type: 'attribute'
+            n: 'attributeName',
+            t: 'a'
           }, {
-            name: 'to',
-            typeInfo: 'String',
-            attributeName: 'to',
-            type: 'attribute'
+            n: 'attributeType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AnimateMotionPrototype',
-        propertyInfos: [{
-            name: 'origin',
-            typeInfo: 'String',
-            attributeName: 'origin',
-            type: 'attribute'
+        ln: 'AnimateMotionPrototype',
+        ps: [{
+            n: 'origin',
+            t: 'a'
           }, {
-            name: 'additive',
-            typeInfo: 'String',
-            attributeName: 'additive',
-            type: 'attribute'
+            n: 'from',
+            t: 'a'
           }, {
-            name: 'accumulate',
-            typeInfo: 'String',
-            attributeName: 'accumulate',
-            type: 'attribute'
+            n: 'by',
+            t: 'a'
           }, {
-            name: 'from',
-            typeInfo: 'String',
-            attributeName: 'from',
-            type: 'attribute'
+            n: 'values',
+            t: 'a'
           }, {
-            name: 'by',
-            typeInfo: 'String',
-            attributeName: 'by',
-            type: 'attribute'
+            n: 'to',
+            t: 'a'
           }, {
-            name: 'values',
-            typeInfo: 'String',
-            attributeName: 'values',
-            type: 'attribute'
+            n: 'additive',
+            t: 'a'
           }, {
-            name: 'to',
-            typeInfo: 'String',
-            attributeName: 'to',
-            type: 'attribute'
+            n: 'accumulate',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AnimatePrototype',
-        propertyInfos: [{
-            name: 'from',
-            typeInfo: 'String',
-            attributeName: 'from',
-            type: 'attribute'
+        ln: 'AnimatePrototype',
+        ps: [{
+            n: 'attributeName',
+            t: 'a'
           }, {
-            name: 'by',
-            typeInfo: 'String',
-            attributeName: 'by',
-            type: 'attribute'
+            n: 'attributeType',
+            t: 'a'
           }, {
-            name: 'values',
-            typeInfo: 'String',
-            attributeName: 'values',
-            type: 'attribute'
+            n: 'additive',
+            t: 'a'
           }, {
-            name: 'to',
-            typeInfo: 'String',
-            attributeName: 'to',
-            type: 'attribute'
+            n: 'accumulate',
+            t: 'a'
           }, {
-            name: 'additive',
-            typeInfo: 'String',
-            attributeName: 'additive',
-            type: 'attribute'
+            n: 'from',
+            t: 'a'
           }, {
-            name: 'accumulate',
-            typeInfo: 'String',
-            attributeName: 'accumulate',
-            type: 'attribute'
+            n: 'by',
+            t: 'a'
           }, {
-            name: 'attributeName',
-            typeInfo: 'String',
-            attributeName: 'attributeName',
-            type: 'attribute'
+            n: 'values',
+            t: 'a'
           }, {
-            name: 'attributeType',
-            typeInfo: 'String',
-            attributeName: 'attributeType',
-            type: 'attribute'
+            n: 'to',
+            t: 'a'
           }]
       }, {
-        type: 'enumInfo',
-        localName: 'RestartDefaultType',
-        baseTypeInfo: 'String',
-        values: ['never', 'always', 'whenNotActive', 'inherit']
+        t: 'enum',
+        ln: 'RestartDefaultType',
+        vs: ['never', 'always', 'whenNotActive', 'inherit']
       }, {
-        type: 'enumInfo',
-        localName: 'FillDefaultType',
-        baseTypeInfo: 'String',
-        values: ['remove', 'freeze', 'hold', 'auto', 'inherit', 'transition']
+        t: 'enum',
+        ln: 'FillDefaultType',
+        vs: ['remove', 'freeze', 'hold', 'auto', 'inherit', 'transition']
       }, {
-        type: 'enumInfo',
-        localName: 'FillTimingAttrsType',
-        baseTypeInfo: 'String',
-        values: ['remove', 'freeze', 'hold', 'auto', 'default', 'transition']
+        t: 'enum',
+        ln: 'FillTimingAttrsType',
+        vs: ['remove', 'freeze', 'hold', 'auto', 'default', 'transition']
       }, {
-        type: 'enumInfo',
-        localName: 'RestartTimingType',
-        baseTypeInfo: 'String',
-        values: ['never', 'always', 'whenNotActive', 'default']
+        t: 'enum',
+        ln: 'RestartTimingType',
+        vs: ['never', 'always', 'whenNotActive', 'default']
       }, {
-        type: 'enumInfo',
-        localName: 'SyncBehaviorType',
-        baseTypeInfo: 'String',
-        values: ['canSlip', 'locked', 'independent', 'default']
+        t: 'enum',
+        ln: 'SyncBehaviorType',
+        vs: ['canSlip', 'locked', 'independent', 'default']
       }, {
-        type: 'enumInfo',
-        localName: 'SyncBehaviorDefaultType',
-        baseTypeInfo: 'String',
-        values: ['canSlip', 'locked', 'independent', 'inherit']
+        t: 'enum',
+        ln: 'SyncBehaviorDefaultType',
+        vs: ['canSlip', 'locked', 'independent', 'inherit']
       }],
-    elementInfos: [{
-        elementName: 'animate',
-        typeInfo: 'SMIL_2_0_Language.AnimateType',
-        substitutionHead: {
-          localPart: 'animate',
-          namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
+    eis: [{
+        en: 'animate',
+        ti: 'SMIL_2_0_Language.AnimateType',
+        sh: {
+          lp: 'animate',
+          ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
         }
       }, {
-        elementName: 'animateMotion',
-        typeInfo: 'SMIL_2_0_Language.AnimateMotionType',
-        substitutionHead: {
-          localPart: 'animateMotion',
-          namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
+        en: 'animateMotion',
+        ti: 'SMIL_2_0_Language.AnimateMotionType',
+        sh: {
+          lp: 'animateMotion',
+          ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
         }
       }, {
-        elementName: 'set',
-        typeInfo: 'SMIL_2_0_Language.SetType',
-        substitutionHead: {
-          localPart: 'set',
-          namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
+        en: 'set',
+        ti: 'SMIL_2_0_Language.SetType',
+        sh: {
+          lp: 'set',
+          ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
         }
       }, {
-        elementName: 'animateColor',
-        typeInfo: 'SMIL_2_0_Language.AnimateColorType',
-        substitutionHead: {
-          localPart: 'animateColor',
-          namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
+        en: 'animateColor',
+        ti: 'SMIL_2_0_Language.AnimateColorType',
+        sh: {
+          lp: 'animateColor',
+          ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
         }
       }]
   };

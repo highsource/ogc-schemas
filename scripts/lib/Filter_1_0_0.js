@@ -1,483 +1,455 @@
 var Filter_1_0_0_Module_Factory = function () {
   var Filter_1_0_0 = {
-    name: 'Filter_1_0_0',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/ogc',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'BinaryOperatorType',
-        baseTypeInfo: 'Filter_1_0_0.ExpressionType',
-        propertyInfos: [{
-            name: 'expression',
-            collection: true,
-            elementName: 'expression',
-            typeInfo: 'Filter_1_0_0.ExpressionType',
-            type: 'elementRef'
+    n: 'Filter_1_0_0',
+    dens: 'http:\/\/www.opengis.net\/ogc',
+    tis: [{
+        ln: 'BinaryOperatorType',
+        bti: 'Filter_1_0_0.ExpressionType',
+        ps: [{
+            n: 'expression',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'Filter_1_0_0.ExpressionType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ExpressionType',
-        propertyInfos: []
+        ln: 'ExpressionType'
       }, {
-        type: 'classInfo',
-        localName: 'BinarySpatialOpType',
-        baseTypeInfo: 'Filter_1_0_0.SpatialOpsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'propertyName',
-            elementName: 'PropertyName',
-            typeInfo: 'Filter_1_0_0.PropertyNameType'
+        ln: 'BinarySpatialOpType',
+        bti: 'Filter_1_0_0.SpatialOpsType',
+        ps: [{
+            n: 'propertyName',
+            en: 'PropertyName',
+            ti: 'Filter_1_0_0.PropertyNameType'
           }, {
-            name: 'geometry',
-            elementName: {
-              localPart: '_Geometry',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: '_Geometry',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            typeInfo: 'GML_2_1_2.AbstractGeometryType',
-            type: 'elementRef'
+            ti: 'GML_2_1_2.AbstractGeometryType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'box',
-            elementName: {
-              localPart: 'Box',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'box',
+            en: {
+              lp: 'Box',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            typeInfo: 'GML_2_1_2.BoxType'
+            ti: 'GML_2_1_2.BoxType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SpatialOpsType',
-        propertyInfos: []
+        ln: 'SpatialOpsType'
       }, {
-        type: 'classInfo',
-        localName: 'BinaryLogicOpType',
-        baseTypeInfo: 'Filter_1_0_0.LogicOpsType',
-        propertyInfos: [{
-            name: 'comparisonOpsOrSpatialOpsOrLogicOps',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'logicOps',
-                typeInfo: 'Filter_1_0_0.LogicOpsType'
+        ln: 'BinaryLogicOpType',
+        bti: 'Filter_1_0_0.LogicOpsType',
+        ps: [{
+            n: 'comparisonOpsOrSpatialOpsOrLogicOps',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'comparisonOps',
+                ti: 'Filter_1_0_0.ComparisonOpsType'
               }, {
-                elementName: 'comparisonOps',
-                typeInfo: 'Filter_1_0_0.ComparisonOpsType'
+                en: 'logicOps',
+                ti: 'Filter_1_0_0.LogicOpsType'
               }, {
-                elementName: 'spatialOps',
-                typeInfo: 'Filter_1_0_0.SpatialOpsType'
+                en: 'spatialOps',
+                ti: 'Filter_1_0_0.SpatialOpsType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LogicOpsType',
-        propertyInfos: []
+        ln: 'LogicOpsType'
       }, {
-        type: 'classInfo',
-        localName: 'BinaryComparisonOpType',
-        baseTypeInfo: 'Filter_1_0_0.ComparisonOpsType',
-        propertyInfos: [{
-            name: 'expression',
-            collection: true,
-            elementName: 'expression',
-            typeInfo: 'Filter_1_0_0.ExpressionType',
-            type: 'elementRef'
+        ln: 'BinaryComparisonOpType',
+        bti: 'Filter_1_0_0.ComparisonOpsType',
+        ps: [{
+            n: 'expression',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'Filter_1_0_0.ExpressionType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ComparisonOpsType',
-        propertyInfos: []
+        ln: 'ComparisonOpsType'
       }, {
-        type: 'classInfo',
-        localName: 'SortByType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'sortProperty',
-            collection: true,
-            elementName: 'SortProperty',
-            typeInfo: 'Filter_1_0_0.SortPropertyType'
+        ln: 'SortByType',
+        ps: [{
+            n: 'sortProperty',
+            col: true,
+            en: 'SortProperty',
+            ti: 'Filter_1_0_0.SortPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DistanceBufferType',
-        baseTypeInfo: 'Filter_1_0_0.SpatialOpsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'propertyName',
-            elementName: 'PropertyName',
-            typeInfo: 'Filter_1_0_0.PropertyNameType'
+        ln: 'DistanceBufferType',
+        bti: 'Filter_1_0_0.SpatialOpsType',
+        ps: [{
+            n: 'propertyName',
+            en: 'PropertyName',
+            ti: 'Filter_1_0_0.PropertyNameType'
           }, {
-            name: 'geometry',
-            elementName: {
-              localPart: '_Geometry',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: '_Geometry',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            typeInfo: 'GML_2_1_2.AbstractGeometryType',
-            type: 'elementRef'
+            ti: 'GML_2_1_2.AbstractGeometryType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'distance',
-            elementName: 'Distance',
-            typeInfo: 'Filter_1_0_0.DistanceType'
+            n: 'distance',
+            en: 'Distance',
+            ti: 'Filter_1_0_0.DistanceType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FunctionType',
-        baseTypeInfo: 'Filter_1_0_0.ExpressionType',
-        propertyInfos: [{
-            name: 'expression',
-            collection: true,
-            elementName: 'expression',
-            typeInfo: 'Filter_1_0_0.ExpressionType',
-            type: 'elementRef'
+        ln: 'FunctionType',
+        bti: 'Filter_1_0_0.ExpressionType',
+        ps: [{
+            n: 'expression',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'Filter_1_0_0.ExpressionType',
+            t: 'er'
           }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+            n: 'name',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LiteralType',
-        propertyInfos: [{
-            name: 'content',
-            collection: true,
-            allowTypedObject: true,
-            mixed: true,
-            type: 'anyElement'
+        ln: 'LiteralType',
+        ps: [{
+            n: 'content',
+            col: true,
+            dom: false,
+            t: 'ae'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PropertyIsBetweenType',
-        baseTypeInfo: 'Filter_1_0_0.ComparisonOpsType',
-        propertyInfos: [{
-            name: 'expression',
-            elementName: 'expression',
-            typeInfo: 'Filter_1_0_0.ExpressionType',
-            type: 'elementRef'
+        ln: 'PropertyIsBetweenType',
+        bti: 'Filter_1_0_0.ComparisonOpsType',
+        ps: [{
+            n: 'expression',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'Filter_1_0_0.ExpressionType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'lowerBoundary',
-            elementName: 'LowerBoundary',
-            typeInfo: 'Filter_1_0_0.LowerBoundaryType'
+            n: 'lowerBoundary',
+            en: 'LowerBoundary',
+            ti: 'Filter_1_0_0.LowerBoundaryType'
           }, {
-            type: 'element',
-            name: 'upperBoundary',
-            elementName: 'UpperBoundary',
-            typeInfo: 'Filter_1_0_0.UpperBoundaryType'
+            n: 'upperBoundary',
+            en: 'UpperBoundary',
+            ti: 'Filter_1_0_0.UpperBoundaryType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PropertyNameType',
-        baseTypeInfo: 'Filter_1_0_0.ExpressionType',
-        propertyInfos: []
+        ln: 'PropertyNameType',
+        bti: 'Filter_1_0_0.ExpressionType'
       }, {
-        type: 'classInfo',
-        localName: 'PropertyIsLikeType',
-        baseTypeInfo: 'Filter_1_0_0.ComparisonOpsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'propertyName',
-            elementName: 'PropertyName',
-            typeInfo: 'Filter_1_0_0.PropertyNameType'
+        ln: 'PropertyIsLikeType',
+        bti: 'Filter_1_0_0.ComparisonOpsType',
+        ps: [{
+            n: 'propertyName',
+            en: 'PropertyName',
+            ti: 'Filter_1_0_0.PropertyNameType'
           }, {
-            type: 'element',
-            name: 'literal',
-            elementName: 'Literal',
-            typeInfo: 'Filter_1_0_0.LiteralType'
+            n: 'literal',
+            en: 'Literal',
+            ti: 'Filter_1_0_0.LiteralType'
           }, {
-            name: 'wildCard',
-            typeInfo: 'String',
-            attributeName: 'wildCard',
-            type: 'attribute'
+            n: 'wildCard',
+            t: 'a'
           }, {
-            name: 'singleChar',
-            typeInfo: 'String',
-            attributeName: 'singleChar',
-            type: 'attribute'
+            n: 'singleChar',
+            t: 'a'
           }, {
-            name: 'escape',
-            typeInfo: 'String',
-            attributeName: 'escape',
-            type: 'attribute'
+            n: 'escape',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureIdType',
-        propertyInfos: [{
-            name: 'fid',
-            typeInfo: 'String',
-            attributeName: 'fid',
-            type: 'attribute'
+        ln: 'FeatureIdType',
+        ps: [{
+            n: 'fid',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UnaryLogicOpType',
-        baseTypeInfo: 'Filter_1_0_0.LogicOpsType',
-        propertyInfos: [{
-            name: 'comparisonOps',
-            elementName: 'comparisonOps',
-            typeInfo: 'Filter_1_0_0.ComparisonOpsType',
-            type: 'elementRef'
+        ln: 'UnaryLogicOpType',
+        bti: 'Filter_1_0_0.LogicOpsType',
+        ps: [{
+            n: 'comparisonOps',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'Filter_1_0_0.ComparisonOpsType',
+            t: 'er'
           }, {
-            name: 'spatialOps',
-            elementName: 'spatialOps',
-            typeInfo: 'Filter_1_0_0.SpatialOpsType',
-            type: 'elementRef'
+            n: 'spatialOps',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'Filter_1_0_0.SpatialOpsType',
+            t: 'er'
           }, {
-            name: 'logicOps',
-            elementName: 'logicOps',
-            typeInfo: 'Filter_1_0_0.LogicOpsType',
-            type: 'elementRef'
+            n: 'logicOps',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'Filter_1_0_0.LogicOpsType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PropertyIsNullType',
-        baseTypeInfo: 'Filter_1_0_0.ComparisonOpsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'propertyName',
-            elementName: 'PropertyName',
-            typeInfo: 'Filter_1_0_0.PropertyNameType'
+        ln: 'PropertyIsNullType',
+        bti: 'Filter_1_0_0.ComparisonOpsType',
+        ps: [{
+            n: 'propertyName',
+            en: 'PropertyName',
+            ti: 'Filter_1_0_0.PropertyNameType'
           }, {
-            type: 'element',
-            name: 'literal',
-            elementName: 'Literal',
-            typeInfo: 'Filter_1_0_0.LiteralType'
+            n: 'literal',
+            en: 'Literal',
+            ti: 'Filter_1_0_0.LiteralType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FilterType',
-        propertyInfos: [{
-            name: 'spatialOps',
-            elementName: 'spatialOps',
-            typeInfo: 'Filter_1_0_0.SpatialOpsType',
-            type: 'elementRef'
+        ln: 'FilterType',
+        ps: [{
+            n: 'spatialOps',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'Filter_1_0_0.SpatialOpsType',
+            t: 'er'
           }, {
-            name: 'comparisonOps',
-            elementName: 'comparisonOps',
-            typeInfo: 'Filter_1_0_0.ComparisonOpsType',
-            type: 'elementRef'
+            n: 'comparisonOps',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'Filter_1_0_0.ComparisonOpsType',
+            t: 'er'
           }, {
-            name: 'logicOps',
-            elementName: 'logicOps',
-            typeInfo: 'Filter_1_0_0.LogicOpsType',
-            type: 'elementRef'
+            n: 'logicOps',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'Filter_1_0_0.LogicOpsType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'featureId',
-            collection: true,
-            elementName: 'FeatureId',
-            typeInfo: 'Filter_1_0_0.FeatureIdType'
+            n: 'featureId',
+            col: true,
+            en: 'FeatureId',
+            ti: 'Filter_1_0_0.FeatureIdType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BBOXType',
-        baseTypeInfo: 'Filter_1_0_0.SpatialOpsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'propertyName',
-            elementName: 'PropertyName',
-            typeInfo: 'Filter_1_0_0.PropertyNameType'
+        ln: 'BBOXType',
+        bti: 'Filter_1_0_0.SpatialOpsType',
+        ps: [{
+            n: 'propertyName',
+            en: 'PropertyName',
+            ti: 'Filter_1_0_0.PropertyNameType'
           }, {
-            type: 'element',
-            name: 'box',
-            elementName: {
-              localPart: 'Box',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'box',
+            en: {
+              lp: 'Box',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            typeInfo: 'GML_2_1_2.BoxType'
+            ti: 'GML_2_1_2.BoxType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DistanceType',
-        propertyInfos: [{
-            name: 'content',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'DistanceType',
+        ps: [{
+            n: 'content',
+            t: 'v'
           }, {
-            name: 'units',
-            typeInfo: 'String',
-            attributeName: 'units',
-            type: 'attribute'
+            n: 'units',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SortPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'propertyName',
-            elementName: 'PropertyName',
-            typeInfo: 'Filter_1_0_0.PropertyNameType'
+        ln: 'SortPropertyType',
+        ps: [{
+            n: 'propertyName',
+            en: 'PropertyName',
+            ti: 'Filter_1_0_0.PropertyNameType'
           }, {
-            type: 'element',
-            name: 'sortOrder',
-            elementName: 'SortOrder',
-            typeInfo: 'String'
+            n: 'sortOrder',
+            en: 'SortOrder'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UpperBoundaryType',
-        propertyInfos: [{
-            name: 'expression',
-            elementName: 'expression',
-            typeInfo: 'Filter_1_0_0.ExpressionType',
-            type: 'elementRef'
+        ln: 'UpperBoundaryType',
+        ps: [{
+            n: 'expression',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'Filter_1_0_0.ExpressionType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LowerBoundaryType',
-        propertyInfos: [{
-            name: 'expression',
-            elementName: 'expression',
-            typeInfo: 'Filter_1_0_0.ExpressionType',
-            type: 'elementRef'
+        ln: 'LowerBoundaryType',
+        ps: [{
+            n: 'expression',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'Filter_1_0_0.ExpressionType',
+            t: 'er'
           }]
       }, {
-        type: 'enumInfo',
-        localName: 'SortOrderType',
-        baseTypeInfo: 'String',
-        values: ['DESC', 'ASC']
+        t: 'enum',
+        ln: 'SortOrderType',
+        vs: ['DESC', 'ASC']
       }],
-    elementInfos: [{
-        elementName: 'Mul',
-        typeInfo: 'Filter_1_0_0.BinaryOperatorType',
-        substitutionHead: 'expression'
+    eis: [{
+        en: 'Mul',
+        ti: 'Filter_1_0_0.BinaryOperatorType',
+        sh: 'expression'
       }, {
-        elementName: 'Sub',
-        typeInfo: 'Filter_1_0_0.BinaryOperatorType',
-        substitutionHead: 'expression'
+        en: 'Sub',
+        ti: 'Filter_1_0_0.BinaryOperatorType',
+        sh: 'expression'
       }, {
-        elementName: 'PropertyName',
-        typeInfo: 'Filter_1_0_0.PropertyNameType',
-        substitutionHead: 'expression'
+        en: 'PropertyName',
+        ti: 'Filter_1_0_0.PropertyNameType',
+        sh: 'expression'
       }, {
-        elementName: 'PropertyIsLike',
-        typeInfo: 'Filter_1_0_0.PropertyIsLikeType',
-        substitutionHead: 'comparisonOps'
+        en: 'PropertyIsLike',
+        ti: 'Filter_1_0_0.PropertyIsLikeType',
+        sh: 'comparisonOps'
       }, {
-        elementName: 'expression',
-        typeInfo: 'Filter_1_0_0.ExpressionType'
+        en: 'expression',
+        ti: 'Filter_1_0_0.ExpressionType'
       }, {
-        elementName: 'logicOps',
-        typeInfo: 'Filter_1_0_0.LogicOpsType'
+        en: 'logicOps',
+        ti: 'Filter_1_0_0.LogicOpsType'
       }, {
-        elementName: 'PropertyIsGreaterThan',
-        typeInfo: 'Filter_1_0_0.BinaryComparisonOpType',
-        substitutionHead: 'comparisonOps'
+        en: 'PropertyIsGreaterThan',
+        ti: 'Filter_1_0_0.BinaryComparisonOpType',
+        sh: 'comparisonOps'
       }, {
-        elementName: 'PropertyIsLessThan',
-        typeInfo: 'Filter_1_0_0.BinaryComparisonOpType',
-        substitutionHead: 'comparisonOps'
+        en: 'PropertyIsLessThan',
+        ti: 'Filter_1_0_0.BinaryComparisonOpType',
+        sh: 'comparisonOps'
       }, {
-        elementName: 'Within',
-        typeInfo: 'Filter_1_0_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
+        en: 'Within',
+        ti: 'Filter_1_0_0.BinarySpatialOpType',
+        sh: 'spatialOps'
       }, {
-        elementName: 'Contains',
-        typeInfo: 'Filter_1_0_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
+        en: 'Contains',
+        ti: 'Filter_1_0_0.BinarySpatialOpType',
+        sh: 'spatialOps'
       }, {
-        elementName: 'Filter',
-        typeInfo: 'Filter_1_0_0.FilterType'
+        en: 'Filter',
+        ti: 'Filter_1_0_0.FilterType'
       }, {
-        elementName: 'PropertyIsNotEqualTo',
-        typeInfo: 'Filter_1_0_0.BinaryComparisonOpType',
-        substitutionHead: 'comparisonOps'
+        en: 'PropertyIsNotEqualTo',
+        ti: 'Filter_1_0_0.BinaryComparisonOpType',
+        sh: 'comparisonOps'
       }, {
-        elementName: 'BBOX',
-        typeInfo: 'Filter_1_0_0.BBOXType',
-        substitutionHead: 'spatialOps'
+        en: 'BBOX',
+        ti: 'Filter_1_0_0.BBOXType',
+        sh: 'spatialOps'
       }, {
-        elementName: 'And',
-        typeInfo: 'Filter_1_0_0.BinaryLogicOpType',
-        substitutionHead: 'logicOps'
+        en: 'And',
+        ti: 'Filter_1_0_0.BinaryLogicOpType',
+        sh: 'logicOps'
       }, {
-        elementName: 'Div',
-        typeInfo: 'Filter_1_0_0.BinaryOperatorType',
-        substitutionHead: 'expression'
+        en: 'Div',
+        ti: 'Filter_1_0_0.BinaryOperatorType',
+        sh: 'expression'
       }, {
-        elementName: 'FeatureId',
-        typeInfo: 'Filter_1_0_0.FeatureIdType'
+        en: 'FeatureId',
+        ti: 'Filter_1_0_0.FeatureIdType'
       }, {
-        elementName: 'Equals',
-        typeInfo: 'Filter_1_0_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
+        en: 'Equals',
+        ti: 'Filter_1_0_0.BinarySpatialOpType',
+        sh: 'spatialOps'
       }, {
-        elementName: 'Not',
-        typeInfo: 'Filter_1_0_0.UnaryLogicOpType',
-        substitutionHead: 'logicOps'
+        en: 'Not',
+        ti: 'Filter_1_0_0.UnaryLogicOpType',
+        sh: 'logicOps'
       }, {
-        elementName: 'PropertyIsNull',
-        typeInfo: 'Filter_1_0_0.PropertyIsNullType',
-        substitutionHead: 'comparisonOps'
+        en: 'PropertyIsNull',
+        ti: 'Filter_1_0_0.PropertyIsNullType',
+        sh: 'comparisonOps'
       }, {
-        elementName: 'Beyond',
-        typeInfo: 'Filter_1_0_0.DistanceBufferType',
-        substitutionHead: 'spatialOps'
+        en: 'Beyond',
+        ti: 'Filter_1_0_0.DistanceBufferType',
+        sh: 'spatialOps'
       }, {
-        elementName: 'comparisonOps',
-        typeInfo: 'Filter_1_0_0.ComparisonOpsType'
+        en: 'comparisonOps',
+        ti: 'Filter_1_0_0.ComparisonOpsType'
       }, {
-        elementName: 'PropertyIsLessThanOrEqualTo',
-        typeInfo: 'Filter_1_0_0.BinaryComparisonOpType',
-        substitutionHead: 'comparisonOps'
+        en: 'PropertyIsLessThanOrEqualTo',
+        ti: 'Filter_1_0_0.BinaryComparisonOpType',
+        sh: 'comparisonOps'
       }, {
-        elementName: 'SortBy',
-        typeInfo: 'Filter_1_0_0.SortByType'
+        en: 'SortBy',
+        ti: 'Filter_1_0_0.SortByType'
       }, {
-        elementName: 'spatialOps',
-        typeInfo: 'Filter_1_0_0.SpatialOpsType'
+        en: 'spatialOps',
+        ti: 'Filter_1_0_0.SpatialOpsType'
       }, {
-        elementName: 'Add',
-        typeInfo: 'Filter_1_0_0.BinaryOperatorType',
-        substitutionHead: 'expression'
+        en: 'Add',
+        ti: 'Filter_1_0_0.BinaryOperatorType',
+        sh: 'expression'
       }, {
-        elementName: 'Overlaps',
-        typeInfo: 'Filter_1_0_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
+        en: 'Overlaps',
+        ti: 'Filter_1_0_0.BinarySpatialOpType',
+        sh: 'spatialOps'
       }, {
-        elementName: 'Or',
-        typeInfo: 'Filter_1_0_0.BinaryLogicOpType',
-        substitutionHead: 'logicOps'
+        en: 'Or',
+        ti: 'Filter_1_0_0.BinaryLogicOpType',
+        sh: 'logicOps'
       }, {
-        elementName: 'Disjoint',
-        typeInfo: 'Filter_1_0_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
+        en: 'Disjoint',
+        ti: 'Filter_1_0_0.BinarySpatialOpType',
+        sh: 'spatialOps'
       }, {
-        elementName: 'Touches',
-        typeInfo: 'Filter_1_0_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
+        en: 'Touches',
+        ti: 'Filter_1_0_0.BinarySpatialOpType',
+        sh: 'spatialOps'
       }, {
-        elementName: 'PropertyIsBetween',
-        typeInfo: 'Filter_1_0_0.PropertyIsBetweenType',
-        substitutionHead: 'comparisonOps'
+        en: 'PropertyIsBetween',
+        ti: 'Filter_1_0_0.PropertyIsBetweenType',
+        sh: 'comparisonOps'
       }, {
-        elementName: 'PropertyIsEqualTo',
-        typeInfo: 'Filter_1_0_0.BinaryComparisonOpType',
-        substitutionHead: 'comparisonOps'
+        en: 'PropertyIsEqualTo',
+        ti: 'Filter_1_0_0.BinaryComparisonOpType',
+        sh: 'comparisonOps'
       }, {
-        elementName: 'DWithin',
-        typeInfo: 'Filter_1_0_0.DistanceBufferType',
-        substitutionHead: 'spatialOps'
+        en: 'DWithin',
+        ti: 'Filter_1_0_0.DistanceBufferType',
+        sh: 'spatialOps'
       }, {
-        elementName: 'Literal',
-        typeInfo: 'Filter_1_0_0.LiteralType',
-        substitutionHead: 'expression'
+        en: 'Literal',
+        ti: 'Filter_1_0_0.LiteralType',
+        sh: 'expression'
       }, {
-        elementName: 'Intersects',
-        typeInfo: 'Filter_1_0_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
+        en: 'Intersects',
+        ti: 'Filter_1_0_0.BinarySpatialOpType',
+        sh: 'spatialOps'
       }, {
-        elementName: 'PropertyIsGreaterThanOrEqualTo',
-        typeInfo: 'Filter_1_0_0.BinaryComparisonOpType',
-        substitutionHead: 'comparisonOps'
+        en: 'PropertyIsGreaterThanOrEqualTo',
+        ti: 'Filter_1_0_0.BinaryComparisonOpType',
+        sh: 'comparisonOps'
       }, {
-        elementName: 'Function',
-        typeInfo: 'Filter_1_0_0.FunctionType',
-        substitutionHead: 'expression'
+        en: 'Function',
+        ti: 'Filter_1_0_0.FunctionType',
+        sh: 'expression'
       }, {
-        elementName: 'Crosses',
-        typeInfo: 'Filter_1_0_0.BinarySpatialOpType',
-        substitutionHead: 'spatialOps'
+        en: 'Crosses',
+        ti: 'Filter_1_0_0.BinarySpatialOpType',
+        sh: 'spatialOps'
       }]
   };
   return {

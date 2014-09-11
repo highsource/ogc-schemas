@@ -1,253 +1,195 @@
 var OM_1_0_0_Module_Factory = function () {
   var OM_1_0_0 = {
-    name: 'OM_1_0_0',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/om\/1.0',
-    defaultAttributeNamespaceURI: 'http:\/\/www.w3.org\/1999\/xlink',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'ObservationType',
-        baseTypeInfo: 'GML_3_1_1.AbstractFeatureType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'metadata',
-            elementName: 'metadata',
-            typeInfo: 'OM_1_0_0.AnyOrReferenceType'
+    n: 'OM_1_0_0',
+    dens: 'http:\/\/www.opengis.net\/om\/1.0',
+    dans: 'http:\/\/www.w3.org\/1999\/xlink',
+    tis: [{
+        ln: 'ObservationType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'metadata',
+            ti: 'OM_1_0_0.AnyOrReferenceType'
           }, {
-            type: 'element',
-            name: 'samplingTime',
-            elementName: 'samplingTime',
-            typeInfo: 'SWE_1_0_1.TimeObjectPropertyType'
+            n: 'samplingTime',
+            ti: 'SWE_1_0_1.TimeObjectPropertyType'
           }, {
-            type: 'element',
-            name: 'resultTime',
-            elementName: 'resultTime',
-            typeInfo: 'SWE_1_0_1.TimeObjectPropertyType'
+            n: 'resultTime',
+            ti: 'SWE_1_0_1.TimeObjectPropertyType'
           }, {
-            type: 'element',
-            name: 'procedure',
-            elementName: 'procedure',
-            typeInfo: 'OM_1_0_0.ProcessPropertyType'
+            n: 'procedure',
+            ti: 'OM_1_0_0.ProcessPropertyType'
           }, {
-            type: 'element',
-            name: 'resultQuality',
-            elementName: 'resultQuality',
-            typeInfo: 'OM_1_0_0.AnyOrReferenceType'
+            n: 'resultQuality',
+            ti: 'OM_1_0_0.AnyOrReferenceType'
           }, {
-            type: 'element',
-            name: 'observedProperty',
-            elementName: 'observedProperty',
-            typeInfo: 'SWE_1_0_1.PhenomenonPropertyType'
+            n: 'observedProperty',
+            ti: 'SWE_1_0_1.PhenomenonPropertyType'
           }, {
-            type: 'element',
-            name: 'featureOfInterest',
-            elementName: 'featureOfInterest',
-            typeInfo: 'GML_3_1_1.FeaturePropertyType'
+            n: 'featureOfInterest',
+            ti: 'GML_3_1_1.FeaturePropertyType'
           }, {
-            type: 'element',
-            name: 'parameter',
-            collection: true,
-            elementName: 'parameter',
-            typeInfo: 'SWE_1_0_1.AnyDataPropertyType'
+            n: 'parameter',
+            col: true,
+            ti: 'SWE_1_0_1.AnyDataPropertyType'
           }, {
-            type: 'element',
-            name: 'result',
-            elementName: 'result',
-            typeInfo: 'AnyType'
+            n: 'result',
+            ti: 'AnyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ObservationCollectionType',
-        baseTypeInfo: 'GML_3_1_1.AbstractFeatureType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'member',
-            collection: true,
-            elementName: 'member',
-            typeInfo: 'OM_1_0_0.ObservationPropertyType'
+        ln: 'ObservationCollectionType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'member',
+            col: true,
+            ti: 'OM_1_0_0.ObservationPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ObservationPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'observation',
-            elementName: 'Observation',
-            typeInfo: 'OM_1_0_0.ObservationType'
+        ln: 'ObservationPropertyType',
+        ps: [{
+            n: 'observation',
+            en: 'Observation',
+            ti: 'OM_1_0_0.ObservationType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ProcessPropertyType',
-        propertyInfos: [{
-            name: 'content',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: {
-                  localPart: '_Process',
-                  namespaceURI: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
+        ln: 'ProcessPropertyType',
+        ps: [{
+            n: 'content',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: {
+                  lp: '_Process',
+                  ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
                 },
-                typeInfo: 'SensorML_1_0_1.AbstractProcessType'
+                ti: 'SensorML_1_0_1.AbstractProcessType'
               }, {
-                elementName: 'Process',
-                typeInfo: 'AnyType'
+                en: 'Process',
+                ti: 'AnyType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AnyOrReferenceType',
-        propertyInfos: [{
-            name: 'any',
-            allowTypedObject: true,
-            type: 'anyElement'
+        ln: 'AnyOrReferenceType',
+        ps: [{
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }],
-    elementInfos: [{
-        elementName: 'Observation',
-        typeInfo: 'OM_1_0_0.ObservationType',
-        substitutionHead: {
-          localPart: '_Feature',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+    eis: [{
+        en: 'Observation',
+        ti: 'OM_1_0_0.ObservationType',
+        sh: {
+          lp: '_Feature',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'ObservationCollection',
-        typeInfo: 'OM_1_0_0.ObservationCollectionType',
-        substitutionHead: {
-          localPart: '_Feature',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'ObservationCollection',
+        ti: 'OM_1_0_0.ObservationCollectionType',
+        sh: {
+          lp: '_Feature',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'Process',
-        typeInfo: 'AnyType',
-        scope: 'OM_1_0_0.ProcessPropertyType'
+        en: 'Process',
+        ti: 'AnyType',
+        sc: 'OM_1_0_0.ProcessPropertyType'
       }]
   };
   return {

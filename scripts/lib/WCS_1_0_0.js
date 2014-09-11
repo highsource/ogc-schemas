@@ -1,1218 +1,948 @@
 var WCS_1_0_0_Module_Factory = function () {
   var WCS_1_0_0 = {
-    name: 'WCS_1_0_0',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/wcs',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'Keywords',
-        propertyInfos: [{
-            type: 'element',
-            name: 'keyword',
-            collection: true,
-            elementName: 'keyword',
-            typeInfo: 'String'
+    n: 'WCS_1_0_0',
+    dens: 'http:\/\/www.opengis.net\/wcs',
+    tis: [{
+        ln: 'Keywords',
+        ps: [{
+            n: 'keyword',
+            col: true
           }, {
-            type: 'element',
-            name: 'type',
-            elementName: 'type',
-            typeInfo: 'GML_3_1_1.CodeType'
+            n: 'type',
+            ti: 'GML_3_1_1.CodeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CoverageOfferingBriefType',
-        baseTypeInfo: 'WCS_1_0_0.AbstractDescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'lonLatEnvelope',
-            elementName: 'lonLatEnvelope',
-            typeInfo: 'WCS_1_0_0.LonLatEnvelopeType'
+        ln: 'CoverageOfferingBriefType',
+        bti: 'WCS_1_0_0.AbstractDescriptionType',
+        ps: [{
+            n: 'lonLatEnvelope',
+            ti: 'WCS_1_0_0.LonLatEnvelopeType'
           }, {
-            type: 'element',
-            name: 'keywords',
-            collection: true,
-            elementName: 'keywords',
-            typeInfo: 'WCS_1_0_0.Keywords'
+            n: 'keywords',
+            col: true,
+            ti: 'WCS_1_0_0.Keywords'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SpatialDomainType',
-        propertyInfos: [{
-            name: 'envelope',
-            collection: true,
-            elementName: {
-              localPart: 'Envelope',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        ln: 'SpatialDomainType',
+        ps: [{
+            n: 'envelope',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'Envelope',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            typeInfo: 'GML_3_1_1.EnvelopeType',
-            type: 'elementRef'
+            ti: 'GML_3_1_1.EnvelopeType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'grid',
-            collection: true,
-            elementName: {
-              localPart: 'Grid',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'grid',
+            col: true,
+            en: {
+              lp: 'Grid',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            typeInfo: 'GML_3_1_1.GridType'
+            ti: 'GML_3_1_1.GridType'
           }, {
-            type: 'element',
-            name: 'polygon',
-            collection: true,
-            elementName: {
-              localPart: 'Polygon',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'polygon',
+            col: true,
+            en: {
+              lp: 'Polygon',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            typeInfo: 'GML_3_1_1.PolygonType'
+            ti: 'GML_3_1_1.PolygonType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TypedLiteralType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'TypedLiteralType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'type',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'type',
-              namespaceURI: 'http:\/\/www.opengis.net\/wcs'
+            n: 'type',
+            an: {
+              lp: 'type',
+              ns: 'http:\/\/www.opengis.net\/wcs'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CoverageDescription',
-        propertyInfos: [{
-            type: 'element',
-            name: 'coverageOffering',
-            collection: true,
-            elementName: 'CoverageOffering',
-            typeInfo: 'WCS_1_0_0.CoverageOfferingType'
+        ln: 'CoverageDescription',
+        ps: [{
+            n: 'coverageOffering',
+            col: true,
+            en: 'CoverageOffering',
+            ti: 'WCS_1_0_0.CoverageOfferingType'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'updateSequence',
-            typeInfo: 'String',
-            attributeName: 'updateSequence',
-            type: 'attribute'
+            n: 'updateSequence',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CoverageOfferingType',
-        baseTypeInfo: 'WCS_1_0_0.CoverageOfferingBriefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'domainSet',
-            elementName: 'domainSet',
-            typeInfo: 'WCS_1_0_0.DomainSetType'
+        ln: 'CoverageOfferingType',
+        bti: 'WCS_1_0_0.CoverageOfferingBriefType',
+        ps: [{
+            n: 'domainSet',
+            ti: 'WCS_1_0_0.DomainSetType'
           }, {
-            type: 'element',
-            name: 'rangeSet',
-            elementName: 'rangeSet',
-            typeInfo: 'WCS_1_0_0.RangeSet'
+            n: 'rangeSet',
+            ti: 'WCS_1_0_0.RangeSet'
           }, {
-            type: 'element',
-            name: 'supportedCRSs',
-            elementName: 'supportedCRSs',
-            typeInfo: 'WCS_1_0_0.SupportedCRSsType'
+            n: 'supportedCRSs',
+            ti: 'WCS_1_0_0.SupportedCRSsType'
           }, {
-            type: 'element',
-            name: 'supportedFormats',
-            elementName: 'supportedFormats',
-            typeInfo: 'WCS_1_0_0.SupportedFormatsType'
+            n: 'supportedFormats',
+            ti: 'WCS_1_0_0.SupportedFormatsType'
           }, {
-            type: 'element',
-            name: 'supportedInterpolations',
-            elementName: 'supportedInterpolations',
-            typeInfo: 'WCS_1_0_0.SupportedInterpolationsType'
+            n: 'supportedInterpolations',
+            ti: 'WCS_1_0_0.SupportedInterpolationsType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeSequenceType',
-        propertyInfos: [{
-            name: 'timePositionOrTimePeriod',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: {
-                  localPart: 'timePosition',
-                  namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        ln: 'TimeSequenceType',
+        ps: [{
+            n: 'timePositionOrTimePeriod',
+            col: true,
+            etis: [{
+                en: {
+                  lp: 'timePosition',
+                  ns: 'http:\/\/www.opengis.net\/gml'
                 },
-                typeInfo: 'GML_3_1_1.TimePositionType'
+                ti: 'GML_3_1_1.TimePositionType'
               }, {
-                elementName: 'timePeriod',
-                typeInfo: 'WCS_1_0_0.TimePeriodType'
+                en: 'timePeriod',
+                ti: 'WCS_1_0_0.TimePeriodType'
               }],
-            type: 'elements'
+            t: 'es'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SpatialSubsetType',
-        baseTypeInfo: 'WCS_1_0_0.SpatialDomainType',
-        propertyInfos: []
+        ln: 'SpatialSubsetType',
+        bti: 'WCS_1_0_0.SpatialDomainType'
       }, {
-        type: 'classInfo',
-        localName: 'SupportedFormatsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'formats',
-            collection: true,
-            elementName: 'formats',
-            typeInfo: 'GML_3_1_1.CodeListType'
+        ln: 'SupportedFormatsType',
+        ps: [{
+            n: 'formats',
+            col: true,
+            ti: 'GML_3_1_1.CodeListType'
           }, {
-            name: 'nativeFormat',
-            typeInfo: 'String',
-            attributeName: 'nativeFormat',
-            type: 'attribute'
+            n: 'nativeFormat',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetCapabilities',
-        propertyInfos: [{
-            type: 'element',
-            name: 'section',
-            elementName: 'section',
-            typeInfo: 'String'
+        ln: 'GetCapabilities',
+        ps: [{
+            n: 'section'
           }, {
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+            n: 'service',
+            t: 'a'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'updateSequence',
-            typeInfo: 'String',
-            attributeName: 'updateSequence',
-            type: 'attribute'
+            n: 'updateSequence',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DomainSetType',
-        propertyInfos: [{
-            name: 'content',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'spatialDomain',
-                typeInfo: 'WCS_1_0_0.SpatialDomainType'
+        ln: 'DomainSetType',
+        ps: [{
+            n: 'content',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'spatialDomain',
+                ti: 'WCS_1_0_0.SpatialDomainType'
               }, {
-                elementName: 'temporalDomain',
-                typeInfo: 'WCS_1_0_0.TimeSequenceType'
+                en: 'temporalDomain',
+                ti: 'WCS_1_0_0.TimeSequenceType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AxisDescription',
-        propertyInfos: [{
-            type: 'element',
-            name: 'axisDescription',
-            elementName: 'AxisDescription',
-            typeInfo: 'WCS_1_0_0.AxisDescriptionType'
+        ln: 'AxisDescription',
+        ps: [{
+            n: 'axisDescription',
+            en: 'AxisDescription',
+            ti: 'WCS_1_0_0.AxisDescriptionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AxisDescriptionType',
-        baseTypeInfo: 'WCS_1_0_0.AbstractDescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'values',
-            elementName: 'values',
-            typeInfo: 'WCS_1_0_0.AxisDescriptionType.Values'
+        ln: 'AxisDescriptionType',
+        bti: 'WCS_1_0_0.AbstractDescriptionType',
+        ps: [{
+            n: 'values',
+            ti: 'WCS_1_0_0.AxisDescriptionType.Values'
           }, {
-            name: 'semantic',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'semantic',
-              namespaceURI: 'http:\/\/www.opengis.net\/wcs'
+            n: 'semantic',
+            an: {
+              lp: 'semantic',
+              ns: 'http:\/\/www.opengis.net\/wcs'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'refSys',
-            typeInfo: 'String',
-            attributeName: 'refSys',
-            type: 'attribute'
+            n: 'refSys',
+            t: 'a'
           }, {
-            name: 'refSysLabel',
-            typeInfo: 'String',
-            attributeName: 'refSysLabel',
-            type: 'attribute'
+            n: 'refSysLabel',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ContentMetadata',
-        propertyInfos: [{
-            type: 'element',
-            name: 'coverageOfferingBrief',
-            collection: true,
-            elementName: 'CoverageOfferingBrief',
-            typeInfo: 'WCS_1_0_0.CoverageOfferingBriefType'
+        ln: 'ContentMetadata',
+        ps: [{
+            n: 'coverageOfferingBrief',
+            col: true,
+            en: 'CoverageOfferingBrief',
+            ti: 'WCS_1_0_0.CoverageOfferingBriefType'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'updateSequence',
-            typeInfo: 'String',
-            attributeName: 'updateSequence',
-            type: 'attribute'
+            n: 'updateSequence',
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: {
-              localPart: 'type',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            an: {
+              lp: 'type',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'href',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'href',
+            an: {
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'role',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'role',
+            an: {
+              lp: 'role',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'arcrole',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'arcrole',
+            an: {
+              lp: 'arcrole',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'title',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'title',
+            an: {
+              lp: 'title',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: {
-              localPart: 'show',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            an: {
+              lp: 'show',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: {
-              localPart: 'actuate',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            an: {
+              lp: 'actuate',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WCSCapabilityType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'request',
-            elementName: 'Request',
-            typeInfo: 'WCS_1_0_0.WCSCapabilityType.Request'
+        ln: 'WCSCapabilityType',
+        ps: [{
+            n: 'request',
+            en: 'Request',
+            ti: 'WCS_1_0_0.WCSCapabilityType.Request'
           }, {
-            type: 'element',
-            name: 'exception',
-            elementName: 'Exception',
-            typeInfo: 'WCS_1_0_0.WCSCapabilityType.Exception'
+            n: 'exception',
+            en: 'Exception',
+            ti: 'WCS_1_0_0.WCSCapabilityType.Exception'
           }, {
-            type: 'element',
-            name: 'vendorSpecificCapabilities',
-            elementName: 'VendorSpecificCapabilities',
-            typeInfo: 'WCS_1_0_0.WCSCapabilityType.VendorSpecificCapabilities'
+            n: 'vendorSpecificCapabilities',
+            en: 'VendorSpecificCapabilities',
+            ti: 'WCS_1_0_0.WCSCapabilityType.VendorSpecificCapabilities'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'updateSequence',
-            typeInfo: 'String',
-            attributeName: 'updateSequence',
-            type: 'attribute'
+            n: 'updateSequence',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SupportedInterpolationsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'interpolationMethod',
-            collection: true,
-            elementName: 'interpolationMethod',
-            typeInfo: 'String'
+        ln: 'SupportedInterpolationsType',
+        ps: [{
+            n: 'interpolationMethod',
+            col: true
           }, {
-            name: '_default',
-            typeInfo: 'String',
-            attributeName: 'default',
-            type: 'attribute'
+            n: '_default',
+            an: 'default',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SupportedCRSsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'requestResponseCRSs',
-            collection: true,
-            elementName: 'requestResponseCRSs',
-            typeInfo: 'GML_3_1_1.CodeListType'
+        ln: 'SupportedCRSsType',
+        ps: [{
+            n: 'requestResponseCRSs',
+            col: true,
+            ti: 'GML_3_1_1.CodeListType'
           }, {
-            type: 'element',
-            name: 'requestCRSs',
-            collection: true,
-            elementName: 'requestCRSs',
-            typeInfo: 'GML_3_1_1.CodeListType'
+            n: 'requestCRSs',
+            col: true,
+            ti: 'GML_3_1_1.CodeListType'
           }, {
-            type: 'element',
-            name: 'responseCRSs',
-            collection: true,
-            elementName: 'responseCRSs',
-            typeInfo: 'GML_3_1_1.CodeListType'
+            n: 'responseCRSs',
+            col: true,
+            ti: 'GML_3_1_1.CodeListType'
           }, {
-            type: 'element',
-            name: 'nativeCRSs',
-            collection: true,
-            elementName: 'nativeCRSs',
-            typeInfo: 'GML_3_1_1.CodeListType'
+            n: 'nativeCRSs',
+            col: true,
+            ti: 'GML_3_1_1.CodeListType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LonLatEnvelopeType',
-        baseTypeInfo: 'WCS_1_0_0.LonLatEnvelopeBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timePosition',
-            collection: true,
-            elementName: {
-              localPart: 'timePosition',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        ln: 'LonLatEnvelopeType',
+        bti: 'WCS_1_0_0.LonLatEnvelopeBaseType',
+        ps: [{
+            n: 'timePosition',
+            col: true,
+            en: {
+              lp: 'timePosition',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            typeInfo: 'GML_3_1_1.TimePositionType'
+            ti: 'GML_3_1_1.TimePositionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WCSCapabilitiesType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'service',
-            elementName: 'Service',
-            typeInfo: 'WCS_1_0_0.ServiceType'
+        ln: 'WCSCapabilitiesType',
+        ps: [{
+            n: 'service',
+            en: 'Service',
+            ti: 'WCS_1_0_0.ServiceType'
           }, {
-            type: 'element',
-            name: 'capability',
-            elementName: 'Capability',
-            typeInfo: 'WCS_1_0_0.WCSCapabilityType'
+            n: 'capability',
+            en: 'Capability',
+            ti: 'WCS_1_0_0.WCSCapabilityType'
           }, {
-            type: 'element',
-            name: 'contentMetadata',
-            elementName: 'ContentMetadata',
-            typeInfo: 'WCS_1_0_0.ContentMetadata'
+            n: 'contentMetadata',
+            en: 'ContentMetadata',
+            ti: 'WCS_1_0_0.ContentMetadata'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'updateSequence',
-            typeInfo: 'String',
-            attributeName: 'updateSequence',
-            type: 'attribute'
+            n: 'updateSequence',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ServiceType',
-        baseTypeInfo: 'WCS_1_0_0.AbstractDescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'keywords',
-            collection: true,
-            elementName: 'keywords',
-            typeInfo: 'WCS_1_0_0.Keywords'
+        ln: 'ServiceType',
+        bti: 'WCS_1_0_0.AbstractDescriptionType',
+        ps: [{
+            n: 'keywords',
+            col: true,
+            ti: 'WCS_1_0_0.Keywords'
           }, {
-            type: 'element',
-            name: 'responsibleParty',
-            elementName: 'responsibleParty',
-            typeInfo: 'WCS_1_0_0.ResponsiblePartyType'
+            n: 'responsibleParty',
+            ti: 'WCS_1_0_0.ResponsiblePartyType'
           }, {
-            type: 'element',
-            name: 'fees',
-            elementName: 'fees',
-            typeInfo: 'GML_3_1_1.CodeListType'
+            n: 'fees',
+            ti: 'GML_3_1_1.CodeListType'
           }, {
-            type: 'element',
-            name: 'accessConstraints',
-            collection: true,
-            elementName: 'accessConstraints',
-            typeInfo: 'GML_3_1_1.CodeListType'
+            n: 'accessConstraints',
+            col: true,
+            ti: 'GML_3_1_1.CodeListType'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'updateSequence',
-            typeInfo: 'String',
-            attributeName: 'updateSequence',
-            type: 'attribute'
+            n: 'updateSequence',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RangeSetType',
-        baseTypeInfo: 'WCS_1_0_0.AbstractDescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'axisDescription',
-            collection: true,
-            elementName: 'axisDescription',
-            typeInfo: 'WCS_1_0_0.AxisDescription'
+        ln: 'RangeSetType',
+        bti: 'WCS_1_0_0.AbstractDescriptionType',
+        ps: [{
+            n: 'axisDescription',
+            col: true,
+            ti: 'WCS_1_0_0.AxisDescription'
           }, {
-            type: 'element',
-            name: 'nullValues',
-            elementName: 'nullValues',
-            typeInfo: 'WCS_1_0_0.ValueEnumType'
+            n: 'nullValues',
+            ti: 'WCS_1_0_0.ValueEnumType'
           }, {
-            name: 'semantic',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'semantic',
-              namespaceURI: 'http:\/\/www.opengis.net\/wcs'
+            n: 'semantic',
+            an: {
+              lp: 'semantic',
+              ns: 'http:\/\/www.opengis.net\/wcs'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'refSys',
-            typeInfo: 'String',
-            attributeName: 'refSys',
-            type: 'attribute'
+            n: 'refSys',
+            t: 'a'
           }, {
-            name: 'refSysLabel',
-            typeInfo: 'String',
-            attributeName: 'refSysLabel',
-            type: 'attribute'
+            n: 'refSysLabel',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetCoverage',
-        propertyInfos: [{
-            type: 'element',
-            name: 'sourceCoverage',
-            elementName: 'sourceCoverage',
-            typeInfo: 'String'
+        ln: 'GetCoverage',
+        ps: [{
+            n: 'sourceCoverage'
           }, {
-            type: 'element',
-            name: 'domainSubset',
-            elementName: 'domainSubset',
-            typeInfo: 'WCS_1_0_0.DomainSubsetType'
+            n: 'domainSubset',
+            ti: 'WCS_1_0_0.DomainSubsetType'
           }, {
-            type: 'element',
-            name: 'rangeSubset',
-            elementName: 'rangeSubset',
-            typeInfo: 'WCS_1_0_0.RangeSubsetType'
+            n: 'rangeSubset',
+            ti: 'WCS_1_0_0.RangeSubsetType'
           }, {
-            type: 'element',
-            name: 'interpolationMethod',
-            elementName: 'interpolationMethod',
-            typeInfo: 'String'
+            n: 'interpolationMethod'
           }, {
-            type: 'element',
-            name: 'output',
-            elementName: 'output',
-            typeInfo: 'WCS_1_0_0.OutputType'
+            n: 'output',
+            ti: 'WCS_1_0_0.OutputType'
           }, {
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+            n: 'service',
+            t: 'a'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DomainSubsetType',
-        propertyInfos: [{
-            name: 'content',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'temporalSubset',
-                typeInfo: 'WCS_1_0_0.TimeSequenceType'
+        ln: 'DomainSubsetType',
+        ps: [{
+            n: 'content',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'temporalSubset',
+                ti: 'WCS_1_0_0.TimeSequenceType'
               }, {
-                elementName: 'spatialSubset',
-                typeInfo: 'WCS_1_0_0.SpatialSubsetType'
+                en: 'spatialSubset',
+                ti: 'WCS_1_0_0.SpatialSubsetType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RangeSubsetType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'axisSubset',
-            collection: true,
-            elementName: 'axisSubset',
-            typeInfo: 'WCS_1_0_0.RangeSubsetType.AxisSubset'
+        ln: 'RangeSubsetType',
+        ps: [{
+            n: 'axisSubset',
+            col: true,
+            ti: 'WCS_1_0_0.RangeSubsetType.AxisSubset'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OutputType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'crs',
-            elementName: 'crs',
-            typeInfo: 'GML_3_1_1.CodeType'
+        ln: 'OutputType',
+        ps: [{
+            n: 'crs',
+            ti: 'GML_3_1_1.CodeType'
           }, {
-            type: 'element',
-            name: 'format',
-            elementName: 'format',
-            typeInfo: 'GML_3_1_1.CodeType'
+            n: 'format',
+            ti: 'GML_3_1_1.CodeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DescribeCoverage',
-        propertyInfos: [{
-            type: 'element',
-            name: 'coverage',
-            collection: true,
-            elementName: 'Coverage',
-            typeInfo: 'String'
+        ln: 'DescribeCoverage',
+        ps: [{
+            n: 'coverage',
+            col: true,
+            en: 'Coverage'
           }, {
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+            n: 'service',
+            t: 'a'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RangeSet',
-        propertyInfos: [{
-            type: 'element',
-            name: 'rangeSet',
-            elementName: 'RangeSet',
-            typeInfo: 'WCS_1_0_0.RangeSetType'
+        ln: 'RangeSet',
+        ps: [{
+            n: 'rangeSet',
+            en: 'RangeSet',
+            ti: 'WCS_1_0_0.RangeSetType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimePeriodType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'beginPosition',
-            elementName: 'beginPosition',
-            typeInfo: 'GML_3_1_1.TimePositionType'
+        ln: 'TimePeriodType',
+        ps: [{
+            n: 'beginPosition',
+            ti: 'GML_3_1_1.TimePositionType'
           }, {
-            type: 'element',
-            name: 'endPosition',
-            elementName: 'endPosition',
-            typeInfo: 'GML_3_1_1.TimePositionType'
+            n: 'endPosition',
+            ti: 'GML_3_1_1.TimePositionType'
           }, {
-            type: 'element',
-            name: 'timeResolution',
-            elementName: 'timeResolution',
-            typeInfo: 'String'
+            n: 'timeResolution'
           }, {
-            name: 'frame',
-            typeInfo: 'String',
-            attributeName: 'frame',
-            type: 'attribute'
+            n: 'frame',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'IntervalType',
-        baseTypeInfo: 'WCS_1_0_0.ValueRangeType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'res',
-            elementName: 'res',
-            typeInfo: 'WCS_1_0_0.TypedLiteralType'
+        ln: 'IntervalType',
+        bti: 'WCS_1_0_0.ValueRangeType',
+        ps: [{
+            n: 'res',
+            ti: 'WCS_1_0_0.TypedLiteralType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MetadataLinkType',
-        baseTypeInfo: 'WCS_1_0_0.MetadataAssociationType',
-        propertyInfos: [{
-            name: 'metadataType',
-            typeInfo: 'String',
-            attributeName: 'metadataType',
-            type: 'attribute'
+        ln: 'MetadataLinkType',
+        bti: 'WCS_1_0_0.MetadataAssociationType',
+        ps: [{
+            n: 'metadataType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DCPTypeType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'http',
-            elementName: 'HTTP',
-            typeInfo: 'WCS_1_0_0.DCPTypeType.HTTP'
+        ln: 'DCPTypeType',
+        ps: [{
+            n: 'http',
+            en: 'HTTP',
+            ti: 'WCS_1_0_0.DCPTypeType.HTTP'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ValueEnumType',
-        baseTypeInfo: 'WCS_1_0_0.ValueEnumBaseType',
-        propertyInfos: [{
-            name: 'type',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'type',
-              namespaceURI: 'http:\/\/www.opengis.net\/wcs'
+        ln: 'ValueEnumType',
+        bti: 'WCS_1_0_0.ValueEnumBaseType',
+        ps: [{
+            n: 'type',
+            an: {
+              lp: 'type',
+              ns: 'http:\/\/www.opengis.net\/wcs'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'semantic',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'semantic',
-              namespaceURI: 'http:\/\/www.opengis.net\/wcs'
+            n: 'semantic',
+            an: {
+              lp: 'semantic',
+              ns: 'http:\/\/www.opengis.net\/wcs'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ContactType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'phone',
-            elementName: 'phone',
-            typeInfo: 'WCS_1_0_0.TelephoneType'
+        ln: 'ContactType',
+        ps: [{
+            n: 'phone',
+            ti: 'WCS_1_0_0.TelephoneType'
           }, {
-            type: 'element',
-            name: 'address',
-            elementName: 'address',
-            typeInfo: 'WCS_1_0_0.AddressType'
+            n: 'address',
+            ti: 'WCS_1_0_0.AddressType'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'onlineResource',
-            typeInfo: 'WCS_1_0_0.OnlineResourceType'
+            n: 'onlineResource',
+            ti: 'WCS_1_0_0.OnlineResourceType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ResponsiblePartyType',
-        propertyInfos: [{
-            name: 'content',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'individualName',
-                typeInfo: 'String'
+        ln: 'ResponsiblePartyType',
+        ps: [{
+            n: 'content',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'positionName'
               }, {
-                elementName: 'organisationName',
-                typeInfo: 'String'
+                en: 'organisationName'
               }, {
-                elementName: 'contactInfo',
-                typeInfo: 'WCS_1_0_0.ContactType'
+                en: 'contactInfo',
+                ti: 'WCS_1_0_0.ContactType'
               }, {
-                elementName: 'positionName',
-                typeInfo: 'String'
+                en: 'individualName'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TelephoneType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'voice',
-            collection: true,
-            elementName: 'voice',
-            typeInfo: 'String'
+        ln: 'TelephoneType',
+        ps: [{
+            n: 'voice',
+            col: true
           }, {
-            type: 'element',
-            name: 'facsimile',
-            collection: true,
-            elementName: 'facsimile',
-            typeInfo: 'String'
+            n: 'facsimile',
+            col: true
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LonLatEnvelopeBaseType',
-        baseTypeInfo: 'GML_3_1_1.EnvelopeType',
-        propertyInfos: []
+        ln: 'LonLatEnvelopeBaseType',
+        bti: 'GML_3_1_1.EnvelopeType'
       }, {
-        type: 'classInfo',
-        localName: 'ValueRangeType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'min',
-            elementName: 'min',
-            typeInfo: 'WCS_1_0_0.TypedLiteralType'
+        ln: 'ValueRangeType',
+        ps: [{
+            n: 'min',
+            ti: 'WCS_1_0_0.TypedLiteralType'
           }, {
-            type: 'element',
-            name: 'max',
-            elementName: 'max',
-            typeInfo: 'WCS_1_0_0.TypedLiteralType'
+            n: 'max',
+            ti: 'WCS_1_0_0.TypedLiteralType'
           }, {
-            name: 'type',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'type',
-              namespaceURI: 'http:\/\/www.opengis.net\/wcs'
+            n: 'type',
+            an: {
+              lp: 'type',
+              ns: 'http:\/\/www.opengis.net\/wcs'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'semantic',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'semantic',
-              namespaceURI: 'http:\/\/www.opengis.net\/wcs'
+            n: 'semantic',
+            an: {
+              lp: 'semantic',
+              ns: 'http:\/\/www.opengis.net\/wcs'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'atomic',
-            typeInfo: 'Boolean',
-            attributeName: 'atomic',
-            type: 'attribute'
+            n: 'atomic',
+            ti: 'Boolean',
+            t: 'a'
           }, {
-            name: 'closure',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'closure',
+            ti: {
+              t: 'l'
             },
-            attributeName: {
-              localPart: 'closure',
-              namespaceURI: 'http:\/\/www.opengis.net\/wcs'
+            an: {
+              lp: 'closure',
+              ns: 'http:\/\/www.opengis.net\/wcs'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OnlineResourceType',
-        propertyInfos: [{
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: {
-              localPart: 'type',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+        ln: 'OnlineResourceType',
+        ps: [{
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            an: {
+              lp: 'type',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'href',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'href',
+            an: {
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'role',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'role',
+            an: {
+              lp: 'role',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'arcrole',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'arcrole',
+            an: {
+              lp: 'arcrole',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'title',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'title',
+            an: {
+              lp: 'title',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: {
-              localPart: 'show',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            an: {
+              lp: 'show',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: {
-              localPart: 'actuate',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            an: {
+              lp: 'actuate',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ValueEnumBaseType',
-        propertyInfos: [{
-            name: 'intervalOrSingleValue',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'interval',
-                typeInfo: 'WCS_1_0_0.IntervalType'
+        ln: 'ValueEnumBaseType',
+        ps: [{
+            n: 'intervalOrSingleValue',
+            col: true,
+            etis: [{
+                en: 'interval',
+                ti: 'WCS_1_0_0.IntervalType'
               }, {
-                elementName: 'singleValue',
-                typeInfo: 'WCS_1_0_0.TypedLiteralType'
+                en: 'singleValue',
+                ti: 'WCS_1_0_0.TypedLiteralType'
               }],
-            type: 'elements'
+            t: 'es'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractDescriptionBaseType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: []
+        ln: 'AbstractDescriptionBaseType',
+        bti: 'GML_3_1_1.AbstractGMLType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractDescriptionType',
-        baseTypeInfo: 'WCS_1_0_0.AbstractDescriptionBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'wcsDescription',
-            elementName: 'description',
-            typeInfo: 'String'
+        ln: 'AbstractDescriptionType',
+        bti: 'WCS_1_0_0.AbstractDescriptionBaseType',
+        ps: [{
+            n: 'wcsDescription',
+            en: 'description'
           }, {
-            type: 'element',
-            name: 'wcsName',
-            elementName: 'name',
-            typeInfo: 'String'
+            n: 'wcsName',
+            en: 'name'
           }, {
-            type: 'element',
-            name: 'label',
-            elementName: 'label',
-            typeInfo: 'String'
+            n: 'label'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AddressType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'deliveryPoint',
-            collection: true,
-            elementName: 'deliveryPoint',
-            typeInfo: 'String'
+        ln: 'AddressType',
+        ps: [{
+            n: 'deliveryPoint',
+            col: true
           }, {
-            type: 'element',
-            name: 'city',
-            elementName: 'city',
-            typeInfo: 'String'
+            n: 'city'
           }, {
-            type: 'element',
-            name: 'administrativeArea',
-            elementName: 'administrativeArea',
-            typeInfo: 'String'
+            n: 'administrativeArea'
           }, {
-            type: 'element',
-            name: 'postalCode',
-            elementName: 'postalCode',
-            typeInfo: 'String'
+            n: 'postalCode'
           }, {
-            type: 'element',
-            name: 'country',
-            elementName: 'country',
-            typeInfo: 'String'
+            n: 'country'
           }, {
-            type: 'element',
-            name: 'electronicMailAddress',
-            collection: true,
-            elementName: 'electronicMailAddress',
-            typeInfo: 'String'
+            n: 'electronicMailAddress',
+            col: true
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MetadataAssociationType',
-        baseTypeInfo: 'GML_3_1_1.MetaDataPropertyType',
-        propertyInfos: []
+        ln: 'MetadataAssociationType',
+        bti: 'GML_3_1_1.MetaDataPropertyType'
       }, {
-        type: 'classInfo',
-        localName: 'DCPTypeType.HTTP',
-        propertyInfos: [{
-            name: 'getOrPost',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'Get',
-                typeInfo: 'WCS_1_0_0.DCPTypeType.HTTP.Get'
+        ln: 'DCPTypeType.HTTP',
+        ps: [{
+            n: 'getOrPost',
+            col: true,
+            etis: [{
+                en: 'Get',
+                ti: 'WCS_1_0_0.DCPTypeType.HTTP.Get'
               }, {
-                elementName: 'Post',
-                typeInfo: 'WCS_1_0_0.DCPTypeType.HTTP.Post'
+                en: 'Post',
+                ti: 'WCS_1_0_0.DCPTypeType.HTTP.Post'
               }],
-            type: 'elements'
+            t: 'es'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DCPTypeType.HTTP.Get',
-        propertyInfos: [{
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WCS_1_0_0.OnlineResourceType'
+        ln: 'DCPTypeType.HTTP.Get',
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WCS_1_0_0.OnlineResourceType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DCPTypeType.HTTP.Post',
-        propertyInfos: [{
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'WCS_1_0_0.OnlineResourceType'
+        ln: 'DCPTypeType.HTTP.Post',
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'WCS_1_0_0.OnlineResourceType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RangeSubsetType.AxisSubset',
-        baseTypeInfo: 'WCS_1_0_0.ValueEnumBaseType',
-        propertyInfos: [{
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+        ln: 'RangeSubsetType.AxisSubset',
+        bti: 'WCS_1_0_0.ValueEnumBaseType',
+        ps: [{
+            n: 'name',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WCSCapabilityType.Request',
-        propertyInfos: [{
-            type: 'element',
-            name: 'getCapabilities',
-            elementName: 'GetCapabilities',
-            typeInfo: 'WCS_1_0_0.WCSCapabilityType.Request.GetCapabilities'
+        ln: 'WCSCapabilityType.Request',
+        ps: [{
+            n: 'getCapabilities',
+            en: 'GetCapabilities',
+            ti: 'WCS_1_0_0.WCSCapabilityType.Request.GetCapabilities'
           }, {
-            type: 'element',
-            name: 'describeCoverage',
-            elementName: 'DescribeCoverage',
-            typeInfo: 'WCS_1_0_0.WCSCapabilityType.Request.DescribeCoverage'
+            n: 'describeCoverage',
+            en: 'DescribeCoverage',
+            ti: 'WCS_1_0_0.WCSCapabilityType.Request.DescribeCoverage'
           }, {
-            type: 'element',
-            name: 'getCoverage',
-            elementName: 'GetCoverage',
-            typeInfo: 'WCS_1_0_0.WCSCapabilityType.Request.GetCoverage'
+            n: 'getCoverage',
+            en: 'GetCoverage',
+            ti: 'WCS_1_0_0.WCSCapabilityType.Request.GetCoverage'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WCSCapabilityType.Exception',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: 'Format',
-            typeInfo: 'String'
+        ln: 'WCSCapabilityType.Exception',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WCSCapabilityType.VendorSpecificCapabilities',
-        propertyInfos: [{
-            name: 'any',
-            allowTypedObject: true,
-            type: 'anyElement'
+        ln: 'WCSCapabilityType.VendorSpecificCapabilities',
+        ps: [{
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WCSCapabilityType.Request.GetCapabilities',
-        propertyInfos: [{
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WCS_1_0_0.DCPTypeType'
+        ln: 'WCSCapabilityType.Request.GetCapabilities',
+        ps: [{
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WCS_1_0_0.DCPTypeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WCSCapabilityType.Request.DescribeCoverage',
-        propertyInfos: [{
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WCS_1_0_0.DCPTypeType'
+        ln: 'WCSCapabilityType.Request.DescribeCoverage',
+        ps: [{
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WCS_1_0_0.DCPTypeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WCSCapabilityType.Request.GetCoverage',
-        propertyInfos: [{
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WCS_1_0_0.DCPTypeType'
+        ln: 'WCSCapabilityType.Request.GetCoverage',
+        ps: [{
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WCS_1_0_0.DCPTypeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AxisDescriptionType.Values',
-        baseTypeInfo: 'WCS_1_0_0.ValueEnumType',
-        propertyInfos: [{
-            type: 'element',
-            name: '_default',
-            elementName: 'default',
-            typeInfo: 'WCS_1_0_0.TypedLiteralType'
+        ln: 'AxisDescriptionType.Values',
+        bti: 'WCS_1_0_0.ValueEnumType',
+        ps: [{
+            n: '_default',
+            en: 'default',
+            ti: 'WCS_1_0_0.TypedLiteralType'
           }]
       }, {
-        type: 'enumInfo',
-        localName: 'CapabilitiesSectionType',
-        baseTypeInfo: 'String',
-        values: ['\/', '\/WCS_Capabilities\/Service', '\/WCS_Capabilities\/Capability', '\/WCS_Capabilities\/ContentMetadata']
+        t: 'enum',
+        ln: 'CapabilitiesSectionType',
+        vs: ['\/', '\/WCS_Capabilities\/Service', '\/WCS_Capabilities\/Capability', '\/WCS_Capabilities\/ContentMetadata']
       }, {
-        type: 'enumInfo',
-        localName: 'InterpolationMethodType',
-        baseTypeInfo: 'String',
-        values: ['nearest neighbor', 'bilinear', 'bicubic', 'lost area', 'barycentric', 'none']
+        t: 'enum',
+        ln: 'InterpolationMethodType',
+        vs: ['nearest neighbor', 'bilinear', 'bicubic', 'lost area', 'barycentric', 'none']
       }],
-    elementInfos: [{
-        elementName: 'keywords',
-        typeInfo: 'WCS_1_0_0.Keywords'
+    eis: [{
+        en: 'keywords',
+        ti: 'WCS_1_0_0.Keywords'
       }, {
-        elementName: 'CoverageDescription',
-        typeInfo: 'WCS_1_0_0.CoverageDescription'
+        en: 'CoverageDescription',
+        ti: 'WCS_1_0_0.CoverageDescription'
       }, {
-        elementName: 'GetCapabilities',
-        typeInfo: 'WCS_1_0_0.GetCapabilities'
+        en: 'GetCapabilities',
+        ti: 'WCS_1_0_0.GetCapabilities'
       }, {
-        elementName: 'axisDescription',
-        typeInfo: 'WCS_1_0_0.AxisDescription'
+        en: 'axisDescription',
+        ti: 'WCS_1_0_0.AxisDescription'
       }, {
-        elementName: 'ContentMetadata',
-        typeInfo: 'WCS_1_0_0.ContentMetadata'
+        en: 'ContentMetadata',
+        ti: 'WCS_1_0_0.ContentMetadata'
       }, {
-        elementName: 'GetCoverage',
-        typeInfo: 'WCS_1_0_0.GetCoverage'
+        en: 'GetCoverage',
+        ti: 'WCS_1_0_0.GetCoverage'
       }, {
-        elementName: 'DescribeCoverage',
-        typeInfo: 'WCS_1_0_0.DescribeCoverage'
+        en: 'DescribeCoverage',
+        ti: 'WCS_1_0_0.DescribeCoverage'
       }, {
-        elementName: 'rangeSet',
-        typeInfo: 'WCS_1_0_0.RangeSet'
+        en: 'rangeSet',
+        ti: 'WCS_1_0_0.RangeSet'
       }, {
-        elementName: 'formats',
-        typeInfo: 'GML_3_1_1.CodeListType'
+        en: 'formats',
+        ti: 'GML_3_1_1.CodeListType'
       }, {
-        elementName: 'CoverageOfferingBrief',
-        typeInfo: 'WCS_1_0_0.CoverageOfferingBriefType',
-        substitutionHead: {
-          localPart: '_GML',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'CoverageOfferingBrief',
+        ti: 'WCS_1_0_0.CoverageOfferingBriefType',
+        sh: {
+          lp: '_GML',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'spatialDomain',
-        typeInfo: 'WCS_1_0_0.SpatialDomainType'
+        en: 'spatialDomain',
+        ti: 'WCS_1_0_0.SpatialDomainType'
       }, {
-        elementName: 'description',
-        typeInfo: 'String'
+        en: 'description'
       }, {
-        elementName: 'singleValue',
-        typeInfo: 'WCS_1_0_0.TypedLiteralType'
+        en: 'singleValue',
+        ti: 'WCS_1_0_0.TypedLiteralType'
       }, {
-        elementName: 'temporalSubset',
-        typeInfo: 'WCS_1_0_0.TimeSequenceType'
+        en: 'temporalSubset',
+        ti: 'WCS_1_0_0.TimeSequenceType'
       }, {
-        elementName: 'spatialSubset',
-        typeInfo: 'WCS_1_0_0.SpatialSubsetType'
+        en: 'spatialSubset',
+        ti: 'WCS_1_0_0.SpatialSubsetType'
       }, {
-        elementName: 'supportedFormats',
-        typeInfo: 'WCS_1_0_0.SupportedFormatsType'
+        en: 'supportedFormats',
+        ti: 'WCS_1_0_0.SupportedFormatsType'
       }, {
-        elementName: 'domainSet',
-        typeInfo: 'WCS_1_0_0.DomainSetType'
+        en: 'domainSet',
+        ti: 'WCS_1_0_0.DomainSetType'
       }, {
-        elementName: 'Capability',
-        typeInfo: 'WCS_1_0_0.WCSCapabilityType'
+        en: 'Capability',
+        ti: 'WCS_1_0_0.WCSCapabilityType'
       }, {
-        elementName: 'supportedInterpolations',
-        typeInfo: 'WCS_1_0_0.SupportedInterpolationsType'
+        en: 'supportedInterpolations',
+        ti: 'WCS_1_0_0.SupportedInterpolationsType'
       }, {
-        elementName: 'supportedCRSs',
-        typeInfo: 'WCS_1_0_0.SupportedCRSsType'
+        en: 'supportedCRSs',
+        ti: 'WCS_1_0_0.SupportedCRSsType'
       }, {
-        elementName: 'lonLatEnvelope',
-        typeInfo: 'WCS_1_0_0.LonLatEnvelopeType'
+        en: 'lonLatEnvelope',
+        ti: 'WCS_1_0_0.LonLatEnvelopeType'
       }, {
-        elementName: 'TimeSequence',
-        typeInfo: 'WCS_1_0_0.TimeSequenceType'
+        en: 'TimeSequence',
+        ti: 'WCS_1_0_0.TimeSequenceType'
       }, {
-        elementName: 'WCS_Capabilities',
-        typeInfo: 'WCS_1_0_0.WCSCapabilitiesType'
+        en: 'WCS_Capabilities',
+        ti: 'WCS_1_0_0.WCSCapabilitiesType'
       }, {
-        elementName: 'Service',
-        typeInfo: 'WCS_1_0_0.ServiceType',
-        substitutionHead: {
-          localPart: '_GML',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'Service',
+        ti: 'WCS_1_0_0.ServiceType',
+        sh: {
+          lp: '_GML',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'RangeSet',
-        typeInfo: 'WCS_1_0_0.RangeSetType',
-        substitutionHead: {
-          localPart: '_GML',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'RangeSet',
+        ti: 'WCS_1_0_0.RangeSetType',
+        sh: {
+          lp: '_GML',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'AxisDescription',
-        typeInfo: 'WCS_1_0_0.AxisDescriptionType',
-        substitutionHead: {
-          localPart: '_GML',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'AxisDescription',
+        ti: 'WCS_1_0_0.AxisDescriptionType',
+        sh: {
+          lp: '_GML',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'interpolationMethod',
-        typeInfo: 'String'
+        en: 'interpolationMethod'
       }, {
-        elementName: 'name',
-        typeInfo: 'String'
+        en: 'name'
       }, {
-        elementName: 'timePeriod',
-        typeInfo: 'WCS_1_0_0.TimePeriodType'
+        en: 'timePeriod',
+        ti: 'WCS_1_0_0.TimePeriodType'
       }, {
-        elementName: 'CoverageOffering',
-        typeInfo: 'WCS_1_0_0.CoverageOfferingType',
-        substitutionHead: {
-          localPart: '_GML',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'CoverageOffering',
+        ti: 'WCS_1_0_0.CoverageOfferingType',
+        sh: {
+          lp: '_GML',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'temporalDomain',
-        typeInfo: 'WCS_1_0_0.TimeSequenceType'
+        en: 'temporalDomain',
+        ti: 'WCS_1_0_0.TimeSequenceType'
       }, {
-        elementName: 'interval',
-        typeInfo: 'WCS_1_0_0.IntervalType'
+        en: 'interval',
+        ti: 'WCS_1_0_0.IntervalType'
       }, {
-        elementName: 'metadataLink',
-        typeInfo: 'WCS_1_0_0.MetadataLinkType',
-        substitutionHead: {
-          localPart: 'metaDataProperty',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'metadataLink',
+        ti: 'WCS_1_0_0.MetadataLinkType',
+        sh: {
+          lp: 'metaDataProperty',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'positionName',
-        typeInfo: 'String',
-        scope: 'WCS_1_0_0.ResponsiblePartyType'
+        en: 'positionName',
+        sc: 'WCS_1_0_0.ResponsiblePartyType'
       }, {
-        elementName: 'organisationName',
-        typeInfo: 'String',
-        scope: 'WCS_1_0_0.ResponsiblePartyType'
+        en: 'organisationName',
+        sc: 'WCS_1_0_0.ResponsiblePartyType'
       }, {
-        elementName: 'contactInfo',
-        typeInfo: 'WCS_1_0_0.ContactType',
-        scope: 'WCS_1_0_0.ResponsiblePartyType'
+        en: 'contactInfo',
+        ti: 'WCS_1_0_0.ContactType',
+        sc: 'WCS_1_0_0.ResponsiblePartyType'
       }, {
-        elementName: 'individualName',
-        typeInfo: 'String',
-        scope: 'WCS_1_0_0.ResponsiblePartyType'
+        en: 'individualName',
+        sc: 'WCS_1_0_0.ResponsiblePartyType'
       }]
   };
   return {

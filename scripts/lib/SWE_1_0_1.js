@@ -1,3488 +1,2741 @@
 var SWE_1_0_1_Module_Factory = function () {
   var SWE_1_0_1 = {
-    name: 'SWE_1_0_1',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/swe\/1.0.1',
-    defaultAttributeNamespaceURI: 'http:\/\/www.w3.org\/1999\/xlink',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'StandardFormat',
-        baseTypeInfo: 'SWE_1_0_1.AbstractEncodingType',
-        propertyInfos: [{
-            name: 'mimeType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'mimeType'
+    n: 'SWE_1_0_1',
+    dens: 'http:\/\/www.opengis.net\/swe\/1.0.1',
+    dans: 'http:\/\/www.w3.org\/1999\/xlink',
+    tis: [{
+        ln: 'StandardFormat',
+        bti: 'SWE_1_0_1.AbstractEncodingType',
+        ps: [{
+            n: 'mimeType',
+            an: {
+              lp: 'mimeType'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractEncodingType',
-        propertyInfos: [{
-            name: 'id',
-            typeInfo: 'ID',
-            attributeName: {
-              localPart: 'id'
+        ln: 'AbstractEncodingType',
+        ps: [{
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeInstantGridType',
-        baseTypeInfo: 'SWE_1_0_1.TimeGridType',
-        propertyInfos: []
+        ln: 'TimeInstantGridType',
+        bti: 'SWE_1_0_1.TimeGridType'
       }, {
-        type: 'classInfo',
-        localName: 'TimeGridType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeComplexType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'extent',
-            elementName: 'extent',
-            typeInfo: 'SWE_1_0_1.TimeGridEnvelopePropertyType'
+        ln: 'TimeGridType',
+        bti: 'GML_3_1_1.AbstractTimeComplexType',
+        ps: [{
+            n: 'extent',
+            ti: 'SWE_1_0_1.TimeGridEnvelopePropertyType'
           }, {
-            type: 'element',
-            name: 'originPos',
-            elementName: 'originPos',
-            typeInfo: 'GML_3_1_1.TimePositionType'
+            n: 'originPos',
+            ti: 'GML_3_1_1.TimePositionType'
           }, {
-            type: 'element',
-            name: 'origin',
-            elementName: 'origin',
-            typeInfo: 'GML_3_1_1.TimeInstantPropertyType'
+            n: 'origin',
+            ti: 'GML_3_1_1.TimeInstantPropertyType'
           }, {
-            type: 'element',
-            name: 'offsetDuration',
-            elementName: 'offsetDuration',
-            typeInfo: 'String'
+            n: 'offsetDuration'
           }, {
-            type: 'element',
-            name: 'offsetInterval',
-            elementName: 'offsetInterval',
-            typeInfo: 'GML_3_1_1.TimeIntervalLengthType'
+            n: 'offsetInterval',
+            ti: 'GML_3_1_1.TimeIntervalLengthType'
           }, {
-            type: 'element',
-            name: 'duration',
-            elementName: 'duration',
-            typeInfo: 'String'
+            n: 'duration'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Category',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataComponentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'codeSpace',
-            elementName: 'codeSpace',
-            typeInfo: 'SWE_1_0_1.CodeSpacePropertyType'
+        ln: 'Category',
+        bti: 'SWE_1_0_1.AbstractDataComponentType',
+        ps: [{
+            n: 'codeSpace',
+            ti: 'SWE_1_0_1.CodeSpacePropertyType'
           }, {
-            type: 'element',
-            name: 'constraint',
-            elementName: 'constraint',
-            typeInfo: 'SWE_1_0_1.AllowedTokensPropertyType'
+            n: 'constraint',
+            ti: 'SWE_1_0_1.AllowedTokensPropertyType'
           }, {
-            type: 'element',
-            name: 'quality',
-            elementName: 'quality',
-            typeInfo: 'SWE_1_0_1.QualityPropertyType'
+            n: 'quality',
+            ti: 'SWE_1_0_1.QualityPropertyType'
           }, {
-            type: 'element',
-            name: 'value',
-            elementName: 'value',
-            typeInfo: 'String'
+            n: 'value'
           }, {
-            name: 'referenceFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'referenceFrame'
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'axisID',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'axisID'
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractDataComponentType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: [{
-            name: 'fixed',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'fixed'
+        ln: 'AbstractDataComponentType',
+        bti: 'GML_3_1_1.AbstractGMLType',
+        ps: [{
+            n: 'fixed',
+            ti: 'Boolean',
+            an: {
+              lp: 'fixed'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'definition',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'definition'
+            n: 'definition',
+            an: {
+              lp: 'definition'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CodeSpacePropertyType',
-        propertyInfos: [{
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        ln: 'CodeSpacePropertyType',
+        ps: [{
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AllowedTokensPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'allowedTokens',
-            elementName: 'AllowedTokens',
-            typeInfo: 'SWE_1_0_1.AllowedTokens'
+        ln: 'AllowedTokensPropertyType',
+        ps: [{
+            n: 'allowedTokens',
+            en: 'AllowedTokens',
+            ti: 'SWE_1_0_1.AllowedTokens'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'QualityPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'quantity',
-            elementName: 'Quantity',
-            typeInfo: 'SWE_1_0_1.Quantity'
+        ln: 'QualityPropertyType',
+        ps: [{
+            n: 'quantity',
+            en: 'Quantity',
+            ti: 'SWE_1_0_1.Quantity'
           }, {
-            type: 'element',
-            name: 'quantityRange',
-            elementName: 'QuantityRange',
-            typeInfo: 'SWE_1_0_1.QuantityRange'
+            n: 'quantityRange',
+            en: 'QuantityRange',
+            ti: 'SWE_1_0_1.QuantityRange'
           }, {
-            type: 'element',
-            name: 'category',
-            elementName: 'Category',
-            typeInfo: 'SWE_1_0_1.Category'
+            n: 'category',
+            en: 'Category',
+            ti: 'SWE_1_0_1.Category'
           }, {
-            type: 'element',
-            name: 'text',
-            elementName: 'Text',
-            typeInfo: 'SWE_1_0_1.Text'
+            n: 'text',
+            en: 'Text',
+            ti: 'SWE_1_0_1.Text'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeAggregateType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'member',
-            collection: true,
-            elementName: 'member',
-            typeInfo: 'SWE_1_0_1.TimeObjectPropertyType'
+        ln: 'TimeAggregateType',
+        bti: 'GML_3_1_1.AbstractTimeObjectType',
+        ps: [{
+            n: 'member',
+            col: true,
+            ti: 'SWE_1_0_1.TimeObjectPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AllowedTokens',
-        propertyInfos: [{
-            name: 'valueList',
-            collection: true,
-            elementName: 'valueList',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+        ln: 'AllowedTokens',
+        ps: [{
+            n: 'valueList',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: {
+              t: 'l'
             },
-            type: 'elementRef'
+            t: 'er'
           }, {
-            name: 'id',
-            typeInfo: 'ID',
-            attributeName: {
-              localPart: 'id'
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SquareMatrixType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractMatrixType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'elementType',
-            elementName: 'elementType',
-            typeInfo: 'SWE_1_0_1.QuantityPropertyType'
+        ln: 'SquareMatrixType',
+        bti: 'SWE_1_0_1.AbstractMatrixType',
+        ps: [{
+            n: 'elementType',
+            ti: 'SWE_1_0_1.QuantityPropertyType'
           }, {
-            type: 'element',
-            name: 'encoding',
-            elementName: 'encoding',
-            typeInfo: 'SWE_1_0_1.BlockEncodingPropertyType'
+            n: 'encoding',
+            ti: 'SWE_1_0_1.BlockEncodingPropertyType'
           }, {
-            type: 'element',
-            name: 'values',
-            elementName: 'values',
-            typeInfo: 'SWE_1_0_1.DataValuePropertyType'
+            n: 'values',
+            ti: 'SWE_1_0_1.DataValuePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractDataArrayType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataComponentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'elementCount',
-            elementName: 'elementCount',
-            typeInfo: 'SWE_1_0_1.AbstractDataArrayType.ElementCount'
+        ln: 'AbstractDataArrayType',
+        bti: 'SWE_1_0_1.AbstractDataComponentType',
+        ps: [{
+            n: 'elementCount',
+            ti: 'SWE_1_0_1.AbstractDataArrayType.ElementCount'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeoLocationArea',
-        baseTypeInfo: 'SWE_1_0_1.AbstractVectorType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'member',
-            collection: true,
-            elementName: 'member',
-            typeInfo: 'SWE_1_0_1.EnvelopePropertyType'
+        ln: 'GeoLocationArea',
+        bti: 'SWE_1_0_1.AbstractVectorType',
+        ps: [{
+            n: 'member',
+            col: true,
+            ti: 'SWE_1_0_1.EnvelopePropertyType'
           }, {
-            name: 'geoLocationAreaName',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'name'
+            n: 'geoLocationAreaName',
+            an: {
+              lp: 'name'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractDataRecordType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataComponentType',
-        propertyInfos: []
+        ln: 'AbstractDataRecordType',
+        bti: 'SWE_1_0_1.AbstractDataComponentType'
       }, {
-        type: 'classInfo',
-        localName: 'BinaryBlock',
-        baseTypeInfo: 'SWE_1_0_1.AbstractEncodingType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'member',
-            collection: true,
-            elementName: 'member',
-            typeInfo: 'SWE_1_0_1.BinaryBlock.Member'
+        ln: 'BinaryBlock',
+        bti: 'SWE_1_0_1.AbstractEncodingType',
+        ps: [{
+            n: 'member',
+            col: true,
+            ti: 'SWE_1_0_1.BinaryBlock.Member'
           }, {
-            name: 'byteLength',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'byteLength'
+            n: 'byteLength',
+            ti: 'Integer',
+            an: {
+              lp: 'byteLength'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'byteEncoding',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'byteEncoding'
+            n: 'byteEncoding',
+            an: {
+              lp: 'byteEncoding'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'byteOrder',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'byteOrder'
+            n: 'byteOrder',
+            an: {
+              lp: 'byteOrder'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BinaryBlock.Member',
-        propertyInfos: [{
-            type: 'element',
-            name: 'component',
-            elementName: 'Component',
-            typeInfo: 'SWE_1_0_1.BinaryBlock.Member.Component'
+        ln: 'BinaryBlock.Member',
+        ps: [{
+            n: 'component',
+            en: 'Component',
+            ti: 'SWE_1_0_1.BinaryBlock.Member.Component'
           }, {
-            type: 'element',
-            name: 'block',
-            elementName: 'Block',
-            typeInfo: 'SWE_1_0_1.BinaryBlock.Member.Block'
+            n: 'block',
+            en: 'Block',
+            ti: 'SWE_1_0_1.BinaryBlock.Member.Block'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Time',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataComponentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'uom',
-            elementName: 'uom',
-            typeInfo: 'SWE_1_0_1.UomPropertyType'
+        ln: 'Time',
+        bti: 'SWE_1_0_1.AbstractDataComponentType',
+        ps: [{
+            n: 'uom',
+            ti: 'SWE_1_0_1.UomPropertyType'
           }, {
-            type: 'element',
-            name: 'constraint',
-            elementName: 'constraint',
-            typeInfo: 'SWE_1_0_1.AllowedTimesPropertyType'
+            n: 'constraint',
+            ti: 'SWE_1_0_1.AllowedTimesPropertyType'
           }, {
-            type: 'element',
-            name: 'quality',
-            elementName: 'quality',
-            typeInfo: 'SWE_1_0_1.QualityPropertyType'
+            n: 'quality',
+            ti: 'SWE_1_0_1.QualityPropertyType'
           }, {
-            type: 'element',
-            name: 'value',
-            elementName: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'value',
+            ti: {
+              t: 'l'
             }
           }, {
-            name: 'referenceTime',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'referenceTime'
+            n: 'referenceTime',
+            an: {
+              lp: 'referenceTime'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'referenceFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'referenceFrame'
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'localFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'localFrame'
+            n: 'localFrame',
+            an: {
+              lp: 'localFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UomPropertyType',
-        propertyInfos: [{
-            name: 'unitDefinition',
-            elementName: {
-              localPart: 'UnitDefinition',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        ln: 'UomPropertyType',
+        ps: [{
+            n: 'unitDefinition',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'UnitDefinition',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            typeInfo: 'GML_3_1_1.UnitDefinitionType',
-            type: 'elementRef'
+            ti: 'GML_3_1_1.UnitDefinitionType',
+            t: 'er'
           }, {
-            name: 'code',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'code'
+            n: 'code',
+            an: {
+              lp: 'code'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AllowedTimesPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'allowedTimes',
-            elementName: 'AllowedTimes',
-            typeInfo: 'SWE_1_0_1.AllowedTimes'
+        ln: 'AllowedTimesPropertyType',
+        ps: [{
+            n: 'allowedTimes',
+            en: 'AllowedTimes',
+            ti: 'SWE_1_0_1.AllowedTimes'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Count',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataComponentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'constraint',
-            elementName: 'constraint',
-            typeInfo: 'SWE_1_0_1.AllowedValuesPropertyType'
+        ln: 'Count',
+        bti: 'SWE_1_0_1.AbstractDataComponentType',
+        ps: [{
+            n: 'constraint',
+            ti: 'SWE_1_0_1.AllowedValuesPropertyType'
           }, {
-            type: 'element',
-            name: 'quality',
-            collection: true,
-            elementName: 'quality',
-            typeInfo: 'SWE_1_0_1.QualityPropertyType'
+            n: 'quality',
+            col: true,
+            ti: 'SWE_1_0_1.QualityPropertyType'
           }, {
-            type: 'element',
-            name: 'value',
-            elementName: 'value',
-            typeInfo: 'Integer'
+            n: 'value',
+            ti: 'Integer'
           }, {
-            name: 'referenceFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'referenceFrame'
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'axisID',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'axisID'
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AllowedValuesPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'allowedValues',
-            elementName: 'AllowedValues',
-            typeInfo: 'SWE_1_0_1.AllowedValues'
+        ln: 'AllowedValuesPropertyType',
+        ps: [{
+            n: 'allowedValues',
+            en: 'AllowedValues',
+            ti: 'SWE_1_0_1.AllowedValues'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataBlockDefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'components',
-            elementName: 'components',
-            typeInfo: 'SWE_1_0_1.DataComponentPropertyType'
+        ln: 'DataBlockDefinitionType',
+        ps: [{
+            n: 'components',
+            ti: 'SWE_1_0_1.DataComponentPropertyType'
           }, {
-            type: 'element',
-            name: 'encoding',
-            elementName: 'encoding',
-            typeInfo: 'SWE_1_0_1.BlockEncodingPropertyType'
+            n: 'encoding',
+            ti: 'SWE_1_0_1.BlockEncodingPropertyType'
           }, {
-            name: 'id',
-            typeInfo: 'ID',
-            attributeName: {
-              localPart: 'id'
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EnvelopeType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractVectorType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'time',
-            elementName: 'time',
-            typeInfo: 'SWE_1_0_1.TimeRangePropertyType'
+        ln: 'EnvelopeType',
+        bti: 'SWE_1_0_1.AbstractVectorType',
+        ps: [{
+            n: 'time',
+            ti: 'SWE_1_0_1.TimeRangePropertyType'
           }, {
-            type: 'element',
-            name: 'lowerCorner',
-            elementName: 'lowerCorner',
-            typeInfo: 'SWE_1_0_1.VectorPropertyType'
+            n: 'lowerCorner',
+            ti: 'SWE_1_0_1.VectorPropertyType'
           }, {
-            type: 'element',
-            name: 'upperCorner',
-            elementName: 'upperCorner',
-            typeInfo: 'SWE_1_0_1.VectorPropertyType'
+            n: 'upperCorner',
+            ti: 'SWE_1_0_1.VectorPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataArrayType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataArrayType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'elementType',
-            elementName: 'elementType',
-            typeInfo: 'SWE_1_0_1.DataComponentPropertyType'
+        ln: 'DataArrayType',
+        bti: 'SWE_1_0_1.AbstractDataArrayType',
+        ps: [{
+            n: 'elementType',
+            ti: 'SWE_1_0_1.DataComponentPropertyType'
           }, {
-            type: 'element',
-            name: 'encoding',
-            elementName: 'encoding',
-            typeInfo: 'SWE_1_0_1.BlockEncodingPropertyType'
+            n: 'encoding',
+            ti: 'SWE_1_0_1.BlockEncodingPropertyType'
           }, {
-            type: 'element',
-            name: 'values',
-            elementName: 'values',
-            typeInfo: 'SWE_1_0_1.DataValuePropertyType'
+            n: 'values',
+            ti: 'SWE_1_0_1.DataValuePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConstrainedPhenomenonType',
-        baseTypeInfo: 'SWE_1_0_1.PhenomenonType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'base',
-            elementName: 'base',
-            typeInfo: 'SWE_1_0_1.PhenomenonPropertyType'
+        ln: 'ConstrainedPhenomenonType',
+        bti: 'SWE_1_0_1.PhenomenonType',
+        ps: [{
+            n: 'base',
+            ti: 'SWE_1_0_1.PhenomenonPropertyType'
           }, {
-            type: 'element',
-            name: 'otherConstraint',
-            collection: true,
-            elementName: 'otherConstraint',
-            typeInfo: 'String'
+            n: 'otherConstraint',
+            col: true
           }, {
-            type: 'element',
-            name: 'singleConstraint',
-            collection: true,
-            elementName: 'singleConstraint',
-            typeInfo: 'SWE_1_0_1.AnyDataPropertyType'
+            n: 'singleConstraint',
+            col: true,
+            ti: 'SWE_1_0_1.AnyDataPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PhenomenonType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: []
+        ln: 'PhenomenonType',
+        bti: 'GML_3_1_1.DefinitionType'
       }, {
-        type: 'classInfo',
-        localName: 'CountRange',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataComponentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'constraint',
-            elementName: 'constraint',
-            typeInfo: 'SWE_1_0_1.AllowedValuesPropertyType'
+        ln: 'CountRange',
+        bti: 'SWE_1_0_1.AbstractDataComponentType',
+        ps: [{
+            n: 'constraint',
+            ti: 'SWE_1_0_1.AllowedValuesPropertyType'
           }, {
-            type: 'element',
-            name: 'quality',
-            collection: true,
-            elementName: 'quality',
-            typeInfo: 'SWE_1_0_1.QualityPropertyType'
+            n: 'quality',
+            col: true,
+            ti: 'SWE_1_0_1.QualityPropertyType'
           }, {
-            type: 'element',
-            name: 'value',
-            elementName: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Integer'
+            n: 'value',
+            ti: {
+              t: 'l',
+              ti: 'Integer'
             }
           }, {
-            name: 'referenceFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'referenceFrame'
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'axisID',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'axisID'
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ObservableProperty',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataComponentType',
-        propertyInfos: []
+        ln: 'ObservableProperty',
+        bti: 'SWE_1_0_1.AbstractDataComponentType'
       }, {
-        type: 'classInfo',
-        localName: 'TimeIntervalGridType',
-        baseTypeInfo: 'SWE_1_0_1.TimeGridType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'windowDuration',
-            elementName: 'windowDuration',
-            typeInfo: 'String'
+        ln: 'TimeIntervalGridType',
+        bti: 'SWE_1_0_1.TimeGridType',
+        ps: [{
+            n: 'windowDuration'
           }, {
-            type: 'element',
-            name: 'windowInterval',
-            elementName: 'windowInterval',
-            typeInfo: 'GML_3_1_1.TimeIntervalLengthType'
+            n: 'windowInterval',
+            ti: 'GML_3_1_1.TimeIntervalLengthType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CompositePhenomenonType',
-        baseTypeInfo: 'SWE_1_0_1.CompoundPhenomenonType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'base',
-            elementName: 'base',
-            typeInfo: 'SWE_1_0_1.PhenomenonPropertyType'
+        ln: 'CompositePhenomenonType',
+        bti: 'SWE_1_0_1.CompoundPhenomenonType',
+        ps: [{
+            n: 'base',
+            ti: 'SWE_1_0_1.PhenomenonPropertyType'
           }, {
-            type: 'element',
-            name: 'component',
-            collection: true,
-            elementName: 'component',
-            typeInfo: 'SWE_1_0_1.PhenomenonPropertyType'
+            n: 'component',
+            col: true,
+            ti: 'SWE_1_0_1.PhenomenonPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CompoundPhenomenonType',
-        baseTypeInfo: 'SWE_1_0_1.PhenomenonType',
-        propertyInfos: [{
-            name: 'dimension',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'dimension'
+        ln: 'CompoundPhenomenonType',
+        bti: 'SWE_1_0_1.PhenomenonType',
+        ps: [{
+            n: 'dimension',
+            ti: 'Integer',
+            an: {
+              lp: 'dimension'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SimpleDataRecordType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataRecordType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'field',
-            collection: true,
-            elementName: 'field',
-            typeInfo: 'SWE_1_0_1.AnyScalarPropertyType'
+        ln: 'SimpleDataRecordType',
+        bti: 'SWE_1_0_1.AbstractDataRecordType',
+        ps: [{
+            n: 'field',
+            col: true,
+            ti: 'SWE_1_0_1.AnyScalarPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RecordType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'field',
-            collection: true,
-            elementName: 'field',
-            typeInfo: 'SWE_1_0_1.ItemPropertyType'
+        ln: 'RecordType',
+        ps: [{
+            n: 'field',
+            col: true,
+            ti: 'SWE_1_0_1.ItemPropertyType'
           }, {
-            name: 'rs',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'RS'
+            n: 'rs',
+            an: {
+              lp: 'RS'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'fieldCount',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'fieldCount'
+            n: 'fieldCount',
+            ti: 'Integer',
+            an: {
+              lp: 'fieldCount'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataRecordType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataRecordType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'field',
-            collection: true,
-            elementName: 'field',
-            typeInfo: 'SWE_1_0_1.DataComponentPropertyType'
+        ln: 'DataRecordType',
+        bti: 'SWE_1_0_1.AbstractDataRecordType',
+        ps: [{
+            n: 'field',
+            col: true,
+            ti: 'SWE_1_0_1.DataComponentPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Boolean',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataComponentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'quality',
-            elementName: 'quality',
-            typeInfo: 'SWE_1_0_1.QualityPropertyType'
+        ln: 'Boolean',
+        bti: 'SWE_1_0_1.AbstractDataComponentType',
+        ps: [{
+            n: 'quality',
+            ti: 'SWE_1_0_1.QualityPropertyType'
           }, {
-            type: 'element',
-            name: 'value',
-            elementName: 'value',
-            typeInfo: 'Boolean'
+            n: 'value',
+            ti: 'Boolean'
           }, {
-            name: 'referenceFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'referenceFrame'
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'axisID',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'axisID'
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'VectorType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractVectorType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'coordinate',
-            collection: true,
-            elementName: 'coordinate',
-            typeInfo: 'SWE_1_0_1.VectorType.Coordinate'
+        ln: 'VectorType',
+        bti: 'SWE_1_0_1.AbstractVectorType',
+        ps: [{
+            n: 'coordinate',
+            col: true,
+            ti: 'SWE_1_0_1.VectorType.Coordinate'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AllowedValues',
-        propertyInfos: [{
-            type: 'element',
-            name: 'min',
-            elementName: 'min',
-            typeInfo: 'Double'
+        ln: 'AllowedValues',
+        ps: [{
+            n: 'min',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'max',
-            elementName: 'max',
-            typeInfo: 'Double'
+            n: 'max',
+            ti: 'Double'
           }, {
-            name: 'intervalOrValueList',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'valueList',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'Double'
+            n: 'intervalOrValueList',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'valueList',
+                ti: {
+                  t: 'l',
+                  ti: 'Double'
                 }
               }, {
-                elementName: 'interval',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'Double'
+                en: 'interval',
+                ti: {
+                  t: 'l',
+                  ti: 'Double'
                 }
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }, {
-            name: 'id',
-            typeInfo: 'ID',
-            attributeName: {
-              localPart: 'id'
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PositionType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractVectorType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'time',
-            elementName: 'time',
-            typeInfo: 'SWE_1_0_1.TimePropertyType'
+        ln: 'PositionType',
+        bti: 'SWE_1_0_1.AbstractVectorType',
+        ps: [{
+            n: 'time',
+            ti: 'SWE_1_0_1.TimePropertyType'
           }, {
-            type: 'element',
-            name: 'location',
-            elementName: 'location',
-            typeInfo: 'SWE_1_0_1.VectorPropertyType'
+            n: 'location',
+            ti: 'SWE_1_0_1.VectorPropertyType'
           }, {
-            type: 'element',
-            name: 'orientation',
-            elementName: 'orientation',
-            typeInfo: 'SWE_1_0_1.VectorOrSquareMatrixPropertyType'
+            n: 'orientation',
+            ti: 'SWE_1_0_1.VectorOrSquareMatrixPropertyType'
           }, {
-            type: 'element',
-            name: 'velocity',
-            elementName: 'velocity',
-            typeInfo: 'SWE_1_0_1.VectorPropertyType'
+            n: 'velocity',
+            ti: 'SWE_1_0_1.VectorPropertyType'
           }, {
-            type: 'element',
-            name: 'angularVelocity',
-            elementName: 'angularVelocity',
-            typeInfo: 'SWE_1_0_1.VectorOrSquareMatrixPropertyType'
+            n: 'angularVelocity',
+            ti: 'SWE_1_0_1.VectorOrSquareMatrixPropertyType'
           }, {
-            type: 'element',
-            name: 'acceleration',
-            elementName: 'acceleration',
-            typeInfo: 'SWE_1_0_1.VectorPropertyType'
+            n: 'acceleration',
+            ti: 'SWE_1_0_1.VectorPropertyType'
           }, {
-            type: 'element',
-            name: 'angularAcceleration',
-            elementName: 'angularAcceleration',
-            typeInfo: 'SWE_1_0_1.VectorOrSquareMatrixPropertyType'
+            n: 'angularAcceleration',
+            ti: 'SWE_1_0_1.VectorOrSquareMatrixPropertyType'
           }, {
-            type: 'element',
-            name: 'state',
-            elementName: 'state',
-            typeInfo: 'SWE_1_0_1.VectorOrSquareMatrixPropertyType'
+            n: 'state',
+            ti: 'SWE_1_0_1.VectorOrSquareMatrixPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConditionalDataType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataRecordType',
-        propertyInfos: [{
-            type: 'element',
-            name: '_case',
-            collection: true,
-            elementName: 'case',
-            typeInfo: 'SWE_1_0_1.ConditionalDataType.Case'
+        ln: 'ConditionalDataType',
+        bti: 'SWE_1_0_1.AbstractDataRecordType',
+        ps: [{
+            n: '_case',
+            col: true,
+            en: 'case',
+            ti: 'SWE_1_0_1.ConditionalDataType.Case'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataStreamDefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'streamComponent',
-            collection: true,
-            elementName: 'streamComponent',
-            typeInfo: 'SWE_1_0_1.DataBlockDefinitionPropertyType'
+        ln: 'DataStreamDefinitionType',
+        ps: [{
+            n: 'streamComponent',
+            col: true,
+            ti: 'SWE_1_0_1.DataBlockDefinitionPropertyType'
           }, {
-            type: 'element',
-            name: 'streamEncoding',
-            elementName: 'streamEncoding',
-            typeInfo: 'SWE_1_0_1.MultiplexedStreamFormatPropertyType'
+            n: 'streamEncoding',
+            ti: 'SWE_1_0_1.MultiplexedStreamFormatPropertyType'
           }, {
-            name: 'id',
-            typeInfo: 'ID',
-            attributeName: {
-              localPart: 'id'
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CurveType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataArrayType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'elementType',
-            elementName: 'elementType',
-            typeInfo: 'SWE_1_0_1.SimpleDataRecordPropertyType'
+        ln: 'CurveType',
+        bti: 'SWE_1_0_1.AbstractDataArrayType',
+        ps: [{
+            n: 'elementType',
+            ti: 'SWE_1_0_1.SimpleDataRecordPropertyType'
           }, {
-            type: 'element',
-            name: 'encoding',
-            elementName: 'encoding',
-            typeInfo: 'SWE_1_0_1.BlockEncodingPropertyType'
+            n: 'encoding',
+            ti: 'SWE_1_0_1.BlockEncodingPropertyType'
           }, {
-            type: 'element',
-            name: 'values',
-            elementName: 'values',
-            typeInfo: 'SWE_1_0_1.DataValuePropertyType'
+            n: 'values',
+            ti: 'SWE_1_0_1.DataValuePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Quantity',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataComponentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'uom',
-            elementName: 'uom',
-            typeInfo: 'SWE_1_0_1.UomPropertyType'
+        ln: 'Quantity',
+        bti: 'SWE_1_0_1.AbstractDataComponentType',
+        ps: [{
+            n: 'uom',
+            ti: 'SWE_1_0_1.UomPropertyType'
           }, {
-            type: 'element',
-            name: 'constraint',
-            elementName: 'constraint',
-            typeInfo: 'SWE_1_0_1.AllowedValuesPropertyType'
+            n: 'constraint',
+            ti: 'SWE_1_0_1.AllowedValuesPropertyType'
           }, {
-            type: 'element',
-            name: 'quality',
-            collection: true,
-            elementName: 'quality',
-            typeInfo: 'SWE_1_0_1.QualityPropertyType'
+            n: 'quality',
+            col: true,
+            ti: 'SWE_1_0_1.QualityPropertyType'
           }, {
-            type: 'element',
-            name: 'value',
-            elementName: 'value',
-            typeInfo: 'Double'
+            n: 'value',
+            ti: 'Double'
           }, {
-            name: 'referenceFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'referenceFrame'
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'axisID',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'axisID'
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'QuantityRange',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataComponentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'uom',
-            elementName: 'uom',
-            typeInfo: 'SWE_1_0_1.UomPropertyType'
+        ln: 'QuantityRange',
+        bti: 'SWE_1_0_1.AbstractDataComponentType',
+        ps: [{
+            n: 'uom',
+            ti: 'SWE_1_0_1.UomPropertyType'
           }, {
-            type: 'element',
-            name: 'constraint',
-            elementName: 'constraint',
-            typeInfo: 'SWE_1_0_1.AllowedValuesPropertyType'
+            n: 'constraint',
+            ti: 'SWE_1_0_1.AllowedValuesPropertyType'
           }, {
-            type: 'element',
-            name: 'quality',
-            collection: true,
-            elementName: 'quality',
-            typeInfo: 'SWE_1_0_1.QualityPropertyType'
+            n: 'quality',
+            col: true,
+            ti: 'SWE_1_0_1.QualityPropertyType'
           }, {
-            type: 'element',
-            name: 'value',
-            elementName: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Double'
+            n: 'value',
+            ti: {
+              t: 'l',
+              ti: 'Double'
             }
           }, {
-            name: 'referenceFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'referenceFrame'
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'axisID',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'axisID'
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Text',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataComponentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'value',
-            elementName: 'value',
-            typeInfo: 'String'
+        ln: 'Text',
+        bti: 'SWE_1_0_1.AbstractDataComponentType',
+        ps: [{
+            n: 'value'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AllowedTimes',
-        propertyInfos: [{
-            type: 'element',
-            name: 'min',
-            elementName: 'min',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+        ln: 'AllowedTimes',
+        ps: [{
+            n: 'min',
+            ti: {
+              t: 'l'
             }
           }, {
-            type: 'element',
-            name: 'max',
-            elementName: 'max',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'max',
+            ti: {
+              t: 'l'
             }
           }, {
-            name: 'intervalOrValueList',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'valueList',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'String'
+            n: 'intervalOrValueList',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'interval',
+                ti: {
+                  t: 'l'
                 }
               }, {
-                elementName: 'interval',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'String'
+                en: 'valueList',
+                ti: {
+                  t: 'l'
                 }
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }, {
-            name: 'id',
-            typeInfo: 'ID',
-            attributeName: {
-              localPart: 'id'
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConditionalValueType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractConditionalType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'data',
-            elementName: 'data',
-            typeInfo: 'SWE_1_0_1.ConditionalValueType.Data'
+        ln: 'ConditionalValueType',
+        bti: 'SWE_1_0_1.AbstractConditionalType',
+        ps: [{
+            n: 'data',
+            ti: 'SWE_1_0_1.ConditionalValueType.Data'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ArrayType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'element',
-            collection: true,
-            elementName: 'element',
-            typeInfo: 'SWE_1_0_1.XMLDataPropertyType'
+        ln: 'ArrayType',
+        ps: [{
+            n: 'element',
+            col: true,
+            ti: 'SWE_1_0_1.XMLDataPropertyType'
           }, {
-            name: 'rs',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'RS'
+            n: 'rs',
+            an: {
+              lp: 'RS'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'elementCount',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'elementCount'
+            n: 'elementCount',
+            ti: 'Integer',
+            an: {
+              lp: 'elementCount'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeRange',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataComponentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'uom',
-            elementName: 'uom',
-            typeInfo: 'SWE_1_0_1.UomPropertyType'
+        ln: 'TimeRange',
+        bti: 'SWE_1_0_1.AbstractDataComponentType',
+        ps: [{
+            n: 'uom',
+            ti: 'SWE_1_0_1.UomPropertyType'
           }, {
-            type: 'element',
-            name: 'constraint',
-            elementName: 'constraint',
-            typeInfo: 'SWE_1_0_1.AllowedTimesPropertyType'
+            n: 'constraint',
+            ti: 'SWE_1_0_1.AllowedTimesPropertyType'
           }, {
-            type: 'element',
-            name: 'quality',
-            elementName: 'quality',
-            typeInfo: 'SWE_1_0_1.QualityPropertyType'
+            n: 'quality',
+            ti: 'SWE_1_0_1.QualityPropertyType'
           }, {
-            type: 'element',
-            name: 'value',
-            elementName: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'value',
+            ti: {
+              t: 'l'
             }
           }, {
-            name: 'referenceTime',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'referenceTime'
+            n: 'referenceTime',
+            an: {
+              lp: 'referenceTime'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'referenceFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'referenceFrame'
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'localFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'localFrame'
+            n: 'localFrame',
+            an: {
+              lp: 'localFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeGeometricComplexType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeComplexType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'primitive',
-            collection: true,
-            elementName: 'primitive',
-            typeInfo: 'SWE_1_0_1.TimeGeometricPrimitivePropertyType'
+        ln: 'TimeGeometricComplexType',
+        bti: 'GML_3_1_1.AbstractTimeComplexType',
+        ps: [{
+            n: 'primitive',
+            col: true,
+            ti: 'SWE_1_0_1.TimeGeometricPrimitivePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiplexedStreamFormatType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractEncodingType',
-        propertyInfos: [{
-            name: 'type',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'type'
+        ln: 'MultiplexedStreamFormatType',
+        bti: 'SWE_1_0_1.AbstractEncodingType',
+        ps: [{
+            n: 'type',
+            an: {
+              lp: 'type'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'version'
+            n: 'version',
+            an: {
+              lp: 'version'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'XMLBlockType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractEncodingType',
-        propertyInfos: [{
-            name: 'xmlElement',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'xmlElement'
+        ln: 'XMLBlockType',
+        bti: 'SWE_1_0_1.AbstractEncodingType',
+        ps: [{
+            n: 'xmlElement',
+            an: {
+              lp: 'xmlElement'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PhenomenonSeriesType',
-        baseTypeInfo: 'SWE_1_0_1.CompoundPhenomenonType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'base',
-            elementName: 'base',
-            typeInfo: 'SWE_1_0_1.PhenomenonPropertyType'
+        ln: 'PhenomenonSeriesType',
+        bti: 'SWE_1_0_1.CompoundPhenomenonType',
+        ps: [{
+            n: 'base',
+            ti: 'SWE_1_0_1.PhenomenonPropertyType'
           }, {
-            type: 'element',
-            name: 'constraintList',
-            collection: true,
-            elementName: 'constraintList',
-            typeInfo: 'SWE_1_0_1.DataArrayPropertyType'
+            n: 'constraintList',
+            col: true,
+            ti: 'SWE_1_0_1.DataArrayPropertyType'
           }, {
-            type: 'element',
-            name: 'otherConstraint',
-            collection: true,
-            elementName: 'otherConstraint',
-            typeInfo: 'String'
+            n: 'otherConstraint',
+            col: true
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TextBlock',
-        baseTypeInfo: 'SWE_1_0_1.AbstractEncodingType',
-        propertyInfos: [{
-            name: 'tokenSeparator',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'tokenSeparator'
+        ln: 'TextBlock',
+        bti: 'SWE_1_0_1.AbstractEncodingType',
+        ps: [{
+            n: 'tokenSeparator',
+            an: {
+              lp: 'tokenSeparator'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'blockSeparator',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'blockSeparator'
+            n: 'blockSeparator',
+            an: {
+              lp: 'blockSeparator'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'decimalSeparator',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'decimalSeparator'
+            n: 'decimalSeparator',
+            an: {
+              lp: 'decimalSeparator'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'NormalizedCurveType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataRecordType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'inputGain',
-            elementName: 'inputGain',
-            typeInfo: 'SWE_1_0_1.QuantityPropertyType'
+        ln: 'NormalizedCurveType',
+        bti: 'SWE_1_0_1.AbstractDataRecordType',
+        ps: [{
+            n: 'inputGain',
+            ti: 'SWE_1_0_1.QuantityPropertyType'
           }, {
-            type: 'element',
-            name: 'inputBias',
-            elementName: 'inputBias',
-            typeInfo: 'SWE_1_0_1.QuantityPropertyType'
+            n: 'inputBias',
+            ti: 'SWE_1_0_1.QuantityPropertyType'
           }, {
-            type: 'element',
-            name: 'outputGain',
-            elementName: 'outputGain',
-            typeInfo: 'SWE_1_0_1.QuantityPropertyType'
+            n: 'outputGain',
+            ti: 'SWE_1_0_1.QuantityPropertyType'
           }, {
-            type: 'element',
-            name: 'outputBias',
-            elementName: 'outputBias',
-            typeInfo: 'SWE_1_0_1.QuantityPropertyType'
+            n: 'outputBias',
+            ti: 'SWE_1_0_1.QuantityPropertyType'
           }, {
-            type: 'element',
-            name: 'interpolationMethod',
-            elementName: 'interpolationMethod',
-            typeInfo: 'SWE_1_0_1.CategoryPropertyType'
+            n: 'interpolationMethod',
+            ti: 'SWE_1_0_1.CategoryPropertyType'
           }, {
-            type: 'element',
-            name: 'extrapolationMethod',
-            elementName: 'extrapolationMethod',
-            typeInfo: 'SWE_1_0_1.CategoryPropertyType'
+            n: 'extrapolationMethod',
+            ti: 'SWE_1_0_1.CategoryPropertyType'
           }, {
-            type: 'element',
-            name: 'function',
-            elementName: 'function',
-            typeInfo: 'SWE_1_0_1.CurvePropertyType'
+            n: 'function',
+            ti: 'SWE_1_0_1.CurvePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'IntervalType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'lowerBound',
-            elementName: 'lowerBound',
-            typeInfo: 'AnyType'
+        ln: 'IntervalType',
+        ps: [{
+            n: 'lowerBound',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'upperBound',
-            elementName: 'upperBound',
-            typeInfo: 'AnyType'
+            n: 'upperBound',
+            ti: 'AnyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeAggregatePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeAggregate',
-            elementName: 'TimeAggregate',
-            typeInfo: 'SWE_1_0_1.TimeAggregateType'
+        ln: 'TimeAggregatePropertyType',
+        ps: [{
+            n: 'timeAggregate',
+            en: 'TimeAggregate',
+            ti: 'SWE_1_0_1.TimeAggregateType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ItemPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'item',
-            elementName: 'Item',
-            typeInfo: 'AnyType'
+        ln: 'ItemPropertyType',
+        ps: [{
+            n: 'item',
+            en: 'Item',
+            ti: 'AnyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'VectorPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'vector',
-            elementName: 'Vector',
-            typeInfo: 'SWE_1_0_1.VectorType'
+        ln: 'VectorPropertyType',
+        ps: [{
+            n: 'vector',
+            en: 'Vector',
+            ti: 'SWE_1_0_1.VectorType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'IntervalPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'interval',
-            elementName: 'Interval',
-            typeInfo: 'SWE_1_0_1.IntervalType'
+        ln: 'IntervalPropertyType',
+        ps: [{
+            n: 'interval',
+            en: 'Interval',
+            ti: 'SWE_1_0_1.IntervalType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'VectorOrSquareMatrixPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'vector',
-            elementName: 'Vector',
-            typeInfo: 'SWE_1_0_1.VectorType'
+        ln: 'VectorOrSquareMatrixPropertyType',
+        ps: [{
+            n: 'vector',
+            en: 'Vector',
+            ti: 'SWE_1_0_1.VectorType'
           }, {
-            type: 'element',
-            name: 'squareMatrix',
-            elementName: 'SquareMatrix',
-            typeInfo: 'SWE_1_0_1.SquareMatrixType'
+            n: 'squareMatrix',
+            en: 'SquareMatrix',
+            ti: 'SWE_1_0_1.SquareMatrixType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CurvePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'curve',
-            elementName: 'Curve',
-            typeInfo: 'SWE_1_0_1.CurveType'
+        ln: 'CurvePropertyType',
+        ps: [{
+            n: 'curve',
+            en: 'Curve',
+            ti: 'SWE_1_0_1.CurveType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeInstantGridPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeInstantGrid',
-            elementName: 'TimeInstantGrid',
-            typeInfo: 'SWE_1_0_1.TimeInstantGridType'
+        ln: 'TimeInstantGridPropertyType',
+        ps: [{
+            n: 'timeInstantGrid',
+            en: 'TimeInstantGrid',
+            ti: 'SWE_1_0_1.TimeInstantGridType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractMatrixType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataArrayType',
-        propertyInfos: [{
-            name: 'referenceFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'referenceFrame'
+        ln: 'AbstractMatrixType',
+        bti: 'SWE_1_0_1.AbstractDataArrayType',
+        ps: [{
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'localFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'localFrame'
+            n: 'localFrame',
+            an: {
+              lp: 'localFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeIntervalGridPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeIntervalGrid',
-            elementName: 'TimeIntervalGrid',
-            typeInfo: 'SWE_1_0_1.TimeIntervalGridType'
+        ln: 'TimeIntervalGridPropertyType',
+        ps: [{
+            n: 'timeIntervalGrid',
+            en: 'TimeIntervalGrid',
+            ti: 'SWE_1_0_1.TimeIntervalGridType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CategoryPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'category',
-            elementName: 'Category',
-            typeInfo: 'SWE_1_0_1.Category'
+        ln: 'CategoryPropertyType',
+        ps: [{
+            n: 'category',
+            en: 'Category',
+            ti: 'SWE_1_0_1.Category'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RecordPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'record',
-            elementName: 'Record',
-            typeInfo: 'SWE_1_0_1.RecordType'
+        ln: 'RecordPropertyType',
+        ps: [{
+            n: 'record',
+            en: 'Record',
+            ti: 'SWE_1_0_1.RecordType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractVectorType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataRecordType',
-        propertyInfos: [{
-            name: 'referenceFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'referenceFrame'
+        ln: 'AbstractVectorType',
+        bti: 'SWE_1_0_1.AbstractDataRecordType',
+        ps: [{
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'localFrame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'localFrame'
+            n: 'localFrame',
+            an: {
+              lp: 'localFrame'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiplexedStreamFormatPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'multiplexedStreamFormat',
-            elementName: 'MultiplexedStreamFormat',
-            typeInfo: 'SWE_1_0_1.MultiplexedStreamFormatType'
+        ln: 'MultiplexedStreamFormatPropertyType',
+        ps: [{
+            n: 'multiplexedStreamFormat',
+            en: 'MultiplexedStreamFormat',
+            ti: 'SWE_1_0_1.MultiplexedStreamFormatType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PhenomenonPropertyType',
-        propertyInfos: [{
-            name: 'phenomenon',
-            elementName: 'Phenomenon',
-            typeInfo: 'SWE_1_0_1.PhenomenonType',
-            type: 'elementRef'
+        ln: 'PhenomenonPropertyType',
+        ps: [{
+            n: 'phenomenon',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'Phenomenon',
+            ti: 'SWE_1_0_1.PhenomenonType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataComponentPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'count',
-            elementName: 'Count',
-            typeInfo: 'SWE_1_0_1.Count'
+        ln: 'DataComponentPropertyType',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: 'SWE_1_0_1.Count'
           }, {
-            type: 'element',
-            name: 'quantity',
-            elementName: 'Quantity',
-            typeInfo: 'SWE_1_0_1.Quantity'
+            n: 'quantity',
+            en: 'Quantity',
+            ti: 'SWE_1_0_1.Quantity'
           }, {
-            type: 'element',
-            name: 'time',
-            elementName: 'Time',
-            typeInfo: 'SWE_1_0_1.Time'
+            n: 'time',
+            en: 'Time',
+            ti: 'SWE_1_0_1.Time'
           }, {
-            type: 'element',
-            name: '_boolean',
-            elementName: 'Boolean',
-            typeInfo: 'SWE_1_0_1.Boolean'
+            n: '_boolean',
+            en: 'Boolean',
+            ti: 'SWE_1_0_1.Boolean'
           }, {
-            type: 'element',
-            name: 'category',
-            elementName: 'Category',
-            typeInfo: 'SWE_1_0_1.Category'
+            n: 'category',
+            en: 'Category',
+            ti: 'SWE_1_0_1.Category'
           }, {
-            type: 'element',
-            name: 'text',
-            elementName: 'Text',
-            typeInfo: 'SWE_1_0_1.Text'
+            n: 'text',
+            en: 'Text',
+            ti: 'SWE_1_0_1.Text'
           }, {
-            type: 'element',
-            name: 'quantityRange',
-            elementName: 'QuantityRange',
-            typeInfo: 'SWE_1_0_1.QuantityRange'
+            n: 'quantityRange',
+            en: 'QuantityRange',
+            ti: 'SWE_1_0_1.QuantityRange'
           }, {
-            type: 'element',
-            name: 'countRange',
-            elementName: 'CountRange',
-            typeInfo: 'SWE_1_0_1.CountRange'
+            n: 'countRange',
+            en: 'CountRange',
+            ti: 'SWE_1_0_1.CountRange'
           }, {
-            type: 'element',
-            name: 'timeRange',
-            elementName: 'TimeRange',
-            typeInfo: 'SWE_1_0_1.TimeRange'
+            n: 'timeRange',
+            en: 'TimeRange',
+            ti: 'SWE_1_0_1.TimeRange'
           }, {
-            name: 'abstractDataRecord',
-            elementName: 'AbstractDataRecord',
-            typeInfo: 'SWE_1_0_1.AbstractDataRecordType',
-            type: 'elementRef'
+            n: 'abstractDataRecord',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractDataRecord',
+            ti: 'SWE_1_0_1.AbstractDataRecordType',
+            t: 'er'
           }, {
-            name: 'abstractDataArray',
-            elementName: 'AbstractDataArray',
-            typeInfo: 'SWE_1_0_1.AbstractDataArrayType',
-            type: 'elementRef'
+            n: 'abstractDataArray',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractDataArray',
+            ti: 'SWE_1_0_1.AbstractDataArrayType',
+            t: 'er'
           }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'name'
+            n: 'name',
+            an: {
+              lp: 'name'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BooleanPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: '_boolean',
-            elementName: 'Boolean',
-            typeInfo: 'SWE_1_0_1.Boolean'
+        ln: 'BooleanPropertyType',
+        ps: [{
+            n: '_boolean',
+            en: 'Boolean',
+            ti: 'SWE_1_0_1.Boolean'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractConditionalType',
-        baseTypeInfo: 'SWE_1_0_1.AbstractDataRecordType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'condition',
-            collection: true,
-            elementName: 'condition',
-            typeInfo: 'SWE_1_0_1.AbstractConditionalType.Condition'
+        ln: 'AbstractConditionalType',
+        bti: 'SWE_1_0_1.AbstractDataRecordType',
+        ps: [{
+            n: 'condition',
+            col: true,
+            ti: 'SWE_1_0_1.AbstractConditionalType.Condition'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeGridEnvelopePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeGridEnvelope',
-            elementName: 'TimeGridEnvelope',
-            typeInfo: 'SWE_1_0_1.TimeGridEnvelopePropertyType.TimeGridEnvelope'
+        ln: 'TimeGridEnvelopePropertyType',
+        ps: [{
+            n: 'timeGridEnvelope',
+            en: 'TimeGridEnvelope',
+            ti: 'SWE_1_0_1.TimeGridEnvelopePropertyType.TimeGridEnvelope'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'QuantityRangePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'quantityRange',
-            elementName: 'QuantityRange',
-            typeInfo: 'SWE_1_0_1.QuantityRange'
+        ln: 'QuantityRangePropertyType',
+        ps: [{
+            n: 'quantityRange',
+            en: 'QuantityRange',
+            ti: 'SWE_1_0_1.QuantityRange'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeObjectPropertyType',
-        propertyInfos: [{
-            name: 'timeObject',
-            elementName: {
-              localPart: '_TimeObject',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        ln: 'TimeObjectPropertyType',
+        ps: [{
+            n: 'timeObject',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: '_TimeObject',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            typeInfo: 'GML_3_1_1.AbstractTimeObjectType',
-            type: 'elementRef'
+            ti: 'GML_3_1_1.AbstractTimeObjectType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'time',
-            elementName: 'Time',
-            typeInfo: 'SWE_1_0_1.Time'
+        ln: 'TimePropertyType',
+        ps: [{
+            n: 'time',
+            en: 'Time',
+            ti: 'SWE_1_0_1.Time'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EnvelopePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'envelope',
-            elementName: 'Envelope',
-            typeInfo: 'SWE_1_0_1.EnvelopeType'
+        ln: 'EnvelopePropertyType',
+        ps: [{
+            n: 'envelope',
+            en: 'Envelope',
+            ti: 'SWE_1_0_1.EnvelopeType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataBlockDefinitionPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'dataBlockDefinition',
-            elementName: 'DataBlockDefinition',
-            typeInfo: 'SWE_1_0_1.DataBlockDefinitionType'
+        ln: 'DataBlockDefinitionPropertyType',
+        ps: [{
+            n: 'dataBlockDefinition',
+            en: 'DataBlockDefinition',
+            ti: 'SWE_1_0_1.DataBlockDefinitionType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataArrayPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'dataArray',
-            elementName: 'DataArray',
-            typeInfo: 'SWE_1_0_1.DataArrayType'
+        ln: 'DataArrayPropertyType',
+        ps: [{
+            n: 'dataArray',
+            en: 'DataArray',
+            ti: 'SWE_1_0_1.DataArrayType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ArrayPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'array',
-            elementName: 'Array',
-            typeInfo: 'SWE_1_0_1.ArrayType'
+        ln: 'ArrayPropertyType',
+        ps: [{
+            n: 'array',
+            en: 'Array',
+            ti: 'SWE_1_0_1.ArrayType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeGridPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeInstantGrid',
-            elementName: 'TimeInstantGrid',
-            typeInfo: 'SWE_1_0_1.TimeInstantGridType'
+        ln: 'TimeGridPropertyType',
+        ps: [{
+            n: 'timeInstantGrid',
+            en: 'TimeInstantGrid',
+            ti: 'SWE_1_0_1.TimeInstantGridType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SimpleDataRecordPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'simpleDataRecord',
-            elementName: 'SimpleDataRecord',
-            typeInfo: 'SWE_1_0_1.SimpleDataRecordType'
+        ln: 'SimpleDataRecordPropertyType',
+        ps: [{
+            n: 'simpleDataRecord',
+            en: 'SimpleDataRecord',
+            ti: 'SWE_1_0_1.SimpleDataRecordType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TextPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'text',
-            elementName: 'Text',
-            typeInfo: 'SWE_1_0_1.Text'
+        ln: 'TextPropertyType',
+        ps: [{
+            n: 'text',
+            en: 'Text',
+            ti: 'SWE_1_0_1.Text'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CountRangePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'countRange',
-            elementName: 'CountRange',
-            typeInfo: 'SWE_1_0_1.CountRange'
+        ln: 'CountRangePropertyType',
+        ps: [{
+            n: 'countRange',
+            en: 'CountRange',
+            ti: 'SWE_1_0_1.CountRange'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimePositionListType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+        ln: 'TimePositionListType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
             },
-            type: 'value'
+            t: 'v'
           }, {
-            name: 'frame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'frame'
+            n: 'frame',
+            an: {
+              lp: 'frame'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'calendarEraName',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'calendarEraName'
+            n: 'calendarEraName',
+            an: {
+              lp: 'calendarEraName'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'indeterminatePosition',
-            typeInfo: 'GML_3_1_1.TimeIndeterminateValueType',
-            attributeName: {
-              localPart: 'indeterminatePosition'
+            n: 'indeterminatePosition',
+            ti: 'GML_3_1_1.TimeIndeterminateValueType',
+            an: {
+              lp: 'indeterminatePosition'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'count',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'count'
+            n: 'count',
+            ti: 'Integer',
+            an: {
+              lp: 'count'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataValuePropertyType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
+        ln: 'DataValuePropertyType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
           }, {
-            name: 'any',
-            collection: true,
-            allowDom: true,
-            type: 'anyElement'
+            n: 'any',
+            col: true,
+            typed: false,
+            mx: false,
+            t: 'ae'
           }, {
-            name: 'recordCount',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'recordCount'
+            n: 'recordCount',
+            ti: 'Integer',
+            an: {
+              lp: 'recordCount'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'XMLDataPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'item',
-            elementName: 'Item',
-            typeInfo: 'AnyType'
+        ln: 'XMLDataPropertyType',
+        ps: [{
+            n: 'item',
+            en: 'Item',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'record',
-            elementName: 'Record',
-            typeInfo: 'SWE_1_0_1.RecordType'
+            n: 'record',
+            en: 'Record',
+            ti: 'SWE_1_0_1.RecordType'
           }, {
-            type: 'element',
-            name: 'array',
-            elementName: 'Array',
-            typeInfo: 'SWE_1_0_1.ArrayType'
+            n: 'array',
+            en: 'Array',
+            ti: 'SWE_1_0_1.ArrayType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BlockEncodingPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'standardFormat',
-            elementName: 'StandardFormat',
-            typeInfo: 'SWE_1_0_1.StandardFormat'
+        ln: 'BlockEncodingPropertyType',
+        ps: [{
+            n: 'standardFormat',
+            en: 'StandardFormat',
+            ti: 'SWE_1_0_1.StandardFormat'
           }, {
-            type: 'element',
-            name: 'binaryBlock',
-            elementName: 'BinaryBlock',
-            typeInfo: 'SWE_1_0_1.BinaryBlock'
+            n: 'binaryBlock',
+            en: 'BinaryBlock',
+            ti: 'SWE_1_0_1.BinaryBlock'
           }, {
-            type: 'element',
-            name: 'textBlock',
-            elementName: 'TextBlock',
-            typeInfo: 'SWE_1_0_1.TextBlock'
+            n: 'textBlock',
+            en: 'TextBlock',
+            ti: 'SWE_1_0_1.TextBlock'
           }, {
-            type: 'element',
-            name: 'xmlBlock',
-            elementName: 'XMLBlock',
-            typeInfo: 'SWE_1_0_1.XMLBlockType'
+            n: 'xmlBlock',
+            en: 'XMLBlock',
+            ti: 'SWE_1_0_1.XMLBlockType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AnyScalarPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'count',
-            elementName: 'Count',
-            typeInfo: 'SWE_1_0_1.Count'
+        ln: 'AnyScalarPropertyType',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: 'SWE_1_0_1.Count'
           }, {
-            type: 'element',
-            name: 'quantity',
-            elementName: 'Quantity',
-            typeInfo: 'SWE_1_0_1.Quantity'
+            n: 'quantity',
+            en: 'Quantity',
+            ti: 'SWE_1_0_1.Quantity'
           }, {
-            type: 'element',
-            name: 'time',
-            elementName: 'Time',
-            typeInfo: 'SWE_1_0_1.Time'
+            n: 'time',
+            en: 'Time',
+            ti: 'SWE_1_0_1.Time'
           }, {
-            type: 'element',
-            name: '_boolean',
-            elementName: 'Boolean',
-            typeInfo: 'SWE_1_0_1.Boolean'
+            n: '_boolean',
+            en: 'Boolean',
+            ti: 'SWE_1_0_1.Boolean'
           }, {
-            type: 'element',
-            name: 'category',
-            elementName: 'Category',
-            typeInfo: 'SWE_1_0_1.Category'
+            n: 'category',
+            en: 'Category',
+            ti: 'SWE_1_0_1.Category'
           }, {
-            type: 'element',
-            name: 'text',
-            elementName: 'Text',
-            typeInfo: 'SWE_1_0_1.Text'
+            n: 'text',
+            en: 'Text',
+            ti: 'SWE_1_0_1.Text'
           }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'name'
+            n: 'name',
+            an: {
+              lp: 'name'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeGeometricComplexPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeGeometricComplex',
-            elementName: 'TimeGeometricComplex',
-            typeInfo: 'SWE_1_0_1.TimeGeometricComplexType'
+        ln: 'TimeGeometricComplexPropertyType',
+        ps: [{
+            n: 'timeGeometricComplex',
+            en: 'TimeGeometricComplex',
+            ti: 'SWE_1_0_1.TimeGeometricComplexType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeRangePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeRange',
-            elementName: 'TimeRange',
-            typeInfo: 'SWE_1_0_1.TimeRange'
+        ln: 'TimeRangePropertyType',
+        ps: [{
+            n: 'timeRange',
+            en: 'TimeRange',
+            ti: 'SWE_1_0_1.TimeRange'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeGeometricPrimitivePropertyType',
-        propertyInfos: [{
-            name: 'timeGeometricPrimitive',
-            elementName: {
-              localPart: '_TimeGeometricPrimitive',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        ln: 'TimeGeometricPrimitivePropertyType',
+        ps: [{
+            n: 'timeGeometricPrimitive',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: '_TimeGeometricPrimitive',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            typeInfo: 'GML_3_1_1.AbstractTimeGeometricPrimitiveType',
-            type: 'elementRef'
+            ti: 'GML_3_1_1.AbstractTimeGeometricPrimitiveType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataStreamDefinitionPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'dataStreamDefinition',
-            elementName: 'DataStreamDefinition',
-            typeInfo: 'SWE_1_0_1.DataStreamDefinitionType'
+        ln: 'DataStreamDefinitionPropertyType',
+        ps: [{
+            n: 'dataStreamDefinition',
+            en: 'DataStreamDefinition',
+            ti: 'SWE_1_0_1.DataStreamDefinitionType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CountPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'count',
-            elementName: 'Count',
-            typeInfo: 'SWE_1_0_1.Count'
+        ln: 'CountPropertyType',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: 'SWE_1_0_1.Count'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ScopedNameType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'ScopedNameType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'codeSpace',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'codeSpace'
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'QuantityPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'quantity',
-            elementName: 'Quantity',
-            typeInfo: 'SWE_1_0_1.Quantity'
+        ln: 'QuantityPropertyType',
+        ps: [{
+            n: 'quantity',
+            en: 'Quantity',
+            ti: 'SWE_1_0_1.Quantity'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AnyDataPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'count',
-            elementName: 'Count',
-            typeInfo: 'SWE_1_0_1.Count'
+        ln: 'AnyDataPropertyType',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: 'SWE_1_0_1.Count'
           }, {
-            type: 'element',
-            name: 'quantity',
-            elementName: 'Quantity',
-            typeInfo: 'SWE_1_0_1.Quantity'
+            n: 'quantity',
+            en: 'Quantity',
+            ti: 'SWE_1_0_1.Quantity'
           }, {
-            type: 'element',
-            name: 'time',
-            elementName: 'Time',
-            typeInfo: 'SWE_1_0_1.Time'
+            n: 'time',
+            en: 'Time',
+            ti: 'SWE_1_0_1.Time'
           }, {
-            type: 'element',
-            name: '_boolean',
-            elementName: 'Boolean',
-            typeInfo: 'SWE_1_0_1.Boolean'
+            n: '_boolean',
+            en: 'Boolean',
+            ti: 'SWE_1_0_1.Boolean'
           }, {
-            type: 'element',
-            name: 'category',
-            elementName: 'Category',
-            typeInfo: 'SWE_1_0_1.Category'
+            n: 'category',
+            en: 'Category',
+            ti: 'SWE_1_0_1.Category'
           }, {
-            type: 'element',
-            name: 'text',
-            elementName: 'Text',
-            typeInfo: 'SWE_1_0_1.Text'
+            n: 'text',
+            en: 'Text',
+            ti: 'SWE_1_0_1.Text'
           }, {
-            type: 'element',
-            name: 'quantityRange',
-            elementName: 'QuantityRange',
-            typeInfo: 'SWE_1_0_1.QuantityRange'
+            n: 'quantityRange',
+            en: 'QuantityRange',
+            ti: 'SWE_1_0_1.QuantityRange'
           }, {
-            type: 'element',
-            name: 'countRange',
-            elementName: 'CountRange',
-            typeInfo: 'SWE_1_0_1.CountRange'
+            n: 'countRange',
+            en: 'CountRange',
+            ti: 'SWE_1_0_1.CountRange'
           }, {
-            type: 'element',
-            name: 'timeRange',
-            elementName: 'TimeRange',
-            typeInfo: 'SWE_1_0_1.TimeRange'
+            n: 'timeRange',
+            en: 'TimeRange',
+            ti: 'SWE_1_0_1.TimeRange'
           }, {
-            name: 'abstractDataRecord',
-            elementName: 'AbstractDataRecord',
-            typeInfo: 'SWE_1_0_1.AbstractDataRecordType',
-            type: 'elementRef'
+            n: 'abstractDataRecord',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractDataRecord',
+            ti: 'SWE_1_0_1.AbstractDataRecordType',
+            t: 'er'
           }, {
-            name: 'abstractDataArray',
-            elementName: 'AbstractDataArray',
-            typeInfo: 'SWE_1_0_1.AbstractDataArrayType',
-            type: 'elementRef'
+            n: 'abstractDataArray',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractDataArray',
+            ti: 'SWE_1_0_1.AbstractDataArrayType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataRecordPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'dataRecord',
-            elementName: 'DataRecord',
-            typeInfo: 'SWE_1_0_1.DataRecordType'
+        ln: 'DataRecordPropertyType',
+        ps: [{
+            n: 'dataRecord',
+            en: 'DataRecord',
+            ti: 'SWE_1_0_1.DataRecordType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeGridEnvelopePropertyType.TimeGridEnvelope',
-        propertyInfos: [{
-            type: 'element',
-            name: 'low',
-            elementName: 'low',
-            typeInfo: 'Integer'
+        ln: 'TimeGridEnvelopePropertyType.TimeGridEnvelope',
+        ps: [{
+            n: 'low',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'high',
-            elementName: 'high',
-            typeInfo: 'Integer'
+            n: 'high',
+            ti: 'Integer'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractConditionalType.Condition',
-        propertyInfos: [{
-            type: 'element',
-            name: 'count',
-            elementName: 'Count',
-            typeInfo: 'SWE_1_0_1.Count'
+        ln: 'AbstractConditionalType.Condition',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: 'SWE_1_0_1.Count'
           }, {
-            type: 'element',
-            name: 'quantity',
-            elementName: 'Quantity',
-            typeInfo: 'SWE_1_0_1.Quantity'
+            n: 'quantity',
+            en: 'Quantity',
+            ti: 'SWE_1_0_1.Quantity'
           }, {
-            type: 'element',
-            name: 'time',
-            elementName: 'Time',
-            typeInfo: 'SWE_1_0_1.Time'
+            n: 'time',
+            en: 'Time',
+            ti: 'SWE_1_0_1.Time'
           }, {
-            type: 'element',
-            name: '_boolean',
-            elementName: 'Boolean',
-            typeInfo: 'SWE_1_0_1.Boolean'
+            n: '_boolean',
+            en: 'Boolean',
+            ti: 'SWE_1_0_1.Boolean'
           }, {
-            type: 'element',
-            name: 'category',
-            elementName: 'Category',
-            typeInfo: 'SWE_1_0_1.Category'
+            n: 'category',
+            en: 'Category',
+            ti: 'SWE_1_0_1.Category'
           }, {
-            type: 'element',
-            name: 'text',
-            elementName: 'Text',
-            typeInfo: 'SWE_1_0_1.Text'
+            n: 'text',
+            en: 'Text',
+            ti: 'SWE_1_0_1.Text'
           }, {
-            type: 'element',
-            name: 'quantityRange',
-            elementName: 'QuantityRange',
-            typeInfo: 'SWE_1_0_1.QuantityRange'
+            n: 'quantityRange',
+            en: 'QuantityRange',
+            ti: 'SWE_1_0_1.QuantityRange'
           }, {
-            type: 'element',
-            name: 'countRange',
-            elementName: 'CountRange',
-            typeInfo: 'SWE_1_0_1.CountRange'
+            n: 'countRange',
+            en: 'CountRange',
+            ti: 'SWE_1_0_1.CountRange'
           }, {
-            type: 'element',
-            name: 'timeRange',
-            elementName: 'TimeRange',
-            typeInfo: 'SWE_1_0_1.TimeRange'
+            n: 'timeRange',
+            en: 'TimeRange',
+            ti: 'SWE_1_0_1.TimeRange'
           }, {
-            name: 'abstractDataRecord',
-            elementName: 'AbstractDataRecord',
-            typeInfo: 'SWE_1_0_1.AbstractDataRecordType',
-            type: 'elementRef'
+            n: 'abstractDataRecord',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractDataRecord',
+            ti: 'SWE_1_0_1.AbstractDataRecordType',
+            t: 'er'
           }, {
-            name: 'abstractDataArray',
-            elementName: 'AbstractDataArray',
-            typeInfo: 'SWE_1_0_1.AbstractDataArrayType',
-            type: 'elementRef'
+            n: 'abstractDataArray',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractDataArray',
+            ti: 'SWE_1_0_1.AbstractDataArrayType',
+            t: 'er'
           }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'name'
+            n: 'name',
+            an: {
+              lp: 'name'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractDataArrayType.ElementCount',
-        propertyInfos: [{
-            type: 'element',
-            name: 'count',
-            elementName: 'Count',
-            typeInfo: 'SWE_1_0_1.Count'
+        ln: 'AbstractDataArrayType.ElementCount',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: 'SWE_1_0_1.Count'
           }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            attributeName: {
-              localPart: 'ref'
+            n: 'ref',
+            ti: 'IDREF',
+            an: {
+              lp: 'ref'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConditionalValueType.Data',
-        propertyInfos: [{
-            type: 'element',
-            name: 'count',
-            elementName: 'Count',
-            typeInfo: 'SWE_1_0_1.Count'
+        ln: 'ConditionalValueType.Data',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: 'SWE_1_0_1.Count'
           }, {
-            type: 'element',
-            name: 'quantity',
-            elementName: 'Quantity',
-            typeInfo: 'SWE_1_0_1.Quantity'
+            n: 'quantity',
+            en: 'Quantity',
+            ti: 'SWE_1_0_1.Quantity'
           }, {
-            type: 'element',
-            name: 'time',
-            elementName: 'Time',
-            typeInfo: 'SWE_1_0_1.Time'
+            n: 'time',
+            en: 'Time',
+            ti: 'SWE_1_0_1.Time'
           }, {
-            type: 'element',
-            name: '_boolean',
-            elementName: 'Boolean',
-            typeInfo: 'SWE_1_0_1.Boolean'
+            n: '_boolean',
+            en: 'Boolean',
+            ti: 'SWE_1_0_1.Boolean'
           }, {
-            type: 'element',
-            name: 'category',
-            elementName: 'Category',
-            typeInfo: 'SWE_1_0_1.Category'
+            n: 'category',
+            en: 'Category',
+            ti: 'SWE_1_0_1.Category'
           }, {
-            type: 'element',
-            name: 'text',
-            elementName: 'Text',
-            typeInfo: 'SWE_1_0_1.Text'
+            n: 'text',
+            en: 'Text',
+            ti: 'SWE_1_0_1.Text'
           }, {
-            type: 'element',
-            name: 'quantityRange',
-            elementName: 'QuantityRange',
-            typeInfo: 'SWE_1_0_1.QuantityRange'
+            n: 'quantityRange',
+            en: 'QuantityRange',
+            ti: 'SWE_1_0_1.QuantityRange'
           }, {
-            type: 'element',
-            name: 'countRange',
-            elementName: 'CountRange',
-            typeInfo: 'SWE_1_0_1.CountRange'
+            n: 'countRange',
+            en: 'CountRange',
+            ti: 'SWE_1_0_1.CountRange'
           }, {
-            type: 'element',
-            name: 'timeRange',
-            elementName: 'TimeRange',
-            typeInfo: 'SWE_1_0_1.TimeRange'
+            n: 'timeRange',
+            en: 'TimeRange',
+            ti: 'SWE_1_0_1.TimeRange'
           }, {
-            name: 'abstractDataRecord',
-            elementName: 'AbstractDataRecord',
-            typeInfo: 'SWE_1_0_1.AbstractDataRecordType',
-            type: 'elementRef'
+            n: 'abstractDataRecord',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractDataRecord',
+            ti: 'SWE_1_0_1.AbstractDataRecordType',
+            t: 'er'
           }, {
-            name: 'abstractDataArray',
-            elementName: 'AbstractDataArray',
-            typeInfo: 'SWE_1_0_1.AbstractDataArrayType',
-            type: 'elementRef'
+            n: 'abstractDataArray',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractDataArray',
+            ti: 'SWE_1_0_1.AbstractDataArrayType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConditionalDataType.Case',
-        propertyInfos: [{
-            type: 'element',
-            name: 'conditionalValue',
-            elementName: 'ConditionalValue',
-            typeInfo: 'SWE_1_0_1.ConditionalValueType'
+        ln: 'ConditionalDataType.Case',
+        ps: [{
+            n: 'conditionalValue',
+            en: 'ConditionalValue',
+            ti: 'SWE_1_0_1.ConditionalValueType'
           }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'name'
+            n: 'name',
+            an: {
+              lp: 'name'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'VectorType.Coordinate',
-        propertyInfos: [{
-            type: 'element',
-            name: 'count',
-            elementName: 'Count',
-            typeInfo: 'SWE_1_0_1.Count'
+        ln: 'VectorType.Coordinate',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: 'SWE_1_0_1.Count'
           }, {
-            type: 'element',
-            name: 'quantity',
-            elementName: 'Quantity',
-            typeInfo: 'SWE_1_0_1.Quantity'
+            n: 'quantity',
+            en: 'Quantity',
+            ti: 'SWE_1_0_1.Quantity'
           }, {
-            type: 'element',
-            name: 'time',
-            elementName: 'Time',
-            typeInfo: 'SWE_1_0_1.Time'
+            n: 'time',
+            en: 'Time',
+            ti: 'SWE_1_0_1.Time'
           }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'name'
+            n: 'name',
+            an: {
+              lp: 'name'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BinaryBlock.Member.Component',
-        propertyInfos: [{
-            name: 'ref',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'ref'
+        ln: 'BinaryBlock.Member.Component',
+        ps: [{
+            n: 'ref',
+            an: {
+              lp: 'ref'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'dataType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'dataType'
+            n: 'dataType',
+            an: {
+              lp: 'dataType'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'significantBits',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'significantBits'
+            n: 'significantBits',
+            ti: 'Integer',
+            an: {
+              lp: 'significantBits'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'bitLength',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'bitLength'
+            n: 'bitLength',
+            ti: 'Integer',
+            an: {
+              lp: 'bitLength'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'paddingBitsBefore',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'paddingBits-before'
+            n: 'paddingBitsBefore',
+            ti: 'Integer',
+            an: {
+              lp: 'paddingBits-before'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'paddingBitsAfter',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'paddingBits-after'
+            n: 'paddingBitsAfter',
+            ti: 'Integer',
+            an: {
+              lp: 'paddingBits-after'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'encryption',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'encryption'
+            n: 'encryption',
+            an: {
+              lp: 'encryption'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BinaryBlock.Member.Block',
-        propertyInfos: [{
-            name: 'ref',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'ref'
+        ln: 'BinaryBlock.Member.Block',
+        ps: [{
+            n: 'ref',
+            an: {
+              lp: 'ref'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'byteLength',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'byteLength'
+            n: 'byteLength',
+            ti: 'Integer',
+            an: {
+              lp: 'byteLength'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'paddingBytesBefore',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'paddingBytes-before'
+            n: 'paddingBytesBefore',
+            ti: 'Integer',
+            an: {
+              lp: 'paddingBytes-before'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'paddingBytesAfter',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'paddingBytes-after'
+            n: 'paddingBytesAfter',
+            ti: 'Integer',
+            an: {
+              lp: 'paddingBytes-after'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'encryption',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'encryption'
+            n: 'encryption',
+            an: {
+              lp: 'encryption'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'compression',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'compression'
+            n: 'compression',
+            an: {
+              lp: 'compression'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'enumInfo',
-        localName: 'ByteEncoding',
-        baseTypeInfo: 'String',
-        values: ['base64', 'raw', 'hex']
+        t: 'enum',
+        ln: 'ByteEncoding',
+        vs: ['base64', 'raw', 'hex']
       }, {
-        type: 'enumInfo',
-        localName: 'ByteOrder',
-        baseTypeInfo: 'String',
-        values: ['bigEndian', 'littleEndian']
+        t: 'enum',
+        ln: 'ByteOrder',
+        vs: ['bigEndian', 'littleEndian']
       }],
-    elementInfos: [{
-        elementName: 'StandardFormat',
-        typeInfo: 'SWE_1_0_1.StandardFormat'
+    eis: [{
+        en: 'StandardFormat',
+        ti: 'SWE_1_0_1.StandardFormat'
       }, {
-        elementName: 'Category',
-        typeInfo: 'SWE_1_0_1.Category'
+        en: 'Category',
+        ti: 'SWE_1_0_1.Category'
       }, {
-        elementName: 'AllowedTokens',
-        typeInfo: 'SWE_1_0_1.AllowedTokens'
+        en: 'AllowedTokens',
+        ti: 'SWE_1_0_1.AllowedTokens'
       }, {
-        elementName: 'BinaryBlock',
-        typeInfo: 'SWE_1_0_1.BinaryBlock'
+        en: 'BinaryBlock',
+        ti: 'SWE_1_0_1.BinaryBlock'
       }, {
-        elementName: 'Time',
-        typeInfo: 'SWE_1_0_1.Time'
+        en: 'Time',
+        ti: 'SWE_1_0_1.Time'
       }, {
-        elementName: 'Count',
-        typeInfo: 'SWE_1_0_1.Count'
+        en: 'Count',
+        ti: 'SWE_1_0_1.Count'
       }, {
-        elementName: 'CountRange',
-        typeInfo: 'SWE_1_0_1.CountRange'
+        en: 'CountRange',
+        ti: 'SWE_1_0_1.CountRange'
       }, {
-        elementName: 'ObservableProperty',
-        typeInfo: 'SWE_1_0_1.ObservableProperty'
+        en: 'ObservableProperty',
+        ti: 'SWE_1_0_1.ObservableProperty'
       }, {
-        elementName: 'Boolean',
-        typeInfo: 'SWE_1_0_1.Boolean'
+        en: 'Boolean',
+        ti: 'SWE_1_0_1.Boolean'
       }, {
-        elementName: 'AllowedValues',
-        typeInfo: 'SWE_1_0_1.AllowedValues'
+        en: 'AllowedValues',
+        ti: 'SWE_1_0_1.AllowedValues'
       }, {
-        elementName: 'Quantity',
-        typeInfo: 'SWE_1_0_1.Quantity'
+        en: 'Quantity',
+        ti: 'SWE_1_0_1.Quantity'
       }, {
-        elementName: 'QuantityRange',
-        typeInfo: 'SWE_1_0_1.QuantityRange'
+        en: 'QuantityRange',
+        ti: 'SWE_1_0_1.QuantityRange'
       }, {
-        elementName: 'Text',
-        typeInfo: 'SWE_1_0_1.Text'
+        en: 'Text',
+        ti: 'SWE_1_0_1.Text'
       }, {
-        elementName: 'AllowedTimes',
-        typeInfo: 'SWE_1_0_1.AllowedTimes'
+        en: 'AllowedTimes',
+        ti: 'SWE_1_0_1.AllowedTimes'
       }, {
-        elementName: 'TimeRange',
-        typeInfo: 'SWE_1_0_1.TimeRange'
+        en: 'TimeRange',
+        ti: 'SWE_1_0_1.TimeRange'
       }, {
-        elementName: 'TextBlock',
-        typeInfo: 'SWE_1_0_1.TextBlock'
+        en: 'TextBlock',
+        ti: 'SWE_1_0_1.TextBlock'
       }, {
-        elementName: 'Position',
-        typeInfo: 'SWE_1_0_1.PositionType',
-        substitutionHead: 'AbstractDataRecord'
+        en: 'Position',
+        ti: 'SWE_1_0_1.PositionType',
+        sh: 'AbstractDataRecord'
       }, {
-        elementName: 'ConditionalData',
-        typeInfo: 'SWE_1_0_1.ConditionalDataType',
-        substitutionHead: 'AbstractDataRecord'
+        en: 'ConditionalData',
+        ti: 'SWE_1_0_1.ConditionalDataType',
+        sh: 'AbstractDataRecord'
       }, {
-        elementName: 'DataStreamDefinition',
-        typeInfo: 'SWE_1_0_1.DataStreamDefinitionType'
+        en: 'DataStreamDefinition',
+        ti: 'SWE_1_0_1.DataStreamDefinitionType'
       }, {
-        elementName: 'AbstractDataArray',
-        typeInfo: 'SWE_1_0_1.AbstractDataArrayType'
+        en: 'AbstractDataArray',
+        ti: 'SWE_1_0_1.AbstractDataArrayType'
       }, {
-        elementName: 'Curve',
-        typeInfo: 'SWE_1_0_1.CurveType',
-        substitutionHead: 'AbstractDataArray'
+        en: 'Curve',
+        ti: 'SWE_1_0_1.CurveType',
+        sh: 'AbstractDataArray'
       }, {
-        elementName: 'ConditionalValue',
-        typeInfo: 'SWE_1_0_1.ConditionalValueType',
-        substitutionHead: 'AbstractDataRecord'
+        en: 'ConditionalValue',
+        ti: 'SWE_1_0_1.ConditionalValueType',
+        sh: 'AbstractDataRecord'
       }, {
-        elementName: 'Array',
-        typeInfo: 'SWE_1_0_1.ArrayType'
+        en: 'Array',
+        ti: 'SWE_1_0_1.ArrayType'
       }, {
-        elementName: 'TimeGeometricComplex',
-        typeInfo: 'SWE_1_0_1.TimeGeometricComplexType',
-        substitutionHead: {
-          localPart: '_TimeComplex',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'TimeGeometricComplex',
+        ti: 'SWE_1_0_1.TimeGeometricComplexType',
+        sh: {
+          lp: '_TimeComplex',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'CompoundPhenomenon',
-        typeInfo: 'SWE_1_0_1.CompoundPhenomenonType',
-        substitutionHead: 'Phenomenon'
+        en: 'CompoundPhenomenon',
+        ti: 'SWE_1_0_1.CompoundPhenomenonType',
+        sh: 'Phenomenon'
       }, {
-        elementName: 'Phenomenon',
-        typeInfo: 'SWE_1_0_1.PhenomenonType',
-        substitutionHead: {
-          localPart: 'Definition',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'Phenomenon',
+        ti: 'SWE_1_0_1.PhenomenonType',
+        sh: {
+          lp: 'Definition',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'MultiplexedStreamFormat',
-        typeInfo: 'SWE_1_0_1.MultiplexedStreamFormatType'
+        en: 'MultiplexedStreamFormat',
+        ti: 'SWE_1_0_1.MultiplexedStreamFormatType'
       }, {
-        elementName: 'XMLBlock',
-        typeInfo: 'SWE_1_0_1.XMLBlockType'
+        en: 'XMLBlock',
+        ti: 'SWE_1_0_1.XMLBlockType'
       }, {
-        elementName: 'PhenomenonSeries',
-        typeInfo: 'SWE_1_0_1.PhenomenonSeriesType',
-        substitutionHead: 'CompoundPhenomenon'
+        en: 'PhenomenonSeries',
+        ti: 'SWE_1_0_1.PhenomenonSeriesType',
+        sh: 'CompoundPhenomenon'
       }, {
-        elementName: 'Interval',
-        typeInfo: 'SWE_1_0_1.IntervalType'
+        en: 'Interval',
+        ti: 'SWE_1_0_1.IntervalType'
       }, {
-        elementName: 'NormalizedCurve',
-        typeInfo: 'SWE_1_0_1.NormalizedCurveType',
-        substitutionHead: 'AbstractDataRecord'
+        en: 'NormalizedCurve',
+        ti: 'SWE_1_0_1.NormalizedCurveType',
+        sh: 'AbstractDataRecord'
       }, {
-        elementName: 'TimeInstantGrid',
-        typeInfo: 'SWE_1_0_1.TimeInstantGridType',
-        substitutionHead: 'TimeGrid'
+        en: 'TimeInstantGrid',
+        ti: 'SWE_1_0_1.TimeInstantGridType',
+        sh: 'TimeGrid'
       }, {
-        elementName: 'TimeAggregate',
-        typeInfo: 'SWE_1_0_1.TimeAggregateType',
-        substitutionHead: {
-          localPart: '_TimeObject',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'TimeAggregate',
+        ti: 'SWE_1_0_1.TimeAggregateType',
+        sh: {
+          lp: '_TimeObject',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'GeoLocationArea',
-        typeInfo: 'SWE_1_0_1.GeoLocationArea',
-        substitutionHead: 'AbstractDataRecord'
+        en: 'GeoLocationArea',
+        ti: 'SWE_1_0_1.GeoLocationArea',
+        sh: 'AbstractDataRecord'
       }, {
-        elementName: 'SquareMatrix',
-        typeInfo: 'SWE_1_0_1.SquareMatrixType',
-        substitutionHead: 'AbstractDataArray'
+        en: 'SquareMatrix',
+        ti: 'SWE_1_0_1.SquareMatrixType',
+        sh: 'AbstractDataArray'
       }, {
-        elementName: 'DataBlockDefinition',
-        typeInfo: 'SWE_1_0_1.DataBlockDefinitionType'
+        en: 'DataBlockDefinition',
+        ti: 'SWE_1_0_1.DataBlockDefinitionType'
       }, {
-        elementName: 'Envelope',
-        typeInfo: 'SWE_1_0_1.EnvelopeType',
-        substitutionHead: 'AbstractDataRecord'
+        en: 'Envelope',
+        ti: 'SWE_1_0_1.EnvelopeType',
+        sh: 'AbstractDataRecord'
       }, {
-        elementName: 'ConstrainedPhenomenon',
-        typeInfo: 'SWE_1_0_1.ConstrainedPhenomenonType',
-        substitutionHead: 'Phenomenon'
+        en: 'ConstrainedPhenomenon',
+        ti: 'SWE_1_0_1.ConstrainedPhenomenonType',
+        sh: 'Phenomenon'
       }, {
-        elementName: 'DataArray',
-        typeInfo: 'SWE_1_0_1.DataArrayType',
-        substitutionHead: 'AbstractDataArray'
+        en: 'DataArray',
+        ti: 'SWE_1_0_1.DataArrayType',
+        sh: 'AbstractDataArray'
       }, {
-        elementName: 'TimeGrid',
-        typeInfo: 'SWE_1_0_1.TimeGridType',
-        substitutionHead: {
-          localPart: '_TimeComplex',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'TimeGrid',
+        ti: 'SWE_1_0_1.TimeGridType',
+        sh: {
+          lp: '_TimeComplex',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'Item',
-        typeInfo: 'AnyType'
+        en: 'Item',
+        ti: 'AnyType'
       }, {
-        elementName: 'TimeIntervalGrid',
-        typeInfo: 'SWE_1_0_1.TimeIntervalGridType',
-        substitutionHead: 'TimeGrid'
+        en: 'TimeIntervalGrid',
+        ti: 'SWE_1_0_1.TimeIntervalGridType',
+        sh: 'TimeGrid'
       }, {
-        elementName: 'CompositePhenomenon',
-        typeInfo: 'SWE_1_0_1.CompositePhenomenonType',
-        substitutionHead: 'CompoundPhenomenon'
+        en: 'CompositePhenomenon',
+        ti: 'SWE_1_0_1.CompositePhenomenonType',
+        sh: 'CompoundPhenomenon'
       }, {
-        elementName: 'DataRecord',
-        typeInfo: 'SWE_1_0_1.DataRecordType',
-        substitutionHead: 'AbstractDataRecord'
+        en: 'DataRecord',
+        ti: 'SWE_1_0_1.DataRecordType',
+        sh: 'AbstractDataRecord'
       }, {
-        elementName: 'SimpleDataRecord',
-        typeInfo: 'SWE_1_0_1.SimpleDataRecordType',
-        substitutionHead: 'AbstractDataRecord'
+        en: 'SimpleDataRecord',
+        ti: 'SWE_1_0_1.SimpleDataRecordType',
+        sh: 'AbstractDataRecord'
       }, {
-        elementName: 'Record',
-        typeInfo: 'SWE_1_0_1.RecordType'
+        en: 'Record',
+        ti: 'SWE_1_0_1.RecordType'
       }, {
-        elementName: 'Vector',
-        typeInfo: 'SWE_1_0_1.VectorType',
-        substitutionHead: 'AbstractDataRecord'
+        en: 'Vector',
+        ti: 'SWE_1_0_1.VectorType',
+        sh: 'AbstractDataRecord'
       }, {
-        elementName: 'AbstractDataRecord',
-        typeInfo: 'SWE_1_0_1.AbstractDataRecordType'
+        en: 'AbstractDataRecord',
+        ti: 'SWE_1_0_1.AbstractDataRecordType'
       }, {
-        elementName: 'valueList',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'Double'
+        en: 'valueList',
+        ti: {
+          t: 'l'
         },
-        scope: 'SWE_1_0_1.AllowedValues'
+        sc: 'SWE_1_0_1.AllowedTimes'
       }, {
-        elementName: 'interval',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'Double'
+        en: 'interval',
+        ti: {
+          t: 'l'
         },
-        scope: 'SWE_1_0_1.AllowedValues'
+        sc: 'SWE_1_0_1.AllowedTimes'
       }, {
-        elementName: 'valueList',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'String'
+        en: 'valueList',
+        ti: {
+          t: 'l'
         },
-        scope: 'SWE_1_0_1.AllowedTokens'
+        sc: 'SWE_1_0_1.AllowedTokens'
       }, {
-        elementName: 'valueList',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'String'
+        en: 'valueList',
+        ti: {
+          t: 'l',
+          ti: 'Double'
         },
-        scope: 'SWE_1_0_1.AllowedTimes'
+        sc: 'SWE_1_0_1.AllowedValues'
       }, {
-        elementName: 'interval',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'String'
+        en: 'interval',
+        ti: {
+          t: 'l',
+          ti: 'Double'
         },
-        scope: 'SWE_1_0_1.AllowedTimes'
+        sc: 'SWE_1_0_1.AllowedValues'
       }]
   };
   return {

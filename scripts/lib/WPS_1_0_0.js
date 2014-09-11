@@ -1,1088 +1,859 @@
 var WPS_1_0_0_Module_Factory = function () {
   var WPS_1_0_0 = {
-    name: 'WPS_1_0_0',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/wps\/1.0.0',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'Execute',
-        baseTypeInfo: 'WPS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'identifier',
-            elementName: {
-              localPart: 'Identifier',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+    n: 'WPS_1_0_0',
+    dens: 'http:\/\/www.opengis.net\/wps\/1.0.0',
+    tis: [{
+        ln: 'Execute',
+        bti: 'WPS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'identifier',
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.CodeType'
+            ti: 'OWS_1_1_0.CodeType'
           }, {
-            type: 'element',
-            name: 'dataInputs',
-            elementName: 'DataInputs',
-            typeInfo: 'WPS_1_0_0.DataInputsType'
+            n: 'dataInputs',
+            en: 'DataInputs',
+            ti: 'WPS_1_0_0.DataInputsType'
           }, {
-            type: 'element',
-            name: 'responseForm',
-            elementName: 'ResponseForm',
-            typeInfo: 'WPS_1_0_0.ResponseFormType'
+            n: 'responseForm',
+            en: 'ResponseForm',
+            ti: 'WPS_1_0_0.ResponseFormType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RequestBaseType',
-        propertyInfos: [{
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+        ln: 'RequestBaseType',
+        ps: [{
+            n: 'service',
+            t: 'a'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'language',
-            typeInfo: 'String',
-            attributeName: 'language',
-            type: 'attribute'
+            n: 'language',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataInputsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'input',
-            collection: true,
-            elementName: 'Input',
-            typeInfo: 'WPS_1_0_0.InputType'
+        ln: 'DataInputsType',
+        ps: [{
+            n: 'input',
+            col: true,
+            en: 'Input',
+            ti: 'WPS_1_0_0.InputType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ResponseFormType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'responseDocument',
-            elementName: 'ResponseDocument',
-            typeInfo: 'WPS_1_0_0.ResponseDocumentType'
+        ln: 'ResponseFormType',
+        ps: [{
+            n: 'responseDocument',
+            en: 'ResponseDocument',
+            ti: 'WPS_1_0_0.ResponseDocumentType'
           }, {
-            type: 'element',
-            name: 'rawDataOutput',
-            elementName: 'RawDataOutput',
-            typeInfo: 'WPS_1_0_0.OutputDefinitionType'
+            n: 'rawDataOutput',
+            en: 'RawDataOutput',
+            ti: 'WPS_1_0_0.OutputDefinitionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetCapabilities',
-        propertyInfos: [{
-            type: 'element',
-            name: 'acceptVersions',
-            elementName: 'AcceptVersions',
-            typeInfo: 'OWS_1_1_0.AcceptVersionsType'
+        ln: 'GetCapabilities',
+        ps: [{
+            n: 'acceptVersions',
+            en: 'AcceptVersions',
+            ti: 'OWS_1_1_0.AcceptVersionsType'
           }, {
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+            n: 'service',
+            t: 'a'
           }, {
-            name: 'language',
-            typeInfo: 'String',
-            attributeName: 'language',
-            type: 'attribute'
+            n: 'language',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WPSCapabilitiesType',
-        baseTypeInfo: 'OWS_1_1_0.CapabilitiesBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'processOfferings',
-            elementName: 'ProcessOfferings',
-            typeInfo: 'WPS_1_0_0.ProcessOfferings'
+        ln: 'WPSCapabilitiesType',
+        bti: 'OWS_1_1_0.CapabilitiesBaseType',
+        ps: [{
+            n: 'processOfferings',
+            en: 'ProcessOfferings',
+            ti: 'WPS_1_0_0.ProcessOfferings'
           }, {
-            type: 'element',
-            name: 'languages',
-            elementName: 'Languages',
-            typeInfo: 'WPS_1_0_0.Languages'
+            n: 'languages',
+            en: 'Languages',
+            ti: 'WPS_1_0_0.Languages'
           }, {
-            type: 'element',
-            name: 'wsdl',
-            elementName: 'WSDL',
-            typeInfo: 'WPS_1_0_0.WSDL'
+            n: 'wsdl',
+            en: 'WSDL',
+            ti: 'WPS_1_0_0.WSDL'
           }, {
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+            n: 'service',
+            t: 'a'
           }, {
-            name: 'lang',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'lang',
-              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            n: 'lang',
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DescribeProcess',
-        baseTypeInfo: 'WPS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'identifier',
-            collection: true,
-            elementName: {
-              localPart: 'Identifier',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        ln: 'DescribeProcess',
+        bti: 'WPS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'identifier',
+            col: true,
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.CodeType'
+            ti: 'OWS_1_1_0.CodeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ExecuteResponse',
-        baseTypeInfo: 'WPS_1_0_0.ResponseBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'process',
-            elementName: 'Process',
-            typeInfo: 'WPS_1_0_0.ProcessBriefType'
+        ln: 'ExecuteResponse',
+        bti: 'WPS_1_0_0.ResponseBaseType',
+        ps: [{
+            n: 'process',
+            en: 'Process',
+            ti: 'WPS_1_0_0.ProcessBriefType'
           }, {
-            type: 'element',
-            name: 'status',
-            elementName: 'Status',
-            typeInfo: 'WPS_1_0_0.StatusType'
+            n: 'status',
+            en: 'Status',
+            ti: 'WPS_1_0_0.StatusType'
           }, {
-            type: 'element',
-            name: 'dataInputs',
-            elementName: 'DataInputs',
-            typeInfo: 'WPS_1_0_0.DataInputsType'
+            n: 'dataInputs',
+            en: 'DataInputs',
+            ti: 'WPS_1_0_0.DataInputsType'
           }, {
-            type: 'element',
-            name: 'outputDefinitions',
-            elementName: 'OutputDefinitions',
-            typeInfo: 'WPS_1_0_0.OutputDefinitionsType'
+            n: 'outputDefinitions',
+            en: 'OutputDefinitions',
+            ti: 'WPS_1_0_0.OutputDefinitionsType'
           }, {
-            type: 'element',
-            name: 'processOutputs',
-            elementName: 'ProcessOutputs',
-            typeInfo: 'WPS_1_0_0.ExecuteResponse.ProcessOutputs'
+            n: 'processOutputs',
+            en: 'ProcessOutputs',
+            ti: 'WPS_1_0_0.ExecuteResponse.ProcessOutputs'
           }, {
-            name: 'serviceInstance',
-            typeInfo: 'String',
-            attributeName: 'serviceInstance',
-            type: 'attribute'
+            n: 'serviceInstance',
+            t: 'a'
           }, {
-            name: 'statusLocation',
-            typeInfo: 'String',
-            attributeName: 'statusLocation',
-            type: 'attribute'
+            n: 'statusLocation',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ResponseBaseType',
-        propertyInfos: [{
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+        ln: 'ResponseBaseType',
+        ps: [{
+            n: 'service',
+            t: 'a'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'lang',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'lang',
-              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            n: 'lang',
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ProcessBriefType',
-        baseTypeInfo: 'WPS_1_0_0.DescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'profile',
-            collection: true,
-            elementName: 'Profile',
-            typeInfo: 'String'
+        ln: 'ProcessBriefType',
+        bti: 'WPS_1_0_0.DescriptionType',
+        ps: [{
+            n: 'profile',
+            col: true,
+            en: 'Profile'
           }, {
-            type: 'element',
-            name: 'wsdl',
-            elementName: 'WSDL',
-            typeInfo: 'WPS_1_0_0.WSDL'
+            n: 'wsdl',
+            en: 'WSDL',
+            ti: 'WPS_1_0_0.WSDL'
           }, {
-            name: 'processVersion',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'processVersion',
-              namespaceURI: 'http:\/\/www.opengis.net\/wps\/1.0.0'
+            n: 'processVersion',
+            an: {
+              lp: 'processVersion',
+              ns: 'http:\/\/www.opengis.net\/wps\/1.0.0'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'StatusType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'processAccepted',
-            elementName: 'ProcessAccepted',
-            typeInfo: 'String'
+        ln: 'StatusType',
+        ps: [{
+            n: 'processAccepted',
+            en: 'ProcessAccepted'
           }, {
-            type: 'element',
-            name: 'processStarted',
-            elementName: 'ProcessStarted',
-            typeInfo: 'WPS_1_0_0.ProcessStartedType'
+            n: 'processStarted',
+            en: 'ProcessStarted',
+            ti: 'WPS_1_0_0.ProcessStartedType'
           }, {
-            type: 'element',
-            name: 'processPaused',
-            elementName: 'ProcessPaused',
-            typeInfo: 'WPS_1_0_0.ProcessStartedType'
+            n: 'processPaused',
+            en: 'ProcessPaused',
+            ti: 'WPS_1_0_0.ProcessStartedType'
           }, {
-            type: 'element',
-            name: 'processSucceeded',
-            elementName: 'ProcessSucceeded',
-            typeInfo: 'String'
+            n: 'processSucceeded',
+            en: 'ProcessSucceeded'
           }, {
-            type: 'element',
-            name: 'processFailed',
-            elementName: 'ProcessFailed',
-            typeInfo: 'WPS_1_0_0.ProcessFailedType'
+            n: 'processFailed',
+            en: 'ProcessFailed',
+            ti: 'WPS_1_0_0.ProcessFailedType'
           }, {
-            name: 'creationTime',
-            typeInfo: 'Calendar',
-            attributeName: 'creationTime',
-            type: 'attribute'
+            n: 'creationTime',
+            ti: 'Calendar',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OutputDefinitionsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'output',
-            collection: true,
-            elementName: 'Output',
-            typeInfo: 'WPS_1_0_0.DocumentOutputDefinitionType'
+        ln: 'OutputDefinitionsType',
+        ps: [{
+            n: 'output',
+            col: true,
+            en: 'Output',
+            ti: 'WPS_1_0_0.DocumentOutputDefinitionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ExecuteResponse.ProcessOutputs',
-        propertyInfos: [{
-            type: 'element',
-            name: 'output',
-            collection: true,
-            elementName: 'Output',
-            typeInfo: 'WPS_1_0_0.OutputDataType'
+        ln: 'ExecuteResponse.ProcessOutputs',
+        ps: [{
+            n: 'output',
+            col: true,
+            en: 'Output',
+            ti: 'WPS_1_0_0.OutputDataType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Languages',
-        propertyInfos: [{
-            type: 'element',
-            name: '_default',
-            elementName: 'Default',
-            typeInfo: 'WPS_1_0_0.Languages.Default'
+        ln: 'Languages',
+        ps: [{
+            n: '_default',
+            en: 'Default',
+            ti: 'WPS_1_0_0.Languages.Default'
           }, {
-            type: 'element',
-            name: 'supported',
-            elementName: 'Supported',
-            typeInfo: 'WPS_1_0_0.LanguagesType'
+            n: 'supported',
+            en: 'Supported',
+            ti: 'WPS_1_0_0.LanguagesType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Languages.Default',
-        propertyInfos: [{
-            type: 'element',
-            name: 'language',
-            elementName: {
-              localPart: 'Language',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            typeInfo: 'String'
+        ln: 'Languages.Default',
+        ps: [{
+            n: 'language',
+            en: {
+              lp: 'Language',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            }
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LanguagesType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'language',
-            collection: true,
-            elementName: {
-              localPart: 'Language',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            typeInfo: 'String'
+        ln: 'LanguagesType',
+        ps: [{
+            n: 'language',
+            col: true,
+            en: {
+              lp: 'Language',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            }
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ProcessOfferings',
-        propertyInfos: [{
-            type: 'element',
-            name: 'process',
-            collection: true,
-            elementName: 'Process',
-            typeInfo: 'WPS_1_0_0.ProcessBriefType'
+        ln: 'ProcessOfferings',
+        ps: [{
+            n: 'process',
+            col: true,
+            en: 'Process',
+            ti: 'WPS_1_0_0.ProcessBriefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WSDL',
-        propertyInfos: [{
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'href',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+        ln: 'WSDL',
+        ps: [{
+            n: 'href',
+            an: {
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ProcessDescriptions',
-        baseTypeInfo: 'WPS_1_0_0.ResponseBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'processDescription',
-            collection: true,
-            elementName: {
-              localPart: 'ProcessDescription'
+        ln: 'ProcessDescriptions',
+        bti: 'WPS_1_0_0.ResponseBaseType',
+        ps: [{
+            n: 'processDescription',
+            col: true,
+            en: {
+              lp: 'ProcessDescription'
             },
-            typeInfo: 'WPS_1_0_0.ProcessDescriptionType'
+            ti: 'WPS_1_0_0.ProcessDescriptionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ProcessDescriptionType',
-        baseTypeInfo: 'WPS_1_0_0.ProcessBriefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'dataInputs',
-            elementName: {
-              localPart: 'DataInputs'
+        ln: 'ProcessDescriptionType',
+        bti: 'WPS_1_0_0.ProcessBriefType',
+        ps: [{
+            n: 'dataInputs',
+            en: {
+              lp: 'DataInputs'
             },
-            typeInfo: 'WPS_1_0_0.ProcessDescriptionType.DataInputs'
+            ti: 'WPS_1_0_0.ProcessDescriptionType.DataInputs'
           }, {
-            type: 'element',
-            name: 'processOutputs',
-            elementName: {
-              localPart: 'ProcessOutputs'
+            n: 'processOutputs',
+            en: {
+              lp: 'ProcessOutputs'
             },
-            typeInfo: 'WPS_1_0_0.ProcessDescriptionType.ProcessOutputs'
+            ti: 'WPS_1_0_0.ProcessDescriptionType.ProcessOutputs'
           }, {
-            name: 'storeSupported',
-            typeInfo: 'Boolean',
-            attributeName: 'storeSupported',
-            type: 'attribute'
+            n: 'storeSupported',
+            ti: 'Boolean',
+            t: 'a'
           }, {
-            name: 'statusSupported',
-            typeInfo: 'Boolean',
-            attributeName: 'statusSupported',
-            type: 'attribute'
+            n: 'statusSupported',
+            ti: 'Boolean',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SupportedCRSsType',
-        propertyInfos: [{
-            type: 'element',
-            name: '_default',
-            elementName: {
-              localPart: 'Default'
+        ln: 'SupportedCRSsType',
+        ps: [{
+            n: '_default',
+            en: {
+              lp: 'Default'
             },
-            typeInfo: 'WPS_1_0_0.SupportedCRSsType.Default'
+            ti: 'WPS_1_0_0.SupportedCRSsType.Default'
           }, {
-            type: 'element',
-            name: 'supported',
-            elementName: {
-              localPart: 'Supported'
+            n: 'supported',
+            en: {
+              lp: 'Supported'
             },
-            typeInfo: 'WPS_1_0_0.CRSsType'
+            ti: 'WPS_1_0_0.CRSsType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CRSsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'crs',
-            collection: true,
-            elementName: {
-              localPart: 'CRS'
-            },
-            typeInfo: 'String'
+        ln: 'CRSsType',
+        ps: [{
+            n: 'crs',
+            col: true,
+            en: {
+              lp: 'CRS'
+            }
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ResponseDocumentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'output',
-            collection: true,
-            elementName: 'Output',
-            typeInfo: 'WPS_1_0_0.DocumentOutputDefinitionType'
+        ln: 'ResponseDocumentType',
+        ps: [{
+            n: 'output',
+            col: true,
+            en: 'Output',
+            ti: 'WPS_1_0_0.DocumentOutputDefinitionType'
           }, {
-            name: 'storeExecuteResponse',
-            typeInfo: 'Boolean',
-            attributeName: 'storeExecuteResponse',
-            type: 'attribute'
+            n: 'storeExecuteResponse',
+            ti: 'Boolean',
+            t: 'a'
           }, {
-            name: 'lineage',
-            typeInfo: 'Boolean',
-            attributeName: 'lineage',
-            type: 'attribute'
+            n: 'lineage',
+            ti: 'Boolean',
+            t: 'a'
           }, {
-            name: 'status',
-            typeInfo: 'Boolean',
-            attributeName: 'status',
-            type: 'attribute'
+            n: 'status',
+            ti: 'Boolean',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UOMsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'uom',
-            collection: true,
-            elementName: {
-              localPart: 'UOM',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        ln: 'UOMsType',
+        ps: [{
+            n: 'uom',
+            col: true,
+            en: {
+              lp: 'UOM',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.DomainMetadataType'
+            ti: 'OWS_1_1_0.DomainMetadataType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ComplexDataCombinationsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: {
-              localPart: 'Format'
+        ln: 'ComplexDataCombinationsType',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: {
+              lp: 'Format'
             },
-            typeInfo: 'WPS_1_0_0.ComplexDataDescriptionType'
+            ti: 'WPS_1_0_0.ComplexDataDescriptionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ValuesReferenceType',
-        propertyInfos: [{
-            name: 'reference',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'reference',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        ln: 'ValuesReferenceType',
+        ps: [{
+            n: 'reference',
+            an: {
+              lp: 'reference',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'valuesForm',
-            typeInfo: 'String',
-            attributeName: 'valuesForm',
-            type: 'attribute'
+            n: 'valuesForm',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OutputDefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'identifier',
-            elementName: {
-              localPart: 'Identifier',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        ln: 'OutputDefinitionType',
+        ps: [{
+            n: 'identifier',
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.CodeType'
+            ti: 'OWS_1_1_0.CodeType'
           }, {
-            name: 'uom',
-            typeInfo: 'String',
-            attributeName: 'uom',
-            type: 'attribute'
+            n: 'uom',
+            t: 'a'
           }, {
-            name: 'mimeType',
-            typeInfo: 'String',
-            attributeName: 'mimeType',
-            type: 'attribute'
+            n: 'mimeType',
+            t: 'a'
           }, {
-            name: 'encoding',
-            typeInfo: 'String',
-            attributeName: 'encoding',
-            type: 'attribute'
+            n: 'encoding',
+            t: 'a'
           }, {
-            name: 'schema',
-            typeInfo: 'String',
-            attributeName: 'schema',
-            type: 'attribute'
+            n: 'schema',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OutputReferenceType',
-        propertyInfos: [{
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+        ln: 'OutputReferenceType',
+        ps: [{
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'mimeType',
-            typeInfo: 'String',
-            attributeName: 'mimeType',
-            type: 'attribute'
+            n: 'mimeType',
+            t: 'a'
           }, {
-            name: 'encoding',
-            typeInfo: 'String',
-            attributeName: 'encoding',
-            type: 'attribute'
+            n: 'encoding',
+            t: 'a'
           }, {
-            name: 'schema',
-            typeInfo: 'String',
-            attributeName: 'schema',
-            type: 'attribute'
+            n: 'schema',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'complexData',
-            elementName: 'ComplexData',
-            typeInfo: 'WPS_1_0_0.ComplexDataType'
+        ln: 'DataType',
+        ps: [{
+            n: 'complexData',
+            en: 'ComplexData',
+            ti: 'WPS_1_0_0.ComplexDataType'
           }, {
-            type: 'element',
-            name: 'literalData',
-            elementName: 'LiteralData',
-            typeInfo: 'WPS_1_0_0.LiteralDataType'
+            n: 'literalData',
+            en: 'LiteralData',
+            ti: 'WPS_1_0_0.LiteralDataType'
           }, {
-            type: 'element',
-            name: 'boundingBoxData',
-            elementName: 'BoundingBoxData',
-            typeInfo: 'OWS_1_1_0.BoundingBoxType'
+            n: 'boundingBoxData',
+            en: 'BoundingBoxData',
+            ti: 'OWS_1_1_0.BoundingBoxType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'InputReferenceType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'header',
-            collection: true,
-            elementName: 'Header',
-            typeInfo: 'WPS_1_0_0.InputReferenceType.Header'
+        ln: 'InputReferenceType',
+        ps: [{
+            n: 'header',
+            col: true,
+            en: 'Header',
+            ti: 'WPS_1_0_0.InputReferenceType.Header'
           }, {
-            type: 'element',
-            name: 'body',
-            elementName: 'Body',
-            typeInfo: 'AnyType'
+            n: 'body',
+            en: 'Body',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'bodyReference',
-            elementName: 'BodyReference',
-            typeInfo: 'WPS_1_0_0.InputReferenceType.BodyReference'
+            n: 'bodyReference',
+            en: 'BodyReference',
+            ti: 'WPS_1_0_0.InputReferenceType.BodyReference'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'href',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+            n: 'href',
+            an: {
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'method',
-            typeInfo: 'String',
-            attributeName: 'method',
-            type: 'attribute'
+            n: 'method',
+            t: 'a'
           }, {
-            name: 'mimeType',
-            typeInfo: 'String',
-            attributeName: 'mimeType',
-            type: 'attribute'
+            n: 'mimeType',
+            t: 'a'
           }, {
-            name: 'encoding',
-            typeInfo: 'String',
-            attributeName: 'encoding',
-            type: 'attribute'
+            n: 'encoding',
+            t: 'a'
           }, {
-            name: 'schema',
-            typeInfo: 'String',
-            attributeName: 'schema',
-            type: 'attribute'
+            n: 'schema',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'identifier',
-            elementName: {
-              localPart: 'Identifier',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        ln: 'DescriptionType',
+        ps: [{
+            n: 'identifier',
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.CodeType'
+            ti: 'OWS_1_1_0.CodeType'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: {
-              localPart: 'Title',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+            n: 'title',
+            en: {
+              lp: 'Title',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.LanguageStringType'
+            ti: 'OWS_1_1_0.LanguageStringType'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: {
-              localPart: 'Abstract',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+            n: '_abstract',
+            en: {
+              lp: 'Abstract',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.LanguageStringType'
+            ti: 'OWS_1_1_0.LanguageStringType'
           }, {
-            type: 'element',
-            name: 'metadata',
-            collection: true,
-            elementName: {
-              localPart: 'Metadata',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+            n: 'metadata',
+            col: true,
+            en: {
+              lp: 'Metadata',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.MetadataType'
+            ti: 'OWS_1_1_0.MetadataType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ProcessFailedType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'exceptionReport',
-            elementName: {
-              localPart: 'ExceptionReport',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        ln: 'ProcessFailedType',
+        ps: [{
+            n: 'exceptionReport',
+            en: {
+              lp: 'ExceptionReport',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.ExceptionReport'
+            ti: 'OWS_1_1_0.ExceptionReport'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ComplexDataType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
+        ln: 'ComplexDataType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
           }, {
-            name: 'content',
-            collection: true,
-            allowDom: true,
-            mixed: true,
-            type: 'anyElement'
+            n: 'content',
+            col: true,
+            typed: false,
+            t: 'ae'
           }, {
-            name: 'mimeType',
-            typeInfo: 'String',
-            attributeName: 'mimeType',
-            type: 'attribute'
+            n: 'mimeType',
+            t: 'a'
           }, {
-            name: 'encoding',
-            typeInfo: 'String',
-            attributeName: 'encoding',
-            type: 'attribute'
+            n: 'encoding',
+            t: 'a'
           }, {
-            name: 'schema',
-            typeInfo: 'String',
-            attributeName: 'schema',
-            type: 'attribute'
+            n: 'schema',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LiteralDataType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'LiteralDataType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'dataType',
-            typeInfo: 'String',
-            attributeName: 'dataType',
-            type: 'attribute'
+            n: 'dataType',
+            t: 'a'
           }, {
-            name: 'uom',
-            typeInfo: 'String',
-            attributeName: 'uom',
-            type: 'attribute'
+            n: 'uom',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DocumentOutputDefinitionType',
-        baseTypeInfo: 'WPS_1_0_0.OutputDefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'title',
-            elementName: {
-              localPart: 'Title',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        ln: 'DocumentOutputDefinitionType',
+        bti: 'WPS_1_0_0.OutputDefinitionType',
+        ps: [{
+            n: 'title',
+            en: {
+              lp: 'Title',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.LanguageStringType'
+            ti: 'OWS_1_1_0.LanguageStringType'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: {
-              localPart: 'Abstract',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+            n: '_abstract',
+            en: {
+              lp: 'Abstract',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.LanguageStringType'
+            ti: 'OWS_1_1_0.LanguageStringType'
           }, {
-            name: 'asReference',
-            typeInfo: 'Boolean',
-            attributeName: 'asReference',
-            type: 'attribute'
+            n: 'asReference',
+            ti: 'Boolean',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SupportedComplexDataInputType',
-        baseTypeInfo: 'WPS_1_0_0.SupportedComplexDataType',
-        propertyInfos: [{
-            name: 'maximumMegabytes',
-            typeInfo: 'Integer',
-            attributeName: 'maximumMegabytes',
-            type: 'attribute'
+        ln: 'SupportedComplexDataInputType',
+        bti: 'WPS_1_0_0.SupportedComplexDataType',
+        ps: [{
+            n: 'maximumMegabytes',
+            ti: 'Integer',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'InputDescriptionType',
-        baseTypeInfo: 'WPS_1_0_0.DescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'complexData',
-            elementName: {
-              localPart: 'ComplexData'
+        ln: 'InputDescriptionType',
+        bti: 'WPS_1_0_0.DescriptionType',
+        ps: [{
+            n: 'complexData',
+            en: {
+              lp: 'ComplexData'
             },
-            typeInfo: 'WPS_1_0_0.SupportedComplexDataInputType'
+            ti: 'WPS_1_0_0.SupportedComplexDataInputType'
           }, {
-            type: 'element',
-            name: 'literalData',
-            elementName: {
-              localPart: 'LiteralData'
+            n: 'literalData',
+            en: {
+              lp: 'LiteralData'
             },
-            typeInfo: 'WPS_1_0_0.LiteralInputType'
+            ti: 'WPS_1_0_0.LiteralInputType'
           }, {
-            type: 'element',
-            name: 'boundingBoxData',
-            elementName: {
-              localPart: 'BoundingBoxData'
+            n: 'boundingBoxData',
+            en: {
+              lp: 'BoundingBoxData'
             },
-            typeInfo: 'WPS_1_0_0.SupportedCRSsType'
+            ti: 'WPS_1_0_0.SupportedCRSsType'
           }, {
-            name: 'minOccurs',
-            typeInfo: 'Integer',
-            attributeName: 'minOccurs',
-            type: 'attribute'
+            n: 'minOccurs',
+            ti: 'Integer',
+            t: 'a'
           }, {
-            name: 'maxOccurs',
-            typeInfo: 'Integer',
-            attributeName: 'maxOccurs',
-            type: 'attribute'
+            n: 'maxOccurs',
+            ti: 'Integer',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'InputType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'identifier',
-            elementName: {
-              localPart: 'Identifier',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        ln: 'InputType',
+        ps: [{
+            n: 'identifier',
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.CodeType'
+            ti: 'OWS_1_1_0.CodeType'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: {
-              localPart: 'Title',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+            n: 'title',
+            en: {
+              lp: 'Title',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.LanguageStringType'
+            ti: 'OWS_1_1_0.LanguageStringType'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: {
-              localPart: 'Abstract',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+            n: '_abstract',
+            en: {
+              lp: 'Abstract',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.LanguageStringType'
+            ti: 'OWS_1_1_0.LanguageStringType'
           }, {
-            type: 'element',
-            name: 'reference',
-            elementName: 'Reference',
-            typeInfo: 'WPS_1_0_0.InputReferenceType'
+            n: 'reference',
+            en: 'Reference',
+            ti: 'WPS_1_0_0.InputReferenceType'
           }, {
-            type: 'element',
-            name: 'data',
-            elementName: 'Data',
-            typeInfo: 'WPS_1_0_0.DataType'
+            n: 'data',
+            en: 'Data',
+            ti: 'WPS_1_0_0.DataType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OutputDataType',
-        baseTypeInfo: 'WPS_1_0_0.DescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'reference',
-            elementName: 'Reference',
-            typeInfo: 'WPS_1_0_0.OutputReferenceType'
+        ln: 'OutputDataType',
+        bti: 'WPS_1_0_0.DescriptionType',
+        ps: [{
+            n: 'reference',
+            en: 'Reference',
+            ti: 'WPS_1_0_0.OutputReferenceType'
           }, {
-            type: 'element',
-            name: 'data',
-            elementName: 'Data',
-            typeInfo: 'WPS_1_0_0.DataType'
+            n: 'data',
+            en: 'Data',
+            ti: 'WPS_1_0_0.DataType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ComplexDataCombinationType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            elementName: {
-              localPart: 'Format'
+        ln: 'ComplexDataCombinationType',
+        ps: [{
+            n: 'format',
+            en: {
+              lp: 'Format'
             },
-            typeInfo: 'WPS_1_0_0.ComplexDataDescriptionType'
+            ti: 'WPS_1_0_0.ComplexDataDescriptionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ComplexDataDescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'mimeType',
-            elementName: {
-              localPart: 'MimeType'
-            },
-            typeInfo: 'String'
+        ln: 'ComplexDataDescriptionType',
+        ps: [{
+            n: 'mimeType',
+            en: {
+              lp: 'MimeType'
+            }
           }, {
-            type: 'element',
-            name: 'encoding',
-            elementName: {
-              localPart: 'Encoding'
-            },
-            typeInfo: 'String'
+            n: 'encoding',
+            en: {
+              lp: 'Encoding'
+            }
           }, {
-            type: 'element',
-            name: 'schema',
-            elementName: {
-              localPart: 'Schema'
-            },
-            typeInfo: 'String'
+            n: 'schema',
+            en: {
+              lp: 'Schema'
+            }
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OutputDescriptionType',
-        baseTypeInfo: 'WPS_1_0_0.DescriptionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'complexOutput',
-            elementName: {
-              localPart: 'ComplexOutput'
+        ln: 'OutputDescriptionType',
+        bti: 'WPS_1_0_0.DescriptionType',
+        ps: [{
+            n: 'complexOutput',
+            en: {
+              lp: 'ComplexOutput'
             },
-            typeInfo: 'WPS_1_0_0.SupportedComplexDataType'
+            ti: 'WPS_1_0_0.SupportedComplexDataType'
           }, {
-            type: 'element',
-            name: 'literalOutput',
-            elementName: {
-              localPart: 'LiteralOutput'
+            n: 'literalOutput',
+            en: {
+              lp: 'LiteralOutput'
             },
-            typeInfo: 'WPS_1_0_0.LiteralOutputType'
+            ti: 'WPS_1_0_0.LiteralOutputType'
           }, {
-            type: 'element',
-            name: 'boundingBoxOutput',
-            elementName: {
-              localPart: 'BoundingBoxOutput'
+            n: 'boundingBoxOutput',
+            en: {
+              lp: 'BoundingBoxOutput'
             },
-            typeInfo: 'WPS_1_0_0.SupportedCRSsType'
+            ti: 'WPS_1_0_0.SupportedCRSsType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SupportedComplexDataType',
-        propertyInfos: [{
-            type: 'element',
-            name: '_default',
-            elementName: {
-              localPart: 'Default'
+        ln: 'SupportedComplexDataType',
+        ps: [{
+            n: '_default',
+            en: {
+              lp: 'Default'
             },
-            typeInfo: 'WPS_1_0_0.ComplexDataCombinationType'
+            ti: 'WPS_1_0_0.ComplexDataCombinationType'
           }, {
-            type: 'element',
-            name: 'supported',
-            elementName: {
-              localPart: 'Supported'
+            n: 'supported',
+            en: {
+              lp: 'Supported'
             },
-            typeInfo: 'WPS_1_0_0.ComplexDataCombinationsType'
+            ti: 'WPS_1_0_0.ComplexDataCombinationsType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LiteralInputType',
-        baseTypeInfo: 'WPS_1_0_0.LiteralOutputType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'allowedValues',
-            elementName: {
-              localPart: 'AllowedValues',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        ln: 'LiteralInputType',
+        bti: 'WPS_1_0_0.LiteralOutputType',
+        ps: [{
+            n: 'allowedValues',
+            en: {
+              lp: 'AllowedValues',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.AllowedValues'
+            ti: 'OWS_1_1_0.AllowedValues'
           }, {
-            type: 'element',
-            name: 'anyValue',
-            elementName: {
-              localPart: 'AnyValue',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+            n: 'anyValue',
+            en: {
+              lp: 'AnyValue',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.AnyValue'
+            ti: 'OWS_1_1_0.AnyValue'
           }, {
-            type: 'element',
-            name: 'valuesReference',
-            elementName: {
-              localPart: 'ValuesReference'
+            n: 'valuesReference',
+            en: {
+              lp: 'ValuesReference'
             },
-            typeInfo: 'WPS_1_0_0.ValuesReferenceType'
+            ti: 'WPS_1_0_0.ValuesReferenceType'
           }, {
-            type: 'element',
-            name: 'defaultValue',
-            elementName: {
-              localPart: 'DefaultValue'
-            },
-            typeInfo: 'String'
+            n: 'defaultValue',
+            en: {
+              lp: 'DefaultValue'
+            }
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ProcessStartedType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'ProcessStartedType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'percentCompleted',
-            typeInfo: 'Int',
-            attributeName: 'percentCompleted',
-            type: 'attribute'
+            n: 'percentCompleted',
+            ti: 'Int',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LiteralOutputType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'dataType',
-            elementName: {
-              localPart: 'DataType',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        ln: 'LiteralOutputType',
+        ps: [{
+            n: 'dataType',
+            en: {
+              lp: 'DataType',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.DomainMetadataType'
+            ti: 'OWS_1_1_0.DomainMetadataType'
           }, {
-            type: 'element',
-            name: 'uoMs',
-            elementName: {
-              localPart: 'UOMs'
+            n: 'uoMs',
+            en: {
+              lp: 'UOMs'
             },
-            typeInfo: 'WPS_1_0_0.SupportedUOMsType'
+            ti: 'WPS_1_0_0.SupportedUOMsType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SupportedUOMsType',
-        propertyInfos: [{
-            type: 'element',
-            name: '_default',
-            elementName: {
-              localPart: 'Default'
+        ln: 'SupportedUOMsType',
+        ps: [{
+            n: '_default',
+            en: {
+              lp: 'Default'
             },
-            typeInfo: 'WPS_1_0_0.SupportedUOMsType.Default'
+            ti: 'WPS_1_0_0.SupportedUOMsType.Default'
           }, {
-            type: 'element',
-            name: 'supported',
-            elementName: {
-              localPart: 'Supported'
+            n: 'supported',
+            en: {
+              lp: 'Supported'
             },
-            typeInfo: 'WPS_1_0_0.UOMsType'
+            ti: 'WPS_1_0_0.UOMsType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SupportedUOMsType.Default',
-        propertyInfos: [{
-            type: 'element',
-            name: 'uom',
-            elementName: {
-              localPart: 'UOM',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        ln: 'SupportedUOMsType.Default',
+        ps: [{
+            n: 'uom',
+            en: {
+              lp: 'UOM',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            typeInfo: 'OWS_1_1_0.DomainMetadataType'
+            ti: 'OWS_1_1_0.DomainMetadataType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'InputReferenceType.Header',
-        propertyInfos: [{
-            name: 'key',
-            typeInfo: 'String',
-            attributeName: 'key',
-            type: 'attribute'
+        ln: 'InputReferenceType.Header',
+        ps: [{
+            n: 'key',
+            t: 'a'
           }, {
-            name: 'value',
-            typeInfo: 'String',
-            attributeName: 'value',
-            type: 'attribute'
+            n: 'value',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'InputReferenceType.BodyReference',
-        propertyInfos: [{
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'href',
-              namespaceURI: 'http:\/\/www.w3.org\/1999\/xlink'
+        ln: 'InputReferenceType.BodyReference',
+        ps: [{
+            n: 'href',
+            an: {
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SupportedCRSsType.Default',
-        propertyInfos: [{
-            type: 'element',
-            name: 'crs',
-            elementName: {
-              localPart: 'CRS'
-            },
-            typeInfo: 'String'
+        ln: 'SupportedCRSsType.Default',
+        ps: [{
+            n: 'crs',
+            en: {
+              lp: 'CRS'
+            }
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ProcessDescriptionType.DataInputs',
-        propertyInfos: [{
-            type: 'element',
-            name: 'input',
-            collection: true,
-            elementName: {
-              localPart: 'Input'
+        ln: 'ProcessDescriptionType.DataInputs',
+        ps: [{
+            n: 'input',
+            col: true,
+            en: {
+              lp: 'Input'
             },
-            typeInfo: 'WPS_1_0_0.InputDescriptionType'
+            ti: 'WPS_1_0_0.InputDescriptionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ProcessDescriptionType.ProcessOutputs',
-        propertyInfos: [{
-            type: 'element',
-            name: 'output',
-            collection: true,
-            elementName: {
-              localPart: 'Output'
+        ln: 'ProcessDescriptionType.ProcessOutputs',
+        ps: [{
+            n: 'output',
+            col: true,
+            en: {
+              lp: 'Output'
             },
-            typeInfo: 'WPS_1_0_0.OutputDescriptionType'
+            ti: 'WPS_1_0_0.OutputDescriptionType'
           }]
       }],
-    elementInfos: [{
-        elementName: 'Execute',
-        typeInfo: 'WPS_1_0_0.Execute'
+    eis: [{
+        en: 'Execute',
+        ti: 'WPS_1_0_0.Execute'
       }, {
-        elementName: 'GetCapabilities',
-        typeInfo: 'WPS_1_0_0.GetCapabilities'
+        en: 'GetCapabilities',
+        ti: 'WPS_1_0_0.GetCapabilities'
       }, {
-        elementName: 'DescribeProcess',
-        typeInfo: 'WPS_1_0_0.DescribeProcess'
+        en: 'DescribeProcess',
+        ti: 'WPS_1_0_0.DescribeProcess'
       }, {
-        elementName: 'ExecuteResponse',
-        typeInfo: 'WPS_1_0_0.ExecuteResponse'
+        en: 'ExecuteResponse',
+        ti: 'WPS_1_0_0.ExecuteResponse'
       }, {
-        elementName: 'Languages',
-        typeInfo: 'WPS_1_0_0.Languages'
+        en: 'Languages',
+        ti: 'WPS_1_0_0.Languages'
       }, {
-        elementName: 'ProcessOfferings',
-        typeInfo: 'WPS_1_0_0.ProcessOfferings'
+        en: 'ProcessOfferings',
+        ti: 'WPS_1_0_0.ProcessOfferings'
       }, {
-        elementName: 'WSDL',
-        typeInfo: 'WPS_1_0_0.WSDL'
+        en: 'WSDL',
+        ti: 'WPS_1_0_0.WSDL'
       }, {
-        elementName: 'ProcessDescriptions',
-        typeInfo: 'WPS_1_0_0.ProcessDescriptions'
+        en: 'ProcessDescriptions',
+        ti: 'WPS_1_0_0.ProcessDescriptions'
       }, {
-        elementName: 'Capabilities',
-        typeInfo: 'WPS_1_0_0.WPSCapabilitiesType'
+        en: 'Capabilities',
+        ti: 'WPS_1_0_0.WPSCapabilitiesType'
       }]
   };
   return {

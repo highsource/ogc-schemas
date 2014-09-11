@@ -1,75 +1,58 @@
 var Atom_1_0_Module_Factory = function () {
   var Atom_1_0 = {
-    name: 'Atom_1_0',
-    defaultElementNamespaceURI: 'http:\/\/www.w3.org\/2005\/Atom',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'AtomPersonConstruct',
-        propertyInfos: [{
-            name: 'nameOrUriOrEmail',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'uri',
-                typeInfo: 'String'
+    n: 'Atom_1_0',
+    dens: 'http:\/\/www.w3.org\/2005\/Atom',
+    tis: [{
+        ln: 'AtomPersonConstruct',
+        ps: [{
+            n: 'nameOrUriOrEmail',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'uri'
               }, {
-                elementName: 'email',
-                typeInfo: 'String'
+                en: 'email'
               }, {
-                elementName: 'name',
-                typeInfo: 'String'
+                en: 'name'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Link',
-        propertyInfos: [{
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+        ln: 'Link',
+        ps: [{
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'rel',
-            typeInfo: 'String',
-            attributeName: 'rel',
-            type: 'attribute'
+            n: 'rel',
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'String',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            t: 'a'
           }, {
-            name: 'hreflang',
-            typeInfo: 'String',
-            attributeName: 'hreflang',
-            type: 'attribute'
+            n: 'hreflang',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'length',
-            typeInfo: 'String',
-            attributeName: 'length',
-            type: 'attribute'
+            n: 'length',
+            t: 'a'
           }]
       }],
-    elementInfos: [{
-        elementName: 'link',
-        typeInfo: 'Atom_1_0.Link'
+    eis: [{
+        en: 'link',
+        ti: 'Atom_1_0.Link'
       }, {
-        elementName: 'author',
-        typeInfo: 'Atom_1_0.AtomPersonConstruct'
+        en: 'author',
+        ti: 'Atom_1_0.AtomPersonConstruct'
       }, {
-        elementName: 'uri',
-        typeInfo: 'String'
+        en: 'uri'
       }, {
-        elementName: 'name',
-        typeInfo: 'String'
+        en: 'name'
       }, {
-        elementName: 'email',
-        typeInfo: 'String'
+        en: 'email'
       }]
   };
   return {

@@ -1,11826 +1,9356 @@
 var GML_3_1_1_Module_Factory = function () {
   var GML_3_1_1 = {
-    name: 'GML_3_1_1',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/gml',
-    defaultAttributeNamespaceURI: 'http:\/\/www.w3.org\/1999\/xlink',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'CodeType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+    n: 'GML_3_1_1',
+    dens: 'http:\/\/www.opengis.net\/gml',
+    dans: 'http:\/\/www.w3.org\/1999\/xlink',
+    tis: [{
+        ln: 'CodeType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'codeSpace',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'codeSpace'
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TopoPointType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTopologyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'directedNode',
-            elementName: 'directedNode',
-            typeInfo: 'GML_3_1_1.DirectedNodePropertyType'
+        ln: 'TopoPointType',
+        bti: 'GML_3_1_1.AbstractTopologyType',
+        ps: [{
+            n: 'directedNode',
+            ti: 'GML_3_1_1.DirectedNodePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DerivedCRSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'derivedCRS',
-            elementName: 'DerivedCRS',
-            typeInfo: 'GML_3_1_1.DerivedCRSType'
+        ln: 'DerivedCRSRefType',
+        ps: [{
+            n: 'derivedCRS',
+            en: 'DerivedCRS',
+            ti: 'GML_3_1_1.DerivedCRSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GridDomainType',
-        baseTypeInfo: 'GML_3_1_1.DomainSetType',
-        propertyInfos: []
+        ln: 'GridDomainType',
+        bti: 'GML_3_1_1.DomainSetType'
       }, {
-        type: 'classInfo',
-        localName: 'DomainSetType',
-        propertyInfos: [{
-            name: 'geometry',
-            elementName: '_Geometry',
-            typeInfo: 'GML_3_1_1.AbstractGeometryType',
-            type: 'elementRef'
+        ln: 'DomainSetType',
+        ps: [{
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Geometry',
+            ti: 'GML_3_1_1.AbstractGeometryType',
+            t: 'er'
           }, {
-            name: 'timeObject',
-            elementName: '_TimeObject',
-            typeInfo: 'GML_3_1_1.AbstractTimeObjectType',
-            type: 'elementRef'
+            n: 'timeObject',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_TimeObject',
+            ti: 'GML_3_1_1.AbstractTimeObjectType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractCoordinateOperationType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateOperationBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'coordinateOperationID',
-            collection: true,
-            elementName: 'coordinateOperationID',
-            typeInfo: 'GML_3_1_1.IdentifierType'
+        ln: 'AbstractCoordinateOperationType',
+        bti: 'GML_3_1_1.AbstractCoordinateOperationBaseType',
+        ps: [{
+            n: 'coordinateOperationID',
+            col: true,
+            ti: 'GML_3_1_1.IdentifierType'
           }, {
-            type: 'element',
-            name: 'remarks',
-            elementName: 'remarks',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'remarks',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'operationVersion',
-            elementName: 'operationVersion',
-            typeInfo: 'String'
+            n: 'operationVersion'
           }, {
-            type: 'element',
-            name: 'validArea',
-            elementName: 'validArea',
-            typeInfo: 'GML_3_1_1.ExtentType'
+            n: 'validArea',
+            ti: 'GML_3_1_1.ExtentType'
           }, {
-            type: 'element',
-            name: 'scope',
-            elementName: 'scope',
-            typeInfo: 'String'
+            n: 'scope'
           }, {
-            name: 'positionalAccuracy',
-            collection: true,
-            elementName: '_positionalAccuracy',
-            typeInfo: 'GML_3_1_1.AbstractPositionalAccuracyType',
-            type: 'elementRef'
+            n: 'positionalAccuracy',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_positionalAccuracy',
+            ti: 'GML_3_1_1.AbstractPositionalAccuracyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'sourceCRS',
-            elementName: 'sourceCRS',
-            typeInfo: 'GML_3_1_1.CRSRefType'
+            n: 'sourceCRS',
+            ti: 'GML_3_1_1.CRSRefType'
           }, {
-            type: 'element',
-            name: 'targetCRS',
-            elementName: 'targetCRS',
-            typeInfo: 'GML_3_1_1.CRSRefType'
+            n: 'targetCRS',
+            ti: 'GML_3_1_1.CRSRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DefinitionType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: []
+        ln: 'DefinitionType',
+        bti: 'GML_3_1_1.AbstractGMLType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGMLType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'metaDataProperty',
-            collection: true,
-            elementName: 'metaDataProperty',
-            typeInfo: 'GML_3_1_1.MetaDataPropertyType'
+        ln: 'AbstractGMLType',
+        ps: [{
+            n: 'metaDataProperty',
+            col: true,
+            ti: 'GML_3_1_1.MetaDataPropertyType'
           }, {
-            type: 'element',
-            name: 'description',
-            elementName: 'description',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'description',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            name: 'name',
-            collection: true,
-            elementName: 'name',
-            typeInfo: 'GML_3_1_1.CodeType',
-            type: 'elementRef'
+            n: 'name',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.CodeType',
+            t: 'er'
           }, {
-            name: 'id',
-            typeInfo: 'ID',
-            attributeName: {
-              localPart: 'id',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DirectionVectorType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'vector',
-            elementName: 'vector',
-            typeInfo: 'GML_3_1_1.VectorType'
+        ln: 'DirectionVectorType',
+        ps: [{
+            n: 'vector',
+            ti: 'GML_3_1_1.VectorType'
           }, {
-            type: 'element',
-            name: 'horizontalAngle',
-            elementName: 'horizontalAngle',
-            typeInfo: 'GML_3_1_1.AngleType'
+            n: 'horizontalAngle',
+            ti: 'GML_3_1_1.AngleType'
           }, {
-            type: 'element',
-            name: 'verticalAngle',
-            elementName: 'verticalAngle',
-            typeInfo: 'GML_3_1_1.AngleType'
+            n: 'verticalAngle',
+            ti: 'GML_3_1_1.AngleType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TopoVolumePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'topoVolume',
-            elementName: 'TopoVolume',
-            typeInfo: 'GML_3_1_1.TopoVolumeType'
+        ln: 'TopoVolumePropertyType',
+        ps: [{
+            n: 'topoVolume',
+            en: 'TopoVolume',
+            ti: 'GML_3_1_1.TopoVolumeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ArcStringType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveSegmentType',
-        propertyInfos: [{
-            name: 'posOrPointPropertyOrPointRep',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'pointProperty',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+        ln: 'ArcStringType',
+        bti: 'GML_3_1_1.AbstractCurveSegmentType',
+        ps: [{
+            n: 'posOrPointPropertyOrPointRep',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'pointProperty',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointRep',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+                en: 'pointRep',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pos',
-                typeInfo: 'GML_3_1_1.DirectPositionType'
+                en: 'pos',
+                ti: 'GML_3_1_1.DirectPositionType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }, {
-            type: 'element',
-            name: 'posList',
-            elementName: 'posList',
-            typeInfo: 'GML_3_1_1.DirectPositionListType'
+            n: 'posList',
+            ti: 'GML_3_1_1.DirectPositionListType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_3_1_1.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_3_1_1.CoordinatesType'
           }, {
-            name: 'interpolation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'interpolation'
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'numArc',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'numArc'
+            n: 'numArc',
+            ti: 'Integer',
+            an: {
+              lp: 'numArc'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractCurveSegmentType',
-        propertyInfos: [{
-            name: 'numDerivativesAtStart',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'numDerivativesAtStart'
+        ln: 'AbstractCurveSegmentType',
+        ps: [{
+            n: 'numDerivativesAtStart',
+            ti: 'Integer',
+            an: {
+              lp: 'numDerivativesAtStart'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'numDerivativesAtEnd',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'numDerivativesAtEnd'
+            n: 'numDerivativesAtEnd',
+            ti: 'Integer',
+            an: {
+              lp: 'numDerivativesAtEnd'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'numDerivativeInterior',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'numDerivativeInterior'
+            n: 'numDerivativeInterior',
+            ti: 'Integer',
+            an: {
+              lp: 'numDerivativeInterior'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SphereType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGriddedSurfaceType',
-        propertyInfos: [{
-            name: 'horizontalCurveType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'horizontalCurveType'
+        ln: 'SphereType',
+        bti: 'GML_3_1_1.AbstractGriddedSurfaceType',
+        ps: [{
+            n: 'horizontalCurveType',
+            an: {
+              lp: 'horizontalCurveType'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'verticalCurveType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'verticalCurveType'
+            n: 'verticalCurveType',
+            an: {
+              lp: 'verticalCurveType'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGriddedSurfaceType',
-        baseTypeInfo: 'GML_3_1_1.AbstractParametricCurveSurfaceType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'row',
-            collection: true,
-            elementName: 'row',
-            typeInfo: 'GML_3_1_1.AbstractGriddedSurfaceType.Row'
+        ln: 'AbstractGriddedSurfaceType',
+        bti: 'GML_3_1_1.AbstractParametricCurveSurfaceType',
+        ps: [{
+            n: 'row',
+            col: true,
+            ti: 'GML_3_1_1.AbstractGriddedSurfaceType.Row'
           }, {
-            type: 'element',
-            name: 'rows',
-            elementName: 'rows',
-            typeInfo: 'Integer'
+            n: 'rows',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'columns',
-            elementName: 'columns',
-            typeInfo: 'Integer'
+            n: 'columns',
+            ti: 'Integer'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractParametricCurveSurfaceType',
-        baseTypeInfo: 'GML_3_1_1.AbstractSurfacePatchType',
-        propertyInfos: []
+        ln: 'AbstractParametricCurveSurfaceType',
+        bti: 'GML_3_1_1.AbstractSurfacePatchType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractSurfacePatchType',
-        propertyInfos: []
+        ln: 'AbstractSurfacePatchType'
       }, {
-        type: 'classInfo',
-        localName: 'CoverageFunctionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'mappingRule',
-            elementName: 'MappingRule',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+        ln: 'CoverageFunctionType',
+        ps: [{
+            n: 'mappingRule',
+            en: 'MappingRule',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            name: 'gridFunction',
-            elementName: 'GridFunction',
-            typeInfo: 'GML_3_1_1.GridFunctionType',
-            type: 'elementRef'
+            n: 'gridFunction',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'GridFunction',
+            ti: 'GML_3_1_1.GridFunctionType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TopoCurveType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTopologyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'directedEdge',
-            collection: true,
-            elementName: 'directedEdge',
-            typeInfo: 'GML_3_1_1.DirectedEdgePropertyType'
+        ln: 'TopoCurveType',
+        bti: 'GML_3_1_1.AbstractTopologyType',
+        ps: [{
+            n: 'directedEdge',
+            col: true,
+            ti: 'GML_3_1_1.DirectedEdgePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractDiscreteCoverageType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoverageType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'coverageFunction',
-            elementName: 'coverageFunction',
-            typeInfo: 'GML_3_1_1.CoverageFunctionType'
+        ln: 'AbstractDiscreteCoverageType',
+        bti: 'GML_3_1_1.AbstractCoverageType',
+        ps: [{
+            n: 'coverageFunction',
+            ti: 'GML_3_1_1.CoverageFunctionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractCoverageType',
-        baseTypeInfo: 'GML_3_1_1.AbstractFeatureType',
-        propertyInfos: [{
-            name: 'domainSet',
-            elementName: 'domainSet',
-            typeInfo: 'GML_3_1_1.DomainSetType',
-            type: 'elementRef'
+        ln: 'AbstractCoverageType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'domainSet',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.DomainSetType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'rangeSet',
-            elementName: 'rangeSet',
-            typeInfo: 'GML_3_1_1.RangeSetType'
+            n: 'rangeSet',
+            ti: 'GML_3_1_1.RangeSetType'
           }, {
-            name: 'dimension',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'dimension'
+            n: 'dimension',
+            ti: 'Integer',
+            an: {
+              lp: 'dimension'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractFeatureType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'boundedBy',
-            elementName: 'boundedBy',
-            typeInfo: 'GML_3_1_1.BoundingShapeType'
+        ln: 'AbstractFeatureType',
+        bti: 'GML_3_1_1.AbstractGMLType',
+        ps: [{
+            n: 'boundedBy',
+            ti: 'GML_3_1_1.BoundingShapeType'
           }, {
-            name: 'location',
-            elementName: 'location',
-            typeInfo: 'GML_3_1_1.LocationPropertyType',
-            type: 'elementRef'
+            n: 'location',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.LocationPropertyType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RectifiedGridType',
-        baseTypeInfo: 'GML_3_1_1.GridType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'origin',
-            elementName: 'origin',
-            typeInfo: 'GML_3_1_1.PointPropertyType'
+        ln: 'RectifiedGridType',
+        bti: 'GML_3_1_1.GridType',
+        ps: [{
+            n: 'origin',
+            ti: 'GML_3_1_1.PointPropertyType'
           }, {
-            type: 'element',
-            name: 'offsetVector',
-            collection: true,
-            elementName: 'offsetVector',
-            typeInfo: 'GML_3_1_1.VectorType'
+            n: 'offsetVector',
+            col: true,
+            ti: 'GML_3_1_1.VectorType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGeometryType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: [{
-            name: 'gid',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'gid'
+        ln: 'AbstractGeometryType',
+        bti: 'GML_3_1_1.AbstractGMLType',
+        ps: [{
+            n: 'gid',
+            an: {
+              lp: 'gid'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'srsName',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'srsName'
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'srsDimension',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'srsDimension'
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'axisLabels',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
             },
-            attributeName: {
-              localPart: 'axisLabels'
+            an: {
+              lp: 'axisLabels'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'uomLabels',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
             },
-            attributeName: {
-              localPart: 'uomLabels'
+            an: {
+              lp: 'uomLabels'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeaturePropertyType',
-        propertyInfos: [{
-            name: 'feature',
-            elementName: '_Feature',
-            typeInfo: 'GML_3_1_1.AbstractFeatureType',
-            type: 'elementRef'
+        ln: 'FeaturePropertyType',
+        ps: [{
+            n: 'feature',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Feature',
+            ti: 'GML_3_1_1.AbstractFeatureType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGeneralTransformationType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateOperationType',
-        propertyInfos: []
+        ln: 'AbstractGeneralTransformationType',
+        bti: 'GML_3_1_1.AbstractCoordinateOperationType'
       }, {
-        type: 'classInfo',
-        localName: 'GeometryPropertyType',
-        propertyInfos: [{
-            name: 'geometry',
-            elementName: '_Geometry',
-            typeInfo: 'GML_3_1_1.AbstractGeometryType',
-            type: 'elementRef'
+        ln: 'GeometryPropertyType',
+        ps: [{
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Geometry',
+            ti: 'GML_3_1_1.AbstractGeometryType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractReferenceSystemType',
-        baseTypeInfo: 'GML_3_1_1.AbstractReferenceSystemBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'srsID',
-            collection: true,
-            elementName: 'srsID',
-            typeInfo: 'GML_3_1_1.IdentifierType'
+        ln: 'AbstractReferenceSystemType',
+        bti: 'GML_3_1_1.AbstractReferenceSystemBaseType',
+        ps: [{
+            n: 'srsID',
+            col: true,
+            ti: 'GML_3_1_1.IdentifierType'
           }, {
-            type: 'element',
-            name: 'remarks',
-            elementName: 'remarks',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'remarks',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'validArea',
-            elementName: 'validArea',
-            typeInfo: 'GML_3_1_1.ExtentType'
+            n: 'validArea',
+            ti: 'GML_3_1_1.ExtentType'
           }, {
-            type: 'element',
-            name: 'scope',
-            elementName: 'scope',
-            typeInfo: 'String'
+            n: 'scope'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeometricComplexType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'element',
-            collection: true,
-            elementName: 'element',
-            typeInfo: 'GML_3_1_1.GeometricPrimitivePropertyType'
+        ln: 'GeometricComplexType',
+        bti: 'GML_3_1_1.AbstractGeometryType',
+        ps: [{
+            n: 'element',
+            col: true,
+            ti: 'GML_3_1_1.GeometricPrimitivePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'IdentifierType',
-        propertyInfos: [{
-            name: 'name',
-            elementName: 'name',
-            typeInfo: 'GML_3_1_1.CodeType',
-            type: 'elementRef'
+        ln: 'IdentifierType',
+        ps: [{
+            n: 'name',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.CodeType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'version',
-            elementName: 'version',
-            typeInfo: 'String'
+            n: 'version'
           }, {
-            type: 'element',
-            name: 'remarks',
-            elementName: 'remarks',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'remarks',
+            ti: 'GML_3_1_1.StringOrRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeometryArrayPropertyType',
-        propertyInfos: [{
-            name: 'geometry',
-            collection: true,
-            elementName: '_Geometry',
-            typeInfo: 'GML_3_1_1.AbstractGeometryType',
-            type: 'elementRef'
+        ln: 'GeometryArrayPropertyType',
+        ps: [{
+            n: 'geometry',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Geometry',
+            ti: 'GML_3_1_1.AbstractGeometryType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGeneralOperationParameterRefType',
-        propertyInfos: [{
-            name: 'generalOperationParameter',
-            elementName: '_GeneralOperationParameter',
-            typeInfo: 'GML_3_1_1.AbstractGeneralOperationParameterType',
-            type: 'elementRef'
+        ln: 'AbstractGeneralOperationParameterRefType',
+        ps: [{
+            n: 'generalOperationParameter',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_GeneralOperationParameter',
+            ti: 'GML_3_1_1.AbstractGeneralOperationParameterType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractContinuousCoverageType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoverageType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'coverageFunction',
-            elementName: 'coverageFunction',
-            typeInfo: 'GML_3_1_1.CoverageFunctionType'
+        ln: 'AbstractContinuousCoverageType',
+        bti: 'GML_3_1_1.AbstractCoverageType',
+        ps: [{
+            n: 'coverageFunction',
+            ti: 'GML_3_1_1.CoverageFunctionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiSolidCoverageType',
-        baseTypeInfo: 'GML_3_1_1.AbstractDiscreteCoverageType',
-        propertyInfos: []
+        ln: 'MultiSolidCoverageType',
+        bti: 'GML_3_1_1.AbstractDiscreteCoverageType'
       }, {
-        type: 'classInfo',
-        localName: 'TopologyStyleType',
-        baseTypeInfo: 'GML_3_1_1.BaseStyleDescriptorType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'symbol',
-            elementName: 'symbol',
-            typeInfo: 'GML_3_1_1.SymbolType'
+        ln: 'TopologyStyleType',
+        bti: 'GML_3_1_1.BaseStyleDescriptorType',
+        ps: [{
+            n: 'symbol',
+            ti: 'GML_3_1_1.SymbolType'
           }, {
-            type: 'element',
-            name: 'style',
-            elementName: 'style',
-            typeInfo: 'String'
+            n: 'style'
           }, {
-            type: 'element',
-            name: 'labelStyle',
-            elementName: 'labelStyle',
-            typeInfo: 'GML_3_1_1.LabelStylePropertyType'
+            n: 'labelStyle',
+            ti: 'GML_3_1_1.LabelStylePropertyType'
           }, {
-            name: 'topologyProperty',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'topologyProperty'
+            n: 'topologyProperty',
+            an: {
+              lp: 'topologyProperty'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'topologyType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'topologyType'
+            n: 'topologyType',
+            an: {
+              lp: 'topologyType'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TopologyStylePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'topologyStyle',
-            elementName: 'TopologyStyle',
-            typeInfo: 'GML_3_1_1.TopologyStyleType'
+        ln: 'TopologyStylePropertyType',
+        ps: [{
+            n: 'topologyStyle',
+            en: 'TopologyStyle',
+            ti: 'GML_3_1_1.TopologyStyleType'
           }, {
-            name: 'about',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'about'
+            n: 'about',
+            an: {
+              lp: 'about'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiPolygonType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometricAggregateType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'polygonMember',
-            collection: true,
-            elementName: 'polygonMember',
-            typeInfo: 'GML_3_1_1.PolygonPropertyType'
+        ln: 'MultiPolygonType',
+        bti: 'GML_3_1_1.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'polygonMember',
+            col: true,
+            ti: 'GML_3_1_1.PolygonPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGeometricAggregateType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometryType',
-        propertyInfos: []
+        ln: 'AbstractGeometricAggregateType',
+        bti: 'GML_3_1_1.AbstractGeometryType'
       }, {
-        type: 'classInfo',
-        localName: 'CartesianCSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'cartesianCS',
-            elementName: 'CartesianCS',
-            typeInfo: 'GML_3_1_1.CartesianCSType'
+        ln: 'CartesianCSRefType',
+        ps: [{
+            n: 'cartesianCS',
+            en: 'CartesianCS',
+            ti: 'GML_3_1_1.CartesianCSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PointPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'point',
-            elementName: 'Point',
-            typeInfo: 'GML_3_1_1.PointType'
+        ln: 'PointPropertyType',
+        ps: [{
+            n: 'point',
+            en: 'Point',
+            ti: 'GML_3_1_1.PointType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeInstantType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeGeometricPrimitiveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timePosition',
-            elementName: 'timePosition',
-            typeInfo: 'GML_3_1_1.TimePositionType'
+        ln: 'TimeInstantType',
+        bti: 'GML_3_1_1.AbstractTimeGeometricPrimitiveType',
+        ps: [{
+            n: 'timePosition',
+            ti: 'GML_3_1_1.TimePositionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractTimeGeometricPrimitiveType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimePrimitiveType',
-        propertyInfos: [{
-            name: 'frame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'frame'
+        ln: 'AbstractTimeGeometricPrimitiveType',
+        bti: 'GML_3_1_1.AbstractTimePrimitiveType',
+        ps: [{
+            n: 'frame',
+            an: {
+              lp: 'frame'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractTimePrimitiveType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'relatedTime',
-            collection: true,
-            elementName: 'relatedTime',
-            typeInfo: 'GML_3_1_1.RelatedTimeType'
+        ln: 'AbstractTimePrimitiveType',
+        bti: 'GML_3_1_1.AbstractTimeObjectType',
+        ps: [{
+            n: 'relatedTime',
+            col: true,
+            ti: 'GML_3_1_1.RelatedTimeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractTimeObjectType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: []
+        ln: 'AbstractTimeObjectType',
+        bti: 'GML_3_1_1.AbstractGMLType'
       }, {
-        type: 'classInfo',
-        localName: 'EngineeringCRSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'usesCS',
-            elementName: 'usesCS',
-            typeInfo: 'GML_3_1_1.CoordinateSystemRefType'
+        ln: 'EngineeringCRSType',
+        bti: 'GML_3_1_1.AbstractReferenceSystemType',
+        ps: [{
+            n: 'usesCS',
+            ti: 'GML_3_1_1.CoordinateSystemRefType'
           }, {
-            type: 'element',
-            name: 'usesEngineeringDatum',
-            elementName: 'usesEngineeringDatum',
-            typeInfo: 'GML_3_1_1.EngineeringDatumRefType'
+            n: 'usesEngineeringDatum',
+            ti: 'GML_3_1_1.EngineeringDatumRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OperationParameterGroupRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'operationParameterGroup',
-            elementName: 'OperationParameterGroup',
-            typeInfo: 'GML_3_1_1.OperationParameterGroupType'
+        ln: 'OperationParameterGroupRefType',
+        ps: [{
+            n: 'operationParameterGroup',
+            en: 'OperationParameterGroup',
+            ti: 'GML_3_1_1.OperationParameterGroupType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ReferenceSystemRefType',
-        propertyInfos: [{
-            name: 'referenceSystem',
-            elementName: '_ReferenceSystem',
-            typeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-            type: 'elementRef'
+        ln: 'ReferenceSystemRefType',
+        ps: [{
+            n: 'referenceSystem',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_ReferenceSystem',
+            ti: 'GML_3_1_1.AbstractReferenceSystemType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EllipsoidalCSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'ellipsoidalCS',
-            elementName: 'EllipsoidalCS',
-            typeInfo: 'GML_3_1_1.EllipsoidalCSType'
+        ln: 'EllipsoidalCSRefType',
+        ps: [{
+            n: 'ellipsoidalCS',
+            en: 'EllipsoidalCS',
+            ti: 'GML_3_1_1.EllipsoidalCSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ParameterValueType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeneralParameterValueType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'value',
-            elementName: 'value',
-            typeInfo: 'GML_3_1_1.MeasureType'
+        ln: 'ParameterValueType',
+        bti: 'GML_3_1_1.AbstractGeneralParameterValueType',
+        ps: [{
+            n: 'value',
+            ti: 'GML_3_1_1.MeasureType'
           }, {
-            type: 'element',
-            name: 'dmsAngleValue',
-            elementName: 'dmsAngleValue',
-            typeInfo: 'GML_3_1_1.DMSAngleType'
+            n: 'dmsAngleValue',
+            ti: 'GML_3_1_1.DMSAngleType'
           }, {
-            type: 'element',
-            name: 'stringValue',
-            elementName: 'stringValue',
-            typeInfo: 'String'
+            n: 'stringValue'
           }, {
-            type: 'element',
-            name: 'integerValue',
-            elementName: 'integerValue',
-            typeInfo: 'Integer'
+            n: 'integerValue',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'booleanValue',
-            elementName: 'booleanValue',
-            typeInfo: 'Boolean'
+            n: 'booleanValue',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'valueList',
-            elementName: 'valueList',
-            typeInfo: 'GML_3_1_1.MeasureListType'
+            n: 'valueList',
+            ti: 'GML_3_1_1.MeasureListType'
           }, {
-            type: 'element',
-            name: 'integerValueList',
-            elementName: 'integerValueList',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Integer'
+            n: 'integerValueList',
+            ti: {
+              t: 'l',
+              ti: 'Integer'
             }
           }, {
-            type: 'element',
-            name: 'valueFile',
-            elementName: 'valueFile',
-            typeInfo: 'String'
+            n: 'valueFile'
           }, {
-            type: 'element',
-            name: 'valueOfParameter',
-            elementName: 'valueOfParameter',
-            typeInfo: 'GML_3_1_1.OperationParameterRefType'
+            n: 'valueOfParameter',
+            ti: 'GML_3_1_1.OperationParameterRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGeneralParameterValueType',
-        propertyInfos: []
+        ln: 'AbstractGeneralParameterValueType'
       }, {
-        type: 'classInfo',
-        localName: 'OperationMethodType',
-        baseTypeInfo: 'GML_3_1_1.OperationMethodBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'methodID',
-            collection: true,
-            elementName: 'methodID',
-            typeInfo: 'GML_3_1_1.IdentifierType'
+        ln: 'OperationMethodType',
+        bti: 'GML_3_1_1.OperationMethodBaseType',
+        ps: [{
+            n: 'methodID',
+            col: true,
+            ti: 'GML_3_1_1.IdentifierType'
           }, {
-            type: 'element',
-            name: 'remarks',
-            elementName: 'remarks',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'remarks',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'methodFormula',
-            elementName: 'methodFormula',
-            typeInfo: 'GML_3_1_1.CodeType'
+            n: 'methodFormula',
+            ti: 'GML_3_1_1.CodeType'
           }, {
-            type: 'element',
-            name: 'sourceDimensions',
-            elementName: 'sourceDimensions',
-            typeInfo: 'Integer'
+            n: 'sourceDimensions',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'targetDimensions',
-            elementName: 'targetDimensions',
-            typeInfo: 'Integer'
+            n: 'targetDimensions',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'usesParameter',
-            collection: true,
-            elementName: 'usesParameter',
-            typeInfo: 'GML_3_1_1.AbstractGeneralOperationParameterRefType'
+            n: 'usesParameter',
+            col: true,
+            ti: 'GML_3_1_1.AbstractGeneralOperationParameterRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractRingPropertyType',
-        propertyInfos: [{
-            name: 'ring',
-            elementName: '_Ring',
-            typeInfo: 'GML_3_1_1.AbstractRingType',
-            type: 'elementRef'
+        ln: 'AbstractRingPropertyType',
+        ps: [{
+            n: 'ring',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Ring',
+            ti: 'GML_3_1_1.AbstractRingType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SurfaceType',
-        baseTypeInfo: 'GML_3_1_1.AbstractSurfaceType',
-        propertyInfos: [{
-            name: 'patches',
-            elementName: 'patches',
-            typeInfo: 'GML_3_1_1.SurfacePatchArrayPropertyType',
-            type: 'elementRef'
+        ln: 'SurfaceType',
+        bti: 'GML_3_1_1.AbstractSurfaceType',
+        ps: [{
+            n: 'patches',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.SurfacePatchArrayPropertyType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractSurfaceType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometricPrimitiveType',
-        propertyInfos: []
+        ln: 'AbstractSurfaceType',
+        bti: 'GML_3_1_1.AbstractGeometricPrimitiveType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGeometricPrimitiveType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometryType',
-        propertyInfos: []
+        ln: 'AbstractGeometricPrimitiveType',
+        bti: 'GML_3_1_1.AbstractGeometryType'
       }, {
-        type: 'classInfo',
-        localName: 'MeasureType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'Double',
-            type: 'value'
+        ln: 'MeasureType',
+        ps: [{
+            n: 'value',
+            ti: 'Double',
+            t: 'v'
           }, {
-            name: 'uom',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'uom'
+            n: 'uom',
+            an: {
+              lp: 'uom'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'VerticalCSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'verticalCS',
-            elementName: 'VerticalCS',
-            typeInfo: 'GML_3_1_1.VerticalCSType'
+        ln: 'VerticalCSRefType',
+        ps: [{
+            n: 'verticalCS',
+            en: 'VerticalCS',
+            ti: 'GML_3_1_1.VerticalCSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'StringOrRefType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'StringOrRefType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeneralConversionRefType',
-        propertyInfos: [{
-            name: 'generalConversion',
-            elementName: '_GeneralConversion',
-            typeInfo: 'GML_3_1_1.AbstractGeneralConversionType',
-            type: 'elementRef'
+        ln: 'GeneralConversionRefType',
+        ps: [{
+            n: 'generalConversion',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_GeneralConversion',
+            ti: 'GML_3_1_1.AbstractGeneralConversionType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SurfacePropertyType',
-        propertyInfos: [{
-            name: 'surface',
-            elementName: '_Surface',
-            typeInfo: 'GML_3_1_1.AbstractSurfaceType',
-            type: 'elementRef'
+        ln: 'SurfacePropertyType',
+        ps: [{
+            n: 'surface',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Surface',
+            ti: 'GML_3_1_1.AbstractSurfaceType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PolyhedralSurfaceType',
-        baseTypeInfo: 'GML_3_1_1.SurfaceType',
-        propertyInfos: []
+        ln: 'PolyhedralSurfaceType',
+        bti: 'GML_3_1_1.SurfaceType'
       }, {
-        type: 'classInfo',
-        localName: 'DirectedObservationAtDistanceType',
-        baseTypeInfo: 'GML_3_1_1.DirectedObservationType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'distance',
-            elementName: 'distance',
-            typeInfo: 'GML_3_1_1.MeasureType'
+        ln: 'DirectedObservationAtDistanceType',
+        bti: 'GML_3_1_1.DirectedObservationType',
+        ps: [{
+            n: 'distance',
+            ti: 'GML_3_1_1.MeasureType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DirectedObservationType',
-        baseTypeInfo: 'GML_3_1_1.ObservationType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'direction',
-            elementName: 'direction',
-            typeInfo: 'GML_3_1_1.DirectionPropertyType'
+        ln: 'DirectedObservationType',
+        bti: 'GML_3_1_1.ObservationType',
+        ps: [{
+            n: 'direction',
+            ti: 'GML_3_1_1.DirectionPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ObservationType',
-        baseTypeInfo: 'GML_3_1_1.AbstractFeatureType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'validTime',
-            elementName: 'validTime',
-            typeInfo: 'GML_3_1_1.TimePrimitivePropertyType'
+        ln: 'ObservationType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'validTime',
+            ti: 'GML_3_1_1.TimePrimitivePropertyType'
           }, {
-            type: 'element',
-            name: 'using',
-            elementName: 'using',
-            typeInfo: 'GML_3_1_1.FeaturePropertyType'
+            n: 'using',
+            ti: 'GML_3_1_1.FeaturePropertyType'
           }, {
-            name: 'target',
-            elementName: 'target',
-            typeInfo: 'GML_3_1_1.TargetPropertyType',
-            type: 'elementRef'
+            n: 'target',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.TargetPropertyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'resultOf',
-            elementName: 'resultOf',
-            typeInfo: 'GML_3_1_1.AssociationType'
+            n: 'resultOf',
+            ti: 'GML_3_1_1.AssociationType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeocentricCRSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'geocentricCRS',
-            elementName: 'GeocentricCRS',
-            typeInfo: 'GML_3_1_1.GeocentricCRSType'
+        ln: 'GeocentricCRSRefType',
+        ps: [{
+            n: 'geocentricCRS',
+            en: 'GeocentricCRS',
+            ti: 'GML_3_1_1.GeocentricCRSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TinType',
-        baseTypeInfo: 'GML_3_1_1.TriangulatedSurfaceType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'stopLines',
-            collection: true,
-            elementName: 'stopLines',
-            typeInfo: 'GML_3_1_1.LineStringSegmentArrayPropertyType'
+        ln: 'TinType',
+        bti: 'GML_3_1_1.TriangulatedSurfaceType',
+        ps: [{
+            n: 'stopLines',
+            col: true,
+            ti: 'GML_3_1_1.LineStringSegmentArrayPropertyType'
           }, {
-            type: 'element',
-            name: 'breakLines',
-            collection: true,
-            elementName: 'breakLines',
-            typeInfo: 'GML_3_1_1.LineStringSegmentArrayPropertyType'
+            n: 'breakLines',
+            col: true,
+            ti: 'GML_3_1_1.LineStringSegmentArrayPropertyType'
           }, {
-            type: 'element',
-            name: 'maxLength',
-            elementName: 'maxLength',
-            typeInfo: 'GML_3_1_1.LengthType'
+            n: 'maxLength',
+            ti: 'GML_3_1_1.LengthType'
           }, {
-            type: 'element',
-            name: 'controlPoint',
-            elementName: 'controlPoint',
-            typeInfo: 'GML_3_1_1.TinType.ControlPoint'
+            n: 'controlPoint',
+            ti: 'GML_3_1_1.TinType.ControlPoint'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TriangulatedSurfaceType',
-        baseTypeInfo: 'GML_3_1_1.SurfaceType',
-        propertyInfos: []
+        ln: 'TriangulatedSurfaceType',
+        bti: 'GML_3_1_1.SurfaceType'
       }, {
-        type: 'classInfo',
-        localName: 'TemporalDatumRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'temporalDatum',
-            elementName: 'TemporalDatum',
-            typeInfo: 'GML_3_1_1.TemporalDatumType'
+        ln: 'TemporalDatumRefType',
+        ps: [{
+            n: 'temporalDatum',
+            en: 'TemporalDatum',
+            ti: 'GML_3_1_1.TemporalDatumType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CoordinateReferenceSystemRefType',
-        propertyInfos: [{
-            name: 'coordinateReferenceSystem',
-            elementName: '_CoordinateReferenceSystem',
-            typeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-            type: 'elementRef'
+        ln: 'CoordinateReferenceSystemRefType',
+        ps: [{
+            n: 'coordinateReferenceSystem',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_CoordinateReferenceSystem',
+            ti: 'GML_3_1_1.AbstractReferenceSystemType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LinearRingType',
-        baseTypeInfo: 'GML_3_1_1.AbstractRingType',
-        propertyInfos: [{
-            name: 'posOrPointPropertyOrPointRep',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'pointProperty',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+        ln: 'LinearRingType',
+        bti: 'GML_3_1_1.AbstractRingType',
+        ps: [{
+            n: 'posOrPointPropertyOrPointRep',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'pointProperty',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointRep',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+                en: 'pointRep',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pos',
-                typeInfo: 'GML_3_1_1.DirectPositionType'
+                en: 'pos',
+                ti: 'GML_3_1_1.DirectPositionType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }, {
-            type: 'element',
-            name: 'posList',
-            elementName: 'posList',
-            typeInfo: 'GML_3_1_1.DirectPositionListType'
+            n: 'posList',
+            ti: 'GML_3_1_1.DirectPositionListType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_3_1_1.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_3_1_1.CoordinatesType'
           }, {
-            type: 'element',
-            name: 'coord',
-            collection: true,
-            elementName: 'coord',
-            typeInfo: 'GML_3_1_1.CoordType'
+            n: 'coord',
+            col: true,
+            ti: 'GML_3_1_1.CoordType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractRingType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometryType',
-        propertyInfos: []
+        ln: 'AbstractRingType',
+        bti: 'GML_3_1_1.AbstractGeometryType'
       }, {
-        type: 'classInfo',
-        localName: 'PrimeMeridianRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'primeMeridian',
-            elementName: 'PrimeMeridian',
-            typeInfo: 'GML_3_1_1.PrimeMeridianType'
+        ln: 'PrimeMeridianRefType',
+        ps: [{
+            n: 'primeMeridian',
+            en: 'PrimeMeridian',
+            ti: 'GML_3_1_1.PrimeMeridianType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LinearCSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'linearCS',
-            elementName: 'LinearCS',
-            typeInfo: 'GML_3_1_1.LinearCSType'
+        ln: 'LinearCSRefType',
+        ps: [{
+            n: 'linearCS',
+            en: 'LinearCS',
+            ti: 'GML_3_1_1.LinearCSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CompoundCRSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'compoundCRS',
-            elementName: 'CompoundCRS',
-            typeInfo: 'GML_3_1_1.CompoundCRSType'
+        ln: 'CompoundCRSRefType',
+        ps: [{
+            n: 'compoundCRS',
+            en: 'CompoundCRS',
+            ti: 'GML_3_1_1.CompoundCRSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeometryStyleType',
-        baseTypeInfo: 'GML_3_1_1.BaseStyleDescriptorType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'symbol',
-            elementName: 'symbol',
-            typeInfo: 'GML_3_1_1.SymbolType'
+        ln: 'GeometryStyleType',
+        bti: 'GML_3_1_1.BaseStyleDescriptorType',
+        ps: [{
+            n: 'symbol',
+            ti: 'GML_3_1_1.SymbolType'
           }, {
-            type: 'element',
-            name: 'style',
-            elementName: 'style',
-            typeInfo: 'String'
+            n: 'style'
           }, {
-            type: 'element',
-            name: 'labelStyle',
-            elementName: 'labelStyle',
-            typeInfo: 'GML_3_1_1.LabelStylePropertyType'
+            n: 'labelStyle',
+            ti: 'GML_3_1_1.LabelStylePropertyType'
           }, {
-            name: 'geometryProperty',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'geometryProperty'
+            n: 'geometryProperty',
+            an: {
+              lp: 'geometryProperty'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'geometryType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'geometryType'
+            n: 'geometryType',
+            an: {
+              lp: 'geometryType'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'VerticalCRSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'verticalCRS',
-            elementName: 'VerticalCRS',
-            typeInfo: 'GML_3_1_1.VerticalCRSType'
+        ln: 'VerticalCRSRefType',
+        ps: [{
+            n: 'verticalCRS',
+            en: 'VerticalCRS',
+            ti: 'GML_3_1_1.VerticalCRSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiCurveType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometricAggregateType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'curveMember',
-            collection: true,
-            elementName: 'curveMember',
-            typeInfo: 'GML_3_1_1.CurvePropertyType'
+        ln: 'MultiCurveType',
+        bti: 'GML_3_1_1.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'curveMember',
+            col: true,
+            ti: 'GML_3_1_1.CurvePropertyType'
           }, {
-            type: 'element',
-            name: 'curveMembers',
-            elementName: 'curveMembers',
-            typeInfo: 'GML_3_1_1.CurveArrayPropertyType'
+            n: 'curveMembers',
+            ti: 'GML_3_1_1.CurveArrayPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BezierType',
-        baseTypeInfo: 'GML_3_1_1.BSplineType',
-        propertyInfos: []
+        ln: 'BezierType',
+        bti: 'GML_3_1_1.BSplineType'
       }, {
-        type: 'classInfo',
-        localName: 'BSplineType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveSegmentType',
-        propertyInfos: [{
-            name: 'posOrPointPropertyOrPointRep',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'pointProperty',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+        ln: 'BSplineType',
+        bti: 'GML_3_1_1.AbstractCurveSegmentType',
+        ps: [{
+            n: 'posOrPointPropertyOrPointRep',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'pointProperty',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointRep',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+                en: 'pointRep',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pos',
-                typeInfo: 'GML_3_1_1.DirectPositionType'
+                en: 'pos',
+                ti: 'GML_3_1_1.DirectPositionType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }, {
-            type: 'element',
-            name: 'posList',
-            elementName: 'posList',
-            typeInfo: 'GML_3_1_1.DirectPositionListType'
+            n: 'posList',
+            ti: 'GML_3_1_1.DirectPositionListType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_3_1_1.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_3_1_1.CoordinatesType'
           }, {
-            type: 'element',
-            name: 'degree',
-            elementName: 'degree',
-            typeInfo: 'Integer'
+            n: 'degree',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'knot',
-            collection: true,
-            elementName: 'knot',
-            typeInfo: 'GML_3_1_1.KnotPropertyType'
+            n: 'knot',
+            col: true,
+            ti: 'GML_3_1_1.KnotPropertyType'
           }, {
-            name: 'interpolation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'interpolation'
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'isPolynomial',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'isPolynomial'
+            n: 'isPolynomial',
+            ti: 'Boolean',
+            an: {
+              lp: 'isPolynomial'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'knotType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'knotType'
+            n: 'knotType',
+            an: {
+              lp: 'knotType'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EllipsoidalCSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateSystemType',
-        propertyInfos: []
+        ln: 'EllipsoidalCSType',
+        bti: 'GML_3_1_1.AbstractCoordinateSystemType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractCoordinateSystemType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateSystemBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'csID',
-            collection: true,
-            elementName: 'csID',
-            typeInfo: 'GML_3_1_1.IdentifierType'
+        ln: 'AbstractCoordinateSystemType',
+        bti: 'GML_3_1_1.AbstractCoordinateSystemBaseType',
+        ps: [{
+            n: 'csID',
+            col: true,
+            ti: 'GML_3_1_1.IdentifierType'
           }, {
-            type: 'element',
-            name: 'remarks',
-            elementName: 'remarks',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'remarks',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'usesAxis',
-            collection: true,
-            elementName: 'usesAxis',
-            typeInfo: 'GML_3_1_1.CoordinateSystemAxisRefType'
+            n: 'usesAxis',
+            col: true,
+            ti: 'GML_3_1_1.CoordinateSystemAxisRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ClothoidType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveSegmentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'refLocation',
-            elementName: 'refLocation',
-            typeInfo: 'GML_3_1_1.ClothoidType.RefLocation'
+        ln: 'ClothoidType',
+        bti: 'GML_3_1_1.AbstractCurveSegmentType',
+        ps: [{
+            n: 'refLocation',
+            ti: 'GML_3_1_1.ClothoidType.RefLocation'
           }, {
-            type: 'element',
-            name: 'scaleFactor',
-            elementName: 'scaleFactor',
-            typeInfo: 'Decimal'
+            n: 'scaleFactor',
+            ti: 'Decimal'
           }, {
-            type: 'element',
-            name: 'startParameter',
-            elementName: 'startParameter',
-            typeInfo: 'Double'
+            n: 'startParameter',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'endParameter',
-            elementName: 'endParameter',
-            typeInfo: 'Double'
+            n: 'endParameter',
+            ti: 'Double'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CircleType',
-        baseTypeInfo: 'GML_3_1_1.ArcType',
-        propertyInfos: []
+        ln: 'CircleType',
+        bti: 'GML_3_1_1.ArcType'
       }, {
-        type: 'classInfo',
-        localName: 'ArcType',
-        baseTypeInfo: 'GML_3_1_1.ArcStringType',
-        propertyInfos: []
+        ln: 'ArcType',
+        bti: 'GML_3_1_1.ArcStringType'
       }, {
-        type: 'classInfo',
-        localName: 'BoundingShapeType',
-        propertyInfos: [{
-            name: 'envelope',
-            elementName: 'Envelope',
-            typeInfo: 'GML_3_1_1.EnvelopeType',
-            type: 'elementRef'
+        ln: 'BoundingShapeType',
+        ps: [{
+            n: 'envelope',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'Envelope',
+            ti: 'GML_3_1_1.EnvelopeType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: '_null',
-            elementName: 'Null',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: '_null',
+            en: 'Null',
+            ti: {
+              t: 'l'
             }
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ObliqueCartesianCSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'obliqueCartesianCS',
-            elementName: 'ObliqueCartesianCS',
-            typeInfo: 'GML_3_1_1.ObliqueCartesianCSType'
+        ln: 'ObliqueCartesianCSRefType',
+        ps: [{
+            n: 'obliqueCartesianCS',
+            en: 'ObliqueCartesianCS',
+            ti: 'GML_3_1_1.ObliqueCartesianCSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GridCoverageType',
-        baseTypeInfo: 'GML_3_1_1.AbstractDiscreteCoverageType',
-        propertyInfos: []
+        ln: 'GridCoverageType',
+        bti: 'GML_3_1_1.AbstractDiscreteCoverageType'
       }, {
-        type: 'classInfo',
-        localName: 'EngineeringCRSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'engineeringCRS',
-            elementName: 'EngineeringCRS',
-            typeInfo: 'GML_3_1_1.EngineeringCRSType'
+        ln: 'EngineeringCRSRefType',
+        ps: [{
+            n: 'engineeringCRS',
+            en: 'EngineeringCRS',
+            ti: 'GML_3_1_1.EngineeringCRSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MovingObjectStatusType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeSliceType',
-        propertyInfos: [{
-            name: 'location',
-            elementName: 'location',
-            typeInfo: 'GML_3_1_1.LocationPropertyType',
-            type: 'elementRef'
+        ln: 'MovingObjectStatusType',
+        bti: 'GML_3_1_1.AbstractTimeSliceType',
+        ps: [{
+            n: 'location',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.LocationPropertyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'speed',
-            elementName: 'speed',
-            typeInfo: 'GML_3_1_1.MeasureType'
+            n: 'speed',
+            ti: 'GML_3_1_1.MeasureType'
           }, {
-            type: 'element',
-            name: 'bearing',
-            elementName: 'bearing',
-            typeInfo: 'GML_3_1_1.DirectionPropertyType'
+            n: 'bearing',
+            ti: 'GML_3_1_1.DirectionPropertyType'
           }, {
-            type: 'element',
-            name: 'acceleration',
-            elementName: 'acceleration',
-            typeInfo: 'GML_3_1_1.MeasureType'
+            n: 'acceleration',
+            ti: 'GML_3_1_1.MeasureType'
           }, {
-            type: 'element',
-            name: 'elevation',
-            elementName: 'elevation',
-            typeInfo: 'GML_3_1_1.MeasureType'
+            n: 'elevation',
+            ti: 'GML_3_1_1.MeasureType'
           }, {
-            type: 'element',
-            name: 'status',
-            elementName: 'status',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'status',
+            ti: 'GML_3_1_1.StringOrRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractTimeSliceType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'validTime',
-            elementName: 'validTime',
-            typeInfo: 'GML_3_1_1.TimePrimitivePropertyType'
+        ln: 'AbstractTimeSliceType',
+        bti: 'GML_3_1_1.AbstractGMLType',
+        ps: [{
+            n: 'validTime',
+            ti: 'GML_3_1_1.TimePrimitivePropertyType'
           }, {
-            type: 'element',
-            name: 'dataSource',
-            elementName: 'dataSource',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'dataSource',
+            ti: 'GML_3_1_1.StringOrRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TopoVolumeType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTopologyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'directedTopoSolid',
-            collection: true,
-            elementName: 'directedTopoSolid',
-            typeInfo: 'GML_3_1_1.DirectedTopoSolidPropertyType'
+        ln: 'TopoVolumeType',
+        bti: 'GML_3_1_1.AbstractTopologyType',
+        ps: [{
+            n: 'directedTopoSolid',
+            col: true,
+            ti: 'GML_3_1_1.DirectedTopoSolidPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ImageDatumType',
-        baseTypeInfo: 'GML_3_1_1.AbstractDatumType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'pixelInCell',
-            elementName: 'pixelInCell',
-            typeInfo: 'GML_3_1_1.PixelInCellType'
+        ln: 'ImageDatumType',
+        bti: 'GML_3_1_1.AbstractDatumType',
+        ps: [{
+            n: 'pixelInCell',
+            ti: 'GML_3_1_1.PixelInCellType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractDatumType',
-        baseTypeInfo: 'GML_3_1_1.AbstractDatumBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'datumID',
-            collection: true,
-            elementName: 'datumID',
-            typeInfo: 'GML_3_1_1.IdentifierType'
+        ln: 'AbstractDatumType',
+        bti: 'GML_3_1_1.AbstractDatumBaseType',
+        ps: [{
+            n: 'datumID',
+            col: true,
+            ti: 'GML_3_1_1.IdentifierType'
           }, {
-            type: 'element',
-            name: 'remarks',
-            elementName: 'remarks',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'remarks',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'anchorPoint',
-            elementName: 'anchorPoint',
-            typeInfo: 'GML_3_1_1.CodeType'
+            n: 'anchorPoint',
+            ti: 'GML_3_1_1.CodeType'
           }, {
-            type: 'element',
-            name: 'realizationEpoch',
-            elementName: 'realizationEpoch',
-            typeInfo: 'Calendar'
+            n: 'realizationEpoch',
+            ti: 'Calendar'
           }, {
-            type: 'element',
-            name: 'validArea',
-            elementName: 'validArea',
-            typeInfo: 'GML_3_1_1.ExtentType'
+            n: 'validArea',
+            ti: 'GML_3_1_1.ExtentType'
           }, {
-            type: 'element',
-            name: 'scope',
-            elementName: 'scope',
-            typeInfo: 'String'
+            n: 'scope'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PolygonPatchArrayPropertyType',
-        baseTypeInfo: 'GML_3_1_1.SurfacePatchArrayPropertyType',
-        propertyInfos: []
+        ln: 'PolygonPatchArrayPropertyType',
+        bti: 'GML_3_1_1.SurfacePatchArrayPropertyType'
       }, {
-        type: 'classInfo',
-        localName: 'SurfacePatchArrayPropertyType',
-        propertyInfos: [{
-            name: 'surfacePatch',
-            collection: true,
-            elementName: '_SurfacePatch',
-            typeInfo: 'GML_3_1_1.AbstractSurfacePatchType',
-            type: 'elementRef'
+        ln: 'SurfacePatchArrayPropertyType',
+        ps: [{
+            n: 'surfacePatch',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_SurfacePatch',
+            ti: 'GML_3_1_1.AbstractSurfacePatchType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiCurvePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'multiCurve',
-            elementName: 'MultiCurve',
-            typeInfo: 'GML_3_1_1.MultiCurveType'
+        ln: 'MultiCurvePropertyType',
+        ps: [{
+            n: 'multiCurve',
+            en: 'MultiCurve',
+            ti: 'GML_3_1_1.MultiCurveType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiSurfaceDomainType',
-        baseTypeInfo: 'GML_3_1_1.DomainSetType',
-        propertyInfos: []
+        ln: 'MultiSurfaceDomainType',
+        bti: 'GML_3_1_1.DomainSetType'
       }, {
-        type: 'classInfo',
-        localName: 'PolygonPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'polygon',
-            elementName: 'Polygon',
-            typeInfo: 'GML_3_1_1.PolygonType'
+        ln: 'PolygonPropertyType',
+        ps: [{
+            n: 'polygon',
+            en: 'Polygon',
+            ti: 'GML_3_1_1.PolygonType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SolidPropertyType',
-        propertyInfos: [{
-            name: 'solid',
-            elementName: '_Solid',
-            typeInfo: 'GML_3_1_1.AbstractSolidType',
-            type: 'elementRef'
+        ln: 'SolidPropertyType',
+        ps: [{
+            n: 'solid',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Solid',
+            ti: 'GML_3_1_1.AbstractSolidType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LinearCSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateSystemType',
-        propertyInfos: []
+        ln: 'LinearCSType',
+        bti: 'GML_3_1_1.AbstractCoordinateSystemType'
       }, {
-        type: 'classInfo',
-        localName: 'OperationParameterRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'operationParameter',
-            elementName: 'OperationParameter',
-            typeInfo: 'GML_3_1_1.OperationParameterType'
+        ln: 'OperationParameterRefType',
+        ps: [{
+            n: 'operationParameter',
+            en: 'OperationParameter',
+            ti: 'GML_3_1_1.OperationParameterType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TemporalCRSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'usesTemporalCS',
-            elementName: 'usesTemporalCS',
-            typeInfo: 'GML_3_1_1.TemporalCSRefType'
+        ln: 'TemporalCRSType',
+        bti: 'GML_3_1_1.AbstractReferenceSystemType',
+        ps: [{
+            n: 'usesTemporalCS',
+            ti: 'GML_3_1_1.TemporalCSRefType'
           }, {
-            type: 'element',
-            name: 'usesTemporalDatum',
-            elementName: 'usesTemporalDatum',
-            typeInfo: 'GML_3_1_1.TemporalDatumRefType'
+            n: 'usesTemporalDatum',
+            ti: 'GML_3_1_1.TemporalDatumRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DirectedTopoSolidPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'topoSolid',
-            elementName: 'TopoSolid',
-            typeInfo: 'GML_3_1_1.TopoSolidType'
+        ln: 'DirectedTopoSolidPropertyType',
+        ps: [{
+            n: 'topoSolid',
+            en: 'TopoSolid',
+            ti: 'GML_3_1_1.TopoSolidType'
           }, {
-            name: 'orientation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'orientation'
+            n: 'orientation',
+            an: {
+              lp: 'orientation'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeOrdinalReferenceSystemType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeReferenceSystemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'component',
-            collection: true,
-            elementName: 'component',
-            typeInfo: 'GML_3_1_1.TimeOrdinalEraPropertyType'
+        ln: 'TimeOrdinalReferenceSystemType',
+        bti: 'GML_3_1_1.AbstractTimeReferenceSystemType',
+        ps: [{
+            n: 'component',
+            col: true,
+            ti: 'GML_3_1_1.TimeOrdinalEraPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractTimeReferenceSystemType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'domainOfValidity',
-            elementName: 'domainOfValidity',
-            typeInfo: 'String'
+        ln: 'AbstractTimeReferenceSystemType',
+        bti: 'GML_3_1_1.DefinitionType',
+        ps: [{
+            n: 'domainOfValidity'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeIntervalLengthType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'Decimal',
-            type: 'value'
+        ln: 'TimeIntervalLengthType',
+        ps: [{
+            n: 'value',
+            ti: 'Decimal',
+            t: 'v'
           }, {
-            name: 'unit',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'unit'
+            n: 'unit',
+            an: {
+              lp: 'unit'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'radix',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'radix'
+            n: 'radix',
+            ti: 'Integer',
+            an: {
+              lp: 'radix'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'factor',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'factor'
+            n: 'factor',
+            ti: 'Integer',
+            an: {
+              lp: 'factor'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeographicCRSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'usesEllipsoidalCS',
-            elementName: 'usesEllipsoidalCS',
-            typeInfo: 'GML_3_1_1.EllipsoidalCSRefType'
+        ln: 'GeographicCRSType',
+        bti: 'GML_3_1_1.AbstractReferenceSystemType',
+        ps: [{
+            n: 'usesEllipsoidalCS',
+            ti: 'GML_3_1_1.EllipsoidalCSRefType'
           }, {
-            type: 'element',
-            name: 'usesGeodeticDatum',
-            elementName: 'usesGeodeticDatum',
-            typeInfo: 'GML_3_1_1.GeodeticDatumRefType'
+            n: 'usesGeodeticDatum',
+            ti: 'GML_3_1_1.GeodeticDatumRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CircleByCenterPointType',
-        baseTypeInfo: 'GML_3_1_1.ArcByCenterPointType',
-        propertyInfos: []
+        ln: 'CircleByCenterPointType',
+        bti: 'GML_3_1_1.ArcByCenterPointType'
       }, {
-        type: 'classInfo',
-        localName: 'ArcByCenterPointType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveSegmentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'pos',
-            elementName: 'pos',
-            typeInfo: 'GML_3_1_1.DirectPositionType'
+        ln: 'ArcByCenterPointType',
+        bti: 'GML_3_1_1.AbstractCurveSegmentType',
+        ps: [{
+            n: 'pos',
+            ti: 'GML_3_1_1.DirectPositionType'
           }, {
-            type: 'element',
-            name: 'pointProperty',
-            elementName: 'pointProperty',
-            typeInfo: 'GML_3_1_1.PointPropertyType'
+            n: 'pointProperty',
+            ti: 'GML_3_1_1.PointPropertyType'
           }, {
-            type: 'element',
-            name: 'pointRep',
-            elementName: 'pointRep',
-            typeInfo: 'GML_3_1_1.PointPropertyType'
+            n: 'pointRep',
+            ti: 'GML_3_1_1.PointPropertyType'
           }, {
-            type: 'element',
-            name: 'posList',
-            elementName: 'posList',
-            typeInfo: 'GML_3_1_1.DirectPositionListType'
+            n: 'posList',
+            ti: 'GML_3_1_1.DirectPositionListType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_3_1_1.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_3_1_1.CoordinatesType'
           }, {
-            type: 'element',
-            name: 'radius',
-            elementName: 'radius',
-            typeInfo: 'GML_3_1_1.LengthType'
+            n: 'radius',
+            ti: 'GML_3_1_1.LengthType'
           }, {
-            type: 'element',
-            name: 'startAngle',
-            elementName: 'startAngle',
-            typeInfo: 'GML_3_1_1.AngleType'
+            n: 'startAngle',
+            ti: 'GML_3_1_1.AngleType'
           }, {
-            type: 'element',
-            name: 'endAngle',
-            elementName: 'endAngle',
-            typeInfo: 'GML_3_1_1.AngleType'
+            n: 'endAngle',
+            ti: 'GML_3_1_1.AngleType'
           }, {
-            name: 'interpolation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'interpolation'
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'numArc',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'numArc'
+            n: 'numArc',
+            ti: 'Integer',
+            an: {
+              lp: 'numArc'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConversionToPreferredUnitType',
-        baseTypeInfo: 'GML_3_1_1.UnitOfMeasureType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'factor',
-            elementName: 'factor',
-            typeInfo: 'Double'
+        ln: 'ConversionToPreferredUnitType',
+        bti: 'GML_3_1_1.UnitOfMeasureType',
+        ps: [{
+            n: 'factor',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'formula',
-            elementName: 'formula',
-            typeInfo: 'GML_3_1_1.FormulaType'
+            n: 'formula',
+            ti: 'GML_3_1_1.FormulaType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DerivedCRSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeneralDerivedCRSType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'derivedCRSType',
-            elementName: 'derivedCRSType',
-            typeInfo: 'GML_3_1_1.DerivedCRSTypeType'
+        ln: 'DerivedCRSType',
+        bti: 'GML_3_1_1.AbstractGeneralDerivedCRSType',
+        ps: [{
+            n: 'derivedCRSType',
+            ti: 'GML_3_1_1.DerivedCRSTypeType'
           }, {
-            type: 'element',
-            name: 'usesCS',
-            elementName: 'usesCS',
-            typeInfo: 'GML_3_1_1.CoordinateSystemRefType'
+            n: 'usesCS',
+            ti: 'GML_3_1_1.CoordinateSystemRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGeneralDerivedCRSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'baseCRS',
-            elementName: 'baseCRS',
-            typeInfo: 'GML_3_1_1.CoordinateReferenceSystemRefType'
+        ln: 'AbstractGeneralDerivedCRSType',
+        bti: 'GML_3_1_1.AbstractReferenceSystemType',
+        ps: [{
+            n: 'baseCRS',
+            ti: 'GML_3_1_1.CoordinateReferenceSystemRefType'
           }, {
-            type: 'element',
-            name: 'definedByConversion',
-            elementName: 'definedByConversion',
-            typeInfo: 'GML_3_1_1.GeneralConversionRefType'
+            n: 'definedByConversion',
+            ti: 'GML_3_1_1.GeneralConversionRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UserDefinedCSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateSystemType',
-        propertyInfos: []
+        ln: 'UserDefinedCSType',
+        bti: 'GML_3_1_1.AbstractCoordinateSystemType'
       }, {
-        type: 'classInfo',
-        localName: 'LabelStyleType',
-        baseTypeInfo: 'GML_3_1_1.BaseStyleDescriptorType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'style',
-            elementName: 'style',
-            typeInfo: 'String'
+        ln: 'LabelStyleType',
+        bti: 'GML_3_1_1.BaseStyleDescriptorType',
+        ps: [{
+            n: 'style'
           }, {
-            type: 'element',
-            name: 'label',
-            elementName: 'label',
-            typeInfo: 'GML_3_1_1.LabelType'
+            n: 'label',
+            ti: 'GML_3_1_1.LabelType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureArrayPropertyType',
-        propertyInfos: [{
-            name: 'feature',
-            collection: true,
-            elementName: '_Feature',
-            typeInfo: 'GML_3_1_1.AbstractFeatureType',
-            type: 'elementRef'
+        ln: 'FeatureArrayPropertyType',
+        ps: [{
+            n: 'feature',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Feature',
+            ti: 'GML_3_1_1.AbstractFeatureType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AssociationType',
-        propertyInfos: [{
-            name: 'object',
-            elementName: '_Object',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+        ln: 'AssociationType',
+        ps: [{
+            n: 'object',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Object',
+            ti: 'AnyType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TopoPrimitiveMemberType',
-        propertyInfos: [{
-            name: 'topoPrimitive',
-            elementName: '_TopoPrimitive',
-            typeInfo: 'GML_3_1_1.AbstractTopoPrimitiveType',
-            type: 'elementRef'
+        ln: 'TopoPrimitiveMemberType',
+        ps: [{
+            n: 'topoPrimitive',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_TopoPrimitive',
+            ti: 'GML_3_1_1.AbstractTopoPrimitiveType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiSurfacePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'multiSurface',
-            elementName: 'MultiSurface',
-            typeInfo: 'GML_3_1_1.MultiSurfaceType'
+        ln: 'MultiSurfacePropertyType',
+        ps: [{
+            n: 'multiSurface',
+            en: 'MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfaceType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CylinderType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGriddedSurfaceType',
-        propertyInfos: [{
-            name: 'horizontalCurveType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'horizontalCurveType'
+        ln: 'CylinderType',
+        bti: 'GML_3_1_1.AbstractGriddedSurfaceType',
+        ps: [{
+            n: 'horizontalCurveType',
+            an: {
+              lp: 'horizontalCurveType'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'verticalCurveType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'verticalCurveType'
+            n: 'verticalCurveType',
+            an: {
+              lp: 'verticalCurveType'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TopoSolidType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTopoPrimitiveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'directedFace',
-            collection: true,
-            elementName: 'directedFace',
-            typeInfo: 'GML_3_1_1.DirectedFacePropertyType'
+        ln: 'TopoSolidType',
+        bti: 'GML_3_1_1.AbstractTopoPrimitiveType',
+        ps: [{
+            n: 'directedFace',
+            col: true,
+            ti: 'GML_3_1_1.DirectedFacePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractTopoPrimitiveType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTopologyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'isolated',
-            collection: true,
-            elementName: 'isolated',
-            typeInfo: 'GML_3_1_1.IsolatedPropertyType'
+        ln: 'AbstractTopoPrimitiveType',
+        bti: 'GML_3_1_1.AbstractTopologyType',
+        ps: [{
+            n: 'isolated',
+            col: true,
+            ti: 'GML_3_1_1.IsolatedPropertyType'
           }, {
-            type: 'element',
-            name: 'container',
-            elementName: 'container',
-            typeInfo: 'GML_3_1_1.ContainerPropertyType'
+            n: 'container',
+            ti: 'GML_3_1_1.ContainerPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractTopologyType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: []
+        ln: 'AbstractTopologyType',
+        bti: 'GML_3_1_1.AbstractGMLType'
       }, {
-        type: 'classInfo',
-        localName: 'MultiPointPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'multiPoint',
-            elementName: 'MultiPoint',
-            typeInfo: 'GML_3_1_1.MultiPointType'
+        ln: 'MultiPointPropertyType',
+        ps: [{
+            n: 'multiPoint',
+            en: 'MultiPoint',
+            ti: 'GML_3_1_1.MultiPointType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LineStringSegmentType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveSegmentType',
-        propertyInfos: [{
-            name: 'posOrPointPropertyOrPointRep',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'pointProperty',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+        ln: 'LineStringSegmentType',
+        bti: 'GML_3_1_1.AbstractCurveSegmentType',
+        ps: [{
+            n: 'posOrPointPropertyOrPointRep',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'pointProperty',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointRep',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+                en: 'pointRep',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pos',
-                typeInfo: 'GML_3_1_1.DirectPositionType'
+                en: 'pos',
+                ti: 'GML_3_1_1.DirectPositionType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }, {
-            type: 'element',
-            name: 'posList',
-            elementName: 'posList',
-            typeInfo: 'GML_3_1_1.DirectPositionListType'
+            n: 'posList',
+            ti: 'GML_3_1_1.DirectPositionListType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_3_1_1.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_3_1_1.CoordinatesType'
           }, {
-            name: 'interpolation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'interpolation'
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AngleChoiceType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'angle',
-            elementName: 'angle',
-            typeInfo: 'GML_3_1_1.MeasureType'
+        ln: 'AngleChoiceType',
+        ps: [{
+            n: 'angle',
+            ti: 'GML_3_1_1.MeasureType'
           }, {
-            type: 'element',
-            name: 'dmsAngle',
-            elementName: 'dmsAngle',
-            typeInfo: 'GML_3_1_1.DMSAngleType'
+            n: 'dmsAngle',
+            ti: 'GML_3_1_1.DMSAngleType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TrianglePatchArrayPropertyType',
-        baseTypeInfo: 'GML_3_1_1.SurfacePatchArrayPropertyType',
-        propertyInfos: []
+        ln: 'TrianglePatchArrayPropertyType',
+        bti: 'GML_3_1_1.SurfacePatchArrayPropertyType'
       }, {
-        type: 'classInfo',
-        localName: 'CylindricalCSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'cylindricalCS',
-            elementName: 'CylindricalCS',
-            typeInfo: 'GML_3_1_1.CylindricalCSType'
+        ln: 'CylindricalCSRefType',
+        ps: [{
+            n: 'cylindricalCS',
+            en: 'CylindricalCS',
+            ti: 'GML_3_1_1.CylindricalCSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CompoundCRSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'includesCRS',
-            collection: true,
-            elementName: 'includesCRS',
-            typeInfo: 'GML_3_1_1.CoordinateReferenceSystemRefType'
+        ln: 'CompoundCRSType',
+        bti: 'GML_3_1_1.AbstractReferenceSystemType',
+        ps: [{
+            n: 'includesCRS',
+            col: true,
+            ti: 'GML_3_1_1.CoordinateReferenceSystemRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RectifiedGridDomainType',
-        baseTypeInfo: 'GML_3_1_1.DomainSetType',
-        propertyInfos: []
+        ln: 'RectifiedGridDomainType',
+        bti: 'GML_3_1_1.DomainSetType'
       }, {
-        type: 'classInfo',
-        localName: 'GeodeticDatumRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'geodeticDatum',
-            elementName: 'GeodeticDatum',
-            typeInfo: 'GML_3_1_1.GeodeticDatumType'
+        ln: 'GeodeticDatumRefType',
+        ps: [{
+            n: 'geodeticDatum',
+            en: 'GeodeticDatum',
+            ti: 'GML_3_1_1.GeodeticDatumType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CRSRefType',
-        propertyInfos: [{
-            name: 'crs',
-            elementName: '_CRS',
-            typeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-            type: 'elementRef'
+        ln: 'CRSRefType',
+        ps: [{
+            n: 'crs',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_CRS',
+            ti: 'GML_3_1_1.AbstractReferenceSystemType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SurfaceArrayPropertyType',
-        propertyInfos: [{
-            name: 'surface',
-            collection: true,
-            elementName: '_Surface',
-            typeInfo: 'GML_3_1_1.AbstractSurfaceType',
-            type: 'elementRef'
+        ln: 'SurfaceArrayPropertyType',
+        ps: [{
+            n: 'surface',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Surface',
+            ti: 'GML_3_1_1.AbstractSurfaceType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'IndirectEntryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'definitionProxy',
-            elementName: 'DefinitionProxy',
-            typeInfo: 'GML_3_1_1.DefinitionProxyType'
+        ln: 'IndirectEntryType',
+        ps: [{
+            n: 'definitionProxy',
+            en: 'DefinitionProxy',
+            ti: 'GML_3_1_1.DefinitionProxyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OperationMethodRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'operationMethod',
-            elementName: 'OperationMethod',
-            typeInfo: 'GML_3_1_1.OperationMethodType'
+        ln: 'OperationMethodRefType',
+        ps: [{
+            n: 'operationMethod',
+            en: 'OperationMethod',
+            ti: 'GML_3_1_1.OperationMethodType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UnitOfMeasureType',
-        propertyInfos: [{
-            name: 'uom',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'uom'
+        ln: 'UnitOfMeasureType',
+        ps: [{
+            n: 'uom',
+            an: {
+              lp: 'uom'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ImageCRSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'imageCRS',
-            elementName: 'ImageCRS',
-            typeInfo: 'GML_3_1_1.ImageCRSType'
+        ln: 'ImageCRSRefType',
+        ps: [{
+            n: 'imageCRS',
+            en: 'ImageCRS',
+            ti: 'GML_3_1_1.ImageCRSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CurvePropertyType',
-        propertyInfos: [{
-            name: 'curve',
-            elementName: '_Curve',
-            typeInfo: 'GML_3_1_1.AbstractCurveType',
-            type: 'elementRef'
+        ln: 'CurvePropertyType',
+        ps: [{
+            n: 'curve',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Curve',
+            ti: 'GML_3_1_1.AbstractCurveType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DirectedNodePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'node',
-            elementName: 'Node',
-            typeInfo: 'GML_3_1_1.NodeType'
+        ln: 'DirectedNodePropertyType',
+        ps: [{
+            n: 'node',
+            en: 'Node',
+            ti: 'GML_3_1_1.NodeType'
           }, {
-            name: 'orientation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'orientation'
+            n: 'orientation',
+            an: {
+              lp: 'orientation'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CoordinateSystemRefType',
-        propertyInfos: [{
-            name: 'coordinateSystem',
-            elementName: '_CoordinateSystem',
-            typeInfo: 'GML_3_1_1.AbstractCoordinateSystemType',
-            type: 'elementRef'
+        ln: 'CoordinateSystemRefType',
+        ps: [{
+            n: 'coordinateSystem',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_CoordinateSystem',
+            ti: 'GML_3_1_1.AbstractCoordinateSystemType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ImageDatumRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'imageDatum',
-            elementName: 'ImageDatum',
-            typeInfo: 'GML_3_1_1.ImageDatumType'
+        ln: 'ImageDatumRefType',
+        ps: [{
+            n: 'imageDatum',
+            en: 'ImageDatum',
+            ti: 'GML_3_1_1.ImageDatumType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiSurfaceCoverageType',
-        baseTypeInfo: 'GML_3_1_1.AbstractDiscreteCoverageType',
-        propertyInfos: []
+        ln: 'MultiSurfaceCoverageType',
+        bti: 'GML_3_1_1.AbstractDiscreteCoverageType'
       }, {
-        type: 'classInfo',
-        localName: 'BaseUnitType',
-        baseTypeInfo: 'GML_3_1_1.UnitDefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'unitsSystem',
-            elementName: 'unitsSystem',
-            typeInfo: 'GML_3_1_1.ReferenceType'
+        ln: 'BaseUnitType',
+        bti: 'GML_3_1_1.UnitDefinitionType',
+        ps: [{
+            n: 'unitsSystem',
+            ti: 'GML_3_1_1.ReferenceType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UnitDefinitionType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'quantityType',
-            elementName: 'quantityType',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+        ln: 'UnitDefinitionType',
+        bti: 'GML_3_1_1.DefinitionType',
+        ps: [{
+            n: 'quantityType',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'catalogSymbol',
-            elementName: 'catalogSymbol',
-            typeInfo: 'GML_3_1_1.CodeType'
+            n: 'catalogSymbol',
+            ti: 'GML_3_1_1.CodeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeCoordinateSystemType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeReferenceSystemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'originPosition',
-            elementName: 'originPosition',
-            typeInfo: 'GML_3_1_1.TimePositionType'
+        ln: 'TimeCoordinateSystemType',
+        bti: 'GML_3_1_1.AbstractTimeReferenceSystemType',
+        ps: [{
+            n: 'originPosition',
+            ti: 'GML_3_1_1.TimePositionType'
           }, {
-            type: 'element',
-            name: 'origin',
-            elementName: 'origin',
-            typeInfo: 'GML_3_1_1.TimeInstantPropertyType'
+            n: 'origin',
+            ti: 'GML_3_1_1.TimeInstantPropertyType'
           }, {
-            type: 'element',
-            name: 'interval',
-            elementName: 'interval',
-            typeInfo: 'GML_3_1_1.TimeIntervalLengthType'
+            n: 'interval',
+            ti: 'GML_3_1_1.TimeIntervalLengthType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CurveArrayPropertyType',
-        propertyInfos: [{
-            name: 'curve',
-            collection: true,
-            elementName: '_Curve',
-            typeInfo: 'GML_3_1_1.AbstractCurveType',
-            type: 'elementRef'
+        ln: 'CurveArrayPropertyType',
+        ps: [{
+            n: 'curve',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Curve',
+            ti: 'GML_3_1_1.AbstractCurveType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SolidArrayPropertyType',
-        propertyInfos: [{
-            name: 'solid',
-            collection: true,
-            elementName: '_Solid',
-            typeInfo: 'GML_3_1_1.AbstractSolidType',
-            type: 'elementRef'
+        ln: 'SolidArrayPropertyType',
+        ps: [{
+            n: 'solid',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Solid',
+            ti: 'GML_3_1_1.AbstractSolidType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeClockType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeReferenceSystemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'referenceEvent',
-            elementName: 'referenceEvent',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+        ln: 'TimeClockType',
+        bti: 'GML_3_1_1.AbstractTimeReferenceSystemType',
+        ps: [{
+            n: 'referenceEvent',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'referenceTime',
-            elementName: 'referenceTime',
-            typeInfo: 'Calendar'
+            n: 'referenceTime',
+            ti: 'Calendar'
           }, {
-            type: 'element',
-            name: 'utcReference',
-            elementName: 'utcReference',
-            typeInfo: 'Calendar'
+            n: 'utcReference',
+            ti: 'Calendar'
           }, {
-            type: 'element',
-            name: 'dateBasis',
-            collection: true,
-            elementName: 'dateBasis',
-            typeInfo: 'GML_3_1_1.TimeCalendarPropertyType'
+            n: 'dateBasis',
+            col: true,
+            ti: 'GML_3_1_1.TimeCalendarPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimePrimitivePropertyType',
-        propertyInfos: [{
-            name: 'timePrimitive',
-            elementName: '_TimePrimitive',
-            typeInfo: 'GML_3_1_1.AbstractTimePrimitiveType',
-            type: 'elementRef'
+        ln: 'TimePrimitivePropertyType',
+        ps: [{
+            n: 'timePrimitive',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_TimePrimitive',
+            ti: 'GML_3_1_1.AbstractTimePrimitiveType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EnvelopeType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'lowerCorner',
-            elementName: 'lowerCorner',
-            typeInfo: 'GML_3_1_1.DirectPositionType'
+        ln: 'EnvelopeType',
+        ps: [{
+            n: 'lowerCorner',
+            ti: 'GML_3_1_1.DirectPositionType'
           }, {
-            type: 'element',
-            name: 'upperCorner',
-            elementName: 'upperCorner',
-            typeInfo: 'GML_3_1_1.DirectPositionType'
+            n: 'upperCorner',
+            ti: 'GML_3_1_1.DirectPositionType'
           }, {
-            type: 'element',
-            name: 'coord',
-            collection: true,
-            elementName: 'coord',
-            typeInfo: 'GML_3_1_1.CoordType'
+            n: 'coord',
+            col: true,
+            ti: 'GML_3_1_1.CoordType'
           }, {
-            type: 'element',
-            name: 'pos',
-            collection: true,
-            elementName: 'pos',
-            typeInfo: 'GML_3_1_1.DirectPositionType'
+            n: 'pos',
+            col: true,
+            ti: 'GML_3_1_1.DirectPositionType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_3_1_1.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_3_1_1.CoordinatesType'
           }, {
-            name: 'srsName',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'srsName'
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'srsDimension',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'srsDimension'
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'axisLabels',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
             },
-            attributeName: {
-              localPart: 'axisLabels'
+            an: {
+              lp: 'axisLabels'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'uomLabels',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
             },
-            attributeName: {
-              localPart: 'uomLabels'
+            an: {
+              lp: 'uomLabels'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractTimeTopologyPrimitiveType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimePrimitiveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'complex',
-            elementName: 'complex',
-            typeInfo: 'GML_3_1_1.ReferenceType'
+        ln: 'AbstractTimeTopologyPrimitiveType',
+        bti: 'GML_3_1_1.AbstractTimePrimitiveType',
+        ps: [{
+            n: 'complex',
+            ti: 'GML_3_1_1.ReferenceType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TopoComplexMemberType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'topoComplex',
-            elementName: 'TopoComplex',
-            typeInfo: 'GML_3_1_1.TopoComplexType'
+        ln: 'TopoComplexMemberType',
+        ps: [{
+            n: 'topoComplex',
+            en: 'TopoComplex',
+            ti: 'GML_3_1_1.TopoComplexType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TopoSurfaceType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTopologyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'directedFace',
-            collection: true,
-            elementName: 'directedFace',
-            typeInfo: 'GML_3_1_1.DirectedFacePropertyType'
+        ln: 'TopoSurfaceType',
+        bti: 'GML_3_1_1.AbstractTopologyType',
+        ps: [{
+            n: 'directedFace',
+            col: true,
+            ti: 'GML_3_1_1.DirectedFacePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureStyleType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureConstraint',
-            elementName: 'featureConstraint',
-            typeInfo: 'String'
+        ln: 'FeatureStyleType',
+        bti: 'GML_3_1_1.AbstractGMLType',
+        ps: [{
+            n: 'featureConstraint'
           }, {
-            type: 'element',
-            name: 'geometryStyle',
-            collection: true,
-            elementName: 'geometryStyle',
-            typeInfo: 'GML_3_1_1.GeometryStylePropertyType'
+            n: 'geometryStyle',
+            col: true,
+            ti: 'GML_3_1_1.GeometryStylePropertyType'
           }, {
-            type: 'element',
-            name: 'topologyStyle',
-            collection: true,
-            elementName: 'topologyStyle',
-            typeInfo: 'GML_3_1_1.TopologyStylePropertyType'
+            n: 'topologyStyle',
+            col: true,
+            ti: 'GML_3_1_1.TopologyStylePropertyType'
           }, {
-            type: 'element',
-            name: 'labelStyle',
-            elementName: 'labelStyle',
-            typeInfo: 'GML_3_1_1.LabelStylePropertyType'
+            n: 'labelStyle',
+            ti: 'GML_3_1_1.LabelStylePropertyType'
           }, {
-            name: 'featureType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'featureType'
+            n: 'featureType',
+            an: {
+              lp: 'featureType'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'baseType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'baseType'
+            n: 'baseType',
+            an: {
+              lp: 'baseType'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'queryGrammar',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'queryGrammar'
+            n: 'queryGrammar',
+            an: {
+              lp: 'queryGrammar'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CurveSegmentArrayPropertyType',
-        propertyInfos: [{
-            name: 'curveSegment',
-            collection: true,
-            elementName: '_CurveSegment',
-            typeInfo: 'GML_3_1_1.AbstractCurveSegmentType',
-            type: 'elementRef'
+        ln: 'CurveSegmentArrayPropertyType',
+        ps: [{
+            n: 'curveSegment',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_CurveSegment',
+            ti: 'GML_3_1_1.AbstractCurveSegmentType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeometryStylePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'geometryStyle',
-            elementName: 'GeometryStyle',
-            typeInfo: 'GML_3_1_1.GeometryStyleType'
+        ln: 'GeometryStylePropertyType',
+        ps: [{
+            n: 'geometryStyle',
+            en: 'GeometryStyle',
+            ti: 'GML_3_1_1.GeometryStyleType'
           }, {
-            name: 'about',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'about'
+            n: 'about',
+            an: {
+              lp: 'about'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PassThroughOperationType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateOperationType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'modifiedCoordinate',
-            collection: true,
-            elementName: 'modifiedCoordinate',
-            typeInfo: 'Integer'
+        ln: 'PassThroughOperationType',
+        bti: 'GML_3_1_1.AbstractCoordinateOperationType',
+        ps: [{
+            n: 'modifiedCoordinate',
+            col: true,
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'usesOperation',
-            elementName: 'usesOperation',
-            typeInfo: 'GML_3_1_1.OperationRefType'
+            n: 'usesOperation',
+            ti: 'GML_3_1_1.OperationRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'VerticalCRSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'usesVerticalCS',
-            elementName: 'usesVerticalCS',
-            typeInfo: 'GML_3_1_1.VerticalCSRefType'
+        ln: 'VerticalCRSType',
+        bti: 'GML_3_1_1.AbstractReferenceSystemType',
+        ps: [{
+            n: 'usesVerticalCS',
+            ti: 'GML_3_1_1.VerticalCSRefType'
           }, {
-            type: 'element',
-            name: 'usesVerticalDatum',
-            elementName: 'usesVerticalDatum',
-            typeInfo: 'GML_3_1_1.VerticalDatumRefType'
+            n: 'usesVerticalDatum',
+            ti: 'GML_3_1_1.VerticalDatumRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'StyleType',
-        baseTypeInfo: 'GML_3_1_1.AbstractStyleType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureStyle',
-            collection: true,
-            elementName: 'featureStyle',
-            typeInfo: 'GML_3_1_1.FeatureStylePropertyType'
+        ln: 'StyleType',
+        bti: 'GML_3_1_1.AbstractStyleType',
+        ps: [{
+            n: 'featureStyle',
+            col: true,
+            ti: 'GML_3_1_1.FeatureStylePropertyType'
           }, {
-            type: 'element',
-            name: 'graphStyle',
-            elementName: 'graphStyle',
-            typeInfo: 'GML_3_1_1.GraphStylePropertyType'
+            n: 'graphStyle',
+            ti: 'GML_3_1_1.GraphStylePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractStyleType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: []
+        ln: 'AbstractStyleType',
+        bti: 'GML_3_1_1.AbstractGMLType'
       }, {
-        type: 'classInfo',
-        localName: 'CompositeValueType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'valueComponent',
-            collection: true,
-            elementName: 'valueComponent',
-            typeInfo: 'GML_3_1_1.ValuePropertyType'
+        ln: 'CompositeValueType',
+        bti: 'GML_3_1_1.AbstractGMLType',
+        ps: [{
+            n: 'valueComponent',
+            col: true,
+            ti: 'GML_3_1_1.ValuePropertyType'
           }, {
-            type: 'element',
-            name: 'valueComponents',
-            elementName: 'valueComponents',
-            typeInfo: 'GML_3_1_1.ValueArrayPropertyType'
+            n: 'valueComponents',
+            ti: 'GML_3_1_1.ValueArrayPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ValueArrayPropertyType',
-        propertyInfos: [{
-            name: 'value',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'Category',
-                typeInfo: 'GML_3_1_1.CodeType'
+        ln: 'ValueArrayPropertyType',
+        ps: [{
+            n: 'value',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'CompositeValue',
+                ti: 'GML_3_1_1.CompositeValueType'
               }, {
-                elementName: 'Boolean',
-                typeInfo: 'Boolean'
+                en: 'Boolean',
+                ti: 'Boolean'
               }, {
-                elementName: 'Quantity',
-                typeInfo: 'GML_3_1_1.MeasureType'
+                en: 'QuantityExtent',
+                ti: 'GML_3_1_1.QuantityExtentType'
               }, {
-                elementName: 'Count',
-                typeInfo: 'Integer'
-              }, {
-                elementName: 'CompositeValue',
-                typeInfo: 'GML_3_1_1.CompositeValueType'
-              }, {
-                elementName: 'CategoryList',
-                typeInfo: 'GML_3_1_1.CodeOrNullListType'
-              }, {
-                elementName: 'CountList',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'String'
+                en: 'CountExtent',
+                ti: {
+                  t: 'l'
                 }
               }, {
-                elementName: 'CategoryExtent',
-                typeInfo: 'GML_3_1_1.CategoryExtentType'
+                en: 'Quantity',
+                ti: 'GML_3_1_1.MeasureType'
               }, {
-                elementName: 'Null',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'String'
+                en: 'CategoryList',
+                ti: 'GML_3_1_1.CodeOrNullListType'
+              }, {
+                en: 'QuantityList',
+                ti: 'GML_3_1_1.MeasureOrNullListType'
+              }, {
+                en: 'Category',
+                ti: 'GML_3_1_1.CodeType'
+              }, {
+                en: 'CategoryExtent',
+                ti: 'GML_3_1_1.CategoryExtentType'
+              }, {
+                en: 'Null',
+                ti: {
+                  t: 'l'
                 }
               }, {
-                elementName: 'QuantityList',
-                typeInfo: 'GML_3_1_1.MeasureOrNullListType'
-              }, {
-                elementName: 'QuantityExtent',
-                typeInfo: 'GML_3_1_1.QuantityExtentType'
-              }, {
-                elementName: 'BooleanList',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'String'
+                en: 'BooleanList',
+                ti: {
+                  t: 'l'
                 }
               }, {
-                elementName: 'CountExtent',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'String'
+                en: '_Object',
+                ti: 'AnyType'
+              }, {
+                en: 'CountList',
+                ti: {
+                  t: 'l'
                 }
               }, {
-                elementName: '_Object',
-                typeInfo: 'AnyType'
+                en: 'Count',
+                ti: 'Integer'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TemporalCSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'temporalCS',
-            elementName: 'TemporalCS',
-            typeInfo: 'GML_3_1_1.TemporalCSType'
+        ln: 'TemporalCSRefType',
+        ps: [{
+            n: 'temporalCS',
+            en: 'TemporalCS',
+            ti: 'GML_3_1_1.TemporalCSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DirectedEdgePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'edge',
-            elementName: 'Edge',
-            typeInfo: 'GML_3_1_1.EdgeType'
+        ln: 'DirectedEdgePropertyType',
+        ps: [{
+            n: 'edge',
+            en: 'Edge',
+            ti: 'GML_3_1_1.EdgeType'
           }, {
-            name: 'orientation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'orientation'
+            n: 'orientation',
+            an: {
+              lp: 'orientation'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PrimeMeridianType',
-        baseTypeInfo: 'GML_3_1_1.PrimeMeridianBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'meridianID',
-            collection: true,
-            elementName: 'meridianID',
-            typeInfo: 'GML_3_1_1.IdentifierType'
+        ln: 'PrimeMeridianType',
+        bti: 'GML_3_1_1.PrimeMeridianBaseType',
+        ps: [{
+            n: 'meridianID',
+            col: true,
+            ti: 'GML_3_1_1.IdentifierType'
           }, {
-            type: 'element',
-            name: 'remarks',
-            elementName: 'remarks',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'remarks',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'greenwichLongitude',
-            elementName: 'greenwichLongitude',
-            typeInfo: 'GML_3_1_1.AngleChoiceType'
+            n: 'greenwichLongitude',
+            ti: 'GML_3_1_1.AngleChoiceType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CompositeSolidType',
-        baseTypeInfo: 'GML_3_1_1.AbstractSolidType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'solidMember',
-            collection: true,
-            elementName: 'solidMember',
-            typeInfo: 'GML_3_1_1.SolidPropertyType'
+        ln: 'CompositeSolidType',
+        bti: 'GML_3_1_1.AbstractSolidType',
+        ps: [{
+            n: 'solidMember',
+            col: true,
+            ti: 'GML_3_1_1.SolidPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractSolidType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometricPrimitiveType',
-        propertyInfos: []
+        ln: 'AbstractSolidType',
+        bti: 'GML_3_1_1.AbstractGeometricPrimitiveType'
       }, {
-        type: 'classInfo',
-        localName: 'GeodesicType',
-        baseTypeInfo: 'GML_3_1_1.GeodesicStringType',
-        propertyInfos: []
+        ln: 'GeodesicType',
+        bti: 'GML_3_1_1.GeodesicStringType'
       }, {
-        type: 'classInfo',
-        localName: 'GeodesicStringType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveSegmentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'posList',
-            elementName: 'posList',
-            typeInfo: 'GML_3_1_1.DirectPositionListType'
+        ln: 'GeodesicStringType',
+        bti: 'GML_3_1_1.AbstractCurveSegmentType',
+        ps: [{
+            n: 'posList',
+            ti: 'GML_3_1_1.DirectPositionListType'
           }, {
-            name: 'geometricPositionGroup',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'pos',
-                typeInfo: 'GML_3_1_1.DirectPositionType'
+            n: 'geometricPositionGroup',
+            col: true,
+            etis: [{
+                en: 'pos',
+                ti: 'GML_3_1_1.DirectPositionType'
               }, {
-                elementName: 'pointProperty',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+                en: 'pointProperty',
+                ti: 'GML_3_1_1.PointPropertyType'
               }],
-            type: 'elements'
+            t: 'es'
           }, {
-            name: 'interpolation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'interpolation'
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PriorityLocationPropertyType',
-        baseTypeInfo: 'GML_3_1_1.LocationPropertyType',
-        propertyInfos: [{
-            name: 'priority',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'priority'
+        ln: 'PriorityLocationPropertyType',
+        bti: 'GML_3_1_1.LocationPropertyType',
+        ps: [{
+            n: 'priority',
+            an: {
+              lp: 'priority'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LocationPropertyType',
-        propertyInfos: [{
-            name: 'geometry',
-            elementName: '_Geometry',
-            typeInfo: 'GML_3_1_1.AbstractGeometryType',
-            type: 'elementRef'
+        ln: 'LocationPropertyType',
+        ps: [{
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Geometry',
+            ti: 'GML_3_1_1.AbstractGeometryType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'locationKeyWord',
-            elementName: 'LocationKeyWord',
-            typeInfo: 'GML_3_1_1.CodeType'
+            n: 'locationKeyWord',
+            en: 'LocationKeyWord',
+            ti: 'GML_3_1_1.CodeType'
           }, {
-            type: 'element',
-            name: 'locationString',
-            elementName: 'LocationString',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'locationString',
+            en: 'LocationString',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: '_null',
-            elementName: 'Null',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: '_null',
+            en: 'Null',
+            ti: {
+              t: 'l'
             }
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DefinitionProxyType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'definitionRef',
-            elementName: 'definitionRef',
-            typeInfo: 'GML_3_1_1.ReferenceType'
+        ln: 'DefinitionProxyType',
+        bti: 'GML_3_1_1.DefinitionType',
+        ps: [{
+            n: 'definitionRef',
+            ti: 'GML_3_1_1.ReferenceType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ValueArrayType',
-        baseTypeInfo: 'GML_3_1_1.CompositeValueType',
-        propertyInfos: [{
-            name: 'codeSpace',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'codeSpace'
+        ln: 'ValueArrayType',
+        bti: 'GML_3_1_1.CompositeValueType',
+        ps: [{
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'uom',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'uom'
+            n: 'uom',
+            an: {
+              lp: 'uom'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiLineStringType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometricAggregateType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'lineStringMember',
-            collection: true,
-            elementName: 'lineStringMember',
-            typeInfo: 'GML_3_1_1.LineStringPropertyType'
+        ln: 'MultiLineStringType',
+        bti: 'GML_3_1_1.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'lineStringMember',
+            col: true,
+            ti: 'GML_3_1_1.LineStringPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TargetPropertyType',
-        propertyInfos: [{
-            name: 'feature',
-            elementName: '_Feature',
-            typeInfo: 'GML_3_1_1.AbstractFeatureType',
-            type: 'elementRef'
+        ln: 'TargetPropertyType',
+        ps: [{
+            n: 'feature',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Feature',
+            ti: 'GML_3_1_1.AbstractFeatureType',
+            t: 'er'
           }, {
-            name: 'geometry',
-            elementName: '_Geometry',
-            typeInfo: 'GML_3_1_1.AbstractGeometryType',
-            type: 'elementRef'
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Geometry',
+            ti: 'GML_3_1_1.AbstractGeometryType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DirectedFacePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'face',
-            elementName: 'Face',
-            typeInfo: 'GML_3_1_1.FaceType'
+        ln: 'DirectedFacePropertyType',
+        ps: [{
+            n: 'face',
+            en: 'Face',
+            ti: 'GML_3_1_1.FaceType'
           }, {
-            name: 'orientation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'orientation'
+            n: 'orientation',
+            an: {
+              lp: 'orientation'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DirectPositionListType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Double'
+        ln: 'DirectPositionListType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l',
+              ti: 'Double'
             },
-            type: 'value'
+            t: 'v'
           }, {
-            name: 'count',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'count'
+            n: 'count',
+            ti: 'Integer',
+            an: {
+              lp: 'count'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'srsName',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'srsName'
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'srsDimension',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'srsDimension'
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'axisLabels',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
             },
-            attributeName: {
-              localPart: 'axisLabels'
+            an: {
+              lp: 'axisLabels'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'uomLabels',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
             },
-            attributeName: {
-              localPart: 'uomLabels'
+            an: {
+              lp: 'uomLabels'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CovarianceMatrixType',
-        baseTypeInfo: 'GML_3_1_1.AbstractPositionalAccuracyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'unitOfMeasure',
-            collection: true,
-            elementName: 'unitOfMeasure',
-            typeInfo: 'GML_3_1_1.UnitOfMeasureType'
+        ln: 'CovarianceMatrixType',
+        bti: 'GML_3_1_1.AbstractPositionalAccuracyType',
+        ps: [{
+            n: 'unitOfMeasure',
+            col: true,
+            ti: 'GML_3_1_1.UnitOfMeasureType'
           }, {
-            type: 'element',
-            name: 'includesElement',
-            collection: true,
-            elementName: 'includesElement',
-            typeInfo: 'GML_3_1_1.CovarianceElementType'
+            n: 'includesElement',
+            col: true,
+            ti: 'GML_3_1_1.CovarianceElementType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractPositionalAccuracyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'measureDescription',
-            elementName: 'measureDescription',
-            typeInfo: 'GML_3_1_1.CodeType'
+        ln: 'AbstractPositionalAccuracyType',
+        ps: [{
+            n: 'measureDescription',
+            ti: 'GML_3_1_1.CodeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'VerticalCSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateSystemType',
-        propertyInfos: []
+        ln: 'VerticalCSType',
+        bti: 'GML_3_1_1.AbstractCoordinateSystemType'
       }, {
-        type: 'classInfo',
-        localName: 'ArrayAssociationType',
-        propertyInfos: [{
-            name: 'object',
-            collection: true,
-            elementName: '_Object',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+        ln: 'ArrayAssociationType',
+        ps: [{
+            n: 'object',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Object',
+            ti: 'AnyType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TemporalCSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateSystemType',
-        propertyInfos: []
+        ln: 'TemporalCSType',
+        bti: 'GML_3_1_1.AbstractCoordinateSystemType'
       }, {
-        type: 'classInfo',
-        localName: 'VerticalDatumType',
-        baseTypeInfo: 'GML_3_1_1.AbstractDatumType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'verticalDatumType',
-            elementName: 'verticalDatumType',
-            typeInfo: 'GML_3_1_1.VerticalDatumTypeType'
+        ln: 'VerticalDatumType',
+        bti: 'GML_3_1_1.AbstractDatumType',
+        ps: [{
+            n: 'verticalDatumType',
+            ti: 'GML_3_1_1.VerticalDatumTypeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConversionType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeneralConversionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'usesMethod',
-            elementName: 'usesMethod',
-            typeInfo: 'GML_3_1_1.OperationMethodRefType'
+        ln: 'ConversionType',
+        bti: 'GML_3_1_1.AbstractGeneralConversionType',
+        ps: [{
+            n: 'usesMethod',
+            ti: 'GML_3_1_1.OperationMethodRefType'
           }, {
-            type: 'element',
-            name: 'usesValue',
-            collection: true,
-            elementName: 'usesValue',
-            typeInfo: 'GML_3_1_1.ParameterValueType'
+            n: 'usesValue',
+            col: true,
+            ti: 'GML_3_1_1.ParameterValueType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGeneralConversionType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateOperationType',
-        propertyInfos: []
+        ln: 'AbstractGeneralConversionType',
+        bti: 'GML_3_1_1.AbstractCoordinateOperationType'
       }, {
-        type: 'classInfo',
-        localName: 'CoordinateSystemAxisRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'coordinateSystemAxis',
-            elementName: 'CoordinateSystemAxis',
-            typeInfo: 'GML_3_1_1.CoordinateSystemAxisType'
+        ln: 'CoordinateSystemAxisRefType',
+        ps: [{
+            n: 'coordinateSystemAxis',
+            en: 'CoordinateSystemAxis',
+            ti: 'GML_3_1_1.CoordinateSystemAxisType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiSolidType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometricAggregateType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'solidMember',
-            collection: true,
-            elementName: 'solidMember',
-            typeInfo: 'GML_3_1_1.SolidPropertyType'
+        ln: 'MultiSolidType',
+        bti: 'GML_3_1_1.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'solidMember',
+            col: true,
+            ti: 'GML_3_1_1.SolidPropertyType'
           }, {
-            type: 'element',
-            name: 'solidMembers',
-            elementName: 'solidMembers',
-            typeInfo: 'GML_3_1_1.SolidArrayPropertyType'
+            n: 'solidMembers',
+            ti: 'GML_3_1_1.SolidArrayPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'VerticalDatumTypeType',
-        baseTypeInfo: 'GML_3_1_1.CodeType',
-        propertyInfos: []
+        ln: 'VerticalDatumTypeType',
+        bti: 'GML_3_1_1.CodeType'
       }, {
-        type: 'classInfo',
-        localName: 'CylindricalCSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateSystemType',
-        propertyInfos: []
+        ln: 'CylindricalCSType',
+        bti: 'GML_3_1_1.AbstractCoordinateSystemType'
       }, {
-        type: 'classInfo',
-        localName: 'TopoPointPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'topoPoint',
-            elementName: 'TopoPoint',
-            typeInfo: 'GML_3_1_1.TopoPointType'
+        ln: 'TopoPointPropertyType',
+        ps: [{
+            n: 'topoPoint',
+            en: 'TopoPoint',
+            ti: 'GML_3_1_1.TopoPointType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FileType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'rangeParameters',
-            elementName: 'rangeParameters',
-            typeInfo: 'GML_3_1_1.RangeParametersType'
+        ln: 'FileType',
+        ps: [{
+            n: 'rangeParameters',
+            ti: 'GML_3_1_1.RangeParametersType'
           }, {
-            type: 'element',
-            name: 'fileName',
-            elementName: 'fileName',
-            typeInfo: 'String'
+            n: 'fileName'
           }, {
-            type: 'element',
-            name: 'fileStructure',
-            elementName: 'fileStructure',
-            typeInfo: 'String'
+            n: 'fileStructure'
           }, {
-            type: 'element',
-            name: 'mimeType',
-            elementName: 'mimeType',
-            typeInfo: 'String'
+            n: 'mimeType'
           }, {
-            type: 'element',
-            name: 'compression',
-            elementName: 'compression',
-            typeInfo: 'String'
+            n: 'compression'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PointArrayPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'point',
-            collection: true,
-            elementName: 'Point',
-            typeInfo: 'GML_3_1_1.PointType'
+        ln: 'PointArrayPropertyType',
+        ps: [{
+            n: 'point',
+            col: true,
+            en: 'Point',
+            ti: 'GML_3_1_1.PointType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DictionaryType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: [{
-            name: 'dictionaryEntryOrIndirectEntry',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'indirectEntry',
-                typeInfo: 'GML_3_1_1.IndirectEntryType'
+        ln: 'DictionaryType',
+        bti: 'GML_3_1_1.DefinitionType',
+        ps: [{
+            n: 'dictionaryEntryOrIndirectEntry',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'dictionaryEntry',
+                ti: 'GML_3_1_1.DictionaryEntryType'
               }, {
-                elementName: 'dictionaryEntry',
-                typeInfo: 'GML_3_1_1.DictionaryEntryType'
+                en: 'indirectEntry',
+                ti: 'GML_3_1_1.IndirectEntryType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'IndexMapType',
-        baseTypeInfo: 'GML_3_1_1.GridFunctionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'lookUpTable',
-            elementName: 'lookUpTable',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Integer'
+        ln: 'IndexMapType',
+        bti: 'GML_3_1_1.GridFunctionType',
+        ps: [{
+            n: 'lookUpTable',
+            ti: {
+              t: 'l',
+              ti: 'Integer'
             }
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GridFunctionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'sequenceRule',
-            elementName: 'sequenceRule',
-            typeInfo: 'GML_3_1_1.SequenceRuleType'
+        ln: 'GridFunctionType',
+        ps: [{
+            n: 'sequenceRule',
+            ti: 'GML_3_1_1.SequenceRuleType'
           }, {
-            type: 'element',
-            name: 'startPoint',
-            elementName: 'startPoint',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Integer'
+            n: 'startPoint',
+            ti: {
+              t: 'l',
+              ti: 'Integer'
             }
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConventionalUnitType',
-        baseTypeInfo: 'GML_3_1_1.UnitDefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'conversionToPreferredUnit',
-            elementName: 'conversionToPreferredUnit',
-            typeInfo: 'GML_3_1_1.ConversionToPreferredUnitType'
+        ln: 'ConventionalUnitType',
+        bti: 'GML_3_1_1.UnitDefinitionType',
+        ps: [{
+            n: 'conversionToPreferredUnit',
+            ti: 'GML_3_1_1.ConversionToPreferredUnitType'
           }, {
-            type: 'element',
-            name: 'roughConversionToPreferredUnit',
-            elementName: 'roughConversionToPreferredUnit',
-            typeInfo: 'GML_3_1_1.ConversionToPreferredUnitType'
+            n: 'roughConversionToPreferredUnit',
+            ti: 'GML_3_1_1.ConversionToPreferredUnitType'
           }, {
-            type: 'element',
-            name: 'derivationUnitTerm',
-            collection: true,
-            elementName: 'derivationUnitTerm',
-            typeInfo: 'GML_3_1_1.DerivationUnitTermType'
+            n: 'derivationUnitTerm',
+            col: true,
+            ti: 'GML_3_1_1.DerivationUnitTermType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MeasureOrNullListType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+        ln: 'MeasureOrNullListType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
             },
-            type: 'value'
+            t: 'v'
           }, {
-            name: 'uom',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'uom'
+            n: 'uom',
+            an: {
+              lp: 'uom'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CoordinateSystemAxisType',
-        baseTypeInfo: 'GML_3_1_1.CoordinateSystemAxisBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'axisID',
-            collection: true,
-            elementName: 'axisID',
-            typeInfo: 'GML_3_1_1.IdentifierType'
+        ln: 'CoordinateSystemAxisType',
+        bti: 'GML_3_1_1.CoordinateSystemAxisBaseType',
+        ps: [{
+            n: 'axisID',
+            col: true,
+            ti: 'GML_3_1_1.IdentifierType'
           }, {
-            type: 'element',
-            name: 'remarks',
-            elementName: 'remarks',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'remarks',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'axisAbbrev',
-            elementName: 'axisAbbrev',
-            typeInfo: 'GML_3_1_1.CodeType'
+            n: 'axisAbbrev',
+            ti: 'GML_3_1_1.CodeType'
           }, {
-            type: 'element',
-            name: 'axisDirection',
-            elementName: 'axisDirection',
-            typeInfo: 'GML_3_1_1.CodeType'
+            n: 'axisDirection',
+            ti: 'GML_3_1_1.CodeType'
           }, {
-            name: 'uom',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'uom',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'uom',
+            an: {
+              lp: 'uom',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiSolidPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'multiSolid',
-            elementName: 'MultiSolid',
-            typeInfo: 'GML_3_1_1.MultiSolidType'
+        ln: 'MultiSolidPropertyType',
+        ps: [{
+            n: 'multiSolid',
+            en: 'MultiSolid',
+            ti: 'GML_3_1_1.MultiSolidType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ReferenceType',
-        propertyInfos: [{
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        ln: 'ReferenceType',
+        ps: [{
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CovarianceElementType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'rowIndex',
-            elementName: 'rowIndex',
-            typeInfo: 'Integer'
+        ln: 'CovarianceElementType',
+        ps: [{
+            n: 'rowIndex',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'columnIndex',
-            elementName: 'columnIndex',
-            typeInfo: 'Integer'
+            n: 'columnIndex',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'covariance',
-            elementName: 'covariance',
-            typeInfo: 'Double'
+            n: 'covariance',
+            ti: 'Double'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractCurveType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometricPrimitiveType',
-        propertyInfos: []
+        ln: 'AbstractCurveType',
+        bti: 'GML_3_1_1.AbstractGeometricPrimitiveType'
       }, {
-        type: 'classInfo',
-        localName: 'QuantityExtentType',
-        baseTypeInfo: 'GML_3_1_1.MeasureOrNullListType',
-        propertyInfos: []
+        ln: 'QuantityExtentType',
+        bti: 'GML_3_1_1.MeasureOrNullListType'
       }, {
-        type: 'classInfo',
-        localName: 'TimeOrdinalEraType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'relatedTime',
-            collection: true,
-            elementName: 'relatedTime',
-            typeInfo: 'GML_3_1_1.RelatedTimeType'
+        ln: 'TimeOrdinalEraType',
+        bti: 'GML_3_1_1.DefinitionType',
+        ps: [{
+            n: 'relatedTime',
+            col: true,
+            ti: 'GML_3_1_1.RelatedTimeType'
           }, {
-            type: 'element',
-            name: 'start',
-            elementName: 'start',
-            typeInfo: 'GML_3_1_1.TimeNodePropertyType'
+            n: 'start',
+            ti: 'GML_3_1_1.TimeNodePropertyType'
           }, {
-            type: 'element',
-            name: 'end',
-            elementName: 'end',
-            typeInfo: 'GML_3_1_1.TimeNodePropertyType'
+            n: 'end',
+            ti: 'GML_3_1_1.TimeNodePropertyType'
           }, {
-            type: 'element',
-            name: 'extent',
-            elementName: 'extent',
-            typeInfo: 'GML_3_1_1.TimePeriodPropertyType'
+            n: 'extent',
+            ti: 'GML_3_1_1.TimePeriodPropertyType'
           }, {
-            type: 'element',
-            name: 'member',
-            collection: true,
-            elementName: 'member',
-            typeInfo: 'GML_3_1_1.TimeOrdinalEraPropertyType'
+            n: 'member',
+            col: true,
+            ti: 'GML_3_1_1.TimeOrdinalEraPropertyType'
           }, {
-            type: 'element',
-            name: 'group',
-            elementName: 'group',
-            typeInfo: 'GML_3_1_1.ReferenceType'
+            n: 'group',
+            ti: 'GML_3_1_1.ReferenceType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimePeriodType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeGeometricPrimitiveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'beginPosition',
-            elementName: 'beginPosition',
-            typeInfo: 'GML_3_1_1.TimePositionType'
+        ln: 'TimePeriodType',
+        bti: 'GML_3_1_1.AbstractTimeGeometricPrimitiveType',
+        ps: [{
+            n: 'beginPosition',
+            ti: 'GML_3_1_1.TimePositionType'
           }, {
-            type: 'element',
-            name: 'begin',
-            elementName: 'begin',
-            typeInfo: 'GML_3_1_1.TimeInstantPropertyType'
+            n: 'begin',
+            ti: 'GML_3_1_1.TimeInstantPropertyType'
           }, {
-            type: 'element',
-            name: 'endPosition',
-            elementName: 'endPosition',
-            typeInfo: 'GML_3_1_1.TimePositionType'
+            n: 'endPosition',
+            ti: 'GML_3_1_1.TimePositionType'
           }, {
-            type: 'element',
-            name: 'end',
-            elementName: 'end',
-            typeInfo: 'GML_3_1_1.TimeInstantPropertyType'
+            n: 'end',
+            ti: 'GML_3_1_1.TimeInstantPropertyType'
           }, {
-            type: 'element',
-            name: 'duration',
-            elementName: 'duration',
-            typeInfo: 'String'
+            n: 'duration'
           }, {
-            type: 'element',
-            name: 'timeInterval',
-            elementName: 'timeInterval',
-            typeInfo: 'GML_3_1_1.TimeIntervalLengthType'
+            n: 'timeInterval',
+            ti: 'GML_3_1_1.TimeIntervalLengthType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RelativeInternalPositionalAccuracyType',
-        baseTypeInfo: 'GML_3_1_1.AbstractPositionalAccuracyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'result',
-            elementName: 'result',
-            typeInfo: 'GML_3_1_1.MeasureType'
+        ln: 'RelativeInternalPositionalAccuracyType',
+        bti: 'GML_3_1_1.AbstractPositionalAccuracyType',
+        ps: [{
+            n: 'result',
+            ti: 'GML_3_1_1.MeasureType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DirectionPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'directionVector',
-            elementName: 'DirectionVector',
-            typeInfo: 'GML_3_1_1.DirectionVectorType'
+        ln: 'DirectionPropertyType',
+        ps: [{
+            n: 'directionVector',
+            en: 'DirectionVector',
+            ti: 'GML_3_1_1.DirectionVectorType'
           }, {
-            type: 'element',
-            name: 'compassPoint',
-            elementName: 'CompassPoint',
-            typeInfo: 'String'
+            n: 'compassPoint',
+            en: 'CompassPoint'
           }, {
-            type: 'element',
-            name: 'directionKeyword',
-            elementName: 'DirectionKeyword',
-            typeInfo: 'GML_3_1_1.CodeType'
+            n: 'directionKeyword',
+            en: 'DirectionKeyword',
+            ti: 'GML_3_1_1.CodeType'
           }, {
-            type: 'element',
-            name: 'directionString',
-            elementName: 'DirectionString',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'directionString',
+            en: 'DirectionString',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EngineeringDatumRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'engineeringDatum',
-            elementName: 'EngineeringDatum',
-            typeInfo: 'GML_3_1_1.EngineeringDatumType'
+        ln: 'EngineeringDatumRefType',
+        ps: [{
+            n: 'engineeringDatum',
+            en: 'EngineeringDatum',
+            ti: 'GML_3_1_1.EngineeringDatumType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OperationParameterGroupType',
-        baseTypeInfo: 'GML_3_1_1.OperationParameterGroupBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'groupID',
-            collection: true,
-            elementName: 'groupID',
-            typeInfo: 'GML_3_1_1.IdentifierType'
+        ln: 'OperationParameterGroupType',
+        bti: 'GML_3_1_1.OperationParameterGroupBaseType',
+        ps: [{
+            n: 'groupID',
+            col: true,
+            ti: 'GML_3_1_1.IdentifierType'
           }, {
-            type: 'element',
-            name: 'remarks',
-            elementName: 'remarks',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'remarks',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'maximumOccurs',
-            elementName: 'maximumOccurs',
-            typeInfo: 'Integer'
+            n: 'maximumOccurs',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'includesParameter',
-            collection: true,
-            elementName: 'includesParameter',
-            typeInfo: 'GML_3_1_1.AbstractGeneralOperationParameterRefType'
+            n: 'includesParameter',
+            col: true,
+            ti: 'GML_3_1_1.AbstractGeneralOperationParameterRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGeneralOperationParameterType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'minimumOccurs',
-            elementName: 'minimumOccurs',
-            typeInfo: 'Integer'
+        ln: 'AbstractGeneralOperationParameterType',
+        bti: 'GML_3_1_1.DefinitionType',
+        ps: [{
+            n: 'minimumOccurs',
+            ti: 'Integer'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PointType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometricPrimitiveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'pos',
-            elementName: 'pos',
-            typeInfo: 'GML_3_1_1.DirectPositionType'
+        ln: 'PointType',
+        bti: 'GML_3_1_1.AbstractGeometricPrimitiveType',
+        ps: [{
+            n: 'pos',
+            ti: 'GML_3_1_1.DirectPositionType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_3_1_1.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_3_1_1.CoordinatesType'
           }, {
-            type: 'element',
-            name: 'coord',
-            elementName: 'coord',
-            typeInfo: 'GML_3_1_1.CoordType'
+            n: 'coord',
+            ti: 'GML_3_1_1.CoordType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ArrayType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'members',
-            elementName: 'members',
-            typeInfo: 'GML_3_1_1.ArrayAssociationType'
+        ln: 'ArrayType',
+        bti: 'GML_3_1_1.AbstractGMLType',
+        ps: [{
+            n: 'members',
+            ti: 'GML_3_1_1.ArrayAssociationType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CodeOrNullListType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+        ln: 'CodeOrNullListType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
             },
-            type: 'value'
+            t: 'v'
           }, {
-            name: 'codeSpace',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'codeSpace'
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SingleOperationRefType',
-        propertyInfos: [{
-            name: 'singleOperation',
-            elementName: '_SingleOperation',
-            typeInfo: 'GML_3_1_1.AbstractCoordinateOperationType',
-            type: 'elementRef'
+        ln: 'SingleOperationRefType',
+        ps: [{
+            n: 'singleOperation',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_SingleOperation',
+            ti: 'GML_3_1_1.AbstractCoordinateOperationType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiGeometryType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometricAggregateType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'geometryMember',
-            collection: true,
-            elementName: 'geometryMember',
-            typeInfo: 'GML_3_1_1.GeometryPropertyType'
+        ln: 'MultiGeometryType',
+        bti: 'GML_3_1_1.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'geometryMember',
+            col: true,
+            ti: 'GML_3_1_1.GeometryPropertyType'
           }, {
-            type: 'element',
-            name: 'geometryMembers',
-            elementName: 'geometryMembers',
-            typeInfo: 'GML_3_1_1.GeometryArrayPropertyType'
+            n: 'geometryMembers',
+            ti: 'GML_3_1_1.GeometryArrayPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EdgeType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTopoPrimitiveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'directedNode',
-            collection: true,
-            elementName: 'directedNode',
-            typeInfo: 'GML_3_1_1.DirectedNodePropertyType'
+        ln: 'EdgeType',
+        bti: 'GML_3_1_1.AbstractTopoPrimitiveType',
+        ps: [{
+            n: 'directedNode',
+            col: true,
+            ti: 'GML_3_1_1.DirectedNodePropertyType'
           }, {
-            type: 'element',
-            name: 'directedFace',
-            collection: true,
-            elementName: 'directedFace',
-            typeInfo: 'GML_3_1_1.DirectedFacePropertyType'
+            n: 'directedFace',
+            col: true,
+            ti: 'GML_3_1_1.DirectedFacePropertyType'
           }, {
-            type: 'element',
-            name: 'curveProperty',
-            elementName: 'curveProperty',
-            typeInfo: 'GML_3_1_1.CurvePropertyType'
+            n: 'curveProperty',
+            ti: 'GML_3_1_1.CurvePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'VerticalDatumRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'verticalDatum',
-            elementName: 'VerticalDatum',
-            typeInfo: 'GML_3_1_1.VerticalDatumType'
+        ln: 'VerticalDatumRefType',
+        ps: [{
+            n: 'verticalDatum',
+            en: 'VerticalDatum',
+            ti: 'GML_3_1_1.VerticalDatumType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConcatenatedOperationRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'concatenatedOperation',
-            elementName: 'ConcatenatedOperation',
-            typeInfo: 'GML_3_1_1.ConcatenatedOperationType'
+        ln: 'ConcatenatedOperationRefType',
+        ps: [{
+            n: 'concatenatedOperation',
+            en: 'ConcatenatedOperation',
+            ti: 'GML_3_1_1.ConcatenatedOperationType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OperationRefType',
-        propertyInfos: [{
-            name: 'operation',
-            elementName: '_Operation',
-            typeInfo: 'GML_3_1_1.AbstractCoordinateOperationType',
-            type: 'elementRef'
+        ln: 'OperationRefType',
+        ps: [{
+            n: 'operation',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Operation',
+            ti: 'GML_3_1_1.AbstractCoordinateOperationType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'NodeType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTopoPrimitiveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'directedEdge',
-            collection: true,
-            elementName: 'directedEdge',
-            typeInfo: 'GML_3_1_1.DirectedEdgePropertyType'
+        ln: 'NodeType',
+        bti: 'GML_3_1_1.AbstractTopoPrimitiveType',
+        ps: [{
+            n: 'directedEdge',
+            col: true,
+            ti: 'GML_3_1_1.DirectedEdgePropertyType'
           }, {
-            type: 'element',
-            name: 'pointProperty',
-            elementName: 'pointProperty',
-            typeInfo: 'GML_3_1_1.PointPropertyType'
+            n: 'pointProperty',
+            ti: 'GML_3_1_1.PointPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OffsetCurveType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveSegmentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'offsetBase',
-            elementName: 'offsetBase',
-            typeInfo: 'GML_3_1_1.CurvePropertyType'
+        ln: 'OffsetCurveType',
+        bti: 'GML_3_1_1.AbstractCurveSegmentType',
+        ps: [{
+            n: 'offsetBase',
+            ti: 'GML_3_1_1.CurvePropertyType'
           }, {
-            type: 'element',
-            name: 'distance',
-            elementName: 'distance',
-            typeInfo: 'GML_3_1_1.LengthType'
+            n: 'distance',
+            ti: 'GML_3_1_1.LengthType'
           }, {
-            type: 'element',
-            name: 'refDirection',
-            elementName: 'refDirection',
-            typeInfo: 'GML_3_1_1.VectorType'
+            n: 'refDirection',
+            ti: 'GML_3_1_1.VectorType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ValuePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: '_boolean',
-            elementName: 'Boolean',
-            typeInfo: 'Boolean'
+        ln: 'ValuePropertyType',
+        ps: [{
+            n: '_boolean',
+            en: 'Boolean',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'category',
-            elementName: 'Category',
-            typeInfo: 'GML_3_1_1.CodeType'
+            n: 'category',
+            en: 'Category',
+            ti: 'GML_3_1_1.CodeType'
           }, {
-            type: 'element',
-            name: 'quantity',
-            elementName: 'Quantity',
-            typeInfo: 'GML_3_1_1.MeasureType'
+            n: 'quantity',
+            en: 'Quantity',
+            ti: 'GML_3_1_1.MeasureType'
           }, {
-            type: 'element',
-            name: 'count',
-            elementName: 'Count',
-            typeInfo: 'Integer'
+            n: 'count',
+            en: 'Count',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'booleanList',
-            elementName: 'BooleanList',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'booleanList',
+            en: 'BooleanList',
+            ti: {
+              t: 'l'
             }
           }, {
-            type: 'element',
-            name: 'categoryList',
-            elementName: 'CategoryList',
-            typeInfo: 'GML_3_1_1.CodeOrNullListType'
+            n: 'categoryList',
+            en: 'CategoryList',
+            ti: 'GML_3_1_1.CodeOrNullListType'
           }, {
-            type: 'element',
-            name: 'quantityList',
-            elementName: 'QuantityList',
-            typeInfo: 'GML_3_1_1.MeasureOrNullListType'
+            n: 'quantityList',
+            en: 'QuantityList',
+            ti: 'GML_3_1_1.MeasureOrNullListType'
           }, {
-            type: 'element',
-            name: 'countList',
-            elementName: 'CountList',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'countList',
+            en: 'CountList',
+            ti: {
+              t: 'l'
             }
           }, {
-            type: 'element',
-            name: 'categoryExtent',
-            elementName: 'CategoryExtent',
-            typeInfo: 'GML_3_1_1.CategoryExtentType'
+            n: 'categoryExtent',
+            en: 'CategoryExtent',
+            ti: 'GML_3_1_1.CategoryExtentType'
           }, {
-            type: 'element',
-            name: 'quantityExtent',
-            elementName: 'QuantityExtent',
-            typeInfo: 'GML_3_1_1.QuantityExtentType'
+            n: 'quantityExtent',
+            en: 'QuantityExtent',
+            ti: 'GML_3_1_1.QuantityExtentType'
           }, {
-            type: 'element',
-            name: 'countExtent',
-            elementName: 'CountExtent',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'countExtent',
+            en: 'CountExtent',
+            ti: {
+              t: 'l'
             }
           }, {
-            name: 'compositeValue',
-            elementName: 'CompositeValue',
-            typeInfo: 'GML_3_1_1.CompositeValueType',
-            type: 'elementRef'
+            n: 'compositeValue',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'CompositeValue',
+            ti: 'GML_3_1_1.CompositeValueType',
+            t: 'er'
           }, {
-            name: 'object',
-            elementName: '_Object',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+            n: 'object',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Object',
+            ti: 'AnyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: '_null',
-            elementName: 'Null',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: '_null',
+            en: 'Null',
+            ti: {
+              t: 'l'
             }
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LabelStylePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'labelStyle',
-            elementName: 'LabelStyle',
-            typeInfo: 'GML_3_1_1.LabelStyleType'
+        ln: 'LabelStylePropertyType',
+        ps: [{
+            n: 'labelStyle',
+            en: 'LabelStyle',
+            ti: 'GML_3_1_1.LabelStyleType'
           }, {
-            name: 'about',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'about'
+            n: 'about',
+            an: {
+              lp: 'about'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TopoComplexType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTopologyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'maximalComplex',
-            elementName: 'maximalComplex',
-            typeInfo: 'GML_3_1_1.TopoComplexMemberType'
+        ln: 'TopoComplexType',
+        bti: 'GML_3_1_1.AbstractTopologyType',
+        ps: [{
+            n: 'maximalComplex',
+            ti: 'GML_3_1_1.TopoComplexMemberType'
           }, {
-            type: 'element',
-            name: 'superComplex',
-            collection: true,
-            elementName: 'superComplex',
-            typeInfo: 'GML_3_1_1.TopoComplexMemberType'
+            n: 'superComplex',
+            col: true,
+            ti: 'GML_3_1_1.TopoComplexMemberType'
           }, {
-            type: 'element',
-            name: 'subComplex',
-            collection: true,
-            elementName: 'subComplex',
-            typeInfo: 'GML_3_1_1.TopoComplexMemberType'
+            n: 'subComplex',
+            col: true,
+            ti: 'GML_3_1_1.TopoComplexMemberType'
           }, {
-            type: 'element',
-            name: 'topoPrimitiveMember',
-            collection: true,
-            elementName: 'topoPrimitiveMember',
-            typeInfo: 'GML_3_1_1.TopoPrimitiveMemberType'
+            n: 'topoPrimitiveMember',
+            col: true,
+            ti: 'GML_3_1_1.TopoPrimitiveMemberType'
           }, {
-            type: 'element',
-            name: 'topoPrimitiveMembers',
-            elementName: 'topoPrimitiveMembers',
-            typeInfo: 'GML_3_1_1.TopoPrimitiveArrayAssociationType'
+            n: 'topoPrimitiveMembers',
+            ti: 'GML_3_1_1.TopoPrimitiveArrayAssociationType'
           }, {
-            name: 'isMaximal',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'isMaximal'
+            n: 'isMaximal',
+            ti: 'Boolean',
+            an: {
+              lp: 'isMaximal'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ParameterValueGroupType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeneralParameterValueType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'includesValue',
-            collection: true,
-            elementName: 'includesValue',
-            typeInfo: 'GML_3_1_1.AbstractGeneralParameterValueType'
+        ln: 'ParameterValueGroupType',
+        bti: 'GML_3_1_1.AbstractGeneralParameterValueType',
+        ps: [{
+            n: 'includesValue',
+            col: true,
+            ti: 'GML_3_1_1.AbstractGeneralParameterValueType'
           }, {
-            type: 'element',
-            name: 'valuesOfGroup',
-            elementName: 'valuesOfGroup',
-            typeInfo: 'GML_3_1_1.OperationParameterGroupRefType'
+            n: 'valuesOfGroup',
+            ti: 'GML_3_1_1.OperationParameterGroupRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DerivationUnitTermType',
-        baseTypeInfo: 'GML_3_1_1.UnitOfMeasureType',
-        propertyInfos: [{
-            name: 'exponent',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'exponent'
+        ln: 'DerivationUnitTermType',
+        bti: 'GML_3_1_1.UnitOfMeasureType',
+        ps: [{
+            n: 'exponent',
+            ti: 'Integer',
+            an: {
+              lp: 'exponent'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ProjectedCRSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'projectedCRS',
-            elementName: 'ProjectedCRS',
-            typeInfo: 'GML_3_1_1.ProjectedCRSType'
+        ln: 'ProjectedCRSRefType',
+        ps: [{
+            n: 'projectedCRS',
+            en: 'ProjectedCRS',
+            ti: 'GML_3_1_1.ProjectedCRSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ImageCRSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'usesCartesianCS',
-            elementName: 'usesCartesianCS',
-            typeInfo: 'GML_3_1_1.CartesianCSRefType'
+        ln: 'ImageCRSType',
+        bti: 'GML_3_1_1.AbstractReferenceSystemType',
+        ps: [{
+            n: 'usesCartesianCS',
+            ti: 'GML_3_1_1.CartesianCSRefType'
           }, {
-            type: 'element',
-            name: 'usesObliqueCartesianCS',
-            elementName: 'usesObliqueCartesianCS',
-            typeInfo: 'GML_3_1_1.ObliqueCartesianCSRefType'
+            n: 'usesObliqueCartesianCS',
+            ti: 'GML_3_1_1.ObliqueCartesianCSRefType'
           }, {
-            type: 'element',
-            name: 'usesImageDatum',
-            elementName: 'usesImageDatum',
-            typeInfo: 'GML_3_1_1.ImageDatumRefType'
+            n: 'usesImageDatum',
+            ti: 'GML_3_1_1.ImageDatumRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SecondDefiningParameterType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'inverseFlattening',
-            elementName: 'inverseFlattening',
-            typeInfo: 'GML_3_1_1.MeasureType'
+        ln: 'SecondDefiningParameterType',
+        ps: [{
+            n: 'inverseFlattening',
+            ti: 'GML_3_1_1.MeasureType'
           }, {
-            type: 'element',
-            name: 'semiMinorAxis',
-            elementName: 'semiMinorAxis',
-            typeInfo: 'GML_3_1_1.MeasureType'
+            n: 'semiMinorAxis',
+            ti: 'GML_3_1_1.MeasureType'
           }, {
-            type: 'element',
-            name: 'isSphere',
-            elementName: 'isSphere',
-            typeInfo: 'String'
+            n: 'isSphere'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiSurfaceType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometricAggregateType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'surfaceMember',
-            collection: true,
-            elementName: 'surfaceMember',
-            typeInfo: 'GML_3_1_1.SurfacePropertyType'
+        ln: 'MultiSurfaceType',
+        bti: 'GML_3_1_1.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'surfaceMember',
+            col: true,
+            ti: 'GML_3_1_1.SurfacePropertyType'
           }, {
-            type: 'element',
-            name: 'surfaceMembers',
-            elementName: 'surfaceMembers',
-            typeInfo: 'GML_3_1_1.SurfaceArrayPropertyType'
+            n: 'surfaceMembers',
+            ti: 'GML_3_1_1.SurfaceArrayPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DictionaryEntryType',
-        propertyInfos: [{
-            name: 'definition',
-            elementName: 'Definition',
-            typeInfo: 'GML_3_1_1.DefinitionType',
-            type: 'elementRef'
+        ln: 'DictionaryEntryType',
+        ps: [{
+            n: 'definition',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'Definition',
+            ti: 'GML_3_1_1.DefinitionType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeEdgeType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeTopologyPrimitiveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'start',
-            elementName: 'start',
-            typeInfo: 'GML_3_1_1.TimeNodePropertyType'
+        ln: 'TimeEdgeType',
+        bti: 'GML_3_1_1.AbstractTimeTopologyPrimitiveType',
+        ps: [{
+            n: 'start',
+            ti: 'GML_3_1_1.TimeNodePropertyType'
           }, {
-            type: 'element',
-            name: 'end',
-            elementName: 'end',
-            typeInfo: 'GML_3_1_1.TimeNodePropertyType'
+            n: 'end',
+            ti: 'GML_3_1_1.TimeNodePropertyType'
           }, {
-            type: 'element',
-            name: 'extent',
-            elementName: 'extent',
-            typeInfo: 'GML_3_1_1.TimePeriodPropertyType'
+            n: 'extent',
+            ti: 'GML_3_1_1.TimePeriodPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SolidType',
-        baseTypeInfo: 'GML_3_1_1.AbstractSolidType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'exterior',
-            elementName: 'exterior',
-            typeInfo: 'GML_3_1_1.SurfacePropertyType'
+        ln: 'SolidType',
+        bti: 'GML_3_1_1.AbstractSolidType',
+        ps: [{
+            n: 'exterior',
+            ti: 'GML_3_1_1.SurfacePropertyType'
           }, {
-            type: 'element',
-            name: 'interior',
-            collection: true,
-            elementName: 'interior',
-            typeInfo: 'GML_3_1_1.SurfacePropertyType'
+            n: 'interior',
+            col: true,
+            ti: 'GML_3_1_1.SurfacePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GraphStylePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'graphStyle',
-            elementName: 'GraphStyle',
-            typeInfo: 'GML_3_1_1.GraphStyleType'
+        ln: 'GraphStylePropertyType',
+        ps: [{
+            n: 'graphStyle',
+            en: 'GraphStyle',
+            ti: 'GML_3_1_1.GraphStyleType'
           }, {
-            name: 'about',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'about'
+            n: 'about',
+            an: {
+              lp: 'about'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeCalendarEraType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'referenceEvent',
-            elementName: 'referenceEvent',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+        ln: 'TimeCalendarEraType',
+        bti: 'GML_3_1_1.DefinitionType',
+        ps: [{
+            n: 'referenceEvent',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'referenceDate',
-            elementName: 'referenceDate',
-            typeInfo: 'Calendar'
+            n: 'referenceDate',
+            ti: 'Calendar'
           }, {
-            type: 'element',
-            name: 'julianReference',
-            elementName: 'julianReference',
-            typeInfo: 'Decimal'
+            n: 'julianReference',
+            ti: 'Decimal'
           }, {
-            type: 'element',
-            name: 'epochOfUse',
-            elementName: 'epochOfUse',
-            typeInfo: 'GML_3_1_1.TimePeriodPropertyType'
+            n: 'epochOfUse',
+            ti: 'GML_3_1_1.TimePeriodPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SphericalCSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateSystemType',
-        propertyInfos: []
+        ln: 'SphericalCSType',
+        bti: 'GML_3_1_1.AbstractCoordinateSystemType'
       }, {
-        type: 'classInfo',
-        localName: 'DirectPositionType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Double'
+        ln: 'DirectPositionType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l',
+              ti: 'Double'
             },
-            type: 'value'
+            t: 'v'
           }, {
-            name: 'srsName',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'srsName'
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'srsDimension',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'srsDimension'
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'axisLabels',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
             },
-            attributeName: {
-              localPart: 'axisLabels'
+            an: {
+              lp: 'axisLabels'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'uomLabels',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
             },
-            attributeName: {
-              localPart: 'uomLabels'
+            an: {
+              lp: 'uomLabels'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiPointCoverageType',
-        baseTypeInfo: 'GML_3_1_1.AbstractDiscreteCoverageType',
-        propertyInfos: []
+        ln: 'MultiPointCoverageType',
+        bti: 'GML_3_1_1.AbstractDiscreteCoverageType'
       }, {
-        type: 'classInfo',
-        localName: 'VectorType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Double'
+        ln: 'VectorType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l',
+              ti: 'Double'
             },
-            type: 'value'
+            t: 'v'
           }, {
-            name: 'srsName',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'srsName'
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'srsDimension',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'srsDimension'
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'axisLabels',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
             },
-            attributeName: {
-              localPart: 'axisLabels'
+            an: {
+              lp: 'axisLabels'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'uomLabels',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
             },
-            attributeName: {
-              localPart: 'uomLabels'
+            an: {
+              lp: 'uomLabels'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FaceType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTopoPrimitiveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'directedEdge',
-            collection: true,
-            elementName: 'directedEdge',
-            typeInfo: 'GML_3_1_1.DirectedEdgePropertyType'
+        ln: 'FaceType',
+        bti: 'GML_3_1_1.AbstractTopoPrimitiveType',
+        ps: [{
+            n: 'directedEdge',
+            col: true,
+            ti: 'GML_3_1_1.DirectedEdgePropertyType'
           }, {
-            type: 'element',
-            name: 'directedTopoSolid',
-            collection: true,
-            elementName: 'directedTopoSolid',
-            typeInfo: 'GML_3_1_1.DirectedTopoSolidPropertyType'
+            n: 'directedTopoSolid',
+            col: true,
+            ti: 'GML_3_1_1.DirectedTopoSolidPropertyType'
           }, {
-            type: 'element',
-            name: 'surfaceProperty',
-            elementName: 'surfaceProperty',
-            typeInfo: 'GML_3_1_1.SurfacePropertyType'
+            n: 'surfaceProperty',
+            ti: 'GML_3_1_1.SurfacePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DatumRefType',
-        propertyInfos: [{
-            name: 'datum',
-            elementName: '_Datum',
-            typeInfo: 'GML_3_1_1.AbstractDatumType',
-            type: 'elementRef'
+        ln: 'DatumRefType',
+        ps: [{
+            n: 'datum',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Datum',
+            ti: 'GML_3_1_1.AbstractDatumType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CoordinatesType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'CoordinatesType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'decimal',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'decimal'
+            n: 'decimal',
+            an: {
+              lp: 'decimal'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'cs',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'cs'
+            n: 'cs',
+            an: {
+              lp: 'cs'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'ts',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'ts'
+            n: 'ts',
+            an: {
+              lp: 'ts'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeodeticDatumType',
-        baseTypeInfo: 'GML_3_1_1.AbstractDatumType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'usesPrimeMeridian',
-            elementName: 'usesPrimeMeridian',
-            typeInfo: 'GML_3_1_1.PrimeMeridianRefType'
+        ln: 'GeodeticDatumType',
+        bti: 'GML_3_1_1.AbstractDatumType',
+        ps: [{
+            n: 'usesPrimeMeridian',
+            ti: 'GML_3_1_1.PrimeMeridianRefType'
           }, {
-            type: 'element',
-            name: 'usesEllipsoid',
-            elementName: 'usesEllipsoid',
-            typeInfo: 'GML_3_1_1.EllipsoidRefType'
+            n: 'usesEllipsoid',
+            ti: 'GML_3_1_1.EllipsoidRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RingType',
-        baseTypeInfo: 'GML_3_1_1.AbstractRingType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'curveMember',
-            collection: true,
-            elementName: 'curveMember',
-            typeInfo: 'GML_3_1_1.CurvePropertyType'
+        ln: 'RingType',
+        bti: 'GML_3_1_1.AbstractRingType',
+        ps: [{
+            n: 'curveMember',
+            col: true,
+            ti: 'GML_3_1_1.CurvePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TemporalCRSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'temporalCRS',
-            elementName: 'TemporalCRS',
-            typeInfo: 'GML_3_1_1.TemporalCRSType'
+        ln: 'TemporalCRSRefType',
+        ps: [{
+            n: 'temporalCRS',
+            en: 'TemporalCRS',
+            ti: 'GML_3_1_1.TemporalCRSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConcatenatedOperationType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateOperationType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'usesSingleOperation',
-            collection: true,
-            elementName: 'usesSingleOperation',
-            typeInfo: 'GML_3_1_1.SingleOperationRefType'
+        ln: 'ConcatenatedOperationType',
+        bti: 'GML_3_1_1.AbstractCoordinateOperationType',
+        ps: [{
+            n: 'usesSingleOperation',
+            col: true,
+            ti: 'GML_3_1_1.SingleOperationRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LineStringPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'lineString',
-            elementName: 'LineString',
-            typeInfo: 'GML_3_1_1.LineStringType'
+        ln: 'LineStringPropertyType',
+        ps: [{
+            n: 'lineString',
+            en: 'LineString',
+            ti: 'GML_3_1_1.LineStringType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TopoCurvePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'topoCurve',
-            elementName: 'TopoCurve',
-            typeInfo: 'GML_3_1_1.TopoCurveType'
+        ln: 'TopoCurvePropertyType',
+        ps: [{
+            n: 'topoCurve',
+            en: 'TopoCurve',
+            ti: 'GML_3_1_1.TopoCurveType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SymbolType',
-        propertyInfos: [{
-            name: 'any',
-            collection: true,
-            allowDom: true,
-            type: 'anyElement'
+        ln: 'SymbolType',
+        ps: [{
+            n: 'any',
+            col: true,
+            typed: false,
+            mx: false,
+            t: 'ae'
           }, {
-            name: 'symbolType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'symbolType'
+            n: 'symbolType',
+            an: {
+              lp: 'symbolType'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'transform',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'transform',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'transform',
+            an: {
+              lp: 'transform',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'about',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'about'
+            n: 'about',
+            an: {
+              lp: 'about'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiPointDomainType',
-        baseTypeInfo: 'GML_3_1_1.DomainSetType',
-        propertyInfos: []
+        ln: 'MultiPointDomainType',
+        bti: 'GML_3_1_1.DomainSetType'
       }, {
-        type: 'classInfo',
-        localName: 'TimeNodeType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeTopologyPrimitiveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'previousEdge',
-            collection: true,
-            elementName: 'previousEdge',
-            typeInfo: 'GML_3_1_1.TimeEdgePropertyType'
+        ln: 'TimeNodeType',
+        bti: 'GML_3_1_1.AbstractTimeTopologyPrimitiveType',
+        ps: [{
+            n: 'previousEdge',
+            col: true,
+            ti: 'GML_3_1_1.TimeEdgePropertyType'
           }, {
-            type: 'element',
-            name: 'nextEdge',
-            collection: true,
-            elementName: 'nextEdge',
-            typeInfo: 'GML_3_1_1.TimeEdgePropertyType'
+            n: 'nextEdge',
+            col: true,
+            ti: 'GML_3_1_1.TimeEdgePropertyType'
           }, {
-            type: 'element',
-            name: 'position',
-            elementName: 'position',
-            typeInfo: 'GML_3_1_1.TimeInstantPropertyType'
+            n: 'position',
+            ti: 'GML_3_1_1.TimeInstantPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ArcByBulgeType',
-        baseTypeInfo: 'GML_3_1_1.ArcStringByBulgeType',
-        propertyInfos: []
+        ln: 'ArcByBulgeType',
+        bti: 'GML_3_1_1.ArcStringByBulgeType'
       }, {
-        type: 'classInfo',
-        localName: 'ArcStringByBulgeType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveSegmentType',
-        propertyInfos: [{
-            name: 'posOrPointPropertyOrPointRep',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'pointProperty',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+        ln: 'ArcStringByBulgeType',
+        bti: 'GML_3_1_1.AbstractCurveSegmentType',
+        ps: [{
+            n: 'posOrPointPropertyOrPointRep',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'pointProperty',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointRep',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+                en: 'pointRep',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pos',
-                typeInfo: 'GML_3_1_1.DirectPositionType'
+                en: 'pos',
+                ti: 'GML_3_1_1.DirectPositionType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }, {
-            type: 'element',
-            name: 'posList',
-            elementName: 'posList',
-            typeInfo: 'GML_3_1_1.DirectPositionListType'
+            n: 'posList',
+            ti: 'GML_3_1_1.DirectPositionListType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_3_1_1.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_3_1_1.CoordinatesType'
           }, {
-            type: 'element',
-            name: 'bulge',
-            collection: true,
-            elementName: 'bulge',
-            typeInfo: 'Double'
+            n: 'bulge',
+            col: true,
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'normal',
-            collection: true,
-            elementName: 'normal',
-            typeInfo: 'GML_3_1_1.VectorType'
+            n: 'normal',
+            col: true,
+            ti: 'GML_3_1_1.VectorType'
           }, {
-            name: 'interpolation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'interpolation'
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'numArc',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'numArc'
+            n: 'numArc',
+            ti: 'Integer',
+            an: {
+              lp: 'numArc'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractMetaDataType',
-        propertyInfos: [{
-            name: 'content',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'AbstractMetaDataType',
+        ps: [{
+            n: 'content',
+            t: 'v'
           }, {
-            name: 'id',
-            typeInfo: 'ID',
-            attributeName: {
-              localPart: 'id',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DerivedUnitType',
-        baseTypeInfo: 'GML_3_1_1.UnitDefinitionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'derivationUnitTerm',
-            collection: true,
-            elementName: 'derivationUnitTerm',
-            typeInfo: 'GML_3_1_1.DerivationUnitTermType'
+        ln: 'DerivedUnitType',
+        bti: 'GML_3_1_1.UnitDefinitionType',
+        ps: [{
+            n: 'derivationUnitTerm',
+            col: true,
+            ti: 'GML_3_1_1.DerivationUnitTermType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EllipsoidRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'ellipsoid',
-            elementName: 'Ellipsoid',
-            typeInfo: 'GML_3_1_1.EllipsoidType'
+        ln: 'EllipsoidRefType',
+        ps: [{
+            n: 'ellipsoid',
+            en: 'Ellipsoid',
+            ti: 'GML_3_1_1.EllipsoidType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AffinePlacementType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'location',
-            elementName: 'location',
-            typeInfo: 'GML_3_1_1.DirectPositionType'
+        ln: 'AffinePlacementType',
+        ps: [{
+            n: 'location',
+            ti: 'GML_3_1_1.DirectPositionType'
           }, {
-            type: 'element',
-            name: 'refDirection',
-            collection: true,
-            elementName: 'refDirection',
-            typeInfo: 'GML_3_1_1.VectorType'
+            n: 'refDirection',
+            col: true,
+            ti: 'GML_3_1_1.VectorType'
           }, {
-            type: 'element',
-            name: 'inDimension',
-            elementName: 'inDimension',
-            typeInfo: 'Integer'
+            n: 'inDimension',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'outDimension',
-            elementName: 'outDimension',
-            typeInfo: 'Integer'
+            n: 'outDimension',
+            ti: 'Integer'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DerivedCRSTypeType',
-        baseTypeInfo: 'GML_3_1_1.CodeType',
-        propertyInfos: []
+        ln: 'DerivedCRSTypeType',
+        bti: 'GML_3_1_1.CodeType'
       }, {
-        type: 'classInfo',
-        localName: 'PolygonType',
-        baseTypeInfo: 'GML_3_1_1.AbstractSurfaceType',
-        propertyInfos: [{
-            name: 'exterior',
-            elementName: 'exterior',
-            typeInfo: 'GML_3_1_1.AbstractRingPropertyType',
-            type: 'elementRef'
+        ln: 'PolygonType',
+        bti: 'GML_3_1_1.AbstractSurfaceType',
+        ps: [{
+            n: 'exterior',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.AbstractRingPropertyType',
+            t: 'er'
           }, {
-            name: 'interior',
-            collection: true,
-            elementName: 'interior',
-            typeInfo: 'GML_3_1_1.AbstractRingPropertyType',
-            type: 'elementRef'
+            n: 'interior',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.AbstractRingPropertyType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OperationParameterType',
-        baseTypeInfo: 'GML_3_1_1.OperationParameterBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'parameterID',
-            collection: true,
-            elementName: 'parameterID',
-            typeInfo: 'GML_3_1_1.IdentifierType'
+        ln: 'OperationParameterType',
+        bti: 'GML_3_1_1.OperationParameterBaseType',
+        ps: [{
+            n: 'parameterID',
+            col: true,
+            ti: 'GML_3_1_1.IdentifierType'
           }, {
-            type: 'element',
-            name: 'remarks',
-            elementName: 'remarks',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'remarks',
+            ti: 'GML_3_1_1.StringOrRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TemporalDatumType',
-        baseTypeInfo: 'GML_3_1_1.TemporalDatumBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'origin',
-            elementName: 'origin',
-            typeInfo: 'Calendar'
+        ln: 'TemporalDatumType',
+        bti: 'GML_3_1_1.TemporalDatumBaseType',
+        ps: [{
+            n: 'origin',
+            ti: 'Calendar'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EnvelopeWithTimePeriodType',
-        baseTypeInfo: 'GML_3_1_1.EnvelopeType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timePosition',
-            collection: true,
-            elementName: 'timePosition',
-            typeInfo: 'GML_3_1_1.TimePositionType'
+        ln: 'EnvelopeWithTimePeriodType',
+        bti: 'GML_3_1_1.EnvelopeType',
+        ps: [{
+            n: 'timePosition',
+            col: true,
+            ti: 'GML_3_1_1.TimePositionType'
           }, {
-            name: 'frame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'frame'
+            n: 'frame',
+            an: {
+              lp: 'frame'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MetaDataPropertyType',
-        propertyInfos: [{
-            name: 'any',
-            allowDom: true,
-            allowTypedObject: true,
-            type: 'anyElement'
+        ln: 'MetaDataPropertyType',
+        ps: [{
+            n: 'any',
+            mx: false,
+            t: 'ae'
           }, {
-            name: 'about',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'about'
+            n: 'about',
+            an: {
+              lp: 'about'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CompositeSurfaceType',
-        baseTypeInfo: 'GML_3_1_1.AbstractSurfaceType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'surfaceMember',
-            collection: true,
-            elementName: 'surfaceMember',
-            typeInfo: 'GML_3_1_1.SurfacePropertyType'
+        ln: 'CompositeSurfaceType',
+        bti: 'GML_3_1_1.AbstractSurfaceType',
+        ps: [{
+            n: 'surfaceMember',
+            col: true,
+            ti: 'GML_3_1_1.SurfacePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ObliqueCartesianCSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateSystemType',
-        propertyInfos: []
+        ln: 'ObliqueCartesianCSType',
+        bti: 'GML_3_1_1.AbstractCoordinateSystemType'
       }, {
-        type: 'classInfo',
-        localName: 'DataBlockType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'rangeParameters',
-            elementName: 'rangeParameters',
-            typeInfo: 'GML_3_1_1.RangeParametersType'
+        ln: 'DataBlockType',
+        ps: [{
+            n: 'rangeParameters',
+            ti: 'GML_3_1_1.RangeParametersType'
           }, {
-            type: 'element',
-            name: 'tupleList',
-            elementName: 'tupleList',
-            typeInfo: 'GML_3_1_1.CoordinatesType'
+            n: 'tupleList',
+            ti: 'GML_3_1_1.CoordinatesType'
           }, {
-            type: 'element',
-            name: 'doubleOrNullTupleList',
-            elementName: 'doubleOrNullTupleList',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'doubleOrNullTupleList',
+            ti: {
+              t: 'l'
             }
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeneralTransformationRefType',
-        propertyInfos: [{
-            name: 'generalTransformation',
-            elementName: '_GeneralTransformation',
-            typeInfo: 'GML_3_1_1.AbstractGeneralTransformationType',
-            type: 'elementRef'
+        ln: 'GeneralTransformationRefType',
+        ps: [{
+            n: 'generalTransformation',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_GeneralTransformation',
+            ti: 'GML_3_1_1.AbstractGeneralTransformationType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RectifiedGridCoverageType',
-        baseTypeInfo: 'GML_3_1_1.AbstractDiscreteCoverageType',
-        propertyInfos: []
+        ln: 'RectifiedGridCoverageType',
+        bti: 'GML_3_1_1.AbstractDiscreteCoverageType'
       }, {
-        type: 'classInfo',
-        localName: 'TimeCalendarType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeReferenceSystemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'referenceFrame',
-            collection: true,
-            elementName: 'referenceFrame',
-            typeInfo: 'GML_3_1_1.TimeCalendarEraPropertyType'
+        ln: 'TimeCalendarType',
+        bti: 'GML_3_1_1.AbstractTimeReferenceSystemType',
+        ps: [{
+            n: 'referenceFrame',
+            col: true,
+            ti: 'GML_3_1_1.TimeCalendarEraPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeTopologyComplexType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeComplexType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'primitive',
-            collection: true,
-            elementName: 'primitive',
-            typeInfo: 'GML_3_1_1.TimeTopologyPrimitivePropertyType'
+        ln: 'TimeTopologyComplexType',
+        bti: 'GML_3_1_1.AbstractTimeComplexType',
+        ps: [{
+            n: 'primitive',
+            col: true,
+            ti: 'GML_3_1_1.TimeTopologyPrimitivePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractTimeComplexType',
-        baseTypeInfo: 'GML_3_1_1.AbstractTimeObjectType',
-        propertyInfos: []
+        ln: 'AbstractTimeComplexType',
+        bti: 'GML_3_1_1.AbstractTimeObjectType'
       }, {
-        type: 'classInfo',
-        localName: 'TransformationRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'transformation',
-            elementName: 'Transformation',
-            typeInfo: 'GML_3_1_1.TransformationType'
+        ln: 'TransformationRefType',
+        ps: [{
+            n: 'transformation',
+            en: 'Transformation',
+            ti: 'GML_3_1_1.TransformationType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RangeParametersType',
-        propertyInfos: [{
-            type: 'element',
-            name: '_boolean',
-            elementName: 'Boolean',
-            typeInfo: 'Boolean'
+        ln: 'RangeParametersType',
+        ps: [{
+            n: '_boolean',
+            en: 'Boolean',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'category',
-            elementName: 'Category',
-            typeInfo: 'GML_3_1_1.CodeType'
+            n: 'category',
+            en: 'Category',
+            ti: 'GML_3_1_1.CodeType'
           }, {
-            type: 'element',
-            name: 'quantity',
-            elementName: 'Quantity',
-            typeInfo: 'GML_3_1_1.MeasureType'
+            n: 'quantity',
+            en: 'Quantity',
+            ti: 'GML_3_1_1.MeasureType'
           }, {
-            type: 'element',
-            name: 'count',
-            elementName: 'Count',
-            typeInfo: 'Integer'
+            n: 'count',
+            en: 'Count',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'booleanList',
-            elementName: 'BooleanList',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'booleanList',
+            en: 'BooleanList',
+            ti: {
+              t: 'l'
             }
           }, {
-            type: 'element',
-            name: 'categoryList',
-            elementName: 'CategoryList',
-            typeInfo: 'GML_3_1_1.CodeOrNullListType'
+            n: 'categoryList',
+            en: 'CategoryList',
+            ti: 'GML_3_1_1.CodeOrNullListType'
           }, {
-            type: 'element',
-            name: 'quantityList',
-            elementName: 'QuantityList',
-            typeInfo: 'GML_3_1_1.MeasureOrNullListType'
+            n: 'quantityList',
+            en: 'QuantityList',
+            ti: 'GML_3_1_1.MeasureOrNullListType'
           }, {
-            type: 'element',
-            name: 'countList',
-            elementName: 'CountList',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'countList',
+            en: 'CountList',
+            ti: {
+              t: 'l'
             }
           }, {
-            type: 'element',
-            name: 'categoryExtent',
-            elementName: 'CategoryExtent',
-            typeInfo: 'GML_3_1_1.CategoryExtentType'
+            n: 'categoryExtent',
+            en: 'CategoryExtent',
+            ti: 'GML_3_1_1.CategoryExtentType'
           }, {
-            type: 'element',
-            name: 'quantityExtent',
-            elementName: 'QuantityExtent',
-            typeInfo: 'GML_3_1_1.QuantityExtentType'
+            n: 'quantityExtent',
+            en: 'QuantityExtent',
+            ti: 'GML_3_1_1.QuantityExtentType'
           }, {
-            type: 'element',
-            name: 'countExtent',
-            elementName: 'CountExtent',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'countExtent',
+            en: 'CountExtent',
+            ti: {
+              t: 'l'
             }
           }, {
-            name: 'compositeValue',
-            elementName: 'CompositeValue',
-            typeInfo: 'GML_3_1_1.CompositeValueType',
-            type: 'elementRef'
+            n: 'compositeValue',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'CompositeValue',
+            ti: 'GML_3_1_1.CompositeValueType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LineStringType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveType',
-        propertyInfos: [{
-            name: 'posOrPointPropertyOrPointRep',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'pointProperty',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+        ln: 'LineStringType',
+        bti: 'GML_3_1_1.AbstractCurveType',
+        ps: [{
+            n: 'posOrPointPropertyOrPointRep',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'pointProperty',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointRep',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+                en: 'pointRep',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pos',
-                typeInfo: 'GML_3_1_1.DirectPositionType'
+                en: 'pos',
+                ti: 'GML_3_1_1.DirectPositionType'
               }, {
-                elementName: 'coord',
-                typeInfo: 'GML_3_1_1.CoordType'
+                en: 'coord',
+                ti: 'GML_3_1_1.CoordType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }, {
-            type: 'element',
-            name: 'posList',
-            elementName: 'posList',
-            typeInfo: 'GML_3_1_1.DirectPositionListType'
+            n: 'posList',
+            ti: 'GML_3_1_1.DirectPositionListType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_3_1_1.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_3_1_1.CoordinatesType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PolygonPatchType',
-        baseTypeInfo: 'GML_3_1_1.AbstractSurfacePatchType',
-        propertyInfos: [{
-            name: 'exterior',
-            elementName: 'exterior',
-            typeInfo: 'GML_3_1_1.AbstractRingPropertyType',
-            type: 'elementRef'
+        ln: 'PolygonPatchType',
+        bti: 'GML_3_1_1.AbstractSurfacePatchType',
+        ps: [{
+            n: 'exterior',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.AbstractRingPropertyType',
+            t: 'er'
           }, {
-            name: 'interior',
-            collection: true,
-            elementName: 'interior',
-            typeInfo: 'GML_3_1_1.AbstractRingPropertyType',
-            type: 'elementRef'
+            n: 'interior',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.AbstractRingPropertyType',
+            t: 'er'
           }, {
-            name: 'interpolation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'interpolation'
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RangeSetType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'valueArray',
-            collection: true,
-            elementName: 'ValueArray',
-            typeInfo: 'GML_3_1_1.ValueArrayType'
+        ln: 'RangeSetType',
+        ps: [{
+            n: 'valueArray',
+            col: true,
+            en: 'ValueArray',
+            ti: 'GML_3_1_1.ValueArrayType'
           }, {
-            name: 'scalarValueList',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'QuantityList',
-                typeInfo: 'GML_3_1_1.MeasureOrNullListType'
-              }, {
-                elementName: 'BooleanList',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'String'
+            n: 'scalarValueList',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'BooleanList',
+                ti: {
+                  t: 'l'
                 }
               }, {
-                elementName: 'CategoryList',
-                typeInfo: 'GML_3_1_1.CodeOrNullListType'
+                en: 'CategoryList',
+                ti: 'GML_3_1_1.CodeOrNullListType'
               }, {
-                elementName: 'CountList',
-                typeInfo: {
-                  type: 'list',
-                  typeInfo: 'String'
+                en: 'QuantityList',
+                ti: 'GML_3_1_1.MeasureOrNullListType'
+              }, {
+                en: 'CountList',
+                ti: {
+                  t: 'l'
                 }
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }, {
-            type: 'element',
-            name: 'dataBlock',
-            elementName: 'DataBlock',
-            typeInfo: 'GML_3_1_1.DataBlockType'
+            n: 'dataBlock',
+            en: 'DataBlock',
+            ti: 'GML_3_1_1.DataBlockType'
           }, {
-            type: 'element',
-            name: 'file',
-            elementName: 'File',
-            typeInfo: 'GML_3_1_1.FileType'
+            n: 'file',
+            en: 'File',
+            ti: 'GML_3_1_1.FileType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EllipsoidType',
-        baseTypeInfo: 'GML_3_1_1.EllipsoidBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'ellipsoidID',
-            collection: true,
-            elementName: 'ellipsoidID',
-            typeInfo: 'GML_3_1_1.IdentifierType'
+        ln: 'EllipsoidType',
+        bti: 'GML_3_1_1.EllipsoidBaseType',
+        ps: [{
+            n: 'ellipsoidID',
+            col: true,
+            ti: 'GML_3_1_1.IdentifierType'
           }, {
-            type: 'element',
-            name: 'remarks',
-            elementName: 'remarks',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'remarks',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'semiMajorAxis',
-            elementName: 'semiMajorAxis',
-            typeInfo: 'GML_3_1_1.MeasureType'
+            n: 'semiMajorAxis',
+            ti: 'GML_3_1_1.MeasureType'
           }, {
-            type: 'element',
-            name: 'secondDefiningParameter',
-            elementName: 'secondDefiningParameter',
-            typeInfo: 'GML_3_1_1.SecondDefiningParameterType'
+            n: 'secondDefiningParameter',
+            ti: 'GML_3_1_1.SecondDefiningParameterType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ContainerPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'face',
-            elementName: 'Face',
-            typeInfo: 'GML_3_1_1.FaceType'
+        ln: 'ContainerPropertyType',
+        ps: [{
+            n: 'face',
+            en: 'Face',
+            ti: 'GML_3_1_1.FaceType'
           }, {
-            type: 'element',
-            name: 'topoSolid',
-            elementName: 'TopoSolid',
-            typeInfo: 'GML_3_1_1.TopoSolidType'
+            n: 'topoSolid',
+            en: 'TopoSolid',
+            ti: 'GML_3_1_1.TopoSolidType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GraphStyleType',
-        baseTypeInfo: 'GML_3_1_1.BaseStyleDescriptorType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'planar',
-            elementName: 'planar',
-            typeInfo: 'Boolean'
+        ln: 'GraphStyleType',
+        bti: 'GML_3_1_1.BaseStyleDescriptorType',
+        ps: [{
+            n: 'planar',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'directed',
-            elementName: 'directed',
-            typeInfo: 'Boolean'
+            n: 'directed',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'grid',
-            elementName: 'grid',
-            typeInfo: 'Boolean'
+            n: 'grid',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'minDistance',
-            elementName: 'minDistance',
-            typeInfo: 'Double'
+            n: 'minDistance',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'minAngle',
-            elementName: 'minAngle',
-            typeInfo: 'Double'
+            n: 'minAngle',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'graphType',
-            elementName: 'graphType',
-            typeInfo: 'String'
+            n: 'graphType'
           }, {
-            type: 'element',
-            name: 'drawingType',
-            elementName: 'drawingType',
-            typeInfo: 'String'
+            n: 'drawingType'
           }, {
-            type: 'element',
-            name: 'lineType',
-            elementName: 'lineType',
-            typeInfo: 'String'
+            n: 'lineType'
           }, {
-            type: 'element',
-            name: 'aestheticCriteria',
-            collection: true,
-            elementName: 'aestheticCriteria',
-            typeInfo: 'String'
+            n: 'aestheticCriteria',
+            col: true
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GenericMetaDataType',
-        baseTypeInfo: 'GML_3_1_1.AbstractMetaDataType',
-        propertyInfos: []
+        ln: 'GenericMetaDataType',
+        bti: 'GML_3_1_1.AbstractMetaDataType'
       }, {
-        type: 'classInfo',
-        localName: 'TriangleType',
-        baseTypeInfo: 'GML_3_1_1.AbstractSurfacePatchType',
-        propertyInfos: [{
-            name: 'exterior',
-            elementName: 'exterior',
-            typeInfo: 'GML_3_1_1.AbstractRingPropertyType',
-            type: 'elementRef'
+        ln: 'TriangleType',
+        bti: 'GML_3_1_1.AbstractSurfacePatchType',
+        ps: [{
+            n: 'exterior',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.AbstractRingPropertyType',
+            t: 'er'
           }, {
-            name: 'interpolation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'interpolation'
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RectangleType',
-        baseTypeInfo: 'GML_3_1_1.AbstractSurfacePatchType',
-        propertyInfos: [{
-            name: 'exterior',
-            elementName: 'exterior',
-            typeInfo: 'GML_3_1_1.AbstractRingPropertyType',
-            type: 'elementRef'
+        ln: 'RectangleType',
+        bti: 'GML_3_1_1.AbstractSurfacePatchType',
+        ps: [{
+            n: 'exterior',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.AbstractRingPropertyType',
+            t: 'er'
           }, {
-            name: 'interpolation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'interpolation'
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DegreesType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'Int',
-            type: 'value'
+        ln: 'DegreesType',
+        ps: [{
+            n: 'value',
+            ti: 'Int',
+            t: 'v'
           }, {
-            name: 'direction',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'direction'
+            n: 'direction',
+            an: {
+              lp: 'direction'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CartesianCSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateSystemType',
-        propertyInfos: []
+        ln: 'CartesianCSType',
+        bti: 'GML_3_1_1.AbstractCoordinateSystemType'
       }, {
-        type: 'classInfo',
-        localName: 'AbsoluteExternalPositionalAccuracyType',
-        baseTypeInfo: 'GML_3_1_1.AbstractPositionalAccuracyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'result',
-            elementName: 'result',
-            typeInfo: 'GML_3_1_1.MeasureType'
+        ln: 'AbsoluteExternalPositionalAccuracyType',
+        bti: 'GML_3_1_1.AbstractPositionalAccuracyType',
+        ps: [{
+            n: 'result',
+            ti: 'GML_3_1_1.MeasureType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CurveType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'segments',
-            elementName: 'segments',
-            typeInfo: 'GML_3_1_1.CurveSegmentArrayPropertyType'
+        ln: 'CurveType',
+        bti: 'GML_3_1_1.AbstractCurveType',
+        ps: [{
+            n: 'segments',
+            ti: 'GML_3_1_1.CurveSegmentArrayPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureStylePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureStyle',
-            elementName: 'FeatureStyle',
-            typeInfo: 'GML_3_1_1.FeatureStyleType'
+        ln: 'FeatureStylePropertyType',
+        ps: [{
+            n: 'featureStyle',
+            en: 'FeatureStyle',
+            ti: 'GML_3_1_1.FeatureStyleType'
           }, {
-            name: 'about',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'about'
+            n: 'about',
+            an: {
+              lp: 'about'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GridType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'limits',
-            elementName: 'limits',
-            typeInfo: 'GML_3_1_1.GridLimitsType'
+        ln: 'GridType',
+        bti: 'GML_3_1_1.AbstractGeometryType',
+        ps: [{
+            n: 'limits',
+            ti: 'GML_3_1_1.GridLimitsType'
           }, {
-            type: 'element',
-            name: 'axisName',
-            collection: true,
-            elementName: 'axisName',
-            typeInfo: 'String'
+            n: 'axisName',
+            col: true
           }, {
-            name: 'dimension',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'dimension'
+            n: 'dimension',
+            ti: 'Integer',
+            an: {
+              lp: 'dimension'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'IsolatedPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'node',
-            elementName: 'Node',
-            typeInfo: 'GML_3_1_1.NodeType'
+        ln: 'IsolatedPropertyType',
+        ps: [{
+            n: 'node',
+            en: 'Node',
+            ti: 'GML_3_1_1.NodeType'
           }, {
-            type: 'element',
-            name: 'edge',
-            elementName: 'Edge',
-            typeInfo: 'GML_3_1_1.EdgeType'
+            n: 'edge',
+            en: 'Edge',
+            ti: 'GML_3_1_1.EdgeType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PassThroughOperationRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'passThroughOperation',
-            elementName: 'PassThroughOperation',
-            typeInfo: 'GML_3_1_1.PassThroughOperationType'
+        ln: 'PassThroughOperationRefType',
+        ps: [{
+            n: 'passThroughOperation',
+            en: 'PassThroughOperation',
+            ti: 'GML_3_1_1.PassThroughOperationType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CoordType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'x',
-            elementName: 'X',
-            typeInfo: 'Decimal'
+        ln: 'CoordType',
+        ps: [{
+            n: 'x',
+            en: 'X',
+            ti: 'Decimal'
           }, {
-            type: 'element',
-            name: 'y',
-            elementName: 'Y',
-            typeInfo: 'Decimal'
+            n: 'y',
+            en: 'Y',
+            ti: 'Decimal'
           }, {
-            type: 'element',
-            name: 'z',
-            elementName: 'Z',
-            typeInfo: 'Decimal'
+            n: 'z',
+            en: 'Z',
+            ti: 'Decimal'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SphericalCSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'sphericalCS',
-            elementName: 'SphericalCS',
-            typeInfo: 'GML_3_1_1.SphericalCSType'
+        ln: 'SphericalCSRefType',
+        ps: [{
+            n: 'sphericalCS',
+            en: 'SphericalCS',
+            ti: 'GML_3_1_1.SphericalCSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeographicCRSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'geographicCRS',
-            elementName: 'GeographicCRS',
-            typeInfo: 'GML_3_1_1.GeographicCRSType'
+        ln: 'GeographicCRSRefType',
+        ps: [{
+            n: 'geographicCRS',
+            en: 'GeographicCRS',
+            ti: 'GML_3_1_1.GeographicCRSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeocentricCRSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'usesCartesianCS',
-            elementName: 'usesCartesianCS',
-            typeInfo: 'GML_3_1_1.CartesianCSRefType'
+        ln: 'GeocentricCRSType',
+        bti: 'GML_3_1_1.AbstractReferenceSystemType',
+        ps: [{
+            n: 'usesCartesianCS',
+            ti: 'GML_3_1_1.CartesianCSRefType'
           }, {
-            type: 'element',
-            name: 'usesSphericalCS',
-            elementName: 'usesSphericalCS',
-            typeInfo: 'GML_3_1_1.SphericalCSRefType'
+            n: 'usesSphericalCS',
+            ti: 'GML_3_1_1.SphericalCSRefType'
           }, {
-            type: 'element',
-            name: 'usesGeodeticDatum',
-            elementName: 'usesGeodeticDatum',
-            typeInfo: 'GML_3_1_1.GeodeticDatumRefType'
+            n: 'usesGeodeticDatum',
+            ti: 'GML_3_1_1.GeodeticDatumRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ExtentType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'description',
-            elementName: 'description',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+        ln: 'ExtentType',
+        ps: [{
+            n: 'description',
+            ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            type: 'element',
-            name: 'boundingBox',
-            collection: true,
-            elementName: 'boundingBox',
-            typeInfo: 'GML_3_1_1.EnvelopeType'
+            n: 'boundingBox',
+            col: true,
+            ti: 'GML_3_1_1.EnvelopeType'
           }, {
-            type: 'element',
-            name: 'boundingPolygon',
-            collection: true,
-            elementName: 'boundingPolygon',
-            typeInfo: 'GML_3_1_1.PolygonType'
+            n: 'boundingPolygon',
+            col: true,
+            ti: 'GML_3_1_1.PolygonType'
           }, {
-            type: 'element',
-            name: 'verticalExtent',
-            collection: true,
-            elementName: 'verticalExtent',
-            typeInfo: 'GML_3_1_1.EnvelopeType'
+            n: 'verticalExtent',
+            col: true,
+            ti: 'GML_3_1_1.EnvelopeType'
           }, {
-            type: 'element',
-            name: 'temporalExtent',
-            collection: true,
-            elementName: 'temporalExtent',
-            typeInfo: 'GML_3_1_1.TimePeriodType'
+            n: 'temporalExtent',
+            col: true,
+            ti: 'GML_3_1_1.TimePeriodType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConversionRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'conversion',
-            elementName: 'Conversion',
-            typeInfo: 'GML_3_1_1.ConversionType'
+        ln: 'ConversionRefType',
+        ps: [{
+            n: 'conversion',
+            en: 'Conversion',
+            ti: 'GML_3_1_1.ConversionType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ConeType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGriddedSurfaceType',
-        propertyInfos: [{
-            name: 'horizontalCurveType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'horizontalCurveType'
+        ln: 'ConeType',
+        bti: 'GML_3_1_1.AbstractGriddedSurfaceType',
+        ps: [{
+            n: 'horizontalCurveType',
+            an: {
+              lp: 'horizontalCurveType'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'verticalCurveType',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'verticalCurveType'
+            n: 'verticalCurveType',
+            an: {
+              lp: 'verticalCurveType'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DefaultStylePropertyType',
-        propertyInfos: [{
-            name: 'style',
-            elementName: '_Style',
-            typeInfo: 'GML_3_1_1.AbstractStyleType',
-            type: 'elementRef'
+        ln: 'DefaultStylePropertyType',
+        ps: [{
+            n: 'style',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_Style',
+            ti: 'GML_3_1_1.AbstractStyleType',
+            t: 'er'
           }, {
-            name: 'about',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'about'
+            n: 'about',
+            an: {
+              lp: 'about'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PolarCSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCoordinateSystemType',
-        propertyInfos: []
+        ln: 'PolarCSType',
+        bti: 'GML_3_1_1.AbstractCoordinateSystemType'
       }, {
-        type: 'classInfo',
-        localName: 'ProjectedCRSType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeneralDerivedCRSType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'usesCartesianCS',
-            elementName: 'usesCartesianCS',
-            typeInfo: 'GML_3_1_1.CartesianCSRefType'
+        ln: 'ProjectedCRSType',
+        bti: 'GML_3_1_1.AbstractGeneralDerivedCRSType',
+        ps: [{
+            n: 'usesCartesianCS',
+            ti: 'GML_3_1_1.CartesianCSRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CoordinateOperationRefType',
-        propertyInfos: [{
-            name: 'coordinateOperation',
-            elementName: '_CoordinateOperation',
-            typeInfo: 'GML_3_1_1.AbstractCoordinateOperationType',
-            type: 'elementRef'
+        ln: 'CoordinateOperationRefType',
+        ps: [{
+            n: 'coordinateOperation',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_CoordinateOperation',
+            ti: 'GML_3_1_1.AbstractCoordinateOperationType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiPointType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeometricAggregateType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'pointMember',
-            collection: true,
-            elementName: 'pointMember',
-            typeInfo: 'GML_3_1_1.PointPropertyType'
+        ln: 'MultiPointType',
+        bti: 'GML_3_1_1.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'pointMember',
+            col: true,
+            ti: 'GML_3_1_1.PointPropertyType'
           }, {
-            type: 'element',
-            name: 'pointMembers',
-            elementName: 'pointMembers',
-            typeInfo: 'GML_3_1_1.PointArrayPropertyType'
+            n: 'pointMembers',
+            ti: 'GML_3_1_1.PointArrayPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TransformationType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeneralTransformationType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'usesMethod',
-            elementName: 'usesMethod',
-            typeInfo: 'GML_3_1_1.OperationMethodRefType'
+        ln: 'TransformationType',
+        bti: 'GML_3_1_1.AbstractGeneralTransformationType',
+        ps: [{
+            n: 'usesMethod',
+            ti: 'GML_3_1_1.OperationMethodRefType'
           }, {
-            type: 'element',
-            name: 'usesValue',
-            collection: true,
-            elementName: 'usesValue',
-            typeInfo: 'GML_3_1_1.ParameterValueType'
+            n: 'usesValue',
+            col: true,
+            ti: 'GML_3_1_1.ParameterValueType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OrientableSurfaceType',
-        baseTypeInfo: 'GML_3_1_1.AbstractSurfaceType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'baseSurface',
-            elementName: 'baseSurface',
-            typeInfo: 'GML_3_1_1.SurfacePropertyType'
+        ln: 'OrientableSurfaceType',
+        bti: 'GML_3_1_1.AbstractSurfaceType',
+        ps: [{
+            n: 'baseSurface',
+            ti: 'GML_3_1_1.SurfacePropertyType'
           }, {
-            name: 'orientation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'orientation'
+            n: 'orientation',
+            an: {
+              lp: 'orientation'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TopoPrimitiveArrayAssociationType',
-        propertyInfos: [{
-            name: 'topoPrimitive',
-            collection: true,
-            elementName: '_TopoPrimitive',
-            typeInfo: 'GML_3_1_1.AbstractTopoPrimitiveType',
-            type: 'elementRef'
+        ln: 'TopoPrimitiveArrayAssociationType',
+        ps: [{
+            n: 'topoPrimitive',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_TopoPrimitive',
+            ti: 'GML_3_1_1.AbstractTopoPrimitiveType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DMSAngleType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'degrees',
-            elementName: 'degrees',
-            typeInfo: 'GML_3_1_1.DegreesType'
+        ln: 'DMSAngleType',
+        ps: [{
+            n: 'degrees',
+            ti: 'GML_3_1_1.DegreesType'
           }, {
-            type: 'element',
-            name: 'decimalMinutes',
-            elementName: 'decimalMinutes',
-            typeInfo: 'Decimal'
+            n: 'decimalMinutes',
+            ti: 'Decimal'
           }, {
-            type: 'element',
-            name: 'minutes',
-            elementName: 'minutes',
-            typeInfo: 'Int'
+            n: 'minutes',
+            ti: 'Int'
           }, {
-            type: 'element',
-            name: 'seconds',
-            elementName: 'seconds',
-            typeInfo: 'Decimal'
+            n: 'seconds',
+            ti: 'Decimal'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractFeatureCollectionType',
-        baseTypeInfo: 'GML_3_1_1.AbstractFeatureType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureMember',
-            collection: true,
-            elementName: 'featureMember',
-            typeInfo: 'GML_3_1_1.FeaturePropertyType'
+        ln: 'AbstractFeatureCollectionType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'featureMember',
+            col: true,
+            ti: 'GML_3_1_1.FeaturePropertyType'
           }, {
-            type: 'element',
-            name: 'featureMembers',
-            elementName: 'featureMembers',
-            typeInfo: 'GML_3_1_1.FeatureArrayPropertyType'
+            n: 'featureMembers',
+            ti: 'GML_3_1_1.FeatureArrayPropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiCurveDomainType',
-        baseTypeInfo: 'GML_3_1_1.DomainSetType',
-        propertyInfos: []
+        ln: 'MultiCurveDomainType',
+        bti: 'GML_3_1_1.DomainSetType'
       }, {
-        type: 'classInfo',
-        localName: 'CubicSplineType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveSegmentType',
-        propertyInfos: [{
-            name: 'posOrPointPropertyOrPointRep',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'pointProperty',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+        ln: 'CubicSplineType',
+        bti: 'GML_3_1_1.AbstractCurveSegmentType',
+        ps: [{
+            n: 'posOrPointPropertyOrPointRep',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'pointProperty',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pointRep',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+                en: 'pointRep',
+                ti: 'GML_3_1_1.PointPropertyType'
               }, {
-                elementName: 'pos',
-                typeInfo: 'GML_3_1_1.DirectPositionType'
+                en: 'pos',
+                ti: 'GML_3_1_1.DirectPositionType'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }, {
-            type: 'element',
-            name: 'posList',
-            elementName: 'posList',
-            typeInfo: 'GML_3_1_1.DirectPositionListType'
+            n: 'posList',
+            ti: 'GML_3_1_1.DirectPositionListType'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: 'GML_3_1_1.CoordinatesType'
+            n: 'coordinates',
+            ti: 'GML_3_1_1.CoordinatesType'
           }, {
-            type: 'element',
-            name: 'vectorAtStart',
-            elementName: 'vectorAtStart',
-            typeInfo: 'GML_3_1_1.VectorType'
+            n: 'vectorAtStart',
+            ti: 'GML_3_1_1.VectorType'
           }, {
-            type: 'element',
-            name: 'vectorAtEnd',
-            elementName: 'vectorAtEnd',
-            typeInfo: 'GML_3_1_1.VectorType'
+            n: 'vectorAtEnd',
+            ti: 'GML_3_1_1.VectorType'
           }, {
-            name: 'interpolation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'interpolation'
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'degree',
-            typeInfo: 'Integer',
-            attributeName: {
-              localPart: 'degree'
+            n: 'degree',
+            ti: 'Integer',
+            an: {
+              lp: 'degree'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CategoryExtentType',
-        baseTypeInfo: 'GML_3_1_1.CodeOrNullListType',
-        propertyInfos: []
+        ln: 'CategoryExtentType',
+        bti: 'GML_3_1_1.CodeOrNullListType'
       }, {
-        type: 'classInfo',
-        localName: 'HistoryPropertyType',
-        propertyInfos: [{
-            name: 'timeSlice',
-            collection: true,
-            elementName: '_TimeSlice',
-            typeInfo: 'GML_3_1_1.AbstractTimeSliceType',
-            type: 'elementRef'
+        ln: 'HistoryPropertyType',
+        ps: [{
+            n: 'timeSlice',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_TimeSlice',
+            ti: 'GML_3_1_1.AbstractTimeSliceType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OrientableCurveType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'baseCurve',
-            elementName: 'baseCurve',
-            typeInfo: 'GML_3_1_1.CurvePropertyType'
+        ln: 'OrientableCurveType',
+        bti: 'GML_3_1_1.AbstractCurveType',
+        ps: [{
+            n: 'baseCurve',
+            ti: 'GML_3_1_1.CurvePropertyType'
           }, {
-            name: 'orientation',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'orientation'
+            n: 'orientation',
+            an: {
+              lp: 'orientation'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EngineeringDatumType',
-        baseTypeInfo: 'GML_3_1_1.AbstractDatumType',
-        propertyInfos: []
+        ln: 'EngineeringDatumType',
+        bti: 'GML_3_1_1.AbstractDatumType'
       }, {
-        type: 'classInfo',
-        localName: 'PixelInCellType',
-        baseTypeInfo: 'GML_3_1_1.CodeType',
-        propertyInfos: []
+        ln: 'PixelInCellType',
+        bti: 'GML_3_1_1.CodeType'
       }, {
-        type: 'classInfo',
-        localName: 'TopoSurfacePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'topoSurface',
-            elementName: 'TopoSurface',
-            typeInfo: 'GML_3_1_1.TopoSurfaceType'
+        ln: 'TopoSurfacePropertyType',
+        ps: [{
+            n: 'topoSurface',
+            en: 'TopoSurface',
+            ti: 'GML_3_1_1.TopoSurfaceType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CompositeCurveType',
-        baseTypeInfo: 'GML_3_1_1.AbstractCurveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'curveMember',
-            collection: true,
-            elementName: 'curveMember',
-            typeInfo: 'GML_3_1_1.CurvePropertyType'
+        ln: 'CompositeCurveType',
+        bti: 'GML_3_1_1.AbstractCurveType',
+        ps: [{
+            n: 'curveMember',
+            col: true,
+            ti: 'GML_3_1_1.CurvePropertyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TrackType',
-        baseTypeInfo: 'GML_3_1_1.HistoryPropertyType',
-        propertyInfos: []
+        ln: 'TrackType',
+        bti: 'GML_3_1_1.HistoryPropertyType'
       }, {
-        type: 'classInfo',
-        localName: 'MultiCurveCoverageType',
-        baseTypeInfo: 'GML_3_1_1.AbstractDiscreteCoverageType',
-        propertyInfos: []
+        ln: 'MultiCurveCoverageType',
+        bti: 'GML_3_1_1.AbstractDiscreteCoverageType'
       }, {
-        type: 'classInfo',
-        localName: 'UserDefinedCSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'userDefinedCS',
-            elementName: 'UserDefinedCS',
-            typeInfo: 'GML_3_1_1.UserDefinedCSType'
+        ln: 'UserDefinedCSRefType',
+        ps: [{
+            n: 'userDefinedCS',
+            en: 'UserDefinedCS',
+            ti: 'GML_3_1_1.UserDefinedCSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiGeometryPropertyType',
-        propertyInfos: [{
-            name: 'geometricAggregate',
-            elementName: '_GeometricAggregate',
-            typeInfo: 'GML_3_1_1.AbstractGeometricAggregateType',
-            type: 'elementRef'
+        ln: 'MultiGeometryPropertyType',
+        ps: [{
+            n: 'geometricAggregate',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_GeometricAggregate',
+            ti: 'GML_3_1_1.AbstractGeometricAggregateType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiSolidDomainType',
-        baseTypeInfo: 'GML_3_1_1.DomainSetType',
-        propertyInfos: []
+        ln: 'MultiSolidDomainType',
+        bti: 'GML_3_1_1.DomainSetType'
       }, {
-        type: 'classInfo',
-        localName: 'TimePositionType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+        ln: 'TimePositionType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
             },
-            type: 'value'
+            t: 'v'
           }, {
-            name: 'frame',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'frame'
+            n: 'frame',
+            an: {
+              lp: 'frame'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'calendarEraName',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'calendarEraName'
+            n: 'calendarEraName',
+            an: {
+              lp: 'calendarEraName'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'indeterminatePosition',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'indeterminatePosition'
+            n: 'indeterminatePosition',
+            an: {
+              lp: 'indeterminatePosition'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BagType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'member',
-            collection: true,
-            elementName: 'member',
-            typeInfo: 'GML_3_1_1.AssociationType'
+        ln: 'BagType',
+        bti: 'GML_3_1_1.AbstractGMLType',
+        ps: [{
+            n: 'member',
+            col: true,
+            ti: 'GML_3_1_1.AssociationType'
           }, {
-            type: 'element',
-            name: 'members',
-            elementName: 'members',
-            typeInfo: 'GML_3_1_1.ArrayAssociationType'
+            n: 'members',
+            ti: 'GML_3_1_1.ArrayAssociationType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PolarCSRefType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'polarCS',
-            elementName: 'PolarCS',
-            typeInfo: 'GML_3_1_1.PolarCSType'
+        ln: 'PolarCSRefType',
+        ps: [{
+            n: 'polarCS',
+            en: 'PolarCS',
+            ti: 'GML_3_1_1.PolarCSType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureCollectionType',
-        baseTypeInfo: 'GML_3_1_1.AbstractFeatureCollectionType',
-        propertyInfos: []
+        ln: 'FeatureCollectionType',
+        bti: 'GML_3_1_1.AbstractFeatureCollectionType'
       }, {
-        type: 'classInfo',
-        localName: 'MeasureListType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Double'
+        ln: 'MeasureListType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l',
+              ti: 'Double'
             },
-            type: 'value'
+            t: 'v'
           }, {
-            name: 'uom',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'uom'
+            n: 'uom',
+            an: {
+              lp: 'uom'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ScaleType',
-        baseTypeInfo: 'GML_3_1_1.MeasureType',
-        propertyInfos: []
+        ln: 'ScaleType',
+        bti: 'GML_3_1_1.MeasureType'
       }, {
-        type: 'classInfo',
-        localName: 'DynamicFeatureType',
-        baseTypeInfo: 'GML_3_1_1.AbstractFeatureType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'validTime',
-            elementName: 'validTime',
-            typeInfo: 'GML_3_1_1.TimePrimitivePropertyType'
+        ln: 'DynamicFeatureType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'validTime',
+            ti: 'GML_3_1_1.TimePrimitivePropertyType'
           }, {
-            name: 'history',
-            elementName: 'history',
-            typeInfo: 'GML_3_1_1.HistoryPropertyType',
-            type: 'elementRef'
+            n: 'history',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.HistoryPropertyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'dataSource',
-            elementName: 'dataSource',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'dataSource',
+            ti: 'GML_3_1_1.StringOrRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DynamicFeatureCollectionType',
-        baseTypeInfo: 'GML_3_1_1.FeatureCollectionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'validTime',
-            elementName: 'validTime',
-            typeInfo: 'GML_3_1_1.TimePrimitivePropertyType'
+        ln: 'DynamicFeatureCollectionType',
+        bti: 'GML_3_1_1.FeatureCollectionType',
+        ps: [{
+            n: 'validTime',
+            ti: 'GML_3_1_1.TimePrimitivePropertyType'
           }, {
-            name: 'history',
-            elementName: 'history',
-            typeInfo: 'GML_3_1_1.HistoryPropertyType',
-            type: 'elementRef'
+            n: 'history',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'GML_3_1_1.HistoryPropertyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'dataSource',
-            elementName: 'dataSource',
-            typeInfo: 'GML_3_1_1.StringOrRefType'
+            n: 'dataSource',
+            ti: 'GML_3_1_1.StringOrRefType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractCoordinateOperationBaseType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: []
+        ln: 'AbstractCoordinateOperationBaseType',
+        bti: 'GML_3_1_1.DefinitionType'
       }, {
-        type: 'classInfo',
-        localName: 'TimeCalendarPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeCalendar',
-            elementName: 'TimeCalendar',
-            typeInfo: 'GML_3_1_1.TimeCalendarType'
+        ln: 'TimeCalendarPropertyType',
+        ps: [{
+            n: 'timeCalendar',
+            en: 'TimeCalendar',
+            ti: 'GML_3_1_1.TimeCalendarType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CodeListType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+        ln: 'CodeListType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
             },
-            type: 'value'
+            t: 'v'
           }, {
-            name: 'codeSpace',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'codeSpace'
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AngleType',
-        baseTypeInfo: 'GML_3_1_1.MeasureType',
-        propertyInfos: []
+        ln: 'AngleType',
+        bti: 'GML_3_1_1.MeasureType'
       }, {
-        type: 'classInfo',
-        localName: 'MultiPolygonPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'multiPolygon',
-            elementName: 'MultiPolygon',
-            typeInfo: 'GML_3_1_1.MultiPolygonType'
+        ln: 'MultiPolygonPropertyType',
+        ps: [{
+            n: 'multiPolygon',
+            en: 'MultiPolygon',
+            ti: 'GML_3_1_1.MultiPolygonType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeOrdinalEraPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeOrdinalEra',
-            elementName: 'TimeOrdinalEra',
-            typeInfo: 'GML_3_1_1.TimeOrdinalEraType'
+        ln: 'TimeOrdinalEraPropertyType',
+        ps: [{
+            n: 'timeOrdinalEra',
+            en: 'TimeOrdinalEra',
+            ti: 'GML_3_1_1.TimeOrdinalEraType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BaseStyleDescriptorType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGMLType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'spatialResolution',
-            elementName: 'spatialResolution',
-            typeInfo: 'GML_3_1_1.ScaleType'
+        ln: 'BaseStyleDescriptorType',
+        bti: 'GML_3_1_1.AbstractGMLType',
+        ps: [{
+            n: 'spatialResolution',
+            ti: 'GML_3_1_1.ScaleType'
           }, {
-            type: 'element',
-            name: 'styleVariation',
-            collection: true,
-            elementName: 'styleVariation',
-            typeInfo: 'GML_3_1_1.StyleVariationType'
+            n: 'styleVariation',
+            col: true,
+            ti: 'GML_3_1_1.StyleVariationType'
           }, {
-            type: 'element',
-            name: 'animate',
-            collection: true,
-            elementName: {
-              localPart: 'animate',
-              namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/'
+            n: 'animate',
+            col: true,
+            en: {
+              lp: 'animate',
+              ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/'
             },
-            typeInfo: 'SMIL_2_0_Language.AnimateType'
+            ti: 'SMIL_2_0_Language.AnimateType'
           }, {
-            type: 'element',
-            name: 'animateMotion',
-            collection: true,
-            elementName: {
-              localPart: 'animateMotion',
-              namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/'
+            n: 'animateMotion',
+            col: true,
+            en: {
+              lp: 'animateMotion',
+              ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/'
             },
-            typeInfo: 'SMIL_2_0_Language.AnimateMotionType'
+            ti: 'SMIL_2_0_Language.AnimateMotionType'
           }, {
-            type: 'element',
-            name: 'animateColor',
-            collection: true,
-            elementName: {
-              localPart: 'animateColor',
-              namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/'
+            n: 'animateColor',
+            col: true,
+            en: {
+              lp: 'animateColor',
+              ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/'
             },
-            typeInfo: 'SMIL_2_0_Language.AnimateColorType'
+            ti: 'SMIL_2_0_Language.AnimateColorType'
           }, {
-            type: 'element',
-            name: 'set',
-            collection: true,
-            elementName: {
-              localPart: 'set',
-              namespaceURI: 'http:\/\/www.w3.org\/2001\/SMIL20\/'
+            n: 'set',
+            col: true,
+            en: {
+              lp: 'set',
+              ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/'
             },
-            typeInfo: 'SMIL_2_0_Language.SetType'
+            ti: 'SMIL_2_0_Language.SetType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractCoordinateSystemBaseType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: []
+        ln: 'AbstractCoordinateSystemBaseType',
+        bti: 'GML_3_1_1.DefinitionType'
       }, {
-        type: 'classInfo',
-        localName: 'ScalarValuePropertyType',
-        baseTypeInfo: 'GML_3_1_1.ValuePropertyType',
-        propertyInfos: []
+        ln: 'ScalarValuePropertyType',
+        bti: 'GML_3_1_1.ValuePropertyType'
       }, {
-        type: 'classInfo',
-        localName: 'GridLimitsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'gridEnvelope',
-            elementName: 'GridEnvelope',
-            typeInfo: 'GML_3_1_1.GridEnvelopeType'
+        ln: 'GridLimitsType',
+        ps: [{
+            n: 'gridEnvelope',
+            en: 'GridEnvelope',
+            ti: 'GML_3_1_1.GridEnvelopeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeometricComplexPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'geometricComplex',
-            elementName: 'GeometricComplex',
-            typeInfo: 'GML_3_1_1.GeometricComplexType'
+        ln: 'GeometricComplexPropertyType',
+        ps: [{
+            n: 'geometricComplex',
+            en: 'GeometricComplex',
+            ti: 'GML_3_1_1.GeometricComplexType'
           }, {
-            type: 'element',
-            name: 'compositeCurve',
-            elementName: 'CompositeCurve',
-            typeInfo: 'GML_3_1_1.CompositeCurveType'
+            n: 'compositeCurve',
+            en: 'CompositeCurve',
+            ti: 'GML_3_1_1.CompositeCurveType'
           }, {
-            type: 'element',
-            name: 'compositeSurface',
-            elementName: 'CompositeSurface',
-            typeInfo: 'GML_3_1_1.CompositeSurfaceType'
+            n: 'compositeSurface',
+            en: 'CompositeSurface',
+            ti: 'GML_3_1_1.CompositeSurfaceType'
           }, {
-            type: 'element',
-            name: 'compositeSolid',
-            elementName: 'CompositeSolid',
-            typeInfo: 'GML_3_1_1.CompositeSolidType'
+            n: 'compositeSolid',
+            en: 'CompositeSolid',
+            ti: 'GML_3_1_1.CompositeSolidType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeClockPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeClock',
-            elementName: 'TimeClock',
-            typeInfo: 'GML_3_1_1.TimeClockType'
+        ln: 'TimeClockPropertyType',
+        ps: [{
+            n: 'timeClock',
+            en: 'TimeClock',
+            ti: 'GML_3_1_1.TimeClockType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OperationParameterGroupBaseType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeneralOperationParameterType',
-        propertyInfos: []
+        ln: 'OperationParameterGroupBaseType',
+        bti: 'GML_3_1_1.AbstractGeneralOperationParameterType'
       }, {
-        type: 'classInfo',
-        localName: 'AreaType',
-        baseTypeInfo: 'GML_3_1_1.MeasureType',
-        propertyInfos: []
+        ln: 'AreaType',
+        bti: 'GML_3_1_1.MeasureType'
       }, {
-        type: 'classInfo',
-        localName: 'CompositeSurfacePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'compositeSurface',
-            elementName: 'CompositeSurface',
-            typeInfo: 'GML_3_1_1.CompositeSurfaceType'
+        ln: 'CompositeSurfacePropertyType',
+        ps: [{
+            n: 'compositeSurface',
+            en: 'CompositeSurface',
+            ti: 'GML_3_1_1.CompositeSurfaceType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LineStringSegmentArrayPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'lineStringSegment',
-            collection: true,
-            elementName: 'LineStringSegment',
-            typeInfo: 'GML_3_1_1.LineStringSegmentType'
+        ln: 'LineStringSegmentArrayPropertyType',
+        ps: [{
+            n: 'lineStringSegment',
+            col: true,
+            en: 'LineStringSegment',
+            ti: 'GML_3_1_1.LineStringSegmentType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CoordinateSystemAxisBaseType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: []
+        ln: 'CoordinateSystemAxisBaseType',
+        bti: 'GML_3_1_1.DefinitionType'
       }, {
-        type: 'classInfo',
-        localName: 'TimePeriodPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timePeriod',
-            elementName: 'TimePeriod',
-            typeInfo: 'GML_3_1_1.TimePeriodType'
+        ln: 'TimePeriodPropertyType',
+        ps: [{
+            n: 'timePeriod',
+            en: 'TimePeriod',
+            ti: 'GML_3_1_1.TimePeriodType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeEdgePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeEdge',
-            elementName: 'TimeEdge',
-            typeInfo: 'GML_3_1_1.TimeEdgeType'
+        ln: 'TimeEdgePropertyType',
+        ps: [{
+            n: 'timeEdge',
+            en: 'TimeEdge',
+            ti: 'GML_3_1_1.TimeEdgeType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BooleanPropertyType',
-        baseTypeInfo: 'GML_3_1_1.ValuePropertyType',
-        propertyInfos: []
+        ln: 'BooleanPropertyType',
+        bti: 'GML_3_1_1.ValuePropertyType'
       }, {
-        type: 'classInfo',
-        localName: 'TimeTopologyComplexPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeTopologyComplex',
-            elementName: 'TimeTopologyComplex',
-            typeInfo: 'GML_3_1_1.TimeTopologyComplexType'
+        ln: 'TimeTopologyComplexPropertyType',
+        ps: [{
+            n: 'timeTopologyComplex',
+            en: 'TimeTopologyComplex',
+            ti: 'GML_3_1_1.TimeTopologyComplexType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RelatedTimeType',
-        baseTypeInfo: 'GML_3_1_1.TimePrimitivePropertyType',
-        propertyInfos: [{
-            name: 'relativePosition',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'relativePosition'
+        ln: 'RelatedTimeType',
+        bti: 'GML_3_1_1.TimePrimitivePropertyType',
+        ps: [{
+            n: 'relativePosition',
+            an: {
+              lp: 'relativePosition'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BoundedFeatureType',
-        baseTypeInfo: 'GML_3_1_1.AbstractFeatureType',
-        propertyInfos: []
+        ln: 'BoundedFeatureType',
+        bti: 'GML_3_1_1.AbstractFeatureType'
       }, {
-        type: 'classInfo',
-        localName: 'LinearRingPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'linearRing',
-            elementName: 'LinearRing',
-            typeInfo: 'GML_3_1_1.LinearRingType'
+        ln: 'LinearRingPropertyType',
+        ps: [{
+            n: 'linearRing',
+            en: 'LinearRing',
+            ti: 'GML_3_1_1.LinearRingType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SpeedType',
-        baseTypeInfo: 'GML_3_1_1.MeasureType',
-        propertyInfos: []
+        ln: 'SpeedType',
+        bti: 'GML_3_1_1.MeasureType'
       }, {
-        type: 'classInfo',
-        localName: 'SequenceRuleType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'SequenceRuleType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'order',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'order'
+            n: 'order',
+            an: {
+              lp: 'order'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CompositeCurvePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'compositeCurve',
-            elementName: 'CompositeCurve',
-            typeInfo: 'GML_3_1_1.CompositeCurveType'
+        ln: 'CompositeCurvePropertyType',
+        ps: [{
+            n: 'compositeCurve',
+            en: 'CompositeCurve',
+            ti: 'GML_3_1_1.CompositeCurveType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeInstantPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeInstant',
-            elementName: 'TimeInstant',
-            typeInfo: 'GML_3_1_1.TimeInstantType'
+        ln: 'TimeInstantPropertyType',
+        ps: [{
+            n: 'timeInstant',
+            en: 'TimeInstant',
+            ti: 'GML_3_1_1.TimeInstantType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CompositeSolidPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'compositeSolid',
-            elementName: 'CompositeSolid',
-            typeInfo: 'GML_3_1_1.CompositeSolidType'
+        ln: 'CompositeSolidPropertyType',
+        ps: [{
+            n: 'compositeSolid',
+            en: 'CompositeSolid',
+            ti: 'GML_3_1_1.CompositeSolidType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeCalendarEraPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeCalendarEra',
-            elementName: 'TimeCalendarEra',
-            typeInfo: 'GML_3_1_1.TimeCalendarEraType'
+        ln: 'TimeCalendarEraPropertyType',
+        ps: [{
+            n: 'timeCalendarEra',
+            en: 'TimeCalendarEra',
+            ti: 'GML_3_1_1.TimeCalendarEraType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CategoryPropertyType',
-        baseTypeInfo: 'GML_3_1_1.ValuePropertyType',
-        propertyInfos: []
+        ln: 'CategoryPropertyType',
+        bti: 'GML_3_1_1.ValuePropertyType'
       }, {
-        type: 'classInfo',
-        localName: 'GridEnvelopeType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'low',
-            elementName: 'low',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Integer'
+        ln: 'GridEnvelopeType',
+        ps: [{
+            n: 'low',
+            ti: {
+              t: 'l',
+              ti: 'Integer'
             }
           }, {
-            type: 'element',
-            name: 'high',
-            elementName: 'high',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'Integer'
+            n: 'high',
+            ti: {
+              t: 'l',
+              ti: 'Integer'
             }
           }]
       }, {
-        type: 'classInfo',
-        localName: 'StyleVariationType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'StyleVariationType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'styleProperty',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'styleProperty'
+            n: 'styleProperty',
+            an: {
+              lp: 'styleProperty'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'featurePropertyRange',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'featurePropertyRange'
+            n: 'featurePropertyRange',
+            an: {
+              lp: 'featurePropertyRange'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeometricPrimitivePropertyType',
-        propertyInfos: [{
-            name: 'geometricPrimitive',
-            elementName: '_GeometricPrimitive',
-            typeInfo: 'GML_3_1_1.AbstractGeometricPrimitiveType',
-            type: 'elementRef'
+        ln: 'GeometricPrimitivePropertyType',
+        ps: [{
+            n: 'geometricPrimitive',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_GeometricPrimitive',
+            ti: 'GML_3_1_1.AbstractGeometricPrimitiveType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OperationMethodBaseType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: []
+        ln: 'OperationMethodBaseType',
+        bti: 'GML_3_1_1.DefinitionType'
       }, {
-        type: 'classInfo',
-        localName: 'TemporalDatumBaseType',
-        baseTypeInfo: 'GML_3_1_1.AbstractDatumType',
-        propertyInfos: []
+        ln: 'TemporalDatumBaseType',
+        bti: 'GML_3_1_1.AbstractDatumType'
       }, {
-        type: 'classInfo',
-        localName: 'EllipsoidBaseType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: []
+        ln: 'EllipsoidBaseType',
+        bti: 'GML_3_1_1.DefinitionType'
       }, {
-        type: 'classInfo',
-        localName: 'TimeNodePropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'timeNode',
-            elementName: 'TimeNode',
-            typeInfo: 'GML_3_1_1.TimeNodeType'
+        ln: 'TimeNodePropertyType',
+        ps: [{
+            n: 'timeNode',
+            en: 'TimeNode',
+            ti: 'GML_3_1_1.TimeNodeType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractReferenceSystemBaseType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: []
+        ln: 'AbstractReferenceSystemBaseType',
+        bti: 'GML_3_1_1.DefinitionType'
       }, {
-        type: 'classInfo',
-        localName: 'LabelType',
-        propertyInfos: [{
-            name: 'content',
-            collection: true,
-            mixed: true,
-            elementName: 'LabelExpression',
-            typeInfo: 'String',
-            type: 'elementRef'
+        ln: 'LabelType',
+        ps: [{
+            n: 'content',
+            col: true,
+            dom: false,
+            typed: false,
+            en: 'LabelExpression',
+            t: 'er'
           }, {
-            name: 'transform',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'transform',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'transform',
+            an: {
+              lp: 'transform',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FormulaType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'a',
-            elementName: 'a',
-            typeInfo: 'Double'
+        ln: 'FormulaType',
+        ps: [{
+            n: 'a',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'b',
-            elementName: 'b',
-            typeInfo: 'Double'
+            n: 'b',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'c',
-            elementName: 'c',
-            typeInfo: 'Double'
+            n: 'c',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'd',
-            elementName: 'd',
-            typeInfo: 'Double'
+            n: 'd',
+            ti: 'Double'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RingPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'ring',
-            elementName: 'Ring',
-            typeInfo: 'GML_3_1_1.RingType'
+        ln: 'RingPropertyType',
+        ps: [{
+            n: 'ring',
+            en: 'Ring',
+            ti: 'GML_3_1_1.RingType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiLineStringPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'multiLineString',
-            elementName: 'MultiLineString',
-            typeInfo: 'GML_3_1_1.MultiLineStringType'
+        ln: 'MultiLineStringPropertyType',
+        ps: [{
+            n: 'multiLineString',
+            en: 'MultiLineString',
+            ti: 'GML_3_1_1.MultiLineStringType'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GridLengthType',
-        baseTypeInfo: 'GML_3_1_1.MeasureType',
-        propertyInfos: []
+        ln: 'GridLengthType',
+        bti: 'GML_3_1_1.MeasureType'
       }, {
-        type: 'classInfo',
-        localName: 'LengthType',
-        baseTypeInfo: 'GML_3_1_1.MeasureType',
-        propertyInfos: []
+        ln: 'LengthType',
+        bti: 'GML_3_1_1.MeasureType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractDatumBaseType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: []
+        ln: 'AbstractDatumBaseType',
+        bti: 'GML_3_1_1.DefinitionType'
       }, {
-        type: 'classInfo',
-        localName: 'TimeTopologyPrimitivePropertyType',
-        propertyInfos: [{
-            name: 'timeTopologyPrimitive',
-            elementName: '_TimeTopologyPrimitive',
-            typeInfo: 'GML_3_1_1.AbstractTimeTopologyPrimitiveType',
-            type: 'elementRef'
+        ln: 'TimeTopologyPrimitivePropertyType',
+        ps: [{
+            n: 'timeTopologyPrimitive',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_TimeTopologyPrimitive',
+            ti: 'GML_3_1_1.AbstractTimeTopologyPrimitiveType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PrimeMeridianBaseType',
-        baseTypeInfo: 'GML_3_1_1.DefinitionType',
-        propertyInfos: []
+        ln: 'PrimeMeridianBaseType',
+        bti: 'GML_3_1_1.DefinitionType'
       }, {
-        type: 'classInfo',
-        localName: 'KnotPropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'knot',
-            elementName: 'Knot',
-            typeInfo: 'GML_3_1_1.KnotType'
+        ln: 'KnotPropertyType',
+        ps: [{
+            n: 'knot',
+            en: 'Knot',
+            ti: 'GML_3_1_1.KnotType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeGeometricPrimitivePropertyType',
-        propertyInfos: [{
-            name: 'timeGeometricPrimitive',
-            elementName: '_TimeGeometricPrimitive',
-            typeInfo: 'GML_3_1_1.AbstractTimeGeometricPrimitiveType',
-            type: 'elementRef'
+        ln: 'TimeGeometricPrimitivePropertyType',
+        ps: [{
+            n: 'timeGeometricPrimitive',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: '_TimeGeometricPrimitive',
+            ti: 'GML_3_1_1.AbstractTimeGeometricPrimitiveType',
+            t: 'er'
           }, {
-            name: 'remoteSchema',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeType',
-        baseTypeInfo: 'GML_3_1_1.MeasureType',
-        propertyInfos: []
+        ln: 'TimeType',
+        bti: 'GML_3_1_1.MeasureType'
       }, {
-        type: 'classInfo',
-        localName: 'VolumeType',
-        baseTypeInfo: 'GML_3_1_1.MeasureType',
-        propertyInfos: []
+        ln: 'VolumeType',
+        bti: 'GML_3_1_1.MeasureType'
       }, {
-        type: 'classInfo',
-        localName: 'CountPropertyType',
-        baseTypeInfo: 'GML_3_1_1.ValuePropertyType',
-        propertyInfos: []
+        ln: 'CountPropertyType',
+        bti: 'GML_3_1_1.ValuePropertyType'
       }, {
-        type: 'classInfo',
-        localName: 'KnotType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'value',
-            elementName: 'value',
-            typeInfo: 'Double'
+        ln: 'KnotType',
+        ps: [{
+            n: 'value',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'multiplicity',
-            elementName: 'multiplicity',
-            typeInfo: 'Integer'
+            n: 'multiplicity',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'weight',
-            elementName: 'weight',
-            typeInfo: 'Double'
+            n: 'weight',
+            ti: 'Double'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'QuantityPropertyType',
-        baseTypeInfo: 'GML_3_1_1.ValuePropertyType',
-        propertyInfos: []
+        ln: 'QuantityPropertyType',
+        bti: 'GML_3_1_1.ValuePropertyType'
       }, {
-        type: 'classInfo',
-        localName: 'OperationParameterBaseType',
-        baseTypeInfo: 'GML_3_1_1.AbstractGeneralOperationParameterType',
-        propertyInfos: []
+        ln: 'OperationParameterBaseType',
+        bti: 'GML_3_1_1.AbstractGeneralOperationParameterType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGriddedSurfaceType.Row',
-        propertyInfos: [{
-            type: 'element',
-            name: 'posList',
-            elementName: 'posList',
-            typeInfo: 'GML_3_1_1.DirectPositionListType'
+        ln: 'AbstractGriddedSurfaceType.Row',
+        ps: [{
+            n: 'posList',
+            ti: 'GML_3_1_1.DirectPositionListType'
           }, {
-            name: 'geometricPositionGroup',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'pos',
-                typeInfo: 'GML_3_1_1.DirectPositionType'
+            n: 'geometricPositionGroup',
+            col: true,
+            etis: [{
+                en: 'pos',
+                ti: 'GML_3_1_1.DirectPositionType'
               }, {
-                elementName: 'pointProperty',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+                en: 'pointProperty',
+                ti: 'GML_3_1_1.PointPropertyType'
               }],
-            type: 'elements'
+            t: 'es'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ClothoidType.RefLocation',
-        propertyInfos: [{
-            type: 'element',
-            name: 'affinePlacement',
-            elementName: 'AffinePlacement',
-            typeInfo: 'GML_3_1_1.AffinePlacementType'
+        ln: 'ClothoidType.RefLocation',
+        ps: [{
+            n: 'affinePlacement',
+            en: 'AffinePlacement',
+            ti: 'GML_3_1_1.AffinePlacementType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TinType.ControlPoint',
-        propertyInfos: [{
-            type: 'element',
-            name: 'posList',
-            elementName: 'posList',
-            typeInfo: 'GML_3_1_1.DirectPositionListType'
+        ln: 'TinType.ControlPoint',
+        ps: [{
+            n: 'posList',
+            ti: 'GML_3_1_1.DirectPositionListType'
           }, {
-            name: 'geometricPositionGroup',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'pos',
-                typeInfo: 'GML_3_1_1.DirectPositionType'
+            n: 'geometricPositionGroup',
+            col: true,
+            etis: [{
+                en: 'pos',
+                ti: 'GML_3_1_1.DirectPositionType'
               }, {
-                elementName: 'pointProperty',
-                typeInfo: 'GML_3_1_1.PointPropertyType'
+                en: 'pointProperty',
+                ti: 'GML_3_1_1.PointPropertyType'
               }],
-            type: 'elements'
+            t: 'es'
           }]
       }, {
-        type: 'enumInfo',
-        localName: 'CompassPointEnumeration',
-        baseTypeInfo: 'String',
-        values: ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW']
+        t: 'enum',
+        ln: 'CompassPointEnumeration',
+        vs: ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW']
       }, {
-        type: 'enumInfo',
-        localName: 'SurfaceInterpolationType',
-        baseTypeInfo: 'String',
-        values: ['none', 'planar', 'spherical', 'elliptical', 'conic', 'tin', 'parametricCurve', 'polynomialSpline', 'rationalSpline', 'triangulatedSpline']
+        t: 'enum',
+        ln: 'SurfaceInterpolationType',
+        vs: ['none', 'planar', 'spherical', 'elliptical', 'conic', 'tin', 'parametricCurve', 'polynomialSpline', 'rationalSpline', 'triangulatedSpline']
       }, {
-        type: 'enumInfo',
-        localName: 'SuccessionType',
-        baseTypeInfo: 'String',
-        values: ['substitution', 'division', 'fusion', 'initiation']
+        t: 'enum',
+        ln: 'SuccessionType',
+        vs: ['substitution', 'division', 'fusion', 'initiation']
       }, {
-        type: 'enumInfo',
-        localName: 'SignType',
-        baseTypeInfo: 'String',
-        values: ['-', '+']
+        t: 'enum',
+        ln: 'SignType',
+        vs: ['-', '+']
       }, {
-        type: 'enumInfo',
-        localName: 'QueryGrammarEnumeration',
-        baseTypeInfo: 'String',
-        values: ['xpath', 'xquery', 'other']
+        t: 'enum',
+        ln: 'QueryGrammarEnumeration',
+        vs: ['xpath', 'xquery', 'other']
       }, {
-        type: 'enumInfo',
-        localName: 'DrawingTypeType',
-        baseTypeInfo: 'String',
-        values: ['POLYLINE', 'ORTHOGONAL']
+        t: 'enum',
+        ln: 'DrawingTypeType',
+        vs: ['POLYLINE', 'ORTHOGONAL']
       }, {
-        type: 'enumInfo',
-        localName: 'LineTypeType',
-        baseTypeInfo: 'String',
-        values: ['STRAIGHT', 'BENT']
+        t: 'enum',
+        ln: 'LineTypeType',
+        vs: ['STRAIGHT', 'BENT']
       }, {
-        type: 'enumInfo',
-        localName: 'GraphTypeType',
-        baseTypeInfo: 'String',
-        values: ['TREE', 'BICONNECTED']
+        t: 'enum',
+        ln: 'GraphTypeType',
+        vs: ['TREE', 'BICONNECTED']
       }, {
-        type: 'enumInfo',
-        localName: 'AesheticCriteriaType',
-        baseTypeInfo: 'String',
-        values: ['MIN_CROSSINGS', 'MIN_AREA', 'MIN_BENDS', 'MAX_BENDS', 'UNIFORM_BENDS', 'MIN_SLOPES', 'MIN_EDGE_LENGTH', 'MAX_EDGE_LENGTH', 'UNIFORM_EDGE_LENGTH', 'MAX_ANGULAR_RESOLUTION', 'MIN_ASPECT_RATIO', 'MAX_SYMMETRIES']
+        t: 'enum',
+        ln: 'AesheticCriteriaType',
+        vs: ['MIN_CROSSINGS', 'MIN_AREA', 'MIN_BENDS', 'MAX_BENDS', 'UNIFORM_BENDS', 'MIN_SLOPES', 'MIN_EDGE_LENGTH', 'MAX_EDGE_LENGTH', 'UNIFORM_EDGE_LENGTH', 'MAX_ANGULAR_RESOLUTION', 'MIN_ASPECT_RATIO', 'MAX_SYMMETRIES']
       }, {
-        type: 'enumInfo',
-        localName: 'CurveInterpolationType',
-        baseTypeInfo: 'String',
-        values: ['linear', 'geodesic', 'circularArc3Points', 'circularArc2PointWithBulge', 'circularArcCenterPointWithRadius', 'elliptical', 'clothoid', 'conic', 'polynomialSpline', 'cubicSpline', 'rationalSpline']
+        t: 'enum',
+        ln: 'CurveInterpolationType',
+        vs: ['linear', 'geodesic', 'circularArc3Points', 'circularArc2PointWithBulge', 'circularArcCenterPointWithRadius', 'elliptical', 'clothoid', 'conic', 'polynomialSpline', 'cubicSpline', 'rationalSpline']
       }, {
-        type: 'enumInfo',
-        localName: 'SymbolTypeEnumeration',
-        baseTypeInfo: 'String',
-        values: ['svg', 'xpath', 'other']
+        t: 'enum',
+        ln: 'SymbolTypeEnumeration',
+        vs: ['svg', 'xpath', 'other']
       }, {
-        type: 'enumInfo',
-        localName: 'IncrementOrder',
-        baseTypeInfo: 'String',
-        values: ['+x+y', '+y+x', '+x-y', '-x-y']
+        t: 'enum',
+        ln: 'IncrementOrder',
+        vs: ['+x+y', '+y+x', '+x-y', '-x-y']
       }, {
-        type: 'enumInfo',
-        localName: 'FileValueModelType',
-        baseTypeInfo: 'String',
-        values: ['Record Interleaved']
+        t: 'enum',
+        ln: 'FileValueModelType',
+        vs: ['Record Interleaved']
       }, {
-        type: 'enumInfo',
-        localName: 'KnotTypesType',
-        baseTypeInfo: 'String',
-        values: ['uniform', 'quasiUniform', 'piecewiseBezier']
+        t: 'enum',
+        ln: 'KnotTypesType',
+        vs: ['uniform', 'quasiUniform', 'piecewiseBezier']
       }, {
-        type: 'enumInfo',
-        localName: 'TimeIndeterminateValueType',
-        baseTypeInfo: 'String',
-        values: ['after', 'before', 'now', 'unknown']
+        t: 'enum',
+        ln: 'TimeIndeterminateValueType',
+        vs: ['after', 'before', 'now', 'unknown']
       }, {
-        type: 'enumInfo',
-        localName: 'SequenceRuleNames',
-        baseTypeInfo: 'String',
-        values: ['Linear', 'Boustrophedonic', 'Cantor-diagonal', 'Spiral', 'Morton', 'Hilbert']
+        t: 'enum',
+        ln: 'SequenceRuleNames',
+        vs: ['Linear', 'Boustrophedonic', 'Cantor-diagonal', 'Spiral', 'Morton', 'Hilbert']
       }],
-    elementInfos: [{
-        elementName: 'OperationParameter',
-        typeInfo: 'GML_3_1_1.OperationParameterType',
-        substitutionHead: '_GeneralOperationParameter'
+    eis: [{
+        en: 'OperationParameter',
+        ti: 'GML_3_1_1.OperationParameterType',
+        sh: '_GeneralOperationParameter'
       }, {
-        elementName: 'groupID',
-        typeInfo: 'GML_3_1_1.IdentifierType'
+        en: 'groupID',
+        ti: 'GML_3_1_1.IdentifierType'
       }, {
-        elementName: 'verticalDatumRef',
-        typeInfo: 'GML_3_1_1.VerticalDatumRefType'
+        en: 'verticalDatumRef',
+        ti: 'GML_3_1_1.VerticalDatumRefType'
       }, {
-        elementName: 'baseCurve',
-        typeInfo: 'GML_3_1_1.CurvePropertyType'
+        en: 'baseCurve',
+        ti: 'GML_3_1_1.CurvePropertyType'
       }, {
-        elementName: 'TemporalDatum',
-        typeInfo: 'GML_3_1_1.TemporalDatumType',
-        substitutionHead: '_Datum'
+        en: 'TemporalDatum',
+        ti: 'GML_3_1_1.TemporalDatumType',
+        sh: '_Datum'
       }, {
-        elementName: 'measure',
-        typeInfo: 'GML_3_1_1.MeasureType'
+        en: 'measure',
+        ti: 'GML_3_1_1.MeasureType'
       }, {
-        elementName: '_Geometry',
-        typeInfo: 'GML_3_1_1.AbstractGeometryType',
-        substitutionHead: '_GML'
+        en: '_Geometry',
+        ti: 'GML_3_1_1.AbstractGeometryType',
+        sh: '_GML'
       }, {
-        elementName: 'datumName',
-        typeInfo: 'GML_3_1_1.CodeType',
-        substitutionHead: 'name'
+        en: 'datumName',
+        ti: 'GML_3_1_1.CodeType',
+        sh: 'name'
       }, {
-        elementName: 'maximumOccurs',
-        typeInfo: 'Integer'
+        en: 'maximumOccurs',
+        ti: 'Integer'
       }, {
-        elementName: 'name',
-        typeInfo: 'GML_3_1_1.CodeType'
+        en: 'name',
+        ti: 'GML_3_1_1.CodeType'
       }, {
-        elementName: 'Observation',
-        typeInfo: 'GML_3_1_1.ObservationType',
-        substitutionHead: '_Feature'
+        en: 'Observation',
+        ti: 'GML_3_1_1.ObservationType',
+        sh: '_Feature'
       }, {
-        elementName: 'EnvelopeWithTimePeriod',
-        typeInfo: 'GML_3_1_1.EnvelopeWithTimePeriodType',
-        substitutionHead: 'Envelope'
+        en: 'EnvelopeWithTimePeriod',
+        ti: 'GML_3_1_1.EnvelopeWithTimePeriodType',
+        sh: 'Envelope'
       }, {
-        elementName: 'ArcStringByBulge',
-        typeInfo: 'GML_3_1_1.ArcStringByBulgeType',
-        substitutionHead: '_CurveSegment'
+        en: 'ArcStringByBulge',
+        ti: 'GML_3_1_1.ArcStringByBulgeType',
+        sh: '_CurveSegment'
       }, {
-        elementName: 'symbol',
-        typeInfo: 'GML_3_1_1.SymbolType'
+        en: 'symbol',
+        ti: 'GML_3_1_1.SymbolType'
       }, {
-        elementName: 'multiPointDomain',
-        typeInfo: 'GML_3_1_1.MultiPointDomainType',
-        substitutionHead: 'domainSet'
+        en: 'multiPointDomain',
+        ti: 'GML_3_1_1.MultiPointDomainType',
+        sh: 'domainSet'
       }, {
-        elementName: 'TimeNode',
-        typeInfo: 'GML_3_1_1.TimeNodeType',
-        substitutionHead: '_TimeTopologyPrimitive'
+        en: 'TimeNode',
+        ti: 'GML_3_1_1.TimeNodeType',
+        sh: '_TimeTopologyPrimitive'
       }, {
-        elementName: '_TimeReferenceSystem',
-        typeInfo: 'GML_3_1_1.AbstractTimeReferenceSystemType',
-        substitutionHead: 'Definition'
+        en: '_TimeReferenceSystem',
+        ti: 'GML_3_1_1.AbstractTimeReferenceSystemType',
+        sh: 'Definition'
       }, {
-        elementName: 'ArcByBulge',
-        typeInfo: 'GML_3_1_1.ArcByBulgeType',
-        substitutionHead: 'ArcStringByBulge'
+        en: 'ArcByBulge',
+        ti: 'GML_3_1_1.ArcByBulgeType',
+        sh: 'ArcStringByBulge'
       }, {
-        elementName: 'usesOperation',
-        typeInfo: 'GML_3_1_1.OperationRefType'
+        en: 'usesOperation',
+        ti: 'GML_3_1_1.OperationRefType'
       }, {
-        elementName: 'DerivedUnit',
-        typeInfo: 'GML_3_1_1.DerivedUnitType',
-        substitutionHead: 'UnitDefinition'
+        en: 'DerivedUnit',
+        ti: 'GML_3_1_1.DerivedUnitType',
+        sh: 'UnitDefinition'
       }, {
-        elementName: 'usesEllipsoid',
-        typeInfo: 'GML_3_1_1.EllipsoidRefType'
+        en: 'usesEllipsoid',
+        ti: 'GML_3_1_1.EllipsoidRefType'
       }, {
-        elementName: '_MetaData',
-        typeInfo: 'GML_3_1_1.AbstractMetaDataType',
-        substitutionHead: '_Object'
+        en: '_MetaData',
+        ti: 'GML_3_1_1.AbstractMetaDataType',
+        sh: '_Object'
       }, {
-        elementName: 'AffinePlacement',
-        typeInfo: 'GML_3_1_1.AffinePlacementType'
+        en: 'AffinePlacement',
+        ti: 'GML_3_1_1.AffinePlacementType'
       }, {
-        elementName: 'stringValue',
-        typeInfo: 'String'
+        en: 'stringValue'
       }, {
-        elementName: 'derivedCRSType',
-        typeInfo: 'GML_3_1_1.DerivedCRSTypeType'
+        en: 'derivedCRSType',
+        ti: 'GML_3_1_1.DerivedCRSTypeType'
       }, {
-        elementName: 'usesImageDatum',
-        typeInfo: 'GML_3_1_1.ImageDatumRefType'
+        en: 'usesImageDatum',
+        ti: 'GML_3_1_1.ImageDatumRefType'
       }, {
-        elementName: 'integerValue',
-        typeInfo: 'Integer'
+        en: 'integerValue',
+        ti: 'Integer'
       }, {
-        elementName: 'Polygon',
-        typeInfo: 'GML_3_1_1.PolygonType',
-        substitutionHead: '_Surface'
+        en: 'Polygon',
+        ti: 'GML_3_1_1.PolygonType',
+        sh: '_Surface'
       }, {
-        elementName: 'transformationRef',
-        typeInfo: 'GML_3_1_1.TransformationRefType'
+        en: 'transformationRef',
+        ti: 'GML_3_1_1.TransformationRefType'
       }, {
-        elementName: '_TimePrimitive',
-        typeInfo: 'GML_3_1_1.AbstractTimePrimitiveType',
-        substitutionHead: '_TimeObject'
+        en: '_TimePrimitive',
+        ti: 'GML_3_1_1.AbstractTimePrimitiveType',
+        sh: '_TimeObject'
       }, {
-        elementName: 'target',
-        typeInfo: 'GML_3_1_1.TargetPropertyType'
+        en: 'target',
+        ti: 'GML_3_1_1.TargetPropertyType'
       }, {
-        elementName: 'rangeParameters',
-        typeInfo: 'GML_3_1_1.RangeParametersType'
+        en: 'rangeParameters',
+        ti: 'GML_3_1_1.RangeParametersType'
       }, {
-        elementName: 'srsName',
-        typeInfo: 'GML_3_1_1.CodeType',
-        substitutionHead: 'name'
+        en: 'srsName',
+        ti: 'GML_3_1_1.CodeType',
+        sh: 'name'
       }, {
-        elementName: 'usesEllipsoidalCS',
-        typeInfo: 'GML_3_1_1.EllipsoidalCSRefType'
+        en: 'usesEllipsoidalCS',
+        ti: 'GML_3_1_1.EllipsoidalCSRefType'
       }, {
-        elementName: 'LineString',
-        typeInfo: 'GML_3_1_1.LineStringType',
-        substitutionHead: '_Curve'
+        en: 'LineString',
+        ti: 'GML_3_1_1.LineStringType',
+        sh: '_Curve'
       }, {
-        elementName: '_GeneralDerivedCRS',
-        typeInfo: 'GML_3_1_1.AbstractGeneralDerivedCRSType',
-        substitutionHead: '_CoordinateReferenceSystem'
+        en: '_GeneralDerivedCRS',
+        ti: 'GML_3_1_1.AbstractGeneralDerivedCRSType',
+        sh: '_CoordinateReferenceSystem'
       }, {
-        elementName: 'rangeSet',
-        typeInfo: 'GML_3_1_1.RangeSetType'
+        en: 'rangeSet',
+        ti: 'GML_3_1_1.RangeSetType'
       }, {
-        elementName: 'decimalMinutes',
-        typeInfo: 'Decimal'
+        en: 'decimalMinutes',
+        ti: 'Decimal'
       }, {
-        elementName: 'PolygonPatch',
-        typeInfo: 'GML_3_1_1.PolygonPatchType',
-        substitutionHead: '_SurfacePatch'
+        en: 'PolygonPatch',
+        ti: 'GML_3_1_1.PolygonPatchType',
+        sh: '_SurfacePatch'
       }, {
-        elementName: 'TriangulatedSurface',
-        typeInfo: 'GML_3_1_1.TriangulatedSurfaceType',
-        substitutionHead: 'Surface'
+        en: 'TriangulatedSurface',
+        ti: 'GML_3_1_1.TriangulatedSurfaceType',
+        sh: 'Surface'
       }, {
-        elementName: 'location',
-        typeInfo: 'GML_3_1_1.LocationPropertyType'
+        en: 'location',
+        ti: 'GML_3_1_1.LocationPropertyType'
       }, {
-        elementName: 'Ellipsoid',
-        typeInfo: 'GML_3_1_1.EllipsoidType',
-        substitutionHead: 'Definition'
+        en: 'Ellipsoid',
+        ti: 'GML_3_1_1.EllipsoidType',
+        sh: 'Definition'
       }, {
-        elementName: 'BooleanList',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'String'
+        en: 'BooleanList',
+        ti: {
+          t: 'l'
         }
       }, {
-        elementName: 'metaDataProperty',
-        typeInfo: 'GML_3_1_1.MetaDataPropertyType'
+        en: 'metaDataProperty',
+        ti: 'GML_3_1_1.MetaDataPropertyType'
       }, {
-        elementName: 'coordinateSystemAxisRef',
-        typeInfo: 'GML_3_1_1.CoordinateSystemAxisRefType'
+        en: 'coordinateSystemAxisRef',
+        ti: 'GML_3_1_1.CoordinateSystemAxisRefType'
       }, {
-        elementName: 'generalConversionRef',
-        typeInfo: 'GML_3_1_1.GeneralConversionRefType'
+        en: 'generalConversionRef',
+        ti: 'GML_3_1_1.GeneralConversionRefType'
       }, {
-        elementName: 'description',
-        typeInfo: 'GML_3_1_1.StringOrRefType'
+        en: 'description',
+        ti: 'GML_3_1_1.StringOrRefType'
       }, {
-        elementName: 'CompositeSurface',
-        typeInfo: 'GML_3_1_1.CompositeSurfaceType',
-        substitutionHead: '_Surface'
+        en: 'CompositeSurface',
+        ti: 'GML_3_1_1.CompositeSurfaceType',
+        sh: '_Surface'
       }, {
-        elementName: 'ObliqueCartesianCS',
-        typeInfo: 'GML_3_1_1.ObliqueCartesianCSType',
-        substitutionHead: '_CoordinateSystem'
+        en: 'ObliqueCartesianCS',
+        ti: 'GML_3_1_1.ObliqueCartesianCSType',
+        sh: '_CoordinateSystem'
       }, {
-        elementName: 'DataBlock',
-        typeInfo: 'GML_3_1_1.DataBlockType'
+        en: 'DataBlock',
+        ti: 'GML_3_1_1.DataBlockType'
       }, {
-        elementName: '_CurveSegment',
-        typeInfo: 'GML_3_1_1.AbstractCurveSegmentType'
+        en: '_CurveSegment',
+        ti: 'GML_3_1_1.AbstractCurveSegmentType'
       }, {
-        elementName: 'generalTransformationRef',
-        typeInfo: 'GML_3_1_1.GeneralTransformationRefType'
+        en: 'generalTransformationRef',
+        ti: 'GML_3_1_1.GeneralTransformationRefType'
       }, {
-        elementName: 'RectifiedGridCoverage',
-        typeInfo: 'GML_3_1_1.RectifiedGridCoverageType',
-        substitutionHead: '_DiscreteCoverage'
+        en: 'RectifiedGridCoverage',
+        ti: 'GML_3_1_1.RectifiedGridCoverageType',
+        sh: '_DiscreteCoverage'
       }, {
-        elementName: 'measureDescription',
-        typeInfo: 'GML_3_1_1.CodeType'
+        en: 'measureDescription',
+        ti: 'GML_3_1_1.CodeType'
       }, {
-        elementName: 'TimeTopologyComplex',
-        typeInfo: 'GML_3_1_1.TimeTopologyComplexType',
-        substitutionHead: '_TimeComplex'
+        en: 'TimeTopologyComplex',
+        ti: 'GML_3_1_1.TimeTopologyComplexType',
+        sh: '_TimeComplex'
       }, {
-        elementName: 'UnitDefinition',
-        typeInfo: 'GML_3_1_1.UnitDefinitionType',
-        substitutionHead: 'Definition'
+        en: 'UnitDefinition',
+        ti: 'GML_3_1_1.UnitDefinitionType',
+        sh: 'Definition'
       }, {
-        elementName: 'valueComponent',
-        typeInfo: 'GML_3_1_1.ValuePropertyType'
+        en: 'valueComponent',
+        ti: 'GML_3_1_1.ValuePropertyType'
       }, {
-        elementName: 'TimeCalendar',
-        typeInfo: 'GML_3_1_1.TimeCalendarType',
-        substitutionHead: '_TimeReferenceSystem'
+        en: 'TimeCalendar',
+        ti: 'GML_3_1_1.TimeCalendarType',
+        sh: '_TimeReferenceSystem'
       }, {
-        elementName: 'TopoComplex',
-        typeInfo: 'GML_3_1_1.TopoComplexType',
-        substitutionHead: '_Topology'
+        en: 'TopoComplex',
+        ti: 'GML_3_1_1.TopoComplexType',
+        sh: '_Topology'
       }, {
-        elementName: 'using',
-        typeInfo: 'GML_3_1_1.FeaturePropertyType'
+        en: 'using',
+        ti: 'GML_3_1_1.FeaturePropertyType'
       }, {
-        elementName: 'patches',
-        typeInfo: 'GML_3_1_1.SurfacePatchArrayPropertyType'
+        en: 'patches',
+        ti: 'GML_3_1_1.SurfacePatchArrayPropertyType'
       }, {
-        elementName: 'parameterValueGroup',
-        typeInfo: 'GML_3_1_1.ParameterValueGroupType',
-        substitutionHead: '_generalParameterValue'
+        en: 'parameterValueGroup',
+        ti: 'GML_3_1_1.ParameterValueGroupType',
+        sh: '_generalParameterValue'
       }, {
-        elementName: 'baseSurface',
-        typeInfo: 'GML_3_1_1.SurfacePropertyType'
+        en: 'baseSurface',
+        ti: 'GML_3_1_1.SurfacePropertyType'
       }, {
-        elementName: 'curveMember',
-        typeInfo: 'GML_3_1_1.CurvePropertyType'
+        en: 'curveMember',
+        ti: 'GML_3_1_1.CurvePropertyType'
       }, {
-        elementName: 'CountList',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'String'
+        en: 'CountList',
+        ti: {
+          t: 'l'
         }
       }, {
-        elementName: 'superComplex',
-        typeInfo: 'GML_3_1_1.TopoComplexMemberType'
+        en: 'superComplex',
+        ti: 'GML_3_1_1.TopoComplexMemberType'
       }, {
-        elementName: 'derivationUnitTerm',
-        typeInfo: 'GML_3_1_1.DerivationUnitTermType'
+        en: 'derivationUnitTerm',
+        ti: 'GML_3_1_1.DerivationUnitTermType'
       }, {
-        elementName: 'projectedCRSRef',
-        typeInfo: 'GML_3_1_1.ProjectedCRSRefType'
+        en: 'projectedCRSRef',
+        ti: 'GML_3_1_1.ProjectedCRSRefType'
       }, {
-        elementName: 'Arc',
-        typeInfo: 'GML_3_1_1.ArcType',
-        substitutionHead: 'ArcString'
+        en: 'Arc',
+        ti: 'GML_3_1_1.ArcType',
+        sh: 'ArcString'
       }, {
-        elementName: 'groupName',
-        typeInfo: 'GML_3_1_1.CodeType',
-        substitutionHead: 'name'
+        en: 'groupName',
+        ti: 'GML_3_1_1.CodeType',
+        sh: 'name'
       }, {
-        elementName: 'ImageCRS',
-        typeInfo: 'GML_3_1_1.ImageCRSType',
-        substitutionHead: '_CoordinateReferenceSystem'
+        en: 'ImageCRS',
+        ti: 'GML_3_1_1.ImageCRSType',
+        sh: '_CoordinateReferenceSystem'
       }, {
-        elementName: 'secondDefiningParameter',
-        typeInfo: 'GML_3_1_1.SecondDefiningParameterType'
+        en: 'secondDefiningParameter',
+        ti: 'GML_3_1_1.SecondDefiningParameterType'
       }, {
-        elementName: 'quantityType',
-        typeInfo: 'GML_3_1_1.StringOrRefType'
+        en: 'quantityType',
+        ti: 'GML_3_1_1.StringOrRefType'
       }, {
-        elementName: 'usesVerticalDatum',
-        typeInfo: 'GML_3_1_1.VerticalDatumRefType'
+        en: 'usesVerticalDatum',
+        ti: 'GML_3_1_1.VerticalDatumRefType'
       }, {
-        elementName: '_TimeGeometricPrimitive',
-        typeInfo: 'GML_3_1_1.AbstractTimeGeometricPrimitiveType',
-        substitutionHead: '_TimePrimitive'
+        en: '_TimeGeometricPrimitive',
+        ti: 'GML_3_1_1.AbstractTimeGeometricPrimitiveType',
+        sh: '_TimePrimitive'
       }, {
-        elementName: '_Operation',
-        typeInfo: 'GML_3_1_1.AbstractCoordinateOperationType',
-        substitutionHead: '_SingleOperation'
+        en: '_Operation',
+        ti: 'GML_3_1_1.AbstractCoordinateOperationType',
+        sh: '_SingleOperation'
       }, {
-        elementName: 'inverseFlattening',
-        typeInfo: 'GML_3_1_1.MeasureType'
+        en: 'inverseFlattening',
+        ti: 'GML_3_1_1.MeasureType'
       }, {
-        elementName: 'operationRef',
-        typeInfo: 'GML_3_1_1.OperationRefType'
+        en: 'operationRef',
+        ti: 'GML_3_1_1.OperationRefType'
       }, {
-        elementName: 'conversionToPreferredUnit',
-        typeInfo: 'GML_3_1_1.ConversionToPreferredUnitType'
+        en: 'conversionToPreferredUnit',
+        ti: 'GML_3_1_1.ConversionToPreferredUnitType'
       }, {
-        elementName: 'concatenatedOperationRef',
-        typeInfo: 'GML_3_1_1.ConcatenatedOperationRefType'
+        en: 'concatenatedOperationRef',
+        ti: 'GML_3_1_1.ConcatenatedOperationRefType'
       }, {
-        elementName: 'Node',
-        typeInfo: 'GML_3_1_1.NodeType',
-        substitutionHead: '_TopoPrimitive'
+        en: 'Node',
+        ti: 'GML_3_1_1.NodeType',
+        sh: '_TopoPrimitive'
       }, {
-        elementName: 'subComplex',
-        typeInfo: 'GML_3_1_1.TopoComplexMemberType'
+        en: 'subComplex',
+        ti: 'GML_3_1_1.TopoComplexMemberType'
       }, {
-        elementName: 'OffsetCurve',
-        typeInfo: 'GML_3_1_1.OffsetCurveType',
-        substitutionHead: '_CurveSegment'
+        en: 'OffsetCurve',
+        ti: 'GML_3_1_1.OffsetCurveType',
+        sh: '_CurveSegment'
       }, {
-        elementName: 'valueProperty',
-        typeInfo: 'GML_3_1_1.ValuePropertyType'
+        en: 'valueProperty',
+        ti: 'GML_3_1_1.ValuePropertyType'
       }, {
-        elementName: 'domainSet',
-        typeInfo: 'GML_3_1_1.DomainSetType'
+        en: 'domainSet',
+        ti: 'GML_3_1_1.DomainSetType'
       }, {
-        elementName: 'labelStyle',
-        typeInfo: 'GML_3_1_1.LabelStylePropertyType'
+        en: 'labelStyle',
+        ti: 'GML_3_1_1.LabelStylePropertyType'
       }, {
-        elementName: 'columnIndex',
-        typeInfo: 'Integer'
+        en: 'columnIndex',
+        ti: 'Integer'
       }, {
-        elementName: '_Surface',
-        typeInfo: 'GML_3_1_1.AbstractSurfaceType',
-        substitutionHead: '_GeometricPrimitive'
+        en: '_Surface',
+        ti: 'GML_3_1_1.AbstractSurfaceType',
+        sh: '_GeometricPrimitive'
       }, {
-        elementName: '_TopoPrimitive',
-        typeInfo: 'GML_3_1_1.AbstractTopoPrimitiveType',
-        substitutionHead: '_Topology'
+        en: '_TopoPrimitive',
+        ti: 'GML_3_1_1.AbstractTopoPrimitiveType',
+        sh: '_Topology'
       }, {
-        elementName: 'multiPointProperty',
-        typeInfo: 'GML_3_1_1.MultiPointPropertyType'
+        en: 'multiPointProperty',
+        ti: 'GML_3_1_1.MultiPointPropertyType'
       }, {
-        elementName: 'datumRef',
-        typeInfo: 'GML_3_1_1.DatumRefType'
+        en: 'datumRef',
+        ti: 'GML_3_1_1.DatumRefType'
       }, {
-        elementName: 'usesTemporalCS',
-        typeInfo: 'GML_3_1_1.TemporalCSRefType'
+        en: 'usesTemporalCS',
+        ti: 'GML_3_1_1.TemporalCSRefType'
       }, {
-        elementName: '_SurfacePatch',
-        typeInfo: 'GML_3_1_1.AbstractSurfacePatchType'
+        en: '_SurfacePatch',
+        ti: 'GML_3_1_1.AbstractSurfacePatchType'
       }, {
-        elementName: 'CountExtent',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'String'
+        en: 'CountExtent',
+        ti: {
+          t: 'l'
         }
       }, {
-        elementName: 'multiCenterLineOf',
-        typeInfo: 'GML_3_1_1.MultiCurvePropertyType'
+        en: 'multiCenterLineOf',
+        ti: 'GML_3_1_1.MultiCurvePropertyType'
       }, {
-        elementName: 'coordinates',
-        typeInfo: 'GML_3_1_1.CoordinatesType'
+        en: 'coordinates',
+        ti: 'GML_3_1_1.CoordinatesType'
       }, {
-        elementName: 'GeodeticDatum',
-        typeInfo: 'GML_3_1_1.GeodeticDatumType',
-        substitutionHead: '_Datum'
+        en: 'GeodeticDatum',
+        ti: 'GML_3_1_1.GeodeticDatumType',
+        sh: '_Datum'
       }, {
-        elementName: 'integerValueList',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'Integer'
+        en: 'integerValueList',
+        ti: {
+          t: 'l',
+          ti: 'Integer'
         }
       }, {
-        elementName: 'temporalCRSRef',
-        typeInfo: 'GML_3_1_1.TemporalCRSRefType'
+        en: 'temporalCRSRef',
+        ti: 'GML_3_1_1.TemporalCRSRefType'
       }, {
-        elementName: '_Style',
-        typeInfo: 'GML_3_1_1.AbstractStyleType',
-        substitutionHead: '_GML'
+        en: '_Style',
+        ti: 'GML_3_1_1.AbstractStyleType',
+        sh: '_GML'
       }, {
-        elementName: 'Ring',
-        typeInfo: 'GML_3_1_1.RingType',
-        substitutionHead: '_Ring'
+        en: 'Ring',
+        ti: 'GML_3_1_1.RingType',
+        sh: '_Ring'
       }, {
-        elementName: 'ConcatenatedOperation',
-        typeInfo: 'GML_3_1_1.ConcatenatedOperationType',
-        substitutionHead: '_CoordinateOperation'
+        en: 'ConcatenatedOperation',
+        ti: 'GML_3_1_1.ConcatenatedOperationType',
+        sh: '_CoordinateOperation'
       }, {
-        elementName: 'rowIndex',
-        typeInfo: 'Integer'
+        en: 'rowIndex',
+        ti: 'Integer'
       }, {
-        elementName: 'polygonProperty',
-        typeInfo: 'GML_3_1_1.PolygonPropertyType'
+        en: 'polygonProperty',
+        ti: 'GML_3_1_1.PolygonPropertyType'
       }, {
-        elementName: 'GridFunction',
-        typeInfo: 'GML_3_1_1.GridFunctionType'
+        en: 'GridFunction',
+        ti: 'GML_3_1_1.GridFunctionType'
       }, {
-        elementName: 'lineStringProperty',
-        typeInfo: 'GML_3_1_1.LineStringPropertyType'
+        en: 'lineStringProperty',
+        ti: 'GML_3_1_1.LineStringPropertyType'
       }, {
-        elementName: 'topoCurveProperty',
-        typeInfo: 'GML_3_1_1.TopoCurvePropertyType'
+        en: 'topoCurveProperty',
+        ti: 'GML_3_1_1.TopoCurvePropertyType'
       }, {
-        elementName: 'edgeOf',
-        typeInfo: 'GML_3_1_1.CurvePropertyType'
+        en: 'edgeOf',
+        ti: 'GML_3_1_1.CurvePropertyType'
       }, {
-        elementName: 'operationParameterRef',
-        typeInfo: 'GML_3_1_1.OperationParameterRefType'
+        en: 'operationParameterRef',
+        ti: 'GML_3_1_1.OperationParameterRefType'
       }, {
-        elementName: 'MultiSurface',
-        typeInfo: 'GML_3_1_1.MultiSurfaceType',
-        substitutionHead: '_GeometricAggregate'
+        en: 'MultiSurface',
+        ti: 'GML_3_1_1.MultiSurfaceType',
+        sh: '_GeometricAggregate'
       }, {
-        elementName: 'usesSingleOperation',
-        typeInfo: 'GML_3_1_1.SingleOperationRefType'
+        en: 'usesSingleOperation',
+        ti: 'GML_3_1_1.SingleOperationRefType'
       }, {
-        elementName: 'realizationEpoch',
-        typeInfo: 'Calendar'
+        en: 'realizationEpoch',
+        ti: 'Calendar'
       }, {
-        elementName: 'dictionaryEntry',
-        typeInfo: 'GML_3_1_1.DictionaryEntryType'
+        en: 'dictionaryEntry',
+        ti: 'GML_3_1_1.DictionaryEntryType'
       }, {
-        elementName: 'TimeEdge',
-        typeInfo: 'GML_3_1_1.TimeEdgeType',
-        substitutionHead: '_TimeTopologyPrimitive'
+        en: 'TimeEdge',
+        ti: 'GML_3_1_1.TimeEdgeType',
+        sh: '_TimeTopologyPrimitive'
       }, {
-        elementName: 'DefinitionCollection',
-        typeInfo: 'GML_3_1_1.DictionaryType',
-        substitutionHead: 'Definition'
+        en: 'DefinitionCollection',
+        ti: 'GML_3_1_1.DictionaryType',
+        sh: 'Definition'
       }, {
-        elementName: 'Envelope',
-        typeInfo: 'GML_3_1_1.EnvelopeType'
+        en: 'Envelope',
+        ti: 'GML_3_1_1.EnvelopeType'
       }, {
-        elementName: '_GeometricAggregate',
-        typeInfo: 'GML_3_1_1.AbstractGeometricAggregateType',
-        substitutionHead: '_Geometry'
+        en: '_GeometricAggregate',
+        ti: 'GML_3_1_1.AbstractGeometricAggregateType',
+        sh: '_Geometry'
       }, {
-        elementName: '_Ring',
-        typeInfo: 'GML_3_1_1.AbstractRingType',
-        substitutionHead: '_Geometry'
+        en: '_Ring',
+        ti: 'GML_3_1_1.AbstractRingType',
+        sh: '_Geometry'
       }, {
-        elementName: 'Solid',
-        typeInfo: 'GML_3_1_1.SolidType',
-        substitutionHead: '_Solid'
+        en: 'Solid',
+        ti: 'GML_3_1_1.SolidType',
+        sh: '_Solid'
       }, {
-        elementName: 'graphStyle',
-        typeInfo: 'GML_3_1_1.GraphStylePropertyType'
+        en: 'graphStyle',
+        ti: 'GML_3_1_1.GraphStylePropertyType'
       }, {
-        elementName: 'TimeCalendarEra',
-        typeInfo: 'GML_3_1_1.TimeCalendarEraType',
-        substitutionHead: 'Definition'
+        en: 'TimeCalendarEra',
+        ti: 'GML_3_1_1.TimeCalendarEraType',
+        sh: 'Definition'
       }, {
-        elementName: 'usesGeodeticDatum',
-        typeInfo: 'GML_3_1_1.GeodeticDatumRefType'
+        en: 'usesGeodeticDatum',
+        ti: 'GML_3_1_1.GeodeticDatumRefType'
       }, {
-        elementName: 'SphericalCS',
-        typeInfo: 'GML_3_1_1.SphericalCSType',
-        substitutionHead: '_CoordinateSystem'
+        en: 'SphericalCS',
+        ti: 'GML_3_1_1.SphericalCSType',
+        sh: '_CoordinateSystem'
       }, {
-        elementName: 'definitionRef',
-        typeInfo: 'GML_3_1_1.ReferenceType'
+        en: 'definitionRef',
+        ti: 'GML_3_1_1.ReferenceType'
       }, {
-        elementName: 'pos',
-        typeInfo: 'GML_3_1_1.DirectPositionType'
+        en: 'pos',
+        ti: 'GML_3_1_1.DirectPositionType'
       }, {
-        elementName: 'MultiPointCoverage',
-        typeInfo: 'GML_3_1_1.MultiPointCoverageType',
-        substitutionHead: '_DiscreteCoverage'
+        en: 'MultiPointCoverage',
+        ti: 'GML_3_1_1.MultiPointCoverageType',
+        sh: '_DiscreteCoverage'
       }, {
-        elementName: 'vector',
-        typeInfo: 'GML_3_1_1.VectorType'
+        en: 'vector',
+        ti: 'GML_3_1_1.VectorType'
       }, {
-        elementName: 'Face',
-        typeInfo: 'GML_3_1_1.FaceType',
-        substitutionHead: '_TopoPrimitive'
+        en: 'Face',
+        ti: 'GML_3_1_1.FaceType',
+        sh: '_TopoPrimitive'
       }, {
-        elementName: 'CategoryExtent',
-        typeInfo: 'GML_3_1_1.CategoryExtentType'
+        en: 'CategoryExtent',
+        ti: 'GML_3_1_1.CategoryExtentType'
       }, {
-        elementName: '_SingleOperation',
-        typeInfo: 'GML_3_1_1.AbstractCoordinateOperationType',
-        substitutionHead: '_CoordinateOperation'
+        en: '_SingleOperation',
+        ti: 'GML_3_1_1.AbstractCoordinateOperationType',
+        sh: '_CoordinateOperation'
       }, {
-        elementName: 'operationParameterGroupRef',
-        typeInfo: 'GML_3_1_1.OperationParameterRefType'
+        en: 'operationParameterGroupRef',
+        ti: 'GML_3_1_1.OperationParameterRefType'
       }, {
-        elementName: 'minutes',
-        typeInfo: 'Int'
+        en: 'minutes',
+        ti: 'Int'
       }, {
-        elementName: 'multiCurveProperty',
-        typeInfo: 'GML_3_1_1.MultiCurvePropertyType'
+        en: 'multiCurveProperty',
+        ti: 'GML_3_1_1.MultiCurvePropertyType'
       }, {
-        elementName: 'history',
-        typeInfo: 'GML_3_1_1.HistoryPropertyType'
+        en: 'history',
+        ti: 'GML_3_1_1.HistoryPropertyType'
       }, {
-        elementName: 'boundingPolygon',
-        typeInfo: 'GML_3_1_1.PolygonType'
+        en: 'boundingPolygon',
+        ti: 'GML_3_1_1.PolygonType'
       }, {
-        elementName: 'OrientableCurve',
-        typeInfo: 'GML_3_1_1.OrientableCurveType',
-        substitutionHead: '_Curve'
+        en: 'OrientableCurve',
+        ti: 'GML_3_1_1.OrientableCurveType',
+        sh: '_Curve'
       }, {
-        elementName: 'EngineeringDatum',
-        typeInfo: 'GML_3_1_1.EngineeringDatumType',
-        substitutionHead: '_Datum'
+        en: 'EngineeringDatum',
+        ti: 'GML_3_1_1.EngineeringDatumType',
+        sh: '_Datum'
       }, {
-        elementName: '_TimeComplex',
-        typeInfo: 'GML_3_1_1.AbstractTimeComplexType',
-        substitutionHead: '_TimeObject'
+        en: '_TimeComplex',
+        ti: 'GML_3_1_1.AbstractTimeComplexType',
+        sh: '_TimeObject'
       }, {
-        elementName: 'pixelInCell',
-        typeInfo: 'GML_3_1_1.PixelInCellType'
+        en: 'pixelInCell',
+        ti: 'GML_3_1_1.PixelInCellType'
       }, {
-        elementName: 'booleanValue',
-        typeInfo: 'Boolean'
+        en: 'booleanValue',
+        ti: 'Boolean'
       }, {
-        elementName: 'dataSource',
-        typeInfo: 'GML_3_1_1.StringOrRefType'
+        en: 'dataSource',
+        ti: 'GML_3_1_1.StringOrRefType'
       }, {
-        elementName: 'surfaceMember',
-        typeInfo: 'GML_3_1_1.SurfacePropertyType'
+        en: 'surfaceMember',
+        ti: 'GML_3_1_1.SurfacePropertyType'
       }, {
-        elementName: 'MultiPoint',
-        typeInfo: 'GML_3_1_1.MultiPointType',
-        substitutionHead: '_GeometricAggregate'
+        en: 'MultiPoint',
+        ti: 'GML_3_1_1.MultiPointType',
+        sh: '_GeometricAggregate'
       }, {
-        elementName: 'Transformation',
-        typeInfo: 'GML_3_1_1.TransformationType',
-        substitutionHead: '_GeneralTransformation'
+        en: 'Transformation',
+        ti: 'GML_3_1_1.TransformationType',
+        sh: '_GeneralTransformation'
       }, {
-        elementName: 'OrientableSurface',
-        typeInfo: 'GML_3_1_1.OrientableSurfaceType',
-        substitutionHead: '_Surface'
+        en: 'OrientableSurface',
+        ti: 'GML_3_1_1.OrientableSurfaceType',
+        sh: '_Surface'
       }, {
-        elementName: 'usesSphericalCS',
-        typeInfo: 'GML_3_1_1.SphericalCSRefType'
+        en: 'usesSphericalCS',
+        ti: 'GML_3_1_1.SphericalCSRefType'
       }, {
-        elementName: '_positionalAccuracy',
-        typeInfo: 'GML_3_1_1.AbstractPositionalAccuracyType'
+        en: '_positionalAccuracy',
+        ti: 'GML_3_1_1.AbstractPositionalAccuracyType'
       }, {
-        elementName: 'primeMeridianRef',
-        typeInfo: 'GML_3_1_1.PrimeMeridianRefType'
+        en: 'primeMeridianRef',
+        ti: 'GML_3_1_1.PrimeMeridianRefType'
       }, {
-        elementName: 'topoPrimitiveMembers',
-        typeInfo: 'GML_3_1_1.TopoPrimitiveArrayAssociationType'
+        en: 'topoPrimitiveMembers',
+        ti: 'GML_3_1_1.TopoPrimitiveArrayAssociationType'
       }, {
-        elementName: '_FeatureCollection',
-        typeInfo: 'GML_3_1_1.AbstractFeatureCollectionType',
-        substitutionHead: '_Feature'
+        en: '_FeatureCollection',
+        ti: 'GML_3_1_1.AbstractFeatureCollectionType',
+        sh: '_Feature'
       }, {
-        elementName: 'dmsAngleValue',
-        typeInfo: 'GML_3_1_1.DMSAngleType'
+        en: 'dmsAngleValue',
+        ti: 'GML_3_1_1.DMSAngleType'
       }, {
-        elementName: 'multiCurveDomain',
-        typeInfo: 'GML_3_1_1.MultiCurveDomainType',
-        substitutionHead: 'domainSet'
+        en: 'multiCurveDomain',
+        ti: 'GML_3_1_1.MultiCurveDomainType',
+        sh: 'domainSet'
       }, {
-        elementName: 'CubicSpline',
-        typeInfo: 'GML_3_1_1.CubicSplineType',
-        substitutionHead: '_CurveSegment'
+        en: 'CubicSpline',
+        ti: 'GML_3_1_1.CubicSplineType',
+        sh: '_CurveSegment'
       }, {
-        elementName: 'userDefinedCSRef',
-        typeInfo: 'GML_3_1_1.UserDefinedCSRefType'
+        en: 'userDefinedCSRef',
+        ti: 'GML_3_1_1.UserDefinedCSRefType'
       }, {
-        elementName: 'pointProperty',
-        typeInfo: 'GML_3_1_1.PointPropertyType'
+        en: 'pointProperty',
+        ti: 'GML_3_1_1.PointPropertyType'
       }, {
-        elementName: 'multiGeometryProperty',
-        typeInfo: 'GML_3_1_1.MultiGeometryPropertyType'
+        en: 'multiGeometryProperty',
+        ti: 'GML_3_1_1.MultiGeometryPropertyType'
       }, {
-        elementName: 'multiSolidDomain',
-        typeInfo: 'GML_3_1_1.MultiSolidDomainType',
-        substitutionHead: 'domainSet'
+        en: 'multiSolidDomain',
+        ti: 'GML_3_1_1.MultiSolidDomainType',
+        sh: 'domainSet'
       }, {
-        elementName: 'Bag',
-        typeInfo: 'GML_3_1_1.BagType',
-        substitutionHead: '_GML'
+        en: 'Bag',
+        ti: 'GML_3_1_1.BagType',
+        sh: '_GML'
       }, {
-        elementName: 'Quantity',
-        typeInfo: 'GML_3_1_1.MeasureType'
+        en: 'Quantity',
+        ti: 'GML_3_1_1.MeasureType'
       }, {
-        elementName: 'methodName',
-        typeInfo: 'GML_3_1_1.CodeType',
-        substitutionHead: 'name'
+        en: 'methodName',
+        ti: 'GML_3_1_1.CodeType',
+        sh: 'name'
       }, {
-        elementName: 'dmsAngle',
-        typeInfo: 'GML_3_1_1.DMSAngleType'
+        en: 'dmsAngle',
+        ti: 'GML_3_1_1.DMSAngleType'
       }, {
-        elementName: 'timePosition',
-        typeInfo: 'GML_3_1_1.TimePositionType'
+        en: 'timePosition',
+        ti: 'GML_3_1_1.TimePositionType'
       }, {
-        elementName: 'ellipsoidID',
-        typeInfo: 'GML_3_1_1.IdentifierType'
+        en: 'ellipsoidID',
+        ti: 'GML_3_1_1.IdentifierType'
       }, {
-        elementName: 'polarCSRef',
-        typeInfo: 'GML_3_1_1.PolarCSRefType'
+        en: 'polarCSRef',
+        ti: 'GML_3_1_1.PolarCSRefType'
       }, {
-        elementName: 'featureMember',
-        typeInfo: 'GML_3_1_1.FeaturePropertyType'
+        en: 'featureMember',
+        ti: 'GML_3_1_1.FeaturePropertyType'
       }, {
-        elementName: 'FeatureCollection',
-        typeInfo: 'GML_3_1_1.FeatureCollectionType',
-        substitutionHead: '_Feature'
+        en: 'FeatureCollection',
+        ti: 'GML_3_1_1.FeatureCollectionType',
+        sh: '_Feature'
       }, {
-        elementName: 'valueList',
-        typeInfo: 'GML_3_1_1.MeasureListType'
+        en: 'valueList',
+        ti: 'GML_3_1_1.MeasureListType'
       }, {
-        elementName: '_GeneralOperationParameter',
-        typeInfo: 'GML_3_1_1.AbstractGeneralOperationParameterType',
-        substitutionHead: 'Definition'
+        en: '_GeneralOperationParameter',
+        ti: 'GML_3_1_1.AbstractGeneralOperationParameterType',
+        sh: 'Definition'
       }, {
-        elementName: '_generalParameterValue',
-        typeInfo: 'GML_3_1_1.AbstractGeneralParameterValueType'
+        en: '_generalParameterValue',
+        ti: 'GML_3_1_1.AbstractGeneralParameterValueType'
       }, {
-        elementName: '_GeometricPrimitive',
-        typeInfo: 'GML_3_1_1.AbstractGeometricPrimitiveType',
-        substitutionHead: '_Geometry'
+        en: '_GeometricPrimitive',
+        ti: 'GML_3_1_1.AbstractGeometricPrimitiveType',
+        sh: '_Geometry'
       }, {
-        elementName: 'Category',
-        typeInfo: 'GML_3_1_1.CodeType'
+        en: 'Category',
+        ti: 'GML_3_1_1.CodeType'
       }, {
-        elementName: 'coordinateOperationName',
-        typeInfo: 'GML_3_1_1.CodeType',
-        substitutionHead: 'name'
+        en: 'coordinateOperationName',
+        ti: 'GML_3_1_1.CodeType',
+        sh: 'name'
       }, {
-        elementName: 'datumID',
-        typeInfo: 'GML_3_1_1.IdentifierType'
+        en: 'datumID',
+        ti: 'GML_3_1_1.IdentifierType'
       }, {
-        elementName: 'CompassPoint',
-        typeInfo: 'String'
+        en: 'CompassPoint'
       }, {
-        elementName: 'curveProperty',
-        typeInfo: 'GML_3_1_1.CurvePropertyType'
+        en: 'curveProperty',
+        ti: 'GML_3_1_1.CurvePropertyType'
       }, {
-        elementName: 'usesObliqueCartesianCS',
-        typeInfo: 'GML_3_1_1.ObliqueCartesianCSRefType'
+        en: 'usesObliqueCartesianCS',
+        ti: 'GML_3_1_1.ObliqueCartesianCSRefType'
       }, {
-        elementName: 'ellipsoidName',
-        typeInfo: 'GML_3_1_1.CodeType',
-        substitutionHead: 'name'
+        en: 'ellipsoidName',
+        ti: 'GML_3_1_1.CodeType',
+        sh: 'name'
       }, {
-        elementName: 'modifiedCoordinate',
-        typeInfo: 'Integer'
+        en: 'modifiedCoordinate',
+        ti: 'Integer'
       }, {
-        elementName: 'topoSurfaceProperty',
-        typeInfo: 'GML_3_1_1.TopoSurfacePropertyType'
+        en: 'topoSurfaceProperty',
+        ti: 'GML_3_1_1.TopoSurfacePropertyType'
       }, {
-        elementName: 'CompositeCurve',
-        typeInfo: 'GML_3_1_1.CompositeCurveType',
-        substitutionHead: '_Curve'
+        en: 'CompositeCurve',
+        ti: 'GML_3_1_1.CompositeCurveType',
+        sh: '_Curve'
       }, {
-        elementName: 'topoComplexProperty',
-        typeInfo: 'GML_3_1_1.TopoComplexMemberType'
+        en: 'topoComplexProperty',
+        ti: 'GML_3_1_1.TopoComplexMemberType'
       }, {
-        elementName: 'value',
-        typeInfo: 'GML_3_1_1.MeasureType'
+        en: 'value',
+        ti: 'GML_3_1_1.MeasureType'
       }, {
-        elementName: 'track',
-        typeInfo: 'GML_3_1_1.TrackType',
-        substitutionHead: 'history'
+        en: 'track',
+        ti: 'GML_3_1_1.TrackType',
+        sh: 'history'
       }, {
-        elementName: 'MultiCurveCoverage',
-        typeInfo: 'GML_3_1_1.MultiCurveCoverageType',
-        substitutionHead: '_DiscreteCoverage'
+        en: 'MultiCurveCoverage',
+        ti: 'GML_3_1_1.MultiCurveCoverageType',
+        sh: '_DiscreteCoverage'
       }, {
-        elementName: 'includesValue',
-        typeInfo: 'GML_3_1_1.AbstractGeneralParameterValueType',
-        substitutionHead: '_generalParameterValue'
+        en: 'includesValue',
+        ti: 'GML_3_1_1.AbstractGeneralParameterValueType',
+        sh: '_generalParameterValue'
       }, {
-        elementName: 'CartesianCS',
-        typeInfo: 'GML_3_1_1.CartesianCSType',
-        substitutionHead: '_CoordinateSystem'
+        en: 'CartesianCS',
+        ti: 'GML_3_1_1.CartesianCSType',
+        sh: '_CoordinateSystem'
       }, {
-        elementName: 'tupleList',
-        typeInfo: 'GML_3_1_1.CoordinatesType'
+        en: 'tupleList',
+        ti: 'GML_3_1_1.CoordinatesType'
       }, {
-        elementName: 'pointRep',
-        typeInfo: 'GML_3_1_1.PointPropertyType'
+        en: 'pointRep',
+        ti: 'GML_3_1_1.PointPropertyType'
       }, {
-        elementName: 'absoluteExternalPositionalAccuracy',
-        typeInfo: 'GML_3_1_1.AbsoluteExternalPositionalAccuracyType',
-        substitutionHead: '_positionalAccuracy'
+        en: 'absoluteExternalPositionalAccuracy',
+        ti: 'GML_3_1_1.AbsoluteExternalPositionalAccuracyType',
+        sh: '_positionalAccuracy'
       }, {
-        elementName: 'TimePeriod',
-        typeInfo: 'GML_3_1_1.TimePeriodType',
-        substitutionHead: '_TimeGeometricPrimitive'
+        en: 'TimePeriod',
+        ti: 'GML_3_1_1.TimePeriodType',
+        sh: '_TimeGeometricPrimitive'
       }, {
-        elementName: 'Definition',
-        typeInfo: 'GML_3_1_1.DefinitionType',
-        substitutionHead: '_GML'
+        en: 'Definition',
+        ti: 'GML_3_1_1.DefinitionType',
+        sh: '_GML'
       }, {
-        elementName: 'Curve',
-        typeInfo: 'GML_3_1_1.CurveType',
-        substitutionHead: '_Curve'
+        en: 'Curve',
+        ti: 'GML_3_1_1.CurveType',
+        sh: '_Curve'
       }, {
-        elementName: '_GeneralConversion',
-        typeInfo: 'GML_3_1_1.AbstractGeneralConversionType',
-        substitutionHead: '_Operation'
+        en: '_GeneralConversion',
+        ti: 'GML_3_1_1.AbstractGeneralConversionType',
+        sh: '_Operation'
       }, {
-        elementName: '_Coverage',
-        typeInfo: 'GML_3_1_1.AbstractCoverageType',
-        substitutionHead: '_Feature'
+        en: '_Coverage',
+        ti: 'GML_3_1_1.AbstractCoverageType',
+        sh: '_Feature'
       }, {
-        elementName: 'featureStyle',
-        typeInfo: 'GML_3_1_1.FeatureStylePropertyType'
+        en: 'featureStyle',
+        ti: 'GML_3_1_1.FeatureStylePropertyType'
       }, {
-        elementName: 'curveMembers',
-        typeInfo: 'GML_3_1_1.CurveArrayPropertyType'
+        en: 'curveMembers',
+        ti: 'GML_3_1_1.CurveArrayPropertyType'
       }, {
-        elementName: 'container',
-        typeInfo: 'GML_3_1_1.ContainerPropertyType'
+        en: 'container',
+        ti: 'GML_3_1_1.ContainerPropertyType'
       }, {
-        elementName: 'GraphStyle',
-        typeInfo: 'GML_3_1_1.GraphStyleType',
-        substitutionHead: '_GML'
+        en: 'GraphStyle',
+        ti: 'GML_3_1_1.GraphStyleType',
+        sh: '_GML'
       }, {
-        elementName: 'GenericMetaData',
-        typeInfo: 'GML_3_1_1.GenericMetaDataType',
-        substitutionHead: '_MetaData'
+        en: 'GenericMetaData',
+        ti: 'GML_3_1_1.GenericMetaDataType',
+        sh: '_MetaData'
       }, {
-        elementName: 'verticalExtent',
-        typeInfo: 'GML_3_1_1.EnvelopeType'
+        en: 'verticalExtent',
+        ti: 'GML_3_1_1.EnvelopeType'
       }, {
-        elementName: 'solidArrayProperty',
-        typeInfo: 'GML_3_1_1.SolidArrayPropertyType'
+        en: 'solidArrayProperty',
+        ti: 'GML_3_1_1.SolidArrayPropertyType'
       }, {
-        elementName: 'Triangle',
-        typeInfo: 'GML_3_1_1.TriangleType',
-        substitutionHead: '_SurfacePatch'
+        en: 'Triangle',
+        ti: 'GML_3_1_1.TriangleType',
+        sh: '_SurfacePatch'
       }, {
-        elementName: 'Rectangle',
-        typeInfo: 'GML_3_1_1.RectangleType',
-        substitutionHead: '_SurfacePatch'
+        en: 'Rectangle',
+        ti: 'GML_3_1_1.RectangleType',
+        sh: '_SurfacePatch'
       }, {
-        elementName: 'Count',
-        typeInfo: 'Integer'
+        en: 'Count',
+        ti: 'Integer'
       }, {
-        elementName: 'lineStringMember',
-        typeInfo: 'GML_3_1_1.LineStringPropertyType'
+        en: 'lineStringMember',
+        ti: 'GML_3_1_1.LineStringPropertyType'
       }, {
-        elementName: 'degrees',
-        typeInfo: 'GML_3_1_1.DegreesType'
+        en: 'degrees',
+        ti: 'GML_3_1_1.DegreesType'
       }, {
-        elementName: 'seconds',
-        typeInfo: 'Decimal'
+        en: 'seconds',
+        ti: 'Decimal'
       }, {
-        elementName: 'definitionMember',
-        typeInfo: 'GML_3_1_1.DictionaryEntryType',
-        substitutionHead: 'dictionaryEntry'
+        en: 'definitionMember',
+        ti: 'GML_3_1_1.DictionaryEntryType',
+        sh: 'dictionaryEntry'
       }, {
-        elementName: 'usesCS',
-        typeInfo: 'GML_3_1_1.CoordinateSystemRefType'
+        en: 'usesCS',
+        ti: 'GML_3_1_1.CoordinateSystemRefType'
       }, {
-        elementName: 'axisDirection',
-        typeInfo: 'GML_3_1_1.CodeType'
+        en: 'axisDirection',
+        ti: 'GML_3_1_1.CodeType'
       }, {
-        elementName: 'Boolean',
-        typeInfo: 'Boolean'
+        en: 'Boolean',
+        ti: 'Boolean'
       }, {
-        elementName: 'Cone',
-        typeInfo: 'GML_3_1_1.ConeType',
-        substitutionHead: '_GriddedSurface'
+        en: 'Cone',
+        ti: 'GML_3_1_1.ConeType',
+        sh: '_GriddedSurface'
       }, {
-        elementName: 'validArea',
-        typeInfo: 'GML_3_1_1.ExtentType'
+        en: 'validArea',
+        ti: 'GML_3_1_1.ExtentType'
       }, {
-        elementName: 'conversionRef',
-        typeInfo: 'GML_3_1_1.ConversionRefType'
+        en: 'conversionRef',
+        ti: 'GML_3_1_1.ConversionRefType'
       }, {
-        elementName: 'defaultStyle',
-        typeInfo: 'GML_3_1_1.DefaultStylePropertyType'
+        en: 'defaultStyle',
+        ti: 'GML_3_1_1.DefaultStylePropertyType'
       }, {
-        elementName: 'crsRef',
-        typeInfo: 'GML_3_1_1.CRSRefType'
+        en: 'crsRef',
+        ti: 'GML_3_1_1.CRSRefType'
       }, {
-        elementName: '_Topology',
-        typeInfo: 'GML_3_1_1.AbstractTopologyType',
-        substitutionHead: '_GML'
+        en: '_Topology',
+        ti: 'GML_3_1_1.AbstractTopologyType',
+        sh: '_GML'
       }, {
-        elementName: '_Solid',
-        typeInfo: 'GML_3_1_1.AbstractSolidType',
-        substitutionHead: '_GeometricPrimitive'
+        en: '_Solid',
+        ti: 'GML_3_1_1.AbstractSolidType',
+        sh: '_GeometricPrimitive'
       }, {
-        elementName: 'usesMethod',
-        typeInfo: 'GML_3_1_1.OperationMethodRefType'
+        en: 'usesMethod',
+        ti: 'GML_3_1_1.OperationMethodRefType'
       }, {
-        elementName: 'PolarCS',
-        typeInfo: 'GML_3_1_1.PolarCSType',
-        substitutionHead: '_CoordinateSystem'
+        en: 'PolarCS',
+        ti: 'GML_3_1_1.PolarCSType',
+        sh: '_CoordinateSystem'
       }, {
-        elementName: 'ProjectedCRS',
-        typeInfo: 'GML_3_1_1.ProjectedCRSType',
-        substitutionHead: '_GeneralDerivedCRS'
+        en: 'ProjectedCRS',
+        ti: 'GML_3_1_1.ProjectedCRSType',
+        sh: '_GeneralDerivedCRS'
       }, {
-        elementName: '_association',
-        typeInfo: 'GML_3_1_1.AssociationType'
+        en: '_association',
+        ti: 'GML_3_1_1.AssociationType'
       }, {
-        elementName: 'coordinateOperationRef',
-        typeInfo: 'GML_3_1_1.CoordinateOperationRefType'
+        en: 'coordinateOperationRef',
+        ti: 'GML_3_1_1.CoordinateOperationRefType'
       }, {
-        elementName: 'ellipsoidRef',
-        typeInfo: 'GML_3_1_1.EllipsoidRefType'
+        en: 'ellipsoidRef',
+        ti: 'GML_3_1_1.EllipsoidRefType'
       }, {
-        elementName: 'surfaceArrayProperty',
-        typeInfo: 'GML_3_1_1.SurfaceArrayPropertyType'
+        en: 'surfaceArrayProperty',
+        ti: 'GML_3_1_1.SurfaceArrayPropertyType'
       }, {
-        elementName: 'Grid',
-        typeInfo: 'GML_3_1_1.GridType',
-        substitutionHead: '_ImplicitGeometry'
+        en: 'Grid',
+        ti: 'GML_3_1_1.GridType',
+        sh: '_ImplicitGeometry'
       }, {
-        elementName: 'isolated',
-        typeInfo: 'GML_3_1_1.IsolatedPropertyType'
+        en: 'isolated',
+        ti: 'GML_3_1_1.IsolatedPropertyType'
       }, {
-        elementName: '_GML',
-        typeInfo: 'GML_3_1_1.AbstractGMLType',
-        substitutionHead: '_Object'
+        en: '_GML',
+        ti: 'GML_3_1_1.AbstractGMLType',
+        sh: '_Object'
       }, {
-        elementName: 'passThroughOperationRef',
-        typeInfo: 'GML_3_1_1.PassThroughOperationRefType'
+        en: 'passThroughOperationRef',
+        ti: 'GML_3_1_1.PassThroughOperationRefType'
       }, {
-        elementName: 'pointMembers',
-        typeInfo: 'GML_3_1_1.PointArrayPropertyType'
+        en: 'pointMembers',
+        ti: 'GML_3_1_1.PointArrayPropertyType'
       }, {
-        elementName: 'coord',
-        typeInfo: 'GML_3_1_1.CoordType'
+        en: 'coord',
+        ti: 'GML_3_1_1.CoordType'
       }, {
-        elementName: 'isSphere',
-        typeInfo: 'String'
+        en: 'isSphere'
       }, {
-        elementName: 'sphericalCSRef',
-        typeInfo: 'GML_3_1_1.SphericalCSRefType'
+        en: 'sphericalCSRef',
+        ti: 'GML_3_1_1.SphericalCSRefType'
       }, {
-        elementName: 'usesTemporalDatum',
-        typeInfo: 'GML_3_1_1.TemporalDatumRefType'
+        en: 'usesTemporalDatum',
+        ti: 'GML_3_1_1.TemporalDatumRefType'
       }, {
-        elementName: 'multiSurfaceProperty',
-        typeInfo: 'GML_3_1_1.MultiSurfacePropertyType'
+        en: 'multiSurfaceProperty',
+        ti: 'GML_3_1_1.MultiSurfacePropertyType'
       }, {
-        elementName: 'geographicCRSRef',
-        typeInfo: 'GML_3_1_1.GeographicCRSRefType'
+        en: 'geographicCRSRef',
+        ti: 'GML_3_1_1.GeographicCRSRefType'
       }, {
-        elementName: 'GeocentricCRS',
-        typeInfo: 'GML_3_1_1.GeocentricCRSType',
-        substitutionHead: '_CoordinateReferenceSystem'
+        en: 'GeocentricCRS',
+        ti: 'GML_3_1_1.GeocentricCRSType',
+        sh: '_CoordinateReferenceSystem'
       }, {
-        elementName: 'Circle',
-        typeInfo: 'GML_3_1_1.CircleType',
-        substitutionHead: 'Arc'
+        en: 'Circle',
+        ti: 'GML_3_1_1.CircleType',
+        sh: 'Arc'
       }, {
-        elementName: 'boundedBy',
-        typeInfo: 'GML_3_1_1.BoundingShapeType'
+        en: 'boundedBy',
+        ti: 'GML_3_1_1.BoundingShapeType'
       }, {
-        elementName: 'obliqueCartesianCSRef',
-        typeInfo: 'GML_3_1_1.ObliqueCartesianCSRefType'
+        en: 'obliqueCartesianCSRef',
+        ti: 'GML_3_1_1.ObliqueCartesianCSRefType'
       }, {
-        elementName: 'operationVersion',
-        typeInfo: 'String'
+        en: 'operationVersion'
       }, {
-        elementName: 'engineeringCRSRef',
-        typeInfo: 'GML_3_1_1.EngineeringCRSRefType'
+        en: 'engineeringCRSRef',
+        ti: 'GML_3_1_1.EngineeringCRSRefType'
       }, {
-        elementName: 'GridCoverage',
-        typeInfo: 'GML_3_1_1.GridCoverageType',
-        substitutionHead: '_DiscreteCoverage'
+        en: 'GridCoverage',
+        ti: 'GML_3_1_1.GridCoverageType',
+        sh: '_DiscreteCoverage'
       }, {
-        elementName: 'MovingObjectStatus',
-        typeInfo: 'GML_3_1_1.MovingObjectStatusType',
-        substitutionHead: '_TimeSlice'
+        en: 'MovingObjectStatus',
+        ti: 'GML_3_1_1.MovingObjectStatusType',
+        sh: '_TimeSlice'
       }, {
-        elementName: 'ImageDatum',
-        typeInfo: 'GML_3_1_1.ImageDatumType',
-        substitutionHead: '_Datum'
+        en: 'ImageDatum',
+        ti: 'GML_3_1_1.ImageDatumType',
+        sh: '_Datum'
       }, {
-        elementName: 'TopoVolume',
-        typeInfo: 'GML_3_1_1.TopoVolumeType'
+        en: 'TopoVolume',
+        ti: 'GML_3_1_1.TopoVolumeType'
       }, {
-        elementName: 'multiEdgeOf',
-        typeInfo: 'GML_3_1_1.MultiCurvePropertyType'
+        en: 'multiEdgeOf',
+        ti: 'GML_3_1_1.MultiCurvePropertyType'
       }, {
-        elementName: 'polygonPatches',
-        typeInfo: 'GML_3_1_1.PolygonPatchArrayPropertyType',
-        substitutionHead: 'patches'
+        en: 'polygonPatches',
+        ti: 'GML_3_1_1.PolygonPatchArrayPropertyType',
+        sh: 'patches'
       }, {
-        elementName: 'multiSurfaceDomain',
-        typeInfo: 'GML_3_1_1.MultiSurfaceDomainType',
-        substitutionHead: 'domainSet'
+        en: 'multiSurfaceDomain',
+        ti: 'GML_3_1_1.MultiSurfaceDomainType',
+        sh: 'domainSet'
       }, {
-        elementName: 'polygonMember',
-        typeInfo: 'GML_3_1_1.PolygonPropertyType'
+        en: 'polygonMember',
+        ti: 'GML_3_1_1.PolygonPropertyType'
       }, {
-        elementName: 'srsID',
-        typeInfo: 'GML_3_1_1.IdentifierType'
+        en: 'srsID',
+        ti: 'GML_3_1_1.IdentifierType'
       }, {
-        elementName: 'linearCSRef',
-        typeInfo: 'GML_3_1_1.LinearCSRefType'
+        en: 'linearCSRef',
+        ti: 'GML_3_1_1.LinearCSRefType'
       }, {
-        elementName: 'parameterName',
-        typeInfo: 'GML_3_1_1.CodeType',
-        substitutionHead: 'name'
+        en: 'parameterName',
+        ti: 'GML_3_1_1.CodeType',
+        sh: 'name'
       }, {
-        elementName: 'axisAbbrev',
-        typeInfo: 'GML_3_1_1.CodeType'
+        en: 'axisAbbrev',
+        ti: 'GML_3_1_1.CodeType'
       }, {
-        elementName: 'compoundCRSRef',
-        typeInfo: 'GML_3_1_1.CompoundCRSRefType'
+        en: 'compoundCRSRef',
+        ti: 'GML_3_1_1.CompoundCRSRefType'
       }, {
-        elementName: 'GeometryStyle',
-        typeInfo: 'GML_3_1_1.GeometryStyleType',
-        substitutionHead: '_GML'
+        en: 'GeometryStyle',
+        ti: 'GML_3_1_1.GeometryStyleType',
+        sh: '_GML'
       }, {
-        elementName: 'MultiCurve',
-        typeInfo: 'GML_3_1_1.MultiCurveType',
-        substitutionHead: '_GeometricAggregate'
+        en: 'MultiCurve',
+        ti: 'GML_3_1_1.MultiCurveType',
+        sh: '_GeometricAggregate'
       }, {
-        elementName: 'verticalCRSRef',
-        typeInfo: 'GML_3_1_1.VerticalCRSRefType'
+        en: 'verticalCRSRef',
+        ti: 'GML_3_1_1.VerticalCRSRefType'
       }, {
-        elementName: 'Bezier',
-        typeInfo: 'GML_3_1_1.BezierType',
-        substitutionHead: 'BSpline'
+        en: 'Bezier',
+        ti: 'GML_3_1_1.BezierType',
+        sh: 'BSpline'
       }, {
-        elementName: 'sourceDimensions',
-        typeInfo: 'Integer'
+        en: 'sourceDimensions',
+        ti: 'Integer'
       }, {
-        elementName: 'EllipsoidalCS',
-        typeInfo: 'GML_3_1_1.EllipsoidalCSType',
-        substitutionHead: '_CoordinateSystem'
+        en: 'EllipsoidalCS',
+        ti: 'GML_3_1_1.EllipsoidalCSType',
+        sh: '_CoordinateSystem'
       }, {
-        elementName: 'Clothoid',
-        typeInfo: 'GML_3_1_1.ClothoidType',
-        substitutionHead: '_CurveSegment'
+        en: 'Clothoid',
+        ti: 'GML_3_1_1.ClothoidType',
+        sh: '_CurveSegment'
       }, {
-        elementName: 'usesParameter',
-        typeInfo: 'GML_3_1_1.AbstractGeneralOperationParameterRefType'
+        en: 'usesParameter',
+        ti: 'GML_3_1_1.AbstractGeneralOperationParameterRefType'
       }, {
-        elementName: 'roughConversionToPreferredUnit',
-        typeInfo: 'GML_3_1_1.ConversionToPreferredUnitType'
+        en: 'roughConversionToPreferredUnit',
+        ti: 'GML_3_1_1.ConversionToPreferredUnitType'
       }, {
-        elementName: 'UserDefinedCS',
-        typeInfo: 'GML_3_1_1.UserDefinedCSType',
-        substitutionHead: '_CoordinateSystem'
+        en: 'UserDefinedCS',
+        ti: 'GML_3_1_1.UserDefinedCSType',
+        sh: '_CoordinateSystem'
       }, {
-        elementName: 'DerivedCRS',
-        typeInfo: 'GML_3_1_1.DerivedCRSType',
-        substitutionHead: '_GeneralDerivedCRS'
+        en: 'DerivedCRS',
+        ti: 'GML_3_1_1.DerivedCRSType',
+        sh: '_GeneralDerivedCRS'
       }, {
-        elementName: 'featureMembers',
-        typeInfo: 'GML_3_1_1.FeatureArrayPropertyType'
+        en: 'featureMembers',
+        ti: 'GML_3_1_1.FeatureArrayPropertyType'
       }, {
-        elementName: 'LabelStyle',
-        typeInfo: 'GML_3_1_1.LabelStyleType',
-        substitutionHead: '_GML'
+        en: 'LabelStyle',
+        ti: 'GML_3_1_1.LabelStyleType',
+        sh: '_GML'
       }, {
-        elementName: '_strictAssociation',
-        typeInfo: 'GML_3_1_1.AssociationType'
+        en: '_strictAssociation',
+        ti: 'GML_3_1_1.AssociationType'
       }, {
-        elementName: 'topoPrimitiveMember',
-        typeInfo: 'GML_3_1_1.TopoPrimitiveMemberType'
+        en: 'topoPrimitiveMember',
+        ti: 'GML_3_1_1.TopoPrimitiveMemberType'
       }, {
-        elementName: 'Cylinder',
-        typeInfo: 'GML_3_1_1.CylinderType',
-        substitutionHead: '_GriddedSurface'
+        en: 'Cylinder',
+        ti: 'GML_3_1_1.CylinderType',
+        sh: '_GriddedSurface'
       }, {
-        elementName: 'TopoSolid',
-        typeInfo: 'GML_3_1_1.TopoSolidType',
-        substitutionHead: '_TopoPrimitive'
+        en: 'TopoSolid',
+        ti: 'GML_3_1_1.TopoSolidType',
+        sh: '_TopoPrimitive'
       }, {
-        elementName: 'multiCoverage',
-        typeInfo: 'GML_3_1_1.MultiSurfacePropertyType'
+        en: 'multiCoverage',
+        ti: 'GML_3_1_1.MultiSurfacePropertyType'
       }, {
-        elementName: 'LineStringSegment',
-        typeInfo: 'GML_3_1_1.LineStringSegmentType',
-        substitutionHead: '_CurveSegment'
+        en: 'LineStringSegment',
+        ti: 'GML_3_1_1.LineStringSegmentType',
+        sh: '_CurveSegment'
       }, {
-        elementName: 'multiLocation',
-        typeInfo: 'GML_3_1_1.MultiPointPropertyType'
+        en: 'multiLocation',
+        ti: 'GML_3_1_1.MultiPointPropertyType'
       }, {
-        elementName: 'greenwichLongitude',
-        typeInfo: 'GML_3_1_1.AngleChoiceType'
+        en: 'greenwichLongitude',
+        ti: 'GML_3_1_1.AngleChoiceType'
       }, {
-        elementName: '_Feature',
-        typeInfo: 'GML_3_1_1.AbstractFeatureType',
-        substitutionHead: '_GML'
+        en: '_Feature',
+        ti: 'GML_3_1_1.AbstractFeatureType',
+        sh: '_GML'
       }, {
-        elementName: 'solidMember',
-        typeInfo: 'GML_3_1_1.SolidPropertyType'
+        en: 'solidMember',
+        ti: 'GML_3_1_1.SolidPropertyType'
       }, {
-        elementName: 'innerBoundaryIs',
-        typeInfo: 'GML_3_1_1.AbstractRingPropertyType',
-        substitutionHead: 'interior'
+        en: 'innerBoundaryIs',
+        ti: 'GML_3_1_1.AbstractRingPropertyType',
+        sh: 'interior'
       }, {
-        elementName: 'anchorPoint',
-        typeInfo: 'GML_3_1_1.CodeType'
+        en: 'anchorPoint',
+        ti: 'GML_3_1_1.CodeType'
       }, {
-        elementName: 'origin',
-        typeInfo: 'Calendar'
+        en: 'origin',
+        ti: 'Calendar'
       }, {
-        elementName: 'LinearCS',
-        typeInfo: 'GML_3_1_1.LinearCSType',
-        substitutionHead: '_CoordinateSystem'
+        en: 'LinearCS',
+        ti: 'GML_3_1_1.LinearCSType',
+        sh: '_CoordinateSystem'
       }, {
-        elementName: 'valueOfParameter',
-        typeInfo: 'GML_3_1_1.OperationParameterRefType'
+        en: 'valueOfParameter',
+        ti: 'GML_3_1_1.OperationParameterRefType'
       }, {
-        elementName: 'duration',
-        typeInfo: 'String'
+        en: 'duration'
       }, {
-        elementName: 'directedTopoSolid',
-        typeInfo: 'GML_3_1_1.DirectedTopoSolidPropertyType'
+        en: 'directedTopoSolid',
+        ti: 'GML_3_1_1.DirectedTopoSolidPropertyType'
       }, {
-        elementName: 'TemporalCRS',
-        typeInfo: 'GML_3_1_1.TemporalCRSType',
-        substitutionHead: '_CoordinateReferenceSystem'
+        en: 'TemporalCRS',
+        ti: 'GML_3_1_1.TemporalCRSType',
+        sh: '_CoordinateReferenceSystem'
       }, {
-        elementName: 'TimeOrdinalReferenceSystem',
-        typeInfo: 'GML_3_1_1.TimeOrdinalReferenceSystemType',
-        substitutionHead: '_TimeReferenceSystem'
+        en: 'TimeOrdinalReferenceSystem',
+        ti: 'GML_3_1_1.TimeOrdinalReferenceSystemType',
+        sh: '_TimeReferenceSystem'
       }, {
-        elementName: 'scope',
-        typeInfo: 'String'
+        en: 'scope'
       }, {
-        elementName: 'timeInterval',
-        typeInfo: 'GML_3_1_1.TimeIntervalLengthType'
+        en: 'timeInterval',
+        ti: 'GML_3_1_1.TimeIntervalLengthType'
       }, {
-        elementName: 'valueFile',
-        typeInfo: 'String'
+        en: 'valueFile'
       }, {
-        elementName: 'GeographicCRS',
-        typeInfo: 'GML_3_1_1.GeographicCRSType',
-        substitutionHead: '_CoordinateReferenceSystem'
+        en: 'GeographicCRS',
+        ti: 'GML_3_1_1.GeographicCRSType',
+        sh: '_CoordinateReferenceSystem'
       }, {
-        elementName: 'CircleByCenterPoint',
-        typeInfo: 'GML_3_1_1.CircleByCenterPointType',
-        substitutionHead: 'ArcByCenterPoint'
+        en: 'CircleByCenterPoint',
+        ti: 'GML_3_1_1.CircleByCenterPointType',
+        sh: 'ArcByCenterPoint'
       }, {
-        elementName: 'geometryMember',
-        typeInfo: 'GML_3_1_1.GeometryPropertyType'
+        en: 'geometryMember',
+        ti: 'GML_3_1_1.GeometryPropertyType'
       }, {
-        elementName: '_ReferenceSystem',
-        typeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-        substitutionHead: 'Definition'
+        en: '_ReferenceSystem',
+        ti: 'GML_3_1_1.AbstractReferenceSystemType',
+        sh: 'Definition'
       }, {
-        elementName: '_GeneralTransformation',
-        typeInfo: 'GML_3_1_1.AbstractGeneralTransformationType',
-        substitutionHead: '_Operation'
+        en: '_GeneralTransformation',
+        ti: 'GML_3_1_1.AbstractGeneralTransformationType',
+        sh: '_Operation'
       }, {
-        elementName: 'GeometricComplex',
-        typeInfo: 'GML_3_1_1.GeometricComplexType',
-        substitutionHead: '_Geometry'
+        en: 'GeometricComplex',
+        ti: 'GML_3_1_1.GeometricComplexType',
+        sh: '_Geometry'
       }, {
-        elementName: 'methodID',
-        typeInfo: 'GML_3_1_1.IdentifierType'
+        en: 'methodID',
+        ti: 'GML_3_1_1.IdentifierType'
       }, {
-        elementName: 'geometryMembers',
-        typeInfo: 'GML_3_1_1.GeometryArrayPropertyType'
+        en: 'geometryMembers',
+        ti: 'GML_3_1_1.GeometryArrayPropertyType'
       }, {
-        elementName: 'abstractGeneralOperationParameterRef',
-        typeInfo: 'GML_3_1_1.AbstractGeneralOperationParameterRefType'
+        en: 'abstractGeneralOperationParameterRef',
+        ti: 'GML_3_1_1.AbstractGeneralOperationParameterRefType'
       }, {
-        elementName: 'version',
-        typeInfo: 'String'
+        en: 'version'
       }, {
-        elementName: 'meridianName',
-        typeInfo: 'GML_3_1_1.CodeType',
-        substitutionHead: 'name'
+        en: 'meridianName',
+        ti: 'GML_3_1_1.CodeType',
+        sh: 'name'
       }, {
-        elementName: '_ContinuousCoverage',
-        typeInfo: 'GML_3_1_1.AbstractContinuousCoverageType',
-        substitutionHead: '_Coverage'
+        en: '_ContinuousCoverage',
+        ti: 'GML_3_1_1.AbstractContinuousCoverageType',
+        sh: '_Coverage'
       }, {
-        elementName: 'axisID',
-        typeInfo: 'GML_3_1_1.IdentifierType'
+        en: 'axisID',
+        ti: 'GML_3_1_1.IdentifierType'
       }, {
-        elementName: 'MultiSolidCoverage',
-        typeInfo: 'GML_3_1_1.MultiSolidCoverageType',
-        substitutionHead: '_DiscreteCoverage'
+        en: 'MultiSolidCoverage',
+        ti: 'GML_3_1_1.MultiSolidCoverageType',
+        sh: '_DiscreteCoverage'
       }, {
-        elementName: 'topologyStyle',
-        typeInfo: 'GML_3_1_1.TopologyStylePropertyType'
+        en: 'topologyStyle',
+        ti: 'GML_3_1_1.TopologyStylePropertyType'
       }, {
-        elementName: 'TopologyStyle',
-        typeInfo: 'GML_3_1_1.TopologyStyleType',
-        substitutionHead: '_GML'
+        en: 'TopologyStyle',
+        ti: 'GML_3_1_1.TopologyStyleType',
+        sh: '_GML'
       }, {
-        elementName: 'MultiPolygon',
-        typeInfo: 'GML_3_1_1.MultiPolygonType',
-        substitutionHead: '_GeometricAggregate'
+        en: 'MultiPolygon',
+        ti: 'GML_3_1_1.MultiPolygonType',
+        sh: '_GeometricAggregate'
       }, {
-        elementName: 'cartesianCSRef',
-        typeInfo: 'GML_3_1_1.CartesianCSRefType'
+        en: 'cartesianCSRef',
+        ti: 'GML_3_1_1.CartesianCSRefType'
       }, {
-        elementName: 'minimumOccurs',
-        typeInfo: 'Integer'
+        en: 'minimumOccurs',
+        ti: 'Integer'
       }, {
-        elementName: 'centerOf',
-        typeInfo: 'GML_3_1_1.PointPropertyType'
+        en: 'centerOf',
+        ti: 'GML_3_1_1.PointPropertyType'
       }, {
-        elementName: 'TimeInstant',
-        typeInfo: 'GML_3_1_1.TimeInstantType',
-        substitutionHead: '_TimeGeometricPrimitive'
+        en: 'TimeInstant',
+        ti: 'GML_3_1_1.TimeInstantType',
+        sh: '_TimeGeometricPrimitive'
       }, {
-        elementName: 'catalogSymbol',
-        typeInfo: 'GML_3_1_1.CodeType'
+        en: 'catalogSymbol',
+        ti: 'GML_3_1_1.CodeType'
       }, {
-        elementName: 'TopoPoint',
-        typeInfo: 'GML_3_1_1.TopoPointType'
+        en: 'TopoPoint',
+        ti: 'GML_3_1_1.TopoPointType'
       }, {
-        elementName: 'derivedCRSRef',
-        typeInfo: 'GML_3_1_1.DerivedCRSRefType'
+        en: 'derivedCRSRef',
+        ti: 'GML_3_1_1.DerivedCRSRefType'
       }, {
-        elementName: 'gridDomain',
-        typeInfo: 'GML_3_1_1.GridDomainType',
-        substitutionHead: 'domainSet'
+        en: 'gridDomain',
+        ti: 'GML_3_1_1.GridDomainType',
+        sh: 'domainSet'
       }, {
-        elementName: 'DirectionVector',
-        typeInfo: 'GML_3_1_1.DirectionVectorType'
+        en: 'DirectionVector',
+        ti: 'GML_3_1_1.DirectionVectorType'
       }, {
-        elementName: 'topoVolumeProperty',
-        typeInfo: 'GML_3_1_1.TopoVolumePropertyType'
+        en: 'topoVolumeProperty',
+        ti: 'GML_3_1_1.TopoVolumePropertyType'
       }, {
-        elementName: '_CoordinateOperation',
-        typeInfo: 'GML_3_1_1.AbstractCoordinateOperationType',
-        substitutionHead: 'Definition'
+        en: '_CoordinateOperation',
+        ti: 'GML_3_1_1.AbstractCoordinateOperationType',
+        sh: 'Definition'
       }, {
-        elementName: 'ArcString',
-        typeInfo: 'GML_3_1_1.ArcStringType',
-        substitutionHead: '_CurveSegment'
+        en: 'ArcString',
+        ti: 'GML_3_1_1.ArcStringType',
+        sh: '_CurveSegment'
       }, {
-        elementName: 'coverageFunction',
-        typeInfo: 'GML_3_1_1.CoverageFunctionType'
+        en: 'coverageFunction',
+        ti: 'GML_3_1_1.CoverageFunctionType'
       }, {
-        elementName: 'Sphere',
-        typeInfo: 'GML_3_1_1.SphereType',
-        substitutionHead: '_GriddedSurface'
+        en: 'Sphere',
+        ti: 'GML_3_1_1.SphereType',
+        sh: '_GriddedSurface'
       }, {
-        elementName: 'TopoCurve',
-        typeInfo: 'GML_3_1_1.TopoCurveType'
+        en: 'TopoCurve',
+        ti: 'GML_3_1_1.TopoCurveType'
       }, {
-        elementName: '_DiscreteCoverage',
-        typeInfo: 'GML_3_1_1.AbstractDiscreteCoverageType',
-        substitutionHead: '_Coverage'
+        en: '_DiscreteCoverage',
+        ti: 'GML_3_1_1.AbstractDiscreteCoverageType',
+        sh: '_Coverage'
       }, {
-        elementName: 'RectifiedGrid',
-        typeInfo: 'GML_3_1_1.RectifiedGridType',
-        substitutionHead: '_ImplicitGeometry'
+        en: 'RectifiedGrid',
+        ti: 'GML_3_1_1.RectifiedGridType',
+        sh: '_ImplicitGeometry'
       }, {
-        elementName: 'featureProperty',
-        typeInfo: 'GML_3_1_1.FeaturePropertyType'
+        en: 'featureProperty',
+        ti: 'GML_3_1_1.FeaturePropertyType'
       }, {
-        elementName: 'LocationString',
-        typeInfo: 'GML_3_1_1.StringOrRefType'
+        en: 'LocationString',
+        ti: 'GML_3_1_1.StringOrRefType'
       }, {
-        elementName: 'definedByConversion',
-        typeInfo: 'GML_3_1_1.GeneralConversionRefType'
+        en: 'definedByConversion',
+        ti: 'GML_3_1_1.GeneralConversionRefType'
       }, {
-        elementName: 'LocationKeyWord',
-        typeInfo: 'GML_3_1_1.CodeType'
+        en: 'LocationKeyWord',
+        ti: 'GML_3_1_1.CodeType'
       }, {
-        elementName: 'surfaceProperty',
-        typeInfo: 'GML_3_1_1.SurfacePropertyType'
+        en: 'surfaceProperty',
+        ti: 'GML_3_1_1.SurfacePropertyType'
       }, {
-        elementName: 'coordinateOperationID',
-        typeInfo: 'GML_3_1_1.IdentifierType'
+        en: 'coordinateOperationID',
+        ti: 'GML_3_1_1.IdentifierType'
       }, {
-        elementName: 'PolyhedralSurface',
-        typeInfo: 'GML_3_1_1.PolyhedralSurfaceType',
-        substitutionHead: 'Surface'
+        en: 'PolyhedralSurface',
+        ti: 'GML_3_1_1.PolyhedralSurfaceType',
+        sh: 'Surface'
       }, {
-        elementName: 'usesValue',
-        typeInfo: 'GML_3_1_1.ParameterValueType'
+        en: 'usesValue',
+        ti: 'GML_3_1_1.ParameterValueType'
       }, {
-        elementName: 'DirectedObservationAtDistance',
-        typeInfo: 'GML_3_1_1.DirectedObservationAtDistanceType',
-        substitutionHead: 'DirectedObservation'
+        en: 'DirectedObservationAtDistance',
+        ti: 'GML_3_1_1.DirectedObservationAtDistanceType',
+        sh: 'DirectedObservation'
       }, {
-        elementName: 'csName',
-        typeInfo: 'GML_3_1_1.CodeType',
-        substitutionHead: 'name'
+        en: 'csName',
+        ti: 'GML_3_1_1.CodeType',
+        sh: 'name'
       }, {
-        elementName: 'geocentricCRSRef',
-        typeInfo: 'GML_3_1_1.GeocentricCRSRefType'
+        en: 'geocentricCRSRef',
+        ti: 'GML_3_1_1.GeocentricCRSRefType'
       }, {
-        elementName: 'doubleOrNullTupleList',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'String'
+        en: 'doubleOrNullTupleList',
+        ti: {
+          t: 'l'
         }
       }, {
-        elementName: 'pointMember',
-        typeInfo: 'GML_3_1_1.PointPropertyType'
+        en: 'pointMember',
+        ti: 'GML_3_1_1.PointPropertyType'
       }, {
-        elementName: 'coordinateReferenceSystemRef',
-        typeInfo: 'GML_3_1_1.CoordinateReferenceSystemRefType'
+        en: 'coordinateReferenceSystemRef',
+        ti: 'GML_3_1_1.CoordinateReferenceSystemRefType'
       }, {
-        elementName: 'Tin',
-        typeInfo: 'GML_3_1_1.TinType',
-        substitutionHead: 'TriangulatedSurface'
+        en: 'Tin',
+        ti: 'GML_3_1_1.TinType',
+        sh: 'TriangulatedSurface'
       }, {
-        elementName: 'temporalDatumRef',
-        typeInfo: 'GML_3_1_1.TemporalDatumRefType'
+        en: 'temporalDatumRef',
+        ti: 'GML_3_1_1.TemporalDatumRefType'
       }, {
-        elementName: 'LinearRing',
-        typeInfo: 'GML_3_1_1.LinearRingType',
-        substitutionHead: '_Ring'
+        en: 'LinearRing',
+        ti: 'GML_3_1_1.LinearRingType',
+        sh: '_Ring'
       }, {
-        elementName: 'usesPrimeMeridian',
-        typeInfo: 'GML_3_1_1.PrimeMeridianRefType'
+        en: 'usesPrimeMeridian',
+        ti: 'GML_3_1_1.PrimeMeridianRefType'
       }, {
-        elementName: 'EngineeringCRS',
-        typeInfo: 'GML_3_1_1.EngineeringCRSType',
-        substitutionHead: '_CoordinateReferenceSystem'
+        en: 'EngineeringCRS',
+        ti: 'GML_3_1_1.EngineeringCRSType',
+        sh: '_CoordinateReferenceSystem'
       }, {
-        elementName: 'referenceSystemRef',
-        typeInfo: 'GML_3_1_1.ReferenceSystemRefType'
+        en: 'referenceSystemRef',
+        ti: 'GML_3_1_1.ReferenceSystemRefType'
       }, {
-        elementName: 'valuesOfGroup',
-        typeInfo: 'GML_3_1_1.OperationParameterGroupRefType'
+        en: 'valuesOfGroup',
+        ti: 'GML_3_1_1.OperationParameterGroupRefType'
       }, {
-        elementName: 'ellipsoidalCSRef',
-        typeInfo: 'GML_3_1_1.EllipsoidalCSRefType'
+        en: 'ellipsoidalCSRef',
+        ti: 'GML_3_1_1.EllipsoidalCSRefType'
       }, {
-        elementName: 'parameterValue',
-        typeInfo: 'GML_3_1_1.ParameterValueType',
-        substitutionHead: '_generalParameterValue'
+        en: 'parameterValue',
+        ti: 'GML_3_1_1.ParameterValueType',
+        sh: '_generalParameterValue'
       }, {
-        elementName: 'interior',
-        typeInfo: 'GML_3_1_1.AbstractRingPropertyType'
+        en: 'interior',
+        ti: 'GML_3_1_1.AbstractRingPropertyType'
       }, {
-        elementName: 'Surface',
-        typeInfo: 'GML_3_1_1.SurfaceType',
-        substitutionHead: '_Surface'
+        en: 'Surface',
+        ti: 'GML_3_1_1.SurfaceType',
+        sh: '_Surface'
       }, {
-        elementName: 'OperationMethod',
-        typeInfo: 'GML_3_1_1.OperationMethodType',
-        substitutionHead: 'Definition'
+        en: 'OperationMethod',
+        ti: 'GML_3_1_1.OperationMethodType',
+        sh: 'Definition'
       }, {
-        elementName: 'semiMajorAxis',
-        typeInfo: 'GML_3_1_1.MeasureType'
+        en: 'semiMajorAxis',
+        ti: 'GML_3_1_1.MeasureType'
       }, {
-        elementName: 'result',
-        typeInfo: 'GML_3_1_1.MeasureType'
+        en: 'result',
+        ti: 'GML_3_1_1.MeasureType'
       }, {
-        elementName: 'verticalCSRef',
-        typeInfo: 'GML_3_1_1.VerticalCSRefType'
+        en: 'verticalCSRef',
+        ti: 'GML_3_1_1.VerticalCSRefType'
       }, {
-        elementName: '_ImplicitGeometry',
-        typeInfo: 'GML_3_1_1.AbstractGeometryType',
-        substitutionHead: '_Geometry'
+        en: '_ImplicitGeometry',
+        ti: 'GML_3_1_1.AbstractGeometryType',
+        sh: '_Geometry'
       }, {
-        elementName: 'TemporalCS',
-        typeInfo: 'GML_3_1_1.TemporalCSType',
-        substitutionHead: '_CoordinateSystem'
+        en: 'TemporalCS',
+        ti: 'GML_3_1_1.TemporalCSType',
+        sh: '_CoordinateSystem'
       }, {
-        elementName: 'csID',
-        typeInfo: 'GML_3_1_1.IdentifierType'
+        en: 'csID',
+        ti: 'GML_3_1_1.IdentifierType'
       }, {
-        elementName: '_Object',
-        typeInfo: 'AnyType'
+        en: '_Object',
+        ti: 'AnyType'
       }, {
-        elementName: 'VerticalDatum',
-        typeInfo: 'GML_3_1_1.VerticalDatumType',
-        substitutionHead: '_Datum'
+        en: 'VerticalDatum',
+        ti: 'GML_3_1_1.VerticalDatumType',
+        sh: '_Datum'
       }, {
-        elementName: 'Conversion',
-        typeInfo: 'GML_3_1_1.ConversionType',
-        substitutionHead: '_GeneralConversion'
+        en: 'Conversion',
+        ti: 'GML_3_1_1.ConversionType',
+        sh: '_GeneralConversion'
       }, {
-        elementName: '_CoordinateSystem',
-        typeInfo: 'GML_3_1_1.AbstractCoordinateSystemType',
-        substitutionHead: 'Definition'
+        en: '_CoordinateSystem',
+        ti: 'GML_3_1_1.AbstractCoordinateSystemType',
+        sh: 'Definition'
       }, {
-        elementName: 'usesAxis',
-        typeInfo: 'GML_3_1_1.CoordinateSystemAxisRefType'
+        en: 'usesAxis',
+        ti: 'GML_3_1_1.CoordinateSystemAxisRefType'
       }, {
-        elementName: 'verticalDatumType',
-        typeInfo: 'GML_3_1_1.VerticalDatumTypeType'
+        en: 'verticalDatumType',
+        ti: 'GML_3_1_1.VerticalDatumTypeType'
       }, {
-        elementName: 'MultiSolid',
-        typeInfo: 'GML_3_1_1.MultiSolidType',
-        substitutionHead: '_GeometricAggregate'
+        en: 'MultiSolid',
+        ti: 'GML_3_1_1.MultiSolidType',
+        sh: '_GeometricAggregate'
       }, {
-        elementName: 'CylindricalCS',
-        typeInfo: 'GML_3_1_1.CylindricalCSType',
-        substitutionHead: '_CoordinateSystem'
+        en: 'CylindricalCS',
+        ti: 'GML_3_1_1.CylindricalCSType',
+        sh: '_CoordinateSystem'
       }, {
-        elementName: 'topoPointProperty',
-        typeInfo: 'GML_3_1_1.TopoPointPropertyType'
+        en: 'topoPointProperty',
+        ti: 'GML_3_1_1.TopoPointPropertyType'
       }, {
-        elementName: 'multiPosition',
-        typeInfo: 'GML_3_1_1.MultiPointPropertyType'
+        en: 'multiPosition',
+        ti: 'GML_3_1_1.MultiPointPropertyType'
       }, {
-        elementName: 'position',
-        typeInfo: 'GML_3_1_1.PointPropertyType'
+        en: 'position',
+        ti: 'GML_3_1_1.PointPropertyType'
       }, {
-        elementName: 'File',
-        typeInfo: 'GML_3_1_1.FileType'
+        en: 'File',
+        ti: 'GML_3_1_1.FileType'
       }, {
-        elementName: 'pointArrayProperty',
-        typeInfo: 'GML_3_1_1.PointArrayPropertyType'
+        en: 'pointArrayProperty',
+        ti: 'GML_3_1_1.PointArrayPropertyType'
       }, {
-        elementName: 'outerBoundaryIs',
-        typeInfo: 'GML_3_1_1.AbstractRingPropertyType',
-        substitutionHead: 'exterior'
+        en: 'outerBoundaryIs',
+        ti: 'GML_3_1_1.AbstractRingPropertyType',
+        sh: 'exterior'
       }, {
-        elementName: 'multiCenterOf',
-        typeInfo: 'GML_3_1_1.MultiPointPropertyType'
+        en: 'multiCenterOf',
+        ti: 'GML_3_1_1.MultiPointPropertyType'
       }, {
-        elementName: 'MultiLineString',
-        typeInfo: 'GML_3_1_1.MultiLineStringType',
-        substitutionHead: '_GeometricAggregate'
+        en: 'MultiLineString',
+        ti: 'GML_3_1_1.MultiLineStringType',
+        sh: '_GeometricAggregate'
       }, {
-        elementName: 'Null',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'String'
+        en: 'Null',
+        ti: {
+          t: 'l'
         }
       }, {
-        elementName: 'subject',
-        typeInfo: 'GML_3_1_1.TargetPropertyType',
-        substitutionHead: 'target'
+        en: 'subject',
+        ti: 'GML_3_1_1.TargetPropertyType',
+        sh: 'target'
       }, {
-        elementName: 'directedFace',
-        typeInfo: 'GML_3_1_1.DirectedFacePropertyType'
+        en: 'directedFace',
+        ti: 'GML_3_1_1.DirectedFacePropertyType'
       }, {
-        elementName: 'posList',
-        typeInfo: 'GML_3_1_1.DirectPositionListType'
+        en: 'posList',
+        ti: 'GML_3_1_1.DirectPositionListType'
       }, {
-        elementName: 'covarianceMatrix',
-        typeInfo: 'GML_3_1_1.CovarianceMatrixType',
-        substitutionHead: '_positionalAccuracy'
+        en: 'covarianceMatrix',
+        ti: 'GML_3_1_1.CovarianceMatrixType',
+        sh: '_positionalAccuracy'
       }, {
-        elementName: 'methodFormula',
-        typeInfo: 'GML_3_1_1.CodeType'
+        en: 'methodFormula',
+        ti: 'GML_3_1_1.CodeType'
       }, {
-        elementName: 'VerticalCS',
-        typeInfo: 'GML_3_1_1.VerticalCSType',
-        substitutionHead: '_CoordinateSystem'
+        en: 'VerticalCS',
+        ti: 'GML_3_1_1.VerticalCSType',
+        sh: '_CoordinateSystem'
       }, {
-        elementName: 'members',
-        typeInfo: 'GML_3_1_1.ArrayAssociationType'
+        en: 'members',
+        ti: 'GML_3_1_1.ArrayAssociationType'
       }, {
-        elementName: '_ParametricCurveSurface',
-        typeInfo: 'GML_3_1_1.AbstractParametricCurveSurfaceType',
-        substitutionHead: '_SurfacePatch'
+        en: '_ParametricCurveSurface',
+        ti: 'GML_3_1_1.AbstractParametricCurveSurfaceType',
+        sh: '_SurfacePatch'
       }, {
-        elementName: 'usesEngineeringDatum',
-        typeInfo: 'GML_3_1_1.EngineeringDatumRefType'
+        en: 'usesEngineeringDatum',
+        ti: 'GML_3_1_1.EngineeringDatumRefType'
       }, {
-        elementName: 'engineeringDatumRef',
-        typeInfo: 'GML_3_1_1.EngineeringDatumRefType'
+        en: 'engineeringDatumRef',
+        ti: 'GML_3_1_1.EngineeringDatumRefType'
       }, {
-        elementName: 'BSpline',
-        typeInfo: 'GML_3_1_1.BSplineType',
-        substitutionHead: '_CurveSegment'
+        en: 'BSpline',
+        ti: 'GML_3_1_1.BSplineType',
+        sh: '_CurveSegment'
       }, {
-        elementName: 'GeodesicString',
-        typeInfo: 'GML_3_1_1.GeodesicStringType',
-        substitutionHead: '_CurveSegment'
+        en: 'GeodesicString',
+        ti: 'GML_3_1_1.GeodesicStringType',
+        sh: '_CurveSegment'
       }, {
-        elementName: 'Point',
-        typeInfo: 'GML_3_1_1.PointType',
-        substitutionHead: '_GeometricPrimitive'
+        en: 'Point',
+        ti: 'GML_3_1_1.PointType',
+        sh: '_GeometricPrimitive'
       }, {
-        elementName: 'OperationParameterGroup',
-        typeInfo: 'GML_3_1_1.OperationParameterGroupType',
-        substitutionHead: '_GeneralOperationParameter'
+        en: 'OperationParameterGroup',
+        ti: 'GML_3_1_1.OperationParameterGroupType',
+        sh: '_GeneralOperationParameter'
       }, {
-        elementName: 'targetCRS',
-        typeInfo: 'GML_3_1_1.CRSRefType'
+        en: 'targetCRS',
+        ti: 'GML_3_1_1.CRSRefType'
       }, {
-        elementName: 'Array',
-        typeInfo: 'GML_3_1_1.ArrayType',
-        substitutionHead: '_GML'
+        en: 'Array',
+        ti: 'GML_3_1_1.ArrayType',
+        sh: '_GML'
       }, {
-        elementName: 'CategoryList',
-        typeInfo: 'GML_3_1_1.CodeOrNullListType'
+        en: 'CategoryList',
+        ti: 'GML_3_1_1.CodeOrNullListType'
       }, {
-        elementName: 'singleOperationRef',
-        typeInfo: 'GML_3_1_1.SingleOperationRefType'
+        en: 'singleOperationRef',
+        ti: 'GML_3_1_1.SingleOperationRefType'
       }, {
-        elementName: 'MultiGeometry',
-        typeInfo: 'GML_3_1_1.MultiGeometryType',
-        substitutionHead: '_GeometricAggregate'
+        en: 'MultiGeometry',
+        ti: 'GML_3_1_1.MultiGeometryType',
+        sh: '_GeometricAggregate'
       }, {
-        elementName: 'Edge',
-        typeInfo: 'GML_3_1_1.EdgeType',
-        substitutionHead: '_TopoPrimitive'
+        en: 'Edge',
+        ti: 'GML_3_1_1.EdgeType',
+        sh: '_TopoPrimitive'
       }, {
-        elementName: '_CoordinateReferenceSystem',
-        typeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-        substitutionHead: '_CRS'
+        en: '_CoordinateReferenceSystem',
+        ti: 'GML_3_1_1.AbstractReferenceSystemType',
+        sh: '_CRS'
       }, {
-        elementName: 'remarks',
-        typeInfo: 'GML_3_1_1.StringOrRefType'
+        en: 'remarks',
+        ti: 'GML_3_1_1.StringOrRefType'
       }, {
-        elementName: 'Dictionary',
-        typeInfo: 'GML_3_1_1.DictionaryType',
-        substitutionHead: 'Definition'
+        en: 'Dictionary',
+        ti: 'GML_3_1_1.DictionaryType',
+        sh: 'Definition'
       }, {
-        elementName: 'ConventionalUnit',
-        typeInfo: 'GML_3_1_1.ConventionalUnitType',
-        substitutionHead: 'UnitDefinition'
+        en: 'ConventionalUnit',
+        ti: 'GML_3_1_1.ConventionalUnitType',
+        sh: 'UnitDefinition'
       }, {
-        elementName: 'QuantityList',
-        typeInfo: 'GML_3_1_1.MeasureOrNullListType'
+        en: 'QuantityList',
+        ti: 'GML_3_1_1.MeasureOrNullListType'
       }, {
-        elementName: 'IndexMap',
-        typeInfo: 'GML_3_1_1.IndexMapType',
-        substitutionHead: 'GridFunction'
+        en: 'IndexMap',
+        ti: 'GML_3_1_1.IndexMapType',
+        sh: 'GridFunction'
       }, {
-        elementName: 'exterior',
-        typeInfo: 'GML_3_1_1.AbstractRingPropertyType'
+        en: 'exterior',
+        ti: 'GML_3_1_1.AbstractRingPropertyType'
       }, {
-        elementName: 'DirectedObservation',
-        typeInfo: 'GML_3_1_1.DirectedObservationType',
-        substitutionHead: 'Observation'
+        en: 'DirectedObservation',
+        ti: 'GML_3_1_1.DirectedObservationType',
+        sh: 'Observation'
       }, {
-        elementName: 'CoordinateSystemAxis',
-        typeInfo: 'GML_3_1_1.CoordinateSystemAxisType',
-        substitutionHead: 'Definition'
+        en: 'CoordinateSystemAxis',
+        ti: 'GML_3_1_1.CoordinateSystemAxisType',
+        sh: 'Definition'
       }, {
-        elementName: 'multiSolidProperty',
-        typeInfo: 'GML_3_1_1.MultiSolidPropertyType'
+        en: 'multiSolidProperty',
+        ti: 'GML_3_1_1.MultiSolidPropertyType'
       }, {
-        elementName: '_GriddedSurface',
-        typeInfo: 'GML_3_1_1.AbstractGriddedSurfaceType',
-        substitutionHead: '_ParametricCurveSurface'
+        en: '_GriddedSurface',
+        ti: 'GML_3_1_1.AbstractGriddedSurfaceType',
+        sh: '_ParametricCurveSurface'
       }, {
-        elementName: 'MappingRule',
-        typeInfo: 'GML_3_1_1.StringOrRefType'
+        en: 'MappingRule',
+        ti: 'GML_3_1_1.StringOrRefType'
       }, {
-        elementName: 'targetDimensions',
-        typeInfo: 'Integer'
+        en: 'targetDimensions',
+        ti: 'Integer'
       }, {
-        elementName: '_reference',
-        typeInfo: 'GML_3_1_1.ReferenceType'
+        en: '_reference',
+        ti: 'GML_3_1_1.ReferenceType'
       }, {
-        elementName: 'includesElement',
-        typeInfo: 'GML_3_1_1.CovarianceElementType'
+        en: 'includesElement',
+        ti: 'GML_3_1_1.CovarianceElementType'
       }, {
-        elementName: '_Curve',
-        typeInfo: 'GML_3_1_1.AbstractCurveType',
-        substitutionHead: '_GeometricPrimitive'
+        en: '_Curve',
+        ti: 'GML_3_1_1.AbstractCurveType',
+        sh: '_GeometricPrimitive'
       }, {
-        elementName: 'QuantityExtent',
-        typeInfo: 'GML_3_1_1.QuantityExtentType'
+        en: 'QuantityExtent',
+        ti: 'GML_3_1_1.QuantityExtentType'
       }, {
-        elementName: 'ArcByCenterPoint',
-        typeInfo: 'GML_3_1_1.ArcByCenterPointType',
-        substitutionHead: '_CurveSegment'
+        en: 'ArcByCenterPoint',
+        ti: 'GML_3_1_1.ArcByCenterPointType',
+        sh: '_CurveSegment'
       }, {
-        elementName: 'TimeOrdinalEra',
-        typeInfo: 'GML_3_1_1.TimeOrdinalEraType'
+        en: 'TimeOrdinalEra',
+        ti: 'GML_3_1_1.TimeOrdinalEraType'
       }, {
-        elementName: 'extentOf',
-        typeInfo: 'GML_3_1_1.SurfacePropertyType'
+        en: 'extentOf',
+        ti: 'GML_3_1_1.SurfacePropertyType'
       }, {
-        elementName: 'multiExtentOf',
-        typeInfo: 'GML_3_1_1.MultiSurfacePropertyType'
+        en: 'multiExtentOf',
+        ti: 'GML_3_1_1.MultiSurfacePropertyType'
       }, {
-        elementName: 'temporalExtent',
-        typeInfo: 'GML_3_1_1.TimePeriodType'
+        en: 'temporalExtent',
+        ti: 'GML_3_1_1.TimePeriodType'
       }, {
-        elementName: 'relativeInternalPositionalAccuracy',
-        typeInfo: 'GML_3_1_1.RelativeInternalPositionalAccuracyType',
-        substitutionHead: '_positionalAccuracy'
+        en: 'relativeInternalPositionalAccuracy',
+        ti: 'GML_3_1_1.RelativeInternalPositionalAccuracyType',
+        sh: '_positionalAccuracy'
       }, {
-        elementName: 'direction',
-        typeInfo: 'GML_3_1_1.DirectionPropertyType'
+        en: 'direction',
+        ti: 'GML_3_1_1.DirectionPropertyType'
       }, {
-        elementName: 'unitOfMeasure',
-        typeInfo: 'GML_3_1_1.UnitOfMeasureType'
+        en: 'unitOfMeasure',
+        ti: 'GML_3_1_1.UnitOfMeasureType'
       }, {
-        elementName: 'parameterID',
-        typeInfo: 'GML_3_1_1.IdentifierType'
+        en: 'parameterID',
+        ti: 'GML_3_1_1.IdentifierType'
       }, {
-        elementName: 'imageCRSRef',
-        typeInfo: 'GML_3_1_1.ImageCRSRefType'
+        en: 'imageCRSRef',
+        ti: 'GML_3_1_1.ImageCRSRefType'
       }, {
-        elementName: 'directedNode',
-        typeInfo: 'GML_3_1_1.DirectedNodePropertyType'
+        en: 'directedNode',
+        ti: 'GML_3_1_1.DirectedNodePropertyType'
       }, {
-        elementName: 'centerLineOf',
-        typeInfo: 'GML_3_1_1.CurvePropertyType'
+        en: 'centerLineOf',
+        ti: 'GML_3_1_1.CurvePropertyType'
       }, {
-        elementName: '_CRS',
-        typeInfo: 'GML_3_1_1.AbstractReferenceSystemType',
-        substitutionHead: '_ReferenceSystem'
+        en: '_CRS',
+        ti: 'GML_3_1_1.AbstractReferenceSystemType',
+        sh: '_ReferenceSystem'
       }, {
-        elementName: 'coordinateSystemRef',
-        typeInfo: 'GML_3_1_1.CoordinateSystemRefType'
+        en: 'coordinateSystemRef',
+        ti: 'GML_3_1_1.CoordinateSystemRefType'
       }, {
-        elementName: 'imageDatumRef',
-        typeInfo: 'GML_3_1_1.ImageDatumRefType'
+        en: 'imageDatumRef',
+        ti: 'GML_3_1_1.ImageDatumRefType'
       }, {
-        elementName: 'resultOf',
-        typeInfo: 'GML_3_1_1.AssociationType'
+        en: 'resultOf',
+        ti: 'GML_3_1_1.AssociationType'
       }, {
-        elementName: 'BaseUnit',
-        typeInfo: 'GML_3_1_1.BaseUnitType',
-        substitutionHead: 'UnitDefinition'
+        en: 'BaseUnit',
+        ti: 'GML_3_1_1.BaseUnitType',
+        sh: 'UnitDefinition'
       }, {
-        elementName: 'TimeCoordinateSystem',
-        typeInfo: 'GML_3_1_1.TimeCoordinateSystemType',
-        substitutionHead: '_TimeReferenceSystem'
+        en: 'TimeCoordinateSystem',
+        ti: 'GML_3_1_1.TimeCoordinateSystemType',
+        sh: '_TimeReferenceSystem'
       }, {
-        elementName: 'MultiSurfaceCoverage',
-        typeInfo: 'GML_3_1_1.MultiSurfaceCoverageType',
-        substitutionHead: '_DiscreteCoverage'
+        en: 'MultiSurfaceCoverage',
+        ti: 'GML_3_1_1.MultiSurfaceCoverageType',
+        sh: '_DiscreteCoverage'
       }, {
-        elementName: 'includesParameter',
-        typeInfo: 'GML_3_1_1.AbstractGeneralOperationParameterRefType'
+        en: 'includesParameter',
+        ti: 'GML_3_1_1.AbstractGeneralOperationParameterRefType'
       }, {
-        elementName: 'curveArrayProperty',
-        typeInfo: 'GML_3_1_1.CurveArrayPropertyType'
+        en: 'curveArrayProperty',
+        ti: 'GML_3_1_1.CurveArrayPropertyType'
       }, {
-        elementName: 'solidMembers',
-        typeInfo: 'GML_3_1_1.SolidArrayPropertyType'
+        en: 'solidMembers',
+        ti: 'GML_3_1_1.SolidArrayPropertyType'
       }, {
-        elementName: 'TimeClock',
-        typeInfo: 'GML_3_1_1.TimeClockType',
-        substitutionHead: '_TimeReferenceSystem'
+        en: 'TimeClock',
+        ti: 'GML_3_1_1.TimeClockType',
+        sh: '_TimeReferenceSystem'
       }, {
-        elementName: 'semiMinorAxis',
-        typeInfo: 'GML_3_1_1.MeasureType'
+        en: 'semiMinorAxis',
+        ti: 'GML_3_1_1.MeasureType'
       }, {
-        elementName: 'validTime',
-        typeInfo: 'GML_3_1_1.TimePrimitivePropertyType'
+        en: 'validTime',
+        ti: 'GML_3_1_1.TimePrimitivePropertyType'
       }, {
-        elementName: 'status',
-        typeInfo: 'GML_3_1_1.StringOrRefType'
+        en: 'status',
+        ti: 'GML_3_1_1.StringOrRefType'
       }, {
-        elementName: 'trianglePatches',
-        typeInfo: 'GML_3_1_1.TrianglePatchArrayPropertyType',
-        substitutionHead: 'patches'
+        en: 'trianglePatches',
+        ti: 'GML_3_1_1.TrianglePatchArrayPropertyType',
+        sh: 'patches'
       }, {
-        elementName: 'cylindricalCSRef',
-        typeInfo: 'GML_3_1_1.CylindricalCSRefType'
+        en: 'cylindricalCSRef',
+        ti: 'GML_3_1_1.CylindricalCSRefType'
       }, {
-        elementName: 'rectifiedGridDomain',
-        typeInfo: 'GML_3_1_1.RectifiedGridDomainType',
-        substitutionHead: 'domainSet'
+        en: 'rectifiedGridDomain',
+        ti: 'GML_3_1_1.RectifiedGridDomainType',
+        sh: 'domainSet'
       }, {
-        elementName: 'geodeticDatumRef',
-        typeInfo: 'GML_3_1_1.GeodeticDatumRefType'
+        en: 'geodeticDatumRef',
+        ti: 'GML_3_1_1.GeodeticDatumRefType'
       }, {
-        elementName: 'CompoundCRS',
-        typeInfo: 'GML_3_1_1.CompoundCRSType',
-        substitutionHead: '_CRS'
+        en: 'CompoundCRS',
+        ti: 'GML_3_1_1.CompoundCRSType',
+        sh: '_CRS'
       }, {
-        elementName: 'surfaceMembers',
-        typeInfo: 'GML_3_1_1.SurfaceArrayPropertyType'
+        en: 'surfaceMembers',
+        ti: 'GML_3_1_1.SurfaceArrayPropertyType'
       }, {
-        elementName: 'sourceCRS',
-        typeInfo: 'GML_3_1_1.CRSRefType'
+        en: 'sourceCRS',
+        ti: 'GML_3_1_1.CRSRefType'
       }, {
-        elementName: '_TimeObject',
-        typeInfo: 'GML_3_1_1.AbstractTimeObjectType',
-        substitutionHead: '_GML'
+        en: '_TimeObject',
+        ti: 'GML_3_1_1.AbstractTimeObjectType',
+        sh: '_GML'
       }, {
-        elementName: 'meridianID',
-        typeInfo: 'GML_3_1_1.IdentifierType'
+        en: 'meridianID',
+        ti: 'GML_3_1_1.IdentifierType'
       }, {
-        elementName: '_TimeSlice',
-        typeInfo: 'GML_3_1_1.AbstractTimeSliceType',
-        substitutionHead: '_GML'
+        en: '_TimeSlice',
+        ti: 'GML_3_1_1.AbstractTimeSliceType',
+        sh: '_GML'
       }, {
-        elementName: 'indirectEntry',
-        typeInfo: 'GML_3_1_1.IndirectEntryType'
+        en: 'indirectEntry',
+        ti: 'GML_3_1_1.IndirectEntryType'
       }, {
-        elementName: 'operationMethodRef',
-        typeInfo: 'GML_3_1_1.OperationMethodRefType'
+        en: 'operationMethodRef',
+        ti: 'GML_3_1_1.OperationMethodRefType'
       }, {
-        elementName: 'valueComponents',
-        typeInfo: 'GML_3_1_1.ValueArrayPropertyType'
+        en: 'valueComponents',
+        ti: 'GML_3_1_1.ValueArrayPropertyType'
       }, {
-        elementName: 'temporalCSRef',
-        typeInfo: 'GML_3_1_1.TemporalCSRefType'
+        en: 'temporalCSRef',
+        ti: 'GML_3_1_1.TemporalCSRefType'
       }, {
-        elementName: 'directedEdge',
-        typeInfo: 'GML_3_1_1.DirectedEdgePropertyType'
+        en: 'directedEdge',
+        ti: 'GML_3_1_1.DirectedEdgePropertyType'
       }, {
-        elementName: 'includesCRS',
-        typeInfo: 'GML_3_1_1.CoordinateReferenceSystemRefType'
+        en: 'includesCRS',
+        ti: 'GML_3_1_1.CoordinateReferenceSystemRefType'
       }, {
-        elementName: 'usesCartesianCS',
-        typeInfo: 'GML_3_1_1.CartesianCSRefType'
+        en: 'usesCartesianCS',
+        ti: 'GML_3_1_1.CartesianCSRefType'
       }, {
-        elementName: 'PrimeMeridian',
-        typeInfo: 'GML_3_1_1.PrimeMeridianType',
-        substitutionHead: 'Definition'
+        en: 'PrimeMeridian',
+        ti: 'GML_3_1_1.PrimeMeridianType',
+        sh: 'Definition'
       }, {
-        elementName: 'CompositeSolid',
-        typeInfo: 'GML_3_1_1.CompositeSolidType',
-        substitutionHead: '_Solid'
+        en: 'CompositeSolid',
+        ti: 'GML_3_1_1.CompositeSolidType',
+        sh: '_Solid'
       }, {
-        elementName: 'priorityLocation',
-        typeInfo: 'GML_3_1_1.PriorityLocationPropertyType',
-        substitutionHead: 'location'
+        en: 'priorityLocation',
+        ti: 'GML_3_1_1.PriorityLocationPropertyType',
+        sh: 'location'
       }, {
-        elementName: 'Geodesic',
-        typeInfo: 'GML_3_1_1.GeodesicType',
-        substitutionHead: 'GeodesicString'
+        en: 'Geodesic',
+        ti: 'GML_3_1_1.GeodesicType',
+        sh: 'GeodesicString'
       }, {
-        elementName: 'DefinitionProxy',
-        typeInfo: 'GML_3_1_1.DefinitionProxyType',
-        substitutionHead: 'Definition'
+        en: 'DefinitionProxy',
+        ti: 'GML_3_1_1.DefinitionProxyType',
+        sh: 'Definition'
       }, {
-        elementName: 'ValueArray',
-        typeInfo: 'GML_3_1_1.ValueArrayType',
-        substitutionHead: 'CompositeValue'
+        en: 'ValueArray',
+        ti: 'GML_3_1_1.ValueArrayType',
+        sh: 'CompositeValue'
       }, {
-        elementName: 'baseCRS',
-        typeInfo: 'GML_3_1_1.CoordinateReferenceSystemRefType'
+        en: 'baseCRS',
+        ti: 'GML_3_1_1.CoordinateReferenceSystemRefType'
       }, {
-        elementName: 'solidProperty',
-        typeInfo: 'GML_3_1_1.SolidPropertyType'
+        en: 'solidProperty',
+        ti: 'GML_3_1_1.SolidPropertyType'
       }, {
-        elementName: 'boundingBox',
-        typeInfo: 'GML_3_1_1.EnvelopeType'
+        en: 'boundingBox',
+        ti: 'GML_3_1_1.EnvelopeType'
       }, {
-        elementName: '_TimeTopologyPrimitive',
-        typeInfo: 'GML_3_1_1.AbstractTimeTopologyPrimitiveType',
-        substitutionHead: '_TimePrimitive'
+        en: '_TimeTopologyPrimitive',
+        ti: 'GML_3_1_1.AbstractTimeTopologyPrimitiveType',
+        sh: '_TimePrimitive'
       }, {
-        elementName: 'maximalComplex',
-        typeInfo: 'GML_3_1_1.TopoComplexMemberType'
+        en: 'maximalComplex',
+        ti: 'GML_3_1_1.TopoComplexMemberType'
       }, {
-        elementName: 'TopoSurface',
-        typeInfo: 'GML_3_1_1.TopoSurfaceType'
+        en: 'TopoSurface',
+        ti: 'GML_3_1_1.TopoSurfaceType'
       }, {
-        elementName: 'covariance',
-        typeInfo: 'Double'
+        en: 'covariance',
+        ti: 'Double'
       }, {
-        elementName: 'segments',
-        typeInfo: 'GML_3_1_1.CurveSegmentArrayPropertyType'
+        en: 'segments',
+        ti: 'GML_3_1_1.CurveSegmentArrayPropertyType'
       }, {
-        elementName: 'usesVerticalCS',
-        typeInfo: 'GML_3_1_1.VerticalCSRefType'
+        en: 'usesVerticalCS',
+        ti: 'GML_3_1_1.VerticalCSRefType'
       }, {
-        elementName: 'FeatureStyle',
-        typeInfo: 'GML_3_1_1.FeatureStyleType',
-        substitutionHead: '_GML'
+        en: 'FeatureStyle',
+        ti: 'GML_3_1_1.FeatureStyleType',
+        sh: '_GML'
       }, {
-        elementName: 'geometryStyle',
-        typeInfo: 'GML_3_1_1.GeometryStylePropertyType'
+        en: 'geometryStyle',
+        ti: 'GML_3_1_1.GeometryStylePropertyType'
       }, {
-        elementName: 'PassThroughOperation',
-        typeInfo: 'GML_3_1_1.PassThroughOperationType',
-        substitutionHead: '_SingleOperation'
+        en: 'PassThroughOperation',
+        ti: 'GML_3_1_1.PassThroughOperationType',
+        sh: '_SingleOperation'
       }, {
-        elementName: 'angle',
-        typeInfo: 'GML_3_1_1.MeasureType'
+        en: 'angle',
+        ti: 'GML_3_1_1.MeasureType'
       }, {
-        elementName: 'Style',
-        typeInfo: 'GML_3_1_1.StyleType',
-        substitutionHead: '_Style'
+        en: 'Style',
+        ti: 'GML_3_1_1.StyleType',
+        sh: '_Style'
       }, {
-        elementName: '_Datum',
-        typeInfo: 'GML_3_1_1.AbstractDatumType',
-        substitutionHead: 'Definition'
+        en: '_Datum',
+        ti: 'GML_3_1_1.AbstractDatumType',
+        sh: 'Definition'
       }, {
-        elementName: 'member',
-        typeInfo: 'GML_3_1_1.AssociationType'
+        en: 'member',
+        ti: 'GML_3_1_1.AssociationType'
       }, {
-        elementName: 'VerticalCRS',
-        typeInfo: 'GML_3_1_1.VerticalCRSType',
-        substitutionHead: '_CoordinateReferenceSystem'
+        en: 'VerticalCRS',
+        ti: 'GML_3_1_1.VerticalCRSType',
+        sh: '_CoordinateReferenceSystem'
       }, {
-        elementName: 'CompositeValue',
-        typeInfo: 'GML_3_1_1.CompositeValueType'
+        en: 'CompositeValue',
+        ti: 'GML_3_1_1.CompositeValueType'
       }, {
-        elementName: 'LabelExpression',
-        typeInfo: 'String',
-        scope: 'GML_3_1_1.LabelType'
+        en: 'LabelExpression',
+        sc: 'GML_3_1_1.LabelType'
       }]
   };
   return {

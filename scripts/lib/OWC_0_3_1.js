@@ -1,560 +1,435 @@
 var OWC_0_3_1_Module_Factory = function () {
   var OWC_0_3_1 = {
-    name: 'OWC_0_3_1',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/ows-context',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'ResourceListType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'layer',
-            collection: true,
-            elementName: 'Layer',
-            typeInfo: 'OWC_0_3_1.LayerType'
+    n: 'OWC_0_3_1',
+    dens: 'http:\/\/www.opengis.net\/ows-context',
+    tis: [{
+        ln: 'ResourceListType',
+        ps: [{
+            n: 'layer',
+            col: true,
+            en: 'Layer',
+            ti: 'OWC_0_3_1.LayerType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OWSContextType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'general',
-            elementName: 'General',
-            typeInfo: 'OWC_0_3_1.GeneralType'
+        ln: 'OWSContextType',
+        ps: [{
+            n: 'general',
+            en: 'General',
+            ti: 'OWC_0_3_1.GeneralType'
           }, {
-            type: 'element',
-            name: 'resourceList',
-            elementName: 'ResourceList',
-            typeInfo: 'OWC_0_3_1.ResourceListType'
+            n: 'resourceList',
+            en: 'ResourceList',
+            ti: 'OWC_0_3_1.ResourceListType'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'id',
-            typeInfo: 'String',
-            attributeName: 'id',
-            type: 'attribute'
+            n: 'id',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LayerType',
-        baseTypeInfo: 'OWC_0_3_1.AbstractResourceType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'dimensionList',
-            elementName: 'DimensionList',
-            typeInfo: 'OWC_0_3_1.DimensionListType'
+        ln: 'LayerType',
+        bti: 'OWC_0_3_1.AbstractResourceType',
+        ps: [{
+            n: 'dimensionList',
+            en: 'DimensionList',
+            ti: 'OWC_0_3_1.DimensionListType'
           }, {
-            type: 'element',
-            name: 'responseCRS',
-            elementName: 'ResponseCRS',
-            typeInfo: 'String'
+            n: 'responseCRS',
+            en: 'ResponseCRS'
           }, {
-            type: 'element',
-            name: 'parameterList',
-            elementName: 'ParameterList',
-            typeInfo: 'OWC_0_3_1.ParameterListType'
+            n: 'parameterList',
+            en: 'ParameterList',
+            ti: 'OWC_0_3_1.ParameterListType'
           }, {
-            type: 'element',
-            name: 'depth',
-            elementName: 'Depth',
-            typeInfo: 'String'
+            n: 'depth',
+            en: 'Depth'
           }, {
-            type: 'element',
-            name: 'resx',
-            elementName: 'Resx',
-            typeInfo: 'String'
+            n: 'resx',
+            en: 'Resx'
           }, {
-            type: 'element',
-            name: 'resy',
-            elementName: 'Resy',
-            typeInfo: 'String'
+            n: 'resy',
+            en: 'Resy'
           }, {
-            type: 'element',
-            name: 'resz',
-            elementName: 'Resz',
-            typeInfo: 'String'
+            n: 'resz',
+            en: 'Resz'
           }, {
-            type: 'element',
-            name: 'maxFeatures',
-            elementName: 'MaxFeatures',
-            typeInfo: 'Integer'
+            n: 'maxFeatures',
+            en: 'MaxFeatures',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'filter',
-            elementName: {
-              localPart: 'Filter',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_0_0.FilterType'
+            ti: 'Filter_1_0_0.FilterType'
           }, {
-            type: 'element',
-            name: 'inlineGeometry',
-            elementName: 'InlineGeometry',
-            typeInfo: 'OWC_0_3_1.InlineFeatureCollectionType'
+            n: 'inlineGeometry',
+            en: 'InlineGeometry',
+            ti: 'OWC_0_3_1.InlineFeatureCollectionType'
           }, {
-            name: 'document',
-            collection: true,
-            allowDom: true,
-            allowTypedObject: true,
-            type: 'anyElement'
+            n: 'document',
+            col: true,
+            mx: false,
+            t: 'ae'
           }, {
-            type: 'element',
-            name: 'vendorExtension',
-            elementName: 'VendorExtension',
-            typeInfo: 'OWC_0_3_1.ExtensionType'
+            n: 'vendorExtension',
+            en: 'VendorExtension',
+            ti: 'OWC_0_3_1.ExtensionType'
           }, {
-            name: 'queryable',
-            typeInfo: 'Boolean',
-            attributeName: 'queryable',
-            type: 'attribute'
+            n: 'queryable',
+            ti: 'Boolean',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ServerType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'onlineResource',
-            collection: true,
-            elementName: 'OnlineResource',
-            typeInfo: 'OWC_0_3_1.OnlineResourceType'
+        ln: 'ServerType',
+        ps: [{
+            n: 'onlineResource',
+            col: true,
+            en: 'OnlineResource',
+            ti: 'OWC_0_3_1.OnlineResourceType'
           }, {
-            name: '_default',
-            typeInfo: 'Boolean',
-            attributeName: 'default',
-            type: 'attribute'
+            n: '_default',
+            ti: 'Boolean',
+            an: 'default',
+            t: 'a'
           }, {
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+            n: 'service',
+            t: 'a'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DimensionType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'DimensionType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+            n: 'name',
+            t: 'a'
           }, {
-            name: 'units',
-            typeInfo: 'String',
-            attributeName: 'units',
-            type: 'attribute'
+            n: 'units',
+            t: 'a'
           }, {
-            name: 'unitSymbol',
-            typeInfo: 'String',
-            attributeName: 'unitSymbol',
-            type: 'attribute'
+            n: 'unitSymbol',
+            t: 'a'
           }, {
-            name: 'userValue',
-            typeInfo: 'String',
-            attributeName: 'userValue',
-            type: 'attribute'
+            n: 'userValue',
+            t: 'a'
           }, {
-            name: '_default',
-            typeInfo: 'String',
-            attributeName: 'default',
-            type: 'attribute'
+            n: '_default',
+            an: 'default',
+            t: 'a'
           }, {
-            name: 'multipleValues',
-            typeInfo: 'Boolean',
-            attributeName: 'multipleValues',
-            type: 'attribute'
+            n: 'multipleValues',
+            ti: 'Boolean',
+            t: 'a'
           }, {
-            name: 'nearestValue',
-            typeInfo: 'Boolean',
-            attributeName: 'nearestValue',
-            type: 'attribute'
+            n: 'nearestValue',
+            ti: 'Boolean',
+            t: 'a'
           }, {
-            name: 'current',
-            typeInfo: 'Boolean',
-            attributeName: 'current',
-            type: 'attribute'
+            n: 'current',
+            ti: 'Boolean',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'StyleType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'StyleType',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            type: 'element',
-            name: 'legendURL',
-            elementName: 'LegendURL',
-            typeInfo: 'OWC_0_3_1.URLType'
+            n: 'legendURL',
+            en: 'LegendURL',
+            ti: 'OWC_0_3_1.URLType'
           }, {
-            type: 'element',
-            name: 'sld',
-            elementName: 'SLD',
-            typeInfo: 'OWC_0_3_1.SLDType'
+            n: 'sld',
+            en: 'SLD',
+            ti: 'OWC_0_3_1.SLDType'
           }, {
-            name: 'current',
-            typeInfo: 'Boolean',
-            attributeName: 'current',
-            type: 'attribute'
+            n: 'current',
+            ti: 'Boolean',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DimensionListType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'dimension',
-            collection: true,
-            elementName: 'Dimension',
-            typeInfo: 'OWC_0_3_1.DimensionType'
+        ln: 'DimensionListType',
+        ps: [{
+            n: 'dimension',
+            col: true,
+            en: 'Dimension',
+            ti: 'OWC_0_3_1.DimensionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeneralType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'window',
-            elementName: 'Window',
-            typeInfo: 'OWC_0_3_1.WindowType'
+        ln: 'GeneralType',
+        ps: [{
+            n: 'window',
+            en: 'Window',
+            ti: 'OWC_0_3_1.WindowType'
           }, {
-            name: 'boundingBox',
-            elementName: {
-              localPart: 'BoundingBox',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows'
+            n: 'boundingBox',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'BoundingBox',
+              ns: 'http:\/\/www.opengis.net\/ows'
             },
-            typeInfo: 'OWS_1_0_0.BoundingBoxType',
-            type: 'elementRef'
+            ti: 'OWS_1_0_0.BoundingBoxType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'minScaleDenominator',
-            elementName: {
-              localPart: 'MinScaleDenominator',
-              namespaceURI: 'http:\/\/www.opengis.net\/sld'
+            n: 'minScaleDenominator',
+            en: {
+              lp: 'MinScaleDenominator',
+              ns: 'http:\/\/www.opengis.net\/sld'
             },
-            typeInfo: 'Double'
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'maxScaleDenominator',
-            elementName: {
-              localPart: 'MaxScaleDenominator',
-              namespaceURI: 'http:\/\/www.opengis.net\/sld'
+            n: 'maxScaleDenominator',
+            en: {
+              lp: 'MaxScaleDenominator',
+              ns: 'http:\/\/www.opengis.net\/sld'
             },
-            typeInfo: 'Double'
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: {
-              localPart: 'Title',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows'
+            n: 'title',
+            en: {
+              lp: 'Title',
+              ns: 'http:\/\/www.opengis.net\/ows'
+            }
+          }, {
+            n: '_abstract',
+            en: {
+              lp: 'Abstract',
+              ns: 'http:\/\/www.opengis.net\/ows'
+            }
+          }, {
+            n: 'keywords',
+            en: {
+              lp: 'Keywords',
+              ns: 'http:\/\/www.opengis.net\/ows'
             },
-            typeInfo: 'String'
+            ti: 'OWS_1_0_0.KeywordsType'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: {
-              localPart: 'Abstract',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows'
+            n: 'logoURL',
+            en: 'LogoURL',
+            ti: 'OWC_0_3_1.URLType'
+          }, {
+            n: 'descriptionURL',
+            en: 'DescriptionURL',
+            ti: 'OWC_0_3_1.URLType'
+          }, {
+            n: 'serviceProvider',
+            en: {
+              lp: 'ServiceProvider',
+              ns: 'http:\/\/www.opengis.net\/ows'
             },
-            typeInfo: 'String'
+            ti: 'OWS_1_0_0.ServiceProvider'
           }, {
-            type: 'element',
-            name: 'keywords',
-            elementName: {
-              localPart: 'Keywords',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows'
+            n: 'extension',
+            en: 'Extension',
+            ti: 'OWC_0_3_1.ExtensionType'
+          }]
+      }, {
+        ln: 'FormatType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'current',
+            ti: 'Boolean',
+            t: 'a'
+          }]
+      }, {
+        ln: 'InlineFeatureCollectionType',
+        bti: 'GML_2_1_2.AbstractFeatureCollectionType'
+      }, {
+        ln: 'OnlineResourceType',
+        bti: 'OWS_1_0_0.OnlineResourceType',
+        ps: [{
+            n: 'method',
+            t: 'a'
+          }]
+      }, {
+        ln: 'StyleListType',
+        ps: [{
+            n: 'style',
+            col: true,
+            en: 'Style',
+            ti: 'OWC_0_3_1.StyleType'
+          }]
+      }, {
+        ln: 'ExtensionType',
+        ps: [{
+            n: 'any',
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'FormatListType',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: 'OWC_0_3_1.FormatType'
+          }]
+      }, {
+        ln: 'AbstractResourceType',
+        bti: 'OWS_1_0_0.IdentificationType',
+        ps: [{
+            n: 'server',
+            col: true,
+            en: 'Server',
+            ti: 'OWC_0_3_1.ServerType'
+          }, {
+            n: 'dataURL',
+            en: 'DataURL',
+            ti: 'OWC_0_3_1.URLType'
+          }, {
+            n: 'metadataURL',
+            en: 'MetadataURL',
+            ti: 'OWC_0_3_1.URLType'
+          }, {
+            n: 'minScaleDenominator',
+            en: {
+              lp: 'MinScaleDenominator',
+              ns: 'http:\/\/www.opengis.net\/sld'
             },
-            typeInfo: 'OWS_1_0_0.KeywordsType'
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'logoURL',
-            elementName: 'LogoURL',
-            typeInfo: 'OWC_0_3_1.URLType'
-          }, {
-            type: 'element',
-            name: 'descriptionURL',
-            elementName: 'DescriptionURL',
-            typeInfo: 'OWC_0_3_1.URLType'
-          }, {
-            type: 'element',
-            name: 'serviceProvider',
-            elementName: {
-              localPart: 'ServiceProvider',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows'
+            n: 'maxScaleDenominator',
+            en: {
+              lp: 'MaxScaleDenominator',
+              ns: 'http:\/\/www.opengis.net\/sld'
             },
-            typeInfo: 'OWS_1_0_0.ServiceProvider'
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'extension',
-            elementName: 'Extension',
-            typeInfo: 'OWC_0_3_1.ExtensionType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'FormatType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+            n: 'styleList',
+            en: 'StyleList',
+            ti: 'OWC_0_3_1.StyleListType'
           }, {
-            name: 'current',
-            typeInfo: 'Boolean',
-            attributeName: 'current',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'InlineFeatureCollectionType',
-        baseTypeInfo: 'GML_2_1_2.AbstractFeatureCollectionType',
-        propertyInfos: []
-      }, {
-        type: 'classInfo',
-        localName: 'OnlineResourceType',
-        baseTypeInfo: 'OWS_1_0_0.OnlineResourceType',
-        propertyInfos: [{
-            name: 'method',
-            typeInfo: 'String',
-            attributeName: 'method',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'StyleListType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'style',
-            collection: true,
-            elementName: 'Style',
-            typeInfo: 'OWC_0_3_1.StyleType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'ExtensionType',
-        propertyInfos: [{
-            name: 'any',
-            allowDom: true,
-            allowTypedObject: true,
-            type: 'anyElement'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'FormatListType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: 'Format',
-            typeInfo: 'OWC_0_3_1.FormatType'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'AbstractResourceType',
-        baseTypeInfo: 'OWS_1_0_0.IdentificationType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'server',
-            collection: true,
-            elementName: 'Server',
-            typeInfo: 'OWC_0_3_1.ServerType'
+            n: 'extension',
+            en: 'Extension',
+            ti: 'OWC_0_3_1.ExtensionType'
           }, {
-            type: 'element',
-            name: 'dataURL',
-            elementName: 'DataURL',
-            typeInfo: 'OWC_0_3_1.URLType'
+            n: 'layer',
+            col: true,
+            en: 'Layer',
+            ti: 'OWC_0_3_1.LayerType'
           }, {
-            type: 'element',
-            name: 'metadataURL',
-            elementName: 'MetadataURL',
-            typeInfo: 'OWC_0_3_1.URLType'
+            n: 'name',
+            t: 'a'
           }, {
-            type: 'element',
-            name: 'minScaleDenominator',
-            elementName: {
-              localPart: 'MinScaleDenominator',
-              namespaceURI: 'http:\/\/www.opengis.net\/sld'
+            n: 'id',
+            t: 'a'
+          }, {
+            n: 'group',
+            t: 'a'
+          }, {
+            n: 'hidden',
+            ti: 'Boolean',
+            t: 'a'
+          }, {
+            n: 'opacity',
+            ti: 'Decimal',
+            t: 'a'
+          }]
+      }, {
+        ln: 'WindowType',
+        ps: [{
+            n: 'width',
+            ti: 'Integer',
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'Integer',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ParameterListType',
+        ps: [{
+            n: 'parameter',
+            col: true,
+            en: 'Parameter',
+            ti: 'OWC_0_3_1.ExtensionType'
+          }]
+      }, {
+        ln: 'SLDType',
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: 'legendURL',
+            en: 'LegendURL',
+            ti: 'OWC_0_3_1.URLType'
+          }, {
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'OWC_0_3_1.OnlineResourceType'
+          }, {
+            n: 'styledLayerDescriptor',
+            en: {
+              lp: 'StyledLayerDescriptor',
+              ns: 'http:\/\/www.opengis.net\/sld'
             },
-            typeInfo: 'Double'
+            ti: 'SLD_1_0_0.StyledLayerDescriptor'
           }, {
-            type: 'element',
-            name: 'maxScaleDenominator',
-            elementName: {
-              localPart: 'MaxScaleDenominator',
-              namespaceURI: 'http:\/\/www.opengis.net\/sld'
+            n: 'featureTypeStyle',
+            en: {
+              lp: 'FeatureTypeStyle',
+              ns: 'http:\/\/www.opengis.net\/sld'
             },
-            typeInfo: 'Double'
-          }, {
-            type: 'element',
-            name: 'styleList',
-            elementName: 'StyleList',
-            typeInfo: 'OWC_0_3_1.StyleListType'
-          }, {
-            type: 'element',
-            name: 'extension',
-            elementName: 'Extension',
-            typeInfo: 'OWC_0_3_1.ExtensionType'
-          }, {
-            type: 'element',
-            name: 'layer',
-            collection: true,
-            elementName: 'Layer',
-            typeInfo: 'OWC_0_3_1.LayerType'
-          }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
-          }, {
-            name: 'id',
-            typeInfo: 'String',
-            attributeName: 'id',
-            type: 'attribute'
-          }, {
-            name: 'group',
-            typeInfo: 'String',
-            attributeName: 'group',
-            type: 'attribute'
-          }, {
-            name: 'hidden',
-            typeInfo: 'Boolean',
-            attributeName: 'hidden',
-            type: 'attribute'
-          }, {
-            name: 'opacity',
-            typeInfo: 'Decimal',
-            attributeName: 'opacity',
-            type: 'attribute'
+            ti: 'SLD_1_0_0.FeatureTypeStyle'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WindowType',
-        propertyInfos: [{
-            name: 'width',
-            typeInfo: 'Integer',
-            attributeName: 'width',
-            type: 'attribute'
+        ln: 'URLType',
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'OWC_0_3_1.OnlineResourceType'
           }, {
-            name: 'height',
-            typeInfo: 'Integer',
-            attributeName: 'height',
-            type: 'attribute'
+            n: 'width',
+            ti: 'Integer',
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'Integer',
+            t: 'a'
+          }, {
+            n: 'format',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ParameterListType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'parameter',
-            collection: true,
-            elementName: 'Parameter',
-            typeInfo: 'OWC_0_3_1.ExtensionType'
-          }]
+        t: 'enum',
+        ln: 'ServiceType',
+        vs: ['urn:ogc:serviceType:WMS', 'urn:ogc:serviceType:WFS', 'urn:ogc:serviceType:WCS', 'urn:ogc:serviceType:GML', 'urn:ogc:serviceType:SLD', 'urn:ogc:serviceType:FES', 'urn:ogc:serviceType:KML']
       }, {
-        type: 'classInfo',
-        localName: 'SLDType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
-          }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
-          }, {
-            type: 'element',
-            name: 'legendURL',
-            elementName: 'LegendURL',
-            typeInfo: 'OWC_0_3_1.URLType'
-          }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'OWC_0_3_1.OnlineResourceType'
-          }, {
-            type: 'element',
-            name: 'styledLayerDescriptor',
-            elementName: {
-              localPart: 'StyledLayerDescriptor',
-              namespaceURI: 'http:\/\/www.opengis.net\/sld'
-            },
-            typeInfo: 'SLD_1_0_0.StyledLayerDescriptor'
-          }, {
-            type: 'element',
-            name: 'featureTypeStyle',
-            elementName: {
-              localPart: 'FeatureTypeStyle',
-              namespaceURI: 'http:\/\/www.opengis.net\/sld'
-            },
-            typeInfo: 'SLD_1_0_0.FeatureTypeStyle'
-          }]
-      }, {
-        type: 'classInfo',
-        localName: 'URLType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'OWC_0_3_1.OnlineResourceType'
-          }, {
-            name: 'width',
-            typeInfo: 'Integer',
-            attributeName: 'width',
-            type: 'attribute'
-          }, {
-            name: 'height',
-            typeInfo: 'Integer',
-            attributeName: 'height',
-            type: 'attribute'
-          }, {
-            name: 'format',
-            typeInfo: 'String',
-            attributeName: 'format',
-            type: 'attribute'
-          }]
-      }, {
-        type: 'enumInfo',
-        localName: 'ServiceType',
-        baseTypeInfo: 'String',
-        values: ['urn:ogc:serviceType:WMS', 'urn:ogc:serviceType:WFS', 'urn:ogc:serviceType:WCS', 'urn:ogc:serviceType:GML', 'urn:ogc:serviceType:SLD', 'urn:ogc:serviceType:FES', 'urn:ogc:serviceType:KML']
-      }, {
-        type: 'enumInfo',
-        localName: 'MethodType',
-        baseTypeInfo: 'String',
-        values: ['GET', 'POST']
+        t: 'enum',
+        ln: 'MethodType',
+        vs: ['GET', 'POST']
       }],
-    elementInfos: [{
-        elementName: 'OWSContext',
-        typeInfo: 'OWC_0_3_1.OWSContextType'
+    eis: [{
+        en: 'OWSContext',
+        ti: 'OWC_0_3_1.OWSContextType'
       }, {
-        elementName: 'Layer',
-        typeInfo: 'OWC_0_3_1.LayerType'
+        en: 'Layer',
+        ti: 'OWC_0_3_1.LayerType'
       }, {
-        elementName: 'ResourceList',
-        typeInfo: 'OWC_0_3_1.ResourceListType'
+        en: 'ResourceList',
+        ti: 'OWC_0_3_1.ResourceListType'
       }]
   };
   return {

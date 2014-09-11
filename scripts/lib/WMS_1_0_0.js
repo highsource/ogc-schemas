@@ -1,596 +1,460 @@
 var WMS_1_0_0_Module_Factory = function () {
   var WMS_1_0_0 = {
-    name: 'WMS_1_0_0',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'DCPType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'http',
-            elementName: 'HTTP',
-            typeInfo: 'WMS_1_0_0.HTTP'
+    n: 'WMS_1_0_0',
+    tis: [{
+        ln: 'DCPType',
+        ps: [{
+            n: 'http',
+            en: 'HTTP',
+            ti: 'WMS_1_0_0.HTTP'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'HTTP',
-        propertyInfos: [{
-            name: 'getOrPost',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'Get',
-                typeInfo: 'WMS_1_0_0.Get'
+        ln: 'HTTP',
+        ps: [{
+            n: 'getOrPost',
+            col: true,
+            etis: [{
+                en: 'Get',
+                ti: 'WMS_1_0_0.Get'
               }, {
-                elementName: 'Post',
-                typeInfo: 'WMS_1_0_0.Post'
+                en: 'Post',
+                ti: 'WMS_1_0_0.Post'
               }],
-            type: 'elements'
+            t: 'es'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WMTMSCapabilities',
-        propertyInfos: [{
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+        ln: 'WMTMSCapabilities',
+        ps: [{
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'updateSequence',
-            typeInfo: 'String',
-            attributeName: 'updateSequence',
-            type: 'attribute'
+            n: 'updateSequence',
+            t: 'a'
           }, {
-            type: 'element',
-            name: 'service',
-            elementName: 'Service',
-            typeInfo: 'WMS_1_0_0.Service'
+            n: 'service',
+            en: 'Service',
+            ti: 'WMS_1_0_0.Service'
           }, {
-            type: 'element',
-            name: 'capability',
-            elementName: 'Capability',
-            typeInfo: 'WMS_1_0_0.Capability'
+            n: 'capability',
+            en: 'Capability',
+            ti: 'WMS_1_0_0.Capability'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Service',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'Service',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            type: 'element',
-            name: 'keywords',
-            elementName: 'Keywords',
-            typeInfo: 'String'
+            n: 'keywords',
+            en: 'Keywords'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'String'
+            n: 'onlineResource',
+            en: 'OnlineResource'
           }, {
-            type: 'element',
-            name: 'fees',
-            elementName: 'Fees',
-            typeInfo: 'String'
+            n: 'fees',
+            en: 'Fees'
           }, {
-            type: 'element',
-            name: 'accessConstraints',
-            elementName: 'AccessConstraints',
-            typeInfo: 'String'
+            n: 'accessConstraints',
+            en: 'AccessConstraints'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Capability',
-        propertyInfos: [{
-            type: 'element',
-            name: 'request',
-            elementName: 'Request',
-            typeInfo: 'WMS_1_0_0.Request'
+        ln: 'Capability',
+        ps: [{
+            n: 'request',
+            en: 'Request',
+            ti: 'WMS_1_0_0.Request'
           }, {
-            type: 'element',
-            name: 'exception',
-            elementName: 'Exception',
-            typeInfo: 'WMS_1_0_0.Exception'
+            n: 'exception',
+            en: 'Exception',
+            ti: 'WMS_1_0_0.Exception'
           }, {
-            type: 'element',
-            name: 'vendorSpecificCapabilities',
-            elementName: 'VendorSpecificCapabilities',
-            typeInfo: 'WMS_1_0_0.VendorSpecificCapabilities'
+            n: 'vendorSpecificCapabilities',
+            en: 'VendorSpecificCapabilities',
+            ti: 'WMS_1_0_0.VendorSpecificCapabilities'
           }, {
-            type: 'element',
-            name: 'layer',
-            elementName: 'Layer',
-            typeInfo: 'WMS_1_0_0.Layer'
+            n: 'layer',
+            en: 'Layer',
+            ti: 'WMS_1_0_0.Layer'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SVG',
-        propertyInfos: []
+        ln: 'SVG'
       }, {
-        type: 'classInfo',
-        localName: 'WBMP',
-        propertyInfos: []
+        ln: 'WBMP'
       }, {
-        type: 'classInfo',
-        localName: 'WebCGM',
-        propertyInfos: []
+        ln: 'WebCGM'
       }, {
-        type: 'classInfo',
-        localName: 'FeatureInfo',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'WMS_1_0_0.Format'
+        ln: 'FeatureInfo',
+        ps: [{
+            n: 'format',
+            en: 'Format',
+            ti: 'WMS_1_0_0.Format'
           }, {
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WMS_1_0_0.DCPType'
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WMS_1_0_0.DCPType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Format',
-        propertyInfos: [{
-            name: 'gifOrJPEGOrPNGOrWebCGMOrSVGOrGML1OrGML2OrGML3OrWBMPOrWMSXMLOrMIMEOrINIMAGEOrTIFFOrGeoTIFFOrPPMOrBLANK',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'GIF',
-                typeInfo: 'WMS_1_0_0.GIF'
+        ln: 'Format',
+        ps: [{
+            n: 'gifOrJPEGOrPNGOrWebCGMOrSVGOrGML1OrGML2OrGML3OrWBMPOrWMSXMLOrMIMEOrINIMAGEOrTIFFOrGeoTIFFOrPPMOrBLANK',
+            col: true,
+            etis: [{
+                en: 'GIF',
+                ti: 'WMS_1_0_0.GIF'
               }, {
-                elementName: 'JPEG',
-                typeInfo: 'WMS_1_0_0.JPEG'
+                en: 'JPEG',
+                ti: 'WMS_1_0_0.JPEG'
               }, {
-                elementName: 'PNG',
-                typeInfo: 'WMS_1_0_0.PNG'
+                en: 'PNG',
+                ti: 'WMS_1_0_0.PNG'
               }, {
-                elementName: 'WebCGM',
-                typeInfo: 'WMS_1_0_0.WebCGM'
+                en: 'WebCGM',
+                ti: 'WMS_1_0_0.WebCGM'
               }, {
-                elementName: 'SVG',
-                typeInfo: 'WMS_1_0_0.SVG'
+                en: 'SVG',
+                ti: 'WMS_1_0_0.SVG'
               }, {
-                elementName: 'GML.1',
-                typeInfo: 'WMS_1_0_0.GML1'
+                en: 'GML.1',
+                ti: 'WMS_1_0_0.GML1'
               }, {
-                elementName: 'GML.2',
-                typeInfo: 'WMS_1_0_0.GML2'
+                en: 'GML.2',
+                ti: 'WMS_1_0_0.GML2'
               }, {
-                elementName: 'GML.3',
-                typeInfo: 'WMS_1_0_0.GML3'
+                en: 'GML.3',
+                ti: 'WMS_1_0_0.GML3'
               }, {
-                elementName: 'WBMP',
-                typeInfo: 'WMS_1_0_0.WBMP'
+                en: 'WBMP',
+                ti: 'WMS_1_0_0.WBMP'
               }, {
-                elementName: 'WMS_XML',
-                typeInfo: 'WMS_1_0_0.WMSXML'
+                en: 'WMS_XML',
+                ti: 'WMS_1_0_0.WMSXML'
               }, {
-                elementName: 'MIME',
-                typeInfo: 'WMS_1_0_0.MIME'
+                en: 'MIME',
+                ti: 'WMS_1_0_0.MIME'
               }, {
-                elementName: 'INIMAGE',
-                typeInfo: 'WMS_1_0_0.INIMAGE'
+                en: 'INIMAGE',
+                ti: 'WMS_1_0_0.INIMAGE'
               }, {
-                elementName: 'TIFF',
-                typeInfo: 'WMS_1_0_0.TIFF'
+                en: 'TIFF',
+                ti: 'WMS_1_0_0.TIFF'
               }, {
-                elementName: 'GeoTIFF',
-                typeInfo: 'WMS_1_0_0.GeoTIFF'
+                en: 'GeoTIFF',
+                ti: 'WMS_1_0_0.GeoTIFF'
               }, {
-                elementName: 'PPM',
-                typeInfo: 'WMS_1_0_0.PPM'
+                en: 'PPM',
+                ti: 'WMS_1_0_0.PPM'
               }, {
-                elementName: 'BLANK',
-                typeInfo: 'WMS_1_0_0.BLANK'
+                en: 'BLANK',
+                ti: 'WMS_1_0_0.BLANK'
               }],
-            type: 'elements'
+            t: 'es'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PNG',
-        propertyInfos: []
+        ln: 'PNG'
       }, {
-        type: 'classInfo',
-        localName: 'JPEG',
-        propertyInfos: []
+        ln: 'JPEG'
       }, {
-        type: 'classInfo',
-        localName: 'PPM',
-        propertyInfos: []
+        ln: 'PPM'
       }, {
-        type: 'classInfo',
-        localName: 'MIME',
-        propertyInfos: []
+        ln: 'MIME'
       }, {
-        type: 'classInfo',
-        localName: 'LatLonBoundingBox',
-        propertyInfos: [{
-            name: 'minx',
-            typeInfo: 'String',
-            attributeName: 'minx',
-            type: 'attribute'
+        ln: 'LatLonBoundingBox',
+        ps: [{
+            n: 'minx',
+            t: 'a'
           }, {
-            name: 'miny',
-            typeInfo: 'String',
-            attributeName: 'miny',
-            type: 'attribute'
+            n: 'miny',
+            t: 'a'
           }, {
-            name: 'maxx',
-            typeInfo: 'String',
-            attributeName: 'maxx',
-            type: 'attribute'
+            n: 'maxx',
+            t: 'a'
           }, {
-            name: 'maxy',
-            typeInfo: 'String',
-            attributeName: 'maxy',
-            type: 'attribute'
+            n: 'maxy',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GeoTIFF',
-        propertyInfos: []
+        ln: 'GeoTIFF'
       }, {
-        type: 'classInfo',
-        localName: 'TIFF',
-        propertyInfos: []
+        ln: 'TIFF'
       }, {
-        type: 'classInfo',
-        localName: 'GIF',
-        propertyInfos: []
+        ln: 'GIF'
       }, {
-        type: 'classInfo',
-        localName: 'GML1',
-        propertyInfos: []
+        ln: 'GML1'
       }, {
-        type: 'classInfo',
-        localName: 'GML2',
-        propertyInfos: []
+        ln: 'GML2'
       }, {
-        type: 'classInfo',
-        localName: 'GML3',
-        propertyInfos: []
+        ln: 'GML3'
       }, {
-        type: 'classInfo',
-        localName: 'WMSXML',
-        propertyInfos: []
+        ln: 'WMSXML'
       }, {
-        type: 'classInfo',
-        localName: 'INIMAGE',
-        propertyInfos: []
+        ln: 'INIMAGE'
       }, {
-        type: 'classInfo',
-        localName: 'BLANK',
-        propertyInfos: []
+        ln: 'BLANK'
       }, {
-        type: 'classInfo',
-        localName: 'BoundingBox',
-        propertyInfos: [{
-            name: 'srs',
-            typeInfo: 'String',
-            attributeName: 'SRS',
-            type: 'attribute'
+        ln: 'BoundingBox',
+        ps: [{
+            n: 'srs',
+            an: 'SRS',
+            t: 'a'
           }, {
-            name: 'minx',
-            typeInfo: 'String',
-            attributeName: 'minx',
-            type: 'attribute'
+            n: 'minx',
+            t: 'a'
           }, {
-            name: 'miny',
-            typeInfo: 'String',
-            attributeName: 'miny',
-            type: 'attribute'
+            n: 'miny',
+            t: 'a'
           }, {
-            name: 'maxx',
-            typeInfo: 'String',
-            attributeName: 'maxx',
-            type: 'attribute'
+            n: 'maxx',
+            t: 'a'
           }, {
-            name: 'maxy',
-            typeInfo: 'String',
-            attributeName: 'maxy',
-            type: 'attribute'
+            n: 'maxy',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Style',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'Style',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            type: 'element',
-            name: 'styleURL',
-            elementName: 'StyleURL',
-            typeInfo: 'String'
+            n: 'styleURL',
+            en: 'StyleURL'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Request',
-        propertyInfos: [{
-            name: 'mapOrCapabilitiesOrFeatureInfo',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'Map',
-                typeInfo: 'WMS_1_0_0.Map'
+        ln: 'Request',
+        ps: [{
+            n: 'mapOrCapabilitiesOrFeatureInfo',
+            col: true,
+            etis: [{
+                en: 'Map',
+                ti: 'WMS_1_0_0.Map'
               }, {
-                elementName: 'Capabilities',
-                typeInfo: 'WMS_1_0_0.Capabilities'
+                en: 'Capabilities',
+                ti: 'WMS_1_0_0.Capabilities'
               }, {
-                elementName: 'FeatureInfo',
-                typeInfo: 'WMS_1_0_0.FeatureInfo'
+                en: 'FeatureInfo',
+                ti: 'WMS_1_0_0.FeatureInfo'
               }],
-            type: 'elements'
+            t: 'es'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Exception',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'WMS_1_0_0.Format'
+        ln: 'Exception',
+        ps: [{
+            n: 'format',
+            en: 'Format',
+            ti: 'WMS_1_0_0.Format'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'VendorSpecificCapabilities',
-        propertyInfos: []
+        ln: 'VendorSpecificCapabilities'
       }, {
-        type: 'classInfo',
-        localName: 'Layer',
-        propertyInfos: [{
-            name: 'queryable',
-            typeInfo: 'String',
-            attributeName: 'queryable',
-            type: 'attribute'
+        ln: 'Layer',
+        ps: [{
+            n: 'queryable',
+            t: 'a'
           }, {
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            type: 'element',
-            name: 'keywords',
-            elementName: 'Keywords',
-            typeInfo: 'String'
+            n: 'keywords',
+            en: 'Keywords'
           }, {
-            type: 'element',
-            name: 'srs',
-            elementName: 'SRS',
-            typeInfo: 'String'
+            n: 'srs',
+            en: 'SRS'
           }, {
-            type: 'element',
-            name: 'latLonBoundingBox',
-            elementName: 'LatLonBoundingBox',
-            typeInfo: 'WMS_1_0_0.LatLonBoundingBox'
+            n: 'latLonBoundingBox',
+            en: 'LatLonBoundingBox',
+            ti: 'WMS_1_0_0.LatLonBoundingBox'
           }, {
-            type: 'element',
-            name: 'boundingBox',
-            collection: true,
-            elementName: 'BoundingBox',
-            typeInfo: 'WMS_1_0_0.BoundingBox'
+            n: 'boundingBox',
+            col: true,
+            en: 'BoundingBox',
+            ti: 'WMS_1_0_0.BoundingBox'
           }, {
-            type: 'element',
-            name: 'dataURL',
-            elementName: 'DataURL',
-            typeInfo: 'String'
+            n: 'dataURL',
+            en: 'DataURL'
           }, {
-            type: 'element',
-            name: 'style',
-            collection: true,
-            elementName: 'Style',
-            typeInfo: 'WMS_1_0_0.Style'
+            n: 'style',
+            col: true,
+            en: 'Style',
+            ti: 'WMS_1_0_0.Style'
           }, {
-            type: 'element',
-            name: 'scaleHint',
-            elementName: 'ScaleHint',
-            typeInfo: 'WMS_1_0_0.ScaleHint'
+            n: 'scaleHint',
+            en: 'ScaleHint',
+            ti: 'WMS_1_0_0.ScaleHint'
           }, {
-            type: 'element',
-            name: 'layer',
-            collection: true,
-            elementName: 'Layer',
-            typeInfo: 'WMS_1_0_0.Layer'
+            n: 'layer',
+            col: true,
+            en: 'Layer',
+            ti: 'WMS_1_0_0.Layer'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Post',
-        propertyInfos: [{
-            name: 'onlineResource',
-            typeInfo: 'String',
-            attributeName: 'onlineResource',
-            type: 'attribute'
+        ln: 'Post',
+        ps: [{
+            n: 'onlineResource',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Map',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'WMS_1_0_0.Format'
+        ln: 'Map',
+        ps: [{
+            n: 'format',
+            en: 'Format',
+            ti: 'WMS_1_0_0.Format'
           }, {
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WMS_1_0_0.DCPType'
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WMS_1_0_0.DCPType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Capabilities',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'WMS_1_0_0.Format'
+        ln: 'Capabilities',
+        ps: [{
+            n: 'format',
+            en: 'Format',
+            ti: 'WMS_1_0_0.Format'
           }, {
-            type: 'element',
-            name: 'dcpType',
-            collection: true,
-            elementName: 'DCPType',
-            typeInfo: 'WMS_1_0_0.DCPType'
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: 'WMS_1_0_0.DCPType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Get',
-        propertyInfos: [{
-            name: 'onlineResource',
-            typeInfo: 'String',
-            attributeName: 'onlineResource',
-            type: 'attribute'
+        ln: 'Get',
+        ps: [{
+            n: 'onlineResource',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ScaleHint',
-        propertyInfos: [{
-            name: 'min',
-            typeInfo: 'String',
-            attributeName: 'min',
-            type: 'attribute'
+        ln: 'ScaleHint',
+        ps: [{
+            n: 'min',
+            t: 'a'
           }, {
-            name: 'max',
-            typeInfo: 'String',
-            attributeName: 'max',
-            type: 'attribute'
+            n: 'max',
+            t: 'a'
           }]
       }],
-    elementInfos: [{
-        elementName: 'DCPType',
-        typeInfo: 'WMS_1_0_0.DCPType'
+    eis: [{
+        en: 'DCPType',
+        ti: 'WMS_1_0_0.DCPType'
       }, {
-        elementName: 'HTTP',
-        typeInfo: 'WMS_1_0_0.HTTP'
+        en: 'HTTP',
+        ti: 'WMS_1_0_0.HTTP'
       }, {
-        elementName: 'WMT_MS_Capabilities',
-        typeInfo: 'WMS_1_0_0.WMTMSCapabilities'
+        en: 'WMT_MS_Capabilities',
+        ti: 'WMS_1_0_0.WMTMSCapabilities'
       }, {
-        elementName: 'Service',
-        typeInfo: 'WMS_1_0_0.Service'
+        en: 'Service',
+        ti: 'WMS_1_0_0.Service'
       }, {
-        elementName: 'Capability',
-        typeInfo: 'WMS_1_0_0.Capability'
+        en: 'Capability',
+        ti: 'WMS_1_0_0.Capability'
       }, {
-        elementName: 'SVG',
-        typeInfo: 'WMS_1_0_0.SVG'
+        en: 'SVG',
+        ti: 'WMS_1_0_0.SVG'
       }, {
-        elementName: 'WBMP',
-        typeInfo: 'WMS_1_0_0.WBMP'
+        en: 'WBMP',
+        ti: 'WMS_1_0_0.WBMP'
       }, {
-        elementName: 'WebCGM',
-        typeInfo: 'WMS_1_0_0.WebCGM'
+        en: 'WebCGM',
+        ti: 'WMS_1_0_0.WebCGM'
       }, {
-        elementName: 'FeatureInfo',
-        typeInfo: 'WMS_1_0_0.FeatureInfo'
+        en: 'FeatureInfo',
+        ti: 'WMS_1_0_0.FeatureInfo'
       }, {
-        elementName: 'Format',
-        typeInfo: 'WMS_1_0_0.Format'
+        en: 'Format',
+        ti: 'WMS_1_0_0.Format'
       }, {
-        elementName: 'PNG',
-        typeInfo: 'WMS_1_0_0.PNG'
+        en: 'PNG',
+        ti: 'WMS_1_0_0.PNG'
       }, {
-        elementName: 'JPEG',
-        typeInfo: 'WMS_1_0_0.JPEG'
+        en: 'JPEG',
+        ti: 'WMS_1_0_0.JPEG'
       }, {
-        elementName: 'PPM',
-        typeInfo: 'WMS_1_0_0.PPM'
+        en: 'PPM',
+        ti: 'WMS_1_0_0.PPM'
       }, {
-        elementName: 'MIME',
-        typeInfo: 'WMS_1_0_0.MIME'
+        en: 'MIME',
+        ti: 'WMS_1_0_0.MIME'
       }, {
-        elementName: 'LatLonBoundingBox',
-        typeInfo: 'WMS_1_0_0.LatLonBoundingBox'
+        en: 'LatLonBoundingBox',
+        ti: 'WMS_1_0_0.LatLonBoundingBox'
       }, {
-        elementName: 'GeoTIFF',
-        typeInfo: 'WMS_1_0_0.GeoTIFF'
+        en: 'GeoTIFF',
+        ti: 'WMS_1_0_0.GeoTIFF'
       }, {
-        elementName: 'TIFF',
-        typeInfo: 'WMS_1_0_0.TIFF'
+        en: 'TIFF',
+        ti: 'WMS_1_0_0.TIFF'
       }, {
-        elementName: 'GIF',
-        typeInfo: 'WMS_1_0_0.GIF'
+        en: 'GIF',
+        ti: 'WMS_1_0_0.GIF'
       }, {
-        elementName: 'GML.1',
-        typeInfo: 'WMS_1_0_0.GML1'
+        en: 'GML.1',
+        ti: 'WMS_1_0_0.GML1'
       }, {
-        elementName: 'GML.2',
-        typeInfo: 'WMS_1_0_0.GML2'
+        en: 'GML.2',
+        ti: 'WMS_1_0_0.GML2'
       }, {
-        elementName: 'GML.3',
-        typeInfo: 'WMS_1_0_0.GML3'
+        en: 'GML.3',
+        ti: 'WMS_1_0_0.GML3'
       }, {
-        elementName: 'WMS_XML',
-        typeInfo: 'WMS_1_0_0.WMSXML'
+        en: 'WMS_XML',
+        ti: 'WMS_1_0_0.WMSXML'
       }, {
-        elementName: 'INIMAGE',
-        typeInfo: 'WMS_1_0_0.INIMAGE'
+        en: 'INIMAGE',
+        ti: 'WMS_1_0_0.INIMAGE'
       }, {
-        elementName: 'BLANK',
-        typeInfo: 'WMS_1_0_0.BLANK'
+        en: 'BLANK',
+        ti: 'WMS_1_0_0.BLANK'
       }, {
-        elementName: 'BoundingBox',
-        typeInfo: 'WMS_1_0_0.BoundingBox'
+        en: 'BoundingBox',
+        ti: 'WMS_1_0_0.BoundingBox'
       }, {
-        elementName: 'Style',
-        typeInfo: 'WMS_1_0_0.Style'
+        en: 'Style',
+        ti: 'WMS_1_0_0.Style'
       }, {
-        elementName: 'Request',
-        typeInfo: 'WMS_1_0_0.Request'
+        en: 'Request',
+        ti: 'WMS_1_0_0.Request'
       }, {
-        elementName: 'Exception',
-        typeInfo: 'WMS_1_0_0.Exception'
+        en: 'Exception',
+        ti: 'WMS_1_0_0.Exception'
       }, {
-        elementName: 'VendorSpecificCapabilities',
-        typeInfo: 'WMS_1_0_0.VendorSpecificCapabilities'
+        en: 'VendorSpecificCapabilities',
+        ti: 'WMS_1_0_0.VendorSpecificCapabilities'
       }, {
-        elementName: 'Layer',
-        typeInfo: 'WMS_1_0_0.Layer'
+        en: 'Layer',
+        ti: 'WMS_1_0_0.Layer'
       }, {
-        elementName: 'Post',
-        typeInfo: 'WMS_1_0_0.Post'
+        en: 'Post',
+        ti: 'WMS_1_0_0.Post'
       }, {
-        elementName: 'Map',
-        typeInfo: 'WMS_1_0_0.Map'
+        en: 'Map',
+        ti: 'WMS_1_0_0.Map'
       }, {
-        elementName: 'Capabilities',
-        typeInfo: 'WMS_1_0_0.Capabilities'
+        en: 'Capabilities',
+        ti: 'WMS_1_0_0.Capabilities'
       }, {
-        elementName: 'Get',
-        typeInfo: 'WMS_1_0_0.Get'
+        en: 'Get',
+        ti: 'WMS_1_0_0.Get'
       }, {
-        elementName: 'ScaleHint',
-        typeInfo: 'WMS_1_0_0.ScaleHint'
+        en: 'ScaleHint',
+        ti: 'WMS_1_0_0.ScaleHint'
       }]
   };
   return {

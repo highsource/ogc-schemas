@@ -1,887 +1,690 @@
 var WFS_1_1_0_Module_Factory = function () {
   var WFS_1_1_0 = {
-    name: 'WFS_1_1_0',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/wfs',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'DescribeFeatureTypeType',
-        baseTypeInfo: 'WFS_1_1_0.BaseRequestType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'typeName',
-            collection: true,
-            elementName: 'TypeName',
-            typeInfo: 'String'
+    n: 'WFS_1_1_0',
+    dens: 'http:\/\/www.opengis.net\/wfs',
+    tis: [{
+        ln: 'DescribeFeatureTypeType',
+        bti: 'WFS_1_1_0.BaseRequestType',
+        ps: [{
+            n: 'typeName',
+            col: true,
+            en: 'TypeName',
+            ti: 'QName'
           }, {
-            name: 'outputFormat',
-            typeInfo: 'String',
-            attributeName: 'outputFormat',
-            type: 'attribute'
+            n: 'outputFormat',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DeleteElementType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'filter',
-            elementName: {
-              localPart: 'Filter',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'DeleteElementType',
+        ps: [{
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_1_0.FilterType'
+            ti: 'Filter_1_1_0.FilterType'
           }, {
-            name: 'handle',
-            typeInfo: 'String',
-            attributeName: 'handle',
-            type: 'attribute'
+            n: 'handle',
+            t: 'a'
           }, {
-            name: 'typeName',
-            typeInfo: 'String',
-            attributeName: 'typeName',
-            type: 'attribute'
+            n: 'typeName',
+            ti: 'QName',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetFeatureType',
-        baseTypeInfo: 'WFS_1_1_0.BaseRequestType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'query',
-            collection: true,
-            elementName: 'Query',
-            typeInfo: 'WFS_1_1_0.QueryType'
+        ln: 'GetFeatureType',
+        bti: 'WFS_1_1_0.BaseRequestType',
+        ps: [{
+            n: 'query',
+            col: true,
+            en: 'Query',
+            ti: 'WFS_1_1_0.QueryType'
           }, {
-            name: 'resultType',
-            typeInfo: 'String',
-            attributeName: 'resultType',
-            type: 'attribute'
+            n: 'resultType',
+            t: 'a'
           }, {
-            name: 'outputFormat',
-            typeInfo: 'String',
-            attributeName: 'outputFormat',
-            type: 'attribute'
+            n: 'outputFormat',
+            t: 'a'
           }, {
-            name: 'maxFeatures',
-            typeInfo: 'Integer',
-            attributeName: 'maxFeatures',
-            type: 'attribute'
+            n: 'maxFeatures',
+            ti: 'Integer',
+            t: 'a'
           }, {
-            name: 'traverseXlinkDepth',
-            typeInfo: 'String',
-            attributeName: 'traverseXlinkDepth',
-            type: 'attribute'
+            n: 'traverseXlinkDepth',
+            t: 'a'
           }, {
-            name: 'traverseXlinkExpiry',
-            typeInfo: 'Integer',
-            attributeName: 'traverseXlinkExpiry',
-            type: 'attribute'
+            n: 'traverseXlinkExpiry',
+            ti: 'Integer',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LockFeatureResponseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'lockId',
-            elementName: 'LockId',
-            typeInfo: 'String'
+        ln: 'LockFeatureResponseType',
+        ps: [{
+            n: 'lockId',
+            en: 'LockId'
           }, {
-            type: 'element',
-            name: 'featuresLocked',
-            elementName: 'FeaturesLocked',
-            typeInfo: 'WFS_1_1_0.FeaturesLockedType'
+            n: 'featuresLocked',
+            en: 'FeaturesLocked',
+            ti: 'WFS_1_1_0.FeaturesLockedType'
           }, {
-            type: 'element',
-            name: 'featuresNotLocked',
-            elementName: 'FeaturesNotLocked',
-            typeInfo: 'WFS_1_1_0.FeaturesNotLockedType'
+            n: 'featuresNotLocked',
+            en: 'FeaturesNotLocked',
+            ti: 'WFS_1_1_0.FeaturesNotLockedType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'QueryType',
-        propertyInfos: [{
-            name: 'propertyNameOrXlinkPropertyNameOrFunction',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'PropertyName',
-                typeInfo: 'String'
+        ln: 'QueryType',
+        ps: [{
+            n: 'propertyNameOrXlinkPropertyNameOrFunction',
+            col: true,
+            etis: [{
+                en: 'PropertyName'
               }, {
-                elementName: 'XlinkPropertyName',
-                typeInfo: 'WFS_1_1_0.XlinkPropertyName'
+                en: 'XlinkPropertyName',
+                ti: 'WFS_1_1_0.XlinkPropertyName'
               }, {
-                elementName: {
-                  localPart: 'Function',
-                  namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+                en: {
+                  lp: 'Function',
+                  ns: 'http:\/\/www.opengis.net\/ogc'
                 },
-                typeInfo: 'Filter_1_1_0.FunctionType'
+                ti: 'Filter_1_1_0.FunctionType'
               }],
-            type: 'elements'
+            t: 'es'
           }, {
-            type: 'element',
-            name: 'filter',
-            elementName: {
-              localPart: 'Filter',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_1_0.FilterType'
+            ti: 'Filter_1_1_0.FilterType'
           }, {
-            type: 'element',
-            name: 'sortBy',
-            elementName: {
-              localPart: 'SortBy',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+            n: 'sortBy',
+            en: {
+              lp: 'SortBy',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_1_0.SortByType'
+            ti: 'Filter_1_1_0.SortByType'
           }, {
-            name: 'handle',
-            typeInfo: 'String',
-            attributeName: 'handle',
-            type: 'attribute'
+            n: 'handle',
+            t: 'a'
           }, {
-            name: 'typeName',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'typeName',
+            ti: {
+              t: 'l',
+              ti: 'QName'
             },
-            attributeName: 'typeName',
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'featureVersion',
-            typeInfo: 'String',
-            attributeName: 'featureVersion',
-            type: 'attribute'
+            n: 'featureVersion',
+            t: 'a'
           }, {
-            name: 'srsName',
-            typeInfo: 'String',
-            attributeName: 'srsName',
-            type: 'attribute'
+            n: 'srsName',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetFeatureWithLockType',
-        baseTypeInfo: 'WFS_1_1_0.BaseRequestType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'query',
-            collection: true,
-            elementName: 'Query',
-            typeInfo: 'WFS_1_1_0.QueryType'
+        ln: 'GetFeatureWithLockType',
+        bti: 'WFS_1_1_0.BaseRequestType',
+        ps: [{
+            n: 'query',
+            col: true,
+            en: 'Query',
+            ti: 'WFS_1_1_0.QueryType'
           }, {
-            name: 'expiry',
-            typeInfo: 'Integer',
-            attributeName: 'expiry',
-            type: 'attribute'
+            n: 'expiry',
+            ti: 'Integer',
+            t: 'a'
           }, {
-            name: 'resultType',
-            typeInfo: 'String',
-            attributeName: 'resultType',
-            type: 'attribute'
+            n: 'resultType',
+            t: 'a'
           }, {
-            name: 'outputFormat',
-            typeInfo: 'String',
-            attributeName: 'outputFormat',
-            type: 'attribute'
+            n: 'outputFormat',
+            t: 'a'
           }, {
-            name: 'maxFeatures',
-            typeInfo: 'Integer',
-            attributeName: 'maxFeatures',
-            type: 'attribute'
+            n: 'maxFeatures',
+            ti: 'Integer',
+            t: 'a'
           }, {
-            name: 'traverseXlinkDepth',
-            typeInfo: 'String',
-            attributeName: 'traverseXlinkDepth',
-            type: 'attribute'
+            n: 'traverseXlinkDepth',
+            t: 'a'
           }, {
-            name: 'traverseXlinkExpiry',
-            typeInfo: 'Integer',
-            attributeName: 'traverseXlinkExpiry',
-            type: 'attribute'
+            n: 'traverseXlinkExpiry',
+            ti: 'Integer',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetGmlObjectType',
-        baseTypeInfo: 'WFS_1_1_0.BaseRequestType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'gmlObjectId',
-            elementName: {
-              localPart: 'GmlObjectId',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'GetGmlObjectType',
+        bti: 'WFS_1_1_0.BaseRequestType',
+        ps: [{
+            n: 'gmlObjectId',
+            en: {
+              lp: 'GmlObjectId',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_1_0.GmlObjectIdType'
+            ti: 'Filter_1_1_0.GmlObjectIdType'
           }, {
-            name: 'outputFormat',
-            typeInfo: 'String',
-            attributeName: 'outputFormat',
-            type: 'attribute'
+            n: 'outputFormat',
+            t: 'a'
           }, {
-            name: 'traverseXlinkDepth',
-            typeInfo: 'String',
-            attributeName: 'traverseXlinkDepth',
-            type: 'attribute'
+            n: 'traverseXlinkDepth',
+            t: 'a'
           }, {
-            name: 'traverseXlinkExpiry',
-            typeInfo: 'Integer',
-            attributeName: 'traverseXlinkExpiry',
-            type: 'attribute'
+            n: 'traverseXlinkExpiry',
+            ti: 'Integer',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LockFeatureType',
-        baseTypeInfo: 'WFS_1_1_0.BaseRequestType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'lock',
-            collection: true,
-            elementName: 'Lock',
-            typeInfo: 'WFS_1_1_0.LockType'
+        ln: 'LockFeatureType',
+        bti: 'WFS_1_1_0.BaseRequestType',
+        ps: [{
+            n: 'lock',
+            col: true,
+            en: 'Lock',
+            ti: 'WFS_1_1_0.LockType'
           }, {
-            name: 'expiry',
-            typeInfo: 'Integer',
-            attributeName: 'expiry',
-            type: 'attribute'
+            n: 'expiry',
+            ti: 'Integer',
+            t: 'a'
           }, {
-            name: 'lockAction',
-            typeInfo: 'String',
-            attributeName: 'lockAction',
-            type: 'attribute'
+            n: 'lockAction',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'WFSCapabilitiesType',
-        baseTypeInfo: 'OWS_1_0_0.CapabilitiesBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureTypeList',
-            elementName: 'FeatureTypeList',
-            typeInfo: 'WFS_1_1_0.FeatureTypeListType'
+        ln: 'WFSCapabilitiesType',
+        bti: 'OWS_1_0_0.CapabilitiesBaseType',
+        ps: [{
+            n: 'featureTypeList',
+            en: 'FeatureTypeList',
+            ti: 'WFS_1_1_0.FeatureTypeListType'
           }, {
-            type: 'element',
-            name: 'servesGMLObjectTypeList',
-            elementName: 'ServesGMLObjectTypeList',
-            typeInfo: 'WFS_1_1_0.GMLObjectTypeListType'
+            n: 'servesGMLObjectTypeList',
+            en: 'ServesGMLObjectTypeList',
+            ti: 'WFS_1_1_0.GMLObjectTypeListType'
           }, {
-            type: 'element',
-            name: 'supportsGMLObjectTypeList',
-            elementName: 'SupportsGMLObjectTypeList',
-            typeInfo: 'WFS_1_1_0.GMLObjectTypeListType'
+            n: 'supportsGMLObjectTypeList',
+            en: 'SupportsGMLObjectTypeList',
+            ti: 'WFS_1_1_0.GMLObjectTypeListType'
           }, {
-            type: 'element',
-            name: 'filterCapabilities',
-            elementName: {
-              localPart: 'Filter_Capabilities',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+            n: 'filterCapabilities',
+            en: {
+              lp: 'Filter_Capabilities',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_1_0.FilterCapabilities'
+            ti: 'Filter_1_1_0.FilterCapabilities'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureTypeListType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'operations',
-            elementName: 'Operations',
-            typeInfo: 'WFS_1_1_0.OperationsType'
+        ln: 'FeatureTypeListType',
+        ps: [{
+            n: 'operations',
+            en: 'Operations',
+            ti: 'WFS_1_1_0.OperationsType'
           }, {
-            type: 'element',
-            name: 'featureType',
-            collection: true,
-            elementName: 'FeatureType',
-            typeInfo: 'WFS_1_1_0.FeatureTypeType'
+            n: 'featureType',
+            col: true,
+            en: 'FeatureType',
+            ti: 'WFS_1_1_0.FeatureTypeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'XlinkPropertyName',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'XlinkPropertyName',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'traverseXlinkDepth',
-            typeInfo: 'String',
-            attributeName: 'traverseXlinkDepth',
-            type: 'attribute'
+            n: 'traverseXlinkDepth',
+            t: 'a'
           }, {
-            name: 'traverseXlinkExpiry',
-            typeInfo: 'Integer',
-            attributeName: 'traverseXlinkExpiry',
-            type: 'attribute'
+            n: 'traverseXlinkExpiry',
+            ti: 'Integer',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'InsertElementType',
-        propertyInfos: [{
-            name: 'feature',
-            collection: true,
-            elementName: {
-              localPart: '_Feature',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        ln: 'InsertElementType',
+        ps: [{
+            n: 'feature',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: '_Feature',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            typeInfo: 'GML_3_1_1.AbstractFeatureType',
-            type: 'elementRef'
+            ti: 'GML_3_1_1.AbstractFeatureType',
+            t: 'er'
           }, {
-            name: 'idgen',
-            typeInfo: 'String',
-            attributeName: 'idgen',
-            type: 'attribute'
+            n: 'idgen',
+            t: 'a'
           }, {
-            name: 'handle',
-            typeInfo: 'String',
-            attributeName: 'handle',
-            type: 'attribute'
+            n: 'handle',
+            t: 'a'
           }, {
-            name: 'inputFormat',
-            typeInfo: 'String',
-            attributeName: 'inputFormat',
-            type: 'attribute'
+            n: 'inputFormat',
+            t: 'a'
           }, {
-            name: 'srsName',
-            typeInfo: 'String',
-            attributeName: 'srsName',
-            type: 'attribute'
+            n: 'srsName',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UpdateElementType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'property',
-            collection: true,
-            elementName: 'Property',
-            typeInfo: 'WFS_1_1_0.PropertyType'
+        ln: 'UpdateElementType',
+        ps: [{
+            n: 'property',
+            col: true,
+            en: 'Property',
+            ti: 'WFS_1_1_0.PropertyType'
           }, {
-            type: 'element',
-            name: 'filter',
-            elementName: {
-              localPart: 'Filter',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_1_0.FilterType'
+            ti: 'Filter_1_1_0.FilterType'
           }, {
-            name: 'handle',
-            typeInfo: 'String',
-            attributeName: 'handle',
-            type: 'attribute'
+            n: 'handle',
+            t: 'a'
           }, {
-            name: 'typeName',
-            typeInfo: 'String',
-            attributeName: 'typeName',
-            type: 'attribute'
+            n: 'typeName',
+            ti: 'QName',
+            t: 'a'
           }, {
-            name: 'inputFormat',
-            typeInfo: 'String',
-            attributeName: 'inputFormat',
-            type: 'attribute'
+            n: 'inputFormat',
+            t: 'a'
           }, {
-            name: 'srsName',
-            typeInfo: 'String',
-            attributeName: 'srsName',
-            type: 'attribute'
+            n: 'srsName',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'NativeType',
-        propertyInfos: [{
-            name: 'vendorId',
-            typeInfo: 'String',
-            attributeName: 'vendorId',
-            type: 'attribute'
+        ln: 'NativeType',
+        ps: [{
+            n: 'vendorId',
+            t: 'a'
           }, {
-            name: 'safeToIgnore',
-            typeInfo: 'Boolean',
-            attributeName: 'safeToIgnore',
-            type: 'attribute'
+            n: 'safeToIgnore',
+            ti: 'Boolean',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TransactionResponseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'transactionSummary',
-            elementName: 'TransactionSummary',
-            typeInfo: 'WFS_1_1_0.TransactionSummaryType'
+        ln: 'TransactionResponseType',
+        ps: [{
+            n: 'transactionSummary',
+            en: 'TransactionSummary',
+            ti: 'WFS_1_1_0.TransactionSummaryType'
           }, {
-            type: 'element',
-            name: 'transactionResults',
-            elementName: 'TransactionResults',
-            typeInfo: 'WFS_1_1_0.TransactionResultsType'
+            n: 'transactionResults',
+            en: 'TransactionResults',
+            ti: 'WFS_1_1_0.TransactionResultsType'
           }, {
-            type: 'element',
-            name: 'insertResults',
-            elementName: 'InsertResults',
-            typeInfo: 'WFS_1_1_0.InsertResultsType'
+            n: 'insertResults',
+            en: 'InsertResults',
+            ti: 'WFS_1_1_0.InsertResultsType'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TransactionType',
-        baseTypeInfo: 'WFS_1_1_0.BaseRequestType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'lockId',
-            elementName: 'LockId',
-            typeInfo: 'String'
+        ln: 'TransactionType',
+        bti: 'WFS_1_1_0.BaseRequestType',
+        ps: [{
+            n: 'lockId',
+            en: 'LockId'
           }, {
-            name: 'insertOrUpdateOrDelete',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'Insert',
-                typeInfo: 'WFS_1_1_0.InsertElementType'
+            n: 'insertOrUpdateOrDelete',
+            col: true,
+            etis: [{
+                en: 'Insert',
+                ti: 'WFS_1_1_0.InsertElementType'
               }, {
-                elementName: 'Update',
-                typeInfo: 'WFS_1_1_0.UpdateElementType'
+                en: 'Update',
+                ti: 'WFS_1_1_0.UpdateElementType'
               }, {
-                elementName: 'Delete',
-                typeInfo: 'WFS_1_1_0.DeleteElementType'
+                en: 'Delete',
+                ti: 'WFS_1_1_0.DeleteElementType'
               }, {
-                elementName: 'Native',
-                typeInfo: 'WFS_1_1_0.NativeType'
+                en: 'Native',
+                ti: 'WFS_1_1_0.NativeType'
               }],
-            type: 'elements'
+            t: 'es'
           }, {
-            name: 'releaseAction',
-            typeInfo: 'String',
-            attributeName: 'releaseAction',
-            type: 'attribute'
+            n: 'releaseAction',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureCollectionType',
-        baseTypeInfo: 'GML_3_1_1.AbstractFeatureCollectionType',
-        propertyInfos: [{
-            name: 'lockId',
-            typeInfo: 'String',
-            attributeName: 'lockId',
-            type: 'attribute'
+        ln: 'FeatureCollectionType',
+        bti: 'GML_3_1_1.AbstractFeatureCollectionType',
+        ps: [{
+            n: 'lockId',
+            t: 'a'
           }, {
-            name: 'timeStamp',
-            typeInfo: 'Calendar',
-            attributeName: 'timeStamp',
-            type: 'attribute'
+            n: 'timeStamp',
+            ti: 'Calendar',
+            t: 'a'
           }, {
-            name: 'numberOfFeatures',
-            typeInfo: 'Integer',
-            attributeName: 'numberOfFeatures',
-            type: 'attribute'
+            n: 'numberOfFeatures',
+            ti: 'Integer',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetCapabilitiesType',
-        baseTypeInfo: 'OWS_1_0_0.GetCapabilitiesType',
-        propertyInfos: [{
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+        ln: 'GetCapabilitiesType',
+        bti: 'OWS_1_0_0.GetCapabilitiesType',
+        ps: [{
+            n: 'service',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GMLObjectTypeListType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'gmlObjectType',
-            collection: true,
-            elementName: 'GMLObjectType',
-            typeInfo: 'WFS_1_1_0.GMLObjectTypeType'
+        ln: 'GMLObjectTypeListType',
+        ps: [{
+            n: 'gmlObjectType',
+            col: true,
+            en: 'GMLObjectType',
+            ti: 'WFS_1_1_0.GMLObjectTypeType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PropertyType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'PropertyType',
+        ps: [{
+            n: 'name',
+            en: 'Name',
+            ti: 'QName'
           }, {
-            type: 'element',
-            name: 'value',
-            elementName: 'Value',
-            typeInfo: 'AnyType'
+            n: 'value',
+            en: 'Value',
+            ti: 'AnyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ActionType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'message',
-            elementName: 'Message',
-            typeInfo: 'String'
+        ln: 'ActionType',
+        ps: [{
+            n: 'message',
+            en: 'Message'
           }, {
-            name: 'locator',
-            typeInfo: 'String',
-            attributeName: 'locator',
-            type: 'attribute'
+            n: 'locator',
+            t: 'a'
           }, {
-            name: 'code',
-            typeInfo: 'String',
-            attributeName: 'code',
-            type: 'attribute'
+            n: 'code',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeaturesNotLockedType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureId',
-            collection: true,
-            elementName: {
-              localPart: 'FeatureId',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'FeaturesNotLockedType',
+        ps: [{
+            n: 'featureId',
+            col: true,
+            en: {
+              lp: 'FeatureId',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_1_0.FeatureIdType'
+            ti: 'Filter_1_1_0.FeatureIdType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeaturesLockedType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureId',
-            collection: true,
-            elementName: {
-              localPart: 'FeatureId',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'FeaturesLockedType',
+        ps: [{
+            n: 'featureId',
+            col: true,
+            en: {
+              lp: 'FeatureId',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_1_0.FeatureIdType'
+            ti: 'Filter_1_1_0.FeatureIdType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TransactionSummaryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'totalInserted',
-            elementName: 'totalInserted',
-            typeInfo: 'Integer'
+        ln: 'TransactionSummaryType',
+        ps: [{
+            n: 'totalInserted',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'totalUpdated',
-            elementName: 'totalUpdated',
-            typeInfo: 'Integer'
+            n: 'totalUpdated',
+            ti: 'Integer'
           }, {
-            type: 'element',
-            name: 'totalDeleted',
-            elementName: 'totalDeleted',
-            typeInfo: 'Integer'
+            n: 'totalDeleted',
+            ti: 'Integer'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LockType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'filter',
-            elementName: {
-              localPart: 'Filter',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'LockType',
+        ps: [{
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_1_0.FilterType'
+            ti: 'Filter_1_1_0.FilterType'
           }, {
-            name: 'handle',
-            typeInfo: 'String',
-            attributeName: 'handle',
-            type: 'attribute'
+            n: 'handle',
+            t: 'a'
           }, {
-            name: 'typeName',
-            typeInfo: 'String',
-            attributeName: 'typeName',
-            type: 'attribute'
+            n: 'typeName',
+            ti: 'QName',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OperationsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'operation',
-            collection: true,
-            elementName: 'Operation',
-            typeInfo: 'String'
+        ln: 'OperationsType',
+        ps: [{
+            n: 'operation',
+            col: true,
+            en: 'Operation'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GMLObjectTypeType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'GMLObjectTypeType',
+        ps: [{
+            n: 'name',
+            en: 'Name',
+            ti: 'QName'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            type: 'element',
-            name: 'keywords',
-            collection: true,
-            elementName: {
-              localPart: 'Keywords',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows'
+            n: 'keywords',
+            col: true,
+            en: {
+              lp: 'Keywords',
+              ns: 'http:\/\/www.opengis.net\/ows'
             },
-            typeInfo: 'OWS_1_0_0.KeywordsType'
+            ti: 'OWS_1_0_0.KeywordsType'
           }, {
-            type: 'element',
-            name: 'outputFormats',
-            elementName: 'OutputFormats',
-            typeInfo: 'WFS_1_1_0.OutputFormatListType'
+            n: 'outputFormats',
+            en: 'OutputFormats',
+            ti: 'WFS_1_1_0.OutputFormatListType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'InsertResultsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'feature',
-            collection: true,
-            elementName: 'Feature',
-            typeInfo: 'WFS_1_1_0.InsertedFeatureType'
+        ln: 'InsertResultsType',
+        ps: [{
+            n: 'feature',
+            col: true,
+            en: 'Feature',
+            ti: 'WFS_1_1_0.InsertedFeatureType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MetadataURLType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'MetadataURLType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'type',
-            typeInfo: 'String',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            t: 'a'
           }, {
-            name: 'format',
-            typeInfo: 'String',
-            attributeName: 'format',
-            type: 'attribute'
+            n: 'format',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureTypeType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'FeatureTypeType',
+        ps: [{
+            n: 'name',
+            en: 'Name',
+            ti: 'QName'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            type: 'element',
-            name: 'keywords',
-            collection: true,
-            elementName: {
-              localPart: 'Keywords',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows'
+            n: 'keywords',
+            col: true,
+            en: {
+              lp: 'Keywords',
+              ns: 'http:\/\/www.opengis.net\/ows'
             },
-            typeInfo: 'OWS_1_0_0.KeywordsType'
+            ti: 'OWS_1_0_0.KeywordsType'
           }, {
-            type: 'element',
-            name: 'defaultSRS',
-            elementName: 'DefaultSRS',
-            typeInfo: 'String'
+            n: 'defaultSRS',
+            en: 'DefaultSRS'
           }, {
-            type: 'element',
-            name: 'otherSRS',
-            collection: true,
-            elementName: 'OtherSRS',
-            typeInfo: 'String'
+            n: 'otherSRS',
+            col: true,
+            en: 'OtherSRS'
           }, {
-            type: 'element',
-            name: 'noSRS',
-            elementName: 'NoSRS',
-            typeInfo: 'WFS_1_1_0.FeatureTypeType.NoSRS'
+            n: 'noSRS',
+            en: 'NoSRS',
+            ti: 'WFS_1_1_0.FeatureTypeType.NoSRS'
           }, {
-            type: 'element',
-            name: 'operations',
-            elementName: 'Operations',
-            typeInfo: 'WFS_1_1_0.OperationsType'
+            n: 'operations',
+            en: 'Operations',
+            ti: 'WFS_1_1_0.OperationsType'
           }, {
-            type: 'element',
-            name: 'outputFormats',
-            elementName: 'OutputFormats',
-            typeInfo: 'WFS_1_1_0.OutputFormatListType'
+            n: 'outputFormats',
+            en: 'OutputFormats',
+            ti: 'WFS_1_1_0.OutputFormatListType'
           }, {
-            type: 'element',
-            name: 'wgs84BoundingBox',
-            collection: true,
-            elementName: {
-              localPart: 'WGS84BoundingBox',
-              namespaceURI: 'http:\/\/www.opengis.net\/ows'
+            n: 'wgs84BoundingBox',
+            col: true,
+            en: {
+              lp: 'WGS84BoundingBox',
+              ns: 'http:\/\/www.opengis.net\/ows'
             },
-            typeInfo: 'OWS_1_0_0.WGS84BoundingBoxType'
+            ti: 'OWS_1_0_0.WGS84BoundingBoxType'
           }, {
-            type: 'element',
-            name: 'metadataURL',
-            collection: true,
-            elementName: 'MetadataURL',
-            typeInfo: 'WFS_1_1_0.MetadataURLType'
+            n: 'metadataURL',
+            col: true,
+            en: 'MetadataURL',
+            ti: 'WFS_1_1_0.MetadataURLType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'InsertedFeatureType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureId',
-            collection: true,
-            elementName: {
-              localPart: 'FeatureId',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'InsertedFeatureType',
+        ps: [{
+            n: 'featureId',
+            col: true,
+            en: {
+              lp: 'FeatureId',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_1_0.FeatureIdType'
+            ti: 'Filter_1_1_0.FeatureIdType'
           }, {
-            name: 'handle',
-            typeInfo: 'String',
-            attributeName: 'handle',
-            type: 'attribute'
+            n: 'handle',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OutputFormatListType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'format',
-            collection: true,
-            elementName: 'Format',
-            typeInfo: 'String'
+        ln: 'OutputFormatListType',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BaseRequestType',
-        propertyInfos: [{
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+        ln: 'BaseRequestType',
+        ps: [{
+            n: 'service',
+            t: 'a'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }, {
-            name: 'handle',
-            typeInfo: 'String',
-            attributeName: 'handle',
-            type: 'attribute'
+            n: 'handle',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TransactionResultsType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'action',
-            collection: true,
-            elementName: 'Action',
-            typeInfo: 'WFS_1_1_0.ActionType'
+        ln: 'TransactionResultsType',
+        ps: [{
+            n: 'action',
+            col: true,
+            en: 'Action',
+            ti: 'WFS_1_1_0.ActionType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureTypeType.NoSRS',
-        propertyInfos: []
+        ln: 'FeatureTypeType.NoSRS'
       }, {
-        type: 'enumInfo',
-        localName: 'IdentifierGenerationOptionType',
-        baseTypeInfo: 'String',
-        values: ['UseExisting', 'ReplaceDuplicate', 'GenerateNew']
+        t: 'enum',
+        ln: 'IdentifierGenerationOptionType',
+        vs: ['UseExisting', 'ReplaceDuplicate', 'GenerateNew']
       }, {
-        type: 'enumInfo',
-        localName: 'AllSomeType',
-        baseTypeInfo: 'String',
-        values: ['ALL', 'SOME']
+        t: 'enum',
+        ln: 'AllSomeType',
+        vs: ['ALL', 'SOME']
       }, {
-        type: 'enumInfo',
-        localName: 'ResultTypeType',
-        baseTypeInfo: 'String',
-        values: ['results', 'hits']
+        t: 'enum',
+        ln: 'ResultTypeType',
+        vs: ['results', 'hits']
       }, {
-        type: 'enumInfo',
-        localName: 'OperationType',
-        baseTypeInfo: 'String',
-        values: ['Insert', 'Update', 'Delete', 'Query', 'Lock', 'GetGmlObject']
+        t: 'enum',
+        ln: 'OperationType',
+        vs: ['Insert', 'Update', 'Delete', 'Query', 'Lock', 'GetGmlObject']
       }],
-    elementInfos: [{
-        elementName: 'XlinkPropertyName',
-        typeInfo: 'WFS_1_1_0.XlinkPropertyName'
+    eis: [{
+        en: 'XlinkPropertyName',
+        ti: 'WFS_1_1_0.XlinkPropertyName'
       }, {
-        elementName: 'GetGmlObject',
-        typeInfo: 'WFS_1_1_0.GetGmlObjectType'
+        en: 'GetGmlObject',
+        ti: 'WFS_1_1_0.GetGmlObjectType'
       }, {
-        elementName: 'GetFeatureWithLock',
-        typeInfo: 'WFS_1_1_0.GetFeatureWithLockType'
+        en: 'GetFeatureWithLock',
+        ti: 'WFS_1_1_0.GetFeatureWithLockType'
       }, {
-        elementName: 'PropertyName',
-        typeInfo: 'String'
+        en: 'PropertyName'
       }, {
-        elementName: 'GetFeature',
-        typeInfo: 'WFS_1_1_0.GetFeatureType'
+        en: 'GetFeature',
+        ti: 'WFS_1_1_0.GetFeatureType'
       }, {
-        elementName: 'LockFeatureResponse',
-        typeInfo: 'WFS_1_1_0.LockFeatureResponseType'
+        en: 'LockFeatureResponse',
+        ti: 'WFS_1_1_0.LockFeatureResponseType'
       }, {
-        elementName: 'WFS_Capabilities',
-        typeInfo: 'WFS_1_1_0.WFSCapabilitiesType'
+        en: 'WFS_Capabilities',
+        ti: 'WFS_1_1_0.WFSCapabilitiesType'
       }, {
-        elementName: 'FeatureCollection',
-        typeInfo: 'WFS_1_1_0.FeatureCollectionType',
-        substitutionHead: {
-          localPart: '_FeatureCollection',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'FeatureCollection',
+        ti: 'WFS_1_1_0.FeatureCollectionType',
+        sh: {
+          lp: '_FeatureCollection',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'Transaction',
-        typeInfo: 'WFS_1_1_0.TransactionType'
+        en: 'Transaction',
+        ti: 'WFS_1_1_0.TransactionType'
       }, {
-        elementName: 'LockId',
-        typeInfo: 'String'
+        en: 'LockId'
       }, {
-        elementName: 'ServesGMLObjectTypeList',
-        typeInfo: 'WFS_1_1_0.GMLObjectTypeListType'
+        en: 'ServesGMLObjectTypeList',
+        ti: 'WFS_1_1_0.GMLObjectTypeListType'
       }, {
-        elementName: 'LockFeature',
-        typeInfo: 'WFS_1_1_0.LockFeatureType'
+        en: 'LockFeature',
+        ti: 'WFS_1_1_0.LockFeatureType'
       }, {
-        elementName: 'Query',
-        typeInfo: 'WFS_1_1_0.QueryType'
+        en: 'Query',
+        ti: 'WFS_1_1_0.QueryType'
       }, {
-        elementName: 'DescribeFeatureType',
-        typeInfo: 'WFS_1_1_0.DescribeFeatureTypeType'
+        en: 'DescribeFeatureType',
+        ti: 'WFS_1_1_0.DescribeFeatureTypeType'
       }, {
-        elementName: 'Delete',
-        typeInfo: 'WFS_1_1_0.DeleteElementType'
+        en: 'Delete',
+        ti: 'WFS_1_1_0.DeleteElementType'
       }, {
-        elementName: 'Insert',
-        typeInfo: 'WFS_1_1_0.InsertElementType'
+        en: 'Insert',
+        ti: 'WFS_1_1_0.InsertElementType'
       }, {
-        elementName: 'Update',
-        typeInfo: 'WFS_1_1_0.UpdateElementType'
+        en: 'Update',
+        ti: 'WFS_1_1_0.UpdateElementType'
       }, {
-        elementName: 'FeatureTypeList',
-        typeInfo: 'WFS_1_1_0.FeatureTypeListType'
+        en: 'FeatureTypeList',
+        ti: 'WFS_1_1_0.FeatureTypeListType'
       }, {
-        elementName: 'GetCapabilities',
-        typeInfo: 'WFS_1_1_0.GetCapabilitiesType'
+        en: 'GetCapabilities',
+        ti: 'WFS_1_1_0.GetCapabilitiesType'
       }, {
-        elementName: 'TransactionResponse',
-        typeInfo: 'WFS_1_1_0.TransactionResponseType'
+        en: 'TransactionResponse',
+        ti: 'WFS_1_1_0.TransactionResponseType'
       }, {
-        elementName: 'Native',
-        typeInfo: 'WFS_1_1_0.NativeType'
+        en: 'Native',
+        ti: 'WFS_1_1_0.NativeType'
       }, {
-        elementName: 'SupportsGMLObjectTypeList',
-        typeInfo: 'WFS_1_1_0.GMLObjectTypeListType'
+        en: 'SupportsGMLObjectTypeList',
+        ti: 'WFS_1_1_0.GMLObjectTypeListType'
       }, {
-        elementName: 'Property',
-        typeInfo: 'WFS_1_1_0.PropertyType'
+        en: 'Property',
+        ti: 'WFS_1_1_0.PropertyType'
       }]
   };
   return {

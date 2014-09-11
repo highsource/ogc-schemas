@@ -1,2754 +1,2286 @@
 var KML_2_2_0_Module_Factory = function () {
   var KML_2_2_0 = {
-    name: 'KML_2_2_0',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/kml\/2.2',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'DeleteType',
-        propertyInfos: [{
-            name: 'abstractFeatureGroup',
-            collection: true,
-            elementName: 'AbstractFeatureGroup',
-            typeInfo: 'KML_2_2_0.AbstractFeatureType',
-            type: 'elementRef'
+    n: 'KML_2_2_0',
+    dens: 'http:\/\/www.opengis.net\/kml\/2.2',
+    tis: [{
+        ln: 'DeleteType',
+        ps: [{
+            n: 'abstractFeatureGroup',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractFeatureGroup',
+            ti: 'KML_2_2_0.AbstractFeatureType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'objectSimpleExtensionGroup',
-            collection: true,
-            elementName: 'ObjectSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+        ln: 'AbstractObjectType',
+        ps: [{
+            n: 'objectSimpleExtensionGroup',
+            col: true,
+            en: 'ObjectSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            name: 'id',
-            typeInfo: 'ID',
-            attributeName: 'id',
-            type: 'attribute'
+            n: 'id',
+            ti: 'ID',
+            t: 'a'
           }, {
-            name: 'targetId',
-            typeInfo: 'String',
-            attributeName: 'targetId',
-            type: 'attribute'
+            n: 'targetId',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DocumentType',
-        baseTypeInfo: 'KML_2_2_0.AbstractContainerType',
-        propertyInfos: []
+        ln: 'DocumentType',
+        bti: 'KML_2_2_0.AbstractContainerType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractContainerType',
-        baseTypeInfo: 'KML_2_2_0.AbstractFeatureType',
-        propertyInfos: []
+        ln: 'AbstractContainerType',
+        bti: 'KML_2_2_0.AbstractFeatureType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractFeatureType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            name: 'rest',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'open',
-                typeInfo: 'Boolean'
+        ln: 'AbstractFeatureType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'rest',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'styleUrl'
               }, {
-                elementName: 'AbstractTimePrimitiveGroup',
-                typeInfo: 'KML_2_2_0.AbstractTimePrimitiveType'
+                en: 'open',
+                ti: 'Boolean'
               }, {
-                elementName: 'Metadata',
-                typeInfo: 'KML_2_2_0.MetadataType'
+                en: 'AbstractFeatureSimpleExtensionGroup',
+                ti: 'AnyType'
               }, {
-                elementName: {
-                  localPart: 'link',
-                  namespaceURI: 'http:\/\/www.w3.org\/2005\/Atom'
+                en: 'phoneNumber'
+              }, {
+                en: {
+                  lp: 'author',
+                  ns: 'http:\/\/www.w3.org\/2005\/Atom'
                 },
-                typeInfo: 'Atom_1_0.Link'
+                ti: 'Atom_1_0.AtomPersonConstruct'
               }, {
-                elementName: 'description',
-                typeInfo: 'String'
+                en: 'description'
               }, {
-                elementName: {
-                  localPart: 'AddressDetails',
-                  namespaceURI: 'urn:oasis:names:tc:ciq:xsdschema:xAL:2.0'
+                en: {
+                  lp: 'link',
+                  ns: 'http:\/\/www.w3.org\/2005\/Atom'
                 },
-                typeInfo: 'xAL_2_0.AddressDetails'
+                ti: 'Atom_1_0.Link'
               }, {
-                elementName: {
-                  localPart: 'author',
-                  namespaceURI: 'http:\/\/www.w3.org\/2005\/Atom'
+                en: 'snippet'
+              }, {
+                en: 'Region',
+                ti: 'KML_2_2_0.RegionType'
+              }, {
+                en: 'visibility',
+                ti: 'Boolean'
+              }, {
+                en: 'Snippet',
+                ti: 'KML_2_2_0.SnippetType'
+              }, {
+                en: 'AbstractTimePrimitiveGroup',
+                ti: 'KML_2_2_0.AbstractTimePrimitiveType'
+              }, {
+                en: 'Metadata',
+                ti: 'KML_2_2_0.MetadataType'
+              }, {
+                en: 'name'
+              }, {
+                en: 'AbstractViewGroup',
+                ti: 'KML_2_2_0.AbstractViewType'
+              }, {
+                en: {
+                  lp: 'AddressDetails',
+                  ns: 'urn:oasis:names:tc:ciq:xsdschema:xAL:2.0'
                 },
-                typeInfo: 'Atom_1_0.AtomPersonConstruct'
+                ti: 'xAL_2_0.AddressDetails'
               }, {
-                elementName: 'AbstractViewGroup',
-                typeInfo: 'KML_2_2_0.AbstractViewType'
+                en: 'AbstractFeatureObjectExtensionGroup',
+                ti: 'KML_2_2_0.AbstractObjectType'
               }, {
-                elementName: 'snippet',
-                typeInfo: 'String'
+                en: 'AbstractStyleSelectorGroup',
+                ti: 'KML_2_2_0.AbstractStyleSelectorType'
               }, {
-                elementName: 'ExtendedData',
-                typeInfo: 'KML_2_2_0.ExtendedDataType'
+                en: 'ExtendedData',
+                ti: 'KML_2_2_0.ExtendedDataType'
               }, {
-                elementName: 'phoneNumber',
-                typeInfo: 'String'
-              }, {
-                elementName: 'visibility',
-                typeInfo: 'Boolean'
-              }, {
-                elementName: 'AbstractFeatureSimpleExtensionGroup',
-                typeInfo: 'AnyType'
-              }, {
-                elementName: 'Region',
-                typeInfo: 'KML_2_2_0.RegionType'
-              }, {
-                elementName: 'name',
-                typeInfo: 'String'
-              }, {
-                elementName: 'styleUrl',
-                typeInfo: 'String'
-              }, {
-                elementName: 'address',
-                typeInfo: 'String'
-              }, {
-                elementName: 'Snippet',
-                typeInfo: 'KML_2_2_0.SnippetType'
-              }, {
-                elementName: 'AbstractStyleSelectorGroup',
-                typeInfo: 'KML_2_2_0.AbstractStyleSelectorType'
-              }, {
-                elementName: 'AbstractFeatureObjectExtensionGroup',
-                typeInfo: 'KML_2_2_0.AbstractObjectType'
+                en: 'address'
               }],
-            type: 'elementRefs'
+            t: 'ers'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LatLonBoxType',
-        baseTypeInfo: 'KML_2_2_0.AbstractLatLonBoxType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'rotation',
-            elementName: 'rotation',
-            typeInfo: 'Double'
+        ln: 'LatLonBoxType',
+        bti: 'KML_2_2_0.AbstractLatLonBoxType',
+        ps: [{
+            n: 'rotation',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'latLonBoxSimpleExtensionGroup',
-            collection: true,
-            elementName: 'LatLonBoxSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'latLonBoxSimpleExtensionGroup',
+            col: true,
+            en: 'LatLonBoxSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'latLonBoxObjectExtensionGroup',
-            collection: true,
-            elementName: 'LatLonBoxObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'latLonBoxObjectExtensionGroup',
+            col: true,
+            en: 'LatLonBoxObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OrientationType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'heading',
-            elementName: 'heading',
-            typeInfo: 'Double'
+        ln: 'OrientationType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'heading',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'tilt',
-            elementName: 'tilt',
-            typeInfo: 'Double'
+            n: 'tilt',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'roll',
-            elementName: 'roll',
-            typeInfo: 'Double'
+            n: 'roll',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'orientationSimpleExtensionGroup',
-            collection: true,
-            elementName: 'OrientationSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'orientationSimpleExtensionGroup',
+            col: true,
+            en: 'OrientationSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'orientationObjectExtensionGroup',
-            collection: true,
-            elementName: 'OrientationObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'orientationObjectExtensionGroup',
+            col: true,
+            en: 'OrientationObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TimeStampType',
-        baseTypeInfo: 'KML_2_2_0.AbstractTimePrimitiveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'when',
-            elementName: 'when',
-            typeInfo: 'String'
+        ln: 'TimeStampType',
+        bti: 'KML_2_2_0.AbstractTimePrimitiveType',
+        ps: [{
+            n: 'when'
           }, {
-            type: 'element',
-            name: 'timeStampSimpleExtensionGroup',
-            collection: true,
-            elementName: 'TimeStampSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'timeStampSimpleExtensionGroup',
+            col: true,
+            en: 'TimeStampSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'timeStampObjectExtensionGroup',
-            collection: true,
-            elementName: 'TimeStampObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'timeStampObjectExtensionGroup',
+            col: true,
+            en: 'TimeStampObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractTimePrimitiveType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'abstractTimePrimitiveSimpleExtensionGroup',
-            collection: true,
-            elementName: 'AbstractTimePrimitiveSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+        ln: 'AbstractTimePrimitiveType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'abstractTimePrimitiveSimpleExtensionGroup',
+            col: true,
+            en: 'AbstractTimePrimitiveSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'abstractTimePrimitiveObjectExtensionGroup',
-            collection: true,
-            elementName: 'AbstractTimePrimitiveObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'abstractTimePrimitiveObjectExtensionGroup',
+            col: true,
+            en: 'AbstractTimePrimitiveObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Vec2Type',
-        propertyInfos: [{
-            name: 'x',
-            typeInfo: 'Double',
-            attributeName: 'x',
-            type: 'attribute'
+        ln: 'Vec2Type',
+        ps: [{
+            n: 'x',
+            ti: 'Double',
+            t: 'a'
           }, {
-            name: 'y',
-            typeInfo: 'Double',
-            attributeName: 'y',
-            type: 'attribute'
+            n: 'y',
+            ti: 'Double',
+            t: 'a'
           }, {
-            name: 'xunits',
-            typeInfo: 'String',
-            attributeName: 'xunits',
-            type: 'attribute'
+            n: 'xunits',
+            t: 'a'
           }, {
-            name: 'yunits',
-            typeInfo: 'String',
-            attributeName: 'yunits',
-            type: 'attribute'
+            n: 'yunits',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LinkType',
-        baseTypeInfo: 'KML_2_2_0.BasicLinkType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'refreshMode',
-            elementName: 'refreshMode',
-            typeInfo: 'String'
+        ln: 'LinkType',
+        bti: 'KML_2_2_0.BasicLinkType',
+        ps: [{
+            n: 'refreshMode'
           }, {
-            type: 'element',
-            name: 'refreshInterval',
-            elementName: 'refreshInterval',
-            typeInfo: 'Double'
+            n: 'refreshInterval',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'viewRefreshMode',
-            elementName: 'viewRefreshMode',
-            typeInfo: 'String'
+            n: 'viewRefreshMode'
           }, {
-            type: 'element',
-            name: 'viewRefreshTime',
-            elementName: 'viewRefreshTime',
-            typeInfo: 'Double'
+            n: 'viewRefreshTime',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'viewBoundScale',
-            elementName: 'viewBoundScale',
-            typeInfo: 'Double'
+            n: 'viewBoundScale',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'viewFormat',
-            elementName: 'viewFormat',
-            typeInfo: 'String'
+            n: 'viewFormat'
           }, {
-            type: 'element',
-            name: 'httpQuery',
-            elementName: 'httpQuery',
-            typeInfo: 'String'
+            n: 'httpQuery'
           }, {
-            type: 'element',
-            name: 'linkSimpleExtensionGroup',
-            collection: true,
-            elementName: 'LinkSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'linkSimpleExtensionGroup',
+            col: true,
+            en: 'LinkSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'linkObjectExtensionGroup',
-            collection: true,
-            elementName: 'LinkObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'linkObjectExtensionGroup',
+            col: true,
+            en: 'LinkObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ListStyleType',
-        baseTypeInfo: 'KML_2_2_0.AbstractSubStyleType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'listItemType',
-            elementName: 'listItemType',
-            typeInfo: 'String'
+        ln: 'ListStyleType',
+        bti: 'KML_2_2_0.AbstractSubStyleType',
+        ps: [{
+            n: 'listItemType'
           }, {
-            type: 'element',
-            name: 'bgColor',
-            elementName: 'bgColor',
-            typeInfo: 'String'
+            n: 'bgColor'
           }, {
-            type: 'element',
-            name: 'itemIcon',
-            collection: true,
-            elementName: 'ItemIcon',
-            typeInfo: 'KML_2_2_0.ItemIconType'
+            n: 'itemIcon',
+            col: true,
+            en: 'ItemIcon',
+            ti: 'KML_2_2_0.ItemIconType'
           }, {
-            type: 'element',
-            name: 'maxSnippetLines',
-            elementName: 'maxSnippetLines',
-            typeInfo: 'Int'
+            n: 'maxSnippetLines',
+            ti: 'Int'
           }, {
-            type: 'element',
-            name: 'listStyleSimpleExtensionGroup',
-            collection: true,
-            elementName: 'ListStyleSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'listStyleSimpleExtensionGroup',
+            col: true,
+            en: 'ListStyleSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'listStyleObjectExtensionGroup',
-            collection: true,
-            elementName: 'ListStyleObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'listStyleObjectExtensionGroup',
+            col: true,
+            en: 'ListStyleObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractSubStyleType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'abstractSubStyleSimpleExtensionGroup',
-            collection: true,
-            elementName: 'AbstractSubStyleSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+        ln: 'AbstractSubStyleType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'abstractSubStyleSimpleExtensionGroup',
+            col: true,
+            en: 'AbstractSubStyleSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'abstractSubStyleObjectExtensionGroup',
-            collection: true,
-            elementName: 'AbstractSubStyleObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'abstractSubStyleObjectExtensionGroup',
+            col: true,
+            en: 'AbstractSubStyleObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LineStyleType',
-        baseTypeInfo: 'KML_2_2_0.AbstractColorStyleType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'width',
-            elementName: 'width',
-            typeInfo: 'Double'
+        ln: 'LineStyleType',
+        bti: 'KML_2_2_0.AbstractColorStyleType',
+        ps: [{
+            n: 'width',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'lineStyleSimpleExtensionGroup',
-            collection: true,
-            elementName: 'LineStyleSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'lineStyleSimpleExtensionGroup',
+            col: true,
+            en: 'LineStyleSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'lineStyleObjectExtensionGroup',
-            collection: true,
-            elementName: 'LineStyleObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'lineStyleObjectExtensionGroup',
+            col: true,
+            en: 'LineStyleObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractColorStyleType',
-        baseTypeInfo: 'KML_2_2_0.AbstractSubStyleType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'color',
-            elementName: 'color',
-            typeInfo: 'String'
+        ln: 'AbstractColorStyleType',
+        bti: 'KML_2_2_0.AbstractSubStyleType',
+        ps: [{
+            n: 'color'
           }, {
-            type: 'element',
-            name: 'colorMode',
-            elementName: 'colorMode',
-            typeInfo: 'String'
+            n: 'colorMode'
           }, {
-            type: 'element',
-            name: 'abstractColorStyleSimpleExtensionGroup',
-            collection: true,
-            elementName: 'AbstractColorStyleSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'abstractColorStyleSimpleExtensionGroup',
+            col: true,
+            en: 'AbstractColorStyleSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'abstractColorStyleObjectExtensionGroup',
-            collection: true,
-            elementName: 'AbstractColorStyleObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'abstractColorStyleObjectExtensionGroup',
+            col: true,
+            en: 'AbstractColorStyleObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MetadataType',
-        propertyInfos: [{
-            name: 'any',
-            collection: true,
-            allowDom: true,
-            allowTypedObject: true,
-            type: 'anyElement'
+        ln: 'MetadataType',
+        ps: [{
+            n: 'any',
+            col: true,
+            mx: false,
+            t: 'ae'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ItemIconType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'state',
-            elementName: 'state',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+        ln: 'ItemIconType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'state',
+            ti: {
+              t: 'l'
             }
           }, {
-            type: 'element',
-            name: 'href',
-            elementName: 'href',
-            typeInfo: 'String'
+            n: 'href'
           }, {
-            type: 'element',
-            name: 'itemIconSimpleExtensionGroup',
-            collection: true,
-            elementName: 'ItemIconSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'itemIconSimpleExtensionGroup',
+            col: true,
+            en: 'ItemIconSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'itemIconObjectExtensionGroup',
-            collection: true,
-            elementName: 'ItemIconObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'itemIconObjectExtensionGroup',
+            col: true,
+            en: 'ItemIconObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LatLonAltBoxType',
-        baseTypeInfo: 'KML_2_2_0.AbstractLatLonBoxType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'minAltitude',
-            elementName: 'minAltitude',
-            typeInfo: 'Double'
+        ln: 'LatLonAltBoxType',
+        bti: 'KML_2_2_0.AbstractLatLonBoxType',
+        ps: [{
+            n: 'minAltitude',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'maxAltitude',
-            elementName: 'maxAltitude',
-            typeInfo: 'Double'
+            n: 'maxAltitude',
+            ti: 'Double'
           }, {
-            name: 'altitudeModeGroup',
-            elementName: 'altitudeModeGroup',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'AnyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'latLonAltBoxSimpleExtensionGroup',
-            collection: true,
-            elementName: 'LatLonAltBoxSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'latLonAltBoxSimpleExtensionGroup',
+            col: true,
+            en: 'LatLonAltBoxSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'latLonAltBoxObjectExtensionGroup',
-            collection: true,
-            elementName: 'LatLonAltBoxObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'latLonAltBoxObjectExtensionGroup',
+            col: true,
+            en: 'LatLonAltBoxObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PlacemarkType',
-        baseTypeInfo: 'KML_2_2_0.AbstractFeatureType',
-        propertyInfos: []
+        ln: 'PlacemarkType',
+        bti: 'KML_2_2_0.AbstractFeatureType'
       }, {
-        type: 'classInfo',
-        localName: 'LinearRingType',
-        baseTypeInfo: 'KML_2_2_0.AbstractGeometryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'extrude',
-            elementName: 'extrude',
-            typeInfo: 'Boolean'
+        ln: 'LinearRingType',
+        bti: 'KML_2_2_0.AbstractGeometryType',
+        ps: [{
+            n: 'extrude',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'tessellate',
-            elementName: 'tessellate',
-            typeInfo: 'Boolean'
+            n: 'tessellate',
+            ti: 'Boolean'
           }, {
-            name: 'altitudeModeGroup',
-            elementName: 'altitudeModeGroup',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'AnyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'coordinates',
+            ti: {
+              t: 'l'
             }
           }, {
-            type: 'element',
-            name: 'linearRingSimpleExtensionGroup',
-            collection: true,
-            elementName: 'LinearRingSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'linearRingSimpleExtensionGroup',
+            col: true,
+            en: 'LinearRingSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'linearRingObjectExtensionGroup',
-            collection: true,
-            elementName: 'LinearRingObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'linearRingObjectExtensionGroup',
+            col: true,
+            en: 'LinearRingObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractGeometryType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'abstractGeometrySimpleExtensionGroup',
-            collection: true,
-            elementName: 'AbstractGeometrySimpleExtensionGroup',
-            typeInfo: 'AnyType'
+        ln: 'AbstractGeometryType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'abstractGeometrySimpleExtensionGroup',
+            col: true,
+            en: 'AbstractGeometrySimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'abstractGeometryObjectExtensionGroup',
-            collection: true,
-            elementName: 'AbstractGeometryObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'abstractGeometryObjectExtensionGroup',
+            col: true,
+            en: 'AbstractGeometryObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SchemaType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'simpleField',
-            collection: true,
-            elementName: 'SimpleField',
-            typeInfo: 'KML_2_2_0.SimpleFieldType'
+        ln: 'SchemaType',
+        ps: [{
+            n: 'simpleField',
+            col: true,
+            en: 'SimpleField',
+            ti: 'KML_2_2_0.SimpleFieldType'
           }, {
-            type: 'element',
-            name: 'schemaExtension',
-            collection: true,
-            elementName: 'SchemaExtension',
-            typeInfo: 'AnyType'
+            n: 'schemaExtension',
+            col: true,
+            en: 'SchemaExtension',
+            ti: 'AnyType'
           }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+            n: 'name',
+            t: 'a'
           }, {
-            name: 'id',
-            typeInfo: 'ID',
-            attributeName: 'id',
-            type: 'attribute'
+            n: 'id',
+            ti: 'ID',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ImagePyramidType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'tileSize',
-            elementName: 'tileSize',
-            typeInfo: 'Int'
+        ln: 'ImagePyramidType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'tileSize',
+            ti: 'Int'
           }, {
-            type: 'element',
-            name: 'maxWidth',
-            elementName: 'maxWidth',
-            typeInfo: 'Int'
+            n: 'maxWidth',
+            ti: 'Int'
           }, {
-            type: 'element',
-            name: 'maxHeight',
-            elementName: 'maxHeight',
-            typeInfo: 'Int'
+            n: 'maxHeight',
+            ti: 'Int'
           }, {
-            type: 'element',
-            name: 'gridOrigin',
-            elementName: 'gridOrigin',
-            typeInfo: 'String'
+            n: 'gridOrigin'
           }, {
-            type: 'element',
-            name: 'imagePyramidSimpleExtensionGroup',
-            collection: true,
-            elementName: 'ImagePyramidSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'imagePyramidSimpleExtensionGroup',
+            col: true,
+            en: 'ImagePyramidSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'imagePyramidObjectExtensionGroup',
-            collection: true,
-            elementName: 'ImagePyramidObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'imagePyramidObjectExtensionGroup',
+            col: true,
+            en: 'ImagePyramidObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'NetworkLinkType',
-        baseTypeInfo: 'KML_2_2_0.AbstractFeatureType',
-        propertyInfos: []
+        ln: 'NetworkLinkType',
+        bti: 'KML_2_2_0.AbstractFeatureType'
       }, {
-        type: 'classInfo',
-        localName: 'ViewVolumeType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'leftFov',
-            elementName: 'leftFov',
-            typeInfo: 'Double'
+        ln: 'ViewVolumeType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'leftFov',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'rightFov',
-            elementName: 'rightFov',
-            typeInfo: 'Double'
+            n: 'rightFov',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'bottomFov',
-            elementName: 'bottomFov',
-            typeInfo: 'Double'
+            n: 'bottomFov',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'topFov',
-            elementName: 'topFov',
-            typeInfo: 'Double'
+            n: 'topFov',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'near',
-            elementName: 'near',
-            typeInfo: 'Double'
+            n: 'near',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'viewVolumeSimpleExtensionGroup',
-            collection: true,
-            elementName: 'ViewVolumeSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'viewVolumeSimpleExtensionGroup',
+            col: true,
+            en: 'ViewVolumeSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'viewVolumeObjectExtensionGroup',
-            collection: true,
-            elementName: 'ViewVolumeObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'viewVolumeObjectExtensionGroup',
+            col: true,
+            en: 'ViewVolumeObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CameraType',
-        baseTypeInfo: 'KML_2_2_0.AbstractViewType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'longitude',
-            elementName: 'longitude',
-            typeInfo: 'Double'
+        ln: 'CameraType',
+        bti: 'KML_2_2_0.AbstractViewType',
+        ps: [{
+            n: 'longitude',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'latitude',
-            elementName: 'latitude',
-            typeInfo: 'Double'
+            n: 'latitude',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'altitude',
-            elementName: 'altitude',
-            typeInfo: 'Double'
+            n: 'altitude',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'heading',
-            elementName: 'heading',
-            typeInfo: 'Double'
+            n: 'heading',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'tilt',
-            elementName: 'tilt',
-            typeInfo: 'Double'
+            n: 'tilt',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'roll',
-            elementName: 'roll',
-            typeInfo: 'Double'
+            n: 'roll',
+            ti: 'Double'
           }, {
-            name: 'altitudeModeGroup',
-            elementName: 'altitudeModeGroup',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'AnyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'cameraSimpleExtensionGroup',
-            collection: true,
-            elementName: 'CameraSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'cameraSimpleExtensionGroup',
+            col: true,
+            en: 'CameraSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'cameraObjectExtensionGroup',
-            collection: true,
-            elementName: 'CameraObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'cameraObjectExtensionGroup',
+            col: true,
+            en: 'CameraObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractViewType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'abstractViewSimpleExtensionGroup',
-            collection: true,
-            elementName: 'AbstractViewSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+        ln: 'AbstractViewType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'abstractViewSimpleExtensionGroup',
+            col: true,
+            en: 'AbstractViewSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'abstractViewObjectExtensionGroup',
-            collection: true,
-            elementName: 'AbstractViewObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'abstractViewObjectExtensionGroup',
+            col: true,
+            en: 'AbstractViewObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PolygonType',
-        baseTypeInfo: 'KML_2_2_0.AbstractGeometryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'extrude',
-            elementName: 'extrude',
-            typeInfo: 'Boolean'
+        ln: 'PolygonType',
+        bti: 'KML_2_2_0.AbstractGeometryType',
+        ps: [{
+            n: 'extrude',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'tessellate',
-            elementName: 'tessellate',
-            typeInfo: 'Boolean'
+            n: 'tessellate',
+            ti: 'Boolean'
           }, {
-            name: 'altitudeModeGroup',
-            elementName: 'altitudeModeGroup',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'AnyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'outerBoundaryIs',
-            elementName: 'outerBoundaryIs',
-            typeInfo: 'KML_2_2_0.BoundaryType'
+            n: 'outerBoundaryIs',
+            ti: 'KML_2_2_0.BoundaryType'
           }, {
-            type: 'element',
-            name: 'innerBoundaryIs',
-            collection: true,
-            elementName: 'innerBoundaryIs',
-            typeInfo: 'KML_2_2_0.BoundaryType'
+            n: 'innerBoundaryIs',
+            col: true,
+            ti: 'KML_2_2_0.BoundaryType'
           }, {
-            type: 'element',
-            name: 'polygonSimpleExtensionGroup',
-            collection: true,
-            elementName: 'PolygonSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'polygonSimpleExtensionGroup',
+            col: true,
+            en: 'PolygonSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'polygonObjectExtensionGroup',
-            collection: true,
-            elementName: 'PolygonObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'polygonObjectExtensionGroup',
+            col: true,
+            en: 'PolygonObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SnippetType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'SnippetType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'maxLines',
-            typeInfo: 'Int',
-            attributeName: 'maxLines',
-            type: 'attribute'
+            n: 'maxLines',
+            ti: 'Int',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ResourceMapType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'alias',
-            collection: true,
-            elementName: 'Alias',
-            typeInfo: 'KML_2_2_0.AliasType'
+        ln: 'ResourceMapType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'alias',
+            col: true,
+            en: 'Alias',
+            ti: 'KML_2_2_0.AliasType'
           }, {
-            type: 'element',
-            name: 'resourceMapSimpleExtensionGroup',
-            collection: true,
-            elementName: 'ResourceMapSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'resourceMapSimpleExtensionGroup',
+            col: true,
+            en: 'ResourceMapSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'resourceMapObjectExtensionGroup',
-            collection: true,
-            elementName: 'ResourceMapObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'resourceMapObjectExtensionGroup',
+            col: true,
+            en: 'ResourceMapObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RegionType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'latLonAltBox',
-            elementName: 'LatLonAltBox',
-            typeInfo: 'KML_2_2_0.LatLonAltBoxType'
+        ln: 'RegionType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'latLonAltBox',
+            en: 'LatLonAltBox',
+            ti: 'KML_2_2_0.LatLonAltBoxType'
           }, {
-            type: 'element',
-            name: 'lod',
-            elementName: 'Lod',
-            typeInfo: 'KML_2_2_0.LodType'
+            n: 'lod',
+            en: 'Lod',
+            ti: 'KML_2_2_0.LodType'
           }, {
-            type: 'element',
-            name: 'regionSimpleExtensionGroup',
-            collection: true,
-            elementName: 'RegionSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'regionSimpleExtensionGroup',
+            col: true,
+            en: 'RegionSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'regionObjectExtensionGroup',
-            collection: true,
-            elementName: 'RegionObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'regionObjectExtensionGroup',
+            col: true,
+            en: 'RegionObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BoundaryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'linearRing',
-            elementName: 'LinearRing',
-            typeInfo: 'KML_2_2_0.LinearRingType'
+        ln: 'BoundaryType',
+        ps: [{
+            n: 'linearRing',
+            en: 'LinearRing',
+            ti: 'KML_2_2_0.LinearRingType'
           }, {
-            type: 'element',
-            name: 'boundarySimpleExtensionGroup',
-            collection: true,
-            elementName: 'BoundarySimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'boundarySimpleExtensionGroup',
+            col: true,
+            en: 'BoundarySimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'boundaryObjectExtensionGroup',
-            collection: true,
-            elementName: 'BoundaryObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'boundaryObjectExtensionGroup',
+            col: true,
+            en: 'BoundaryObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ScreenOverlayType',
-        baseTypeInfo: 'KML_2_2_0.AbstractOverlayType',
-        propertyInfos: []
+        ln: 'ScreenOverlayType',
+        bti: 'KML_2_2_0.AbstractOverlayType'
       }, {
-        type: 'classInfo',
-        localName: 'AbstractOverlayType',
-        baseTypeInfo: 'KML_2_2_0.AbstractFeatureType',
-        propertyInfos: []
+        ln: 'AbstractOverlayType',
+        bti: 'KML_2_2_0.AbstractFeatureType'
       }, {
-        type: 'classInfo',
-        localName: 'NetworkLinkControlType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'minRefreshPeriod',
-            elementName: 'minRefreshPeriod',
-            typeInfo: 'Double'
+        ln: 'NetworkLinkControlType',
+        ps: [{
+            n: 'minRefreshPeriod',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'maxSessionLength',
-            elementName: 'maxSessionLength',
-            typeInfo: 'Double'
+            n: 'maxSessionLength',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'cookie',
-            elementName: 'cookie',
-            typeInfo: 'String'
+            n: 'cookie'
           }, {
-            type: 'element',
-            name: 'message',
-            elementName: 'message',
-            typeInfo: 'String'
+            n: 'message'
           }, {
-            type: 'element',
-            name: 'linkName',
-            elementName: 'linkName',
-            typeInfo: 'String'
+            n: 'linkName'
           }, {
-            type: 'element',
-            name: 'linkDescription',
-            elementName: 'linkDescription',
-            typeInfo: 'String'
+            n: 'linkDescription'
           }, {
-            type: 'element',
-            name: 'linkSnippet',
-            elementName: 'linkSnippet',
-            typeInfo: 'KML_2_2_0.SnippetType'
+            n: 'linkSnippet',
+            ti: 'KML_2_2_0.SnippetType'
           }, {
-            type: 'element',
-            name: 'expires',
-            elementName: 'expires',
-            typeInfo: 'String'
+            n: 'expires'
           }, {
-            type: 'element',
-            name: 'update',
-            elementName: 'Update',
-            typeInfo: 'KML_2_2_0.UpdateType'
+            n: 'update',
+            en: 'Update',
+            ti: 'KML_2_2_0.UpdateType'
           }, {
-            name: 'abstractViewGroup',
-            elementName: 'AbstractViewGroup',
-            typeInfo: 'KML_2_2_0.AbstractViewType',
-            type: 'elementRef'
+            n: 'abstractViewGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractViewGroup',
+            ti: 'KML_2_2_0.AbstractViewType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'networkLinkControlSimpleExtensionGroup',
-            collection: true,
-            elementName: 'NetworkLinkControlSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'networkLinkControlSimpleExtensionGroup',
+            col: true,
+            en: 'NetworkLinkControlSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'networkLinkControlObjectExtensionGroup',
-            collection: true,
-            elementName: 'NetworkLinkControlObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'networkLinkControlObjectExtensionGroup',
+            col: true,
+            en: 'NetworkLinkControlObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PairType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'key',
-            elementName: 'key',
-            typeInfo: 'String'
+        ln: 'PairType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'key'
           }, {
-            type: 'element',
-            name: 'styleUrl',
-            elementName: 'styleUrl',
-            typeInfo: 'String'
+            n: 'styleUrl'
           }, {
-            name: 'abstractStyleSelectorGroup',
-            elementName: 'AbstractStyleSelectorGroup',
-            typeInfo: 'KML_2_2_0.AbstractStyleSelectorType',
-            type: 'elementRef'
+            n: 'abstractStyleSelectorGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractStyleSelectorGroup',
+            ti: 'KML_2_2_0.AbstractStyleSelectorType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'pairSimpleExtensionGroup',
-            collection: true,
-            elementName: 'PairSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'pairSimpleExtensionGroup',
+            col: true,
+            en: 'PairSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'pairObjectExtensionGroup',
-            collection: true,
-            elementName: 'PairObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'pairObjectExtensionGroup',
+            col: true,
+            en: 'PairObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'StyleMapType',
-        baseTypeInfo: 'KML_2_2_0.AbstractStyleSelectorType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'pair',
-            collection: true,
-            elementName: 'Pair',
-            typeInfo: 'KML_2_2_0.PairType'
+        ln: 'StyleMapType',
+        bti: 'KML_2_2_0.AbstractStyleSelectorType',
+        ps: [{
+            n: 'pair',
+            col: true,
+            en: 'Pair',
+            ti: 'KML_2_2_0.PairType'
           }, {
-            type: 'element',
-            name: 'styleMapSimpleExtensionGroup',
-            collection: true,
-            elementName: 'StyleMapSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'styleMapSimpleExtensionGroup',
+            col: true,
+            en: 'StyleMapSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'styleMapObjectExtensionGroup',
-            collection: true,
-            elementName: 'StyleMapObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'styleMapObjectExtensionGroup',
+            col: true,
+            en: 'StyleMapObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractStyleSelectorType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'abstractStyleSelectorSimpleExtensionGroup',
-            collection: true,
-            elementName: 'AbstractStyleSelectorSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+        ln: 'AbstractStyleSelectorType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'abstractStyleSelectorSimpleExtensionGroup',
+            col: true,
+            en: 'AbstractStyleSelectorSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'abstractStyleSelectorObjectExtensionGroup',
-            collection: true,
-            elementName: 'AbstractStyleSelectorObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'abstractStyleSelectorObjectExtensionGroup',
+            col: true,
+            en: 'AbstractStyleSelectorObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LabelStyleType',
-        baseTypeInfo: 'KML_2_2_0.AbstractColorStyleType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'scale',
-            elementName: 'scale',
-            typeInfo: 'Double'
+        ln: 'LabelStyleType',
+        bti: 'KML_2_2_0.AbstractColorStyleType',
+        ps: [{
+            n: 'scale',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'labelStyleSimpleExtensionGroup',
-            collection: true,
-            elementName: 'LabelStyleSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'labelStyleSimpleExtensionGroup',
+            col: true,
+            en: 'LabelStyleSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'labelStyleObjectExtensionGroup',
-            collection: true,
-            elementName: 'LabelStyleObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'labelStyleObjectExtensionGroup',
+            col: true,
+            en: 'LabelStyleObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LineStringType',
-        baseTypeInfo: 'KML_2_2_0.AbstractGeometryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'extrude',
-            elementName: 'extrude',
-            typeInfo: 'Boolean'
+        ln: 'LineStringType',
+        bti: 'KML_2_2_0.AbstractGeometryType',
+        ps: [{
+            n: 'extrude',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'tessellate',
-            elementName: 'tessellate',
-            typeInfo: 'Boolean'
+            n: 'tessellate',
+            ti: 'Boolean'
           }, {
-            name: 'altitudeModeGroup',
-            elementName: 'altitudeModeGroup',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'AnyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'coordinates',
+            ti: {
+              t: 'l'
             }
           }, {
-            type: 'element',
-            name: 'lineStringSimpleExtensionGroup',
-            collection: true,
-            elementName: 'LineStringSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'lineStringSimpleExtensionGroup',
+            col: true,
+            en: 'LineStringSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'lineStringObjectExtensionGroup',
-            collection: true,
-            elementName: 'LineStringObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'lineStringObjectExtensionGroup',
+            col: true,
+            en: 'LineStringObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LocationType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'longitude',
-            elementName: 'longitude',
-            typeInfo: 'Double'
+        ln: 'LocationType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'longitude',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'latitude',
-            elementName: 'latitude',
-            typeInfo: 'Double'
+            n: 'latitude',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'altitude',
-            elementName: 'altitude',
-            typeInfo: 'Double'
+            n: 'altitude',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'locationSimpleExtensionGroup',
-            collection: true,
-            elementName: 'LocationSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'locationSimpleExtensionGroup',
+            col: true,
+            en: 'LocationSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'locationObjectExtensionGroup',
-            collection: true,
-            elementName: 'LocationObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'locationObjectExtensionGroup',
+            col: true,
+            en: 'LocationObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SchemaDataType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'simpleData',
-            collection: true,
-            elementName: 'SimpleData',
-            typeInfo: 'KML_2_2_0.SimpleDataType'
+        ln: 'SchemaDataType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'simpleData',
+            col: true,
+            en: 'SimpleData',
+            ti: 'KML_2_2_0.SimpleDataType'
           }, {
-            type: 'element',
-            name: 'schemaDataExtension',
-            collection: true,
-            elementName: 'SchemaDataExtension',
-            typeInfo: 'AnyType'
+            n: 'schemaDataExtension',
+            col: true,
+            en: 'SchemaDataExtension',
+            ti: 'AnyType'
           }, {
-            name: 'schemaUrl',
-            typeInfo: 'String',
-            attributeName: 'schemaUrl',
-            type: 'attribute'
+            n: 'schemaUrl',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GroundOverlayType',
-        baseTypeInfo: 'KML_2_2_0.AbstractOverlayType',
-        propertyInfos: []
+        ln: 'GroundOverlayType',
+        bti: 'KML_2_2_0.AbstractOverlayType'
       }, {
-        type: 'classInfo',
-        localName: 'LodType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'minLodPixels',
-            elementName: 'minLodPixels',
-            typeInfo: 'Double'
+        ln: 'LodType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'minLodPixels',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'maxLodPixels',
-            elementName: 'maxLodPixels',
-            typeInfo: 'Double'
+            n: 'maxLodPixels',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'minFadeExtent',
-            elementName: 'minFadeExtent',
-            typeInfo: 'Double'
+            n: 'minFadeExtent',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'maxFadeExtent',
-            elementName: 'maxFadeExtent',
-            typeInfo: 'Double'
+            n: 'maxFadeExtent',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'lodSimpleExtensionGroup',
-            collection: true,
-            elementName: 'LodSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'lodSimpleExtensionGroup',
+            col: true,
+            en: 'LodSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'lodObjectExtensionGroup',
-            collection: true,
-            elementName: 'LodObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'lodObjectExtensionGroup',
+            col: true,
+            en: 'LodObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SimpleFieldType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'displayName',
-            elementName: 'displayName',
-            typeInfo: 'String'
+        ln: 'SimpleFieldType',
+        ps: [{
+            n: 'displayName'
           }, {
-            type: 'element',
-            name: 'simpleFieldExtension',
-            collection: true,
-            elementName: 'SimpleFieldExtension',
-            typeInfo: 'AnyType'
+            n: 'simpleFieldExtension',
+            col: true,
+            en: 'SimpleFieldExtension',
+            ti: 'AnyType'
           }, {
-            name: 'type',
-            typeInfo: 'String',
-            attributeName: 'type',
-            type: 'attribute'
+            n: 'type',
+            t: 'a'
           }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+            n: 'name',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'KmlType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'networkLinkControl',
-            elementName: 'NetworkLinkControl',
-            typeInfo: 'KML_2_2_0.NetworkLinkControlType'
+        ln: 'KmlType',
+        ps: [{
+            n: 'networkLinkControl',
+            en: 'NetworkLinkControl',
+            ti: 'KML_2_2_0.NetworkLinkControlType'
           }, {
-            name: 'abstractFeatureGroup',
-            elementName: 'AbstractFeatureGroup',
-            typeInfo: 'KML_2_2_0.AbstractFeatureType',
-            type: 'elementRef'
+            n: 'abstractFeatureGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractFeatureGroup',
+            ti: 'KML_2_2_0.AbstractFeatureType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'kmlSimpleExtensionGroup',
-            collection: true,
-            elementName: 'KmlSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'kmlSimpleExtensionGroup',
+            col: true,
+            en: 'KmlSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'kmlObjectExtensionGroup',
-            collection: true,
-            elementName: 'KmlObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'kmlObjectExtensionGroup',
+            col: true,
+            en: 'KmlObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }, {
-            name: 'hint',
-            typeInfo: 'String',
-            attributeName: 'hint',
-            type: 'attribute'
+            n: 'hint',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FolderType',
-        baseTypeInfo: 'KML_2_2_0.AbstractContainerType',
-        propertyInfos: []
+        ln: 'FolderType',
+        bti: 'KML_2_2_0.AbstractContainerType'
       }, {
-        type: 'classInfo',
-        localName: 'PolyStyleType',
-        baseTypeInfo: 'KML_2_2_0.AbstractColorStyleType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'fill',
-            elementName: 'fill',
-            typeInfo: 'Boolean'
+        ln: 'PolyStyleType',
+        bti: 'KML_2_2_0.AbstractColorStyleType',
+        ps: [{
+            n: 'fill',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'outline',
-            elementName: 'outline',
-            typeInfo: 'Boolean'
+            n: 'outline',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'polyStyleSimpleExtensionGroup',
-            collection: true,
-            elementName: 'PolyStyleSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'polyStyleSimpleExtensionGroup',
+            col: true,
+            en: 'PolyStyleSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'polyStyleObjectExtensionGroup',
-            collection: true,
-            elementName: 'PolyStyleObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'polyStyleObjectExtensionGroup',
+            col: true,
+            en: 'PolyStyleObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LookAtType',
-        baseTypeInfo: 'KML_2_2_0.AbstractViewType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'longitude',
-            elementName: 'longitude',
-            typeInfo: 'Double'
+        ln: 'LookAtType',
+        bti: 'KML_2_2_0.AbstractViewType',
+        ps: [{
+            n: 'longitude',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'latitude',
-            elementName: 'latitude',
-            typeInfo: 'Double'
+            n: 'latitude',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'altitude',
-            elementName: 'altitude',
-            typeInfo: 'Double'
+            n: 'altitude',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'heading',
-            elementName: 'heading',
-            typeInfo: 'Double'
+            n: 'heading',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'tilt',
-            elementName: 'tilt',
-            typeInfo: 'Double'
+            n: 'tilt',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'range',
-            elementName: 'range',
-            typeInfo: 'Double'
+            n: 'range',
+            ti: 'Double'
           }, {
-            name: 'altitudeModeGroup',
-            elementName: 'altitudeModeGroup',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'AnyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'lookAtSimpleExtensionGroup',
-            collection: true,
-            elementName: 'LookAtSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'lookAtSimpleExtensionGroup',
+            col: true,
+            en: 'LookAtSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'lookAtObjectExtensionGroup',
-            collection: true,
-            elementName: 'LookAtObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'lookAtObjectExtensionGroup',
+            col: true,
+            en: 'LookAtObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'StyleType',
-        baseTypeInfo: 'KML_2_2_0.AbstractStyleSelectorType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'iconStyle',
-            elementName: 'IconStyle',
-            typeInfo: 'KML_2_2_0.IconStyleType'
+        ln: 'StyleType',
+        bti: 'KML_2_2_0.AbstractStyleSelectorType',
+        ps: [{
+            n: 'iconStyle',
+            en: 'IconStyle',
+            ti: 'KML_2_2_0.IconStyleType'
           }, {
-            type: 'element',
-            name: 'labelStyle',
-            elementName: 'LabelStyle',
-            typeInfo: 'KML_2_2_0.LabelStyleType'
+            n: 'labelStyle',
+            en: 'LabelStyle',
+            ti: 'KML_2_2_0.LabelStyleType'
           }, {
-            type: 'element',
-            name: 'lineStyle',
-            elementName: 'LineStyle',
-            typeInfo: 'KML_2_2_0.LineStyleType'
+            n: 'lineStyle',
+            en: 'LineStyle',
+            ti: 'KML_2_2_0.LineStyleType'
           }, {
-            type: 'element',
-            name: 'polyStyle',
-            elementName: 'PolyStyle',
-            typeInfo: 'KML_2_2_0.PolyStyleType'
+            n: 'polyStyle',
+            en: 'PolyStyle',
+            ti: 'KML_2_2_0.PolyStyleType'
           }, {
-            type: 'element',
-            name: 'balloonStyle',
-            elementName: 'BalloonStyle',
-            typeInfo: 'KML_2_2_0.BalloonStyleType'
+            n: 'balloonStyle',
+            en: 'BalloonStyle',
+            ti: 'KML_2_2_0.BalloonStyleType'
           }, {
-            type: 'element',
-            name: 'listStyle',
-            elementName: 'ListStyle',
-            typeInfo: 'KML_2_2_0.ListStyleType'
+            n: 'listStyle',
+            en: 'ListStyle',
+            ti: 'KML_2_2_0.ListStyleType'
           }, {
-            type: 'element',
-            name: 'styleSimpleExtensionGroup',
-            collection: true,
-            elementName: 'StyleSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'styleSimpleExtensionGroup',
+            col: true,
+            en: 'StyleSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'styleObjectExtensionGroup',
-            collection: true,
-            elementName: 'StyleObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'styleObjectExtensionGroup',
+            col: true,
+            en: 'StyleObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'IconStyleType',
-        baseTypeInfo: 'KML_2_2_0.AbstractColorStyleType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'scale',
-            elementName: 'scale',
-            typeInfo: 'Double'
+        ln: 'IconStyleType',
+        bti: 'KML_2_2_0.AbstractColorStyleType',
+        ps: [{
+            n: 'scale',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'heading',
-            elementName: 'heading',
-            typeInfo: 'Double'
+            n: 'heading',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'icon',
-            elementName: 'Icon',
-            typeInfo: 'KML_2_2_0.BasicLinkType'
+            n: 'icon',
+            en: 'Icon',
+            ti: 'KML_2_2_0.BasicLinkType'
           }, {
-            type: 'element',
-            name: 'hotSpot',
-            elementName: 'hotSpot',
-            typeInfo: 'KML_2_2_0.Vec2Type'
+            n: 'hotSpot',
+            ti: 'KML_2_2_0.Vec2Type'
           }, {
-            type: 'element',
-            name: 'iconStyleSimpleExtensionGroup',
-            collection: true,
-            elementName: 'IconStyleSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'iconStyleSimpleExtensionGroup',
+            col: true,
+            en: 'IconStyleSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'iconStyleObjectExtensionGroup',
-            collection: true,
-            elementName: 'IconStyleObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'iconStyleObjectExtensionGroup',
+            col: true,
+            en: 'IconStyleObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ModelType',
-        baseTypeInfo: 'KML_2_2_0.AbstractGeometryType',
-        propertyInfos: [{
-            name: 'altitudeModeGroup',
-            elementName: 'altitudeModeGroup',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+        ln: 'ModelType',
+        bti: 'KML_2_2_0.AbstractGeometryType',
+        ps: [{
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'AnyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'location',
-            elementName: 'Location',
-            typeInfo: 'KML_2_2_0.LocationType'
+            n: 'location',
+            en: 'Location',
+            ti: 'KML_2_2_0.LocationType'
           }, {
-            type: 'element',
-            name: 'orientation',
-            elementName: 'Orientation',
-            typeInfo: 'KML_2_2_0.OrientationType'
+            n: 'orientation',
+            en: 'Orientation',
+            ti: 'KML_2_2_0.OrientationType'
           }, {
-            type: 'element',
-            name: 'scale',
-            elementName: 'Scale',
-            typeInfo: 'KML_2_2_0.ScaleType'
+            n: 'scale',
+            en: 'Scale',
+            ti: 'KML_2_2_0.ScaleType'
           }, {
-            type: 'element',
-            name: 'link',
-            elementName: 'Link',
-            typeInfo: 'KML_2_2_0.LinkType'
+            n: 'link',
+            en: 'Link',
+            ti: 'KML_2_2_0.LinkType'
           }, {
-            type: 'element',
-            name: 'resourceMap',
-            elementName: 'ResourceMap',
-            typeInfo: 'KML_2_2_0.ResourceMapType'
+            n: 'resourceMap',
+            en: 'ResourceMap',
+            ti: 'KML_2_2_0.ResourceMapType'
           }, {
-            type: 'element',
-            name: 'modelSimpleExtensionGroup',
-            collection: true,
-            elementName: 'ModelSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'modelSimpleExtensionGroup',
+            col: true,
+            en: 'ModelSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'modelObjectExtensionGroup',
-            collection: true,
-            elementName: 'ModelObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'modelObjectExtensionGroup',
+            col: true,
+            en: 'ModelObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UpdateType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'targetHref',
-            elementName: 'targetHref',
-            typeInfo: 'String'
+        ln: 'UpdateType',
+        ps: [{
+            n: 'targetHref'
           }, {
-            name: 'createOrDeleteOrChange',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'Create',
-                typeInfo: 'KML_2_2_0.CreateType'
+            n: 'createOrDeleteOrChange',
+            col: true,
+            etis: [{
+                en: 'Create',
+                ti: 'KML_2_2_0.CreateType'
               }, {
-                elementName: 'Delete',
-                typeInfo: 'KML_2_2_0.DeleteType'
+                en: 'Delete',
+                ti: 'KML_2_2_0.DeleteType'
               }, {
-                elementName: 'Change',
-                typeInfo: 'KML_2_2_0.ChangeType'
+                en: 'Change',
+                ti: 'KML_2_2_0.ChangeType'
               }, {
-                elementName: 'UpdateOpExtensionGroup',
-                typeInfo: 'AnyType'
+                en: 'UpdateOpExtensionGroup',
+                ti: 'AnyType'
               }],
-            type: 'elements'
+            t: 'es'
           }, {
-            type: 'element',
-            name: 'updateExtensionGroup',
-            collection: true,
-            elementName: 'UpdateExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'updateExtensionGroup',
+            col: true,
+            en: 'UpdateExtensionGroup',
+            ti: 'AnyType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BalloonStyleType',
-        baseTypeInfo: 'KML_2_2_0.AbstractSubStyleType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'color',
-            elementName: 'color',
-            typeInfo: 'String'
+        ln: 'BalloonStyleType',
+        bti: 'KML_2_2_0.AbstractSubStyleType',
+        ps: [{
+            n: 'color'
           }, {
-            type: 'element',
-            name: 'bgColor',
-            elementName: 'bgColor',
-            typeInfo: 'String'
+            n: 'bgColor'
           }, {
-            type: 'element',
-            name: 'textColor',
-            elementName: 'textColor',
-            typeInfo: 'String'
+            n: 'textColor'
           }, {
-            type: 'element',
-            name: 'text',
-            elementName: 'text',
-            typeInfo: 'String'
+            n: 'text'
           }, {
-            type: 'element',
-            name: 'displayMode',
-            elementName: 'displayMode',
-            typeInfo: 'String'
+            n: 'displayMode'
           }, {
-            type: 'element',
-            name: 'balloonStyleSimpleExtensionGroup',
-            collection: true,
-            elementName: 'BalloonStyleSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'balloonStyleSimpleExtensionGroup',
+            col: true,
+            en: 'BalloonStyleSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'balloonStyleObjectExtensionGroup',
-            collection: true,
-            elementName: 'BalloonStyleObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'balloonStyleObjectExtensionGroup',
+            col: true,
+            en: 'BalloonStyleObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ExtendedDataType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'data',
-            collection: true,
-            elementName: 'Data',
-            typeInfo: 'KML_2_2_0.DataType'
+        ln: 'ExtendedDataType',
+        ps: [{
+            n: 'data',
+            col: true,
+            en: 'Data',
+            ti: 'KML_2_2_0.DataType'
           }, {
-            type: 'element',
-            name: 'schemaData',
-            collection: true,
-            elementName: 'SchemaData',
-            typeInfo: 'KML_2_2_0.SchemaDataType'
+            n: 'schemaData',
+            col: true,
+            en: 'SchemaData',
+            ti: 'KML_2_2_0.SchemaDataType'
           }, {
-            name: 'any',
-            collection: true,
-            allowDom: true,
-            allowTypedObject: true,
-            type: 'anyElement'
+            n: 'any',
+            col: true,
+            mx: false,
+            t: 'ae'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PhotoOverlayType',
-        baseTypeInfo: 'KML_2_2_0.AbstractOverlayType',
-        propertyInfos: []
+        ln: 'PhotoOverlayType',
+        bti: 'KML_2_2_0.AbstractOverlayType'
       }, {
-        type: 'classInfo',
-        localName: 'TimeSpanType',
-        baseTypeInfo: 'KML_2_2_0.AbstractTimePrimitiveType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'begin',
-            elementName: 'begin',
-            typeInfo: 'String'
+        ln: 'TimeSpanType',
+        bti: 'KML_2_2_0.AbstractTimePrimitiveType',
+        ps: [{
+            n: 'begin'
           }, {
-            type: 'element',
-            name: 'end',
-            elementName: 'end',
-            typeInfo: 'String'
+            n: 'end'
           }, {
-            type: 'element',
-            name: 'timeSpanSimpleExtensionGroup',
-            collection: true,
-            elementName: 'TimeSpanSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'timeSpanSimpleExtensionGroup',
+            col: true,
+            en: 'TimeSpanSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'timeSpanObjectExtensionGroup',
-            collection: true,
-            elementName: 'TimeSpanObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'timeSpanObjectExtensionGroup',
+            col: true,
+            en: 'TimeSpanObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CreateType',
-        propertyInfos: [{
-            name: 'abstractContainerGroup',
-            collection: true,
-            elementName: 'AbstractContainerGroup',
-            typeInfo: 'KML_2_2_0.AbstractContainerType',
-            type: 'elementRef'
+        ln: 'CreateType',
+        ps: [{
+            n: 'abstractContainerGroup',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractContainerGroup',
+            ti: 'KML_2_2_0.AbstractContainerType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SimpleDataType',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'SimpleDataType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+            n: 'name',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DataType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'displayName',
-            elementName: 'displayName',
-            typeInfo: 'String'
+        ln: 'DataType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'displayName'
           }, {
-            type: 'element',
-            name: 'value',
-            elementName: 'value',
-            typeInfo: 'String'
+            n: 'value'
           }, {
-            type: 'element',
-            name: 'dataExtension',
-            collection: true,
-            elementName: 'DataExtension',
-            typeInfo: 'AnyType'
+            n: 'dataExtension',
+            col: true,
+            en: 'DataExtension',
+            ti: 'AnyType'
           }, {
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: 'name',
-            type: 'attribute'
+            n: 'name',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ScaleType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'x',
-            elementName: 'x',
-            typeInfo: 'Double'
+        ln: 'ScaleType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'x',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'y',
-            elementName: 'y',
-            typeInfo: 'Double'
+            n: 'y',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'z',
-            elementName: 'z',
-            typeInfo: 'Double'
+            n: 'z',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'scaleSimpleExtensionGroup',
-            collection: true,
-            elementName: 'ScaleSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'scaleSimpleExtensionGroup',
+            col: true,
+            en: 'ScaleSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'scaleObjectExtensionGroup',
-            collection: true,
-            elementName: 'ScaleObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'scaleObjectExtensionGroup',
+            col: true,
+            en: 'ScaleObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PointType',
-        baseTypeInfo: 'KML_2_2_0.AbstractGeometryType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'extrude',
-            elementName: 'extrude',
-            typeInfo: 'Boolean'
+        ln: 'PointType',
+        bti: 'KML_2_2_0.AbstractGeometryType',
+        ps: [{
+            n: 'extrude',
+            ti: 'Boolean'
           }, {
-            name: 'altitudeModeGroup',
-            elementName: 'altitudeModeGroup',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'AnyType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'coordinates',
-            elementName: 'coordinates',
-            typeInfo: {
-              type: 'list',
-              typeInfo: 'String'
+            n: 'coordinates',
+            ti: {
+              t: 'l'
             }
           }, {
-            type: 'element',
-            name: 'pointSimpleExtensionGroup',
-            collection: true,
-            elementName: 'PointSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'pointSimpleExtensionGroup',
+            col: true,
+            en: 'PointSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'pointObjectExtensionGroup',
-            collection: true,
-            elementName: 'PointObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'pointObjectExtensionGroup',
+            col: true,
+            en: 'PointObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ChangeType',
-        propertyInfos: [{
-            name: 'abstractObjectGroup',
-            collection: true,
-            elementName: 'AbstractObjectGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType',
-            type: 'elementRef'
+        ln: 'ChangeType',
+        ps: [{
+            n: 'abstractObjectGroup',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractObjectGroup',
+            ti: 'KML_2_2_0.AbstractObjectType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AliasType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'targetHref',
-            elementName: 'targetHref',
-            typeInfo: 'String'
+        ln: 'AliasType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'targetHref'
           }, {
-            type: 'element',
-            name: 'sourceHref',
-            elementName: 'sourceHref',
-            typeInfo: 'String'
+            n: 'sourceHref'
           }, {
-            type: 'element',
-            name: 'aliasSimpleExtensionGroup',
-            collection: true,
-            elementName: 'AliasSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'aliasSimpleExtensionGroup',
+            col: true,
+            en: 'AliasSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'aliasObjectExtensionGroup',
-            collection: true,
-            elementName: 'AliasObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'aliasObjectExtensionGroup',
+            col: true,
+            en: 'AliasObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'MultiGeometryType',
-        baseTypeInfo: 'KML_2_2_0.AbstractGeometryType',
-        propertyInfos: [{
-            name: 'abstractGeometryGroup',
-            collection: true,
-            elementName: 'AbstractGeometryGroup',
-            typeInfo: 'KML_2_2_0.AbstractGeometryType',
-            type: 'elementRef'
+        ln: 'MultiGeometryType',
+        bti: 'KML_2_2_0.AbstractGeometryType',
+        ps: [{
+            n: 'abstractGeometryGroup',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractGeometryGroup',
+            ti: 'KML_2_2_0.AbstractGeometryType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'multiGeometrySimpleExtensionGroup',
-            collection: true,
-            elementName: 'MultiGeometrySimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'multiGeometrySimpleExtensionGroup',
+            col: true,
+            en: 'MultiGeometrySimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'multiGeometryObjectExtensionGroup',
-            collection: true,
-            elementName: 'MultiGeometryObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'multiGeometryObjectExtensionGroup',
+            col: true,
+            en: 'MultiGeometryObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'BasicLinkType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'href',
-            elementName: 'href',
-            typeInfo: 'String'
+        ln: 'BasicLinkType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'href'
           }, {
-            type: 'element',
-            name: 'basicLinkSimpleExtensionGroup',
-            collection: true,
-            elementName: 'BasicLinkSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'basicLinkSimpleExtensionGroup',
+            col: true,
+            en: 'BasicLinkSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'basicLinkObjectExtensionGroup',
-            collection: true,
-            elementName: 'BasicLinkObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'basicLinkObjectExtensionGroup',
+            col: true,
+            en: 'BasicLinkObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AbstractLatLonBoxType',
-        baseTypeInfo: 'KML_2_2_0.AbstractObjectType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'north',
-            elementName: 'north',
-            typeInfo: 'Double'
+        ln: 'AbstractLatLonBoxType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'north',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'south',
-            elementName: 'south',
-            typeInfo: 'Double'
+            n: 'south',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'east',
-            elementName: 'east',
-            typeInfo: 'Double'
+            n: 'east',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'west',
-            elementName: 'west',
-            typeInfo: 'Double'
+            n: 'west',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'abstractLatLonBoxSimpleExtensionGroup',
-            collection: true,
-            elementName: 'AbstractLatLonBoxSimpleExtensionGroup',
-            typeInfo: 'AnyType'
+            n: 'abstractLatLonBoxSimpleExtensionGroup',
+            col: true,
+            en: 'AbstractLatLonBoxSimpleExtensionGroup',
+            ti: 'AnyType'
           }, {
-            type: 'element',
-            name: 'abstractLatLonBoxObjectExtensionGroup',
-            collection: true,
-            elementName: 'AbstractLatLonBoxObjectExtensionGroup',
-            typeInfo: 'KML_2_2_0.AbstractObjectType'
+            n: 'abstractLatLonBoxObjectExtensionGroup',
+            col: true,
+            en: 'AbstractLatLonBoxObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
-        type: 'enumInfo',
-        localName: 'ItemIconStateEnumType',
-        baseTypeInfo: 'String',
-        values: ['open', 'closed', 'error', 'fetching0', 'fetching1', 'fetching2']
+        t: 'enum',
+        ln: 'ItemIconStateEnumType',
+        vs: ['open', 'closed', 'error', 'fetching0', 'fetching1', 'fetching2']
       }, {
-        type: 'enumInfo',
-        localName: 'ViewRefreshModeEnumType',
-        baseTypeInfo: 'String',
-        values: ['never', 'onRequest', 'onStop', 'onRegion']
+        t: 'enum',
+        ln: 'ViewRefreshModeEnumType',
+        vs: ['never', 'onRequest', 'onStop', 'onRegion']
       }, {
-        type: 'enumInfo',
-        localName: 'RefreshModeEnumType',
-        baseTypeInfo: 'String',
-        values: ['onChange', 'onInterval', 'onExpire']
+        t: 'enum',
+        ln: 'RefreshModeEnumType',
+        vs: ['onChange', 'onInterval', 'onExpire']
       }, {
-        type: 'enumInfo',
-        localName: 'StyleStateEnumType',
-        baseTypeInfo: 'String',
-        values: ['normal', 'highlight']
+        t: 'enum',
+        ln: 'StyleStateEnumType',
+        vs: ['normal', 'highlight']
       }, {
-        type: 'enumInfo',
-        localName: 'GridOriginEnumType',
-        baseTypeInfo: 'String',
-        values: ['lowerLeft', 'upperLeft']
+        t: 'enum',
+        ln: 'GridOriginEnumType',
+        vs: ['lowerLeft', 'upperLeft']
       }, {
-        type: 'enumInfo',
-        localName: 'AltitudeModeEnumType',
-        baseTypeInfo: 'String',
-        values: ['clampToGround', 'relativeToGround', 'absolute']
+        t: 'enum',
+        ln: 'AltitudeModeEnumType',
+        vs: ['clampToGround', 'relativeToGround', 'absolute']
       }, {
-        type: 'enumInfo',
-        localName: 'ShapeEnumType',
-        baseTypeInfo: 'String',
-        values: ['rectangle', 'cylinder', 'sphere']
+        t: 'enum',
+        ln: 'ShapeEnumType',
+        vs: ['rectangle', 'cylinder', 'sphere']
       }, {
-        type: 'enumInfo',
-        localName: 'ListItemTypeEnumType',
-        baseTypeInfo: 'String',
-        values: ['radioFolder', 'check', 'checkHideChildren', 'checkOffOnly']
+        t: 'enum',
+        ln: 'ListItemTypeEnumType',
+        vs: ['radioFolder', 'check', 'checkHideChildren', 'checkOffOnly']
       }, {
-        type: 'enumInfo',
-        localName: 'ColorModeEnumType',
-        baseTypeInfo: 'String',
-        values: ['normal', 'random']
+        t: 'enum',
+        ln: 'ColorModeEnumType',
+        vs: ['normal', 'random']
       }, {
-        type: 'enumInfo',
-        localName: 'DisplayModeEnumType',
-        baseTypeInfo: 'String',
-        values: ['default', 'hide']
+        t: 'enum',
+        ln: 'DisplayModeEnumType',
+        vs: ['default', 'hide']
       }, {
-        type: 'enumInfo',
-        localName: 'UnitsEnumType',
-        baseTypeInfo: 'String',
-        values: ['fraction', 'pixels', 'insetPixels']
+        t: 'enum',
+        ln: 'UnitsEnumType',
+        vs: ['fraction', 'pixels', 'insetPixels']
       }],
-    elementInfos: [{
-        elementName: 'LineString',
-        typeInfo: 'KML_2_2_0.LineStringType',
-        substitutionHead: 'AbstractGeometryGroup'
+    eis: [{
+        en: 'LineString',
+        ti: 'KML_2_2_0.LineStringType',
+        sh: 'AbstractGeometryGroup'
       }, {
-        elementName: 'AbstractStyleSelectorGroup',
-        typeInfo: 'KML_2_2_0.AbstractStyleSelectorType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractStyleSelectorGroup',
+        ti: 'KML_2_2_0.AbstractStyleSelectorType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'Location',
-        typeInfo: 'KML_2_2_0.LocationType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'Location',
+        ti: 'KML_2_2_0.LocationType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'LatLonBoxObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'LatLonBoxObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'FolderSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'FolderSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'StyleMap',
-        typeInfo: 'KML_2_2_0.StyleMapType',
-        substitutionHead: 'AbstractStyleSelectorGroup'
+        en: 'StyleMap',
+        ti: 'KML_2_2_0.StyleMapType',
+        sh: 'AbstractStyleSelectorGroup'
       }, {
-        elementName: 'rotation',
-        typeInfo: 'Double'
+        en: 'rotation',
+        ti: 'Double'
       }, {
-        elementName: 'AbstractContainerGroup',
-        typeInfo: 'KML_2_2_0.AbstractContainerType',
-        substitutionHead: 'AbstractFeatureGroup'
+        en: 'AbstractContainerGroup',
+        ti: 'KML_2_2_0.AbstractContainerType',
+        sh: 'AbstractFeatureGroup'
       }, {
-        elementName: 'LocationObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'LocationObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'AliasSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'AliasSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'message',
-        typeInfo: 'String'
+        en: 'message'
       }, {
-        elementName: 'StyleObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'StyleObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'styleUrl',
-        typeInfo: 'String'
+        en: 'styleUrl'
       }, {
-        elementName: 'MultiGeometrySimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'MultiGeometrySimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'LabelStyle',
-        typeInfo: 'KML_2_2_0.LabelStyleType',
-        substitutionHead: 'AbstractColorStyleGroup'
+        en: 'LabelStyle',
+        ti: 'KML_2_2_0.LabelStyleType',
+        sh: 'AbstractColorStyleGroup'
       }, {
-        elementName: 'ScreenOverlayObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'ScreenOverlayObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'OrientationSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'OrientationSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'httpQuery',
-        typeInfo: 'String'
+        en: 'httpQuery'
       }, {
-        elementName: 'altitudeModeGroup',
-        typeInfo: 'AnyType'
+        en: 'altitudeModeGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'AbstractFeatureObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractFeatureObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'Pair',
-        typeInfo: 'KML_2_2_0.PairType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'Pair',
+        ti: 'KML_2_2_0.PairType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'NetworkLinkControl',
-        typeInfo: 'KML_2_2_0.NetworkLinkControlType'
+        en: 'NetworkLinkControl',
+        ti: 'KML_2_2_0.NetworkLinkControlType'
       }, {
-        elementName: 'altitudeMode',
-        typeInfo: 'String',
-        substitutionHead: 'altitudeModeGroup'
+        en: 'altitudeMode',
+        sh: 'altitudeModeGroup'
       }, {
-        elementName: 'LineStyleSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'LineStyleSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'end',
-        typeInfo: 'String'
+        en: 'end'
       }, {
-        elementName: 'viewBoundScale',
-        typeInfo: 'Double'
+        en: 'viewBoundScale',
+        ti: 'Double'
       }, {
-        elementName: 'color',
-        typeInfo: 'String'
+        en: 'color'
       }, {
-        elementName: 'AbstractLatLonBoxSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'AbstractLatLonBoxSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'NetworkLinkSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'NetworkLinkSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'innerBoundaryIs',
-        typeInfo: 'KML_2_2_0.BoundaryType'
+        en: 'innerBoundaryIs',
+        ti: 'KML_2_2_0.BoundaryType'
       }, {
-        elementName: 'expires',
-        typeInfo: 'String'
+        en: 'expires'
       }, {
-        elementName: 'description',
-        typeInfo: 'String'
+        en: 'description'
       }, {
-        elementName: 'ScreenOverlay',
-        typeInfo: 'KML_2_2_0.ScreenOverlayType',
-        substitutionHead: 'AbstractOverlayGroup'
+        en: 'ScreenOverlay',
+        ti: 'KML_2_2_0.ScreenOverlayType',
+        sh: 'AbstractOverlayGroup'
       }, {
-        elementName: 'linkSnippet',
-        typeInfo: 'KML_2_2_0.SnippetType'
+        en: 'linkSnippet',
+        ti: 'KML_2_2_0.SnippetType'
       }, {
-        elementName: 'ResourceMap',
-        typeInfo: 'KML_2_2_0.ResourceMapType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'ResourceMap',
+        ti: 'KML_2_2_0.ResourceMapType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'phoneNumber',
-        typeInfo: 'String'
+        en: 'phoneNumber'
       }, {
-        elementName: 'AbstractObjectGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType'
+        en: 'AbstractObjectGroup',
+        ti: 'KML_2_2_0.AbstractObjectType'
       }, {
-        elementName: 'AbstractGeometryGroup',
-        typeInfo: 'KML_2_2_0.AbstractGeometryType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractGeometryGroup',
+        ti: 'KML_2_2_0.AbstractGeometryType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'CameraSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'CameraSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'Region',
-        typeInfo: 'KML_2_2_0.RegionType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'Region',
+        ti: 'KML_2_2_0.RegionType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'name',
-        typeInfo: 'String'
+        en: 'name'
       }, {
-        elementName: 'Icon',
-        typeInfo: 'KML_2_2_0.LinkType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'Icon',
+        ti: 'KML_2_2_0.LinkType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'ImagePyramidObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'ImagePyramidObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'refreshInterval',
-        typeInfo: 'Double'
+        en: 'refreshInterval',
+        ti: 'Double'
       }, {
-        elementName: 'visibility',
-        typeInfo: 'Boolean'
+        en: 'visibility',
+        ti: 'Boolean'
       }, {
-        elementName: 'targetHref',
-        typeInfo: 'String'
+        en: 'targetHref'
       }, {
-        elementName: 'maxAltitude',
-        typeInfo: 'Double'
+        en: 'maxAltitude',
+        ti: 'Double'
       }, {
-        elementName: 'flyToView',
-        typeInfo: 'Boolean'
+        en: 'flyToView',
+        ti: 'Boolean'
       }, {
-        elementName: 'PolyStyleSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'PolyStyleSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'textColor',
-        typeInfo: 'String'
+        en: 'textColor'
       }, {
-        elementName: 'Snippet',
-        typeInfo: 'KML_2_2_0.SnippetType'
+        en: 'Snippet',
+        ti: 'KML_2_2_0.SnippetType'
       }, {
-        elementName: 'ItemIconObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'ItemIconObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'ViewVolume',
-        typeInfo: 'KML_2_2_0.ViewVolumeType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'ViewVolume',
+        ti: 'KML_2_2_0.ViewVolumeType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'ScaleObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'ScaleObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'NetworkLink',
-        typeInfo: 'KML_2_2_0.NetworkLinkType',
-        substitutionHead: 'AbstractFeatureGroup'
+        en: 'NetworkLink',
+        ti: 'KML_2_2_0.NetworkLinkType',
+        sh: 'AbstractFeatureGroup'
       }, {
-        elementName: 'Polygon',
-        typeInfo: 'KML_2_2_0.PolygonType',
-        substitutionHead: 'AbstractGeometryGroup'
+        en: 'Polygon',
+        ti: 'KML_2_2_0.PolygonType',
+        sh: 'AbstractGeometryGroup'
       }, {
-        elementName: 'TimeStampSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'TimeStampSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'AbstractGeometryObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractGeometryObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'gridOrigin',
-        typeInfo: 'String'
+        en: 'gridOrigin'
       }, {
-        elementName: 'Camera',
-        typeInfo: 'KML_2_2_0.CameraType',
-        substitutionHead: 'AbstractViewGroup'
+        en: 'Camera',
+        ti: 'KML_2_2_0.CameraType',
+        sh: 'AbstractViewGroup'
       }, {
-        elementName: 'Schema',
-        typeInfo: 'KML_2_2_0.SchemaType'
+        en: 'Schema',
+        ti: 'KML_2_2_0.SchemaType'
       }, {
-        elementName: 'NetworkLinkControlSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'NetworkLinkControlSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'linkName',
-        typeInfo: 'String'
+        en: 'linkName'
       }, {
-        elementName: 'ImagePyramid',
-        typeInfo: 'KML_2_2_0.ImagePyramidType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'ImagePyramid',
+        ti: 'KML_2_2_0.ImagePyramidType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'tilt',
-        typeInfo: 'Double'
+        en: 'tilt',
+        ti: 'Double'
       }, {
-        elementName: 'viewFormat',
-        typeInfo: 'String'
+        en: 'viewFormat'
       }, {
-        elementName: 'RegionSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'RegionSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'PlacemarkObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'PlacemarkObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'LinearRing',
-        typeInfo: 'KML_2_2_0.LinearRingType',
-        substitutionHead: 'AbstractGeometryGroup'
+        en: 'LinearRing',
+        ti: 'KML_2_2_0.LinearRingType',
+        sh: 'AbstractGeometryGroup'
       }, {
-        elementName: 'open',
-        typeInfo: 'Boolean'
+        en: 'open',
+        ti: 'Boolean'
       }, {
-        elementName: 'minLodPixels',
-        typeInfo: 'Double'
+        en: 'minLodPixels',
+        ti: 'Double'
       }, {
-        elementName: 'y',
-        typeInfo: 'Double'
+        en: 'y',
+        ti: 'Double'
       }, {
-        elementName: 'x',
-        typeInfo: 'Double'
+        en: 'x',
+        ti: 'Double'
       }, {
-        elementName: 'LookAtSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'LookAtSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'LodObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'LodObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'z',
-        typeInfo: 'Double'
+        en: 'z',
+        ti: 'Double'
       }, {
-        elementName: 'LinearRingObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'LinearRingObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'Placemark',
-        typeInfo: 'KML_2_2_0.PlacemarkType',
-        substitutionHead: 'AbstractFeatureGroup'
+        en: 'Placemark',
+        ti: 'KML_2_2_0.PlacemarkType',
+        sh: 'AbstractFeatureGroup'
       }, {
-        elementName: 'address',
-        typeInfo: 'String'
+        en: 'address'
       }, {
-        elementName: 'AbstractStyleSelectorSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'AbstractStyleSelectorSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'PointSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'PointSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'TimeSpanSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'TimeSpanSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'coordinates',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'String'
+        en: 'coordinates',
+        ti: {
+          t: 'l'
         }
       }, {
-        elementName: 'maxHeight',
-        typeInfo: 'Int'
+        en: 'maxHeight',
+        ti: 'Int'
       }, {
-        elementName: 'LatLonAltBox',
-        typeInfo: 'KML_2_2_0.LatLonAltBoxType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'LatLonAltBox',
+        ti: 'KML_2_2_0.LatLonAltBoxType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'outline',
-        typeInfo: 'Boolean'
+        en: 'outline',
+        ti: 'Boolean'
       }, {
-        elementName: 'refreshMode',
-        typeInfo: 'String'
+        en: 'refreshMode'
       }, {
-        elementName: 'sourceHref',
-        typeInfo: 'String'
+        en: 'sourceHref'
       }, {
-        elementName: 'PairObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'PairObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'IconStyleSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'IconStyleSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'key',
-        typeInfo: 'String'
+        en: 'key'
       }, {
-        elementName: 'SchemaDataExtension',
-        typeInfo: 'AnyType'
+        en: 'SchemaDataExtension',
+        ti: 'AnyType'
       }, {
-        elementName: 'LineStringObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'LineStringObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'DocumentSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'DocumentSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'latitude',
-        typeInfo: 'Double'
+        en: 'latitude',
+        ti: 'Double'
       }, {
-        elementName: 'displayName',
-        typeInfo: 'String'
+        en: 'displayName'
       }, {
-        elementName: 'LineStyle',
-        typeInfo: 'KML_2_2_0.LineStyleType',
-        substitutionHead: 'AbstractColorStyleGroup'
+        en: 'LineStyle',
+        ti: 'KML_2_2_0.LineStyleType',
+        sh: 'AbstractColorStyleGroup'
       }, {
-        elementName: 'ListStyle',
-        typeInfo: 'KML_2_2_0.ListStyleType',
-        substitutionHead: 'AbstractSubStyleGroup'
+        en: 'ListStyle',
+        ti: 'KML_2_2_0.ListStyleType',
+        sh: 'AbstractSubStyleGroup'
       }, {
-        elementName: 'AbstractGeometrySimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'AbstractGeometrySimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'ListStyleObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'ListStyleObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'UpdateExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'UpdateExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'AbstractContainerObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractContainerObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'KmlObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'KmlObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'AbstractSubStyleGroup',
-        typeInfo: 'KML_2_2_0.AbstractSubStyleType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractSubStyleGroup',
+        ti: 'KML_2_2_0.AbstractSubStyleType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'AbstractSubStyleSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'AbstractSubStyleSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'GroundOverlayObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'GroundOverlayObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'PhotoOverlayObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'PhotoOverlayObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'roll',
-        typeInfo: 'Double'
+        en: 'roll',
+        ti: 'Double'
       }, {
-        elementName: 'Metadata',
-        typeInfo: 'KML_2_2_0.MetadataType'
+        en: 'Metadata',
+        ti: 'KML_2_2_0.MetadataType'
       }, {
-        elementName: 'ItemIcon',
-        typeInfo: 'KML_2_2_0.ItemIconType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'ItemIcon',
+        ti: 'KML_2_2_0.ItemIconType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'AbstractOverlayObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractOverlayObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'BalloonStyleObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'BalloonStyleObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'size',
-        typeInfo: 'KML_2_2_0.Vec2Type'
+        en: 'size',
+        ti: 'KML_2_2_0.Vec2Type'
       }, {
-        elementName: 'AbstractOverlaySimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'AbstractOverlaySimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'Link',
-        typeInfo: 'KML_2_2_0.LinkType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'Link',
+        ti: 'KML_2_2_0.LinkType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'ObjectSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'ObjectSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'AbstractStyleSelectorObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractStyleSelectorObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'PlacemarkSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'PlacemarkSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'SchemaExtension',
-        typeInfo: 'AnyType'
+        en: 'SchemaExtension',
+        ti: 'AnyType'
       }, {
-        elementName: 'LinearRingSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'LinearRingSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'RegionObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'RegionObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'Orientation',
-        typeInfo: 'KML_2_2_0.OrientationType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'Orientation',
+        ti: 'KML_2_2_0.OrientationType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'viewRefreshMode',
-        typeInfo: 'String'
+        en: 'viewRefreshMode'
       }, {
-        elementName: 'TimeStamp',
-        typeInfo: 'KML_2_2_0.TimeStampType',
-        substitutionHead: 'AbstractTimePrimitiveGroup'
+        en: 'TimeStamp',
+        ti: 'KML_2_2_0.TimeStampType',
+        sh: 'AbstractTimePrimitiveGroup'
       }, {
-        elementName: 'LatLonBox',
-        typeInfo: 'KML_2_2_0.LatLonBoxType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'LatLonBox',
+        ti: 'KML_2_2_0.LatLonBoxType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'DataExtension',
-        typeInfo: 'AnyType'
+        en: 'DataExtension',
+        ti: 'AnyType'
       }, {
-        elementName: 'refreshVisibility',
-        typeInfo: 'Boolean'
+        en: 'refreshVisibility',
+        ti: 'Boolean'
       }, {
-        elementName: 'maxSnippetLines',
-        typeInfo: 'Int'
+        en: 'maxSnippetLines',
+        ti: 'Int'
       }, {
-        elementName: 'near',
-        typeInfo: 'Double'
+        en: 'near',
+        ti: 'Double'
       }, {
-        elementName: 'state',
-        typeInfo: {
-          type: 'list',
-          typeInfo: 'String'
+        en: 'state',
+        ti: {
+          t: 'l'
         }
       }, {
-        elementName: 'AbstractSubStyleObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractSubStyleObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'KmlSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'KmlSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'snippet',
-        typeInfo: 'String'
+        en: 'snippet'
       }, {
-        elementName: 'LodSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'LodSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'Delete',
-        typeInfo: 'KML_2_2_0.DeleteType'
+        en: 'Delete',
+        ti: 'KML_2_2_0.DeleteType'
       }, {
-        elementName: 'GroundOverlaySimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'GroundOverlaySimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'LineStyleObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'LineStyleObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'ListStyleSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'ListStyleSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'Document',
-        typeInfo: 'KML_2_2_0.DocumentType',
-        substitutionHead: 'AbstractContainerGroup'
+        en: 'Document',
+        ti: 'KML_2_2_0.DocumentType',
+        sh: 'AbstractContainerGroup'
       }, {
-        elementName: 'IconStyleObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'IconStyleObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'leftFov',
-        typeInfo: 'Double'
+        en: 'leftFov',
+        ti: 'Double'
       }, {
-        elementName: 'DocumentObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'DocumentObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'AbstractLatLonBoxObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractLatLonBoxObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'minRefreshPeriod',
-        typeInfo: 'Double'
+        en: 'minRefreshPeriod',
+        ti: 'Double'
       }, {
-        elementName: 'Alias',
-        typeInfo: 'KML_2_2_0.AliasType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'Alias',
+        ti: 'KML_2_2_0.AliasType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'minFadeExtent',
-        typeInfo: 'Double'
+        en: 'minFadeExtent',
+        ti: 'Double'
       }, {
-        elementName: 'ScaleSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'ScaleSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'MultiGeometry',
-        typeInfo: 'KML_2_2_0.MultiGeometryType',
-        substitutionHead: 'AbstractGeometryGroup'
+        en: 'MultiGeometry',
+        ti: 'KML_2_2_0.MultiGeometryType',
+        sh: 'AbstractGeometryGroup'
       }, {
-        elementName: 'ImagePyramidSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'ImagePyramidSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'AbstractOverlayGroup',
-        typeInfo: 'KML_2_2_0.AbstractOverlayType',
-        substitutionHead: 'AbstractFeatureGroup'
+        en: 'AbstractOverlayGroup',
+        ti: 'KML_2_2_0.AbstractOverlayType',
+        sh: 'AbstractFeatureGroup'
       }, {
-        elementName: 'maxFadeExtent',
-        typeInfo: 'Double'
+        en: 'maxFadeExtent',
+        ti: 'Double'
       }, {
-        elementName: 'LineStringSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'LineStringSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'AbstractTimePrimitiveSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'AbstractTimePrimitiveSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'Point',
-        typeInfo: 'KML_2_2_0.PointType',
-        substitutionHead: 'AbstractGeometryGroup'
+        en: 'Point',
+        ti: 'KML_2_2_0.PointType',
+        sh: 'AbstractGeometryGroup'
       }, {
-        elementName: 'Change',
-        typeInfo: 'KML_2_2_0.ChangeType'
+        en: 'Change',
+        ti: 'KML_2_2_0.ChangeType'
       }, {
-        elementName: 'SimpleData',
-        typeInfo: 'KML_2_2_0.SimpleDataType'
+        en: 'SimpleData',
+        ti: 'KML_2_2_0.SimpleDataType'
       }, {
-        elementName: 'Data',
-        typeInfo: 'KML_2_2_0.DataType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'Data',
+        ti: 'KML_2_2_0.DataType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'Scale',
-        typeInfo: 'KML_2_2_0.ScaleType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'Scale',
+        ti: 'KML_2_2_0.ScaleType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'bgColor',
-        typeInfo: 'String'
+        en: 'bgColor'
       }, {
-        elementName: 'LookAtObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'LookAtObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'Create',
-        typeInfo: 'KML_2_2_0.CreateType'
+        en: 'Create',
+        ti: 'KML_2_2_0.CreateType'
       }, {
-        elementName: 'TimeSpan',
-        typeInfo: 'KML_2_2_0.TimeSpanType',
-        substitutionHead: 'AbstractTimePrimitiveGroup'
+        en: 'TimeSpan',
+        ti: 'KML_2_2_0.TimeSpanType',
+        sh: 'AbstractTimePrimitiveGroup'
       }, {
-        elementName: 'east',
-        typeInfo: 'Double'
+        en: 'east',
+        ti: 'Double'
       }, {
-        elementName: 'value',
-        typeInfo: 'String'
+        en: 'value'
       }, {
-        elementName: 'PolyStyleObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'PolyStyleObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'LatLonAltBoxObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'LatLonAltBoxObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'BalloonStyleSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'BalloonStyleSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'NetworkLinkControlObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'NetworkLinkControlObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'tessellate',
-        typeInfo: 'Boolean'
+        en: 'tessellate',
+        ti: 'Boolean'
       }, {
-        elementName: 'altitude',
-        typeInfo: 'Double'
+        en: 'altitude',
+        ti: 'Double'
       }, {
-        elementName: 'AbstractViewSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'AbstractViewSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'ModelObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'ModelObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'scale',
-        typeInfo: 'Double'
+        en: 'scale',
+        ti: 'Double'
       }, {
-        elementName: 'PhotoOverlay',
-        typeInfo: 'KML_2_2_0.PhotoOverlayType',
-        substitutionHead: 'AbstractOverlayGroup'
+        en: 'PhotoOverlay',
+        ti: 'KML_2_2_0.PhotoOverlayType',
+        sh: 'AbstractOverlayGroup'
       }, {
-        elementName: 'bottomFov',
-        typeInfo: 'Double'
+        en: 'bottomFov',
+        ti: 'Double'
       }, {
-        elementName: 'AbstractTimePrimitiveGroup',
-        typeInfo: 'KML_2_2_0.AbstractTimePrimitiveType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractTimePrimitiveGroup',
+        ti: 'KML_2_2_0.AbstractTimePrimitiveType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'ResourceMapSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'ResourceMapSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'drawOrder',
-        typeInfo: 'Int'
+        en: 'drawOrder',
+        ti: 'Int'
       }, {
-        elementName: 'tileSize',
-        typeInfo: 'Int'
+        en: 'tileSize',
+        ti: 'Int'
       }, {
-        elementName: 'PairSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'PairSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'StyleSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'StyleSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'outerBoundaryIs',
-        typeInfo: 'KML_2_2_0.BoundaryType'
+        en: 'outerBoundaryIs',
+        ti: 'KML_2_2_0.BoundaryType'
       }, {
-        elementName: 'UpdateOpExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'UpdateOpExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'ScreenOverlaySimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'ScreenOverlaySimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'TimeSpanObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'TimeSpanObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'overlayXY',
-        typeInfo: 'KML_2_2_0.Vec2Type'
+        en: 'overlayXY',
+        ti: 'KML_2_2_0.Vec2Type'
       }, {
-        elementName: 'ExtendedData',
-        typeInfo: 'KML_2_2_0.ExtendedDataType'
+        en: 'ExtendedData',
+        ti: 'KML_2_2_0.ExtendedDataType'
       }, {
-        elementName: 'AliasObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AliasObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'PointObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'PointObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'FolderObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'FolderObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'SimpleFieldExtension',
-        typeInfo: 'AnyType'
+        en: 'SimpleFieldExtension',
+        ti: 'AnyType'
       }, {
-        elementName: 'BalloonStyle',
-        typeInfo: 'KML_2_2_0.BalloonStyleType',
-        substitutionHead: 'AbstractSubStyleGroup'
+        en: 'BalloonStyle',
+        ti: 'KML_2_2_0.BalloonStyleType',
+        sh: 'AbstractSubStyleGroup'
       }, {
-        elementName: 'fill',
-        typeInfo: 'Boolean'
+        en: 'fill',
+        ti: 'Boolean'
       }, {
-        elementName: 'displayMode',
-        typeInfo: 'String'
+        en: 'displayMode'
       }, {
-        elementName: 'colorMode',
-        typeInfo: 'String'
+        en: 'colorMode'
       }, {
-        elementName: 'AbstractColorStyleObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractColorStyleObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'StyleMapSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'StyleMapSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'MultiGeometryObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'MultiGeometryObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'OrientationObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'OrientationObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'extrude',
-        typeInfo: 'Boolean'
+        en: 'extrude',
+        ti: 'Boolean'
       }, {
-        elementName: 'hotSpot',
-        typeInfo: 'KML_2_2_0.Vec2Type'
+        en: 'hotSpot',
+        ti: 'KML_2_2_0.Vec2Type'
       }, {
-        elementName: 'AbstractColorStyleSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'AbstractColorStyleSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'PhotoOverlaySimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'PhotoOverlaySimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'longitude',
-        typeInfo: 'Double'
+        en: 'longitude',
+        ti: 'Double'
       }, {
-        elementName: 'AbstractContainerSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'AbstractContainerSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'west',
-        typeInfo: 'Double'
+        en: 'west',
+        ti: 'Double'
       }, {
-        elementName: 'ModelSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'ModelSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'NetworkLinkObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'NetworkLinkObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'maxSessionLength',
-        typeInfo: 'Double'
+        en: 'maxSessionLength',
+        ti: 'Double'
       }, {
-        elementName: 'Update',
-        typeInfo: 'KML_2_2_0.UpdateType'
+        en: 'Update',
+        ti: 'KML_2_2_0.UpdateType'
       }, {
-        elementName: 'rightFov',
-        typeInfo: 'Double'
+        en: 'rightFov',
+        ti: 'Double'
       }, {
-        elementName: 'ResourceMapObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'ResourceMapObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'IconStyle',
-        typeInfo: 'KML_2_2_0.IconStyleType',
-        substitutionHead: 'AbstractColorStyleGroup'
+        en: 'IconStyle',
+        ti: 'KML_2_2_0.IconStyleType',
+        sh: 'AbstractColorStyleGroup'
       }, {
-        elementName: 'AbstractViewGroup',
-        typeInfo: 'KML_2_2_0.AbstractViewType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractViewGroup',
+        ti: 'KML_2_2_0.AbstractViewType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'PolygonSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'PolygonSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'width',
-        typeInfo: 'Double'
+        en: 'width',
+        ti: 'Double'
       }, {
-        elementName: 'Model',
-        typeInfo: 'KML_2_2_0.ModelType',
-        substitutionHead: 'AbstractGeometryGroup'
+        en: 'Model',
+        ti: 'KML_2_2_0.ModelType',
+        sh: 'AbstractGeometryGroup'
       }, {
-        elementName: 'AbstractViewObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractViewObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'topFov',
-        typeInfo: 'Double'
+        en: 'topFov',
+        ti: 'Double'
       }, {
-        elementName: 'viewRefreshTime',
-        typeInfo: 'Double'
+        en: 'viewRefreshTime',
+        ti: 'Double'
       }, {
-        elementName: 'heading',
-        typeInfo: 'Double'
+        en: 'heading',
+        ti: 'Double'
       }, {
-        elementName: 'listItemType',
-        typeInfo: 'String'
+        en: 'listItemType'
       }, {
-        elementName: 'rotationXY',
-        typeInfo: 'KML_2_2_0.Vec2Type'
+        en: 'rotationXY',
+        ti: 'KML_2_2_0.Vec2Type'
       }, {
-        elementName: 'maxLodPixels',
-        typeInfo: 'Double'
+        en: 'maxLodPixels',
+        ti: 'Double'
       }, {
-        elementName: 'LookAt',
-        typeInfo: 'KML_2_2_0.LookAtType',
-        substitutionHead: 'AbstractViewGroup'
+        en: 'LookAt',
+        ti: 'KML_2_2_0.LookAtType',
+        sh: 'AbstractViewGroup'
       }, {
-        elementName: 'LinkSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'LinkSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'ViewVolumeObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'ViewVolumeObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'Style',
-        typeInfo: 'KML_2_2_0.StyleType',
-        substitutionHead: 'AbstractStyleSelectorGroup'
+        en: 'Style',
+        ti: 'KML_2_2_0.StyleType',
+        sh: 'AbstractStyleSelectorGroup'
       }, {
-        elementName: 'south',
-        typeInfo: 'Double'
+        en: 'south',
+        ti: 'Double'
       }, {
-        elementName: 'north',
-        typeInfo: 'Double'
+        en: 'north',
+        ti: 'Double'
       }, {
-        elementName: 'LabelStyleSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'LabelStyleSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'BoundarySimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'BoundarySimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'BasicLinkSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'BasicLinkSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'PolyStyle',
-        typeInfo: 'KML_2_2_0.PolyStyleType',
-        substitutionHead: 'AbstractColorStyleGroup'
+        en: 'PolyStyle',
+        ti: 'KML_2_2_0.PolyStyleType',
+        sh: 'AbstractColorStyleGroup'
       }, {
-        elementName: 'Folder',
-        typeInfo: 'KML_2_2_0.FolderType',
-        substitutionHead: 'AbstractContainerGroup'
+        en: 'Folder',
+        ti: 'KML_2_2_0.FolderType',
+        sh: 'AbstractContainerGroup'
       }, {
-        elementName: 'Url',
-        typeInfo: 'KML_2_2_0.LinkType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'Url',
+        ti: 'KML_2_2_0.LinkType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'range',
-        typeInfo: 'Double'
+        en: 'range',
+        ti: 'Double'
       }, {
-        elementName: 'kml',
-        typeInfo: 'KML_2_2_0.KmlType'
+        en: 'kml',
+        ti: 'KML_2_2_0.KmlType'
       }, {
-        elementName: 'TimeStampObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'TimeStampObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'AbstractColorStyleGroup',
-        typeInfo: 'KML_2_2_0.AbstractColorStyleType',
-        substitutionHead: 'AbstractSubStyleGroup'
+        en: 'AbstractColorStyleGroup',
+        ti: 'KML_2_2_0.AbstractColorStyleType',
+        sh: 'AbstractSubStyleGroup'
       }, {
-        elementName: 'minAltitude',
-        typeInfo: 'Double'
+        en: 'minAltitude',
+        ti: 'Double'
       }, {
-        elementName: 'begin',
-        typeInfo: 'String'
+        en: 'begin'
       }, {
-        elementName: 'AbstractTimePrimitiveObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractTimePrimitiveObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'SimpleField',
-        typeInfo: 'KML_2_2_0.SimpleFieldType'
+        en: 'SimpleField',
+        ti: 'KML_2_2_0.SimpleFieldType'
       }, {
-        elementName: 'cookie',
-        typeInfo: 'String'
+        en: 'cookie'
       }, {
-        elementName: 'shape',
-        typeInfo: 'String'
+        en: 'shape'
       }, {
-        elementName: 'PolygonObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'PolygonObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'ItemIconSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'ItemIconSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'Lod',
-        typeInfo: 'KML_2_2_0.LodType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'Lod',
+        ti: 'KML_2_2_0.LodType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'LocationSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'LocationSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'ViewVolumeSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'ViewVolumeSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'CameraObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'CameraObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'StyleMapObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'StyleMapObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'linkDescription',
-        typeInfo: 'String'
+        en: 'linkDescription'
       }, {
-        elementName: 'AbstractFeatureGroup',
-        typeInfo: 'KML_2_2_0.AbstractFeatureType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'AbstractFeatureGroup',
+        ti: 'KML_2_2_0.AbstractFeatureType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'maxWidth',
-        typeInfo: 'Int'
+        en: 'maxWidth',
+        ti: 'Int'
       }, {
-        elementName: 'GroundOverlay',
-        typeInfo: 'KML_2_2_0.GroundOverlayType',
-        substitutionHead: 'AbstractOverlayGroup'
+        en: 'GroundOverlay',
+        ti: 'KML_2_2_0.GroundOverlayType',
+        sh: 'AbstractOverlayGroup'
       }, {
-        elementName: 'href',
-        typeInfo: 'String'
+        en: 'href'
       }, {
-        elementName: 'text',
-        typeInfo: 'String'
+        en: 'text'
       }, {
-        elementName: 'screenXY',
-        typeInfo: 'KML_2_2_0.Vec2Type'
+        en: 'screenXY',
+        ti: 'KML_2_2_0.Vec2Type'
       }, {
-        elementName: 'SchemaData',
-        typeInfo: 'KML_2_2_0.SchemaDataType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'SchemaData',
+        ti: 'KML_2_2_0.SchemaDataType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'BasicLinkObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'BasicLinkObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'LinkObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'LinkObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'AbstractFeatureSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'AbstractFeatureSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'when',
-        typeInfo: 'String'
+        en: 'when'
       }, {
-        elementName: 'LatLonAltBoxSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'LatLonAltBoxSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        elementName: 'BoundaryObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'BoundaryObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'LabelStyleObjectExtensionGroup',
-        typeInfo: 'KML_2_2_0.AbstractObjectType',
-        substitutionHead: 'AbstractObjectGroup'
+        en: 'LabelStyleObjectExtensionGroup',
+        ti: 'KML_2_2_0.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
       }, {
-        elementName: 'LatLonBoxSimpleExtensionGroup',
-        typeInfo: 'AnyType'
+        en: 'LatLonBoxSimpleExtensionGroup',
+        ti: 'AnyType'
       }]
   };
   return {

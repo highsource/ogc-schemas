@@ -1,13 +1,12 @@
 var IC_2_0_Module_Factory = function () {
   var IC_2_0 = {
-    name: 'IC_2_0',
-    typeInfos: [{
-        type: 'enumInfo',
-        localName: 'ClassificationType',
-        baseTypeInfo: 'String',
-        values: ['U', 'C', 'S', 'TS', 'R', 'CTS', 'CTS-B', 'CTS-BALK', 'NU', 'NR', 'NC', 'NS', 'NS-S', 'NS-A', 'CTSA', 'NSAT', 'NCA']
+    n: 'IC_2_0',
+    tis: [{
+        t: 'enum',
+        ln: 'ClassificationType',
+        vs: ['U', 'C', 'S', 'TS', 'R', 'CTS', 'CTS-B', 'CTS-BALK', 'NU', 'NR', 'NC', 'NS', 'NS-S', 'NS-A', 'CTSA', 'NSAT', 'NCA']
       }],
-    elementInfos: []
+    eis: []
   };
   return {
     IC_2_0: IC_2_0

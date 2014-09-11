@@ -1,253 +1,253 @@
 var DCT_Module_Factory = function () {
   var DCT = {
-    name: 'DCT',
-    defaultElementNamespaceURI: 'http:\/\/purl.org\/dc\/terms\/',
-    typeInfos: [],
-    elementInfos: [{
-        elementName: 'modified',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'date',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+    n: 'DCT',
+    dens: 'http:\/\/purl.org\/dc\/terms\/',
+    tis: [],
+    eis: [{
+        en: 'modified',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'isVersionOf',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'isVersionOf',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'issued',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'date',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'issued',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'spatial',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'coverage',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'spatial',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'coverage',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'isReplacedBy',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'isReplacedBy',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'temporal',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'coverage',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'temporal',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'coverage',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'extent',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'format',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'extent',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'format',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'rightsHolder',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'DC-element',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'rightsHolder',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'DC-element',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'isFormatOf',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'isFormatOf',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'references',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'references',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'available',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'date',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'available',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'license',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'rights',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'license',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'rights',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'bibliographicCitation',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'identifier',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'bibliographicCitation',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'identifier',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'conformsTo',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'conformsTo',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'mediator',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'audience'
+        en: 'mediator',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'audience'
       }, {
-        elementName: 'tableOfContents',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'description',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'tableOfContents',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'description',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'dateSubmitted',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'date',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'dateSubmitted',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'requires',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'requires',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'audience',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'DC-element',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'audience',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'DC-element',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'hasPart',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'hasPart',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'created',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'date',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'created',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'isPartOf',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'isPartOf',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'isReferencedBy',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'isReferencedBy',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'valid',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'date',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'valid',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'provenance',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'DC-element',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'provenance',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'DC-element',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'educationLevel',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'audience'
+        en: 'educationLevel',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'audience'
       }, {
-        elementName: 'hasVersion',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'hasVersion',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'dateAccepted',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'date',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'dateAccepted',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'medium',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'format',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'medium',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'format',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'dateCopyrighted',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'date',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'dateCopyrighted',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'accessRights',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'rights',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'accessRights',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'rights',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'isRequiredBy',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'isRequiredBy',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'hasFormat',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'hasFormat',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'replaces',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'relation',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'replaces',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'alternative',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'title',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'alternative',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'title',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        elementName: 'abstract',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: {
-          localPart: 'description',
-          namespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        en: 'abstract',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'description',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }]
   };

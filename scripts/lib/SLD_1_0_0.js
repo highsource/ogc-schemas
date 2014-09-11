@@ -1,1136 +1,926 @@
 var SLD_1_0_0_Module_Factory = function () {
   var SLD_1_0_0 = {
-    name: 'SLD_1_0_0',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/sld',
-    defaultAttributeNamespaceURI: 'http:\/\/www.w3.org\/1999\/xlink',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'RemoteOWS',
-        propertyInfos: [{
-            type: 'element',
-            name: 'service',
-            elementName: 'Service',
-            typeInfo: 'String'
+    n: 'SLD_1_0_0',
+    dens: 'http:\/\/www.opengis.net\/sld',
+    dans: 'http:\/\/www.w3.org\/1999\/xlink',
+    tis: [{
+        ln: 'RemoteOWS',
+        ps: [{
+            n: 'service',
+            en: 'Service'
           }, {
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'SLD_1_0_0.OnlineResource'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'SLD_1_0_0.OnlineResource'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OnlineResource',
-        propertyInfos: [{
-            name: 'type',
-            typeInfo: 'XLink_1_0.TypeType',
-            attributeName: 'type',
-            type: 'attribute'
+        ln: 'OnlineResource',
+        ps: [{
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            name: 'href',
-            typeInfo: 'String',
-            attributeName: 'href',
-            type: 'attribute'
+            n: 'href',
+            t: 'a'
           }, {
-            name: 'role',
-            typeInfo: 'String',
-            attributeName: 'role',
-            type: 'attribute'
+            n: 'role',
+            t: 'a'
           }, {
-            name: 'arcrole',
-            typeInfo: 'String',
-            attributeName: 'arcrole',
-            type: 'attribute'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            name: 'title',
-            typeInfo: 'String',
-            attributeName: 'title',
-            type: 'attribute'
+            n: 'title',
+            t: 'a'
           }, {
-            name: 'show',
-            typeInfo: 'XLink_1_0.ShowType',
-            attributeName: 'show',
-            type: 'attribute'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
           }, {
-            name: 'actuate',
-            typeInfo: 'XLink_1_0.ActuateType',
-            attributeName: 'actuate',
-            type: 'attribute'
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UserStyle',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'UserStyle',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            type: 'element',
-            name: 'isDefault',
-            elementName: 'IsDefault',
-            typeInfo: 'Boolean'
+            n: 'isDefault',
+            en: 'IsDefault',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'featureTypeStyle',
-            collection: true,
-            elementName: 'FeatureTypeStyle',
-            typeInfo: 'SLD_1_0_0.FeatureTypeStyle'
+            n: 'featureTypeStyle',
+            col: true,
+            en: 'FeatureTypeStyle',
+            ti: 'SLD_1_0_0.FeatureTypeStyle'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureTypeStyle',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'FeatureTypeStyle',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            type: 'element',
-            name: 'featureTypeName',
-            elementName: 'FeatureTypeName',
-            typeInfo: 'String'
+            n: 'featureTypeName',
+            en: 'FeatureTypeName'
           }, {
-            type: 'element',
-            name: 'semanticTypeIdentifier',
-            collection: true,
-            elementName: 'SemanticTypeIdentifier',
-            typeInfo: 'String'
+            n: 'semanticTypeIdentifier',
+            col: true,
+            en: 'SemanticTypeIdentifier'
           }, {
-            type: 'element',
-            name: 'rule',
-            collection: true,
-            elementName: 'Rule',
-            typeInfo: 'SLD_1_0_0.Rule'
+            n: 'rule',
+            col: true,
+            en: 'Rule',
+            ti: 'SLD_1_0_0.Rule'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Rule',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'Rule',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            type: 'element',
-            name: 'legendGraphic',
-            elementName: 'LegendGraphic',
-            typeInfo: 'SLD_1_0_0.LegendGraphic'
+            n: 'legendGraphic',
+            en: 'LegendGraphic',
+            ti: 'SLD_1_0_0.LegendGraphic'
           }, {
-            type: 'element',
-            name: 'filter',
-            elementName: {
-              localPart: 'Filter',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_0_0.FilterType'
+            ti: 'Filter_1_0_0.FilterType'
           }, {
-            type: 'element',
-            name: 'elseFilter',
-            elementName: 'ElseFilter',
-            typeInfo: 'SLD_1_0_0.ElseFilter'
+            n: 'elseFilter',
+            en: 'ElseFilter',
+            ti: 'SLD_1_0_0.ElseFilter'
           }, {
-            type: 'element',
-            name: 'minScaleDenominator',
-            elementName: 'MinScaleDenominator',
-            typeInfo: 'Double'
+            n: 'minScaleDenominator',
+            en: 'MinScaleDenominator',
+            ti: 'Double'
           }, {
-            type: 'element',
-            name: 'maxScaleDenominator',
-            elementName: 'MaxScaleDenominator',
-            typeInfo: 'Double'
+            n: 'maxScaleDenominator',
+            en: 'MaxScaleDenominator',
+            ti: 'Double'
           }, {
-            name: 'symbolizer',
-            collection: true,
-            elementName: 'Symbolizer',
-            typeInfo: 'SLD_1_0_0.SymbolizerType',
-            type: 'elementRef'
+            n: 'symbolizer',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'Symbolizer',
+            ti: 'SLD_1_0_0.SymbolizerType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LegendGraphic',
-        propertyInfos: [{
-            type: 'element',
-            name: 'graphic',
-            elementName: 'Graphic',
-            typeInfo: 'SLD_1_0_0.Graphic'
+        ln: 'LegendGraphic',
+        ps: [{
+            n: 'graphic',
+            en: 'Graphic',
+            ti: 'SLD_1_0_0.Graphic'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Graphic',
-        propertyInfos: [{
-            name: 'externalGraphicOrMark',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'ExternalGraphic',
-                typeInfo: 'SLD_1_0_0.ExternalGraphic'
+        ln: 'Graphic',
+        ps: [{
+            n: 'externalGraphicOrMark',
+            col: true,
+            etis: [{
+                en: 'ExternalGraphic',
+                ti: 'SLD_1_0_0.ExternalGraphic'
               }, {
-                elementName: 'Mark',
-                typeInfo: 'SLD_1_0_0.Mark'
+                en: 'Mark',
+                ti: 'SLD_1_0_0.Mark'
               }],
-            type: 'elements'
+            t: 'es'
           }, {
-            type: 'element',
-            name: 'opacity',
-            elementName: 'Opacity',
-            typeInfo: 'SLD_1_0_0.ParameterValueType'
+            n: 'opacity',
+            en: 'Opacity',
+            ti: 'SLD_1_0_0.ParameterValueType'
           }, {
-            type: 'element',
-            name: 'size',
-            elementName: 'Size',
-            typeInfo: 'SLD_1_0_0.ParameterValueType'
+            n: 'size',
+            en: 'Size',
+            ti: 'SLD_1_0_0.ParameterValueType'
           }, {
-            type: 'element',
-            name: 'rotation',
-            elementName: 'Rotation',
-            typeInfo: 'SLD_1_0_0.ParameterValueType'
+            n: 'rotation',
+            en: 'Rotation',
+            ti: 'SLD_1_0_0.ParameterValueType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ExternalGraphic',
-        propertyInfos: [{
-            type: 'element',
-            name: 'onlineResource',
-            elementName: 'OnlineResource',
-            typeInfo: 'SLD_1_0_0.OnlineResource'
+        ln: 'ExternalGraphic',
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: 'SLD_1_0_0.OnlineResource'
           }, {
-            type: 'element',
-            name: 'format',
-            elementName: 'Format',
-            typeInfo: 'String'
+            n: 'format',
+            en: 'Format'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Mark',
-        propertyInfos: [{
-            type: 'element',
-            name: 'wellKnownName',
-            elementName: 'WellKnownName',
-            typeInfo: 'String'
+        ln: 'Mark',
+        ps: [{
+            n: 'wellKnownName',
+            en: 'WellKnownName'
           }, {
-            type: 'element',
-            name: 'fill',
-            elementName: 'Fill',
-            typeInfo: 'SLD_1_0_0.Fill'
+            n: 'fill',
+            en: 'Fill',
+            ti: 'SLD_1_0_0.Fill'
           }, {
-            type: 'element',
-            name: 'stroke',
-            elementName: 'Stroke',
-            typeInfo: 'SLD_1_0_0.Stroke'
+            n: 'stroke',
+            en: 'Stroke',
+            ti: 'SLD_1_0_0.Stroke'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Fill',
-        propertyInfos: [{
-            type: 'element',
-            name: 'graphicFill',
-            elementName: 'GraphicFill',
-            typeInfo: 'SLD_1_0_0.GraphicFill'
+        ln: 'Fill',
+        ps: [{
+            n: 'graphicFill',
+            en: 'GraphicFill',
+            ti: 'SLD_1_0_0.GraphicFill'
           }, {
-            type: 'element',
-            name: 'cssParameter',
-            collection: true,
-            elementName: 'CssParameter',
-            typeInfo: 'SLD_1_0_0.CssParameter'
+            n: 'cssParameter',
+            col: true,
+            en: 'CssParameter',
+            ti: 'SLD_1_0_0.CssParameter'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GraphicFill',
-        propertyInfos: [{
-            type: 'element',
-            name: 'graphic',
-            elementName: 'Graphic',
-            typeInfo: 'SLD_1_0_0.Graphic'
+        ln: 'GraphicFill',
+        ps: [{
+            n: 'graphic',
+            en: 'Graphic',
+            ti: 'SLD_1_0_0.Graphic'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'CssParameter',
-        baseTypeInfo: 'SLD_1_0_0.ParameterValueType',
-        propertyInfos: [{
-            name: 'name',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'name'
+        ln: 'CssParameter',
+        bti: 'SLD_1_0_0.ParameterValueType',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ParameterValueType',
-        propertyInfos: [{
-            name: 'content',
-            collection: true,
-            mixed: true,
-            elementName: {
-              localPart: 'expression',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'ParameterValueType',
+        ps: [{
+            n: 'content',
+            col: true,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'expression',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_0_0.ExpressionType',
-            type: 'elementRef'
+            ti: 'Filter_1_0_0.ExpressionType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Stroke',
-        propertyInfos: [{
-            type: 'element',
-            name: 'graphicFill',
-            elementName: 'GraphicFill',
-            typeInfo: 'SLD_1_0_0.GraphicFill'
+        ln: 'Stroke',
+        ps: [{
+            n: 'graphicFill',
+            en: 'GraphicFill',
+            ti: 'SLD_1_0_0.GraphicFill'
           }, {
-            type: 'element',
-            name: 'graphicStroke',
-            elementName: 'GraphicStroke',
-            typeInfo: 'SLD_1_0_0.GraphicStroke'
+            n: 'graphicStroke',
+            en: 'GraphicStroke',
+            ti: 'SLD_1_0_0.GraphicStroke'
           }, {
-            type: 'element',
-            name: 'cssParameter',
-            collection: true,
-            elementName: 'CssParameter',
-            typeInfo: 'SLD_1_0_0.CssParameter'
+            n: 'cssParameter',
+            col: true,
+            en: 'CssParameter',
+            ti: 'SLD_1_0_0.CssParameter'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GraphicStroke',
-        propertyInfos: [{
-            type: 'element',
-            name: 'graphic',
-            elementName: 'Graphic',
-            typeInfo: 'SLD_1_0_0.Graphic'
+        ln: 'GraphicStroke',
+        ps: [{
+            n: 'graphic',
+            en: 'Graphic',
+            ti: 'SLD_1_0_0.Graphic'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ElseFilter',
-        propertyInfos: []
+        ln: 'ElseFilter'
       }, {
-        type: 'classInfo',
-        localName: 'SymbolizerType',
-        propertyInfos: []
+        ln: 'SymbolizerType'
       }, {
-        type: 'classInfo',
-        localName: 'PointPlacement',
-        propertyInfos: [{
-            type: 'element',
-            name: 'anchorPoint',
-            elementName: 'AnchorPoint',
-            typeInfo: 'SLD_1_0_0.AnchorPoint'
+        ln: 'PointPlacement',
+        ps: [{
+            n: 'anchorPoint',
+            en: 'AnchorPoint',
+            ti: 'SLD_1_0_0.AnchorPoint'
           }, {
-            type: 'element',
-            name: 'displacement',
-            elementName: 'Displacement',
-            typeInfo: 'SLD_1_0_0.Displacement'
+            n: 'displacement',
+            en: 'Displacement',
+            ti: 'SLD_1_0_0.Displacement'
           }, {
-            type: 'element',
-            name: 'rotation',
-            elementName: 'Rotation',
-            typeInfo: 'SLD_1_0_0.ParameterValueType'
+            n: 'rotation',
+            en: 'Rotation',
+            ti: 'SLD_1_0_0.ParameterValueType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AnchorPoint',
-        propertyInfos: [{
-            type: 'element',
-            name: 'anchorPointX',
-            elementName: 'AnchorPointX',
-            typeInfo: 'SLD_1_0_0.ParameterValueType'
+        ln: 'AnchorPoint',
+        ps: [{
+            n: 'anchorPointX',
+            en: 'AnchorPointX',
+            ti: 'SLD_1_0_0.ParameterValueType'
           }, {
-            type: 'element',
-            name: 'anchorPointY',
-            elementName: 'AnchorPointY',
-            typeInfo: 'SLD_1_0_0.ParameterValueType'
+            n: 'anchorPointY',
+            en: 'AnchorPointY',
+            ti: 'SLD_1_0_0.ParameterValueType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Displacement',
-        propertyInfos: [{
-            type: 'element',
-            name: 'displacementX',
-            elementName: 'DisplacementX',
-            typeInfo: 'SLD_1_0_0.ParameterValueType'
+        ln: 'Displacement',
+        ps: [{
+            n: 'displacementX',
+            en: 'DisplacementX',
+            ti: 'SLD_1_0_0.ParameterValueType'
           }, {
-            type: 'element',
-            name: 'displacementY',
-            elementName: 'DisplacementY',
-            typeInfo: 'SLD_1_0_0.ParameterValueType'
+            n: 'displacementY',
+            en: 'DisplacementY',
+            ti: 'SLD_1_0_0.ParameterValueType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Histogram',
-        propertyInfos: []
+        ln: 'Histogram'
       }, {
-        type: 'classInfo',
-        localName: 'ImageOutline',
-        propertyInfos: [{
-            type: 'element',
-            name: 'lineSymbolizer',
-            elementName: 'LineSymbolizer',
-            typeInfo: 'SLD_1_0_0.LineSymbolizer'
+        ln: 'ImageOutline',
+        ps: [{
+            n: 'lineSymbolizer',
+            en: 'LineSymbolizer',
+            ti: 'SLD_1_0_0.LineSymbolizer'
           }, {
-            type: 'element',
-            name: 'polygonSymbolizer',
-            elementName: 'PolygonSymbolizer',
-            typeInfo: 'SLD_1_0_0.PolygonSymbolizer'
+            n: 'polygonSymbolizer',
+            en: 'PolygonSymbolizer',
+            ti: 'SLD_1_0_0.PolygonSymbolizer'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LineSymbolizer',
-        baseTypeInfo: 'SLD_1_0_0.SymbolizerType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'geometry',
-            elementName: 'Geometry',
-            typeInfo: 'SLD_1_0_0.Geometry'
+        ln: 'LineSymbolizer',
+        bti: 'SLD_1_0_0.SymbolizerType',
+        ps: [{
+            n: 'geometry',
+            en: 'Geometry',
+            ti: 'SLD_1_0_0.Geometry'
           }, {
-            type: 'element',
-            name: 'stroke',
-            elementName: 'Stroke',
-            typeInfo: 'SLD_1_0_0.Stroke'
+            n: 'stroke',
+            en: 'Stroke',
+            ti: 'SLD_1_0_0.Stroke'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PolygonSymbolizer',
-        baseTypeInfo: 'SLD_1_0_0.SymbolizerType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'geometry',
-            elementName: 'Geometry',
-            typeInfo: 'SLD_1_0_0.Geometry'
+        ln: 'PolygonSymbolizer',
+        bti: 'SLD_1_0_0.SymbolizerType',
+        ps: [{
+            n: 'geometry',
+            en: 'Geometry',
+            ti: 'SLD_1_0_0.Geometry'
           }, {
-            type: 'element',
-            name: 'fill',
-            elementName: 'Fill',
-            typeInfo: 'SLD_1_0_0.Fill'
+            n: 'fill',
+            en: 'Fill',
+            ti: 'SLD_1_0_0.Fill'
           }, {
-            type: 'element',
-            name: 'stroke',
-            elementName: 'Stroke',
-            typeInfo: 'SLD_1_0_0.Stroke'
+            n: 'stroke',
+            en: 'Stroke',
+            ti: 'SLD_1_0_0.Stroke'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LayerFeatureConstraints',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureTypeConstraint',
-            collection: true,
-            elementName: 'FeatureTypeConstraint',
-            typeInfo: 'SLD_1_0_0.FeatureTypeConstraint'
+        ln: 'LayerFeatureConstraints',
+        ps: [{
+            n: 'featureTypeConstraint',
+            col: true,
+            en: 'FeatureTypeConstraint',
+            ti: 'SLD_1_0_0.FeatureTypeConstraint'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FeatureTypeConstraint',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureTypeName',
-            elementName: 'FeatureTypeName',
-            typeInfo: 'String'
+        ln: 'FeatureTypeConstraint',
+        ps: [{
+            n: 'featureTypeName',
+            en: 'FeatureTypeName'
           }, {
-            type: 'element',
-            name: 'filter',
-            elementName: {
-              localPart: 'Filter',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_0_0.FilterType'
+            ti: 'Filter_1_0_0.FilterType'
           }, {
-            type: 'element',
-            name: 'extent',
-            collection: true,
-            elementName: 'Extent',
-            typeInfo: 'SLD_1_0_0.Extent'
+            n: 'extent',
+            col: true,
+            en: 'Extent',
+            ti: 'SLD_1_0_0.Extent'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Extent',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'Extent',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'value',
-            elementName: 'Value',
-            typeInfo: 'String'
+            n: 'value',
+            en: 'Value'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'StyledLayerDescriptor',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'StyledLayerDescriptor',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'title',
-            elementName: 'Title',
-            typeInfo: 'String'
+            n: 'title',
+            en: 'Title'
           }, {
-            type: 'element',
-            name: '_abstract',
-            elementName: 'Abstract',
-            typeInfo: 'String'
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            name: 'namedLayerOrUserLayer',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'NamedLayer',
-                typeInfo: 'SLD_1_0_0.NamedLayer'
+            n: 'namedLayerOrUserLayer',
+            col: true,
+            etis: [{
+                en: 'NamedLayer',
+                ti: 'SLD_1_0_0.NamedLayer'
               }, {
-                elementName: 'UserLayer',
-                typeInfo: 'SLD_1_0_0.UserLayer'
+                en: 'UserLayer',
+                ti: 'SLD_1_0_0.UserLayer'
               }],
-            type: 'elements'
+            t: 'es'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'version'
+            n: 'version',
+            an: {
+              lp: 'version'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'NamedLayer',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'NamedLayer',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'layerFeatureConstraints',
-            elementName: 'LayerFeatureConstraints',
-            typeInfo: 'SLD_1_0_0.LayerFeatureConstraints'
+            n: 'layerFeatureConstraints',
+            en: 'LayerFeatureConstraints',
+            ti: 'SLD_1_0_0.LayerFeatureConstraints'
           }, {
-            name: 'namedStyleOrUserStyle',
-            collection: true,
-            elementTypeInfos: [{
-                elementName: 'NamedStyle',
-                typeInfo: 'SLD_1_0_0.NamedStyle'
+            n: 'namedStyleOrUserStyle',
+            col: true,
+            etis: [{
+                en: 'NamedStyle',
+                ti: 'SLD_1_0_0.NamedStyle'
               }, {
-                elementName: 'UserStyle',
-                typeInfo: 'SLD_1_0_0.UserStyle'
+                en: 'UserStyle',
+                ti: 'SLD_1_0_0.UserStyle'
               }],
-            type: 'elements'
+            t: 'es'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'NamedStyle',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'NamedStyle',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'UserLayer',
-        propertyInfos: [{
-            type: 'element',
-            name: 'name',
-            elementName: 'Name',
-            typeInfo: 'String'
+        ln: 'UserLayer',
+        ps: [{
+            n: 'name',
+            en: 'Name'
           }, {
-            type: 'element',
-            name: 'remoteOWS',
-            elementName: 'RemoteOWS',
-            typeInfo: 'SLD_1_0_0.RemoteOWS'
+            n: 'remoteOWS',
+            en: 'RemoteOWS',
+            ti: 'SLD_1_0_0.RemoteOWS'
           }, {
-            type: 'element',
-            name: 'layerFeatureConstraints',
-            elementName: 'LayerFeatureConstraints',
-            typeInfo: 'SLD_1_0_0.LayerFeatureConstraints'
+            n: 'layerFeatureConstraints',
+            en: 'LayerFeatureConstraints',
+            ti: 'SLD_1_0_0.LayerFeatureConstraints'
           }, {
-            type: 'element',
-            name: 'userStyle',
-            collection: true,
-            elementName: 'UserStyle',
-            typeInfo: 'SLD_1_0_0.UserStyle'
+            n: 'userStyle',
+            col: true,
+            en: 'UserStyle',
+            ti: 'SLD_1_0_0.UserStyle'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LATESTONTOP',
-        propertyInfos: []
+        ln: 'LATESTONTOP'
       }, {
-        type: 'classInfo',
-        localName: 'RasterSymbolizer',
-        baseTypeInfo: 'SLD_1_0_0.SymbolizerType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'geometry',
-            elementName: 'Geometry',
-            typeInfo: 'SLD_1_0_0.Geometry'
+        ln: 'RasterSymbolizer',
+        bti: 'SLD_1_0_0.SymbolizerType',
+        ps: [{
+            n: 'geometry',
+            en: 'Geometry',
+            ti: 'SLD_1_0_0.Geometry'
           }, {
-            type: 'element',
-            name: 'opacity',
-            elementName: 'Opacity',
-            typeInfo: 'SLD_1_0_0.ParameterValueType'
+            n: 'opacity',
+            en: 'Opacity',
+            ti: 'SLD_1_0_0.ParameterValueType'
           }, {
-            type: 'element',
-            name: 'channelSelection',
-            elementName: 'ChannelSelection',
-            typeInfo: 'SLD_1_0_0.ChannelSelection'
+            n: 'channelSelection',
+            en: 'ChannelSelection',
+            ti: 'SLD_1_0_0.ChannelSelection'
           }, {
-            type: 'element',
-            name: 'overlapBehavior',
-            elementName: 'OverlapBehavior',
-            typeInfo: 'SLD_1_0_0.OverlapBehavior'
+            n: 'overlapBehavior',
+            en: 'OverlapBehavior',
+            ti: 'SLD_1_0_0.OverlapBehavior'
           }, {
-            type: 'element',
-            name: 'colorMap',
-            elementName: 'ColorMap',
-            typeInfo: 'SLD_1_0_0.ColorMap'
+            n: 'colorMap',
+            en: 'ColorMap',
+            ti: 'SLD_1_0_0.ColorMap'
           }, {
-            type: 'element',
-            name: 'contrastEnhancement',
-            elementName: 'ContrastEnhancement',
-            typeInfo: 'SLD_1_0_0.ContrastEnhancement'
+            n: 'contrastEnhancement',
+            en: 'ContrastEnhancement',
+            ti: 'SLD_1_0_0.ContrastEnhancement'
           }, {
-            type: 'element',
-            name: 'shadedRelief',
-            elementName: 'ShadedRelief',
-            typeInfo: 'SLD_1_0_0.ShadedRelief'
+            n: 'shadedRelief',
+            en: 'ShadedRelief',
+            ti: 'SLD_1_0_0.ShadedRelief'
           }, {
-            type: 'element',
-            name: 'imageOutline',
-            elementName: 'ImageOutline',
-            typeInfo: 'SLD_1_0_0.ImageOutline'
+            n: 'imageOutline',
+            en: 'ImageOutline',
+            ti: 'SLD_1_0_0.ImageOutline'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ChannelSelection',
-        propertyInfos: [{
-            type: 'element',
-            name: 'redChannel',
-            elementName: 'RedChannel',
-            typeInfo: 'SLD_1_0_0.SelectedChannelType'
+        ln: 'ChannelSelection',
+        ps: [{
+            n: 'redChannel',
+            en: 'RedChannel',
+            ti: 'SLD_1_0_0.SelectedChannelType'
           }, {
-            type: 'element',
-            name: 'greenChannel',
-            elementName: 'GreenChannel',
-            typeInfo: 'SLD_1_0_0.SelectedChannelType'
+            n: 'greenChannel',
+            en: 'GreenChannel',
+            ti: 'SLD_1_0_0.SelectedChannelType'
           }, {
-            type: 'element',
-            name: 'blueChannel',
-            elementName: 'BlueChannel',
-            typeInfo: 'SLD_1_0_0.SelectedChannelType'
+            n: 'blueChannel',
+            en: 'BlueChannel',
+            ti: 'SLD_1_0_0.SelectedChannelType'
           }, {
-            type: 'element',
-            name: 'grayChannel',
-            elementName: 'GrayChannel',
-            typeInfo: 'SLD_1_0_0.SelectedChannelType'
+            n: 'grayChannel',
+            en: 'GrayChannel',
+            ti: 'SLD_1_0_0.SelectedChannelType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'SelectedChannelType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'sourceChannelName',
-            elementName: 'SourceChannelName',
-            typeInfo: 'String'
+        ln: 'SelectedChannelType',
+        ps: [{
+            n: 'sourceChannelName',
+            en: 'SourceChannelName'
           }, {
-            type: 'element',
-            name: 'contrastEnhancement',
-            elementName: 'ContrastEnhancement',
-            typeInfo: 'SLD_1_0_0.ContrastEnhancement'
+            n: 'contrastEnhancement',
+            en: 'ContrastEnhancement',
+            ti: 'SLD_1_0_0.ContrastEnhancement'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'EARLIESTONTOP',
-        propertyInfos: []
+        ln: 'EARLIESTONTOP'
       }, {
-        type: 'classInfo',
-        localName: 'ColorMap',
-        propertyInfos: [{
-            type: 'element',
-            name: 'colorMapEntry',
-            collection: true,
-            elementName: 'ColorMapEntry',
-            typeInfo: 'SLD_1_0_0.ColorMapEntry'
+        ln: 'ColorMap',
+        ps: [{
+            n: 'colorMapEntry',
+            col: true,
+            en: 'ColorMapEntry',
+            ti: 'SLD_1_0_0.ColorMapEntry'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ColorMapEntry',
-        propertyInfos: [{
-            name: 'color',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'color'
+        ln: 'ColorMapEntry',
+        ps: [{
+            n: 'color',
+            an: {
+              lp: 'color'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'opacity',
-            typeInfo: 'Double',
-            attributeName: {
-              localPart: 'opacity'
+            n: 'opacity',
+            ti: 'Double',
+            an: {
+              lp: 'opacity'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'quantity',
-            typeInfo: 'Double',
-            attributeName: {
-              localPart: 'quantity'
+            n: 'quantity',
+            ti: 'Double',
+            an: {
+              lp: 'quantity'
             },
-            type: 'attribute'
+            t: 'a'
           }, {
-            name: 'label',
-            typeInfo: 'String',
-            attributeName: {
-              localPart: 'label'
+            n: 'label',
+            an: {
+              lp: 'label'
             },
-            type: 'attribute'
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Font',
-        propertyInfos: [{
-            type: 'element',
-            name: 'cssParameter',
-            collection: true,
-            elementName: 'CssParameter',
-            typeInfo: 'SLD_1_0_0.CssParameter'
+        ln: 'Font',
+        ps: [{
+            n: 'cssParameter',
+            col: true,
+            en: 'CssParameter',
+            ti: 'SLD_1_0_0.CssParameter'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'AVERAGE',
-        propertyInfos: []
+        ln: 'AVERAGE'
       }, {
-        type: 'classInfo',
-        localName: 'LinePlacement',
-        propertyInfos: [{
-            type: 'element',
-            name: 'perpendicularOffset',
-            elementName: 'PerpendicularOffset',
-            typeInfo: 'SLD_1_0_0.ParameterValueType'
+        ln: 'LinePlacement',
+        ps: [{
+            n: 'perpendicularOffset',
+            en: 'PerpendicularOffset',
+            ti: 'SLD_1_0_0.ParameterValueType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'PointSymbolizer',
-        baseTypeInfo: 'SLD_1_0_0.SymbolizerType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'geometry',
-            elementName: 'Geometry',
-            typeInfo: 'SLD_1_0_0.Geometry'
+        ln: 'PointSymbolizer',
+        bti: 'SLD_1_0_0.SymbolizerType',
+        ps: [{
+            n: 'geometry',
+            en: 'Geometry',
+            ti: 'SLD_1_0_0.Geometry'
           }, {
-            type: 'element',
-            name: 'graphic',
-            elementName: 'Graphic',
-            typeInfo: 'SLD_1_0_0.Graphic'
+            n: 'graphic',
+            en: 'Graphic',
+            ti: 'SLD_1_0_0.Graphic'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Normalize',
-        propertyInfos: []
+        ln: 'Normalize'
       }, {
-        type: 'classInfo',
-        localName: 'RANDOM',
-        propertyInfos: []
+        ln: 'RANDOM'
       }, {
-        type: 'classInfo',
-        localName: 'ShadedRelief',
-        propertyInfos: [{
-            type: 'element',
-            name: 'brightnessOnly',
-            elementName: 'BrightnessOnly',
-            typeInfo: 'Boolean'
+        ln: 'ShadedRelief',
+        ps: [{
+            n: 'brightnessOnly',
+            en: 'BrightnessOnly',
+            ti: 'Boolean'
           }, {
-            type: 'element',
-            name: 'reliefFactor',
-            elementName: 'ReliefFactor',
-            typeInfo: 'Double'
+            n: 'reliefFactor',
+            en: 'ReliefFactor',
+            ti: 'Double'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Geometry',
-        propertyInfos: [{
-            type: 'element',
-            name: 'propertyName',
-            elementName: {
-              localPart: 'PropertyName',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'Geometry',
+        ps: [{
+            n: 'propertyName',
+            en: {
+              lp: 'PropertyName',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'Filter_1_0_0.PropertyNameType'
+            ti: 'Filter_1_0_0.PropertyNameType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ContrastEnhancement',
-        propertyInfos: [{
-            type: 'element',
-            name: 'normalize',
-            elementName: 'Normalize',
-            typeInfo: 'SLD_1_0_0.Normalize'
+        ln: 'ContrastEnhancement',
+        ps: [{
+            n: 'normalize',
+            en: 'Normalize',
+            ti: 'SLD_1_0_0.Normalize'
           }, {
-            type: 'element',
-            name: 'histogram',
-            elementName: 'Histogram',
-            typeInfo: 'SLD_1_0_0.Histogram'
+            n: 'histogram',
+            en: 'Histogram',
+            ti: 'SLD_1_0_0.Histogram'
           }, {
-            type: 'element',
-            name: 'gammaValue',
-            elementName: 'GammaValue',
-            typeInfo: 'Double'
+            n: 'gammaValue',
+            en: 'GammaValue',
+            ti: 'Double'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'LabelPlacement',
-        propertyInfos: [{
-            type: 'element',
-            name: 'pointPlacement',
-            elementName: 'PointPlacement',
-            typeInfo: 'SLD_1_0_0.PointPlacement'
+        ln: 'LabelPlacement',
+        ps: [{
+            n: 'pointPlacement',
+            en: 'PointPlacement',
+            ti: 'SLD_1_0_0.PointPlacement'
           }, {
-            type: 'element',
-            name: 'linePlacement',
-            elementName: 'LinePlacement',
-            typeInfo: 'SLD_1_0_0.LinePlacement'
+            n: 'linePlacement',
+            en: 'LinePlacement',
+            ti: 'SLD_1_0_0.LinePlacement'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'TextSymbolizer',
-        baseTypeInfo: 'SLD_1_0_0.SymbolizerType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'geometry',
-            elementName: 'Geometry',
-            typeInfo: 'SLD_1_0_0.Geometry'
+        ln: 'TextSymbolizer',
+        bti: 'SLD_1_0_0.SymbolizerType',
+        ps: [{
+            n: 'geometry',
+            en: 'Geometry',
+            ti: 'SLD_1_0_0.Geometry'
           }, {
-            type: 'element',
-            name: 'label',
-            elementName: 'Label',
-            typeInfo: 'SLD_1_0_0.ParameterValueType'
+            n: 'label',
+            en: 'Label',
+            ti: 'SLD_1_0_0.ParameterValueType'
           }, {
-            type: 'element',
-            name: 'font',
-            elementName: 'Font',
-            typeInfo: 'SLD_1_0_0.Font'
+            n: 'font',
+            en: 'Font',
+            ti: 'SLD_1_0_0.Font'
           }, {
-            type: 'element',
-            name: 'labelPlacement',
-            elementName: 'LabelPlacement',
-            typeInfo: 'SLD_1_0_0.LabelPlacement'
+            n: 'labelPlacement',
+            en: 'LabelPlacement',
+            ti: 'SLD_1_0_0.LabelPlacement'
           }, {
-            type: 'element',
-            name: 'halo',
-            elementName: 'Halo',
-            typeInfo: 'SLD_1_0_0.Halo'
+            n: 'halo',
+            en: 'Halo',
+            ti: 'SLD_1_0_0.Halo'
           }, {
-            type: 'element',
-            name: 'fill',
-            elementName: 'Fill',
-            typeInfo: 'SLD_1_0_0.Fill'
+            n: 'fill',
+            en: 'Fill',
+            ti: 'SLD_1_0_0.Fill'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Halo',
-        propertyInfos: [{
-            type: 'element',
-            name: 'radius',
-            elementName: 'Radius',
-            typeInfo: 'SLD_1_0_0.ParameterValueType'
+        ln: 'Halo',
+        ps: [{
+            n: 'radius',
+            en: 'Radius',
+            ti: 'SLD_1_0_0.ParameterValueType'
           }, {
-            type: 'element',
-            name: 'fill',
-            elementName: 'Fill',
-            typeInfo: 'SLD_1_0_0.Fill'
+            n: 'fill',
+            en: 'Fill',
+            ti: 'SLD_1_0_0.Fill'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'OverlapBehavior',
-        propertyInfos: [{
-            type: 'element',
-            name: 'latestontop',
-            elementName: 'LATEST_ON_TOP',
-            typeInfo: 'SLD_1_0_0.LATESTONTOP'
+        ln: 'OverlapBehavior',
+        ps: [{
+            n: 'latestontop',
+            en: 'LATEST_ON_TOP',
+            ti: 'SLD_1_0_0.LATESTONTOP'
           }, {
-            type: 'element',
-            name: 'earliestontop',
-            elementName: 'EARLIEST_ON_TOP',
-            typeInfo: 'SLD_1_0_0.EARLIESTONTOP'
+            n: 'earliestontop',
+            en: 'EARLIEST_ON_TOP',
+            ti: 'SLD_1_0_0.EARLIESTONTOP'
           }, {
-            type: 'element',
-            name: 'average',
-            elementName: 'AVERAGE',
-            typeInfo: 'SLD_1_0_0.AVERAGE'
+            n: 'average',
+            en: 'AVERAGE',
+            ti: 'SLD_1_0_0.AVERAGE'
           }, {
-            type: 'element',
-            name: 'random',
-            elementName: 'RANDOM',
-            typeInfo: 'SLD_1_0_0.RANDOM'
+            n: 'random',
+            en: 'RANDOM',
+            ti: 'SLD_1_0_0.RANDOM'
           }]
       }],
-    elementInfos: [{
-        elementName: 'RemoteOWS',
-        typeInfo: 'SLD_1_0_0.RemoteOWS'
+    eis: [{
+        en: 'RemoteOWS',
+        ti: 'SLD_1_0_0.RemoteOWS'
       }, {
-        elementName: 'OnlineResource',
-        typeInfo: 'SLD_1_0_0.OnlineResource'
+        en: 'OnlineResource',
+        ti: 'SLD_1_0_0.OnlineResource'
       }, {
-        elementName: 'UserStyle',
-        typeInfo: 'SLD_1_0_0.UserStyle'
+        en: 'UserStyle',
+        ti: 'SLD_1_0_0.UserStyle'
       }, {
-        elementName: 'FeatureTypeStyle',
-        typeInfo: 'SLD_1_0_0.FeatureTypeStyle'
+        en: 'FeatureTypeStyle',
+        ti: 'SLD_1_0_0.FeatureTypeStyle'
       }, {
-        elementName: 'Rule',
-        typeInfo: 'SLD_1_0_0.Rule'
+        en: 'Rule',
+        ti: 'SLD_1_0_0.Rule'
       }, {
-        elementName: 'LegendGraphic',
-        typeInfo: 'SLD_1_0_0.LegendGraphic'
+        en: 'LegendGraphic',
+        ti: 'SLD_1_0_0.LegendGraphic'
       }, {
-        elementName: 'Graphic',
-        typeInfo: 'SLD_1_0_0.Graphic'
+        en: 'Graphic',
+        ti: 'SLD_1_0_0.Graphic'
       }, {
-        elementName: 'ExternalGraphic',
-        typeInfo: 'SLD_1_0_0.ExternalGraphic'
+        en: 'ExternalGraphic',
+        ti: 'SLD_1_0_0.ExternalGraphic'
       }, {
-        elementName: 'Mark',
-        typeInfo: 'SLD_1_0_0.Mark'
+        en: 'Mark',
+        ti: 'SLD_1_0_0.Mark'
       }, {
-        elementName: 'Fill',
-        typeInfo: 'SLD_1_0_0.Fill'
+        en: 'Fill',
+        ti: 'SLD_1_0_0.Fill'
       }, {
-        elementName: 'GraphicFill',
-        typeInfo: 'SLD_1_0_0.GraphicFill'
+        en: 'GraphicFill',
+        ti: 'SLD_1_0_0.GraphicFill'
       }, {
-        elementName: 'CssParameter',
-        typeInfo: 'SLD_1_0_0.CssParameter'
+        en: 'CssParameter',
+        ti: 'SLD_1_0_0.CssParameter'
       }, {
-        elementName: 'Stroke',
-        typeInfo: 'SLD_1_0_0.Stroke'
+        en: 'Stroke',
+        ti: 'SLD_1_0_0.Stroke'
       }, {
-        elementName: 'GraphicStroke',
-        typeInfo: 'SLD_1_0_0.GraphicStroke'
+        en: 'GraphicStroke',
+        ti: 'SLD_1_0_0.GraphicStroke'
       }, {
-        elementName: 'ElseFilter',
-        typeInfo: 'SLD_1_0_0.ElseFilter'
+        en: 'ElseFilter',
+        ti: 'SLD_1_0_0.ElseFilter'
       }, {
-        elementName: 'PointPlacement',
-        typeInfo: 'SLD_1_0_0.PointPlacement'
+        en: 'PointPlacement',
+        ti: 'SLD_1_0_0.PointPlacement'
       }, {
-        elementName: 'AnchorPoint',
-        typeInfo: 'SLD_1_0_0.AnchorPoint'
+        en: 'AnchorPoint',
+        ti: 'SLD_1_0_0.AnchorPoint'
       }, {
-        elementName: 'Displacement',
-        typeInfo: 'SLD_1_0_0.Displacement'
+        en: 'Displacement',
+        ti: 'SLD_1_0_0.Displacement'
       }, {
-        elementName: 'Histogram',
-        typeInfo: 'SLD_1_0_0.Histogram'
+        en: 'Histogram',
+        ti: 'SLD_1_0_0.Histogram'
       }, {
-        elementName: 'ImageOutline',
-        typeInfo: 'SLD_1_0_0.ImageOutline'
+        en: 'ImageOutline',
+        ti: 'SLD_1_0_0.ImageOutline'
       }, {
-        elementName: 'LayerFeatureConstraints',
-        typeInfo: 'SLD_1_0_0.LayerFeatureConstraints'
+        en: 'LayerFeatureConstraints',
+        ti: 'SLD_1_0_0.LayerFeatureConstraints'
       }, {
-        elementName: 'FeatureTypeConstraint',
-        typeInfo: 'SLD_1_0_0.FeatureTypeConstraint'
+        en: 'FeatureTypeConstraint',
+        ti: 'SLD_1_0_0.FeatureTypeConstraint'
       }, {
-        elementName: 'Extent',
-        typeInfo: 'SLD_1_0_0.Extent'
+        en: 'Extent',
+        ti: 'SLD_1_0_0.Extent'
       }, {
-        elementName: 'StyledLayerDescriptor',
-        typeInfo: 'SLD_1_0_0.StyledLayerDescriptor'
+        en: 'StyledLayerDescriptor',
+        ti: 'SLD_1_0_0.StyledLayerDescriptor'
       }, {
-        elementName: 'NamedLayer',
-        typeInfo: 'SLD_1_0_0.NamedLayer'
+        en: 'NamedLayer',
+        ti: 'SLD_1_0_0.NamedLayer'
       }, {
-        elementName: 'NamedStyle',
-        typeInfo: 'SLD_1_0_0.NamedStyle'
+        en: 'NamedStyle',
+        ti: 'SLD_1_0_0.NamedStyle'
       }, {
-        elementName: 'UserLayer',
-        typeInfo: 'SLD_1_0_0.UserLayer'
+        en: 'UserLayer',
+        ti: 'SLD_1_0_0.UserLayer'
       }, {
-        elementName: 'LATEST_ON_TOP',
-        typeInfo: 'SLD_1_0_0.LATESTONTOP'
+        en: 'LATEST_ON_TOP',
+        ti: 'SLD_1_0_0.LATESTONTOP'
       }, {
-        elementName: 'ChannelSelection',
-        typeInfo: 'SLD_1_0_0.ChannelSelection'
+        en: 'ChannelSelection',
+        ti: 'SLD_1_0_0.ChannelSelection'
       }, {
-        elementName: 'EARLIEST_ON_TOP',
-        typeInfo: 'SLD_1_0_0.EARLIESTONTOP'
+        en: 'EARLIEST_ON_TOP',
+        ti: 'SLD_1_0_0.EARLIESTONTOP'
       }, {
-        elementName: 'ColorMap',
-        typeInfo: 'SLD_1_0_0.ColorMap'
+        en: 'ColorMap',
+        ti: 'SLD_1_0_0.ColorMap'
       }, {
-        elementName: 'ColorMapEntry',
-        typeInfo: 'SLD_1_0_0.ColorMapEntry'
+        en: 'ColorMapEntry',
+        ti: 'SLD_1_0_0.ColorMapEntry'
       }, {
-        elementName: 'Font',
-        typeInfo: 'SLD_1_0_0.Font'
+        en: 'Font',
+        ti: 'SLD_1_0_0.Font'
       }, {
-        elementName: 'AVERAGE',
-        typeInfo: 'SLD_1_0_0.AVERAGE'
+        en: 'AVERAGE',
+        ti: 'SLD_1_0_0.AVERAGE'
       }, {
-        elementName: 'LinePlacement',
-        typeInfo: 'SLD_1_0_0.LinePlacement'
+        en: 'LinePlacement',
+        ti: 'SLD_1_0_0.LinePlacement'
       }, {
-        elementName: 'Normalize',
-        typeInfo: 'SLD_1_0_0.Normalize'
+        en: 'Normalize',
+        ti: 'SLD_1_0_0.Normalize'
       }, {
-        elementName: 'RANDOM',
-        typeInfo: 'SLD_1_0_0.RANDOM'
+        en: 'RANDOM',
+        ti: 'SLD_1_0_0.RANDOM'
       }, {
-        elementName: 'ShadedRelief',
-        typeInfo: 'SLD_1_0_0.ShadedRelief'
+        en: 'ShadedRelief',
+        ti: 'SLD_1_0_0.ShadedRelief'
       }, {
-        elementName: 'Geometry',
-        typeInfo: 'SLD_1_0_0.Geometry'
+        en: 'Geometry',
+        ti: 'SLD_1_0_0.Geometry'
       }, {
-        elementName: 'ContrastEnhancement',
-        typeInfo: 'SLD_1_0_0.ContrastEnhancement'
+        en: 'ContrastEnhancement',
+        ti: 'SLD_1_0_0.ContrastEnhancement'
       }, {
-        elementName: 'LabelPlacement',
-        typeInfo: 'SLD_1_0_0.LabelPlacement'
+        en: 'LabelPlacement',
+        ti: 'SLD_1_0_0.LabelPlacement'
       }, {
-        elementName: 'Halo',
-        typeInfo: 'SLD_1_0_0.Halo'
+        en: 'Halo',
+        ti: 'SLD_1_0_0.Halo'
       }, {
-        elementName: 'OverlapBehavior',
-        typeInfo: 'SLD_1_0_0.OverlapBehavior'
+        en: 'OverlapBehavior',
+        ti: 'SLD_1_0_0.OverlapBehavior'
       }, {
-        elementName: 'Name',
-        typeInfo: 'String'
+        en: 'Name'
       }, {
-        elementName: 'Label',
-        typeInfo: 'SLD_1_0_0.ParameterValueType'
+        en: 'Label',
+        ti: 'SLD_1_0_0.ParameterValueType'
       }, {
-        elementName: 'DisplacementY',
-        typeInfo: 'SLD_1_0_0.ParameterValueType'
+        en: 'DisplacementY',
+        ti: 'SLD_1_0_0.ParameterValueType'
       }, {
-        elementName: 'GammaValue',
-        typeInfo: 'Double'
+        en: 'GammaValue',
+        ti: 'Double'
       }, {
-        elementName: 'SemanticTypeIdentifier',
-        typeInfo: 'String'
+        en: 'SemanticTypeIdentifier'
       }, {
-        elementName: 'DisplacementX',
-        typeInfo: 'SLD_1_0_0.ParameterValueType'
+        en: 'DisplacementX',
+        ti: 'SLD_1_0_0.ParameterValueType'
       }, {
-        elementName: 'MaxScaleDenominator',
-        typeInfo: 'Double'
+        en: 'MaxScaleDenominator',
+        ti: 'Double'
       }, {
-        elementName: 'PolygonSymbolizer',
-        typeInfo: 'SLD_1_0_0.PolygonSymbolizer',
-        substitutionHead: 'Symbolizer'
+        en: 'PolygonSymbolizer',
+        ti: 'SLD_1_0_0.PolygonSymbolizer',
+        sh: 'Symbolizer'
       }, {
-        elementName: 'Size',
-        typeInfo: 'SLD_1_0_0.ParameterValueType'
+        en: 'Size',
+        ti: 'SLD_1_0_0.ParameterValueType'
       }, {
-        elementName: 'Radius',
-        typeInfo: 'SLD_1_0_0.ParameterValueType'
+        en: 'Radius',
+        ti: 'SLD_1_0_0.ParameterValueType'
       }, {
-        elementName: 'GrayChannel',
-        typeInfo: 'SLD_1_0_0.SelectedChannelType'
+        en: 'GrayChannel',
+        ti: 'SLD_1_0_0.SelectedChannelType'
       }, {
-        elementName: 'MinScaleDenominator',
-        typeInfo: 'Double'
+        en: 'MinScaleDenominator',
+        ti: 'Double'
       }, {
-        elementName: 'WellKnownName',
-        typeInfo: 'String'
+        en: 'WellKnownName'
       }, {
-        elementName: 'ReliefFactor',
-        typeInfo: 'Double'
+        en: 'ReliefFactor',
+        ti: 'Double'
       }, {
-        elementName: 'Opacity',
-        typeInfo: 'SLD_1_0_0.ParameterValueType'
+        en: 'Opacity',
+        ti: 'SLD_1_0_0.ParameterValueType'
       }, {
-        elementName: 'Format',
-        typeInfo: 'String'
+        en: 'Format'
       }, {
-        elementName: 'Rotation',
-        typeInfo: 'SLD_1_0_0.ParameterValueType'
+        en: 'Rotation',
+        ti: 'SLD_1_0_0.ParameterValueType'
       }, {
-        elementName: 'RedChannel',
-        typeInfo: 'SLD_1_0_0.SelectedChannelType'
+        en: 'RedChannel',
+        ti: 'SLD_1_0_0.SelectedChannelType'
       }, {
-        elementName: 'Symbolizer',
-        typeInfo: 'SLD_1_0_0.SymbolizerType'
+        en: 'Symbolizer',
+        ti: 'SLD_1_0_0.SymbolizerType'
       }, {
-        elementName: 'SourceChannelName',
-        typeInfo: 'String'
+        en: 'SourceChannelName'
       }, {
-        elementName: 'Service',
-        typeInfo: 'String'
+        en: 'Service'
       }, {
-        elementName: 'Title',
-        typeInfo: 'String'
+        en: 'Title'
       }, {
-        elementName: 'Abstract',
-        typeInfo: 'String'
+        en: 'Abstract'
       }, {
-        elementName: 'IsDefault',
-        typeInfo: 'Boolean'
+        en: 'IsDefault',
+        ti: 'Boolean'
       }, {
-        elementName: 'PointSymbolizer',
-        typeInfo: 'SLD_1_0_0.PointSymbolizer',
-        substitutionHead: 'Symbolizer'
+        en: 'PointSymbolizer',
+        ti: 'SLD_1_0_0.PointSymbolizer',
+        sh: 'Symbolizer'
       }, {
-        elementName: 'PerpendicularOffset',
-        typeInfo: 'SLD_1_0_0.ParameterValueType'
+        en: 'PerpendicularOffset',
+        ti: 'SLD_1_0_0.ParameterValueType'
       }, {
-        elementName: 'FeatureTypeName',
-        typeInfo: 'String'
+        en: 'FeatureTypeName'
       }, {
-        elementName: 'Value',
-        typeInfo: 'String'
+        en: 'Value'
       }, {
-        elementName: 'BlueChannel',
-        typeInfo: 'SLD_1_0_0.SelectedChannelType'
+        en: 'BlueChannel',
+        ti: 'SLD_1_0_0.SelectedChannelType'
       }, {
-        elementName: 'GreenChannel',
-        typeInfo: 'SLD_1_0_0.SelectedChannelType'
+        en: 'GreenChannel',
+        ti: 'SLD_1_0_0.SelectedChannelType'
       }, {
-        elementName: 'TextSymbolizer',
-        typeInfo: 'SLD_1_0_0.TextSymbolizer',
-        substitutionHead: 'Symbolizer'
+        en: 'TextSymbolizer',
+        ti: 'SLD_1_0_0.TextSymbolizer',
+        sh: 'Symbolizer'
       }, {
-        elementName: 'LineSymbolizer',
-        typeInfo: 'SLD_1_0_0.LineSymbolizer',
-        substitutionHead: 'Symbolizer'
+        en: 'LineSymbolizer',
+        ti: 'SLD_1_0_0.LineSymbolizer',
+        sh: 'Symbolizer'
       }, {
-        elementName: 'AnchorPointX',
-        typeInfo: 'SLD_1_0_0.ParameterValueType'
+        en: 'AnchorPointX',
+        ti: 'SLD_1_0_0.ParameterValueType'
       }, {
-        elementName: 'RasterSymbolizer',
-        typeInfo: 'SLD_1_0_0.RasterSymbolizer',
-        substitutionHead: 'Symbolizer'
+        en: 'RasterSymbolizer',
+        ti: 'SLD_1_0_0.RasterSymbolizer',
+        sh: 'Symbolizer'
       }, {
-        elementName: 'BrightnessOnly',
-        typeInfo: 'Boolean'
+        en: 'BrightnessOnly',
+        ti: 'Boolean'
       }, {
-        elementName: 'AnchorPointY',
-        typeInfo: 'SLD_1_0_0.ParameterValueType'
+        en: 'AnchorPointY',
+        ti: 'SLD_1_0_0.ParameterValueType'
       }]
   };
   return {

@@ -1,96 +1,95 @@
 var DC_1_1_Module_Factory = function () {
   var DC_1_1 = {
-    name: 'DC_1_1',
-    defaultElementNamespaceURI: 'http:\/\/purl.org\/dc\/elements\/1.1\/',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'SimpleLiteral',
-        propertyInfos: [{
-            name: 'content',
-            collection: true,
-            mixed: true,
-            elementTypeInfos: [],
-            type: 'elementRefs'
+    n: 'DC_1_1',
+    dens: 'http:\/\/purl.org\/dc\/elements\/1.1\/',
+    tis: [{
+        ln: 'SimpleLiteral',
+        ps: [{
+            n: 'content',
+            col: true,
+            dom: false,
+            typed: false,
+            t: 'ers'
           }, {
-            name: 'scheme',
-            typeInfo: 'String',
-            attributeName: 'scheme',
-            type: 'attribute'
+            n: 'scheme',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ElementContainer',
-        propertyInfos: [{
-            name: 'dcElement',
-            collection: true,
-            elementName: 'DC-element',
-            typeInfo: 'DC_1_1.SimpleLiteral',
-            type: 'elementRef'
+        ln: 'ElementContainer',
+        ps: [{
+            n: 'dcElement',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'DC-element',
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
           }]
       }],
-    elementInfos: [{
-        elementName: 'contributor',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+    eis: [{
+        en: 'contributor',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'rights',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'rights',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'description',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'description',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'title',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'title',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'DC-element',
-        typeInfo: 'DC_1_1.SimpleLiteral'
+        en: 'DC-element',
+        ti: 'DC_1_1.SimpleLiteral'
       }, {
-        elementName: 'coverage',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'coverage',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'creator',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'creator',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'date',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'date',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'subject',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'subject',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'language',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'language',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'source',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'source',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'type',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'type',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'relation',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'relation',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'publisher',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'publisher',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'identifier',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'identifier',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }, {
-        elementName: 'format',
-        typeInfo: 'DC_1_1.SimpleLiteral',
-        substitutionHead: 'DC-element'
+        en: 'format',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'DC-element'
       }]
   };
   return {
