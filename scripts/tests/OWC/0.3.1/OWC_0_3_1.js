@@ -9,6 +9,8 @@ var GML_2_1_2 = require('../../../ogc-schemas').GML_2_1_2;
 var SLD_1_0_0 = require('../../../ogc-schemas').SLD_1_0_0;
 var OWC_0_3_1 = require('../../../ogc-schemas').OWC_0_3_1;
 
+var roundtrips = require('../../roundtrip').roundtrips;
+
 var roundtrip = require('../../roundtrip').roundtrip;
 var mappings = [XLink_1_0, OWS_1_0_0, Filter_1_0_0, GML_2_1_2, SLD_1_0_0, OWC_0_3_1];
 module.exports = {
@@ -42,7 +44,5 @@ module.exports = {
 			test.done();
 		});
 	},
-	"Roundtrips" : {
-		"example-owsContext.xml" : function(test) {roundtrip(test, mappings, "tests/OWC/0.3.1/example-owsContext.xml");}
-	}
+	"Roundtrips" : roundtrips(mappings, __dirname)
 };

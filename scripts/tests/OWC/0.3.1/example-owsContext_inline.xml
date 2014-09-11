@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OWSContext xmlns="http://www.opengis.net/ows-context" xmlns:gml="http://www.opengis.net/gml" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ows="http://www.opengis.net/ows" xmlns:sld="http://www.opengis.net/sld" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="0.3.1" id="ows-context-ex-1-v3" xsi:schemaLocation="http://www.opengis.net/ows-context http://www.ogcnetwork.net/schemas/owc/0.3.0/owsContext.xsd">
+<owc:OWSContext
+    xmlns:owc="http://www.opengis.net/ows-context"
+    xmlns="http://www.opengis.net/ows-context" xmlns:gml="http://www.opengis.net/gml" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ows="http://www.opengis.net/ows" xmlns:sld="http://www.opengis.net/sld" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="0.3.1" id="ows-context-ex-1-v3" xsi:schemaLocation="http://www.opengis.net/ows-context http://www.ogcnetwork.net/schemas/owc/0.3.0/owsContext.xsd">
     <General>
         <ows:BoundingBox crs="urn:ogc:def:crs:EPSG:6.6:4326">
             <ows:LowerCorner>-117.44667178362664 32.57086210449395</ows:LowerCorner>
@@ -41,4 +43,4 @@
             </kml:Document>
         </Layer>
     </ResourceList>
-</OWSContext>
+</owc:OWSContext>

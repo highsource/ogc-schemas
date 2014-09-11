@@ -1,4 +1,6 @@
-<OWSContext xmlns="http://www.opengis.net/ows-context" version="0.3.1" id="foo" xsi:schemaLocation="http://www.opengis.net/ows-context http://www.ogcnetwork.net/schemas/owc/0.3.1/owsContext.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<owc:OWSContext
+    xmlns:owc="http://www.opengis.net/ows-context"
+    xmlns="http://www.opengis.net/ows-context" version="0.3.1" id="foo" xsi:schemaLocation="http://www.opengis.net/ows-context http://www.ogcnetwork.net/schemas/owc/0.3.1/owsContext.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <General>
         <ows:BoundingBox xmlns:ows="http://www.opengis.net/ows" crs="EPSG:4326">
             <ows:LowerCorner>-5.986328125 27.9150390625</ows:LowerCorner>
@@ -21,4 +23,4 @@
             </Server>
         </Layer>
     </ResourceList>
-</OWSContext>
+</owc:OWSContext>

@@ -51,8 +51,8 @@
 		"test" : "nodeunit tests/tests.js"
 	},
 	"dependencies": {
-		"jsonix": "~2.0.12",
-		"w3c-schemas": "~1.0.0"
+		"jsonix": "~2.0.13",
+		"w3c-schemas": "~1.0.2"
 	},
 	"devDependencies" : {
 		"nodeunit" : "~0.8.6",

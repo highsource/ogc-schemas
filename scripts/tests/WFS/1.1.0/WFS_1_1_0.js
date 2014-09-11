@@ -19,6 +19,7 @@ module.exports = {
 		var unmarshaller = context.createUnmarshaller();
 		unmarshaller.unmarshalFile("tests/WFS/1.1.0/GetCapabilities-01.xml", function(result) {
 			test.equal("DOCS", result.value.featureTypeList.featureType[0].title);
+			test.equal('{http://www.sfmta.com/}asbuilt:DOCS', result.value.featureTypeList.featureType[0].name.string);
 			test.done();
 		});
 	},

@@ -45,6 +45,7 @@
 							<arg>-Xfluent-api</arg>
 							<!--arg>-Xvisitor</arg-->
 							<arg>-Xjsonix</arg>
+							<arg>-Xjsonix-compact</arg>
 						</args>
 						<plugins>
 							<plugin>
