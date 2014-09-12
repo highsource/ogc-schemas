@@ -4,22 +4,42 @@ var OWS_1_1_0 = require('../../../ogc-schemas').OWS_1_1_0;
 var Filter_2_0 = require('../../../ogc-schemas').Filter_2_0;
 var WFS_2_0 = require('../../../ogc-schemas').WFS_2_0;
 
-var roundtrip = require('../../roundtrip').roundtrip;
+var roundtrips = require('../../roundtrip').roundtrips;
 var mappings = [XLink_1_0, OWS_1_1_0, Filter_2_0, WFS_2_0];
 module.exports = {
 	"Context": function(test) {
 		var context = new Jsonix.Context(mappings);
 		test.done();
         },
-/*	"Example" : function(test) {
-		var context =  new Jsonix.Context([XLink_1_0, OWS_1_1_0, WPS_1_0_0]);
+	"Example" : function(test) {
+		var context =  new Jsonix.Context(mappings);
 		var unmarshaller = context.createUnmarshaller();
-		unmarshaller.unmarshalFile("tests/WPS/1.0.0/execute-01.xml", function(result) {
-			test.equal("geom", result.value.dataInputs.input[0].title.value);
+		unmarshaller.unmarshalFile("tests/WFS/2.0/GetFeature-01.xml", function(result) {
+			test.equal('opengeo:restricted', result.value.abstractQueryExpression[0].value.typeNames[0]);
 			test.done();
 		});
 	},
-	"Roundtrips" : {
-		"execute-01.xml" : function(test) {roundtrip(test, mappings, "tests/WPS/1.0.0/execute-01.xml");}
-	}*/
+	"Roundtrips" : roundtrips(mappings, __dirname),
+	"QName" : function(test) {
+		var context = new Jsonix.Context(mappings, {
+			namespacePrefixes : { 'http://opengeo.org' : opengeo }
+		});
+		var marshaller = context.createMarshaller();
+		var data = {
+			service : 'WFS',
+			version : '1.0.0',
+			outputFormat : 'GML2',
+			abstractQueryExpression : [
+				{
+					// TODO this should be reduceable to 'Query'
+					name : { ns : 'http://www.opengis.net/wfs/2.0', lp : 'Query', p : 'wfs' },
+					value : { typeNames: [ 'opengeo:restricted' ] }
+				}
+			]
+		};
+		var result = { name : { ns : 'http://www.opengis.net/wfs/2.0', lp : 'GetFeature', p : 'wfs' } , value : data };
+		console.log(marshaller.marshalString(result));
+		test.done();
+	}
+
 };
