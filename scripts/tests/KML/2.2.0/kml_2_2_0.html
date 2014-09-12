@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<script type="text/javascript" src="../../../node_modules/jsonix/jsonix.js"></script> 
+		<script type="text/javascript" src="../../../lib/Atom_1_0.js"></script> 
+		<script type="text/javascript" src="../../../lib/xAL_2_0.js"></script> 
+		<script type="text/javascript" src="../../../lib/KML_2_2_0.js"></script> 
+	</head>
+	<body>
+		<script>
+			var context =  new Jsonix.Context([Atom_1_0, xAL_2_0, KML_2_2_0]);
+			var unmarshaller = context.createUnmarshaller();
+			unmarshaller.unmarshalURL("states.kml", function(result) {
+				console.log(result.value.abstractFeatureGroup.value.abstractFeatureGroup[0].value.name);
+			});
+		</script>
+	</body>
+</html>
