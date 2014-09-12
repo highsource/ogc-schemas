@@ -22,7 +22,7 @@ module.exports = {
 	"Roundtrips" : roundtrips(mappings, __dirname),
 	"QName" : function(test) {
 		var context = new Jsonix.Context(mappings, {
-			namespacePrefixes : { 'http://opengeo.org' : opengeo }
+			namespacePrefixes : { 'http://opengeo.org' : 'opengeo' }
 		});
 		var marshaller = context.createMarshaller();
 		var data = {
@@ -38,7 +38,8 @@ module.exports = {
 			]
 		};
 		var result = { name : { ns : 'http://www.opengis.net/wfs/2.0', lp : 'GetFeature', p : 'wfs' } , value : data };
-		console.log(marshaller.marshalString(result));
+		// TODO Will work in 2.1.1
+//		test.ok(marshaller.marshalString(result).indexOf('xmlns:opengeo="http://opengeo.org"') >= 0);
 		test.done();
 	}
 
