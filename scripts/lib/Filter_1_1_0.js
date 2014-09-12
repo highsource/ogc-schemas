@@ -20,28 +20,35 @@ var Filter_1_1_0_Module_Factory = function () {
         ln: 'BinarySpatialOpType',
         bti: 'Filter_1_1_0.SpatialOpsType',
         ps: [{
-            n: 'rest',
-            col: true,
+            n: 'propertyName1',
+            en: 'PropertyName',
+            ti: 'Filter_1_1_0.PropertyNameType'
+          }, {
+            n: 'propertyName2',
+            en: 'PropertyName',
+            ti: 'Filter_1_1_0.PropertyNameType'
+          }, {
+            n: 'geometry',
             mx: false,
             dom: false,
             typed: false,
-            etis: [{
-                en: {
-                  lp: '_Geometry',
-                  ns: 'http:\/\/www.opengis.net\/gml'
-                },
-                ti: 'GML_3_1_1.AbstractGeometryType'
-              }, {
-                en: 'PropertyName',
-                ti: 'Filter_1_1_0.PropertyNameType'
-              }, {
-                en: {
-                  lp: 'Envelope',
-                  ns: 'http:\/\/www.opengis.net\/gml'
-                },
-                ti: 'GML_3_1_1.EnvelopeType'
-              }],
-            t: 'ers'
+            en: {
+              lp: '_Geometry',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'envelope',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'Envelope',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.EnvelopeType',
+            t: 'er'
           }]
       }, {
         ln: 'SpatialOpsType'
@@ -58,14 +65,14 @@ var Filter_1_1_0_Module_Factory = function () {
                 en: 'comparisonOps',
                 ti: 'Filter_1_1_0.ComparisonOpsType'
               }, {
-                en: 'Function',
-                ti: 'Filter_1_1_0.FunctionType'
+                en: 'logicOps',
+                ti: 'Filter_1_1_0.LogicOpsType'
               }, {
                 en: 'spatialOps',
                 ti: 'Filter_1_1_0.SpatialOpsType'
               }, {
-                en: 'logicOps',
-                ti: 'Filter_1_1_0.LogicOpsType'
+                en: 'Function',
+                ti: 'Filter_1_1_0.FunctionType'
               }],
             t: 'ers'
           }]
@@ -403,7 +410,8 @@ var Filter_1_1_0_Module_Factory = function () {
         ps: [{
             n: 'geometryOperand',
             col: true,
-            en: 'GeometryOperand'
+            en: 'GeometryOperand',
+            ti: 'QName'
           }]
       }, {
         ln: 'SortPropertyType',

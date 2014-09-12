@@ -12,7 +12,8 @@ var CSW_2_0_2_Module_Factory = function () {
           }, {
             n: 'elementName',
             col: true,
-            en: 'ElementName'
+            en: 'ElementName',
+            ti: 'QName'
           }, {
             n: 'constraint',
             en: 'Constraint',
@@ -25,7 +26,8 @@ var CSW_2_0_2_Module_Factory = function () {
           }, {
             n: 'typeNames',
             ti: {
-              t: 'l'
+              t: 'l',
+              ti: 'QName'
             },
             t: 'a'
           }]
@@ -124,7 +126,8 @@ var CSW_2_0_2_Module_Factory = function () {
         ps: [{
             n: 'typeName',
             col: true,
-            en: 'TypeName'
+            en: 'TypeName',
+            ti: 'QName'
           }, {
             n: 'outputFormat',
             t: 'a'
@@ -235,7 +238,8 @@ var CSW_2_0_2_Module_Factory = function () {
           }, {
             n: 'typeNames',
             ti: {
-              t: 'l'
+              t: 'l',
+              ti: 'QName'
             },
             t: 'a'
           }]
@@ -517,6 +521,7 @@ var CSW_2_0_2_Module_Factory = function () {
             ti: 'CSW_2_0_2.RangeOfValuesType'
           }, {
             n: 'type',
+            ti: 'QName',
             t: 'a'
           }, {
             n: 'uom',

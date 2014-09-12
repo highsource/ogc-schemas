@@ -1,594 +1,469 @@
 var SOS_1_0_0_Module_Factory = function () {
   var SOS_1_0_0 = {
-    name: 'SOS_1_0_0',
-    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/sos\/1.0',
-    typeInfos: [{
-        type: 'classInfo',
-        localName: 'DescribeFeatureType',
-        baseTypeInfo: 'SOS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureId',
-            elementName: 'FeatureId',
-            typeInfo: 'String'
+    n: 'SOS_1_0_0',
+    dens: 'http:\/\/www.opengis.net\/sos\/1.0',
+    tis: [{
+        ln: 'DescribeFeatureType',
+        bti: 'SOS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'featureId',
+            en: 'FeatureId'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RequestBaseType',
-        propertyInfos: [{
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+        ln: 'RequestBaseType',
+        ps: [{
+            n: 'service',
+            t: 'a'
           }, {
-            name: 'version',
-            typeInfo: 'String',
-            attributeName: 'version',
-            type: 'attribute'
+            n: 'version',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RegisterSensorResponse',
-        propertyInfos: [{
-            type: 'element',
-            name: 'assignedSensorId',
-            elementName: 'AssignedSensorId',
-            typeInfo: 'String'
+        ln: 'RegisterSensorResponse',
+        ps: [{
+            n: 'assignedSensorId',
+            en: 'AssignedSensorId'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetResult',
-        baseTypeInfo: 'SOS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'observationTemplateId',
-            elementName: 'ObservationTemplateId',
-            typeInfo: 'String'
+        ln: 'GetResult',
+        bti: 'SOS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'observationTemplateId',
+            en: 'ObservationTemplateId'
           }, {
-            type: 'element',
-            name: 'eventTime',
-            collection: true,
-            elementName: 'eventTime',
-            typeInfo: 'SOS_1_0_0.GetResult.EventTime'
+            n: 'eventTime',
+            col: true,
+            ti: 'SOS_1_0_0.GetResult.EventTime'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetResult.EventTime',
-        propertyInfos: [{
-            name: 'temporalOps',
-            elementName: {
-              localPart: 'temporalOps',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'GetResult.EventTime',
+        ps: [{
+            n: 'temporalOps',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'temporalOps',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'SOS_1_0_0_Filter.TemporalOpsType',
-            type: 'elementRef'
+            ti: 'SOS_1_0_0_Filter.TemporalOpsType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetResultResponse',
-        propertyInfos: [{
-            type: 'element',
-            name: 'result',
-            elementName: 'result',
-            typeInfo: 'SOS_1_0_0.GetResultResponse.Result'
+        ln: 'GetResultResponse',
+        ps: [{
+            n: 'result',
+            ti: 'SOS_1_0_0.GetResultResponse.Result'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetResultResponse.Result',
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'String',
-            type: 'value'
+        ln: 'GetResultResponse.Result',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            name: 'rs',
-            typeInfo: 'String',
-            attributeName: 'RS',
-            type: 'attribute'
+            n: 'rs',
+            an: 'RS',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DescribeSensor',
-        baseTypeInfo: 'SOS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'procedure',
-            elementName: 'procedure',
-            typeInfo: 'String'
+        ln: 'DescribeSensor',
+        bti: 'SOS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'procedure'
           }, {
-            name: 'outputFormat',
-            typeInfo: 'String',
-            attributeName: 'outputFormat',
-            type: 'attribute'
+            n: 'outputFormat',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'InsertObservation',
-        baseTypeInfo: 'SOS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'assignedSensorId',
-            elementName: 'AssignedSensorId',
-            typeInfo: 'String'
+        ln: 'InsertObservation',
+        bti: 'SOS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'assignedSensorId',
+            en: 'AssignedSensorId'
           }, {
-            type: 'element',
-            name: 'observation',
-            elementName: {
-              localPart: 'Observation',
-              namespaceURI: 'http:\/\/www.opengis.net\/om\/1.0'
+            n: 'observation',
+            en: {
+              lp: 'Observation',
+              ns: 'http:\/\/www.opengis.net\/om\/1.0'
             },
-            typeInfo: 'OM_1_0_0.ObservationType'
+            ti: 'OM_1_0_0.ObservationType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetObservation',
-        baseTypeInfo: 'SOS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'offering',
-            elementName: 'offering',
-            typeInfo: 'String'
+        ln: 'GetObservation',
+        bti: 'SOS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'offering'
           }, {
-            type: 'element',
-            name: 'eventTime',
-            collection: true,
-            elementName: 'eventTime',
-            typeInfo: 'SOS_1_0_0.GetObservation.EventTime'
+            n: 'eventTime',
+            col: true,
+            ti: 'SOS_1_0_0.GetObservation.EventTime'
           }, {
-            type: 'element',
-            name: 'procedure',
-            collection: true,
-            elementName: 'procedure',
-            typeInfo: 'String'
+            n: 'procedure',
+            col: true
           }, {
-            type: 'element',
-            name: 'observedProperty',
-            collection: true,
-            elementName: 'observedProperty',
-            typeInfo: 'String'
+            n: 'observedProperty',
+            col: true
           }, {
-            type: 'element',
-            name: 'featureOfInterest',
-            elementName: 'featureOfInterest',
-            typeInfo: 'SOS_1_0_0.GetObservation.FeatureOfInterest'
+            n: 'featureOfInterest',
+            ti: 'SOS_1_0_0.GetObservation.FeatureOfInterest'
           }, {
-            type: 'element',
-            name: 'result',
-            elementName: 'result',
-            typeInfo: 'SOS_1_0_0.GetObservation.Result'
+            n: 'result',
+            ti: 'SOS_1_0_0.GetObservation.Result'
           }, {
-            type: 'element',
-            name: 'responseFormat',
-            elementName: 'responseFormat',
-            typeInfo: 'String'
+            n: 'responseFormat'
           }, {
-            type: 'element',
-            name: 'resultModel',
-            elementName: 'resultModel',
-            typeInfo: 'String'
+            n: 'resultModel',
+            ti: 'QName'
           }, {
-            type: 'element',
-            name: 'responseMode',
-            elementName: 'responseMode',
-            typeInfo: 'String'
+            n: 'responseMode'
           }, {
-            name: 'srsName',
-            typeInfo: 'String',
-            attributeName: 'srsName',
-            type: 'attribute'
+            n: 'srsName',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetObservation.EventTime',
-        propertyInfos: [{
-            name: 'temporalOps',
-            elementName: {
-              localPart: 'temporalOps',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'GetObservation.EventTime',
+        ps: [{
+            n: 'temporalOps',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'temporalOps',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'SOS_1_0_0_Filter.TemporalOpsType',
-            type: 'elementRef'
+            ti: 'SOS_1_0_0_Filter.TemporalOpsType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetObservation.FeatureOfInterest',
-        propertyInfos: [{
-            name: 'spatialOps',
-            elementName: {
-              localPart: 'spatialOps',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'GetObservation.FeatureOfInterest',
+        ps: [{
+            n: 'spatialOps',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'spatialOps',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'SOS_1_0_0_Filter.SpatialOpsType',
-            type: 'elementRef'
+            ti: 'SOS_1_0_0_Filter.SpatialOpsType',
+            t: 'er'
           }, {
-            type: 'element',
-            name: 'objectID',
-            collection: true,
-            elementName: 'ObjectID',
-            typeInfo: 'String'
+            n: 'objectID',
+            col: true,
+            en: 'ObjectID'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetObservation.Result',
-        propertyInfos: [{
-            name: 'comparisonOps',
-            elementName: {
-              localPart: 'comparisonOps',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'GetObservation.Result',
+        ps: [{
+            n: 'comparisonOps',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'comparisonOps',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'SOS_1_0_0_Filter.ComparisonOpsType',
-            type: 'elementRef'
+            ti: 'SOS_1_0_0_Filter.ComparisonOpsType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DescribeObservationType',
-        baseTypeInfo: 'SOS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'observedProperty',
-            elementName: 'observedProperty',
-            typeInfo: 'String'
+        ln: 'DescribeObservationType',
+        bti: 'SOS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'observedProperty'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Contents',
-        propertyInfos: [{
-            type: 'element',
-            name: 'observationOfferingList',
-            elementName: 'ObservationOfferingList',
-            typeInfo: 'SOS_1_0_0.Contents.ObservationOfferingList'
+        ln: 'Contents',
+        ps: [{
+            n: 'observationOfferingList',
+            en: 'ObservationOfferingList',
+            ti: 'SOS_1_0_0.Contents.ObservationOfferingList'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Contents.ObservationOfferingList',
-        propertyInfos: [{
-            type: 'element',
-            name: 'observationOffering',
-            collection: true,
-            elementName: 'ObservationOffering',
-            typeInfo: 'SOS_1_0_0.ObservationOfferingType'
+        ln: 'Contents.ObservationOfferingList',
+        ps: [{
+            n: 'observationOffering',
+            col: true,
+            en: 'ObservationOffering',
+            ti: 'SOS_1_0_0.ObservationOfferingType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetCapabilities',
-        baseTypeInfo: 'OWS_1_1_0.GetCapabilitiesType',
-        propertyInfos: [{
-            name: 'service',
-            typeInfo: 'String',
-            attributeName: 'service',
-            type: 'attribute'
+        ln: 'GetCapabilities',
+        bti: 'OWS_1_1_0.GetCapabilitiesType',
+        ps: [{
+            n: 'service',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'Capabilities',
-        baseTypeInfo: 'OWS_1_1_0.CapabilitiesBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'filterCapabilities',
-            elementName: 'Filter_Capabilities',
-            typeInfo: 'SOS_1_0_0.FilterCapabilities'
+        ln: 'Capabilities',
+        bti: 'OWS_1_1_0.CapabilitiesBaseType',
+        ps: [{
+            n: 'filterCapabilities',
+            en: 'Filter_Capabilities',
+            ti: 'SOS_1_0_0.FilterCapabilities'
           }, {
-            type: 'element',
-            name: 'contents',
-            elementName: 'Contents',
-            typeInfo: 'SOS_1_0_0.Contents'
+            n: 'contents',
+            en: 'Contents',
+            ti: 'SOS_1_0_0.Contents'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'FilterCapabilities',
-        propertyInfos: [{
-            type: 'element',
-            name: 'spatialCapabilities',
-            elementName: {
-              localPart: 'Spatial_Capabilities',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'FilterCapabilities',
+        ps: [{
+            n: 'spatialCapabilities',
+            en: {
+              lp: 'Spatial_Capabilities',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'SOS_1_0_0_Filter.SpatialCapabilitiesType'
+            ti: 'SOS_1_0_0_Filter.SpatialCapabilitiesType'
           }, {
-            type: 'element',
-            name: 'temporalCapabilities',
-            elementName: {
-              localPart: 'Temporal_Capabilities',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+            n: 'temporalCapabilities',
+            en: {
+              lp: 'Temporal_Capabilities',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'SOS_1_0_0_Filter.TemporalCapabilitiesType'
+            ti: 'SOS_1_0_0_Filter.TemporalCapabilitiesType'
           }, {
-            type: 'element',
-            name: 'scalarCapabilities',
-            elementName: {
-              localPart: 'Scalar_Capabilities',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+            n: 'scalarCapabilities',
+            en: {
+              lp: 'Scalar_Capabilities',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'SOS_1_0_0_Filter.ScalarCapabilitiesType'
+            ti: 'SOS_1_0_0_Filter.ScalarCapabilitiesType'
           }, {
-            type: 'element',
-            name: 'idCapabilities',
-            elementName: {
-              localPart: 'Id_Capabilities',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+            n: 'idCapabilities',
+            en: {
+              lp: 'Id_Capabilities',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'SOS_1_0_0_Filter.IdCapabilitiesType'
+            ti: 'SOS_1_0_0_Filter.IdCapabilitiesType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetFeatureOfInterest',
-        baseTypeInfo: 'SOS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureOfInterestId',
-            collection: true,
-            elementName: 'FeatureOfInterestId',
-            typeInfo: 'String'
+        ln: 'GetFeatureOfInterest',
+        bti: 'SOS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'featureOfInterestId',
+            col: true,
+            en: 'FeatureOfInterestId'
           }, {
-            type: 'element',
-            name: 'location',
-            elementName: 'location',
-            typeInfo: 'SOS_1_0_0.GetFeatureOfInterest.Location'
+            n: 'location',
+            ti: 'SOS_1_0_0.GetFeatureOfInterest.Location'
           }, {
-            type: 'element',
-            name: 'eventTime',
-            collection: true,
-            elementName: 'eventTime',
-            typeInfo: 'SOS_1_0_0.GetFeatureOfInterest.EventTime'
+            n: 'eventTime',
+            col: true,
+            ti: 'SOS_1_0_0.GetFeatureOfInterest.EventTime'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetFeatureOfInterest.Location',
-        propertyInfos: [{
-            name: 'spatialOps',
-            elementName: {
-              localPart: 'spatialOps',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'GetFeatureOfInterest.Location',
+        ps: [{
+            n: 'spatialOps',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'spatialOps',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'SOS_1_0_0_Filter.SpatialOpsType',
-            type: 'elementRef'
+            ti: 'SOS_1_0_0_Filter.SpatialOpsType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetFeatureOfInterest.EventTime',
-        propertyInfos: [{
-            name: 'temporalOps',
-            elementName: {
-              localPart: 'temporalOps',
-              namespaceURI: 'http:\/\/www.opengis.net\/ogc'
+        ln: 'GetFeatureOfInterest.EventTime',
+        ps: [{
+            n: 'temporalOps',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'temporalOps',
+              ns: 'http:\/\/www.opengis.net\/ogc'
             },
-            typeInfo: 'SOS_1_0_0_Filter.TemporalOpsType',
-            type: 'elementRef'
+            ti: 'SOS_1_0_0_Filter.TemporalOpsType',
+            t: 'er'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'DescribeResultModel',
-        baseTypeInfo: 'SOS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'resultName',
-            elementName: 'ResultName',
-            typeInfo: 'String'
+        ln: 'DescribeResultModel',
+        bti: 'SOS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'resultName',
+            en: 'ResultName',
+            ti: 'QName'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RegisterSensor',
-        baseTypeInfo: 'SOS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'sensorDescription',
-            elementName: 'SensorDescription',
-            typeInfo: 'SOS_1_0_0.RegisterSensor.SensorDescription'
+        ln: 'RegisterSensor',
+        bti: 'SOS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'sensorDescription',
+            en: 'SensorDescription',
+            ti: 'SOS_1_0_0.RegisterSensor.SensorDescription'
           }, {
-            type: 'element',
-            name: 'observationTemplate',
-            elementName: 'ObservationTemplate',
-            typeInfo: 'SOS_1_0_0.ObservationTemplate'
+            n: 'observationTemplate',
+            en: 'ObservationTemplate',
+            ti: 'SOS_1_0_0.ObservationTemplate'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'RegisterSensor.SensorDescription',
-        propertyInfos: [{
-            name: 'any',
-            allowDom: true,
-            allowTypedObject: true,
-            type: 'anyElement'
+        ln: 'RegisterSensor.SensorDescription',
+        ps: [{
+            n: 'any',
+            mx: false,
+            t: 'ae'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ObservationTemplate',
-        propertyInfos: [{
-            type: 'element',
-            name: 'observation',
-            elementName: {
-              localPart: 'Observation',
-              namespaceURI: 'http:\/\/www.opengis.net\/om\/1.0'
+        ln: 'ObservationTemplate',
+        ps: [{
+            n: 'observation',
+            en: {
+              lp: 'Observation',
+              ns: 'http:\/\/www.opengis.net\/om\/1.0'
             },
-            typeInfo: 'OM_1_0_0.ObservationType'
+            ti: 'OM_1_0_0.ObservationType'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetObservationById',
-        baseTypeInfo: 'SOS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'observationId',
-            elementName: 'ObservationId',
-            typeInfo: 'String'
+        ln: 'GetObservationById',
+        bti: 'SOS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'observationId',
+            en: 'ObservationId'
           }, {
-            type: 'element',
-            name: 'responseFormat',
-            elementName: 'responseFormat',
-            typeInfo: 'String'
+            n: 'responseFormat'
           }, {
-            type: 'element',
-            name: 'resultModel',
-            elementName: 'resultModel',
-            typeInfo: 'String'
+            n: 'resultModel',
+            ti: 'QName'
           }, {
-            type: 'element',
-            name: 'responseMode',
-            elementName: 'responseMode',
-            typeInfo: 'String'
+            n: 'responseMode'
           }, {
-            name: 'srsName',
-            typeInfo: 'String',
-            attributeName: 'srsName',
-            type: 'attribute'
+            n: 'srsName',
+            t: 'a'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'GetFeatureOfInterestTime',
-        baseTypeInfo: 'SOS_1_0_0.RequestBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'featureOfInterestId',
-            elementName: 'FeatureOfInterestId',
-            typeInfo: 'String'
+        ln: 'GetFeatureOfInterestTime',
+        bti: 'SOS_1_0_0.RequestBaseType',
+        ps: [{
+            n: 'featureOfInterestId',
+            en: 'FeatureOfInterestId'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'InsertObservationResponse',
-        propertyInfos: [{
-            type: 'element',
-            name: 'assignedObservationId',
-            elementName: 'AssignedObservationId',
-            typeInfo: 'String'
+        ln: 'InsertObservationResponse',
+        ps: [{
+            n: 'assignedObservationId',
+            en: 'AssignedObservationId'
           }]
       }, {
-        type: 'classInfo',
-        localName: 'ObservationOfferingBaseType',
-        baseTypeInfo: 'GML_3_1_1.AbstractFeatureType',
-        propertyInfos: []
+        ln: 'ObservationOfferingBaseType',
+        bti: 'GML_3_1_1.AbstractFeatureType'
       }, {
-        type: 'classInfo',
-        localName: 'ObservationOfferingType',
-        baseTypeInfo: 'SOS_1_0_0.ObservationOfferingBaseType',
-        propertyInfos: [{
-            type: 'element',
-            name: 'intendedApplication',
-            collection: true,
-            elementName: 'intendedApplication',
-            typeInfo: 'String'
+        ln: 'ObservationOfferingType',
+        bti: 'SOS_1_0_0.ObservationOfferingBaseType',
+        ps: [{
+            n: 'intendedApplication',
+            col: true
           }, {
-            type: 'element',
-            name: 'time',
-            elementName: 'time',
-            typeInfo: 'SWE_1_0_1.TimeGeometricPrimitivePropertyType'
+            n: 'time',
+            ti: 'SWE_1_0_1.TimeGeometricPrimitivePropertyType'
           }, {
-            type: 'element',
-            name: 'procedure',
-            collection: true,
-            elementName: 'procedure',
-            typeInfo: 'GML_3_1_1.ReferenceType'
+            n: 'procedure',
+            col: true,
+            ti: 'GML_3_1_1.ReferenceType'
           }, {
-            type: 'element',
-            name: 'observedProperty',
-            collection: true,
-            elementName: 'observedProperty',
-            typeInfo: 'SWE_1_0_1.PhenomenonPropertyType'
+            n: 'observedProperty',
+            col: true,
+            ti: 'SWE_1_0_1.PhenomenonPropertyType'
           }, {
-            type: 'element',
-            name: 'featureOfInterest',
-            collection: true,
-            elementName: 'featureOfInterest',
-            typeInfo: 'GML_3_1_1.ReferenceType'
+            n: 'featureOfInterest',
+            col: true,
+            ti: 'GML_3_1_1.ReferenceType'
           }, {
-            type: 'element',
-            name: 'responseFormat',
-            collection: true,
-            elementName: 'responseFormat',
-            typeInfo: 'String'
+            n: 'responseFormat',
+            col: true
           }, {
-            type: 'element',
-            name: 'resultModel',
-            collection: true,
-            elementName: 'resultModel',
-            typeInfo: 'String'
+            n: 'resultModel',
+            col: true,
+            ti: 'QName'
           }, {
-            type: 'element',
-            name: 'responseMode',
-            collection: true,
-            elementName: 'responseMode',
-            typeInfo: 'String'
+            n: 'responseMode',
+            col: true
           }]
       }, {
-        type: 'enumInfo',
-        localName: 'ResponseModeType',
-        baseTypeInfo: 'String',
-        values: ['inline', 'attached', 'out-of-band', 'resultTemplate']
+        t: 'enum',
+        ln: 'ResponseModeType',
+        vs: ['inline', 'attached', 'out-of-band', 'resultTemplate']
       }],
-    elementInfos: [{
-        elementName: 'DescribeFeatureType',
-        typeInfo: 'SOS_1_0_0.DescribeFeatureType'
+    eis: [{
+        en: 'DescribeFeatureType',
+        ti: 'SOS_1_0_0.DescribeFeatureType'
       }, {
-        elementName: 'RegisterSensorResponse',
-        typeInfo: 'SOS_1_0_0.RegisterSensorResponse'
+        en: 'RegisterSensorResponse',
+        ti: 'SOS_1_0_0.RegisterSensorResponse'
       }, {
-        elementName: 'GetResult',
-        typeInfo: 'SOS_1_0_0.GetResult'
+        en: 'GetResult',
+        ti: 'SOS_1_0_0.GetResult'
       }, {
-        elementName: 'GetResultResponse',
-        typeInfo: 'SOS_1_0_0.GetResultResponse'
+        en: 'GetResultResponse',
+        ti: 'SOS_1_0_0.GetResultResponse'
       }, {
-        elementName: 'DescribeSensor',
-        typeInfo: 'SOS_1_0_0.DescribeSensor'
+        en: 'DescribeSensor',
+        ti: 'SOS_1_0_0.DescribeSensor'
       }, {
-        elementName: 'InsertObservation',
-        typeInfo: 'SOS_1_0_0.InsertObservation'
+        en: 'InsertObservation',
+        ti: 'SOS_1_0_0.InsertObservation'
       }, {
-        elementName: 'GetObservation',
-        typeInfo: 'SOS_1_0_0.GetObservation'
+        en: 'GetObservation',
+        ti: 'SOS_1_0_0.GetObservation'
       }, {
-        elementName: 'DescribeObservationType',
-        typeInfo: 'SOS_1_0_0.DescribeObservationType'
+        en: 'DescribeObservationType',
+        ti: 'SOS_1_0_0.DescribeObservationType'
       }, {
-        elementName: 'Contents',
-        typeInfo: 'SOS_1_0_0.Contents'
+        en: 'Contents',
+        ti: 'SOS_1_0_0.Contents'
       }, {
-        elementName: 'GetCapabilities',
-        typeInfo: 'SOS_1_0_0.GetCapabilities'
+        en: 'GetCapabilities',
+        ti: 'SOS_1_0_0.GetCapabilities'
       }, {
-        elementName: 'Capabilities',
-        typeInfo: 'SOS_1_0_0.Capabilities'
+        en: 'Capabilities',
+        ti: 'SOS_1_0_0.Capabilities'
       }, {
-        elementName: 'Filter_Capabilities',
-        typeInfo: 'SOS_1_0_0.FilterCapabilities'
+        en: 'Filter_Capabilities',
+        ti: 'SOS_1_0_0.FilterCapabilities'
       }, {
-        elementName: 'GetFeatureOfInterest',
-        typeInfo: 'SOS_1_0_0.GetFeatureOfInterest'
+        en: 'GetFeatureOfInterest',
+        ti: 'SOS_1_0_0.GetFeatureOfInterest'
       }, {
-        elementName: 'DescribeResultModel',
-        typeInfo: 'SOS_1_0_0.DescribeResultModel'
+        en: 'DescribeResultModel',
+        ti: 'SOS_1_0_0.DescribeResultModel'
       }, {
-        elementName: 'RegisterSensor',
-        typeInfo: 'SOS_1_0_0.RegisterSensor'
+        en: 'RegisterSensor',
+        ti: 'SOS_1_0_0.RegisterSensor'
       }, {
-        elementName: 'ObservationTemplate',
-        typeInfo: 'SOS_1_0_0.ObservationTemplate'
+        en: 'ObservationTemplate',
+        ti: 'SOS_1_0_0.ObservationTemplate'
       }, {
-        elementName: 'GetObservationById',
-        typeInfo: 'SOS_1_0_0.GetObservationById'
+        en: 'GetObservationById',
+        ti: 'SOS_1_0_0.GetObservationById'
       }, {
-        elementName: 'GetFeatureOfInterestTime',
-        typeInfo: 'SOS_1_0_0.GetFeatureOfInterestTime'
+        en: 'GetFeatureOfInterestTime',
+        ti: 'SOS_1_0_0.GetFeatureOfInterestTime'
       }, {
-        elementName: 'InsertObservationResponse',
-        typeInfo: 'SOS_1_0_0.InsertObservationResponse'
+        en: 'InsertObservationResponse',
+        ti: 'SOS_1_0_0.InsertObservationResponse'
       }, {
-        elementName: 'srsName',
-        typeInfo: 'GML_3_1_1.CodeType',
-        substitutionHead: {
-          localPart: 'AbstractMetaData',
-          namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        en: 'srsName',
+        ti: 'GML_3_1_1.CodeType',
+        sh: {
+          lp: 'AbstractMetaData',
+          ns: 'http:\/\/www.opengis.net\/ows\/1.1'
         }
       }, {
-        elementName: 'supportedSRS',
-        typeInfo: 'GML_3_1_1.CodeType',
-        substitutionHead: {
-          localPart: 'name',
-          namespaceURI: 'http:\/\/www.opengis.net\/gml'
+        en: 'supportedSRS',
+        ti: 'GML_3_1_1.CodeType',
+        sh: {
+          lp: 'name',
+          ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        elementName: 'supportedSensorDescription',
-        typeInfo: 'String',
-        substitutionHead: {
-          localPart: 'AbstractMetaData',
-          namespaceURI: 'http:\/\/www.opengis.net\/ows\/1.1'
+        en: 'supportedSensorDescription',
+        ti: 'QName',
+        sh: {
+          lp: 'AbstractMetaData',
+          ns: 'http:\/\/www.opengis.net\/ows\/1.1'
         }
       }]
   };

@@ -31,84 +31,139 @@ var KML_2_2_0_Module_Factory = function () {
           }]
       }, {
         ln: 'DocumentType',
-        bti: 'KML_2_2_0.AbstractContainerType'
-      }, {
-        ln: 'AbstractContainerType',
-        bti: 'KML_2_2_0.AbstractFeatureType'
-      }, {
-        ln: 'AbstractFeatureType',
-        bti: 'KML_2_2_0.AbstractObjectType',
+        bti: 'KML_2_2_0.AbstractContainerType',
         ps: [{
-            n: 'rest',
+            n: 'schema',
+            col: true,
+            en: 'Schema',
+            ti: 'KML_2_2_0.SchemaType'
+          }, {
+            n: 'abstractFeatureGroup',
             col: true,
             mx: false,
             dom: false,
             typed: false,
-            etis: [{
-                en: 'styleUrl'
-              }, {
-                en: 'open',
-                ti: 'Boolean'
-              }, {
-                en: 'AbstractFeatureSimpleExtensionGroup',
-                ti: 'AnyType'
-              }, {
-                en: 'phoneNumber'
-              }, {
-                en: {
-                  lp: 'author',
-                  ns: 'http:\/\/www.w3.org\/2005\/Atom'
-                },
-                ti: 'Atom_1_0.AtomPersonConstruct'
-              }, {
-                en: 'description'
-              }, {
-                en: {
-                  lp: 'link',
-                  ns: 'http:\/\/www.w3.org\/2005\/Atom'
-                },
-                ti: 'Atom_1_0.Link'
-              }, {
-                en: 'snippet'
-              }, {
-                en: 'Region',
-                ti: 'KML_2_2_0.RegionType'
-              }, {
-                en: 'visibility',
-                ti: 'Boolean'
-              }, {
-                en: 'Snippet',
-                ti: 'KML_2_2_0.SnippetType'
-              }, {
-                en: 'AbstractTimePrimitiveGroup',
-                ti: 'KML_2_2_0.AbstractTimePrimitiveType'
-              }, {
-                en: 'Metadata',
-                ti: 'KML_2_2_0.MetadataType'
-              }, {
-                en: 'name'
-              }, {
-                en: 'AbstractViewGroup',
-                ti: 'KML_2_2_0.AbstractViewType'
-              }, {
-                en: {
-                  lp: 'AddressDetails',
-                  ns: 'urn:oasis:names:tc:ciq:xsdschema:xAL:2.0'
-                },
-                ti: 'xAL_2_0.AddressDetails'
-              }, {
-                en: 'AbstractFeatureObjectExtensionGroup',
-                ti: 'KML_2_2_0.AbstractObjectType'
-              }, {
-                en: 'AbstractStyleSelectorGroup',
-                ti: 'KML_2_2_0.AbstractStyleSelectorType'
-              }, {
-                en: 'ExtendedData',
-                ti: 'KML_2_2_0.ExtendedDataType'
-              }, {
-                en: 'address'
-              }],
-            t: 'ers'
+            en: 'AbstractFeatureGroup',
+            ti: 'KML_2_2_0.AbstractFeatureType',
+            t: 'er'
+          }, {
+            n: 'documentSimpleExtensionGroup',
+            col: true,
+            en: 'DocumentSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'documentObjectExtensionGroup',
+            col: true,
+            en: 'DocumentObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
+          }]
+      }, {
+        ln: 'AbstractContainerType',
+        bti: 'KML_2_2_0.AbstractFeatureType',
+        ps: [{
+            n: 'abstractContainerSimpleExtensionGroup',
+            col: true,
+            en: 'AbstractContainerSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'abstractContainerObjectExtensionGroup',
+            col: true,
+            en: 'AbstractContainerObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
+          }]
+      }, {
+        ln: 'AbstractFeatureType',
+        bti: 'KML_2_2_0.AbstractObjectType',
+        ps: [{
+            n: 'name'
+          }, {
+            n: 'visibility',
+            ti: 'Boolean'
+          }, {
+            n: 'open',
+            ti: 'Boolean'
+          }, {
+            n: 'atomAuthor',
+            en: {
+              lp: 'author',
+              ns: 'http:\/\/www.w3.org\/2005\/Atom'
+            },
+            ti: 'Atom_1_0.AtomPersonConstruct'
+          }, {
+            n: 'atomLink',
+            en: {
+              lp: 'link',
+              ns: 'http:\/\/www.w3.org\/2005\/Atom'
+            },
+            ti: 'Atom_1_0.Link'
+          }, {
+            n: 'address'
+          }, {
+            n: 'addressDetails',
+            en: {
+              lp: 'AddressDetails',
+              ns: 'urn:oasis:names:tc:ciq:xsdschema:xAL:2.0'
+            },
+            ti: 'xAL_2_0.AddressDetails'
+          }, {
+            n: 'phoneNumber'
+          }, {
+            n: 'complexSnippet',
+            en: 'Snippet',
+            ti: 'KML_2_2_0.SnippetType'
+          }, {
+            n: 'snippet'
+          }, {
+            n: 'description'
+          }, {
+            n: 'abstractViewGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractViewGroup',
+            ti: 'KML_2_2_0.AbstractViewType',
+            t: 'er'
+          }, {
+            n: 'abstractTimePrimitiveGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractTimePrimitiveGroup',
+            ti: 'KML_2_2_0.AbstractTimePrimitiveType',
+            t: 'er'
+          }, {
+            n: 'styleUrl'
+          }, {
+            n: 'abstractStyleSelectorGroup',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractStyleSelectorGroup',
+            ti: 'KML_2_2_0.AbstractStyleSelectorType',
+            t: 'er'
+          }, {
+            n: 'region',
+            en: 'Region',
+            ti: 'KML_2_2_0.RegionType'
+          }, {
+            n: 'metadata',
+            en: 'Metadata',
+            ti: 'KML_2_2_0.MetadataType'
+          }, {
+            n: 'extendedData',
+            en: 'ExtendedData',
+            ti: 'KML_2_2_0.ExtendedDataType'
+          }, {
+            n: 'abstractFeatureSimpleExtensionGroup',
+            col: true,
+            en: 'AbstractFeatureSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'abstractFeatureObjectExtensionGroup',
+            col: true,
+            en: 'AbstractFeatureObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
           }]
       }, {
         ln: 'LatLonBoxType',
@@ -361,7 +416,26 @@ var KML_2_2_0_Module_Factory = function () {
           }]
       }, {
         ln: 'PlacemarkType',
-        bti: 'KML_2_2_0.AbstractFeatureType'
+        bti: 'KML_2_2_0.AbstractFeatureType',
+        ps: [{
+            n: 'abstractGeometryGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractGeometryGroup',
+            ti: 'KML_2_2_0.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'placemarkSimpleExtensionGroup',
+            col: true,
+            en: 'PlacemarkSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'placemarkObjectExtensionGroup',
+            col: true,
+            en: 'PlacemarkObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
+          }]
       }, {
         ln: 'LinearRingType',
         bti: 'KML_2_2_0.AbstractGeometryType',
@@ -455,7 +529,32 @@ var KML_2_2_0_Module_Factory = function () {
           }]
       }, {
         ln: 'NetworkLinkType',
-        bti: 'KML_2_2_0.AbstractFeatureType'
+        bti: 'KML_2_2_0.AbstractFeatureType',
+        ps: [{
+            n: 'refreshVisibility',
+            ti: 'Boolean'
+          }, {
+            n: 'flyToView',
+            ti: 'Boolean'
+          }, {
+            n: 'url',
+            en: 'Url',
+            ti: 'KML_2_2_0.LinkType'
+          }, {
+            n: 'link',
+            en: 'Link',
+            ti: 'KML_2_2_0.LinkType'
+          }, {
+            n: 'networkLinkSimpleExtensionGroup',
+            col: true,
+            en: 'NetworkLinkSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'networkLinkObjectExtensionGroup',
+            col: true,
+            en: 'NetworkLinkObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
+          }]
       }, {
         ln: 'ViewVolumeType',
         bti: 'KML_2_2_0.AbstractObjectType',
@@ -642,10 +741,56 @@ var KML_2_2_0_Module_Factory = function () {
           }]
       }, {
         ln: 'ScreenOverlayType',
-        bti: 'KML_2_2_0.AbstractOverlayType'
+        bti: 'KML_2_2_0.AbstractOverlayType',
+        ps: [{
+            n: 'overlayXY',
+            ti: 'KML_2_2_0.Vec2Type'
+          }, {
+            n: 'screenXY',
+            ti: 'KML_2_2_0.Vec2Type'
+          }, {
+            n: 'rotationXY',
+            ti: 'KML_2_2_0.Vec2Type'
+          }, {
+            n: 'size',
+            ti: 'KML_2_2_0.Vec2Type'
+          }, {
+            n: 'rotation',
+            ti: 'Double'
+          }, {
+            n: 'screenOverlaySimpleExtensionGroup',
+            col: true,
+            en: 'ScreenOverlaySimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'screenOverlayObjectExtensionGroup',
+            col: true,
+            en: 'ScreenOverlayObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
+          }]
       }, {
         ln: 'AbstractOverlayType',
-        bti: 'KML_2_2_0.AbstractFeatureType'
+        bti: 'KML_2_2_0.AbstractFeatureType',
+        ps: [{
+            n: 'color'
+          }, {
+            n: 'drawOrder',
+            ti: 'Int'
+          }, {
+            n: 'icon',
+            en: 'Icon',
+            ti: 'KML_2_2_0.LinkType'
+          }, {
+            n: 'abstractOverlaySimpleExtensionGroup',
+            col: true,
+            en: 'AbstractOverlaySimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'abstractOverlayObjectExtensionGroup',
+            col: true,
+            en: 'AbstractOverlayObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
+          }]
       }, {
         ln: 'NetworkLinkControlType',
         ps: [{
@@ -840,7 +985,32 @@ var KML_2_2_0_Module_Factory = function () {
           }]
       }, {
         ln: 'GroundOverlayType',
-        bti: 'KML_2_2_0.AbstractOverlayType'
+        bti: 'KML_2_2_0.AbstractOverlayType',
+        ps: [{
+            n: 'altitude',
+            ti: 'Double'
+          }, {
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'latLonBox',
+            en: 'LatLonBox',
+            ti: 'KML_2_2_0.LatLonBoxType'
+          }, {
+            n: 'groundOverlaySimpleExtensionGroup',
+            col: true,
+            en: 'GroundOverlaySimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'groundOverlayObjectExtensionGroup',
+            col: true,
+            en: 'GroundOverlayObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
+          }]
       }, {
         ln: 'LodType',
         bti: 'KML_2_2_0.AbstractObjectType',
@@ -913,7 +1083,27 @@ var KML_2_2_0_Module_Factory = function () {
           }]
       }, {
         ln: 'FolderType',
-        bti: 'KML_2_2_0.AbstractContainerType'
+        bti: 'KML_2_2_0.AbstractContainerType',
+        ps: [{
+            n: 'abstractFeatureGroup',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractFeatureGroup',
+            ti: 'KML_2_2_0.AbstractFeatureType',
+            t: 'er'
+          }, {
+            n: 'folderSimpleExtensionGroup',
+            col: true,
+            en: 'FolderSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'folderObjectExtensionGroup',
+            col: true,
+            en: 'FolderObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
+          }]
       }, {
         ln: 'PolyStyleType',
         bti: 'KML_2_2_0.AbstractColorStyleType',
@@ -1150,7 +1340,35 @@ var KML_2_2_0_Module_Factory = function () {
           }]
       }, {
         ln: 'PhotoOverlayType',
-        bti: 'KML_2_2_0.AbstractOverlayType'
+        bti: 'KML_2_2_0.AbstractOverlayType',
+        ps: [{
+            n: 'rotation',
+            ti: 'Double'
+          }, {
+            n: 'viewVolume',
+            en: 'ViewVolume',
+            ti: 'KML_2_2_0.ViewVolumeType'
+          }, {
+            n: 'imagePyramid',
+            en: 'ImagePyramid',
+            ti: 'KML_2_2_0.ImagePyramidType'
+          }, {
+            n: 'point',
+            en: 'Point',
+            ti: 'KML_2_2_0.PointType'
+          }, {
+            n: 'shape'
+          }, {
+            n: 'photoOverlaySimpleExtensionGroup',
+            col: true,
+            en: 'PhotoOverlaySimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'photoOverlayObjectExtensionGroup',
+            col: true,
+            en: 'PhotoOverlayObjectExtensionGroup',
+            ti: 'KML_2_2_0.AbstractObjectType'
+          }]
       }, {
         ln: 'TimeSpanType',
         bti: 'KML_2_2_0.AbstractTimePrimitiveType',

@@ -397,6 +397,16 @@ var WFS_2_0_Module_Factory = function () {
             n: 'resolvePath',
             t: 'a'
           }, {
+            n: 'resolve',
+            t: 'a'
+          }, {
+            n: 'resolveDepth',
+            t: 'a'
+          }, {
+            n: 'resolveTimeout',
+            ti: 'Integer',
+            t: 'a'
+          }, {
             n: 'startIndex',
             ti: 'Integer',
             t: 'a'
@@ -409,16 +419,6 @@ var WFS_2_0_Module_Factory = function () {
             t: 'a'
           }, {
             n: 'outputFormat',
-            t: 'a'
-          }, {
-            n: 'resolve',
-            t: 'a'
-          }, {
-            n: 'resolveDepth',
-            t: 'a'
-          }, {
-            n: 'resolveTimeout',
-            ti: 'Integer',
             t: 'a'
           }]
       }, {

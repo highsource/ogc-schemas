@@ -70,10 +70,10 @@ var OWS_1_1_0_Module_Factory = function () {
             dom: false,
             typed: false,
             etis: [{
-                en: 'Post',
+                en: 'Get',
                 ti: 'OWS_1_1_0.RequestMethodType'
               }, {
-                en: 'Get',
+                en: 'Post',
                 ti: 'OWS_1_1_0.RequestMethodType'
               }],
             t: 'ers'

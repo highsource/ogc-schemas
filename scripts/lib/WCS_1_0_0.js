@@ -146,19 +146,15 @@ var WCS_1_0_0_Module_Factory = function () {
       }, {
         ln: 'DomainSetType',
         ps: [{
-            n: 'content',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            etis: [{
-                en: 'spatialDomain',
-                ti: 'WCS_1_0_0.SpatialDomainType'
-              }, {
-                en: 'temporalDomain',
-                ti: 'WCS_1_0_0.TimeSequenceType'
-              }],
-            t: 'ers'
+            n: 'spatialDomain',
+            ti: 'WCS_1_0_0.SpatialDomainType'
+          }, {
+            n: 'optionalTemporalDomain',
+            en: 'temporalDomain',
+            ti: 'WCS_1_0_0.TimeSequenceType'
+          }, {
+            n: 'temporalDomain',
+            ti: 'WCS_1_0_0.TimeSequenceType'
           }]
       }, {
         ln: 'AxisDescription',
@@ -416,19 +412,15 @@ var WCS_1_0_0_Module_Factory = function () {
       }, {
         ln: 'DomainSubsetType',
         ps: [{
-            n: 'content',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            etis: [{
-                en: 'temporalSubset',
-                ti: 'WCS_1_0_0.TimeSequenceType'
-              }, {
-                en: 'spatialSubset',
-                ti: 'WCS_1_0_0.SpatialSubsetType'
-              }],
-            t: 'ers'
+            n: 'spatialSubset',
+            ti: 'WCS_1_0_0.SpatialSubsetType'
+          }, {
+            n: 'optionalTemporalSubset',
+            en: 'temporalSubset',
+            ti: 'WCS_1_0_0.TimeSequenceType'
+          }, {
+            n: 'temporalSubset',
+            ti: 'WCS_1_0_0.TimeSequenceType'
           }]
       }, {
         ln: 'RangeSubsetType',
@@ -534,22 +526,17 @@ var WCS_1_0_0_Module_Factory = function () {
       }, {
         ln: 'ResponsiblePartyType',
         ps: [{
-            n: 'content',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            etis: [{
-                en: 'positionName'
-              }, {
-                en: 'organisationName'
-              }, {
-                en: 'contactInfo',
-                ti: 'WCS_1_0_0.ContactType'
-              }, {
-                en: 'individualName'
-              }],
-            t: 'ers'
+            n: 'individualName'
+          }, {
+            n: 'optionalOrganisationName',
+            en: 'organisationName'
+          }, {
+            n: 'organisationName'
+          }, {
+            n: 'positionName'
+          }, {
+            n: 'contactInfo',
+            ti: 'WCS_1_0_0.ContactType'
           }]
       }, {
         ln: 'TelephoneType',
@@ -930,19 +917,6 @@ var WCS_1_0_0_Module_Factory = function () {
           lp: 'metaDataProperty',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
-      }, {
-        en: 'positionName',
-        sc: 'WCS_1_0_0.ResponsiblePartyType'
-      }, {
-        en: 'organisationName',
-        sc: 'WCS_1_0_0.ResponsiblePartyType'
-      }, {
-        en: 'contactInfo',
-        ti: 'WCS_1_0_0.ContactType',
-        sc: 'WCS_1_0_0.ResponsiblePartyType'
-      }, {
-        en: 'individualName',
-        sc: 'WCS_1_0_0.ResponsiblePartyType'
       }]
   };
   return {

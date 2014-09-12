@@ -5,18 +5,24 @@ var SMIL_2_0_Module_Factory = function () {
     tis: [{
         ln: 'SetPrototype',
         ps: [{
+            n: 'to',
+            t: 'a'
+          }, {
             n: 'attributeName',
             t: 'a'
           }, {
             n: 'attributeType',
             t: 'a'
-          }, {
-            n: 'to',
-            t: 'a'
           }]
       }, {
         ln: 'AnimateColorPrototype',
         ps: [{
+            n: 'additive',
+            t: 'a'
+          }, {
+            n: 'accumulate',
+            t: 'a'
+          }, {
             n: 'from',
             t: 'a'
           }, {
@@ -27,12 +33,6 @@ var SMIL_2_0_Module_Factory = function () {
             t: 'a'
           }, {
             n: 'to',
-            t: 'a'
-          }, {
-            n: 'additive',
-            t: 'a'
-          }, {
-            n: 'accumulate',
             t: 'a'
           }, {
             n: 'attributeName',
@@ -47,6 +47,27 @@ var SMIL_2_0_Module_Factory = function () {
             n: 'origin',
             t: 'a'
           }, {
+            n: 'additive',
+            t: 'a'
+          }, {
+            n: 'accumulate',
+            t: 'a'
+          }, {
+            n: 'from',
+            t: 'a'
+          }, {
+            n: 'by',
+            t: 'a'
+          }, {
+            n: 'values',
+            t: 'a'
+          }, {
+            n: 'to',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AnimatePrototype',
+        ps: [{
             n: 'from',
             t: 'a'
           }, {
@@ -59,15 +80,6 @@ var SMIL_2_0_Module_Factory = function () {
             n: 'to',
             t: 'a'
           }, {
-            n: 'additive',
-            t: 'a'
-          }, {
-            n: 'accumulate',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AnimatePrototype',
-        ps: [{
             n: 'attributeName',
             t: 'a'
           }, {
@@ -78,18 +90,6 @@ var SMIL_2_0_Module_Factory = function () {
             t: 'a'
           }, {
             n: 'accumulate',
-            t: 'a'
-          }, {
-            n: 'from',
-            t: 'a'
-          }, {
-            n: 'by',
-            t: 'a'
-          }, {
-            n: 'values',
-            t: 'a'
-          }, {
-            n: 'to',
             t: 'a'
           }]
       }, {

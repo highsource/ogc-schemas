@@ -84,22 +84,20 @@ var OM_1_0_0_Module_Factory = function () {
       }, {
         ln: 'ProcessPropertyType',
         ps: [{
-            n: 'content',
-            col: true,
+            n: 'sensorMLProcess',
             mx: false,
             dom: false,
             typed: false,
-            etis: [{
-                en: {
-                  lp: '_Process',
-                  ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
-                },
-                ti: 'SensorML_1_0_1.AbstractProcessType'
-              }, {
-                en: 'Process',
-                ti: 'AnyType'
-              }],
-            t: 'ers'
+            en: {
+              lp: '_Process',
+              ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
+            },
+            ti: 'SensorML_1_0_1.AbstractProcessType',
+            t: 'er'
+          }, {
+            n: 'process',
+            en: 'Process',
+            ti: 'AnyType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -186,10 +184,6 @@ var OM_1_0_0_Module_Factory = function () {
           lp: '_Feature',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
-      }, {
-        en: 'Process',
-        ti: 'AnyType',
-        sc: 'OM_1_0_0.ProcessPropertyType'
       }]
   };
   return {

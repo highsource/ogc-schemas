@@ -36,23 +36,23 @@ var Filter_2_0_Module_Factory = function () {
                 en: '_Id',
                 ti: 'Filter_2_0.AbstractIdType'
               }, {
-                en: 'temporalOps',
-                ti: 'Filter_2_0.TemporalOpsType'
-              }, {
-                en: 'Function',
-                ti: 'Filter_2_0.FunctionType'
-              }, {
                 en: 'logicOps',
                 ti: 'Filter_2_0.LogicOpsType'
-              }, {
-                en: 'spatialOps',
-                ti: 'Filter_2_0.SpatialOpsType'
               }, {
                 en: 'extensionOps',
                 ti: 'Filter_2_0.ExtensionOpsType'
               }, {
+                en: 'Function',
+                ti: 'Filter_2_0.FunctionType'
+              }, {
                 en: 'comparisonOps',
                 ti: 'Filter_2_0.ComparisonOpsType'
+              }, {
+                en: 'spatialOps',
+                ti: 'Filter_2_0.SpatialOpsType'
+              }, {
+                en: 'temporalOps',
+                ti: 'Filter_2_0.TemporalOpsType'
               }],
             t: 'ers'
           }]
@@ -69,6 +69,7 @@ var Filter_2_0_Module_Factory = function () {
             t: 'ae'
           }, {
             n: 'type',
+            ti: 'QName',
             t: 'a'
           }]
       }, {
@@ -506,7 +507,8 @@ var Filter_2_0_Module_Factory = function () {
             ti: 'OWS_1_1_0.MetadataType'
           }, {
             n: 'type',
-            en: 'Type'
+            en: 'Type',
+            ti: 'QName'
           }, {
             n: 'name',
             t: 'a'
@@ -539,6 +541,7 @@ var Filter_2_0_Module_Factory = function () {
         ln: 'ExtensionOperatorType',
         ps: [{
             n: 'name',
+            ti: 'QName',
             t: 'a'
           }]
       }, {
@@ -592,7 +595,8 @@ var Filter_2_0_Module_Factory = function () {
             ti: 'OWS_1_1_0.MetadataType'
           }, {
             n: 'returns',
-            en: 'Returns'
+            en: 'Returns',
+            ti: 'QName'
           }, {
             n: 'arguments',
             en: 'Arguments',
@@ -622,6 +626,7 @@ var Filter_2_0_Module_Factory = function () {
             ti: 'OWS_1_1_0.MetadataType'
           }, {
             n: 'name',
+            ti: 'QName',
             t: 'a'
           }]
       }, {
@@ -681,12 +686,14 @@ var Filter_2_0_Module_Factory = function () {
         ln: 'GeometryOperandsType.GeometryOperand',
         ps: [{
             n: 'name',
+            ti: 'QName',
             t: 'a'
           }]
       }, {
         ln: 'TemporalOperandsType.TemporalOperand',
         ps: [{
             n: 'name',
+            ti: 'QName',
             t: 'a'
           }]
       }, {

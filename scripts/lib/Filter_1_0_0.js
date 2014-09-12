@@ -57,11 +57,11 @@ var Filter_1_0_0_Module_Factory = function () {
                 en: 'comparisonOps',
                 ti: 'Filter_1_0_0.ComparisonOpsType'
               }, {
-                en: 'logicOps',
-                ti: 'Filter_1_0_0.LogicOpsType'
-              }, {
                 en: 'spatialOps',
                 ti: 'Filter_1_0_0.SpatialOpsType'
+              }, {
+                en: 'logicOps',
+                ti: 'Filter_1_0_0.LogicOpsType'
               }],
             t: 'ers'
           }]

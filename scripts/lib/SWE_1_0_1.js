@@ -707,13 +707,13 @@ var SWE_1_0_1_Module_Factory = function () {
             dom: false,
             typed: false,
             etis: [{
-                en: 'valueList',
+                en: 'interval',
                 ti: {
                   t: 'l',
                   ti: 'Double'
                 }
               }, {
-                en: 'interval',
+                en: 'valueList',
                 ti: {
                   t: 'l',
                   ti: 'Double'
@@ -881,12 +881,12 @@ var SWE_1_0_1_Module_Factory = function () {
             dom: false,
             typed: false,
             etis: [{
-                en: 'interval',
+                en: 'valueList',
                 ti: {
                   t: 'l'
                 }
               }, {
-                en: 'valueList',
+                en: 'interval',
                 ti: {
                   t: 'l'
                 }
@@ -992,6 +992,7 @@ var SWE_1_0_1_Module_Factory = function () {
         bti: 'SWE_1_0_1.AbstractEncodingType',
         ps: [{
             n: 'xmlElement',
+            ti: 'QName',
             an: {
               lp: 'xmlElement'
             },
@@ -2709,18 +2710,6 @@ var SWE_1_0_1_Module_Factory = function () {
         ti: {
           t: 'l'
         },
-        sc: 'SWE_1_0_1.AllowedTimes'
-      }, {
-        en: 'interval',
-        ti: {
-          t: 'l'
-        },
-        sc: 'SWE_1_0_1.AllowedTimes'
-      }, {
-        en: 'valueList',
-        ti: {
-          t: 'l'
-        },
         sc: 'SWE_1_0_1.AllowedTokens'
       }, {
         en: 'valueList',
@@ -2736,6 +2725,18 @@ var SWE_1_0_1_Module_Factory = function () {
           ti: 'Double'
         },
         sc: 'SWE_1_0_1.AllowedValues'
+      }, {
+        en: 'valueList',
+        ti: {
+          t: 'l'
+        },
+        sc: 'SWE_1_0_1.AllowedTimes'
+      }, {
+        en: 'interval',
+        ti: {
+          t: 'l'
+        },
+        sc: 'SWE_1_0_1.AllowedTimes'
       }]
   };
   return {

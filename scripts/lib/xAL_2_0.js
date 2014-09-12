@@ -2234,17 +2234,17 @@ var xAL_2_0_Module_Factory = function () {
             dom: false,
             typed: false,
             etis: [{
-                en: 'ThoroughfareNumberSuffix',
-                ti: 'xAL_2_0.ThoroughfareNumberSuffix'
-              }, {
-                en: 'ThoroughfareNumberPrefix',
-                ti: 'xAL_2_0.ThoroughfareNumberPrefix'
-              }, {
                 en: 'AddressLine',
                 ti: 'xAL_2_0.AddressLine'
               }, {
+                en: 'ThoroughfareNumberSuffix',
+                ti: 'xAL_2_0.ThoroughfareNumberSuffix'
+              }, {
                 en: 'ThoroughfareNumber',
                 ti: 'xAL_2_0.ThoroughfareNumber'
+              }, {
+                en: 'ThoroughfareNumberPrefix',
+                ti: 'xAL_2_0.ThoroughfareNumberPrefix'
               }],
             t: 'ers'
           }, {
@@ -2263,17 +2263,17 @@ var xAL_2_0_Module_Factory = function () {
             dom: false,
             typed: false,
             etis: [{
-                en: 'ThoroughfareNumberSuffix',
-                ti: 'xAL_2_0.ThoroughfareNumberSuffix'
-              }, {
-                en: 'ThoroughfareNumberPrefix',
-                ti: 'xAL_2_0.ThoroughfareNumberPrefix'
-              }, {
                 en: 'AddressLine',
                 ti: 'xAL_2_0.AddressLine'
               }, {
+                en: 'ThoroughfareNumberSuffix',
+                ti: 'xAL_2_0.ThoroughfareNumberSuffix'
+              }, {
                 en: 'ThoroughfareNumber',
                 ti: 'xAL_2_0.ThoroughfareNumber'
+              }, {
+                en: 'ThoroughfareNumberPrefix',
+                ti: 'xAL_2_0.ThoroughfareNumberPrefix'
               }],
             t: 'ers'
           }, {

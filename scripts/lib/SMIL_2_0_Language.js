@@ -14,10 +14,9 @@ var SMIL_2_0_Language_Module_Factory = function () {
             mx: false,
             t: 'ae'
           }, {
-            n: 'alt',
-            t: 'a'
-          }, {
-            n: 'longdesc',
+            n: 'skipContent',
+            ti: 'Boolean',
+            an: 'skip-content',
             t: 'a'
           }, {
             n: 'id',
@@ -35,31 +34,23 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'restartDefault',
+            n: 'alt',
             t: 'a'
           }, {
-            n: 'fill',
+            n: 'longdesc',
             t: 'a'
           }, {
-            n: 'syncBehavior',
+            n: 'targetElement',
+            ti: 'IDREF',
             t: 'a'
           }, {
-            n: 'syncTolerance',
-            t: 'a'
-          }, {
-            n: 'syncBehaviorDefault',
-            t: 'a'
-          }, {
-            n: 'syncToleranceDefault',
+            n: 'restart',
             t: 'a'
           }, {
             n: 'fillDefault',
             t: 'a'
           }, {
-            n: 'begin',
-            t: 'a'
-          }, {
-            n: 'end',
+            n: 'restartDefault',
             t: 'a'
           }, {
             n: 'min',
@@ -72,9 +63,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             ti: 'Integer',
             t: 'a'
           }, {
-            n: 'dur',
-            t: 'a'
-          }, {
             n: 'repeatDur',
             t: 'a'
           }, {
@@ -82,16 +70,28 @@ var SMIL_2_0_Language_Module_Factory = function () {
             ti: 'Decimal',
             t: 'a'
           }, {
-            n: 'restart',
+            n: 'begin',
             t: 'a'
           }, {
-            n: 'skipContent',
-            ti: 'Boolean',
-            an: 'skip-content',
+            n: 'end',
             t: 'a'
           }, {
-            n: 'targetElement',
-            ti: 'IDREF',
+            n: 'dur',
+            t: 'a'
+          }, {
+            n: 'syncBehavior',
+            t: 'a'
+          }, {
+            n: 'syncTolerance',
+            t: 'a'
+          }, {
+            n: 'fill',
+            t: 'a'
+          }, {
+            n: 'syncBehaviorDefault',
+            t: 'a'
+          }, {
+            n: 'syncToleranceDefault',
             t: 'a'
           }]
       }, {
@@ -106,10 +106,54 @@ var SMIL_2_0_Language_Module_Factory = function () {
             mx: false,
             t: 'ae'
           }, {
-            n: 'alt',
+            n: 'restart',
             t: 'a'
           }, {
-            n: 'longdesc',
+            n: 'fillDefault',
+            t: 'a'
+          }, {
+            n: 'restartDefault',
+            t: 'a'
+          }, {
+            n: 'min',
+            t: 'a'
+          }, {
+            n: 'max',
+            t: 'a'
+          }, {
+            n: 'repeat',
+            ti: 'Integer',
+            t: 'a'
+          }, {
+            n: 'repeatDur',
+            t: 'a'
+          }, {
+            n: 'repeatCount',
+            ti: 'Decimal',
+            t: 'a'
+          }, {
+            n: 'begin',
+            t: 'a'
+          }, {
+            n: 'end',
+            t: 'a'
+          }, {
+            n: 'dur',
+            t: 'a'
+          }, {
+            n: 'syncBehavior',
+            t: 'a'
+          }, {
+            n: 'syncTolerance',
+            t: 'a'
+          }, {
+            n: 'fill',
+            t: 'a'
+          }, {
+            n: 'syncBehaviorDefault',
+            t: 'a'
+          }, {
+            n: 'syncToleranceDefault',
             t: 'a'
           }, {
             n: 'id',
@@ -127,58 +171,13 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'targetElement',
-            ti: 'IDREF',
+            n: 'alt',
             t: 'a'
           }, {
-            n: 'restartDefault',
+            n: 'longdesc',
             t: 'a'
           }, {
-            n: 'fill',
-            t: 'a'
-          }, {
-            n: 'syncBehavior',
-            t: 'a'
-          }, {
-            n: 'syncTolerance',
-            t: 'a'
-          }, {
-            n: 'syncBehaviorDefault',
-            t: 'a'
-          }, {
-            n: 'syncToleranceDefault',
-            t: 'a'
-          }, {
-            n: 'fillDefault',
-            t: 'a'
-          }, {
-            n: 'begin',
-            t: 'a'
-          }, {
-            n: 'end',
-            t: 'a'
-          }, {
-            n: 'min',
-            t: 'a'
-          }, {
-            n: 'max',
-            t: 'a'
-          }, {
-            n: 'repeat',
-            ti: 'Integer',
-            t: 'a'
-          }, {
-            n: 'dur',
-            t: 'a'
-          }, {
-            n: 'repeatDur',
-            t: 'a'
-          }, {
-            n: 'repeatCount',
-            ti: 'Decimal',
-            t: 'a'
-          }, {
-            n: 'restart',
+            n: 'calcMode',
             t: 'a'
           }, {
             n: 'skipContent',
@@ -186,7 +185,8 @@ var SMIL_2_0_Language_Module_Factory = function () {
             an: 'skip-content',
             t: 'a'
           }, {
-            n: 'calcMode',
+            n: 'targetElement',
+            ti: 'IDREF',
             t: 'a'
           }]
       }, {
@@ -201,22 +201,66 @@ var SMIL_2_0_Language_Module_Factory = function () {
             mx: false,
             t: 'ae'
           }, {
+            n: 'calcMode',
+            t: 'a'
+          }, {
             n: 'skipContent',
             ti: 'Boolean',
             an: 'skip-content',
             t: 'a'
           }, {
+            n: 'restart',
+            t: 'a'
+          }, {
+            n: 'fillDefault',
+            t: 'a'
+          }, {
+            n: 'restartDefault',
+            t: 'a'
+          }, {
+            n: 'min',
+            t: 'a'
+          }, {
+            n: 'max',
+            t: 'a'
+          }, {
+            n: 'repeat',
+            ti: 'Integer',
+            t: 'a'
+          }, {
+            n: 'repeatDur',
+            t: 'a'
+          }, {
+            n: 'repeatCount',
+            ti: 'Decimal',
+            t: 'a'
+          }, {
+            n: 'begin',
+            t: 'a'
+          }, {
+            n: 'end',
+            t: 'a'
+          }, {
+            n: 'dur',
+            t: 'a'
+          }, {
+            n: 'syncBehavior',
+            t: 'a'
+          }, {
+            n: 'syncTolerance',
+            t: 'a'
+          }, {
+            n: 'fill',
+            t: 'a'
+          }, {
+            n: 'syncBehaviorDefault',
+            t: 'a'
+          }, {
+            n: 'syncToleranceDefault',
+            t: 'a'
+          }, {
             n: 'targetElement',
             ti: 'IDREF',
-            t: 'a'
-          }, {
-            n: 'calcMode',
-            t: 'a'
-          }, {
-            n: 'alt',
-            t: 'a'
-          }, {
-            n: 'longdesc',
             t: 'a'
           }, {
             n: 'id',
@@ -234,54 +278,10 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'restartDefault',
+            n: 'alt',
             t: 'a'
           }, {
-            n: 'fill',
-            t: 'a'
-          }, {
-            n: 'syncBehavior',
-            t: 'a'
-          }, {
-            n: 'syncTolerance',
-            t: 'a'
-          }, {
-            n: 'syncBehaviorDefault',
-            t: 'a'
-          }, {
-            n: 'syncToleranceDefault',
-            t: 'a'
-          }, {
-            n: 'fillDefault',
-            t: 'a'
-          }, {
-            n: 'begin',
-            t: 'a'
-          }, {
-            n: 'end',
-            t: 'a'
-          }, {
-            n: 'min',
-            t: 'a'
-          }, {
-            n: 'max',
-            t: 'a'
-          }, {
-            n: 'repeat',
-            ti: 'Integer',
-            t: 'a'
-          }, {
-            n: 'dur',
-            t: 'a'
-          }, {
-            n: 'repeatDur',
-            t: 'a'
-          }, {
-            n: 'repeatCount',
-            ti: 'Decimal',
-            t: 'a'
-          }, {
-            n: 'restart',
+            n: 'longdesc',
             t: 'a'
           }]
       }, {
@@ -296,38 +296,13 @@ var SMIL_2_0_Language_Module_Factory = function () {
             mx: false,
             t: 'ae'
           }, {
-            n: 'targetElement',
-            ti: 'IDREF',
-            t: 'a'
-          }, {
-            n: 'calcMode',
-            t: 'a'
-          }, {
-            n: 'restartDefault',
-            t: 'a'
-          }, {
-            n: 'fill',
-            t: 'a'
-          }, {
-            n: 'syncBehavior',
-            t: 'a'
-          }, {
-            n: 'syncTolerance',
-            t: 'a'
-          }, {
-            n: 'syncBehaviorDefault',
-            t: 'a'
-          }, {
-            n: 'syncToleranceDefault',
+            n: 'restart',
             t: 'a'
           }, {
             n: 'fillDefault',
             t: 'a'
           }, {
-            n: 'begin',
-            t: 'a'
-          }, {
-            n: 'end',
+            n: 'restartDefault',
             t: 'a'
           }, {
             n: 'min',
@@ -340,9 +315,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             ti: 'Integer',
             t: 'a'
           }, {
-            n: 'dur',
-            t: 'a'
-          }, {
             n: 'repeatDur',
             t: 'a'
           }, {
@@ -350,18 +322,32 @@ var SMIL_2_0_Language_Module_Factory = function () {
             ti: 'Decimal',
             t: 'a'
           }, {
-            n: 'restart',
+            n: 'begin',
             t: 'a'
           }, {
-            n: 'skipContent',
-            ti: 'Boolean',
-            an: 'skip-content',
+            n: 'end',
             t: 'a'
           }, {
-            n: 'alt',
+            n: 'dur',
             t: 'a'
           }, {
-            n: 'longdesc',
+            n: 'syncBehavior',
+            t: 'a'
+          }, {
+            n: 'syncTolerance',
+            t: 'a'
+          }, {
+            n: 'fill',
+            t: 'a'
+          }, {
+            n: 'syncBehaviorDefault',
+            t: 'a'
+          }, {
+            n: 'syncToleranceDefault',
+            t: 'a'
+          }, {
+            n: 'targetElement',
+            ti: 'IDREF',
             t: 'a'
           }, {
             n: 'id',
@@ -377,6 +363,20 @@ var SMIL_2_0_Language_Module_Factory = function () {
               lp: 'lang',
               ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
             },
+            t: 'a'
+          }, {
+            n: 'alt',
+            t: 'a'
+          }, {
+            n: 'longdesc',
+            t: 'a'
+          }, {
+            n: 'calcMode',
+            t: 'a'
+          }, {
+            n: 'skipContent',
+            ti: 'Boolean',
+            an: 'skip-content',
             t: 'a'
           }]
       }],
