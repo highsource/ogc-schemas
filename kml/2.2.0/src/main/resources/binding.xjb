@@ -15,6 +15,18 @@
 		<jaxb:bindings node="xs:element[@name='snippet']">
 			<jaxb:factoryMethod name="AbstractSnippetElement"/>
 		</jaxb:bindings>
+		<jaxb:bindings node="xs:element[@name='Snippet']">
+			<jaxb:factoryMethod name="ComplexSnippet"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='AbstractFeatureType']//xs:element[@ref='kml:Snippet']">
+			<jaxb:property name="ComplexSnippet"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='AbstractFeatureType']//xs:element[@ref='atom:link']">
+			<jaxb:property name="AtomLink"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='AbstractFeatureType']//xs:element[@ref='atom:author']">
+			<jaxb:property name="AtomAuthor"/>
+		</jaxb:bindings>
 		<jsonix:packageMapping packageName="org.hisrc.w3c.atom.v_1_0" spaceName="Atom_1_0"/>
 		<jsonix:packageMapping packageName="org.hisrc.w3c.oasis.xal.v_2_0" spaceName="xAL_2_0"/>
 		<jsonix:packageMapping packageName="net.opengis.kml.v_2_2_0" spaceName="KML_2_2_0"/>
@@ -24,9 +36,6 @@
 		<jaxb:schemaBindings>
 			<jaxb:package name="org.hisrc.w3c.atom.v_1_0"/>
 		</jaxb:schemaBindings>
-		<!--jaxb:bindings node="xs:element[@name='name']">
-			<jaxb:class name="AtomName"/>
-		</jaxb:bindings-->
 	</jaxb:bindings>
 	<jaxb:bindings schemaLocation="oasis/election/external/xAL.xsd" 
 		node="/xs:schema">

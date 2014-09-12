@@ -24,6 +24,11 @@
 		<jsonix:packageMapping packageName="org.hisrc.w3c.xlink.v_1_0" spaceName="XLink_1_0"/>
 		<jsonix:packageMapping packageName="net.opengis.gml.v_3_1_1" spaceName="GML_3_1_1"/>
 		<jsonix:packageMapping packageName="net.opengis.filter.v_1_1_0" spaceName="Filter_1_1_0"/>
-
+		<jaxb:bindings node="xs:complexType[@name='BinarySpatialOpType']//xs:sequence/xs:element[@ref='ogc:PropertyName']">
+			<jaxb:property name="PropertyName1"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='BinarySpatialOpType']//xs:choice/xs:element[@ref='ogc:PropertyName']">
+			<jaxb:property name="PropertyName2"/>
+		</jaxb:bindings>
 	</jaxb:bindings>
 </jaxb:bindings>

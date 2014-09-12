@@ -32,5 +32,22 @@
 		<jaxb:bindings node="xs:complexType[@name='AbstractDescriptionType']//xs:element[@ref='name']">
 			<jaxb:property name="WcsName"/>
 		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='ResponsiblePartyType']//xs:sequence/xs:element[@name='organisationName']">
+			<jaxb:property name="OptionalOrganisationName"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+	<jaxb:bindings 
+		schemaLocation="ogc/wcs/1.0.0/describeCoverage.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='DomainSetType']//xs:sequence/xs:element[@ref='temporalDomain']">
+			<jaxb:property name="OptionalTemporalDomain"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+	<jaxb:bindings 
+		schemaLocation="ogc/wcs/1.0.0/getCoverage.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='DomainSubsetType']//xs:sequence/xs:element[@ref='temporalSubset']">
+			<jaxb:property name="OptionalTemporalSubset"/>
+		</jaxb:bindings>
 	</jaxb:bindings>
 </jaxb:bindings>

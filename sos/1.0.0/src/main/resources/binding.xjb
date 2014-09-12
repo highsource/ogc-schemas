@@ -33,6 +33,22 @@
 		<jaxb:schemaBindings>
 			<jaxb:package name="net.opengis.sos.v_1_0_0.filter"/>
 		</jaxb:schemaBindings>
+		<jaxb:bindings node="xs:complexType[@name='BinaryTemporalOpType']//xs:sequence/xs:element[@ref='ogc:PropertyName']">
+			<jaxb:property name="PropertyName1"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='BinaryTemporalOpType']//xs:choice/xs:element[@ref='ogc:PropertyName']">
+			<jaxb:property name="PropertyName2"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+	<jaxb:bindings 
+		schemaLocation="ogc/filter/1.1.0/filter.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='BinarySpatialOpType']//xs:sequence/xs:element[@ref='ogc:PropertyName']">
+			<jaxb:property name="PropertyName1"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='BinarySpatialOpType']//xs:choice/xs:element[@ref='ogc:PropertyName']">
+			<jaxb:property name="PropertyName2"/>
+		</jaxb:bindings>
 	</jaxb:bindings>
 
 </jaxb:bindings>

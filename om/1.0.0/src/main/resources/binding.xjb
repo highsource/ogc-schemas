@@ -23,16 +23,9 @@
 		<jsonix:packageMapping packageName="net.opengis.sensorml.v_1_0_1" spaceName="SensorML_1_0_1"/>
 		<jsonix:packageMapping packageName="net.opengis.om.v_1_0_0" spaceName="OM_1_0_0"/>
 	</jaxb:bindings>
-
-	<!--jaxb:bindings 
-		schemaLocation="ogc/sensorML/1.0.1/system.xsd" 
-		node="/xs:schema">
-		<jaxb:bindings node="xs:complexType[@name='AbstractDerivableComponentType']//xs:element[@ref='sml:location']">
-			<jaxb:property name="TargetLocation"/>
+	<jaxb:bindings schemaLocation="ogc/om/1.0.0/observation.xsd" node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='ProcessPropertyType']//xs:element[@ref='sml:_Process']">
+			<jaxb:property name="SensorMLProcess"/>
 		</jaxb:bindings>
-		<jaxb:bindings node="xs:complexType[@name='AbstractDerivableComponentType']//xs:element[@ref='sml:position']">
-			<jaxb:property name="TargetPosition"/>
-		</jaxb:bindings>
-	</jaxb:bindings-->
-
+	</jaxb:bindings>
 </jaxb:bindings>

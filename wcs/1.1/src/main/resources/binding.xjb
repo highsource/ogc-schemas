@@ -25,4 +25,11 @@
 		<jsonix:packageMapping packageName="net.opengis.ows.v_1_1_0" spaceName="OWS_1_1_0"/>
 		<jsonix:packageMapping packageName="net.opengis.gml.v_3_1_1" spaceName="GML_3_1_1"/>
 	</jaxb:bindings>
+	<jaxb:bindings 
+		schemaLocation="ogc/wcs/1.1/wcsContents.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='CoverageSummaryType']//xs:choice/xs:sequence/xs:element[@ref='wcs:Identifier']">
+			<jaxb:property name="OptionalIdentifier"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
 </jaxb:bindings>
