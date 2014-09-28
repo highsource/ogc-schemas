@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <WFS_Capabilities
-   version="2.0.0"
+   version="2.0.2"
    xmlns="http://www.opengis.net/wfs/2.0"
    xmlns:gml="http://www.opengis.net/gml/3.2"
    xmlns:fes="http://www.opengis.net/fes/2.0"
@@ -8,8 +8,7 @@
    xmlns:ows="http://www.opengis.net/ows/1.1"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://www.opengis.net/wfs/2.0
-                       http://schemas.opengis.net/wfs/2.0/wfs.xsd
+   xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
                        http://www.opengis.net/ows/1.1
                        http://schemas.opengis.net/ows/1.1.0/owsAll.xsd">
    <ows:ServiceIdentification>
@@ -23,6 +22,8 @@
          <ows:Type>String</ows:Type>
       </ows:Keywords>
       <ows:ServiceType>WFS</ows:ServiceType>
+      <ows:ServiceTypeVersion>2.0.2</ows:ServiceTypeVersion>
+      <ows:ServiceTypeVersion>2.0.1</ows:ServiceTypeVersion>
       <ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
       <ows:ServiceTypeVersion>1.1.0</ows:ServiceTypeVersion>
       <ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
@@ -70,7 +71,11 @@
          </ows:DCP>
          <ows:Parameter name="AcceptVersions">
             <ows:AllowedValues>
+            <ows:Value>2.0.2</ows:Value>
+            <ows:Value>2.0.1</ows:Value>
             <ows:Value>2.0.0</ows:Value>
+            <ows:Value>1.1.0</ows:Value>
+            <ows:Value>1.0.0</ows:Value>
             </ows:AllowedValues>
          </ows:Parameter>
       </ows:Operation>
@@ -108,7 +113,11 @@
       </ows:Operation>
       <ows:Parameter name="version">
          <ows:AllowedValues>
-         <ows:Value>2.0.0</ows:Value>
+            <ows:Value>2.0.2</ows:Value>
+            <ows:Value>2.0.1</ows:Value>
+            <ows:Value>2.0.0</ows:Value>
+            <ows:Value>1.1.0</ows:Value>
+            <ows:Value>1.0.0</ows:Value>
          </ows:AllowedValues>
       </ows:Parameter>
       <!-- ***************************************************** -->
@@ -208,23 +217,23 @@
             <ows:LowerCorner>-180 -90</ows:LowerCorner>
             <ows:UpperCorner>180 90</ows:UpperCorner>
          </ows:WGS84BoundingBox>
-         <MetadataURL xlink:href="http://www.ogccatservice.com/csw.cgi?service=CSW&amp;version=2.0.0&amp;request=GetRecords&amp;constraintlanguage=CQL&amp;recordid=urn:uuid:4ee8b2d3-9409-4a1d-b26b-6782e4fa3d59"/>
+         <MetadataURL xlink:href="http://www.ogccatservice.example.com/csw.cgi?service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;constraintlanguage=CQL&amp;recordid=urn:uuid:4ee8b2d3-9409-4a1d-b26b-6782e4fa3d59"/>
          <ExtendedDescription>
             <Element name="TemporalExtent" type="xsd:date">
-               <ows:Metadata xlink:href="http://www.someserver.com/AboutTemporalExtent.html"/>
+               <ows:Metadata xlink:href="http://www.someserver.example.com/AboutTemporalExtent.html"/>
                <ValueList>
                   <Value>2000-01-01</Value>
                   <Value>2006-01-31</Value>
                </ValueList>
             </Element>
             <Element name="Classifications" type="xsd:anyURI">
-               <ows:Metadata xlink:href="http://www.someserver.com/AboutClassifications.html"/>
+               <ows:Metadata xlink:href="http://www.someserver.example.com/AboutClassifications.html"/>
                <ValueList>
                   <Value>urn:x-ogc:specification:csw-ebrim:ClassificationScheme:ISO-19115:biota</Value>
                </ValueList>
             </Element>
             <Element name="ArborialDiversityIndex" type="xsd:integer">
-               <ows:Metadata xlink:href="http://www.someserver.com/ArborialDiversity.html"/>
+               <ows:Metadata xlink:href="http://www.someserver.example.com/ArborialDiversity.html"/>
                <ValueList>
                   <Value>14</Value>
                </ValueList>

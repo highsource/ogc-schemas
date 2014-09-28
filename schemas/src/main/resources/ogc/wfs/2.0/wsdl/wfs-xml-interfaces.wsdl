@@ -8,11 +8,11 @@
    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <wsdl:documentation xmlns:dc="http://purl.org/dc/elements/1.1/">
-      <dc:identifier>urn:opengis:spec:wfs:wsdl-1.1:interfaces:2.0.0</dc:identifier>
+      <dc:identifier>urn:opengis:spec:wfs:wsdl-1.1:interfaces:2.0.2</dc:identifier>
       <dc:date>2008-08-31</dc:date>
       <dc:description>
          This is the the normative abstract service interface definition
-         for the  OpenGIS Web Feature Service, v2.0.0. The WSDL 1.1 syntax is 
+         for the  OpenGIS Web Feature Service, v2.0.2. The WSDL 1.1 syntax is 
          used to describe the interface signatures and message structures.
       </dc:description>
    </wsdl:documentation>

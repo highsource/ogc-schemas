@@ -4,8 +4,7 @@
    xmlns:gml="http://www.opengis.net/gml/3.2"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://www.opengis.net/fes/2.0
-   http://schemas.opengis.net/filter/2.0/filterAll.xsd">
+   xsi:schemaLocation="http://www.opengis.net/fes/2.0 http://schemas.opengis.net/filter/2.0/filterAll.xsd">
    <fes:Conformance>
       <fes:Constraint name="ImplementsQuery">
          <ows:NoValues/>
@@ -25,7 +24,7 @@
       </fes:Constraint>
       <fes:Constraint name="ImplementsMinStandardFilter">
          <ows:NoValues/>
-         <ows:DefaultValue>TRUE</ows:DefaultValue>
+         <ows:DefaultValue>FALSE</ows:DefaultValue>
       </fes:Constraint>
       <fes:Constraint name="ImplementsStandardFilter">
          <ows:NoValues/>
@@ -61,7 +60,7 @@
       </fes:Constraint>
       <fes:Constraint name="ImplementsMinimumXPath">
          <ows:NoValues/>
-         <ows:DefaultValue>FALSE</ows:DefaultValue>
+         <ows:DefaultValue>TRUE</ows:DefaultValue>
       </fes:Constraint>
       <fes:Constraint name="ImplementsSchemaElementFunc">
          <ows:NoValues/>

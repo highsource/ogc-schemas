@@ -4,10 +4,10 @@
    xmlns:fes="http://www.opengis.org/fes/2.0"
    xmlns:gml="http://www.opengis.net/gml/3.2"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xmlns:myns="http://www.someserver.com/myns"
-   xsi:schemaLocation="http://www.opengis.net/wfs/2.0 ../../wfs.xsd"
+   xmlns:myns="http://www.someserver.example.com/myns"
+   xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"
    service="WFS"
-   version="2.0.0">
+   version="2.0.2">
    <wfs:StoredQueryDefinition id="urn:StoredQueries:FeaturesInPolygon">
       <wfs:Title>Features In Polygon</wfs:Title>
       <wfs:Abstract>Find all the features in a Polygon.</wfs:Abstract>

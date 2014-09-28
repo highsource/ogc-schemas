@@ -4,7 +4,7 @@
    xmlns:fes="http://www.opengis.net/fes/2.0"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
    elementFormDefault="qualified"
-   version="2.0.1">
+   version="2.0.2">
 
    <xsd:annotation>
       <xsd:documentation>
@@ -12,7 +12,7 @@
          all the XML Schema defined by the Filter Encoding Standard.
 
          Filter Encoding is an OGC Standard.
-         Copyright (c) 2010 Open Geospatial Consortium.
+         Copyright (c) 2010, 2014 Open Geospatial Consortium.
          To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
       </xsd:documentation>
    </xsd:annotation>

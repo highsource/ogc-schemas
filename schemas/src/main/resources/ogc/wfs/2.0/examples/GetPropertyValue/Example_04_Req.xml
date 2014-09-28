@@ -5,7 +5,7 @@ Q. Find the number of lanes of the road that the house that
 -->
 <GetPropertyValue
    service="WFS"
-   version="2.0.0"
+   version="2.0.2"
    valueReference="valueOf(myns:livesIn)/valueOf(myns:frontsOn)/abc:numLanes"
    outputFormat="application/xml; subtype=gml/3.2"
    xmlns="http://www.opengis.net/wfs/2.0"
@@ -13,10 +13,9 @@ Q. Find the number of lanes of the road that the house that
    xmlns:myns="http://www.myserver.com/myns"
    xmlns:abc="http://www.myserver.com/abc"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://www.opengis.net/wfs/2.0
-                       http://schemas.opengis.net/wfs/2.0/wfs.xsd
-                       http://www.someserver.com/myns ./myns.xsd
-                       http://www.someserver.com/abc ./abc.xsd">
+   xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+                       http://www.someserver.example.com/myns ./myns.xsd
+                       http://www.someserver.example.com/abc ./abc.xsd">
    <Query typeNames="myns:Person">
       <fes:Filter>
          <fes:And>

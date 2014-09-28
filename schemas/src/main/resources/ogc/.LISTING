@@ -266,6 +266,11 @@ filter/2.0/examples/2.1.2/filter21.xml
 filter/2.0/examples/2.1.2/filter22.xml
 filter/2.0/examples/2.1.2/filter23.xsd
 filter/2.0/examples/2.1.2/filter24.xml
+filter/2.0/examples/2.1.2/filter25.xml
+filter/2.0/examples/2.1.2/filter26.xml
+filter/2.0/examples/2.1.2/filter27.xml
+filter/2.0/examples/2.1.2/filter28.xml
+filter/2.0/examples/2.1.2/filter29.xml
 filter/2.0/examples/2.1.2/myOps.xsd
 filter/2.0/examples/3.1.1/filter01.xml
 filter/2.0/examples/3.1.1/filter02.xml
@@ -291,6 +296,11 @@ filter/2.0/examples/3.1.1/filter21.xml
 filter/2.0/examples/3.1.1/filter22.xml
 filter/2.0/examples/3.1.1/filter23.xsd
 filter/2.0/examples/3.1.1/filter24.xml
+filter/2.0/examples/3.1.1/filter25.xml
+filter/2.0/examples/3.1.1/filter26.xml
+filter/2.0/examples/3.1.1/filter27.xml
+filter/2.0/examples/3.1.1/filter28.xml
+filter/2.0/examples/3.1.1/filter29.xml
 filter/2.0/examples/3.1.1/myOps.xsd
 filter/2.0/examples/3.2.0/filter01.xml
 filter/2.0/examples/3.2.0/filter02.xml
@@ -342,6 +352,11 @@ filter/2.0/examples/3.2.1/filter22.xml
 filter/2.0/examples/3.2.1/filter23.xsd
 filter/2.0/examples/3.2.1/filter24.xml
 filter/2.0/examples/3.2.1/filter25.xml
+filter/2.0/examples/3.2.1/filter26.xml
+filter/2.0/examples/3.2.1/filter27.xml
+filter/2.0/examples/3.2.1/filter28.xml
+filter/2.0/examples/3.2.1/filter29.xml
+filter/2.0/examples/3.2.1/filter30.xml
 filter/2.0/examples/3.2.1/myOps.xsd
 filter/2.0/expr.xsd
 filter/2.0/filterAll.xsd
@@ -355,6 +370,7 @@ filter/filter-1_1_2.zip
 filter/filter-1_1_3.zip
 filter/filter-2_0_0.zip
 filter/filter-2_0_1.zip
+filter/filter-2_0_2.zip
 filter/ReadMe.txt
 geosparql/1.0/geosparql_vocab_all.rdf
 geosparql/geosparql-1_0_0.zip
@@ -674,6 +690,10 @@ gml/gml-3_1_0.zip
 gml/gml-3_1_1.zip
 gml/gml-3_2_1.zip
 gml/gml-3_3_0.zip
+gmljp2/2.0/examples/gmljp2.xml
+gmljp2/2.0/gmljp2.xsd
+gmljp2/gmljp2-2_0_0.zip
+gmljp2/ReadMe.txt
 gml/ReadMe.txt
 gmlsfProfile/2.0/gmlsfL2.sch
 gmlsfProfile/2.0/gmlsfLevels.xsd
@@ -1876,6 +1896,8 @@ wfs/2.0/examples/GetPropertyValue/Example_09_Req.xml
 wfs/2.0/examples/GetPropertyValue/Example_09_Res.xml
 wfs/2.0/examples/GetPropertyValue/Example_10_Req.xml
 wfs/2.0/examples/GetPropertyValue/Example_10_Res.xml
+wfs/2.0/examples/GetPropertyValue/Example_11_Req.xml
+wfs/2.0/examples/GetPropertyValue/Example_11_Res.xml
 wfs/2.0/examples/GetPropertyValue/myns.xsd
 wfs/2.0/examples/GetPropertyValue/SampleData.xml
 wfs/2.0/examples/KVP/kvp.txt
@@ -1888,6 +1910,8 @@ wfs/2.0/examples/LockFeature/LockFeature_03.xml
 wfs/2.0/examples/LockFeature/LockFeature_04_Res.xml
 wfs/2.0/examples/LockFeature/LockFeature_04.xml
 wfs/2.0/examples/StoredQuery/CreateStoredQueryExample.xml
+wfs/2.0/examples/StoredQuery/DescribeStoredQueries.xml
+wfs/2.0/examples/StoredQuery/ListStoredQueries.xml
 wfs/2.0/examples/StoredQuery/StoredQueryExample.xml
 wfs/2.0/examples/Transaction/SampleSchema.xsd
 wfs/2.0/examples/Transaction/Transaction_01.xml
@@ -1922,6 +1946,7 @@ wfs/wfs-1_0_0.zip
 wfs/wfs-1_1_0.zip
 wfs/wfs-2_0_0.zip
 wfs/wfs-2_0_1.zip
+wfs/wfs-2_0_2.zip
 wms/1.0.0/capabilities_1_0_0.dtd
 wms/1.0.0/capabilities_1_0_0.xml
 wms/1.1.0/capabilities_1_1_0.dtd

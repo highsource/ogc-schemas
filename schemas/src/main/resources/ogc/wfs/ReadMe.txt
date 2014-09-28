@@ -17,6 +17,9 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2014-09-23  Panagiotis (Peter) A. Vretanos
+  * v2.0: Added WFS 2.0.2 as wfs/2.0 from OGC 09-025r2
+
 2012-07-21  Kevin Stegemoller
   * v1.0 - v2.0: WARNING XLink change is NOT BACKWARD COMPATIBLE.
   * Changed OGC XLink (xlink:simpleLink) to W3C XLink (xlink:simpleAttrs)

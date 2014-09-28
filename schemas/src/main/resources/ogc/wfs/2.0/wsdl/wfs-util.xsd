@@ -9,6 +9,10 @@
          This file defines the type of the DescribeFeatureType response,
          because WSDL requires that types be explicitly defined in the
          types section, perhaps thru imports.
+
+         WFS is an OGC Standard.
+         Copyright (c) 2010, 2014 Open Geospatial Consortium.
+         To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
       </xsd:documentation>
    </xsd:annotation>
    <xsd:import namespace="http://www.w3.org/2001/XMLSchema"

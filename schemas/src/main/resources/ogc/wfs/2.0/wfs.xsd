@@ -6,14 +6,14 @@
    xmlns:ows="http://www.opengis.net/ows/1.1"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:xml="http://www.w3.org/XML/1998/namespace"
-   elementFormDefault="qualified" version="2.0.1">
+   elementFormDefault="qualified" version="2.0.2">
    <xsd:annotation>
       <xsd:documentation>This XML Schema Document includes and imports, 
       directly or indirectly, all the XML Schemas defined by the 
       Web Feature Service (WFS) Implementation Specification.
 
       WFS is an OGC Standard.
-      Copyright (c) 2010 Open Geospatial Consortium.
+      Copyright (c) 2010, 2014 Open Geospatial Consortium.
       To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .     
       </xsd:documentation>
    </xsd:annotation>
@@ -34,10 +34,15 @@
    <xsd:complexType name="BaseRequestType" abstract="true">
       <xsd:attribute name="service"
                      type="xsd:string" use="required" fixed="WFS"/>
-      <xsd:attribute name="version" type="xsd:string" use="required"
-         fixed="2.0.0"/>
+      <xsd:attribute name="version" type="wfs:VersionStringType"
+         use="required"/>
       <xsd:attribute name="handle" type="xsd:string"/>
    </xsd:complexType>
+   <xsd:simpleType name="VersionStringType">
+      <xsd:restriction base="xsd:string">
+         <xsd:pattern value="2\.0\.\d+"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <!-- ================================================================== -->
    <!-- =   STANDARD QUERY PARAMETERS                                    = -->
    <!-- ================================================================== -->
@@ -750,8 +755,8 @@
          <xsd:element name="ReplaceResults" type="wfs:ActionResultsType"
             minOccurs="0"/>
       </xsd:sequence>
-      <xsd:attribute name="version" type="xsd:string" use="required"
-         fixed="2.0.0"/>
+      <xsd:attribute name="version" type="wfs:VersionStringType"
+         use="required"/>
    </xsd:complexType>
    <xsd:complexType name="TransactionSummaryType">
       <xsd:sequence>

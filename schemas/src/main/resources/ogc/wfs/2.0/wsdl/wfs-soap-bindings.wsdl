@@ -7,7 +7,7 @@
    <wsdl:documentation xmlns:dc="http://purl.org/dc/elements/1.1/">
       <dc:date>2008-08-31</dc:date>
       <dc:description>
-         Adds SOAP (over HTTP) protocol bindings for WFS 2.0.0 interfaces.
+         Adds SOAP (over HTTP) protocol bindings for WFS 2.0.2 interfaces.
       </dc:description>
    </wsdl:documentation>
    <wsdl:import namespace="http://www.opengis.net/wfs/requests/2.0"

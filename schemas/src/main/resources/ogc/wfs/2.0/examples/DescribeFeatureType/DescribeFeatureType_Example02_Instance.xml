@@ -3,18 +3,17 @@
    timeStamp="2008-09-07T19:00:00"
    numberReturned="2"
    numberMatched="unknown"
-   xmlns="http://www.someserver.com/myns"
-   xmlns:myns="http://www.someserver.com/myns"
-   xmlns:rds="http://www.someserver.com/rds"
+   xmlns="http://www.someserver.example.com/myns"
+   xmlns:myns="http://www.someserver.example.com/myns"
+   xmlns:rds="http://www.someserver.example.com/rds"
    xmlns:wfs="http://www.opengis.net/wfs/2.0"
    xmlns:gml="http://www.opengis.net/gml/3.2"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://www.opengis.net/wfs/2.0
-                       http://schemas.opengis.net/wfs/2.0/wfs.xsd
-                       http://www.someserver.com/myns
-                       ./DescribeFeatureType_Example02_Response.xsd
-                       http://www.someserver.com/rds
+   xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+                       http://www.someserver.example.com/myns
+                       ../Common/PersonSchema.xsd 
+                       http://www.someserver.example.com/rds
                        ./DescribeFeatureType_Example02_Road.xsd">
 
    <wfs:member>
@@ -23,7 +22,7 @@
          codeSpace="http://www.canadaSIN.com">424679374</gml:identifier>
          <myns:lastName>Smith</myns:lastName> 
          <myns:firstName>Fred</myns:firstName> 
-         <myns:age>35</myns:age> 
+         <myns:age uom="year">35</myns:age> 
          <myns:sex>male</myns:sex> 
          <myns:spouse xlink:href="#p4467"/> 
          <myns:location xlink:href="#pt102" />
@@ -40,7 +39,7 @@
          codeSpace="http://www.canadaSIN.com">424679360</gml:identifier>
          <myns:lastName>Smith</myns:lastName> 
          <myns:firstName>Mary</myns:firstName> 
-         <myns:age>18</myns:age> 
+         <myns:age uom="year">18</myns:age> 
          <myns:sex>female</myns:sex> 
          <myns:spouse xlink:href="#p4456"/> 
          <myns:location xlink:href="#pt101" />
@@ -57,7 +56,7 @@
          <gml:identifier
          codeSpace="http://www.carserial.org">51465243</gml:identifier>
          <myns:model>Ford Pinto</myns:model>
-         <myns:age>4</myns:age>
+         <myns:age uom="year">4</myns:age>
          <myns:colour>red</myns:colour>
          <myns:location>
             <gml:Point gml:id="pt102">

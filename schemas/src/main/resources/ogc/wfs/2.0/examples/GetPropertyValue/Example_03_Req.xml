@@ -1,17 +1,16 @@
 <?xml version="1.0" ?>
 <GetFeature
    service="WFS"
-   version="2.0.0"
+   version="2.0.2"
    outputFormat="application/xml; subtype=gml/3.2"
    xmlns="http://www.opengis.net/wfs/2.0"
    xmlns:fes="http://www.opengis.net/fes/2.0"
    xmlns:abc="http://www.myserver.com/abc"
    xmlns:myns="http://www.myserver.com/myns"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://www.opengis.net/wfs/2.0
-                       http://schemas.opengis.net/wfs/2.0/wfs.xsd
-                       http://www.someserver.com/myns ./myns.xsd
-                       http://www.someserver.com/abc ./abc.xsd">
+   xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+                       http://www.someserver.example.com/myns ./myns.xsd
+                       http://www.someserver.example.com/abc ./abc.xsd">
    <Query typeNames="myns:Person myns:House abc:Road">
      <PropertyName resolve="local">abc:numberOfLanes</PropertyName>
      <fes:Filter>

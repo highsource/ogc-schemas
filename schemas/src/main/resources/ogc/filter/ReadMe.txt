@@ -28,6 +28,9 @@ FES 2.0 is filterAll.xsd .
 
 -----------------------------------------------------------------------
 
+2014-09-23  Panagiotis (Peter) A. Vretanos
+  * v2.0: Added FES 2.0.2 as filter/2.0 from 09-026r2.
+
 2012-07-21  Kevin Stegemoller
   * implement 11-025: retroactively require/add all leaf documents of an
   XML namespace shall explicitly <include/> the all-components schema

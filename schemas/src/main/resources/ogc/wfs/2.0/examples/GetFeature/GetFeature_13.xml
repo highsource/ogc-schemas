@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 <GetFeature
    service="WFS"
-   version="2.0.0"
+   version="2.0.2"
    xmlns="http://www.opengis.net/wfs/2.0"
-   xmlns:myns="http://www.someserver.com/myns"
+   xmlns:myns="http://www.someserver.example.com/myns"
    xmlns:fes="http://www.opengis.net/fes/2.0"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://www.opengis.net/wfs/2.0
-                       http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+   xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
    <Query typeNames="myns:Parks myns:Lakes">
       <fes:Filter>
          <fes:And>

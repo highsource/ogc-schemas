@@ -4,12 +4,16 @@
    xmlns:wfs-kvp="http://www.opengis.net/wfs-kvp/2.0"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
    elementFormDefault="qualified"
-   version="2.0.1">
+   version="2.0.2">
    <xsd:annotation>
       <xsd:documentation>
          This file defines the abstract schema of keyword-value pair
          encoding of WFS operations.  This is NOT the wire format.  
          The types in this file are meant to convery the structure.
+
+         WFS is an OGC Standard.
+         Copyright (c) 2010, 2014 Open Geospatial Consortium.
+         To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
       </xsd:documentation>
    </xsd:annotation>
    <xsd:simpleType name="CommaSeparatedList">
@@ -44,6 +48,11 @@
          <xsd:enumeration value="none"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="VersionStringType">
+      <xsd:restriction base="xsd:string">
+         <xsd:pattern value="2\.0\.\d+"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <!-- GETCAPABILITIES TYPE DEFINITION ================================= -->
    <xsd:complexType name="GetCapabilitiesType">
       <xsd:sequence>
@@ -67,8 +76,8 @@
       <xsd:sequence>
          <xsd:element name="service" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="WFS"/>
-         <xsd:element name="version" type="xsd:string" minOccurs="1"
-            maxOccurs="1" fixed="2.0.0"/>
+         <xsd:element name="version" type="wfs-kvp:VersionStringType"
+            minOccurs="1" maxOccurs="1"/>
          <xsd:element name="request" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="DescribeFeatureType"/>
          <xsd:element name="typeName" type="wfs-kvp:CommaSeparatedList"
@@ -84,8 +93,8 @@
       <xsd:sequence>
          <xsd:element name="service" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="WFS"/>
-         <xsd:element name="version" type="xsd:string" minOccurs="1"
-            maxOccurs="1" fixed="2.0.0"/>
+         <xsd:element name="version" type="wfs-kvp:VersionStringType"
+            minOccurs="1" maxOccurs="1"/>
          <xsd:element name="request" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="GetPropertyValue"/>
          <xsd:element name="valuereference" type="xsd:string"/>
@@ -120,8 +129,8 @@
       <xsd:sequence>
          <xsd:element name="service" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="WFS"/>
-         <xsd:element name="version" type="xsd:string" minOccurs="1"
-            maxOccurs="1" fixed="2.0.0"/>
+         <xsd:element name="version" type="wfs-kvp:VersionStringType"
+            minOccurs="1" maxOccurs="1"/>
          <xsd:element name="request" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="GetFeature"/>
          <xsd:element name="outputFormat" type="xsd:string" minOccurs="0"
@@ -170,8 +179,8 @@
       <xsd:sequence>
          <xsd:element name="service" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="WFS"/>
-         <xsd:element name="version" type="xsd:string" minOccurs="1"
-            maxOccurs="1" fixed="2.0.0"/>
+         <xsd:element name="version" type="wfs-kvp:VersionStringType"
+            minOccurs="1" maxOccurs="1"/>
          <xsd:element name="request" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="GetFeatureWithLock"/>
          <xsd:element name="outputFormat" type="xsd:string" minOccurs="0"
@@ -221,8 +230,8 @@
       <xsd:sequence>
          <xsd:element name="service" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="WFS"/>
-         <xsd:element name="version" type="xsd:string" minOccurs="1"
-            maxOccurs="1" fixed="2.0.0"/>
+         <xsd:element name="version" type="wfs-kvp:VersionStringType"
+            minOccurs="1" maxOccurs="1"/>
          <xsd:element name="request" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="LockFeature"/>
          <xsd:element name="lockaction" type="wfs-kvp:All_Some_ValueType"
@@ -247,8 +256,8 @@
       <xsd:sequence>
          <xsd:element name="service" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="WFS"/>
-         <xsd:element name="version" type="xsd:string" minOccurs="1"
-            maxOccurs="1" fixed="2.0.0"/>
+         <xsd:element name="version" type="wfs-kvp:VersionStringType"
+            minOccurs="1" maxOccurs="1"/>
          <xsd:element name="request" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="ListStoredQueries"/>
          <xsd:element name="namespace" type="wfs-kvp:CommaSeparatedList"
@@ -260,8 +269,8 @@
       <xsd:sequence>
          <xsd:element name="service" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="WFS"/>
-         <xsd:element name="version" type="xsd:string" minOccurs="1"
-            maxOccurs="1" fixed="2.0.0"/>
+         <xsd:element name="version" type="wfs-kvp:VersionStringType"
+            minOccurs="1" maxOccurs="1"/>
          <xsd:element name="request" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="DescribeStoredQueries"/>
          <xsd:element name="storedQueryId" type="wfs-kvp:CommaSeparatedList"
@@ -276,8 +285,8 @@
       <xsd:sequence>
          <xsd:element name="service" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="WFS"/>
-         <xsd:element name="version" type="xsd:string" minOccurs="1"
-            maxOccurs="1" fixed="2.0.0"/>
+         <xsd:element name="version" type="wfs-kvp:VersionStringType"
+            minOccurs="1" maxOccurs="1"/>
          <xsd:element name="request" type="xsd:string" minOccurs="1"
             maxOccurs="1" fixed="DropStoredQuery"/>
          <xsd:element name="storedQueryId" type="xsd:string" maxOccurs="1"
