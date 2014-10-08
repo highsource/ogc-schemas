@@ -1,1 +1,1 @@
-git diff --patch --no-prefix --relative genesis master -- ogc > ../../../src/main/patches/ogc.patch
+git diff --patch --no-prefix --relative origin/genesis master -- ogc > ../../../src/main/patches/ogc.patch
