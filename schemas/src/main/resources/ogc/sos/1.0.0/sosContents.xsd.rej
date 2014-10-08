@@ -1,0 +1,21 @@
+***************
+*** 15,23 ****
+  	<!-- ==============================================================
+  		includes and imports
+  	============================================================== -->
+- 	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+- 	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd"/>
+- 	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+  	<include schemaLocation="sosAll.xsd"/>
+  	<include schemaLocation="sosCommon.xsd"/>
+  	<!-- ==============================================================
+--- 15,23 ----
+  	<!-- ==============================================================
+  		includes and imports
+  	============================================================== -->
++ 	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
++ 	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="../../sweCommon/1.0.1/swe.xsd"/>
++ 	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+  	<include schemaLocation="sosAll.xsd"/>
+  	<include schemaLocation="sosCommon.xsd"/>
+  	<!-- ==============================================================

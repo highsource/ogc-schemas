@@ -1,0 +1,17 @@
+***************
+*** 12,18 ****
+  	</annotation>
+  	<!-- ====================================================================== -->
+  	<!-- bring in other schemas -->
+- 	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+  	<include schemaLocation="./swe.xsd"/>
+  	<include schemaLocation="./aggregateTypes.xsd"/>
+  	<!-- ====================================================================== -->
+--- 12,18 ----
+  	</annotation>
+  	<!-- ====================================================================== -->
+  	<!-- bring in other schemas -->
++ 	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+  	<include schemaLocation="./swe.xsd"/>
+  	<include schemaLocation="./aggregateTypes.xsd"/>
+  	<!-- ====================================================================== -->

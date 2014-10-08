@@ -1,0 +1,17 @@
+***************
+*** 14,20 ****
+  	<!-- =============================================================
+  		includes and imports
+  	============================================================== -->
+- 	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+  	<include schemaLocation="wpsAll.xsd"/>
+  	<include schemaLocation="common/RequestBaseType.xsd"/>
+  	<!-- =============================================================
+--- 14,20 ----
+  	<!-- =============================================================
+  		includes and imports
+  	============================================================== -->
++ 	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+  	<include schemaLocation="wpsAll.xsd"/>
+  	<include schemaLocation="common/RequestBaseType.xsd"/>
+  	<!-- =============================================================

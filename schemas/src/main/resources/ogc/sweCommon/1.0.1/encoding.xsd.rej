@@ -1,0 +1,17 @@
+***************
+*** 8,14 ****
+  		</xs:documentation>
+  	</xs:annotation>
+  	<!-- ================================================= -->
+- 	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+  	<xs:include schemaLocation="./swe.xsd"/>
+  	<!-- ================================================= -->
+  	<xs:complexType name="BlockEncodingPropertyType">
+--- 8,14 ----
+  		</xs:documentation>
+  	</xs:annotation>
+  	<!-- ================================================= -->
++ 	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+  	<xs:include schemaLocation="./swe.xsd"/>
+  	<!-- ================================================= -->
+  	<xs:complexType name="BlockEncodingPropertyType">

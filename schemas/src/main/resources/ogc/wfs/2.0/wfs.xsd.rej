@@ -1,0 +1,21 @@
+***************
+*** 25,33 ****
+     <xsd:import namespace="http://www.w3.org/1999/xlink"
+        schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+     <xsd:import namespace="http://www.opengis.net/ows/1.1"
+-       schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+     <xsd:import namespace="http://www.opengis.net/fes/2.0"
+-       schemaLocation="http://schemas.opengis.net/filter/2.0/filterAll.xsd"/>
+     <!-- ================================================================== -->
+     <!-- =   BASE REQUEST TYPE                                            = -->
+     <!-- ================================================================== -->
+--- 25,33 ----
+     <xsd:import namespace="http://www.w3.org/1999/xlink"
+        schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+     <xsd:import namespace="http://www.opengis.net/ows/1.1"
++       schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+     <xsd:import namespace="http://www.opengis.net/fes/2.0"
++       schemaLocation="../../filter/2.0/filterAll.xsd"/>
+     <!-- ================================================================== -->
+     <!-- =   BASE REQUEST TYPE                                            = -->
+     <!-- ================================================================== -->

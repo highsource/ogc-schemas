@@ -1,0 +1,17 @@
+***************
+*** 6,12 ****
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+  -->
+  	<xsd:include schemaLocation="expr.xsd"/>
+- 	<xsd:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/2.1.2/geometry.xsd"/>
+  	<!-- ============================================= -->
+  	<!-- FILTER EXPRESSION                             -->
+  	<!-- ============================================= -->
+--- 6,12 ----
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+  -->
+  	<xsd:include schemaLocation="expr.xsd"/>
++ 	<xsd:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/2.1.2/geometry.xsd"/>
+  	<!-- ============================================= -->
+  	<!-- FILTER EXPRESSION                             -->
+  	<!-- ============================================= -->
