@@ -27,6 +27,9 @@ this Schema gmljp2.xsd.
 
 -----------------------------------------------------------------------
 
+2014-10-02  Lucio Colaiacomo & Joan Maso
+  + v2.0: update examples.
+
 2014-09-16  Lucio Colaiacomo & Joan Maso
   + v2.0: Added GMLJP2 2.0.0 as gmljp2/2.0 from OGC 08-085r4.
 

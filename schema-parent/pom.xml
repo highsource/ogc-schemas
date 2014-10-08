@@ -20,18 +20,57 @@
 					<artifactId>maven-jaxb2-plugin</artifactId>
 					<executions>
 						<execution>
+							<id>xjc</id>
 							<goals>
 								<goal>generate</goal>
 							</goals>
 						</execution>
+						<!--execution>
+							<id>jsonix</id>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+							<configuration>
+								<generateDirectory>${project.build.directory}/generated-sources/jsonix</generateDirectory>
+								<useDependenciesAsEpisodes>false</useDependenciesAsEpisodes>
+								<writeCode>false</writeCode>
+							</configuration>
+						</execution-->
 					</executions>
 					<configuration>
-						<!--schemaDirectory>${project.build.directory}/unpacked-resources</schemaDirectory>
-						<bindingDirectory>src/main/resources</bindingDirectory-->
-						<catalog>src/main/resources/catalog.cat</catalog>
 						<useDependenciesAsEpisodes>true</useDependenciesAsEpisodes>
 						<strict>false</strict>
 						<extension>true</extension>
+						<schemaIncludes/>
+						<bindings>
+							<binding>
+								<dependencyResource>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>ogc-schemas</artifactId>
+									<resource>ogc/globalBindings.xjb</resource>
+									<version>${project.version}</version>
+								</dependencyResource>
+							</binding>
+						</bindings>
+						<catalogs>
+							<catalog>
+								<dependencyResource>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>ogc-schemas</artifactId>
+									<resource>ogc/catalog.cat</resource>
+									<version>${project.version}</version>
+								</dependencyResource>
+							</catalog>
+							<catalog>
+								<dependencyResource>
+									<groupId>org.hisrc.w3c</groupId>
+									<artifactId>w3c-schemas</artifactId>
+									<resource>w3c/catalog.cat</resource>
+									<version>${w3c-schemas.version}</version>
+								</dependencyResource>
+							</catalog>
+						</catalogs>
+
 						<args>
 							<arg>-XtoString</arg>
 							<arg>-Xequals</arg>

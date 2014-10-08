@@ -16,10 +16,11 @@ if (typeof define === 'function' && define.amd) {
   define([], IC_2_0_Module_Factory);
 }
 else {
+  var IC_2_0_Module = IC_2_0_Module_Factory();
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports.IC_2_0 = IC_2_0_Module_Factory().IC_2_0;
+    module.exports.IC_2_0 = IC_2_0_Module.IC_2_0;
   }
   else {
-    var IC_2_0 = IC_2_0_Module_Factory().IC_2_0;
+    var IC_2_0 = IC_2_0_Module.IC_2_0;
   }
 }

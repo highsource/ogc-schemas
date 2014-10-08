@@ -45,7 +45,7 @@
     <!-- ========= includes and imports ================================ -->
     <xs:include schemaLocation="./wcsAll.xsd"/>
     <xs:include schemaLocation="./owsBase.xsd"/>
-    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"/>
     <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
     <!-- ==============================================================       elements and types	============================================================== -->
     <xs:element name="GetCapabilities">

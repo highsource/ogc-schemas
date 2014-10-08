@@ -17,6 +17,9 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2014-10-02  Panagiotis (Peter) A. Vretanos
+  * v2.0: Update examples.  No version change.
+
 2014-09-23  Panagiotis (Peter) A. Vretanos
   * v2.0: Added WFS 2.0.2 as wfs/2.0 from OGC 09-025r2
 

@@ -16,8 +16,8 @@
 	<!-- ==============================================================
 		includes and imports
 	============================================================== -->
-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
-	<import namespace="http://www.opengis.net/om/1.0" schemaLocation="../../om/1.0.0/om.xsd"/>
+	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+	<import namespace="http://www.opengis.net/om/1.0" schemaLocation="http://schemas.opengis.net/om/1.0.0/om.xsd"/>
 	<include schemaLocation="sosAll.xsd"/>
 	<include schemaLocation="sosCommon.xsd"/>
 	<!-- ==============================================================

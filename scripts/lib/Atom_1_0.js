@@ -3,6 +3,45 @@ var Atom_1_0_Module_Factory = function () {
     n: 'Atom_1_0',
     dens: 'http:\/\/www.w3.org\/2005\/Atom',
     tis: [{
+        ln: 'Link',
+        ps: [{
+            n: 'href',
+            an: {
+              lp: 'href'
+            },
+            t: 'a'
+          }, {
+            n: 'rel',
+            an: {
+              lp: 'rel'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'type'
+            },
+            t: 'a'
+          }, {
+            n: 'hreflang',
+            an: {
+              lp: 'hreflang'
+            },
+            t: 'a'
+          }, {
+            n: 'title',
+            an: {
+              lp: 'title'
+            },
+            t: 'a'
+          }, {
+            n: 'length',
+            an: {
+              lp: 'length'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'AtomPersonConstruct',
         ps: [{
             n: 'nameOrUriOrEmail',
@@ -11,48 +50,27 @@ var Atom_1_0_Module_Factory = function () {
             dom: false,
             typed: false,
             etis: [{
-                en: 'email'
+                en: 'name'
               }, {
                 en: 'uri'
               }, {
-                en: 'name'
+                en: 'email'
               }],
             t: 'ers'
           }]
-      }, {
-        ln: 'Link',
-        ps: [{
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'rel',
-            t: 'a'
-          }, {
-            n: 'type',
-            t: 'a'
-          }, {
-            n: 'hreflang',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'length',
-            t: 'a'
-          }]
       }],
     eis: [{
-        en: 'link',
-        ti: 'Atom_1_0.Link'
-      }, {
-        en: 'author',
-        ti: 'Atom_1_0.AtomPersonConstruct'
-      }, {
-        en: 'uri'
+        en: 'email'
       }, {
         en: 'name'
       }, {
-        en: 'email'
+        en: 'uri'
+      }, {
+        en: 'author',
+        ti: '.AtomPersonConstruct'
+      }, {
+        en: 'link',
+        ti: '.Link'
       }]
   };
   return {
@@ -63,10 +81,11 @@ if (typeof define === 'function' && define.amd) {
   define([], Atom_1_0_Module_Factory);
 }
 else {
+  var Atom_1_0_Module = Atom_1_0_Module_Factory();
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports.Atom_1_0 = Atom_1_0_Module_Factory().Atom_1_0;
+    module.exports.Atom_1_0 = Atom_1_0_Module.Atom_1_0;
   }
   else {
-    var Atom_1_0 = Atom_1_0_Module_Factory().Atom_1_0;
+    var Atom_1_0 = Atom_1_0_Module.Atom_1_0;
   }
 }

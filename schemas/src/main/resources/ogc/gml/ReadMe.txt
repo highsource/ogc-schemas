@@ -13,6 +13,10 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2014-10-03  Simon Cox
+  + v3.2.1: Fix spelling of Bezier in gml/3.2.1/gml_32_geometries.rdf . 
+            No Version Change.
+
 2012-09-10  Simon Cox
   + v3.2.1: add geosparql 1.0.1 ontology gml/3.2.1/gml_32_geometries.rdf
             see OGC 11-052r4 at http://www.opengeospatial.org/standards/geosparql

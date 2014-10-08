@@ -18,8 +18,8 @@
         Includes and Imports
         ============================================================== -->
    <xsd:include schemaLocation="./wfs.xsd"/>
-   <xsd:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/2.1.2/feature.xsd"/>
-   <xsd:import namespace="http://www.opengis.net/ogc" schemaLocation="../../filter/1.0.0/filter.xsd"/>
+   <xsd:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/2.1.2/feature.xsd"/>
+   <xsd:import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/filter/1.0.0/filter.xsd"/>
 
    <!-- ==============================================================
          REQUEST MESSAGES
