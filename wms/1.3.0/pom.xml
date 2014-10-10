@@ -25,48 +25,10 @@
 			<groupId>org.hisrc.w3c</groupId>
 			<artifactId>xlink-v_1_0</artifactId>
 		</dependency>
-		<!--dependency>
-			<groupId>org.jvnet.ogc</groupId>
-			<artifactId>ows-v_1_1_0</artifactId>
-			<version>${project.version}</version>
-		</dependency-->
 	</dependencies>
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<plugins>
-			<plugin>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>unpack-schemas</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>unpack</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>org.hisrc.w3c</groupId>
-									<artifactId>w3c-schemas</artifactId>
-									<type>jar</type>
-									<outputDirectory>src/main/resources</outputDirectory>
-									<includes>w3c/1999/xlink.xsd,w3c/2001/xml.xsd</includes>
-								 </artifactItem>
-								<artifactItem>
-									<groupId>${project.groupId}</groupId>
-									<artifactId>ogc-schemas</artifactId>
-									<version>${project.version}</version>
-									<type>jar</type>
-									<overWrite>false</overWrite>
-									<outputDirectory>src/main/resources</outputDirectory>
-									<includes>ogc/wms/1.3.0/**/*.*</includes>
-<!--,ogc/ows/1.1.0/**/*.*-->
-								 </artifactItem>
-							 </artifactItems>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
@@ -74,6 +36,32 @@
 					<schemaIncludes>
 						<value>ogc/wms/*/*.xsd</value>
 					</schemaIncludes>
+					<schemas>
+						<schema>
+							<url>http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd</url>
+						</schema>
+						<schema>
+							<url>http://schemas.opengis.net/wms/1.3.0/exceptions_1_3_0.xsd</url>
+						</schema>
+					</schemas>
+					<bindings>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>ogc-schemas</artifactId>
+								<resource>ogc/globalBindings.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>org.hisrc.w3c</groupId>
+								<artifactId>xlink-v_1_0</artifactId>
+								<resource>xlink-v_1_0.jsonix.xjb</resource>
+								<version>${w3c-schemas.version}</version>
+							</dependencyResource>
+						</binding>
+					</bindings>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -83,8 +71,7 @@
 						<phase>process-sources</phase>
 						<configuration>
 							<tasks>
-								<!--delete dir="${basedir}/target/generated-sources/xjc/net/opengis/ows"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="OWS*.*"/-->
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="XLink*.*"/>
 							</tasks>
 						</configuration>
 						<goals>

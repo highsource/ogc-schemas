@@ -8,9 +8,9 @@
 	<name>OGC WMS 1.0.0</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
-		<artifactId>ogc-schema-parent</artifactId>
+		<artifactId>ogc-dtd-parent</artifactId>
 		<version>2.0.1-SNAPSHOT</version>
-		<relativePath>../../schema-parent/pom.xml</relativePath>
+		<relativePath>../../dtd-parent/pom.xml</relativePath>
 	</parent>
 	<dependencies>
 		<dependency>
@@ -26,71 +26,28 @@
 		<defaultGoal>install</defaultGoal>
 		<plugins>
 			<plugin>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>unpack-schemas</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>unpack</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>${project.groupId}</groupId>
-									<artifactId>ogc-schemas</artifactId>
-									<version>${project.version}</version>
-									<type>jar</type>
-									<overWrite>false</overWrite>
-									<outputDirectory>src/main/resources</outputDirectory>
-									<includes>ogc/wms/1.0.0/**/*.*</includes>
-								 </artifactItem>
-							 </artifactItems>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
-				<!--configuration>
-					<schemaLanguage>dtd</schemaLanguage>
-					<schemaIncludes>
-						<value>ogc/wms/*/capabilities*.dtd</value>
-					</schemaIncludes>
-				</configuration-->
+				<configuration>
+					<schemas>
+						<schema>
+							<url>http://schemas.opengis.net/wms/1.0.0/capabilities_1_0_0.dtd</url>
+						</schema>
+					</schemas>
+				</configuration>
 				<executions>
-				<execution>
-					<id>sources</id>
-					<goals>
-						<goal>generate</goal>
-					</goals>
-					<configuration>
-						<schemaLanguage>dtd</schemaLanguage>
-						<generatePackage>net.opengis.wms.v_1_0_0</generatePackage>
-						<bindingIncludes>
-						</bindingIncludes>
-						<schemaIncludes>
-							<value>ogc/wms/*/capabilities*.dtd</value>
-						</schemaIncludes>
-					</configuration>
-				</execution>
-				<execution>
-					<id>scripts</id>
-					<goals>
-						<goal>generate</goal>
-					</goals>
-					<configuration>
-						<forceRegenerate>true</forceRegenerate>
-						<schemaLanguage>dtd</schemaLanguage>
-						<generatePackage>WMS_1_0_0</generatePackage>
-						<bindingIncludes>
-						</bindingIncludes>
-						<schemaIncludes>
-							<value>ogc/wms/*/capabilities*.dtd</value>
-						</schemaIncludes>
-					</configuration>
-				</execution>
+					<execution>
+						<id>sources</id>
+						<configuration>
+							<generatePackage>net.opengis.wms.v_1_0_0</generatePackage>
+						</configuration>
+					</execution>
+					<execution>
+						<id>scripts</id>
+						<configuration>
+							<generatePackage>WMS_1_0_0</generatePackage>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 			<plugin>

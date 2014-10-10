@@ -8,9 +8,9 @@
 	<name>OGC WMS 1.1.0</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
-		<artifactId>ogc-schema-parent</artifactId>
+		<artifactId>ogc-dtd-parent</artifactId>
 		<version>2.0.1-SNAPSHOT</version>
-		<relativePath>../../schema-parent/pom.xml</relativePath>
+		<relativePath>../../dtd-parent/pom.xml</relativePath>
 	</parent>
 	<dependencies>
 		<dependency>
@@ -83,44 +83,24 @@
 			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
-				<!--configuration>
-					<schemaLanguage>dtd</schemaLanguage>
+				<configuration>
 					<schemaIncludes>
-						<value>ogc/wms/*/capabilities*.dtd</value>
+						<include>ogc/wms/1.1.0/wms_1_1_0.dtd</include>
 					</schemaIncludes>
-				</configuration-->
+				</configuration>
 				<executions>
-				<execution>
-					<id>sources</id>
-					<goals>
-						<goal>generate</goal>
-					</goals>
-					<configuration>
-						<schemaLanguage>dtd</schemaLanguage>
-						<generatePackage>net.opengis.wms.v_1_1_0</generatePackage>
-						<bindingIncludes>
-						</bindingIncludes>
-						<schemaIncludes>
-							<value>ogc/wms/*/wms*.dtd</value>
-						</schemaIncludes>
-					</configuration>
-				</execution>
-				<execution>
-					<id>scripts</id>
-					<goals>
-						<goal>generate</goal>
-					</goals>
-					<configuration>
-						<forceRegenerate>true</forceRegenerate>
-						<schemaLanguage>dtd</schemaLanguage>
-						<generatePackage>WMS_1_1_0</generatePackage>
-						<bindingIncludes>
-						</bindingIncludes>
-						<schemaIncludes>
-							<value>ogc/wms/*/wms*.dtd</value>
-						</schemaIncludes>
-					</configuration>
-				</execution>
+					<execution>
+						<id>sources</id>
+						<configuration>
+							<generatePackage>net.opengis.wms.v_1_1_0</generatePackage>
+						</configuration>
+					</execution>
+					<execution>
+						<id>scripts</id>
+						<configuration>
+							<generatePackage>WMS_1_1_0</generatePackage>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 			<plugin>

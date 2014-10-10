@@ -70,13 +70,6 @@
 						</binding>
 					</bindings>
 				</configuration>
-				<!--configuration>
-					<schemaIncludes>
-						<value>ogc/wps/*/wpsAll.xsd</value>
-						<value>ogc/filter/*/filter.xsd</value>
-						<value>ogc/filter/*/sort.xsd</value>
-					</schemaIncludes>
-				</configuration-->
 			</plugin>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
@@ -85,8 +78,8 @@
 						<phase>process-sources</phase>
 						<configuration>
 							<tasks>
-								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/ows"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="OWS*.*"/>
+								<!--delete dir="${basedir}/target/generated-sources/xjc/net/opengis/ows"/>
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="OWS*.*"/-->
 							</tasks>
 						</configuration>
 						<goals>
