@@ -33,9 +33,6 @@
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
 				<configuration>
-					<schemaIncludes>
-						<value>ogc/wms/*/*.xsd</value>
-					</schemaIncludes>
 					<schemas>
 						<schema>
 							<url>http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd</url>
@@ -71,7 +68,7 @@
 						<phase>process-sources</phase>
 						<configuration>
 							<tasks>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="XLink*.*"/>
+								<!--delete dir="${basedir}/target/generated-sources/xjc" includes="XLink*.*"/-->
 							</tasks>
 						</configuration>
 						<goals>
