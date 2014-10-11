@@ -29,7 +29,7 @@
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<plugins>
-			<plugin>
+			<!--plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
@@ -60,8 +60,38 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin-->
 			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<configuration>
+					<schemas>
+						<schema>
+							<url>http://schemas.opengis.net/gml/3.1.1/base/gml.xsd</url>
+						</schema>
+					</schemas>
+					<bindings>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>ogc-schemas</artifactId>
+								<resource>ogc/globalBindings.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>org.hisrc.w3c</groupId>
+								<artifactId>xlink-v_1_0</artifactId>
+								<resource>xlink-v_1_0.jsonix.xjb</resource>
+								<version>${w3c-schemas.version}</version>
+							</dependencyResource>
+						</binding>
+					</bindings>
+				</configuration>
+			</plugin>
+
+			<!--plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
 				<configuration>
@@ -69,7 +99,7 @@
 						<value>ogc/gml/*/base/gml.xsd</value>
 					</schemaIncludes>
 				</configuration>
-			</plugin>
+			</plugin-->
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 			</plugin>
