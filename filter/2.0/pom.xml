@@ -31,44 +31,40 @@
 		<defaultGoal>install</defaultGoal>
 		<plugins>
 			<plugin>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>unpack-schemas</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>unpack</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>org.hisrc.w3c</groupId>
-									<artifactId>w3c-schemas</artifactId>
-									<type>jar</type>
-									<outputDirectory>src/main/resources</outputDirectory>
-									<includes>w3c/1999/xlink.xsd,w3c/2001/xml.xsd</includes>
-								 </artifactItem>
-								<artifactItem>
-									<groupId>${project.groupId}</groupId>
-									<artifactId>ogc-schemas</artifactId>
-									<version>${project.version}</version>
-									<type>jar</type>
-									<overWrite>false</overWrite>
-									<outputDirectory>src/main/resources</outputDirectory>
-									<includes>ogc/filter/2.0/**/*.*,ogc/ows/1.1.0/**/*.*</includes>
-								 </artifactItem>
-							 </artifactItems>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
 				<configuration>
-					<schemaIncludes>
-						<value>ogc/filter/*/filterAll.xsd</value>
-					</schemaIncludes>
+					<schemas>
+						<schema>
+							<url>http://schemas.opengis.net/filter/2.0/filterAll.xsd</url>
+						</schema>
+					</schemas>
+					<bindings>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>ogc-schemas</artifactId>
+								<resource>ogc/globalBindings.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>ows-v_1_1_0</artifactId>
+								<resource>ows-v_1_1_0.jsonix.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+						<!--binding>
+							<dependencyResource>
+								<groupId>org.hisrc.w3c</groupId>
+								<artifactId>xlink-v_1_0</artifactId>
+								<resource>xlink-v_1_0.jsonix.xjb</resource>
+								<version>${w3c-schemas.version}</version>
+							</dependencyResource>
+						</binding-->
+					</bindings>
 				</configuration>
 			</plugin>
 			<plugin>

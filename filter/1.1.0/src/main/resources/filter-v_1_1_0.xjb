@@ -1,29 +1,16 @@
 <jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
-	xmlns:jsonix="http://jsonix.highsource.org/customizations"
-	jaxb:extensionBindingPrefixes="xjc jsonix">
+	jaxb:extensionBindingPrefixes="xjc">
 
 	<jaxb:bindings 
-		schemaLocation="ogc/filter/1.1.0/filter.xsd" 
+		schemaLocation="http://schemas.opengis.net/filter/1.1.0/filter.xsd" 
 		node="/xs:schema">
-
-		<jaxb:globalBindings
-			fixedAttributeAsConstantProperty="true"
-			typesafeEnumBase="xs:string"
-			typesafeEnumMemberName="generateName" 
-			generateIsSetMethod="true">
-			<xjc:noValidator />
-			<xjc:noValidatingUnmarshaller />
-		</jaxb:globalBindings>
 
 		<jaxb:schemaBindings>
 			<jaxb:package name="net.opengis.filter.v_1_1_0"/>
 		</jaxb:schemaBindings>
 
-		<jsonix:packageMapping packageName="org.hisrc.w3c.xlink.v_1_0" spaceName="XLink_1_0"/>
-		<jsonix:packageMapping packageName="net.opengis.gml.v_3_1_1" spaceName="GML_3_1_1"/>
-		<jsonix:packageMapping packageName="net.opengis.filter.v_1_1_0" spaceName="Filter_1_1_0"/>
 		<jaxb:bindings node="xs:complexType[@name='BinarySpatialOpType']//xs:sequence/xs:element[@ref='ogc:PropertyName']">
 			<jaxb:property name="PropertyName1"/>
 		</jaxb:bindings>
