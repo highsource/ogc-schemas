@@ -3,4 +3,5 @@
     not recognized and the test will fail because of a missing schema.
 --
 REWRITE_SYSTEM "http://schemas.opengis.net" "maven:org.jvnet.ogc:ogc-schemas:jar::!/ogc"
-REWRITE_SYSTEM "http://docs.oasis-open.org/election/external/xAL.xsd" "maven:org.jvnet.ogc:ogc-schemas:jar::!/oasis"
+REWRITE_SYSTEM "http://docs.oasis-open.org" "maven:org.jvnet.ogc:ogc-schemas:jar::!/oasis"
+REWRITE_SYSTEM "http://schemas.opengis.net/kml/2.2.0/atom-author-link.xsd" "maven:org.hisrc.w3c:w3c-schemas:jar::!/w3c/2005/atom-author-link.xsd"

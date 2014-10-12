@@ -21,53 +21,52 @@
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-impl</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.hisrc.w3c</groupId>
+			<artifactId>atom-v_1_0</artifactId>
+			<version>${w3c-schemas.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<plugins>
 			<plugin>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>unpack-schemas</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>unpack</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>org.hisrc.w3c</groupId>
-									<artifactId>w3c-schemas</artifactId>
-									<type>jar</type>
-									<outputDirectory>src/main/resources</outputDirectory>
-									<includes>w3c/2005/atom-author-link.xsd</includes>
-								 </artifactItem>
-								<artifactItem>
-									<groupId>${project.groupId}</groupId>
-									<artifactId>ogc-schemas</artifactId>
-									<version>${project.version}</version>
-									<type>jar</type>
-									<overWrite>false</overWrite>
-									<outputDirectory>src/main/resources</outputDirectory>
-									<includes>ogc/kml/2.2.0/ogckml22.xsd,oasis/election/external/xAL.xsd</includes>
-								 </artifactItem>
-							 </artifactItems>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
 				<configuration>
-					<schemaIncludes>
-						<value>ogc/kml/*/ogckml22.xsd</value>
-					</schemaIncludes>
+					<schemas>
+						<schema>
+							<url>http://schemas.opengis.net/kml/2.2.0/ogckml22.xsd</url>
+						</schema>
+					</schemas>
+					<bindings>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>ogc-schemas</artifactId>
+								<resource>ogc/globalBindings.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+					</bindings>
 				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>process-sources</phase>
+						<configuration>
+							<tasks>
+								<delete dir="${basedir}/target/generated-sources/xjc/org/hisrc/w3c/atom"/>
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="Atom*.*"/>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
