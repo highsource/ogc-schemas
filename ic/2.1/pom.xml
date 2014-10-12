@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.jvnet.ogc</groupId>
-	<artifactId>ic-v_2_0</artifactId>
+	<artifactId>ic-v_2_1</artifactId>
 	<packaging>jar</packaging>
-	<name>OGC IC 2.0</name>
+	<name>OGC IC 2.1</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schema-parent</artifactId>
@@ -31,7 +31,7 @@
 				<configuration>
 					<schemas>
 						<schema>
-							<url>http://schemas.opengis.net/ic/2.0/IC-ISM-v2.xsd</url>
+							<url>http://schemas.opengis.net/ic/2.1/IC-ISM-v2.1.xsd</url>
 						</schema>
 					</schemas>
 					<bindings>

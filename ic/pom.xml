@@ -13,6 +13,7 @@
 	</parent>
 	<modules>
 		<module>2.0</module>
+		<module>2.1</module>
 	</modules>
 	<build>
 		<defaultGoal>install</defaultGoal>

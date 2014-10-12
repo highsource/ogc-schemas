@@ -10,6 +10,7 @@ var schemas = [
 	"SMIL_2_0",
 	"SMIL_2_0_Language",
 	"IC_2_0",
+	"IC_2_1",
 	"KML_2_2_0",
 		"Atom_1_0",
 		"xAL_2_0",
