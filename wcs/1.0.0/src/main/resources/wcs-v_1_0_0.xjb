@@ -1,31 +1,17 @@
 <jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
-	xmlns:jsonix="http://jsonix.highsource.org/customizations"
-	jaxb:extensionBindingPrefixes="xjc jsonix">
+	jaxb:extensionBindingPrefixes="xjc">
 
 	<jaxb:bindings 
-		schemaLocation="ogc/wcs/1.0.0/wcsAll.xsd" 
+		schemaLocation="http://schemas.opengis.net/wcs/1.0.0/wcsAll.xsd" 
 		node="/xs:schema">
-
-		<jaxb:globalBindings
-			fixedAttributeAsConstantProperty="true"
-			typesafeEnumBase="xs:string"
-			typesafeEnumMemberName="generateName" 
-			generateIsSetMethod="true">
-			<xjc:noValidator />
-			<xjc:noValidatingUnmarshaller />
-		</jaxb:globalBindings>
-
 		<jaxb:schemaBindings>
 			<jaxb:package name="net.opengis.wcs.v_1_0_0"/>
 		</jaxb:schemaBindings>
-		<jsonix:packageMapping packageName="org.hisrc.w3c.xlink.v_1_0" spaceName="XLink_1_0"/>
-		<jsonix:packageMapping packageName="net.opengis.wcs.v_1_0_0" spaceName="WCS_1_0_0"/>
-		<jsonix:packageMapping packageName="net.opengis.gml.v_3_1_1" spaceName="GML_3_1_1"/>
 	</jaxb:bindings>
 	<jaxb:bindings 
-		schemaLocation="ogc/wcs/1.0.0/wcsCapabilities.xsd">
+		schemaLocation="http://schemas.opengis.net/wcs/1.0.0/wcsCapabilities.xsd">
 		<jaxb:bindings node="xs:complexType[@name='AbstractDescriptionType']//xs:element[@ref='description']">
 			<jaxb:property name="WcsDescription"/>
 		</jaxb:bindings>
@@ -37,14 +23,14 @@
 		</jaxb:bindings>
 	</jaxb:bindings>
 	<jaxb:bindings 
-		schemaLocation="ogc/wcs/1.0.0/describeCoverage.xsd" 
+		schemaLocation="http://schemas.opengis.net/wcs/1.0.0/describeCoverage.xsd" 
 		node="/xs:schema">
 		<jaxb:bindings node="xs:complexType[@name='DomainSetType']//xs:sequence/xs:element[@ref='temporalDomain']">
 			<jaxb:property name="OptionalTemporalDomain"/>
 		</jaxb:bindings>
 	</jaxb:bindings>
 	<jaxb:bindings 
-		schemaLocation="ogc/wcs/1.0.0/getCoverage.xsd" 
+		schemaLocation="http://schemas.opengis.net/wcs/1.0.0/getCoverage.xsd" 
 		node="/xs:schema">
 		<jaxb:bindings node="xs:complexType[@name='DomainSubsetType']//xs:sequence/xs:element[@ref='temporalSubset']">
 			<jaxb:property name="OptionalTemporalSubset"/>

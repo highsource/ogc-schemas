@@ -1,3 +1,24 @@
+diff --git ogc/gml/3.1.1/base/temporal.xsd ogc/gml/3.1.1/base/temporal.xsd
+index 96be3f7..19ef923 100644
+--- ogc/gml/3.1.1/base/temporal.xsd
++++ ogc/gml/3.1.1/base/temporal.xsd
+@@ -325,6 +325,16 @@
+ 			<enumeration value="unknown"/>
+ 		</restriction>
+ 	</simpleType>
++	<!-- ===================================== -->
++	<simpleType name="TimeDurationType">
++		<annotation>
++			<documentation xml:lang="en">
++      Base type for describing temporal length or distance. The value space is further 
++      constrained by subtypes that conform to the ISO 8601 or ISO 11404 standards.
++      </documentation>
++		</annotation>
++		<union memberTypes="duration decimal"/>
++	</simpleType>
+ 	<!-- ================================================================== -->
+ 	<!-- ==== Convenience properties ==== -->
+ 	<!-- ================================================================== -->
 diff --git ogc/ows/2.0/owsAdditionalParameters.xsd ogc/ows/2.0/owsAdditionalParameters.xsd
 index 8e91265..1f534a3 100644
 --- ogc/ows/2.0/owsAdditionalParameters.xsd
@@ -18,3 +39,55 @@ index 8e91265..1f534a3 100644
      </complexContent>
    </complexType>
    <!-- ========================================================== -->
+diff --git ogc/wcs/1.0.0/describeCoverage.xsd ogc/wcs/1.0.0/describeCoverage.xsd
+index 0a544c4..5618894 100644
+--- ogc/wcs/1.0.0/describeCoverage.xsd
++++ ogc/wcs/1.0.0/describeCoverage.xsd
+@@ -41,7 +41,7 @@
+ 	<xs:include schemaLocation="./wcsAll.xsd"/>
+ 	<xs:include schemaLocation="./wcsCapabilities.xsd"/>
+ 	<xs:include schemaLocation="./values.xsd"/>
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+ 	<!-- ==============================================================
+        elements and types
+ 	============================================================== -->
+diff --git ogc/wcs/1.0.0/getCoverage.xsd ogc/wcs/1.0.0/getCoverage.xsd
+index 94d4d17..0284607 100644
+--- ogc/wcs/1.0.0/getCoverage.xsd
++++ ogc/wcs/1.0.0/getCoverage.xsd
+@@ -40,7 +40,7 @@
+ 	========================================================== -->
+ 	<xs:include schemaLocation="./wcsAll.xsd"/>
+ 	<xs:include schemaLocation="./describeCoverage.xsd"/>
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+ 	<!-- ==============================================================
+        elements and types
+ 	============================================================== -->
+diff --git ogc/wcs/1.0.0/owsBase.xsd ogc/wcs/1.0.0/owsBase.xsd
+index 6410894..fe7f039 100644
+--- ogc/wcs/1.0.0/owsBase.xsd
++++ ogc/wcs/1.0.0/owsBase.xsd
+@@ -38,7 +38,7 @@
+ 	<!-- ==============================================================
+            includes and imports
+ 	============================================================== -->
+-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"/>
++	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+ 	<!-- ============================================================
+ 		 Elements and types		
+ 	============================================================== -->
+diff --git ogc/wcs/1.0.0/wcsCapabilities.xsd ogc/wcs/1.0.0/wcsCapabilities.xsd
+index 5997a13..7cad1a4 100644
+--- ogc/wcs/1.0.0/wcsCapabilities.xsd
++++ ogc/wcs/1.0.0/wcsCapabilities.xsd
+@@ -45,7 +45,7 @@
+     <!-- ========= includes and imports ================================ -->
+     <xs:include schemaLocation="./wcsAll.xsd"/>
+     <xs:include schemaLocation="./owsBase.xsd"/>
+-    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"/>
++    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+     <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+     <!-- ==============================================================       elements and types	============================================================== -->
+     <xs:element name="GetCapabilities">
