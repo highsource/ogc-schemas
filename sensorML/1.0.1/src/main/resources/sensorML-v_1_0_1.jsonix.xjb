@@ -1,0 +1,10 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:jsonix="http://jsonix.highsource.org/customizations"
+	jaxb:extensionBindingPrefixes="jsonix">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/sensorML/1.0.1/sensorML.xsd" node="/xs:schema">
+		<jsonix:packageMapping packageName="net.opengis.sensorml.v_1_0_1" spaceName="SensorML_1_0_1"/>
+	</jaxb:bindings>
+
+</jaxb:bindings>
