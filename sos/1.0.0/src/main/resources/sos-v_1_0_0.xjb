@@ -1,0 +1,26 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/sos/1.0.0/sosAll.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.sos.v_1_0_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.sos.v_1_0_0.filter"/>
+		</jaxb:schemaBindings>
+		<jaxb:bindings node="xs:complexType[@name='BinaryTemporalOpType']//xs:sequence/xs:element[@ref='ogc:PropertyName']">
+			<jaxb:property name="PropertyName1"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='BinaryTemporalOpType']//xs:choice/xs:element[@ref='ogc:PropertyName']">
+			<jaxb:property name="PropertyName2"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+</jaxb:bindings>

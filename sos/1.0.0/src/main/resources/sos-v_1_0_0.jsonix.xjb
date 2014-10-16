@@ -1,0 +1,16 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:jsonix="http://jsonix.highsource.org/customizations"
+	jaxb:extensionBindingPrefixes="jsonix">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/sos/1.0.0/sosAll.xsd" node="/xs:schema">
+		<jsonix:packageMapping packageName="net.opengis.sos.v_1_0_0" spaceName="SOS_1_0_0"/>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd" 
+		node="/xs:schema">
+		<jsonix:packageMapping packageName="net.opengis.sos.v_1_0_0.filter" spaceName="SOS_1_0_0_Filter"/>
+	</jaxb:bindings>
+
+</jaxb:bindings>
