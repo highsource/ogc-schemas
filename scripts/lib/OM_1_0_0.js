@@ -4,6 +4,14 @@ var OM_1_0_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/om\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     tis: [{
+        ln: 'ObservationCollectionType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'member',
+            col: true,
+            ti: '.ObservationPropertyType'
+          }]
+      }, {
         ln: 'AnyOrReferenceType',
         ps: [{
             n: 'any',
@@ -43,22 +51,11 @@ var OM_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ProcessPropertyType',
+        ln: 'ObservationPropertyType',
         ps: [{
-            n: 'sensorMLProcess',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: '_Process',
-              ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
-            },
-            ti: 'SensorML_1_0_1.AbstractProcessType',
-            t: 'er'
-          }, {
-            n: 'process',
-            en: 'Process',
-            ti: 'AnyType'
+            n: 'observation',
+            en: 'Observation',
+            ti: '.ObservationType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -124,11 +121,22 @@ var OM_1_0_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'ObservationPropertyType',
+        ln: 'ProcessPropertyType',
         ps: [{
-            n: 'observation',
-            en: 'Observation',
-            ti: '.ObservationType'
+            n: 'sensorMLProcess',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: '_Process',
+              ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
+            },
+            ti: 'SensorML_1_0_1.AbstractProcessType',
+            t: 'er'
+          }, {
+            n: 'process',
+            en: 'Process',
+            ti: 'AnyType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -161,25 +169,17 @@ var OM_1_0_0_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
-      }, {
-        ln: 'ObservationCollectionType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'member',
-            col: true,
-            ti: '.ObservationPropertyType'
-          }]
       }],
     eis: [{
-        en: 'Observation',
-        ti: '.ObservationType',
+        en: 'ObservationCollection',
+        ti: '.ObservationCollectionType',
         sh: {
           lp: '_Feature',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: 'ObservationCollection',
-        ti: '.ObservationCollectionType',
+        en: 'Observation',
+        ti: '.ObservationType',
         sh: {
           lp: '_Feature',
           ns: 'http:\/\/www.opengis.net\/gml'

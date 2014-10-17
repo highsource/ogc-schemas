@@ -59,47 +59,6 @@
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<plugins>
-			<!--plugin>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>unpack-schemas</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>unpack</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>org.hisrc.w3c</groupId>
-									<artifactId>w3c-schemas</artifactId>
-									<type>jar</type>
-									<outputDirectory>src/main/resources</outputDirectory>
-									<includes>w3c/1999/xlink.xsd,w3c/2001/xml.xsd,w3c/2005/atom-author-link.xsd</includes>
-								 </artifactItem>
-								<artifactItem>
-									<groupId>${project.groupId}</groupId>
-									<artifactId>ogc-schemas</artifactId>
-									<version>${project.version}</version>
-									<type>jar</type>
-									<overWrite>false</overWrite>
-									<outputDirectory>src/main/resources</outputDirectory>
-									<includes>
-										ogc/owc/0.3.1/**/*.xsd,
-										ogc/owc/0.3.0/**/*.xsd,
-										ogc/gml/2.1.2/**/*.*,
-										ogc/filter/1.0.0/**/*.*,
-										ogc/filter/1.0.20/**/*.*,
-										ogc/sld/1.0.0/**/*.*,
-										ogc/kml/2.2.0/**/*.*,
-										ogc/ows/1.0.0/**/*.*,
-										oasis/election/external/xAL.xsd</includes>
-								 </artifactItem>
-							 </artifactItems>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin-->
 			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>

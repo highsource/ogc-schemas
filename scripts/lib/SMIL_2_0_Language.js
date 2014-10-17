@@ -3,8 +3,8 @@ var SMIL_2_0_Language_Module_Factory = function () {
     n: 'SMIL_2_0_Language',
     dens: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language',
     tis: [{
-        ln: 'AnimateType',
-        bti: 'SMIL_2_0.AnimatePrototype',
+        ln: 'SetType',
+        bti: 'SMIL_2_0.SetPrototype',
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
@@ -13,6 +13,18 @@ var SMIL_2_0_Language_Module_Factory = function () {
             col: true,
             mx: false,
             t: 'ae'
+          }, {
+            n: 'syncBehaviorDefault',
+            an: {
+              lp: 'syncBehaviorDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'syncToleranceDefault',
+            an: {
+              lp: 'syncToleranceDefault'
+            },
+            t: 'a'
           }, {
             n: 'syncBehavior',
             an: {
@@ -23,6 +35,25 @@ var SMIL_2_0_Language_Module_Factory = function () {
             n: 'syncTolerance',
             an: {
               lp: 'syncTolerance'
+            },
+            t: 'a'
+          }, {
+            n: 'fillDefault',
+            an: {
+              lp: 'fillDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'restartDefault',
+            an: {
+              lp: 'restartDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'repeat',
+            ti: 'Integer',
+            an: {
+              lp: 'repeat'
             },
             t: 'a'
           }, {
@@ -45,10 +76,15 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'repeat',
-            ti: 'Integer',
+            n: 'begin',
             an: {
-              lp: 'repeat'
+              lp: 'begin'
+            },
+            t: 'a'
+          }, {
+            n: 'end',
+            an: {
+              lp: 'end'
             },
             t: 'a'
           }, {
@@ -64,24 +100,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'begin',
-            an: {
-              lp: 'begin'
-            },
-            t: 'a'
-          }, {
-            n: 'end',
-            an: {
-              lp: 'end'
-            },
-            t: 'a'
-          }, {
-            n: 'restartDefault',
-            an: {
-              lp: 'restartDefault'
-            },
-            t: 'a'
-          }, {
             n: 'restart',
             an: {
               lp: 'restart'
@@ -94,21 +112,10 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'syncBehaviorDefault',
+            n: 'targetElement',
+            ti: 'IDREF',
             an: {
-              lp: 'syncBehaviorDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'syncToleranceDefault',
-            an: {
-              lp: 'syncToleranceDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'fillDefault',
-            an: {
-              lp: 'fillDefault'
+              lp: 'targetElement'
             },
             t: 'a'
           }, {
@@ -148,19 +155,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             ti: 'Boolean',
             an: {
               lp: 'skip-content'
-            },
-            t: 'a'
-          }, {
-            n: 'calcMode',
-            an: {
-              lp: 'calcMode'
-            },
-            t: 'a'
-          }, {
-            n: 'targetElement',
-            ti: 'IDREF',
-            an: {
-              lp: 'targetElement'
             },
             t: 'a'
           }]
@@ -182,10 +176,10 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'skipContent',
-            ti: 'Boolean',
+            n: 'targetElement',
+            ti: 'IDREF',
             an: {
-              lp: 'skip-content'
+              lp: 'targetElement'
             },
             t: 'a'
           }, {
@@ -221,10 +215,15 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'targetElement',
-            ti: 'IDREF',
+            n: 'syncBehaviorDefault',
             an: {
-              lp: 'targetElement'
+              lp: 'syncBehaviorDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'syncToleranceDefault',
+            an: {
+              lp: 'syncToleranceDefault'
             },
             t: 'a'
           }, {
@@ -237,6 +236,25 @@ var SMIL_2_0_Language_Module_Factory = function () {
             n: 'syncTolerance',
             an: {
               lp: 'syncTolerance'
+            },
+            t: 'a'
+          }, {
+            n: 'fillDefault',
+            an: {
+              lp: 'fillDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'restartDefault',
+            an: {
+              lp: 'restartDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'repeat',
+            ti: 'Integer',
+            an: {
+              lp: 'repeat'
             },
             t: 'a'
           }, {
@@ -259,10 +277,15 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'repeat',
-            ti: 'Integer',
+            n: 'begin',
             an: {
-              lp: 'repeat'
+              lp: 'begin'
+            },
+            t: 'a'
+          }, {
+            n: 'end',
+            an: {
+              lp: 'end'
             },
             t: 'a'
           }, {
@@ -278,24 +301,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'begin',
-            an: {
-              lp: 'begin'
-            },
-            t: 'a'
-          }, {
-            n: 'end',
-            an: {
-              lp: 'end'
-            },
-            t: 'a'
-          }, {
-            n: 'restartDefault',
-            an: {
-              lp: 'restartDefault'
-            },
-            t: 'a'
-          }, {
             n: 'restart',
             an: {
               lp: 'restart'
@@ -308,27 +313,16 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'syncBehaviorDefault',
+            n: 'skipContent',
+            ti: 'Boolean',
             an: {
-              lp: 'syncBehaviorDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'syncToleranceDefault',
-            an: {
-              lp: 'syncToleranceDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'fillDefault',
-            an: {
-              lp: 'fillDefault'
+              lp: 'skip-content'
             },
             t: 'a'
           }]
       }, {
-        ln: 'SetType',
-        bti: 'SMIL_2_0.SetPrototype',
+        ln: 'AnimateType',
+        bti: 'SMIL_2_0.AnimatePrototype',
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
@@ -338,6 +332,13 @@ var SMIL_2_0_Language_Module_Factory = function () {
             mx: false,
             t: 'ae'
           }, {
+            n: 'targetElement',
+            ti: 'IDREF',
+            an: {
+              lp: 'targetElement'
+            },
+            t: 'a'
+          }, {
             n: 'alt',
             an: {
               lp: 'alt'
@@ -370,10 +371,9 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'targetElement',
-            ti: 'IDREF',
+            n: 'calcMode',
             an: {
-              lp: 'targetElement'
+              lp: 'calcMode'
             },
             t: 'a'
           }, {
@@ -381,6 +381,18 @@ var SMIL_2_0_Language_Module_Factory = function () {
             ti: 'Boolean',
             an: {
               lp: 'skip-content'
+            },
+            t: 'a'
+          }, {
+            n: 'syncBehaviorDefault',
+            an: {
+              lp: 'syncBehaviorDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'syncToleranceDefault',
+            an: {
+              lp: 'syncToleranceDefault'
             },
             t: 'a'
           }, {
@@ -393,6 +405,25 @@ var SMIL_2_0_Language_Module_Factory = function () {
             n: 'syncTolerance',
             an: {
               lp: 'syncTolerance'
+            },
+            t: 'a'
+          }, {
+            n: 'fillDefault',
+            an: {
+              lp: 'fillDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'restartDefault',
+            an: {
+              lp: 'restartDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'repeat',
+            ti: 'Integer',
+            an: {
+              lp: 'repeat'
             },
             t: 'a'
           }, {
@@ -415,10 +446,15 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'repeat',
-            ti: 'Integer',
+            n: 'begin',
             an: {
-              lp: 'repeat'
+              lp: 'begin'
+            },
+            t: 'a'
+          }, {
+            n: 'end',
+            an: {
+              lp: 'end'
             },
             t: 'a'
           }, {
@@ -434,24 +470,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'begin',
-            an: {
-              lp: 'begin'
-            },
-            t: 'a'
-          }, {
-            n: 'end',
-            an: {
-              lp: 'end'
-            },
-            t: 'a'
-          }, {
-            n: 'restartDefault',
-            an: {
-              lp: 'restartDefault'
-            },
-            t: 'a'
-          }, {
             n: 'restart',
             an: {
               lp: 'restart'
@@ -461,24 +479,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             n: 'fill',
             an: {
               lp: 'fill'
-            },
-            t: 'a'
-          }, {
-            n: 'syncBehaviorDefault',
-            an: {
-              lp: 'syncBehaviorDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'syncToleranceDefault',
-            an: {
-              lp: 'syncToleranceDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'fillDefault',
-            an: {
-              lp: 'fillDefault'
             },
             t: 'a'
           }]
@@ -494,10 +494,35 @@ var SMIL_2_0_Language_Module_Factory = function () {
             mx: false,
             t: 'ae'
           }, {
+            n: 'targetElement',
+            ti: 'IDREF',
+            an: {
+              lp: 'targetElement'
+            },
+            t: 'a'
+          }, {
+            n: 'calcMode',
+            an: {
+              lp: 'calcMode'
+            },
+            t: 'a'
+          }, {
             n: 'skipContent',
             ti: 'Boolean',
             an: {
               lp: 'skip-content'
+            },
+            t: 'a'
+          }, {
+            n: 'syncBehaviorDefault',
+            an: {
+              lp: 'syncBehaviorDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'syncToleranceDefault',
+            an: {
+              lp: 'syncToleranceDefault'
             },
             t: 'a'
           }, {
@@ -510,6 +535,25 @@ var SMIL_2_0_Language_Module_Factory = function () {
             n: 'syncTolerance',
             an: {
               lp: 'syncTolerance'
+            },
+            t: 'a'
+          }, {
+            n: 'fillDefault',
+            an: {
+              lp: 'fillDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'restartDefault',
+            an: {
+              lp: 'restartDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'repeat',
+            ti: 'Integer',
+            an: {
+              lp: 'repeat'
             },
             t: 'a'
           }, {
@@ -532,10 +576,15 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'repeat',
-            ti: 'Integer',
+            n: 'begin',
             an: {
-              lp: 'repeat'
+              lp: 'begin'
+            },
+            t: 'a'
+          }, {
+            n: 'end',
+            an: {
+              lp: 'end'
             },
             t: 'a'
           }, {
@@ -551,24 +600,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'begin',
-            an: {
-              lp: 'begin'
-            },
-            t: 'a'
-          }, {
-            n: 'end',
-            an: {
-              lp: 'end'
-            },
-            t: 'a'
-          }, {
-            n: 'restartDefault',
-            an: {
-              lp: 'restartDefault'
-            },
-            t: 'a'
-          }, {
             n: 'restart',
             an: {
               lp: 'restart'
@@ -578,24 +609,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             n: 'fill',
             an: {
               lp: 'fill'
-            },
-            t: 'a'
-          }, {
-            n: 'syncBehaviorDefault',
-            an: {
-              lp: 'syncBehaviorDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'syncToleranceDefault',
-            an: {
-              lp: 'syncToleranceDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'fillDefault',
-            an: {
-              lp: 'fillDefault'
             },
             t: 'a'
           }, {
@@ -630,25 +643,9 @@ var SMIL_2_0_Language_Module_Factory = function () {
               ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
             },
             t: 'a'
-          }, {
-            n: 'targetElement',
-            ti: 'IDREF',
-            an: {
-              lp: 'targetElement'
-            },
-            t: 'a'
-          }, {
-            n: 'calcMode',
-            an: {
-              lp: 'calcMode'
-            },
-            t: 'a'
           }]
       }],
     eis: [{
-        en: 'animate',
-        ti: '.AnimateType'
-      }, {
         en: 'animateMotion',
         ti: '.AnimateMotionType'
       }, {
@@ -657,6 +654,9 @@ var SMIL_2_0_Language_Module_Factory = function () {
       }, {
         en: 'animateColor',
         ti: '.AnimateColorType'
+      }, {
+        en: 'animate',
+        ti: '.AnimateType'
       }]
   };
   return {

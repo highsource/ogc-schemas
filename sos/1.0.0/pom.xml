@@ -36,6 +36,11 @@
 			<artifactId>ows-v_1_1_0</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.jvnet.ogc</groupId>
+			<artifactId>gml-v_3_1_1</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<defaultGoal>install</defaultGoal>
@@ -71,6 +76,22 @@
 								<groupId>${project.groupId}</groupId>
 								<artifactId>ows-v_1_1_0</artifactId>
 								<resource>ows-v_1_1_0.jsonix.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>gml-v_3_1_1</artifactId>
+								<resource>gml-v_3_1_1.jsonix.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>sweCommon-v_1_0_1</artifactId>
+								<resource>sweCommon-v_1_0_1.jsonix.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>
 						</binding>

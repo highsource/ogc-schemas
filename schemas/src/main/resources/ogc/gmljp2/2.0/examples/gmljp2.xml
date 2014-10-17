@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-
   This example illustrates how to use the XML Schema Document that defines the GMLJP2 XML encoding described in OGC 08-085r4.
   GMLJP2 is an OGC Standard.
   Copyright (c) 2014 Open Geospatial Consortium.
@@ -10,12 +9,6 @@
 It illustrates several posibilities in a single instance such as including GML features, KML annotations and several forms of metadata. Common GMLJP2 instances are expected to be simpler and smaller.
 -->
 <gmljp2:GMLJP2CoverageCollection xmlns="http://www.opengis.net/gml/3.2" xmlns:gmljp2="http://www.opengis.net/gmljp2/2.0" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="ID_JPEG2000_0" xsi:schemaLocation="http://www.opengis.net/gmljp2/2.0 ../gmljp2.xsd">
-	<boundedBy>
-		<Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326" axisLabels="Lat Long" uomLabels="deg deg" srsDimension="2">
-			<lowerCorner>1 1</lowerCorner>
-			<upperCorner>3 10</upperCorner>
-		</Envelope>
-	</boundedBy>
 	<domainSet/>
 	<rangeSet>
 		<File>
@@ -42,34 +35,33 @@ It illustrates several posibilities in a single instance such as including GML f
 	</gmlcov:metadata>
 	<gmljp2:featureMember>
 		<gmljp2:GMLJP2RectifiedGridCoverage gml:id="ID_1">
-			<domainSet>
-				<RectifiedGrid gml:id="RG_CodeStream0" dimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
-					<limits>
-						<GridEnvelope>
-							<low>0 0</low>
-							<high>1111 1109</high>
-						</GridEnvelope>
-					</limits>
-					<axisName>x</axisName>
-					<axisName>y</axisName>
-					<origin>
-						<Point gml:id="PointCodeStream0" srsName="crsdictionary.gml#crs1">
-							<pos>317927.000000000000 3319124.999999999500</pos>
-						</Point>
-					</origin>
-					<offsetVector>2.799999999988 0.000000000000</offsetVector>
-					<offsetVector>0.000000000000 -0.799999999814</offsetVector>
-				</RectifiedGrid>
-			</domainSet>
-			<rangeSet>
-				<File>
-					<rangeParameters>
+			<gml:domainSet>
+				<gml:RectifiedGrid gml:id="RG_CodeStream0" dimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+					<gml:limits>
+						<gml:GridEnvelope>
+							<gml:low>0 0</gml:low>
+							<gml:high>1111 1109</gml:high>
+						</gml:GridEnvelope>
+					</gml:limits>
+					<gml:axisLabels>Lat Long</gml:axisLabels>
+					<gml:origin>
+						<gml:Point gml:id="PointCodeStream0" srsName="crsdictionary.gml#crs1">
+							<gml:pos>317927.000000000000 3319124.999999999500</gml:pos>
+						</gml:Point>
+					</gml:origin>
+					<gml:offsetVector>2.799999999988 0.000000000000</gml:offsetVector>
+					<gml:offsetVector>0.000000000000 -0.799999999814</gml:offsetVector>
+				</gml:RectifiedGrid>
+			</gml:domainSet>
+			<gml:rangeSet>
+				<gml:File>
+					<gml:rangeParameters>
 						<QuantityList uom="urn:ogc:def:uom:EPSG::9001"/>
-					</rangeParameters>
-					<fileName>gmljp2://codestream/0</fileName>
-					<fileStructure>inapplicable</fileStructure>
-				</File>
-			</rangeSet>
+					</gml:rangeParameters>
+					<gml:fileName>gmljp2://codestream/0</gml:fileName>
+					<gml:fileStructure>inapplicable</gml:fileStructure>
+				</gml:File>
+			</gml:rangeSet>
 			<gmlcov:rangeType>
 				<swe:DataRecord>
 					<swe:field name="red">

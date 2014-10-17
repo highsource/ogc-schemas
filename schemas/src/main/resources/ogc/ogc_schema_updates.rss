@@ -18,17 +18,18 @@
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
 <dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2014-09-23T18:01:27:+00:00
+<dc:date>2014-10-14T20:52:55:+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2014-09-23T18:01:27:+00:00
+<syn:updateBase>2014-10-14T20:52:55:+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
+  <rdf:li rdf:resource="http://schemas.opengis.net/gmljp2/ReadMe.txt#20141014t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wfs/ReadMe.txt#20140923t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wfs/ReadMe.txt#20140923t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/gmljp2/ReadMe.txt#20140916t15" />
@@ -86,6 +87,15 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
+<item rdf:about="http://schemas.opengis.net/gmljp2/ReadMe.txt#20141014t15">
+<title>OGC GMLJP2 2.0 - Schema Examples Updated</title>
+<link>http://schemas.opengis.net/gmljp2/ReadMe.txt#20141014t15</link>
+<description>The GMLJP2 online examples have been updated. The OGC GML JPEG2 XML encoding 2.0 schema described in OGC document 08-085r4 has been posted.  See http://www.opengeospatial.org/standards/gmljp2 for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2014-10-14T15:45:50:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC GMLJP2 2.0 Standard Schema Posted</dc:subject>
+</item>
 <item rdf:about="http://schemas.opengis.net/wfs/ReadMe.txt#20140923t15">
 <title>OGC Filter (FES) 2.0 - Schema Posted</title>
 <link>http://schemas.opengis.net/wfs/ReadMe.txt#20140923t15</link>

@@ -78,8 +78,8 @@
 						<phase>process-sources</phase>
 						<configuration>
 							<tasks>
-								<!--delete dir="${basedir}/target/generated-sources/xjc/net/opengis/ows"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="OWS*.*"/-->
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/ows"/>
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="OWS*.*"/>
 							</tasks>
 						</configuration>
 						<goals>
