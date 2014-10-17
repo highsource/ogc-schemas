@@ -85,7 +85,7 @@
 				<artifactId>maven-jaxb2-plugin</artifactId>
 				<configuration>
 					<schemaIncludes>
-						<value>ogc/wms/*/capabilities*.dtd</value>
+						<value>ogc/wms/1.1.1/wms_1_1_1.dtd</value>
 					</schemaIncludes>
 				</configuration>
 				<executions>

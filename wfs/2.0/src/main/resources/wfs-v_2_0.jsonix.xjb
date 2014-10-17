@@ -7,7 +7,7 @@
 		schemaLocation="http://schemas.opengis.net/wfs/2.0/wfs.xsd" 
 		node="/xs:schema">
 
-		<jsonix:packageMapping packageName="net.opengis.filter.v_2_0" spaceName="Filter_2_0"/>
+		<jsonix:packageMapping packageName="net.opengis.wfs.v_2_0" spaceName="WFS_2_0"/>
 
 	</jaxb:bindings>
 </jaxb:bindings>
