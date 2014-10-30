@@ -23,6 +23,17 @@ module.exports = {
 			test.done();
 		});
 	},
+	"Unmarshal" : {
+		"GetFeature-01.xml" : function(test) {
+			var context =  new Jsonix.Context([XLink_1_0, OWS_1_0_0, Filter_1_1_0, GML_3_1_1, SMIL_2_0, SMIL_2_0_Language, WFS_1_1_0]);
+			var unmarshaller = context.createUnmarshaller();
+			unmarshaller.unmarshalFile("tests/WFS/1.1.0/GetFeature-01.xml", function(result) {
+				console.log("Result:");
+				console.log(result);
+				test.done();
+			});
+		}
+	},
 	"Roundtrips" : {
 		"GetCapabilities-01.xml" : function(test) {roundtrip(test, mappings, "tests/WFS/1.1.0/GetCapabilities-01.xml");}
 	}
