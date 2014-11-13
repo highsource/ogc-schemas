@@ -2,6 +2,7 @@ module.exports =
 {
 	"ogc-schemas": {
 		"CSW" : require('./CSW/CSW.js'),
+		"GML" : require('./GML/GML.js'),
 		"KML" : require('./KML/KML.js'),
 		"SensorML" : require('./SensorML/SensorML.js'),
 		"SLD" : require('./SLD/SLD.js'),

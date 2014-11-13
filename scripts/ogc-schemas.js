@@ -7,6 +7,7 @@ var schemas = [
 	"Filter_2_0",
 	"GML_2_1_2",
 	"GML_3_1_1",
+	"GML_3_2_1",
 	"SMIL_2_0",
 	"SMIL_2_0_Language",
 	"IC_2_0",

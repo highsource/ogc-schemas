@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+	<bindings scd="x-schema::tns" xmlns:tns="http://www.isotc211.org/2005/gts">
+		<schemaBindings map="false">
+			<package name="org.isotc211._2005.gts"/>
+		</schemaBindings>
+	</bindings>
+	<bindings scd="x-schema::tns" xmlns:tns="http://www.isotc211.org/2005/gsr">
+		<schemaBindings map="false">
+			<package name="org.isotc211._2005.gsr"/>
+		</schemaBindings>
+	</bindings>
+	<bindings scd="x-schema::tns" xmlns:tns="http://www.isotc211.org/2005/gss">
+		<schemaBindings map="false">
+			<package name="org.isotc211._2005.gss"/>
+		</schemaBindings>
+	</bindings>
+	<bindings scd="x-schema::tns" xmlns:tns="http://www.isotc211.org/2005/gco">
+		<schemaBindings map="false">
+			<package name="org.isotc211._2005.gco"/>
+		</schemaBindings>
+	</bindings>
+	<bindings scd="x-schema::tns" xmlns:tns="http://www.isotc211.org/2005/gmd">
+		<schemaBindings map="false">
+			<package name="org.isotc211._2005.gmd"/>
+		</schemaBindings>
+	</bindings>
+</bindings>
+
