@@ -66,5 +66,5 @@
       </swe:BinaryEncoding>
    </swe:encoding>
    <!-- -->
-   <!--swe:values xlink:href="http://mydomain.net/myimage.raw"/-->
+   <!-- *** swe:values xlink:href="http://mydomain.net/myimage.raw"/-->
 </swe:DataStream>
