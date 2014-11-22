@@ -31,7 +31,7 @@ module.exports = {
 	"ExampleInline" : function(test) {
 		var context =  new Jsonix.Context([XLink_1_0, OWS_1_0_0, Filter_1_0_0, GML_2_1_2, SLD_1_0_0, OWC_0_3_1]);
 		var unmarshaller = context.createUnmarshaller();
-		unmarshaller.unmarshalFile("tests/OWC/0.3.1/example-owsContext_inline.xml", function(result) {
+		unmarshaller.unmarshalFile("tests/OWC/0.3.1/example-owsContext_inline.xmltodo", function(result) {
 			test.equal(result.value.resourceList.layer[1].document[0].tagName, 'kml:Document');
 			test.done();
 		});

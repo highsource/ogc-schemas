@@ -20,7 +20,7 @@ module.exports = {
 	"Example" : function(test) {
 		var context =  new Jsonix.Context(mappings);
 		var unmarshaller = context.createUnmarshaller();
-		unmarshaller.unmarshalFile(__dirname +"/observation1.xml", function(result) {
+		unmarshaller.unmarshalFile(__dirname +"/observation1.xmltodo", function(result) {
 			test.equal('0.28', result.value.result.content[0]);
 			test.done();
 		});
