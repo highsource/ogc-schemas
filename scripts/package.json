@@ -24,6 +24,8 @@
 		"OGC",
 		"Filter", "Filter Encoding",
 		"GML",
+		"GMLCOV",
+		"GML Application Schema for Coverages",
 		"OWS",
 		"SWE",
 		"WCS",
@@ -41,7 +43,7 @@
 	} ],
 	"author" : {
 		"name" : "Alexey Valikov",
-		"url" : "http://confluence.highsource.org"
+		"url" : "https://github.com/highsource"
 	},
 	"main": "ogc-schemas.js",
 	"repository": {
