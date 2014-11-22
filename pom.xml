@@ -86,6 +86,7 @@
 		<module>sensorML</module>
 		<module>sld</module>
 		<module>sweCommon</module>
+		<module>swes</module>
 		<module>wcs</module>
 		<module>wfs</module>
 		<module>wms</module>
@@ -172,6 +173,11 @@
 				<artifactId>jts</artifactId>
 				<version>1.13</version>
 			</dependency-->
+			<dependency>
+				<groupId>org.hisrc.w3c</groupId>
+				<artifactId>ws-addr-v_1_0-core</artifactId>
+				<version>${w3c-schemas.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.hisrc.w3c</groupId>
 				<artifactId>xlink-v_1_0</artifactId>

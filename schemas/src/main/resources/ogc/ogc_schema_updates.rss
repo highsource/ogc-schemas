@@ -18,17 +18,23 @@
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
 <dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2014-10-14T20:52:55:+00:00
+<dc:date>2014-11-19T20:21:31:+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2014-10-14T20:52:55:+00:00
+<syn:updateBase>2014-11-19T20:21:31:+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
+  <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20141119t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20141118t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20141118t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/gmlcov/ReadMe.txt#20141118t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20141106t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/indoorGML/ReadMe.txt#20141105t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/gmljp2/ReadMe.txt#20141014t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wfs/ReadMe.txt#20140923t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wfs/ReadMe.txt#20140923t15" />
@@ -87,6 +93,68 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
+<item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20141119t15">
+<title>OGC WCS Range Subsetting 1.0 - Schema Posted</title>
+<link>http://schemas.opengis.net/wcs/ReadMe.txt#20141119t15</link>
+<description>The OGC WCS Range Subsetting 1.0 schema described in OGC document 12-040 has been posted.  
+This document specifies parameters to the OGC Web Coverage Service (WCS) GetCoverage request which allow extraction of specific fields, according to the range type specification, from the range set of a coverage during server-side processing of a coverage in a GetCover-age request. 
+See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2014-11-06T15:45:56:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WCS Range Subsetting 1.0 Standard Schema Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20141118t15">
+<title>OGC WCS Interpolation 1.0 - Schema Posted</title>
+<link>http://schemas.opengis.net/wcs/ReadMe.txt#20141118t15</link>
+<description>The OGC WCS Interpolation 1.0 schema described in OGC document 12-049 has been posted.  
+This OGC standard specifies parameters to the OGC Web Coverage Service (WCS) GetCoverage request which give control over interpolation of a coverage during its server-side pro-cessing. This allows the client (user) to control and specify the interpolation mechanism to be applied to a coverage during server processing. This WCS Interpolation extension relies on WCS Core [OGC 09-110r4] and the GML Appli-cation Schema for Coverages [OGC 09-146r2]. 
+See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2014-11-06T15:45:55:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WCS Interpolation 1.0 Standard Schema Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20141118t15">
+<title>OGC WCS Scaling 1.0 - Schema Posted</title>
+<link>http://schemas.opengis.net/wcs/ReadMe.txt#20141118t15</link>
+<description>The OGC WCS Scaling 1.0 schema described in OGC document 12-039 has been posted.  
+This document specifies parameters to the OGC Web Coverage Service (WCS) GetCoverage request which allow scaling of a coverage during its server-side processing in a GetCoverage request. 
+See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2014-11-06T15:45:54:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WCS Scaling 1.0 Standard Schema Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/gmlcov/ReadMe.txt#20141118t15">
+<title>OGC GMLCOV GeoTiff 1.0 - Schema Posted</title>
+<link>http://schemas.opengis.net/gmlcov/ReadMe.txt#20141118t15</link>
+<description>The OGC GMLCOV GeoTIFF 1.0 schema described in OGC document 12-100r1 has been posted.  
+This Interface Standard is a profile of the OGC(r) GML Application Schema &#xE2;&#x80;&#x93; Coverages version 1.0 [OGC 09-146r2]. This document specifies the usage of the GeoTIFF data format for the encoding of GML coverages. This encoding is used by several OGC services like the Web Coverage Service (WCS) 2.0 Interface Standard &#xE2;&#x80;&#x93; Core [OGC 09-110r4]. 
+See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2014-11-06T15:45:53:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC GMLCOV GeoTIFF 1.0 Standard Schema Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20141106t15">
+<title>OGC WCS EO Profile 1.0 - Schema Posted</title>
+<link>http://schemas.opengis.net/wcs/ReadMe.txt#20141106t15</link>
+<description>The OGC WCS EO Profile 1.0 schema described in OGC document 10-140r1 has been posted.  See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2014-11-06T15:45:52:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WCS EO Profile 1.0 Standard Schema Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/indoorGML/ReadMe.txt#20141105t15">
+<title>OGC IndoorGML 1.0 - Schema Posted</title>
+<link>http://schemas.opengis.net/indoorGML/ReadMe.txt#20141105t15</link>
+<description>The OGC IndoorGML 1.0 schema described in OGC document 14-005r3 has been posted.  See http://www.opengeospatial.org/standards/indoorgml for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2014-11-05T15:45:51:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC IndoorGML 1.0 Standard Schema Posted</dc:subject>
+</item>
 <item rdf:about="http://schemas.opengis.net/gmljp2/ReadMe.txt#20141014t15">
 <title>OGC GMLJP2 2.0 - Schema Examples Updated</title>
 <link>http://schemas.opengis.net/gmljp2/ReadMe.txt#20141014t15</link>

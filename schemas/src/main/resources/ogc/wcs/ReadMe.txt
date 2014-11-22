@@ -16,6 +16,18 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2014-11-19  Peter Baumann, Jinsongdi Yu
+  * wcs/range-subsetting/1.0: added WCS Range Subsetting Extension 1.0.0 (OGC 12-040)
+
+2014-11-18  Peter Baumann, Jinsongdi Yu
+  * wcs/interpolation/1.0: added WCS Interpolation Extension 1.0.0 (OGC 12-049)
+
+2014-11-18  Peter Baumann, Jinsongdi Yu
+  * wcs/scaling/1.0: added WCS Scaling Extension 1.0.0 (OGC 12-039)
+
+2014-11-06  Stephan Meissl
+  * wcs/wcseo/1.0: added WCS EO Profile 1.0.0 (OGC 10-140r1)
+
 NOTE: wcs/1.1.0 is WCS 1.1.0 (circa 2007) plus the W3C XLink changes (2012-07-21).
       WCS 1.1.0 is deprecated. -- 2012-08-28
 
@@ -120,7 +132,7 @@ NOTE: wcs/1.1.0 is WCS 1.1.0 (circa 2007) plus the W3C XLink changes (2012-07-21
 Policies, Procedures, Terms, and Conditions of OGC(r) are available
   http://www.opengeospatial.org/ogc/legal/ .
 
-Copyright (c) 2010 Open Geospatial Consortium.
+Copyright (c) 2010, 2014 Open Geospatial Consortium.
 
 -----------------------------------------------------------------------
 

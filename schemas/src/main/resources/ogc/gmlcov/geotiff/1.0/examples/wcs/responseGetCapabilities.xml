@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wcs:Capabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" updateSequence="20120913T173000Z" version="2.0.1" xsi:schemaLocation="http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsAll.xsd">
+  <ows:ServiceIdentification>
+    <ows:Title>Title</ows:Title>
+    <ows:Abstract>Abstract</ows:Abstract>
+    <ows:Keywords>
+      <ows:Keyword>WCS 2.0</ows:Keyword>
+      <ows:Keyword>WCS</ows:Keyword>
+      <ows:Keyword>Keyword</ows:Keyword>
+    </ows:Keywords>
+    <ows:ServiceType codeSpace="OGC">OGC WCS</ows:ServiceType>
+    <ows:ServiceTypeVersion>2.0.1</ows:ServiceTypeVersion>
+    <ows:Profile>http://www.opengis.net/spec/WCS/2.0/conf/core</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/WCS_protocol-binding_get-kvp/1.0/conf/get-kvp</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/WCS_protocol-binding_post-xml/1.0/conf/post-xml</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/GMLCOV/1.0/conf/gml-coverage</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/GMLCOV/1.0/conf/multipart</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/GMLCOV/1.0/conf/special-format</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/GMLCOV_geotiff-coverages/1.0/conf/geotiff-coverage</ows:Profile>
+  </ows:ServiceIdentification>
+  <ows:OperationsMetadata>
+    <ows:Operation name="GetCapabilities">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://www.someu.rl?" xlink:type="simple"/>
+          <ows:Post xlink:href="http://www.someu.rl?" xlink:type="simple">
+            <ows:Constraint name="PostEncoding">
+              <ows:AllowedValues>
+                <ows:Value>XML</ows:Value>
+              </ows:AllowedValues>
+            </ows:Constraint>
+          </ows:Post>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="DescribeCoverage">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://www.someu.rl?" xlink:type="simple"/>
+          <ows:Post xlink:href="http://www.someu.rl?" xlink:type="simple">
+            <ows:Constraint name="PostEncoding">
+              <ows:AllowedValues>
+                <ows:Value>XML</ows:Value>
+              </ows:AllowedValues>
+            </ows:Constraint>
+          </ows:Post>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="GetCoverage">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://www.someu.rl?" xlink:type="simple"/>
+          <ows:Post xlink:href="http://www.someu.rl?" xlink:type="simple">
+            <ows:Constraint name="PostEncoding">
+              <ows:AllowedValues>
+                <ows:Value>XML</ows:Value>
+              </ows:AllowedValues>
+            </ows:Constraint>
+          </ows:Post>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+  </ows:OperationsMetadata>
+  <wcs:ServiceMetadata>
+    <wcs:formatSupported>application/gml+xml</wcs:formatSupported>
+    <wcs:formatSupported>image/tiff</wcs:formatSupported>
+    <wcs:Extension>
+      <gmlcov:metadata/>
+    </wcs:Extension>
+  </wcs:ServiceMetadata>
+  <wcs:Contents>
+    <wcs:CoverageSummary>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>0.000449157641044 0.00089831528412</ows:LowerCorner>
+        <ows:UpperCorner>0.003144103492834 0.00449157641984</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <wcs:CoverageId>grey</wcs:CoverageId>
+      <wcs:CoverageSubtype>RectifiedGridCoverage</wcs:CoverageSubtype>
+      <wcs:CoverageSubtypeParent>
+        <wcs:CoverageSubtype>AbstractDiscreteCoverage</wcs:CoverageSubtype>
+        <wcs:CoverageSubtypeParent>
+          <wcs:CoverageSubtype>AbstractCoverage</wcs:CoverageSubtype>
+        </wcs:CoverageSubtypeParent>
+      </wcs:CoverageSubtypeParent>
+      <ows:BoundingBox crs="http://www.opengis.net/def/crs/EPSG/0/3857" dimensions="2">
+        <ows:LowerCorner>100 50</ows:LowerCorner>
+        <ows:UpperCorner>500 350</ows:UpperCorner>
+      </ows:BoundingBox>
+    </wcs:CoverageSummary>
+  </wcs:Contents>
+</wcs:Capabilities>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scal="http://www.opengis.net/WCS_service-extension_scaling/1.0" service="WCS" version="2.0.1" xsi:schemaLocation="http://www.opengis.net/WCS_service-extension_scaling/1.0 http://schemas.opengis.net/wcs/scaling/1.0/wcsScal.xsd">
+	<wcs:Extension>
+		<scal:Scaling>
+			<scal:ScaleToExtent>
+				<scal:TargetAxisExtent>
+					<scal:axis>i</scal:axis>
+					<scal:low>10</scal:low>
+					<scal:high>20</scal:high>
+				</scal:TargetAxisExtent>
+				<scal:TargetAxisExtent>
+					<scal:axis>j</scal:axis>
+					<scal:low>20</scal:low>
+					<scal:high>30</scal:high>
+				</scal:TargetAxisExtent>
+			</scal:ScaleToExtent>
+		</scal:Scaling>
+	</wcs:Extension>
+	<wcs:CoverageId>C0001</wcs:CoverageId>
+</wcs:GetCoverage>

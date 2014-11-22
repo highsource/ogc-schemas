@@ -14,6 +14,9 @@ The most current schema is available at http://schemas.opengis.net/ .
 
 Change history:
 
+2014-11-18  Stephan Meissl
+  * gmlcov/geotiff/1.0: added GMLCOV GeoTiff 1.0.0 (OGC 12-100r1)
+
 2012-07-21 Kevin Stegemoller
   * v1.0: WARNING XLink change is NOT BACKWARD COMPATIBLE.
   * v1.0: implement 11-025: retroactively require/add all leaf documents of an
@@ -41,7 +44,7 @@ Note: check each OGC numbered document for detailed changes.
 Policies, Procedures, Terms, and Conditions of OGC(r) are available
   http://www.opengeospatial.org/ogc/legal/ .
 
-Copyright (c) 2012 Open Geospatial Consortium.
+Copyright (c) 2014 Open Geospatial Consortium.
 
 -----------------------------------------------------------------------
 
