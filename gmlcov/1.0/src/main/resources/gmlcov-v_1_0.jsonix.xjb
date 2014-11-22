@@ -7,7 +7,7 @@
 		schemaLocation="http://schemas.opengis.net/gmlcov/1.0/gmlcovAll.xsd" 
 		node="/xs:schema">
 
-		<jsonix:packageMapping packageName="net.opengis.gmlcov.v_1_0" spaceName="GMLCOV_2_0"/>
+		<jsonix:packageMapping packageName="net.opengis.gmlcov.v_1_0" spaceName="GMLCOV_1_0"/>
 
 	</jaxb:bindings>
 </jaxb:bindings>
