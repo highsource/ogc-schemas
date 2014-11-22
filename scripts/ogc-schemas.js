@@ -27,6 +27,8 @@ var schemas = [
 	"SOS_1_0_0_Filter",
 	"SWE_1_0_1",
 	"SWE_2_0",
+	"SWES_2_0",
+		"WSN_T_1",
 	"WCS_1_0_0",
 	"WCS_1_1",
 	"WCS_2_0",

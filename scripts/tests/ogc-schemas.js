@@ -12,6 +12,7 @@ module.exports =
 		"SWE" : require('./SWE/SWE.js'),
 		"OM" : require('./OM/OM.js'),
 		"OWC" : require('./OWC/OWC.js'),
+		"SWES" : require('./SWES/SWES.js'),
 		"WCS" : require('./WCS/WCS.js'),
 		"WFS" : require('./WFS/WFS.js'),
 		"WMS" : require('./WMS/WMS.js'),
