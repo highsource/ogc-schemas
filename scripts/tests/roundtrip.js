@@ -6,19 +6,21 @@ var roundtrip = function (test, mappings, resource) {
 		var unmarshallerTwo = context.createUnmarshaller();
 		var marshallerOne = context.createMarshaller();
 		var marshallerTwo = context.createMarshaller();
-//		console.log('Unmarshalling [' + resource + '].');
+		// console.log('Unmarshalling [' + resource + '].');
 		unmarshallerOne.unmarshalFile(resource,
 			function(one) {
-//				console.log('Unmarshalled one:');
-//				console.log(one);
+				// console.log('Unmarshalled one:');
+				// console.log(one);
 				var documentOne = marshallerOne.marshalDocument(one);
 				var two = unmarshallerTwo.unmarshalDocument(documentOne);
-//				console.log('Unmarshalled two:');
-//				console.log(one);
+				// console.log('Unmarshalled two:');
+				// console.log(one);
 				var stringTwo = marshallerTwo.marshalString(two);
-//				console.log('Marshalled two:');
-//				console.log(stringTwo);
-				test.ok(Jsonix.Util.Type.isEqual(one, two, function(text) {console.log(text)}), 'Roundtrip [' + resource + '] failed in phase two. Objects must be equal.');
+				// console.log('Marshalled two:');
+				// console.log(stringTwo);
+				test.ok(Jsonix.Util.Type.isEqual(one, two, function(text) {
+					console.log(text);
+				}), 'Roundtrip [' + resource + '] failed in phase two. Objects must be equal.');
 				test.done();
 			}
 		);
@@ -27,6 +29,12 @@ module.exports = {
 	roundtrip: roundtrip,
 	roundtrips: function(mappings, directory)
 	{
+		var roundtripFactory = function (resource) {
+			return function(test) {
+				console.log('Testing [' + resource + '].');
+				roundtrip(test, mappings, resource);
+			};
+		};
 		var files = fs.readdirSync(directory);
 		var result = {};
 		for (var index = 0; index < files.length; index++)
@@ -36,10 +44,7 @@ module.exports = {
 			{
 				var resourceName = directory + '/' + file;
 				console.log('Adding roundtrip test ['+ resourceName + ']');
-				result[file] = function(test) {
-					console.log('Testing [' + resourceName + '].');
-					roundtrip(test, mappings, resourceName);
-				};
+				result[file] = roundtripFactory(resourceName);
 			}
 		}
 		return result
