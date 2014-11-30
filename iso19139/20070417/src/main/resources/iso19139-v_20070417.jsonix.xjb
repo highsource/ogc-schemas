@@ -1,0 +1,36 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:jsonix="http://jsonix.highsource.org/customizations"
+	jaxb:extensionBindingPrefixes="jsonix">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd" 
+		node="/xs:schema">
+		<jsonix:packageMapping packageName="net.opengis.iso19139.gmd.v_20070417" spaceName="ISO19139_GMD_20070417"/>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd" 
+		node="/xs:schema">
+		<jsonix:packageMapping packageName="net.opengis.iso19139.gco.v_20070417" spaceName="ISO19139_GCO_20070417"/>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmx/gmx.xsd" 
+		node="/xs:schema">
+		<jsonix:packageMapping packageName="net.opengis.iso19139.gmx.v_20070417" spaceName="ISO19139_GMX_20070417"/>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gsr/gsr.xsd" 
+		node="/xs:schema">
+		<jsonix:packageMapping packageName="net.opengis.iso19139.gsr.v_20070417" spaceName="ISO19139_GSR_20070417"/>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gss/gss.xsd" 
+		node="/xs:schema">
+		<jsonix:packageMapping packageName="net.opengis.iso19139.gss.v_20070417" spaceName="ISO19139_GSS_20070417"/>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gts/gts.xsd" 
+		node="/xs:schema">
+		<jsonix:packageMapping packageName="net.opengis.iso19139.gts.v_20070417" spaceName="ISO19139_GTS_20070417"/>
+	</jaxb:bindings>
+
+</jaxb:bindings>
