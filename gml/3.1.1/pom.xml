@@ -90,16 +90,6 @@
 					</bindings>
 				</configuration>
 			</plugin>
-
-			<!--plugin>
-				<groupId>org.jvnet.jaxb2.maven2</groupId>
-				<artifactId>maven-jaxb2-plugin</artifactId>
-				<configuration>
-					<schemaIncludes>
-						<value>ogc/gml/*/base/gml.xsd</value>
-					</schemaIncludes>
-				</configuration>
-			</plugin-->
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 			</plugin>
