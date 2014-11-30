@@ -79,10 +79,12 @@
 		<module>gml</module>
 		<module>gmlcov</module>
 		<module>ic</module>
+		<module>iso19139</module>
 		<module>kml</module>
 		<module>om</module>
 		<module>owc</module>
 		<module>ows</module>
+		<module>sampling</module>
 		<module>sensorML</module>
 		<module>sld</module>
 		<module>sweCommon</module>
