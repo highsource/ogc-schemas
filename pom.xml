@@ -85,6 +85,7 @@
 		<module>owc</module>
 		<module>ows</module>
 		<module>sampling</module>
+		<module>sps</module>
 		<module>sensorML</module>
 		<module>sld</module>
 		<module>sweCommon</module>
