@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.jvnet.ogc</groupId>
-	<artifactId>om-v_1_0_0</artifactId>
+	<artifactId>om-v_2_0</artifactId>
 	<packaging>jar</packaging>
-	<name>OGC OM 1.0.0</name>
+	<name>OGC OM 2.0</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schema-parent</artifactId>
@@ -27,22 +27,12 @@
 		</dependency>
 		<dependency>
 			<groupId>org.jvnet.ogc</groupId>
-			<artifactId>gml-v_3_1_1</artifactId>
+			<artifactId>gml-v_3_2_1</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jvnet.ogc</groupId>
-			<artifactId>sweCommon-v_1_0_1</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jvnet.ogc</groupId>
-			<artifactId>ic-v_2_0</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jvnet.ogc</groupId>
-			<artifactId>sensorML-v_1_0_1</artifactId>
+			<artifactId>iso19139-v_20070417</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
@@ -55,7 +45,11 @@
 				<configuration>
 					<schemas>
 						<schema>
-							<url>http://schemas.opengis.net/om/1.0.0/om.xsd</url>
+							<url>http://schemas.opengis.net/om/2.0/observation.xsd</url>
+						</schema>
+						<!-- *** Needed because of the XJC problem -->
+						<schema>
+							<url>http://schemas.opengis.net/iso/19139/20070417/gmx/gmx.xsd</url>
 						</schema>
 					</schemas>
 					<bindings>
@@ -70,32 +64,16 @@
 						<binding>
 							<dependencyResource>
 								<groupId>${project.groupId}</groupId>
-								<artifactId>gml-v_3_1_1</artifactId>
-								<resource>gml-v_3_1_1.jsonix.xjb</resource>
+								<artifactId>gml-v_3_2_1</artifactId>
+								<resource>gml-v_3_2_1.jsonix.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>
 						</binding>
 						<binding>
 							<dependencyResource>
-								<groupId>org.jvnet.ogc</groupId>
-								<artifactId>sweCommon-v_1_0_1</artifactId>
-								<resource>sweCommon-v_1_0_1.jsonix.xjb</resource>
-								<version>${project.version}</version>
-							</dependencyResource>
-						</binding>
-						<binding>
-							<dependencyResource>
-								<groupId>org.jvnet.ogc</groupId>
-								<artifactId>ic-v_2_0</artifactId>
-								<resource>ic-v_2_0.jsonix.xjb</resource>
-								<version>${project.version}</version>
-							</dependencyResource>
-						</binding>
-						<binding>
-							<dependencyResource>
-								<groupId>org.jvnet.ogc</groupId>
-								<artifactId>sensorML-v_1_0_1</artifactId>
-								<resource>sensorML-v_1_0_1.jsonix.xjb</resource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>iso19139-v_20070417</artifactId>
+								<resource>iso19139-v_20070417.jsonix.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>
 						</binding>
@@ -118,9 +96,7 @@
 						<configuration>
 							<tasks>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
-								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/sensorml"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="GML*.*"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="SensorML*.*"/>
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="GML_*.*"/>
 							</tasks>
 						</configuration>
 						<goals>
