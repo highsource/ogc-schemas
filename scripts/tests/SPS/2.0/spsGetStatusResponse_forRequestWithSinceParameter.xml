@@ -1,0 +1,31 @@
+<sps:GetStatusResponse xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <sps:status>
+    <sps:StatusReport>
+      <sps:task>http://www.ogc.org/procedure/camera/1/tasks/6</sps:task>
+      <sps:event>TaskUpdated</sps:event>
+      <sps:procedure>http://www.ogc.org/procedure/camera/1</sps:procedure>
+      <sps:requestStatus>Accepted</sps:requestStatus>
+      <sps:taskStatus>InExecution</sps:taskStatus>
+      <sps:updateTime>2010-08-20T12:40:50+02:00</sps:updateTime>
+      <sps:taskingParameters>
+        <sps:ParameterData>
+          <sps:encoding>
+            <swe:TextEncoding tokenSeparator="," blockSeparator="@@"/>
+          </sps:encoding>
+          <sps:values>Y,relativePositioning,Y,-10,N,N</sps:values>
+        </sps:ParameterData>
+      </sps:taskingParameters>
+    </sps:StatusReport>
+  </sps:status>
+  <sps:status>
+    <sps:StatusReport>
+      <sps:task>http://www.ogc.org/procedure/camera/1/tasks/6</sps:task>
+      <sps:event>TaskCompleted</sps:event>
+      <sps:percentCompletion>100</sps:percentCompletion>
+      <sps:procedure>http://www.ogc.org/procedure/camera/1</sps:procedure>
+      <sps:requestStatus>Accepted</sps:requestStatus>
+      <sps:taskStatus>Completed</sps:taskStatus>
+      <sps:updateTime>2010-08-20T14:30:00+02:00</sps:updateTime>
+    </sps:StatusReport>
+  </sps:status>
+</sps:GetStatusResponse>

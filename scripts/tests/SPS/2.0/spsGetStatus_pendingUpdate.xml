@@ -1,0 +1,3 @@
+<sps:GetStatus service="SPS" version="2.0.0" xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <sps:task>http://www.ogc.org/procedure/camera/1/tasks/6/updates/1</sps:task>
+</sps:GetStatus>

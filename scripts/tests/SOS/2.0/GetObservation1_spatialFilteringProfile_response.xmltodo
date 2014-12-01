@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example Request for GetObservation operation which contains filters for offering, observedProperty, procedure and a spatial filter. The response contains observations for the observed property which are executed by the procedure defined in this request and match the spatial filter defined in this request.
+=======================================================================-->
+
+<sos:GetObservationResponse xmlns="http://www.opengis.net/sos/2.0" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd">
+	<observationData>
+	     <!-- observations -->
+		<om:OM_Observation gml:id="obsTest1">
+			<om:type
+		xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"/>
+			<om:phenomenonTime>
+				<gml:TimeInstant gml:id="phenomenonTime">
+					<gml:timePosition>2008-03-01T17:45:15.000+00:00</gml:timePosition>
+				</gml:TimeInstant>
+			</om:phenomenonTime>
+			<om:resultTime xlink:href="#phenomenonTime"/>
+			<!-- link to DescribeSensor operation of SOS which is providing the sensor description -->
+			<om:procedure xlink:href="http://www.my_namespace.org/sensors/Water_Gage_1"/>
+			<!-- parameter containing samplingPoint as defined in SOS 2.0 Extension - Data Encoding Restriction-->
+			<om:parameter>
+				<om:NamedValue>
+					<om:name xlink:href="http://www.opengis.net/req/omxml/2.0/data/samplingGeometry"/>
+					<om:value>
+						<gml:Point gml:id="SamplingPoint1">
+							<gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">52.9 7.52</gml:pos>
+						</gml:Point>
+					</om:value>
+				</om:NamedValue>
+			</om:parameter>
+			<!-- a notional URN identifying the observed property -->
+			<om:observedProperty xlink:href="http://sweet.jpl.nasa.gov/2.0/hydroSurface.owl#WaterHeight"/>
+			<!-- a notional WFS call identifying the object regarding which the observation was made -->
+			<om:featureOfInterest xlink:href="http://wfs.example.org?request=getFeature&amp;featureid=river1"/>
+			<om:result xsi:type="gml:MeasureType" uom="urn:ogc:def:uom:OGC:m">0.28</om:result>
+		</om:OM_Observation>
+	</observationData>
+</sos:GetObservationResponse>

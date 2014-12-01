@@ -1,0 +1,65 @@
+<swe:DataRecord xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <swe:field name="taskTimeFrame">
+    <swe:TimeRange definition="http://www.opengis.net/def/property/OGC-SPS/0/TaskTimeFrame" referenceFrame="http://www.opengis.net/def/trs/BIPM/0/UTC" optional="false" updatable="false">
+      <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+    </swe:TimeRange>
+  </swe:field>
+  <swe:field name="positioningChoice">
+    <swe:DataChoice optional="true">
+      <swe:item name="pointToLookAt">
+        <swe:Vector definition="http://www.opengis.net/def/property/OGC-SPS-X-CAM/0/PointToLookAt" referenceFrame="http://www.opengis.net/def/crs/EPSG/0/4979">
+          <swe:coordinate name="lat">
+            <swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Latitude" axisID="Lat">
+              <swe:uom xlink:href="deg"/>
+            </swe:Quantity>
+          </swe:coordinate>
+          <swe:coordinate name="long">
+            <swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Longitude" axisID="Long">
+              <swe:uom code="deg"/>
+            </swe:Quantity>
+          </swe:coordinate>
+          <swe:coordinate name="h">
+            <swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Vertical" axisID="h">
+              <swe:uom code="m"/>
+              <swe:value>0</swe:value>
+            </swe:Quantity>
+          </swe:coordinate>
+        </swe:Vector>
+      </swe:item>
+      <swe:item name="relativePositioning">
+        <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-SPS-X-CAM/0/RelativePan">
+          <swe:field name="relativeHorizontalPan">
+            <swe:Quantity definition="http://www.opengis.net/def/property/OGC-SPS-X-CAM/0/RelativeHorizontalPan" optional="true">
+              <swe:uom code="deg"/>
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:interval>-180 180</swe:interval>
+                </swe:AllowedValues>
+              </swe:constraint>
+            </swe:Quantity>
+          </swe:field>
+          <swe:field name="relativeVerticalPan">
+            <swe:Quantity definition="http://www.opengis.net/def/property/OGC-SPS-X-CAM/0/RelativeVerticalPan" optional="true">
+              <swe:uom code="deg"/>
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:interval>-90 90</swe:interval>
+                </swe:AllowedValues>
+              </swe:constraint>
+            </swe:Quantity>
+          </swe:field>
+        </swe:DataRecord>
+      </swe:item>
+    </swe:DataChoice>
+  </swe:field>
+  <swe:field name="focalLength">
+    <swe:Quantity definition="http://www.opengis.net/def/property/OGC-SPS-X-CAM/0/FocalLength" optional="true">
+      <swe:uom code="mm"/>
+      <swe:constraint>
+        <swe:AllowedValues>
+          <swe:interval>3.5 10</swe:interval>
+        </swe:AllowedValues>
+      </swe:constraint>
+    </swe:Quantity>
+  </swe:field>
+</swe:DataRecord>

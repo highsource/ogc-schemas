@@ -1,0 +1,6 @@
+<sps:ParameterData xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <sps:encoding>
+    <swe:TextEncoding tokenSeparator="," blockSeparator="@@"/>
+  </sps:encoding>
+  <sps:values>2010-08-20T12:37:00+02:00,2010-08-20T14:30:00+02:00,Y,pointToLookAt,51.902112,8.192728,0,Y,3.5</sps:values>
+</sps:ParameterData>
