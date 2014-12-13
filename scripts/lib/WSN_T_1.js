@@ -15,64 +15,6 @@ var WSN_T_1_Module_Factory = function () {
             t: 'ae'
           }]
       }, {
-        ln: 'QueryExpressionType',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }, {
-            n: 'dialect',
-            an: {
-              lp: 'Dialect'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ExtensibleDocumented',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'documentation',
-            ti: '.Documentation'
-          }]
-      }, {
-        ln: 'TopicNamespaceType',
-        bti: '.ExtensibleDocumented',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'topic',
-            col: true,
-            en: 'Topic',
-            ti: '.TopicNamespaceType.Topic'
-          }, {
-            n: 'any',
-            col: true,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'targetNamespace',
-            an: {
-              lp: 'targetNamespace'
-            },
-            t: 'a'
-          }, {
-            n: '_final',
-            ti: 'Boolean',
-            an: {
-              lp: 'final'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'TopicNamespaceType.Topic',
         bti: '.TopicType',
         ps: [{
@@ -86,11 +28,13 @@ var WSN_T_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Documentation',
+        ln: 'ExtensibleDocumented',
         ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'documentation',
+            ti: '.Documentation'
           }]
       }, {
         ln: 'TopicType',
@@ -134,6 +78,62 @@ var WSN_T_1_Module_Factory = function () {
             ti: 'Boolean',
             an: {
               lp: 'final'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TopicNamespaceType',
+        bti: '.ExtensibleDocumented',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'topic',
+            col: true,
+            en: 'Topic',
+            ti: '.TopicNamespaceType.Topic'
+          }, {
+            n: 'any',
+            col: true,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'targetNamespace',
+            an: {
+              lp: 'targetNamespace'
+            },
+            t: 'a'
+          }, {
+            n: '_final',
+            ti: 'Boolean',
+            an: {
+              lp: 'final'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Documentation',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'QueryExpressionType',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }, {
+            n: 'dialect',
+            an: {
+              lp: 'Dialect'
             },
             t: 'a'
           }]
