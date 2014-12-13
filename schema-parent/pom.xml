@@ -72,19 +72,19 @@
 						</catalogs>
 
 						<args>
-							<arg>-XtoString</arg>
+							<!--arg>-XtoString</arg>
 							<arg>-Xequals</arg>
 							<arg>-XhashCode</arg>
 							<arg>-Xcopyable</arg>
-							<arg>-Xmergeable</arg>
+							<arg>-Xmergeable</arg-->
 							<arg>-Xsetters</arg>
 							<arg>-Xwildcard</arg>
 							<arg>-Xinject-code</arg>
 							<arg>-Xinheritance</arg>
 							<arg>-Xfluent-api</arg>
-							<!--arg>-Xvisitor</arg-->
 							<arg>-Xjsonix</arg>
 							<arg>-Xjsonix-compact</arg>
+							<!--arg>-Xvisitor</arg-->
 						</args>
 						<plugins>
 							<plugin>
