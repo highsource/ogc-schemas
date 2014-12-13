@@ -721,10 +721,11 @@ ic/2.0/ReadMe.txt
 ic/2.1/IC-ISM-v2.1.xsd
 ic/2.1/ReadMe.txt
 ImageCRSs/ImageCRSs-1_1_0.zip
-indoorGML/1.0/indoorGMLCore.xsd
-indoorGML/1.0/indoorGMLNavi.xsd
-indoorGML/indoorGML-1_0_0.zip
-indoorGML/ReadMe.txt
+indoorgml/1.0/indoorgmlcore.xsd
+indoorgml/1.0/indoorgmlnavi.xsd
+indoorgml/indoorgml-1_0_0.zip
+indoorgml/indoorgml-1_0_1.zip
+indoorgml/ReadMe.txt
 iso/19139/20060504/gco/basicTypes.xsd
 iso/19139/20060504/gco/gcoBase.xsd
 iso/19139/20060504/gco/gco.xsd
@@ -1808,6 +1809,9 @@ wcs/2.0/wsdl/wcs-soap-binding.wsdl
 wcs/interpolation-1_0_0.zip
 wcs/interpolation/1.0/wcsInt.sch
 wcs/interpolation/1.0/wcsInt.xsd
+wcs/processing-2_0_0.zip
+wcs/processing/2.0/wcsProcessCoverages.sch
+wcs/processing/2.0/wcsProcessCoverages.xsd
 wcs/range-subsetting-1_0_0.zip
 wcs/range-subsetting/1.0/examples/requestGetCoverageRangeSubsetting.xml
 wcs/range-subsetting/1.0/wcsRsub.sch

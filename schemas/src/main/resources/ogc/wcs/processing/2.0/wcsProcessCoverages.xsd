@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.opengis.net/wcs_service-extension_processing/2.0"
+    xmlns:proc="http://www.opengis.net/wcs_service-extension_processing/2.0"
+    xmlns:wcs="http://www.opengis.net/wcs/2.0"
+    xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2.1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    version="2.0.0"
+    xml:lang="en">
+    <xs:annotation>
+        <xs:appinfo>wcsProcessing.xsd</xs:appinfo>
+        <xs:documentation>
+            This schema defines the WCS ProcessCoverages operation request elements and types, used by an OGC Web Coverage Service (WCS) Processing Extension [OGC 08-059r4].
+            Last updated: 2014-11-26
+            
+            WCS Proccessing Extension is an OGC standard.
+            
+            Copyright (c) 2014 Open Geospatial Consortium.
+            To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- =============================================================
+    includes and imports
+    ============================================================== -->
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+    <xs:import namespace="http://www.opengis.net/wcs/2.0" schemaLocation="http://schemas.opengis.net/wcs/2.0/wcsAll.xsd"/>
+    <!-- ==============================================================
+    elements and types
+    =============================================================== -->
+    <xs:element name="ProcessCoverages" type="proc:ProcessCoveragesType">
+        <xs:annotation>
+            <xs:documentation>Request to a WCS, which must implement WCPS, to perform a ProcessCoverages operation.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="ProcessCoveragesType">
+        <xs:complexContent>
+            <xs:extension base="wcs:RequestBaseType">
+            <xs:sequence>
+                <xs:element name="query" type="xs:string"/>
+                <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" namespace="##other"/>
+            </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

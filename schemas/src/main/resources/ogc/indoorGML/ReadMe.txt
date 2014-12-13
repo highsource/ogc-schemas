@@ -22,6 +22,12 @@ http://schemas.opengis.net/SCHEMAS_OPENGIS_NET.zip
 
 -----------------------------------------------------------------------
 
+2014-12-03  Ki-Joune Li
+
+  * v1.0: Moved indoorGML/1.0 to indoorgml/1.0 per OGC-NA recommendations.
+  * v1.0: Removed all upper case in indoorgml 1.0 URI's.
+  * v1.0: updated xsd:schema/@version to 1.0.1 (06-135r7 s#13.4)
+
 2014-11-05  Jiyeong Lee, Ki-Joune Li, Sisi Zlatanova, Thomas H. Kolbe, 
 			Claus Nagel, Thomas Becker
 

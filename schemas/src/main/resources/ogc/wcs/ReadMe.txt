@@ -16,6 +16,9 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2014-11-26  Peter Baumann
+  * wcs/processing/2.0: added WCS Processing Extension 2.0.0 (OGC 08-059r4)
+
 2014-11-19  Peter Baumann, Jinsongdi Yu
   * wcs/range-subsetting/1.0: added WCS Range Subsetting Extension 1.0.0 (OGC 12-040)
 

@@ -18,17 +18,19 @@
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
 <dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2014-11-19T20:21:31:+00:00
+<dc:date>2014-12-03T20:29:14:+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2014-11-19T20:21:31:+00:00
+<syn:updateBase>2014-12-03T20:29:14:+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
+  <rdf:li rdf:resource="http://schemas.opengis.net/indoorGML/ReadMe.txt#20141203t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20141126t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20141119t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20141118t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20141118t15" />
@@ -93,6 +95,26 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
+<item rdf:about="http://schemas.opengis.net/indoorGML/ReadMe.txt#20141203t15">
+<title>OGC IndoorGML 1.0 - Schema Moved and Updated</title>
+<link>http://schemas.opengis.net/indoorGML/ReadMe.txt#20141203t15</link>
+<description>The OGC IndoorGML 1.0 schema described in OGC document 14-005r3 has been moved and updated.  These modifications reflect OGC-NA recommendations regarding URI names. The See http://www.opengeospatial.org/standards/indoorgml for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2014-12-03T15:45:58:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC IndoorGML 1.0 Standard Schema Moved and Updated</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20141126t15">
+<title>OGC WCS Processing 2.0 - Schema Posted</title>
+<link>http://schemas.opengis.net/wcs/ReadMe.txt#20141126t15</link>
+<description>The OGC WCS Processing 2.0 schema described in OGC document 08-059r4 has been posted.  
+The OGC Web Coverage Service &#xE2;&#x80;&#x93; Processing Extension defines an extension to the WCS Core [OGC 09-110], the ProcessCoverages request type, which allows clients to initi-ate server-side processing and filtering of coverages and to download the resulting coverage or value sets based on the query language defined in the Web Coverage Processing Service (WCPS) interface standard [OGC 08-068].
+See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2014-11-26T15:45:57:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WCS Processing 2.0 Standard Schema Posted</dc:subject>
+</item>
 <item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20141119t15">
 <title>OGC WCS Range Subsetting 1.0 - Schema Posted</title>
 <link>http://schemas.opengis.net/wcs/ReadMe.txt#20141119t15</link>

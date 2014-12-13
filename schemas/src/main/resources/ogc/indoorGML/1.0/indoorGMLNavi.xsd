@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://www.opengis.net/indoorgml/navigation/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:IndoorCore="http://www.opengis.net/indoorgml/core/1.0" targetNamespace="http://www.opengis.net/indoorgml/navigation/1.0" elementFormDefault="qualified" version="1.0.0">
+<xs:schema xmlns="http://www.opengis.net/indoorgml/1.0/navigation" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:IndoorCore="http://www.opengis.net/indoorgml/1.0/core" targetNamespace="http://www.opengis.net/indoorgml/1.0/navigation" elementFormDefault="qualified" version="1.0.1">
 	<xs:annotation>
 		<xs:documentation>
 			IndoorGML is an OGC Standard. 
@@ -8,7 +8,7 @@
 		</xs:documentation>
 	</xs:annotation>
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
-	<xs:import namespace="http://www.opengis.net/indoorgml/core/1.0" schemaLocation="http://schemas.opengis.net/indoorGML/1.0/indoorGMLCore.xsd"/>
+	<xs:import namespace="http://www.opengis.net/indoorgml/1.0/core" schemaLocation="http://schemas.opengis.net/indoorgml/1.0/core/indoorgmlcore.xsd"/>
 	<!-- ====================================================================== -->
 	<xs:element name="NavigableSpace" type="NavigableSpaceType" substitutionGroup="IndoorCore:CellSpace">
 		<xs:annotation>
