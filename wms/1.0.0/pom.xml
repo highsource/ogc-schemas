@@ -12,16 +12,6 @@
 		<version>2.0.1-SNAPSHOT</version>
 		<relativePath>../../dtd-parent/pom.xml</relativePath>
 	</parent>
-	<dependencies>
-		<dependency>
-			<groupId>org.jvnet.jaxb2_commons</groupId>
-			<artifactId>jaxb2-basics-runtime</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-impl</artifactId>
-		</dependency>
-	</dependencies>
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<plugins>
