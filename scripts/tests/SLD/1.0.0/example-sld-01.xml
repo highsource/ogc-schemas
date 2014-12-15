@@ -1,0 +1,21 @@
+<sld:StyledLayerDescriptor xmlns:sld="http://www.opengis.net/sld"
+	xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0.0">
+	<sld:NamedLayer>
+		<sld:Name>simple</sld:Name>
+		<sld:UserStyle>
+			<sld:FeatureTypeStyle>
+				<sld:Rule>
+					<sld:PointSymbolizer>
+						<sld:Graphic>
+							<sld:ExternalGraphic>
+								<sld:OnlineResource xlink:type="simple"
+									xlink:href="icon.svg" />
+								<sld:Format>image/svg+xml</sld:Format>
+							</sld:ExternalGraphic>
+						</sld:Graphic>
+					</sld:PointSymbolizer>
+				</sld:Rule>
+			</sld:FeatureTypeStyle>
+		</sld:UserStyle>
+	</sld:NamedLayer>
+</sld:StyledLayerDescriptor>
