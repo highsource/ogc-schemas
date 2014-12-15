@@ -11,6 +11,16 @@
 		<artifactId>ogc-schemas-project</artifactId>
 		<version>2.0.1-SNAPSHOT</version>
 	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>org.jvnet.jaxb2_commons</groupId>
+			<artifactId>jaxb2-basics-runtime</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+		</dependency>
+	</dependencies>
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<pluginManagement>
@@ -70,13 +80,13 @@
 								</dependencyResource>
 							</catalog>
 						</catalogs>
-
 						<args>
-							<!--arg>-XtoString</arg>
+							<arg>-XfixJAXB1058</arg>
+							<arg>-XtoString</arg>
 							<arg>-Xequals</arg>
 							<arg>-XhashCode</arg>
 							<arg>-Xcopyable</arg>
-							<arg>-Xmergeable</arg-->
+							<arg>-Xmergeable</arg>
 							<arg>-Xsetters</arg>
 							<arg>-Xwildcard</arg>
 							<arg>-Xinject-code</arg>
