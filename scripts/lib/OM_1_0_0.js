@@ -4,87 +4,6 @@ var OM_1_0_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/om\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     tis: [{
-        ln: 'ProcessPropertyType',
-        ps: [{
-            n: 'sensorMLProcess',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: '_Process',
-              ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
-            },
-            ti: 'SensorML_1_0_1.AbstractProcessType',
-            t: 'er'
-          }, {
-            n: 'process',
-            en: 'Process',
-            ti: 'AnyType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ObservationType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'metadata',
-            ti: '.AnyOrReferenceType'
-          }, {
-            n: 'samplingTime',
-            ti: 'SWE_1_0_1.TimeObjectPropertyType'
-          }, {
-            n: 'resultTime',
-            ti: 'SWE_1_0_1.TimeObjectPropertyType'
-          }, {
-            n: 'procedure',
-            ti: '.ProcessPropertyType'
-          }, {
-            n: 'resultQuality',
-            ti: '.AnyOrReferenceType'
-          }, {
-            n: 'observedProperty',
-            ti: 'SWE_1_0_1.PhenomenonPropertyType'
-          }, {
-            n: 'featureOfInterest',
-            ti: 'GML_3_1_1.FeaturePropertyType'
-          }, {
-            n: 'parameter',
-            col: true,
-            ti: 'SWE_1_0_1.AnyDataPropertyType'
-          }, {
-            n: 'result',
-            ti: 'AnyType'
-          }]
-      }, {
         ln: 'AnyOrReferenceType',
         ps: [{
             n: 'any',
@@ -168,6 +87,87 @@ var OM_1_0_0_Module_Factory = function () {
             n: 'member',
             col: true,
             ti: '.ObservationPropertyType'
+          }]
+      }, {
+        ln: 'ObservationType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'metadata',
+            ti: '.AnyOrReferenceType'
+          }, {
+            n: 'samplingTime',
+            ti: 'SWE_1_0_1.TimeObjectPropertyType'
+          }, {
+            n: 'resultTime',
+            ti: 'SWE_1_0_1.TimeObjectPropertyType'
+          }, {
+            n: 'procedure',
+            ti: '.ProcessPropertyType'
+          }, {
+            n: 'resultQuality',
+            ti: '.AnyOrReferenceType'
+          }, {
+            n: 'observedProperty',
+            ti: 'SWE_1_0_1.PhenomenonPropertyType'
+          }, {
+            n: 'featureOfInterest',
+            ti: 'GML_3_1_1.FeaturePropertyType'
+          }, {
+            n: 'parameter',
+            col: true,
+            ti: 'SWE_1_0_1.AnyDataPropertyType'
+          }, {
+            n: 'result',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'ProcessPropertyType',
+        ps: [{
+            n: 'sensorMLProcess',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: '_Process',
+              ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
+            },
+            ti: 'SensorML_1_0_1.AbstractProcessType',
+            t: 'er'
+          }, {
+            n: 'process',
+            en: 'Process',
+            ti: 'AnyType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }],
     eis: [{

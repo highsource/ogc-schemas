@@ -30,22 +30,6 @@ var Sampling_2_0_Module_Factory = function () {
             ti: 'OM_2_0.NamedValuePropertyType'
           }]
       }, {
-        ln: 'SamplingFeatureComplexType',
-        ps: [{
-            n: 'role',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'relatedSamplingFeature',
-            ti: '.SFSamplingFeaturePropertyType'
-          }]
-      }, {
-        ln: 'SamplingFeatureComplexPropertyType',
-        ps: [{
-            n: 'samplingFeatureComplex',
-            en: 'SamplingFeatureComplex',
-            ti: '.SamplingFeatureComplexType'
-          }]
-      }, {
         ln: 'SFSamplingFeatureCollectionPropertyType',
         ps: [{
             n: 'sfSamplingFeatureCollection',
@@ -91,6 +75,13 @@ var Sampling_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'SamplingFeatureComplexPropertyType',
+        ps: [{
+            n: 'samplingFeatureComplex',
+            en: 'SamplingFeatureComplex',
+            ti: '.SamplingFeatureComplexType'
           }]
       }, {
         ln: 'SFSamplingFeatureCollectionType',
@@ -193,6 +184,15 @@ var Sampling_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'SamplingFeatureComplexType',
+        ps: [{
+            n: 'role',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'relatedSamplingFeature',
+            ti: '.SFSamplingFeaturePropertyType'
           }]
       }],
     eis: [{

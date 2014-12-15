@@ -3,361 +3,33 @@ var WFS_2_0_Module_Factory = function () {
     n: 'WFS_2_0',
     dens: 'http:\/\/www.opengis.net\/wfs\/2.0',
     tis: [{
-        ln: 'FeaturesLockedType',
+        ln: 'NativeType',
+        bti: '.AbstractTransactionActionType',
         ps: [{
-            n: 'resourceId',
+            n: 'content',
             col: true,
-            en: {
-              lp: 'ResourceId',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            ti: 'Filter_2_0.ResourceIdType'
-          }]
-      }, {
-        ln: 'ActionResultsType',
-        ps: [{
-            n: 'feature',
-            col: true,
-            en: 'Feature',
-            ti: '.CreatedOrModifiedFeatureType'
-          }]
-      }, {
-        ln: 'ExtendedDescriptionType',
-        ps: [{
-            n: 'element',
-            col: true,
-            en: 'Element',
-            ti: '.ElementType'
-          }]
-      }, {
-        ln: 'FeatureTypeType',
-        ps: [{
-            n: 'name',
-            en: 'Name',
-            ti: 'QName'
+            t: 'ae'
           }, {
-            n: 'title',
-            col: true,
-            en: 'Title',
-            ti: '.Title'
-          }, {
-            n: '_abstract',
-            col: true,
-            en: 'Abstract',
-            ti: '.Abstract'
-          }, {
-            n: 'keywords',
-            col: true,
-            en: {
-              lp: 'Keywords',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.KeywordsType'
-          }, {
-            n: 'defaultCRS',
-            en: 'DefaultCRS'
-          }, {
-            n: 'otherCRS',
-            col: true,
-            en: 'OtherCRS'
-          }, {
-            n: 'noCRS',
-            en: 'NoCRS',
-            ti: '.FeatureTypeType.NoCRS'
-          }, {
-            n: 'outputFormats',
-            en: 'OutputFormats',
-            ti: '.OutputFormatListType'
-          }, {
-            n: 'wgs84BoundingBox',
-            col: true,
-            en: {
-              lp: 'WGS84BoundingBox',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.WGS84BoundingBoxType'
-          }, {
-            n: 'metadataURL',
-            col: true,
-            en: 'MetadataURL',
-            ti: '.MetadataURLType'
-          }, {
-            n: 'extendedDescription',
-            en: 'ExtendedDescription',
-            ti: '.ExtendedDescriptionType'
-          }]
-      }, {
-        ln: 'AdditionalObjects',
-        ps: [{
-            n: 'valueCollection',
-            en: 'ValueCollection',
-            ti: '.ValueCollectionType'
-          }, {
-            n: 'simpleFeatureCollection',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'SimpleFeatureCollection',
-            ti: '.SimpleFeatureCollectionType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'DescribeStoredQueriesType',
-        bti: '.BaseRequestType',
-        ps: [{
-            n: 'storedQueryId',
-            col: true,
-            en: 'StoredQueryId'
-          }]
-      }, {
-        ln: 'OutputFormatListType',
-        ps: [{
-            n: 'format',
-            col: true,
-            en: 'Format'
-          }]
-      }, {
-        ln: 'CreateStoredQueryResponseType',
-        bti: '.ExecutionStatusType'
-      }, {
-        ln: 'CreatedOrModifiedFeatureType',
-        ps: [{
-            n: 'resourceId',
-            col: true,
-            en: {
-              lp: 'ResourceId',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            ti: 'Filter_2_0.ResourceIdType'
-          }, {
-            n: 'handle',
+            n: 'vendorId',
             an: {
-              lp: 'handle'
+              lp: 'vendorId'
+            },
+            t: 'a'
+          }, {
+            n: 'safeToIgnore',
+            ti: 'Boolean',
+            an: {
+              lp: 'safeToIgnore'
             },
             t: 'a'
           }]
       }, {
-        ln: 'DescribeFeatureTypeType',
-        bti: '.BaseRequestType',
+        ln: 'ListStoredQueriesResponseType',
         ps: [{
-            n: 'typeName',
+            n: 'storedQuery',
             col: true,
-            en: 'TypeName',
-            ti: 'QName'
-          }, {
-            n: 'outputFormat',
-            an: {
-              lp: 'outputFormat'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'StoredQueryDescriptionType',
-        ps: [{
-            n: 'title',
-            col: true,
-            en: 'Title',
-            ti: '.Title'
-          }, {
-            n: '_abstract',
-            col: true,
-            en: 'Abstract',
-            ti: '.Abstract'
-          }, {
-            n: 'metadata',
-            col: true,
-            en: {
-              lp: 'Metadata',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.MetadataType'
-          }, {
-            n: 'parameter',
-            col: true,
-            en: 'Parameter',
-            ti: '.ParameterExpressionType'
-          }, {
-            n: 'queryExpressionText',
-            col: true,
-            en: 'QueryExpressionText',
-            ti: '.QueryExpressionTextType'
-          }, {
-            n: 'id',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TupleType',
-        ps: [{
-            n: 'member',
-            col: true,
-            ti: '.MemberPropertyType'
-          }]
-      }, {
-        ln: 'PropertyName',
-        ps: [{
-            n: 'value',
-            ti: 'QName',
-            t: 'v'
-          }, {
-            n: 'resolvePath',
-            an: {
-              lp: 'resolvePath'
-            },
-            t: 'a'
-          }, {
-            n: 'resolve',
-            an: {
-              lp: 'resolve'
-            },
-            t: 'a'
-          }, {
-            n: 'resolveDepth',
-            an: {
-              lp: 'resolveDepth'
-            },
-            t: 'a'
-          }, {
-            n: 'resolveTimeout',
-            ti: 'Integer',
-            an: {
-              lp: 'resolveTimeout'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'WFSCapabilitiesType.WSDL',
-        ps: [{
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            an: {
-              lp: 'type',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'href',
-            an: {
-              lp: 'href',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'role',
-            an: {
-              lp: 'role',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            an: {
-              lp: 'arcrole',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'title',
-            an: {
-              lp: 'title',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            an: {
-              lp: 'show',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            an: {
-              lp: 'actuate',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeStoredQueriesResponseType',
-        ps: [{
-            n: 'storedQueryDescription',
-            col: true,
-            en: 'StoredQueryDescription',
-            ti: '.StoredQueryDescriptionType'
-          }]
-      }, {
-        ln: 'SimpleFeatureCollectionType',
-        ps: [{
-            n: 'boundedBy',
-            ti: '.EnvelopePropertyType'
-          }, {
-            n: 'member',
-            col: true,
-            ti: '.MemberPropertyType'
-          }]
-      }, {
-        ln: 'FeatureTypeType.NoCRS'
-      }, {
-        ln: 'Abstract',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'lang',
-            an: {
-              lp: 'lang',
-              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'StoredQueryListItemType',
-        ps: [{
-            n: 'title',
-            col: true,
-            en: 'Title',
-            ti: '.Title'
-          }, {
-            n: 'returnFeatureType',
-            col: true,
-            en: 'ReturnFeatureType',
-            ti: 'QName'
-          }, {
-            n: 'id',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TransactionResponseType',
-        ps: [{
-            n: 'transactionSummary',
-            en: 'TransactionSummary',
-            ti: '.TransactionSummaryType'
-          }, {
-            n: 'insertResults',
-            en: 'InsertResults',
-            ti: '.ActionResultsType'
-          }, {
-            n: 'updateResults',
-            en: 'UpdateResults',
-            ti: '.ActionResultsType'
-          }, {
-            n: 'replaceResults',
-            en: 'ReplaceResults',
-            ti: '.ActionResultsType'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
+            en: 'StoredQuery',
+            ti: '.StoredQueryListItemType'
           }]
       }, {
         ln: 'ExecutionStatusType',
@@ -367,163 +39,6 @@ var WFS_2_0_Module_Factory = function () {
               lp: 'status'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'AbstractTransactionActionType',
-        ps: [{
-            n: 'handle',
-            an: {
-              lp: 'handle'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PropertyType',
-        ps: [{
-            n: 'valueReference',
-            en: 'ValueReference',
-            ti: '.PropertyType.ValueReference'
-          }, {
-            n: 'value',
-            en: 'Value',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'WFSCapabilitiesType',
-        bti: 'OWS_1_1_0.CapabilitiesBaseType',
-        ps: [{
-            n: 'wsdl',
-            en: 'WSDL',
-            ti: '.WFSCapabilitiesType.WSDL'
-          }, {
-            n: 'featureTypeList',
-            en: 'FeatureTypeList',
-            ti: '.FeatureTypeListType'
-          }, {
-            n: 'filterCapabilities',
-            en: {
-              lp: 'Filter_Capabilities',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            ti: 'Filter_2_0.FilterCapabilities'
-          }]
-      }, {
-        ln: 'GetFeatureWithLockType',
-        bti: '.GetFeatureType',
-        ps: [{
-            n: 'expiry',
-            ti: 'Integer',
-            an: {
-              lp: 'expiry'
-            },
-            t: 'a'
-          }, {
-            n: 'lockAction',
-            an: {
-              lp: 'lockAction'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetCapabilitiesType',
-        bti: 'OWS_1_1_0.GetCapabilitiesType',
-        ps: [{
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LockFeatureType',
-        bti: '.BaseRequestType',
-        ps: [{
-            n: 'abstractQueryExpression',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'AbstractQueryExpression',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            ti: 'Filter_2_0.AbstractQueryExpressionType',
-            t: 'er'
-          }, {
-            n: 'lockId',
-            an: {
-              lp: 'lockId'
-            },
-            t: 'a'
-          }, {
-            n: 'expiry',
-            ti: 'Integer',
-            an: {
-              lp: 'expiry'
-            },
-            t: 'a'
-          }, {
-            n: 'lockAction',
-            an: {
-              lp: 'lockAction'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'QueryExpressionTextType',
-        ps: [{
-            n: 'content',
-            col: true,
-            typed: false,
-            t: 'ae'
-          }, {
-            n: 'returnFeatureTypes',
-            ti: {
-              t: 'l',
-              bti: 'QName'
-            },
-            an: {
-              lp: 'returnFeatureTypes'
-            },
-            t: 'a'
-          }, {
-            n: 'language',
-            an: {
-              lp: 'language'
-            },
-            t: 'a'
-          }, {
-            n: 'isPrivate',
-            ti: 'Boolean',
-            an: {
-              lp: 'isPrivate'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TruncatedResponse',
-        ps: [{
-            n: 'exceptionReport',
-            en: {
-              lp: 'ExceptionReport',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.ExceptionReport'
-          }]
-      }, {
-        ln: 'AdditionalValues',
-        ps: [{
-            n: 'valueCollection',
-            en: 'ValueCollection',
-            ti: '.ValueCollectionType'
-          }, {
-            n: 'simpleFeatureCollection',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'SimpleFeatureCollection',
-            ti: '.SimpleFeatureCollectionType',
-            t: 'er'
           }]
       }, {
         ln: 'LockFeatureResponseType',
@@ -543,22 +58,62 @@ var WFS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MemberPropertyType',
+        ln: 'FeatureTypeListType',
         ps: [{
-            n: 'content',
+            n: 'featureType',
             col: true,
-            etis: [{
-                en: 'SimpleFeatureCollection',
-                ti: '.SimpleFeatureCollectionType'
-              }, {
-                en: 'Tuple',
-                ti: '.TupleType'
-              }],
-            t: 'ers'
+            en: 'FeatureType',
+            ti: '.FeatureTypeType'
+          }]
+      }, {
+        ln: 'TransactionType',
+        bti: '.BaseRequestType',
+        ps: [{
+            n: 'abstractTransactionAction',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractTransactionAction',
+            ti: '.AbstractTransactionActionType',
+            t: 'er'
           }, {
-            n: 'state',
+            n: 'lockId',
             an: {
-              lp: 'state'
+              lp: 'lockId'
+            },
+            t: 'a'
+          }, {
+            n: 'releaseAction',
+            an: {
+              lp: 'releaseAction'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PropertyType.ValueReference',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'action',
+            an: {
+              lp: 'action'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MetadataURLType',
+        ps: [{
+            n: 'about',
+            an: {
+              lp: 'about'
             },
             t: 'a'
           }, {
@@ -660,22 +215,71 @@ var WFS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DropStoredQuery',
+        ln: 'WFSCapabilitiesType',
+        bti: 'OWS_1_1_0.CapabilitiesBaseType',
+        ps: [{
+            n: 'wsdl',
+            en: 'WSDL',
+            ti: '.WFSCapabilitiesType.WSDL'
+          }, {
+            n: 'featureTypeList',
+            en: 'FeatureTypeList',
+            ti: '.FeatureTypeListType'
+          }, {
+            n: 'filterCapabilities',
+            en: {
+              lp: 'Filter_Capabilities',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.FilterCapabilities'
+          }]
+      }, {
+        ln: 'EmptyType'
+      }, {
+        ln: 'DescribeStoredQueriesType',
         bti: '.BaseRequestType',
         ps: [{
-            n: 'id',
+            n: 'storedQueryId',
+            col: true,
+            en: 'StoredQueryId'
+          }]
+      }, {
+        ln: 'PropertyType',
+        ps: [{
+            n: 'valueReference',
+            en: 'ValueReference',
+            ti: '.PropertyType.ValueReference'
+          }, {
+            n: 'value',
+            en: 'Value',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'GetFeatureWithLockType',
+        bti: '.GetFeatureType',
+        ps: [{
+            n: 'expiry',
+            ti: 'Integer',
             an: {
-              lp: 'id'
+              lp: 'expiry'
+            },
+            t: 'a'
+          }, {
+            n: 'lockAction',
+            an: {
+              lp: 'lockAction'
             },
             t: 'a'
           }]
       }, {
-        ln: 'FeatureTypeListType',
+        ln: 'CreateStoredQueryResponseType',
+        bti: '.ExecutionStatusType'
+      }, {
+        ln: 'TupleType',
         ps: [{
-            n: 'featureType',
+            n: 'member',
             col: true,
-            en: 'FeatureType',
-            ti: '.FeatureTypeType'
+            ti: '.MemberPropertyType'
           }]
       }, {
         ln: 'FeaturesNotLockedType',
@@ -689,23 +293,238 @@ var WFS_2_0_Module_Factory = function () {
             ti: 'Filter_2_0.ResourceIdType'
           }]
       }, {
-        ln: 'NativeType',
-        bti: '.AbstractTransactionActionType',
+        ln: 'CreateStoredQueryType',
+        bti: '.BaseRequestType',
         ps: [{
-            n: 'content',
+            n: 'storedQueryDefinition',
             col: true,
-            t: 'ae'
+            en: 'StoredQueryDefinition',
+            ti: '.StoredQueryDescriptionType'
+          }]
+      }, {
+        ln: 'TransactionResponseType',
+        ps: [{
+            n: 'transactionSummary',
+            en: 'TransactionSummary',
+            ti: '.TransactionSummaryType'
           }, {
-            n: 'vendorId',
+            n: 'insertResults',
+            en: 'InsertResults',
+            ti: '.ActionResultsType'
+          }, {
+            n: 'updateResults',
+            en: 'UpdateResults',
+            ti: '.ActionResultsType'
+          }, {
+            n: 'replaceResults',
+            en: 'ReplaceResults',
+            ti: '.ActionResultsType'
+          }, {
+            n: 'version',
             an: {
-              lp: 'vendorId'
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'OutputFormatListType',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format'
+          }]
+      }, {
+        ln: 'CreatedOrModifiedFeatureType',
+        ps: [{
+            n: 'resourceId',
+            col: true,
+            en: {
+              lp: 'ResourceId',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.ResourceIdType'
+          }, {
+            n: 'handle',
+            an: {
+              lp: 'handle'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'StoredQueryDescriptionType',
+        ps: [{
+            n: 'title',
+            col: true,
+            en: 'Title',
+            ti: '.Title'
+          }, {
+            n: '_abstract',
+            col: true,
+            en: 'Abstract',
+            ti: '.Abstract'
+          }, {
+            n: 'metadata',
+            col: true,
+            en: {
+              lp: 'Metadata',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.MetadataType'
+          }, {
+            n: 'parameter',
+            col: true,
+            en: 'Parameter',
+            ti: '.ParameterExpressionType'
+          }, {
+            n: 'queryExpressionText',
+            col: true,
+            en: 'QueryExpressionText',
+            ti: '.QueryExpressionTextType'
+          }, {
+            n: 'id',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ActionResultsType',
+        ps: [{
+            n: 'feature',
+            col: true,
+            en: 'Feature',
+            ti: '.CreatedOrModifiedFeatureType'
+          }]
+      }, {
+        ln: 'ElementType',
+        ps: [{
+            n: 'metadata',
+            en: {
+              lp: 'Metadata',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.MetadataType'
+          }, {
+            n: 'valueList',
+            en: 'ValueList',
+            ti: '.ValueListType'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
             },
             t: 'a'
           }, {
-            n: 'safeToIgnore',
-            ti: 'Boolean',
+            n: 'type',
+            ti: 'QName',
             an: {
-              lp: 'safeToIgnore'
+              lp: 'type'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FeatureTypeType',
+        ps: [{
+            n: 'name',
+            en: 'Name',
+            ti: 'QName'
+          }, {
+            n: 'title',
+            col: true,
+            en: 'Title',
+            ti: '.Title'
+          }, {
+            n: '_abstract',
+            col: true,
+            en: 'Abstract',
+            ti: '.Abstract'
+          }, {
+            n: 'keywords',
+            col: true,
+            en: {
+              lp: 'Keywords',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.KeywordsType'
+          }, {
+            n: 'defaultCRS',
+            en: 'DefaultCRS'
+          }, {
+            n: 'otherCRS',
+            col: true,
+            en: 'OtherCRS'
+          }, {
+            n: 'noCRS',
+            en: 'NoCRS',
+            ti: '.FeatureTypeType.NoCRS'
+          }, {
+            n: 'outputFormats',
+            en: 'OutputFormats',
+            ti: '.OutputFormatListType'
+          }, {
+            n: 'wgs84BoundingBox',
+            col: true,
+            en: {
+              lp: 'WGS84BoundingBox',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.WGS84BoundingBoxType'
+          }, {
+            n: 'metadataURL',
+            col: true,
+            en: 'MetadataURL',
+            ti: '.MetadataURLType'
+          }, {
+            n: 'extendedDescription',
+            en: 'ExtendedDescription',
+            ti: '.ExtendedDescriptionType'
+          }]
+      }, {
+        ln: 'AdditionalObjects',
+        ps: [{
+            n: 'valueCollection',
+            en: 'ValueCollection',
+            ti: '.ValueCollectionType'
+          }, {
+            n: 'simpleFeatureCollection',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'SimpleFeatureCollection',
+            ti: '.SimpleFeatureCollectionType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'TransactionSummaryType',
+        ps: [{
+            n: 'totalInserted',
+            ti: 'Integer'
+          }, {
+            n: 'totalUpdated',
+            ti: 'Integer'
+          }, {
+            n: 'totalReplaced',
+            ti: 'Integer'
+          }, {
+            n: 'totalDeleted',
+            ti: 'Integer'
+          }]
+      }, {
+        ln: 'ListStoredQueriesType',
+        bti: '.BaseRequestType'
+      }, {
+        ln: 'QueryType',
+        bti: 'Filter_2_0.AbstractAdhocQueryExpressionType',
+        ps: [{
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'featureVersion',
+            an: {
+              lp: 'featureVersion'
             },
             t: 'a'
           }]
@@ -718,12 +537,137 @@ var WFS_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'EnvelopePropertyType',
+        ln: 'LockFeatureType',
+        bti: '.BaseRequestType',
         ps: [{
-            n: 'any',
-            dom: false,
+            n: 'abstractQueryExpression',
+            col: true,
             mx: false,
-            t: 'ae'
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'AbstractQueryExpression',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.AbstractQueryExpressionType',
+            t: 'er'
+          }, {
+            n: 'lockId',
+            an: {
+              lp: 'lockId'
+            },
+            t: 'a'
+          }, {
+            n: 'expiry',
+            ti: 'Integer',
+            an: {
+              lp: 'expiry'
+            },
+            t: 'a'
+          }, {
+            n: 'lockAction',
+            an: {
+              lp: 'lockAction'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeStoredQueriesResponseType',
+        ps: [{
+            n: 'storedQueryDescription',
+            col: true,
+            en: 'StoredQueryDescription',
+            ti: '.StoredQueryDescriptionType'
+          }]
+      }, {
+        ln: 'GetPropertyValueType',
+        bti: '.BaseRequestType',
+        ps: [{
+            n: 'abstractQueryExpression',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'AbstractQueryExpression',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.AbstractQueryExpressionType',
+            t: 'er'
+          }, {
+            n: 'valueReference',
+            an: {
+              lp: 'valueReference'
+            },
+            t: 'a'
+          }, {
+            n: 'resolvePath',
+            an: {
+              lp: 'resolvePath'
+            },
+            t: 'a'
+          }, {
+            n: 'resolve',
+            an: {
+              lp: 'resolve'
+            },
+            t: 'a'
+          }, {
+            n: 'resolveDepth',
+            an: {
+              lp: 'resolveDepth'
+            },
+            t: 'a'
+          }, {
+            n: 'resolveTimeout',
+            ti: 'Integer',
+            an: {
+              lp: 'resolveTimeout'
+            },
+            t: 'a'
+          }, {
+            n: 'startIndex',
+            ti: 'Integer',
+            an: {
+              lp: 'startIndex'
+            },
+            t: 'a'
+          }, {
+            n: 'count',
+            ti: 'Integer',
+            an: {
+              lp: 'count'
+            },
+            t: 'a'
+          }, {
+            n: 'resultType',
+            an: {
+              lp: 'resultType'
+            },
+            t: 'a'
+          }, {
+            n: 'outputFormat',
+            an: {
+              lp: 'outputFormat'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ExtendedDescriptionType',
+        ps: [{
+            n: 'element',
+            col: true,
+            en: 'Element',
+            ti: '.ElementType'
+          }]
+      }, {
+        ln: 'TruncatedResponse',
+        ps: [{
+            n: 'exceptionReport',
+            en: {
+              lp: 'ExceptionReport',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.ExceptionReport'
           }]
       }, {
         ln: 'ParameterExpressionType',
@@ -760,60 +704,40 @@ var WFS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ListStoredQueriesResponseType',
+        ln: 'AdditionalValues',
         ps: [{
-            n: 'storedQuery',
-            col: true,
-            en: 'StoredQuery',
-            ti: '.StoredQueryListItemType'
+            n: 'valueCollection',
+            en: 'ValueCollection',
+            ti: '.ValueCollectionType'
+          }, {
+            n: 'simpleFeatureCollection',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'SimpleFeatureCollection',
+            ti: '.SimpleFeatureCollectionType',
+            t: 'er'
           }]
       }, {
-        ln: 'UpdateType',
-        bti: '.AbstractTransactionActionType',
+        ln: 'DropStoredQuery',
+        bti: '.BaseRequestType',
         ps: [{
-            n: 'property',
-            col: true,
-            en: 'Property',
-            ti: '.PropertyType'
-          }, {
-            n: 'filter',
-            en: {
-              lp: 'Filter',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            ti: 'Filter_2_0.FilterType'
-          }, {
-            n: 'typeName',
-            ti: 'QName',
+            n: 'id',
             an: {
-              lp: 'typeName'
-            },
-            t: 'a'
-          }, {
-            n: 'inputFormat',
-            an: {
-              lp: 'inputFormat'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
+              lp: 'id'
             },
             t: 'a'
           }]
       }, {
-        ln: 'ListStoredQueriesType',
-        bti: '.BaseRequestType'
-      }, {
-        ln: 'PropertyType.ValueReference',
+        ln: 'Title',
         ps: [{
             n: 'value',
             t: 'v'
           }, {
-            n: 'action',
+            n: 'lang',
             an: {
-              lp: 'action'
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
             },
             t: 'a'
           }]
@@ -866,11 +790,294 @@ var WFS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MetadataURLType',
+        ln: 'WFSCapabilitiesType.WSDL',
         ps: [{
-            n: 'about',
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
             an: {
-              lp: 'about'
+              lp: 'type',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'href',
+            an: {
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'role',
+            an: {
+              lp: 'role',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            an: {
+              lp: 'arcrole',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'title',
+            an: {
+              lp: 'title',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            an: {
+              lp: 'show',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            an: {
+              lp: 'actuate',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'StoredQueryType',
+        bti: 'Filter_2_0.AbstractQueryExpressionType',
+        ps: [{
+            n: 'parameter',
+            col: true,
+            en: 'Parameter',
+            ti: '.ParameterType'
+          }, {
+            n: 'id',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DeleteType',
+        bti: '.AbstractTransactionActionType',
+        ps: [{
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.FilterType'
+          }, {
+            n: 'typeName',
+            ti: 'QName',
+            an: {
+              lp: 'typeName'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetCapabilitiesType',
+        bti: 'OWS_1_1_0.GetCapabilitiesType',
+        ps: [{
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PropertyName',
+        ps: [{
+            n: 'value',
+            ti: 'QName',
+            t: 'v'
+          }, {
+            n: 'resolvePath',
+            an: {
+              lp: 'resolvePath'
+            },
+            t: 'a'
+          }, {
+            n: 'resolve',
+            an: {
+              lp: 'resolve'
+            },
+            t: 'a'
+          }, {
+            n: 'resolveDepth',
+            an: {
+              lp: 'resolveDepth'
+            },
+            t: 'a'
+          }, {
+            n: 'resolveTimeout',
+            ti: 'Integer',
+            an: {
+              lp: 'resolveTimeout'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FeatureTypeType.NoCRS'
+      }, {
+        ln: 'ReplaceType',
+        bti: '.AbstractTransactionActionType',
+        ps: [{
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.FilterType'
+          }, {
+            n: 'inputFormat',
+            an: {
+              lp: 'inputFormat'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'InsertType',
+        bti: '.AbstractTransactionActionType',
+        ps: [{
+            n: 'any',
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'inputFormat',
+            an: {
+              lp: 'inputFormat'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FeaturesLockedType',
+        ps: [{
+            n: 'resourceId',
+            col: true,
+            en: {
+              lp: 'ResourceId',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.ResourceIdType'
+          }]
+      }, {
+        ln: 'UpdateType',
+        bti: '.AbstractTransactionActionType',
+        ps: [{
+            n: 'property',
+            col: true,
+            en: 'Property',
+            ti: '.PropertyType'
+          }, {
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.FilterType'
+          }, {
+            n: 'typeName',
+            ti: 'QName',
+            an: {
+              lp: 'typeName'
+            },
+            t: 'a'
+          }, {
+            n: 'inputFormat',
+            an: {
+              lp: 'inputFormat'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'QueryExpressionTextType',
+        ps: [{
+            n: 'content',
+            col: true,
+            typed: false,
+            t: 'ae'
+          }, {
+            n: 'returnFeatureTypes',
+            ti: {
+              t: 'l',
+              bti: 'QName'
+            },
+            an: {
+              lp: 'returnFeatureTypes'
+            },
+            t: 'a'
+          }, {
+            n: 'language',
+            an: {
+              lp: 'language'
+            },
+            t: 'a'
+          }, {
+            n: 'isPrivate',
+            ti: 'Boolean',
+            an: {
+              lp: 'isPrivate'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ParameterType',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MemberPropertyType',
+        ps: [{
+            n: 'content',
+            col: true,
+            etis: [{
+                en: 'Tuple',
+                ti: '.TupleType'
+              }, {
+                en: 'SimpleFeatureCollection',
+                ti: '.SimpleFeatureCollectionType'
+              }],
+            t: 'ers'
+          }, {
+            n: 'state',
+            an: {
+              lp: 'state'
             },
             t: 'a'
           }, {
@@ -927,179 +1134,6 @@ var WFS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Title',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'lang',
-            an: {
-              lp: 'lang',
-              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CreateStoredQueryType',
-        bti: '.BaseRequestType',
-        ps: [{
-            n: 'storedQueryDefinition',
-            col: true,
-            en: 'StoredQueryDefinition',
-            ti: '.StoredQueryDescriptionType'
-          }]
-      }, {
-        ln: 'ReplaceType',
-        bti: '.AbstractTransactionActionType',
-        ps: [{
-            n: 'any',
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'filter',
-            en: {
-              lp: 'Filter',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            ti: 'Filter_2_0.FilterType'
-          }, {
-            n: 'inputFormat',
-            an: {
-              lp: 'inputFormat'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DeleteType',
-        bti: '.AbstractTransactionActionType',
-        ps: [{
-            n: 'filter',
-            en: {
-              lp: 'Filter',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            ti: 'Filter_2_0.FilterType'
-          }, {
-            n: 'typeName',
-            ti: 'QName',
-            an: {
-              lp: 'typeName'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EmptyType'
-      }, {
-        ln: 'ElementType',
-        ps: [{
-            n: 'metadata',
-            en: {
-              lp: 'Metadata',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.MetadataType'
-          }, {
-            n: 'valueList',
-            en: 'ValueList',
-            ti: '.ValueListType'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'QName',
-            an: {
-              lp: 'type'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetFeatureType',
-        bti: '.BaseRequestType',
-        ps: [{
-            n: 'abstractQueryExpression',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'AbstractQueryExpression',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            ti: 'Filter_2_0.AbstractQueryExpressionType',
-            t: 'er'
-          }, {
-            n: 'startIndex',
-            ti: 'Integer',
-            an: {
-              lp: 'startIndex'
-            },
-            t: 'a'
-          }, {
-            n: 'count',
-            ti: 'Integer',
-            an: {
-              lp: 'count'
-            },
-            t: 'a'
-          }, {
-            n: 'resultType',
-            an: {
-              lp: 'resultType'
-            },
-            t: 'a'
-          }, {
-            n: 'outputFormat',
-            an: {
-              lp: 'outputFormat'
-            },
-            t: 'a'
-          }, {
-            n: 'resolve',
-            an: {
-              lp: 'resolve'
-            },
-            t: 'a'
-          }, {
-            n: 'resolveDepth',
-            an: {
-              lp: 'resolveDepth'
-            },
-            t: 'a'
-          }, {
-            n: 'resolveTimeout',
-            ti: 'Integer',
-            an: {
-              lp: 'resolveTimeout'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TransactionSummaryType',
-        ps: [{
-            n: 'totalInserted',
-            ti: 'Integer'
-          }, {
-            n: 'totalUpdated',
-            ti: 'Integer'
-          }, {
-            n: 'totalReplaced',
-            ti: 'Integer'
-          }, {
-            n: 'totalDeleted',
-            ti: 'Integer'
-          }]
-      }, {
         ln: 'BaseRequestType',
         ps: [{
             n: 'service',
@@ -1121,10 +1155,57 @@ var WFS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GetPropertyValueType',
+        ln: 'EnvelopePropertyType',
+        ps: [{
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'DescribeFeatureTypeType',
+        bti: '.BaseRequestType',
+        ps: [{
+            n: 'typeName',
+            col: true,
+            en: 'TypeName',
+            ti: 'QName'
+          }, {
+            n: 'outputFormat',
+            an: {
+              lp: 'outputFormat'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SimpleFeatureCollectionType',
+        ps: [{
+            n: 'boundedBy',
+            ti: '.EnvelopePropertyType'
+          }, {
+            n: 'member',
+            col: true,
+            ti: '.MemberPropertyType'
+          }]
+      }, {
+        ln: 'Abstract',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'lang',
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetFeatureType',
         bti: '.BaseRequestType',
         ps: [{
             n: 'abstractQueryExpression',
+            col: true,
             mx: false,
             dom: false,
             typed: false,
@@ -1135,15 +1216,22 @@ var WFS_2_0_Module_Factory = function () {
             ti: 'Filter_2_0.AbstractQueryExpressionType',
             t: 'er'
           }, {
-            n: 'valueReference',
+            n: 'resolve',
             an: {
-              lp: 'valueReference'
+              lp: 'resolve'
             },
             t: 'a'
           }, {
-            n: 'resolvePath',
+            n: 'resolveDepth',
             an: {
-              lp: 'resolvePath'
+              lp: 'resolveDepth'
+            },
+            t: 'a'
+          }, {
+            n: 'resolveTimeout',
+            ti: 'Integer',
+            an: {
+              lp: 'resolveTimeout'
             },
             t: 'a'
           }, {
@@ -1172,81 +1260,28 @@ var WFS_2_0_Module_Factory = function () {
               lp: 'outputFormat'
             },
             t: 'a'
-          }, {
-            n: 'resolve',
+          }]
+      }, {
+        ln: 'AbstractTransactionActionType',
+        ps: [{
+            n: 'handle',
             an: {
-              lp: 'resolve'
-            },
-            t: 'a'
-          }, {
-            n: 'resolveDepth',
-            an: {
-              lp: 'resolveDepth'
-            },
-            t: 'a'
-          }, {
-            n: 'resolveTimeout',
-            ti: 'Integer',
-            an: {
-              lp: 'resolveTimeout'
+              lp: 'handle'
             },
             t: 'a'
           }]
       }, {
-        ln: 'TransactionType',
-        bti: '.BaseRequestType',
+        ln: 'StoredQueryListItemType',
         ps: [{
-            n: 'abstractTransactionAction',
+            n: 'title',
             col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractTransactionAction',
-            ti: '.AbstractTransactionActionType',
-            t: 'er'
+            en: 'Title',
+            ti: '.Title'
           }, {
-            n: 'lockId',
-            an: {
-              lp: 'lockId'
-            },
-            t: 'a'
-          }, {
-            n: 'releaseAction',
-            an: {
-              lp: 'releaseAction'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'QueryType',
-        bti: 'Filter_2_0.AbstractAdhocQueryExpressionType',
-        ps: [{
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'featureVersion',
-            an: {
-              lp: 'featureVersion'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'StoredQueryType',
-        bti: 'Filter_2_0.AbstractQueryExpressionType',
-        ps: [{
-            n: 'parameter',
+            n: 'returnFeatureType',
             col: true,
-            en: 'Parameter',
-            ti: '.ParameterType'
+            en: 'ReturnFeatureType',
+            ti: 'QName'
           }, {
             n: 'id',
             an: {
@@ -1255,68 +1290,27 @@ var WFS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'InsertType',
-        bti: '.AbstractTransactionActionType',
-        ps: [{
-            n: 'any',
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'inputFormat',
-            an: {
-              lp: 'inputFormat'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ParameterType',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        t: 'enum',
-        ln: 'StarStringType',
-        vs: ['*']
-      }, {
         t: 'enum',
         ln: 'ResultTypeType',
         vs: ['results', 'hits']
       }, {
         t: 'enum',
-        ln: 'UpdateActionType',
-        vs: ['replace', 'insertBefore', 'insertAfter', 'remove']
+        ln: 'AllSomeType',
+        vs: ['ALL', 'SOME']
       }, {
         t: 'enum',
         ln: 'ResolveValueType',
         vs: ['local', 'remote', 'all', 'none']
       }, {
         t: 'enum',
-        ln: 'AllSomeType',
-        vs: ['ALL', 'SOME']
+        ln: 'UpdateActionType',
+        vs: ['replace', 'insertBefore', 'insertAfter', 'remove']
+      }, {
+        t: 'enum',
+        ln: 'StarStringType',
+        vs: ['*']
       }],
     eis: [{
-        en: 'additionalObjects',
-        ti: '.AdditionalObjects'
-      }, {
-        en: 'CreateStoredQuery',
-        ti: '.CreateStoredQueryType'
-      }, {
         en: 'StoredQuery',
         ti: '.StoredQueryType',
         sh: {
@@ -1324,17 +1318,11 @@ var WFS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/fes\/2.0'
         }
       }, {
-        en: 'Property',
-        ti: '.PropertyType'
+        en: 'Transaction',
+        ti: '.TransactionType'
       }, {
-        en: 'Abstract',
-        ti: '.Abstract'
-      }, {
-        en: 'DescribeFeatureType',
-        ti: '.DescribeFeatureTypeType'
-      }, {
-        en: 'DescribeStoredQueries',
-        ti: '.DescribeStoredQueriesType'
+        en: 'GetCapabilities',
+        ti: '.GetCapabilitiesType'
       }, {
         en: 'Query',
         ti: '.QueryType',
@@ -1343,46 +1331,12 @@ var WFS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/fes\/2.0'
         }
       }, {
-        en: 'SimpleFeatureCollection',
-        ti: '.SimpleFeatureCollectionType'
-      }, {
-        en: 'LockFeature',
-        ti: '.LockFeatureType'
-      }, {
-        en: 'ValueCollection',
-        ti: '.ValueCollectionType'
-      }, {
-        en: 'boundedBy',
-        ti: '.EnvelopePropertyType'
-      }, {
-        en: 'ListStoredQueriesResponse',
-        ti: '.ListStoredQueriesResponseType'
-      }, {
-        en: 'truncatedResponse',
-        ti: '.TruncatedResponse'
-      }, {
-        en: 'Native',
-        ti: '.NativeType',
+        en: 'Insert',
+        ti: '.InsertType',
         sh: 'AbstractTransactionAction'
-      }, {
-        en: 'CreateStoredQueryResponse',
-        ti: '.CreateStoredQueryResponseType'
       }, {
         en: 'FeatureTypeList',
         ti: '.FeatureTypeListType'
-      }, {
-        en: 'WFS_Capabilities',
-        ti: '.WFSCapabilitiesType'
-      }, {
-        en: 'GetPropertyValue',
-        ti: '.GetPropertyValueType'
-      }, {
-        en: 'GetFeature',
-        ti: '.GetFeatureType'
-      }, {
-        en: 'Replace',
-        ti: '.ReplaceType',
-        sh: 'AbstractTransactionAction'
       }, {
         en: 'PropertyName',
         ti: '.PropertyName',
@@ -1391,72 +1345,118 @@ var WFS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/fes\/2.0'
         }
       }, {
-        en: 'Delete',
-        ti: '.DeleteType',
-        sh: 'AbstractTransactionAction'
-      }, {
-        en: 'Title',
-        ti: '.Title'
-      }, {
-        en: 'DescribeStoredQueriesResponse',
-        ti: '.DescribeStoredQueriesResponseType'
-      }, {
-        en: 'AbstractTransactionAction',
-        ti: '.AbstractTransactionActionType'
-      }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilitiesType'
+        en: 'boundedBy',
+        ti: '.EnvelopePropertyType'
       }, {
         en: 'GetFeatureWithLock',
         ti: '.GetFeatureWithLockType'
       }, {
-        en: 'ValueList',
-        ti: '.ValueListType'
+        en: 'Native',
+        ti: '.NativeType',
+        sh: 'AbstractTransactionAction'
       }, {
-        en: 'ListStoredQueries',
-        ti: '.ListStoredQueriesType'
+        en: 'ValueCollection',
+        ti: '.ValueCollectionType'
       }, {
         en: 'TransactionResponse',
         ti: '.TransactionResponseType'
       }, {
-        en: 'member',
-        ti: '.MemberPropertyType'
+        en: 'Value',
+        ti: 'AnyType'
       }, {
-        en: 'Element',
-        ti: '.ElementType'
+        en: 'CreateStoredQueryResponse',
+        ti: '.CreateStoredQueryResponseType'
       }, {
-        en: 'DropStoredQuery',
-        ti: '.DropStoredQuery'
-      }, {
-        en: 'LockFeatureResponse',
-        ti: '.LockFeatureResponseType'
-      }, {
-        en: 'Insert',
-        ti: '.InsertType',
+        en: 'Delete',
+        ti: '.DeleteType',
         sh: 'AbstractTransactionAction'
       }, {
         en: 'DropStoredQueryResponse',
         ti: '.ExecutionStatusType'
       }, {
-        en: 'FeatureCollection',
-        ti: '.FeatureCollectionType',
-        sh: 'SimpleFeatureCollection'
+        en: 'ListStoredQueries',
+        ti: '.ListStoredQueriesType'
       }, {
-        en: 'additionalValues',
-        ti: '.AdditionalValues'
+        en: 'GetPropertyValue',
+        ti: '.GetPropertyValueType'
       }, {
-        en: 'Tuple',
-        ti: '.TupleType'
+        en: 'LockFeatureResponse',
+        ti: '.LockFeatureResponseType'
       }, {
-        en: 'Transaction',
-        ti: '.TransactionType'
+        en: 'additionalObjects',
+        ti: '.AdditionalObjects'
       }, {
-        en: 'Value',
-        ti: 'AnyType'
+        en: 'ValueList',
+        ti: '.ValueListType'
+      }, {
+        en: 'DescribeStoredQueriesResponse',
+        ti: '.DescribeStoredQueriesResponseType'
       }, {
         en: 'Update',
         ti: '.UpdateType',
         sh: 'AbstractTransactionAction'
+      }, {
+        en: 'ListStoredQueriesResponse',
+        ti: '.ListStoredQueriesResponseType'
+      }, {
+        en: 'Property',
+        ti: '.PropertyType'
+      }, {
+        en: 'FeatureCollection',
+        ti: '.FeatureCollectionType',
+        sh: 'SimpleFeatureCollection'
+      }, {
+        en: 'DescribeStoredQueries',
+        ti: '.DescribeStoredQueriesType'
+      }, {
+        en: 'Tuple',
+        ti: '.TupleType'
+      }, {
+        en: 'DescribeFeatureType',
+        ti: '.DescribeFeatureTypeType'
+      }, {
+        en: 'Element',
+        ti: '.ElementType'
+      }, {
+        en: 'LockFeature',
+        ti: '.LockFeatureType'
+      }, {
+        en: 'AbstractTransactionAction',
+        ti: '.AbstractTransactionActionType'
+      }, {
+        en: 'CreateStoredQuery',
+        ti: '.CreateStoredQueryType'
+      }, {
+        en: 'Abstract',
+        ti: '.Abstract'
+      }, {
+        en: 'truncatedResponse',
+        ti: '.TruncatedResponse'
+      }, {
+        en: 'SimpleFeatureCollection',
+        ti: '.SimpleFeatureCollectionType'
+      }, {
+        en: 'additionalValues',
+        ti: '.AdditionalValues'
+      }, {
+        en: 'DropStoredQuery',
+        ti: '.DropStoredQuery'
+      }, {
+        en: 'Replace',
+        ti: '.ReplaceType',
+        sh: 'AbstractTransactionAction'
+      }, {
+        en: 'member',
+        ti: '.MemberPropertyType'
+      }, {
+        en: 'GetFeature',
+        ti: '.GetFeatureType'
+      }, {
+        en: 'WFS_Capabilities',
+        ti: '.WFSCapabilitiesType'
+      }, {
+        en: 'Title',
+        ti: '.Title'
       }]
   };
   return {

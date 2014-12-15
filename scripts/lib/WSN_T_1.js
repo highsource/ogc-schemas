@@ -3,16 +3,17 @@ var WSN_T_1_Module_Factory = function () {
     n: 'WSN_T_1',
     dens: 'http:\/\/docs.oasis-open.org\/wsn\/t-1',
     tis: [{
-        ln: 'TopicSetType',
-        bti: '.ExtensibleDocumented',
+        ln: 'QueryExpressionType',
         ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'any',
+            n: 'content',
             col: true,
-            mx: false,
             t: 'ae'
+          }, {
+            n: 'dialect',
+            an: {
+              lp: 'Dialect'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'TopicNamespaceType.Topic',
@@ -28,6 +29,18 @@ var WSN_T_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'TopicSetType',
+        bti: '.ExtensibleDocumented',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'any',
+            col: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
         ln: 'ExtensibleDocumented',
         ps: [{
             n: 'otherAttributes',
@@ -35,51 +48,6 @@ var WSN_T_1_Module_Factory = function () {
           }, {
             n: 'documentation',
             ti: '.Documentation'
-          }]
-      }, {
-        ln: 'TopicType',
-        bti: '.ExtensibleDocumented',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'messagePattern',
-            en: 'MessagePattern',
-            ti: '.QueryExpressionType'
-          }, {
-            n: 'topic',
-            col: true,
-            en: 'Topic',
-            ti: '.TopicType'
-          }, {
-            n: 'any',
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'messageTypes',
-            ti: {
-              t: 'l',
-              bti: 'QName'
-            },
-            an: {
-              lp: 'messageTypes'
-            },
-            t: 'a'
-          }, {
-            n: '_final',
-            ti: 'Boolean',
-            an: {
-              lp: 'final'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'TopicNamespaceType',
@@ -125,15 +93,47 @@ var WSN_T_1_Module_Factory = function () {
             t: 'ae'
           }]
       }, {
-        ln: 'QueryExpressionType',
+        ln: 'TopicType',
+        bti: '.ExtensibleDocumented',
         ps: [{
-            n: 'content',
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'messagePattern',
+            en: 'MessagePattern',
+            ti: '.QueryExpressionType'
+          }, {
+            n: 'topic',
             col: true,
+            en: 'Topic',
+            ti: '.TopicType'
+          }, {
+            n: 'any',
+            col: true,
+            dom: false,
+            mx: false,
             t: 'ae'
           }, {
-            n: 'dialect',
+            n: 'name',
             an: {
-              lp: 'Dialect'
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'messageTypes',
+            ti: {
+              t: 'l',
+              bti: 'QName'
+            },
+            an: {
+              lp: 'messageTypes'
+            },
+            t: 'a'
+          }, {
+            n: '_final',
+            ti: 'Boolean',
+            an: {
+              lp: 'final'
             },
             t: 'a'
           }]
