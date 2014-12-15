@@ -9,6 +9,7 @@
 		typesafeEnumMemberName="generateName" 
 		generateIsSetMethod="false"
 		generateMixedExtensions="true">
+
 		<xjc:noValidator />
 		<xjc:noValidatingUnmarshaller />
 	</jaxb:globalBindings>
