@@ -87,7 +87,7 @@ module.exports = {
                                                 "query": [
                                                   {
                                                     "typeName": [
-                                                      "cite:states"
+                                                      {ns: 'http://www.opengeospatial.net/cite', lp: 'states', p: 'cite'}
                                                     ]
                                                   }
                                                 ]
@@ -103,7 +103,7 @@ module.exports = {
                             };
                 var marshaller = context.createMarshaller();
                 var marshalled = marshaller.marshalString(data);
-                test.equals(1, marshalled.indexOf('Execute'));
+                test.ok(marshalled.indexOf('xmlns:cite="http://www.opengeospatial.net/cite"' >= 0));
                 console.log(marshalled);
                 test.done();
         },
