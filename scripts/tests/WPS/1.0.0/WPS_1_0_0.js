@@ -87,7 +87,7 @@ module.exports = {
                                                 "query": [
                                                   {
                                                     "typeName": [
-                                                      {ns: 'http://www.opengeospatial.net/cite', lp: 'states', p: 'cite'}
+                                                      'cite:states'
                                                     ]
                                                   }
                                                 ]
