@@ -1,0 +1,75 @@
+{
+	"name": "ogc-schemas",
+	"version": "${project.version}",
+	"description": "Jsonix XML-JSON mappings for OGC Schemas.",
+	"keywords": [
+		"json",
+		"xml",
+		"unmarshal",
+		"unmarshalling",
+		"marshal",
+		"marshalling",
+		"parse",
+		"parsing",
+		"serialize",
+		"serializing",
+		"javascript",
+		"objects",
+		"dom",
+		"util",
+		"utility",
+		"jaxb",
+		"jsonix",
+		"mapping",
+		"OGC",
+		"CSW",
+		"Filter",
+		"GML",
+		"GMLCOV",
+		"IC",
+		"ISO19139",
+		"KML",
+		"OM",
+		"OM",
+		"OWC",
+		"OWS",
+		"Sampling",
+		"SensorML",
+		"SLD",
+		"SPS",
+		"SWE",
+		"SWES",
+		"WCS",
+		"WFS",
+		"WMS",
+		"WPS"
+	],
+	"homepage": "https://github.com/highsource/ogc-schemas",
+	"bugs" : {
+		"url" : "http://github.com/highsource/ogc-schemas/issues"
+	},
+	"licenses" : [ {
+		"type" : "BSD-2-Clause",
+		"url" : "http://github.com/highsource/ogc-schemas/raw/master/LICENSE"
+	} ],
+	"author" : {
+		"name" : "Alexey Valikov",
+		"url" : "https://github.com/highsource"
+	},
+	"main": "ogc-schemas.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/highsource/ogc-schemas"
+	},
+	"scripts" : {
+		"test" : "nodeunit tests/tests.js"
+	},
+	"dependencies": {
+		"jsonix": "2.x.x",
+		"w3c-schemas": "1.x.x"
+	},
+	"devDependencies" : {
+		"nodeunit" : "0.x.x",
+		"node-static" : "0.x.x"
+	}
+}
