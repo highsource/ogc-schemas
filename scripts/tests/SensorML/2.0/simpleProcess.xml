@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:SimpleProcess gml:id="windChill01"
+    xmlns:sml="http://www.opengis.net/sensorml/2.0"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+    <!-- ============================= -->
+    <!--       Descriptions            -->
+    <!-- ============================= -->
+    <gml:description>A simple process for taking temperature and wind speed and determining wind chill </gml:description>
+    <gml:identifier codeSpace="uid">urn:net:swe:process:windChill01</gml:identifier>
+    <gml:name>Wind Chill Process 01</gml:name>
+    <!--================ -->
+    <!--             Inputs            -->
+    <!-- ================ -->
+    <sml:inputs>
+        <sml:InputList>
+            <sml:input name="process_inputs">
+                <swe:DataRecord>
+                    <swe:field name="temperature">
+                        <swe:Quantity definition="http://sweet.jpl.nasa.gov/2.2/quanTemperature.owl#Temperature">
+                            <swe:uom code="cel"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="windSpeed">
+                        <swe:Quantity definition="http://sweet.jpl.nasa.gov/2.2/quanSpeed.owl#WindSpeed">
+                            <swe:uom code="m/s"/>
+                        </swe:Quantity>
+                    </swe:field>
+                </swe:DataRecord>           
+            </sml:input>
+        </sml:InputList>    
+    </sml:inputs>
+    <!-- ================ -->
+    <!--            Outputs            -->
+    <!-- ================ -->
+    <sml:outputs>
+        <sml:OutputList>
+            <sml:output name="windChill">
+                <swe:Quantity definition="http://sweet.jpl.nasa.gov/2.2/quanTemperature.owl#WindChill">
+                    <swe:uom code="cel"/>
+                </swe:Quantity>
+            </sml:output>
+        </sml:OutputList>      
+    </sml:outputs>
+    <sml:method xlink:href="http://blah.blah/windchillMethod01v5.xml"/>
+</sml:SimpleProcess>

@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="MY_CBRNE"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description>
+         Example CBRNE sensor with streaming data vales, status messages, and maintenance messages.
+   </gml:description>
+   <gml:identifier codeSpace="uid">urn:dai:chem-bio:3984726</gml:identifier>
+    
+   <!-- metadata deleted for brevity  -->
+   <!--~~~~~~~~~~~~~~~~~-->
+   <!-- inputs          -->
+   <!--~~~~~~~~~~~~~~~~~-->
+   <sml:inputs>
+      <sml:InputList>
+         <sml:input name="genericCBRNHazard">
+            <sml:ObservableProperty definition="http://sensorml.com/ont/swe/property/ToxicAgent"/>
+         </sml:input>
+      </sml:InputList>
+   </sml:inputs>
+   <!--~~~~~~~~~~~~~~~~~-->
+   <!-- outputs         -->
+   <!--~~~~~~~~~~~~~~~~~-->
+   <sml:outputs>
+      <sml:OutputList>
+         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+         <!--  Define Data Stream            -->
+         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+         <sml:output name="CBRN_DataStream">
+            <sml:DataInterface>
+               <sml:data>
+                  <swe:DataStream>
+                     <swe:elementType name="multiplexStream">
+                        <swe:DataChoice>
+                            
+                           <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                           <!--  CBRNE Alerts Output Record    -->
+                           <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                           <swe:item name="ALERTS">
+                              <swe:DataRecord definition="http://sensorml.com/ont/swe/property/Alerts">
+                                 <swe:field name="ALERTS_time">
+                                    <swe:Time
+                                       definition="http://sensorml.com/ont/swe/property/SamplingTime">
+                                       <swe:uom
+                                          xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                                    </swe:Time>
+                                 </swe:field>
+                                 <swe:field name="sensorID">
+                                    <swe:Category definition="http://sensorml.com/ont/swe/property/SensorID">
+                                       <swe:codeSpace
+                                          xlink:href="http://sensorml.com/ont/swe/property/sensorRegistry"/>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="ALERTS_Event">
+                                    <swe:Category
+                                       definition="http://sensorml.com/ont/swe/property/AlertEvent">
+                                        <swe:constraint>
+                                          <swe:AllowedTokens>
+                                             <swe:value>ALERT</swe:value>
+                                             <swe:value>DEALERT</swe:value>
+                                             <swe:value>WARN</swe:value>
+                                             <swe:value>DEWARN</swe:value>
+                                             <swe:value>NONE</swe:value>
+                                          </swe:AllowedTokens>
+                                       </swe:constraint>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="ALERTS_AgentClass">
+                                    <swe:Category
+                                       definition="http://sensorml.com/ont/swe/property/ChemicalAgentClass">
+                                       <swe:constraint>
+                                          <swe:AllowedTokens>
+                                             <swe:value>G_Agent</swe:value>
+                                             <swe:value>H_Agent</swe:value>
+                                             <swe:value>BloodTIC</swe:value>
+                                          </swe:AllowedTokens>
+                                       </swe:constraint>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="ALERTS_AgentID">
+                                    <swe:Category
+                                       definition="http://sensorml.com/ont/swe/property/ChemicalAgentID">
+                                       <swe:constraint>
+                                          <swe:AllowedTokens>
+                                             <swe:value>GA</swe:value>
+                                             <swe:value>GB</swe:value>
+                                             <swe:value>GD</swe:value>
+                                             <swe:value>VX</swe:value>
+                                             <swe:value>HN</swe:value>
+                                             <swe:value>HD</swe:value>
+                                             <swe:value>L</swe:value>
+                                          </swe:AllowedTokens>
+                                       </swe:constraint>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="ALERTS_Level">
+                                    <swe:Quantity definition="http://sensorml.com/ont/swe/property/Level">
+                                       <!-- NOTE/ this is NOT the same uom as UCUM “BAR”-->
+                                       <swe:uom xlink:href="http://www.opengis.net/def/uom/0/instrument_BAR"/>
+                                       <swe:constraint>
+                                          <swe:AllowedValues>
+                                             <swe:interval>0 6</swe:interval>
+                                          </swe:AllowedValues>
+                                       </swe:constraint>
+                                    </swe:Quantity>
+                                 </swe:field>
+                                 <swe:field name="ALERTS_Units">
+                                    <swe:Category definition="http://sensorml.com/ont/swe/property/UnitOfMeasure">
+                                       <swe:constraint>
+                                          <swe:AllowedTokens>
+                                             <swe:value>BARS</swe:value>
+                                          </swe:AllowedTokens>
+                                       </swe:constraint>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="ALERTS_HazardLevel">
+                                    <swe:Category
+                                       definition="http://sensorml.com/ont/swe/property/HazardLevel">
+                                       <swe:constraint>
+                                          <swe:AllowedTokens>
+                                             <swe:value>None</swe:value>
+                                             <swe:value>Medium</swe:value>
+                                             <swe:value>High</swe:value>
+                                          </swe:AllowedTokens>
+                                       </swe:constraint>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="ALERTS_Temperature">
+                                    <swe:Quantity
+                                       definition="http://sensorml.com/ont/swe/property/Temperature">
+                                       <swe:uom code="cel"/>
+                                    </swe:Quantity>
+                                 </swe:field>
+                              </swe:DataRecord>
+                           </swe:item>
+                            
+                           <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                           <!-- CBRN Readings Output Record  -->
+                           <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                           <swe:item name="READGS">
+                              <swe:DataRecord definition="http://sensorml.com/ont/swe/property/Readings">
+                                 <swe:field name="READGS_time">
+                                    <swe:Time
+                                       definition="http://sensorml.com/ont/swe/property/SamplingTime">
+                                       <swe:uom
+                                          xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                                    </swe:Time>
+                                 </swe:field>
+                                 <swe:field name="sensorID">
+                                    <swe:Category definition="http://sensorml.com/ont/swe/property/SensorID">
+                                       <swe:codeSpace
+                                          xlink:href="http://sensorml.com/ont/swe/property/sensorRegistry"/>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="READGS_AgentClass">
+                                    <swe:Category
+                                       definition="http://sensorml.com/ont/swe/property/ChemicalAgentClass">
+                                       <swe:constraint>
+                                          <swe:AllowedTokens>
+                                             <swe:value>G_Agent</swe:value>
+                                             <swe:value>H_Agent</swe:value>
+                                             <swe:value>BloodTIC</swe:value>
+                                          </swe:AllowedTokens>
+                                       </swe:constraint>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="READGS_AgentID">
+                                    <swe:Category
+                                       definition="http://sensorml.com/ont/swe/property/ChemicalAgentID">
+                                       <swe:constraint>
+                                          <swe:AllowedTokens>
+                                             <swe:value>GA</swe:value>
+                                             <swe:value>GB</swe:value>
+                                             <swe:value>GD</swe:value>
+                                             <swe:value>VX</swe:value>
+                                             <swe:value>HN</swe:value>
+                                             <swe:value>HD</swe:value>
+                                             <swe:value>L</swe:value>
+                                          </swe:AllowedTokens>
+                                       </swe:constraint>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="READGS_Level">
+                                    <swe:Quantity
+                                       definition="http://sensorml.com/ont/swe/property/Level">
+                                       <!-- NOTE/ this is NOT the same uom as UCUM BAR -->
+                                       <swe:uom xlink:href="http://www.opengis.net/def/uom/0/instrument_BAR"/>
+                                       <swe:constraint>
+                                          <swe:AllowedValues>
+                                             <swe:interval>0 6</swe:interval>
+                                          </swe:AllowedValues>
+                                       </swe:constraint>
+                                    </swe:Quantity>
+                                 </swe:field>
+                                 <swe:field name="READGS_Units">
+                                    <swe:Category
+                                       definition="http://sensorml.com/ont/swe/property/UnitOfMeasure">
+                                       <swe:constraint>
+                                          <swe:AllowedTokens>
+                                             <!-- forced to BARS -->
+                                             <swe:value>BARS</swe:value>
+                                          </swe:AllowedTokens>
+                                       </swe:constraint>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="READGS_HazardLevel">
+                                    <swe:Category
+                                       definition="http://sensorml.com/ont/swe/property/HazardLevel">
+                                       <swe:constraint>
+                                          <swe:AllowedTokens>
+                                             <swe:value>None</swe:value>
+                                             <swe:value>Medium</swe:value>
+                                             <swe:value>High</swe:value>
+                                          </swe:AllowedTokens>
+                                       </swe:constraint>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="READGS_Temperature">
+                                    <swe:Quantity
+                                       definition="http://sensorml.com/ont/swe/property/Temperature">
+                                       <swe:uom code="cel"/>
+                                    </swe:Quantity>
+                                 </swe:field>
+                              </swe:DataRecord>
+                           </swe:item>
+                            
+                           <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                           <!-- CBRN Maintenance Output Record -->
+                           <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                           <swe:item name="MAINT">
+                              <swe:DataRecord definition="http://sensorml.com/ont/swe/property/MaintenanceRecord">
+                                 <swe:field name="MAINT_time">
+                                    <swe:Time
+                                       definition="http://sensorml.com/ont/swe/property/SamplingTime">
+                                       <swe:uom
+                                          xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                                    </swe:Time>
+                                 </swe:field>
+                                 <swe:field name="sensorID">
+                                    <swe:Category definition="http://sensorml.com/ont/swe/property/SensorID">
+                                       <swe:codeSpace
+                                          xlink:href="http://sensorml.com/ont/swe/property/sensorRegistry"/>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="MAINT_Faults">
+                                    <swe:Category
+                                       definition="http://sensorml.com/ont/swe/property/MaintenanceFaults">
+                                       <swe:constraint>
+                                          <swe:AllowedTokens>
+                                             <swe:value>Change_Sieve</swe:value>
+                                             <swe:value>Pressure/Temperature_Range_Error</swe:value>
+                                             <swe:value>Cornona_Fault</swe:value>
+                                             <swe:value>Fan_Current_Above_Limit</swe:value>
+                                             <swe:value>Init_Self_Test_Failure</swe:value>
+                                             <swe:value>Health_Check_Failure</swe:value>
+                                             <swe:value>Code_Checksum_Error</swe:value>
+                                             <swe:value>HT_Outside_Limits</swe:value>
+                                             <swe:value>Fan_Life_Warning</swe:value>
+                                             <swe:value>Configuration_Not_Valid</swe:value>
+                                             <swe:value>None</swe:value>
+                                          </swe:AllowedTokens>
+                                       </swe:constraint>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="MAINT_LowSieveWarning">
+                                    <swe:Boolean
+                                       definition="http://sensorml.com/ont/swe/property/LowSieveWarning"/>
+                                 </swe:field>
+                                 <swe:field name="MAINT_UsageHours">
+                                    <swe:Quantity
+                                       definition="http://sensorml.com/ont/swe/property/UsageHours">
+                                       <swe:uom code="hours"/>
+                                       <swe:constraint>
+                                          <swe:AllowedValues>
+                                             <swe:interval>0 99999</swe:interval>
+                                          </swe:AllowedValues>
+                                       </swe:constraint>
+                                    </swe:Quantity>
+                                 </swe:field>
+                              </swe:DataRecord>
+                           </swe:item>
+                            
+                           <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                           <!-- CBRN Status Output Record  -->
+                           <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                           <swe:item name="STATUS">
+                              <swe:DataRecord definition="http://sensorml.com/ont/swe/property/Status">
+                                 <swe:field name="STATUS_time">
+                                    <swe:Time
+                                       definition="http://sensorml.com/ont/swe/property/SamplingTime">
+                                       <swe:uom
+                                          xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                                    </swe:Time>
+                                 </swe:field>
+                                 <swe:field name="sensorID">
+                                    <swe:Category definition="http://sensorml.com/ont/swe/property/SensorID">
+                                       <swe:codeSpace
+                                          xlink:href="http://sensorml.com/ont/swe/property/sensorRegistry"/>
+                                    </swe:Category>
+                                 </swe:field>
+                                 <swe:field name="STATUS_BIT_Failure">
+                                    <swe:Boolean
+                                       definition="http://sensorml.com/ont/swe/property/BIT_Failure"/>
+                                 </swe:field>
+                                 <swe:field name="STATUS_Alert">
+                                    <swe:Boolean
+                                       definition="http://sensorml.com/ont/swe/property/Alert"/>
+                                 </swe:field>
+                                 <swe:field name="STATUS_MaintNeeded">
+                                    <swe:Boolean
+                                       definition="http://sensorml.com/ont/swe/property/MaintenanceNeeded"/>
+                                 </swe:field>
+                                 <swe:field name="STATUS_NAK">
+                                    <swe:Text
+                                       definition="http://sensorml.com/ont/swe/property/NAK_Details"/>
+                                 </swe:field>
+                              </swe:DataRecord>
+                           </swe:item>
+                            
+                           <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                           <!--  CBRNE Identification         -->
+                           <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                           <swe:item name="ID">
+                              <swe:DataRecord definition="http://sensorml.com/ont/swe/property/SourceRecord">
+                                 <swe:field name="ID_time">
+                                    <swe:Time
+                                       definition="http://sensorml.com/ont/swe/property/SamplingTime">
+                                       <swe:uom
+                                          xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                                    </swe:Time>
+                                 </swe:field>
+                                 <swe:field name="Sensor_ID">
+                                    <swe:Category definition="http://sensorml.com/ont/swe/property/SensorID"/>
+                                 </swe:field>
+                                 <swe:field name="Host_ID">
+                                    <swe:Category definition="http://sensorml.com/ont/swe/property/HostID"/>
+                                 </swe:field>
+                                 <swe:field name="Maint_POC">
+                                    <swe:DataRecord definition="http://sensorml.com/ont/swe/property/POC">
+                                       <swe:field name="POC_Name">
+                                          <swe:Text
+                                             definition="http://sensorml.com/ont/swe/property/Name"/>
+                                       </swe:field>
+                                       <swe:field name="POC_Organization">
+                                          <swe:Text
+                                             definition="http://sensorml.com/ont/swe/property/Organization"/>
+                                       </swe:field>
+                                       <swe:field name="POC_Phone">
+                                          <swe:Text
+                                             definition="http://sensorml.com/ont/swe/property/Phone"/>
+                                       </swe:field>
+                                       <swe:field name="POC_Email">
+                                          <swe:Text
+                                             definition="http://sensorml.com/ont/swe/property/Email"/>
+                                       </swe:field>
+                                       <swe:field name="POC_Address">
+                                          <swe:Text
+                                             definition="http://sensorml.com/ont/swe/property/Address"/>
+                                       </swe:field>
+                                    </swe:DataRecord>
+                                 </swe:field>
+                              </swe:DataRecord>
+                           </swe:item>
+                            
+                        </swe:DataChoice>
+                     </swe:elementType>
+                      
+                     <swe:encoding>
+                        <swe:TextEncoding tokenSeparator="
+" blockSeparator=","></swe:TextEncoding>
+                     </swe:encoding>
+                      
+                     <swe:values xlink:href="rtp//myDomain.com/4563/sensor3984726"/>
+                      
+                  </swe:DataStream>
+               </sml:data>
+            </sml:DataInterface>
+         </sml:output>
+      </sml:OutputList>
+   </sml:outputs>
+   <!-- ================================================= -->
+   <!--                  Station Location                 -->
+   <!-- ================================================= -->
+   <!-- position could also be mobile with position streaming from a GPS or as part of the CBRN stream -->
+   <sml:position>
+      <gml:Point gml:id="stationLocation" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+         <gml:coordinates>47.8 88.56</gml:coordinates>
+      </gml:Point>
+   </sml:position>
+</sml:PhysicalComponent>

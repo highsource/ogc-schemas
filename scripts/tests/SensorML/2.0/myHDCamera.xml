@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:SimpleProcess gml:id="myKCM-HD-camera"
+xmlns:sml="http://www.opengis.net/sensorml/2.0"
+xmlns:swe="http://www.opengis.net/swe/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+    <gml:description>
+        An example of an instance of the Community Sensor Model for precise geolocation of the HD UAV-borne video KCM-HD camera
+    </gml:description>
+    <gml:identifier codeSpace="uid">urn:myDomain:swe:csm:KCM-HD</gml:identifier>
+    <sml:typeOf xlink:title="urn:net:swe:process:csmFrameCamera2"
+        xlink:href="http://www.sensorml.com/sensorML-2.0/examples/xml/CSM_FrameCamera2"/>
+    <sml:configuration>
+        <sml:Settings>
+            <sml:setValue ref="parameters/csmParams/focalLength">51.5465</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/focalLength/quality">5.512e-003</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/pixelGridCharacteristics/numberOfRowsInImage">1080</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/pixelGridCharacteristics/numberOfColumnsInImage">1920</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/pixelGridCharacteristics/rowSpacing">0.0074</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/pixelGridCharacteristics/columnSpacing">0.0074</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/principalPointCoordinates/x0">-0.1608</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/principalPointCoordinates/x0/quality">4.353e-003</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/principalPointCoordinates/y0">0.0979</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/principalPointCoordinates/y0/quality">5.059e-003</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/affineDistortionCoefficients/a1">0.0</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/affineDistortionCoefficients/b1">-4.94883e-025</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/affineDistortionCoefficients/b1/quality">1.419e-016</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/affineDistortionCoefficients/c1/quality">0</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/affineDistortionCoefficients/a2/quality">0</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/affineDistortionCoefficients/b2">-1.42380e-025</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/affineDistortionCoefficients/b2/quality">1.419e-016</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/affineDistortionCoefficients/c2">0</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/radialDistortionCoefficients/k1">3.34076e-005</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/radialDistortionCoefficients/k1/quality">1.036e-006</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/radialDistortionCoefficients/k2">1.64705e-007</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/radialDistortionCoefficients/k2/quality">1.735e-008</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/radialDistortionCoefficients/k3">2.10952e-022</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/radialDistortionCoefficients/k3/quality">1.419e-016</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/decenteringCoefficients/p1">-2.30790e-025</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/decenteringCoefficients/p1/quality">1.419e-016</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/decenteringCoefficients/p2">-4.27963e-025</sml:setValue>
+            <sml:setValue ref="parameters/csmParams/decenteringCoefficients/p2/quality">1.419e-016</sml:setValue>
+        </sml:Settings>
+    </sml:configuration>
+</sml:SimpleProcess>

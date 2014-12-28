@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="MY_SENSOR"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description>A Health 2070 Gamma detector</gml:description>
+   <gml:identifier codeSpace="uid">urn:myRadationNet:stations:76455</gml:identifier>
+ 
+   <!-- metadata deleted for brevity sake -->
+ 
+   <!-- ================================================= -->
+   <!--             Observed Property = Output            -->
+   <!-- ================================================= -->
+   <sml:outputs>
+      <sml:OutputList>
+         <sml:output name="gammaRadiation">
+            <sml:DataInterface>
+ 
+               <!-- data description -->
+               <sml:data>
+                  <swe:DataStream>
+                     <swe:elementType name="gamaRadiation">
+                        <swe:DataRecord>
+                            <swe:field name="averageDose">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/DoseRate.html">
+                                    <swe:label>Average Dose of Gamma Radiation</swe:label>
+                                    <swe:uom code="uR/min"/>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="InstantaneousDose">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/RadiationDose">
+                                    <swe:label>Instantaneous Dose of Gamma Radiation</swe:label>
+                                    <swe:uom code="uR"/>
+                                </swe:Quantity>
+                            </swe:field>
+                        </swe:DataRecord>
+                     </swe:elementType>
+ 
+                     <!-- encoding description -->
+                     <swe:encoding>
+                        <swe:TextEncoding tokenSeparator="," blockSeparator=" "/>
+                     </swe:encoding>
+                      
+                     <!-- a Real-Time-Protocol (RTP) server that continues to stream real time measurements -->
+                     <swe:values xlink:href="rtp://myServer.com:4563/sensor/02080"/>
+ 
+                  </swe:DataStream>
+               </sml:data>
+            </sml:DataInterface>
+         </sml:output>
+      </sml:OutputList>
+   </sml:outputs>
+   <!-- ================================================= -->
+   <!--                  Station Location                 -->
+   <!-- ================================================= -->
+   <sml:position>
+      <gml:Point gml:id="stationLocation" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+         <gml:coordinates>47.8 88.56</gml:coordinates>
+      </gml:Point>
+   </sml:position>
+</sml:PhysicalComponent>

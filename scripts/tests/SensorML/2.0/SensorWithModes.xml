@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="SensorWithModes"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+    <!-- ==================================== -->
+    <!--           System Description         -->
+    <!-- ==================================== -->
+    <gml:description>
+        Sensor with Modes: example where sensor modes can be changed externally and reported in the output
+    </gml:description>
+    <!-- ==================================== -->
+    <!--                 Inputs               -->
+    <!-- ==================================== -->
+    <sml:inputs>
+        <sml:InputList>
+            <sml:input name="radiation">
+                <sml:ObservableProperty definition="http://sensorml.com/ont/swe/property/Radiation"/>
+            </sml:input>
+        </sml:InputList>
+    </sml:inputs>
+    <!-- ==================================== -->
+    <!--                outputs               -->
+    <!-- ==================================== -->
+    <sml:outputs>
+        <sml:OutputList>
+            <sml:output name="gammaLevel">
+                <swe:Quantity definition="http://sensorml.com/ont/swe/property/RadiationDose">
+                    <swe:label>Gamma Radiation Level</swe:label>
+                    <swe:uom code="uR/min"/>
+                </swe:Quantity> 
+            </sml:output>
+            <!-- provides a separate output for retrieving current parameter values (i.e. settings) -->
+            <sml:output name="settings" xlink:href="#CURRENT_SETTINGS"/>
+        </sml:OutputList>
+    </sml:outputs>    
+    <!-- ==================================== -->
+    <!--             Parameters               -->
+    <!-- ==================================== -->
+    <sml:parameters>
+        <sml:ParameterList>
+            <sml:parameter name="settings">
+                <swe:DataRecord id="CURRENT_SETTINGS">
+                   <swe:field name="samplingRate">
+                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/SamplingRate" updatable="false">
+                            <swe:label>Sampling Rate</swe:label>
+                            <swe:uom code="Hz"/>
+                            <swe:constraint>
+                                <swe:AllowedValues>
+                                    <swe:interval>0.01 10.0</swe:interval>
+                                </swe:AllowedValues>
+                            </swe:constraint>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="gain">
+                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/Gain" updatable="false">
+                            <swe:label>Gain</swe:label>
+                            <swe:uom code="Hz"/>
+                            <swe:constraint>
+                                <swe:AllowedValues>
+                                    <swe:interval>1.0 2.5</swe:interval>
+                                </swe:AllowedValues>
+                            </swe:constraint>
+                        </swe:Quantity>
+                    </swe:field>
+                    <!-- Note: no parameter values provided because the sensor switches  automatically when mode is changed -->
+                </swe:DataRecord>
+            </sml:parameter>    
+         </sml:ParameterList>
+    </sml:parameters>    
+    <!-- ==================================== -->
+    <!--                 Modes                -->
+    <!-- ==================================== -->
+    <sml:modes>
+        <sml:ModeChoice id="THREAT_LEVEL_MODE">
+            <sml:mode>
+                <sml:Mode gml:id="lowThreat">
+                    <gml:description> Setting when nothing has been detected </gml:description>
+                    <gml:name>Low Threat Mode</gml:name>
+                    <sml:configuration>
+                        <sml:Settings>
+                            <sml:setValue ref="parameters/settings/samplingRate">0.1</sml:setValue>
+                            <sml:setValue ref="parameters/settings/gain">1.0</sml:setValue>
+                        </sml:Settings>
+                    </sml:configuration>
+                </sml:Mode>
+            </sml:mode>
+            <sml:mode>
+                <sml:Mode gml:id="highThreat">
+                    <gml:description> Setting when something has been detected </gml:description>
+                    <gml:name>High Threat Mode</gml:name>
+                    <sml:configuration>
+                        <sml:Settings>
+                            <sml:setValue ref="parameters/settings/samplingRate">10.0</sml:setValue>
+                            <sml:setValue ref="parameters/settings/gain">2.5</sml:setValue>
+                        </sml:Settings>
+                    </sml:configuration>
+                </sml:Mode>
+            </sml:mode>            
+        </sml:ModeChoice>  
+    </sml:modes>
+</sml:PhysicalComponent>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalSystem gml:id="MY_WEATHER_STATION"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description> Weather station in my yard </gml:description>
+   <gml:identifier codeSpace="uid">urn:weather-we-is:stations:FR8766</gml:identifier>
+    
+    <!-- ================================================ -->
+   <!--              Inputs  = Observed Properties                                          -->
+   <!-- ================================================= -->
+    <sml:inputs>
+        <sml:InputList>
+            <sml:input name="temperature">
+                <sml:ObservableProperty definition="http://sweet.jpl.nasa.gov/2.3/propTemperature.owl#Temperature"/>
+            </sml:input>
+            <sml:input name="wind">
+                <sml:ObservableProperty definition="http://sweet.jpl.nasa.gov/2.3/phenAtmoWind.owl#Wind"/>
+            </sml:input>
+        </sml:InputList>
+    </sml:inputs>
+   <!-- ================================================= -->
+   <!--             Outputs = Quantities                                                         -->
+   <!-- ================================================= -->
+   <sml:outputs>
+      <sml:OutputList>
+         <sml:output name="weather">
+            <swe:DataRecord>
+               <swe:field name="temperature">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/AtmosphericTemperature">
+                     <swe:label>Air Temperature</swe:label>
+                     <swe:uom code="cel"/>
+                  </swe:Quantity>
+               </swe:field>
+               <swe:field name="wind_chill">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/WindChillFactor">
+                     <swe:label>Wind Chill Factor</swe:label>
+                     <swe:uom code="cel"/>
+                  </swe:Quantity>
+               </swe:field>
+               <swe:field name="wind_speed">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/WindSpeed">
+                     <swe:label>Wind Speed</swe:label>
+                     <swe:uom code="km/h"/>
+                  </swe:Quantity>
+               </swe:field>
+               <swe:field name="wind_direction">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/WindDirection">
+                     <swe:label>Wind Direction</swe:label>
+                     <swe:uom code="deg"/>
+                  </swe:Quantity>
+               </swe:field>
+            </swe:DataRecord>
+         </sml:output>
+      </sml:OutputList>
+   </sml:outputs>
+   <!-- ================================================= -->
+   <!--                  System Location                  -->
+   <!-- ================================================= -->
+   <sml:position>
+      <gml:Point gml:id="stationLocation" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+         <gml:coordinates>47.8 88.56</gml:coordinates>
+      </gml:Point>
+   </sml:position>
+   <!-- ================================================= -->
+   <!--                  System Components                  -->
+   <!-- ================================================= -->
+   <sml:components>
+      <sml:ComponentList>
+         <sml:component name="thermometer" xlink:title="urn:davis:sensors:7817"
+            xlink:href="http://www.sensorml.com/sensorML-2.0/examples/xml/Davis_7817.xml"/>
+         <sml:component name="anemometer" xlink:title="urn:davis:sensors:barometer_internal"
+            xlink:href="http://www.sensorml.com/sensorML-2.0/examples/xml/Davis_7911.xml"/>
+          <sml:component name="windchill" xlink:title="urn:ogc:process:windchill-02"
+            xlink:href="http://www.sensorml.com/sensorML-2.0/examples/xml/windchill-02.xml"/>
+      </sml:ComponentList>
+   </sml:components>
+   <!-- =================================================== -->
+   <!--   Connections between components and system output  -->
+   <!-- =================================================== -->
+   <sml:connections>
+      <sml:ConnectionList>
+         <!-- connection between thermometer's output and system's temperature output -->
+         <sml:connection>
+            <sml:Link>
+               <sml:source ref="components/thermometer/outputs/temperature"/>
+               <sml:destination ref="outputs/weather/temperature"/>
+            </sml:Link>
+         </sml:connection>
+         <!-- connection between anemometer's wind speed output and system's windspeed output -->
+         <sml:connection>
+            <sml:Link>
+               <sml:source ref="components/anemometer/outputs/wind_state/wind_speed"/>
+               <sml:destination ref="outputs/weather/wind_speed"/>
+            </sml:Link>
+         </sml:connection>
+         <!-- connection between anemometer's wind direction output and system's wind direction output -->
+         <sml:connection>
+            <sml:Link>
+               <sml:source ref="components/anemometer/outputs/wind_state/wind_direction"/>
+               <sml:destination ref="outputs/weather/wind_direction"/>
+            </sml:Link>
+         </sml:connection>
+         <!-- connection between thermometer's output and windchill temperature input  -->
+         <sml:connection>
+            <sml:Link>
+               <sml:source ref="components/thermometer/outputs/temperature"/>
+               <sml:destination ref="components/windchill/inputs/process_inputs/temperature"/>
+            </sml:Link>
+         </sml:connection>
+         <!-- connection between anemometer's wind speed output and windchill wind_speed input -->
+         <sml:connection>
+            <sml:Link>
+               <sml:source ref="components/thermometer/outputs/wind_state/wind_speed"/>
+               <sml:destination ref="components/windchill/inputs/process_inputs/wind_speed"/>
+            </sml:Link>
+         </sml:connection>
+         <!-- connection between windchill process output and system's windchill output -->
+         <sml:connection>
+            <sml:Link>
+               <sml:source ref="components/thermometer/outputs/windchill"/>
+               <sml:destination ref="outputs/weather/windchill"/>
+            </sml:Link>
+         </sml:connection>
+      </sml:ConnectionList>
+   </sml:connections>
+</sml:PhysicalSystem>

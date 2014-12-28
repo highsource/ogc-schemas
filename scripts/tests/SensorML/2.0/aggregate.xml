@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:AggregateProcess gml:id="scaleAndClip01"
+    xmlns:sml="http://www.opengis.net/sensorml/2.0"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd"
+    definition="http://sensors.ws/process/linearInterpolator">
+    <!-- ============================= -->
+    <!--       Descriptions            -->
+    <!-- ============================= -->
+    <gml:description>
+        A simple aggregate process that scales according to linear equation y = 2.3x + 1.76 and then clips if below 15.0
+        In this example all processes are defined inline with no configuration settings. Parameter values are set inline.
+    </gml:description>
+    <gml:identifier codeSpace="uid">urn:myCompany:swe:process:scaleAndClip01</gml:identifier>
+    <gml:name>Scale and Clip Aggregate Process 01</gml:name>
+    <!-- ============================= -->
+    <!--            Aggregate Process Inputs            -->
+    <!-- ============================= -->
+    <sml:inputs>
+        <sml:InputList>
+            <sml:input name="valueIn">
+                <swe:Quantity definition="http://sensorml.com/ont/swe/property/SimpleDN">
+                    <swe:uom code="any"/>
+                </swe:Quantity>
+            </sml:input>
+        </sml:InputList>    
+    </sml:inputs>
+    <!-- ============================= -->
+    <!--            Aggregate Process Outputs            -->
+    <!-- ============================= -->
+    <sml:outputs>
+        <sml:OutputList>
+            <sml:output name="valueOut">
+                <swe:Quantity definition="http://sensorml.com/ont/swe/property/DN">
+                    <swe:uom code="any"/>
+                </swe:Quantity>                
+            </sml:output>
+         </sml:OutputList>     
+     </sml:outputs>
+  
+     <!-- ======================================= -->
+    <!--         Aggregate process components declared             -->
+    <!-- ======================================== -->
+    <sml:components>
+        <sml:ComponentList >
+         
+            <!-- Component 1 - Linear Interpolator -->
+            <sml:component name="scale">    
+                <sml:SimpleProcess gml:id="linearInterpolator01"
+                    definition="http://sensorml/ont/swe/process/LinearInterpolator">
+                    <!-- ============================= -->
+                    <!--       Linear Interpolator Descriptions            -->
+                    <!-- ============================= -->
+                    <gml:description>A linear interpolator based on equation y = mx + b </gml:description>
+                    <gml:identifier codeSpace="uid">urn:myCompany:process:8755d73ab</gml:identifier>
+                    <gml:name>Linear Equation 01</gml:name>
+                    <!-- ============================= -->
+                    <!--            Linear Interpolator Inputs            -->
+                    <!-- ============================= -->
+                    <sml:inputs>
+                        <sml:InputList>
+                            <sml:input name="x">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/DN">
+                                    <swe:uom code="any"/>
+                                </swe:Quantity>
+                            </sml:input>
+                        </sml:InputList>    
+                    </sml:inputs>
+                    <!-- ============================= -->
+                    <!--            Linear Interpolator Outputs           -->
+                    <!-- ============================= -->
+                    <sml:outputs>
+                        <sml:OutputList>
+                        <!-- scaled output value -->
+                            <sml:output name="y">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/DN">
+                                    <swe:uom code="any"/>
+                                </swe:Quantity>                
+                            </sml:output>
+                        </sml:OutputList>     
+                     </sml:outputs>
+                    <!-- ============================= -->
+                    <!--         Linear Interpolator Parameters        -->
+                    <!-- ============================= -->
+                    <sml:parameters>
+                        <sml:ParameterList>
+                            <sml:parameter name="slope-intercept">
+                                <swe:DataRecord>
+                                    <swe:field name="slope">
+                                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/LinearSlope">
+                                            <swe:uom code="any"/>
+                                            <!-- slope value set inline -->
+                                            <swe:value>2.3</swe:value>
+                                        </swe:Quantity>
+                                    </swe:field>
+                                    <swe:field name="intercept">
+                                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/LinearAxisIntercept">
+                                            <!-- y-intercept value set inline -->
+                                            <swe:uom code="any"/>
+                                            <swe:value>1.76</swe:value>
+                                        </swe:Quantity>
+                                    </swe:field>
+                                </swe:DataRecord>                
+                            </sml:parameter>
+                        </sml:ParameterList>       
+                    </sml:parameters>
+                </sml:SimpleProcess>        
+            </sml:component>
+             
+ 
+            <!-- Component 2 - Threshold clipper -->
+            <sml:component name="clip"> 
+                <sml:SimpleProcess gml:id="thresholdClipper"
+                    definition="http://sensorml.com/ont/swe/process/thresholdClipper">
+                    <!-- ============================= -->
+                    <!--      Threshold Clipper  Descriptions            -->
+                    <!-- ============================= -->
+                    <gml:description>
+                        A process that clips anything below threshold; 
+                        values higher than threshold to passValue output;
+                        Values below threshold sent to failValue output</gml:description>
+                    <gml:identifier codeSpace="uid">urn:myCompany:swe:process:65d74a65c</gml:identifier>
+                    <gml:name>Threshold Clipper  01</gml:name>
+                    <!-- ============================= -->
+                    <!--             Threshold Clipper Inputs            -->
+                    <!-- ============================= -->
+                    <sml:inputs>
+                        <sml:InputList>
+                            <sml:input name="valueIn">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/SimpleDN">
+                                    <swe:uom code="any"/>
+                                </swe:Quantity>
+                            </sml:input>
+                        </sml:InputList>    
+                    </sml:inputs>
+                    <!-- ============================= -->
+                    <!--            Threshold Clipper Outputs            -->
+                    <!-- ============================= -->
+                    <sml:outputs>
+                        <sml:OutputList>
+                        <!-- output for values that pass -->
+                            <sml:output name="passValue">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/PassValue">
+                                    <swe:uom code="any"/>
+                                </swe:Quantity>                
+                            </sml:output>
+                            <!-- output for values that fail -->
+                            <sml:output name="failValue">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/FailValue">
+                                    <swe:uom code="any"/>
+                                </swe:Quantity>                
+                            </sml:output>
+                        </sml:OutputList>     
+                     </sml:outputs>
+                    <!-- ============================= -->
+                    <!--        Threshold Clipper Parameters            -->
+                    <!-- ============================= -->
+                    <sml:parameters>
+                        <sml:ParameterList>
+                            <sml:parameter name="threshold">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/LowerThreshold">
+                                    <swe:uom code="any"/>
+                                    <!-- threshold value set inline -->
+                                    <swe:value>15.0</swe:value>
+                                </swe:Quantity>
+                            </sml:parameter>
+                        </sml:ParameterList>       
+                    </sml:parameters>
+                </sml:SimpleProcess>        
+            </sml:component>
+             
+        </sml:ComponentList>
+    </sml:components>
+ 
+     <!-- ======================================= -->
+    <!--         Aggregate process links declared             -->
+    <!-- ======================================== -->
+    <sml:connections>
+        <sml:ConnectionList>
+ 
+            <!-- Connect AggregateProcess input to LinearInterpolator (scale) input -->
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="inputs/valueIn"/>
+                    <sml:destination ref="components/scale/inputs/x"/>
+                </sml:Link>
+            </sml:connection>
+             
+            <!-- Connect LinearInterpolator (scale) output to ThresholdClipper (clip) input -->
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="components/scale/outputs/y"/>
+                    <sml:destination ref="components/clip/inputs/valueIn"/>
+                </sml:Link>
+            </sml:connection>
+ 
+            <!-- Connect ThresholdClipper (clip) passValue output to AggregateProcess passValue output -->
+            <sml:connection>
+                <sml:Link>
+                    <sml:source ref="components/clip/outputs/passValue"/>
+                    <sml:destination ref="outputs/valueOut"/>
+                </sml:Link>
+            </sml:connection>
+ 
+            <!-- Note: ThresholdClipper (clip) failValue output is ignored in this example -->
+ 
+        </sml:ConnectionList>
+    </sml:connections>
+ 
+</sml:AggregateProcess>

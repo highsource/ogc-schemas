@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="MY_SENSOR"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description>Navigation System on and aircraft</gml:description>
+   <gml:identifier codeSpace="uid">urn:dai:imu:645378</gml:identifier>
+   <!-- NOTE: metadata deleted for brevity -->
+ 
+   <!-- ================================================= -->
+   <!--             Observed Property = Output            -->
+   <!-- ================================================= -->
+   <sml:outputs>
+      <sml:OutputList>
+         <sml:output name="navigation">
+ 
+            <sml:DataInterface>
+               <swe:label>Aircraft Navigation</swe:label>
+               <sml:data>
+                  <swe:DataStream>
+                     <swe:elementType name="navigationStream">
+                   
+                   
+                        <swe:DataRecord definition="http://sensorml.com/ont/swe/property/DynamicState">
+                           <swe:field name="time">
+                              <swe:Time
+                                 definition="http://sensorml.com/ont/swe/property/SamplingTime"
+                                 referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS"
+                                 referenceTime="1970-01-01T00:00:00Z">
+                                 <swe:uom code="s"/>
+                              </swe:Time>
+                           </swe:field>
+                           <swe:field name="location">
+                              <swe:Vector
+                                 definition="http://sensorml.com/ont/swe/property/PlatformLocation"
+                                 referenceFrame="http://www.opengis.net/def/crs/EPSG/0/4979">
+                                 <swe:coordinate name="lat">
+                                    <swe:Quantity
+                                       definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Latitude"
+                                       axisID="Lat">
+                                       <swe:uom code="deg"/>
+                                    </swe:Quantity>
+                                 </swe:coordinate>
+                                 <swe:coordinate name="lon">
+                                    <swe:Quantity
+                                       definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Longitude"
+                                       axisID="Long">
+                                       <swe:uom code="deg"/>
+                                    </swe:Quantity>
+                                 </swe:coordinate>
+                                 <swe:coordinate name="alt">
+                                    <swe:Quantity
+                                       definition="http://sweet.jpl.nasa.gov/2.0/spaceExtent.owl#Altitude"
+                                       axisID="h">
+                                       <swe:uom code="m"/>
+                                    </swe:Quantity>
+                                 </swe:coordinate>
+                              </swe:Vector>
+                           </swe:field>
+                           <swe:field name="attitude">
+                              <swe:Vector
+                                 definition="http://sensorml.com/ont/swe/property/PlatformOrientation"
+                                 referenceFrame="http://www.opengis.net/def/crs/OGC/0/ENU">
+                                 <swe:coordinate name="heading">
+                                    <swe:Quantity
+                                       definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Yaw"
+                                       axisID="Z">
+                                       <swe:uom code="deg"/>
+                                    </swe:Quantity>
+                                 </swe:coordinate>
+                                 <swe:coordinate name="pitch">
+                                    <swe:Quantity
+                                       definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Pitch"
+                                       axisID="X">
+                                       <swe:uom code="deg"/>
+                                    </swe:Quantity>
+                                 </swe:coordinate>
+                                 <swe:coordinate name="roll">
+                                    <swe:Quantity
+                                       definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Roll"
+                                       axisID="Y">
+                                       <swe:uom code="deg"/>
+                                    </swe:Quantity>
+                                 </swe:coordinate>
+                              </swe:Vector>
+                           </swe:field>
+                        </swe:DataRecord>
+                     </swe:elementType>
+                    
+                     <swe:encoding>
+                        <swe:TextEncoding tokenSeparator="," blockSeparator="
+" decimalSeparator="."/>
+                     </swe:encoding>
+                     <swe:values xlink:href="rtp://myserver:4563/navData"/>
+                  </swe:DataStream>
+               </sml:data>
+            </sml:DataInterface>
+ 
+         </sml:output>
+      </sml:OutputList>
+   </sml:outputs>
+</sml:PhysicalComponent>

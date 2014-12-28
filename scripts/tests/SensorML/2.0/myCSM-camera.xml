@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:SimpleProcess gml:id="myCSM-camera"
+xmlns:sml="http://www.opengis.net/sensorml/2.0"
+xmlns:swe="http://www.opengis.net/swe/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd"
+definition="http://sensors.ws/process/CSM_FrameCamera2">
+    <!-- ============================= -->
+    <!--       Descriptions                                   -->
+    <!-- ============================= -->
+    <gml:description>Community Sensor Model (CSM) for Frame Camera</gml:description>
+    <gml:identifier codeSpace="uid">urn:net:swe:process:csmFrameCamera2</gml:identifier>
+    <gml:name>CSM Frame Camera</gml:name>
+    <sml:inputs>
+        <sml:InputList>
+            <sml:input name="pixelGridCoordinates">
+                <swe:Vector referenceFrame="urn:ogc:def:crs:CSM:pixelGridCRS">
+                    <swe:coordinate name="r">
+                        <swe:Quantity definition="http://sensorml.com/def/property/ImageRowPosition.">
+                            <swe:label>Row Position</swe:label>
+                            <swe:uom xlink:href="http://sensorml.com/def/property/pixel"/>
+                        </swe:Quantity>
+                    </swe:coordinate>
+                    <swe:coordinate name="c">
+                        <swe:Quantity definition="http://sensorml.com/def/property/ImageColumnPosition">
+                            <swe:label>Column Position</swe:label>
+                            <swe:uom xlink:href="http://sensorml.com/def/property/pixel"/>
+                        </swe:Quantity>
+                    </swe:coordinate>
+                </swe:Vector>
+            </sml:input>
+        </sml:InputList>
+    </sml:inputs>
+    <sml:outputs>
+        <sml:OutputList>
+            <sml:output name="viewVector">
+                <swe:Vector referenceFrame="urn:ogc:def:crs:CSM:sensorCRS">
+                    <swe:label>Sensor View Vector</swe:label>
+                    <swe:coordinate name="x">
+                        <swe:Quantity definition="http://sensorml.com/def/property/XCoordinate">
+                            <swe:label>X</swe:label>
+                            <swe:uom xlink:href="http://sensorml.com/def/property/UnitVector"/>
+                        </swe:Quantity>
+                    </swe:coordinate>
+                    <swe:coordinate name="y">
+                        <swe:Quantity definition="http://sensorml.com/def/property/YCoordinate">
+                            <swe:label>Y</swe:label>
+                            <swe:uom xlink:href="http://sensorml.com/def/property/UnitVector"/>
+                        </swe:Quantity>
+                    </swe:coordinate>
+                    <swe:coordinate name="z">
+                        <swe:Quantity definition="http://sensorml.com/def/property/ZCoordinate">
+                            <swe:label>Z</swe:label>
+                            <swe:uom xlink:href="http://sensorml.com/def/property/UnitVector"/>                     
+                        </swe:Quantity>
+                    </swe:coordinate>
+                </swe:Vector>
+            </sml:output>
+        </sml:OutputList>
+    </sml:outputs>
+    <sml:parameters>
+        <sml:ParameterList>
+            <sml:parameter name="csmParams">
+                <swe:DataRecord definition="http://sensorml.com/ont/csm/property/FrameParams">
+                    <swe:label>CSM Sensor Model Parameters</swe:label>
+                    <swe:field name="focalLength">
+                        <swe:Quantity definition="http://sensorml.com/ont/csm/property/FOCAL_LENGTH">
+                            <swe:label>Focal Length</swe:label>
+                            <swe:quality>
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/StdError">
+                                    <swe:label>Standard Error</swe:label>
+                                    <swe:uom code="mm"/>
+                                    <swe:value>5.512e-003</swe:value>
+                                </swe:Quantity>
+                            </swe:quality>
+                            <swe:uom code="mm"/>
+                            <swe:value>51.5465</swe:value>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="pixelGridCharacteristics">
+                        <swe:DataRecord>
+                            <swe:label>Pixel Grid Characteristics</swe:label>
+                            <swe:field name="numberOfRowsInImage">
+                                <swe:Count definition="http://sensorml.com/ont/csm/property/NROWS">
+                                    <swe:label>Number of Rows</swe:label>
+                                    <swe:value>1080</swe:value>
+                                </swe:Count>
+                            </swe:field>
+                            <swe:field name="numberOfColumnsInImage">
+                                <swe:Count definition="http://sensorml.com/ont/csm/property/NCOLS">
+                                    <swe:label>Number of Columns</swe:label>
+                                    <swe:value>1920</swe:value>
+                                </swe:Count>
+                            </swe:field>
+                            <swe:field name="rowSpacing">
+                                <swe:Quantity definition="urn:ogc:def:property:CSM:ROW_SPACING">
+                                    <swe:label>Row Spacing</swe:label>
+                                    <swe:uom code="mm"/>
+                                    <swe:value>0.0074</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="columnSpacing">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/COL_SPACING">
+                                    <swe:label>Column Spacing</swe:label>
+                                    <swe:uom code="mm"/>
+                                    <swe:value>0.0074</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                        </swe:DataRecord>
+                    </swe:field>
+                    <swe:field name="principalPointCoordinates">
+                        <swe:Vector referenceFrame="http://sensorml.com/ont/csm/property/ImagePlaneCRS">
+                            <swe:label>Principal Point Coordinates</swe:label>
+                            <swe:coordinate name="x0">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/PRIN_OFFSETX">
+                                    <swe:label>Principal Offset X</swe:label>
+                                    <swe:quality>
+                                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/StdError">
+                                            <swe:label>Standard Error</swe:label>
+                                            <swe:uom code="mm"/>
+                                            <swe:value>4.353e-003</swe:value>
+                                        </swe:Quantity>
+                                    </swe:quality>
+                                    <swe:uom code="mm"/>
+                                    <swe:value>-0.1608</swe:value>
+                                </swe:Quantity>
+                            </swe:coordinate>
+                            <swe:coordinate name="y0">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/PRIN_OFFSETY">
+                                    <swe:label>Principal Offset Y</swe:label>
+                                    <swe:quality>
+                                        <swe:Quantity definition="http://sensorml.com/ont/csm/property/StdError">
+                                            <swe:label>Standard Error</swe:label>
+                                            <swe:uom code="mm"/>
+                                            <swe:value>5.059e-003</swe:value>
+                                        </swe:Quantity>
+                                    </swe:quality>
+                                    <swe:uom code="mm"/>
+                                    <swe:value>0.0979</swe:value>
+                                </swe:Quantity>
+                            </swe:coordinate>
+                        </swe:Vector>
+                    </swe:field>
+                    <swe:field name="affineDistortionCoefficients">
+                        <swe:DataRecord>
+                            <swe:label>Affine Distortion Coefficients</swe:label>
+                            <swe:field name="a1">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/DISTOR_A1">
+                                    <swe:label>a1</swe:label>
+                                    <swe:uom code="1/1"/>
+                                    <swe:value>0</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="b1">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/DISTOR_B1">
+                                    <swe:label>b1</swe:label>
+                                    <swe:quality>
+                                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/StdError">
+                                            <swe:label>Standard Error</swe:label>
+                                            <swe:uom code="1/1"/>
+                                            <swe:value>1.419e-016</swe:value>
+                                        </swe:Quantity>
+                                    </swe:quality>
+                                    <swe:uom code="1/1"/>
+                                    <swe:value>-4.94883e-025</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="c1">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/DISTOR_C1">
+                                    <swe:label>c1</swe:label>
+                                    <swe:uom code="1/1"/>
+                                    <swe:value>0</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="a2">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/DISTOR_A2">
+                                    <swe:label>a2</swe:label>
+                                    <swe:uom code="1/1"/>
+                                    <swe:value>0</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="b2">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/DISTOR_B2">
+                                    <swe:label>b2</swe:label>
+                                    <swe:quality>
+                                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/StdError">
+                                            <swe:label>Standard Error</swe:label>
+                                            <swe:uom code="1/1"/>
+                                            <swe:value>1.419e-016</swe:value>
+                                        </swe:Quantity>
+                                    </swe:quality>
+                                    <swe:uom code="1/1"/>
+                                    <swe:value>-1.42380e-025</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="c2">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/DISTOR_C2">
+                                    <swe:label>c2</swe:label>
+                                    <swe:uom code="1/1"/>
+                                    <swe:value>0</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                        </swe:DataRecord>
+                    </swe:field>
+                    <swe:field name="radialDistortionCoefficients">
+                        <swe:DataRecord>
+                            <swe:label>Radial Distortion Coefficient</swe:label>
+                            <swe:field name="k1">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/DISTOR_RAD1">
+                                    <swe:label>k1</swe:label>
+                                    <swe:quality>
+                                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/StdError">
+                                            <swe:label>Standard Error</swe:label>
+                                            <swe:uom code="mm-2"/>
+                                            <swe:value>1.036e-006</swe:value>
+                                        </swe:Quantity>
+                                    </swe:quality>
+                                    <swe:uom code="mm-2"/>
+                                    <swe:value>3.34076e-005</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="k2">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/:DISTOR_RAD2">
+                                    <swe:label>k2</swe:label>
+                                    <swe:quality>
+                                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/StdError">
+                                            <swe:label>Standard Error</swe:label>
+                                            <swe:uom code="mm-2"/>
+                                            <swe:value>1.735e-008</swe:value>
+                                        </swe:Quantity>
+                                    </swe:quality>
+                                    <swe:uom code="mm-2"/>
+                                    <swe:value>1.64705e-007</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="k3">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/DISTOR_RAD3">
+                                    <swe:label>k3</swe:label>
+                                    <swe:quality>
+                                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/StdError">
+                                            <swe:label>Standard Error</swe:label>
+                                            <swe:uom code="mm-2"/>
+                                            <swe:value>1.419e-016</swe:value>
+                                        </swe:Quantity>
+                                    </swe:quality>
+                                    <swe:uom code="mm-2"/>
+                                    <swe:value>2.10952e-022</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                        </swe:DataRecord>
+                    </swe:field>
+                    <swe:field name="decenteringCoefficients">
+                        <swe:DataRecord>
+                            <swe:label>Decentering Coefficients</swe:label>
+                            <swe:field name="p1">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/DECEN_LENS1">
+                                    <swe:label>p1</swe:label>
+                                    <swe:quality>
+                                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/StdError">
+                                            <swe:label>Standard Error</swe:label>
+                                            <swe:uom code="mm-1"/>
+                                            <swe:value>1.419e-016</swe:value>
+                                        </swe:Quantity>
+                                    </swe:quality>
+                                    <swe:uom code="mm-1"/>
+                                    <swe:value>-2.30790e-025</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="p2">
+                                <swe:Quantity definition="http://sensorml.com/ont/csm/property/DECEN_LENS2">
+                                    <swe:label>p2</swe:label>
+                                    <swe:quality>
+                                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/StdError">
+                                            <swe:label>Standard Error</swe:label>
+                                            <swe:uom code="mm-1"/>
+                                            <swe:value>1.419e-016</swe:value>
+                                        </swe:Quantity>
+                                    </swe:quality>
+                                    <swe:uom code="mm-1"/>
+                                    <swe:value>-4.27963e-025</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                        </swe:DataRecord>
+                    </swe:field>
+                </swe:DataRecord>
+            </sml:parameter>
+        </sml:ParameterList>
+    </sml:parameters>
+    <sml:method xlink:href="http://www.opengis.net/def/process/OGC/0/csm/frameSensorModel2"/>
+</sml:SimpleProcess>

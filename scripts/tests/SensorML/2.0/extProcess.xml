@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:SimpleProcess gml:id="myLinearEquation"
+xmlns:sml="http://www.opengis.net/sensorml/2.0"
+xmlns:swe="http://www.opengis.net/swe/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+    <gml:description>
+        An example of an instance in which only the parameters are set with no additional information provided.
+        This case is for a linearInterpolator
+    </gml:description>
+    <gml:identifier codeSpace="uid">urn:myDomain:swe:process:calibration</gml:identifier>
+    <sml:typeOf xlink:title="urn:net:swe:process:linearEquation01"
+        xlink:href="http://www.sensorml.com/sensorML-2.0/examples/xml/LinearInterpolator.xml"/>
+    <sml:configuration>
+        <sml:Settings>
+            <sml:setValue ref="parameters/slope-intercept/slope">2.5</sml:setValue>
+            <sml:setValue ref="parameters/slope-intercept/intercept">-3.789</sml:setValue>
+        </sml:Settings>
+    </sml:configuration>
+</sml:SimpleProcess>

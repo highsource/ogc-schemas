@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="MY_SENSOR"
+xmlns:sml="http://www.opengis.net/sensorml/2.0"
+xmlns:swe="http://www.opengis.net/swe/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+   <!-- ============================= -->
+   <!--     System Description        -->
+   <!-- ============================= -->
+   <gml:description> Dynamic Location - Temperature sensor on my free-floating buoy with an on-board GPS</gml:description>
+   <!-- ============================= -->
+   <!--             Output            -->
+   <!-- ============================= -->
+   <sml:outputs>
+      <sml:OutputList>
+         <!-- for the case of moving thermometer output in sync with GPS location -->
+         <sml:output name="tempStream">
+            <swe:DataRecord>
+               <swe:field name="sampleTime">
+                  <swe:Time definition="http://sensorml.com/ont/swe/property/SamplingTime"
+                     referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS"> 
+                     <swe:label>Sampling Time</swe:label> 
+                     <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                  </swe:Time>
+               </swe:field>
+               <swe:field name="temperature">
+                  <swe:Quantity definition="http://sweet.jpl.nasa.gov/2.2/quanTemperature.owl#Temperature">
+                     <swe:label>Air Temperature</swe:label>
+                     <swe:uom code="Cel"/>
+                  </swe:Quantity>                  
+               </swe:field>
+               <swe:field name="location" >
+                    <swe:Vector id="MY_LOCATION" definition="http://sensorml.com/ont/swe/property/Location"
+                              referenceFrame="http://www.opengis.net/def/crs/EPSG/6.7/4326">
+                        <swe:coordinate name="Lat">
+                            <swe:Quantity definition="http://sensorml.com/ont/swe/property/Latitude" axisID="Lat">
+                               <swe:uom code="deg"/>
+                            </swe:Quantity>
+                        </swe:coordinate>
+                        <swe:coordinate name="Lon">
+                            <swe:Quantity definition="http://sensorml.com/ont/swe/property/Longitude" axisID="Long">
+                               <swe:uom code="deg"/>
+                            </swe:Quantity>
+                        </swe:coordinate>
+                    </swe:Vector>
+                </swe:field>
+            </swe:DataRecord>            
+         </sml:output>
+      </sml:OutputList>
+   </sml:outputs>
+   <!-- ======================================= -->
+   <!--   Sensor Location from Component Output     -->
+   <!-- ======================================= -->
+   <sml:position  xlink:href="#MY_LOCATION"/>
+</sml:PhysicalComponent>

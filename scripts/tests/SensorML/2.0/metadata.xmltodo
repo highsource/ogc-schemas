@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="Gamma2070" xml:lang="en" definition="http://sensorml.com/def/sensor/gammaDetector"
+xmlns:sml="http://www.opengis.net/sensorml/2.0"
+xmlns:swe="http://www.opengis.net/swe/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2"
+xmlns:gmd="http://www.isotc211.org/2005/gmd"
+xmlns:gco="http://www.isotc211.org/2005/gco"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:ism="urn:us:gov:ic:ism"
+xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+    <!-- ================================================= -->
+    <!--                  System Description               -->
+    <!-- ================================================= -->
+    <gml:description>A solid state Gamma measurement module</gml:description>
+    <gml:identifier codeSpace="UID">urn:heath:gamma2070</gml:identifier>
+    <gml:name>Health Physics Instruments 2070 Gamma Detector</gml:name>
+    <sml:keywords>
+        <sml:KeywordList>
+            <sml:keyword>CBRNE</sml:keyword>
+            <sml:keyword>gamma</sml:keyword>
+            <sml:keyword>insitu</sml:keyword>
+        </sml:KeywordList>
+    </sml:keywords>
+     
+    <!-- ======================================= -->
+    <!--               Identifiers               -->
+    <!-- ======================================= -->
+    <sml:identification>
+        <sml:IdentifierList>
+            <sml:identifier>
+                <sml:Term definition="http://sensorml.com/ont/swe/property/LongName">
+                    <sml:label>Long Name</sml:label>
+                    <sml:value>Health Physics Instruments 2070 Gamma Detector</sml:value>
+                </sml:Term>
+            </sml:identifier>
+            <sml:identifier>
+                <sml:Term definition="http://sensorml.com/ont/swe/property/ShortName">
+                    <sml:label>Short Name</sml:label>
+                    <sml:value>2070 Gamma Detector</sml:value>
+                </sml:Term>
+            </sml:identifier>
+            <sml:identifier>
+                <sml:Term definition="http://sensorml.com/ont/swe/property/ModelNumber">
+                    <sml:label>Model Number</sml:label>
+                    <sml:value>2070</sml:value>
+                </sml:Term>
+            </sml:identifier>
+            <sml:identifier>
+                <sml:Term definition="http://sensorml.com/ont/swe/property/Manufacturer">
+                    <sml:label>Manufacturer</sml:label>
+                    <sml:value>Health Physics Instruments</sml:value>
+                </sml:Term>
+            </sml:identifier>
+        </sml:IdentifierList>
+    </sml:identification>
+     
+    <!-- ======================================= -->
+    <!--               Classifiers               -->
+    <!-- ======================================= -->
+    <sml:classification>
+        <sml:ClassifierList>
+            <sml:classifier>
+                <sml:Term definition="http://sensorml.com/ont/swe/property/IntendedApplication">
+                    <sml:label>Intended Application</sml:label>
+                    <sml:value>CBRNE</sml:value>
+                </sml:Term>
+            </sml:classifier>
+            <sml:classifier>
+                <sml:Term definition="http://sensorml.com/ont/swe/property/IntendedApplication">
+                    <sml:label>Intended Application</sml:label>
+                    <sml:value>radiation detection</sml:value>
+                </sml:Term>
+            </sml:classifier>
+            <sml:classifier>
+                <sml:Term definition="http://sensorml.com/ont/swe/property/SensorType">
+                    <sml:label>Sensor Type</sml:label>
+                    <sml:codeSpace xlink:href="urn:x-ceos:def:GCMD:sensors"/>
+                    <sml:value>gamma detector</sml:value>
+                </sml:Term>
+            </sml:classifier>
+        </sml:ClassifierList>
+    </sml:classification>
+     
+    <!-- ======================================= -->
+    <!--            Constraints              -->
+    <!-- =======================================  -->
+    <sml:validTime>
+        <gml:TimePeriod gml:id="documentValidTime">
+            <gml:beginPosition>2002-08-01</gml:beginPosition>
+            <gml:endPosition indeterminatePosition="now"/>
+        </gml:TimePeriod>
+    </sml:validTime>
+     
+    <!-- secuirty tagging with ic:ism -->
+    <sml:securityConstraints>
+        <ism:Notice noticeType="RD">
+            <ism:NoticeText classification="U" />
+        </ism:Notice>
+    </sml:securityConstraints>
+     
+    <sml:legalConstraints>
+        <gmd:MD_LegalConstraints>
+            <gmd:useLimitation>
+                <gco:CharacterString>
+                    Use of this information is without limitation; however, the provider takes no responsibility for any misunderstanding or misuse of the information. 
+                </gco:CharacterString>
+            </gmd:useLimitation>
+        </gmd:MD_LegalConstraints>
+    </sml:legalConstraints>
+     
+    <!-- ======================================= -->
+    <!--            Characteristics              -->
+    <!-- =======================================  -->
+    <sml:characteristics name="generalProperties">
+        <sml:CharacteristicList>
+            <sml:characteristic name="physicalProperties">
+                <swe:DataRecord definition="http://sensorml.com/ont/swe/property/PhysicalProperties">
+                    <swe:label>Physical Properties</swe:label>
+                    <swe:field name="PhysicalProperties">
+                        <swe:DataRecord>
+                            <swe:field name="Weight">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/Weight">
+                                    <swe:uom code="oz"/>
+                                    <swe:value>10</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="Length">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/Length">
+                                    <swe:uom code="in"/>
+                                    <swe:value>4.5</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="Width">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/Width">
+                                    <swe:uom code="in"/>
+                                    <swe:value>2.5</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="Height">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/Height">
+                                    <swe:uom code="in"/>
+                                    <swe:value>1.4</swe:value>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="CasingMaterial">
+                                <swe:Category definition="http://sensorml.com/ont/swe/property/Material">
+                                    <swe:value>Aluminum</swe:value>
+                                </swe:Category>
+                            </swe:field>
+                        </swe:DataRecord>
+                    </swe:field>
+                </swe:DataRecord>
+            </sml:characteristic>
+             
+            <sml:characteristic name="electricalRequirements">
+                <swe:DataRecord definition="http://sensorml.com/ont/swe/property/PowerRequirement">
+                    <swe:label>Electrical Requirements</swe:label>
+                    <swe:field name="voltage">
+                        <swe:QuantityRange definition="http://sensorml.com/ont/swe/property/Voltage">
+                            <swe:uom code="V"/>
+                            <swe:value>8 12</swe:value>
+                        </swe:QuantityRange>
+                    </swe:field>
+                    <swe:field name="CurrentType">
+                        <swe:Category definition="http://sensorml.com/ont/swe/property/ElectricalCurrentType">
+                            <swe:value>DC</swe:value>
+                        </swe:Category>
+                    </swe:field>
+                    <swe:field name="AmpRange">
+                        <swe:QuantityRange definition="http://sensorml.com/ont/swe/property/ElectricalCurrent">
+                            <swe:uom code="mA"/>
+                            <swe:value>20 40</swe:value>
+                        </swe:QuantityRange>
+                    </swe:field>
+                </swe:DataRecord>
+            </sml:characteristic>
+        </sml:CharacteristicList>
+    </sml:characteristics>
+     
+    <!-- ============================ -->
+    <!--            Capabilities              -->
+    <!-- ============================ -->
+    <sml:capabilities name="specifications">
+        <sml:CapabilityList>
+            <sml:capability name="measurementProperties">
+                <swe:DataRecord definition="http://sensorml.com/ont/swe/property/MeasurementProperties">
+                    <swe:label>Measurement Properties</swe:label>
+                    <swe:field name="RadiationRange">
+                        <swe:QuantityRange definition="http://sensorml.com/ont/swe/property/RadiationLevel">
+                            <swe:uom code="R/h"/>
+                            <swe:value>0 30</swe:value>
+                        </swe:QuantityRange>
+                    </swe:field>
+                    <swe:field name="Sensitivitity">
+                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/RadiationSensitivity">
+                            <swe:uom code="{tot}/uR"/>
+                            <swe:value>1</swe:value>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="SamplePeriod">
+                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/SamplePeriod">
+                            <swe:uom code="s"/>
+                            <swe:value>1</swe:value>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="MeasurementOutputTime">
+                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/OutputPeriod">
+                            <swe:uom code="s"/>
+                            <swe:value>450</swe:value>
+                        </swe:Quantity>
+                    </swe:field>
+                </swe:DataRecord>
+            </sml:capability>
+        </sml:CapabilityList>
+    </sml:capabilities>
+     
+    <!-- ============================ -->
+    <!--               Contacts              -->
+    <!-- ============================ -->
+    <sml:contacts>
+        <sml:ContactList>
+            <sml:contact xlink:arcrole="http://sensorml.com/def/role/Manufacturer">
+                <gmd:CI_ResponsibleParty>
+                    <gmd:organisationName>
+                        <gco:CharacterString>Health Physics Instruments</gco:CharacterString>
+                    </gmd:organisationName>
+                    <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                            <gmd:phone>
+                                <gmd:CI_Telephone>
+                                    <gmd:voice>
+                                        <gco:CharacterString>805-964-3615</gco:CharacterString>
+                                    </gmd:voice>
+                                </gmd:CI_Telephone>
+                            </gmd:phone>
+                            <gmd:address>
+                                <gmd:CI_Address>
+                                    <gmd:deliveryPoint>
+                                        <gco:CharacterString>
+                                            Suite D, 330 South Kellogg Ave
+                                        </gco:CharacterString>
+                                    </gmd:deliveryPoint>
+                                    <gmd:city>
+                                        <gco:CharacterString>Goleta</gco:CharacterString>
+                                    </gmd:city>
+                                    <gmd:administrativeArea>
+                                        <gco:CharacterString>California</gco:CharacterString>
+                                    </gmd:administrativeArea>
+                                    <gmd:postalCode>
+                                        <gco:CharacterString>93117-3814</gco:CharacterString>
+                                    </gmd:postalCode>
+                                </gmd:CI_Address>
+                            </gmd:address>
+                        </gmd:CI_Contact>
+                    </gmd:contactInfo>
+                    <gmd:role gco:nilReason="inapplicable"/>
+                </gmd:CI_ResponsibleParty>
+            </sml:contact>
+        </sml:ContactList>
+    </sml:contacts>
+     
+    <!-- ============================ -->
+    <!--            Documentation              -->
+    <!-- ============================ -->
+    <sml:documentation>
+        <sml:DocumentList>
+            <sml:document xlink:arcrole="http://sensorml.com/ont/swe/property/OperationsManual">
+                <gmd:CI_OnlineResource>
+                    <gmd:linkage>
+                        <gmd:URL>http://www.sensorml.com/resources/Farwest-2070man.pdf</gmd:URL>
+                    </gmd:linkage>
+                    <gmd:name>
+                        <gco:CharacterString>Model 2070 Gamma Detector Module - Operation Manual</gco:CharacterString>
+                    </gmd:name>
+                    <gmd:description>
+                        <gco:CharacterString>Operation Manual for the Gamma Detector 2070. Prvides outout interface information, settigs, and calibration instructions.</gco:CharacterString>
+                    </gmd:description>
+                </gmd:CI_OnlineResource>
+            </sml:document>
+        </sml:DocumentList>
+    </sml:documentation>
+     
+    <!-- =================== -->
+    <!--   Inputs               -->
+    <!-- =================== -->
+    <sml:inputs>
+        <sml:InputList>
+            <sml:input name="gammaRadiation">
+                <sml:ObservableProperty definition="http://sensorml.com/ont/swe/property/Radiation">
+                    <swe:label>Electromagnetic Radiation</swe:label>
+                </sml:ObservableProperty>
+            </sml:input>
+        </sml:InputList>
+    </sml:inputs>
+     
+    <!-- ===================== -->
+    <!--     outputs                  -->
+    <!-- ===================== -->
+    <sml:outputs>
+        <sml:OutputList>
+            <sml:output name="dose">
+                <swe:DataRecord>
+                    <swe:field name="averageDose">
+                        <swe:Quantity definition="http://sensorml.com/ont/SWE/sensor-property/DoseRate.html">
+                            <swe:label>Average Dose of Gamma Radiation</swe:label>
+                            <swe:uom code="uR/min"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="InstantaneousDose">
+                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/RadiationDose">
+                            <swe:label>Instantaneous Dose of Gamma Radiation</swe:label>
+                            <swe:uom code="uR"/>
+                        </swe:Quantity>
+                    </swe:field>
+                </swe:DataRecord>
+            </sml:output>
+        </sml:OutputList>
+    </sml:outputs>
+     
+    <!-- ======================== -->
+    <!--        Parameters                 -->
+    <!-- ======================== -->
+    <sml:parameters>
+        <sml:ParameterList>
+            <sml:parameter name="energyResponse">
+                <swe:DataArray definition="http://sensorml.com/ont/swe/property/SpectralResponse">
+                    <swe:label>Gamma Radiation Response Curve</swe:label>
+                    <swe:description>
+                        The normalized energy response per KeV showing the sensitivity to gamma radiation
+                    </swe:description>
+                    <swe:elementCount>
+                        <swe:Count>
+                            <swe:value>7</swe:value>
+                        </swe:Count>
+                    </swe:elementCount>
+                    <swe:elementType name="energyResponse">
+                        <swe:DataRecord>
+                            <swe:label>Normalize Energy Response</swe:label>
+                            <swe:field name="radiationEnergy">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/RadiationEnergy">
+                                    <swe:label>Radiation Energy</swe:label>
+                                    <swe:uom code="KeV"/>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="relativeResponse">
+                                <swe:Quantity definition="http://sensorml.com/ont/swe/property/RelativeResponse">
+                                    <swe:label>Relative Response</swe:label>
+                                    <swe:uom code="%"/>
+                                </swe:Quantity>
+                            </swe:field>
+                        </swe:DataRecord>
+                    </swe:elementType>
+                    <swe:encoding>
+                        <swe:TextEncoding blockSeparator="
+" tokenSeparator=","/>
+                    </swe:encoding>
+                    <swe:values>
+                        10.0,73 17.5,89.5 20.0,94.0 30.,95.5 40.0,96.0 50.0,96.0 100.0,94.0
+                    </swe:values>
+                </swe:DataArray>
+            </sml:parameter>
+        </sml:ParameterList>
+    </sml:parameters>
+    <sml:method xlink:href="http://oem.com/gamma2070_method.xml"/>
+</sml:PhysicalComponent>

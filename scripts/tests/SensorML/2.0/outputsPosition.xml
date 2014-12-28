@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="MY_SENSOR"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description> Temperature sensor on my window outputting location with temperature</gml:description>
+   <gml:identifier codeSpace="uid">myCompany.com.63547</gml:identifier>
+    <!-- ================================================= -->
+   <!--             Observed Property = Output            -->
+   <!-- ================================================= -->
+   <sml:outputs>
+      <sml:OutputList>
+         <sml:output name="tempAndLocation">
+             <swe:DataRecord>
+                    <swe:field name="temperature">
+                       <swe:Quantity definition="http://sweet.jpl.nasa.gov/2.2/quanTemperature.owl#Temperature">
+                           <swe:label>Air Temperature</swe:label>
+                           <swe:uom code="Cel"/>
+                        </swe:Quantity>     
+                    </swe:field>
+                    <!-- output for location along with temperature -->
+                    <swe:field name="location" xlink:href="#STATION_LOCATION"/>
+                </swe:DataRecord>
+          </sml:output>
+      </sml:OutputList>
+   </sml:outputs>
+   <!-- ================================================= -->
+   <!--                  Sensor Location                  -->
+   <!-- ================================================= -->
+   <sml:position>
+      <gml:Point gml:id="STATION_LOCATION" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+         <gml:coordinates>47.8 88.56</gml:coordinates>
+      </gml:Point>
+   </sml:position>
+</sml:PhysicalComponent>

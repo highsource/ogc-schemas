@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="MY_SENSOR"
+xmlns:sml="http://www.opengis.net/sensorml/2.0"
+xmlns:swe="http://www.opengis.net/swe/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description> 
+      Stationary Location and Orientation - Single-beam Motion Detector 
+   </gml:description>
+   <!-- ================================================= -->
+   <!--             Observed Property = Output            -->
+   <!-- ================================================= -->
+   <sml:outputs>
+      <sml:OutputList>
+         <sml:output name="motionDetection">
+            <swe:Boolean definition="http://sensorml.com/ont/swe/property/Motion"/>
+         </sml:output>
+      </sml:OutputList>
+   </sml:outputs>
+   <!-- ==================================== -->
+   <!--     Station Reference Frame          -->
+   <!-- ==================================== -->
+   <!-- Particularly when dealing with orientations, one needs to understand the sensor's
+        spatial reference frame as defined by the OEM or sensor deployer; the position and
+        orientation of this local frame is then described relative to an external reference
+        frame in the "position" property -->
+   <sml:localReferenceFrame>
+      <sml:SpatialFrame id="SENSOR_FRAME">
+        <sml:origin>
+            Origin is at the intersection of the symmetric axis of the cylinder and the rear of the sensor
+        </sml:origin>
+        <sml:axis name="X">
+            X is perdendicular to the symmetric axis and intersects the indicator marked "x" on the casing
+        </sml:axis>
+         <sml:axis name="Y">Y = Z cross X</sml:axis>
+       <sml:axis name="Z">
+            Z is along the symmetric axis of the sensor in the direction of view
+        </sml:axis>
+      </sml:SpatialFrame>
+   </sml:localReferenceFrame>
+   <!-- ================================================= -->
+   <!--     Station Location and Orientation              -->
+   <!-- ================================================= -->
+   <sml:position>
+      <swe:DataRecord>
+         <swe:field name="location">
+            <swe:Vector
+                definition="http://sensorml.com/ont/swe/property/SensorLocation"
+                referenceFrame="http://www.opengis.net/def/crs/EPSG/6.7/4979"
+                localFrame="#SENSOR_FRAME">
+               <swe:coordinate name="Lat">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/Latitude" axisID="Lat">
+                     <swe:uom code="deg"/>
+                     <swe:value>47.8</swe:value>
+                  </swe:Quantity>
+               </swe:coordinate>
+               <swe:coordinate name="Lon">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/Longitude" axisID="Long">
+                     <swe:uom code="deg"/>
+                     <swe:value>2.3</swe:value>
+                  </swe:Quantity>
+               </swe:coordinate>
+               <swe:coordinate name="Alt">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/Altitude" axisID="Alt">
+                     <swe:uom code="m"/>
+                     <swe:value>40.8</swe:value>
+                  </swe:Quantity>
+               </swe:coordinate>
+            </swe:Vector>
+         </swe:field>
+         <swe:field name="orientation">
+            <swe:Vector
+                definition="http://sensorml.com/ont/swe/property/SensorOrientation"
+                referenceFrame="http://www.opengis.net/def/crs/NED"
+                localFrame="#SENSOR_FRAME">
+               <swe:coordinate name="TrueHeading">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/TrueHeading" axisID="Z">
+                     <swe:uom code="deg"/>
+                     <swe:value>-6.8</swe:value>
+                  </swe:Quantity>
+               </swe:coordinate>
+               <swe:coordinate name="Pitch">
+                  <swe:Quantity definition="http://sensorml.com/ont/swe/property/Pitch" axisID="Y">
+                     <swe:uom code="deg"/>
+                     <swe:value>0.3</swe:value>
+                  </swe:Quantity>
+               </swe:coordinate>
+            </swe:Vector>
+         </swe:field>
+      </swe:DataRecord>
+   </sml:position>
+</sml:PhysicalComponent>

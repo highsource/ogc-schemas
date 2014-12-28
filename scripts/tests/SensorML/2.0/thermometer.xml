@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="Davis7817" xml:lang="en"
+xmlns:sml="http://www.opengis.net/sensorml/2.0"
+xmlns:swe="http://www.opengis.net/swe/2.0"
+ xmlns:gml="http://www.opengis.net/gml/3.2"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+    <!-- ================================================= -->
+    <!--                  Component Description               -->
+    <!-- ================================================= -->
+    <gml:description>a simplet thermistor that outputs resistance as a function of temperature</gml:description>
+    <gml:identifier codeSpace="UID">urn:davisweather:7817</gml:identifier>
+    <gml:name>Davis_7817 Thermometer</gml:name>
+    <!-- metadata left out for brevity sake  -->
+    <!--~~~~~~~~~~~~~-->
+    <!-- Detector Inputs-->
+    <!--~~~~~~~~~~~~~-->
+    <!-- note: in most cases, a detector’s input will be an observableProperty and its output a measured digital value 
+            (e.g. Quantity)  -->
+    <sml:inputs>
+        <sml:InputList>
+            <sml:input name="temperature">
+                <sml:ObservableProperty definition="http://sweet.jpl.nasa.gov/2.3/propTemperature.owl#Temperature"/>
+            </sml:input>
+        </sml:InputList>
+    </sml:inputs>
+     
+    <!--~~~~~~~~~~~~~~-->
+    <!-- Detector Outputs-->
+    <!--~~~~~~~~~~~~~~-->
+    <!-- note: in this case, the detector’s output is also an observableProperty (electrical resistance) rather than 
+                measured digital values -->
+    <sml:outputs>
+        <sml:OutputList>
+            <sml:output name="electricalResistance">
+                <sml:ObservableProperty definition="http://sweet.jpl.nasa.gov/2.3/propConductivity.owl#Resistance"/>
+            </sml:output>
+        </sml:OutputList>
+    </sml:outputs>
+     
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--  Temperature Response     -->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <sml:parameters>
+        <sml:ParameterList>
+            <sml:parameter name="steadyStateCalibration">
+                <swe:DataArray definition="http://sensorml.com/ont/swe/property/calibrationCurve">
+                    <swe:elementCount>
+                        <swe:Count>
+                            <swe:value>21</swe:value>
+                        </swe:Count>
+                    </swe:elementCount>
+                    <swe:elementType name="calibrationCurve">
+                        <swe:DataRecord>
+                            <swe:label>Calibration Curve</swe:label>
+                            <swe:field name="temperature">
+                                <swe:Quantity definition="http://sweet.jpl.nasa.gov/2.3/propTemperature.owl#Temperature">
+                                    <swe:label>Temperature</swe:label>
+                                    <swe:uom code="cel"/>
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="resistance">
+                                <swe:Quantity definition="http://sweet.jpl.nasa.gov/2.3/propConductivity.owl#Resistance">
+                                    <swe:label>Resistance</swe:label>
+                                    <swe:uom code="kohm"/>
+                                </swe:Quantity>
+                            </swe:field>
+                        </swe:DataRecord>
+                    </swe:elementType>
+                    <swe:encoding>
+                        <swe:TextEncoding tokenSeparator=" " blockSeparator="," decimalSeparator="."/>
+                    </swe:encoding>
+                    <swe:values>
+                        -40,328.4 -35,237.7 -30,173.9
+                        -25,128.5 -20,95.89 -15,72.23
+                        -10,54.89 -5,42.07 0,32.51
+                        5,25.31 10,19.86 15,15.69
+                        20,12.49 25,10 30,8.06 35,6.536
+                        40,5.331 45,4.373 50,3.606
+                        55,2.989 60,2.49
+                    </swe:values>
+                </swe:DataArray>
+            </sml:parameter>
+        </sml:ParameterList>
+    </sml:parameters>
+     
+    <!--~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--Detector Coordinate Frame-->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- Spatial Reference Frame -->
+    <sml:localReferenceFrame>
+        <sml:SpatialFrame id="THERMOMETER_FRAME">
+            <sml:origin>origin is at the measuring tip of the thermistor</sml:origin>
+            <sml:axis name="x">the x axis is orthogonal to z but indeterminate</sml:axis>
+            <sml:axis name="y">the y axis is orthogonal to z but indeterminate</sml:axis>
+            <sml:axis name="z">the z axis is along the long axis of symmetry (or shaft) of the thermistor</sml:axis>
+        </sml:SpatialFrame>
+    </sml:localReferenceFrame>
+ 
+    <!--~~~~~~~~~~~~~~-->
+    <!--  Method               -->
+    <!--~~~~~~~~~~~~~~-->  
+    <sml:method xlink:href="http://sensorml.com/def/process/detector"/>
+ 
+</sml:PhysicalComponent>

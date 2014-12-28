@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalSystem gml:id="MY_SENSOR"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description>simple thermometer with time tag</gml:description>
+   <gml:identifier codeSpace="uid">urn:meteofrance:stations:network2002</gml:identifier>
+ 
+   <!-- metadata deleted for brevity sake -->
+ 
+   <!-- ================================================= -->
+   <!--             Observed Property = Output            -->
+   <!-- ================================================= -->
+   <sml:outputs>
+      <sml:OutputList>
+         <sml:output name="sensorNetworkStream">
+            <sml:DataInterface>
+               <sml:data>
+                  <swe:DataStream>
+                      <swe:description>
+                         This stream is for a sensor network where all output are homogeneous; 
+                         The station ID and location is provided with each reading; 
+                      </swe:description>
+                     <swe:elementType name="weather_data">
+                        <swe:DataRecord>
+                           <swe:label>Atmospheric Conditions</swe:label>
+                           <swe:field name="time">
+                              <swe:Time
+                                 definition="http://sensorml.com/ont/swe/property/SamplingTime">
+                                 <swe:uom
+                                    xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                              </swe:Time>
+                           </swe:field>
+                           <swe:field name="sensorID">
+                              <swe:Text
+                                 definition="http://sensorml.com/ont/swe/property/SensorUID"/>
+                           </swe:field>
+ 
+                           <swe:field name="location">
+                              <swe:Vector
+                                 definition="http://sensorml.com/ont/swe/property/PlatformLocation"
+                                 referenceFrame="http://www.opengis.net/def/crs/EPSG/0/4979">
+                                 <swe:coordinate name="lat">
+                                    <swe:Quantity
+                                       definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Latitude"
+                                       axisID="Lat">
+                                       <swe:uom code="deg"/>
+                                    </swe:Quantity>
+                                 </swe:coordinate>
+                                 <swe:coordinate name="lon">
+                                    <swe:Quantity
+                                       definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Longitude"
+                                       axisID="Long">
+                                       <swe:uom code="deg"/>
+                                    </swe:Quantity>
+                                 </swe:coordinate>
+                                 <swe:coordinate name="alt">
+                                    <swe:Quantity
+                                       definition="http://sweet.jpl.nasa.gov/2.0/spaceExtent.owl#Altitude"
+                                       axisID="h">
+                                       <swe:uom code="m"/>
+                                    </swe:Quantity>
+                                 </swe:coordinate>
+                              </swe:Vector>
+                           </swe:field>
+ 
+                           <swe:field name="temp">
+                              <swe:Quantity
+                                 definition="http://mmisw.org/ont/cf/parameter/air_temperature">
+                                 <swe:uom code="Cel"/>
+                              </swe:Quantity>
+                           </swe:field>
+                           <swe:field name="pressure">
+                              <swe:Quantity
+                                 definition="http://mmisw.org/ont/cf/parameter/barometric_pressure">
+                                 <swe:uom code="kPa"/>
+                              </swe:Quantity>
+                           </swe:field>
+                           <swe:field name="wind_speed">
+                              <swe:Quantity
+                                 definition="http://mmisw.org/ont/cf/parameter/wind_speed">
+                                 <swe:uom code="km/h"/>
+                              </swe:Quantity>
+                           </swe:field>
+                           <swe:field name="wind_dir">
+                              <swe:Quantity
+                                 definition="http://mmisw.org/ont/cf/parameter/wind_to_direction">
+                                 <swe:uom code="deg"/>
+                              </swe:Quantity>
+                           </swe:field>
+                        </swe:DataRecord>
+                     </swe:elementType>
+                     <swe:encoding>
+                        <swe:TextEncoding tokenSeparator="," blockSeparator=""/>
+                     </swe:encoding>
+                     <swe:values xlink:href="rtp://mySensors.com:4356/76455"/>
+                  </swe:DataStream>
+               </sml:data>
+            </sml:DataInterface>
+         </sml:output>
+      </sml:OutputList>
+   </sml:outputs>
+</sml:PhysicalSystem>
