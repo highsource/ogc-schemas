@@ -2,7 +2,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.jvnet.ogc</groupId>
 	<artifactId>sos-v_1_0_0</artifactId>
 	<packaging>jar</packaging>
 	<name>OGC SOS 1.0.0</name>
@@ -14,22 +13,22 @@
 	</parent>
 	<dependencies>
 		<dependency>
-			<groupId>org.jvnet.ogc</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>sweCommon-v_1_0_1</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.jvnet.ogc</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>om-v_1_0_0</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.jvnet.ogc</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>ows-v_1_1_0</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.jvnet.ogc</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>gml-v_3_1_1</artifactId>
 			<version>${project.version}</version>
 		</dependency>
