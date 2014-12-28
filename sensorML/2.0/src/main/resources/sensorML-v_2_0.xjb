@@ -1,0 +1,32 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/sensorML/2.0/sensorML.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.sensorml.v_2_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/sensorML/2.0/core.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='IdentifierListType']//xs:element[@name='identifier']">
+			<jaxb:property name="SMLIdentifier"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+
+	<!--jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/sensorML/2.0/system.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='AbstractDerivableComponentType']//xs:element[@ref='sml:location']">
+			<jaxb:property name="TargetLocation"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='AbstractDerivableComponentType']//xs:element[@ref='sml:position']">
+			<jaxb:property name="TargetPosition"/>
+		</jaxb:bindings>
+	</jaxb:bindings-->
+
+</jaxb:bindings>

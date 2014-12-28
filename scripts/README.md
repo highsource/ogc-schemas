@@ -37,6 +37,7 @@ Supports the following schemas:
 * `OWS_2_0`
 * `Sampling_2_0`
 * `SensorML_1_0_1`
+* `SensorML_2_0`
 * `SLD_1_0_0`
 * `SPS_2_0`
 * `SOS_1_0_0`

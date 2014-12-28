@@ -76,6 +76,7 @@
 								<artifactItem><artifactId>sampling-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 
 								<artifactItem><artifactId>sensorML-v_1_0_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
+								<artifactItem><artifactId>sensorML-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 
 								<artifactItem><artifactId>sld-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 
