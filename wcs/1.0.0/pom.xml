@@ -68,10 +68,10 @@
 					<execution>
 						<phase>process-sources</phase>
 						<configuration>
-							<tasks>
+							<target>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/GML"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="GML*.*"/>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>

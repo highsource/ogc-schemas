@@ -107,12 +107,12 @@
 					<execution>
 						<phase>process-sources</phase>
 						<configuration>
-							<tasks>
+							<target>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/sensorml"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="GML*.*"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="SensorML*.*"/>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>

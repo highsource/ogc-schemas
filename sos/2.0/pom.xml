@@ -153,7 +153,7 @@
 					<execution>
 						<phase>process-sources</phase>
 						<configuration>
-							<tasks>
+							<target>
 +								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/filter"/>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/om"/>
@@ -165,7 +165,7 @@
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="OM_*.*"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="OWS_*.*"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="SWES_*.*"/>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>

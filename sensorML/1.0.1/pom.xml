@@ -94,14 +94,14 @@
 					<execution>
 						<phase>process-sources</phase>
 						<configuration>
-							<tasks>
+							<target>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/ic"/>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/swecommon"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="IC*.*"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="GML*.*"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="SWE*.*"/>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>

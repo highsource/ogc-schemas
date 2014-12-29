@@ -48,10 +48,10 @@
 					<execution>
 						<phase>process-sources</phase>
 						<configuration>
-							<tasks>
+							<target>
 								<delete dir="${basedir}/target/generated-sources/xjc/org/hisrc/w3c/atom"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="Atom*.*"/>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>

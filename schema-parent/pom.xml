@@ -122,13 +122,13 @@
 							<id>package-scripts</id>
 							<phase>package</phase>
 							<configuration>
-								<tasks>
+								<target>
 									<zip basedir="${project.build.directory}/generated-sources/xjc" destfile="${project.build.directory}/${project.artifactId}-${project.version}-scripts.zip">
 										<patternset>
 											<include name="**/*.js"/>
 										</patternset>
 									</zip>
-								</tasks>
+								</target>
 							</configuration>
 							<goals>
 								<goal>run</goal>

@@ -109,12 +109,12 @@
 					<execution>
 						<phase>process-sources</phase>
 						<configuration>
-							<tasks>
+							<target>
 								<delete dir="${basedir}/target/generated-sources/xjc/org/hisrc/w3c/wsaddr"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="WS_Addr_*_Core.*"/>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="GML_*.*"/>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>

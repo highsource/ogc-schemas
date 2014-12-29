@@ -22,9 +22,9 @@
 						<id>download-schemas</id>
 						<phase>generate-sources</phase>
 						<configuration>
-							<tasks>
+							<target>
 								<get src="http://schemas.opengis.net/${schemas.zip}" dest="src/main/etc/${schemas.zip}" usetimestamp="true"/>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>
@@ -34,14 +34,14 @@
 						<id>unpack</id>
 						<phase>generate-sources</phase>
 						<configuration>
-							<tasks>
+							<target>
 								<!--delete dir="src/main/resources/ogc"/-->
 								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources/ogc">
 									<patternset>
 										<exclude name="**/*.zip"/>
 									</patternset>
 								</unzip>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>

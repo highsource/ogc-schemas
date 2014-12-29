@@ -46,11 +46,11 @@
 						<id>concatenate-dtds</id>
 						<phase>generate-sources</phase>
 						<configuration>
-							<tasks>
+							<target>
 								<concat destfile="src/main/resources/ogc/wms/1.1.0/wms_1_1_0.dtd">
 									<fileset dir="src/main/resources/ogc/wms/1.1.0" includes="capabilities*.dtd,exception*.dtd"/>
 								</concat>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>
@@ -59,9 +59,9 @@
 					<execution>
 						<phase>process-sources</phase>
 						<configuration>
-							<tasks>
+							<target>
 								<delete dir="${basedir}/target/generated-sources/xjc/WMS_1_1_0"/>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>

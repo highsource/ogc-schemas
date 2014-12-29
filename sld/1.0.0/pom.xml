@@ -90,10 +90,10 @@
 					<execution>
 						<phase>process-sources</phase>
 						<configuration>
-							<tasks>
+							<target>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/filter"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="Filter*.*"/>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>
