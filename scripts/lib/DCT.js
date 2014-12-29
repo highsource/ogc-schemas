@@ -5,102 +5,18 @@ var DCT_Module_Factory = function () {
     deps: ['DC_1_1'],
     tis: [],
     eis: [{
-        en: 'conformsTo',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'relation',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'hasVersion',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'relation',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'isPartOf',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'relation',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'mediator',
+        en: 'educationLevel',
         ti: 'DC_1_1.SimpleLiteral',
         sh: 'audience'
       }, {
-        en: 'temporal',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'coverage',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'issued',
+        en: 'dateCopyrighted',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'date',
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        en: 'valid',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'date',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'provenance',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'DC-element',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'isRequiredBy',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'relation',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'audience',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'DC-element',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'accessRights',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'rights',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'dateSubmitted',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'date',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'modified',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'date',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'references',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'relation',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'isFormatOf',
+        en: 'isReferencedBy',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'relation',
@@ -114,17 +30,17 @@ var DCT_Module_Factory = function () {
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        en: 'extent',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'format',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'isReferencedBy',
+        en: 'references',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'issued',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
@@ -135,7 +51,42 @@ var DCT_Module_Factory = function () {
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        en: 'replaces',
+        en: 'abstract',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'description',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'hasVersion',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'alternative',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'title',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'created',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'dateSubmitted',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'isPartOf',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'relation',
@@ -149,42 +100,14 @@ var DCT_Module_Factory = function () {
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        en: 'created',
+        en: 'extent',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
-          lp: 'date',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'available',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'date',
+          lp: 'format',
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
         en: 'isReplacedBy',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'relation',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'abstract',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'description',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'dateAccepted',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'date',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'isVersionOf',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'relation',
@@ -198,10 +121,38 @@ var DCT_Module_Factory = function () {
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        en: 'dateCopyrighted',
+        en: 'modified',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'dateAccepted',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'replaces',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'requires',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'isRequiredBy',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
@@ -212,18 +163,7 @@ var DCT_Module_Factory = function () {
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        en: 'educationLevel',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: 'audience'
-      }, {
-        en: 'alternative',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'title',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'requires',
+        en: 'isVersionOf',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'relation',
@@ -237,7 +177,28 @@ var DCT_Module_Factory = function () {
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        en: 'hasPart',
+        en: 'isFormatOf',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'temporal',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'coverage',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'audience',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'DC-element',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'conformsTo',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'relation',
@@ -248,6 +209,45 @@ var DCT_Module_Factory = function () {
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'identifier',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'valid',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'mediator',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: 'audience'
+      }, {
+        en: 'hasPart',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'available',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'date',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'provenance',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'DC-element',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'accessRights',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'rights',
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }]
