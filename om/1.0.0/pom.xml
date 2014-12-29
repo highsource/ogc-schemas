@@ -92,7 +92,7 @@
 						</binding>
 						<binding>
 							<dependencyResource>
-								<groupId>${project.groupId}</groupId>
+								<groupId>org.hisrc.w3c</groupId>
 								<artifactId>xlink-v_1_0</artifactId>
 								<resource>xlink-v_1_0.jsonix.xjb</resource>
 								<version>${w3c-schemas.version}</version>
