@@ -3,13 +3,13 @@ var Sampling_2_0_Module_Factory = function () {
     n: 'Sampling_2_0',
     dens: 'http:\/\/www.opengis.net\/sampling\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1', 'XLink_1_0', 'OM_2_0', 'XLink_1_0', 'XLink_1_0', 'OM_2_0', 'XLink_1_0', 'ISO19139_GMD_20070417', 'GML_3_2_1', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0'],
+    deps: ['XLink_1_0', 'XLink_1_0', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'ISO19139_GMD_20070417', 'OM_2_0', 'XLink_1_0', 'OM_2_0', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'GML_3_2_1'],
     tis: [{
-        ln: 'SFSamplingFeatureCollectionPropertyType',
+        ln: 'SFSamplingFeaturePropertyType',
         ps: [{
-            n: 'sfSamplingFeatureCollection',
-            en: 'SF_SamplingFeatureCollection',
-            ti: '.SFSamplingFeatureCollectionType'
+            n: 'sfSamplingFeature',
+            en: 'SF_SamplingFeature',
+            ti: '.SFSamplingFeatureType'
           }, {
             n: 'nilReason',
             ti: {
@@ -134,26 +134,11 @@ var Sampling_2_0_Module_Factory = function () {
             ti: 'OM_2_0.NamedValuePropertyType'
           }]
       }, {
-        ln: 'SFSamplingFeatureCollectionType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
+        ln: 'SFSamplingFeatureCollectionPropertyType',
         ps: [{
-            n: 'member',
-            col: true,
-            ti: '.SFSamplingFeaturePropertyType'
-          }]
-      }, {
-        ln: 'SamplingFeatureComplexPropertyType',
-        ps: [{
-            n: 'samplingFeatureComplex',
-            en: 'SamplingFeatureComplex',
-            ti: '.SamplingFeatureComplexType'
-          }]
-      }, {
-        ln: 'SFSamplingFeaturePropertyType',
-        ps: [{
-            n: 'sfSamplingFeature',
-            en: 'SF_SamplingFeature',
-            ti: '.SFSamplingFeatureType'
+            n: 'sfSamplingFeatureCollection',
+            en: 'SF_SamplingFeatureCollection',
+            ti: '.SFSamplingFeatureCollectionType'
           }, {
             n: 'nilReason',
             ti: {
@@ -194,6 +179,21 @@ var Sampling_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'SamplingFeatureComplexPropertyType',
+        ps: [{
+            n: 'samplingFeatureComplex',
+            en: 'SamplingFeatureComplex',
+            ti: '.SamplingFeatureComplexType'
+          }]
+      }, {
+        ln: 'SFSamplingFeatureCollectionType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'member',
+            col: true,
+            ti: '.SFSamplingFeaturePropertyType'
           }]
       }],
     eis: [{
