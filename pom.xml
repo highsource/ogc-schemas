@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.jvnet.ogc</groupId>
 	<artifactId>ogc-schemas-project</artifactId>
-	<version>2.0.1</version>
+	<version>2.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>OGC Schemas Project</name>
 	<url>https://github.com/highsource/ogc-schemas</url>
@@ -73,9 +73,10 @@
 		<module>owc</module>
 		<module>ows</module>
 		<module>sampling</module>
-		<module>sps</module>
 		<module>sensorML</module>
 		<module>sld</module>
+		<module>sos</module>
+		<module>sps</module>
 		<module>sweCommon</module>
 		<module>swes</module>
 		<module>wcs</module>
