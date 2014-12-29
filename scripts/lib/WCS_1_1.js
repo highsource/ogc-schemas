@@ -2,202 +2,8 @@ var WCS_1_1_Module_Factory = function () {
   var WCS_1_1 = {
     n: 'WCS_1_1',
     dens: 'http:\/\/www.opengis.net\/wcs\/1.1',
-    deps: ['OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'XLink_1_0', 'GML_3_1_1', 'OWS_1_1_0', 'GML_3_1_1', 'GML_3_1_1', 'OWS_1_1_0', 'OWS_1_1_0', 'GML_3_1_1', 'OWS_1_1_0', 'XLink_1_0', 'XLink_1_0', 'GML_3_1_1'],
+    deps: ['GML_3_1_1', 'OWS_1_1_0', 'GML_3_1_1', 'OWS_1_1_0', 'OWS_1_1_0', 'GML_3_1_1', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'GML_3_1_1', 'XLink_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'XLink_1_0', 'GML_3_1_1', 'OWS_1_1_0', 'XLink_1_0'],
     tis: [{
-        ln: 'CoveragesType',
-        ps: [{
-            n: 'coverage',
-            col: true,
-            en: 'Coverage',
-            ti: 'OWS_1_1_0.ReferenceGroupType'
-          }]
-      }, {
-        ln: 'DomainSubsetType',
-        ps: [{
-            n: 'boundingBox',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'BoundingBox',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.BoundingBoxType',
-            t: 'er'
-          }, {
-            n: 'temporalSubset',
-            en: 'TemporalSubset',
-            ti: '.TimeSequenceType'
-          }]
-      }, {
-        ln: 'Contents',
-        ps: [{
-            n: 'coverageSummary',
-            col: true,
-            en: 'CoverageSummary',
-            ti: '.CoverageSummaryType'
-          }, {
-            n: 'supportedCRS',
-            col: true,
-            en: 'SupportedCRS'
-          }, {
-            n: 'supportedFormat',
-            col: true,
-            en: 'SupportedFormat'
-          }, {
-            n: 'otherSource',
-            col: true,
-            en: 'OtherSource',
-            ti: 'OWS_1_1_0.OnlineResourceType'
-          }]
-      }, {
-        ln: 'GridCrsType',
-        ps: [{
-            n: 'srsName',
-            en: {
-              lp: 'srsName',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'gridBaseCRS',
-            en: 'GridBaseCRS'
-          }, {
-            n: 'gridType',
-            en: 'GridType'
-          }, {
-            n: 'gridOrigin',
-            en: 'GridOrigin',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'gridOffsets',
-            en: 'GridOffsets',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'gridCS',
-            en: 'GridCS'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'FieldType',
-        bti: 'OWS_1_1_0.DescriptionType',
-        ps: [{
-            n: 'identifier',
-            en: 'Identifier'
-          }, {
-            n: 'definition',
-            en: 'Definition',
-            ti: 'OWS_1_1_0.UnNamedDomainType'
-          }, {
-            n: 'nullValue',
-            col: true,
-            en: 'NullValue',
-            ti: 'OWS_1_1_0.CodeType'
-          }, {
-            n: 'interpolationMethods',
-            en: 'InterpolationMethods',
-            ti: '.InterpolationMethods'
-          }, {
-            n: 'axis',
-            col: true,
-            en: 'Axis',
-            ti: '.AxisType'
-          }]
-      }, {
-        ln: 'CoverageDescriptions',
-        ps: [{
-            n: 'coverageDescription',
-            col: true,
-            en: 'CoverageDescription',
-            ti: '.CoverageDescriptionType'
-          }]
-      }, {
-        ln: 'CoverageDescriptionType',
-        bti: 'OWS_1_1_0.DescriptionType',
-        ps: [{
-            n: 'identifier',
-            en: 'Identifier'
-          }, {
-            n: 'metadata',
-            col: true,
-            en: {
-              lp: 'Metadata',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.MetadataType'
-          }, {
-            n: 'domain',
-            en: 'Domain',
-            ti: '.CoverageDomainType'
-          }, {
-            n: 'range',
-            en: 'Range',
-            ti: '.RangeType'
-          }, {
-            n: 'supportedCRS',
-            col: true,
-            en: 'SupportedCRS'
-          }, {
-            n: 'supportedFormat',
-            col: true,
-            en: 'SupportedFormat'
-          }]
-      }, {
-        ln: 'InterpolationMethodBaseType',
-        bti: 'OWS_1_1_0.CodeType'
-      }, {
-        ln: 'CoverageSummaryType',
-        bti: 'OWS_1_1_0.DescriptionType',
-        ps: [{
-            n: 'metadata',
-            col: true,
-            en: {
-              lp: 'Metadata',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.MetadataType'
-          }, {
-            n: 'wgs84BoundingBox',
-            col: true,
-            en: {
-              lp: 'WGS84BoundingBox',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.WGS84BoundingBoxType'
-          }, {
-            n: 'supportedCRS',
-            col: true,
-            en: 'SupportedCRS'
-          }, {
-            n: 'supportedFormat',
-            col: true,
-            en: 'SupportedFormat'
-          }, {
-            n: 'coverageSummary',
-            col: true,
-            en: 'CoverageSummary',
-            ti: '.CoverageSummaryType'
-          }, {
-            n: 'optionalIdentifier',
-            en: 'Identifier'
-          }, {
-            n: 'identifier',
-            en: 'Identifier'
-          }]
-      }, {
         ln: 'InterpolationMethods',
         ps: [{
             n: 'interpolationMethod',
@@ -209,77 +15,12 @@ var WCS_1_1_Module_Factory = function () {
             en: 'Default'
           }]
       }, {
-        ln: 'AxisSubset',
+        ln: 'DescribeCoverage',
+        bti: '.RequestBaseType',
         ps: [{
             n: 'identifier',
+            col: true,
             en: 'Identifier'
-          }, {
-            n: 'key',
-            col: true,
-            en: 'Key'
-          }]
-      }, {
-        ln: 'RangeSubsetType',
-        ps: [{
-            n: 'fieldSubset',
-            col: true,
-            en: 'FieldSubset',
-            ti: '.RangeSubsetType.FieldSubset'
-          }]
-      }, {
-        ln: 'RangeSubsetType.FieldSubset',
-        ps: [{
-            n: 'identifier',
-            en: {
-              lp: 'Identifier',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.CodeType'
-          }, {
-            n: 'interpolationType',
-            en: 'InterpolationType'
-          }, {
-            n: 'axisSubset',
-            col: true,
-            en: 'AxisSubset',
-            ti: '.AxisSubset'
-          }]
-      }, {
-        ln: 'InterpolationMethodType',
-        bti: '.InterpolationMethodBaseType',
-        ps: [{
-            n: 'nullResistance',
-            an: {
-              lp: 'nullResistance'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AvailableKeys',
-        ps: [{
-            n: 'key',
-            col: true,
-            en: 'Key'
-          }]
-      }, {
-        ln: 'OutputType',
-        ps: [{
-            n: 'gridCRS',
-            en: 'GridCRS',
-            ti: '.GridCrsType'
-          }, {
-            n: 'format',
-            an: {
-              lp: 'format'
-            },
-            t: 'a'
-          }, {
-            n: 'store',
-            ti: 'Boolean',
-            an: {
-              lp: 'store'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'CoverageDomainType',
@@ -293,188 +34,11 @@ var WCS_1_1_Module_Factory = function () {
             ti: '.TimeSequenceType'
           }]
       }, {
-        ln: 'GetCoverage',
-        bti: '.RequestBaseType',
+        ln: 'AvailableKeys',
         ps: [{
-            n: 'identifier',
-            en: {
-              lp: 'Identifier',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.CodeType'
-          }, {
-            n: 'domainSubset',
-            en: 'DomainSubset',
-            ti: '.DomainSubsetType'
-          }, {
-            n: 'rangeSubset',
-            en: 'RangeSubset',
-            ti: '.RangeSubsetType'
-          }, {
-            n: 'output',
-            en: 'Output',
-            ti: '.OutputType'
-          }]
-      }, {
-        ln: 'AxisType',
-        bti: 'OWS_1_1_0.DescriptionType',
-        ps: [{
-            n: 'availableKeys',
-            en: 'AvailableKeys',
-            ti: '.AvailableKeys'
-          }, {
-            n: 'meaning',
-            en: {
-              lp: 'Meaning',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.DomainMetadataType'
-          }, {
-            n: 'dataType',
-            en: {
-              lp: 'DataType',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.DomainMetadataType'
-          }, {
-            n: 'uom',
-            en: {
-              lp: 'UOM',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.DomainMetadataType'
-          }, {
-            n: 'referenceSystem',
-            en: {
-              lp: 'ReferenceSystem',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.DomainMetadataType'
-          }, {
-            n: 'metadata',
+            n: 'key',
             col: true,
-            en: {
-              lp: 'Metadata',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.MetadataType'
-          }, {
-            n: 'identifier',
-            an: {
-              lp: 'identifier'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RequestBaseType',
-        ps: [{
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RangeType',
-        ps: [{
-            n: 'field',
-            col: true,
-            en: 'Field',
-            ti: '.FieldType'
-          }]
-      }, {
-        ln: 'TimePeriodType',
-        ps: [{
-            n: 'beginPosition',
-            en: 'BeginPosition',
-            ti: 'GML_3_1_1.TimePositionType'
-          }, {
-            n: 'endPosition',
-            en: 'EndPosition',
-            ti: 'GML_3_1_1.TimePositionType'
-          }, {
-            n: 'timeResolution',
-            en: 'TimeResolution'
-          }, {
-            n: 'frame',
-            an: {
-              lp: 'frame'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SpatialDomainType',
-        ps: [{
-            n: 'boundingBox',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'BoundingBox',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.BoundingBoxType',
-            t: 'er'
-          }, {
-            n: 'gridCRS',
-            en: 'GridCRS',
-            ti: '.GridCrsType'
-          }, {
-            n: 'coordinateOperation',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: '_CoordinateOperation',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.AbstractCoordinateOperationType',
-            t: 'er'
-          }, {
-            n: 'imageCRS',
-            en: 'ImageCRS',
-            ti: '.ImageCRSRefType'
-          }, {
-            n: 'polygon',
-            col: true,
-            en: {
-              lp: 'Polygon',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.PolygonType'
-          }]
-      }, {
-        ln: 'DescribeCoverage',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'identifier',
-            col: true,
-            en: 'Identifier'
-          }]
-      }, {
-        ln: 'Capabilities',
-        bti: 'OWS_1_1_0.CapabilitiesBaseType',
-        ps: [{
-            n: 'contents',
-            en: 'Contents',
-            ti: '.Contents'
-          }]
-      }, {
-        ln: 'GetCapabilities',
-        bti: 'OWS_1_1_0.GetCapabilitiesType',
-        ps: [{
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
+            en: 'Key'
           }]
       }, {
         ln: 'ImageCRSRefType',
@@ -546,6 +110,249 @@ var WCS_1_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'OutputType',
+        ps: [{
+            n: 'gridCRS',
+            en: 'GridCRS',
+            ti: '.GridCrsType'
+          }, {
+            n: 'format',
+            an: {
+              lp: 'format'
+            },
+            t: 'a'
+          }, {
+            n: 'store',
+            ti: 'Boolean',
+            an: {
+              lp: 'store'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AxisType',
+        bti: 'OWS_1_1_0.DescriptionType',
+        ps: [{
+            n: 'availableKeys',
+            en: 'AvailableKeys',
+            ti: '.AvailableKeys'
+          }, {
+            n: 'meaning',
+            en: {
+              lp: 'Meaning',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.DomainMetadataType'
+          }, {
+            n: 'dataType',
+            en: {
+              lp: 'DataType',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.DomainMetadataType'
+          }, {
+            n: 'uom',
+            en: {
+              lp: 'UOM',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.DomainMetadataType'
+          }, {
+            n: 'referenceSystem',
+            en: {
+              lp: 'ReferenceSystem',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.DomainMetadataType'
+          }, {
+            n: 'metadata',
+            col: true,
+            en: {
+              lp: 'Metadata',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.MetadataType'
+          }, {
+            n: 'identifier',
+            an: {
+              lp: 'identifier'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'RangeSubsetType',
+        ps: [{
+            n: 'fieldSubset',
+            col: true,
+            en: 'FieldSubset',
+            ti: '.RangeSubsetType.FieldSubset'
+          }]
+      }, {
+        ln: 'DomainSubsetType',
+        ps: [{
+            n: 'boundingBox',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'BoundingBox',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.BoundingBoxType',
+            t: 'er'
+          }, {
+            n: 'temporalSubset',
+            en: 'TemporalSubset',
+            ti: '.TimeSequenceType'
+          }]
+      }, {
+        ln: 'Contents',
+        ps: [{
+            n: 'coverageSummary',
+            col: true,
+            en: 'CoverageSummary',
+            ti: '.CoverageSummaryType'
+          }, {
+            n: 'supportedCRS',
+            col: true,
+            en: 'SupportedCRS'
+          }, {
+            n: 'supportedFormat',
+            col: true,
+            en: 'SupportedFormat'
+          }, {
+            n: 'otherSource',
+            col: true,
+            en: 'OtherSource',
+            ti: 'OWS_1_1_0.OnlineResourceType'
+          }]
+      }, {
+        ln: 'GetCoverage',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'identifier',
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.CodeType'
+          }, {
+            n: 'domainSubset',
+            en: 'DomainSubset',
+            ti: '.DomainSubsetType'
+          }, {
+            n: 'rangeSubset',
+            en: 'RangeSubset',
+            ti: '.RangeSubsetType'
+          }, {
+            n: 'output',
+            en: 'Output',
+            ti: '.OutputType'
+          }]
+      }, {
+        ln: 'TimePeriodType',
+        ps: [{
+            n: 'beginPosition',
+            en: 'BeginPosition',
+            ti: 'GML_3_1_1.TimePositionType'
+          }, {
+            n: 'endPosition',
+            en: 'EndPosition',
+            ti: 'GML_3_1_1.TimePositionType'
+          }, {
+            n: 'timeResolution',
+            en: 'TimeResolution'
+          }, {
+            n: 'frame',
+            an: {
+              lp: 'frame'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CoveragesType',
+        ps: [{
+            n: 'coverage',
+            col: true,
+            en: 'Coverage',
+            ti: 'OWS_1_1_0.ReferenceGroupType'
+          }]
+      }, {
+        ln: 'AxisSubset',
+        ps: [{
+            n: 'identifier',
+            en: 'Identifier'
+          }, {
+            n: 'key',
+            col: true,
+            en: 'Key'
+          }]
+      }, {
+        ln: 'CoverageDescriptions',
+        ps: [{
+            n: 'coverageDescription',
+            col: true,
+            en: 'CoverageDescription',
+            ti: '.CoverageDescriptionType'
+          }]
+      }, {
+        ln: 'RangeSubsetType.FieldSubset',
+        ps: [{
+            n: 'identifier',
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.CodeType'
+          }, {
+            n: 'interpolationType',
+            en: 'InterpolationType'
+          }, {
+            n: 'axisSubset',
+            col: true,
+            en: 'AxisSubset',
+            ti: '.AxisSubset'
+          }]
+      }, {
+        ln: 'Capabilities',
+        bti: 'OWS_1_1_0.CapabilitiesBaseType',
+        ps: [{
+            n: 'contents',
+            en: 'Contents',
+            ti: '.Contents'
+          }]
+      }, {
+        ln: 'CoverageDescriptionType',
+        bti: 'OWS_1_1_0.DescriptionType',
+        ps: [{
+            n: 'identifier',
+            en: 'Identifier'
+          }, {
+            n: 'metadata',
+            col: true,
+            en: {
+              lp: 'Metadata',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.MetadataType'
+          }, {
+            n: 'domain',
+            en: 'Domain',
+            ti: '.CoverageDomainType'
+          }, {
+            n: 'range',
+            en: 'Range',
+            ti: '.RangeType'
+          }, {
+            n: 'supportedCRS',
+            col: true,
+            en: 'SupportedCRS'
+          }, {
+            n: 'supportedFormat',
+            col: true,
+            en: 'SupportedFormat'
+          }]
+      }, {
         ln: 'TimeSequenceType',
         ps: [{
             n: 'timePositionOrTimePeriod',
@@ -562,10 +369,210 @@ var WCS_1_1_Module_Factory = function () {
               }],
             t: 'es'
           }]
+      }, {
+        ln: 'InterpolationMethodType',
+        bti: '.InterpolationMethodBaseType',
+        ps: [{
+            n: 'nullResistance',
+            an: {
+              lp: 'nullResistance'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SpatialDomainType',
+        ps: [{
+            n: 'boundingBox',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'BoundingBox',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.BoundingBoxType',
+            t: 'er'
+          }, {
+            n: 'gridCRS',
+            en: 'GridCRS',
+            ti: '.GridCrsType'
+          }, {
+            n: 'coordinateOperation',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: '_CoordinateOperation',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.AbstractCoordinateOperationType',
+            t: 'er'
+          }, {
+            n: 'imageCRS',
+            en: 'ImageCRS',
+            ti: '.ImageCRSRefType'
+          }, {
+            n: 'polygon',
+            col: true,
+            en: {
+              lp: 'Polygon',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.PolygonType'
+          }]
+      }, {
+        ln: 'RequestBaseType',
+        ps: [{
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CoverageSummaryType',
+        bti: 'OWS_1_1_0.DescriptionType',
+        ps: [{
+            n: 'metadata',
+            col: true,
+            en: {
+              lp: 'Metadata',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.MetadataType'
+          }, {
+            n: 'wgs84BoundingBox',
+            col: true,
+            en: {
+              lp: 'WGS84BoundingBox',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.WGS84BoundingBoxType'
+          }, {
+            n: 'supportedCRS',
+            col: true,
+            en: 'SupportedCRS'
+          }, {
+            n: 'supportedFormat',
+            col: true,
+            en: 'SupportedFormat'
+          }, {
+            n: 'coverageSummary',
+            col: true,
+            en: 'CoverageSummary',
+            ti: '.CoverageSummaryType'
+          }, {
+            n: 'optionalIdentifier',
+            en: 'Identifier'
+          }, {
+            n: 'identifier',
+            en: 'Identifier'
+          }]
+      }, {
+        ln: 'RangeType',
+        ps: [{
+            n: 'field',
+            col: true,
+            en: 'Field',
+            ti: '.FieldType'
+          }]
+      }, {
+        ln: 'GetCapabilities',
+        bti: 'OWS_1_1_0.GetCapabilitiesType',
+        ps: [{
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'InterpolationMethodBaseType',
+        bti: 'OWS_1_1_0.CodeType'
+      }, {
+        ln: 'GridCrsType',
+        ps: [{
+            n: 'srsName',
+            en: {
+              lp: 'srsName',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'gridBaseCRS',
+            en: 'GridBaseCRS'
+          }, {
+            n: 'gridType',
+            en: 'GridType'
+          }, {
+            n: 'gridOrigin',
+            en: 'GridOrigin',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'gridOffsets',
+            en: 'GridOffsets',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'gridCS',
+            en: 'GridCS'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FieldType',
+        bti: 'OWS_1_1_0.DescriptionType',
+        ps: [{
+            n: 'identifier',
+            en: 'Identifier'
+          }, {
+            n: 'definition',
+            en: 'Definition',
+            ti: 'OWS_1_1_0.UnNamedDomainType'
+          }, {
+            n: 'nullValue',
+            col: true,
+            en: 'NullValue',
+            ti: 'OWS_1_1_0.CodeType'
+          }, {
+            n: 'interpolationMethods',
+            en: 'InterpolationMethods',
+            ti: '.InterpolationMethods'
+          }, {
+            n: 'axis',
+            col: true,
+            en: 'Axis',
+            ti: '.AxisType'
+          }]
       }],
     eis: [{
-        en: 'Coverages',
-        ti: '.CoveragesType'
+        en: 'GridType'
+      }, {
+        en: 'Capabilities',
+        ti: '.Capabilities'
+      }, {
+        en: 'TemporalSubset',
+        ti: '.TimeSequenceType'
+      }, {
+        en: 'GridCS'
       }, {
         en: 'GridOrigin',
         ti: {
@@ -573,21 +580,8 @@ var WCS_1_1_Module_Factory = function () {
           bti: 'Double'
         }
       }, {
-        en: 'TemporalSubset',
+        en: 'TemporalDomain',
         ti: '.TimeSequenceType'
-      }, {
-        en: 'InterpolationMethods',
-        ti: '.InterpolationMethods'
-      }, {
-        en: 'Transformation',
-        ti: 'GML_3_1_1.AbstractCoordinateOperationType',
-        sh: {
-          lp: '_CoordinateOperation',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilities'
       }, {
         en: 'AvailableKeys',
         ti: '.AvailableKeys'
@@ -599,46 +593,52 @@ var WCS_1_1_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/ows\/1.1'
         }
       }, {
-        en: 'CoverageDescriptions',
-        ti: '.CoverageDescriptions'
-      }, {
-        en: 'GetCoverage',
-        ti: '.GetCoverage'
-      }, {
-        en: 'AxisSubset',
-        ti: '.AxisSubset'
-      }, {
-        en: 'GridType'
-      }, {
-        en: 'DescribeCoverage',
-        ti: '.DescribeCoverage'
-      }, {
-        en: 'GridCRS',
-        ti: '.GridCrsType'
-      }, {
-        en: 'Identifier'
-      }, {
-        en: 'Contents',
-        ti: '.Contents'
-      }, {
-        en: 'GridBaseCRS'
-      }, {
-        en: 'GridCS'
-      }, {
-        en: 'CoverageSummary',
-        ti: '.CoverageSummaryType'
-      }, {
-        en: 'Capabilities',
-        ti: '.Capabilities'
-      }, {
         en: 'GridOffsets',
         ti: {
           t: 'l',
           bti: 'Double'
         }
       }, {
-        en: 'TemporalDomain',
-        ti: '.TimeSequenceType'
+        en: 'GridCRS',
+        ti: '.GridCrsType'
+      }, {
+        en: 'GetCoverage',
+        ti: '.GetCoverage'
+      }, {
+        en: 'Identifier'
+      }, {
+        en: 'DescribeCoverage',
+        ti: '.DescribeCoverage'
+      }, {
+        en: 'GetCapabilities',
+        ti: '.GetCapabilities'
+      }, {
+        en: 'Contents',
+        ti: '.Contents'
+      }, {
+        en: 'CoverageSummary',
+        ti: '.CoverageSummaryType'
+      }, {
+        en: 'Coverages',
+        ti: '.CoveragesType'
+      }, {
+        en: 'Transformation',
+        ti: 'GML_3_1_1.AbstractCoordinateOperationType',
+        sh: {
+          lp: '_CoordinateOperation',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'InterpolationMethods',
+        ti: '.InterpolationMethods'
+      }, {
+        en: 'AxisSubset',
+        ti: '.AxisSubset'
+      }, {
+        en: 'GridBaseCRS'
+      }, {
+        en: 'CoverageDescriptions',
+        ti: '.CoverageDescriptions'
       }]
   };
   return {

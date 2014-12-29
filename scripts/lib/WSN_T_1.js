@@ -39,6 +39,13 @@ var WSN_T_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'Documentation',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }]
+      }, {
         ln: 'QueryExpressionType',
         ps: [{
             n: 'content',
@@ -50,22 +57,6 @@ var WSN_T_1_Module_Factory = function () {
               lp: 'Dialect'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'Documentation',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'ExtensibleDocumented',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'documentation',
-            ti: '.Documentation'
           }]
       }, {
         ln: 'TopicType',
@@ -137,13 +128,22 @@ var WSN_T_1_Module_Factory = function () {
             },
             t: 'a'
           }]
+      }, {
+        ln: 'ExtensibleDocumented',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'documentation',
+            ti: '.Documentation'
+          }]
       }],
     eis: [{
-        en: 'TopicSet',
-        ti: '.TopicSetType'
-      }, {
         en: 'TopicNamespace',
         ti: '.TopicNamespaceType'
+      }, {
+        en: 'TopicSet',
+        ti: '.TopicSetType'
       }]
   };
   return {

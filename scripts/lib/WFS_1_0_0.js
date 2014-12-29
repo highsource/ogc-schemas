@@ -2,21 +2,47 @@ var WFS_1_0_0_Module_Factory = function () {
   var WFS_1_0_0 = {
     n: 'WFS_1_0_0',
     dens: 'http:\/\/www.opengis.net\/wfs',
-    deps: ['Filter_1_0_0', 'Filter_1_0_0', 'GML_2_1_2', 'GML_2_1_2', 'Filter_1_0_0'],
+    deps: ['GML_2_1_2', 'Filter_1_0_0', 'Filter_1_0_0', 'Filter_1_0_0', 'GML_2_1_2'],
     tis: [{
-        ln: 'StatusType',
+        ln: 'NativeType',
         ps: [{
-            n: 'success',
-            en: 'SUCCESS',
-            ti: '.EmptyType'
+            n: 'vendorId',
+            an: {
+              lp: 'vendorId'
+            },
+            t: 'a'
           }, {
-            n: 'failed',
-            en: 'FAILED',
-            ti: '.EmptyType'
+            n: 'safeToIgnore',
+            ti: 'Boolean',
+            an: {
+              lp: 'safeToIgnore'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetCapabilitiesType',
+        ps: [{
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
           }, {
-            n: 'partial',
-            en: 'PARTIAL',
-            ti: '.EmptyType'
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FeatureCollectionType',
+        bti: 'GML_2_1_2.AbstractFeatureCollectionType',
+        ps: [{
+            n: 'lockId',
+            an: {
+              lp: 'lockId'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'GetFeatureType',
@@ -81,80 +107,6 @@ var WFS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'FeaturesLockedType',
-        ps: [{
-            n: 'featureId',
-            col: true,
-            en: {
-              lp: 'FeatureId',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'Filter_1_0_0.FeatureIdType'
-          }]
-      }, {
-        ln: 'QueryType',
-        ps: [{
-            n: 'propertyName',
-            col: true,
-            en: {
-              lp: 'PropertyName',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'Filter_1_0_0.PropertyNameType'
-          }, {
-            n: 'filter',
-            en: {
-              lp: 'Filter',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'Filter_1_0_0.FilterType'
-          }, {
-            n: 'handle',
-            an: {
-              lp: 'handle'
-            },
-            t: 'a'
-          }, {
-            n: 'typeName',
-            ti: 'QName',
-            an: {
-              lp: 'typeName'
-            },
-            t: 'a'
-          }, {
-            n: 'featureVersion',
-            an: {
-              lp: 'featureVersion'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeFeatureTypeType',
-        ps: [{
-            n: 'typeName',
-            col: true,
-            en: 'TypeName',
-            ti: 'QName'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'outputFormat',
-            an: {
-              lp: 'outputFormat'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'GetFeatureWithLockType',
         ps: [{
             n: 'query',
@@ -201,6 +153,21 @@ var WFS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'StatusType',
+        ps: [{
+            n: 'success',
+            en: 'SUCCESS',
+            ti: '.EmptyType'
+          }, {
+            n: 'failed',
+            en: 'FAILED',
+            ti: '.EmptyType'
+          }, {
+            n: 'partial',
+            en: 'PARTIAL',
+            ti: '.EmptyType'
+          }]
+      }, {
         ln: 'FeaturesNotLockedType',
         ps: [{
             n: 'featureId',
@@ -212,13 +179,8 @@ var WFS_1_0_0_Module_Factory = function () {
             ti: 'Filter_1_0_0.FeatureIdType'
           }]
       }, {
-        ln: 'UpdateElementType',
+        ln: 'LockType',
         ps: [{
-            n: 'property',
-            col: true,
-            en: 'Property',
-            ti: '.PropertyType'
-          }, {
             n: 'filter',
             en: {
               lp: 'Filter',
@@ -240,16 +202,15 @@ var WFS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'EmptyType'
-      }, {
-        ln: 'PropertyType',
+        ln: 'FeaturesLockedType',
         ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'value',
-            en: 'Value',
-            ti: 'AnyType'
+            n: 'featureId',
+            col: true,
+            en: {
+              lp: 'FeatureId',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'Filter_1_0_0.FeatureIdType'
           }]
       }, {
         ln: 'InsertResultType',
@@ -269,6 +230,16 @@ var WFS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'PropertyType',
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'value',
+            en: 'Value',
+            ti: 'AnyType'
+          }]
+      }, {
         ln: 'WFSLockFeatureResponseType',
         ps: [{
             n: 'lockId',
@@ -283,17 +254,45 @@ var WFS_1_0_0_Module_Factory = function () {
             ti: '.FeaturesNotLockedType'
           }]
       }, {
-        ln: 'TransactionResultType',
+        ln: 'DescribeFeatureTypeType',
         ps: [{
-            n: 'status',
-            en: 'Status',
-            ti: '.StatusType'
+            n: 'typeName',
+            col: true,
+            en: 'TypeName',
+            ti: 'QName'
           }, {
-            n: 'locator',
-            en: 'Locator'
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
           }, {
-            n: 'message',
-            en: 'Message'
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'outputFormat',
+            an: {
+              lp: 'outputFormat'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'InsertElementType',
+        ps: [{
+            n: 'feature',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: '_Feature',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_2_1_2.AbstractFeatureType',
+            t: 'er'
           }, {
             n: 'handle',
             an: {
@@ -320,18 +319,67 @@ var WFS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'NativeType',
+        ln: 'QueryType',
         ps: [{
-            n: 'vendorId',
+            n: 'propertyName',
+            col: true,
+            en: {
+              lp: 'PropertyName',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'Filter_1_0_0.PropertyNameType'
+          }, {
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'Filter_1_0_0.FilterType'
+          }, {
+            n: 'handle',
             an: {
-              lp: 'vendorId'
+              lp: 'handle'
             },
             t: 'a'
           }, {
-            n: 'safeToIgnore',
-            ti: 'Boolean',
+            n: 'typeName',
+            ti: 'QName',
             an: {
-              lp: 'safeToIgnore'
+              lp: 'typeName'
+            },
+            t: 'a'
+          }, {
+            n: 'featureVersion',
+            an: {
+              lp: 'featureVersion'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'UpdateElementType',
+        ps: [{
+            n: 'property',
+            col: true,
+            en: 'Property',
+            ti: '.PropertyType'
+          }, {
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'Filter_1_0_0.FilterType'
+          }, {
+            n: 'handle',
+            an: {
+              lp: 'handle'
+            },
+            t: 'a'
+          }, {
+            n: 'typeName',
+            ti: 'QName',
+            an: {
+              lp: 'typeName'
             },
             t: 'a'
           }]
@@ -383,50 +431,21 @@ var WFS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'FeatureCollectionType',
-        bti: 'GML_2_1_2.AbstractFeatureCollectionType',
+        ln: 'TransactionResultType',
         ps: [{
-            n: 'lockId',
-            an: {
-              lp: 'lockId'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LockType',
-        ps: [{
-            n: 'filter',
-            en: {
-              lp: 'Filter',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'Filter_1_0_0.FilterType'
+            n: 'status',
+            en: 'Status',
+            ti: '.StatusType'
+          }, {
+            n: 'locator',
+            en: 'Locator'
+          }, {
+            n: 'message',
+            en: 'Message'
           }, {
             n: 'handle',
             an: {
               lp: 'handle'
-            },
-            t: 'a'
-          }, {
-            n: 'typeName',
-            ti: 'QName',
-            an: {
-              lp: 'typeName'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetCapabilitiesType',
-        ps: [{
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'service',
-            an: {
-              lp: 'service'
             },
             t: 'a'
           }]
@@ -464,70 +483,18 @@ var WFS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'InsertElementType',
-        ps: [{
-            n: 'feature',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: '_Feature',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_2_1_2.AbstractFeatureType',
-            t: 'er'
-          }, {
-            n: 'handle',
-            an: {
-              lp: 'handle'
-            },
-            t: 'a'
-          }]
+        ln: 'EmptyType'
       }, {
         t: 'enum',
         ln: 'AllSomeType',
         vs: ['ALL', 'SOME']
       }],
     eis: [{
-        en: 'FAILED',
-        ti: '.EmptyType'
-      }, {
-        en: 'Property',
-        ti: '.PropertyType'
-      }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilitiesType'
-      }, {
-        en: 'LockFeature',
-        ti: '.LockFeatureType'
-      }, {
-        en: 'Delete',
-        ti: '.DeleteElementType'
-      }, {
-        en: 'WFS_TransactionResponse',
-        ti: '.WFSTransactionResponseType'
-      }, {
-        en: 'Insert',
-        ti: '.InsertElementType'
-      }, {
         en: 'DescribeFeatureType',
         ti: '.DescribeFeatureTypeType'
       }, {
-        en: 'PARTIAL',
-        ti: '.EmptyType'
-      }, {
         en: 'Query',
         ti: '.QueryType'
-      }, {
-        en: 'SUCCESS',
-        ti: '.EmptyType'
-      }, {
-        en: 'Update',
-        ti: '.UpdateElementType'
-      }, {
-        en: 'Native',
-        ti: '.NativeType'
       }, {
         en: 'FeatureCollection',
         ti: '.FeatureCollectionType',
@@ -536,19 +503,52 @@ var WFS_1_0_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: 'WFS_LockFeatureResponse',
-        ti: '.WFSLockFeatureResponseType'
+        en: 'WFS_TransactionResponse',
+        ti: '.WFSTransactionResponseType'
       }, {
-        en: 'GetFeature',
-        ti: '.GetFeatureType'
+        en: 'Native',
+        ti: '.NativeType'
       }, {
-        en: 'LockId'
+        en: 'GetCapabilities',
+        ti: '.GetCapabilitiesType'
       }, {
         en: 'GetFeatureWithLock',
         ti: '.GetFeatureWithLockType'
       }, {
+        en: 'LockFeature',
+        ti: '.LockFeatureType'
+      }, {
+        en: 'Insert',
+        ti: '.InsertElementType'
+      }, {
         en: 'Transaction',
         ti: '.TransactionType'
+      }, {
+        en: 'FAILED',
+        ti: '.EmptyType'
+      }, {
+        en: 'Property',
+        ti: '.PropertyType'
+      }, {
+        en: 'Update',
+        ti: '.UpdateElementType'
+      }, {
+        en: 'PARTIAL',
+        ti: '.EmptyType'
+      }, {
+        en: 'SUCCESS',
+        ti: '.EmptyType'
+      }, {
+        en: 'Delete',
+        ti: '.DeleteElementType'
+      }, {
+        en: 'GetFeature',
+        ti: '.GetFeatureType'
+      }, {
+        en: 'WFS_LockFeatureResponse',
+        ti: '.WFSLockFeatureResponseType'
+      }, {
+        en: 'LockId'
       }]
   };
   return {
