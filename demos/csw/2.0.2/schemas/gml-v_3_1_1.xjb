@@ -1,0 +1,101 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings schemaLocation="ogc/gml/3.1.1/base/gml.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.gml.v_3_1_1"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="ogc/gml/3.1.1/base/geometryPrimitives.xsd" 
+		node="/xs:schema">
+
+		<jaxb:bindings node="xs:element[@name='_Solid']">
+			<jaxb:factoryMethod name="ASolidElement"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+
+	<jaxb:bindings 
+		schemaLocation="ogc/gml/3.1.1/base/geometryBasic0d1d.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:element[@name='_Curve']">
+			<jaxb:factoryMethod name="ACurveElement"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="ogc/gml/3.1.1/base/geometryBasic2d.xsd " 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:element[@name='_Surface']">
+			<jaxb:factoryMethod name="ASurfaceElement"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:element[@name='_Ring']">
+			<jaxb:factoryMethod name="ARingElement"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="ogc/gml/3.1.1/base/defaultStyle.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:element[@name='graphStyle']">
+			<jaxb:factoryMethod name="GraphStylePropertyElement"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:element[@name='topologyStyle']">
+			<jaxb:factoryMethod name="TopologyStylePropertyElement"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:element[@name='labelStyle']">
+			<jaxb:factoryMethod name="LabelStylePropertyElement"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:element[@name='geometryStyle']">
+			<jaxb:factoryMethod name="GeometryStylePropertyElement"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:element[@name='featureStyle']">
+			<jaxb:factoryMethod name="FeatureStylePropertyElement"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:element[@name='_Style']">
+			<jaxb:factoryMethod name="AStyleElement"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="ogc/gml/3.1.1/base/coverage.xsd" node="/xs:schema">
+		<jaxb:bindings node="xs:simpleType[@name='IncrementOrder']">
+			<jaxb:typesafeEnumClass>
+				<jaxb:typesafeEnumMember name="PLUS_X_PLUS_Y" value="+x+y"/>
+				<jaxb:typesafeEnumMember name="PLUS_X_MINUS_Y" value="+x-y"/>
+				<jaxb:typesafeEnumMember name="MINUS_X_PLUS_Y" value="-x+y"/>
+				<jaxb:typesafeEnumMember name="MINUS_X_MINUS_Y" value="-x-y"/>
+			</jaxb:typesafeEnumClass>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+
+	<jaxb:bindings 
+		schemaLocation="ogc/gml/3.1.1/base/feature.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:element[@name='_FeatureCollection']">
+			<jaxb:factoryMethod name="AFeatureCollectionElement"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="ogc/gml/3.1.1/smil/smil20.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.w3.smil.v_2_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="ogc/gml/3.1.1/smil/smil20-language.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.w3.smil.v_2_0.language"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+</jaxb:bindings>

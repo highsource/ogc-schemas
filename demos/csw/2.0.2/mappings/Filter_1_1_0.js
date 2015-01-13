@@ -1,0 +1,710 @@
+var Filter_1_1_0_Module_Factory = function () {
+  var Filter_1_1_0 = {
+    name: 'Filter_1_1_0',
+    defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/ogc',
+    dependencies: ['GML_3_1_1'],
+    typeInfos: [{
+        localName: 'EID'
+      }, {
+        localName: 'LogicalOperators'
+      }, {
+        localName: 'UpperBoundaryType',
+        propertyInfos: [{
+            name: 'expression',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            typeInfo: '.ExpressionType',
+            type: 'elementRef'
+          }]
+      }, {
+        localName: 'LogicOpsType'
+      }, {
+        localName: 'FID'
+      }, {
+        localName: 'LiteralType',
+        propertyInfos: [{
+            name: 'content',
+            collection: true,
+            allowDom: false,
+            type: 'anyElement'
+          }]
+      }, {
+        localName: 'PropertyNameType',
+        baseTypeInfo: '.ExpressionType'
+      }, {
+        localName: 'SortByType',
+        propertyInfos: [{
+            name: 'sortProperty',
+            collection: true,
+            elementName: 'SortProperty',
+            typeInfo: '.SortPropertyType'
+          }]
+      }, {
+        localName: 'FunctionType',
+        baseTypeInfo: '.ExpressionType',
+        propertyInfos: [{
+            name: 'expression',
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            typeInfo: '.ExpressionType',
+            type: 'elementRef'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'name'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'FunctionNamesType',
+        propertyInfos: [{
+            name: 'functionName',
+            collection: true,
+            elementName: 'FunctionName',
+            typeInfo: '.FunctionNameType'
+          }]
+      }, {
+        localName: 'SpatialOperatorsType',
+        propertyInfos: [{
+            name: 'spatialOperator',
+            collection: true,
+            elementName: 'SpatialOperator',
+            typeInfo: '.SpatialOperatorType'
+          }]
+      }, {
+        localName: 'BinarySpatialOpType',
+        baseTypeInfo: '.SpatialOpsType',
+        propertyInfos: [{
+            name: 'propertyName1',
+            elementName: 'PropertyName',
+            typeInfo: '.PropertyNameType'
+          }, {
+            name: 'propertyName2',
+            elementName: 'PropertyName',
+            typeInfo: '.PropertyNameType'
+          }, {
+            name: 'geometry',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            elementName: {
+              localPart: '_Geometry',
+              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            },
+            typeInfo: 'GML_3_1_1.AbstractGeometryType',
+            type: 'elementRef'
+          }, {
+            name: 'envelope',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            elementName: {
+              localPart: 'Envelope',
+              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            },
+            typeInfo: 'GML_3_1_1.EnvelopeType',
+            type: 'elementRef'
+          }]
+      }, {
+        localName: 'FilterType',
+        propertyInfos: [{
+            name: 'spatialOps',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            typeInfo: '.SpatialOpsType',
+            type: 'elementRef'
+          }, {
+            name: 'comparisonOps',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            typeInfo: '.ComparisonOpsType',
+            type: 'elementRef'
+          }, {
+            name: 'logicOps',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            typeInfo: '.LogicOpsType',
+            type: 'elementRef'
+          }, {
+            name: 'id',
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            elementName: '_Id',
+            typeInfo: '.AbstractIdType',
+            type: 'elementRef'
+          }]
+      }, {
+        localName: 'FeatureIdType',
+        baseTypeInfo: '.AbstractIdType',
+        propertyInfos: [{
+            name: 'fid',
+            typeInfo: 'ID',
+            attributeName: {
+              localPart: 'fid'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'ComparisonOpsType'
+      }, {
+        localName: 'ExpressionType'
+      }, {
+        localName: 'LowerBoundaryType',
+        propertyInfos: [{
+            name: 'expression',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            typeInfo: '.ExpressionType',
+            type: 'elementRef'
+          }]
+      }, {
+        localName: 'SpatialCapabilitiesType',
+        propertyInfos: [{
+            name: 'geometryOperands',
+            elementName: 'GeometryOperands',
+            typeInfo: '.GeometryOperandsType'
+          }, {
+            name: 'spatialOperators',
+            elementName: 'SpatialOperators',
+            typeInfo: '.SpatialOperatorsType'
+          }]
+      }, {
+        localName: 'GeometryOperandsType',
+        propertyInfos: [{
+            name: 'geometryOperand',
+            collection: true,
+            elementName: 'GeometryOperand',
+            typeInfo: 'QName'
+          }]
+      }, {
+        localName: 'SpatialOpsType'
+      }, {
+        localName: 'DistanceType',
+        propertyInfos: [{
+            name: 'value',
+            typeInfo: 'Double',
+            type: 'value'
+          }, {
+            name: 'units',
+            attributeName: {
+              localPart: 'units'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'ScalarCapabilitiesType',
+        propertyInfos: [{
+            name: 'logicalOperators',
+            elementName: 'LogicalOperators',
+            typeInfo: '.LogicalOperators'
+          }, {
+            name: 'comparisonOperators',
+            elementName: 'ComparisonOperators',
+            typeInfo: '.ComparisonOperatorsType'
+          }, {
+            name: 'arithmeticOperators',
+            elementName: 'ArithmeticOperators',
+            typeInfo: '.ArithmeticOperatorsType'
+          }]
+      }, {
+        localName: 'BBOXType',
+        baseTypeInfo: '.SpatialOpsType',
+        propertyInfos: [{
+            name: 'propertyName',
+            elementName: 'PropertyName',
+            typeInfo: '.PropertyNameType'
+          }, {
+            name: 'envelope',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            elementName: {
+              localPart: 'Envelope',
+              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            },
+            typeInfo: 'GML_3_1_1.EnvelopeType',
+            type: 'elementRef'
+          }]
+      }, {
+        localName: 'BinaryComparisonOpType',
+        baseTypeInfo: '.ComparisonOpsType',
+        propertyInfos: [{
+            name: 'expression',
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            typeInfo: '.ExpressionType',
+            type: 'elementRef'
+          }, {
+            name: 'matchCase',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'matchCase'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'PropertyIsNullType',
+        baseTypeInfo: '.ComparisonOpsType',
+        propertyInfos: [{
+            name: 'propertyName',
+            elementName: 'PropertyName',
+            typeInfo: '.PropertyNameType'
+          }]
+      }, {
+        localName: 'SortPropertyType',
+        propertyInfos: [{
+            name: 'propertyName',
+            elementName: 'PropertyName',
+            typeInfo: '.PropertyNameType'
+          }, {
+            name: 'sortOrder',
+            elementName: 'SortOrder'
+          }]
+      }, {
+        localName: 'SpatialOperatorType',
+        propertyInfos: [{
+            name: 'geometryOperands',
+            elementName: 'GeometryOperands',
+            typeInfo: '.GeometryOperandsType'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'name'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'FilterCapabilities',
+        propertyInfos: [{
+            name: 'spatialCapabilities',
+            elementName: 'Spatial_Capabilities',
+            typeInfo: '.SpatialCapabilitiesType'
+          }, {
+            name: 'scalarCapabilities',
+            elementName: 'Scalar_Capabilities',
+            typeInfo: '.ScalarCapabilitiesType'
+          }, {
+            name: 'idCapabilities',
+            elementName: 'Id_Capabilities',
+            typeInfo: '.IdCapabilitiesType'
+          }]
+      }, {
+        localName: 'AbstractIdType'
+      }, {
+        localName: 'BinaryLogicOpType',
+        baseTypeInfo: '.LogicOpsType',
+        propertyInfos: [{
+            name: 'comparisonOpsOrSpatialOpsOrLogicOps',
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            elementTypeInfos: [{
+                elementName: 'comparisonOps',
+                typeInfo: '.ComparisonOpsType'
+              }, {
+                elementName: 'logicOps',
+                typeInfo: '.LogicOpsType'
+              }, {
+                elementName: 'spatialOps',
+                typeInfo: '.SpatialOpsType'
+              }, {
+                elementName: 'Function',
+                typeInfo: '.FunctionType'
+              }],
+            type: 'elementRefs'
+          }]
+      }, {
+        localName: 'FunctionNameType',
+        propertyInfos: [{
+            name: 'value',
+            type: 'value'
+          }, {
+            name: 'nArgs',
+            attributeName: {
+              localPart: 'nArgs'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'SimpleArithmetic'
+      }, {
+        localName: 'ComparisonOperatorsType',
+        propertyInfos: [{
+            name: 'comparisonOperator',
+            collection: true,
+            elementName: 'ComparisonOperator'
+          }]
+      }, {
+        localName: 'PropertyIsBetweenType',
+        baseTypeInfo: '.ComparisonOpsType',
+        propertyInfos: [{
+            name: 'expression',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            typeInfo: '.ExpressionType',
+            type: 'elementRef'
+          }, {
+            name: 'lowerBoundary',
+            elementName: 'LowerBoundary',
+            typeInfo: '.LowerBoundaryType'
+          }, {
+            name: 'upperBoundary',
+            elementName: 'UpperBoundary',
+            typeInfo: '.UpperBoundaryType'
+          }]
+      }, {
+        localName: 'FunctionsType',
+        propertyInfos: [{
+            name: 'functionNames',
+            elementName: 'FunctionNames',
+            typeInfo: '.FunctionNamesType'
+          }]
+      }, {
+        localName: 'PropertyIsLikeType',
+        baseTypeInfo: '.ComparisonOpsType',
+        propertyInfos: [{
+            name: 'propertyName',
+            elementName: 'PropertyName',
+            typeInfo: '.PropertyNameType'
+          }, {
+            name: 'literal',
+            elementName: 'Literal',
+            typeInfo: '.LiteralType'
+          }, {
+            name: 'wildCard',
+            attributeName: {
+              localPart: 'wildCard'
+            },
+            type: 'attribute'
+          }, {
+            name: 'singleChar',
+            attributeName: {
+              localPart: 'singleChar'
+            },
+            type: 'attribute'
+          }, {
+            name: 'escapeChar',
+            attributeName: {
+              localPart: 'escapeChar'
+            },
+            type: 'attribute'
+          }, {
+            name: 'matchCase',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'matchCase'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'IdCapabilitiesType',
+        propertyInfos: [{
+            name: 'eidOrFID',
+            collection: true,
+            elementTypeInfos: [{
+                elementName: 'EID',
+                typeInfo: '.EID'
+              }, {
+                elementName: 'FID',
+                typeInfo: '.FID'
+              }],
+            type: 'elements'
+          }]
+      }, {
+        localName: 'GmlObjectIdType',
+        baseTypeInfo: '.AbstractIdType',
+        propertyInfos: [{
+            name: 'id',
+            typeInfo: 'ID',
+            attributeName: {
+              localPart: 'id',
+              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'BinaryOperatorType',
+        baseTypeInfo: '.ExpressionType',
+        propertyInfos: [{
+            name: 'expression',
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            typeInfo: '.ExpressionType',
+            type: 'elementRef'
+          }]
+      }, {
+        localName: 'ArithmeticOperatorsType',
+        propertyInfos: [{
+            name: 'simpleArithmeticOrFunctions',
+            collection: true,
+            elementTypeInfos: [{
+                elementName: 'SimpleArithmetic',
+                typeInfo: '.SimpleArithmetic'
+              }, {
+                elementName: 'Functions',
+                typeInfo: '.FunctionsType'
+              }],
+            type: 'elements'
+          }]
+      }, {
+        localName: 'DistanceBufferType',
+        baseTypeInfo: '.SpatialOpsType',
+        propertyInfos: [{
+            name: 'propertyName',
+            elementName: 'PropertyName',
+            typeInfo: '.PropertyNameType'
+          }, {
+            name: 'geometry',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            elementName: {
+              localPart: '_Geometry',
+              namespaceURI: 'http:\/\/www.opengis.net\/gml'
+            },
+            typeInfo: 'GML_3_1_1.AbstractGeometryType',
+            type: 'elementRef'
+          }, {
+            name: 'distance',
+            elementName: 'Distance',
+            typeInfo: '.DistanceType'
+          }]
+      }, {
+        localName: 'UnaryLogicOpType',
+        baseTypeInfo: '.LogicOpsType',
+        propertyInfos: [{
+            name: 'comparisonOps',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            typeInfo: '.ComparisonOpsType',
+            type: 'elementRef'
+          }, {
+            name: 'spatialOps',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            typeInfo: '.SpatialOpsType',
+            type: 'elementRef'
+          }, {
+            name: 'logicOps',
+            mixed: false,
+            allowDom: false,
+            allowTypedObject: false,
+            typeInfo: '.LogicOpsType',
+            type: 'elementRef'
+          }, {
+            name: 'function',
+            elementName: 'Function',
+            typeInfo: '.FunctionType'
+          }]
+      }, {
+        type: 'enumInfo',
+        localName: 'SortOrderType',
+        values: ['DESC', 'ASC']
+      }, {
+        type: 'enumInfo',
+        localName: 'SpatialOperatorNameType',
+        values: ['BBOX', 'Equals', 'Disjoint', 'Intersects', 'Touches', 'Crosses', 'Within', 'Contains', 'Overlaps', 'Beyond', 'DWithin']
+      }, {
+        type: 'enumInfo',
+        localName: 'ComparisonOperatorType',
+        values: ['LessThan', 'GreaterThan', 'LessThanEqualTo', 'GreaterThanEqualTo', 'EqualTo', 'NotEqualTo', 'Like', 'Between', 'NullCheck']
+      }],
+    elementInfos: [{
+        elementName: 'PropertyIsNull',
+        typeInfo: '.PropertyIsNullType',
+        substitutionHead: 'comparisonOps'
+      }, {
+        elementName: 'PropertyName',
+        typeInfo: '.PropertyNameType',
+        substitutionHead: 'expression'
+      }, {
+        elementName: 'logicOps',
+        typeInfo: '.LogicOpsType'
+      }, {
+        elementName: 'Literal',
+        typeInfo: '.LiteralType',
+        substitutionHead: 'expression'
+      }, {
+        elementName: 'Contains',
+        typeInfo: '.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'Filter_Capabilities',
+        typeInfo: '.FilterCapabilities'
+      }, {
+        elementName: 'Intersects',
+        typeInfo: '.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'EID',
+        typeInfo: '.EID'
+      }, {
+        elementName: 'spatialOps',
+        typeInfo: '.SpatialOpsType'
+      }, {
+        elementName: 'Filter',
+        typeInfo: '.FilterType'
+      }, {
+        elementName: 'PropertyIsGreaterThan',
+        typeInfo: '.BinaryComparisonOpType',
+        substitutionHead: 'comparisonOps'
+      }, {
+        elementName: 'DWithin',
+        typeInfo: '.DistanceBufferType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'Or',
+        typeInfo: '.BinaryLogicOpType',
+        substitutionHead: 'logicOps'
+      }, {
+        elementName: 'Function',
+        typeInfo: '.FunctionType',
+        substitutionHead: 'expression'
+      }, {
+        elementName: 'Not',
+        typeInfo: '.UnaryLogicOpType',
+        substitutionHead: 'logicOps'
+      }, {
+        elementName: 'SimpleArithmetic',
+        typeInfo: '.SimpleArithmetic'
+      }, {
+        elementName: 'expression',
+        typeInfo: '.ExpressionType'
+      }, {
+        elementName: 'SortBy',
+        typeInfo: '.SortByType'
+      }, {
+        elementName: 'Touches',
+        typeInfo: '.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'Within',
+        typeInfo: '.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'GmlObjectId',
+        typeInfo: '.GmlObjectIdType',
+        substitutionHead: '_Id'
+      }, {
+        elementName: 'Sub',
+        typeInfo: '.BinaryOperatorType',
+        substitutionHead: 'expression'
+      }, {
+        elementName: 'comparisonOps',
+        typeInfo: '.ComparisonOpsType'
+      }, {
+        elementName: 'Div',
+        typeInfo: '.BinaryOperatorType',
+        substitutionHead: 'expression'
+      }, {
+        elementName: 'Add',
+        typeInfo: '.BinaryOperatorType',
+        substitutionHead: 'expression'
+      }, {
+        elementName: 'PropertyIsNotEqualTo',
+        typeInfo: '.BinaryComparisonOpType',
+        substitutionHead: 'comparisonOps'
+      }, {
+        elementName: 'And',
+        typeInfo: '.BinaryLogicOpType',
+        substitutionHead: 'logicOps'
+      }, {
+        elementName: 'Mul',
+        typeInfo: '.BinaryOperatorType',
+        substitutionHead: 'expression'
+      }, {
+        elementName: 'LogicalOperators',
+        typeInfo: '.LogicalOperators'
+      }, {
+        elementName: 'FeatureId',
+        typeInfo: '.FeatureIdType',
+        substitutionHead: '_Id'
+      }, {
+        elementName: '_Id',
+        typeInfo: '.AbstractIdType'
+      }, {
+        elementName: 'Beyond',
+        typeInfo: '.DistanceBufferType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'PropertyIsGreaterThanOrEqualTo',
+        typeInfo: '.BinaryComparisonOpType',
+        substitutionHead: 'comparisonOps'
+      }, {
+        elementName: 'FID',
+        typeInfo: '.FID'
+      }, {
+        elementName: 'Overlaps',
+        typeInfo: '.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'PropertyIsLessThanOrEqualTo',
+        typeInfo: '.BinaryComparisonOpType',
+        substitutionHead: 'comparisonOps'
+      }, {
+        elementName: 'Disjoint',
+        typeInfo: '.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'PropertyIsEqualTo',
+        typeInfo: '.BinaryComparisonOpType',
+        substitutionHead: 'comparisonOps'
+      }, {
+        elementName: 'BBOX',
+        typeInfo: '.BBOXType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'PropertyIsLessThan',
+        typeInfo: '.BinaryComparisonOpType',
+        substitutionHead: 'comparisonOps'
+      }, {
+        elementName: 'Equals',
+        typeInfo: '.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'Crosses',
+        typeInfo: '.BinarySpatialOpType',
+        substitutionHead: 'spatialOps'
+      }, {
+        elementName: 'PropertyIsLike',
+        typeInfo: '.PropertyIsLikeType',
+        substitutionHead: 'comparisonOps'
+      }, {
+        elementName: 'PropertyIsBetween',
+        typeInfo: '.PropertyIsBetweenType',
+        substitutionHead: 'comparisonOps'
+      }]
+  };
+  return {
+    Filter_1_1_0: Filter_1_1_0
+  };
+};
+if (typeof define === 'function' && define.amd) {
+  define([], Filter_1_1_0_Module_Factory);
+}
+else {
+  var Filter_1_1_0_Module = Filter_1_1_0_Module_Factory();
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports.Filter_1_1_0 = Filter_1_1_0_Module.Filter_1_1_0;
+  }
+  else {
+    var Filter_1_1_0 = Filter_1_1_0_Module.Filter_1_1_0;
+  }
+}
