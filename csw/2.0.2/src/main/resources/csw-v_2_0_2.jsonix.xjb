@@ -7,7 +7,52 @@
 		schemaLocation="http://schemas.opengis.net/csw/2.0.2/csw.xsd" 
 		node="/xs:schema">
 
-		<jsonix:packageMapping packageName="net.opengis.csw.v_2_0_2" spaceName="CSW_2_0_2"/>
+		<jsonix:mapping package="net.opengis.csw.v_2_0_2" name="CSW_2_0_2"/>
+
+		<!--jsonix:module name="CSW_2_0_2_Full">
+			<jsonix:mapping package="net.opengis.csw.v_2_0_2" id="CSW_2_0_2_Full" name="CSW_2_0_2"/>
+			<jsonix:mapping package="org.hisrc.dc.elements.v_1_1" name="DC_1_1">
+				<jsonix:includes>
+					<jsonix:dependencies-of-mapping id="CSW_2_0_2_Full"/>
+				</jsonix:includes>
+			</jsonix:mapping>
+			<jsonix:mapping package="org.hisrc.dc.terms" name="DCT">
+				<jsonix:includes>
+					<jsonix:dependencies-of-mapping id="CSW_2_0_2_Full"/>
+				</jsonix:includes>
+			</jsonix:mapping>
+			<jsonix:mapping package="net.opengis.filter.v_1_1_0" name="Filter_1_1_0">
+				<jsonix:includes>
+					<jsonix:dependencies-of-mapping id="CSW_2_0_2_Full"/>
+				</jsonix:includes>
+			</jsonix:mapping>
+			<jsonix:mapping package="net.opengis.gml.v_3_1_1" name="GML_3_1_1">
+				<jsonix:includes>
+					<jsonix:dependencies-of-mapping id="CSW_2_0_2_Full"/>
+				</jsonix:includes>
+			</jsonix:mapping>
+			<jsonix:mapping package="org.w3.smil.v_2_0" name="SMIL_2_0">
+				<jsonix:includes>
+					<jsonix:dependencies-of-mapping id="CSW_2_0_2_Full"/>
+				</jsonix:includes>
+			</jsonix:mapping>
+			<jsonix:mapping package="org.w3.smil.v_2_0.language" name="SMIL_2_0_Language">
+				<jsonix:includes>
+					<jsonix:dependencies-of-mapping id="CSW_2_0_2_Full"/>
+				</jsonix:includes>
+			</jsonix:mapping>
+			<jsonix:mapping package="net.opengis.ows.v_1_0_0" name="OWS_1_0_0">
+				<jsonix:includes>
+					<jsonix:dependencies-of-mapping id="CSW_2_0_2_Full"/>
+				</jsonix:includes>
+			</jsonix:mapping>
+			<jsonix:mapping package="org.hisrc.w3c.xlink.v_1_0" name="XLink_1_0">
+				<jsonix:includes>
+					<jsonix:dependencies-of-mapping id="CSW_2_0_2_Full"/>
+				</jsonix:includes>
+			</jsonix:mapping>
+		</jsonix:module-->
+
 
 	</jaxb:bindings>
 
