@@ -9,5 +9,9 @@
 		<jaxb:schemaBindings>
 			<jaxb:package name="net.opengis.filter.v_2_0"/>
 		</jaxb:schemaBindings>
+
+		<jaxb:bindings node="xs:complexType[@name='BinaryLogicOpType']//xs:choice">
+			<jaxb:property name="Ops"/>
+		</jaxb:bindings>
 	</jaxb:bindings>
 </jaxb:bindings>
