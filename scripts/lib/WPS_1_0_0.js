@@ -4,50 +4,6 @@ var WPS_1_0_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/wps\/1.0.0',
     deps: ['OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0', 'OWS_1_1_0'],
     tis: [{
-        ln: 'InputType',
-        ps: [{
-            n: 'identifier',
-            en: {
-              lp: 'Identifier',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.CodeType'
-          }, {
-            n: 'title',
-            en: {
-              lp: 'Title',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.LanguageStringType'
-          }, {
-            n: '_abstract',
-            en: {
-              lp: 'Abstract',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.LanguageStringType'
-          }, {
-            n: 'reference',
-            en: 'Reference',
-            ti: '.InputReferenceType'
-          }, {
-            n: 'data',
-            en: 'Data',
-            ti: '.DataType'
-          }]
-      }, {
-        ln: 'OutputDataType',
-        bti: '.DescriptionType',
-        ps: [{
-            n: 'reference',
-            en: 'Reference',
-            ti: '.OutputReferenceType'
-          }, {
-            n: 'data',
-            en: 'Data',
-            ti: '.DataType'
-          }]
-      }, {
         ln: 'InputReferenceType.Header',
         ps: [{
             n: 'key',
@@ -63,74 +19,23 @@ var WPS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SupportedCRSsType',
+        ln: 'CRSsType',
         ps: [{
-            n: '_default',
-            en: {
-              lp: 'Default'
-            },
-            ti: '.SupportedCRSsType.Default'
-          }, {
-            n: 'supported',
-            en: {
-              lp: 'Supported'
-            },
-            ti: '.CRSsType'
-          }]
-      }, {
-        ln: 'StatusType',
-        ps: [{
-            n: 'processAccepted',
-            en: 'ProcessAccepted'
-          }, {
-            n: 'processStarted',
-            en: 'ProcessStarted',
-            ti: '.ProcessStartedType'
-          }, {
-            n: 'processPaused',
-            en: 'ProcessPaused',
-            ti: '.ProcessStartedType'
-          }, {
-            n: 'processSucceeded',
-            en: 'ProcessSucceeded'
-          }, {
-            n: 'processFailed',
-            en: 'ProcessFailed',
-            ti: '.ProcessFailedType'
-          }, {
-            n: 'creationTime',
-            ti: 'Calendar',
-            an: {
-              lp: 'creationTime'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Execute',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'identifier',
-            en: {
-              lp: 'Identifier',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.CodeType'
-          }, {
-            n: 'dataInputs',
-            en: 'DataInputs',
-            ti: '.DataInputsType'
-          }, {
-            n: 'responseForm',
-            en: 'ResponseForm',
-            ti: '.ResponseFormType'
-          }]
-      }, {
-        ln: 'DataInputsType',
-        ps: [{
-            n: 'input',
+            n: 'crs',
             col: true,
-            en: 'Input',
-            ti: '.InputType'
+            en: {
+              lp: 'CRS'
+            }
+          }]
+      }, {
+        ln: 'LanguagesType',
+        ps: [{
+            n: 'language',
+            col: true,
+            en: {
+              lp: 'Language',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            }
           }]
       }, {
         ln: 'OutputDefinitionsType',
@@ -141,30 +46,118 @@ var WPS_1_0_0_Module_Factory = function () {
             ti: '.DocumentOutputDefinitionType'
           }]
       }, {
-        ln: 'SupportedUOMsType',
+        ln: 'LiteralInputType',
+        bti: '.LiteralOutputType',
+        ps: [{
+            n: 'allowedValues',
+            en: {
+              lp: 'AllowedValues',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.AllowedValues'
+          }, {
+            n: 'anyValue',
+            en: {
+              lp: 'AnyValue',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.AnyValue'
+          }, {
+            n: 'valuesReference',
+            en: {
+              lp: 'ValuesReference'
+            },
+            ti: '.ValuesReferenceType'
+          }, {
+            n: 'defaultValue',
+            en: {
+              lp: 'DefaultValue'
+            }
+          }]
+      }, {
+        ln: 'ProcessDescriptionType.ProcessOutputs',
+        ps: [{
+            n: 'output',
+            col: true,
+            en: {
+              lp: 'Output'
+            },
+            ti: '.OutputDescriptionType'
+          }]
+      }, {
+        ln: 'ComplexDataType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            col: true,
+            typed: false,
+            t: 'ae'
+          }, {
+            n: 'mimeType',
+            an: {
+              lp: 'mimeType'
+            },
+            t: 'a'
+          }, {
+            n: 'encoding',
+            an: {
+              lp: 'encoding'
+            },
+            t: 'a'
+          }, {
+            n: 'schema',
+            an: {
+              lp: 'schema'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SupportedComplexDataType',
         ps: [{
             n: '_default',
             en: {
               lp: 'Default'
             },
-            ti: '.SupportedUOMsType.Default'
+            ti: '.ComplexDataCombinationType'
           }, {
             n: 'supported',
             en: {
               lp: 'Supported'
             },
-            ti: '.UOMsType'
+            ti: '.ComplexDataCombinationsType'
           }]
       }, {
-        ln: 'ProcessDescriptions',
-        bti: '.ResponseBaseType',
+        ln: 'DataType',
         ps: [{
-            n: 'processDescription',
-            col: true,
+            n: 'complexData',
+            en: 'ComplexData',
+            ti: '.ComplexDataType'
+          }, {
+            n: 'literalData',
+            en: 'LiteralData',
+            ti: '.LiteralDataType'
+          }, {
+            n: 'boundingBoxData',
+            en: 'BoundingBoxData',
+            ti: 'OWS_1_1_0.BoundingBoxType'
+          }]
+      }, {
+        ln: 'LiteralOutputType',
+        ps: [{
+            n: 'dataType',
             en: {
-              lp: 'ProcessDescription'
+              lp: 'DataType',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            ti: '.ProcessDescriptionType'
+            ti: 'OWS_1_1_0.DomainMetadataType'
+          }, {
+            n: 'uoMs',
+            en: {
+              lp: 'UOMs'
+            },
+            ti: '.SupportedUOMsType'
           }]
       }, {
         ln: 'DescriptionType',
@@ -199,37 +192,96 @@ var WPS_1_0_0_Module_Factory = function () {
             ti: 'OWS_1_1_0.MetadataType'
           }]
       }, {
-        ln: 'ProcessOfferings',
+        ln: 'SupportedUOMsType',
         ps: [{
-            n: 'process',
-            col: true,
-            en: 'Process',
-            ti: '.ProcessBriefType'
+            n: '_default',
+            en: {
+              lp: 'Default'
+            },
+            ti: '.SupportedUOMsType.Default'
+          }, {
+            n: 'supported',
+            en: {
+              lp: 'Supported'
+            },
+            ti: '.UOMsType'
           }]
       }, {
-        ln: 'DocumentOutputDefinitionType',
-        bti: '.OutputDefinitionType',
+        ln: 'ComplexDataCombinationsType',
         ps: [{
-            n: 'title',
+            n: 'format',
+            col: true,
             en: {
-              lp: 'Title',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+              lp: 'Format'
             },
-            ti: 'OWS_1_1_0.LanguageStringType'
+            ti: '.ComplexDataDescriptionType'
+          }]
+      }, {
+        ln: 'GetCapabilities',
+        ps: [{
+            n: 'acceptVersions',
+            en: 'AcceptVersions',
+            ti: 'OWS_1_1_0.AcceptVersionsType'
           }, {
-            n: '_abstract',
-            en: {
-              lp: 'Abstract',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.LanguageStringType'
-          }, {
-            n: 'asReference',
-            ti: 'Boolean',
+            n: 'service',
             an: {
-              lp: 'asReference'
+              lp: 'service'
             },
             t: 'a'
+          }, {
+            n: 'language',
+            an: {
+              lp: 'language'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ResponseDocumentType',
+        ps: [{
+            n: 'output',
+            col: true,
+            en: 'Output',
+            ti: '.DocumentOutputDefinitionType'
+          }, {
+            n: 'storeExecuteResponse',
+            ti: 'Boolean',
+            an: {
+              lp: 'storeExecuteResponse'
+            },
+            t: 'a'
+          }, {
+            n: 'lineage',
+            ti: 'Boolean',
+            an: {
+              lp: 'lineage'
+            },
+            t: 'a'
+          }, {
+            n: 'status',
+            ti: 'Boolean',
+            an: {
+              lp: 'status'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Execute',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'identifier',
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.CodeType'
+          }, {
+            n: 'dataInputs',
+            en: 'DataInputs',
+            ti: '.DataInputsType'
+          }, {
+            n: 'responseForm',
+            en: 'ResponseForm',
+            ti: '.ResponseFormType'
           }]
       }, {
         ln: 'ProcessDescriptionType',
@@ -262,34 +314,117 @@ var WPS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SupportedUOMsType.Default',
+        ln: 'DataInputsType',
         ps: [{
-            n: 'uom',
+            n: 'input',
+            col: true,
+            en: 'Input',
+            ti: '.InputType'
+          }]
+      }, {
+        ln: 'ComplexDataCombinationType',
+        ps: [{
+            n: 'format',
             en: {
-              lp: 'UOM',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+              lp: 'Format'
             },
-            ti: 'OWS_1_1_0.DomainMetadataType'
+            ti: '.ComplexDataDescriptionType'
           }]
       }, {
-        ln: 'ResponseFormType',
+        ln: 'StatusType',
         ps: [{
-            n: 'responseDocument',
-            en: 'ResponseDocument',
-            ti: '.ResponseDocumentType'
+            n: 'processAccepted',
+            en: 'ProcessAccepted'
           }, {
-            n: 'rawDataOutput',
-            en: 'RawDataOutput',
-            ti: '.OutputDefinitionType'
+            n: 'processStarted',
+            en: 'ProcessStarted',
+            ti: '.ProcessStartedType'
+          }, {
+            n: 'processPaused',
+            en: 'ProcessPaused',
+            ti: '.ProcessStartedType'
+          }, {
+            n: 'processSucceeded',
+            en: 'ProcessSucceeded'
+          }, {
+            n: 'processFailed',
+            en: 'ProcessFailed',
+            ti: '.ProcessFailedType'
+          }, {
+            n: 'creationTime',
+            ti: 'Calendar',
+            an: {
+              lp: 'creationTime'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'Languages.Default',
+        ln: 'OutputReferenceType',
         ps: [{
-            n: 'language',
-            en: {
-              lp: 'Language',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            }
+            n: 'href',
+            an: {
+              lp: 'href'
+            },
+            t: 'a'
+          }, {
+            n: 'mimeType',
+            an: {
+              lp: 'mimeType'
+            },
+            t: 'a'
+          }, {
+            n: 'encoding',
+            an: {
+              lp: 'encoding'
+            },
+            t: 'a'
+          }, {
+            n: 'schema',
+            an: {
+              lp: 'schema'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ResponseBaseType',
+        ps: [{
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'lang',
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessBriefType',
+        bti: '.DescriptionType',
+        ps: [{
+            n: 'profile',
+            col: true,
+            en: 'Profile'
+          }, {
+            n: 'wsdl',
+            en: 'WSDL',
+            ti: '.WSDL'
+          }, {
+            n: 'processVersion',
+            an: {
+              lp: 'processVersion',
+              ns: 'http:\/\/www.opengis.net\/wps\/1.0.0'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'ProcessDescriptionType.DataInputs',
@@ -300,6 +435,120 @@ var WPS_1_0_0_Module_Factory = function () {
               lp: 'Input'
             },
             ti: '.InputDescriptionType'
+          }]
+      }, {
+        ln: 'DocumentOutputDefinitionType',
+        bti: '.OutputDefinitionType',
+        ps: [{
+            n: 'title',
+            en: {
+              lp: 'Title',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.LanguageStringType'
+          }, {
+            n: '_abstract',
+            en: {
+              lp: 'Abstract',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.LanguageStringType'
+          }, {
+            n: 'asReference',
+            ti: 'Boolean',
+            an: {
+              lp: 'asReference'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeProcess',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'identifier',
+            col: true,
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.CodeType'
+          }]
+      }, {
+        ln: 'OutputDefinitionType',
+        ps: [{
+            n: 'identifier',
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.CodeType'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }, {
+            n: 'mimeType',
+            an: {
+              lp: 'mimeType'
+            },
+            t: 'a'
+          }, {
+            n: 'encoding',
+            an: {
+              lp: 'encoding'
+            },
+            t: 'a'
+          }, {
+            n: 'schema',
+            an: {
+              lp: 'schema'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'InputType',
+        ps: [{
+            n: 'identifier',
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.CodeType'
+          }, {
+            n: 'title',
+            en: {
+              lp: 'Title',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.LanguageStringType'
+          }, {
+            n: '_abstract',
+            en: {
+              lp: 'Abstract',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.LanguageStringType'
+          }, {
+            n: 'reference',
+            en: 'Reference',
+            ti: '.InputReferenceType'
+          }, {
+            n: 'data',
+            en: 'Data',
+            ti: '.DataType'
+          }]
+      }, {
+        ln: 'SupportedComplexDataInputType',
+        bti: '.SupportedComplexDataType',
+        ps: [{
+            n: 'maximumMegabytes',
+            ti: 'Integer',
+            an: {
+              lp: 'maximumMegabytes'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'InputReferenceType',
@@ -349,196 +598,9 @@ var WPS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ResponseBaseType',
-        ps: [{
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'lang',
-            an: {
-              lp: 'lang',
-              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'WPSCapabilitiesType',
-        bti: 'OWS_1_1_0.CapabilitiesBaseType',
-        ps: [{
-            n: 'processOfferings',
-            en: 'ProcessOfferings',
-            ti: '.ProcessOfferings'
-          }, {
-            n: 'languages',
-            en: 'Languages',
-            ti: '.Languages'
-          }, {
-            n: 'wsdl',
-            en: 'WSDL',
-            ti: '.WSDL'
-          }, {
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'lang',
-            an: {
-              lp: 'lang',
-              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeProcess',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'identifier',
-            col: true,
-            en: {
-              lp: 'Identifier',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.CodeType'
-          }]
-      }, {
-        ln: 'InputReferenceType.BodyReference',
-        ps: [{
-            n: 'href',
-            an: {
-              lp: 'href',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ComplexDataDescriptionType',
-        ps: [{
-            n: 'mimeType',
-            en: {
-              lp: 'MimeType'
-            }
-          }, {
-            n: 'encoding',
-            en: {
-              lp: 'Encoding'
-            }
-          }, {
-            n: 'schema',
-            en: {
-              lp: 'Schema'
-            }
-          }]
-      }, {
-        ln: 'WSDL',
-        ps: [{
-            n: 'href',
-            an: {
-              lp: 'href',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ComplexDataCombinationType',
-        ps: [{
-            n: 'format',
-            en: {
-              lp: 'Format'
-            },
-            ti: '.ComplexDataDescriptionType'
-          }]
-      }, {
-        ln: 'RequestBaseType',
-        ps: [{
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'language',
-            an: {
-              lp: 'language'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SupportedCRSsType.Default',
-        ps: [{
-            n: 'crs',
-            en: {
-              lp: 'CRS'
-            }
-          }]
-      }, {
-        ln: 'ProcessDescriptionType.ProcessOutputs',
-        ps: [{
-            n: 'output',
-            col: true,
-            en: {
-              lp: 'Output'
-            },
-            ti: '.OutputDescriptionType'
-          }]
-      }, {
-        ln: 'ExecuteResponse.ProcessOutputs',
-        ps: [{
-            n: 'output',
-            col: true,
-            en: 'Output',
-            ti: '.OutputDataType'
-          }]
-      }, {
-        ln: 'LiteralInputType',
-        bti: '.LiteralOutputType',
-        ps: [{
-            n: 'allowedValues',
-            en: {
-              lp: 'AllowedValues',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.AllowedValues'
-          }, {
-            n: 'anyValue',
-            en: {
-              lp: 'AnyValue',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.AnyValue'
-          }, {
-            n: 'valuesReference',
-            en: {
-              lp: 'ValuesReference'
-            },
-            ti: '.ValuesReferenceType'
-          }, {
-            n: 'defaultValue',
-            en: {
-              lp: 'DefaultValue'
-            }
-          }]
-      }, {
-        ln: 'UOMsType',
+        ln: 'SupportedUOMsType.Default',
         ps: [{
             n: 'uom',
-            col: true,
             en: {
               lp: 'UOM',
               ns: 'http:\/\/www.opengis.net\/ows\/1.1'
@@ -564,126 +626,95 @@ var WPS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ResponseDocumentType',
+        ln: 'SupportedCRSsType.Default',
         ps: [{
-            n: 'output',
-            col: true,
-            en: 'Output',
-            ti: '.DocumentOutputDefinitionType'
-          }, {
-            n: 'storeExecuteResponse',
-            ti: 'Boolean',
-            an: {
-              lp: 'storeExecuteResponse'
-            },
-            t: 'a'
-          }, {
-            n: 'lineage',
-            ti: 'Boolean',
-            an: {
-              lp: 'lineage'
-            },
-            t: 'a'
-          }, {
-            n: 'status',
-            ti: 'Boolean',
-            an: {
-              lp: 'status'
-            },
-            t: 'a'
+            n: 'crs',
+            en: {
+              lp: 'CRS'
+            }
           }]
       }, {
-        ln: 'OutputDefinitionType',
+        ln: 'OutputDataType',
+        bti: '.DescriptionType',
         ps: [{
-            n: 'identifier',
+            n: 'reference',
+            en: 'Reference',
+            ti: '.OutputReferenceType'
+          }, {
+            n: 'data',
+            en: 'Data',
+            ti: '.DataType'
+          }]
+      }, {
+        ln: 'ProcessFailedType',
+        ps: [{
+            n: 'exceptionReport',
             en: {
-              lp: 'Identifier',
+              lp: 'ExceptionReport',
               ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             },
-            ti: 'OWS_1_1_0.CodeType'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }, {
-            n: 'mimeType',
-            an: {
-              lp: 'mimeType'
-            },
-            t: 'a'
-          }, {
-            n: 'encoding',
-            an: {
-              lp: 'encoding'
-            },
-            t: 'a'
-          }, {
-            n: 'schema',
-            an: {
-              lp: 'schema'
-            },
-            t: 'a'
+            ti: 'OWS_1_1_0.ExceptionReport'
           }]
       }, {
-        ln: 'OutputReferenceType',
+        ln: 'RequestBaseType',
         ps: [{
-            n: 'href',
-            an: {
-              lp: 'href'
-            },
-            t: 'a'
-          }, {
-            n: 'mimeType',
-            an: {
-              lp: 'mimeType'
-            },
-            t: 'a'
-          }, {
-            n: 'encoding',
-            an: {
-              lp: 'encoding'
-            },
-            t: 'a'
-          }, {
-            n: 'schema',
-            an: {
-              lp: 'schema'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataType',
-        ps: [{
-            n: 'complexData',
-            en: 'ComplexData',
-            ti: '.ComplexDataType'
-          }, {
-            n: 'literalData',
-            en: 'LiteralData',
-            ti: '.LiteralDataType'
-          }, {
-            n: 'boundingBoxData',
-            en: 'BoundingBoxData',
-            ti: 'OWS_1_1_0.BoundingBoxType'
-          }]
-      }, {
-        ln: 'GetCapabilities',
-        ps: [{
-            n: 'acceptVersions',
-            en: 'AcceptVersions',
-            ti: 'OWS_1_1_0.AcceptVersionsType'
-          }, {
             n: 'service',
             an: {
               lp: 'service'
             },
             t: 'a'
           }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
             n: 'language',
             an: {
               lp: 'language'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SupportedCRSsType',
+        ps: [{
+            n: '_default',
+            en: {
+              lp: 'Default'
+            },
+            ti: '.SupportedCRSsType.Default'
+          }, {
+            n: 'supported',
+            en: {
+              lp: 'Supported'
+            },
+            ti: '.CRSsType'
+          }]
+      }, {
+        ln: 'Languages',
+        ps: [{
+            n: '_default',
+            en: 'Default',
+            ti: '.Languages.Default'
+          }, {
+            n: 'supported',
+            en: 'Supported',
+            ti: '.LanguagesType'
+          }]
+      }, {
+        ln: 'ValuesReferenceType',
+        ps: [{
+            n: 'reference',
+            an: {
+              lp: 'reference',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            t: 'a'
+          }, {
+            n: 'valuesForm',
+            an: {
+              lp: 'valuesForm'
             },
             t: 'a'
           }]
@@ -724,69 +755,54 @@ var WPS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CRSsType',
+        ln: 'WPSCapabilitiesType',
+        bti: 'OWS_1_1_0.CapabilitiesBaseType',
         ps: [{
-            n: 'crs',
+            n: 'processOfferings',
+            en: 'ProcessOfferings',
+            ti: '.ProcessOfferings'
+          }, {
+            n: 'languages',
+            en: 'Languages',
+            ti: '.Languages'
+          }, {
+            n: 'wsdl',
+            en: 'WSDL',
+            ti: '.WSDL'
+          }, {
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'lang',
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessStartedType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'percentCompleted',
+            ti: 'Int',
+            an: {
+              lp: 'percentCompleted'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ExecuteResponse.ProcessOutputs',
+        ps: [{
+            n: 'output',
             col: true,
-            en: {
-              lp: 'CRS'
-            }
-          }]
-      }, {
-        ln: 'ComplexDataType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            col: true,
-            typed: false,
-            t: 'ae'
-          }, {
-            n: 'mimeType',
-            an: {
-              lp: 'mimeType'
-            },
-            t: 'a'
-          }, {
-            n: 'encoding',
-            an: {
-              lp: 'encoding'
-            },
-            t: 'a'
-          }, {
-            n: 'schema',
-            an: {
-              lp: 'schema'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ValuesReferenceType',
-        ps: [{
-            n: 'reference',
-            an: {
-              lp: 'reference',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            t: 'a'
-          }, {
-            n: 'valuesForm',
-            an: {
-              lp: 'valuesForm'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Languages',
-        ps: [{
-            n: '_default',
-            en: 'Default',
-            ti: '.Languages.Default'
-          }, {
-            n: 'supported',
-            en: 'Supported',
-            ti: '.LanguagesType'
+            en: 'Output',
+            ti: '.OutputDataType'
           }]
       }, {
         ln: 'ExecuteResponse',
@@ -825,40 +841,32 @@ var WPS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SupportedComplexDataType',
+        ln: 'ProcessOfferings',
         ps: [{
-            n: '_default',
-            en: {
-              lp: 'Default'
-            },
-            ti: '.ComplexDataCombinationType'
-          }, {
-            n: 'supported',
-            en: {
-              lp: 'Supported'
-            },
-            ti: '.ComplexDataCombinationsType'
+            n: 'process',
+            col: true,
+            en: 'Process',
+            ti: '.ProcessBriefType'
           }]
       }, {
-        ln: 'LanguagesType',
+        ln: 'UOMsType',
+        ps: [{
+            n: 'uom',
+            col: true,
+            en: {
+              lp: 'UOM',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.DomainMetadataType'
+          }]
+      }, {
+        ln: 'Languages.Default',
         ps: [{
             n: 'language',
-            col: true,
             en: {
               lp: 'Language',
               ns: 'http:\/\/www.opengis.net\/ows\/1.1'
             }
-          }]
-      }, {
-        ln: 'SupportedComplexDataInputType',
-        bti: '.SupportedComplexDataType',
-        ps: [{
-            n: 'maximumMegabytes',
-            ti: 'Integer',
-            an: {
-              lp: 'maximumMegabytes'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'OutputDescriptionType',
@@ -883,80 +891,69 @@ var WPS_1_0_0_Module_Factory = function () {
             ti: '.SupportedCRSsType'
           }]
       }, {
-        ln: 'ProcessBriefType',
-        bti: '.DescriptionType',
+        ln: 'ComplexDataDescriptionType',
         ps: [{
-            n: 'profile',
+            n: 'mimeType',
+            en: {
+              lp: 'MimeType'
+            }
+          }, {
+            n: 'encoding',
+            en: {
+              lp: 'Encoding'
+            }
+          }, {
+            n: 'schema',
+            en: {
+              lp: 'Schema'
+            }
+          }]
+      }, {
+        ln: 'ProcessDescriptions',
+        bti: '.ResponseBaseType',
+        ps: [{
+            n: 'processDescription',
             col: true,
-            en: 'Profile'
-          }, {
-            n: 'wsdl',
-            en: 'WSDL',
-            ti: '.WSDL'
-          }, {
-            n: 'processVersion',
+            en: {
+              lp: 'ProcessDescription'
+            },
+            ti: '.ProcessDescriptionType'
+          }]
+      }, {
+        ln: 'WSDL',
+        ps: [{
+            n: 'href',
             an: {
-              lp: 'processVersion',
-              ns: 'http:\/\/www.opengis.net\/wps\/1.0.0'
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
             t: 'a'
           }]
       }, {
-        ln: 'ComplexDataCombinationsType',
+        ln: 'ResponseFormType',
         ps: [{
-            n: 'format',
-            col: true,
-            en: {
-              lp: 'Format'
-            },
-            ti: '.ComplexDataDescriptionType'
+            n: 'responseDocument',
+            en: 'ResponseDocument',
+            ti: '.ResponseDocumentType'
+          }, {
+            n: 'rawDataOutput',
+            en: 'RawDataOutput',
+            ti: '.OutputDefinitionType'
           }]
       }, {
-        ln: 'ProcessStartedType',
+        ln: 'InputReferenceType.BodyReference',
         ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'percentCompleted',
-            ti: 'Int',
+            n: 'href',
             an: {
-              lp: 'percentCompleted'
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'ProcessFailedType',
-        ps: [{
-            n: 'exceptionReport',
-            en: {
-              lp: 'ExceptionReport',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.ExceptionReport'
-          }]
-      }, {
-        ln: 'LiteralOutputType',
-        ps: [{
-            n: 'dataType',
-            en: {
-              lp: 'DataType',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.DomainMetadataType'
-          }, {
-            n: 'uoMs',
-            en: {
-              lp: 'UOMs'
-            },
-            ti: '.SupportedUOMsType'
           }]
       }],
     eis: [{
-        en: 'ExecuteResponse',
-        ti: '.ExecuteResponse'
-      }, {
-        en: 'ProcessDescriptions',
-        ti: '.ProcessDescriptions'
+        en: 'GetCapabilities',
+        ti: '.GetCapabilities'
       }, {
         en: 'WSDL',
         ti: '.WSDL'
@@ -964,20 +961,23 @@ var WPS_1_0_0_Module_Factory = function () {
         en: 'ProcessOfferings',
         ti: '.ProcessOfferings'
       }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilities'
+        en: 'DescribeProcess',
+        ti: '.DescribeProcess'
+      }, {
+        en: 'Languages',
+        ti: '.Languages'
+      }, {
+        en: 'ExecuteResponse',
+        ti: '.ExecuteResponse'
+      }, {
+        en: 'ProcessDescriptions',
+        ti: '.ProcessDescriptions'
       }, {
         en: 'Execute',
         ti: '.Execute'
       }, {
         en: 'Capabilities',
         ti: '.WPSCapabilitiesType'
-      }, {
-        en: 'Languages',
-        ti: '.Languages'
-      }, {
-        en: 'DescribeProcess',
-        ti: '.DescribeProcess'
       }]
   };
   return {

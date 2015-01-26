@@ -325,6 +325,16 @@
 			<enumeration value="unknown"/>
 		</restriction>
 	</simpleType>
+	<!-- ===================================== -->
+	<simpleType name="TimeDurationType">
+		<annotation>
+			<documentation xml:lang="en">
+      Base type for describing temporal length or distance. The value space is further 
+      constrained by subtypes that conform to the ISO 8601 or ISO 11404 standards.
+      </documentation>
+		</annotation>
+		<union memberTypes="duration decimal"/>
+	</simpleType>
 	<!-- ================================================================== -->
 	<!-- ==== Convenience properties ==== -->
 	<!-- ================================================================== -->

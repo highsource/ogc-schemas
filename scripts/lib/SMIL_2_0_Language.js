@@ -4,6 +4,168 @@ var SMIL_2_0_Language_Module_Factory = function () {
     dens: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language',
     deps: ['SMIL_2_0'],
     tis: [{
+        ln: 'AnimateType',
+        bti: 'SMIL_2_0.AnimatePrototype',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'any',
+            col: true,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'skipContent',
+            ti: 'Boolean',
+            an: {
+              lp: 'skip-content'
+            },
+            t: 'a'
+          }, {
+            n: 'calcMode',
+            an: {
+              lp: 'calcMode'
+            },
+            t: 'a'
+          }, {
+            n: 'alt',
+            an: {
+              lp: 'alt'
+            },
+            t: 'a'
+          }, {
+            n: 'longdesc',
+            an: {
+              lp: 'longdesc'
+            },
+            t: 'a'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }, {
+            n: 'clazz',
+            an: {
+              lp: 'class'
+            },
+            t: 'a'
+          }, {
+            n: 'lang',
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            t: 'a'
+          }, {
+            n: 'targetElement',
+            ti: 'IDREF',
+            an: {
+              lp: 'targetElement'
+            },
+            t: 'a'
+          }, {
+            n: 'begin',
+            an: {
+              lp: 'begin'
+            },
+            t: 'a'
+          }, {
+            n: 'end',
+            an: {
+              lp: 'end'
+            },
+            t: 'a'
+          }, {
+            n: 'min',
+            an: {
+              lp: 'min'
+            },
+            t: 'a'
+          }, {
+            n: 'max',
+            an: {
+              lp: 'max'
+            },
+            t: 'a'
+          }, {
+            n: 'repeatDur',
+            an: {
+              lp: 'repeatDur'
+            },
+            t: 'a'
+          }, {
+            n: 'repeatCount',
+            ti: 'Decimal',
+            an: {
+              lp: 'repeatCount'
+            },
+            t: 'a'
+          }, {
+            n: 'dur',
+            an: {
+              lp: 'dur'
+            },
+            t: 'a'
+          }, {
+            n: 'repeat',
+            ti: 'Integer',
+            an: {
+              lp: 'repeat'
+            },
+            t: 'a'
+          }, {
+            n: 'fillDefault',
+            an: {
+              lp: 'fillDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'restartDefault',
+            an: {
+              lp: 'restartDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'syncBehavior',
+            an: {
+              lp: 'syncBehavior'
+            },
+            t: 'a'
+          }, {
+            n: 'syncTolerance',
+            an: {
+              lp: 'syncTolerance'
+            },
+            t: 'a'
+          }, {
+            n: 'syncBehaviorDefault',
+            an: {
+              lp: 'syncBehaviorDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'syncToleranceDefault',
+            an: {
+              lp: 'syncToleranceDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'fill',
+            an: {
+              lp: 'fill'
+            },
+            t: 'a'
+          }, {
+            n: 'restart',
+            an: {
+              lp: 'restart'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'SetType',
         bti: 'SMIL_2_0.SetPrototype',
         ps: [{
@@ -47,13 +209,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'targetElement',
-            ti: 'IDREF',
-            an: {
-              lp: 'targetElement'
-            },
-            t: 'a'
-          }, {
             n: 'skipContent',
             ti: 'Boolean',
             an: {
@@ -61,21 +216,22 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'syncBehavior',
+            n: 'targetElement',
+            ti: 'IDREF',
             an: {
-              lp: 'syncBehavior'
+              lp: 'targetElement'
             },
             t: 'a'
           }, {
-            n: 'syncTolerance',
+            n: 'begin',
             an: {
-              lp: 'syncTolerance'
+              lp: 'begin'
             },
             t: 'a'
           }, {
-            n: 'dur',
+            n: 'end',
             an: {
-              lp: 'dur'
+              lp: 'end'
             },
             t: 'a'
           }, {
@@ -88,13 +244,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             n: 'max',
             an: {
               lp: 'max'
-            },
-            t: 'a'
-          }, {
-            n: 'repeat',
-            ti: 'Integer',
-            an: {
-              lp: 'repeat'
             },
             t: 'a'
           }, {
@@ -111,21 +260,16 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'begin',
+            n: 'dur',
             an: {
-              lp: 'begin'
+              lp: 'dur'
             },
             t: 'a'
           }, {
-            n: 'end',
+            n: 'repeat',
+            ti: 'Integer',
             an: {
-              lp: 'end'
-            },
-            t: 'a'
-          }, {
-            n: 'restartDefault',
-            an: {
-              lp: 'restartDefault'
+              lp: 'repeat'
             },
             t: 'a'
           }, {
@@ -135,9 +279,21 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'fill',
+            n: 'restartDefault',
             an: {
-              lp: 'fill'
+              lp: 'restartDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'syncBehavior',
+            an: {
+              lp: 'syncBehavior'
+            },
+            t: 'a'
+          }, {
+            n: 'syncTolerance',
+            an: {
+              lp: 'syncTolerance'
             },
             t: 'a'
           }, {
@@ -150,6 +306,12 @@ var SMIL_2_0_Language_Module_Factory = function () {
             n: 'syncToleranceDefault',
             an: {
               lp: 'syncToleranceDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'fill',
+            an: {
+              lp: 'fill'
             },
             t: 'a'
           }, {
@@ -171,6 +333,111 @@ var SMIL_2_0_Language_Module_Factory = function () {
             mx: false,
             t: 'ae'
           }, {
+            n: 'skipContent',
+            ti: 'Boolean',
+            an: {
+              lp: 'skip-content'
+            },
+            t: 'a'
+          }, {
+            n: 'begin',
+            an: {
+              lp: 'begin'
+            },
+            t: 'a'
+          }, {
+            n: 'end',
+            an: {
+              lp: 'end'
+            },
+            t: 'a'
+          }, {
+            n: 'min',
+            an: {
+              lp: 'min'
+            },
+            t: 'a'
+          }, {
+            n: 'max',
+            an: {
+              lp: 'max'
+            },
+            t: 'a'
+          }, {
+            n: 'repeatDur',
+            an: {
+              lp: 'repeatDur'
+            },
+            t: 'a'
+          }, {
+            n: 'repeatCount',
+            ti: 'Decimal',
+            an: {
+              lp: 'repeatCount'
+            },
+            t: 'a'
+          }, {
+            n: 'dur',
+            an: {
+              lp: 'dur'
+            },
+            t: 'a'
+          }, {
+            n: 'repeat',
+            ti: 'Integer',
+            an: {
+              lp: 'repeat'
+            },
+            t: 'a'
+          }, {
+            n: 'fillDefault',
+            an: {
+              lp: 'fillDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'restartDefault',
+            an: {
+              lp: 'restartDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'syncBehavior',
+            an: {
+              lp: 'syncBehavior'
+            },
+            t: 'a'
+          }, {
+            n: 'syncTolerance',
+            an: {
+              lp: 'syncTolerance'
+            },
+            t: 'a'
+          }, {
+            n: 'syncBehaviorDefault',
+            an: {
+              lp: 'syncBehaviorDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'syncToleranceDefault',
+            an: {
+              lp: 'syncToleranceDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'fill',
+            an: {
+              lp: 'fill'
+            },
+            t: 'a'
+          }, {
+            n: 'restart',
+            an: {
+              lp: 'restart'
+            },
+            t: 'a'
+          }, {
             n: 'alt',
             an: {
               lp: 'alt'
@@ -203,111 +470,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'syncBehavior',
-            an: {
-              lp: 'syncBehavior'
-            },
-            t: 'a'
-          }, {
-            n: 'syncTolerance',
-            an: {
-              lp: 'syncTolerance'
-            },
-            t: 'a'
-          }, {
-            n: 'dur',
-            an: {
-              lp: 'dur'
-            },
-            t: 'a'
-          }, {
-            n: 'min',
-            an: {
-              lp: 'min'
-            },
-            t: 'a'
-          }, {
-            n: 'max',
-            an: {
-              lp: 'max'
-            },
-            t: 'a'
-          }, {
-            n: 'repeat',
-            ti: 'Integer',
-            an: {
-              lp: 'repeat'
-            },
-            t: 'a'
-          }, {
-            n: 'repeatDur',
-            an: {
-              lp: 'repeatDur'
-            },
-            t: 'a'
-          }, {
-            n: 'repeatCount',
-            ti: 'Decimal',
-            an: {
-              lp: 'repeatCount'
-            },
-            t: 'a'
-          }, {
-            n: 'begin',
-            an: {
-              lp: 'begin'
-            },
-            t: 'a'
-          }, {
-            n: 'end',
-            an: {
-              lp: 'end'
-            },
-            t: 'a'
-          }, {
-            n: 'restartDefault',
-            an: {
-              lp: 'restartDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'fillDefault',
-            an: {
-              lp: 'fillDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'fill',
-            an: {
-              lp: 'fill'
-            },
-            t: 'a'
-          }, {
-            n: 'syncBehaviorDefault',
-            an: {
-              lp: 'syncBehaviorDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'syncToleranceDefault',
-            an: {
-              lp: 'syncToleranceDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'restart',
-            an: {
-              lp: 'restart'
-            },
-            t: 'a'
-          }, {
-            n: 'skipContent',
-            ti: 'Boolean',
-            an: {
-              lp: 'skip-content'
-            },
-            t: 'a'
-          }, {
             n: 'targetElement',
             ti: 'IDREF',
             an: {
@@ -318,168 +480,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             n: 'calcMode',
             an: {
               lp: 'calcMode'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AnimateType',
-        bti: 'SMIL_2_0.AnimatePrototype',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'any',
-            col: true,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'skipContent',
-            ti: 'Boolean',
-            an: {
-              lp: 'skip-content'
-            },
-            t: 'a'
-          }, {
-            n: 'calcMode',
-            an: {
-              lp: 'calcMode'
-            },
-            t: 'a'
-          }, {
-            n: 'syncBehavior',
-            an: {
-              lp: 'syncBehavior'
-            },
-            t: 'a'
-          }, {
-            n: 'syncTolerance',
-            an: {
-              lp: 'syncTolerance'
-            },
-            t: 'a'
-          }, {
-            n: 'dur',
-            an: {
-              lp: 'dur'
-            },
-            t: 'a'
-          }, {
-            n: 'min',
-            an: {
-              lp: 'min'
-            },
-            t: 'a'
-          }, {
-            n: 'max',
-            an: {
-              lp: 'max'
-            },
-            t: 'a'
-          }, {
-            n: 'repeat',
-            ti: 'Integer',
-            an: {
-              lp: 'repeat'
-            },
-            t: 'a'
-          }, {
-            n: 'repeatDur',
-            an: {
-              lp: 'repeatDur'
-            },
-            t: 'a'
-          }, {
-            n: 'repeatCount',
-            ti: 'Decimal',
-            an: {
-              lp: 'repeatCount'
-            },
-            t: 'a'
-          }, {
-            n: 'begin',
-            an: {
-              lp: 'begin'
-            },
-            t: 'a'
-          }, {
-            n: 'end',
-            an: {
-              lp: 'end'
-            },
-            t: 'a'
-          }, {
-            n: 'restartDefault',
-            an: {
-              lp: 'restartDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'fillDefault',
-            an: {
-              lp: 'fillDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'fill',
-            an: {
-              lp: 'fill'
-            },
-            t: 'a'
-          }, {
-            n: 'syncBehaviorDefault',
-            an: {
-              lp: 'syncBehaviorDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'syncToleranceDefault',
-            an: {
-              lp: 'syncToleranceDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'restart',
-            an: {
-              lp: 'restart'
-            },
-            t: 'a'
-          }, {
-            n: 'targetElement',
-            ti: 'IDREF',
-            an: {
-              lp: 'targetElement'
-            },
-            t: 'a'
-          }, {
-            n: 'alt',
-            an: {
-              lp: 'alt'
-            },
-            t: 'a'
-          }, {
-            n: 'longdesc',
-            an: {
-              lp: 'longdesc'
-            },
-            t: 'a'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }, {
-            n: 'clazz',
-            an: {
-              lp: 'class'
-            },
-            t: 'a'
-          }, {
-            n: 'lang',
-            an: {
-              lp: 'lang',
-              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
             },
             t: 'a'
           }]
@@ -495,111 +495,6 @@ var SMIL_2_0_Language_Module_Factory = function () {
             mx: false,
             t: 'ae'
           }, {
-            n: 'syncBehavior',
-            an: {
-              lp: 'syncBehavior'
-            },
-            t: 'a'
-          }, {
-            n: 'syncTolerance',
-            an: {
-              lp: 'syncTolerance'
-            },
-            t: 'a'
-          }, {
-            n: 'dur',
-            an: {
-              lp: 'dur'
-            },
-            t: 'a'
-          }, {
-            n: 'min',
-            an: {
-              lp: 'min'
-            },
-            t: 'a'
-          }, {
-            n: 'max',
-            an: {
-              lp: 'max'
-            },
-            t: 'a'
-          }, {
-            n: 'repeat',
-            ti: 'Integer',
-            an: {
-              lp: 'repeat'
-            },
-            t: 'a'
-          }, {
-            n: 'repeatDur',
-            an: {
-              lp: 'repeatDur'
-            },
-            t: 'a'
-          }, {
-            n: 'repeatCount',
-            ti: 'Decimal',
-            an: {
-              lp: 'repeatCount'
-            },
-            t: 'a'
-          }, {
-            n: 'begin',
-            an: {
-              lp: 'begin'
-            },
-            t: 'a'
-          }, {
-            n: 'end',
-            an: {
-              lp: 'end'
-            },
-            t: 'a'
-          }, {
-            n: 'restartDefault',
-            an: {
-              lp: 'restartDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'fillDefault',
-            an: {
-              lp: 'fillDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'fill',
-            an: {
-              lp: 'fill'
-            },
-            t: 'a'
-          }, {
-            n: 'syncBehaviorDefault',
-            an: {
-              lp: 'syncBehaviorDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'syncToleranceDefault',
-            an: {
-              lp: 'syncToleranceDefault'
-            },
-            t: 'a'
-          }, {
-            n: 'restart',
-            an: {
-              lp: 'restart'
-            },
-            t: 'a'
-          }, {
-            n: 'skipContent',
-            ti: 'Boolean',
-            an: {
-              lp: 'skip-content'
-            },
-            t: 'a'
-          }, {
             n: 'alt',
             an: {
               lp: 'alt'
@@ -632,9 +527,101 @@ var SMIL_2_0_Language_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'calcMode',
+            n: 'begin',
             an: {
-              lp: 'calcMode'
+              lp: 'begin'
+            },
+            t: 'a'
+          }, {
+            n: 'end',
+            an: {
+              lp: 'end'
+            },
+            t: 'a'
+          }, {
+            n: 'min',
+            an: {
+              lp: 'min'
+            },
+            t: 'a'
+          }, {
+            n: 'max',
+            an: {
+              lp: 'max'
+            },
+            t: 'a'
+          }, {
+            n: 'repeatDur',
+            an: {
+              lp: 'repeatDur'
+            },
+            t: 'a'
+          }, {
+            n: 'repeatCount',
+            ti: 'Decimal',
+            an: {
+              lp: 'repeatCount'
+            },
+            t: 'a'
+          }, {
+            n: 'dur',
+            an: {
+              lp: 'dur'
+            },
+            t: 'a'
+          }, {
+            n: 'repeat',
+            ti: 'Integer',
+            an: {
+              lp: 'repeat'
+            },
+            t: 'a'
+          }, {
+            n: 'fillDefault',
+            an: {
+              lp: 'fillDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'restartDefault',
+            an: {
+              lp: 'restartDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'syncBehavior',
+            an: {
+              lp: 'syncBehavior'
+            },
+            t: 'a'
+          }, {
+            n: 'syncTolerance',
+            an: {
+              lp: 'syncTolerance'
+            },
+            t: 'a'
+          }, {
+            n: 'syncBehaviorDefault',
+            an: {
+              lp: 'syncBehaviorDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'syncToleranceDefault',
+            an: {
+              lp: 'syncToleranceDefault'
+            },
+            t: 'a'
+          }, {
+            n: 'fill',
+            an: {
+              lp: 'fill'
+            },
+            t: 'a'
+          }, {
+            n: 'restart',
+            an: {
+              lp: 'restart'
             },
             t: 'a'
           }, {
@@ -644,20 +631,33 @@ var SMIL_2_0_Language_Module_Factory = function () {
               lp: 'targetElement'
             },
             t: 'a'
+          }, {
+            n: 'skipContent',
+            ti: 'Boolean',
+            an: {
+              lp: 'skip-content'
+            },
+            t: 'a'
+          }, {
+            n: 'calcMode',
+            an: {
+              lp: 'calcMode'
+            },
+            t: 'a'
           }]
       }],
     eis: [{
-        en: 'animateMotion',
-        ti: '.AnimateMotionType'
-      }, {
-        en: 'animateColor',
-        ti: '.AnimateColorType'
+        en: 'animate',
+        ti: '.AnimateType'
       }, {
         en: 'set',
         ti: '.SetType'
       }, {
-        en: 'animate',
-        ti: '.AnimateType'
+        en: 'animateColor',
+        ti: '.AnimateColorType'
+      }, {
+        en: 'animateMotion',
+        ti: '.AnimateMotionType'
       }]
   };
   return {

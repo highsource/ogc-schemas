@@ -5,171 +5,8 @@ var GML_3_2_1_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0'],
     tis: [{
-        ln: 'ScaleType',
-        bti: '.MeasureType'
-      }, {
-        ln: 'GeneralConversionPropertyType',
-        ps: [{
-            n: 'abstractGeneralConversion',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractGeneralConversion',
-            ti: '.AbstractGeneralConversionType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'EngineeringCRSPropertyType',
-        ps: [{
-            n: 'engineeringCRS',
-            en: 'EngineeringCRS',
-            ti: '.EngineeringCRSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeTopologyComplexType',
-        bti: '.AbstractTimeComplexType',
-        ps: [{
-            n: 'primitive',
-            col: true,
-            ti: '.TimeTopologyPrimitivePropertyType'
-          }]
-      }, {
-        ln: 'PrimeMeridianPropertyType',
-        ps: [{
-            n: 'primeMeridian',
-            en: 'PrimeMeridian',
-            ti: '.PrimeMeridianType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractSurfaceType',
-        bti: '.AbstractGeometricPrimitiveType'
-      }, {
-        ln: 'DynamicFeatureCollectionType',
-        bti: '.DynamicFeatureType',
-        ps: [{
-            n: 'dynamicMembers',
-            ti: '.DynamicFeatureMemberType'
-          }]
+        ln: 'FeatureCollectionType',
+        bti: '.AbstractFeatureCollectionType'
       }, {
         ln: 'ProjectedCRSPropertyType',
         ps: [{
@@ -218,23 +55,51 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ParameterValueGroupType',
-        bti: '.AbstractGeneralParameterValueType',
+        ln: 'FormulaCitation',
         ps: [{
-            n: 'parameterValue',
-            col: true,
+            n: 'ciCitation',
             mx: false,
-            dom: false,
-            typed: false,
-            ti: '.AbstractGeneralParameterValuePropertyType',
-            t: 'er'
+            t: 'ae'
           }, {
-            n: 'group',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.OperationParameterGroupPropertyType',
-            t: 'er'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'NodePropertyType',
@@ -291,3159 +156,11 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'UserDefinedCSType',
-        bti: '.AbstractCoordinateSystemType'
-      }, {
-        ln: 'LinearRingType',
-        bti: '.AbstractRingType',
-        ps: [{
-            n: 'posOrPointPropertyOrPointRep',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            etis: [{
-                en: 'pos',
-                ti: '.DirectPositionType'
-              }, {
-                en: 'pointRep',
-                ti: '.PointPropertyType'
-              }, {
-                en: 'pointProperty',
-                ti: '.PointPropertyType'
-              }],
-            t: 'ers'
-          }, {
-            n: 'posList',
-            ti: '.DirectPositionListType'
-          }, {
-            n: 'coordinates',
-            ti: '.CoordinatesType'
-          }]
-      }, {
-        ln: 'EnvelopeWithTimePeriodType',
-        bti: '.EnvelopeType',
-        ps: [{
-            n: 'beginPosition',
-            ti: '.TimePositionType'
-          }, {
-            n: 'endPosition',
-            ti: '.TimePositionType'
-          }, {
-            n: 'frame',
-            an: {
-              lp: 'frame'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LineStringSegmentArrayPropertyType',
-        ps: [{
-            n: 'lineStringSegment',
-            col: true,
-            en: 'LineStringSegment',
-            ti: '.LineStringSegmentType'
-          }]
-      }, {
-        ln: 'FeatureArrayPropertyType',
-        ps: [{
-            n: 'abstractFeature',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractFeature',
-            ti: '.AbstractFeatureType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'CoordinatesType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'decimal',
-            an: {
-              lp: 'decimal'
-            },
-            t: 'a'
-          }, {
-            n: 'cs',
-            an: {
-              lp: 'cs'
-            },
-            t: 'a'
-          }, {
-            n: 'ts',
-            an: {
-              lp: 'ts'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractRingPropertyType',
-        ps: [{
-            n: 'abstractRing',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractRing',
-            ti: '.AbstractRingType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'TriangleType',
-        bti: '.AbstractSurfacePatchType',
-        ps: [{
-            n: 'exterior',
-            ti: '.AbstractRingPropertyType'
-          }, {
-            n: 'interpolation',
-            an: {
-              lp: 'interpolation'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MultiCurveType',
-        bti: '.AbstractGeometricAggregateType',
-        ps: [{
-            n: 'curveMember',
-            col: true,
-            ti: '.CurvePropertyType'
-          }, {
-            n: 'curveMembers',
-            ti: '.CurveArrayPropertyType'
-          }]
-      }, {
-        ln: 'AbstractRingType'
-      }, {
-        ln: 'MeasureListType',
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            },
-            t: 'v'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TopoComplexType',
-        bti: '.AbstractTopologyType',
-        ps: [{
-            n: 'maximalComplex',
-            ti: '.TopoComplexPropertyType'
-          }, {
-            n: 'superComplex',
-            col: true,
-            ti: '.TopoComplexPropertyType'
-          }, {
-            n: 'subComplex',
-            col: true,
-            ti: '.TopoComplexPropertyType'
-          }, {
-            n: 'topoPrimitiveMember',
-            col: true,
-            ti: '.TopoPrimitiveMemberType'
-          }, {
-            n: 'topoPrimitiveMembers',
-            ti: '.TopoPrimitiveArrayAssociationType'
-          }, {
-            n: 'isMaximal',
-            ti: 'Boolean',
-            an: {
-              lp: 'isMaximal'
-            },
-            t: 'a'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ArcByBulgeType',
-        bti: '.ArcStringByBulgeType'
-      }, {
-        ln: 'GeometricComplexPropertyType',
-        ps: [{
-            n: 'geometricComplex',
-            en: 'GeometricComplex',
-            ti: '.GeometricComplexType'
-          }, {
-            n: 'compositeCurve',
-            en: 'CompositeCurve',
-            ti: '.CompositeCurveType'
-          }, {
-            n: 'compositeSurface',
-            en: 'CompositeSurface',
-            ti: '.CompositeSurfaceType'
-          }, {
-            n: 'compositeSolid',
-            en: 'CompositeSolid',
-            ti: '.CompositeSolidType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ImageCRSType',
-        bti: '.AbstractCRSType',
-        ps: [{
-            n: 'cartesianCS',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.CartesianCSPropertyType',
-            t: 'er'
-          }, {
-            n: 'affineCS',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.AffineCSPropertyType',
-            t: 'er'
-          }, {
-            n: 'usesObliqueCartesianCS',
-            ti: '.ObliqueCartesianCSPropertyType'
-          }, {
-            n: 'imageDatum',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.ImageDatumPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'ArcType',
-        bti: '.ArcStringType'
-      }, {
-        ln: 'GeometricComplexType',
-        bti: '.AbstractGeometryType',
-        ps: [{
-            n: 'element',
-            col: true,
-            ti: '.GeometricPrimitivePropertyType'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DerivationUnitTermType',
-        bti: '.UnitOfMeasureType',
-        ps: [{
-            n: 'exponent',
-            ti: 'Integer',
-            an: {
-              lp: 'exponent'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'UnitOfMeasureType',
-        ps: [{
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ArcByCenterPointType',
-        bti: '.AbstractCurveSegmentType',
-        ps: [{
-            n: 'pos',
-            ti: '.DirectPositionType'
-          }, {
-            n: 'pointProperty',
-            ti: '.PointPropertyType'
-          }, {
-            n: 'pointRep',
-            ti: '.PointPropertyType'
-          }, {
-            n: 'posList',
-            ti: '.DirectPositionListType'
-          }, {
-            n: 'coordinates',
-            ti: '.CoordinatesType'
-          }, {
-            n: 'radius',
-            ti: '.LengthType'
-          }, {
-            n: 'startAngle',
-            ti: '.AngleType'
-          }, {
-            n: 'endAngle',
-            ti: '.AngleType'
-          }, {
-            n: 'interpolation',
-            an: {
-              lp: 'interpolation'
-            },
-            t: 'a'
-          }, {
-            n: 'numARC',
-            ti: 'Integer',
-            an: {
-              lp: 'numArc'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DirectionPropertyType',
-        ps: [{
-            n: 'directionVector',
-            en: 'DirectionVector',
-            ti: '.DirectionVectorType'
-          }, {
-            n: 'directionDescription',
-            en: 'DirectionDescription',
-            ti: '.DirectionDescriptionType'
-          }, {
-            n: 'compassPoint',
-            en: 'CompassPoint'
-          }, {
-            n: 'directionKeyword',
-            en: 'DirectionKeyword',
-            ti: '.CodeType'
-          }, {
-            n: 'directionString',
-            en: 'DirectionString',
-            ti: '.StringOrRefType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TargetPropertyType',
-        ps: [{
-            n: 'abstractFeature',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractFeature',
-            ti: '.AbstractFeatureType',
-            t: 'er'
-          }, {
-            n: 'abstractGeometry',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractGeometry',
-            ti: '.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'QuantityExtentType',
-        bti: '.MeasureOrNilReasonListType'
-      }, {
-        ln: 'OperationParameterType',
-        bti: '.AbstractGeneralOperationParameterType'
-      }, {
-        ln: 'VerticalCRSType',
-        bti: '.AbstractCRSType',
-        ps: [{
-            n: 'verticalCS',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.VerticalCSPropertyType',
-            t: 'er'
-          }, {
-            n: 'verticalDatum',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.VerticalDatumPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'GeodeticDatumType',
-        bti: '.AbstractDatumType',
-        ps: [{
-            n: 'primeMeridian',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.PrimeMeridianPropertyType',
-            t: 'er'
-          }, {
-            n: 'ellipsoid',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.EllipsoidPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'ImageDatumPropertyType',
-        ps: [{
-            n: 'imageDatum',
-            en: 'ImageDatum',
-            ti: '.ImageDatumType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ClothoidType',
-        bti: '.AbstractCurveSegmentType',
-        ps: [{
-            n: 'refLocation',
-            ti: '.ClothoidType.RefLocation'
-          }, {
-            n: 'scaleFactor',
-            ti: 'Decimal'
-          }, {
-            n: 'startParameter',
-            ti: 'Double'
-          }, {
-            n: 'endParameter',
-            ti: 'Double'
-          }, {
-            n: 'interpolation',
-            an: {
-              lp: 'interpolation'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SurfacePropertyType',
-        ps: [{
-            n: 'abstractSurface',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractSurface',
-            ti: '.AbstractSurfaceType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SecondDefiningParameterPropertyElement',
-        ps: [{
-            n: 'secondDefiningParameter',
-            en: 'SecondDefiningParameter',
-            ti: '.SecondDefiningParameter'
-          }]
-      }, {
-        ln: 'TopoCurveType',
-        bti: '.AbstractTopologyType',
-        ps: [{
-            n: 'directedEdge',
-            col: true,
-            ti: '.DirectedEdgePropertyType'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EdgeType',
-        bti: '.AbstractTopoPrimitiveType',
-        ps: [{
-            n: 'container',
-            ti: '.TopoSolidPropertyType'
-          }, {
-            n: 'directedNode',
-            col: true,
-            ti: '.DirectedNodePropertyType'
-          }, {
-            n: 'directedFace',
-            col: true,
-            ti: '.DirectedFacePropertyType'
-          }, {
-            n: 'curveProperty',
-            ti: '.CurvePropertyType'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DictionaryEntryType',
-        bti: '.AbstractMemberType',
-        ps: [{
-            n: 'definition',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'Definition',
-            ti: '.DefinitionType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimePeriodPropertyType',
-        ps: [{
-            n: 'timePeriod',
-            en: 'TimePeriod',
-            ti: '.TimePeriodType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'OrientableCurveType',
-        bti: '.AbstractCurveType',
-        ps: [{
-            n: 'baseCurve',
-            ti: '.CurvePropertyType'
-          }, {
-            n: 'orientation',
-            an: {
-              lp: 'orientation'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TopoVolumeType',
-        bti: '.AbstractTopologyType',
-        ps: [{
-            n: 'directedTopoSolid',
-            col: true,
-            ti: '.DirectedTopoSolidPropertyType'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RangeSetType',
-        ps: [{
-            n: 'valueArray',
-            col: true,
-            en: 'ValueArray',
-            ti: '.ValueArrayType'
-          }, {
-            n: 'abstractScalarValueList',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractScalarValueList',
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'dataBlock',
-            en: 'DataBlock',
-            ti: '.DataBlockType'
-          }, {
-            n: 'file',
-            en: 'File',
-            ti: '.FileType'
-          }]
-      }, {
-        ln: 'MultiPointPropertyType',
-        ps: [{
-            n: 'multiPoint',
-            en: 'MultiPoint',
-            ti: '.MultiPointType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MultiSurfacePropertyType',
-        ps: [{
-            n: 'multiSurface',
-            en: 'MultiSurface',
-            ti: '.MultiSurfaceType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GridLengthType',
-        bti: '.MeasureType'
-      }, {
-        ln: 'TopoVolumePropertyType',
-        ps: [{
-            n: 'topoVolume',
-            en: 'TopoVolume',
-            ti: '.TopoVolumeType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AngleChoiceType',
-        ps: [{
-            n: 'angle',
-            ti: '.AngleType'
-          }, {
-            n: 'dmsAngle',
-            ti: '.DMSAngleType'
-          }]
-      }, {
-        ln: 'ConversionPropertyType',
-        ps: [{
-            n: 'conversion',
-            en: 'Conversion',
-            ti: '.ConversionType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeNodePropertyType',
-        ps: [{
-            n: 'timeNode',
-            en: 'TimeNode',
-            ti: '.TimeNodeType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CRSPropertyType',
-        ps: [{
-            n: 'abstractCRS',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractCRS',
-            ti: '.AbstractCRSType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'RectifiedGridType',
-        bti: '.GridType'
-      }, {
-        ln: 'DirectedObservationAtDistanceType',
-        bti: '.DirectedObservationType',
-        ps: [{
-            n: 'distance',
-            ti: '.MeasureType'
-          }]
-      }, {
-        ln: 'EngineeringCRSType',
-        bti: '.AbstractCRSType',
-        ps: [{
-            n: 'affineCS',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.AffineCSPropertyType',
-            t: 'er'
-          }, {
-            n: 'cartesianCS',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.CartesianCSPropertyType',
-            t: 'er'
-          }, {
-            n: 'cylindricalCS',
-            ti: '.CylindricalCSPropertyType'
-          }, {
-            n: 'linearCS',
-            ti: '.LinearCSPropertyType'
-          }, {
-            n: 'polarCS',
-            ti: '.PolarCSPropertyType'
-          }, {
-            n: 'sphericalCS',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.SphericalCSPropertyType',
-            t: 'er'
-          }, {
-            n: 'userDefinedCS',
-            ti: '.UserDefinedCSPropertyType'
-          }, {
-            n: 'coordinateSystem',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.CoordinateSystemPropertyType',
-            t: 'er'
-          }, {
-            n: 'engineeringDatum',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.EngineeringDatumPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'CoordinateSystemPropertyType',
-        ps: [{
-            n: 'abstractCoordinateSystem',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractCoordinateSystem',
-            ti: '.AbstractCoordinateSystemType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGeneralConversionType',
-        bti: '.AbstractCoordinateOperationType'
-      }, {
-        ln: 'SurfaceType',
-        bti: '.AbstractSurfaceType',
-        ps: [{
-            n: 'patches',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.SurfacePatchArrayPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'AbstractMetadataPropertyType',
-        ps: [{
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeEdgeType',
-        bti: '.AbstractTimeTopologyPrimitiveType',
-        ps: [{
-            n: 'start',
-            ti: '.TimeNodePropertyType'
-          }, {
-            n: 'end',
-            ti: '.TimeNodePropertyType'
-          }, {
-            n: 'extent',
-            ti: '.TimePeriodPropertyType'
-          }]
-      }, {
-        ln: 'EllipsoidalCSPropertyType',
-        ps: [{
-            n: 'ellipsoidalCS',
-            en: 'EllipsoidalCS',
-            ti: '.EllipsoidalCSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'QuantityPropertyType',
-        ps: [{
-            n: 'quantity',
-            en: 'Quantity',
-            ti: '.Quantity'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CurvePropertyType',
-        ps: [{
-            n: 'abstractCurve',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractCurve',
-            ti: '.AbstractCurveType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CategoryPropertyType',
-        ps: [{
-            n: 'category',
-            en: 'Category',
-            ti: '.Category'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MappingRuleType',
-        ps: [{
-            n: 'ruleDefinition'
-          }, {
-            n: 'ruleReference',
-            ti: '.ReferenceType'
-          }]
-      }, {
-        ln: 'AbstractGeneralParameterValuePropertyType',
-        ps: [{
-            n: 'abstractGeneralParameterValue',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractGeneralParameterValue',
-            ti: '.AbstractGeneralParameterValueType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'OrientableSurfaceType',
-        bti: '.AbstractSurfaceType',
-        ps: [{
-            n: 'baseSurface',
-            ti: '.SurfacePropertyType'
-          }, {
-            n: 'orientation',
-            an: {
-              lp: 'orientation'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimePeriodType',
-        bti: '.AbstractTimeGeometricPrimitiveType',
-        ps: [{
-            n: 'beginPosition',
-            ti: '.TimePositionType'
-          }, {
-            n: 'begin',
-            ti: '.TimeInstantPropertyType'
-          }, {
-            n: 'endPosition',
-            ti: '.TimePositionType'
-          }, {
-            n: 'end',
-            ti: '.TimeInstantPropertyType'
-          }, {
-            n: 'duration'
-          }, {
-            n: 'timeInterval',
-            ti: '.TimeIntervalLengthType'
-          }]
-      }, {
-        ln: 'PassThroughOperationPropertyType',
-        ps: [{
-            n: 'passThroughOperation',
-            en: 'PassThroughOperation',
-            ti: '.PassThroughOperationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ArrayType',
-        bti: '.AbstractGMLType',
-        ps: [{
-            n: 'members',
-            ti: '.ArrayAssociationType'
-          }]
-      }, {
-        ln: 'DerivedUnitType',
-        bti: '.UnitDefinitionType',
-        ps: [{
-            n: 'derivationUnitTerm',
-            col: true,
-            ti: '.DerivationUnitTermType'
-          }]
-      }, {
-        ln: 'OperationParameterGroupType',
-        bti: '.AbstractGeneralOperationParameterType',
-        ps: [{
-            n: 'maximumOccurs',
-            ti: 'Integer'
-          }, {
-            n: 'parameter',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.AbstractGeneralOperationParameterPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'OperationMethodPropertyType',
-        ps: [{
-            n: 'operationMethod',
-            en: 'OperationMethod',
-            ti: '.OperationMethodType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ConversionToPreferredUnitType',
-        bti: '.UnitOfMeasureType',
-        ps: [{
-            n: 'factor',
-            ti: 'Double'
-          }, {
-            n: 'formula',
-            ti: '.FormulaType'
-          }]
-      }, {
-        ln: 'GeometricPrimitivePropertyType',
-        ps: [{
-            n: 'abstractGeometricPrimitive',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractGeometricPrimitive',
-            ti: '.AbstractGeometricPrimitiveType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CurveArrayPropertyType',
-        ps: [{
-            n: 'abstractCurve',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractCurve',
-            ti: '.AbstractCurveType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CylindricalCSPropertyType',
-        ps: [{
-            n: 'cylindricalCS',
-            en: 'CylindricalCS',
-            ti: '.CylindricalCSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProcedurePropertyType',
-        ps: [{
-            n: 'abstractFeature',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractFeature',
-            ti: '.AbstractFeatureType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TemporalCRSPropertyType',
-        ps: [{
-            n: 'temporalCRS',
-            en: 'TemporalCRS',
-            ti: '.TemporalCRSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TopoSurfaceType',
-        bti: '.AbstractTopologyType',
-        ps: [{
-            n: 'directedFace',
-            col: true,
-            ti: '.DirectedFacePropertyType'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EllipsoidalCSType',
-        bti: '.AbstractCoordinateSystemType'
-      }, {
-        ln: 'TopoPointType',
-        bti: '.AbstractTopologyType',
-        ps: [{
-            n: 'directedNode',
-            ti: '.DirectedNodePropertyType'
-          }]
-      }, {
-        ln: 'AbstractTimeObjectType',
-        bti: '.AbstractGMLType'
-      }, {
-        ln: 'DirectionDescriptionType',
-        ps: [{
-            n: 'compassPoint'
-          }, {
-            n: 'keyword',
-            ti: '.CodeType'
-          }, {
-            n: 'description'
-          }, {
-            n: 'reference',
-            ti: '.ReferenceType'
-          }]
-      }, {
-        ln: 'LinearCSType',
-        bti: '.AbstractCoordinateSystemType'
-      }, {
-        ln: 'MetaDataPropertyType',
-        ps: [{
-            n: 'abstractMetaData',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractMetaData',
-            ti: '.AbstractMetaDataType',
-            t: 'er'
-          }, {
-            n: 'about',
-            an: {
-              lp: 'about'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'OperationPropertyType',
-        ps: [{
-            n: 'abstractOperation',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractOperation',
-            ti: '.AbstractCoordinateOperationType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ImageDatumType',
-        bti: '.AbstractDatumType',
-        ps: [{
-            n: 'pixelInCell',
-            ti: '.CodeWithAuthorityType'
-          }]
-      }, {
-        ln: 'AbstractTimeSliceType',
-        bti: '.AbstractGMLType',
-        ps: [{
-            n: 'validTime',
-            ti: '.TimePrimitivePropertyType'
-          }, {
-            n: 'dataSource',
-            ti: '.StringOrRefType'
-          }]
-      }, {
-        ln: 'FormulaCitation',
-        ps: [{
-            n: 'ciCitation',
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractMetaDataType',
-        ps: [{
-            n: 'content',
-            col: true,
-            dom: false,
-            typed: false,
-            t: 'ers'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GeodesicType',
-        bti: '.GeodesicStringType'
-      }, {
-        ln: 'TinType.ControlPoint',
-        ps: [{
-            n: 'posList',
-            ti: '.DirectPositionListType'
-          }, {
-            n: 'geometricPositionGroup',
-            col: true,
-            etis: [{
-                en: 'pos',
-                ti: '.DirectPositionType'
-              }, {
-                en: 'pointProperty',
-                ti: '.PointPropertyType'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'DatumPropertyType',
-        ps: [{
-            n: 'abstractDatum',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractDatum',
-            ti: '.AbstractDatumType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'GridLimitsType',
-        ps: [{
-            n: 'gridEnvelope',
-            en: 'GridEnvelope',
-            ti: '.GridEnvelopeType'
-          }]
-      }, {
-        ln: 'TimeOrdinalEraType',
-        bti: '.DefinitionType',
-        ps: [{
-            n: 'relatedTime',
-            col: true,
-            ti: '.RelatedTimeType'
-          }, {
-            n: 'start',
-            ti: '.TimeNodePropertyType'
-          }, {
-            n: 'end',
-            ti: '.TimeNodePropertyType'
-          }, {
-            n: 'extent',
-            ti: '.TimePeriodPropertyType'
-          }, {
-            n: 'member',
-            col: true,
-            ti: '.TimeOrdinalEraPropertyType'
-          }, {
-            n: 'group',
-            ti: '.ReferenceType'
-          }]
-      }, {
-        ln: 'TemporalDatumBaseType',
-        bti: '.AbstractDatumType'
-      }, {
-        ln: 'NodeOrEdgePropertyType',
-        ps: [{
-            n: 'node',
-            en: 'Node',
-            ti: '.NodeType'
-          }, {
-            n: 'edge',
-            en: 'Edge',
-            ti: '.EdgeType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimePrimitivePropertyType',
-        ps: [{
-            n: 'abstractTimePrimitive',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractTimePrimitive',
-            ti: '.AbstractTimePrimitiveType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'VerticalDatumType',
-        bti: '.AbstractDatumType'
-      }, {
-        ln: 'TimeOrdinalReferenceSystemType',
-        bti: '.TimeReferenceSystemType',
-        ps: [{
-            n: 'component',
-            col: true,
-            ti: '.TimeOrdinalEraPropertyType'
-          }]
-      }, {
-        ln: 'TopoSurfacePropertyType',
-        ps: [{
-            n: 'topoSurface',
-            en: 'TopoSurface',
-            ti: '.TopoSurfaceType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DynamicFeatureMemberType',
-        bti: '.AbstractFeatureMemberType',
-        ps: [{
-            n: 'dynamicFeature',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'DynamicFeature',
-            ti: '.DynamicFeatureType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ConventionalUnitType',
-        bti: '.UnitDefinitionType',
-        ps: [{
-            n: 'conversionToPreferredUnit',
-            ti: '.ConversionToPreferredUnitType'
-          }, {
-            n: 'roughConversionToPreferredUnit',
-            ti: '.ConversionToPreferredUnitType'
-          }, {
-            n: 'derivationUnitTerm',
-            col: true,
-            ti: '.DerivationUnitTermType'
-          }]
-      }, {
-        ln: 'CompoundCRSPropertyType',
-        ps: [{
-            n: 'compoundCRS',
-            en: 'CompoundCRS',
-            ti: '.CompoundCRSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractTimeComplexType',
-        bti: '.AbstractTimeObjectType'
-      }, {
-        ln: 'TimeReferenceSystemType',
-        bti: '.DefinitionType',
-        ps: [{
-            n: 'domainOfValidity'
-          }]
-      }, {
-        ln: 'ConversionType',
-        bti: '.AbstractGeneralConversionType',
-        ps: [{
-            n: 'method',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.OperationMethodPropertyType',
-            t: 'er'
-          }, {
-            n: 'parameterValue',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.AbstractGeneralParameterValuePropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'ConcatenatedOperationPropertyType',
-        ps: [{
-            n: 'concatenatedOperation',
-            en: 'ConcatenatedOperation',
-            ti: '.ConcatenatedOperationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeCalendarEraType',
-        bti: '.DefinitionType',
-        ps: [{
-            n: 'referenceEvent',
-            ti: '.StringOrRefType'
-          }, {
-            n: 'referenceDate'
-          }, {
-            n: 'julianReference',
-            ti: 'Decimal'
-          }, {
-            n: 'epochOfUse',
-            ti: '.TimePeriodPropertyType'
-          }]
-      }, {
-        ln: 'HistoryPropertyType',
-        ps: [{
-            n: 'abstractTimeSlice',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractTimeSlice',
-            ti: '.AbstractTimeSliceType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGeometricPrimitiveType',
-        bti: '.AbstractGeometryType'
-      }, {
-        ln: 'StringOrRefType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DirectionVectorType',
-        ps: [{
-            n: 'vector',
-            ti: '.VectorType'
-          }, {
-            n: 'horizontalAngle',
-            ti: '.AngleType'
-          }, {
-            n: 'verticalAngle',
-            ti: '.AngleType'
-          }]
-      }, {
         ln: 'AbstractTimeTopologyPrimitiveType',
         bti: '.AbstractTimePrimitiveType',
         ps: [{
             n: 'complex',
             ti: '.ReferenceType'
-          }]
-      }, {
-        ln: 'GeometryArrayPropertyType',
-        ps: [{
-            n: 'abstractGeometry',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractGeometry',
-            ti: '.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'OperationParameterPropertyType',
-        ps: [{
-            n: 'operationParameter',
-            en: 'OperationParameter',
-            ti: '.OperationParameterType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DomainOfValidity',
-        ps: [{
-            n: 'exExtent',
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGeneralTransformationType',
-        bti: '.AbstractCoordinateOperationType'
-      }, {
-        ln: 'GenericMetaDataType',
-        bti: '.AbstractMetaDataType',
-        ps: [{
-            n: 'contentOverrideForGenericMetaDataType',
-            t: 'ae'
-          }]
-      }, {
-        ln: 'TimeInstantType',
-        bti: '.AbstractTimeGeometricPrimitiveType',
-        ps: [{
-            n: 'timePosition',
-            ti: '.TimePositionType'
-          }]
-      }, {
-        ln: 'RingPropertyType',
-        ps: [{
-            n: 'ring',
-            en: 'Ring',
-            ti: '.RingType'
-          }]
-      }, {
-        ln: 'TimeIntervalLengthType',
-        ps: [{
-            n: 'value',
-            ti: 'Decimal',
-            t: 'v'
-          }, {
-            n: 'unit',
-            an: {
-              lp: 'unit'
-            },
-            t: 'a'
-          }, {
-            n: 'radix',
-            ti: 'Integer',
-            an: {
-              lp: 'radix'
-            },
-            t: 'a'
-          }, {
-            n: 'factor',
-            ti: 'Integer',
-            an: {
-              lp: 'factor'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGriddedSurfaceType.Rows.Row',
-        ps: [{
-            n: 'posList',
-            ti: '.DirectPositionListType'
-          }, {
-            n: 'geometricPositionGroup',
-            col: true,
-            etis: [{
-                en: 'pos',
-                ti: '.DirectPositionType'
-              }, {
-                en: 'pointProperty',
-                ti: '.PointPropertyType'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'TimePositionType',
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l'
-            },
-            t: 'v'
-          }, {
-            n: 'frame',
-            an: {
-              lp: 'frame'
-            },
-            t: 'a'
-          }, {
-            n: 'calendarEraName',
-            an: {
-              lp: 'calendarEraName'
-            },
-            t: 'a'
-          }, {
-            n: 'indeterminatePosition',
-            an: {
-              lp: 'indeterminatePosition'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ShellType',
-        ps: [{
-            n: 'surfaceMember',
-            col: true,
-            ti: '.SurfacePropertyType'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TopoPrimitiveMemberType',
-        ps: [{
-            n: 'abstractTopoPrimitive',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractTopoPrimitive',
-            ti: '.AbstractTopoPrimitiveType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DegreesType',
-        ps: [{
-            n: 'value',
-            ti: 'Int',
-            t: 'v'
-          }, {
-            n: 'direction',
-            an: {
-              lp: 'direction'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeCalendarPropertyType',
-        ps: [{
-            n: 'timeCalendar',
-            en: 'TimeCalendar',
-            ti: '.TimeCalendarType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractSolidType',
-        bti: '.AbstractGeometricPrimitiveType'
-      }, {
-        ln: 'GeodeticCRSType',
-        bti: '.AbstractCRSType',
-        ps: [{
-            n: 'ellipsoidalCS',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.EllipsoidalCSPropertyType',
-            t: 'er'
-          }, {
-            n: 'cartesianCS',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.CartesianCSPropertyType',
-            t: 'er'
-          }, {
-            n: 'sphericalCS',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.SphericalCSPropertyType',
-            t: 'er'
-          }, {
-            n: 'geodeticDatum',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.GeodeticDatumPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'MultiSolidPropertyType',
-        ps: [{
-            n: 'multiSolid',
-            en: 'MultiSolid',
-            ti: '.MultiSolidType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'InlinePropertyType',
-        ps: [{
-            n: 'any',
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'BoundingShapeType',
-        ps: [{
-            n: 'envelope',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'Envelope',
-            ti: '.EnvelopeType',
-            t: 'er'
-          }, {
-            n: '_null',
-            en: 'Null',
-            ti: {
-              t: 'l'
-            }
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'ConeType',
@@ -3462,38 +179,17 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractCurveSegmentType',
+        ln: 'DirectedNodePropertyType',
         ps: [{
-            n: 'numDerivativesAtStart',
-            ti: 'Integer',
-            an: {
-              lp: 'numDerivativesAtStart'
-            },
-            t: 'a'
+            n: 'node',
+            en: 'Node',
+            ti: '.NodeType'
           }, {
-            n: 'numDerivativesAtEnd',
-            ti: 'Integer',
+            n: 'orientation',
             an: {
-              lp: 'numDerivativesAtEnd'
+              lp: 'orientation'
             },
             t: 'a'
-          }, {
-            n: 'numDerivativeInterior',
-            ti: 'Integer',
-            an: {
-              lp: 'numDerivativeInterior'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'BezierType',
-        bti: '.BSplineType'
-      }, {
-        ln: 'CoordinateSystemAxisPropertyType',
-        ps: [{
-            n: 'coordinateSystemAxis',
-            en: 'CoordinateSystemAxis',
-            ti: '.CoordinateSystemAxisType'
           }, {
             n: 'nilReason',
             ti: {
@@ -3534,13 +230,27 @@ var GML_3_2_1_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'CoordinateOperationAccuracy',
+        ln: 'RingPropertyType',
         ps: [{
-            n: 'abstractDQPositionalAccuracy',
-            mx: false,
-            t: 'ae'
+            n: 'ring',
+            en: 'Ring',
+            ti: '.RingType'
+          }]
+      }, {
+        ln: 'TemporalCSPropertyType',
+        ps: [{
+            n: 'temporalCS',
+            en: 'TemporalCS',
+            ti: '.TemporalCSType'
           }, {
             n: 'nilReason',
             ti: {
@@ -3580,245 +290,6 @@ var GML_3_2_1_Module_Factory = function () {
           }, {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'EllipsoidPropertyType',
-        ps: [{
-            n: 'ellipsoid',
-            en: 'Ellipsoid',
-            ti: '.EllipsoidType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'VerticalCSType',
-        bti: '.AbstractCoordinateSystemType'
-      }, {
-        ln: 'DefinitionBaseType',
-        bti: '.AbstractGMLType'
-      }, {
-        ln: 'SolidType',
-        bti: '.AbstractSolidType',
-        ps: [{
-            n: 'exterior',
-            ti: '.ShellPropertyType'
-          }, {
-            n: 'interior',
-            col: true,
-            ti: '.ShellPropertyType'
-          }]
-      }, {
-        ln: 'CompositeSurfaceType',
-        bti: '.AbstractSurfaceType',
-        ps: [{
-            n: 'surfaceMember',
-            col: true,
-            ti: '.SurfacePropertyType'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CircleByCenterPointType',
-        bti: '.ArcByCenterPointType'
-      }, {
-        ln: 'TemporalDatumPropertyType',
-        ps: [{
-            n: 'temporalDatum',
-            en: 'TemporalDatum',
-            ti: '.TemporalDatumType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGeneralDerivedCRSType',
-        bti: '.AbstractCRSType',
-        ps: [{
-            n: 'conversion',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.GeneralConversionPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'AbstractGeneralOperationParameterPropertyType',
-        ps: [{
-            n: 'abstractGeneralOperationParameter',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractGeneralOperationParameter',
-            ti: '.AbstractGeneralOperationParameterType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'VectorType',
-        bti: '.DirectPositionType'
-      }, {
-        ln: 'MultiSurfaceType',
-        bti: '.AbstractGeometricAggregateType',
-        ps: [{
-            n: 'surfaceMember',
-            col: true,
-            ti: '.SurfacePropertyType'
-          }, {
-            n: 'surfaceMembers',
-            ti: '.SurfaceArrayPropertyType'
-          }]
-      }, {
-        ln: 'CoverageFunctionType',
-        ps: [{
-            n: 'mappingRule',
-            en: 'MappingRule',
-            ti: '.StringOrRefType'
-          }, {
-            n: 'coverageMappingRule',
-            en: 'CoverageMappingRule',
-            ti: '.MappingRuleType'
-          }, {
-            n: 'gridFunction',
-            en: 'GridFunction',
-            ti: '.GridFunctionType'
-          }]
-      }, {
-        ln: 'NodeType',
-        bti: '.AbstractTopoPrimitiveType',
-        ps: [{
-            n: 'container',
-            ti: '.FaceOrTopoSolidPropertyType'
-          }, {
-            n: 'directedEdge',
-            col: true,
-            ti: '.DirectedEdgePropertyType'
-          }, {
-            n: 'pointProperty',
-            ti: '.PointPropertyType'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
             t: 'a'
           }]
       }, {
@@ -3841,587 +312,42 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'RingType',
-        bti: '.AbstractRingType',
+        ln: 'DefinitionType',
+        bti: '.DefinitionBaseType',
         ps: [{
-            n: 'curveMember',
-            col: true,
-            ti: '.CurvePropertyType'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
+            n: 'remarks'
           }]
       }, {
-        ln: 'AbstractGriddedSurfaceType.Rows',
+        ln: 'SecondDefiningParameter',
         ps: [{
-            n: 'row',
-            col: true,
-            en: 'Row',
-            ti: '.AbstractGriddedSurfaceType.Rows.Row'
+            n: 'inverseFlattening',
+            ti: '.MeasureType'
+          }, {
+            n: 'semiMinorAxis',
+            ti: '.LengthType'
+          }, {
+            n: 'isSphere',
+            ti: 'Boolean'
           }]
       }, {
-        ln: 'OperationParameterGroupPropertyType',
+        ln: 'DerivedCRSType',
+        bti: '.AbstractGeneralDerivedCRSType',
         ps: [{
-            n: 'operationParameterGroup',
-            en: 'OperationParameterGroup',
-            ti: '.OperationParameterGroupType'
+            n: 'baseCRS',
+            ti: '.SingleCRSPropertyType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
+            n: 'derivedCRSType',
+            ti: '.CodeWithAuthorityType'
           }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'BoundedFeatureType',
-        bti: '.AbstractFeatureType'
-      }, {
-        ln: 'ValueArrayPropertyType',
-        ps: [{
-            n: 'abstractValueOrAbstractGeometryOrAbstractTimeObject',
-            col: true,
+            n: 'coordinateSystem',
             mx: false,
             dom: false,
             typed: false,
-            etis: [{
-                en: 'Null',
-                ti: {
-                  t: 'l'
-                }
-              }, {
-                en: 'AbstractTimeObject',
-                ti: '.AbstractTimeObjectType'
-              }, {
-                en: 'AbstractValue',
-                ti: 'AnyType'
-              }, {
-                en: 'AbstractGeometry',
-                ti: '.AbstractGeometryType'
-              }],
-            t: 'ers'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractTimeGeometricPrimitiveType',
-        bti: '.AbstractTimePrimitiveType',
-        ps: [{
-            n: 'frame',
-            an: {
-              lp: 'frame'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeOrdinalEraPropertyType',
-        ps: [{
-            n: 'timeOrdinalEra',
-            en: 'TimeOrdinalEra',
-            ti: '.TimeOrdinalEraType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GeodeticDatumPropertyType',
-        ps: [{
-            n: 'geodeticDatum',
-            en: 'GeodeticDatum',
-            ti: '.GeodeticDatumType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SolidPropertyType',
-        ps: [{
-            n: 'abstractSolid',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractSolid',
-            ti: '.AbstractSolidType',
+            ti: '.CoordinateSystemPropertyType',
             t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
           }]
       }, {
-        ln: 'PolygonType',
-        bti: '.AbstractSurfaceType',
-        ps: [{
-            n: 'exterior',
-            ti: '.AbstractRingPropertyType'
-          }, {
-            n: 'interior',
-            col: true,
-            ti: '.AbstractRingPropertyType'
-          }]
-      }, {
-        ln: 'GridEnvelopeType',
-        ps: [{
-            n: 'low',
-            ti: {
-              t: 'l',
-              bti: 'Integer'
-            }
-          }, {
-            n: 'high',
-            ti: {
-              t: 'l',
-              bti: 'Integer'
-            }
-          }]
-      }, {
-        ln: 'ResultType',
-        ps: [{
-            n: 'any',
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGriddedSurfaceType',
-        bti: '.AbstractParametricCurveSurfaceType',
-        ps: [{
-            n: 'pointGridRows',
-            en: 'rows',
-            ti: '.AbstractGriddedSurfaceType.Rows'
-          }, {
-            n: 'rows',
-            ti: 'Integer',
-            an: {
-              lp: 'rows'
-            },
-            t: 'a'
-          }, {
-            n: 'columns',
-            ti: 'Integer',
-            an: {
-              lp: 'columns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TransformationPropertyType',
-        ps: [{
-            n: 'transformation',
-            en: 'Transformation',
-            ti: '.TransformationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeTopologyPrimitivePropertyType',
-        ps: [{
-            n: 'abstractTimeTopologyPrimitive',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractTimeTopologyPrimitive',
-            ti: '.AbstractTimeTopologyPrimitiveType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SphericalCSType',
-        bti: '.AbstractCoordinateSystemType'
-      }, {
-        ln: 'GeodeticCRSPropertyType',
-        ps: [{
-            n: 'geodeticCRS',
-            en: 'GeodeticCRS',
-            ti: '.GeodeticCRSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'LinearCSPropertyType',
-        ps: [{
-            n: 'linearCS',
-            en: 'LinearCS',
-            ti: '.LinearCSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGeneralParameterValueType'
-      }, {
-        ln: 'BSplineType',
+        ln: 'ArcStringType',
         bti: '.AbstractCurveSegmentType',
         ps: [{
             n: 'posOrPointPropertyOrPointRep',
@@ -4447,89 +373,40 @@ var GML_3_2_1_Module_Factory = function () {
             n: 'coordinates',
             ti: '.CoordinatesType'
           }, {
-            n: 'degree',
-            ti: 'Integer'
-          }, {
-            n: 'knot',
-            col: true,
-            ti: '.KnotPropertyType'
-          }, {
             n: 'interpolation',
             an: {
               lp: 'interpolation'
             },
             t: 'a'
           }, {
-            n: 'isPolynomial',
-            ti: 'Boolean',
+            n: 'numArc',
+            ti: 'Integer',
             an: {
-              lp: 'isPolynomial'
-            },
-            t: 'a'
-          }, {
-            n: 'knotType',
-            an: {
-              lp: 'knotType'
+              lp: 'numArc'
             },
             t: 'a'
           }]
       }, {
-        ln: 'ImageCRSPropertyType',
+        ln: 'DirectionVectorType',
         ps: [{
-            n: 'imageCRS',
-            en: 'ImageCRS',
-            ti: '.ImageCRSType'
+            n: 'vector',
+            ti: '.VectorType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
+            n: 'horizontalAngle',
+            ti: '.AngleType'
           }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'verticalAngle',
+            ti: '.AngleType'
           }]
       }, {
-        ln: 'ArrayAssociationType',
+        ln: 'GeometricPrimitivePropertyType',
         ps: [{
-            n: 'abstractObject',
-            col: true,
+            n: 'abstractGeometricPrimitive',
             mx: false,
             dom: false,
             typed: false,
-            en: 'AbstractObject',
-            ti: 'AnyType',
+            en: 'AbstractGeometricPrimitive',
+            ti: '.AbstractGeometricPrimitiveType',
             t: 'er'
           }, {
             n: 'owns',
@@ -4538,161 +415,6 @@ var GML_3_2_1_Module_Factory = function () {
               lp: 'owns'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'SolidArrayPropertyType',
-        ps: [{
-            n: 'abstractSolid',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractSolid',
-            ti: '.AbstractSolidType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ClothoidType.RefLocation',
-        ps: [{
-            n: 'affinePlacement',
-            en: 'AffinePlacement',
-            ti: '.AffinePlacementType'
-          }]
-      }, {
-        ln: 'TimeNodeType',
-        bti: '.AbstractTimeTopologyPrimitiveType',
-        ps: [{
-            n: 'previousEdge',
-            col: true,
-            ti: '.TimeEdgePropertyType'
-          }, {
-            n: 'nextEdge',
-            col: true,
-            ti: '.TimeEdgePropertyType'
-          }, {
-            n: 'position',
-            ti: '.TimeInstantPropertyType'
-          }]
-      }, {
-        ln: 'TemporalCRSType',
-        bti: '.AbstractCRSType',
-        ps: [{
-            n: 'timeCS',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.TimeCSPropertyType',
-            t: 'er'
-          }, {
-            n: 'usesTemporalCS',
-            ti: '.TemporalCSPropertyType'
-          }, {
-            n: 'temporalDatum',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.TemporalDatumPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'MeasureType',
-        ps: [{
-            n: 'value',
-            ti: 'Double',
-            t: 'v'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CodeOrNilReasonListType',
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l'
-            },
-            t: 'v'
-          }, {
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'FaceOrTopoSolidPropertyType',
-        ps: [{
-            n: 'face',
-            en: 'Face',
-            ti: '.FaceType'
-          }, {
-            n: 'topoSolid',
-            en: 'TopoSolid',
-            ti: '.TopoSolidType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EngineeringDatumPropertyType',
-        ps: [{
-            n: 'engineeringDatum',
-            en: 'EngineeringDatum',
-            ti: '.EngineeringDatumType'
           }, {
             n: 'nilReason',
             ti: {
@@ -4735,382 +457,11 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GeocentricCRSPropertyType',
+        ln: 'ObliqueCartesianCSPropertyType',
         ps: [{
-            n: 'geocentricCRS',
-            en: 'GeocentricCRS',
-            ti: '.GeocentricCRSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeTopologyComplexPropertyType',
-        ps: [{
-            n: 'timeTopologyComplex',
-            en: 'TimeTopologyComplex',
-            ti: '.TimeTopologyComplexType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TopoComplexPropertyType',
-        ps: [{
-            n: 'topoComplex',
-            en: 'TopoComplex',
-            ti: '.TopoComplexType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CompositeSolidType',
-        bti: '.AbstractSolidType',
-        ps: [{
-            n: 'solidMember',
-            col: true,
-            ti: '.SolidPropertyType'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeType',
-        bti: '.MeasureType'
-      }, {
-        ln: 'PolarCSType',
-        bti: '.AbstractCoordinateSystemType'
-      }, {
-        ln: 'AbstractFeatureCollectionType',
-        bti: '.AbstractFeatureType',
-        ps: [{
-            n: 'featureMember',
-            col: true,
-            ti: '.FeaturePropertyType'
-          }, {
-            n: 'featureMembers',
-            ti: '.FeatureArrayPropertyType'
-          }]
-      }, {
-        ln: 'CodeType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'VerticalCRSPropertyType',
-        ps: [{
-            n: 'verticalCRS',
-            en: 'VerticalCRS',
-            ti: '.VerticalCRSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CartesianCSType',
-        bti: '.AbstractCoordinateSystemType'
-      }, {
-        ln: 'OperationMethodType',
-        bti: '.IdentifiedObjectType',
-        ps: [{
-            n: 'formulaCitation',
-            ti: '.FormulaCitation'
-          }, {
-            n: 'formula',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.CodeType',
-            t: 'er'
-          }, {
-            n: 'sourceDimensions',
-            ti: 'Integer'
-          }, {
-            n: 'targetDimensions',
-            ti: 'Integer'
-          }, {
-            n: 'parameter',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.AbstractGeneralOperationParameterPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'RelatedTimeType',
-        bti: '.TimePrimitivePropertyType',
-        ps: [{
-            n: 'relativePosition',
-            an: {
-              lp: 'relativePosition'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DirectedFacePropertyType',
-        ps: [{
-            n: 'face',
-            en: 'Face',
-            ti: '.FaceType'
-          }, {
-            n: 'orientation',
-            an: {
-              lp: 'orientation'
-            },
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeClockType',
-        bti: '.TimeReferenceSystemType',
-        ps: [{
-            n: 'referenceEvent',
-            ti: '.StringOrRefType'
-          }, {
-            n: 'referenceTime',
-            ti: 'Calendar'
-          }, {
-            n: 'utcReference',
-            ti: 'Calendar'
-          }, {
-            n: 'dateBasis',
-            col: true,
-            ti: '.TimeCalendarPropertyType'
-          }]
-      }, {
-        ln: 'MeasureOrNilReasonListType',
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l'
-            },
-            t: 'v'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PolarCSPropertyType',
-        ps: [{
-            n: 'polarCS',
-            en: 'PolarCS',
-            ti: '.PolarCSType'
+            n: 'obliqueCartesianCS',
+            en: 'ObliqueCartesianCS',
+            ti: '.ObliqueCartesianCSType'
           }, {
             n: 'nilReason',
             ti: {
@@ -5211,34 +562,285 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractDatumType',
-        bti: '.IdentifiedObjectType',
+        ln: 'Boolean',
         ps: [{
-            n: 'domainOfValidity',
-            ti: '.DomainOfValidity'
+            n: 'value',
+            ti: 'Boolean',
+            t: 'v'
           }, {
-            n: 'scope',
-            col: true
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CategoryExtentType',
+        bti: '.CodeOrNilReasonListType'
+      }, {
+        ln: 'OperationParameterType',
+        bti: '.AbstractGeneralOperationParameterType'
+      }, {
+        ln: 'GridLimitsType',
+        ps: [{
+            n: 'gridEnvelope',
+            en: 'GridEnvelope',
+            ti: '.GridEnvelopeType'
+          }]
+      }, {
+        ln: 'TimeInstantPropertyType',
+        ps: [{
+            n: 'timeInstant',
+            en: 'TimeInstant',
+            ti: '.TimeInstantType'
           }, {
-            n: 'anchorDefinition',
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractTopologyType',
+        bti: '.AbstractGMLType'
+      }, {
+        ln: 'UserDefinedCSType',
+        bti: '.AbstractCoordinateSystemType'
+      }, {
+        ln: 'EngineeringDatumType',
+        bti: '.AbstractDatumType'
+      }, {
+        ln: 'TopoPrimitiveMemberType',
+        ps: [{
+            n: 'abstractTopoPrimitive',
             mx: false,
             dom: false,
             typed: false,
-            ti: '.CodeType',
+            en: 'AbstractTopoPrimitive',
+            ti: '.AbstractTopoPrimitiveType',
             t: 'er'
           }, {
-            n: 'realizationEpoch',
-            ti: 'Calendar'
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'DefinitionProxyType',
-        bti: '.DefinitionType',
+        ln: 'HistoryPropertyType',
         ps: [{
-            n: 'definitionRef',
-            ti: '.ReferenceType'
+            n: 'abstractTimeSlice',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractTimeSlice',
+            ti: '.AbstractTimeSliceType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'AbstractFeatureMemberType',
+        ln: 'BagType',
+        bti: '.AbstractGMLType',
+        ps: [{
+            n: 'member',
+            col: true,
+            ti: '.AssociationRoleType'
+          }, {
+            n: 'members',
+            ti: '.ArrayAssociationType'
+          }]
+      }, {
+        ln: 'GeneralTransformationPropertyType',
+        ps: [{
+            n: 'abstractGeneralTransformation',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractGeneralTransformation',
+            ti: '.AbstractGeneralTransformationType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'OperationParameterPropertyType',
+        ps: [{
+            n: 'operationParameter',
+            en: 'OperationParameter',
+            ti: '.OperationParameterType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractMetadataPropertyType',
         ps: [{
             n: 'owns',
             ti: 'Boolean',
@@ -5248,21 +850,99 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'PrimeMeridianType',
-        bti: '.IdentifiedObjectType',
+        ln: 'ArrayAssociationType',
         ps: [{
-            n: 'greenwichLongitude',
-            ti: '.AngleType'
+            n: 'abstractObject',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractObject',
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'TemporalCSType',
-        bti: '.AbstractCoordinateSystemType'
-      }, {
-        ln: 'RectangleType',
-        bti: '.AbstractSurfacePatchType',
+        ln: 'PolygonType',
+        bti: '.AbstractSurfaceType',
         ps: [{
             n: 'exterior',
             ti: '.AbstractRingPropertyType'
+          }, {
+            n: 'interior',
+            col: true,
+            ti: '.AbstractRingPropertyType'
+          }]
+      }, {
+        ln: 'AffineCSPropertyType',
+        ps: [{
+            n: 'affineCS',
+            en: 'AffineCS',
+            ti: '.AffineCSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeodesicStringType',
+        bti: '.AbstractCurveSegmentType',
+        ps: [{
+            n: 'posList',
+            ti: '.DirectPositionListType'
+          }, {
+            n: 'geometricPositionGroup',
+            col: true,
+            etis: [{
+                en: 'pos',
+                ti: '.DirectPositionType'
+              }, {
+                en: 'pointProperty',
+                ti: '.PointPropertyType'
+              }],
+            t: 'es'
           }, {
             n: 'interpolation',
             an: {
@@ -5271,28 +951,13 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'PassThroughOperationType',
-        bti: '.AbstractCoordinateOperationType',
-        ps: [{
-            n: 'modifiedCoordinate',
-            col: true,
-            ti: 'Integer'
-          }, {
-            n: 'coordOperation',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.CoordinateOperationPropertyType',
-            t: 'er'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
+        ln: 'ArcType',
+        bti: '.ArcStringType'
       }, {
-        ln: 'ArcStringType',
+        ln: 'AbstractTopoPrimitiveType',
+        bti: '.AbstractTopologyType'
+      }, {
+        ln: 'BSplineType',
         bti: '.AbstractCurveSegmentType',
         ps: [{
             n: 'posOrPointPropertyOrPointRep',
@@ -5318,477 +983,99 @@ var GML_3_2_1_Module_Factory = function () {
             n: 'coordinates',
             ti: '.CoordinatesType'
           }, {
+            n: 'degree',
+            ti: 'Integer'
+          }, {
+            n: 'knot',
+            col: true,
+            ti: '.KnotPropertyType'
+          }, {
             n: 'interpolation',
             an: {
               lp: 'interpolation'
             },
             t: 'a'
           }, {
-            n: 'numArc',
-            ti: 'Integer',
-            an: {
-              lp: 'numArc'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractCoverageType',
-        bti: '.AbstractFeatureType',
-        ps: [{
-            n: 'domainSet',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.DomainSetType',
-            t: 'er'
-          }, {
-            n: 'rangeSet',
-            ti: '.RangeSetType'
-          }]
-      }, {
-        ln: 'ProjectedCRSType',
-        bti: '.AbstractGeneralDerivedCRSType',
-        ps: [{
-            n: 'baseGeodeticCRS',
-            ti: '.GeodeticCRSPropertyType'
-          }, {
-            n: 'baseGeographicCRS',
-            ti: '.GeographicCRSPropertyType'
-          }, {
-            n: 'cartesianCS',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.CartesianCSPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'EllipsoidType',
-        bti: '.IdentifiedObjectType',
-        ps: [{
-            n: 'semiMajorAxis',
-            ti: '.MeasureType'
-          }, {
-            n: 'secondDefiningParameter',
-            ti: '.SecondDefiningParameterPropertyElement'
-          }]
-      }, {
-        ln: 'VerticalDatumPropertyType',
-        ps: [{
-            n: 'verticalDatum',
-            en: 'VerticalDatum',
-            ti: '.VerticalDatumType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'FeaturePropertyType',
-        ps: [{
-            n: 'abstractFeature',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractFeature',
-            ti: '.AbstractFeatureType',
-            t: 'er'
-          }, {
-            n: 'owns',
+            n: 'isPolynomial',
             ti: 'Boolean',
             an: {
-              lp: 'owns'
+              lp: 'isPolynomial'
             },
             t: 'a'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
+            n: 'knotType',
             an: {
-              lp: 'nilReason'
+              lp: 'knotType'
             },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
-        ln: 'DefinitionType',
-        bti: '.DefinitionBaseType',
+        ln: 'AbstractCoordinateSystemType',
+        bti: '.IdentifiedObjectType',
         ps: [{
-            n: 'remarks'
-          }]
-      }, {
-        ln: 'TransformationType',
-        bti: '.AbstractGeneralTransformationType',
-        ps: [{
-            n: 'method',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.OperationMethodPropertyType',
-            t: 'er'
-          }, {
-            n: 'parameterValue',
+            n: 'axis',
             col: true,
             mx: false,
             dom: false,
             typed: false,
-            ti: '.AbstractGeneralParameterValuePropertyType',
+            ti: '.CoordinateSystemAxisPropertyType',
             t: 'er'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'MovingObjectStatusType',
-        bti: '.AbstractTimeSliceType',
+        ln: 'BaseUnitType',
+        bti: '.UnitDefinitionType',
         ps: [{
-            n: 'position',
-            ti: '.GeometryPropertyType'
-          }, {
-            n: 'pos',
-            ti: '.DirectPositionType'
-          }, {
-            n: 'locationName',
-            ti: '.CodeType'
-          }, {
-            n: 'locationReference',
-            ti: '.ReferenceType'
-          }, {
-            n: 'location',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.LocationPropertyType',
-            t: 'er'
-          }, {
-            n: 'speed',
-            ti: '.MeasureType'
-          }, {
-            n: 'bearing',
-            ti: '.DirectionPropertyType'
-          }, {
-            n: 'acceleration',
-            ti: '.MeasureType'
-          }, {
-            n: 'elevation',
-            ti: '.MeasureType'
-          }, {
-            n: 'status',
-            ti: '.StringOrRefType'
-          }, {
-            n: 'statusReference',
+            n: 'unitsSystem',
             ti: '.ReferenceType'
           }]
       }, {
-        ln: 'CircleType',
-        bti: '.ArcType'
+        ln: 'AbstractSurfacePatchType'
       }, {
-        ln: 'DiscreteCoverageType',
-        bti: '.AbstractCoverageType',
+        ln: 'TopoVolumeType',
+        bti: '.AbstractTopologyType',
         ps: [{
-            n: 'coverageFunction',
-            ti: '.CoverageFunctionType'
+            n: 'directedTopoSolid',
+            col: true,
+            ti: '.DirectedTopoSolidPropertyType'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'DerivedCRSType',
-        bti: '.AbstractGeneralDerivedCRSType',
+        ln: 'DataBlockType',
         ps: [{
-            n: 'baseCRS',
-            ti: '.SingleCRSPropertyType'
+            n: 'rangeParameters',
+            ti: '.AssociationRoleType'
           }, {
-            n: 'derivedCRSType',
-            ti: '.CodeWithAuthorityType'
+            n: 'tupleList',
+            ti: '.CoordinatesType'
           }, {
-            n: 'coordinateSystem',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.CoordinateSystemPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'KnotPropertyType',
-        ps: [{
-            n: 'knot',
-            en: 'Knot',
-            ti: '.KnotType'
-          }]
-      }, {
-        ln: 'KnotType',
-        ps: [{
-            n: 'value',
-            ti: 'Double'
-          }, {
-            n: 'multiplicity',
-            ti: 'Integer'
-          }, {
-            n: 'weight',
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'SecondDefiningParameter',
-        ps: [{
-            n: 'inverseFlattening',
-            ti: '.MeasureType'
-          }, {
-            n: 'semiMinorAxis',
-            ti: '.LengthType'
-          }, {
-            n: 'isSphere',
-            ti: 'Boolean'
-          }]
-      }, {
-        ln: 'CountPropertyType',
-        ps: [{
-            n: 'count',
-            en: 'Count',
-            ti: '.Count'
-          }, {
-            n: 'nilReason',
+            n: 'doubleOrNilReasonTupleList',
             ti: {
               t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            }
           }]
       }, {
-        ln: 'CurveType',
-        bti: '.AbstractCurveType',
+        ln: 'GeocentricCRSType',
+        bti: '.AbstractCRSType',
         ps: [{
-            n: 'segments',
-            ti: '.CurveSegmentArrayPropertyType'
-          }]
-      }, {
-        ln: 'VerticalCSPropertyType',
-        ps: [{
-            n: 'verticalCS',
-            en: 'VerticalCS',
-            ti: '.VerticalCSType'
+            n: 'usesCartesianCS',
+            ti: '.CartesianCSPropertyType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
+            n: 'usesSphericalCS',
+            ti: '.SphericalCSPropertyType'
           }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TopoPointPropertyType',
-        ps: [{
-            n: 'topoPoint',
-            en: 'TopoPoint',
-            ti: '.TopoPointType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Category',
-        bti: '.CodeType',
-        ps: [{
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TopoSolidPropertyType',
-        ps: [{
-            n: 'topoSolid',
-            en: 'TopoSolid',
-            ti: '.TopoSolidType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'IndirectEntryType',
-        ps: [{
-            n: 'definitionProxy',
-            en: 'DefinitionProxy',
-            ti: '.DefinitionProxyType'
+            n: 'usesGeodeticDatum',
+            ti: '.GeodeticDatumPropertyType'
           }]
       }, {
         ln: 'AbstractContinuousCoverageType',
@@ -5798,116 +1085,32 @@ var GML_3_2_1_Module_Factory = function () {
             ti: '.CoverageFunctionType'
           }]
       }, {
-        ln: 'EnvelopeType',
+        ln: 'CylindricalCSType',
+        bti: '.AbstractCoordinateSystemType'
+      }, {
+        ln: 'RectangleType',
+        bti: '.AbstractSurfacePatchType',
         ps: [{
-            n: 'lowerCorner',
-            ti: '.DirectPositionType'
+            n: 'exterior',
+            ti: '.AbstractRingPropertyType'
           }, {
-            n: 'upperCorner',
-            ti: '.DirectPositionType'
-          }, {
-            n: 'pos',
-            col: true,
-            ti: '.DirectPositionType'
-          }, {
-            n: 'coordinates',
-            ti: '.CoordinatesType'
-          }, {
-            n: 'srsName',
+            n: 'interpolation',
             an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'Integer',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'uomLabels'
+              lp: 'interpolation'
             },
             t: 'a'
           }]
       }, {
-        ln: 'PointPropertyType',
+        ln: 'MultiSolidPropertyType',
         ps: [{
-            n: 'point',
-            en: 'Point',
-            ti: '.PointType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'multiSolid',
+            en: 'MultiSolid',
+            ti: '.MultiSolidType'
           }, {
             n: 'owns',
             ti: 'Boolean',
             an: {
               lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DirectedTopoSolidPropertyType',
-        ps: [{
-            n: 'topoSolid',
-            en: 'TopoSolid',
-            ti: '.TopoSolidType'
-          }, {
-            n: 'orientation',
-            an: {
-              lp: 'orientation'
             },
             t: 'a'
           }, {
@@ -5950,6 +1153,55 @@ var GML_3_2_1_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'ArcByBulgeType',
+        bti: '.ArcStringByBulgeType'
+      }, {
+        ln: 'TimePositionType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
+            },
+            t: 'v'
+          }, {
+            n: 'frame',
+            an: {
+              lp: 'frame'
+            },
+            t: 'a'
+          }, {
+            n: 'calendarEraName',
+            an: {
+              lp: 'calendarEraName'
+            },
+            t: 'a'
+          }, {
+            n: 'indeterminatePosition',
+            an: {
+              lp: 'indeterminatePosition'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TargetPropertyType',
+        ps: [{
+            n: 'abstractFeature',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractFeature',
+            ti: '.AbstractFeatureType',
+            t: 'er'
+          }, {
+            n: 'abstractGeometry',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractGeometry',
+            ti: '.AbstractGeometryType',
+            t: 'er'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -5957,119 +1209,141 @@ var GML_3_2_1_Module_Factory = function () {
               lp: 'owns'
             },
             t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'AbstractSurfacePatchType'
-      }, {
-        ln: 'CurveSegmentArrayPropertyType',
+        ln: 'TemporalDatumPropertyType',
         ps: [{
-            n: 'abstractCurveSegment',
+            n: 'temporalDatum',
+            en: 'TemporalDatum',
+            ti: '.TemporalDatumType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'OperationParameterGroupType',
+        bti: '.AbstractGeneralOperationParameterType',
+        ps: [{
+            n: 'maximumOccurs',
+            ti: 'Integer'
+          }, {
+            n: 'parameter',
             col: true,
             mx: false,
             dom: false,
             typed: false,
-            en: 'AbstractCurveSegment',
-            ti: '.AbstractCurveSegmentType',
+            ti: '.AbstractGeneralOperationParameterPropertyType',
             t: 'er'
           }]
       }, {
-        ln: 'TimeCSPropertyType',
+        ln: 'ClothoidType.RefLocation',
         ps: [{
-            n: 'timeCS',
-            en: 'TimeCS',
-            ti: '.TimeCSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'affinePlacement',
+            en: 'AffinePlacement',
+            ti: '.AffinePlacementType'
           }]
       }, {
-        ln: 'Boolean',
+        ln: 'TopoCurvePropertyType',
         ps: [{
-            n: 'value',
+            n: 'topoCurve',
+            en: 'TopoCurve',
+            ti: '.TopoCurveType'
+          }, {
+            n: 'owns',
             ti: 'Boolean',
-            t: 'v'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
             an: {
-              lp: 'nilReason'
+              lp: 'owns'
             },
             t: 'a'
           }]
       }, {
-        ln: 'LineStringType',
-        bti: '.AbstractCurveType',
+        ln: 'DirectedObservationType',
+        bti: '.ObservationType',
         ps: [{
-            n: 'posOrPointPropertyOrPointRep',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            etis: [{
-                en: 'pos',
-                ti: '.DirectPositionType'
-              }, {
-                en: 'pointRep',
-                ti: '.PointPropertyType'
-              }, {
-                en: 'pointProperty',
-                ti: '.PointPropertyType'
-              }],
-            t: 'ers'
-          }, {
-            n: 'posList',
-            ti: '.DirectPositionListType'
-          }, {
-            n: 'coordinates',
-            ti: '.CoordinatesType'
+            n: 'direction',
+            ti: '.DirectionPropertyType'
           }]
       }, {
-        ln: 'CompositeCurveType',
-        bti: '.AbstractCurveType',
+        ln: 'AbstractParametricCurveSurfaceType',
+        bti: '.AbstractSurfacePatchType',
         ps: [{
-            n: 'curveMember',
-            col: true,
-            ti: '.CurvePropertyType'
-          }, {
             n: 'aggregationType',
             an: {
               lp: 'aggregationType'
@@ -6077,11 +1351,11 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DerivedCRSPropertyType',
+        ln: 'CoordinateSystemAxisPropertyType',
         ps: [{
-            n: 'derivedCRS',
-            en: 'DerivedCRS',
-            ti: '.DerivedCRSType'
+            n: 'coordinateSystemAxis',
+            en: 'CoordinateSystemAxis',
+            ti: '.CoordinateSystemAxisType'
           }, {
             n: 'nilReason',
             ti: {
@@ -6124,61 +1398,29 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SequenceRuleType',
+        ln: 'VerticalDatumType',
+        bti: '.AbstractDatumType'
+      }, {
+        ln: 'ArrayType',
+        bti: '.AbstractGMLType',
         ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'order',
-            an: {
-              lp: 'order'
-            },
-            t: 'a'
-          }, {
-            n: 'axisOrder',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'axisOrder'
-            },
-            t: 'a'
+            n: 'members',
+            ti: '.ArrayAssociationType'
           }]
       }, {
-        ln: 'AbstractTopologyType',
-        bti: '.AbstractGMLType'
-      }, {
-        ln: 'GridFunctionType',
+        ln: 'TimeCalendarType',
+        bti: '.TimeReferenceSystemType',
         ps: [{
-            n: 'sequenceRule',
-            ti: '.SequenceRuleType'
-          }, {
-            n: 'startPoint',
-            ti: {
-              t: 'l',
-              bti: 'Integer'
-            }
+            n: 'referenceFrame',
+            col: true,
+            ti: '.TimeCalendarEraPropertyType'
           }]
       }, {
-        ln: 'GeographicCRSType',
-        bti: '.AbstractCRSType',
+        ln: 'TimeNodePropertyType',
         ps: [{
-            n: 'usesEllipsoidalCS',
-            ti: '.EllipsoidalCSPropertyType'
-          }, {
-            n: 'usesGeodeticDatum',
-            ti: '.GeodeticDatumPropertyType'
-          }]
-      }, {
-        ln: 'MultiGeometryPropertyType',
-        ps: [{
-            n: 'abstractGeometricAggregate',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractGeometricAggregate',
-            ti: '.AbstractGeometricAggregateType',
-            t: 'er'
+            n: 'timeNode',
+            en: 'TimeNode',
+            ti: '.TimeNodeType'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -6228,28 +1470,58 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'FaceType',
-        bti: '.AbstractTopoPrimitiveType',
+        ln: 'TimeIntervalLengthType',
         ps: [{
-            n: 'isolated',
+            n: 'value',
+            ti: 'Decimal',
+            t: 'v'
+          }, {
+            n: 'unit',
+            an: {
+              lp: 'unit'
+            },
+            t: 'a'
+          }, {
+            n: 'radix',
+            ti: 'Integer',
+            an: {
+              lp: 'radix'
+            },
+            t: 'a'
+          }, {
+            n: 'factor',
+            ti: 'Integer',
+            an: {
+              lp: 'factor'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TopoComplexType',
+        bti: '.AbstractTopologyType',
+        ps: [{
+            n: 'maximalComplex',
+            ti: '.TopoComplexPropertyType'
+          }, {
+            n: 'superComplex',
             col: true,
-            ti: '.NodePropertyType'
+            ti: '.TopoComplexPropertyType'
           }, {
-            n: 'directedEdge',
+            n: 'subComplex',
             col: true,
-            ti: '.DirectedEdgePropertyType'
+            ti: '.TopoComplexPropertyType'
           }, {
-            n: 'directedTopoSolid',
+            n: 'topoPrimitiveMember',
             col: true,
-            ti: '.DirectedTopoSolidPropertyType'
+            ti: '.TopoPrimitiveMemberType'
           }, {
-            n: 'surfaceProperty',
-            ti: '.SurfacePropertyType'
+            n: 'topoPrimitiveMembers',
+            ti: '.TopoPrimitiveArrayAssociationType'
           }, {
-            n: 'universal',
+            n: 'isMaximal',
             ti: 'Boolean',
             an: {
-              lp: 'universal'
+              lp: 'isMaximal'
             },
             t: 'a'
           }, {
@@ -6311,22 +1583,171 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'AbstractTimeObjectType',
+        bti: '.AbstractGMLType'
+      }, {
+        ln: 'AngleChoiceType',
+        ps: [{
+            n: 'angle',
+            ti: '.AngleType'
+          }, {
+            n: 'dmsAngle',
+            ti: '.DMSAngleType'
+          }]
+      }, {
+        ln: 'DynamicFeatureMemberType',
+        bti: '.AbstractFeatureMemberType',
+        ps: [{
+            n: 'dynamicFeature',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'DynamicFeature',
+            ti: '.DynamicFeatureType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TinType.ControlPoint',
+        ps: [{
+            n: 'posList',
+            ti: '.DirectPositionListType'
+          }, {
+            n: 'geometricPositionGroup',
+            col: true,
+            etis: [{
+                en: 'pos',
+                ti: '.DirectPositionType'
+              }, {
+                en: 'pointProperty',
+                ti: '.PointPropertyType'
+              }],
+            t: 'es'
+          }]
+      }, {
+        ln: 'RectifiedGridType',
+        bti: '.GridType'
+      }, {
+        ln: 'AbstractFeatureType',
+        bti: '.AbstractGMLType',
+        ps: [{
+            n: 'boundedBy',
+            ti: '.BoundingShapeType'
+          }, {
+            n: 'location',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.LocationPropertyType',
+            t: 'er'
+          }]
+      }, {
         ln: 'AffineCSType',
         bti: '.AbstractCoordinateSystemType'
       }, {
-        ln: 'SpeedType',
-        bti: '.MeasureType'
-      }, {
-        ln: 'GeneralTransformationPropertyType',
+        ln: 'TemporalCRSPropertyType',
         ps: [{
-            n: 'abstractGeneralTransformation',
+            n: 'temporalCRS',
+            en: 'TemporalCRS',
+            ti: '.TemporalCRSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'BoundingShapeType',
+        ps: [{
+            n: 'envelope',
             mx: false,
             dom: false,
             typed: false,
-            en: 'AbstractGeneralTransformation',
-            ti: '.AbstractGeneralTransformationType',
+            en: 'Envelope',
+            ti: '.EnvelopeType',
             t: 'er'
           }, {
+            n: '_null',
+            en: 'Null',
+            ti: {
+              t: 'l'
+            }
+          }, {
             n: 'nilReason',
             ti: {
               t: 'l'
@@ -6335,51 +1756,13 @@ var GML_3_2_1_Module_Factory = function () {
               lp: 'nilReason'
             },
             t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
           }]
       }, {
-        ln: 'TimeCalendarEraPropertyType',
+        ln: 'ImageDatumPropertyType',
         ps: [{
-            n: 'timeCalendarEra',
-            en: 'TimeCalendarEra',
-            ti: '.TimeCalendarEraType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
+            n: 'imageDatum',
+            en: 'ImageDatum',
+            ti: '.ImageDatumType'
           }, {
             n: 'nilReason',
             ti: {
@@ -6422,31 +1805,9 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DomainSetType',
+        ln: 'Category',
+        bti: '.CodeType',
         ps: [{
-            n: 'abstractGeometry',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractGeometry',
-            ti: '.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'abstractTimeObject',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractTimeObject',
-            ti: '.AbstractTimeObjectType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
             n: 'nilReason',
             ti: {
               t: 'l'
@@ -6455,206 +1816,306 @@ var GML_3_2_1_Module_Factory = function () {
               lp: 'nilReason'
             },
             t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
           }]
       }, {
-        ln: 'TimeEdgePropertyType',
+        ln: 'SphereType',
+        bti: '.AbstractGriddedSurfaceType',
         ps: [{
-            n: 'timeEdge',
-            en: 'TimeEdge',
-            ti: '.TimeEdgeType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
+            n: 'horizontalCURVETYPE',
             an: {
-              lp: 'owns'
+              lp: 'horizontalCurveType'
             },
             t: 'a'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
+            n: 'verticalCURVETYPE',
             an: {
-              lp: 'nilReason'
+              lp: 'verticalCurveType'
             },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
-        ln: 'DirectPositionListType',
+        ln: 'TemporalDatumType',
+        bti: '.TemporalDatumBaseType',
+        ps: [{
+            n: 'origin',
+            ti: 'Calendar'
+          }]
+      }, {
+        ln: 'DegreesType',
         ps: [{
             n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            },
+            ti: 'Int',
             t: 'v'
           }, {
-            n: 'count',
-            ti: 'Integer',
+            n: 'direction',
             an: {
-              lp: 'count'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'Integer',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'uomLabels'
+              lp: 'direction'
             },
             t: 'a'
           }]
       }, {
-        ln: 'TimeCalendarType',
-        bti: '.TimeReferenceSystemType',
+        ln: 'VerticalDatumPropertyType',
         ps: [{
-            n: 'referenceFrame',
+            n: 'verticalDatum',
+            en: 'VerticalDatum',
+            ti: '.VerticalDatumType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractGriddedSurfaceType.Rows',
+        ps: [{
+            n: 'row',
             col: true,
-            ti: '.TimeCalendarEraPropertyType'
+            en: 'Row',
+            ti: '.AbstractGriddedSurfaceType.Rows.Row'
           }]
       }, {
-        ln: 'PointType',
-        bti: '.AbstractGeometricPrimitiveType',
+        ln: 'DiscreteCoverageType',
+        bti: '.AbstractCoverageType',
         ps: [{
-            n: 'pos',
-            ti: '.DirectPositionType'
-          }, {
-            n: 'coordinates',
-            ti: '.CoordinatesType'
-          }]
-      }, {
-        ln: 'FileType',
-        ps: [{
-            n: 'rangeParameters',
-            ti: '.AssociationRoleType'
-          }, {
-            n: 'fileName'
-          }, {
-            n: 'fileReference'
-          }, {
-            n: 'fileStructure',
-            ti: '.CodeType'
-          }, {
-            n: 'mimeType'
-          }, {
-            n: 'compression'
+            n: 'coverageFunction',
+            ti: '.CoverageFunctionType'
           }]
       }, {
         ln: 'CodeWithAuthorityType',
         bti: '.CodeType'
       }, {
-        ln: 'AbstractTopoPrimitiveType',
-        bti: '.AbstractTopologyType'
+        ln: 'SphericalCSType',
+        bti: '.AbstractCoordinateSystemType'
       }, {
-        ln: 'TopoCurvePropertyType',
+        ln: 'BezierType',
+        bti: '.BSplineType'
+      }, {
+        ln: 'GeodesicType',
+        bti: '.GeodesicStringType'
+      }, {
+        ln: 'EllipsoidalCSPropertyType',
         ps: [{
-            n: 'topoCurve',
-            en: 'TopoCurve',
-            ti: '.TopoCurveType'
+            n: 'ellipsoidalCS',
+            en: 'EllipsoidalCS',
+            ti: '.EllipsoidalCSType'
           }, {
-            n: 'owns',
-            ti: 'Boolean',
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
             an: {
-              lp: 'owns'
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CodeListType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
+            },
+            t: 'v'
+          }, {
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
             },
             t: 'a'
           }]
       }, {
-        ln: 'LengthType',
-        bti: '.MeasureType'
-      }, {
-        ln: 'AbstractMemberType',
+        ln: 'GeographicCRSPropertyType',
         ps: [{
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
+            n: 'geographicCRS',
+            en: 'GeographicCRS',
+            ti: '.GeographicCRSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
             },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CompositeCurveType',
+        bti: '.AbstractCurveType',
+        ps: [{
+            n: 'curveMember',
+            col: true,
+            ti: '.CurvePropertyType'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractCRSType',
+        bti: '.IdentifiedObjectType',
+        ps: [{
+            n: 'domainOfValidity',
+            col: true,
+            ti: '.DomainOfValidity'
+          }, {
+            n: 'scope',
+            col: true
+          }]
+      }, {
+        ln: 'MetaDataPropertyType',
+        ps: [{
+            n: 'abstractMetaData',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractMetaData',
+            ti: '.AbstractMetaDataType',
+            t: 'er'
+          }, {
+            n: 'about',
+            an: {
+              lp: 'about'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
@@ -6677,52 +2138,11 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DirectPositionType',
+        ln: 'GeocentricCRSPropertyType',
         ps: [{
-            n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            },
-            t: 'v'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'Integer',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ObliqueCartesianCSPropertyType',
-        ps: [{
-            n: 'obliqueCartesianCS',
-            en: 'ObliqueCartesianCS',
-            ti: '.ObliqueCartesianCSType'
+            n: 'geocentricCRS',
+            en: 'GeocentricCRS',
+            ti: '.GeocentricCRSType'
           }, {
             n: 'nilReason',
             ti: {
@@ -6765,770 +2185,14 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LinearRingPropertyType',
+        ln: 'AngleType',
+        bti: '.MeasureType'
+      }, {
+        ln: 'DirectedEdgePropertyType',
         ps: [{
-            n: 'linearRing',
-            en: 'LinearRing',
-            ti: '.LinearRingType'
-          }]
-      }, {
-        ln: 'CoordinateOperationPropertyType',
-        ps: [{
-            n: 'abstractCoordinateOperation',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractCoordinateOperation',
-            ti: '.AbstractCoordinateOperationType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CompositeValueType',
-        bti: '.AbstractGMLType',
-        ps: [{
-            n: 'valueComponent',
-            col: true,
-            ti: '.ValuePropertyType'
-          }, {
-            n: 'valueComponents',
-            ti: '.ValueArrayPropertyType'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Count',
-        ps: [{
-            n: 'value',
-            ti: 'Integer',
-            t: 'v'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'OffsetCurveType',
-        bti: '.AbstractCurveSegmentType',
-        ps: [{
-            n: 'offsetBase',
-            ti: '.CurvePropertyType'
-          }, {
-            n: 'distance',
-            ti: '.LengthType'
-          }, {
-            n: 'refDirection',
-            ti: '.VectorType'
-          }]
-      }, {
-        ln: 'ValueArrayType',
-        bti: '.CompositeValueType',
-        ps: [{
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AffinePlacementType',
-        ps: [{
-            n: 'location',
-            ti: '.DirectPositionType'
-          }, {
-            n: 'refDirection',
-            col: true,
-            ti: '.VectorType'
-          }, {
-            n: 'inDimension',
-            ti: 'Integer'
-          }, {
-            n: 'outDimension',
-            ti: 'Integer'
-          }]
-      }, {
-        ln: 'TimeInstantPropertyType',
-        ps: [{
-            n: 'timeInstant',
-            en: 'TimeInstant',
-            ti: '.TimeInstantType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ReferenceType',
-        ps: [{
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ConcatenatedOperationType',
-        bti: '.AbstractCoordinateOperationType',
-        ps: [{
-            n: 'coordOperation',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.CoordinateOperationPropertyType',
-            t: 'er'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeCSType',
-        bti: '.AbstractCoordinateSystemType'
-      }, {
-        ln: 'BagType',
-        bti: '.AbstractGMLType',
-        ps: [{
-            n: 'member',
-            col: true,
-            ti: '.AssociationRoleType'
-          }, {
-            n: 'members',
-            ti: '.ArrayAssociationType'
-          }]
-      }, {
-        ln: 'AbstractFeatureType',
-        bti: '.AbstractGMLType',
-        ps: [{
-            n: 'boundedBy',
-            ti: '.BoundingShapeType'
-          }, {
-            n: 'location',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.LocationPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'GeocentricCRSType',
-        bti: '.AbstractCRSType',
-        ps: [{
-            n: 'usesCartesianCS',
-            ti: '.CartesianCSPropertyType'
-          }, {
-            n: 'usesSphericalCS',
-            ti: '.SphericalCSPropertyType'
-          }, {
-            n: 'usesGeodeticDatum',
-            ti: '.GeodeticDatumPropertyType'
-          }]
-      }, {
-        ln: 'DirectedObservationType',
-        bti: '.ObservationType',
-        ps: [{
-            n: 'direction',
-            ti: '.DirectionPropertyType'
-          }]
-      }, {
-        ln: 'GridType',
-        bti: '.AbstractGeometryType',
-        ps: [{
-            n: 'rest',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            etis: [{
-                en: 'limits',
-                ti: '.GridLimitsType'
-              }, {
-                en: 'axisLabels',
-                ti: {
-                  t: 'l'
-                }
-              }, {
-                en: 'axisName'
-              }],
-            t: 'ers'
-          }, {
-            n: 'dimension',
-            ti: 'Integer',
-            an: {
-              lp: 'dimension'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Quantity',
-        bti: '.MeasureType',
-        ps: [{
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LineStringSegmentType',
-        bti: '.AbstractCurveSegmentType',
-        ps: [{
-            n: 'posOrPointPropertyOrPointRep',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            etis: [{
-                en: 'pos',
-                ti: '.DirectPositionType'
-              }, {
-                en: 'pointRep',
-                ti: '.PointPropertyType'
-              }, {
-                en: 'pointProperty',
-                ti: '.PointPropertyType'
-              }],
-            t: 'ers'
-          }, {
-            n: 'posList',
-            ti: '.DirectPositionListType'
-          }, {
-            n: 'coordinates',
-            ti: '.CoordinatesType'
-          }, {
-            n: 'interpolation',
-            an: {
-              lp: 'interpolation'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGeometricAggregateType',
-        bti: '.AbstractGeometryType',
-        ps: [{
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TopoSolidType',
-        bti: '.AbstractTopoPrimitiveType',
-        ps: [{
-            n: 'isolated',
-            col: true,
-            ti: '.NodeOrEdgePropertyType'
-          }, {
-            n: 'directedFace',
-            col: true,
-            ti: '.DirectedFacePropertyType'
-          }, {
-            n: 'solidProperty',
-            ti: '.SolidPropertyType'
-          }, {
-            n: 'universal',
-            ti: 'Boolean',
-            an: {
-              lp: 'universal'
-            },
-            t: 'a'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'UnitDefinitionType',
-        bti: '.DefinitionType',
-        ps: [{
-            n: 'quantityType',
-            ti: '.StringOrRefType'
-          }, {
-            n: 'quantityTypeReference',
-            ti: '.ReferenceType'
-          }, {
-            n: 'catalogSymbol',
-            ti: '.CodeType'
-          }]
-      }, {
-        ln: 'AbstractGMLType',
-        ps: [{
-            n: 'metaDataProperty',
-            col: true,
-            ti: '.MetaDataPropertyType'
-          }, {
-            n: 'description',
-            ti: '.StringOrRefType'
-          }, {
-            n: 'descriptionReference',
-            ti: '.ReferenceType'
-          }, {
-            n: 'identifier',
-            ti: '.CodeWithAuthorityType'
-          }, {
-            n: 'name',
-            col: true,
-            ti: '.CodeType'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PriorityLocationPropertyType',
-        bti: '.LocationPropertyType',
-        ps: [{
-            n: 'priority',
-            an: {
-              lp: 'priority'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'IdentifiedObjectType',
-        bti: '.DefinitionType'
-      }, {
-        ln: 'CylinderType',
-        bti: '.AbstractGriddedSurfaceType',
-        ps: [{
-            n: 'horizontalCURVETYPE',
-            an: {
-              lp: 'horizontalCurveType'
-            },
-            t: 'a'
-          }, {
-            n: 'verticalCURVETYPE',
-            an: {
-              lp: 'verticalCurveType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractParametricCurveSurfaceType',
-        bti: '.AbstractSurfacePatchType',
-        ps: [{
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CodeListType',
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l'
-            },
-            t: 'v'
-          }, {
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractCoordinateOperationType',
-        bti: '.IdentifiedObjectType',
-        ps: [{
-            n: 'domainOfValidity',
-            ti: '.DomainOfValidity'
-          }, {
-            n: 'scope',
-            col: true
-          }, {
-            n: 'operationVersion'
-          }, {
-            n: 'coordinateOperationAccuracy',
-            col: true,
-            ti: '.CoordinateOperationAccuracy'
-          }, {
-            n: 'sourceCRS',
-            ti: '.CRSPropertyType'
-          }, {
-            n: 'targetCRS',
-            ti: '.CRSPropertyType'
-          }]
-      }, {
-        ln: 'TimeClockPropertyType',
-        ps: [{
-            n: 'timeClock',
-            en: 'TimeClock',
-            ti: '.TimeClockType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CoordinateSystemAxisType',
-        bti: '.IdentifiedObjectType',
-        ps: [{
-            n: 'axisAbbrev',
-            ti: '.CodeType'
-          }, {
-            n: 'axisDirection',
-            ti: '.CodeWithAuthorityType'
-          }, {
-            n: 'minimumValue',
-            ti: 'Double'
-          }, {
-            n: 'maximumValue',
-            ti: 'Double'
-          }, {
-            n: 'rangeMeaning',
-            ti: '.CodeWithAuthorityType'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'FeatureCollectionType',
-        bti: '.AbstractFeatureCollectionType'
-      }, {
-        ln: 'AbstractCRSType',
-        bti: '.IdentifiedObjectType',
-        ps: [{
-            n: 'domainOfValidity',
-            col: true,
-            ti: '.DomainOfValidity'
-          }, {
-            n: 'scope',
-            col: true
-          }]
-      }, {
-        ln: 'CubicSplineType',
-        bti: '.AbstractCurveSegmentType',
-        ps: [{
-            n: 'posOrPointPropertyOrPointRep',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            etis: [{
-                en: 'pos',
-                ti: '.DirectPositionType'
-              }, {
-                en: 'pointRep',
-                ti: '.PointPropertyType'
-              }, {
-                en: 'pointProperty',
-                ti: '.PointPropertyType'
-              }],
-            t: 'ers'
-          }, {
-            n: 'posList',
-            ti: '.DirectPositionListType'
-          }, {
-            n: 'coordinates',
-            ti: '.CoordinatesType'
-          }, {
-            n: 'vectorAtStart',
-            ti: '.VectorType'
-          }, {
-            n: 'vectorAtEnd',
-            ti: '.VectorType'
-          }, {
-            n: 'interpolation',
-            an: {
-              lp: 'interpolation'
-            },
-            t: 'a'
-          }, {
-            n: 'degree',
-            ti: 'Integer',
-            an: {
-              lp: 'degree'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SurfacePatchArrayPropertyType',
-        ps: [{
-            n: 'abstractSurfacePatch',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractSurfacePatch',
-            ti: '.AbstractSurfacePatchType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'MultiGeometryType',
-        bti: '.AbstractGeometricAggregateType',
-        ps: [{
-            n: 'geometryMember',
-            col: true,
-            ti: '.GeometryPropertyType'
-          }, {
-            n: 'geometryMembers',
-            ti: '.GeometryArrayPropertyType'
-          }]
-      }, {
-        ln: 'AssociationRoleType',
-        ps: [{
-            n: 'any',
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractCurveType',
-        bti: '.AbstractGeometricPrimitiveType'
-      }, {
-        ln: 'CategoryExtentType',
-        bti: '.CodeOrNilReasonListType'
-      }, {
-        ln: 'DirectedNodePropertyType',
-        ps: [{
-            n: 'node',
-            en: 'Node',
-            ti: '.NodeType'
+            n: 'edge',
+            en: 'Edge',
+            ti: '.EdgeType'
           }, {
             n: 'orientation',
             an: {
@@ -7631,37 +2295,2449 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TimeCoordinateSystemType',
-        bti: '.TimeReferenceSystemType',
+        ln: 'OrientableSurfaceType',
+        bti: '.AbstractSurfaceType',
         ps: [{
-            n: 'originPosition',
+            n: 'baseSurface',
+            ti: '.SurfacePropertyType'
+          }, {
+            n: 'orientation',
+            an: {
+              lp: 'orientation'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'VolumeType',
+        bti: '.MeasureType'
+      }, {
+        ln: 'MultiCurvePropertyType',
+        ps: [{
+            n: 'multiCurve',
+            en: 'MultiCurve',
+            ti: '.MultiCurveType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimePeriodType',
+        bti: '.AbstractTimeGeometricPrimitiveType',
+        ps: [{
+            n: 'beginPosition',
             ti: '.TimePositionType'
           }, {
-            n: 'origin',
+            n: 'begin',
             ti: '.TimeInstantPropertyType'
           }, {
-            n: 'interval',
+            n: 'endPosition',
+            ti: '.TimePositionType'
+          }, {
+            n: 'end',
+            ti: '.TimeInstantPropertyType'
+          }, {
+            n: 'duration'
+          }, {
+            n: 'timeInterval',
             ti: '.TimeIntervalLengthType'
           }]
       }, {
-        ln: 'AbstractTimePrimitiveType',
-        bti: '.AbstractTimeObjectType',
+        ln: 'MultiPointPropertyType',
+        ps: [{
+            n: 'multiPoint',
+            en: 'MultiPoint',
+            ti: '.MultiPointType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ScaleType',
+        bti: '.MeasureType'
+      }, {
+        ln: 'GenericMetaDataType',
+        bti: '.AbstractMetaDataType',
+        ps: [{
+            n: 'contentOverrideForGenericMetaDataType',
+            t: 'ae'
+          }]
+      }, {
+        ln: 'RingType',
+        bti: '.AbstractRingType',
+        ps: [{
+            n: 'curveMember',
+            col: true,
+            ti: '.CurvePropertyType'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'VectorType',
+        bti: '.DirectPositionType'
+      }, {
+        ln: 'SequenceRuleType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'order',
+            an: {
+              lp: 'order'
+            },
+            t: 'a'
+          }, {
+            n: 'axisOrder',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'axisOrder'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SphericalCSPropertyType',
+        ps: [{
+            n: 'sphericalCS',
+            en: 'SphericalCS',
+            ti: '.SphericalCSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'OperationParameterGroupPropertyType',
+        ps: [{
+            n: 'operationParameterGroup',
+            en: 'OperationParameterGroup',
+            ti: '.OperationParameterGroupType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractSurfaceType',
+        bti: '.AbstractGeometricPrimitiveType'
+      }, {
+        ln: 'TimeClockPropertyType',
+        ps: [{
+            n: 'timeClock',
+            en: 'TimeClock',
+            ti: '.TimeClockType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'IndirectEntryType',
+        ps: [{
+            n: 'definitionProxy',
+            en: 'DefinitionProxy',
+            ti: '.DefinitionProxyType'
+          }]
+      }, {
+        ln: 'TinType',
+        bti: '.SurfaceType',
+        ps: [{
+            n: 'stopLines',
+            col: true,
+            ti: '.LineStringSegmentArrayPropertyType'
+          }, {
+            n: 'breakLines',
+            col: true,
+            ti: '.LineStringSegmentArrayPropertyType'
+          }, {
+            n: 'maxLength',
+            ti: '.LengthType'
+          }, {
+            n: 'controlPoint',
+            ti: '.TinType.ControlPoint'
+          }]
+      }, {
+        ln: 'PolygonPatchType',
+        bti: '.AbstractSurfacePatchType',
+        ps: [{
+            n: 'exterior',
+            ti: '.AbstractRingPropertyType'
+          }, {
+            n: 'interior',
+            col: true,
+            ti: '.AbstractRingPropertyType'
+          }, {
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeEdgePropertyType',
+        ps: [{
+            n: 'timeEdge',
+            en: 'TimeEdge',
+            ti: '.TimeEdgeType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeometryArrayPropertyType',
+        ps: [{
+            n: 'abstractGeometry',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractGeometry',
+            ti: '.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ImageCRSPropertyType',
+        ps: [{
+            n: 'imageCRS',
+            en: 'ImageCRS',
+            ti: '.ImageCRSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CubicSplineType',
+        bti: '.AbstractCurveSegmentType',
+        ps: [{
+            n: 'posOrPointPropertyOrPointRep',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'pos',
+                ti: '.DirectPositionType'
+              }, {
+                en: 'pointRep',
+                ti: '.PointPropertyType'
+              }, {
+                en: 'pointProperty',
+                ti: '.PointPropertyType'
+              }],
+            t: 'ers'
+          }, {
+            n: 'posList',
+            ti: '.DirectPositionListType'
+          }, {
+            n: 'coordinates',
+            ti: '.CoordinatesType'
+          }, {
+            n: 'vectorAtStart',
+            ti: '.VectorType'
+          }, {
+            n: 'vectorAtEnd',
+            ti: '.VectorType'
+          }, {
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
+            },
+            t: 'a'
+          }, {
+            n: 'degree',
+            ti: 'Integer',
+            an: {
+              lp: 'degree'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LinearCSType',
+        bti: '.AbstractCoordinateSystemType'
+      }, {
+        ln: 'ValueArrayType',
+        bti: '.CompositeValueType',
+        ps: [{
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MultiCurveType',
+        bti: '.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'curveMember',
+            col: true,
+            ti: '.CurvePropertyType'
+          }, {
+            n: 'curveMembers',
+            ti: '.CurveArrayPropertyType'
+          }]
+      }, {
+        ln: 'DatumPropertyType',
+        ps: [{
+            n: 'abstractDatum',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractDatum',
+            ti: '.AbstractDatumType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'PrimeMeridianType',
+        bti: '.IdentifiedObjectType',
+        ps: [{
+            n: 'greenwichLongitude',
+            ti: '.AngleType'
+          }]
+      }, {
+        ln: 'DefinitionBaseType',
+        bti: '.AbstractGMLType'
+      }, {
+        ln: 'RangeSetType',
+        ps: [{
+            n: 'valueArray',
+            col: true,
+            en: 'ValueArray',
+            ti: '.ValueArrayType'
+          }, {
+            n: 'abstractScalarValueList',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractScalarValueList',
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'dataBlock',
+            en: 'DataBlock',
+            ti: '.DataBlockType'
+          }, {
+            n: 'file',
+            en: 'File',
+            ti: '.FileType'
+          }]
+      }, {
+        ln: 'TimeOrdinalEraType',
+        bti: '.DefinitionType',
         ps: [{
             n: 'relatedTime',
             col: true,
             ti: '.RelatedTimeType'
+          }, {
+            n: 'start',
+            ti: '.TimeNodePropertyType'
+          }, {
+            n: 'end',
+            ti: '.TimeNodePropertyType'
+          }, {
+            n: 'extent',
+            ti: '.TimePeriodPropertyType'
+          }, {
+            n: 'member',
+            col: true,
+            ti: '.TimeOrdinalEraPropertyType'
+          }, {
+            n: 'group',
+            ti: '.ReferenceType'
           }]
       }, {
-        ln: 'ValuePropertyType',
+        ln: 'TimeTopologyComplexPropertyType',
         ps: [{
-            n: 'abstractValue',
+            n: 'timeTopologyComplex',
+            en: 'TimeTopologyComplex',
+            ti: '.TimeTopologyComplexType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PrimeMeridianPropertyType',
+        ps: [{
+            n: 'primeMeridian',
+            en: 'PrimeMeridian',
+            ti: '.PrimeMeridianType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GridFunctionType',
+        ps: [{
+            n: 'sequenceRule',
+            ti: '.SequenceRuleType'
+          }, {
+            n: 'startPoint',
+            ti: {
+              t: 'l',
+              bti: 'Integer'
+            }
+          }]
+      }, {
+        ln: 'GeographicCRSType',
+        bti: '.AbstractCRSType',
+        ps: [{
+            n: 'usesEllipsoidalCS',
+            ti: '.EllipsoidalCSPropertyType'
+          }, {
+            n: 'usesGeodeticDatum',
+            ti: '.GeodeticDatumPropertyType'
+          }]
+      }, {
+        ln: 'ConversionToPreferredUnitType',
+        bti: '.UnitOfMeasureType',
+        ps: [{
+            n: 'factor',
+            ti: 'Double'
+          }, {
+            n: 'formula',
+            ti: '.FormulaType'
+          }]
+      }, {
+        ln: 'TemporalCSType',
+        bti: '.AbstractCoordinateSystemType'
+      }, {
+        ln: 'AbstractCurveType',
+        bti: '.AbstractGeometricPrimitiveType'
+      }, {
+        ln: 'DirectPositionListType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            },
+            t: 'v'
+          }, {
+            n: 'count',
+            ti: 'Integer',
+            an: {
+              lp: 'count'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeTopologyComplexType',
+        bti: '.AbstractTimeComplexType',
+        ps: [{
+            n: 'primitive',
+            col: true,
+            ti: '.TimeTopologyPrimitivePropertyType'
+          }]
+      }, {
+        ln: 'ImageDatumType',
+        bti: '.AbstractDatumType',
+        ps: [{
+            n: 'pixelInCell',
+            ti: '.CodeWithAuthorityType'
+          }]
+      }, {
+        ln: 'CoordinatesType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'decimal',
+            an: {
+              lp: 'decimal'
+            },
+            t: 'a'
+          }, {
+            n: 'cs',
+            an: {
+              lp: 'cs'
+            },
+            t: 'a'
+          }, {
+            n: 'ts',
+            an: {
+              lp: 'ts'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ClothoidType',
+        bti: '.AbstractCurveSegmentType',
+        ps: [{
+            n: 'refLocation',
+            ti: '.ClothoidType.RefLocation'
+          }, {
+            n: 'scaleFactor',
+            ti: 'Decimal'
+          }, {
+            n: 'startParameter',
+            ti: 'Double'
+          }, {
+            n: 'endParameter',
+            ti: 'Double'
+          }, {
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ConventionalUnitType',
+        bti: '.UnitDefinitionType',
+        ps: [{
+            n: 'conversionToPreferredUnit',
+            ti: '.ConversionToPreferredUnitType'
+          }, {
+            n: 'roughConversionToPreferredUnit',
+            ti: '.ConversionToPreferredUnitType'
+          }, {
+            n: 'derivationUnitTerm',
+            col: true,
+            ti: '.DerivationUnitTermType'
+          }]
+      }, {
+        ln: 'QuantityPropertyType',
+        ps: [{
+            n: 'quantity',
+            en: 'Quantity',
+            ti: '.Quantity'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MeasureOrNilReasonListType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
+            },
+            t: 'v'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractFeatureMemberType',
+        ps: [{
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EllipsoidType',
+        bti: '.IdentifiedObjectType',
+        ps: [{
+            n: 'semiMajorAxis',
+            ti: '.MeasureType'
+          }, {
+            n: 'secondDefiningParameter',
+            ti: '.SecondDefiningParameterPropertyElement'
+          }]
+      }, {
+        ln: 'DefinitionProxyType',
+        bti: '.DefinitionType',
+        ps: [{
+            n: 'definitionRef',
+            ti: '.ReferenceType'
+          }]
+      }, {
+        ln: 'VerticalCSPropertyType',
+        ps: [{
+            n: 'verticalCS',
+            en: 'VerticalCS',
+            ti: '.VerticalCSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DictionaryEntryType',
+        bti: '.AbstractMemberType',
+        ps: [{
+            n: 'definition',
             mx: false,
             dom: false,
             typed: false,
-            en: 'AbstractValue',
-            ti: 'AnyType',
+            en: 'Definition',
+            ti: '.DefinitionType',
             t: 'er'
           }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'LineStringSegmentType',
+        bti: '.AbstractCurveSegmentType',
+        ps: [{
+            n: 'posOrPointPropertyOrPointRep',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'pos',
+                ti: '.DirectPositionType'
+              }, {
+                en: 'pointRep',
+                ti: '.PointPropertyType'
+              }, {
+                en: 'pointProperty',
+                ti: '.PointPropertyType'
+              }],
+            t: 'ers'
+          }, {
+            n: 'posList',
+            ti: '.DirectPositionListType'
+          }, {
+            n: 'coordinates',
+            ti: '.CoordinatesType'
+          }, {
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PassThroughOperationPropertyType',
+        ps: [{
+            n: 'passThroughOperation',
+            en: 'PassThroughOperation',
+            ti: '.PassThroughOperationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'QuantityExtentType',
+        bti: '.MeasureOrNilReasonListType'
+      }, {
+        ln: 'CRSPropertyType',
+        ps: [{
+            n: 'abstractCRS',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractCRS',
+            ti: '.AbstractCRSType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeometricComplexType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'element',
+            col: true,
+            ti: '.GeometricPrimitivePropertyType'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LinearCSPropertyType',
+        ps: [{
+            n: 'linearCS',
+            en: 'LinearCS',
+            ti: '.LinearCSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DirectedTopoSolidPropertyType',
+        ps: [{
+            n: 'topoSolid',
+            en: 'TopoSolid',
+            ti: '.TopoSolidType'
+          }, {
+            n: 'orientation',
+            an: {
+              lp: 'orientation'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LocationPropertyType',
+        ps: [{
+            n: 'abstractGeometry',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractGeometry',
+            ti: '.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'locationKeyWord',
+            en: 'LocationKeyWord',
+            ti: '.CodeType'
+          }, {
+            n: 'locationString',
+            en: 'LocationString',
+            ti: '.StringOrRefType'
+          }, {
+            n: '_null',
+            en: 'Null',
+            ti: {
+              t: 'l'
+            }
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'EngineeringCRSType',
+        bti: '.AbstractCRSType',
+        ps: [{
+            n: 'affineCS',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.AffineCSPropertyType',
+            t: 'er'
+          }, {
+            n: 'cartesianCS',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.CartesianCSPropertyType',
+            t: 'er'
+          }, {
+            n: 'cylindricalCS',
+            ti: '.CylindricalCSPropertyType'
+          }, {
+            n: 'linearCS',
+            ti: '.LinearCSPropertyType'
+          }, {
+            n: 'polarCS',
+            ti: '.PolarCSPropertyType'
+          }, {
+            n: 'sphericalCS',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.SphericalCSPropertyType',
+            t: 'er'
+          }, {
+            n: 'userDefinedCS',
+            ti: '.UserDefinedCSPropertyType'
+          }, {
+            n: 'coordinateSystem',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.CoordinateSystemPropertyType',
+            t: 'er'
+          }, {
+            n: 'engineeringDatum',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.EngineeringDatumPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'IdentifiedObjectType',
+        bti: '.DefinitionType'
+      }, {
+        ln: 'StringOrRefType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TemporalCRSType',
+        bti: '.AbstractCRSType',
+        ps: [{
+            n: 'timeCS',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.TimeCSPropertyType',
+            t: 'er'
+          }, {
+            n: 'usesTemporalCS',
+            ti: '.TemporalCSPropertyType'
+          }, {
+            n: 'temporalDatum',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.TemporalDatumPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'NodeType',
+        bti: '.AbstractTopoPrimitiveType',
+        ps: [{
+            n: 'container',
+            ti: '.FaceOrTopoSolidPropertyType'
+          }, {
+            n: 'directedEdge',
+            col: true,
+            ti: '.DirectedEdgePropertyType'
+          }, {
+            n: 'pointProperty',
+            ti: '.PointPropertyType'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Quantity',
+        bti: '.MeasureType',
+        ps: [{
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ShellPropertyType',
+        ps: [{
+            n: 'shell',
+            en: 'Shell',
+            ti: '.ShellType'
+          }]
+      }, {
+        ln: 'GeometricComplexPropertyType',
+        ps: [{
+            n: 'geometricComplex',
+            en: 'GeometricComplex',
+            ti: '.GeometricComplexType'
+          }, {
+            n: 'compositeCurve',
+            en: 'CompositeCurve',
+            ti: '.CompositeCurveType'
+          }, {
+            n: 'compositeSurface',
+            en: 'CompositeSurface',
+            ti: '.CompositeSurfaceType'
+          }, {
+            n: 'compositeSolid',
+            en: 'CompositeSolid',
+            ti: '.CompositeSolidType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'PointArrayPropertyType',
+        ps: [{
+            n: 'point',
+            col: true,
+            en: 'Point',
+            ti: '.PointType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CompositeValueType',
+        bti: '.AbstractGMLType',
+        ps: [{
+            n: 'valueComponent',
+            col: true,
+            ti: '.ValuePropertyType'
+          }, {
+            n: 'valueComponents',
+            ti: '.ValueArrayPropertyType'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractGeneralConversionType',
+        bti: '.AbstractCoordinateOperationType'
+      }, {
+        ln: 'DynamicFeatureCollectionType',
+        bti: '.DynamicFeatureType',
+        ps: [{
+            n: 'dynamicMembers',
+            ti: '.DynamicFeatureMemberType'
+          }]
+      }, {
+        ln: 'LinearRingPropertyType',
+        ps: [{
+            n: 'linearRing',
+            en: 'LinearRing',
+            ti: '.LinearRingType'
+          }]
+      }, {
+        ln: 'TopoPointType',
+        bti: '.AbstractTopologyType',
+        ps: [{
+            n: 'directedNode',
+            ti: '.DirectedNodePropertyType'
+          }]
+      }, {
+        ln: 'TimeCSPropertyType',
+        ps: [{
+            n: 'timeCS',
+            en: 'TimeCS',
+            ti: '.TimeCSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeInstantType',
+        bti: '.AbstractTimeGeometricPrimitiveType',
+        ps: [{
+            n: 'timePosition',
+            ti: '.TimePositionType'
+          }]
+      }, {
+        ln: 'CodeType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SpeedType',
+        bti: '.MeasureType'
+      }, {
+        ln: 'TopoCurveType',
+        bti: '.AbstractTopologyType',
+        ps: [{
+            n: 'directedEdge',
+            col: true,
+            ti: '.DirectedEdgePropertyType'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CompositeSolidType',
+        bti: '.AbstractSolidType',
+        ps: [{
+            n: 'solidMember',
+            col: true,
+            ti: '.SolidPropertyType'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CompoundCRSPropertyType',
+        ps: [{
+            n: 'compoundCRS',
+            en: 'CompoundCRS',
+            ti: '.CompoundCRSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TransformationPropertyType',
+        ps: [{
+            n: 'transformation',
+            en: 'Transformation',
+            ti: '.TransformationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractGeneralOperationParameterPropertyType',
+        ps: [{
+            n: 'abstractGeneralOperationParameter',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractGeneralOperationParameter',
+            ti: '.AbstractGeneralOperationParameterType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ArcStringByBulgeType',
+        bti: '.AbstractCurveSegmentType',
+        ps: [{
+            n: 'posOrPointPropertyOrPointRep',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'pos',
+                ti: '.DirectPositionType'
+              }, {
+                en: 'pointRep',
+                ti: '.PointPropertyType'
+              }, {
+                en: 'pointProperty',
+                ti: '.PointPropertyType'
+              }],
+            t: 'ers'
+          }, {
+            n: 'posList',
+            ti: '.DirectPositionListType'
+          }, {
+            n: 'coordinates',
+            ti: '.CoordinatesType'
+          }, {
+            n: 'bulge',
+            col: true,
+            ti: 'Double'
+          }, {
+            n: 'normal',
+            col: true,
+            ti: '.VectorType'
+          }, {
+            n: 'interpolation',
+            an: {
+              lp: 'interpolation'
+            },
+            t: 'a'
+          }, {
+            n: 'numArc',
+            ti: 'Integer',
+            an: {
+              lp: 'numArc'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DirectPositionType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            },
+            t: 'v'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LinearRingType',
+        bti: '.AbstractRingType',
+        ps: [{
+            n: 'posOrPointPropertyOrPointRep',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'pos',
+                ti: '.DirectPositionType'
+              }, {
+                en: 'pointRep',
+                ti: '.PointPropertyType'
+              }, {
+                en: 'pointProperty',
+                ti: '.PointPropertyType'
+              }],
+            t: 'ers'
+          }, {
+            n: 'posList',
+            ti: '.DirectPositionListType'
+          }, {
+            n: 'coordinates',
+            ti: '.CoordinatesType'
+          }]
+      }, {
+        ln: 'UnitDefinitionType',
+        bti: '.DefinitionType',
+        ps: [{
+            n: 'quantityType',
+            ti: '.StringOrRefType'
+          }, {
+            n: 'quantityTypeReference',
+            ti: '.ReferenceType'
+          }, {
+            n: 'catalogSymbol',
+            ti: '.CodeType'
+          }]
+      }, {
+        ln: 'ParameterValueType',
+        bti: '.AbstractGeneralParameterValueType',
+        ps: [{
+            n: 'value',
+            ti: '.MeasureType'
+          }, {
+            n: 'dmsAngleValue',
+            ti: '.DMSAngleType'
+          }, {
+            n: 'stringValue'
+          }, {
+            n: 'integerValue',
+            ti: 'Integer'
+          }, {
+            n: 'booleanValue',
+            ti: 'Boolean'
+          }, {
+            n: 'valueList',
+            ti: '.MeasureListType'
+          }, {
+            n: 'integerValueList',
+            ti: {
+              t: 'l',
+              bti: 'Integer'
+            }
+          }, {
+            n: 'valueFile'
+          }, {
+            n: 'operationParameter',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.OperationParameterPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'LineStringType',
+        bti: '.AbstractCurveType',
+        ps: [{
+            n: 'posOrPointPropertyOrPointRep',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'pos',
+                ti: '.DirectPositionType'
+              }, {
+                en: 'pointRep',
+                ti: '.PointPropertyType'
+              }, {
+                en: 'pointProperty',
+                ti: '.PointPropertyType'
+              }],
+            t: 'ers'
+          }, {
+            n: 'posList',
+            ti: '.DirectPositionListType'
+          }, {
+            n: 'coordinates',
+            ti: '.CoordinatesType'
+          }]
+      }, {
+        ln: 'TopoSurfaceType',
+        bti: '.AbstractTopologyType',
+        ps: [{
+            n: 'directedFace',
+            col: true,
+            ti: '.DirectedFacePropertyType'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractGeneralDerivedCRSType',
+        bti: '.AbstractCRSType',
+        ps: [{
+            n: 'conversion',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.GeneralConversionPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'AssociationRoleType',
+        ps: [{
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractGeometryType',
+        bti: '.AbstractGMLType',
+        ps: [{
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CartesianCSType',
+        bti: '.AbstractCoordinateSystemType'
+      }, {
+        ln: 'MultiSolidType',
+        bti: '.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'solidMember',
+            col: true,
+            ti: '.SolidPropertyType'
+          }, {
+            n: 'solidMembers',
+            ti: '.SolidArrayPropertyType'
+          }]
+      }, {
+        ln: 'VerticalCRSPropertyType',
+        ps: [{
+            n: 'verticalCRS',
+            en: 'VerticalCRS',
+            ti: '.VerticalCRSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractGeometricAggregateType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GridType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'rest',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'axisLabels',
+                ti: {
+                  t: 'l'
+                }
+              }, {
+                en: 'axisName'
+              }, {
+                en: 'limits',
+                ti: '.GridLimitsType'
+              }],
+            t: 'ers'
+          }, {
+            n: 'dimension',
+            ti: 'Integer',
+            an: {
+              lp: 'dimension'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'BooleanPropertyType',
+        ps: [{
+            n: '_boolean',
+            en: 'Boolean',
+            ti: '.Boolean'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DomainSetType',
+        ps: [{
             n: 'abstractGeometry',
             mx: false,
             dom: false,
@@ -7678,11 +4754,45 @@ var GML_3_2_1_Module_Factory = function () {
             ti: '.AbstractTimeObjectType',
             t: 'er'
           }, {
-            n: '_null',
-            en: 'Null',
+            n: 'nilReason',
             ti: {
               t: 'l'
-            }
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -7690,6 +4800,505 @@ var GML_3_2_1_Module_Factory = function () {
               lp: 'owns'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'EdgeType',
+        bti: '.AbstractTopoPrimitiveType',
+        ps: [{
+            n: 'container',
+            ti: '.TopoSolidPropertyType'
+          }, {
+            n: 'directedNode',
+            col: true,
+            ti: '.DirectedNodePropertyType'
+          }, {
+            n: 'directedFace',
+            col: true,
+            ti: '.DirectedFacePropertyType'
+          }, {
+            n: 'curveProperty',
+            ti: '.CurvePropertyType'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MultiPointType',
+        bti: '.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'pointMember',
+            col: true,
+            ti: '.PointPropertyType'
+          }, {
+            n: 'pointMembers',
+            ti: '.PointArrayPropertyType'
+          }]
+      }, {
+        ln: 'CurvePropertyType',
+        ps: [{
+            n: 'abstractCurve',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractCurve',
+            ti: '.AbstractCurveType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PolarCSType',
+        bti: '.AbstractCoordinateSystemType'
+      }, {
+        ln: 'AbstractGriddedSurfaceType.Rows.Row',
+        ps: [{
+            n: 'posList',
+            ti: '.DirectPositionListType'
+          }, {
+            n: 'geometricPositionGroup',
+            col: true,
+            etis: [{
+                en: 'pos',
+                ti: '.DirectPositionType'
+              }, {
+                en: 'pointProperty',
+                ti: '.PointPropertyType'
+              }],
+            t: 'es'
+          }]
+      }, {
+        ln: 'SolidPropertyType',
+        ps: [{
+            n: 'abstractSolid',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractSolid',
+            ti: '.AbstractSolidType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ConcatenatedOperationType',
+        bti: '.AbstractCoordinateOperationType',
+        ps: [{
+            n: 'coordOperation',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.CoordinateOperationPropertyType',
+            t: 'er'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'VerticalCSType',
+        bti: '.AbstractCoordinateSystemType'
+      }, {
+        ln: 'DirectionPropertyType',
+        ps: [{
+            n: 'directionVector',
+            en: 'DirectionVector',
+            ti: '.DirectionVectorType'
+          }, {
+            n: 'directionDescription',
+            en: 'DirectionDescription',
+            ti: '.DirectionDescriptionType'
+          }, {
+            n: 'compassPoint',
+            en: 'CompassPoint'
+          }, {
+            n: 'directionKeyword',
+            en: 'DirectionKeyword',
+            ti: '.CodeType'
+          }, {
+            n: 'directionString',
+            en: 'DirectionString',
+            ti: '.StringOrRefType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ImageCRSType',
+        bti: '.AbstractCRSType',
+        ps: [{
+            n: 'cartesianCS',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.CartesianCSPropertyType',
+            t: 'er'
+          }, {
+            n: 'affineCS',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.AffineCSPropertyType',
+            t: 'er'
+          }, {
+            n: 'usesObliqueCartesianCS',
+            ti: '.ObliqueCartesianCSPropertyType'
+          }, {
+            n: 'imageDatum',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.ImageDatumPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'TimeCSType',
+        bti: '.AbstractCoordinateSystemType'
+      }, {
+        ln: 'TransformationType',
+        bti: '.AbstractGeneralTransformationType',
+        ps: [{
+            n: 'method',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.OperationMethodPropertyType',
+            t: 'er'
+          }, {
+            n: 'parameterValue',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.AbstractGeneralParameterValuePropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'RelatedTimeType',
+        bti: '.TimePrimitivePropertyType',
+        ps: [{
+            n: 'relativePosition',
+            an: {
+              lp: 'relativePosition'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SolidType',
+        bti: '.AbstractSolidType',
+        ps: [{
+            n: 'exterior',
+            ti: '.ShellPropertyType'
+          }, {
+            n: 'interior',
+            col: true,
+            ti: '.ShellPropertyType'
+          }]
+      }, {
+        ln: 'AbstractTimePrimitiveType',
+        bti: '.AbstractTimeObjectType',
+        ps: [{
+            n: 'relatedTime',
+            col: true,
+            ti: '.RelatedTimeType'
+          }]
+      }, {
+        ln: 'InlinePropertyType',
+        ps: [{
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CylindricalCSPropertyType',
+        ps: [{
+            n: 'cylindricalCS',
+            en: 'CylindricalCS',
+            ti: '.CylindricalCSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ConcatenatedOperationPropertyType',
+        ps: [{
+            n: 'concatenatedOperation',
+            en: 'ConcatenatedOperation',
+            ti: '.ConcatenatedOperationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractTimeSliceType',
+        bti: '.AbstractGMLType',
+        ps: [{
+            n: 'validTime',
+            ti: '.TimePrimitivePropertyType'
+          }, {
+            n: 'dataSource',
+            ti: '.StringOrRefType'
+          }]
+      }, {
+        ln: 'AreaType',
+        bti: '.MeasureType'
+      }, {
+        ln: 'FeatureArrayPropertyType',
+        ps: [{
+            n: 'abstractFeature',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractFeature',
+            ti: '.AbstractFeatureType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'TopoSurfacePropertyType',
+        ps: [{
+            n: 'topoSurface',
+            en: 'TopoSurface',
+            ti: '.TopoSurfaceType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'OperationPropertyType',
+        ps: [{
+            n: 'abstractOperation',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractOperation',
+            ti: '.AbstractCoordinateOperationType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -7783,431 +5392,11 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LocationPropertyType',
+        ln: 'DirectedFacePropertyType',
         ps: [{
-            n: 'abstractGeometry',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractGeometry',
-            ti: '.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'locationKeyWord',
-            en: 'LocationKeyWord',
-            ti: '.CodeType'
-          }, {
-            n: 'locationString',
-            en: 'LocationString',
-            ti: '.StringOrRefType'
-          }, {
-            n: '_null',
-            en: 'Null',
-            ti: {
-              t: 'l'
-            }
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TemporalCSPropertyType',
-        ps: [{
-            n: 'temporalCS',
-            en: 'TemporalCS',
-            ti: '.TemporalCSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CylindricalCSType',
-        bti: '.AbstractCoordinateSystemType'
-      }, {
-        ln: 'EngineeringDatumType',
-        bti: '.AbstractDatumType'
-      }, {
-        ln: 'ParameterValueType',
-        bti: '.AbstractGeneralParameterValueType',
-        ps: [{
-            n: 'value',
-            ti: '.MeasureType'
-          }, {
-            n: 'dmsAngleValue',
-            ti: '.DMSAngleType'
-          }, {
-            n: 'stringValue'
-          }, {
-            n: 'integerValue',
-            ti: 'Integer'
-          }, {
-            n: 'booleanValue',
-            ti: 'Boolean'
-          }, {
-            n: 'valueList',
-            ti: '.MeasureListType'
-          }, {
-            n: 'integerValueList',
-            ti: {
-              t: 'l',
-              bti: 'Integer'
-            }
-          }, {
-            n: 'valueFile'
-          }, {
-            n: 'operationParameter',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.OperationParameterPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'AngleType',
-        bti: '.MeasureType'
-      }, {
-        ln: 'PolygonPatchType',
-        bti: '.AbstractSurfacePatchType',
-        ps: [{
-            n: 'exterior',
-            ti: '.AbstractRingPropertyType'
-          }, {
-            n: 'interior',
-            col: true,
-            ti: '.AbstractRingPropertyType'
-          }, {
-            n: 'interpolation',
-            an: {
-              lp: 'interpolation'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ShellPropertyType',
-        ps: [{
-            n: 'shell',
-            en: 'Shell',
-            ti: '.ShellType'
-          }]
-      }, {
-        ln: 'VolumeType',
-        bti: '.MeasureType'
-      }, {
-        ln: 'SphericalCSPropertyType',
-        ps: [{
-            n: 'sphericalCS',
-            en: 'SphericalCS',
-            ti: '.SphericalCSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGeometryType',
-        bti: '.AbstractGMLType',
-        ps: [{
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'Integer',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractCoordinateSystemType',
-        bti: '.IdentifiedObjectType',
-        ps: [{
-            n: 'axis',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.CoordinateSystemAxisPropertyType',
-            t: 'er'
-          }, {
-            n: 'aggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MultiPointType',
-        bti: '.AbstractGeometricAggregateType',
-        ps: [{
-            n: 'pointMember',
-            col: true,
-            ti: '.PointPropertyType'
-          }, {
-            n: 'pointMembers',
-            ti: '.PointArrayPropertyType'
-          }]
-      }, {
-        ln: 'UserDefinedCSPropertyType',
-        ps: [{
-            n: 'userDefinedCS',
-            en: 'UserDefinedCS',
-            ti: '.UserDefinedCSType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGeneralOperationParameterType',
-        bti: '.IdentifiedObjectType',
-        ps: [{
-            n: 'minimumOccurs',
-            ti: 'Integer'
-          }]
-      }, {
-        ln: 'FormulaType',
-        ps: [{
-            n: 'a',
-            ti: 'Double'
-          }, {
-            n: 'b',
-            ti: 'Double'
-          }, {
-            n: 'c',
-            ti: 'Double'
-          }, {
-            n: 'd',
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'AreaType',
-        bti: '.MeasureType'
-      }, {
-        ln: 'ObliqueCartesianCSType',
-        bti: '.AbstractCoordinateSystemType'
-      }, {
-        ln: 'PointArrayPropertyType',
-        ps: [{
-            n: 'point',
-            col: true,
-            en: 'Point',
-            ti: '.PointType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DMSAngleType',
-        ps: [{
-            n: 'degrees',
-            ti: '.DegreesType'
-          }, {
-            n: 'decimalMinutes',
-            ti: 'Decimal'
-          }, {
-            n: 'minutes',
-            ti: 'Int'
-          }, {
-            n: 'seconds',
-            ti: 'Decimal'
-          }]
-      }, {
-        ln: 'DynamicFeatureType',
-        bti: '.AbstractFeatureType',
-        ps: [{
-            n: 'validTime',
-            ti: '.TimePrimitivePropertyType'
-          }, {
-            n: 'history',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.HistoryPropertyType',
-            t: 'er'
-          }, {
-            n: 'dataSource',
-            ti: '.StringOrRefType'
-          }, {
-            n: 'dataSourceReference',
-            ti: '.ReferenceType'
-          }]
-      }, {
-        ln: 'DirectedEdgePropertyType',
-        ps: [{
-            n: 'edge',
-            en: 'Edge',
-            ti: '.EdgeType'
+            n: 'face',
+            en: 'Face',
+            ti: '.FaceType'
           }, {
             n: 'orientation',
             an: {
@@ -8263,22 +5452,245 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GeodesicStringType',
-        bti: '.AbstractCurveSegmentType',
+        ln: 'ReferenceType',
         ps: [{
-            n: 'posList',
-            ti: '.DirectPositionListType'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
           }, {
-            n: 'geometricPositionGroup',
-            col: true,
-            etis: [{
-                en: 'pos',
-                ti: '.DirectPositionType'
-              }, {
-                en: 'pointProperty',
-                ti: '.PointPropertyType'
-              }],
-            t: 'es'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'OperationMethodPropertyType',
+        ps: [{
+            n: 'operationMethod',
+            en: 'OperationMethod',
+            ti: '.OperationMethodType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractTimeComplexType',
+        bti: '.AbstractTimeObjectType'
+      }, {
+        ln: 'OrientableCurveType',
+        bti: '.AbstractCurveType',
+        ps: [{
+            n: 'baseCurve',
+            ti: '.CurvePropertyType'
+          }, {
+            n: 'orientation',
+            an: {
+              lp: 'orientation'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DerivedCRSPropertyType',
+        ps: [{
+            n: 'derivedCRS',
+            en: 'DerivedCRS',
+            ti: '.DerivedCRSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TopoComplexPropertyType',
+        ps: [{
+            n: 'topoComplex',
+            en: 'TopoComplex',
+            ti: '.TopoComplexType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'UnitOfMeasureType',
+        ps: [{
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'VerticalCRSType',
+        bti: '.AbstractCRSType',
+        ps: [{
+            n: 'verticalCS',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.VerticalCSPropertyType',
+            t: 'er'
+          }, {
+            n: 'verticalDatum',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.VerticalDatumPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'TriangleType',
+        bti: '.AbstractSurfacePatchType',
+        ps: [{
+            n: 'exterior',
+            ti: '.AbstractRingPropertyType'
           }, {
             n: 'interpolation',
             an: {
@@ -8287,18 +5699,186 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'BaseUnitType',
-        bti: '.UnitDefinitionType',
+        ln: 'CoordinateOperationPropertyType',
         ps: [{
-            n: 'unitsSystem',
-            ti: '.ReferenceType'
+            n: 'abstractCoordinateOperation',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractCoordinateOperation',
+            ti: '.AbstractCoordinateOperationType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'MultiCurvePropertyType',
+        ln: 'CoordinateOperationAccuracy',
         ps: [{
-            n: 'multiCurve',
-            en: 'MultiCurve',
-            ti: '.MultiCurveType'
+            n: 'abstractDQPositionalAccuracy',
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcedurePropertyType',
+        ps: [{
+            n: 'abstractFeature',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractFeature',
+            ti: '.AbstractFeatureType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CurveArrayPropertyType',
+        ps: [{
+            n: 'abstractCurve',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractCurve',
+            ti: '.AbstractCurveType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MultiSurfacePropertyType',
+        ps: [{
+            n: 'multiSurface',
+            en: 'MultiSurface',
+            ti: '.MultiSurfaceType'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -8348,42 +5928,42 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ObservationType',
-        bti: '.AbstractFeatureType',
+        ln: 'TimeOrdinalReferenceSystemType',
+        bti: '.TimeReferenceSystemType',
         ps: [{
-            n: 'validTime',
-            ti: '.TimePrimitivePropertyType'
-          }, {
-            n: 'using',
-            ti: '.ProcedurePropertyType'
-          }, {
-            n: 'target',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.TargetPropertyType',
-            t: 'er'
-          }, {
-            n: 'resultOf',
-            ti: '.ResultType'
+            n: 'component',
+            col: true,
+            ti: '.TimeOrdinalEraPropertyType'
           }]
       }, {
-        ln: 'DictionaryType',
-        bti: '.DefinitionType',
+        ln: 'OffsetCurveType',
+        bti: '.AbstractCurveSegmentType',
         ps: [{
-            n: 'dictionaryEntryOrIndirectEntry',
+            n: 'offsetBase',
+            ti: '.CurvePropertyType'
+          }, {
+            n: 'distance',
+            ti: '.LengthType'
+          }, {
+            n: 'refDirection',
+            ti: '.VectorType'
+          }]
+      }, {
+        ln: 'AbstractMemberType',
+        ps: [{
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ShellType',
+        ps: [{
+            n: 'surfaceMember',
             col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            etis: [{
-                en: 'indirectEntry',
-                ti: '.IndirectEntryType'
-              }, {
-                en: 'dictionaryEntry',
-                ti: '.DictionaryEntryType'
-              }],
-            t: 'ers'
+            ti: '.SurfacePropertyType'
           }, {
             n: 'aggregationType',
             an: {
@@ -8392,11 +5972,351 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GeographicCRSPropertyType',
+        ln: 'AbstractGeometricPrimitiveType',
+        bti: '.AbstractGeometryType'
+      }, {
+        ln: 'CylinderType',
+        bti: '.AbstractGriddedSurfaceType',
         ps: [{
-            n: 'geographicCRS',
-            en: 'GeographicCRS',
-            ti: '.GeographicCRSType'
+            n: 'horizontalCURVETYPE',
+            an: {
+              lp: 'horizontalCurveType'
+            },
+            t: 'a'
+          }, {
+            n: 'verticalCURVETYPE',
+            an: {
+              lp: 'verticalCurveType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractGriddedSurfaceType',
+        bti: '.AbstractParametricCurveSurfaceType',
+        ps: [{
+            n: 'pointGridRows',
+            en: 'rows',
+            ti: '.AbstractGriddedSurfaceType.Rows'
+          }, {
+            n: 'rows',
+            ti: 'Integer',
+            an: {
+              lp: 'rows'
+            },
+            t: 'a'
+          }, {
+            n: 'columns',
+            ti: 'Integer',
+            an: {
+              lp: 'columns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Count',
+        ps: [{
+            n: 'value',
+            ti: 'Integer',
+            t: 'v'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EnvelopeType',
+        ps: [{
+            n: 'lowerCorner',
+            ti: '.DirectPositionType'
+          }, {
+            n: 'upperCorner',
+            ti: '.DirectPositionType'
+          }, {
+            n: 'pos',
+            col: true,
+            ti: '.DirectPositionType'
+          }, {
+            n: 'coordinates',
+            ti: '.CoordinatesType'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SolidArrayPropertyType',
+        ps: [{
+            n: 'abstractSolid',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractSolid',
+            ti: '.AbstractSolidType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DMSAngleType',
+        ps: [{
+            n: 'degrees',
+            ti: '.DegreesType'
+          }, {
+            n: 'decimalMinutes',
+            ti: 'Decimal'
+          }, {
+            n: 'minutes',
+            ti: 'Int'
+          }, {
+            n: 'seconds',
+            ti: 'Decimal'
+          }]
+      }, {
+        ln: 'AbstractGeneralParameterValuePropertyType',
+        ps: [{
+            n: 'abstractGeneralParameterValue',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractGeneralParameterValue',
+            ti: '.AbstractGeneralParameterValueType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'FileType',
+        ps: [{
+            n: 'rangeParameters',
+            ti: '.AssociationRoleType'
+          }, {
+            n: 'fileName'
+          }, {
+            n: 'fileReference'
+          }, {
+            n: 'fileStructure',
+            ti: '.CodeType'
+          }, {
+            n: 'mimeType'
+          }, {
+            n: 'compression'
+          }]
+      }, {
+        ln: 'TopoVolumePropertyType',
+        ps: [{
+            n: 'topoVolume',
+            en: 'TopoVolume',
+            ti: '.TopoVolumeType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PointPropertyType',
+        ps: [{
+            n: 'point',
+            en: 'Point',
+            ti: '.PointType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeEdgeType',
+        bti: '.AbstractTimeTopologyPrimitiveType',
+        ps: [{
+            n: 'start',
+            ti: '.TimeNodePropertyType'
+          }, {
+            n: 'end',
+            ti: '.TimeNodePropertyType'
+          }, {
+            n: 'extent',
+            ti: '.TimePeriodPropertyType'
+          }]
+      }, {
+        ln: 'TopoSolidPropertyType',
+        ps: [{
+            n: 'topoSolid',
+            en: 'TopoSolid',
+            ti: '.TopoSolidType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractGMLType',
+        ps: [{
+            n: 'metaDataProperty',
+            col: true,
+            ti: '.MetaDataPropertyType'
+          }, {
+            n: 'description',
+            ti: '.StringOrRefType'
+          }, {
+            n: 'descriptionReference',
+            ti: '.ReferenceType'
+          }, {
+            n: 'identifier',
+            ti: '.CodeWithAuthorityType'
+          }, {
+            n: 'name',
+            col: true,
+            ti: '.CodeType'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CircleByCenterPointType',
+        bti: '.ArcByCenterPointType'
+      }, {
+        ln: 'DerivedUnitType',
+        bti: '.UnitDefinitionType',
+        ps: [{
+            n: 'derivationUnitTerm',
+            col: true,
+            ti: '.DerivationUnitTermType'
+          }]
+      }, {
+        ln: 'UserDefinedCSPropertyType',
+        ps: [{
+            n: 'userDefinedCS',
+            en: 'UserDefinedCS',
+            ti: '.UserDefinedCSType'
           }, {
             n: 'nilReason',
             ti: {
@@ -8439,11 +6359,1470 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TemporalDatumType',
-        bti: '.TemporalDatumBaseType',
+        ln: 'AbstractCoverageType',
+        bti: '.AbstractFeatureType',
         ps: [{
-            n: 'origin',
+            n: 'domainSet',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.DomainSetType',
+            t: 'er'
+          }, {
+            n: 'rangeSet',
+            ti: '.RangeSetType'
+          }]
+      }, {
+        ln: 'AbstractGeneralParameterValueType'
+      }, {
+        ln: 'TimeClockType',
+        bti: '.TimeReferenceSystemType',
+        ps: [{
+            n: 'referenceEvent',
+            ti: '.StringOrRefType'
+          }, {
+            n: 'referenceTime',
             ti: 'Calendar'
+          }, {
+            n: 'utcReference',
+            ti: 'Calendar'
+          }, {
+            n: 'dateBasis',
+            col: true,
+            ti: '.TimeCalendarPropertyType'
+          }]
+      }, {
+        ln: 'CurveSegmentArrayPropertyType',
+        ps: [{
+            n: 'abstractCurveSegment',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractCurveSegment',
+            ti: '.AbstractCurveSegmentType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'DerivationUnitTermType',
+        bti: '.UnitOfMeasureType',
+        ps: [{
+            n: 'exponent',
+            ti: 'Integer',
+            an: {
+              lp: 'exponent'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MappingRuleType',
+        ps: [{
+            n: 'ruleDefinition'
+          }, {
+            n: 'ruleReference',
+            ti: '.ReferenceType'
+          }]
+      }, {
+        ln: 'TimeCalendarEraType',
+        bti: '.DefinitionType',
+        ps: [{
+            n: 'referenceEvent',
+            ti: '.StringOrRefType'
+          }, {
+            n: 'referenceDate'
+          }, {
+            n: 'julianReference',
+            ti: 'Decimal'
+          }, {
+            n: 'epochOfUse',
+            ti: '.TimePeriodPropertyType'
+          }]
+      }, {
+        ln: 'AbstractGeneralTransformationType',
+        bti: '.AbstractCoordinateOperationType'
+      }, {
+        ln: 'TimePeriodPropertyType',
+        ps: [{
+            n: 'timePeriod',
+            en: 'TimePeriod',
+            ti: '.TimePeriodType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TemporalDatumBaseType',
+        bti: '.AbstractDatumType'
+      }, {
+        ln: 'ValuePropertyType',
+        ps: [{
+            n: 'abstractValue',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractValue',
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'abstractGeometry',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractGeometry',
+            ti: '.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'abstractTimeObject',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractTimeObject',
+            ti: '.AbstractTimeObjectType',
+            t: 'er'
+          }, {
+            n: '_null',
+            en: 'Null',
+            ti: {
+              t: 'l'
+            }
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractDatumType',
+        bti: '.IdentifiedObjectType',
+        ps: [{
+            n: 'domainOfValidity',
+            ti: '.DomainOfValidity'
+          }, {
+            n: 'scope',
+            col: true
+          }, {
+            n: 'anchorDefinition',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.CodeType',
+            t: 'er'
+          }, {
+            n: 'realizationEpoch',
+            ti: 'Calendar'
+          }]
+      }, {
+        ln: 'PriorityLocationPropertyType',
+        bti: '.LocationPropertyType',
+        ps: [{
+            n: 'priority',
+            an: {
+              lp: 'priority'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MovingObjectStatusType',
+        bti: '.AbstractTimeSliceType',
+        ps: [{
+            n: 'position',
+            ti: '.GeometryPropertyType'
+          }, {
+            n: 'pos',
+            ti: '.DirectPositionType'
+          }, {
+            n: 'locationName',
+            ti: '.CodeType'
+          }, {
+            n: 'locationReference',
+            ti: '.ReferenceType'
+          }, {
+            n: 'location',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.LocationPropertyType',
+            t: 'er'
+          }, {
+            n: 'speed',
+            ti: '.MeasureType'
+          }, {
+            n: 'bearing',
+            ti: '.DirectionPropertyType'
+          }, {
+            n: 'acceleration',
+            ti: '.MeasureType'
+          }, {
+            n: 'elevation',
+            ti: '.MeasureType'
+          }, {
+            n: 'status',
+            ti: '.StringOrRefType'
+          }, {
+            n: 'statusReference',
+            ti: '.ReferenceType'
+          }]
+      }, {
+        ln: 'EllipsoidalCSType',
+        bti: '.AbstractCoordinateSystemType'
+      }, {
+        ln: 'FormulaType',
+        ps: [{
+            n: 'a',
+            ti: 'Double'
+          }, {
+            n: 'b',
+            ti: 'Double'
+          }, {
+            n: 'c',
+            ti: 'Double'
+          }, {
+            n: 'd',
+            ti: 'Double'
+          }]
+      }, {
+        ln: 'KnotType',
+        ps: [{
+            n: 'value',
+            ti: 'Double'
+          }, {
+            n: 'multiplicity',
+            ti: 'Integer'
+          }, {
+            n: 'weight',
+            ti: 'Double'
+          }]
+      }, {
+        ln: 'CategoryPropertyType',
+        ps: [{
+            n: 'category',
+            en: 'Category',
+            ti: '.Category'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractSolidType',
+        bti: '.AbstractGeometricPrimitiveType'
+      }, {
+        ln: 'ConversionType',
+        bti: '.AbstractGeneralConversionType',
+        ps: [{
+            n: 'method',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.OperationMethodPropertyType',
+            t: 'er'
+          }, {
+            n: 'parameterValue',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.AbstractGeneralParameterValuePropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'CodeOrNilReasonListType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
+            },
+            t: 'v'
+          }, {
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ParameterValueGroupType',
+        bti: '.AbstractGeneralParameterValueType',
+        ps: [{
+            n: 'parameterValue',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.AbstractGeneralParameterValuePropertyType',
+            t: 'er'
+          }, {
+            n: 'group',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.OperationParameterGroupPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'CoverageFunctionType',
+        ps: [{
+            n: 'mappingRule',
+            en: 'MappingRule',
+            ti: '.StringOrRefType'
+          }, {
+            n: 'coverageMappingRule',
+            en: 'CoverageMappingRule',
+            ti: '.MappingRuleType'
+          }, {
+            n: 'gridFunction',
+            en: 'GridFunction',
+            ti: '.GridFunctionType'
+          }]
+      }, {
+        ln: 'GridEnvelopeType',
+        ps: [{
+            n: 'low',
+            ti: {
+              t: 'l',
+              bti: 'Integer'
+            }
+          }, {
+            n: 'high',
+            ti: {
+              t: 'l',
+              bti: 'Integer'
+            }
+          }]
+      }, {
+        ln: 'TimeType',
+        bti: '.MeasureType'
+      }, {
+        ln: 'MeasureType',
+        ps: [{
+            n: 'value',
+            ti: 'Double',
+            t: 'v'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EnvelopeWithTimePeriodType',
+        bti: '.EnvelopeType',
+        ps: [{
+            n: 'beginPosition',
+            ti: '.TimePositionType'
+          }, {
+            n: 'endPosition',
+            ti: '.TimePositionType'
+          }, {
+            n: 'frame',
+            an: {
+              lp: 'frame'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractTimeGeometricPrimitiveType',
+        bti: '.AbstractTimePrimitiveType',
+        ps: [{
+            n: 'frame',
+            an: {
+              lp: 'frame'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CountPropertyType',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: '.Count'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'PolarCSPropertyType',
+        ps: [{
+            n: 'polarCS',
+            en: 'PolarCS',
+            ti: '.PolarCSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ValueArrayPropertyType',
+        ps: [{
+            n: 'abstractValueOrAbstractGeometryOrAbstractTimeObject',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'AbstractGeometry',
+                ti: '.AbstractGeometryType'
+              }, {
+                en: 'AbstractValue',
+                ti: 'AnyType'
+              }, {
+                en: 'Null',
+                ti: {
+                  t: 'l'
+                }
+              }, {
+                en: 'AbstractTimeObject',
+                ti: '.AbstractTimeObjectType'
+              }],
+            t: 'ers'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeodeticDatumType',
+        bti: '.AbstractDatumType',
+        ps: [{
+            n: 'primeMeridian',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.PrimeMeridianPropertyType',
+            t: 'er'
+          }, {
+            n: 'ellipsoid',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.EllipsoidPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'TopoSolidType',
+        bti: '.AbstractTopoPrimitiveType',
+        ps: [{
+            n: 'isolated',
+            col: true,
+            ti: '.NodeOrEdgePropertyType'
+          }, {
+            n: 'directedFace',
+            col: true,
+            ti: '.DirectedFacePropertyType'
+          }, {
+            n: 'solidProperty',
+            ti: '.SolidPropertyType'
+          }, {
+            n: 'universal',
+            ti: 'Boolean',
+            an: {
+              lp: 'universal'
+            },
+            t: 'a'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'OperationMethodType',
+        bti: '.IdentifiedObjectType',
+        ps: [{
+            n: 'formulaCitation',
+            ti: '.FormulaCitation'
+          }, {
+            n: 'formula',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.CodeType',
+            t: 'er'
+          }, {
+            n: 'sourceDimensions',
+            ti: 'Integer'
+          }, {
+            n: 'targetDimensions',
+            ti: 'Integer'
+          }, {
+            n: 'parameter',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.AbstractGeneralOperationParameterPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'AffinePlacementType',
+        ps: [{
+            n: 'location',
+            ti: '.DirectPositionType'
+          }, {
+            n: 'refDirection',
+            col: true,
+            ti: '.VectorType'
+          }, {
+            n: 'inDimension',
+            ti: 'Integer'
+          }, {
+            n: 'outDimension',
+            ti: 'Integer'
+          }]
+      }, {
+        ln: 'PointType',
+        bti: '.AbstractGeometricPrimitiveType',
+        ps: [{
+            n: 'pos',
+            ti: '.DirectPositionType'
+          }, {
+            n: 'coordinates',
+            ti: '.CoordinatesType'
+          }]
+      }, {
+        ln: 'GeodeticDatumPropertyType',
+        ps: [{
+            n: 'geodeticDatum',
+            en: 'GeodeticDatum',
+            ti: '.GeodeticDatumType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'FaceType',
+        bti: '.AbstractTopoPrimitiveType',
+        ps: [{
+            n: 'isolated',
+            col: true,
+            ti: '.NodePropertyType'
+          }, {
+            n: 'directedEdge',
+            col: true,
+            ti: '.DirectedEdgePropertyType'
+          }, {
+            n: 'directedTopoSolid',
+            col: true,
+            ti: '.DirectedTopoSolidPropertyType'
+          }, {
+            n: 'surfaceProperty',
+            ti: '.SurfacePropertyType'
+          }, {
+            n: 'universal',
+            ti: 'Boolean',
+            an: {
+              lp: 'universal'
+            },
+            t: 'a'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CoordinateSystemPropertyType',
+        ps: [{
+            n: 'abstractCoordinateSystem',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractCoordinateSystem',
+            ti: '.AbstractCoordinateSystemType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'EllipsoidPropertyType',
+        ps: [{
+            n: 'ellipsoid',
+            en: 'Ellipsoid',
+            ti: '.EllipsoidType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MultiGeometryPropertyType',
+        ps: [{
+            n: 'abstractGeometricAggregate',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractGeometricAggregate',
+            ti: '.AbstractGeometricAggregateType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CompositeSurfaceType',
+        bti: '.AbstractSurfaceType',
+        ps: [{
+            n: 'surfaceMember',
+            col: true,
+            ti: '.SurfacePropertyType'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimePrimitivePropertyType',
+        ps: [{
+            n: 'abstractTimePrimitive',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractTimePrimitive',
+            ti: '.AbstractTimePrimitiveType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DictionaryType',
+        bti: '.DefinitionType',
+        ps: [{
+            n: 'dictionaryEntryOrIndirectEntry',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            etis: [{
+                en: 'dictionaryEntry',
+                ti: '.DictionaryEntryType'
+              }, {
+                en: 'indirectEntry',
+                ti: '.IndirectEntryType'
+              }],
+            t: 'ers'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeOrdinalEraPropertyType',
+        ps: [{
+            n: 'timeOrdinalEra',
+            en: 'TimeOrdinalEra',
+            ti: '.TimeOrdinalEraType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CurveType',
+        bti: '.AbstractCurveType',
+        ps: [{
+            n: 'segments',
+            ti: '.CurveSegmentArrayPropertyType'
+          }]
+      }, {
+        ln: 'ResultType',
+        ps: [{
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'KnotPropertyType',
+        ps: [{
+            n: 'knot',
+            en: 'Knot',
+            ti: '.KnotType'
+          }]
+      }, {
+        ln: 'DirectionDescriptionType',
+        ps: [{
+            n: 'compassPoint'
+          }, {
+            n: 'keyword',
+            ti: '.CodeType'
+          }, {
+            n: 'description'
+          }, {
+            n: 'reference',
+            ti: '.ReferenceType'
+          }]
+      }, {
+        ln: 'PassThroughOperationType',
+        bti: '.AbstractCoordinateOperationType',
+        ps: [{
+            n: 'modifiedCoordinate',
+            col: true,
+            ti: 'Integer'
+          }, {
+            n: 'coordOperation',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.CoordinateOperationPropertyType',
+            t: 'er'
+          }, {
+            n: 'aggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SurfacePropertyType',
+        ps: [{
+            n: 'abstractSurface',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractSurface',
+            ti: '.AbstractSurfaceType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'EngineeringCRSPropertyType',
+        ps: [{
+            n: 'engineeringCRS',
+            en: 'EngineeringCRS',
+            ti: '.EngineeringCRSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'BoundedFeatureType',
+        bti: '.AbstractFeatureType'
+      }, {
+        ln: 'NodeOrEdgePropertyType',
+        ps: [{
+            n: 'node',
+            en: 'Node',
+            ti: '.NodeType'
+          }, {
+            n: 'edge',
+            en: 'Edge',
+            ti: '.EdgeType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeNodeType',
+        bti: '.AbstractTimeTopologyPrimitiveType',
+        ps: [{
+            n: 'previousEdge',
+            col: true,
+            ti: '.TimeEdgePropertyType'
+          }, {
+            n: 'nextEdge',
+            col: true,
+            ti: '.TimeEdgePropertyType'
+          }, {
+            n: 'position',
+            ti: '.TimeInstantPropertyType'
+          }]
+      }, {
+        ln: 'FaceOrTopoSolidPropertyType',
+        ps: [{
+            n: 'face',
+            en: 'Face',
+            ti: '.FaceType'
+          }, {
+            n: 'topoSolid',
+            en: 'TopoSolid',
+            ti: '.TopoSolidType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractRingPropertyType',
+        ps: [{
+            n: 'abstractRing',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractRing',
+            ti: '.AbstractRingType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'DirectedObservationAtDistanceType',
+        bti: '.DirectedObservationType',
+        ps: [{
+            n: 'distance',
+            ti: '.MeasureType'
           }]
       }, {
         ln: 'CompoundCRSType',
@@ -8464,25 +7843,199 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ArcStringByBulgeType',
-        bti: '.AbstractCurveSegmentType',
+        ln: 'MeasureListType',
         ps: [{
-            n: 'posOrPointPropertyOrPointRep',
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            },
+            t: 'v'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeCoordinateSystemType',
+        bti: '.TimeReferenceSystemType',
+        ps: [{
+            n: 'originPosition',
+            ti: '.TimePositionType'
+          }, {
+            n: 'origin',
+            ti: '.TimeInstantPropertyType'
+          }, {
+            n: 'interval',
+            ti: '.TimeIntervalLengthType'
+          }]
+      }, {
+        ln: 'ProjectedCRSType',
+        bti: '.AbstractGeneralDerivedCRSType',
+        ps: [{
+            n: 'baseGeodeticCRS',
+            ti: '.GeodeticCRSPropertyType'
+          }, {
+            n: 'baseGeographicCRS',
+            ti: '.GeographicCRSPropertyType'
+          }, {
+            n: 'cartesianCS',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.CartesianCSPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'AbstractMetaDataType',
+        ps: [{
+            n: 'content',
+            col: true,
+            dom: false,
+            typed: false,
+            t: 'ers'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractCurveSegmentType',
+        ps: [{
+            n: 'numDerivativesAtStart',
+            ti: 'Integer',
+            an: {
+              lp: 'numDerivativesAtStart'
+            },
+            t: 'a'
+          }, {
+            n: 'numDerivativesAtEnd',
+            ti: 'Integer',
+            an: {
+              lp: 'numDerivativesAtEnd'
+            },
+            t: 'a'
+          }, {
+            n: 'numDerivativeInterior',
+            ti: 'Integer',
+            an: {
+              lp: 'numDerivativeInterior'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DomainOfValidity',
+        ps: [{
+            n: 'exExtent',
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SurfacePatchArrayPropertyType',
+        ps: [{
+            n: 'abstractSurfacePatch',
             col: true,
             mx: false,
             dom: false,
             typed: false,
-            etis: [{
-                en: 'pos',
-                ti: '.DirectPositionType'
-              }, {
-                en: 'pointRep',
-                ti: '.PointPropertyType'
-              }, {
-                en: 'pointProperty',
-                ti: '.PointPropertyType'
-              }],
-            t: 'ers'
+            en: 'AbstractSurfacePatch',
+            ti: '.AbstractSurfacePatchType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'MultiGeometryType',
+        bti: '.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'geometryMember',
+            col: true,
+            ti: '.GeometryPropertyType'
+          }, {
+            n: 'geometryMembers',
+            ti: '.GeometryArrayPropertyType'
+          }]
+      }, {
+        ln: 'TopoPointPropertyType',
+        ps: [{
+            n: 'topoPoint',
+            en: 'TopoPoint',
+            ti: '.TopoPointType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MultiSurfaceType',
+        bti: '.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'surfaceMember',
+            col: true,
+            ti: '.SurfacePropertyType'
+          }, {
+            n: 'surfaceMembers',
+            ti: '.SurfaceArrayPropertyType'
+          }]
+      }, {
+        ln: 'ArcByCenterPointType',
+        bti: '.AbstractCurveSegmentType',
+        ps: [{
+            n: 'pos',
+            ti: '.DirectPositionType'
+          }, {
+            n: 'pointProperty',
+            ti: '.PointPropertyType'
+          }, {
+            n: 'pointRep',
+            ti: '.PointPropertyType'
           }, {
             n: 'posList',
             ti: '.DirectPositionListType'
@@ -8490,13 +8043,14 @@ var GML_3_2_1_Module_Factory = function () {
             n: 'coordinates',
             ti: '.CoordinatesType'
           }, {
-            n: 'bulge',
-            col: true,
-            ti: 'Double'
+            n: 'radius',
+            ti: '.LengthType'
           }, {
-            n: 'normal',
-            col: true,
-            ti: '.VectorType'
+            n: 'startAngle',
+            ti: '.AngleType'
+          }, {
+            n: 'endAngle',
+            ti: '.AngleType'
           }, {
             n: 'interpolation',
             an: {
@@ -8504,7 +8058,7 @@ var GML_3_2_1_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'numArc',
+            n: 'numARC',
             ti: 'Integer',
             an: {
               lp: 'numArc'
@@ -8512,27 +8066,20 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SphereType',
-        bti: '.AbstractGriddedSurfaceType',
-        ps: [{
-            n: 'horizontalCURVETYPE',
-            an: {
-              lp: 'horizontalCurveType'
-            },
-            t: 'a'
-          }, {
-            n: 'verticalCURVETYPE',
-            an: {
-              lp: 'verticalCurveType'
-            },
-            t: 'a'
-          }]
+        ln: 'AbstractRingType'
       }, {
-        ln: 'AffineCSPropertyType',
+        ln: 'TimeCalendarEraPropertyType',
         ps: [{
-            n: 'affineCS',
-            en: 'AffineCS',
-            ti: '.AffineCSType'
+            n: 'timeCalendarEra',
+            en: 'TimeCalendarEra',
+            ti: '.TimeCalendarEraType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }, {
             n: 'nilReason',
             ti: {
@@ -8575,11 +8122,18 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'BooleanPropertyType',
+        ln: 'TimeCalendarPropertyType',
         ps: [{
-            n: '_boolean',
-            en: 'Boolean',
-            ti: '.Boolean'
+            n: 'timeCalendar',
+            en: 'TimeCalendar',
+            ti: '.TimeCalendarType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }, {
             n: 'nilReason',
             ti: {
@@ -8622,48 +8176,522 @@ var GML_3_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TinType',
-        bti: '.SurfaceType',
+        ln: 'ConversionPropertyType',
         ps: [{
-            n: 'stopLines',
-            col: true,
-            ti: '.LineStringSegmentArrayPropertyType'
+            n: 'conversion',
+            en: 'Conversion',
+            ti: '.ConversionType'
           }, {
-            n: 'breakLines',
-            col: true,
-            ti: '.LineStringSegmentArrayPropertyType'
-          }, {
-            n: 'maxLength',
-            ti: '.LengthType'
-          }, {
-            n: 'controlPoint',
-            ti: '.TinType.ControlPoint'
-          }]
-      }, {
-        ln: 'DataBlockType',
-        ps: [{
-            n: 'rangeParameters',
-            ti: '.AssociationRoleType'
-          }, {
-            n: 'tupleList',
-            ti: '.CoordinatesType'
-          }, {
-            n: 'doubleOrNilReasonTupleList',
+            n: 'nilReason',
             ti: {
               t: 'l'
-            }
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'MultiSolidType',
-        bti: '.AbstractGeometricAggregateType',
+        ln: 'AbstractFeatureCollectionType',
+        bti: '.AbstractFeatureType',
         ps: [{
-            n: 'solidMember',
+            n: 'featureMember',
             col: true,
-            ti: '.SolidPropertyType'
+            ti: '.FeaturePropertyType'
           }, {
-            n: 'solidMembers',
-            ti: '.SolidArrayPropertyType'
+            n: 'featureMembers',
+            ti: '.FeatureArrayPropertyType'
           }]
+      }, {
+        ln: 'ObservationType',
+        bti: '.AbstractFeatureType',
+        ps: [{
+            n: 'validTime',
+            ti: '.TimePrimitivePropertyType'
+          }, {
+            n: 'using',
+            ti: '.ProcedurePropertyType'
+          }, {
+            n: 'target',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.TargetPropertyType',
+            t: 'er'
+          }, {
+            n: 'resultOf',
+            ti: '.ResultType'
+          }]
+      }, {
+        ln: 'ObliqueCartesianCSType',
+        bti: '.AbstractCoordinateSystemType'
+      }, {
+        ln: 'LengthType',
+        bti: '.MeasureType'
+      }, {
+        ln: 'TimeTopologyPrimitivePropertyType',
+        ps: [{
+            n: 'abstractTimeTopologyPrimitive',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractTimeTopologyPrimitive',
+            ti: '.AbstractTimeTopologyPrimitiveType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EngineeringDatumPropertyType',
+        ps: [{
+            n: 'engineeringDatum',
+            en: 'EngineeringDatum',
+            ti: '.EngineeringDatumType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeodeticCRSPropertyType',
+        ps: [{
+            n: 'geodeticCRS',
+            en: 'GeodeticCRS',
+            ti: '.GeodeticCRSType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SurfaceType',
+        bti: '.AbstractSurfaceType',
+        ps: [{
+            n: 'patches',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.SurfacePatchArrayPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'LineStringSegmentArrayPropertyType',
+        ps: [{
+            n: 'lineStringSegment',
+            col: true,
+            en: 'LineStringSegment',
+            ti: '.LineStringSegmentType'
+          }]
+      }, {
+        ln: 'FeaturePropertyType',
+        ps: [{
+            n: 'abstractFeature',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractFeature',
+            ti: '.AbstractFeatureType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CoordinateSystemAxisType',
+        bti: '.IdentifiedObjectType',
+        ps: [{
+            n: 'axisAbbrev',
+            ti: '.CodeType'
+          }, {
+            n: 'axisDirection',
+            ti: '.CodeWithAuthorityType'
+          }, {
+            n: 'minimumValue',
+            ti: 'Double'
+          }, {
+            n: 'maximumValue',
+            ti: 'Double'
+          }, {
+            n: 'rangeMeaning',
+            ti: '.CodeWithAuthorityType'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeReferenceSystemType',
+        bti: '.DefinitionType',
+        ps: [{
+            n: 'domainOfValidity'
+          }]
+      }, {
+        ln: 'CircleType',
+        bti: '.ArcType'
+      }, {
+        ln: 'AbstractGeneralOperationParameterType',
+        bti: '.IdentifiedObjectType',
+        ps: [{
+            n: 'minimumOccurs',
+            ti: 'Integer'
+          }]
+      }, {
+        ln: 'GeodeticCRSType',
+        bti: '.AbstractCRSType',
+        ps: [{
+            n: 'ellipsoidalCS',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.EllipsoidalCSPropertyType',
+            t: 'er'
+          }, {
+            n: 'cartesianCS',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.CartesianCSPropertyType',
+            t: 'er'
+          }, {
+            n: 'sphericalCS',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.SphericalCSPropertyType',
+            t: 'er'
+          }, {
+            n: 'geodeticDatum',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.GeodeticDatumPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'GridLengthType',
+        bti: '.MeasureType'
+      }, {
+        ln: 'DynamicFeatureType',
+        bti: '.AbstractFeatureType',
+        ps: [{
+            n: 'validTime',
+            ti: '.TimePrimitivePropertyType'
+          }, {
+            n: 'history',
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: '.HistoryPropertyType',
+            t: 'er'
+          }, {
+            n: 'dataSource',
+            ti: '.StringOrRefType'
+          }, {
+            n: 'dataSourceReference',
+            ti: '.ReferenceType'
+          }]
+      }, {
+        ln: 'GeneralConversionPropertyType',
+        ps: [{
+            n: 'abstractGeneralConversion',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractGeneralConversion',
+            ti: '.AbstractGeneralConversionType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractCoordinateOperationType',
+        bti: '.IdentifiedObjectType',
+        ps: [{
+            n: 'domainOfValidity',
+            ti: '.DomainOfValidity'
+          }, {
+            n: 'scope',
+            col: true
+          }, {
+            n: 'operationVersion'
+          }, {
+            n: 'coordinateOperationAccuracy',
+            col: true,
+            ti: '.CoordinateOperationAccuracy'
+          }, {
+            n: 'sourceCRS',
+            ti: '.CRSPropertyType'
+          }, {
+            n: 'targetCRS',
+            ti: '.CRSPropertyType'
+          }]
+      }, {
+        ln: 'SecondDefiningParameterPropertyElement',
+        ps: [{
+            n: 'secondDefiningParameter',
+            en: 'SecondDefiningParameter',
+            ti: '.SecondDefiningParameter'
+          }]
+      }, {
+        t: 'enum',
+        ln: 'KnotTypesType',
+        vs: ['uniform', 'quasiUniform', 'piecewiseBezier']
+      }, {
+        t: 'enum',
+        ln: 'CurveInterpolationType',
+        vs: ['linear', 'geodesic', 'circularArc3Points', 'circularArc2PointWithBulge', 'circularArcCenterPointWithRadius', 'elliptical', 'clothoid', 'conic', 'polynomialSpline', 'cubicSpline', 'rationalSpline']
+      }, {
+        t: 'enum',
+        ln: 'TimeIndeterminateValueType',
+        vs: ['after', 'before', 'now', 'unknown']
+      }, {
+        t: 'enum',
+        ln: 'SuccessionType',
+        vs: ['substitution', 'division', 'fusion', 'initiation']
+      }, {
+        t: 'enum',
+        ln: 'IncrementOrder',
+        vs: ['+x+y', '+y+x', '+x-y', '-x-y']
+      }, {
+        t: 'enum',
+        ln: 'SurfaceInterpolationType',
+        vs: ['none', 'planar', 'spherical', 'elliptical', 'conic', 'tin', 'parametricCurve', 'polynomialSpline', 'rationalSpline', 'triangulatedSpline']
+      }, {
+        t: 'enum',
+        ln: 'SequenceRuleEnumeration',
+        vs: ['Linear', 'Boustrophedonic', 'Cantor-diagonal', 'Spiral', 'Morton', 'Hilbert']
       }, {
         t: 'enum',
         ln: 'CompassPointEnumeration',
@@ -8674,1580 +8702,499 @@ var GML_3_2_1_Module_Factory = function () {
         vs: ['set', 'bag', 'sequence', 'array', 'record', 'table']
       }, {
         t: 'enum',
-        ln: 'SuccessionType',
-        vs: ['substitution', 'division', 'fusion', 'initiation']
-      }, {
-        t: 'enum',
-        ln: 'TimeIndeterminateValueType',
-        vs: ['after', 'before', 'now', 'unknown']
-      }, {
-        t: 'enum',
         ln: 'SignType',
         vs: ['-', '+']
-      }, {
-        t: 'enum',
-        ln: 'CurveInterpolationType',
-        vs: ['linear', 'geodesic', 'circularArc3Points', 'circularArc2PointWithBulge', 'circularArcCenterPointWithRadius', 'elliptical', 'clothoid', 'conic', 'polynomialSpline', 'cubicSpline', 'rationalSpline']
-      }, {
-        t: 'enum',
-        ln: 'IncrementOrder',
-        vs: ['+x+y', '+y+x', '+x-y', '-x-y']
-      }, {
-        t: 'enum',
-        ln: 'SequenceRuleEnumeration',
-        vs: ['Linear', 'Boustrophedonic', 'Cantor-diagonal', 'Spiral', 'Morton', 'Hilbert']
-      }, {
-        t: 'enum',
-        ln: 'SurfaceInterpolationType',
-        vs: ['none', 'planar', 'spherical', 'elliptical', 'conic', 'tin', 'parametricCurve', 'polynomialSpline', 'rationalSpline', 'triangulatedSpline']
-      }, {
-        t: 'enum',
-        ln: 'KnotTypesType',
-        vs: ['uniform', 'quasiUniform', 'piecewiseBezier']
       }],
     eis: [{
-        en: 'ArcByCenterPoint',
-        ti: '.ArcByCenterPointType',
-        sh: 'AbstractCurveSegment'
-      }, {
-        en: 'PolygonPatch',
-        ti: '.PolygonPatchType',
-        sh: 'AbstractSurfacePatch'
-      }, {
-        en: 'AbstractTimeGeometricPrimitive',
-        ti: '.AbstractTimeGeometricPrimitiveType',
-        sh: 'AbstractTimePrimitive'
-      }, {
-        en: 'AbstractFeature',
-        ti: '.AbstractFeatureType',
-        sh: 'AbstractGML'
-      }, {
-        en: 'multiCenterOf',
-        ti: '.MultiPointPropertyType'
-      }, {
-        en: 'topoPrimitiveMember',
-        ti: '.TopoPrimitiveMemberType'
-      }, {
-        en: 'targetElement'
-      }, {
-        en: 'statusReference',
-        ti: '.ReferenceType'
-      }, {
-        en: 'pos',
-        ti: '.DirectPositionType'
-      }, {
-        en: 'ProjectedCRS',
-        ti: '.ProjectedCRSType',
-        sh: 'AbstractGeneralDerivedCRS'
-      }, {
-        en: 'usesTemporalCS',
-        ti: '.TemporalCSPropertyType'
-      }, {
-        en: 'pointProperty',
-        ti: '.PointPropertyType'
-      }, {
-        en: 'usesImageDatum',
-        ti: '.ImageDatumPropertyType',
-        sh: 'imageDatum'
-      }, {
-        en: 'geocentricCRSRef',
-        ti: '.GeocentricCRSPropertyType'
-      }, {
-        en: 'singleOperationRef',
-        ti: '.SingleOperationPropertyType'
-      }, {
-        en: 'maximumValue',
-        ti: 'Double'
-      }, {
-        en: 'coordinateSystemAxisRef',
-        ti: '.CoordinateSystemAxisPropertyType'
-      }, {
-        en: 'directedNode',
-        ti: '.DirectedNodePropertyType'
-      }, {
-        en: 'multiCoverage',
-        ti: '.MultiSurfacePropertyType'
-      }, {
-        en: 'pointMember',
-        ti: '.PointPropertyType'
-      }, {
-        en: 'temporalDatumRef',
-        ti: '.TemporalDatumPropertyType'
-      }, {
-        en: 'CoordinateSystemAxis',
-        ti: '.CoordinateSystemAxisType',
-        sh: 'Definition'
-      }, {
-        en: 'baseGeodeticCRS',
-        ti: '.GeodeticCRSPropertyType'
-      }, {
-        en: 'methodFormula',
-        ti: '.CodeType',
-        sh: 'formula'
-      }, {
-        en: 'greenwichLongitude',
-        ti: '.AngleType'
-      }, {
-        en: 'surfaceProperty',
-        ti: '.SurfacePropertyType'
-      }, {
-        en: 'crsRef',
-        ti: '.CRSPropertyType'
-      }, {
-        en: 'MultiSurfaceCoverage',
-        ti: '.DiscreteCoverageType',
-        sh: 'AbstractDiscreteCoverage'
-      }, {
-        en: 'ImageDatum',
-        ti: '.ImageDatumType',
-        sh: 'AbstractDatum'
-      }, {
-        en: 'UnitDefinition',
-        ti: '.UnitDefinitionType',
-        sh: 'Definition'
-      }, {
-        en: 'topoPrimitiveMembers',
-        ti: '.TopoPrimitiveArrayAssociationType'
-      }, {
-        en: 'conversionToPreferredUnit',
-        ti: '.ConversionToPreferredUnitType'
-      }, {
-        en: 'topoComplexProperty',
-        ti: '.TopoComplexPropertyType'
-      }, {
-        en: 'imageCRSRef',
-        ti: '.ImageCRSPropertyType'
-      }, {
-        en: 'polarCSRef',
-        ti: '.PolarCSPropertyType'
-      }, {
-        en: 'AbstractGeneralDerivedCRS',
-        ti: '.AbstractGeneralDerivedCRSType',
-        sh: 'AbstractSingleCRS'
-      }, {
-        en: 'ParameterValueGroup',
-        ti: '.ParameterValueGroupType',
-        sh: 'AbstractGeneralParameterValue'
-      }, {
-        en: 'TriangulatedSurface',
-        ti: '.SurfaceType',
-        sh: 'Surface'
-      }, {
-        en: 'group',
-        ti: '.OperationParameterGroupPropertyType'
-      }, {
-        en: 'File',
-        ti: '.FileType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'AbstractCoordinateOperation',
-        ti: '.AbstractCoordinateOperationType',
-        sh: 'Definition'
-      }, {
-        en: 'CountExtent',
-        ti: {
-          t: 'l'
-        },
-        sh: 'AbstractValue'
-      }, {
-        en: 'rangeParameters',
-        ti: '.AssociationRoleType'
-      }, {
-        en: 'dictionaryEntry',
-        ti: '.DictionaryEntryType'
-      }, {
-        en: 'curveMember',
-        ti: '.CurvePropertyType'
-      }, {
-        en: 'timeInterval',
-        ti: '.TimeIntervalLengthType'
-      }, {
-        en: 'AbstractTopoPrimitive',
-        ti: '.AbstractTopoPrimitiveType',
-        sh: 'AbstractTopology'
-      }, {
-        en: 'topoPointProperty',
-        ti: '.TopoPointPropertyType'
-      }, {
-        en: 'GeodeticDatum',
-        ti: '.GeodeticDatumType',
-        sh: 'AbstractDatum'
-      }, {
-        en: 'TimeTopologyComplex',
-        ti: '.TimeTopologyComplexType',
-        sh: 'AbstractTimeComplex'
-      }, {
-        en: 'LocationKeyWord',
-        ti: '.CodeType'
-      }, {
-        en: 'multiExtentOf',
-        ti: '.MultiSurfacePropertyType'
-      }, {
-        en: 'minutes',
-        ti: 'Int'
-      }, {
-        en: 'cartesianCSRef',
-        ti: '.CartesianCSPropertyType'
-      }, {
-        en: 'usesVerticalCS',
-        ti: '.VerticalCSPropertyType',
-        sh: 'verticalCS'
-      }, {
-        en: 'multiSurfaceProperty',
-        ti: '.MultiSurfacePropertyType'
-      }, {
-        en: 'AbstractMetaData',
-        ti: '.AbstractMetaDataType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'obliqueCartesianCSRef',
-        ti: '.ObliqueCartesianCSPropertyType'
-      }, {
-        en: 'Conversion',
-        ti: '.ConversionType',
-        sh: 'AbstractGeneralConversion'
-      }, {
-        en: 'AbstractCurve',
-        ti: '.AbstractCurveType',
-        sh: 'AbstractGeometricPrimitive'
-      }, {
-        en: 'conversion',
-        ti: '.GeneralConversionPropertyType'
-      }, {
-        en: 'track',
-        ti: '.HistoryPropertyType',
-        sh: 'history'
-      }, {
-        en: 'Category',
-        ti: '.Category',
-        sh: 'AbstractScalarValue'
-      }, {
-        en: 'sphericalCSRef',
-        ti: '.SphericalCSPropertyType'
-      }, {
-        en: 'RectifiedGridCoverage',
-        ti: '.DiscreteCoverageType',
-        sh: 'AbstractDiscreteCoverage'
-      }, {
-        en: 'abstractAssociationRole',
-        ti: '.AssociationRoleType'
-      }, {
-        en: 'definitionMember',
-        ti: '.DictionaryEntryType',
-        sh: 'dictionaryEntry'
-      }, {
-        en: 'modifiedCoordinate',
-        ti: 'Integer'
-      }, {
-        en: 'baseGeographicCRS',
-        ti: '.GeographicCRSPropertyType'
-      }, {
-        en: 'CoverageMappingRule',
-        ti: '.MappingRuleType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'TopoComplex',
-        ti: '.TopoComplexType',
-        sh: 'AbstractTopology'
-      }, {
-        en: 'CubicSpline',
-        ti: '.CubicSplineType',
-        sh: 'AbstractCurveSegment'
-      }, {
-        en: 'Array',
-        ti: '.ArrayType',
-        sh: 'AbstractGML'
-      }, {
-        en: 'validTime',
-        ti: '.TimePrimitivePropertyType'
-      }, {
-        en: 'AbstractTimeComplex',
-        ti: '.AbstractTimeComplexType',
-        sh: 'AbstractTimeObject'
-      }, {
-        en: 'GenericMetaData',
-        ti: '.GenericMetaDataType',
-        sh: 'AbstractMetaData'
-      }, {
-        en: 'AbstractGeometricPrimitive',
-        ti: '.AbstractGeometricPrimitiveType',
-        sh: 'AbstractGeometry'
-      }, {
-        en: 'operationParameter',
-        ti: '.OperationParameterPropertyType'
-      }, {
-        en: 'integerValueList',
-        ti: {
-          t: 'l',
-          bti: 'Integer'
-        }
-      }, {
-        en: 'usesTemporalDatum',
-        ti: '.TemporalDatumPropertyType',
-        sh: 'temporalDatum'
-      }, {
-        en: 'multiSolidDomain',
-        ti: '.DomainSetType',
-        sh: 'domainSet'
-      }, {
-        en: 'GeometricComplex',
-        ti: '.GeometricComplexType',
-        sh: 'AbstractGeometry'
-      }, {
-        en: 'usesSphericalCS',
-        ti: '.SphericalCSPropertyType',
-        sh: 'sphericalCS'
-      }, {
-        en: 'CompositeValue',
-        ti: '.CompositeValueType',
-        sh: 'AbstractValue'
-      }, {
-        en: 'OperationParameter',
-        ti: '.OperationParameterType',
-        sh: 'AbstractGeneralOperationParameter'
-      }, {
-        en: 'AbstractGeneralConversion',
-        ti: '.AbstractGeneralConversionType',
-        sh: 'AbstractOperation'
-      }, {
-        en: 'dataSource',
-        ti: '.StringOrRefType'
-      }, {
-        en: 'multiPosition',
-        ti: '.MultiPointPropertyType'
-      }, {
-        en: 'GridFunction',
-        ti: '.GridFunctionType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'measure',
-        ti: '.MeasureType'
-      }, {
-        en: 'LinearCS',
-        ti: '.LinearCSType',
-        sh: 'AbstractCoordinateSystem'
-      }, {
-        en: 'singleCRSRef',
-        ti: '.SingleCRSPropertyType'
-      }, {
-        en: 'targetDimensions',
-        ti: 'Integer'
-      }, {
-        en: 'FeatureCollection',
-        ti: '.FeatureCollectionType',
-        sh: 'AbstractFeature'
-      }, {
-        en: 'VerticalCS',
-        ti: '.VerticalCSType',
-        sh: 'AbstractCoordinateSystem'
-      }, {
-        en: 'usesValue',
-        ti: '.AbstractGeneralParameterValuePropertyType',
-        sh: 'parameterValue'
-      }, {
-        en: 'curveArrayProperty',
-        ti: '.CurveArrayPropertyType'
-      }, {
-        en: 'name',
-        ti: '.CodeType'
-      }, {
-        en: 'maximalComplex',
-        ti: '.TopoComplexPropertyType'
-      }, {
-        en: 'derivedCRSType',
-        ti: '.CodeWithAuthorityType'
-      }, {
-        en: 'position',
-        ti: '.PointPropertyType'
-      }, {
-        en: 'Dictionary',
-        ti: '.DictionaryType',
-        sh: 'Definition'
-      }, {
-        en: 'Count',
-        ti: '.Count',
-        sh: 'AbstractScalarValue'
-      }, {
-        en: 'AbstractTimeTopologyPrimitive',
-        ti: '.AbstractTimeTopologyPrimitiveType',
-        sh: 'AbstractTimePrimitive'
-      }, {
-        en: 'AbstractCoverage',
-        ti: '.AbstractCoverageType',
-        sh: 'AbstractFeature'
-      }, {
-        en: 'DynamicFeatureCollection',
-        ti: '.DynamicFeatureCollectionType',
-        sh: 'DynamicFeature'
-      }, {
-        en: 'TopoSolid',
-        ti: '.TopoSolidType',
-        sh: 'AbstractTopoPrimitive'
-      }, {
-        en: 'Face',
-        ti: '.FaceType',
-        sh: 'AbstractTopoPrimitive'
-      }, {
-        en: 'usesAffineCS',
-        ti: '.AffineCSPropertyType',
-        sh: 'affineCS'
-      }, {
-        en: 'directedTopoSolid',
-        ti: '.DirectedTopoSolidPropertyType'
-      }, {
-        en: 'AffinePlacement',
-        ti: '.AffinePlacementType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'usesAxis',
-        ti: '.CoordinateSystemAxisPropertyType',
-        sh: 'axis'
-      }, {
-        en: 'multiCurveProperty',
-        ti: '.MultiCurvePropertyType'
-      }, {
-        en: 'usesEllipsoid',
-        ti: '.EllipsoidPropertyType',
-        sh: 'ellipsoid'
-      }, {
-        en: 'AbstractGeneralOperationParameter',
-        ti: '.AbstractGeneralOperationParameterType',
-        sh: 'Definition'
-      }, {
-        en: 'Sphere',
-        ti: '.SphereType',
-        sh: 'AbstractGriddedSurface'
-      }, {
-        en: 'primeMeridian',
-        ti: '.PrimeMeridianPropertyType'
-      }, {
-        en: 'temporalDatum',
-        ti: '.TemporalDatumPropertyType'
-      }, {
-        en: 'member',
-        ti: '.AssociationRoleType'
-      }, {
-        en: 'multiGeometryProperty',
-        ti: '.MultiGeometryPropertyType'
-      }, {
-        en: 'RectifiedGrid',
-        ti: '.RectifiedGridType',
-        sh: 'Grid'
-      }, {
-        en: 'sourceDimensions',
-        ti: 'Integer'
-      }, {
-        en: 'TimeOrdinalEra',
-        ti: '.TimeOrdinalEraType'
-      }, {
-        en: 'valueFile'
-      }, {
-        en: 'OperationMethod',
-        ti: '.OperationMethodType',
-        sh: 'Definition'
-      }, {
-        en: 'LocationString',
-        ti: '.StringOrRefType'
-      }, {
-        en: 'baseSurface',
-        ti: '.SurfacePropertyType'
-      }, {
-        en: 'abstractInlineProperty',
-        ti: '.InlinePropertyType'
-      }, {
-        en: 'decimalMinutes',
-        ti: 'Decimal'
-      }, {
-        en: 'coordinates',
-        ti: '.CoordinatesType'
-      }, {
-        en: 'CylindricalCS',
-        ti: '.CylindricalCSType',
-        sh: 'AbstractCoordinateSystem'
-      }, {
-        en: 'vector',
-        ti: '.VectorType'
-      }, {
-        en: 'AbstractGeometricAggregate',
-        ti: '.AbstractGeometricAggregateType',
-        sh: 'AbstractGeometry'
-      }, {
-        en: 'TimePeriod',
-        ti: '.TimePeriodType',
-        sh: 'AbstractTimeGeometricPrimitive'
-      }, {
-        en: 'Null',
-        ti: {
-          t: 'l'
-        }
-      }, {
-        en: 'abstractGeneralOperationParameterRef',
-        ti: '.AbstractGeneralOperationParameterPropertyType'
-      }, {
-        en: 'directedEdge',
-        ti: '.DirectedEdgePropertyType'
-      }, {
-        en: 'AbstractDiscreteCoverage',
-        ti: '.DiscreteCoverageType',
-        sh: 'AbstractCoverage'
-      }, {
-        en: 'usesCS',
-        ti: '.CoordinateSystemPropertyType',
-        sh: 'coordinateSystem'
-      }, {
-        en: 'rangeMeaning',
-        ti: '.CodeWithAuthorityType'
-      }, {
-        en: 'geodeticDatumRef',
-        ti: '.GeodeticDatumPropertyType'
-      }, {
-        en: 'verticalDatumRef',
-        ti: '.VerticalDatumPropertyType'
-      }, {
-        en: 'gridDomain',
-        ti: '.DomainSetType',
-        sh: 'domainSet'
-      }, {
-        en: 'usesPrimeMeridian',
-        ti: '.PrimeMeridianPropertyType',
-        sh: 'primeMeridian'
-      }, {
-        en: 'subComplex',
-        ti: '.TopoComplexPropertyType'
-      }, {
-        en: 'Bag',
-        ti: '.BagType',
-        sh: 'AbstractGML'
-      }, {
-        en: 'descriptionReference',
-        ti: '.ReferenceType'
-      }, {
-        en: 'TimeInstant',
-        ti: '.TimeInstantType',
-        sh: 'AbstractTimeGeometricPrimitive'
-      }, {
-        en: 'Ellipsoid',
-        ti: '.EllipsoidType',
-        sh: 'Definition'
-      }, {
-        en: 'AbstractScalarValueList',
-        ti: 'AnyType',
-        sh: 'AbstractValue'
-      }, {
-        en: 'VerticalDatum',
-        ti: '.VerticalDatumType',
-        sh: 'AbstractDatum'
-      }, {
-        en: 'multiPointProperty',
-        ti: '.MultiPointPropertyType'
-      }, {
-        en: 'MultiSurface',
-        ti: '.MultiSurfaceType',
-        sh: 'AbstractGeometricAggregate'
-      }, {
-        en: 'BSpline',
-        ti: '.BSplineType',
-        sh: 'AbstractCurveSegment'
-      }, {
-        en: 'maximumOccurs',
-        ti: 'Integer'
-      }, {
-        en: 'includesValue',
-        ti: '.AbstractGeneralParameterValuePropertyType',
-        sh: 'parameterValue'
-      }, {
-        en: 'semiMajorAxis',
-        ti: '.MeasureType'
-      }, {
-        en: 'indirectEntry',
-        ti: '.IndirectEntryType'
-      }, {
-        en: 'curveProperty',
-        ti: '.CurvePropertyType'
-      }, {
-        en: 'operationParameterGroupRef',
-        ti: '.OperationParameterPropertyType'
-      }, {
-        en: 'multiPointDomain',
-        ti: '.DomainSetType',
-        sh: 'domainSet'
-      }, {
-        en: 'CategoryExtent',
-        ti: '.CategoryExtentType',
-        sh: 'AbstractValue'
-      }, {
-        en: 'valueOfParameter',
-        ti: '.OperationParameterPropertyType',
-        sh: 'operationParameter'
-      }, {
-        en: 'ellipsoidRef',
-        ti: '.EllipsoidPropertyType'
-      }, {
-        en: 'TimeEdge',
-        ti: '.TimeEdgeType',
-        sh: 'AbstractTimeTopologyPrimitive'
-      }, {
-        en: 'PassThroughOperation',
-        ti: '.PassThroughOperationType',
-        sh: 'AbstractSingleOperation'
-      }, {
-        en: 'AbstractCRS',
-        ti: '.AbstractCRSType',
-        sh: 'Definition'
-      }, {
-        en: 'AbstractContinuousCoverage',
-        ti: '.AbstractContinuousCoverageType',
-        sh: 'AbstractFeature'
-      }, {
-        en: 'extentOf',
-        ti: '.SurfacePropertyType'
-      }, {
-        en: 'topoSurfaceProperty',
-        ti: '.TopoSurfacePropertyType'
-      }, {
-        en: 'datumRef',
-        ti: '.DatumPropertyType'
-      }, {
-        en: 'TemporalCRS',
-        ti: '.TemporalCRSType',
-        sh: 'AbstractSingleCRS'
-      }, {
-        en: 'operationMethodRef',
-        ti: '.OperationMethodPropertyType'
-      }, {
-        en: 'MultiSolid',
-        ti: '.MultiSolidType',
-        sh: 'AbstractGeometricAggregate'
-      }, {
-        en: 'usesTimeCS',
-        ti: '.TimeCSPropertyType',
-        sh: 'timeCS'
-      }, {
-        en: 'Quantity',
-        ti: '.Quantity',
-        sh: 'AbstractScalarValue'
-      }, {
-        en: 'surfaceArrayProperty',
-        ti: '.SurfaceArrayPropertyType'
-      }, {
-        en: 'baseCurve',
-        ti: '.CurvePropertyType'
-      }, {
-        en: 'affineCS',
-        ti: '.AffineCSPropertyType'
-      }, {
-        en: 'UserDefinedCS',
-        ti: '.UserDefinedCSType',
-        sh: 'AbstractCoordinateSystem'
-      }, {
-        en: 'Transformation',
-        ti: '.TransformationType',
-        sh: 'AbstractGeneralTransformation'
-      }, {
-        en: 'coordinateSystemRef',
-        ti: '.CoordinateSystemPropertyType'
-      }, {
-        en: 'AbstractTimeSlice',
-        ti: '.AbstractTimeSliceType',
-        sh: 'AbstractGML'
-      }, {
-        en: 'solidProperty',
-        ti: '.SolidPropertyType'
-      }, {
-        en: 'remarks'
-      }, {
-        en: 'defaultCodeSpace'
-      }, {
-        en: 'Bezier',
-        ti: '.BezierType',
-        sh: 'BSpline'
-      }, {
-        en: 'angle',
-        ti: '.AngleType'
-      }, {
-        en: 'usesMethod',
-        ti: '.OperationMethodPropertyType',
-        sh: 'method'
-      }, {
-        en: 'dmsAngleValue',
-        ti: '.DMSAngleType'
-      }, {
-        en: 'Triangle',
-        ti: '.TriangleType',
-        sh: 'AbstractSurfacePatch'
-      }, {
-        en: 'engineeringDatumRef',
-        ti: '.EngineeringDatumPropertyType'
-      }, {
-        en: 'Grid',
-        ti: '.GridType',
-        sh: 'AbstractImplicitGeometry'
-      }, {
-        en: 'imageDatumRef',
-        ti: '.ImageDatumPropertyType'
-      }, {
-        en: 'Boolean',
-        ti: '.Boolean',
-        sh: 'AbstractScalarValue'
-      }, {
-        en: 'valueComponents',
-        ti: '.ValueArrayPropertyType'
-      }, {
-        en: 'centerLineOf',
-        ti: '.CurvePropertyType'
-      }, {
-        en: 'usesParameter',
-        ti: '.AbstractGeneralOperationParameterPropertyType',
-        sh: 'generalOperationParameter'
-      }, {
-        en: 'Cylinder',
-        ti: '.CylinderType',
-        sh: 'AbstractGriddedSurface'
-      }, {
-        en: 'EllipsoidalCS',
-        ti: '.EllipsoidalCSType',
-        sh: 'AbstractCoordinateSystem'
-      }, {
-        en: 'verticalDatum',
-        ti: '.VerticalDatumPropertyType'
-      }, {
-        en: 'transformationRef',
-        ti: '.TransformationPropertyType'
-      }, {
-        en: 'Shell',
-        ti: '.ShellType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'CartesianCS',
-        ti: '.CartesianCSType',
-        sh: 'AbstractCoordinateSystem'
-      }, {
-        en: 'CompositeSurface',
-        ti: '.CompositeSurfaceType',
-        sh: 'AbstractSurface'
-      }, {
-        en: 'tupleList',
-        ti: '.CoordinatesType'
-      }, {
-        en: 'gmlProfileSchema'
-      }, {
-        en: 'PolyhedralSurface',
-        ti: '.SurfaceType',
-        sh: 'Surface'
-      }, {
-        en: 'timePosition',
-        ti: '.TimePositionType'
-      }, {
-        en: 'DynamicFeature',
-        ti: '.DynamicFeatureType',
-        sh: 'AbstractFeature'
-      }, {
-        en: 'Polygon',
-        ti: '.PolygonType',
-        sh: 'AbstractSurface'
-      }, {
-        en: 'engineeringDatum',
-        ti: '.EngineeringDatumPropertyType'
-      }, {
-        en: 'dataSourceReference',
-        ti: '.ReferenceType'
-      }, {
-        en: 'DirectedObservation',
-        ti: '.DirectedObservationType',
-        sh: 'Observation'
-      }, {
-        en: 'derivedCRSRef',
-        ti: '.DerivedCRSPropertyType'
-      }, {
-        en: 'curveMembers',
-        ti: '.CurveArrayPropertyType'
-      }, {
-        en: 'associationName'
-      }, {
-        en: 'subject',
-        ti: '.TargetPropertyType',
-        sh: 'target'
-      }, {
-        en: 'AbstractSurface',
-        ti: '.AbstractSurfaceType',
-        sh: 'AbstractGeometricPrimitive'
-      }, {
-        en: 'Solid',
-        ti: '.SolidType',
-        sh: 'AbstractSolid'
-      }, {
-        en: 'TimeCS',
-        ti: '.TimeCSType',
-        sh: 'AbstractCoordinateSystem'
-      }, {
-        en: 'catalogSymbol',
-        ti: '.CodeType'
-      }, {
-        en: 'CompoundCRS',
-        ti: '.CompoundCRSType',
-        sh: 'AbstractCRS'
-      }, {
-        en: 'multiSolidProperty',
-        ti: '.MultiSolidPropertyType'
-      }, {
-        en: 'multiEdgeOf',
-        ti: '.MultiCurvePropertyType'
-      }, {
-        en: 'coordinateOperationAccuracy',
-        ti: '.CoordinateOperationAccuracy'
-      }, {
-        en: 'DerivedUnit',
-        ti: '.DerivedUnitType',
-        sh: 'UnitDefinition'
-      }, {
-        en: 'cylindricalCS',
-        ti: '.CylindricalCSPropertyType'
-      }, {
-        en: 'method',
-        ti: '.OperationMethodPropertyType'
-      }, {
-        en: 'includesSingleCRS',
-        ti: '.SingleCRSPropertyType',
-        sh: 'componentReferenceSystem'
-      }, {
-        en: 'Circle',
-        ti: '.CircleType',
-        sh: 'Arc'
-      }, {
-        en: 'LineString',
-        ti: '.LineStringType',
-        sh: 'AbstractCurve'
-      }, {
-        en: 'axisName',
-        sc: '.GridType'
-      }, {
-        en: 'multiSurfaceDomain',
-        ti: '.DomainSetType',
-        sh: 'domainSet'
-      }, {
-        en: 'ValueArray',
-        ti: '.ValueArrayType',
-        sh: 'CompositeValue'
-      }, {
-        en: 'definitionRef',
-        ti: '.ReferenceType'
-      }, {
-        en: 'ArcByBulge',
-        ti: '.ArcByBulgeType',
-        sh: 'ArcStringByBulge'
-      }, {
-        en: 'Envelope',
-        ti: '.EnvelopeType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'operationParameterRef',
-        ti: '.OperationParameterPropertyType'
-      }, {
-        en: 'history',
-        ti: '.HistoryPropertyType'
-      }, {
-        en: 'TimeReferenceSystem',
-        ti: '.TimeReferenceSystemType',
-        sh: 'Definition'
-      }, {
-        en: 'EnvelopeWithTimePeriod',
-        ti: '.EnvelopeWithTimePeriodType',
-        sh: 'Envelope'
-      }, {
-        en: 'pixelInCell',
-        ti: '.CodeWithAuthorityType'
-      }, {
-        en: 'QuantityExtent',
-        ti: '.QuantityExtentType',
-        sh: 'AbstractValue'
-      }, {
-        en: 'timeCS',
-        ti: '.TimeCSPropertyType'
-      }, {
-        en: 'OrientableSurface',
-        ti: '.OrientableSurfaceType',
-        sh: 'AbstractSurface'
-      }, {
-        en: 'generalTransformationRef',
-        ti: '.GeneralTransformationPropertyType'
-      }, {
-        en: 'axisLabels',
-        ti: {
-          t: 'l'
-        },
-        sc: '.GridType'
-      }, {
-        en: 'locationReference',
-        ti: '.ReferenceType'
-      }, {
-        en: 'TopoPoint',
-        ti: '.TopoPointType'
-      }, {
-        en: 'using',
-        ti: '.ProcedurePropertyType'
-      }, {
-        en: 'stringValue'
-      }, {
-        en: 'interior',
-        ti: '.AbstractRingPropertyType'
-      }, {
-        en: 'identifier',
-        ti: '.CodeWithAuthorityType'
-      }, {
-        en: 'rectifiedGridDomain',
-        ti: '.DomainSetType',
-        sh: 'domainSet'
-      }, {
-        en: 'origin',
-        ti: 'Calendar'
-      }, {
-        en: 'AbstractDatum',
-        ti: '.AbstractDatumType',
-        sh: 'Definition'
-      }, {
-        en: 'VerticalCRS',
-        ti: '.VerticalCRSType',
-        sh: 'AbstractSingleCRS'
-      }, {
-        en: 'passThroughOperationRef',
-        ti: '.PassThroughOperationPropertyType'
-      }, {
-        en: 'QuantityList',
-        ti: '.MeasureOrNilReasonListType',
-        sh: 'AbstractScalarValueList'
-      }, {
-        en: 'operationRef',
-        ti: '.OperationPropertyType'
-      }, {
-        en: 'TemporalDatum',
-        ti: '.TemporalDatumType',
-        sh: 'AbstractDatum'
-      }, {
-        en: 'seconds',
-        ti: 'Decimal'
-      }, {
-        en: 'Cone',
-        ti: '.ConeType',
-        sh: 'AbstractGriddedSurface'
-      }, {
-        en: 'OperationParameterGroup',
-        ti: '.OperationParameterGroupType',
-        sh: 'AbstractGeneralOperationParameter'
-      }, {
-        en: 'operationVersion'
-      }, {
-        en: 'geographicCRSRef',
-        ti: '.GeographicCRSPropertyType'
-      }, {
-        en: 'AbstractParametricCurveSurface',
-        ti: '.AbstractParametricCurveSurfaceType',
-        sh: 'AbstractSurfacePatch'
-      }, {
-        en: 'AbstractGeneralTransformation',
-        ti: '.AbstractGeneralTransformationType',
-        sh: 'AbstractOperation'
-      }, {
-        en: 'dmsAngle',
-        ti: '.DMSAngleType'
-      }, {
-        en: 'pointRep',
-        ti: '.PointPropertyType'
-      }, {
-        en: 'topoVolumeProperty',
-        ti: '.TopoVolumePropertyType'
-      }, {
-        en: 'parameterValue',
-        ti: '.AbstractGeneralParameterValuePropertyType'
-      }, {
-        en: 'duration'
-      }, {
-        en: 'axisAbbrev',
-        ti: '.CodeType'
-      }, {
-        en: 'CategoryList',
-        ti: '.CodeOrNilReasonListType',
-        sh: 'AbstractScalarValueList'
-      }, {
-        en: 'TimeNode',
-        ti: '.TimeNodeType',
-        sh: 'AbstractTimeTopologyPrimitive'
-      }, {
-        en: 'doubleOrNilReasonTupleList',
-        ti: {
-          t: 'l'
-        }
-      }, {
-        en: 'primeMeridianRef',
-        ti: '.PrimeMeridianPropertyType'
-      }, {
-        en: 'target',
-        ti: '.TargetPropertyType'
-      }, {
-        en: 'AbstractCurveSegment',
-        ti: '.AbstractCurveSegmentType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'Definition',
-        ti: '.DefinitionType',
-        sh: 'AbstractGML'
-      }, {
-        en: 'usesGeodeticDatum',
-        ti: '.GeodeticDatumPropertyType',
-        sh: 'geodeticDatum'
-      }, {
-        en: 'OffsetCurve',
-        ti: '.OffsetCurveType',
-        sh: 'AbstractCurveSegment'
-      }, {
-        en: 'featureMembers',
-        ti: '.FeatureArrayPropertyType'
-      }, {
-        en: 'Arc',
-        ti: '.ArcType',
-        sh: 'ArcString'
-      }, {
-        en: 'dynamicMembers',
-        ti: '.DynamicFeatureMemberType'
-      }, {
-        en: 'generalOperationParameter',
-        ti: '.AbstractGeneralOperationParameterPropertyType',
-        sh: 'parameter'
-      }, {
-        en: 'linearCS',
-        ti: '.LinearCSPropertyType'
-      }, {
-        en: 'generalConversionRef',
-        ti: '.GeneralConversionPropertyType'
-      }, {
-        en: 'Ring',
-        ti: '.RingType',
-        sh: 'AbstractRing'
-      }, {
-        en: 'EngineeringCRS',
-        ti: '.EngineeringCRSType',
-        sh: 'AbstractSingleCRS'
-      }, {
-        en: 'MultiCurveCoverage',
-        ti: '.DiscreteCoverageType',
-        sh: 'AbstractDiscreteCoverage'
-      }, {
-        en: 'degrees',
-        ti: '.DegreesType'
-      }, {
-        en: 'cartesianCS',
-        ti: '.CartesianCSPropertyType'
-      }, {
-        en: 'ArcString',
-        ti: '.ArcStringType',
-        sh: 'AbstractCurveSegment'
-      }, {
-        en: 'BaseUnit',
-        ti: '.BaseUnitType',
-        sh: 'UnitDefinition'
-      }, {
-        en: 'verticalCRSRef',
-        ti: '.VerticalCRSPropertyType'
-      }, {
-        en: 'Clothoid',
-        ti: '.ClothoidType',
-        sh: 'AbstractCurveSegment'
-      }, {
-        en: 'MultiGeometry',
-        ti: '.MultiGeometryType',
-        sh: 'AbstractGeometricAggregate'
-      }, {
-        en: 'TimeCoordinateSystem',
-        ti: '.TimeCoordinateSystemType',
-        sh: 'TimeReferenceSystem'
-      }, {
-        en: 'patches',
-        ti: '.SurfacePatchArrayPropertyType'
-      }, {
-        en: 'usesEllipsoidalCS',
-        ti: '.EllipsoidalCSPropertyType',
-        sh: 'ellipsoidalCS'
-      }, {
-        en: 'ParameterValue',
-        ti: '.ParameterValueType',
-        sh: 'AbstractGeneralParameterValue'
-      }, {
-        en: 'realizationEpoch',
-        ti: 'Calendar'
-      }, {
-        en: 'quantityType',
-        ti: '.StringOrRefType'
-      }, {
-        en: 'ConcatenatedOperation',
-        ti: '.ConcatenatedOperationType',
-        sh: 'AbstractCoordinateOperation'
-      }, {
-        en: 'AffineCS',
-        ti: '.AffineCSType',
-        sh: 'AbstractCoordinateSystem'
-      }, {
-        en: 'surfaceMember',
-        ti: '.SurfacePropertyType'
-      }, {
-        en: 'usesOperation',
-        ti: '.CoordinateOperationPropertyType',
-        sh: 'coordOperation'
-      }, {
-        en: 'priorityLocation',
-        ti: '.PriorityLocationPropertyType',
-        sh: 'location'
-      }, {
-        en: 'anchorPoint',
-        ti: '.CodeType',
-        sh: 'anchorDefinition'
-      }, {
-        en: 'TopoSurface',
-        ti: '.TopoSurfaceType'
-      }, {
-        en: 'axis',
-        ti: '.CoordinateSystemAxisPropertyType'
-      }, {
-        en: 'usesSingleOperation',
-        ti: '.CoordinateOperationPropertyType',
-        sh: 'coordOperation'
-      }, {
         en: 'usesEngineeringDatum',
         ti: '.EngineeringDatumPropertyType',
         sh: 'engineeringDatum'
       }, {
-        en: 'abstractReference',
-        ti: '.ReferenceType'
-      }, {
-        en: 'scope'
-      }, {
-        en: 'superComplex',
-        ti: '.TopoComplexPropertyType'
-      }, {
-        en: 'TimeOrdinalReferenceSystem',
-        ti: '.TimeOrdinalReferenceSystemType',
-        sh: 'TimeReferenceSystem'
-      }, {
-        en: 'DefinitionProxy',
-        ti: '.DefinitionProxyType',
-        sh: 'Definition'
-      }, {
-        en: 'TopoVolume',
-        ti: '.TopoVolumeType'
-      }, {
-        en: 'locationName',
-        ti: '.CodeType'
-      }, {
-        en: 'TemporalCS',
-        ti: '.TemporalCSType',
-        sh: 'AbstractCoordinateSystem'
-      }, {
-        en: 'AbstractTimePrimitive',
-        ti: '.AbstractTimePrimitiveType',
-        sh: 'AbstractTimeObject'
-      }, {
-        en: 'LinearRing',
-        ti: '.LinearRingType',
-        sh: 'AbstractRing'
-      }, {
-        en: 'EngineeringDatum',
-        ti: '.EngineeringDatumType',
-        sh: 'AbstractDatum'
-      }, {
-        en: 'AbstractGeometry',
-        ti: '.AbstractGeometryType',
-        sh: 'AbstractGML'
-      }, {
-        en: 'AbstractSolid',
-        ti: '.AbstractSolidType',
-        sh: 'AbstractGeometricPrimitive'
+        en: 'ellipsoid',
+        ti: '.EllipsoidPropertyType'
       }, {
         en: 'ImageCRS',
         ti: '.ImageCRSType',
         sh: 'AbstractSingleCRS'
       }, {
-        en: 'multiLocation',
-        ti: '.MultiPointPropertyType'
+        en: 'verticalCSRef',
+        ti: '.VerticalCSPropertyType'
       }, {
         en: 'surfaceMembers',
         ti: '.SurfaceArrayPropertyType'
       }, {
-        en: 'TimeCalendarEra',
-        ti: '.TimeCalendarEraType'
-      }, {
-        en: 'solidArrayProperty',
-        ti: '.SolidArrayPropertyType'
-      }, {
-        en: 'DirectedObservationAtDistance',
-        ti: '.DirectedObservationAtDistanceType',
-        sh: 'DirectedObservation'
-      }, {
-        en: 'multiCurveDomain',
-        ti: '.DomainSetType',
-        sh: 'domainSet'
-      }, {
-        en: 'OrientableCurve',
-        ti: '.OrientableCurveType',
-        sh: 'AbstractCurve'
-      }, {
-        en: 'GeographicCRS',
-        ti: '.GeographicCRSType',
-        sh: 'AbstractSingleCRS'
-      }, {
-        en: 'ObliqueCartesianCS',
-        ti: '.ObliqueCartesianCSType',
-        sh: 'AbstractCoordinateSystem'
-      }, {
-        en: 'exterior',
-        ti: '.AbstractRingPropertyType'
-      }, {
-        en: 'polarCS',
-        ti: '.PolarCSPropertyType'
-      }, {
-        en: 'solidMembers',
-        ti: '.SolidArrayPropertyType'
-      }, {
-        en: 'userDefinedCS',
-        ti: '.UserDefinedCSPropertyType'
-      }, {
-        en: 'coordinateSystem',
-        ti: '.CoordinateSystemPropertyType'
-      }, {
-        en: 'includesParameter',
-        ti: '.AbstractGeneralOperationParameterPropertyType',
-        sh: 'parameter'
-      }, {
-        en: 'Tin',
-        ti: '.TinType',
-        sh: 'TriangulatedSurface'
-      }, {
         en: 'anchorDefinition',
         ti: '.CodeType'
-      }, {
-        en: 'domainOfValidity',
-        ti: '.DomainOfValidity'
-      }, {
-        en: 'derivationUnitTerm',
-        ti: '.DerivationUnitTermType'
-      }, {
-        en: 'ellipsoidalCSRef',
-        ti: '.EllipsoidalCSPropertyType'
-      }, {
-        en: 'reversePropertyName'
-      }, {
-        en: 'CompositeSolid',
-        ti: '.CompositeSolidType',
-        sh: 'AbstractSolid'
-      }, {
-        en: 'Surface',
-        ti: '.SurfaceType',
-        sh: 'AbstractSurface'
-      }, {
-        en: 'geometryMember',
-        ti: '.GeometryPropertyType'
-      }, {
-        en: 'targetCRS',
-        ti: '.CRSPropertyType'
-      }, {
-        en: 'domainSet',
-        ti: '.DomainSetType'
-      }, {
-        en: 'ArcStringByBulge',
-        ti: '.ArcStringByBulgeType',
-        sh: 'AbstractCurveSegment'
-      }, {
-        en: 'metaDataProperty',
-        ti: '.MetaDataPropertyType'
-      }, {
-        en: 'featureMember',
-        ti: '.FeaturePropertyType'
-      }, {
-        en: 'temporalCSRef',
-        ti: '.TemporalCSPropertyType'
-      }, {
-        en: 'referenceSystemRef',
-        ti: '.CRSPropertyType'
-      }, {
-        en: 'GeocentricCRS',
-        ti: '.GeocentricCRSType',
-        sh: 'AbstractSingleCRS'
-      }, {
-        en: 'PrimeMeridian',
-        ti: '.PrimeMeridianType',
-        sh: 'Definition'
-      }, {
-        en: 'ellipsoid',
-        ti: '.EllipsoidPropertyType'
-      }, {
-        en: 'featureProperty',
-        ti: '.FeaturePropertyType'
-      }, {
-        en: 'GeodeticCRS',
-        ti: '.GeodeticCRSType',
-        sh: 'AbstractSingleCRS'
-      }, {
-        en: 'rangeSet',
-        ti: '.RangeSetType'
-      }, {
-        en: 'description',
-        ti: '.StringOrRefType'
-      }, {
-        en: 'formulaCitation',
-        ti: '.FormulaCitation'
-      }, {
-        en: 'polygonPatches',
-        ti: '.SurfacePatchArrayPropertyType',
-        sh: 'patches'
-      }, {
-        en: 'resultOf',
-        ti: '.ResultType'
-      }, {
-        en: 'booleanValue',
-        ti: 'Boolean'
-      }, {
-        en: 'Node',
-        ti: '.NodeType',
-        sh: 'AbstractTopoPrimitive'
-      }, {
-        en: 'unitOfMeasure',
-        ti: '.UnitOfMeasureType'
-      }, {
-        en: 'ConventionalUnit',
-        ti: '.ConventionalUnitType',
-        sh: 'UnitDefinition'
-      }, {
-        en: 'TimeCalendar',
-        ti: '.TimeCalendarType',
-        sh: 'TimeReferenceSystem'
-      }, {
-        en: 'direction',
-        ti: '.DirectionPropertyType'
-      }, {
-        en: 'coordOperation',
-        ti: '.CoordinateOperationPropertyType'
-      }, {
-        en: 'valueList',
-        ti: '.MeasureListType'
-      }, {
-        en: 'MappingRule',
-        ti: '.StringOrRefType'
-      }, {
-        en: 'componentReferenceSystem',
-        ti: '.SingleCRSPropertyType'
-      }, {
-        en: 'AbstractTimeObject',
-        ti: '.AbstractTimeObjectType',
-        sh: 'AbstractGML'
-      }, {
-        en: 'valueComponent',
-        ti: '.ValuePropertyType'
-      }, {
-        en: 'AbstractTopology',
-        ti: '.AbstractTopologyType',
-        sh: 'AbstractGML'
-      }, {
-        en: 'SphericalCS',
-        ti: '.SphericalCSType',
-        sh: 'AbstractCoordinateSystem'
-      }, {
-        en: 'cylindricalCSRef',
-        ti: '.CylindricalCSPropertyType'
-      }, {
-        en: 'limits',
-        ti: '.GridLimitsType',
-        sc: '.GridType'
-      }, {
-        en: 'temporalCRSRef',
-        ti: '.TemporalCRSPropertyType'
-      }, {
-        en: 'GridCoverage',
-        ti: '.DiscreteCoverageType',
-        sh: 'AbstractDiscreteCoverage'
-      }, {
-        en: 'usesVerticalDatum',
-        ti: '.VerticalDatumPropertyType',
-        sh: 'verticalDatum'
-      }, {
-        en: 'quantityTypeReference',
-        ti: '.ReferenceType'
-      }, {
-        en: 'pointMembers',
-        ti: '.PointArrayPropertyType'
-      }, {
-        en: 'topoCurveProperty',
-        ti: '.TopoCurvePropertyType'
-      }, {
-        en: 'formula',
-        ti: '.CodeType'
-      }, {
-        en: 'engineeringCRSRef',
-        ti: '.EngineeringCRSPropertyType'
-      }, {
-        en: 'MultiPointCoverage',
-        ti: '.DiscreteCoverageType',
-        sh: 'AbstractDiscreteCoverage'
-      }, {
-        en: 'conversionRef',
-        ti: '.ConversionPropertyType'
-      }, {
-        en: 'AbstractObject',
-        ti: 'AnyType'
-      }, {
-        en: 'MultiCurve',
-        ti: '.MultiCurveType',
-        sh: 'AbstractGeometricAggregate'
-      }, {
-        en: 'location',
-        ti: '.LocationPropertyType'
-      }, {
-        en: 'edgeOf',
-        ti: '.CurvePropertyType'
-      }, {
-        en: 'SecondDefiningParameter',
-        ti: '.SecondDefiningParameter'
-      }, {
-        en: 'valuesOfGroup',
-        ti: '.OperationParameterGroupPropertyType',
-        sh: 'group'
-      }, {
-        en: 'definedByConversion',
-        ti: '.GeneralConversionPropertyType',
-        sh: 'conversion'
-      }, {
-        en: 'segments',
-        ti: '.CurveSegmentArrayPropertyType'
-      }, {
-        en: 'LineStringSegment',
-        ti: '.LineStringSegmentType',
-        sh: 'AbstractCurveSegment'
-      }, {
-        en: 'AbstractValue',
-        ti: 'AnyType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'value',
-        ti: '.MeasureType'
-      }, {
-        en: 'minimumValue',
-        ti: 'Double'
-      }, {
-        en: 'usesObliqueCartesianCS',
-        ti: '.ObliqueCartesianCSPropertyType'
-      }, {
-        en: 'Observation',
-        ti: '.ObservationType',
-        sh: 'AbstractFeature'
-      }, {
-        en: 'BooleanList',
-        ti: {
-          t: 'l'
-        },
-        sh: 'AbstractScalarValueList'
-      }, {
-        en: 'TopoCurve',
-        ti: '.TopoCurveType'
-      }, {
-        en: 'boundedBy',
-        ti: '.BoundingShapeType'
-      }, {
-        en: 'roughConversionToPreferredUnit',
-        ti: '.ConversionToPreferredUnitType'
-      }, {
-        en: 'abstractStrictAssociationRole',
-        ti: '.AssociationRoleType'
-      }, {
-        en: 'pointArrayProperty',
-        ti: '.PointArrayPropertyType'
-      }, {
-        en: 'AbstractGeneralParameterValue',
-        ti: '.AbstractGeneralParameterValueType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'MultiPoint',
-        ti: '.MultiPointType',
-        sh: 'AbstractGeometricAggregate'
-      }, {
-        en: 'directedFace',
-        ti: '.DirectedFacePropertyType'
-      }, {
-        en: 'imageDatum',
-        ti: '.ImageDatumPropertyType'
-      }, {
-        en: 'concatenatedOperationRef',
-        ti: '.ConcatenatedOperationPropertyType'
-      }, {
-        en: 'sphericalCS',
-        ti: '.SphericalCSPropertyType'
-      }, {
-        en: 'solidMember',
-        ti: '.SolidPropertyType'
-      }, {
-        en: 'usesCartesianCS',
-        ti: '.CartesianCSPropertyType',
-        sh: 'cartesianCS'
-      }, {
-        en: 'coverageFunction',
-        ti: '.CoverageFunctionType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'AbstractGriddedSurface',
-        ti: '.AbstractGriddedSurfaceType',
-        sh: 'AbstractParametricCurveSurface'
-      }, {
-        en: 'MultiSolidCoverage',
-        ti: '.DiscreteCoverageType',
-        sh: 'AbstractDiscreteCoverage'
-      }, {
-        en: 'Curve',
-        ti: '.CurveType',
-        sh: 'AbstractCurve'
-      }, {
-        en: 'AbstractSurfacePatch',
-        ti: '.AbstractSurfacePatchType'
-      }, {
-        en: 'compoundCRSRef',
-        ti: '.CompoundCRSPropertyType'
-      }, {
-        en: 'CompositeCurve',
-        ti: '.CompositeCurveType',
-        sh: 'AbstractCurve'
-      }, {
-        en: 'AbstractSingleCRS',
-        ti: '.AbstractCRSType',
-        sh: 'AbstractCRS'
-      }, {
-        en: 'linearCSRef',
-        ti: '.LinearCSPropertyType'
-      }, {
-        en: 'AbstractSingleOperation',
-        ti: '.AbstractCoordinateOperationType',
-        sh: 'AbstractCoordinateOperation'
       }, {
         en: 'Rectangle',
         ti: '.RectangleType',
         sh: 'AbstractSurfacePatch'
       }, {
-        en: 'posList',
-        ti: '.DirectPositionListType'
+        en: 'includesParameter',
+        ti: '.AbstractGeneralOperationParameterPropertyType',
+        sh: 'parameter'
       }, {
-        en: 'AbstractRing',
-        ti: '.AbstractRingType',
+        en: 'Conversion',
+        ti: '.ConversionType',
+        sh: 'AbstractGeneralConversion'
+      }, {
+        en: 'pointMembers',
+        ti: '.PointArrayPropertyType'
+      }, {
+        en: 'AbstractSolid',
+        ti: '.AbstractSolidType',
+        sh: 'AbstractGeometricPrimitive'
+      }, {
+        en: 'realizationEpoch',
+        ti: 'Calendar'
+      }, {
+        en: 'MultiSolid',
+        ti: '.MultiSolidType',
+        sh: 'AbstractGeometricAggregate'
+      }, {
+        en: 'curveMembers',
+        ti: '.CurveArrayPropertyType'
+      }, {
+        en: 'valueFile'
+      }, {
+        en: 'AbstractGeneralParameterValue',
+        ti: '.AbstractGeneralParameterValueType',
         sh: 'AbstractObject'
       }, {
-        en: 'MovingObjectStatus',
-        ti: '.MovingObjectStatusType',
-        sh: 'AbstractTimeSlice'
+        en: 'dictionaryEntry',
+        ti: '.DictionaryEntryType'
       }, {
-        en: 'Geodesic',
-        ti: '.GeodesicType',
-        sh: 'GeodesicString'
+        en: 'AbstractTimeSlice',
+        ti: '.AbstractTimeSliceType',
+        sh: 'AbstractGML'
+      }, {
+        en: 'CartesianCS',
+        ti: '.CartesianCSType',
+        sh: 'AbstractCoordinateSystem'
+      }, {
+        en: 'baseGeodeticCRS',
+        ti: '.GeodeticCRSPropertyType'
+      }, {
+        en: 'AbstractFeatureCollection',
+        ti: '.AbstractFeatureCollectionType',
+        sh: 'AbstractFeature'
       }, {
         en: 'sourceCRS',
         ti: '.CRSPropertyType'
       }, {
-        en: 'geometryMembers',
-        ti: '.GeometryArrayPropertyType'
+        en: 'method',
+        ti: '.OperationMethodPropertyType'
       }, {
-        en: 'projectedCRSRef',
-        ti: '.ProjectedCRSPropertyType'
+        en: 'AbstractValue',
+        ti: 'AnyType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'timeCS',
+        ti: '.TimeCSPropertyType'
+      }, {
+        en: 'coverageFunction',
+        ti: '.CoverageFunctionType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'multiCurveProperty',
+        ti: '.MultiCurvePropertyType'
+      }, {
+        en: 'temporalDatumRef',
+        ti: '.TemporalDatumPropertyType'
+      }, {
+        en: 'AbstractScalarValue',
+        ti: 'AnyType',
+        sh: 'AbstractValue'
+      }, {
+        en: 'valueComponent',
+        ti: '.ValuePropertyType'
+      }, {
+        en: 'usesVerticalCS',
+        ti: '.VerticalCSPropertyType',
+        sh: 'verticalCS'
+      }, {
+        en: 'dataSource',
+        ti: '.StringOrRefType'
+      }, {
+        en: 'polygonPatches',
+        ti: '.SurfacePatchArrayPropertyType',
+        sh: 'patches'
+      }, {
+        en: 'Category',
+        ti: '.Category',
+        sh: 'AbstractScalarValue'
+      }, {
+        en: 'usesEllipsoid',
+        ti: '.EllipsoidPropertyType',
+        sh: 'ellipsoid'
+      }, {
+        en: 'history',
+        ti: '.HistoryPropertyType'
+      }, {
+        en: 'multiSolidProperty',
+        ti: '.MultiSolidPropertyType'
+      }, {
+        en: 'track',
+        ti: '.HistoryPropertyType',
+        sh: 'history'
+      }, {
+        en: 'RectifiedGridCoverage',
+        ti: '.DiscreteCoverageType',
+        sh: 'AbstractDiscreteCoverage'
+      }, {
+        en: 'using',
+        ti: '.ProcedurePropertyType'
+      }, {
+        en: 'TopoVolume',
+        ti: '.TopoVolumeType'
+      }, {
+        en: 'Grid',
+        ti: '.GridType',
+        sh: 'AbstractImplicitGeometry'
+      }, {
+        en: 'methodFormula',
+        ti: '.CodeType',
+        sh: 'formula'
+      }, {
+        en: 'CompositeValue',
+        ti: '.CompositeValueType',
+        sh: 'AbstractValue'
+      }, {
+        en: 'singleCRSRef',
+        ti: '.SingleCRSPropertyType'
+      }, {
+        en: 'usesEllipsoidalCS',
+        ti: '.EllipsoidalCSPropertyType',
+        sh: 'ellipsoidalCS'
+      }, {
+        en: 'PrimeMeridian',
+        ti: '.PrimeMeridianType',
+        sh: 'Definition'
+      }, {
+        en: 'subComplex',
+        ti: '.TopoComplexPropertyType'
+      }, {
+        en: 'superComplex',
+        ti: '.TopoComplexPropertyType'
+      }, {
+        en: 'minimumOccurs',
+        ti: 'Integer'
+      }, {
+        en: 'GridFunction',
+        ti: '.GridFunctionType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'multiSurfaceProperty',
+        ti: '.MultiSurfacePropertyType'
+      }, {
+        en: 'Transformation',
+        ti: '.TransformationType',
+        sh: 'AbstractGeneralTransformation'
+      }, {
+        en: 'concatenatedOperationRef',
+        ti: '.ConcatenatedOperationPropertyType'
+      }, {
+        en: 'AbstractScalarValueList',
+        ti: 'AnyType',
+        sh: 'AbstractValue'
+      }, {
+        en: 'subject',
+        ti: '.TargetPropertyType',
+        sh: 'target'
+      }, {
+        en: 'multiPosition',
+        ti: '.MultiPointPropertyType'
+      }, {
+        en: 'geometryMember',
+        ti: '.GeometryPropertyType'
+      }, {
+        en: 'sourceDimensions',
+        ti: 'Integer'
+      }, {
+        en: 'usesOperation',
+        ti: '.CoordinateOperationPropertyType',
+        sh: 'coordOperation'
+      }, {
+        en: 'MultiCurveCoverage',
+        ti: '.DiscreteCoverageType',
+        sh: 'AbstractDiscreteCoverage'
+      }, {
+        en: 'AbstractMetaData',
+        ti: '.AbstractMetaDataType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'Bag',
+        ti: '.BagType',
+        sh: 'AbstractGML'
+      }, {
+        en: 'FeatureCollection',
+        ti: '.FeatureCollectionType',
+        sh: 'AbstractFeature'
+      }, {
+        en: 'Cylinder',
+        ti: '.CylinderType',
+        sh: 'AbstractGriddedSurface'
+      }, {
+        en: 'ParameterValueGroup',
+        ti: '.ParameterValueGroupType',
+        sh: 'AbstractGeneralParameterValue'
+      }, {
+        en: 'Sphere',
+        ti: '.SphereType',
+        sh: 'AbstractGriddedSurface'
+      }, {
+        en: 'AbstractCoordinateOperation',
+        ti: '.AbstractCoordinateOperationType',
+        sh: 'Definition'
+      }, {
+        en: 'coordinateSystemRef',
+        ti: '.CoordinateSystemPropertyType'
+      }, {
+        en: 'componentReferenceSystem',
+        ti: '.SingleCRSPropertyType'
+      }, {
+        en: 'direction',
+        ti: '.DirectionPropertyType'
+      }, {
+        en: 'crsRef',
+        ti: '.CRSPropertyType'
+      }, {
+        en: 'TopoSurface',
+        ti: '.TopoSurfaceType'
+      }, {
+        en: 'topoVolumeProperty',
+        ti: '.TopoVolumePropertyType'
+      }, {
+        en: 'AbstractCoverage',
+        ti: '.AbstractCoverageType',
+        sh: 'AbstractFeature'
+      }, {
+        en: 'AbstractImplicitGeometry',
+        ti: '.AbstractGeometryType',
+        sh: 'AbstractGeometry'
+      }, {
+        en: 'abstractGeneralOperationParameterRef',
+        ti: '.AbstractGeneralOperationParameterPropertyType'
+      }, {
+        en: 'AbstractTimeTopologyPrimitive',
+        ti: '.AbstractTimeTopologyPrimitiveType',
+        sh: 'AbstractTimePrimitive'
+      }, {
+        en: 'operationRef',
+        ti: '.OperationPropertyType'
+      }, {
+        en: 'ValueArray',
+        ti: '.ValueArrayType',
+        sh: 'CompositeValue'
+      }, {
+        en: 'TemporalCRS',
+        ti: '.TemporalCRSType',
+        sh: 'AbstractSingleCRS'
+      }, {
+        en: 'File',
+        ti: '.FileType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'Point',
+        ti: '.PointType',
+        sh: 'AbstractGeometricPrimitive'
+      }, {
+        en: 'Polygon',
+        ti: '.PolygonType',
+        sh: 'AbstractSurface'
+      }, {
+        en: 'TimeInstant',
+        ti: '.TimeInstantType',
+        sh: 'AbstractTimeGeometricPrimitive'
+      }, {
+        en: 'AffinePlacement',
+        ti: '.AffinePlacementType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'multiExtentOf',
+        ti: '.MultiSurfacePropertyType'
+      }, {
+        en: 'featureMember',
+        ti: '.FeaturePropertyType'
+      }, {
+        en: 'maximumOccurs',
+        ti: 'Integer'
+      }, {
+        en: 'AbstractTopoPrimitive',
+        ti: '.AbstractTopoPrimitiveType',
+        sh: 'AbstractTopology'
+      }, {
+        en: 'axisDirection',
+        ti: '.CodeWithAuthorityType'
+      }, {
+        en: 'AbstractSingleOperation',
+        ti: '.AbstractCoordinateOperationType',
+        sh: 'AbstractCoordinateOperation'
+      }, {
+        en: 'edgeOf',
+        ti: '.CurvePropertyType'
+      }, {
+        en: 'MappingRule',
+        ti: '.StringOrRefType'
+      }, {
+        en: 'AbstractTopology',
+        ti: '.AbstractTopologyType',
+        sh: 'AbstractGML'
+      }, {
+        en: 'Node',
+        ti: '.NodeType',
+        sh: 'AbstractTopoPrimitive'
+      }, {
+        en: 'ObliqueCartesianCS',
+        ti: '.ObliqueCartesianCSType',
+        sh: 'AbstractCoordinateSystem'
+      }, {
+        en: 'MultiSolidCoverage',
+        ti: '.DiscreteCoverageType',
+        sh: 'AbstractDiscreteCoverage'
+      }, {
+        en: 'maximumValue',
+        ti: 'Double'
+      }, {
+        en: 'usesPrimeMeridian',
+        ti: '.PrimeMeridianPropertyType',
+        sh: 'primeMeridian'
+      }, {
+        en: 'ArcByCenterPoint',
+        ti: '.ArcByCenterPointType',
+        sh: 'AbstractCurveSegment'
+      }, {
+        en: 'cylindricalCSRef',
+        ti: '.CylindricalCSPropertyType'
+      }, {
+        en: 'solidMember',
+        ti: '.SolidPropertyType'
+      }, {
+        en: 'MultiSurfaceCoverage',
+        ti: '.DiscreteCoverageType',
+        sh: 'AbstractDiscreteCoverage'
+      }, {
+        en: 'valueOfParameter',
+        ti: '.OperationParameterPropertyType',
+        sh: 'operationParameter'
+      }, {
+        en: 'DerivedCRS',
+        ti: '.DerivedCRSType',
+        sh: 'AbstractGeneralDerivedCRS'
+      }, {
+        en: 'ConventionalUnit',
+        ti: '.ConventionalUnitType',
+        sh: 'UnitDefinition'
+      }, {
+        en: 'dmsAngleValue',
+        ti: '.DMSAngleType'
+      }, {
+        en: 'GeodeticCRS',
+        ti: '.GeodeticCRSType',
+        sh: 'AbstractSingleCRS'
+      }, {
+        en: 'operationMethodRef',
+        ti: '.OperationMethodPropertyType'
+      }, {
+        en: 'CompoundCRS',
+        ti: '.CompoundCRSType',
+        sh: 'AbstractCRS'
+      }, {
+        en: 'formula',
+        ti: '.CodeType'
+      }, {
+        en: 'passThroughOperationRef',
+        ti: '.PassThroughOperationPropertyType'
+      }, {
+        en: 'AbstractGriddedSurface',
+        ti: '.AbstractGriddedSurfaceType',
+        sh: 'AbstractParametricCurveSurface'
+      }, {
+        en: 'polarCS',
+        ti: '.PolarCSPropertyType'
+      }, {
+        en: 'location',
+        ti: '.LocationPropertyType'
+      }, {
+        en: 'generalConversionRef',
+        ti: '.GeneralConversionPropertyType'
+      }, {
+        en: 'anchorPoint',
+        ti: '.CodeType',
+        sh: 'anchorDefinition'
+      }, {
+        en: 'GeodesicString',
+        ti: '.GeodesicStringType',
+        sh: 'AbstractCurveSegment'
+      }, {
+        en: 'TimeCalendar',
+        ti: '.TimeCalendarType',
+        sh: 'TimeReferenceSystem'
+      }, {
+        en: 'surfaceArrayProperty',
+        ti: '.SurfaceArrayPropertyType'
+      }, {
+        en: 'CompositeSurface',
+        ti: '.CompositeSurfaceType',
+        sh: 'AbstractSurface'
+      }, {
+        en: 'directedEdge',
+        ti: '.DirectedEdgePropertyType'
+      }, {
+        en: 'imageDatumRef',
+        ti: '.ImageDatumPropertyType'
+      }, {
+        en: 'temporalCRSRef',
+        ti: '.TemporalCRSPropertyType'
+      }, {
+        en: 'CoverageMappingRule',
+        ti: '.MappingRuleType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'operationParameterGroupRef',
+        ti: '.OperationParameterPropertyType'
+      }, {
+        en: 'patches',
+        ti: '.SurfacePatchArrayPropertyType'
+      }, {
+        en: 'imageCRSRef',
+        ti: '.ImageCRSPropertyType'
+      }, {
+        en: 'GeocentricCRS',
+        ti: '.GeocentricCRSType',
+        sh: 'AbstractSingleCRS'
+      }, {
+        en: 'roughConversionToPreferredUnit',
+        ti: '.ConversionToPreferredUnitType'
+      }, {
+        en: 'solidMembers',
+        ti: '.SolidArrayPropertyType'
+      }, {
+        en: 'scope'
+      }, {
+        en: 'AbstractTimeObject',
+        ti: '.AbstractTimeObjectType',
+        sh: 'AbstractGML'
+      }, {
+        en: 'booleanValue',
+        ti: 'Boolean'
+      }, {
+        en: 'AbstractSingleCRS',
+        ti: '.AbstractCRSType',
+        sh: 'AbstractCRS'
+      }, {
+        en: 'curveMember',
+        ti: '.CurvePropertyType'
+      }, {
+        en: 'Edge',
+        ti: '.EdgeType',
+        sh: 'AbstractTopoPrimitive'
+      }, {
+        en: 'TopoPoint',
+        ti: '.TopoPointType'
+      }, {
+        en: 'surfaceProperty',
+        ti: '.SurfacePropertyType'
       }, {
         en: 'CountList',
         ti: {
@@ -10255,120 +9202,1173 @@ var GML_3_2_1_Module_Factory = function () {
         },
         sh: 'AbstractScalarValueList'
       }, {
-        en: 'DerivedCRS',
-        ti: '.DerivedCRSType',
-        sh: 'AbstractGeneralDerivedCRS'
+        en: 'MultiSurface',
+        ti: '.MultiSurfaceType',
+        sh: 'AbstractGeometricAggregate'
       }, {
-        en: 'valueProperty',
-        ti: '.ValuePropertyType'
+        en: 'descriptionReference',
+        ti: '.ReferenceType'
       }, {
-        en: 'PolarCS',
-        ti: '.PolarCSType',
-        sh: 'AbstractCoordinateSystem'
+        en: 'BaseUnit',
+        ti: '.BaseUnitType',
+        sh: 'UnitDefinition'
       }, {
-        en: 'GeodesicString',
-        ti: '.GeodesicStringType',
-        sh: 'AbstractCurveSegment'
+        en: 'usesGeodeticDatum',
+        ti: '.GeodeticDatumPropertyType',
+        sh: 'geodeticDatum'
       }, {
-        en: 'coordinateOperationRef',
-        ti: '.CoordinateOperationPropertyType'
+        en: 'engineeringDatum',
+        ti: '.EngineeringDatumPropertyType'
       }, {
-        en: 'geodeticDatum',
-        ti: '.GeodeticDatumPropertyType'
+        en: 'semiMajorAxis',
+        ti: '.MeasureType'
       }, {
-        en: 'trianglePatches',
-        ti: '.SurfacePatchArrayPropertyType',
-        sh: 'patches'
+        en: 'transformationRef',
+        ti: '.TransformationPropertyType'
       }, {
-        en: 'AbstractFeatureCollection',
-        ti: '.AbstractFeatureCollectionType',
-        sh: 'AbstractFeature'
+        en: 'decimalMinutes',
+        ti: 'Decimal'
       }, {
-        en: 'ellipsoidalCS',
-        ti: '.EllipsoidalCSPropertyType'
+        en: 'abstractStrictAssociationRole',
+        ti: '.AssociationRoleType'
       }, {
-        en: 'multiCenterLineOf',
-        ti: '.MultiCurvePropertyType'
+        en: 'singleOperationRef',
+        ti: '.SingleOperationPropertyType'
       }, {
-        en: 'userDefinedCSRef',
-        ti: '.UserDefinedCSPropertyType'
+        en: 'sphericalCS',
+        ti: '.SphericalCSPropertyType'
       }, {
-        en: 'axisDirection',
-        ti: '.CodeWithAuthorityType'
-      }, {
-        en: 'secondDefiningParameter',
-        ti: '.SecondDefiningParameterPropertyElement'
-      }, {
-        en: 'integerValue',
-        ti: 'Integer'
-      }, {
-        en: 'CircleByCenterPoint',
-        ti: '.CircleByCenterPointType',
-        sh: 'ArcByCenterPoint'
-      }, {
-        en: 'AbstractOperation',
-        ti: '.AbstractCoordinateOperationType',
+        en: 'PassThroughOperation',
+        ti: '.PassThroughOperationType',
         sh: 'AbstractSingleOperation'
       }, {
-        en: 'AbstractScalarValue',
-        ti: 'AnyType',
-        sh: 'AbstractValue'
-      }, {
-        en: 'status',
-        ti: '.StringOrRefType'
-      }, {
-        en: 'parameter',
-        ti: '.AbstractGeneralOperationParameterPropertyType'
-      }, {
-        en: 'AbstractCoordinateSystem',
-        ti: '.AbstractCoordinateSystemType',
-        sh: 'Definition'
-      }, {
-        en: 'Point',
-        ti: '.PointType',
-        sh: 'AbstractGeometricPrimitive'
-      }, {
-        en: 'AbstractGML',
-        ti: '.AbstractGMLType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'Edge',
-        ti: '.EdgeType',
-        sh: 'AbstractTopoPrimitive'
-      }, {
-        en: 'DataBlock',
-        ti: '.DataBlockType',
-        sh: 'AbstractObject'
-      }, {
-        en: 'verticalCS',
-        ti: '.VerticalCSPropertyType'
+        en: 'AbstractTimeGeometricPrimitive',
+        ti: '.AbstractTimeGeometricPrimitiveType',
+        sh: 'AbstractTimePrimitive'
       }, {
         en: 'DefinitionCollection',
         ti: '.DictionaryType',
         sh: 'Definition'
       }, {
-        en: 'centerOf',
+        en: 'userDefinedCS',
+        ti: '.UserDefinedCSPropertyType'
+      }, {
+        en: 'EnvelopeWithTimePeriod',
+        ti: '.EnvelopeWithTimePeriodType',
+        sh: 'Envelope'
+      }, {
+        en: 'dynamicMembers',
+        ti: '.DynamicFeatureMemberType'
+      }, {
+        en: 'AbstractGeneralTransformation',
+        ti: '.AbstractGeneralTransformationType',
+        sh: 'AbstractOperation'
+      }, {
+        en: 'generalTransformationRef',
+        ti: '.GeneralTransformationPropertyType'
+      }, {
+        en: 'targetElement'
+      }, {
+        en: 'operationParameterRef',
+        ti: '.OperationParameterPropertyType'
+      }, {
+        en: 'cartesianCSRef',
+        ti: '.CartesianCSPropertyType'
+      }, {
+        en: 'AbstractGeneralOperationParameter',
+        ti: '.AbstractGeneralOperationParameterType',
+        sh: 'Definition'
+      }, {
+        en: 'trianglePatches',
+        ti: '.SurfacePatchArrayPropertyType',
+        sh: 'patches'
+      }, {
+        en: 'Array',
+        ti: '.ArrayType',
+        sh: 'AbstractGML'
+      }, {
+        en: 'verticalDatumRef',
+        ti: '.VerticalDatumPropertyType'
+      }, {
+        en: 'AbstractGeometricPrimitive',
+        ti: '.AbstractGeometricPrimitiveType',
+        sh: 'AbstractGeometry'
+      }, {
+        en: 'usesImageDatum',
+        ti: '.ImageDatumPropertyType',
+        sh: 'imageDatum'
+      }, {
+        en: 'pointMember',
         ti: '.PointPropertyType'
       }, {
-        en: 'verticalCSRef',
-        ti: '.VerticalCSPropertyType'
+        en: 'modifiedCoordinate',
+        ti: 'Integer'
+      }, {
+        en: 'minimumValue',
+        ti: 'Double'
+      }, {
+        en: 'tupleList',
+        ti: '.CoordinatesType'
+      }, {
+        en: 'domainSet',
+        ti: '.DomainSetType'
+      }, {
+        en: 'directedNode',
+        ti: '.DirectedNodePropertyType'
+      }, {
+        en: 'targetCRS',
+        ti: '.CRSPropertyType'
+      }, {
+        en: 'defaultCodeSpace'
+      }, {
+        en: 'primeMeridian',
+        ti: '.PrimeMeridianPropertyType'
+      }, {
+        en: 'topoCurveProperty',
+        ti: '.TopoCurvePropertyType'
+      }, {
+        en: 'LinearCS',
+        ti: '.LinearCSType',
+        sh: 'AbstractCoordinateSystem'
+      }, {
+        en: 'usesMethod',
+        ti: '.OperationMethodPropertyType',
+        sh: 'method'
+      }, {
+        en: 'featureMembers',
+        ti: '.FeatureArrayPropertyType'
+      }, {
+        en: 'Cone',
+        ti: '.ConeType',
+        sh: 'AbstractGriddedSurface'
+      }, {
+        en: 'TopoComplex',
+        ti: '.TopoComplexType',
+        sh: 'AbstractTopology'
+      }, {
+        en: 'Tin',
+        ti: '.TinType',
+        sh: 'TriangulatedSurface'
+      }, {
+        en: 'targetDimensions',
+        ti: 'Integer'
+      }, {
+        en: 'AbstractObject',
+        ti: 'AnyType'
+      }, {
+        en: 'Arc',
+        ti: '.ArcType',
+        sh: 'ArcString'
+      }, {
+        en: 'PolyhedralSurface',
+        ti: '.SurfaceType',
+        sh: 'Surface'
+      }, {
+        en: 'AbstractCurve',
+        ti: '.AbstractCurveType',
+        sh: 'AbstractGeometricPrimitive'
+      }, {
+        en: 'axisLabels',
+        ti: {
+          t: 'l'
+        },
+        sc: '.GridType'
+      }, {
+        en: 'VerticalDatum',
+        ti: '.VerticalDatumType',
+        sh: 'AbstractDatum'
+      }, {
+        en: 'TimeOrdinalEra',
+        ti: '.TimeOrdinalEraType'
+      }, {
+        en: 'quantityType',
+        ti: '.StringOrRefType'
+      }, {
+        en: 'coordinateSystemAxisRef',
+        ti: '.CoordinateSystemAxisPropertyType'
+      }, {
+        en: 'imageDatum',
+        ti: '.ImageDatumPropertyType'
+      }, {
+        en: 'rectifiedGridDomain',
+        ti: '.DomainSetType',
+        sh: 'domainSet'
+      }, {
+        en: 'priorityLocation',
+        ti: '.PriorityLocationPropertyType',
+        sh: 'location'
+      }, {
+        en: 'LineString',
+        ti: '.LineStringType',
+        sh: 'AbstractCurve'
+      }, {
+        en: 'temporalCSRef',
+        ti: '.TemporalCSPropertyType'
+      }, {
+        en: 'axisName',
+        sc: '.GridType'
+      }, {
+        en: 'geographicCRSRef',
+        ti: '.GeographicCRSPropertyType'
+      }, {
+        en: 'EllipsoidalCS',
+        ti: '.EllipsoidalCSType',
+        sh: 'AbstractCoordinateSystem'
+      }, {
+        en: 'Bezier',
+        ti: '.BezierType',
+        sh: 'BSpline'
+      }, {
+        en: 'operationVersion'
+      }, {
+        en: 'userDefinedCSRef',
+        ti: '.UserDefinedCSPropertyType'
+      }, {
+        en: 'locationReference',
+        ti: '.ReferenceType'
+      }, {
+        en: 'axisAbbrev',
+        ti: '.CodeType'
+      }, {
+        en: 'abstractInlineProperty',
+        ti: '.InlinePropertyType'
+      }, {
+        en: 'TemporalDatum',
+        ti: '.TemporalDatumType',
+        sh: 'AbstractDatum'
+      }, {
+        en: 'pointProperty',
+        ti: '.PointPropertyType'
+      }, {
+        en: 'LinearRing',
+        ti: '.LinearRingType',
+        sh: 'AbstractRing'
+      }, {
+        en: 'Dictionary',
+        ti: '.DictionaryType',
+        sh: 'Definition'
+      }, {
+        en: 'AbstractGeometricAggregate',
+        ti: '.AbstractGeometricAggregateType',
+        sh: 'AbstractGeometry'
+      }, {
+        en: 'RectifiedGrid',
+        ti: '.RectifiedGridType',
+        sh: 'Grid'
+      }, {
+        en: 'polarCSRef',
+        ti: '.PolarCSPropertyType'
+      }, {
+        en: 'multiPointProperty',
+        ti: '.MultiPointPropertyType'
+      }, {
+        en: 'vector',
+        ti: '.VectorType'
+      }, {
+        en: 'valueProperty',
+        ti: '.ValuePropertyType'
+      }, {
+        en: 'AbstractSurfacePatch',
+        ti: '.AbstractSurfacePatchType'
+      }, {
+        en: 'gmlProfileSchema'
+      }, {
+        en: 'TimeOrdinalReferenceSystem',
+        ti: '.TimeOrdinalReferenceSystemType',
+        sh: 'TimeReferenceSystem'
+      }, {
+        en: 'ellipsoidalCSRef',
+        ti: '.EllipsoidalCSPropertyType'
+      }, {
+        en: 'operationParameter',
+        ti: '.OperationParameterPropertyType'
+      }, {
+        en: 'Geodesic',
+        ti: '.GeodesicType',
+        sh: 'GeodesicString'
+      }, {
+        en: 'CubicSpline',
+        ti: '.CubicSplineType',
+        sh: 'AbstractCurveSegment'
+      }, {
+        en: 'DynamicFeature',
+        ti: '.DynamicFeatureType',
+        sh: 'AbstractFeature'
+      }, {
+        en: 'topoPrimitiveMember',
+        ti: '.TopoPrimitiveMemberType'
+      }, {
+        en: 'BSpline',
+        ti: '.BSplineType',
+        sh: 'AbstractCurveSegment'
+      }, {
+        en: 'temporalDatum',
+        ti: '.TemporalDatumPropertyType'
+      }, {
+        en: 'Shell',
+        ti: '.ShellType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'AbstractDatum',
+        ti: '.AbstractDatumType',
+        sh: 'Definition'
+      }, {
+        en: 'generalOperationParameter',
+        ti: '.AbstractGeneralOperationParameterPropertyType',
+        sh: 'parameter'
+      }, {
+        en: 'curveArrayProperty',
+        ti: '.CurveArrayPropertyType'
+      }, {
+        en: 'DataBlock',
+        ti: '.DataBlockType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'Curve',
+        ti: '.CurveType',
+        sh: 'AbstractCurve'
+      }, {
+        en: 'group',
+        ti: '.OperationParameterGroupPropertyType'
+      }, {
+        en: 'pointRep',
+        ti: '.PointPropertyType'
+      }, {
+        en: 'CircleByCenterPoint',
+        ti: '.CircleByCenterPointType',
+        sh: 'ArcByCenterPoint'
+      }, {
+        en: 'value',
+        ti: '.MeasureType'
+      }, {
+        en: 'CategoryExtent',
+        ti: '.CategoryExtentType',
+        sh: 'AbstractValue'
+      }, {
+        en: 'CategoryList',
+        ti: '.CodeOrNilReasonListType',
+        sh: 'AbstractScalarValueList'
+      }, {
+        en: 'Null',
+        ti: {
+          t: 'l'
+        }
+      }, {
+        en: 'GridCoverage',
+        ti: '.DiscreteCoverageType',
+        sh: 'AbstractDiscreteCoverage'
+      }, {
+        en: 'usesTimeCS',
+        ti: '.TimeCSPropertyType',
+        sh: 'timeCS'
+      }, {
+        en: 'QuantityExtent',
+        ti: '.QuantityExtentType',
+        sh: 'AbstractValue'
+      }, {
+        en: 'multiGeometryProperty',
+        ti: '.MultiGeometryPropertyType'
+      }, {
+        en: 'MultiGeometry',
+        ti: '.MultiGeometryType',
+        sh: 'AbstractGeometricAggregate'
+      }, {
+        en: 'geodeticDatumRef',
+        ti: '.GeodeticDatumPropertyType'
+      }, {
+        en: 'CoordinateSystemAxis',
+        ti: '.CoordinateSystemAxisType',
+        sh: 'Definition'
+      }, {
+        en: 'segments',
+        ti: '.CurveSegmentArrayPropertyType'
+      }, {
+        en: 'LocationKeyWord',
+        ti: '.CodeType'
+      }, {
+        en: 'solidProperty',
+        ti: '.SolidPropertyType'
+      }, {
+        en: 'coordinateSystem',
+        ti: '.CoordinateSystemPropertyType'
+      }, {
+        en: 'TimeCS',
+        ti: '.TimeCSType',
+        sh: 'AbstractCoordinateSystem'
+      }, {
+        en: 'measure',
+        ti: '.MeasureType'
+      }, {
+        en: 'Ring',
+        ti: '.RingType',
+        sh: 'AbstractRing'
+      }, {
+        en: 'metaDataProperty',
+        ti: '.MetaDataPropertyType'
+      }, {
+        en: 'coordinates',
+        ti: '.CoordinatesType'
+      }, {
+        en: 'geometryMembers',
+        ti: '.GeometryArrayPropertyType'
+      }, {
+        en: 'BooleanList',
+        ti: {
+          t: 'l'
+        },
+        sh: 'AbstractScalarValueList'
+      }, {
+        en: 'affineCS',
+        ti: '.AffineCSPropertyType'
+      }, {
+        en: 'OffsetCurve',
+        ti: '.OffsetCurveType',
+        sh: 'AbstractCurveSegment'
+      }, {
+        en: 'DirectedObservation',
+        ti: '.DirectedObservationType',
+        sh: 'Observation'
+      }, {
+        en: 'OperationMethod',
+        ti: '.OperationMethodType',
+        sh: 'Definition'
+      }, {
+        en: 'linearCSRef',
+        ti: '.LinearCSPropertyType'
+      }, {
+        en: 'Face',
+        ti: '.FaceType',
+        sh: 'AbstractTopoPrimitive'
+      }, {
+        en: 'Clothoid',
+        ti: '.ClothoidType',
+        sh: 'AbstractCurveSegment'
+      }, {
+        en: 'CompositeSolid',
+        ti: '.CompositeSolidType',
+        sh: 'AbstractSolid'
+      }, {
+        en: 'usesCS',
+        ti: '.CoordinateSystemPropertyType',
+        sh: 'coordinateSystem'
+      }, {
+        en: 'GenericMetaData',
+        ti: '.GenericMetaDataType',
+        sh: 'AbstractMetaData'
+      }, {
+        en: 'conversion',
+        ti: '.GeneralConversionPropertyType'
+      }, {
+        en: 'unitOfMeasure',
+        ti: '.UnitOfMeasureType'
+      }, {
+        en: 'ArcByBulge',
+        ti: '.ArcByBulgeType',
+        sh: 'ArcStringByBulge'
+      }, {
+        en: 'AbstractDiscreteCoverage',
+        ti: '.DiscreteCoverageType',
+        sh: 'AbstractCoverage'
+      }, {
+        en: 'projectedCRSRef',
+        ti: '.ProjectedCRSPropertyType'
+      }, {
+        en: 'coordinateOperationRef',
+        ti: '.CoordinateOperationPropertyType'
+      }, {
+        en: 'timePosition',
+        ti: '.TimePositionType'
+      }, {
+        en: 'TriangulatedSurface',
+        ti: '.SurfaceType',
+        sh: 'Surface'
+      }, {
+        en: 'Circle',
+        ti: '.CircleType',
+        sh: 'Arc'
+      }, {
+        en: 'AbstractTimeComplex',
+        ti: '.AbstractTimeComplexType',
+        sh: 'AbstractTimeObject'
+      }, {
+        en: 'ArcString',
+        ti: '.ArcStringType',
+        sh: 'AbstractCurveSegment'
+      }, {
+        en: 'DerivedUnit',
+        ti: '.DerivedUnitType',
+        sh: 'UnitDefinition'
+      }, {
+        en: 'SecondDefiningParameter',
+        ti: '.SecondDefiningParameter'
+      }, {
+        en: 'GeodeticDatum',
+        ti: '.GeodeticDatumType',
+        sh: 'AbstractDatum'
+      }, {
+        en: 'AbstractSurface',
+        ti: '.AbstractSurfaceType',
+        sh: 'AbstractGeometricPrimitive'
+      }, {
+        en: 'degrees',
+        ti: '.DegreesType'
+      }, {
+        en: 'multiCenterOf',
+        ti: '.MultiPointPropertyType'
+      }, {
+        en: 'obliqueCartesianCSRef',
+        ti: '.ObliqueCartesianCSPropertyType'
+      }, {
+        en: 'directedFace',
+        ti: '.DirectedFacePropertyType'
       }, {
         en: 'TimeClock',
         ti: '.TimeClockType',
         sh: 'TimeReferenceSystem'
       }, {
-        en: 'minimumOccurs',
-        ti: 'Integer'
+        en: 'maximalComplex',
+        ti: '.TopoComplexPropertyType'
       }, {
         en: 'members',
         ti: '.ArrayAssociationType'
       }, {
-        en: 'AbstractImplicitGeometry',
-        ti: '.AbstractGeometryType',
+        en: 'definitionRef',
+        ti: '.ReferenceType'
+      }, {
+        en: 'derivedCRSRef',
+        ti: '.DerivedCRSPropertyType'
+      }, {
+        en: 'TimeEdge',
+        ti: '.TimeEdgeType',
+        sh: 'AbstractTimeTopologyPrimitive'
+      }, {
+        en: 'LineStringSegment',
+        ti: '.LineStringSegmentType',
+        sh: 'AbstractCurveSegment'
+      }, {
+        en: 'name',
+        ti: '.CodeType'
+      }, {
+        en: 'OrientableSurface',
+        ti: '.OrientableSurfaceType',
+        sh: 'AbstractSurface'
+      }, {
+        en: 'usesAxis',
+        ti: '.CoordinateSystemAxisPropertyType',
+        sh: 'axis'
+      }, {
+        en: 'multiEdgeOf',
+        ti: '.MultiCurvePropertyType'
+      }, {
+        en: 'gridDomain',
+        ti: '.DomainSetType',
+        sh: 'domainSet'
+      }, {
+        en: 'topoComplexProperty',
+        ti: '.TopoComplexPropertyType'
+      }, {
+        en: 'ImageDatum',
+        ti: '.ImageDatumType',
+        sh: 'AbstractDatum'
+      }, {
+        en: 'datumRef',
+        ti: '.DatumPropertyType'
+      }, {
+        en: 'AbstractCurveSegment',
+        ti: '.AbstractCurveSegmentType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'MovingObjectStatus',
+        ti: '.MovingObjectStatusType',
+        sh: 'AbstractTimeSlice'
+      }, {
+        en: 'timeInterval',
+        ti: '.TimeIntervalLengthType'
+      }, {
+        en: 'posList',
+        ti: '.DirectPositionListType'
+      }, {
+        en: 'TimeCoordinateSystem',
+        ti: '.TimeCoordinateSystemType',
+        sh: 'TimeReferenceSystem'
+      }, {
+        en: 'ellipsoidalCS',
+        ti: '.EllipsoidalCSPropertyType'
+      }, {
+        en: 'cartesianCS',
+        ti: '.CartesianCSPropertyType'
+      }, {
+        en: 'topoPointProperty',
+        ti: '.TopoPointPropertyType'
+      }, {
+        en: 'OperationParameter',
+        ti: '.OperationParameterType',
+        sh: 'AbstractGeneralOperationParameter'
+      }, {
+        en: 'multiPointDomain',
+        ti: '.DomainSetType',
+        sh: 'domainSet'
+      }, {
+        en: 'PolarCS',
+        ti: '.PolarCSType',
+        sh: 'AbstractCoordinateSystem'
+      }, {
+        en: 'AbstractGeneralConversion',
+        ti: '.AbstractGeneralConversionType',
+        sh: 'AbstractOperation'
+      }, {
+        en: 'coordOperation',
+        ti: '.CoordinateOperationPropertyType'
+      }, {
+        en: 'associationName'
+      }, {
+        en: 'ConcatenatedOperation',
+        ti: '.ConcatenatedOperationType',
+        sh: 'AbstractCoordinateOperation'
+      }, {
+        en: 'usesTemporalCS',
+        ti: '.TemporalCSPropertyType'
+      }, {
+        en: 'VerticalCRS',
+        ti: '.VerticalCRSType',
+        sh: 'AbstractSingleCRS'
+      }, {
+        en: 'stringValue'
+      }, {
+        en: 'TimePeriod',
+        ti: '.TimePeriodType',
+        sh: 'AbstractTimeGeometricPrimitive'
+      }, {
+        en: 'TemporalCS',
+        ti: '.TemporalCSType',
+        sh: 'AbstractCoordinateSystem'
+      }, {
+        en: 'validTime',
+        ti: '.TimePrimitivePropertyType'
+      }, {
+        en: 'GeometricComplex',
+        ti: '.GeometricComplexType',
         sh: 'AbstractGeometry'
+      }, {
+        en: 'EngineeringDatum',
+        ti: '.EngineeringDatumType',
+        sh: 'AbstractDatum'
+      }, {
+        en: 'valueComponents',
+        ti: '.ValueArrayPropertyType'
+      }, {
+        en: 'verticalDatum',
+        ti: '.VerticalDatumPropertyType'
+      }, {
+        en: 'TopoSolid',
+        ti: '.TopoSolidType',
+        sh: 'AbstractTopoPrimitive'
+      }, {
+        en: 'LocationString',
+        ti: '.StringOrRefType'
+      }, {
+        en: 'DirectedObservationAtDistance',
+        ti: '.DirectedObservationAtDistanceType',
+        sh: 'DirectedObservation'
+      }, {
+        en: 'topoSurfaceProperty',
+        ti: '.TopoSurfacePropertyType'
+      }, {
+        en: 'curveProperty',
+        ti: '.CurvePropertyType'
+      }, {
+        en: 'AbstractOperation',
+        ti: '.AbstractCoordinateOperationType',
+        sh: 'AbstractSingleOperation'
+      }, {
+        en: 'multiSolidDomain',
+        ti: '.DomainSetType',
+        sh: 'domainSet'
+      }, {
+        en: 'formulaCitation',
+        ti: '.FormulaCitation'
+      }, {
+        en: 'Observation',
+        ti: '.ObservationType',
+        sh: 'AbstractFeature'
+      }, {
+        en: 'usesValue',
+        ti: '.AbstractGeneralParameterValuePropertyType',
+        sh: 'parameterValue'
+      }, {
+        en: 'Definition',
+        ti: '.DefinitionType',
+        sh: 'AbstractGML'
+      }, {
+        en: 'solidArrayProperty',
+        ti: '.SolidArrayPropertyType'
+      }, {
+        en: 'TopoCurve',
+        ti: '.TopoCurveType'
+      }, {
+        en: 'multiLocation',
+        ti: '.MultiPointPropertyType'
+      }, {
+        en: 'usesAffineCS',
+        ti: '.AffineCSPropertyType',
+        sh: 'affineCS'
+      }, {
+        en: 'conversionToPreferredUnit',
+        ti: '.ConversionToPreferredUnitType'
+      }, {
+        en: 'MultiPoint',
+        ti: '.MultiPointType',
+        sh: 'AbstractGeometricAggregate'
+      }, {
+        en: 'abstractReference',
+        ti: '.ReferenceType'
+      }, {
+        en: 'status',
+        ti: '.StringOrRefType'
+      }, {
+        en: 'TimeCalendarEra',
+        ti: '.TimeCalendarEraType'
+      }, {
+        en: 'topoPrimitiveMembers',
+        ti: '.TopoPrimitiveArrayAssociationType'
+      }, {
+        en: 'compoundCRSRef',
+        ti: '.CompoundCRSPropertyType'
+      }, {
+        en: 'AbstractRing',
+        ti: '.AbstractRingType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'doubleOrNilReasonTupleList',
+        ti: {
+          t: 'l'
+        }
+      }, {
+        en: 'remarks'
+      }, {
+        en: 'usesTemporalDatum',
+        ti: '.TemporalDatumPropertyType',
+        sh: 'temporalDatum'
+      }, {
+        en: 'domainOfValidity',
+        ti: '.DomainOfValidity'
+      }, {
+        en: 'cylindricalCS',
+        ti: '.CylindricalCSPropertyType'
+      }, {
+        en: 'usesSingleOperation',
+        ti: '.CoordinateOperationPropertyType',
+        sh: 'coordOperation'
+      }, {
+        en: 'resultOf',
+        ti: '.ResultType'
+      }, {
+        en: 'exterior',
+        ti: '.AbstractRingPropertyType'
+      }, {
+        en: 'ProjectedCRS',
+        ti: '.ProjectedCRSType',
+        sh: 'AbstractGeneralDerivedCRS'
+      }, {
+        en: 'statusReference',
+        ti: '.ReferenceType'
+      }, {
+        en: 'usesVerticalDatum',
+        ti: '.VerticalDatumPropertyType',
+        sh: 'verticalDatum'
+      }, {
+        en: 'seconds',
+        ti: 'Decimal'
+      }, {
+        en: 'AffineCS',
+        ti: '.AffineCSType',
+        sh: 'AbstractCoordinateSystem'
+      }, {
+        en: 'Surface',
+        ti: '.SurfaceType',
+        sh: 'AbstractSurface'
+      }, {
+        en: 'multiCenterLineOf',
+        ti: '.MultiCurvePropertyType'
+      }, {
+        en: 'verticalCS',
+        ti: '.VerticalCSPropertyType'
+      }, {
+        en: 'CountExtent',
+        ti: {
+          t: 'l'
+        },
+        sh: 'AbstractValue'
       }, {
         en: 'baseCRS',
         ti: '.SingleCRSPropertyType'
+      }, {
+        en: 'EngineeringCRS',
+        ti: '.EngineeringCRSType',
+        sh: 'AbstractSingleCRS'
+      }, {
+        en: 'includesSingleCRS',
+        ti: '.SingleCRSPropertyType',
+        sh: 'componentReferenceSystem'
+      }, {
+        en: 'derivationUnitTerm',
+        ti: '.DerivationUnitTermType'
+      }, {
+        en: 'Solid',
+        ti: '.SolidType',
+        sh: 'AbstractSolid'
+      }, {
+        en: 'AbstractParametricCurveSurface',
+        ti: '.AbstractParametricCurveSurfaceType',
+        sh: 'AbstractSurfacePatch'
+      }, {
+        en: 'catalogSymbol',
+        ti: '.CodeType'
+      }, {
+        en: 'verticalCRSRef',
+        ti: '.VerticalCRSPropertyType'
+      }, {
+        en: 'abstractAssociationRole',
+        ti: '.AssociationRoleType'
+      }, {
+        en: 'pos',
+        ti: '.DirectPositionType'
+      }, {
+        en: 'valuesOfGroup',
+        ti: '.OperationParameterGroupPropertyType',
+        sh: 'group'
+      }, {
+        en: 'locationName',
+        ti: '.CodeType'
+      }, {
+        en: 'parameterValue',
+        ti: '.AbstractGeneralParameterValuePropertyType'
+      }, {
+        en: 'parameter',
+        ti: '.AbstractGeneralOperationParameterPropertyType'
+      }, {
+        en: 'baseGeographicCRS',
+        ti: '.GeographicCRSPropertyType'
+      }, {
+        en: 'SphericalCS',
+        ti: '.SphericalCSType',
+        sh: 'AbstractCoordinateSystem'
+      }, {
+        en: 'UnitDefinition',
+        ti: '.UnitDefinitionType',
+        sh: 'Definition'
+      }, {
+        en: 'integerValue',
+        ti: 'Integer'
+      }, {
+        en: 'AbstractGML',
+        ti: '.AbstractGMLType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'UserDefinedCS',
+        ti: '.UserDefinedCSType',
+        sh: 'AbstractCoordinateSystem'
+      }, {
+        en: 'position',
+        ti: '.PointPropertyType'
+      }, {
+        en: 'PolygonPatch',
+        ti: '.PolygonPatchType',
+        sh: 'AbstractSurfacePatch'
+      }, {
+        en: 'multiCurveDomain',
+        ti: '.DomainSetType',
+        sh: 'domainSet'
+      }, {
+        en: 'engineeringCRSRef',
+        ti: '.EngineeringCRSPropertyType'
+      }, {
+        en: 'referenceSystemRef',
+        ti: '.CRSPropertyType'
+      }, {
+        en: 'usesCartesianCS',
+        ti: '.CartesianCSPropertyType',
+        sh: 'cartesianCS'
+      }, {
+        en: 'directedTopoSolid',
+        ti: '.DirectedTopoSolidPropertyType'
+      }, {
+        en: 'coordinateOperationAccuracy',
+        ti: '.CoordinateOperationAccuracy'
+      }, {
+        en: 'conversionRef',
+        ti: '.ConversionPropertyType'
+      }, {
+        en: 'baseCurve',
+        ti: '.CurvePropertyType'
+      }, {
+        en: 'baseSurface',
+        ti: '.SurfacePropertyType'
+      }, {
+        en: 'featureProperty',
+        ti: '.FeaturePropertyType'
+      }, {
+        en: 'OperationParameterGroup',
+        ti: '.OperationParameterGroupType',
+        sh: 'AbstractGeneralOperationParameter'
+      }, {
+        en: 'ParameterValue',
+        ti: '.ParameterValueType',
+        sh: 'AbstractGeneralParameterValue'
+      }, {
+        en: 'primeMeridianRef',
+        ti: '.PrimeMeridianPropertyType'
+      }, {
+        en: 'interior',
+        ti: '.AbstractRingPropertyType'
+      }, {
+        en: 'greenwichLongitude',
+        ti: '.AngleType'
+      }, {
+        en: 'description',
+        ti: '.StringOrRefType'
+      }, {
+        en: 'DynamicFeatureCollection',
+        ti: '.DynamicFeatureCollectionType',
+        sh: 'DynamicFeature'
+      }, {
+        en: 'axis',
+        ti: '.CoordinateSystemAxisPropertyType'
+      }, {
+        en: 'angle',
+        ti: '.AngleType'
+      }, {
+        en: 'Envelope',
+        ti: '.EnvelopeType',
+        sh: 'AbstractObject'
+      }, {
+        en: 'AbstractTimePrimitive',
+        ti: '.AbstractTimePrimitiveType',
+        sh: 'AbstractTimeObject'
+      }, {
+        en: 'ArcStringByBulge',
+        ti: '.ArcStringByBulgeType',
+        sh: 'AbstractCurveSegment'
+      }, {
+        en: 'CylindricalCS',
+        ti: '.CylindricalCSType',
+        sh: 'AbstractCoordinateSystem'
+      }, {
+        en: 'AbstractGeometry',
+        ti: '.AbstractGeometryType',
+        sh: 'AbstractGML'
+      }, {
+        en: 'MultiPointCoverage',
+        ti: '.DiscreteCoverageType',
+        sh: 'AbstractDiscreteCoverage'
+      }, {
+        en: 'usesObliqueCartesianCS',
+        ti: '.ObliqueCartesianCSPropertyType'
+      }, {
+        en: 'AbstractContinuousCoverage',
+        ti: '.AbstractContinuousCoverageType',
+        sh: 'AbstractFeature'
+      }, {
+        en: 'TimeTopologyComplex',
+        ti: '.TimeTopologyComplexType',
+        sh: 'AbstractTimeComplex'
+      }, {
+        en: 'definedByConversion',
+        ti: '.GeneralConversionPropertyType',
+        sh: 'conversion'
+      }, {
+        en: 'includesValue',
+        ti: '.AbstractGeneralParameterValuePropertyType',
+        sh: 'parameterValue'
+      }, {
+        en: 'Quantity',
+        ti: '.Quantity',
+        sh: 'AbstractScalarValue'
+      }, {
+        en: 'derivedCRSType',
+        ti: '.CodeWithAuthorityType'
+      }, {
+        en: 'limits',
+        ti: '.GridLimitsType',
+        sc: '.GridType'
+      }, {
+        en: 'AbstractCRS',
+        ti: '.AbstractCRSType',
+        sh: 'Definition'
+      }, {
+        en: 'pixelInCell',
+        ti: '.CodeWithAuthorityType'
+      }, {
+        en: 'quantityTypeReference',
+        ti: '.ReferenceType'
+      }, {
+        en: 'centerOf',
+        ti: '.PointPropertyType'
+      }, {
+        en: 'usesParameter',
+        ti: '.AbstractGeneralOperationParameterPropertyType',
+        sh: 'generalOperationParameter'
+      }, {
+        en: 'geocentricCRSRef',
+        ti: '.GeocentricCRSPropertyType'
+      }, {
+        en: 'CompositeCurve',
+        ti: '.CompositeCurveType',
+        sh: 'AbstractCurve'
+      }, {
+        en: 'duration'
+      }, {
+        en: 'secondDefiningParameter',
+        ti: '.SecondDefiningParameterPropertyElement'
+      }, {
+        en: 'Ellipsoid',
+        ti: '.EllipsoidType',
+        sh: 'Definition'
+      }, {
+        en: 'usesSphericalCS',
+        ti: '.SphericalCSPropertyType',
+        sh: 'sphericalCS'
+      }, {
+        en: 'linearCS',
+        ti: '.LinearCSPropertyType'
+      }, {
+        en: 'Triangle',
+        ti: '.TriangleType',
+        sh: 'AbstractSurfacePatch'
+      }, {
+        en: 'extentOf',
+        ti: '.SurfacePropertyType'
+      }, {
+        en: 'multiSurfaceDomain',
+        ti: '.DomainSetType',
+        sh: 'domainSet'
+      }, {
+        en: 'Boolean',
+        ti: '.Boolean',
+        sh: 'AbstractScalarValue'
+      }, {
+        en: 'OrientableCurve',
+        ti: '.OrientableCurveType',
+        sh: 'AbstractCurve'
+      }, {
+        en: 'Count',
+        ti: '.Count',
+        sh: 'AbstractScalarValue'
+      }, {
+        en: 'surfaceMember',
+        ti: '.SurfacePropertyType'
+      }, {
+        en: 'rangeMeaning',
+        ti: '.CodeWithAuthorityType'
+      }, {
+        en: 'geodeticDatum',
+        ti: '.GeodeticDatumPropertyType'
+      }, {
+        en: 'member',
+        ti: '.AssociationRoleType'
+      }, {
+        en: 'multiCoverage',
+        ti: '.MultiSurfacePropertyType'
+      }, {
+        en: 'QuantityList',
+        ti: '.MeasureOrNilReasonListType',
+        sh: 'AbstractScalarValueList'
+      }, {
+        en: 'AbstractFeature',
+        ti: '.AbstractFeatureType',
+        sh: 'AbstractGML'
+      }, {
+        en: 'TimeNode',
+        ti: '.TimeNodeType',
+        sh: 'AbstractTimeTopologyPrimitive'
+      }, {
+        en: 'VerticalCS',
+        ti: '.VerticalCSType',
+        sh: 'AbstractCoordinateSystem'
+      }, {
+        en: 'GeographicCRS',
+        ti: '.GeographicCRSType',
+        sh: 'AbstractSingleCRS'
+      }, {
+        en: 'reversePropertyName'
+      }, {
+        en: 'sphericalCSRef',
+        ti: '.SphericalCSPropertyType'
+      }, {
+        en: 'DefinitionProxy',
+        ti: '.DefinitionProxyType',
+        sh: 'Definition'
+      }, {
+        en: 'AbstractCoordinateSystem',
+        ti: '.AbstractCoordinateSystemType',
+        sh: 'Definition'
+      }, {
+        en: 'boundedBy',
+        ti: '.BoundingShapeType'
+      }, {
+        en: 'engineeringDatumRef',
+        ti: '.EngineeringDatumPropertyType'
+      }, {
+        en: 'MultiCurve',
+        ti: '.MultiCurveType',
+        sh: 'AbstractGeometricAggregate'
+      }, {
+        en: 'minutes',
+        ti: 'Int'
+      }, {
+        en: 'rangeSet',
+        ti: '.RangeSetType'
+      }, {
+        en: 'pointArrayProperty',
+        ti: '.PointArrayPropertyType'
+      }, {
+        en: 'dataSourceReference',
+        ti: '.ReferenceType'
+      }, {
+        en: 'AbstractGeneralDerivedCRS',
+        ti: '.AbstractGeneralDerivedCRSType',
+        sh: 'AbstractSingleCRS'
+      }, {
+        en: 'integerValueList',
+        ti: {
+          t: 'l',
+          bti: 'Integer'
+        }
+      }, {
+        en: 'indirectEntry',
+        ti: '.IndirectEntryType'
+      }, {
+        en: 'rangeParameters',
+        ti: '.AssociationRoleType'
+      }, {
+        en: 'valueList',
+        ti: '.MeasureListType'
+      }, {
+        en: 'ellipsoidRef',
+        ti: '.EllipsoidPropertyType'
+      }, {
+        en: 'centerLineOf',
+        ti: '.CurvePropertyType'
+      }, {
+        en: 'identifier',
+        ti: '.CodeWithAuthorityType'
+      }, {
+        en: 'TimeReferenceSystem',
+        ti: '.TimeReferenceSystemType',
+        sh: 'Definition'
+      }, {
+        en: 'definitionMember',
+        ti: '.DictionaryEntryType',
+        sh: 'dictionaryEntry'
+      }, {
+        en: 'origin',
+        ti: 'Calendar'
+      }, {
+        en: 'target',
+        ti: '.TargetPropertyType'
+      }, {
+        en: 'dmsAngle',
+        ti: '.DMSAngleType'
       }]
   };
   return {

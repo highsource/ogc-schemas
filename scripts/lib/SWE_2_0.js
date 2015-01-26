@@ -5,100 +5,23 @@ var SWE_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0'],
     tis: [{
-        ln: 'CategoryType',
-        bti: '.AbstractSimpleComponentType',
+        ln: 'AllowedTokensType',
+        bti: '.AbstractSWEType',
         ps: [{
-            n: 'codeSpace',
-            ti: '.Reference'
+            n: 'value',
+            col: true
           }, {
-            n: 'constraint',
-            ti: '.AllowedTokensPropertyType'
-          }, {
-            n: 'value'
+            n: 'pattern'
           }]
       }, {
-        ln: 'DataArrayType',
-        bti: '.AbstractDataComponentType',
+        ln: 'AbstractEncodingPropertyType',
         ps: [{
-            n: 'elementCount',
-            ti: '.CountPropertyType'
-          }, {
-            n: 'elementType',
-            ti: '.DataArrayType.ElementType'
-          }, {
-            n: 'encoding',
-            ti: '.DataArrayType.Encoding'
-          }, {
-            n: 'values',
-            ti: '.EncodedValuesPropertyType'
-          }]
-      }, {
-        ln: 'QuantityRangePropertyType',
-        ps: [{
-            n: 'quantityRange',
-            en: 'QuantityRange',
-            ti: '.QuantityRangeType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'Reference',
-        ps: [{
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataArrayPropertyType',
-        ps: [{
-            n: 'dataArray',
+            n: 'abstractEncoding',
             mx: false,
             dom: false,
             typed: false,
-            en: 'DataArray',
-            ti: '.DataArrayType',
+            en: 'AbstractEncoding',
+            ti: '.AbstractEncodingType',
             t: 'er'
           }, {
             n: 'type',
@@ -126,99 +49,20 @@ var SWE_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractSWEIdentifiableType',
-        bti: '.AbstractSWEType',
+        ln: 'QualityPropertyType',
         ps: [{
-            n: 'identifier'
+            n: 'quantity',
+            en: 'Quantity',
+            ti: '.QuantityType'
           }, {
-            n: 'label'
+            n: 'quantityRange',
+            en: 'QuantityRange',
+            ti: '.QuantityRangeType'
           }, {
-            n: 'description'
-          }]
-      }, {
-        ln: 'CategoryPropertyType',
-        ps: [{
             n: 'category',
             en: 'Category',
             ti: '.CategoryType'
           }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataStreamPropertyByValueType',
-        ps: [{
-            n: 'dataStream',
-            en: 'DataStream',
-            ti: '.DataStreamType'
-          }]
-      }, {
-        ln: 'BlockType',
-        bti: '.AbstractSWEType',
-        ps: [{
-            n: 'compression',
-            an: {
-              lp: 'compression'
-            },
-            t: 'a'
-          }, {
-            n: 'encryption',
-            an: {
-              lp: 'encryption'
-            },
-            t: 'a'
-          }, {
-            n: 'paddingBytesAfter',
-            ti: 'Integer',
-            an: {
-              lp: 'paddingBytes-after'
-            },
-            t: 'a'
-          }, {
-            n: 'paddingBytesBefore',
-            ti: 'Integer',
-            an: {
-              lp: 'paddingBytes-before'
-            },
-            t: 'a'
-          }, {
-            n: 'byteLength',
-            ti: 'Integer',
-            an: {
-              lp: 'byteLength'
-            },
-            t: 'a'
-          }, {
-            n: 'ref',
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TextPropertyType',
-        ps: [{
             n: 'text',
             en: 'Text',
             ti: '.TextType'
@@ -248,114 +92,126 @@ var SWE_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TimeType',
-        bti: '.AbstractSimpleComponentType',
+        ln: 'MatrixPropertyType',
         ps: [{
-            n: 'uom',
-            ti: '.UnitReference'
+            n: 'matrix',
+            en: 'Matrix',
+            ti: '.MatrixType'
           }, {
-            n: 'constraint',
-            ti: '.AllowedTimesPropertyType'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            n: 'value',
-            ti: {
-              t: 'l'
-            }
+            n: 'href',
+            t: 'a'
           }, {
-            n: 'referenceTime',
-            ti: 'Calendar',
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'NilValuesType',
+        bti: '.AbstractSWEType',
+        ps: [{
+            n: 'nilValue',
+            col: true,
+            ti: '.NilValue'
+          }]
+      }, {
+        ln: 'AbstractDataComponentType',
+        bti: '.AbstractSWEIdentifiableType',
+        ps: [{
+            n: 'updatable',
+            ti: 'Boolean',
             an: {
-              lp: 'referenceTime'
+              lp: 'updatable'
             },
             t: 'a'
           }, {
-            n: 'localFrame',
+            n: 'optional',
+            ti: 'Boolean',
             an: {
-              lp: 'localFrame'
+              lp: 'optional'
+            },
+            t: 'a'
+          }, {
+            n: 'definition',
+            an: {
+              lp: 'definition'
             },
             t: 'a'
           }]
       }, {
-        ln: 'TextEncodingPropertyType',
+        ln: 'DataRecordType',
+        bti: '.AbstractDataComponentType',
+        ps: [{
+            n: 'field',
+            col: true,
+            ti: '.DataRecordType.Field'
+          }]
+      }, {
+        ln: 'TextEncodingPropertyByValueType',
         ps: [{
             n: 'textEncoding',
             en: 'TextEncoding',
             ti: '.TextEncodingType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
           }]
       }, {
-        ln: 'AbstractSimpleComponentType',
-        bti: '.AbstractDataComponentType',
-        ps: [{
-            n: 'quality',
-            col: true,
-            ti: '.QualityPropertyType'
-          }, {
-            n: 'nilValues',
-            ti: '.NilValuesPropertyType'
-          }, {
-            n: 'referenceFrame',
-            an: {
-              lp: 'referenceFrame'
-            },
-            t: 'a'
-          }, {
-            n: 'axisID',
-            an: {
-              lp: 'axisID'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'VectorType.Coordinate',
-        bti: '.AnyNumericalPropertyType',
-        ps: [{
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'BooleanType',
+        ln: 'CountType',
         bti: '.AbstractSimpleComponentType',
         ps: [{
+            n: 'constraint',
+            ti: '.AllowedValuesPropertyType'
+          }, {
             n: 'value',
-            ti: 'Boolean'
+            ti: 'Integer'
           }]
       }, {
-        ln: 'AbstractDataComponentPropertyType',
+        ln: 'AllowedValuesType',
+        bti: '.AbstractSWEType',
         ps: [{
-            n: 'abstractDataComponent',
+            n: 'value',
+            col: true,
+            ti: 'Double'
+          }, {
+            n: 'interval',
+            col: true,
             mx: false,
             dom: false,
             typed: false,
-            en: 'AbstractDataComponent',
-            ti: '.AbstractDataComponentType',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            },
             t: 'er'
+          }, {
+            n: 'significantFigures',
+            ti: 'Integer'
+          }]
+      }, {
+        ln: 'EncodedValuesPropertyType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'any',
+            col: true,
+            typed: false,
+            mx: false,
+            t: 'ae'
           }, {
             n: 'type',
             ti: 'XLink_1_0.TypeType',
@@ -382,53 +238,16 @@ var SWE_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'VectorPropertyByValueType',
+        ln: 'CategoryType',
+        bti: '.AbstractSimpleComponentType',
         ps: [{
-            n: 'vector',
-            en: 'Vector',
-            ti: '.VectorType'
-          }]
-      }, {
-        ln: 'VectorType',
-        bti: '.AbstractDataComponentType',
-        ps: [{
-            n: 'coordinate',
-            col: true,
-            ti: '.VectorType.Coordinate'
+            n: 'codeSpace',
+            ti: '.Reference'
           }, {
-            n: 'referenceFrame',
-            an: {
-              lp: 'referenceFrame'
-            },
-            t: 'a'
+            n: 'constraint',
+            ti: '.AllowedTokensPropertyType'
           }, {
-            n: 'localFrame',
-            an: {
-              lp: 'localFrame'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractEncodingPropertyByValueType',
-        ps: [{
-            n: 'abstractEncoding',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractEncoding',
-            ti: '.AbstractEncodingType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'DataStreamType.Encoding',
-        ps: [{
-            n: 'abstractEncoding',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractEncoding',
-            ti: '.AbstractEncodingType',
-            t: 'er'
+            n: 'value'
           }]
       }, {
         ln: 'AnyScalarPropertyType',
@@ -482,734 +301,6 @@ var SWE_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TimePropertyType',
-        ps: [{
-            n: 'time',
-            en: 'Time',
-            ti: '.TimeType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AllowedTimesPropertyType',
-        ps: [{
-            n: 'allowedTimes',
-            en: 'AllowedTimes',
-            ti: '.AllowedTimesType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CategoryRangePropertyType',
-        ps: [{
-            n: 'categoryRange',
-            en: 'CategoryRange',
-            ti: '.CategoryRangeType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeRangeType',
-        bti: '.AbstractSimpleComponentType',
-        ps: [{
-            n: 'uom',
-            ti: '.UnitReference'
-          }, {
-            n: 'constraint',
-            ti: '.AllowedTimesPropertyType'
-          }, {
-            n: 'value',
-            ti: {
-              t: 'l'
-            }
-          }, {
-            n: 'referenceTime',
-            ti: 'Calendar',
-            an: {
-              lp: 'referenceTime'
-            },
-            t: 'a'
-          }, {
-            n: 'localFrame',
-            an: {
-              lp: 'localFrame'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'XMLEncodingPropertyByValueType',
-        ps: [{
-            n: 'xmlEncoding',
-            en: 'XMLEncoding',
-            ti: '.XMLEncodingType'
-          }]
-      }, {
-        ln: 'ComponentPropertyByValueType',
-        ps: [{
-            n: 'component',
-            en: 'Component',
-            ti: '.ComponentType'
-          }]
-      }, {
-        ln: 'DataStreamType.ElementType',
-        bti: '.AbstractDataComponentPropertyType',
-        ps: [{
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CountPropertyType',
-        ps: [{
-            n: 'count',
-            en: 'Count',
-            ti: '.CountType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CategoryRangeType',
-        bti: '.AbstractSimpleComponentType',
-        ps: [{
-            n: 'codeSpace',
-            ti: '.Reference'
-          }, {
-            n: 'constraint',
-            ti: '.AllowedTokensPropertyType'
-          }, {
-            n: 'value',
-            ti: {
-              t: 'l'
-            }
-          }]
-      }, {
-        ln: 'DataChoicePropertyByValueType',
-        ps: [{
-            n: 'dataChoice',
-            en: 'DataChoice',
-            ti: '.DataChoiceType'
-          }]
-      }, {
-        ln: 'BinaryEncodingPropertyByValueType',
-        ps: [{
-            n: 'binaryEncoding',
-            en: 'BinaryEncoding',
-            ti: '.BinaryEncodingType'
-          }]
-      }, {
-        ln: 'EncodedValuesPropertyType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'any',
-            col: true,
-            typed: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractEncodingPropertyType',
-        ps: [{
-            n: 'abstractEncoding',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractEncoding',
-            ti: '.AbstractEncodingType',
-            t: 'er'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'XMLEncodingType',
-        bti: '.AbstractEncodingType'
-      }, {
-        ln: 'AnyRangePropertyType',
-        ps: [{
-            n: 'quantityRange',
-            en: 'QuantityRange',
-            ti: '.QuantityRangeType'
-          }, {
-            n: 'timeRange',
-            en: 'TimeRange',
-            ti: '.TimeRangeType'
-          }, {
-            n: 'countRange',
-            en: 'CountRange',
-            ti: '.CountRangeType'
-          }, {
-            n: 'categoryRange',
-            en: 'CategoryRange',
-            ti: '.CategoryRangeType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataArrayType.ElementType',
-        bti: '.AbstractDataComponentPropertyType',
-        ps: [{
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'UnitReference',
-        ps: [{
-            n: 'code',
-            an: {
-              lp: 'code'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataStreamPropertyType',
-        ps: [{
-            n: 'dataStream',
-            en: 'DataStream',
-            ti: '.DataStreamType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'BinaryEncodingType.Member',
-        ps: [{
-            n: 'component',
-            en: 'Component',
-            ti: '.ComponentType'
-          }, {
-            n: 'block',
-            en: 'Block',
-            ti: '.BlockType'
-          }]
-      }, {
-        ln: 'DataArrayPropertyByValueType',
-        ps: [{
-            n: 'dataArray',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'DataArray',
-            ti: '.DataArrayType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'NilValuesPropertyType',
-        ps: [{
-            n: 'nilValues',
-            en: 'NilValues',
-            ti: '.NilValuesType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AllowedTimesType',
-        bti: '.AbstractSWEType',
-        ps: [{
-            n: 'value',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: {
-              t: 'l'
-            },
-            t: 'er'
-          }, {
-            n: 'interval',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: {
-              t: 'l'
-            },
-            t: 'er'
-          }, {
-            n: 'significantFigures',
-            ti: 'Integer'
-          }]
-      }, {
-        ln: 'ComponentType',
-        bti: '.AbstractSWEType',
-        ps: [{
-            n: 'encryption',
-            an: {
-              lp: 'encryption'
-            },
-            t: 'a'
-          }, {
-            n: 'significantBits',
-            ti: 'Integer',
-            an: {
-              lp: 'significantBits'
-            },
-            t: 'a'
-          }, {
-            n: 'bitLength',
-            ti: 'Integer',
-            an: {
-              lp: 'bitLength'
-            },
-            t: 'a'
-          }, {
-            n: 'byteLength',
-            ti: 'Integer',
-            an: {
-              lp: 'byteLength'
-            },
-            t: 'a'
-          }, {
-            n: 'dataType',
-            an: {
-              lp: 'dataType'
-            },
-            t: 'a'
-          }, {
-            n: 'ref',
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MatrixPropertyType',
-        ps: [{
-            n: 'matrix',
-            en: 'Matrix',
-            ti: '.MatrixType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataChoicePropertyType',
-        ps: [{
-            n: 'dataChoice',
-            en: 'DataChoice',
-            ti: '.DataChoiceType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'NilValuesType',
-        bti: '.AbstractSWEType',
-        ps: [{
-            n: 'nilValue',
-            col: true,
-            ti: '.NilValue'
-          }]
-      }, {
-        ln: 'MatrixPropertyByValueType',
-        ps: [{
-            n: 'matrix',
-            en: 'Matrix',
-            ti: '.MatrixType'
-          }]
-      }, {
-        ln: 'AbstractSWEType',
-        ps: [{
-            n: 'extension',
-            col: true,
-            ti: 'AnyType'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataRecordType.Field',
-        bti: '.AbstractDataComponentPropertyType',
-        ps: [{
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataStreamType',
-        bti: '.AbstractSWEIdentifiableType',
-        ps: [{
-            n: 'elementCount',
-            ti: '.DataStreamType.ElementCount'
-          }, {
-            n: 'elementType',
-            ti: '.DataStreamType.ElementType'
-          }, {
-            n: 'encoding',
-            ti: '.DataStreamType.Encoding'
-          }, {
-            n: 'values',
-            ti: '.EncodedValuesPropertyType'
-          }]
-      }, {
-        ln: 'DataArrayType.Encoding',
-        ps: [{
-            n: 'abstractEncoding',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractEncoding',
-            ti: '.AbstractEncodingType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'DataChoiceType.ChoiceValue',
-        ps: [{
-            n: 'category',
-            en: 'Category',
-            ti: '.CategoryType'
-          }]
-      }, {
-        ln: 'TimeRangePropertyType',
-        ps: [{
-            n: 'timeRange',
-            en: 'TimeRange',
-            ti: '.TimeRangeType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'QuantityRangeType',
-        bti: '.AbstractSimpleComponentType',
-        ps: [{
-            n: 'uom',
-            ti: '.UnitReference'
-          }, {
-            n: 'constraint',
-            ti: '.AllowedValuesPropertyType'
-          }, {
-            n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }]
-      }, {
-        ln: 'BinaryEncodingType',
-        bti: '.AbstractEncodingType',
-        ps: [{
-            n: 'member',
-            col: true,
-            ti: '.BinaryEncodingType.Member'
-          }, {
-            n: 'byteOrder',
-            an: {
-              lp: 'byteOrder'
-            },
-            t: 'a'
-          }, {
-            n: 'byteEncoding',
-            an: {
-              lp: 'byteEncoding'
-            },
-            t: 'a'
-          }, {
-            n: 'byteLength',
-            ti: 'Integer',
-            an: {
-              lp: 'byteLength'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'BinaryEncodingPropertyType',
         ps: [{
             n: 'binaryEncoding',
@@ -1241,168 +332,6 @@ var SWE_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DataRecordPropertyType',
-        ps: [{
-            n: 'dataRecord',
-            en: 'DataRecord',
-            ti: '.DataRecordType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'VectorPropertyType',
-        ps: [{
-            n: 'vector',
-            en: 'Vector',
-            ti: '.VectorType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CountRangePropertyType',
-        ps: [{
-            n: 'countRange',
-            en: 'CountRange',
-            ti: '.CountRangeType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TextType',
-        bti: '.AbstractSimpleComponentType',
-        ps: [{
-            n: 'constraint',
-            ti: '.AllowedTokensPropertyType'
-          }, {
-            n: 'value'
-          }]
-      }, {
-        ln: 'QualityPropertyType',
-        ps: [{
-            n: 'quantity',
-            en: 'Quantity',
-            ti: '.QuantityType'
-          }, {
-            n: 'quantityRange',
-            en: 'QuantityRange',
-            ti: '.QuantityRangeType'
-          }, {
-            n: 'category',
-            en: 'Category',
-            ti: '.CategoryType'
-          }, {
-            n: 'text',
-            en: 'Text',
-            ti: '.TextType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AllowedTokensType',
-        bti: '.AbstractSWEType',
-        ps: [{
-            n: 'value',
-            col: true
-          }, {
-            n: 'pattern'
-          }]
-      }, {
-        ln: 'DataRecordType',
-        bti: '.AbstractDataComponentType',
-        ps: [{
-            n: 'field',
-            col: true,
-            ti: '.DataRecordType.Field'
-          }]
-      }, {
         ln: 'TextEncodingType',
         bti: '.AbstractEncodingType',
         ps: [{
@@ -1432,363 +361,38 @@ var SWE_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'QuantityType',
-        bti: '.AbstractSimpleComponentType',
+        ln: 'BinaryEncodingType',
+        bti: '.AbstractEncodingType',
         ps: [{
-            n: 'uom',
-            ti: '.UnitReference'
-          }, {
-            n: 'constraint',
-            ti: '.AllowedValuesPropertyType'
-          }, {
-            n: 'value',
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'CountRangeType',
-        bti: '.AbstractSimpleComponentType',
-        ps: [{
-            n: 'constraint',
-            ti: '.AllowedValuesPropertyType'
-          }, {
-            n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Integer'
-            }
-          }]
-      }, {
-        ln: 'ComponentOrBlockPropertyType',
-        ps: [{
-            n: 'component',
-            en: 'Component',
-            ti: '.ComponentType'
-          }, {
-            n: 'block',
-            en: 'Block',
-            ti: '.BlockType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AllowedValuesType',
-        bti: '.AbstractSWEType',
-        ps: [{
-            n: 'value',
+            n: 'member',
             col: true,
-            ti: 'Double'
+            ti: '.BinaryEncodingType.Member'
           }, {
-            n: 'interval',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            },
-            t: 'er'
-          }, {
-            n: 'significantFigures',
-            ti: 'Integer'
-          }]
-      }, {
-        ln: 'CountType',
-        bti: '.AbstractSimpleComponentType',
-        ps: [{
-            n: 'constraint',
-            ti: '.AllowedValuesPropertyType'
-          }, {
-            n: 'value',
-            ti: 'Integer'
-          }]
-      }, {
-        ln: 'DataChoiceType',
-        bti: '.AbstractDataComponentType',
-        ps: [{
-            n: 'choiceValue',
-            ti: '.DataChoiceType.ChoiceValue'
-          }, {
-            n: 'item',
-            col: true,
-            ti: '.DataChoiceType.Item'
-          }]
-      }, {
-        ln: 'AllowedValuesPropertyByValueType',
-        ps: [{
-            n: 'allowedValues',
-            en: 'AllowedValues',
-            ti: '.AllowedValuesType'
-          }]
-      }, {
-        ln: 'ComponentPropertyType',
-        ps: [{
-            n: 'component',
-            en: 'Component',
-            ti: '.ComponentType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TextEncodingPropertyByValueType',
-        ps: [{
-            n: 'textEncoding',
-            en: 'TextEncoding',
-            ti: '.TextEncodingType'
-          }]
-      }, {
-        ln: 'DataRecordPropertyByValueType',
-        ps: [{
-            n: 'dataRecord',
-            en: 'DataRecord',
-            ti: '.DataRecordType'
-          }]
-      }, {
-        ln: 'AllowedTimesPropertyByValueType',
-        ps: [{
-            n: 'allowedTimes',
-            en: 'AllowedTimes',
-            ti: '.AllowedTimesType'
-          }]
-      }, {
-        ln: 'BlockPropertyType',
-        ps: [{
-            n: 'block',
-            en: 'Block',
-            ti: '.BlockType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AnyNumericalPropertyType',
-        ps: [{
-            n: 'count',
-            en: 'Count',
-            ti: '.CountType'
-          }, {
-            n: 'quantity',
-            en: 'Quantity',
-            ti: '.QuantityType'
-          }, {
-            n: 'time',
-            en: 'Time',
-            ti: '.TimeType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MatrixType',
-        bti: '.DataArrayType',
-        ps: [{
-            n: 'referenceFrame',
+            n: 'byteOrder',
             an: {
-              lp: 'referenceFrame'
+              lp: 'byteOrder'
             },
             t: 'a'
           }, {
-            n: 'localFrame',
+            n: 'byteEncoding',
             an: {
-              lp: 'localFrame'
+              lp: 'byteEncoding'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'AllowedTokensPropertyType',
-        ps: [{
-            n: 'allowedTokens',
-            en: 'AllowedTokens',
-            ti: '.AllowedTokensType'
           }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'XMLEncodingPropertyType',
-        ps: [{
-            n: 'xmlEncoding',
-            en: 'XMLEncoding',
-            ti: '.XMLEncodingType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataChoiceType.Item',
-        bti: '.AbstractDataComponentPropertyType',
-        ps: [{
-            n: 'name',
+            n: 'byteLength',
+            ti: 'Integer',
             an: {
-              lp: 'name'
+              lp: 'byteLength'
             },
             t: 'a'
           }]
       }, {
-        ln: 'QuantityPropertyType',
+        ln: 'VectorPropertyType',
         ps: [{
-            n: 'quantity',
-            en: 'Quantity',
-            ti: '.QuantityType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'BooleanPropertyType',
-        ps: [{
-            n: '_boolean',
-            en: 'Boolean',
-            ti: '.BooleanType'
+            n: 'vector',
+            en: 'Vector',
+            ti: '.VectorType'
           }, {
             n: 'type',
             ti: 'XLink_1_0.TypeType',
@@ -1827,11 +431,334 @@ var SWE_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AllowedValuesPropertyType',
+        ln: 'DataChoiceType.ChoiceValue',
         ps: [{
-            n: 'allowedValues',
-            en: 'AllowedValues',
-            ti: '.AllowedValuesType'
+            n: 'category',
+            en: 'Category',
+            ti: '.CategoryType'
+          }]
+      }, {
+        ln: 'ComponentPropertyByValueType',
+        ps: [{
+            n: 'component',
+            en: 'Component',
+            ti: '.ComponentType'
+          }]
+      }, {
+        ln: 'CategoryRangeType',
+        bti: '.AbstractSimpleComponentType',
+        ps: [{
+            n: 'codeSpace',
+            ti: '.Reference'
+          }, {
+            n: 'constraint',
+            ti: '.AllowedTokensPropertyType'
+          }, {
+            n: 'value',
+            ti: {
+              t: 'l'
+            }
+          }]
+      }, {
+        ln: 'DataArrayType.ElementType',
+        bti: '.AbstractDataComponentPropertyType',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'QuantityType',
+        bti: '.AbstractSimpleComponentType',
+        ps: [{
+            n: 'uom',
+            ti: '.UnitReference'
+          }, {
+            n: 'constraint',
+            ti: '.AllowedValuesPropertyType'
+          }, {
+            n: 'value',
+            ti: 'Double'
+          }]
+      }, {
+        ln: 'VectorType.Coordinate',
+        bti: '.AnyNumericalPropertyType',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TextPropertyType',
+        ps: [{
+            n: 'text',
+            en: 'Text',
+            ti: '.TextType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeRangePropertyType',
+        ps: [{
+            n: 'timeRange',
+            en: 'TimeRange',
+            ti: '.TimeRangeType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CountPropertyType',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: '.CountType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataArrayType',
+        bti: '.AbstractDataComponentType',
+        ps: [{
+            n: 'elementCount',
+            ti: '.CountPropertyType'
+          }, {
+            n: 'elementType',
+            ti: '.DataArrayType.ElementType'
+          }, {
+            n: 'encoding',
+            ti: '.DataArrayType.Encoding'
+          }, {
+            n: 'values',
+            ti: '.EncodedValuesPropertyType'
+          }]
+      }, {
+        ln: 'DataStreamType.ElementType',
+        bti: '.AbstractDataComponentPropertyType',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'BlockType',
+        bti: '.AbstractSWEType',
+        ps: [{
+            n: 'compression',
+            an: {
+              lp: 'compression'
+            },
+            t: 'a'
+          }, {
+            n: 'encryption',
+            an: {
+              lp: 'encryption'
+            },
+            t: 'a'
+          }, {
+            n: 'paddingBytesAfter',
+            ti: 'Integer',
+            an: {
+              lp: 'paddingBytes-after'
+            },
+            t: 'a'
+          }, {
+            n: 'paddingBytesBefore',
+            ti: 'Integer',
+            an: {
+              lp: 'paddingBytes-before'
+            },
+            t: 'a'
+          }, {
+            n: 'byteLength',
+            ti: 'Integer',
+            an: {
+              lp: 'byteLength'
+            },
+            t: 'a'
+          }, {
+            n: 'ref',
+            an: {
+              lp: 'ref'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AllowedTokensPropertyType',
+        ps: [{
+            n: 'allowedTokens',
+            en: 'AllowedTokens',
+            ti: '.AllowedTokensType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'BlockPropertyType',
+        ps: [{
+            n: 'block',
+            en: 'Block',
+            ti: '.BlockType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataChoiceType',
+        bti: '.AbstractDataComponentType',
+        ps: [{
+            n: 'choiceValue',
+            ti: '.DataChoiceType.ChoiceValue'
+          }, {
+            n: 'item',
+            col: true,
+            ti: '.DataChoiceType.Item'
+          }]
+      }, {
+        ln: 'XMLEncodingPropertyByValueType',
+        ps: [{
+            n: 'xmlEncoding',
+            en: 'XMLEncoding',
+            ti: '.XMLEncodingType'
+          }]
+      }, {
+        ln: 'XMLEncodingType',
+        bti: '.AbstractEncodingType'
+      }, {
+        ln: 'MatrixType',
+        bti: '.DataArrayType',
+        ps: [{
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
+            },
+            t: 'a'
+          }, {
+            n: 'localFrame',
+            an: {
+              lp: 'localFrame'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'XMLEncodingPropertyType',
+        ps: [{
+            n: 'xmlEncoding',
+            en: 'XMLEncoding',
+            ti: '.XMLEncodingType'
           }, {
             n: 'type',
             ti: 'XLink_1_0.TypeType',
@@ -1893,11 +820,560 @@ var SWE_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DataStreamType.ElementCount',
+        ln: 'BinaryEncodingType.Member',
+        ps: [{
+            n: 'component',
+            en: 'Component',
+            ti: '.ComponentType'
+          }, {
+            n: 'block',
+            en: 'Block',
+            ti: '.BlockType'
+          }]
+      }, {
+        ln: 'DataChoicePropertyType',
+        ps: [{
+            n: 'dataChoice',
+            en: 'DataChoice',
+            ti: '.DataChoiceType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataChoicePropertyByValueType',
+        ps: [{
+            n: 'dataChoice',
+            en: 'DataChoice',
+            ti: '.DataChoiceType'
+          }]
+      }, {
+        ln: 'CountRangePropertyType',
+        ps: [{
+            n: 'countRange',
+            en: 'CountRange',
+            ti: '.CountRangeType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractSWEIdentifiableType',
+        bti: '.AbstractSWEType',
+        ps: [{
+            n: 'identifier'
+          }, {
+            n: 'label'
+          }, {
+            n: 'description'
+          }]
+      }, {
+        ln: 'ComponentPropertyType',
+        ps: [{
+            n: 'component',
+            en: 'Component',
+            ti: '.ComponentType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'NilValuesPropertyType',
+        ps: [{
+            n: 'nilValues',
+            en: 'NilValues',
+            ti: '.NilValuesType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractEncodingType',
+        bti: '.AbstractSWEType'
+      }, {
+        ln: 'QuantityPropertyType',
+        ps: [{
+            n: 'quantity',
+            en: 'Quantity',
+            ti: '.QuantityType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'UnitReference',
+        ps: [{
+            n: 'code',
+            an: {
+              lp: 'code'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CountRangeType',
+        bti: '.AbstractSimpleComponentType',
+        ps: [{
+            n: 'constraint',
+            ti: '.AllowedValuesPropertyType'
+          }, {
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Integer'
+            }
+          }]
+      }, {
+        ln: 'AllowedTimesPropertyByValueType',
+        ps: [{
+            n: 'allowedTimes',
+            en: 'AllowedTimes',
+            ti: '.AllowedTimesType'
+          }]
+      }, {
+        ln: 'QuantityRangeType',
+        bti: '.AbstractSimpleComponentType',
+        ps: [{
+            n: 'uom',
+            ti: '.UnitReference'
+          }, {
+            n: 'constraint',
+            ti: '.AllowedValuesPropertyType'
+          }, {
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }]
+      }, {
+        ln: 'AnyNumericalPropertyType',
         ps: [{
             n: 'count',
             en: 'Count',
             ti: '.CountType'
+          }, {
+            n: 'quantity',
+            en: 'Quantity',
+            ti: '.QuantityType'
+          }, {
+            n: 'time',
+            en: 'Time',
+            ti: '.TimeType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'VectorPropertyByValueType',
+        ps: [{
+            n: 'vector',
+            en: 'Vector',
+            ti: '.VectorType'
+          }]
+      }, {
+        ln: 'AbstractSimpleComponentType',
+        bti: '.AbstractDataComponentType',
+        ps: [{
+            n: 'quality',
+            col: true,
+            ti: '.QualityPropertyType'
+          }, {
+            n: 'nilValues',
+            ti: '.NilValuesPropertyType'
+          }, {
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
+            },
+            t: 'a'
+          }, {
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AnyRangePropertyType',
+        ps: [{
+            n: 'quantityRange',
+            en: 'QuantityRange',
+            ti: '.QuantityRangeType'
+          }, {
+            n: 'timeRange',
+            en: 'TimeRange',
+            ti: '.TimeRangeType'
+          }, {
+            n: 'countRange',
+            en: 'CountRange',
+            ti: '.CountRangeType'
+          }, {
+            n: 'categoryRange',
+            en: 'CategoryRange',
+            ti: '.CategoryRangeType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimePropertyType',
+        ps: [{
+            n: 'time',
+            en: 'Time',
+            ti: '.TimeType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MatrixPropertyByValueType',
+        ps: [{
+            n: 'matrix',
+            en: 'Matrix',
+            ti: '.MatrixType'
+          }]
+      }, {
+        ln: 'BooleanType',
+        bti: '.AbstractSimpleComponentType',
+        ps: [{
+            n: 'value',
+            ti: 'Boolean'
+          }]
+      }, {
+        ln: 'AbstractEncodingPropertyByValueType',
+        ps: [{
+            n: 'abstractEncoding',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractEncoding',
+            ti: '.AbstractEncodingType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'DataArrayPropertyByValueType',
+        ps: [{
+            n: 'dataArray',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'DataArray',
+            ti: '.DataArrayType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'VectorType',
+        bti: '.AbstractDataComponentType',
+        ps: [{
+            n: 'coordinate',
+            col: true,
+            ti: '.VectorType.Coordinate'
+          }, {
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
+            },
+            t: 'a'
+          }, {
+            n: 'localFrame',
+            an: {
+              lp: 'localFrame'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ComponentType',
+        bti: '.AbstractSWEType',
+        ps: [{
+            n: 'encryption',
+            an: {
+              lp: 'encryption'
+            },
+            t: 'a'
+          }, {
+            n: 'significantBits',
+            ti: 'Integer',
+            an: {
+              lp: 'significantBits'
+            },
+            t: 'a'
+          }, {
+            n: 'bitLength',
+            ti: 'Integer',
+            an: {
+              lp: 'bitLength'
+            },
+            t: 'a'
+          }, {
+            n: 'byteLength',
+            ti: 'Integer',
+            an: {
+              lp: 'byteLength'
+            },
+            t: 'a'
+          }, {
+            n: 'dataType',
+            an: {
+              lp: 'dataType'
+            },
+            t: 'a'
+          }, {
+            n: 'ref',
+            an: {
+              lp: 'ref'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataStreamType.Encoding',
+        ps: [{
+            n: 'abstractEncoding',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractEncoding',
+            ti: '.AbstractEncodingType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'DataChoiceType.Item',
+        bti: '.AbstractDataComponentPropertyType',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataStreamPropertyType',
+        ps: [{
+            n: 'dataStream',
+            en: 'DataStream',
+            ti: '.DataStreamType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataRecordPropertyByValueType',
+        ps: [{
+            n: 'dataRecord',
+            en: 'DataRecord',
+            ti: '.DataRecordType'
           }]
       }, {
         ln: 'AllowedTokensPropertyByValueType',
@@ -1907,32 +1383,133 @@ var SWE_2_0_Module_Factory = function () {
             ti: '.AllowedTokensType'
           }]
       }, {
-        ln: 'AbstractDataComponentType',
-        bti: '.AbstractSWEIdentifiableType',
+        ln: 'DataArrayType.Encoding',
         ps: [{
-            n: 'updatable',
-            ti: 'Boolean',
-            an: {
-              lp: 'updatable'
-            },
-            t: 'a'
+            n: 'abstractEncoding',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractEncoding',
+            ti: '.AbstractEncodingType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'AbstractSWEType',
+        ps: [{
+            n: 'extension',
+            col: true,
+            ti: 'AnyType'
           }, {
-            n: 'optional',
-            ti: 'Boolean',
+            n: 'id',
+            ti: 'ID',
             an: {
-              lp: 'optional'
-            },
-            t: 'a'
-          }, {
-            n: 'definition',
-            an: {
-              lp: 'definition'
+              lp: 'id'
             },
             t: 'a'
           }]
       }, {
-        ln: 'AbstractEncodingType',
-        bti: '.AbstractSWEType'
+        ln: 'TextEncodingPropertyType',
+        ps: [{
+            n: 'textEncoding',
+            en: 'TextEncoding',
+            ti: '.TextEncodingType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataStreamType',
+        bti: '.AbstractSWEIdentifiableType',
+        ps: [{
+            n: 'elementCount',
+            ti: '.DataStreamType.ElementCount'
+          }, {
+            n: 'elementType',
+            ti: '.DataStreamType.ElementType'
+          }, {
+            n: 'encoding',
+            ti: '.DataStreamType.Encoding'
+          }, {
+            n: 'values',
+            ti: '.EncodedValuesPropertyType'
+          }]
+      }, {
+        ln: 'TimeRangeType',
+        bti: '.AbstractSimpleComponentType',
+        ps: [{
+            n: 'uom',
+            ti: '.UnitReference'
+          }, {
+            n: 'constraint',
+            ti: '.AllowedTimesPropertyType'
+          }, {
+            n: 'value',
+            ti: {
+              t: 'l'
+            }
+          }, {
+            n: 'referenceTime',
+            ti: 'Calendar',
+            an: {
+              lp: 'referenceTime'
+            },
+            t: 'a'
+          }, {
+            n: 'localFrame',
+            an: {
+              lp: 'localFrame'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeType',
+        bti: '.AbstractSimpleComponentType',
+        ps: [{
+            n: 'uom',
+            ti: '.UnitReference'
+          }, {
+            n: 'constraint',
+            ti: '.AllowedTimesPropertyType'
+          }, {
+            n: 'value',
+            ti: {
+              t: 'l'
+            }
+          }, {
+            n: 'referenceTime',
+            ti: 'Calendar',
+            an: {
+              lp: 'referenceTime'
+            },
+            t: 'a'
+          }, {
+            n: 'localFrame',
+            an: {
+              lp: 'localFrame'
+            },
+            t: 'a'
+          }]
       }, {
         ln: 'BlockPropertyByValueType',
         ps: [{
@@ -1941,53 +1518,505 @@ var SWE_2_0_Module_Factory = function () {
             ti: '.BlockType'
           }]
       }, {
-        t: 'enum',
-        ln: 'TimeIndeterminateValue',
-        vs: ['now']
+        ln: 'DataStreamPropertyByValueType',
+        ps: [{
+            n: 'dataStream',
+            en: 'DataStream',
+            ti: '.DataStreamType'
+          }]
+      }, {
+        ln: 'DataArrayPropertyType',
+        ps: [{
+            n: 'dataArray',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'DataArray',
+            ti: '.DataArrayType',
+            t: 'er'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'BooleanPropertyType',
+        ps: [{
+            n: '_boolean',
+            en: 'Boolean',
+            ti: '.BooleanType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AllowedTimesType',
+        bti: '.AbstractSWEType',
+        ps: [{
+            n: 'value',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: {
+              t: 'l'
+            },
+            t: 'er'
+          }, {
+            n: 'interval',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            ti: {
+              t: 'l'
+            },
+            t: 'er'
+          }, {
+            n: 'significantFigures',
+            ti: 'Integer'
+          }]
+      }, {
+        ln: 'AllowedValuesPropertyType',
+        ps: [{
+            n: 'allowedValues',
+            en: 'AllowedValues',
+            ti: '.AllowedValuesType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'BinaryEncodingPropertyByValueType',
+        ps: [{
+            n: 'binaryEncoding',
+            en: 'BinaryEncoding',
+            ti: '.BinaryEncodingType'
+          }]
+      }, {
+        ln: 'TextType',
+        bti: '.AbstractSimpleComponentType',
+        ps: [{
+            n: 'constraint',
+            ti: '.AllowedTokensPropertyType'
+          }, {
+            n: 'value'
+          }]
+      }, {
+        ln: 'ComponentOrBlockPropertyType',
+        ps: [{
+            n: 'component',
+            en: 'Component',
+            ti: '.ComponentType'
+          }, {
+            n: 'block',
+            en: 'Block',
+            ti: '.BlockType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CategoryRangePropertyType',
+        ps: [{
+            n: 'categoryRange',
+            en: 'CategoryRange',
+            ti: '.CategoryRangeType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataStreamType.ElementCount',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: '.CountType'
+          }]
+      }, {
+        ln: 'AllowedTimesPropertyType',
+        ps: [{
+            n: 'allowedTimes',
+            en: 'AllowedTimes',
+            ti: '.AllowedTimesType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'Reference',
+        ps: [{
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataRecordType.Field',
+        bti: '.AbstractDataComponentPropertyType',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractDataComponentPropertyType',
+        ps: [{
+            n: 'abstractDataComponent',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractDataComponent',
+            ti: '.AbstractDataComponentType',
+            t: 'er'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AllowedValuesPropertyByValueType',
+        ps: [{
+            n: 'allowedValues',
+            en: 'AllowedValues',
+            ti: '.AllowedValuesType'
+          }]
+      }, {
+        ln: 'CategoryPropertyType',
+        ps: [{
+            n: 'category',
+            en: 'Category',
+            ti: '.CategoryType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataRecordPropertyType',
+        ps: [{
+            n: 'dataRecord',
+            en: 'DataRecord',
+            ti: '.DataRecordType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'QuantityRangePropertyType',
+        ps: [{
+            n: 'quantityRange',
+            en: 'QuantityRange',
+            ti: '.QuantityRangeType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
       }, {
         t: 'enum',
         ln: 'ByteEncodingType',
         vs: ['base64', 'raw']
       }, {
         t: 'enum',
+        ln: 'TimeIndeterminateValue',
+        vs: ['now']
+      }, {
+        t: 'enum',
         ln: 'ByteOrderType',
         vs: ['bigEndian', 'littleEndian']
       }],
     eis: [{
-        en: 'AllowedTimes',
-        ti: '.AllowedTimesType',
-        sh: 'AbstractSWE'
-      }, {
-        en: 'Text',
-        ti: '.TextType',
+        en: 'Time',
+        ti: '.TimeType',
         sh: 'AbstractSimpleComponent'
       }, {
-        en: 'AbstractSWE',
-        ti: '.AbstractSWEType'
-      }, {
-        en: 'AbstractDataComponent',
-        ti: '.AbstractDataComponentType',
-        sh: 'AbstractSWEIdentifiable'
-      }, {
-        en: 'AllowedTokens',
-        ti: '.AllowedTokensType',
+        en: 'Block',
+        ti: '.BlockType',
         sh: 'AbstractSWE'
       }, {
-        en: 'XMLEncoding',
-        ti: '.XMLEncodingType',
-        sh: 'AbstractEncoding'
+        en: 'AbstractSWEIdentifiable',
+        ti: '.AbstractSWEIdentifiableType',
+        sh: 'AbstractSWE'
       }, {
-        en: 'BinaryEncoding',
-        ti: '.BinaryEncodingType',
-        sh: 'AbstractEncoding'
+        en: 'DataArray',
+        ti: '.DataArrayType',
+        sh: 'AbstractDataComponent'
       }, {
         en: 'CategoryRange',
         ti: '.CategoryRangeType',
         sh: 'AbstractSimpleComponent'
       }, {
-        en: 'DataChoice',
-        ti: '.DataChoiceType',
+        en: 'DataRecord',
+        ti: '.DataRecordType',
         sh: 'AbstractDataComponent'
+      }, {
+        en: 'Matrix',
+        ti: '.MatrixType',
+        sh: 'DataArray'
+      }, {
+        en: 'Boolean',
+        ti: '.BooleanType',
+        sh: 'AbstractSimpleComponent'
+      }, {
+        en: 'AllowedTokens',
+        ti: '.AllowedTokensType',
+        sh: 'AbstractSWE'
+      }, {
+        en: 'Count',
+        ti: '.CountType',
+        sh: 'AbstractSimpleComponent'
+      }, {
+        en: 'DataStream',
+        ti: '.DataStreamType',
+        sh: 'AbstractSWEIdentifiable'
+      }, {
+        en: 'AbstractDataComponent',
+        ti: '.AbstractDataComponentType',
+        sh: 'AbstractSWEIdentifiable'
+      }, {
+        en: 'AbstractEncoding',
+        ti: '.AbstractEncodingType',
+        sh: 'AbstractSWE'
+      }, {
+        en: 'NilValues',
+        ti: '.NilValuesType',
+        sh: 'AbstractSWE'
+      }, {
+        en: 'TimeRange',
+        ti: '.TimeRangeType',
+        sh: 'AbstractSimpleComponent'
+      }, {
+        en: 'CountRange',
+        ti: '.CountRangeType',
+        sh: 'AbstractSimpleComponent'
       }, {
         en: 'value',
         ti: {
@@ -1995,13 +2024,12 @@ var SWE_2_0_Module_Factory = function () {
         },
         sc: '.AllowedTimesType'
       }, {
-        en: 'Time',
-        ti: '.TimeType',
-        sh: 'AbstractSimpleComponent'
+        en: 'AbstractSWE',
+        ti: '.AbstractSWEType'
       }, {
-        en: 'AbstractEncoding',
-        ti: '.AbstractEncodingType',
-        sh: 'AbstractSWE'
+        en: 'Vector',
+        ti: '.VectorType',
+        sh: 'AbstractDataComponent'
       }, {
         en: 'interval',
         ti: {
@@ -2009,8 +2037,44 @@ var SWE_2_0_Module_Factory = function () {
         },
         sc: '.AllowedTimesType'
       }, {
+        en: 'BinaryEncoding',
+        ti: '.BinaryEncodingType',
+        sh: 'AbstractEncoding'
+      }, {
+        en: 'Component',
+        ti: '.ComponentType',
+        sh: 'AbstractSWE'
+      }, {
+        en: 'Quantity',
+        ti: '.QuantityType',
+        sh: 'AbstractSimpleComponent'
+      }, {
+        en: 'AbstractSimpleComponent',
+        ti: '.AbstractSimpleComponentType',
+        sh: 'AbstractDataComponent'
+      }, {
+        en: 'TextEncoding',
+        ti: '.TextEncodingType',
+        sh: 'AbstractEncoding'
+      }, {
+        en: 'Category',
+        ti: '.CategoryType',
+        sh: 'AbstractSimpleComponent'
+      }, {
+        en: 'AllowedValues',
+        ti: '.AllowedValuesType',
+        sh: 'AbstractSWE'
+      }, {
+        en: 'XMLEncoding',
+        ti: '.XMLEncodingType',
+        sh: 'AbstractEncoding'
+      }, {
         en: 'QuantityRange',
         ti: '.QuantityRangeType',
+        sh: 'AbstractSimpleComponent'
+      }, {
+        en: 'Text',
+        ti: '.TextType',
         sh: 'AbstractSimpleComponent'
       }, {
         en: 'interval',
@@ -2020,77 +2084,13 @@ var SWE_2_0_Module_Factory = function () {
         },
         sc: '.AllowedValuesType'
       }, {
-        en: 'AbstractSWEIdentifiable',
-        ti: '.AbstractSWEIdentifiableType',
+        en: 'AllowedTimes',
+        ti: '.AllowedTimesType',
         sh: 'AbstractSWE'
       }, {
-        en: 'Boolean',
-        ti: '.BooleanType',
-        sh: 'AbstractSimpleComponent'
-      }, {
-        en: 'AbstractSimpleComponent',
-        ti: '.AbstractSimpleComponentType',
+        en: 'DataChoice',
+        ti: '.DataChoiceType',
         sh: 'AbstractDataComponent'
-      }, {
-        en: 'Matrix',
-        ti: '.MatrixType',
-        sh: 'DataArray'
-      }, {
-        en: 'Block',
-        ti: '.BlockType',
-        sh: 'AbstractSWE'
-      }, {
-        en: 'DataArray',
-        ti: '.DataArrayType',
-        sh: 'AbstractDataComponent'
-      }, {
-        en: 'Category',
-        ti: '.CategoryType',
-        sh: 'AbstractSimpleComponent'
-      }, {
-        en: 'NilValues',
-        ti: '.NilValuesType',
-        sh: 'AbstractSWE'
-      }, {
-        en: 'DataRecord',
-        ti: '.DataRecordType',
-        sh: 'AbstractDataComponent'
-      }, {
-        en: 'AllowedValues',
-        ti: '.AllowedValuesType',
-        sh: 'AbstractSWE'
-      }, {
-        en: 'DataStream',
-        ti: '.DataStreamType',
-        sh: 'AbstractSWEIdentifiable'
-      }, {
-        en: 'TimeRange',
-        ti: '.TimeRangeType',
-        sh: 'AbstractSimpleComponent'
-      }, {
-        en: 'Vector',
-        ti: '.VectorType',
-        sh: 'AbstractDataComponent'
-      }, {
-        en: 'TextEncoding',
-        ti: '.TextEncodingType',
-        sh: 'AbstractEncoding'
-      }, {
-        en: 'CountRange',
-        ti: '.CountRangeType',
-        sh: 'AbstractSimpleComponent'
-      }, {
-        en: 'Count',
-        ti: '.CountType',
-        sh: 'AbstractSimpleComponent'
-      }, {
-        en: 'Component',
-        ti: '.ComponentType',
-        sh: 'AbstractSWE'
-      }, {
-        en: 'Quantity',
-        ti: '.QuantityType',
-        sh: 'AbstractSimpleComponent'
       }]
   };
   return {
