@@ -1,0 +1,40 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings 
+		schemaLocation="ogc/filter/1.1.0/filter.xsd" 
+		node="/xs:schema">
+
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.filter.v_1_1_0"/>
+		</jaxb:schemaBindings>
+
+		<jaxb:bindings node="xs:complexType[@name='BinarySpatialOpType']//xs:sequence/xs:element[@ref='ogc:PropertyName']">
+			<jaxb:property name="PropertyName1"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='BinarySpatialOpType']//xs:choice/xs:element[@ref='ogc:PropertyName']">
+			<jaxb:property name="PropertyName2"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='BinaryLogicOpType']//xs:choice">
+			<jaxb:property name="Ops"/>
+		</jaxb:bindings>
+
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="ogc/filter/1.1.0/filterCapabilities.xsd" 
+		node="/xs:schema">
+
+		<jaxb:bindings node="xs:complexType[@name='ArithmeticOperatorsType']//xs:choice">
+			<jaxb:property name="Ops"/>
+		</jaxb:bindings>
+
+		<jaxb:bindings node="xs:complexType[@name='Id_CapabilitiesType']//xs:choice">
+			<jaxb:property name="Ids"/>
+		</jaxb:bindings>
+
+
+	</jaxb:bindings>
+</jaxb:bindings>

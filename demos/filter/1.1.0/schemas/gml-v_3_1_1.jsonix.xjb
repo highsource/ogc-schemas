@@ -1,0 +1,27 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:jsonix="http://jsonix.highsource.org/customizations"
+	jaxb:extensionBindingPrefixes="jsonix">
+
+	<jaxb:bindings schemaLocation="ogc/gml/3.1.1/base/gml.xsd" 
+		node="/xs:schema">
+
+		<jsonix:module name="Filter_1_1_0_GML_3_1_1">
+			<jsonix:mapping package="net.opengis.gml.v_3_1_1" name="GML_3_1_1">
+				<jsonix:includes>
+					<jsonix:dependencies-of-mapping id="Filter_1_1_0"/>
+				</jsonix:includes>
+			</jsonix:mapping>
+			<jsonix:mapping package="org.w3.smil.v_2_0" name="SMIL_2_0">
+				<jsonix:includes>
+					<jsonix:dependencies-of-mapping id="Filter_1_1_0"/>
+				</jsonix:includes>
+			</jsonix:mapping>
+			<jsonix:mapping package="org.w3.smil.v_2_0.language" name="SMIL_2_0_Language">
+				<jsonix:includes>
+					<jsonix:dependencies-of-mapping id="Filter_1_1_0"/>
+				</jsonix:includes>
+			</jsonix:mapping>
+		</jsonix:module>
+	</jaxb:bindings>
+</jaxb:bindings>
