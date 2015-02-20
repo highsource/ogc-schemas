@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<ViewContext version="1.0.0"
+			    id="eos_data_gateways"
+			    xmlns="http://www.opengis.net/context"
+			    xmlns:xlink="http://www.w3.org/1999/xlink"
+			    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			    xsi:schemaLocation="http://www.opengis.net/context context.xsd">
+	<General>
+		<Window width="500" height="300" />
+		<BoundingBox SRS="EPSG:4326" minx="-180.000000" miny="-90.000000" maxx="180.000000" maxy="90.000000"/>
+		<Title>EOS Data Gateways</Title>
+		<KeywordList>
+			<Keyword>EOS</Keyword>
+			<Keyword>EOSDIS</Keyword>
+			<Keyword>NASA</Keyword>
+			<Keyword>CCRS</Keyword>
+			<Keyword>CEOS</Keyword>
+			<Keyword>OGC</Keyword>
+		</KeywordList>
+		<Abstract>Map View of EOSDIS partners locations</Abstract>
+		<LogoURL width="130" height="74" format="image/gif">
+			<OnlineResource xlink:type="simple" xlink:href="http://redhook.gsfc.nasa.gov/~imswww/pub/icons/logo.gif"/>
+		</LogoURL>
+		<DescriptionURL format="text/html">
+			<OnlineResource xlink:type="simple" xlink:href="http://eos.nasa.gov/imswelcome"/>
+		</DescriptionURL>
+		<ContactInformation>
+			<ContactPersonPrimary>
+				<ContactPerson>Tom Kralidis</ContactPerson>
+				<ContactOrganization>Canada Centre for Remote Sensing</ContactOrganization>
+			</ContactPersonPrimary>
+			<ContactPosition>Systems Scientist</ContactPosition>
+			<ContactAddress>
+				<AddressType>postal</AddressType>
+				<Address>615 Booth Street, room 650</Address>
+				<City>Ottawa</City>
+				<StateOrProvince>Ontario</StateOrProvince>
+				<PostCode>K1A 0E9</PostCode>
+				<Country>Canada</Country>
+			</ContactAddress>
+			<ContactVoiceTelephone>+01 613 947 1828</ContactVoiceTelephone>
+			<ContactFacsimileTelephone>+01 613 947 2410</ContactFacsimileTelephone>
+			<ContactElectronicMailAddress>tom.kralidis@ccrs.nrcan.gc.ca</ContactElectronicMailAddress>
+		</ContactInformation>
+	</General>
+	<LayerList>
+		<Layer queryable="1" hidden="0">
+			<Server service="OGC:WMS" version="1.1.0" title="ESA CubeSERV">
+				<OnlineResource xlink:type="simple" xlink:href="http://mapserv2.esrin.esa.it/cubestor/cubeserv/cubeserv.cgi"/>
+			</Server>
+			<Name>WORLD_MODIS_1KM:MapAdmin</Name>
+			<Title>WORLD_MODIS_1KM</Title>
+			<Abstract>Global maps derived from various Earth Observation sensors / WORLD_MODIS_1KM:MapAdmin</Abstract>
+			<SRS>EPSG:4326</SRS>
+			<FormatList>
+				<Format current="1">image/png</Format>
+			</FormatList>
+			<StyleList>
+				<Style current="1">
+					<Name>default</Name>
+					<Title>default</Title>
+					<LegendURL width="16" height="16" format="image/gif">
+						<OnlineResource xlink:type="simple" xlink:href="http://mapserv2.esrin.esa.it/cubestor/cubeserv/cubeserv.cgi?VERSION=1.1.0&amp;REQUEST=GetLegendIcon&amp;LAYER=WORLD_MODIS_1KM:MapAdmin&amp;SPATIAL_TYPE=RASTER&amp;STYLE=default&amp;FORMAT=image/gif"/>
+					</LegendURL>
+				</Style>
+			</StyleList>
+		</Layer>
+		<Layer queryable="0" hidden="0">
+			<Server service="OGC:WMS" version="1.0.7" title="The GLOBE Program Visualization Server">
+				<OnlineResource xlink:type="simple" xlink:href="http://globe.digitalearth.gov/viz-bin/wmt.cgi"/>
+			</Server>
+			<Name>COASTLINES</Name>
+			<Title>Coastlines</Title>
+			<Abstract>Context layer: Coastlines</Abstract>
+			<SRS>EPSG:4326</SRS>
+			<FormatList>
+				<Format current="1">GIF</Format>
+			</FormatList>
+			<StyleList>
+				<Style current="1">
+					<Name>default</Name>
+					<Title>Default</Title>
+					<LegendURL width="180" format="image/gif" height="50">
+						<OnlineResource xlink:type="simple" xlink:href="http://globe.digitalearth.gov/globe/en/icons/colorbars/COASTLINES.gif"/>
+					</LegendURL>
+				</Style>
+			</StyleList>
+		</Layer>
+		<Layer queryable="1" hidden="0">
+			<Server service="OGC:WMS" version="1.0.7" title="The GLOBE Program Visualization Server">
+				<OnlineResource xlink:type="simple" xlink:href="http://globe.digitalearth.gov/viz-bin/wmt.cgi"/>
+			</Server>
+			<Name>NATIONAL</Name>
+			<Title>National Boundaries</Title>
+			<Abstract>Context layer: National Boundaries</Abstract>
+			<SRS>EPSG:4326</SRS>
+			<FormatList>
+				<Format current="1">GIF</Format>
+			</FormatList>
+			<StyleList>
+				<Style current="1">
+					<Name>default</Name>
+					<Title>Default</Title>
+					<LegendURL width="180" format="image/gif" height="50">
+						<OnlineResource xlink:type="simple" xlink:href="http://globe.digitalearth.gov/globe/en/icons/colorbars/NATIONAL.gif"/>
+					</LegendURL>
+				</Style>
+			</StyleList>
+		</Layer>
+		<Layer queryable="1" hidden="0">
+			<Server service="OGC:WMS" version="1.1.0" title="CCRS Spatial Data Warehouse">
+				<OnlineResource xlink:type="simple" xlink:href="http://ceoware2.ccrs.nrcan.gc.ca/cubewerx/cubeserv/cubeserv.cgi"/>
+			</Server>
+			<Name>EOS_DATA_GATEWAYS:CEOWARE2</Name>
+			<Title>EOS Data Gateways</Title>
+			<Abstract>Locations of EOS Data Gateway Locations. The same services and data are available through each gateway location.</Abstract>
+			<SRS>EPSG:4326</SRS>
+			<FormatList>
+				<Format current="1">image/gif</Format>
+			</FormatList>
+			<StyleList>
+				<Style current="1">
+					<Name>default</Name>
+					<Title>default</Title>
+					<LegendURL width="16" height="16" format="image/gif">
+						<OnlineResource xlink:type="simple" xlink:href="http://ceoware2.ccrs.nrcan.gc.ca/cubewerx/cubeserv/cubeserv.cgi?VERSION=1.1.0&amp;REQUEST=GetLegendIcon&amp;LAYER=EOS_DATA_GATEWAYS:CEOWARE2&amp;SPATIAL_TYPE=POINT&amp;STYLE=default&amp;FORMAT=image/gif"/>
+					</LegendURL>
+				</Style>
+			</StyleList>
+		</Layer>
+	</LayerList>
+</ViewContext> 
