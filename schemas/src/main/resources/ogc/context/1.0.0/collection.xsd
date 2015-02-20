@@ -8,7 +8,7 @@
 -->
 <xs:schema targetNamespace="http://www.opengis.net/context" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:context="http://www.opengis.net/context" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0.0.2">
 	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
-	<xs:include schemaLocation="context.xsd"/>
+	<xs:include schemaLocation="./context.xsd"/>
 	<xs:element name="ViewContextCollection" type="context:ViewContextCollectionType"/>
 	<xs:complexType name="ViewContextCollectionType">
 		<xs:sequence>
@@ -29,9 +29,7 @@
 			<xs:element name="OnlineResource" type="context:OnlineResourceType"/>
 		</xs:sequence>
 	</xs:complexType>
-	<!--
-	<xs:complexType name="OnlineResourceType">
+	<!--xs:complexType name="OnlineResourceType">
 		<xs:attributeGroup ref="xlink:simpleAttrs"/>
-	</xs:complexType>
-	-->
+	</xs:complexType-->
 </xs:schema>

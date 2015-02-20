@@ -1,3 +1,25 @@
+diff --git ogc/context/1.0.0/collection.xsd ogc/context/1.0.0/collection.xsd
+index 2a5a431..5ce6c03 100644
+--- ogc/context/1.0.0/collection.xsd
++++ ogc/context/1.0.0/collection.xsd
+@@ -8,6 +8,7 @@
+ -->
+ <xs:schema targetNamespace="http://www.opengis.net/context" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:context="http://www.opengis.net/context" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0.0.2">
+ 	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
++	<xs:include schemaLocation="context.xsd"/>
+ 	<xs:element name="ViewContextCollection" type="context:ViewContextCollectionType"/>
+ 	<xs:complexType name="ViewContextCollectionType">
+ 		<xs:sequence>
+@@ -28,7 +29,9 @@
+ 			<xs:element name="OnlineResource" type="context:OnlineResourceType"/>
+ 		</xs:sequence>
+ 	</xs:complexType>
++	<!--
+ 	<xs:complexType name="OnlineResourceType">
+ 		<xs:attributeGroup ref="xlink:simpleAttrs"/>
+ 	</xs:complexType>
++	-->
+ </xs:schema>
 diff --git ogc/gml/3.1.1/base/temporal.xsd ogc/gml/3.1.1/base/temporal.xsd
 index 96be3f7..19ef923 100644
 --- ogc/gml/3.1.1/base/temporal.xsd
