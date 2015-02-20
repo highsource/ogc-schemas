@@ -2,9 +2,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>wmc-v_1_0_0</artifactId>
+	<artifactId>wmc-v_1_1_0</artifactId>
 	<packaging>jar</packaging>
-	<name>OGC WMC 1.0.0</name>
+	<name>OGC WMC 1.1.0</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schema-parent</artifactId>
@@ -31,10 +31,10 @@
 				<configuration>
 					<schemas>
 						<schema>
-							<url>http://schemas.opengis.net/context/1.0.0/context.xsd</url>
+							<url>http://schemas.opengis.net/context/1.1.0/context.xsd</url>
 						</schema>
 						<schema>
-							<url>http://schemas.opengis.net/context/1.0.0/collection.xsd</url>
+							<url>http://schemas.opengis.net/context/1.1.0/collection.xsd</url>
 						</schema>
 						<!-- ++++ Due to XJC problem -->
 						<schema>
@@ -100,7 +100,8 @@
 						<phase>process-sources</phase>
 						<configuration>
 							<target>
-								<!--delete dir="${basedir}/target/generated-sources/xjc" includes="XLink*.*"/-->
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="SLD*.*"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/sld"/>
 							</target>
 						</configuration>
 						<goals>

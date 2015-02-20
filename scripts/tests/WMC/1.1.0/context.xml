@@ -1,141 +1,141 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<ViewContext version="1.1.0"
+<wmc:ViewContext version="1.1.0"
 			    id="eos_data_gateways"
-			    xmlns="http://www.opengis.net/context"
+			    xmlns:wmc="http://www.opengis.net/context"
 			    xmlns:xlink="http://www.w3.org/1999/xlink"
 			    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			    xmlns:sld="http://www.opengis.net/sld"
 			    xsi:schemaLocation="http://www.opengis.net/context context.xsd">
-	<General>
-		<Window width="500" height="300" />
-		<BoundingBox SRS="EPSG:4326" minx="-180.000000" miny="-90.000000" maxx="180.000000" maxy="90.000000"/>
-		<Title>EOS Data Gateways</Title>
-		<KeywordList>
-			<Keyword>EOS</Keyword>
-			<Keyword>EOSDIS</Keyword>
-			<Keyword>NASA</Keyword>
-			<Keyword>CCRS</Keyword>
-			<Keyword>CEOS</Keyword>
-			<Keyword>OGC</Keyword>
-		</KeywordList>
-		<Abstract>Map View of EOSDIS partners locations</Abstract>
-		<LogoURL width="130" height="74" format="image/gif">
-			<OnlineResource xlink:type="simple" xlink:href="http://redhook.gsfc.nasa.gov/~imswww/pub/icons/logo.gif"/>
-		</LogoURL>
-		<DescriptionURL format="text/html">
-			<OnlineResource xlink:type="simple" xlink:href="http://eos.nasa.gov/imswelcome"/>
-		</DescriptionURL>
-		<ContactInformation>
-			<ContactPersonPrimary>
-				<ContactPerson>Tom Kralidis</ContactPerson>
-				<ContactOrganization>Environment Canada</ContactOrganization>
-			</ContactPersonPrimary>
-			<ContactPosition>Systems Scientist</ContactPosition>
-			<ContactAddress>
-				<AddressType>postal</AddressType>
-				<Address>867 Lakeshore Road</Address>
-				<City>Burlington</City>
-				<StateOrProvince>Ontario</StateOrProvince>
-				<PostCode>L7R 4A6</PostCode>
-				<Country>Canada</Country>
-			</ContactAddress>
-			<ContactVoiceTelephone>+01-905-336-4409</ContactVoiceTelephone>
-			<ContactFacsimileTelephone>+01-905-336-4499</ContactFacsimileTelephone>
-			<ContactElectronicMailAddress>tom.kralidis@ec.gc.ca</ContactElectronicMailAddress>
-		</ContactInformation>
-	</General>
-	<LayerList>
-		<Layer queryable="1" hidden="0">
-			<Server service="OGC:WMS" version="1.1.1" title="ESA CubeSERV">
-				<OnlineResource xlink:type="simple" xlink:href="http://mapserv2.esrin.esa.it/cubestor/cubeserv/cubeserv.cgi"/>
-			</Server>
-			<Name>WORLD_MODIS_1KM:MapAdmin</Name>
-			<Title>WORLD_MODIS_1KM</Title>
-			<Abstract>Global maps derived from various Earth Observation sensors / WORLD_MODIS_1KM:MapAdmin</Abstract>
-			<SRS>EPSG:4326</SRS>
-			<FormatList>
-				<Format current="1">image/png</Format>
-				<Format>image/gif</Format>
-				<Format>image/jpeg</Format>
-			</FormatList>
-			<StyleList>
-				<Style current="1">
-					<Name>default</Name>
-					<Title>default</Title>
-					<LegendURL width="16" height="16" format="image/gif">
-						<OnlineResource xlink:type="simple" xlink:href="http://mapserv2.esrin.esa.it/cubestor/cubeserv/cubeserv.cgi?version=1.1.1&amp;request=GetLegendGraphic&amp;layer=WORLD_MODIS_1KM:MapAdmin&amp;style=default&amp;format=image/gif"/>
-					</LegendURL>
-				</Style>
-			</StyleList>
-		</Layer>
-		<Layer queryable="0" hidden="0">
-			<Server service="OGC:WMS" version="1.1.1" title="The GLOBE Program Visualization Server">
-				<OnlineResource xlink:type="simple" xlink:href="http://globe.digitalearth.gov/viz-bin/wmt.cgi"/>
-			</Server>
-			<Name>COASTLINES</Name>
-			<Title>Coastlines</Title>
-			<Abstract>Context layer: Coastlines</Abstract>
-			<SRS>EPSG:4326</SRS>
-			<FormatList>
-				<Format current="1">image/gif</Format>
-				<Format>image/png</Format>
-			</FormatList>
-			<StyleList>
-				<Style current="1">
-					<Name>default</Name>
-					<Title>Default</Title>
-					<LegendURL width="180" format="image/gif" height="50">
-						<OnlineResource xlink:type="simple" xlink:href="http://globe.digitalearth.gov/globe/en/icons/colorbars/COASTLINES.gif"/>
-					</LegendURL>
-				</Style>
-			</StyleList>
-		</Layer>
-		<Layer queryable="1" hidden="0">
-			<Server service="OGC:WMS" version="1.1.1" title="The GLOBE Program Visualization Server">
-				<OnlineResource xlink:type="simple" xlink:href="http://globe.digitalearth.gov/viz-bin/wmt.cgi"/>
-			</Server>
-			<Name>NATIONAL</Name>
-			<Title>National Boundaries</Title>
-			<Abstract>Context layer: National Boundaries</Abstract>
-			<SRS>EPSG:4326</SRS>
-			<FormatList>
-				<Format current="1">image/gif</Format>
-				<Format>image/png</Format>
-			</FormatList>
-			<StyleList>
-				<Style current="1">
-					<Name>default</Name>
-					<Title>Default</Title>
-					<LegendURL width="180" format="image/gif" height="50">
-						<OnlineResource xlink:type="simple" xlink:href="http://globe.digitalearth.gov/globe/en/icons/colorbars/NATIONAL.gif"/>
-					</LegendURL>
-				</Style>
-			</StyleList>
-		</Layer>
-		<Layer queryable="1" hidden="0">
-			<Server service="OGC:WMS" version="1.1.1" title="Canada Centre for Remote Sensing Web Map Service">
-				<OnlineResource xlink:type="simple" xlink:href="http://ceoware2.ccrs.nrcan.gc.ca/cubewerx/cubeserv/cubeserv.cgi"/>
-			</Server>
-			<Name>EOS_DATA_GATEWAYS:CEOWARE2</Name>
-			<Title>EOS Data Gateways</Title>
-			<Abstract>Locations of EOS Data Gateway Locations. The same services and data are available through each gateway location.</Abstract>
+	<wmc:General>
+		<wmc:Window width="500" height="300" />
+		<wmc:BoundingBox SRS="EPSG:4326" minx="-180.000000" miny="-90.000000" maxx="180.000000" maxy="90.000000"/>
+		<wmc:Title>EOS Data Gateways</wmc:Title>
+		<wmc:KeywordList>
+			<wmc:Keyword>EOS</wmc:Keyword>
+			<wmc:Keyword>EOSDIS</wmc:Keyword>
+			<wmc:Keyword>NASA</wmc:Keyword>
+			<wmc:Keyword>CCRS</wmc:Keyword>
+			<wmc:Keyword>CEOS</wmc:Keyword>
+			<wmc:Keyword>OGC</wmc:Keyword>
+		</wmc:KeywordList>
+		<wmc:Abstract>Map View of EOSDIS partners locations</wmc:Abstract>
+		<wmc:LogoURL width="130" height="74" format="image/gif">
+			<wmc:OnlineResource xlink:type="simple" xlink:href="http://redhook.gsfc.nasa.gov/~imswww/pub/icons/logo.gif"/>
+		</wmc:LogoURL>
+		<wmc:DescriptionURL format="text/html">
+			<wmc:OnlineResource xlink:type="simple" xlink:href="http://eos.nasa.gov/imswelcome"/>
+		</wmc:DescriptionURL>
+		<wmc:ContactInformation>
+			<wmc:ContactPersonPrimary>
+				<wmc:ContactPerson>Tom Kralidis</wmc:ContactPerson>
+				<wmc:ContactOrganization>Environment Canada</wmc:ContactOrganization>
+			</wmc:ContactPersonPrimary>
+			<wmc:ContactPosition>Systems Scientist</wmc:ContactPosition>
+			<wmc:ContactAddress>
+				<wmc:AddressType>postal</wmc:AddressType>
+				<wmc:Address>867 Lakeshore Road</wmc:Address>
+				<wmc:City>Burlington</wmc:City>
+				<wmc:StateOrProvince>Ontario</wmc:StateOrProvince>
+				<wmc:PostCode>L7R 4A6</wmc:PostCode>
+				<wmc:Country>Canada</wmc:Country>
+			</wmc:ContactAddress>
+			<wmc:ContactVoiceTelephone>+01-905-336-4409</wmc:ContactVoiceTelephone>
+			<wmc:ContactFacsimileTelephone>+01-905-336-4499</wmc:ContactFacsimileTelephone>
+			<wmc:ContactElectronicMailAddress>tom.kralidis@ec.gc.ca</wmc:ContactElectronicMailAddress>
+		</wmc:ContactInformation>
+	</wmc:General>
+	<wmc:LayerList>
+		<wmc:Layer queryable="1" hidden="0">
+			<wmc:Server service="OGC:WMS" version="1.1.1" title="ESA CubeSERV">
+				<wmc:OnlineResource xlink:type="simple" xlink:href="http://mapserv2.esrin.esa.it/cubestor/cubeserv/cubeserv.cgi"/>
+			</wmc:Server>
+			<wmc:Name>WORLD_MODIS_1KM:MapAdmin</wmc:Name>
+			<wmc:Title>WORLD_MODIS_1KM</wmc:Title>
+			<wmc:Abstract>Global maps derived from various Earth Observation sensors / WORLD_MODIS_1KM:MapAdmin</wmc:Abstract>
+			<wmc:SRS>EPSG:4326</wmc:SRS>
+			<wmc:FormatList>
+				<wmc:Format current="1">image/png</wmc:Format>
+				<wmc:Format>image/gif</wmc:Format>
+				<wmc:Format>image/jpeg</wmc:Format>
+			</wmc:FormatList>
+			<wmc:StyleList>
+				<wmc:Style current="1">
+					<wmc:Name>default</wmc:Name>
+					<wmc:Title>default</wmc:Title>
+					<wmc:LegendURL width="16" height="16" format="image/gif">
+						<wmc:OnlineResource xlink:type="simple" xlink:href="http://mapserv2.esrin.esa.it/cubestor/cubeserv/cubeserv.cgi?version=1.1.1&amp;request=GetLegendGraphic&amp;layer=WORLD_MODIS_1KM:MapAdmin&amp;style=default&amp;format=image/gif"/>
+					</wmc:LegendURL>
+				</wmc:Style>
+			</wmc:StyleList>
+		</wmc:Layer>
+		<wmc:Layer queryable="0" hidden="0">
+			<wmc:Server service="OGC:WMS" version="1.1.1" title="The GLOBE Program Visualization Server">
+				<wmc:OnlineResource xlink:type="simple" xlink:href="http://globe.digitalearth.gov/viz-bin/wmt.cgi"/>
+			</wmc:Server>
+			<wmc:Name>COASTLINES</wmc:Name>
+			<wmc:Title>Coastlines</wmc:Title>
+			<wmc:Abstract>Context layer: Coastlines</wmc:Abstract>
+			<wmc:SRS>EPSG:4326</wmc:SRS>
+			<wmc:FormatList>
+				<wmc:Format current="1">image/gif</wmc:Format>
+				<wmc:Format>image/png</wmc:Format>
+			</wmc:FormatList>
+			<wmc:StyleList>
+				<wmc:Style current="1">
+					<wmc:Name>default</wmc:Name>
+					<wmc:Title>Default</wmc:Title>
+					<wmc:LegendURL width="180" format="image/gif" height="50">
+						<wmc:OnlineResource xlink:type="simple" xlink:href="http://globe.digitalearth.gov/globe/en/icons/colorbars/COASTLINES.gif"/>
+					</wmc:LegendURL>
+				</wmc:Style>
+			</wmc:StyleList>
+		</wmc:Layer>
+		<wmc:Layer queryable="1" hidden="0">
+			<wmc:Server service="OGC:WMS" version="1.1.1" title="The GLOBE Program Visualization Server">
+				<wmc:OnlineResource xlink:type="simple" xlink:href="http://globe.digitalearth.gov/viz-bin/wmt.cgi"/>
+			</wmc:Server>
+			<wmc:Name>NATIONAL</wmc:Name>
+			<wmc:Title>National Boundaries</wmc:Title>
+			<wmc:Abstract>Context layer: National Boundaries</wmc:Abstract>
+			<wmc:SRS>EPSG:4326</wmc:SRS>
+			<wmc:FormatList>
+				<wmc:Format current="1">image/gif</wmc:Format>
+				<wmc:Format>image/png</wmc:Format>
+			</wmc:FormatList>
+			<wmc:StyleList>
+				<wmc:Style current="1">
+					<wmc:Name>default</wmc:Name>
+					<wmc:Title>Default</wmc:Title>
+					<wmc:LegendURL width="180" format="image/gif" height="50">
+						<wmc:OnlineResource xlink:type="simple" xlink:href="http://globe.digitalearth.gov/globe/en/icons/colorbars/NATIONAL.gif"/>
+					</wmc:LegendURL>
+				</wmc:Style>
+			</wmc:StyleList>
+		</wmc:Layer>
+		<wmc:Layer queryable="1" hidden="0">
+			<wmc:Server service="OGC:WMS" version="1.1.1" title="Canada Centre for Remote Sensing Web Map Service">
+				<wmc:OnlineResource xlink:type="simple" xlink:href="http://ceoware2.ccrs.nrcan.gc.ca/cubewerx/cubeserv/cubeserv.cgi"/>
+			</wmc:Server>
+			<wmc:Name>EOS_DATA_GATEWAYS:CEOWARE2</wmc:Name>
+			<wmc:Title>EOS Data Gateways</wmc:Title>
+			<wmc:Abstract>Locations of EOS Data Gateway Locations. The same services and data are available through each gateway location.</wmc:Abstract>
 			<sld:MinScaleDenominator>1000</sld:MinScaleDenominator>
 			<sld:MaxScaleDenominator>500000</sld:MaxScaleDenominator>
-			<SRS>EPSG:4326</SRS>
-			<FormatList>
-				<Format current="1">image/gif</Format>
-				<Format>image/png</Format>
-				<Format>image/jpeg</Format>
-			</FormatList>
-			<StyleList>
-				<Style current="1">
-					<Name>default</Name>
-					<Title>default</Title>
-					<LegendURL width="16" height="16" format="image/gif">
-						<OnlineResource xlink:type="simple" xlink:href="http://ceoware2.ccrs.nrcan.gc.ca/cubewerx/cubeserv/cubeserv.cgi?version=1.1.1&amp;request=GetLegendGraphic&amp;layer=EOS_DATA_GATEWAYS:CEOWARE2&amp;style=default&amp;format=image/gif"/>
-					</LegendURL>
-				</Style>
-			</StyleList>
-		</Layer>
-	</LayerList>
-</ViewContext> 
+			<wmc:SRS>EPSG:4326</wmc:SRS>
+			<wmc:FormatList>
+				<wmc:Format current="1">image/gif</wmc:Format>
+				<wmc:Format>image/png</wmc:Format>
+				<wmc:Format>image/jpeg</wmc:Format>
+			</wmc:FormatList>
+			<wmc:StyleList>
+				<wmc:Style current="1">
+					<wmc:Name>default</wmc:Name>
+					<wmc:Title>default</wmc:Title>
+					<wmc:LegendURL width="16" height="16" format="image/gif">
+						<wmc:OnlineResource xlink:type="simple" xlink:href="http://ceoware2.ccrs.nrcan.gc.ca/cubewerx/cubeserv/cubeserv.cgi?version=1.1.1&amp;request=GetLegendGraphic&amp;layer=EOS_DATA_GATEWAYS:CEOWARE2&amp;style=default&amp;format=image/gif"/>
+					</wmc:LegendURL>
+				</wmc:Style>
+			</wmc:StyleList>
+		</wmc:Layer>
+	</wmc:LayerList>
+</wmc:ViewContext>

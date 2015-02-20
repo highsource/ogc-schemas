@@ -62,6 +62,7 @@
 		<module>schemas</module>
 		<module>schema-parent</module>
 		<module>dtd-parent</module>
+		<module>context</module>
 		<module>csw</module>
 		<module>filter</module>
 		<module>gml</module>

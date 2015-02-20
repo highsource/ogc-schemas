@@ -4,10 +4,10 @@
 	jaxb:extensionBindingPrefixes="xjc">
 
 	<jaxb:bindings 
-		schemaLocation="http://schemas.opengis.net/context/1.0.0/context.xsd" 
+		schemaLocation="http://schemas.opengis.net/context/1.1.0/context.xsd" 
 		node="/xs:schema">
 		<jaxb:schemaBindings>
-			<jaxb:package name="net.opengis.wmc.v_1_0_0"/>
+			<jaxb:package name="net.opengis.wmc.v_1_1_0"/>
 		</jaxb:schemaBindings>
 	</jaxb:bindings>
 
