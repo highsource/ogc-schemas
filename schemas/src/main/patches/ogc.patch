@@ -20,6 +20,21 @@ index 2a5a431..5ce6c03 100644
  	</xs:complexType>
 +	-->
  </xs:schema>
+diff --git ogc/globalBindings.xjb ogc/globalBindings.xjb
+index 47cdb6e..4053268 100644
+--- ogc/globalBindings.xjb
++++ ogc/globalBindings.xjb
+@@ -7,7 +7,9 @@
+ 		fixedAttributeAsConstantProperty="true"
+ 		typesafeEnumBase="xs:string"
+ 		typesafeEnumMemberName="generateName" 
+-		generateIsSetMethod="true">
++		generateIsSetMethod="false"
++		generateMixedExtensions="true">
++
+ 		<xjc:noValidator />
+ 		<xjc:noValidatingUnmarshaller />
+ 	</jaxb:globalBindings>
 diff --git ogc/gml/3.1.1/base/temporal.xsd ogc/gml/3.1.1/base/temporal.xsd
 index 96be3f7..19ef923 100644
 --- ogc/gml/3.1.1/base/temporal.xsd
