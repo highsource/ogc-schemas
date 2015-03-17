@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    OGC LICENSE HEADER
+
+    The official OGC XML schemas can be accessed under http://schemas.opengis.net.
+    Please consider the schema copyright notices: http://www.opengeospatial.org/ogc/document
+    and the OGC Copyright Notice and Disclaimers: http://www.opengeospatial.org/ogc/legal
+    If there are any questions left there is also a copyright FAQ: http://www.opengeospatial.org/ogc/legalfaq
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:ows="http://www.opengis.net/ows/2.0"
+	xmlns:wps="http://www.opengis.net/wps/2.0.0"
+	targetNamespace="http://www.opengis.net/wps/2.0.0"
+	elementFormDefault="qualified"
+	xml:lang="en"
+	version="1.0.0">
+	<annotation>
+		<documentation>
+			<description>This XML Schema Document encodes the WPS Delete operation information elements.</description>
+			<copyright>
+				WPS is an OGC Standard.
+				Copyright (c) 2013 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</copyright>
+		</documentation>
+	</annotation>
+	
+	<!-- === INCLUDES === -->
+	<include schemaLocation="wpsCommon.xsd"/>
+	
+	<!-- =========================================================== -->
+	<!-- Delete request elements and types -->
+	<!-- =========================================================== -->
+	<element name="Dismiss">
+		<annotation>
+			<documentation>
+				WPS GetStatus operation request. This operation is used to query status information of executed processes.
+				The response to a GetStatus operation is a StatusInfo document or an exception.
+				Depending on the implementation, a WPS may "forget" old process executions sooner or later.
+				In this case, there is no status information available and an exception shall be returned instead of a StatusInfo response. 
+			</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="wps:RequestBaseType">
+					<sequence>
+						<element ref="wps:JobID"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	
+	
+</schema>

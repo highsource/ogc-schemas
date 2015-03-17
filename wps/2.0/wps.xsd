@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    OGC LICENSE HEADER
+
+    The official OGC XML schemas can be accessed under http://schemas.opengis.net.
+    Please consider the schema copyright notices: http://www.opengeospatial.org/ogc/document
+    and the OGC Copyright Notice and Disclaimers: http://www.opengeospatial.org/ogc/legal
+    If there are any questions left there is also a copyright FAQ: http://www.opengeospatial.org/ogc/legalfaq
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:wps="http://www.opengis.net/wps/2.0.0"
+	targetNamespace="http://www.opengis.net/wps/2.0.0" xml:lang="en"
+	version="2.0.0">
+	<annotation>
+		<appinfo>$Id: wps.xsd 2013-03-05 $</appinfo>
+		<documentation>
+			<description>This XML Schema Document encodes the WPS DescribeProcess
+				operation response.</description>
+			<copyright>
+				WPS is an OGC Standard.
+				Copyright (c) 2013 Open Geospatial Consortium.
+				To obtain additional rights of use, visit
+				http://www.opengeospatial.org/legal/ .
+			</copyright>
+		</documentation>
+	</annotation>
+	
+	<!-- === INCLUDES === -->
+	<include schemaLocation="wpsCommon.xsd"/>
+	<include schemaLocation="dataTypes.xsd"/>
+	<include schemaLocation="processDescription.xsd"/>
+	<include schemaLocation="wpsExecute.xsd"/>
+	<include schemaLocation="wpsGetCapabilities.xsd"/>
+	<include schemaLocation="wpsGetStatus.xsd"/>
+	<include schemaLocation="wpsDismiss.xsd"/>
+	
+	<!-- TODO: add remaining when finished -->
+</schema>
