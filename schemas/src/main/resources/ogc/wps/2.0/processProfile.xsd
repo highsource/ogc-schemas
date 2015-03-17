@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    OGC LICENSE HEADER
+
+    The official OGC XML schemas can be accessed under http://schemas.opengis.net.
+    Please consider the schema copyright notices: http://www.opengeospatial.org/ogc/document
+    and the OGC Copyright Notice and Disclaimers: http://www.opengeospatial.org/ogc/legal
+    If there are any questions left there is also a copyright FAQ: http://www.opengeospatial.org/ogc/legalfaq
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:ows="http://www.opengis.net/ows/2.0"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:wps="http://www.opengis.net/wps/2.0.0"
+	targetNamespace="http://www.opengis.net/wps/2.0.0"
+	elementFormDefault="qualified"
+	xml:lang="en"
+	version="1.0.0">
+	<annotation>
+		<appinfo>$Id: processProfile.xsd 2014-01-31 $</appinfo>
+		<documentation>
+			<description>Description of a Process, designed for Process identification and discovery.</description>
+			<copyright>
+				WPS is an OGC Standard.
+				Copyright (c) 2014 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</copyright>
+		</documentation>
+	</annotation>
+	
+		<!-- === IMPORTS === -->
+	<import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsCommon.xsd" />
+	<import namespace="http://www.w3.org/2001/XMLSchema" schemaLocation="http://www.w3.org/2001/XMLSchema.xsd" />
+	
+	<!-- Required for links in profiles -->
+	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+	
+	<!-- === INCLUDES === -->
+	<include schemaLocation="processDescription.xsd"/>
+	
+	<!-- =========================================================== -->
+	<element name="GenericProcess" type="wps:GenericProcessType"/>
+	<!-- =========================================================== -->
+	<complexType name="GenericProcessType">
+		<complexContent>
+			<extension base="wps:DescriptionType">
+				<annotation>
+					<documentation>
+						In this use, the DescriptionType shall describe process properties.
+					</documentation>
+				</annotation>
+				<sequence>
+					<element name="Input" type="wps:GenericInputType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>
+								A process can have zero or more inputs.
+							</documentation>
+						</annotation>
+					</element>
+					<element name="Output" type="wps:GenericOutputType" minOccurs="1" maxOccurs="unbounded">
+						<annotation>
+							<documentation>
+								A process can have one or more outputs.
+							</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- =========================================================== -->
+	<complexType name="GenericInputType">
+		<annotation>
+			<documentation>Description of an input to a process. </documentation>
+		</annotation>
+		<complexContent>
+			<extension base="wps:DescriptionType">
+				<annotation>
+					<documentation>
+						In this use, the DescriptionType shall describe a process input.
+					</documentation>
+				</annotation>
+				<sequence>
+					<element name="Input" type="wps:GenericInputType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+				<attributeGroup ref="occurs">
+					<annotation>
+						<documentation>
+							This attribute defines the cardinality of a particular input.
+						</documentation>
+					</annotation>
+				</attributeGroup>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- =========================================================== -->
+	<complexType name="GenericOutputType">
+		<annotation>
+			<documentation>Description of a process Output. </documentation>
+		</annotation>
+		<complexContent>
+			<extension base="wps:DescriptionType">
+				<annotation>
+					<documentation>
+						In this use, the DescriptionType shall describe a process output.
+					</documentation>
+				</annotation>
+				<sequence>
+					<element name="Output" type="wps:GenericOutputType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+</schema>

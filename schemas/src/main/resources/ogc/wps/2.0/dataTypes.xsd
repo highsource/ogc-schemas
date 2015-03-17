@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    OGC LICENSE HEADER
+
+    The official OGC XML schemas can be accessed under http://schemas.opengis.net.
+    Please consider the schema copyright notices: http://www.opengeospatial.org/ogc/document
+    and the OGC Copyright Notice and Disclaimers: http://www.opengeospatial.org/ogc/legal
+    If there are any questions left there is also a copyright FAQ: http://www.opengeospatial.org/ogc/legalfaq
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:ows="http://www.opengis.net/ows/2.0"
+	xmlns:wps="http://www.opengis.net/wps/2.0.0"
+	targetNamespace="http://www.opengis.net/wps/2.0.0"
+	xml:lang="en"
+	version="1.0.0">
+	<annotation>
+		<appinfo>$Id: dataTypes.xsd 2014-05-20 $</appinfo>
+		<documentation>
+			<description>This XML Schema Document defines basic data types for WPS.</description>
+			<copyright>
+				WPS is an OGC Standard.
+				Copyright (c) 2014 Open Geospatial Consortium.
+				To obtain additional rights of use, visit
+				http://www.opengeospatial.org/legal/ .
+			</copyright>
+		</documentation>
+	</annotation>
+	
+	<!-- === IMPORTS === -->
+	<import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsCommon.xsd" />
+	<include schemaLocation="processDescription.xsd"/>
+	
+	<!-- =========================================================== -->
+	<!-- LiteralData elements and types -->
+	<!-- =========================================================== -->
+	<element name="LiteralData" type="wps:LiteralDataType" substitutionGroup="wps:DataDescription"/>
+	<complexType name="LiteralDataType">
+		<complexContent>
+			<extension base="wps:DataDescriptionType">
+				<sequence>
+					<element name="LiteralDataDomain" maxOccurs="unbounded">
+						<annotation>
+							<documentation>
+								Literal Data inputs and outputs may be specified for several domains, i.e. distance units in meters, kilometers and feet.
+								One of these must be the default domain.
+							</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="wps:LiteralDataDomainType">
+									<attribute name="default" type="boolean" use="optional">
+										<annotation>
+											<documentation>
+												Indicates that this LiteralDataDomain is the default domain.
+											</documentation>
+										</annotation>
+									</attribute>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- =========================================================== -->	
+	<complexType name="LiteralDataDomainType">
+		<annotation>
+			<documentation>
+				A literal data domain consists of a value type and range,
+				and optionally a unit of measurement and a default value.
+			</documentation>
+		</annotation>
+		<sequence>
+			<choice>
+				<element ref="ows:AllowedValues" />
+				<element ref="ows:AnyValue" />
+				<element ref="ows:ValuesReference" />
+			</choice>
+			<element ref="ows:DataType" minOccurs="0" />
+			<element ref="ows:UOM" minOccurs="0"/>
+			<element ref="ows:DefaultValue" minOccurs="0" />
+		</sequence>
+	</complexType>
+	<!-- =========================================================== -->
+	<element name="LiteralValue">
+		<complexType>
+			<annotation>
+				<documentation>One simple literal value (such as an integer or real number) that is embedded in the Execute operation request or response. </documentation>
+			</annotation>
+			<simpleContent>
+				<extension base="ows:ValueType">
+					<annotation>
+						<documentation>String containing the Literal value (e.g., "49").</documentation>
+					</annotation>
+					<attribute name="dataType" type="anyURI" use="optional">
+						<annotation>
+							<documentation>Identifies the data type of this literal input or output. This dataType should be included for each quantity whose value is not a simple string. </documentation>
+						</annotation>
+					</attribute>
+					<attribute name="uom" type="anyURI" use="optional">
+						<annotation>
+							<documentation>Identifies the value unit of this literal input or output. Shall be a value unit identified in the Process description for this input or output. </documentation>
+						</annotation>
+					</attribute>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+	<!-- =========================================================== -->	
+	
+	<!-- =========================================================== -->
+	<!-- BoundingBoxData elements and types -->
+	<!-- =========================================================== -->
+	<element name="BoundingBoxData" substitutionGroup="wps:DataDescription">
+		<annotation>
+			<documentation>
+				Indicates that this Input shall be a BoundingBox data
+				structure that is embedded in the execute request, and provides a
+				list of the Coordinate Reference System support for this Bounding
+				Box.
+			</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="wps:DataDescriptionType">
+					<sequence>
+						<annotation>
+							<documentation>
+								Identifies the default CRS that will be used
+								unless the Execute operation request specifies
+								another supported CRS.
+							</documentation>
+						</annotation>
+						<element ref="wps:SupportedCRS" maxOccurs="unbounded" />
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- =========================================================== -->
+	<element name="SupportedCRS">
+		<annotation>
+			<documentation>
+				Supported  CRS supported for this Input/Output. "default" shall be used
+				on only one element. This default element identifies the default CRS.
+			</documentation>
+		</annotation>
+		<complexType>
+			<simpleContent>
+				<extension base="anyURI">
+					<attribute name="default" type="boolean" use="optional"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+	<!-- =========================================================== -->
+	
+	<!-- =========================================================== -->
+	<!-- ComplexData elements and types -->
+	<!-- =========================================================== -->
+	<element name="ComplexData" type="wps:ComplexDataType" substitutionGroup="wps:DataDescription">
+		<annotation>
+			<documentation>
+				Indicates that this input/output shall be a complex data
+				structure (such as a GML document), and provides a list of
+				Formats, Encodings, and Schemas supported for this input/output. The
+				value of this ComplexData structure can be input either embedded
+				in the Execute request or remotely accessible to the server. The
+				client can select from among the identified combinations of
+				Formats, Encodings, and Schemas to specify the form of the input/output.
+				This allows for complete specification of particular versions of
+				GML, or image formats.
+			</documentation>
+		</annotation>
+	</element>
+	<!-- =========================================================== -->
+	<complexType name="ComplexDataType">
+		<complexContent>
+			<extension base="wps:DataDescriptionType">
+				<sequence>
+					<any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+</schema>
