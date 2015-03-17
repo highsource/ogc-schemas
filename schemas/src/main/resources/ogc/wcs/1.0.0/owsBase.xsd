@@ -38,7 +38,7 @@
 	<!-- ==============================================================
            includes and imports
 	============================================================== -->
-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
 	<!-- ============================================================
 		 Elements and types		
 	============================================================== -->
