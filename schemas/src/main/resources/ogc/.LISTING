@@ -1,5 +1,7 @@
 .timestamp
 .LISTING
+arml/2.0/arml.xsd
+arml/ReadMe.txt
 citygml/1.0/cityGMLBase.xsd
 citygml/1.0/ReadMe.txt
 citygml/2.0/cityGMLBase.xsd

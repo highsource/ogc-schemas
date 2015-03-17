@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.opengis.net/arml/2.0" xmlns="http://www.opengis.net/arml/2.0"
+	elementFormDefault="qualified" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:gml="http://www.opengis.net/gml/3.2" version="2.0.0">
+
+	<xsd:annotation>
+		<xsd:documentation>
+			ARML is an OGC Standard. 
+			Copyright (c) 2015 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:import namespace="http://www.w3.org/1999/xlink"
+		schemaLocation="http://www.w3.org/1999/xlink.xsd" />
+	<xsd:import schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"
+		namespace="http://www.opengis.net/gml/3.2" />
+
+	<!-- Document Structure -->
+	<xsd:complexType name="ArmlType">
+		<xsd:sequence>
+			<xsd:element name="ARElements" maxOccurs="1" minOccurs="1">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="ARElement" minOccurs="0" maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="style" maxOccurs="unbounded" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="type" type="xsd:string" use="optional" />
+							<xsd:attribute ref="xlink:href" use="optional" />
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="script" maxOccurs="unbounded" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="type" type="xsd:string" use="optional" />
+							<xsd:attribute ref="xlink:href" use="optional" />
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="arml" type="ArmlType" />
+
+	<!-- ARElement -->
+	<xsd:complexType name="ARElementType" abstract="true">
+		<xsd:attribute name="id" type="xsd:ID" use="optional" />
+	</xsd:complexType>
+
+	<xsd:element name="ARElement" abstract="true" type="ARElementType" />
+
+	<!-- Feature -->
+	<xsd:complexType name="FeatureType">
+		<xsd:complexContent>
+			<xsd:extension base="ARElementType">
+				<xsd:sequence>
+					<xsd:element name="name" type="xsd:string" maxOccurs="1"
+						minOccurs="0" />
+					<xsd:element name="description" type="xsd:string"
+						maxOccurs="1" minOccurs="0" />
+					<xsd:element name="enabled" type="xsd:boolean"
+						maxOccurs="1" minOccurs="0" />
+					<xsd:element name="metadata" maxOccurs="1" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="anchors" maxOccurs="1" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="Anchor" minOccurs="0" maxOccurs="unbounded" />
+								<xsd:element name="anchorRef" maxOccurs="unbounded"
+									minOccurs="0">
+									<xsd:complexType>
+										<xsd:attribute ref="xlink:href" use="required" />
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="Feature" type="FeatureType"
+		substitutionGroup="ARElement" />
+
+	<!-- Anchor -->
+	<xsd:complexType name="AnchorType" abstract="true">
+		<xsd:complexContent>
+			<xsd:extension base="ARElementType">
+				<xsd:sequence>
+					<xsd:element name="enabled" type="xsd:boolean"
+						maxOccurs="1" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="Anchor" type="AnchorType" abstract="true"
+		substitutionGroup="ARElement" />
+
+	<!-- ScreenAnchor -->
+	<xsd:complexType name="ScreenAnchorType">
+		<xsd:complexContent>
+			<xsd:extension base="AnchorType">
+				<xsd:sequence>
+					<xsd:element name="style" type="xsd:string" maxOccurs="1"
+						minOccurs="0" />
+					<xsd:element name="class" type="xsd:string" maxOccurs="1"
+						minOccurs="0" />
+					<xsd:element name="assets" maxOccurs="1" minOccurs="1">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="Label" maxOccurs="unbounded"
+									minOccurs="0" />
+								<xsd:element name="assetRef" maxOccurs="unbounded"
+									minOccurs="0">
+									<xsd:complexType>
+										<xsd:attribute ref="xlink:href" use="required" />
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="ScreenAnchor" type="ScreenAnchorType"
+		substitutionGroup="Anchor" />
+
+	<!-- ARAnchor -->
+	<xsd:complexType name="ARAnchorType" abstract="true">
+		<xsd:complexContent>
+			<xsd:extension base="AnchorType">
+				<xsd:sequence>
+					<xsd:element name="assets" maxOccurs="1" minOccurs="1">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="VisualAsset" maxOccurs="unbounded"
+									minOccurs="0" />
+								<xsd:element name="assetRef" maxOccurs="unbounded"
+									minOccurs="0">
+									<xsd:complexType>
+										<xsd:attribute ref="xlink:href" use="required" />
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="ARAnchor" type="ARAnchorType" abstract="true"
+		substitutionGroup="Anchor" />
+
+	<!-- Geometry -->
+	<xsd:complexType name="GeometryType">
+		<xsd:complexContent>
+			<xsd:extension base="ARAnchorType">
+				<xsd:choice>
+					<xsd:element ref="gml:Point" />
+					<xsd:element ref="gml:LineString" />
+					<xsd:element ref="gml:Polygon" />
+				</xsd:choice>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="Geometry" type="GeometryType"
+		substitutionGroup="ARAnchor" />
+
+	<!-- Tracker -->
+	<xsd:complexType name="TrackerType">
+		<xsd:complexContent>
+			<xsd:extension base="ARElementType">
+				<xsd:sequence>
+					<xsd:element name="uri" maxOccurs="1" minOccurs="1">
+						<xsd:complexType>
+							<xsd:attribute ref="xlink:href" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="src" maxOccurs="1" minOccurs="0">
+						<xsd:complexType>
+							<xsd:attribute ref="xlink:href" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="Tracker" type="TrackerType"
+		substitutionGroup="ARElement" />
+
+	<!-- Trackable -->
+	<xsd:complexType name="TrackableType">
+		<xsd:complexContent>
+			<xsd:extension base="ARAnchorType">
+				<xsd:sequence>
+					<xsd:element name="config" maxOccurs="unbounded"
+						minOccurs="1">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="tracker" maxOccurs="1" minOccurs="1">
+									<xsd:complexType>
+										<xsd:attribute ref="xlink:href" use="required" />
+									</xsd:complexType>
+								</xsd:element>
+								<xsd:element name="src" type="xsd:string" maxOccurs="1"
+									minOccurs="1" />
+							</xsd:sequence>
+							<xsd:attribute name="order" type="xsd:int" use="optional">
+							</xsd:attribute>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="size" type="xsd:double" maxOccurs="1"
+						minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="Trackable" type="TrackableType"
+		substitutionGroup="ARAnchor" />
+
+	<!-- RelativeTo -->
+	<xsd:complexType name="RelativeToType">
+		<xsd:complexContent>
+			<xsd:extension base="ARAnchorType">
+				<xsd:sequence>
+					<xsd:element name="ref" maxOccurs="1" minOccurs="1">
+						<xsd:complexType>
+							<xsd:attribute ref="xlink:href" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:choice>
+						<xsd:element ref="gml:Point" />
+						<xsd:element ref="gml:LineString" />
+						<xsd:element ref="gml:Polygon" />
+					</xsd:choice>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="RelativeTo" type="RelativeToType"
+		substitutionGroup="ARAnchor" />
+
+	<!-- VisualAsset -->
+	<xsd:complexType name="VisualAssetType" abstract="true">
+		<xsd:complexContent>
+			<xsd:extension base="ARElementType">
+				<xsd:sequence>
+					<xsd:element name="enabled" type="xsd:boolean"
+						maxOccurs="1" minOccurs="0" />
+					<xsd:element name="zOrder" type="xsd:int" maxOccurs="1"
+						minOccurs="0" />
+					<xsd:element name="conditions" maxOccurs="1" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="Condition" maxOccurs="unbounded"
+									minOccurs="1"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="Orientation" type="OrientationType"
+						maxOccurs="1" minOccurs="0" />
+					<xsd:element name="ScalingMode" type="ScalingModeType"
+						maxOccurs="1" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="VisualAsset" type="VisualAssetType"
+		abstract="true" substitutionGroup="ARElement" />
+
+	<!-- Orientation -->
+	<xsd:complexType name="OrientationType">
+		<xsd:sequence>
+			<xsd:element name="roll" type="xsd:double" maxOccurs="1"
+				minOccurs="0" />
+			<xsd:element name="tilt" type="xsd:double" maxOccurs="1"
+				minOccurs="0" />
+			<xsd:element name="heading" type="xsd:double" maxOccurs="1"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- ScalingMode -->
+	<xsd:complexType name="ScalingModeType">
+		<xsd:complexContent>
+			<xsd:extension base="ARElementType">
+				<xsd:sequence>
+					<xsd:element name="minScalingDistance" type="xsd:double"
+						maxOccurs="1" minOccurs="0" />
+					<xsd:element name="maxScalingDistance" type="xsd:double"
+						maxOccurs="1" minOccurs="0" />
+					<xsd:element name="scalingFactor" type="xsd:double"
+						maxOccurs="1" minOccurs="0" />
+				</xsd:sequence>
+				<xsd:attribute name="type" use="required">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="natural" />
+							<xsd:enumeration value="custom" />
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<!-- VisualAsset2D -->
+	<xsd:complexType name="VisualAsset2DType" abstract="true">
+		<xsd:complexContent>
+			<xsd:extension base="VisualAssetType">
+				<xsd:sequence>
+					<xsd:element name="width" type="xsd:string" maxOccurs="1"
+						minOccurs="0" />
+					<xsd:element name="height" type="xsd:string" maxOccurs="1"
+						minOccurs="0" />
+					<xsd:element name="orientationMode" maxOccurs="1"
+						minOccurs="0">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="user" />
+								<xsd:enumeration value="absolute" />
+								<xsd:enumeration value="auto" />
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="backside" type="xsd:string"
+						maxOccurs="1" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="VisualAsset2D" type="VisualAsset2DType"
+		abstract="true" substitutionGroup="VisualAsset" />
+
+	<!-- Label -->
+	<xsd:complexType name="LabelType">
+		<xsd:complexContent>
+			<xsd:extension base="VisualAsset2DType">
+				<xsd:sequence>
+					<xsd:element name="href" maxOccurs="1" minOccurs="0">
+						<xsd:complexType>
+							<xsd:attribute ref="xlink:href" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="src" type="xsd:anyType" maxOccurs="1"
+						minOccurs="0" />
+					<xsd:element name="hyperlinkBehavior" maxOccurs="1"
+						minOccurs="0">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="block"></xsd:enumeration>
+								<xsd:enumeration value="blank"></xsd:enumeration>
+								<xsd:enumeration value="self"></xsd:enumeration>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="viewportWidth" type="xsd:positiveInteger"
+						maxOccurs="1" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="Label" type="LabelType"
+		substitutionGroup="VisualAsset2D" />
+
+	<!-- Fill -->
+	<xsd:complexType name="FillType">
+		<xsd:complexContent>
+			<xsd:extension base="VisualAsset2DType">
+				<xsd:sequence>
+					<xsd:element name="style" type="xsd:string" maxOccurs="1"
+						minOccurs="0" />
+					<xsd:element name="class" type="xsd:string" maxOccurs="1"
+						minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="Fill" type="FillType" substitutionGroup="VisualAsset2D" />
+
+	<!-- Text -->
+	<xsd:complexType name="TextType">
+		<xsd:complexContent>
+			<xsd:extension base="VisualAsset2DType">
+				<xsd:sequence>
+					<xsd:element name="src" type="xsd:string" maxOccurs="1"
+						minOccurs="1" />
+					<xsd:element name="style" type="xsd:string" maxOccurs="1"
+						minOccurs="0" />
+					<xsd:element name="class" type="xsd:string" maxOccurs="1"
+						minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="Text" type="TextType" substitutionGroup="VisualAsset2D" />
+
+	<!-- Image -->
+	<xsd:complexType name="ImageType">
+		<xsd:complexContent>
+			<xsd:extension base="VisualAsset2DType">
+				<xsd:sequence>
+					<xsd:element name="href" maxOccurs="1" minOccurs="1">
+						<xsd:complexType>
+							<xsd:attribute ref="xlink:href" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="Image" type="ImageType"
+		substitutionGroup="VisualAsset2D" />
+
+	<!-- Model -->
+	<xsd:complexType name="ModelType">
+		<xsd:complexContent>
+			<xsd:extension base="VisualAssetType">
+				<xsd:sequence>
+					<xsd:element name="href" maxOccurs="1" minOccurs="1">
+						<xsd:complexType>
+							<xsd:attribute ref="xlink:href" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="type" maxOccurs="1" minOccurs="0">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="normal" />
+								<xsd:enumeration value="infrastructure" />
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="Scale" type="ScaleType" maxOccurs="1"
+						minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="Model" type="ModelType"
+		substitutionGroup="VisualAsset" />
+
+	<!-- Scale -->
+	<xsd:complexType name="ScaleType">
+		<xsd:sequence>
+			<xsd:element name="x" type="xsd:double" maxOccurs="1"
+				minOccurs="0" />
+			<xsd:element name="y" type="xsd:double" maxOccurs="1"
+				minOccurs="0" />
+			<xsd:element name="z" type="xsd:double" maxOccurs="1"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- Condition -->
+	<xsd:complexType name="ConditionType" abstract="true">
+		<xsd:complexContent>
+			<xsd:extension base="ARElementType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="Condition" type="ConditionType"
+		abstract="true" substitutionGroup="ARElement" />
+
+	<!-- DistanceCondition -->
+	<xsd:complexType name="DistanceConditionType">
+		<xsd:complexContent>
+			<xsd:extension base="ConditionType">
+				<xsd:sequence>
+					<xsd:element name="max" type="xsd:double" maxOccurs="1"
+						minOccurs="0" />
+					<xsd:element name="min" type="xsd:double" maxOccurs="1"
+						minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="DistanceCondition" type="DistanceConditionType"
+		substitutionGroup="Condition" />
+
+	<!-- SelectedCondition -->
+	<xsd:complexType name="SelectedConditionType">
+		<xsd:complexContent>
+			<xsd:extension base="ConditionType">
+				<xsd:sequence>
+					<xsd:element name="listener" maxOccurs="1" minOccurs="0">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="feature"></xsd:enumeration>
+								<xsd:enumeration value="anchor"></xsd:enumeration>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="selected" type="xsd:boolean"
+						maxOccurs="1" minOccurs="1" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="SelectedCondition" type="SelectedConditionType"
+		substitutionGroup="Condition" />
+
+</xsd:schema>

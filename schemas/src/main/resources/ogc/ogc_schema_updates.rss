@@ -18,18 +18,19 @@
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
 <dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2014-12-03T20:29:14:+00:00
+<dc:date>2015-03-06T15:31:57:+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2014-12-03T20:29:14:+00:00
+<syn:updateBase>2015-03-06T15:31:57:+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
-  <rdf:li rdf:resource="http://schemas.opengis.net/indoorGML/ReadMe.txt#20141203t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/arml/ReadMe.txt#20150225t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/indoorgml/ReadMe.txt#20141203t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20141126t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20141119t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20141118t15" />
@@ -95,9 +96,18 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
-<item rdf:about="http://schemas.opengis.net/indoorGML/ReadMe.txt#20141203t15">
+<item rdf:about="http://schemas.opengis.net/arml/ReadMe.txt#20150225t15">
+<title>OGC ARML 2.0 - Schema Posted</title>
+<link>http://schemas.opengis.net/arml/ReadMe.txt#20150225t15</link>
+<description>The OGC ARML 2.0 schema described in OGC document 12-132r4 has been posted.  This OGC Standard defines the Augmented Reality Markup Language 2.0 (ARML 2.0). ARML 2.0 allows users to describe virtual objects in an Augmented Reality (AR) scene with their appearances and their anchors (a broader concept of a location) related to the real world. Additionally, ARML 2.0 defines ECMAScript bindings to dynamically modify the AR scene based on user behavior and user input. The See http://www.opengeospatial.org/standards/arml for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2015-02-25T15:45:59:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC ARML 2.0 Standard Schema Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/indoorgml/ReadMe.txt#20141203t15">
 <title>OGC IndoorGML 1.0 - Schema Moved and Updated</title>
-<link>http://schemas.opengis.net/indoorGML/ReadMe.txt#20141203t15</link>
+<link>http://schemas.opengis.net/indoorgml/ReadMe.txt#20141203t15</link>
 <description>The OGC IndoorGML 1.0 schema described in OGC document 14-005r3 has been moved and updated.  These modifications reflect OGC-NA recommendations regarding URI names. The See http://www.opengeospatial.org/standards/indoorgml for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2014-12-03T15:45:58:+00:00</dc:date>
