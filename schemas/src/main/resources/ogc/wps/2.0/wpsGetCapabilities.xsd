@@ -28,7 +28,7 @@
 	
 	<!-- === IMPORTS === -->
 	<import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsCommon.xsd" />
-	<!-- import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/-->
+	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 	
 	<!-- === INCLUDES === -->
 	<include schemaLocation="wpsCommon.xsd"/>

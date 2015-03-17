@@ -108,6 +108,7 @@
 								<artifactItem><artifactId>wms-v_1_3_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 
 								<artifactItem><artifactId>wps-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
+								<artifactItem><artifactId>wps-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 							 </artifactItems>
 							<outputDirectory>lib</outputDirectory>
 							<includes>**/*.js</includes>
