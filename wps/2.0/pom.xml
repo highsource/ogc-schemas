@@ -37,6 +37,12 @@
 						<schema>
 							<url>http://schemas.opengis.net/wps/2.0/wps.xsd</url>
 						</schema>
+						<schema>
+							<url>http://schemas.opengis.net/wps/2.0/wpsGetResult.xsd</url>
+						</schema>
+						<schema>
+							<url>http://schemas.opengis.net/wps/2.0/processProfile.xsd</url>
+						</schema>
 					</schemas>
 					<bindings>
 						<binding>
