@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.pixia.com/wami/common"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:wami_common="http://www.pixia.com/wami/common"
+	xmlns:ows="http://www.opengis.net/ows/2.0"
+	elementFormDefault="qualified"
+	version="1.0.0 2011-08-09">
+
+	<import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsAll.xsd" />
+
+	<!-- ********************************************************************* -->
+	<!-- ** The Top-Level Elements. ** -->
+	<!-- ********************************************************************* -->
+	<!-- Refer to the corresponding complexType nodes for documentation -->
+
+	<!-- ********************************************************************* -->
+	<!-- ** Simple Type definitions. ** -->
+	<!-- ********************************************************************* -->
+
+	<simpleType name="ServiceNameType">
+		<annotation>
+			<documentation>
+				Enumeration of the WAMI Service Types as of version 1.0.0
+			</documentation>
+		</annotation>
+		<restriction base="ows:ServiceType">
+			<enumeration value="CS" />
+			<enumeration value="IS" />
+			<enumeration value="VS" />
+			<enumeration value="RS" />
+			<enumeration value="QS" />
+			<enumeration value="VCSS" />
+			<enumeration value="VFS" />
+		</restriction>
+	</simpleType>
+
+	<!-- ********************************************************************* -->
+	<!-- ** Complex Type definitions. ** -->
+	<!-- ********************************************************************* -->
+
+	<complexType name="CommonAbstractWamiRequestType">
+		<attribute name="service" type="wami_common:ServiceNameType"
+			use="required">
+			<annotation>
+				<documentation>
+					This is the top-level WAMI service name.. There are a fixed number of
+					possible values.
+					Any addition of such services would likely require non-trivial
+					extensions to this XSD and thus merrit a new version.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="request" type="string" use="required">
+			<annotation>
+				<documentation>
+					The sub-request of the named service. Each Request/Response document
+					will be correlated to a specific required value here.. Unfortunately,
+					XSD doesn't allow overriding of this value as a fixed parameter, so 
+					XSD is unable to validate this.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="version" type="ows:VersionType" use="required">
+			<annotation>
+				<documentation>
+					WAMI allows multiple simultaneously running versions instances of a
+					given service + request.
+					This allows backward compatibility by having completely isolated XSDs,
+					with the starting point being the URL (as specified in the GetCapabilities
+					Request), and a version-number (specified here). In most cases, the URL
+					for different versions of WAMI will be isolated, but this allows
+					A) validation that a client does not accidentally hit the wrong URL
+					with an expected Schema
+					B) The possibility that a common back-end can parse multiple grammer
+					versions.
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+
+</schema>

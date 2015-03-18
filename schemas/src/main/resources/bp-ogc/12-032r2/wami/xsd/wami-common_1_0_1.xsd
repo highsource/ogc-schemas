@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.pixia.com/wami/common"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:wami_common="http://www.pixia.com/wami/common"
+        xmlns:ows="http://www.opengis.net/ows/2.0"
+        elementFormDefault="qualified"
+        version="1.0.1 2011-08-09">
+
+	<include schemaLocation="wami-common_1_0_0.xsd"/>
+
+    <!-- ********************************************************************* -->
+    <!-- **  The Top-Level Elements.                                         ** -->
+    <!-- ********************************************************************* -->
+    <!-- Refer to the corresponding complexType nodes for documentation -->
+
+    <!-- ********************************************************************* -->
+    <!-- **  Simple Type definitions.                                       ** -->
+    <!-- ********************************************************************* -->
+
+    <!-- ********************************************************************* -->
+    <!-- **  Complex Type definitions.                                      ** -->
+    <!-- ********************************************************************* -->
+
+</schema>

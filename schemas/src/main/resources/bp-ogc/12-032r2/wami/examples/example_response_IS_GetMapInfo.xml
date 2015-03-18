@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IS_MapInfo
+  xmlns="http://www.pixia.com/wami/v102"
+  xmlns:ows="http://www.opengis.net/ows/2.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.pixia.com/wami/v102 ../xsd/wami_1_0_2.xsd
+      http://www.opengis.net/ows/2.0
+      http://www.w3.org/1999/xlink"
+  version="1.0.2">
+
+  <Metadata>
+    <GeoBox nativeCRS="EPSG:4326">
+      <BoundingBox crs="EPSG:4326" minx="1.0" maxx="2.0" miny="1.0" maxy="2.0" resx="50" resy="50"/>
+    </GeoBox>
+    <TOA>2010-01-01T15:15:15.0Z</TOA>
+    <FrameNum>5</FrameNum>
+    <File
+    	fileName="MISSION_001_2010-01-01_FRAME5.jp2"
+      	fileSize="1000000"
+      	createTime="2010-01-01T15:15:15.0Z"
+      	modifyTime="2010-01-01T15:15:15.0Z"
+      	pixelWidth="10000"
+      	pixelHeight="10000"
+      	fileFormat="image/nitf"
+      	bands="1"
+      	bitsPerBand="8"
+        bandDataType="unsigned"
+    >
+      <GeoTransform xOffset="100" yOffset="100" xScale=".123" yScale=".123" xSkew="0" ySkew="0"/>
+      <BoundingPolygon crs="EPSG:4326">1.0 1.0 1.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0</BoundingPolygon>
+    </File>
+    <Group name="geotiff">
+      <Attribute name="GCS">4267/NAD27</Attribute>
+      <Attribute name="Datum">6267/North American Datum 1927</Attribute>
+      <Attribute name="CornerCoordinates.upperLeft">440720.000,3751320.000</Attribute>
+      <Attribute name="CornerCoordinates.lowerLeft">440720.000,3720600.000</Attribute>
+      <Attribute name="CornerCoordinates.upperRight">471440.000,3751320.000</Attribute>
+      <Attribute name="CornerCoordinates.lowerRight">471440.000,3720600.000</Attribute>
+      <Attribute name="CornerCoordinates.center">456080.000,3735960.000</Attribute>
+    </Group>
+  </Metadata>
+</IS_MapInfo>

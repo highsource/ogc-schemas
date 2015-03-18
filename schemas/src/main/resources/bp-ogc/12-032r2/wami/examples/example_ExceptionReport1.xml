@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExceptionReport xmlns="http://www.opengis.net/ows/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/ows/2.0 http://schemas.opengis.net/ows/2.0/owsAll.xsd" version="1.0.1" xml:lang="en-US">
+  <Exception exceptionCode="MissingParameterValue" locator="version"/>
+  <Exception exceptionCode="InvalidParameterValue" locator="collection"/>
+</ExceptionReport>

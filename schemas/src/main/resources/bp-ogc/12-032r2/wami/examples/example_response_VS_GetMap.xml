@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<VS_GetMapVideoRequest
+  xmlns="http://www.pixia.com/wami/v102"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.pixia.com/wami/v102 ../xsd/wami_1_0_2.xsd
+      http://www.opengis.net/ows/2.0
+      http://www.w3.org/1999/xlink"
+  service="VS"
+  request="GetMapVideo"
+  version="1.0.2"
+  crs="wgs84"
+  format="video/mpeg"
+  styles=""
+  bgcolor="0x000000"
+  CID="collection1"
+  dup="1">
+<!--
+<VS_GetMapVideoRequest xmlns="http://www.pixia.com/wami/v102" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.pixia.com/wami/v102 wami_1_0_2.xsd                  http://www.opengis.net/ows/2.0 owsAll.xsd                  http://www.w3.org/1999/xlink xlinks.xsd" service="VS" request="GetMapVideo" version="1.0.2" crs="wgs84" format="video/mpeg" styles="" bgcolor="0x000000" CID="collection1" dup="1">
+FIXME
+-->
+
+  <Option name="Options.Video.Mpeg">Mpeg2</Option>
+  <Option name="Options.Video.Mpeg.Mpeg2.Codec">H264</Option>
+  <Option name="Options.Video.Mpeg.Mpeg2.Codec.H264.BitRate">2500</Option>
+  <Option name="Options.Video.Mpeg.Mpeg2.Codec.H264.GOP">10</Option>
+  <Option name="Options.Video.Mpeg.Mpeg2.Codec.H264.FrameRate">29.97</Option>
+  <Option name="Options.Video.Mpeg.Mpeg2.Codec.H264.ChromaSubSampling">422</Option>
+  <ViewPort width="512" height="512"/>
+  <BBox crs="wgs84" minx="100" miny="100" maxx="100.1" maxy="100.1"/>
+  <Time>
+    <FrameRange start="5" end="100" />
+  </Time>
+</VS_GetMapVideoRequest>

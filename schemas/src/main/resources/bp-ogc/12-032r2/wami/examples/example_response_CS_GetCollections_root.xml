@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CS_Collections
+  xmlns="http://www.pixia.com/wami/v102"
+  xmlns:ows="http://www.opengis.net/ows/2.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.pixia.com/wami/v102 ../xsd/wami_1_0_2.xsd
+      http://www.opengis.net/ows/2.0
+      http://www.w3.org/1999/xlink">
+
+  <Node NID="root" name="ROOT">
+    <Node NID="2010" name="2010" parentNID="root">
+      <Description>This section contains all 2010 missions</Description>
+      <Node NID="2010/Jan" name="Jan Missions" parentNID="2010">
+        <Node NID="2010/2010-MISSION1" CID="2010-MISSION1" name="MISSION 1" parentNID="2010/Jan">
+          <Description>Info about Mission 1</Description>
+          <Service name="IS">
+              <Request xlink:href="http://example.com/CS" get="true" post="true"/>
+          </Service>
+        </Node>
+        <Node NID="2010/2010-MISSION2" CID="2010-MISSION2" name="MISSION 2" parentNID="2010/Jan">
+          <Description>Info about Mission 2</Description>
+          <Service name="IS">
+              <Request xlink:href="http://example.com/CS" get="true" post="true"/>
+          </Service>
+        </Node>
+      </Node>
+    </Node>
+  </Node>
+</CS_Collections>

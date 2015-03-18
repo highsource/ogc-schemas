@@ -1,0 +1,1700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.pixia.com/wami/v102"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:wami="http://www.pixia.com/wami/v102"
+	xmlns:wami_common="http://www.pixia.com/wami/common"
+	xmlns:ows="http://www.opengis.net/ows/2.0"
+	elementFormDefault="qualified"
+	version="1.0.2 2012-08-31">
+
+	<import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsAll.xsd" />
+	<import namespace="http://www.pixia.com/wami/common" schemaLocation="wami-common_1_0_0.xsd"/>
+
+	<!-- ********************************************************************* -->
+	<!-- ** The Top-Level Elements. ** -->
+	<!-- ********************************************************************* -->
+	<!-- Refer to the corresponding complexType nodes for documentation -->
+
+	<!-- Common Service call response documents -->
+	<element name="GetCapabilitiesRequest" type="wami:GetCapabilitiesRequestType" />
+	<element name="Capabilities" type="wami:CapabilitiesResponseBaseType" />
+
+	<element name="GetHelpRequest" type="wami:GetHelpRequestType" />
+	<element name="Help" type="wami:HelpResponseType" />
+
+	<!-- Collection Service call response documents -->
+	<element name="CS_GetCollectionsRequest" type="wami:CS_GetCollectionsRequestType" />
+	<element name="CS_Collections" type="wami:CS_CollectionsType" />
+
+	<element name="CS_GetCollectionCountRequest" type="wami:CS_GetCollectionCountRequestType" />
+	<element name="CS_CollectionCount" type="wami:CS_CollectionCountType" />
+
+	<!-- Image Service call response documents -->
+	<element name="IS_GetMapRequest" type="wami:IS_GetMapRequestType" />
+	<element name="IS_Map" type="wami:IS_MapType" />
+
+	<element name="IS_GetMapInfoRequest" type="wami:IS_GetMapInfoRequestType" />
+	<element name="IS_MapInfo" type="wami:IS_MapInfoType" />
+
+	<element name="IS_GetPathMapRequest" type="wami:IS_GetPathMapRequestType" />
+	<element name="IS_PathMap" type="wami:IS_PathMapType" />
+
+	<element name="IS_GetPathMapInfoRequest" type="wami:IS_GetPathMapInfoRequestType" />
+	<element name="IS_PathMapInfo" type="wami:IS_PathMapInfoType" />
+
+	<!-- Video Service call response documents -->
+	<element name="VS_GetMapVideoRequest" type="wami:VS_GetMapVideoRequestType" />
+	<element name="VS_GetPathMapVideoRequest" type="wami:VS_GetPathMapVideoRequestType" />
+
+	<!-- Query Service call response documents -->
+
+	<!-- Video Control and Streaming Service call response documents -->
+	<!-- <element name="VCSS_EstablishConnection" type="wami:VCSS_EstablishConnectionType"/> 
+		<element name="VCSS_HeartBeat" type="wami:VCSS_HeartBeatType"/> <element 
+		name="VCSS_StartVideo" type="wami:VCSS_StartVideoType"/> <element name="VCSS_GetVideo" 
+		type="wami:VCSS_GetVideoType"/> <element name="VCSS_Control" type="wami:VCSS_ControlType"/> 
+		<element name="VCSS_Disconnect" type="wami:VCSS_Disconnect"/> -->
+
+
+	<!-- ********************************************************************* -->
+	<!-- ** Simple Type definitions. ** -->
+	<!-- ********************************************************************* -->
+
+
+	<simpleType name="VersionList">
+		<annotation>
+			<documentation>
+				SPACE-separated List of dotted versions
+			</documentation>
+		</annotation>
+		<list itemType="ows:VersionType" />
+	</simpleType>
+
+	<simpleType name="StringList">
+		<annotation>
+			<documentation>
+				SPACE-separated List of strings (that don't contain spaces)
+			</documentation>
+		</annotation>
+		<list itemType="string" />
+	</simpleType>
+
+	<simpleType name="LanguageList">
+		<annotation>
+			<documentation>
+				SPACE-separated List of ISO 639-1 spoken language codes
+			</documentation>
+		</annotation>
+		<list itemType="language" />
+	</simpleType>
+
+	<simpleType name="PolygonType">
+		<annotation>
+			<documentation>
+				Pairs of 2D points
+			</documentation>
+		</annotation>
+		<list itemType="double" />
+	</simpleType>
+
+	<simpleType name="ExceptionNameType">
+		<annotation>
+			<documentation>
+				Enumeration of allowable named values of commands for how to return exceptions
+			</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="XML">
+				<annotation>
+					<documentation>
+						Ignores the MIME type set in the Format parameter and returns exceptions
+						in XML format. At least
+						XML shall be supported.
+
+						Example: A GetMap request in the Image Service request may set
+						Format=image/jpeg but if
+						Exceptions=XML, then in case of an exception the server implementation shall
+						return a response
+						content type of text/xml.
+
+					</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="IMAGE">
+				<annotation>
+					<documentation>
+						Applicable only if MIME type of the Format parameter is of type
+						image/[something]. It means if
+						the request generates an exception, return the response as an image
+						with the exception string
+						embedded in the image.
+
+						Example: If, in a GetMap request from an Image Service, Format=image/jpeg
+						and Exceptions=IMAGE,
+						then in case of an exception the server implementation shall return a
+						response content type of
+						image/jpeg that has the exception message string embedded in the image. The
+						rendering of the
+						text is governed by the server implementation or the specification.
+
+						Warning: If MIME type of the response is text and
+						Exceptions=IMAGE, this is not permitted. In
+						this case, the server shall ignore the parameter and assume the
+						default.
+					</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="NONE">
+				<annotation>
+					<documentation>
+						In case of an exception just return the appropriate response header
+						with no body.
+					</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="OTHER">
+				<annotation>
+					<documentation>
+						Same as XML, except this may be some other standard format. Shall be
+						extensively document by the
+						server implementation.
+					</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="NodeCountDepthType">
+		<annotation>
+			<documentation>
+				Constrained Enumeration of request values for Depth in GetCollectionCount
+			</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="All" />
+			<enumeration value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="NodeDepthType">
+		<annotation>
+			<documentation>
+				Constrained Enumeration of request values for Depth in GetCollections
+			</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="All" />
+			<enumeration value="0" />
+			<enumeration value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="DispositionType">
+		<annotation>
+			<documentation>
+				Constrained Enumeration of request values for ImageService calls which require
+				mime-multipart responses.
+			</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="ordered" />
+			<enumeration value="unordered" />
+			<enumeration value="replace" />
+		</restriction>
+	</simpleType>
+	<simpleType name="CRSType">
+		<annotation>
+			<documentation>
+				Usually references the definition of a CRS, as
+				specified in [OGC Topic 2]. Such a CRS definition can be XML encoded
+				using the gml:CoordinateReferenceSystemType in [GML 3.1]. For well
+				known references, it is not required that a CRS definition exist at
+				the location the URI points to.
+
+				May also simply be EPSG:\d\d\d\d
+			</documentation>
+		</annotation>
+		<restriction base="string">
+		</restriction>
+	</simpleType>
+
+	<simpleType name="WamiDurationType">
+		<annotation>
+			<documentation>
+				A generic way of specifying Duration in floating-point seconds.
+				Namely 1/2 second is "0.5".. 50 seconds is "50.0".
+				This allows you to specify arbitrary precision. The only thing it
+				prevents is
+				precise date-intervals that are not linearly proportional to a second (such
+				as the number of seconds
+				in a month or a year).
+			</documentation>
+		</annotation>
+		<restriction base="double" />
+	</simpleType>
+
+	<!-- ********************************************************************* -->
+	<!-- ** Complex Type definitions. ** -->
+	<!-- ********************************************************************* -->
+
+
+	<complexType name="RequestMethodLinkType">
+		<annotation>
+			<documentation>
+				A slight modification / simplification of ows:DCP / ows:HTTP such
+				that simplifies
+				alternate encoding methods such as JSON.
+				This allows a given URL to be either get or post or both.
+				Note ows:Constraint elements can optionally be applied and thereby
+				linked.
+
+				The Service Document (Capabilities) still uses DCP since that MUST be
+				encoded in XML.
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="ows:RequestMethodType">
+				<attribute name="get" type="boolean" use="optional" />
+				<attribute name="post" type="boolean" use="optional" />
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="ServiceElementType">
+		<annotation>
+			<documentation>
+				This type contains a 1-to-many "Request" links that represent equally
+				valid http service calls.
+				The links should NOT contain any query-string parameters, but they may
+				contain embedded URL stateful
+				information.
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="Request" type="wami:RequestMethodLinkType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="NamedServiceElementType">
+		<annotation>
+			<documentation>
+				A named collection of web-service URLs (and whether they are
+				post/get)
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="wami:ServiceElementType">
+				<attribute name="name" type="wami_common:ServiceNameType" use="required" />
+			</extension>
+		</complexContent>
+	</complexType>
+
+
+	<complexType name="CS_NodeType">
+		<annotation>
+			<documentation>
+				This is the basic Collection-Service Node type, common to both
+				intermediate Nodes, and leaf-nodes which contain
+				collection-specific information.
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="Description" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Description of the Collection Service Node / Collection itself
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="Service" minOccurs="0" maxOccurs="unbounded"
+				type="wami:NamedServiceElementType">
+				<annotation>
+					<documentation>
+						One or more Image or Video Service URLs. Absent in inner and root
+						nodes. This base URL is used to construct a GetCapabilities,
+						GetMap, etc request.
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="Metadata" type="wami:CollectionMetadataSectionsType"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Structured metadata about this node.
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="Node" type="wami:CS_NodeType" minOccurs="0"
+				maxOccurs="unbounded">
+				<annotation>
+					<documentation>
+						The outer or sub-node which contains an NID, URL(s) to serve it up
+						from the Collection-Service, and in the case of collection-Nodes,
+						URLs to service up the actual collection data (i.e. IS, VS, VCSS).
+						Absent in leaf nodes.
+					</documentation>
+				</annotation>
+			</element>
+		</sequence>
+
+		<!-- <attribute name="id" type="ID" use="optional"> -->
+		<attribute name="id" type="string" use="optional">
+			<annotation>
+				<documentation>
+					It is recommended to add ID references because it makes it easier for
+					clients to search and
+					discover with XPATH.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="name" type="string" use="optional">
+			<annotation>
+				<documentation>
+					A human readable name of this node
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="parentNID" type="string" use="optional">
+			<annotation>
+				<documentation>
+					NID of the parent node and a URL to serve it up. A root node does not
+					have this member.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="NID" type="string" use="required">
+			<annotation>
+				<documentation>
+					Node Id – this is guaranteed to be unique within a collection-service.
+					It SHOULD be globally unique (if a UUID is utilized) so that
+					collection services can be aggregated together.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="CID" type="string" use="optional">
+			<annotation>
+				<documentation>
+					Collection ID – this SHOULD be unique within a Collection Service. It may or
+					may not be the same value as NID. This is the value that will be
+					passed to IS, VS, VCSS operations as the C ID parameter. It may be
+					a UUID.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="updateSequence" type="ows:UpdateSequenceType" use="optional">
+			<annotation>
+				<documentation>
+					This may only be supported by a Node or by a Collection (represented by a node), by both, or neither. It is vendor specific because it represents the ability of
+					the WAMI collection service to detect changes of different categories.
+
+					If a Node supports updateSequence, then it should increase every time an add/remove/move of a child (or decendent) node occurs.
+					Note this does NOT reflect changes to individual leaf-collections, only the existance / placement of said collection.
+
+					If a Collection (represented here as a Node) supports updateSequence, then it should increase every time the metadata for a collection changes.
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+
+
+	<complexType name="AbstractResponseType" abstract="true">
+		<annotation>
+			<documentation>
+				Base of most HTTP response documents
+			</documentation>
+		</annotation>
+		<attributeGroup ref="wami:CommonResponseAttributes" />
+	</complexType>
+
+
+	<attributeGroup name="CommonResponseAttributes">
+		<annotation>
+			<documentation>
+				HTTP response documents mostly all contain a version (of the XSD) and
+				the language of any human-readible
+				text is translated (encoded as UTF-8).
+			</documentation>
+		</annotation>
+		<attribute name="lang" type="language" use="optional" >
+			<annotation>
+				<documentation>
+					ISO 639-1 Language code of the response document text.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="version" type="ows:VersionType" use="optional" >
+			<annotation>
+				<documentation>
+					Version of WAMI schema.
+				</documentation>
+			</annotation>
+		</attribute>
+	</attributeGroup>
+
+
+	<complexType name="NameValuePairType">
+		<annotation>
+			<documentation>
+				A simple NVP where name is an attribute and value is the XML string
+				body
+			</documentation>
+		</annotation>
+		<complexContent mixed="true">
+			<extension base="anyType">
+				<attribute name="name" type="string" />
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="MetadataGroupType">
+		<annotation>
+			<documentation>
+				This is a base type that allows generalized vendor specific key-value
+				pairs.
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="Attribute" type="wami:NameValuePairType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+		<attribute name="name" type="string" use="required" />
+	</complexType>
+
+	<complexType name="BoundBoxType">
+		<annotation>
+			<documentation>
+				The BoundingBox attributes indicate the limits of the bounding box
+				in units of the specified coordinate reference system, and the
+				resolution (or GSD) of each dimension.
+
+				This is simplified/specialized for image viewers that may or may not
+				need/understand significant detail
+				geometric detail.
+			</documentation>
+		</annotation>
+		<attribute name="crs" type="wami:CRSType" use="required" />
+		<attribute name="minx" type="double" use="required" />
+		<attribute name="miny" type="double" use="required" />
+		<attribute name="maxx" type="double" use="required" />
+		<attribute name="maxy" type="double" use="required" />
+		<attribute name="resx" type="double" use="optional">
+			<annotation>
+				<documentation>
+					The unit conversion for units in the x-dimension. If long/lat, then
+					the number of pixels per degree.
+					For meter based units, then the number of pixels per meter.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="resy" type="double" use="optional">
+			<annotation>
+				<documentation>
+					Same as resx but in y-dimension
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+	<complexType name="GeoBoxSectionType">
+		<annotation>
+			<documentation>
+				This is a 1-to-many collection of BoundingBoxes with associated CRS's,
+				as used in the Metadata section
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="BoundingBox" type="wami:BoundBoxType" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+		<attribute name="nativeCRS" type="string" use="optional">
+			<annotation>
+				<documentation>
+					This is useful if more than one bounding box is specified, and thus
+					lists multiple CRS's.
+					Generally it is most efficient to make requests in the native CRC.
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+
+	<complexType name="CollectionSectionType">
+		<annotation>
+			<documentation>
+				This is a Metadata section which contains aggregate collection-wide
+				information.
+				Frame-based and TOA-based ranges are described, along with [average] temporal
+				intervals and
+				[max] temporal Jitter.
+			</documentation>
+		</annotation>
+		<sequence>
+		</sequence>
+		<attribute name="CID" type="string" use="optional">
+			<annotation>
+				<documentation>
+					The collection identifier of the the collection
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="startFrame" type="nonNegativeInteger" use="optional">
+			<annotation>
+				<documentation>
+					The frame-number of the first frame in the collection (typically 0 or
+					1)
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="endFrame" type="nonNegativeInteger" use="optional">
+			<annotation>
+				<documentation>
+					The frame-number of the last frame in the collection.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="frameCount" type="nonNegativeInteger" use="optional">
+			<annotation>
+				<documentation>
+					Simple count of the number of frames in the collection.
+				</documentation>
+			</annotation>
+		</attribute>
+
+
+		<attribute name="startTime" type="dateTime" use="optional">
+			<annotation>
+				<documentation>
+					The TOA of the first frame in the collection
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="endTime" type="dateTime" use="optional">
+			<annotation>
+				<documentation>
+					The TOA of the last frame in the collection
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="timeSpan" type="wami:WamiDurationType" use="optional">
+			<annotation>
+				<documentation>
+					Number of floating point seconds in the video, as defined by EndTime -
+					StartTime.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="frameInterval" type="wami:WamiDurationType"
+			use="optional">
+			<annotation>
+				<documentation>
+					Number of floating point seconds between any given pair of frames.
+					Trivial implementation may simply
+					calculate this as timeSpan/frameCount. But it may utilize the sensor
+					capture-rate which may or
+					may not account for dropped frames.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="frameJitter" type="wami:WamiDurationType"
+			use="optional">
+			<annotation>
+				<documentation>
+					Number of floating point seconds that represents deviation from the
+					normalized frameInterval.
+					If specified, this can be used to define an expected
+					tolerance/deviation from TOA_x to TOA_x+1
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="live" type="boolean" use="optional">
+			<annotation>
+				<documentation>
+					If present and "true", then the collection is considered actively updating (or live).  Clients should assume the contents
+					could change at any moment. This allows clients to decide which collections to actively poll.
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+
+	<complexType name="GeoTransformType">
+		<annotation>
+			<documentation>
+				A per frame (or consistent per collection) affine transform
+			</documentation>
+		</annotation>
+		<sequence>
+		</sequence>
+
+		<attribute name="xOffset" type="double" use="required" />
+		<attribute name="yOffset" type="double" use="required" />
+
+		<attribute name="xScale" type="double" use="required" />
+		<attribute name="yScale" type="double" use="required" />
+
+		<attribute name="xSkew" type="double" use="required" />
+		<attribute name="ySkew" type="double" use="required" />
+	</complexType>
+
+
+	<complexType name="BoundingPolygonType">
+		<simpleContent>
+			<extension base="wami:PolygonType">
+				<attribute name="crs" type="wami:CRSType" use="required" />
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="FileSectionType">
+		<annotation>
+			<documentation>
+				In a IS_GetMapInfo, this is the individual image file info.
+				In a CS_Collections node, this is file info about the whole collection
+				of files if that is
+				available/relevant.
+				It should NOT refer to individual frame imagry.
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="GeoTransform" type="wami:GeoTransformType"
+				minOccurs="0" />
+			<element name="WKT" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Well Known Text
+					</documentation>
+				</annotation>
+			</element>
+			<element name="BoundingPolygon" type="wami:BoundingPolygonType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+		<attribute name="fileName" type="string" use="optional" />
+		<attribute name="fileSize" type="nonNegativeInteger" use="optional" />
+		<attribute name="createTime" type="dateTime" use="optional" />
+		<attribute name="modifyTime" type="dateTime" use="optional" />
+
+		<attribute name="pixelWidth" type="nonNegativeInteger" use="optional" />
+		<attribute name="pixelHeight" type="nonNegativeInteger" use="optional" />
+		<attribute name="fileFormat" type="string" use="optional">
+			<annotation>
+				<documentation>
+					for example, image/nitf, image/jp2, image/jpeg, etc
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="bands" type="nonNegativeInteger" use="optional" />
+		<attribute name="bitsPerBand" type="nonNegativeInteger" use="optional" />
+		<attribute name="bandDataType" type="string" use="optional">
+			<annotation>
+				<documentation>
+					for example, signed, unsigned, floatingpoint
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+
+	<element name="ExtendedMetadataSection">
+		<complexType>
+			<annotation>
+				<documentation>
+					This allows 3rd parties to link in their own XSD's to define any
+					arbitrary complex metadata
+					(e.g. non simple name-value pairs) through the use of XSD substitution
+					groups.
+					Ideally, each item has it's own named section, so as to minimize
+					integration complexity
+					(vendors only need to interpret custom XML elements that are needed for
+					communication as opposed
+					to validating an entire custom metadata sub-tree)
+				</documentation>
+			</annotation>
+			<sequence>
+				<element ref="ows:AbstractMetaData" minOccurs="0" maxOccurs="unbounded" />
+			</sequence>
+			<attribute name="name" type="string" />
+		</complexType>
+	</element>
+
+	<complexType name="CollectionMetadataSectionsType">
+		<annotation>
+			<documentation>
+				We utilize multiple sections so that a query can specify a specific
+				section header, or 'All'.
+				It also allows substitution groups to replace a section element.
+				Note ExtraMetadataSection SHOULD be grouped according to a metadata
+				type.. For example
+				geotiff and jp2 would be the name of sections containing key-value pairs
+				associated with geotiff and jp2
+				respectively.
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="Collection" type="wami:CollectionSectionType"
+				minOccurs="0" />
+			<element name="GeoBox" type="wami:GeoBoxSectionType"
+				minOccurs="0" />
+			<element name="TOA" type="dateTime" minOccurs="0">
+				<annotation>
+					<documentation>
+						Time Of Acquisition for the associated Image/Video.
+						It is listed as it's own section header so that the request
+						parameter "sections=TOA" can be used
+						to exclusively acquire a list of TOAs of a given collection.
+					</documentation>
+				</annotation>
+			</element>
+			<element name="FrameNum" type="nonNegativeInteger" minOccurs="0">
+				<annotation>
+					<documentation>
+						Relative Frame Number of an image within a Collection (both for IS, VS and
+						VCSS).
+						This is useful if you wish to make a sequence of ordered requests,
+						where the TOA might otherwise
+						have had too much jitter.
+					</documentation>
+				</annotation>
+			</element>
+			<element name="File" type="wami:FileSectionType" minOccurs="0" />
+			<element name="Group" type="wami:MetadataGroupType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<element ref="wami:ExtendedMetadataSection" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="MultipartImageRootDocumentType">
+		<annotation>
+			<documentation>
+				This type is generated with mime-multipart documents, and serves as the
+				root element
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="Reference" minOccurs="0" maxOccurs="unbounded">
+				<complexType>
+					<attribute name="imageReference" type="anyURI">
+						<annotation>
+							<documentation>
+								GetMap will return a sequence of Reference/imageReference elements
+								which
+								refer to the mime-multipart attachments.
+							</documentation>
+						</annotation>
+					</attribute>
+
+					<attribute name="metadataReference" type="anyURI" use="optional">
+						<annotation>
+							<documentation>
+								If GetMap requests Metadata, then in addition to the
+								imageReference links above,
+								a sequence of Reference/imageReference , metadataReference pairs
+								will be
+								generated.
+							</documentation>
+						</annotation>
+					</attribute>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="CommonAbstractRequestType" abstract="true">
+		<attribute name="service" type="wami_common:ServiceNameType" use="required">
+			<annotation>
+				<documentation>
+					This is the top-level WAMI service name.. There are a fixed number of
+					possible values.
+					Any addition of such services would likely require non-trivial
+					extensions to this XSD and thus
+					merrit a new version.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="request" type="string" use="required">
+			<annotation>
+				<documentation>
+					The sub-request of the named service. Each Request/Response document
+					will be correlated to
+					a specific required value here.. Unfortunately, XSD doesn't allow
+					overriding of this value as a
+					fixed parameter, so XSD is unable to validate this.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="exceptions" type="wami:ExceptionNameType"
+			use="optional">
+			<annotation>
+				<documentation>
+					How should Exceptions be returned. Generally this will be
+					application/xml as an ows:ExceptionReport
+					But it could also be a JSON form. When acquiring imagry, the client
+					may wish the exception be
+					displayed as an image with embedded text - so that the viewer can determine
+					there is a problem.
+				</documentation>
+			</annotation>
+		</attribute>
+
+		<attribute name="acceptLanguages" type="wami:LanguageList"
+			use="optional">
+			<annotation>
+				<documentation>
+					SPACE-separated list of languages desired by the client for all human readable
+					text in the
+					response, in order of preference.
+					For every element, the first matching language available from the
+					server shall be present
+					in the response. When not supported by server, return human readable
+					text in a language of
+					the server’s choice. Shall be implemented by multi-lingual servers and
+					clients.
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+
+	<complexType name="AbstractRequestType" abstract="true">
+		<complexContent>
+			<extension base="wami:CommonAbstractRequestType">
+				<attribute name="version" type="ows:VersionType" use="required">
+					<annotation>
+						<documentation>
+							WAMI allows multiple simultaneously running versions instances of a
+							given service + request.
+							This allows backward compatibility by having completely isolated
+							XSDs, with the starting
+							point
+							being the URL (as specified in the GetCapabilities Request), and a
+							version-number (specified
+							here). In most cases, the URL for different versions of WAMI will be
+							isolated, but this
+							allows
+							A) validation that a client does not accidentally hit the wrong URL
+							with an expected Schema
+							B) The possibility that a common back-end can parse multiple
+							grammer versions.
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="format" type="string" use="optional">
+					<annotation>
+						<documentation>
+							Any given Service Request may support multiple response formats /
+							underlying content types.
+							This field allows selection of say 'image/jpg' v.s. 'image/png'. Or
+							'application/xml' v.s.
+							'application/x-json'. ETC. A corresponding 'GetCapabilties' response document will
+							outline
+							the supported values for format for EACH service-request.
+						</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="TimeRangeRequestType">
+		<choice>
+			<element name="TimeRange" minOccurs="0" maxOccurs="unbounded">
+				<complexType>
+					<attribute name="recurringInterval" type="nonNegativeInteger" use="optional"/>
+					<attribute name="start" type="dateTime" use="optional"/>
+					<attribute name="end" type="dateTime" use="optional"/>
+					<attribute name="resolution" type="duration" use="optional"/>
+				</complexType>
+			</element>
+			<element name="TimeList" type="wami:StringList" minOccurs="0"/>
+		</choice>
+	</complexType>
+	
+	<complexType name="FrameOrTimeRangeRequestType">
+		<choice>
+			<element name="FrameRange" minOccurs="0" maxOccurs="unbounded">
+				<complexType>
+					<attribute name="recurringInterval" type="nonNegativeInteger" use="optional"/>
+					<attribute name="start" type="nonNegativeInteger"/>
+					<attribute name="end" type="nonNegativeInteger" use="optional"/>
+					<attribute name="step" type="nonNegativeInteger" use="optional"/>
+				</complexType>
+			</element>
+			<element name="TimeRange" minOccurs="0" maxOccurs="unbounded">
+				<complexType>
+					<attribute name="recurringInterval" type="nonNegativeInteger" use="optional"/>
+					<attribute name="start" type="dateTime" use="optional"/>
+					<attribute name="end" type="dateTime" use="optional"/>
+					<attribute name="resolution" type="duration" use="optional"/>
+				</complexType>
+			</element>
+			<element name="TimeList" type="wami:StringList" minOccurs="0"/>
+		</choice>
+	</complexType>
+
+	<complexType name="FrameOrTimeRequestType">
+		<attribute name="frame" type="nonNegativeInteger" />
+
+		<attribute name="time" type="dateTime" />
+	</complexType>
+
+	<complexType name="FrameOrTimeSpanRequestType">
+		<attribute name="frames" type="nonNegativeInteger">
+			<annotation>
+				<documentation>
+					Number of Requested Frames
+				</documentation>
+			</annotation>
+		</attribute>
+
+		<attribute name="duration" type="wami:WamiDurationType">
+			<annotation>
+				<documentation>
+					Number of floating point seconds of requested duration.
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+
+	<complexType name="DimensionType">
+		<annotation>
+			<documentation>
+				A primitive BoundingBox; generally in pixel-space, where height is
+				the y-axis and width is the x-axis.
+			</documentation>
+		</annotation>
+		<attribute name="width" type="nonNegativeInteger" use="required" />
+		<attribute name="height" type="nonNegativeInteger" use="required" />
+	</complexType>
+
+	<complexType name="CommonAbstractGetMapRequestType"
+		abstract="true">
+		<annotation>
+			<documentation>
+				This is a common base class for all IS/VS GetMap style service-requests
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="wami:AbstractRequestType">
+				<sequence>
+					<element name="Option" type="wami:NameValuePairType"
+						minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>
+								This allows vendor specific enhancements to the underlying suite of
+								pre-defined request
+								parameters.
+							</documentation>
+						</annotation>
+					</element>
+				</sequence>
+
+				<attribute name="crs" type="wami:CRSType" use="required" />
+				<attribute name="metadata" type="wami:StringList" use="optional">
+					<annotation>
+						<documentation>
+							SPACE-separated list of section-names in the response Metadata document.
+							If ommitted and the response document IS NOT an 'Info'/'Metadata'
+							type request, then
+							NO metdata SHAL be returned. If the response document IS an
+							'Info'/'Metadata' type request,
+							then ALL metadata sections SHAL be returned.
+							The value 'All' (case sensitive) MAY be specified so as to force all
+							known metadata sections
+							to be returned, and in the case of natural binary response data
+							(e.g. GetMap), the
+							Content-Type of the document will be a MIME-MULTIPART containing a linkage
+							XML document
+							and associated Metadata and binary response bodies.
+						</documentation>
+					</annotation>
+				</attribute>
+
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="BinaryAbstractGetMapRequestType">
+		<annotation>
+			<documentation>
+				Image/Video based GetMap requests require an extra view-port.
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="wami:CommonAbstractGetMapRequestType">
+				<sequence>
+					<element name="ViewPort" type="wami:DimensionType">
+						<annotation>
+							<documentation>
+								Image/Video binary requests need to map the requested bounding-box to a
+								fixed output viewport.
+							</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PathMapTrackAoiType">
+		<sequence>
+			<element name="BBox" type="wami:BoundBoxType" />
+			<element name="Time" type="wami:FrameOrTimeRequestType">
+				<annotation>
+					<documentation>
+						The time of acquisition (either as frame-number of date-time).
+					</documentation>
+				</annotation>
+			</element>
+			<element name="TimeSpan" type="wami:FrameOrTimeSpanRequestType"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						The time increment - specifying either the frames or seconds between
+						this key AOI and the
+						next key AOI.
+						Thus, this is required for the first several AOI's, but not present for
+						the last.
+						This should correlate with the 'Time' element with respect to
+						Frame-number v.s. date-time.
+					</documentation>
+				</annotation>
+			</element>
+			<element name="Option" type="wami:NameValuePairType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PathMapTrackType">
+		<sequence>
+			<element name="Aoi" type="wami:PathMapTrackAoiType" minOccurs="2" maxOccurs="unbounded" />
+		</sequence>
+		<attribute name="CID" type="wami:StringList" use="required" />
+		<attribute name="method" type="string" default="linear" use="optional" />
+	</complexType>
+
+	<complexType name="PathMapType">
+		<sequence>
+			<element name="Track" type="wami:PathMapTrackType" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+
+	<!-- ********************************************************************* -->
+	<!-- ** Substitution elements. ** -->
+	<!-- ********************************************************************* -->
+
+
+	<element name="PostContentTypeMetaData" substitutionGroup="ows:AbstractMetaData">
+		<annotation>
+			<documentation>
+				This is intended to be used in the GetCapabilities Operation Metadata
+				section when Operation method
+				POST is supported. It specifies the allowed HTTP-header Content-Type's
+				and any associated encoding.
+				Note that if this metadata section isn't provided, then it is assumed to
+				be
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="KVP" minOccurs="0">
+					<annotation>
+						<documentation>
+							This is associated with Content-Type
+							"application/x-www-form-urlencoded".
+							The POST data will be a URL-encoded KVP query-string.
+
+							ALL WAMI services should support this encoding content type.
+						</documentation>
+					</annotation>
+					<complexType>
+
+					</complexType>
+
+				</element>
+				<element name="XML" minOccurs="0">
+					<annotation>
+						<documentation>
+							This is associated with Content-Type "text/xml". The XML body conform
+							to the named schema element as found in this XSD.
+						</documentation>
+					</annotation>
+					<complexType>
+						<attribute name="schemaElement" type="NCName" use="required">
+							<annotation>
+								<documentation>
+									This should be an element name of the form IS_GetMapRequest with no
+									colon that is
+									expected to be passed in.
+								</documentation>
+							</annotation>
+						</attribute>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+
+
+	<!-- ********************************************************************* -->
+	<!-- ** Request/Response definitions. ** -->
+	<!-- ********************************************************************* -->
+
+
+	<complexType name="GetCapabilitiesRequestType">
+		<complexContent>
+			<extension base="wami:CommonAbstractRequestType">
+				<sequence>
+				</sequence>
+				<attribute name="acceptVersions" type="wami:VersionList"
+					use="required">
+					<annotation>
+						<documentation>
+							SPACE-separated Prioritized sequence of one or more specific versions that the
+							client
+							accepts, with preferred versions listed first. When omitted, return the
+							latest supported
+							version. MAY be implemented by clients. SHALL be implemented by servers.
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="acceptFormats" type="wami:StringList"
+					default="text/xml" use="optional">
+					<annotation>
+						<documentation>
+							SPACE-separated list of HTTP response types the client prefers for this
+							operation
+							Example: "text/xml", "application/json", etc. This is analogous to
+							AbstractRequestType
+							format
+							but, with GetCapabilities, you can't know for sure what the server
+							supports yet.
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="sections" type="wami:StringList" default="All"
+					use="optional">
+					<annotation>
+						<documentation>
+							SPACE-separated un-ordered list of zero or more names of sections of service
+							metadata
+							document to be returned in service metadata document. May be implemented
+							by client and
+							server. If not implemented, expect/provide default response.
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="updateSequence" type="ows:UpdateSequenceType"
+					use="optional">
+					<annotation>
+						<documentation>
+							Service metadata document version, value is “increased” whenever any
+							change is
+							made in complete service metadata document. May be implemented by
+							client and server.
+							If not implemented, expect/provide default response.
+						</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+
+
+	<complexType name="CapabilitiesResponseBaseType">
+		<annotation>
+			<documentation>
+				This is based off OWS CapabilitiesBaseType. There was a bug in the spec
+				that prevented 1 to many
+				languages, so we don't actually extend that class here.
+			</documentation>
+		</annotation>
+		<sequence>
+			<element ref="ows:ServiceIdentification" minOccurs="0" />
+			<element ref="ows:ServiceProvider" minOccurs="0" />
+			<element ref="ows:OperationsMetadata" minOccurs="0" />
+			<element name="Language" type="language" minOccurs="0"
+				maxOccurs="unbounded">
+				<annotation>
+					<documentation>IETF RFC 4646 lang code "en-US"
+
+						The list of languages that this service is able to
+						fully support. That is, if one of the listed languages is requested
+						using the AcceptLanguages parameter in future requests to the
+						server, all text strings contained in the response are guaranteed
+						to
+						be in that language. This list does not necessarily constitute a
+						complete list of all languages that may be (at least partially)
+						supported by the server. It only states the languages that are
+						fully
+						supported. If a server cannot guarantee full support of any
+						particular language, it shall omit it from the list of supported
+						languages in the capabilities document.
+					</documentation>
+				</annotation>
+			</element>
+		</sequence>
+		<attribute name="updateSequence" type="ows:UpdateSequenceType"
+			use="optional">
+			<annotation>
+				<documentation>Service metadata document version, having values that
+					are "increased" whenever any change is made in service metadata
+					document. Values are selected by each server, and are always opaque
+					to
+					clients. When not supported by server, server shall not return this
+					attribute.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attributeGroup ref="wami:CommonResponseAttributes" />
+	</complexType>
+
+
+	<complexType name="GetHelpRequestType">
+		<complexContent>
+			<extension base="wami:AbstractRequestType">
+				<attribute name="topic" type="wami:StringList" use="optional">
+					<annotation>
+						<documentation>
+							Name of a help topic. A list of supported help topics shall be made
+							available in the
+							Capabilities response.
+							This parameter shall specify a topic that the client chooses to
+							request help on.
+							The server shall support sending a valid response to all values it
+							lists as allowed
+							values to this parameter.
+							The default format shall also be specified in the corresponding
+							Capabilities response.
+						</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="HelpResponseType" xml:base="anyType">
+		<annotation>
+			<documentation>
+				This is returned on GetHelpRequest.. It contains arbitrary text/HTML,
+				but also defines some XML
+				attributes of the server. Service-Name / version
+			</documentation>
+		</annotation>
+		<complexContent mixed="true">
+			<extension base="anyType">
+				<attributeGroup ref="wami:CommonResponseAttributes" />
+				<attribute name="service" type="wami_common:ServiceNameType" use="required" />
+				<attribute name="request" type="string" use="required" />
+			</extension>
+		</complexContent>
+	</complexType>
+
+
+	<complexType name="CS_CollectionsType">
+		<annotation>
+			<documentation>
+				This is the response to CS_GetCollectionsRequest.
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="wami:AbstractResponseType">
+				<sequence>
+					<element name="Description" type="string" minOccurs="0">
+						<annotation>
+							<documentation>Description of the REQUEST, not the node
+							</documentation>
+						</annotation>
+					</element>
+
+					<element name="Parent" minOccurs="0">
+						<annotation>
+							<documentation>
+								Web service reference which allows a given GetCollections call to
+								find it's parent node.
+								If this is the root node, this this element isn't present.
+							</documentation>
+						</annotation>
+						<complexType>
+							<sequence>
+								<element name="Service" type="wami:NamedServiceElementType">
+									<annotation>
+										<documentation>
+											Web service reference which allows a given GetCollections call
+											to find it's
+											parent node.
+											If this is the root node, this this element isn't present.
+										</documentation>
+									</annotation>
+								</element>
+							</sequence>
+							<attribute name="NID" type="string" use="required" />
+						</complexType>
+					</element>
+
+					<element name="Node" type="wami:CS_NodeType">
+						<annotation>
+							<documentation>
+								This is the description of the Node referenced by the NID parameter.
+							</documentation>
+						</annotation>
+					</element>
+				</sequence>
+				<attribute name="updateSequence" type="ows:UpdateSequenceType" use="optional">
+					<annotation>
+						<documentation>
+							If supported, this represents a monotonicly increasing version-number of the entire contents of the collection-tree.
+							This is significant because a GetCollections call may only request a subset of collections, thus this allows a client to see that
+							changes potentially outside the scope of the request have changed.
+						</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CS_CollectionCountType">
+		<annotation>
+			<documentation>
+				This is the response to CS_GetCollectionCountRequest
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="wami:AbstractResponseType">
+				<sequence>
+					<element name="Description" type="string" minOccurs="0" />
+				</sequence>
+				<attribute name="root" type="boolean" use="required">
+					<annotation>
+						<documentation>
+							The attribute root can be True or False.
+							If root=True, it means the collection count information has been
+							provided starting from the
+							root node.
+							If root=False, it means the specified node is either an inner node
+							or leaf node.
+						</documentation>
+					</annotation>
+				</attribute>
+
+				<attribute name="depth" type="nonNegativeInteger">
+					<annotation>
+						<documentation>
+							How deep this node is in the tree
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="NID" type="string" use="optional">
+					<annotation>
+						<documentation>
+							The attribute NID is the node ID of the collection node being
+							queried.
+							Its value is either the value of the NID parameter in the request
+							(if it was set explicitly)
+							or the node ID of the root node.
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="childNodes" type="nonNegativeInteger"
+					use="required">
+					<annotation>
+						<documentation>
+							The attribute childNodes holds the number of immediate children
+							below this node.
+							The value of childNodes shall be an integer ≥ 0.
+							If childNodes=0, it means the given node is a leaf node and points
+							to a valid collection.
+							If childNode has a value ≥ 1, it means the given node is a root
+							node or inner node.
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="totalNodes" type="nonNegativeInteger"
+					use="required">
+					<annotation>
+						<documentation>
+							The attribute totalNodes holds the total number of nodes below the
+							node specified in NID,
+							including the node specified in NID.
+							The value of totalNodes shall be an integer > 0.
+							If Depth=1 in the request, then totalNodes shall be equal to
+							childNodes+1.
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="collections" type="nonNegativeInteger"
+					use="optional">
+					<annotation>
+						<documentation>
+							The attribute collections holds the total number of collections
+							available below this node.
+							The value of collections is an integer ≥ 0.
+							If collections=0 and childNodes=0, it means the node specified in
+							NID points to a
+							collection.
+							If collections=0, childNodes>0 in the response and Depth=1 in the
+							request,
+							it means the node specified in NID has child nodes that may have
+							additional nodes under them
+							that may have collections under them.
+							If collections=0, childNodes>0 in the response and Depth=All in the
+							request,
+							it means there are no collections under the node specified in NID.
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="edgeDepth" type="nonNegativeInteger" use="optional">
+					<annotation>
+						<documentation>
+							The attribute edgeDepth holds the total number of edges or links
+							from the node specified in
+							NID to the deepest leaf in the sub-tree.
+							The value of edgeDepth shall be an integer ≥ 0.
+							A leaf node i.e. a node that points to a collection has
+							edgeDepth=0.
+							If Depth=1 in the request, then edgeDepth can be 1 or 0 in the
+							response.
+						</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CS_GetCollectionCountRequestType">
+		<annotation>
+			<documentation>
+
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="wami:AbstractRequestType">
+				<sequence>
+					<element name="BBox" type="wami:BoundBoxType" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>
+								Bbox specifies a bounding box in the reference system set by CRS. The request 
+								filters selected nodes in the tree through this bounding box. The parameter 
+								shall be implemented by both client and server. This parameter is optional. 
+								The default value is “unbounded” to include all collections. If Bbox is set, 
+								CRS shall be set. Setting Bbox without CRS, or setting CRS without Bbox 
+								indicates error.
+							</documentation>
+						</annotation>
+					</element>
+					<element name="Time" type="wami:TimeRangeRequestType" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>
+								Specifies one or more time values or time ranges. The request filters 
+								selected nodes in the tree through the time values and ranges. The 
+								parameter shall be implemented by both client and server. This parameter 
+								is optional. The default value is all time. Time is set in ISO 8601:2004 
+								format (not as frame numbers).
+							</documentation>
+						</annotation>
+					</element>
+				</sequence>
+				<attribute name="NID" type="string" use="optional" />
+				<attribute name="depth" type="wami:NodeCountDepthType"
+					default="All" use="optional" />
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CS_GetCollectionsRequestType">
+		<complexContent>
+			<extension base="wami:AbstractRequestType">
+				<sequence>
+					<element name="BBox" type="wami:BoundBoxType" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>
+								Bbox specifies a bounding box in the reference system set by CRS. The request 
+								filters selected nodes in the tree through this bounding box. The parameter 
+								shall be implemented by both client and server. This parameter is optional. 
+								The default value is “unbounded” to include all collections. If Bbox is set, 
+								CRS shall be set. Setting Bbox without CRS, or setting CRS without Bbox 
+								indicates error.
+							</documentation>
+						</annotation>
+					</element>
+					<element name="Time" type="wami:TimeRangeRequestType" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>
+								Specifies one or more time values or time ranges. The request filters 
+								selected nodes in the tree through the time values and ranges. The 
+								parameter shall be implemented by both client and server. This parameter 
+								is optional. The default value is all time. Time is set in ISO 8601:2004 
+								format (not as frame numbers).
+							</documentation>
+						</annotation>
+					</element>
+				</sequence>
+				<attribute name="NID" type="string" use="optional" />
+				<attribute name="depth" type="wami:NodeDepthType" default="0"
+					use="optional" />
+				<attribute name="metadata" type="wami:StringList" use="optional" />
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="IS_MapType">
+		<complexContent>
+			<extension base="wami:MultipartImageRootDocumentType" />
+		</complexContent>
+	</complexType>
+
+	<complexType name="IS_PathMapType">
+		<complexContent>
+			<extension base="wami:MultipartImageRootDocumentType" />
+		</complexContent>
+	</complexType>
+
+	<complexType name="IS_InfoType" abstract="true">
+		<complexContent>
+			<extension base="wami:AbstractResponseType">
+				<sequence>
+					<element name="Metadata" type="wami:CollectionMetadataSectionsType"
+						minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="IS_AbstractMapInfoType" abstract="true">
+		<annotation>
+			<documentation>
+				This is returned BOTH in a GetMap request and a GetMapInfo request.
+				For GetMap request, it is only returned if the metadata paramter is
+				non-empty. It is referenced by
+				a mime-multipart IS_Map document.
+				Such documents will only ever contain 1 record.
+
+				For GetMapInfo, 1 or more records may have been queried and thus this
+				document will contain of all
+				such images.
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="wami:AbstractResponseType">
+				<sequence>
+					<element name="Metadata" type="wami:CollectionMetadataSectionsType"
+						maxOccurs="unbounded">
+						<annotation>
+							<documentation>
+								The metadata for an individual requested frame.
+							</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="IS_MapInfoType">
+		<complexContent>
+			<extension base="wami:IS_AbstractMapInfoType" />
+		</complexContent>
+	</complexType>
+	<complexType name="IS_PathMapInfoType">
+		<complexContent>
+			<extension base="wami:IS_AbstractMapInfoType" />
+		</complexContent>
+	</complexType>
+
+
+	<complexType name="IS_GetMapRequestType">
+		<complexContent>
+			<extension base="wami:BinaryAbstractGetMapRequestType">
+				<sequence>
+					<element name="BBox" type="wami:BoundBoxType" />
+					<element name="Time" type="wami:FrameOrTimeRangeRequestType" />
+				</sequence>
+				<attribute name="CID" type="wami:StringList" use="required" />
+				<attribute name="disposition" type="wami:DispositionType"
+					default="ordered" use="optional" />
+				<attribute name="styles" type="wami:StringList" use="optional" />
+				<attribute name="bgcolor" type="string" default="0x000000"
+					use="optional" />
+				<attribute name="transparent" type="boolean" default="false"
+					use="optional" />
+
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="IS_GetMapInfoRequestType">
+		<complexContent>
+			<extension base="wami:CommonAbstractGetMapRequestType">
+				<sequence>
+					<element name="BBox" type="wami:BoundBoxType" />
+					<element name="Time" type="wami:FrameOrTimeRangeRequestType" />
+				</sequence>
+				<attribute name="CID" type="wami:StringList" use="required" />
+			</extension>
+		</complexContent>
+	</complexType>
+
+
+	<complexType name="IS_GetPathMapRequestType">
+		<complexContent>
+			<extension base="wami:BinaryAbstractGetMapRequestType">
+				<sequence>
+					<element name="Path" type="wami:PathMapType" />
+				</sequence>
+				<attribute name="disposition" type="wami:DispositionType"
+					default="ordered" use="optional" />
+				<attribute name="styles" type="wami:StringList" use="optional" />
+				<attribute name="bgcolor" type="string" default="0x000000"
+					use="optional" />
+				<attribute name="transparent" type="boolean" default="false"
+					use="optional" />
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="IS_GetPathMapInfoRequestType">
+		<complexContent>
+			<extension base="wami:CommonAbstractGetMapRequestType">
+				<sequence>
+					<element name="Path" type="wami:PathMapType" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+
+	<complexType name="VS_GetMapVideoRequestType">
+		<complexContent>
+			<extension base="wami:BinaryAbstractGetMapRequestType">
+				<sequence>
+					<element name="BBox" type="wami:BoundBoxType" />
+					<element name="Time" type="wami:FrameOrTimeRangeRequestType" />
+				</sequence>
+				<attribute name="CID" type="wami:StringList" use="required" />
+				<attribute name="styles" type="wami:StringList" use="optional" />
+				<attribute name="bgcolor" type="string" default="0x000000"
+					use="optional" />
+				<attribute name="transparent" type="boolean" default="false"
+					use="optional" />
+
+				<attribute name="dup" type="nonNegativeInteger" use="required" />
+			</extension>
+		</complexContent>
+
+	</complexType>
+
+	<complexType name="VS_GetPathMapVideoRequestType">
+		<complexContent>
+			<extension base="wami:BinaryAbstractGetMapRequestType">
+				<sequence>
+					<element name="Path" type="wami:PathMapType" />
+				</sequence>
+				<attribute name="styles" type="wami:StringList" use="optional" />
+				<attribute name="bgcolor" type="string" default="0x000000"
+					use="optional" />
+				<attribute name="transparent" type="boolean" default="false"
+					use="optional" />
+
+				<attribute name="dup" type="nonNegativeInteger" use="required" />
+			</extension>
+		</complexContent>
+
+	</complexType>
+</schema>
