@@ -3,13 +3,20 @@ var ISO19139_GCO_20070417_Module_Factory = function () {
     n: 'ISO19139_GCO_20070417',
     dens: 'http:\/\/www.isotc211.org\/2005\/gco',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'GML_3_2_1', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0'],
+    deps: ['XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'GML_3_2_1', 'GML_3_2_1', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0'],
     tis: [{
-        ln: 'DateTimePropertyType',
+        ln: 'TypeNameType',
+        bti: '.AbstractObjectType',
         ps: [{
-            n: 'dateTime',
-            en: 'DateTime',
-            ti: 'Calendar'
+            n: 'aName',
+            ti: '.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'MultiplicityPropertyType',
+        ps: [{
+            n: 'multiplicity',
+            en: 'Multiplicity',
+            ti: '.MultiplicityType'
           }, {
             n: 'nilReason',
             ti: {
@@ -20,18 +27,51 @@ var ISO19139_GCO_20070417_Module_Factory = function () {
               ns: 'http:\/\/www.isotc211.org\/2005\/gco'
             },
             t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'UnlimitedIntegerType',
+        ln: 'DecimalPropertyType',
         ps: [{
-            n: 'value',
-            ti: 'Integer',
-            t: 'v'
+            n: 'decimal',
+            en: 'Decimal',
+            ti: 'Decimal'
           }, {
-            n: 'isInfinite',
-            ti: 'Boolean',
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
             an: {
-              lp: 'isInfinite'
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
             },
             t: 'a'
           }]
@@ -83,11 +123,288 @@ var ISO19139_GCO_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MultiplicityPropertyType',
+        ln: 'UomVelocityPropertyType',
         ps: [{
-            n: 'multiplicity',
-            en: 'Multiplicity',
-            ti: '.MultiplicityType'
+            n: 'unitDefinition',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'UnitDefinition',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.UnitDefinitionType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'UnlimitedIntegerType',
+        ps: [{
+            n: 'value',
+            ti: 'Integer',
+            t: 'v'
+          }, {
+            n: 'isInfinite',
+            ti: 'Boolean',
+            an: {
+              lp: 'isInfinite'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractObjectType',
+        ps: [{
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }, {
+            n: 'uuid',
+            an: {
+              lp: 'uuid'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'RealPropertyType',
+        ps: [{
+            n: 'real',
+            en: 'Real',
+            ti: 'Double'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'UomAreaPropertyType',
+        ps: [{
+            n: 'unitDefinition',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'UnitDefinition',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.UnitDefinitionType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AnglePropertyType',
+        ps: [{
+            n: 'angle',
+            en: 'Angle',
+            ti: 'GML_3_2_1.AngleType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'UomLengthPropertyType',
+        ps: [{
+            n: 'unitDefinition',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'UnitDefinition',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.UnitDefinitionType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ScopedNamePropertyType',
+        ps: [{
+            n: 'scopedName',
+            en: 'ScopedName',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MemberNameType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'aName',
+            ti: '.CharacterStringPropertyType'
+          }, {
+            n: 'attributeType',
+            ti: '.TypeNamePropertyType'
+          }]
+      }, {
+        ln: 'BooleanPropertyType',
+        ps: [{
+            n: '_boolean',
+            en: 'Boolean',
+            ti: 'Boolean'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'UomScalePropertyType',
+        ps: [{
+            n: 'unitDefinition',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'UnitDefinition',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.UnitDefinitionType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -173,11 +490,11 @@ var ISO19139_GCO_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'UnlimitedIntegerPropertyType',
+        ln: 'RecordPropertyType',
         ps: [{
-            n: 'unlimitedInteger',
-            en: 'UnlimitedInteger',
-            ti: '.UnlimitedIntegerType'
+            n: 'record',
+            en: 'Record',
+            ti: 'AnyType'
           }, {
             n: 'nilReason',
             ti: {
@@ -188,70 +505,39 @@ var ISO19139_GCO_20070417_Module_Factory = function () {
               ns: 'http:\/\/www.isotc211.org\/2005\/gco'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'CharacterStringPropertyType',
-        ps: [{
-            n: 'characterString',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'CharacterString',
-            t: 'er'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
+            n: 'uuidref',
             an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+              lp: 'uuidref'
             },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
-        ln: 'CodeListValueType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'codeList',
-            an: {
-              lp: 'codeList'
-            },
-            t: 'a'
-          }, {
-            n: 'codeListValue',
-            an: {
-              lp: 'codeListValue'
-            },
-            t: 'a'
-          }, {
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LocalNamePropertyType',
-        ps: [{
-            n: 'localName',
-            en: 'LocalName',
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'UomAreaPropertyType',
+        ln: 'UomAnglePropertyType',
         ps: [{
             n: 'unitDefinition',
             mx: false,
@@ -305,11 +591,194 @@ var ISO19139_GCO_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ScopedNamePropertyType',
+        ln: 'BinaryType',
         ps: [{
-            n: 'scopedName',
-            en: 'ScopedName',
-            ti: 'GML_3_2_1.CodeType'
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'src',
+            an: {
+              lp: 'src'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MultiplicityRangeType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'lower',
+            ti: '.IntegerPropertyType'
+          }, {
+            n: 'upper',
+            ti: '.UnlimitedIntegerPropertyType'
+          }]
+      }, {
+        ln: 'GenericNamePropertyType',
+        ps: [{
+            n: 'abstractGenericName',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'AbstractGenericName',
+            ti: 'GML_3_2_1.CodeType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'NumberPropertyType',
+        ps: [{
+            n: 'real',
+            en: 'Real',
+            ti: 'Double'
+          }, {
+            n: 'decimal',
+            en: 'Decimal',
+            ti: 'Decimal'
+          }, {
+            n: 'integer',
+            en: 'Integer',
+            ti: 'Integer'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'UnlimitedIntegerPropertyType',
+        ps: [{
+            n: 'unlimitedInteger',
+            en: 'UnlimitedInteger',
+            ti: '.UnlimitedIntegerType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MultiplicityRangePropertyType',
+        ps: [{
+            n: 'multiplicityRange',
+            en: 'MultiplicityRange',
+            ti: '.MultiplicityRangeType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'RecordTypeType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'LengthPropertyType',
+        ps: [{
+            n: 'length',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'Length',
+            ti: 'GML_3_2_1.LengthType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'IntegerPropertyType',
+        ps: [{
+            n: 'integer',
+            en: 'Integer',
+            ti: 'Integer'
           }, {
             n: 'nilReason',
             ti: {
@@ -330,6 +799,319 @@ var ISO19139_GCO_20070417_Module_Factory = function () {
             n: 'dateTime',
             en: 'DateTime',
             ti: 'Calendar'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CharacterStringPropertyType',
+        ps: [{
+            n: 'characterString',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'CharacterString',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DistancePropertyType',
+        ps: [{
+            n: 'distance',
+            en: 'Distance',
+            ti: 'GML_3_2_1.LengthType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'RecordTypePropertyType',
+        ps: [{
+            n: 'recordType',
+            en: 'RecordType',
+            ti: '.RecordTypeType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'UomTimePropertyType',
+        ps: [{
+            n: 'unitDefinition',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'UnitDefinition',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.UnitDefinitionType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MultiplicityType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'range',
+            col: true,
+            ti: '.MultiplicityRangePropertyType'
+          }]
+      }, {
+        ln: 'TypeNamePropertyType',
+        ps: [{
+            n: 'typeName',
+            en: 'TypeName',
+            ti: '.TypeNameType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MeasurePropertyType',
+        ps: [{
+            n: 'measure',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'Measure',
+            ti: 'GML_3_2_1.MeasureType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'UomVolumePropertyType',
+        ps: [{
+            n: 'unitDefinition',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'UnitDefinition',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.UnitDefinitionType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CodeListValueType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'codeList',
+            an: {
+              lp: 'codeList'
+            },
+            t: 'a'
+          }, {
+            n: 'codeListValue',
+            an: {
+              lp: 'codeListValue'
+            },
+            t: 'a'
+          }, {
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ScalePropertyType',
+        ps: [{
+            n: 'scale',
+            en: 'Scale',
+            ti: 'GML_3_2_1.ScaleType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LocalNamePropertyType',
+        ps: [{
+            n: 'localName',
+            en: 'LocalName',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'BinaryPropertyType',
+        ps: [{
+            n: 'binary',
+            en: 'Binary',
+            ti: '.BinaryType'
           }, {
             n: 'nilReason',
             ti: {
@@ -396,15 +1178,11 @@ var ISO19139_GCO_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GenericNamePropertyType',
+        ln: 'DateTimePropertyType',
         ps: [{
-            n: 'abstractGenericName',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractGenericName',
-            ti: 'GML_3_2_1.CodeType',
-            t: 'er'
+            n: 'dateTime',
+            en: 'DateTime',
+            ti: 'Calendar'
           }, {
             n: 'nilReason',
             ti: {
@@ -415,862 +1193,84 @@ var ISO19139_GCO_20070417_Module_Factory = function () {
               ns: 'http:\/\/www.isotc211.org\/2005\/gco'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'MeasurePropertyType',
-        ps: [{
-            n: 'measure',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'Measure',
-            ti: 'GML_3_2_1.MeasureType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'IntegerPropertyType',
-        ps: [{
-            n: 'integer',
-            en: 'Integer',
-            ti: 'Integer'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RecordTypeType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TypeNamePropertyType',
-        ps: [{
-            n: 'typeName',
-            en: 'TypeName',
-            ti: '.TypeNameType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'RecordTypePropertyType',
-        ps: [{
-            n: 'recordType',
-            en: 'RecordType',
-            ti: '.RecordTypeType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MultiplicityRangePropertyType',
-        ps: [{
-            n: 'multiplicityRange',
-            en: 'MultiplicityRange',
-            ti: '.MultiplicityRangeType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ScalePropertyType',
-        ps: [{
-            n: 'scale',
-            en: 'Scale',
-            ti: 'GML_3_2_1.ScaleType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RealPropertyType',
-        ps: [{
-            n: 'real',
-            en: 'Real',
-            ti: 'Double'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'UomVelocityPropertyType',
-        ps: [{
-            n: 'unitDefinition',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'UnitDefinition',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.UnitDefinitionType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'UomScalePropertyType',
-        ps: [{
-            n: 'unitDefinition',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'UnitDefinition',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.UnitDefinitionType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'UomLengthPropertyType',
-        ps: [{
-            n: 'unitDefinition',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'UnitDefinition',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.UnitDefinitionType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TypeNameType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'aName',
-            ti: '.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'UomTimePropertyType',
-        ps: [{
-            n: 'unitDefinition',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'UnitDefinition',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.UnitDefinitionType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DecimalPropertyType',
-        ps: [{
-            n: 'decimal',
-            en: 'Decimal',
-            ti: 'Decimal'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MultiplicityRangeType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'lower',
-            ti: '.IntegerPropertyType'
-          }, {
-            n: 'upper',
-            ti: '.UnlimitedIntegerPropertyType'
-          }]
-      }, {
-        ln: 'BinaryPropertyType',
-        ps: [{
-            n: 'binary',
-            en: 'Binary',
-            ti: '.BinaryType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'UomAnglePropertyType',
-        ps: [{
-            n: 'unitDefinition',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'UnitDefinition',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.UnitDefinitionType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DistancePropertyType',
-        ps: [{
-            n: 'distance',
-            en: 'Distance',
-            ti: 'GML_3_2_1.LengthType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'BooleanPropertyType',
-        ps: [{
-            n: '_boolean',
-            en: 'Boolean',
-            ti: 'Boolean'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'NumberPropertyType',
-        ps: [{
-            n: 'real',
-            en: 'Real',
-            ti: 'Double'
-          }, {
-            n: 'decimal',
-            en: 'Decimal',
-            ti: 'Decimal'
-          }, {
-            n: 'integer',
-            en: 'Integer',
-            ti: 'Integer'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MemberNameType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'aName',
-            ti: '.CharacterStringPropertyType'
-          }, {
-            n: 'attributeType',
-            ti: '.TypeNamePropertyType'
-          }]
-      }, {
-        ln: 'UomVolumePropertyType',
-        ps: [{
-            n: 'unitDefinition',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'UnitDefinition',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.UnitDefinitionType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'LengthPropertyType',
-        ps: [{
-            n: 'length',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'Length',
-            ti: 'GML_3_2_1.LengthType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractObjectType',
-        ps: [{
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }, {
-            n: 'uuid',
-            an: {
-              lp: 'uuid'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'BinaryType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'src',
-            an: {
-              lp: 'src'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AnglePropertyType',
-        ps: [{
-            n: 'angle',
-            en: 'Angle',
-            ti: 'GML_3_2_1.AngleType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RecordPropertyType',
-        ps: [{
-            n: 'record',
-            en: 'Record',
-            ti: 'AnyType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MultiplicityType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'range',
-            col: true,
-            ti: '.MultiplicityRangePropertyType'
           }]
       }],
     eis: [{
-        en: 'AbstractObject',
-        ti: '.AbstractObjectType'
-      }, {
-        en: 'ScopedName',
-        ti: 'GML_3_2_1.CodeType',
-        sh: 'AbstractGenericName'
-      }, {
-        en: 'AbstractGenericName',
-        ti: 'GML_3_2_1.CodeType'
-      }, {
-        en: 'Multiplicity',
-        ti: '.MultiplicityType'
-      }, {
-        en: 'MultiplicityRange',
-        ti: '.MultiplicityRangeType'
-      }, {
-        en: 'TypeName',
-        ti: '.TypeNameType'
-      }, {
-        en: 'CharacterString'
-      }, {
-        en: 'RecordType',
-        ti: '.RecordTypeType'
-      }, {
-        en: 'Record',
-        ti: 'AnyType'
-      }, {
-        en: 'Decimal',
-        ti: 'Decimal'
+        en: 'Boolean',
+        ti: 'Boolean'
       }, {
         en: 'LocalName',
         ti: 'GML_3_2_1.CodeType',
         sh: 'AbstractGenericName'
       }, {
-        en: 'Scale',
-        ti: 'GML_3_2_1.ScaleType',
-        sh: 'Measure'
-      }, {
-        en: 'Measure',
-        ti: 'GML_3_2_1.MeasureType'
-      }, {
-        en: 'Binary',
-        ti: '.BinaryType'
-      }, {
-        en: 'Length',
-        ti: 'GML_3_2_1.LengthType',
-        sh: 'Measure'
-      }, {
-        en: 'Angle',
-        ti: 'GML_3_2_1.AngleType',
-        sh: 'Measure'
-      }, {
-        en: 'Boolean',
-        ti: 'Boolean'
-      }, {
-        en: 'UnlimitedInteger',
-        ti: '.UnlimitedIntegerType'
+        en: 'CharacterString'
       }, {
         en: 'Distance',
         ti: 'GML_3_2_1.LengthType',
         sh: 'Length'
       }, {
-        en: 'DateTime',
-        ti: 'Calendar'
+        en: 'Multiplicity',
+        ti: '.MultiplicityType'
+      }, {
+        en: 'AbstractGenericName',
+        ti: 'GML_3_2_1.CodeType'
+      }, {
+        en: 'Scale',
+        ti: 'GML_3_2_1.ScaleType',
+        sh: 'Measure'
+      }, {
+        en: 'Date'
+      }, {
+        en: 'Measure',
+        ti: 'GML_3_2_1.MeasureType'
+      }, {
+        en: 'MultiplicityRange',
+        ti: '.MultiplicityRangeType'
+      }, {
+        en: 'Record',
+        ti: 'AnyType'
       }, {
         en: 'Integer',
         ti: 'Integer'
       }, {
+        en: 'ScopedName',
+        ti: 'GML_3_2_1.CodeType',
+        sh: 'AbstractGenericName'
+      }, {
+        en: 'RecordType',
+        ti: '.RecordTypeType'
+      }, {
+        en: 'Length',
+        ti: 'GML_3_2_1.LengthType',
+        sh: 'Measure'
+      }, {
         en: 'MemberName',
         ti: '.MemberNameType'
+      }, {
+        en: 'AbstractObject',
+        ti: '.AbstractObjectType'
+      }, {
+        en: 'TypeName',
+        ti: '.TypeNameType'
+      }, {
+        en: 'Decimal',
+        ti: 'Decimal'
+      }, {
+        en: 'UnlimitedInteger',
+        ti: '.UnlimitedIntegerType'
       }, {
         en: 'Real',
         ti: 'Double'
       }, {
-        en: 'Date'
+        en: 'DateTime',
+        ti: 'Calendar'
+      }, {
+        en: 'Angle',
+        ti: 'GML_3_2_1.AngleType',
+        sh: 'Measure'
+      }, {
+        en: 'Binary',
+        ti: '.BinaryType'
       }]
   };
   return {

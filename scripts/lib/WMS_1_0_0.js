@@ -2,27 +2,6 @@ var WMS_1_0_0_Module_Factory = function () {
   var WMS_1_0_0 = {
     n: 'WMS_1_0_0',
     tis: [{
-        ln: 'MIME'
-      }, {
-        ln: 'TIFF'
-      }, {
-        ln: 'WBMP'
-      }, {
-        ln: 'GML3'
-      }, {
-        ln: 'Get',
-        ps: [{
-            n: 'onlineResource',
-            an: {
-              lp: 'onlineResource'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GML1'
-      }, {
-        ln: 'GIF'
-      }, {
         ln: 'FeatureInfo',
         ps: [{
             n: 'format',
@@ -39,96 +18,13 @@ var WMS_1_0_0_Module_Factory = function () {
             ti: '.DCPType'
           }]
       }, {
-        ln: 'PNG'
+        ln: 'GeoTIFF'
       }, {
-        ln: 'ScaleHint',
-        ps: [{
-            n: 'min',
-            an: {
-              lp: 'min'
-            },
-            t: 'a'
-          }, {
-            n: 'max',
-            an: {
-              lp: 'max'
-            },
-            t: 'a'
-          }]
+        ln: 'INIMAGE'
       }, {
-        ln: 'Style',
-        ps: [{
-            n: 'name',
-            en: {
-              lp: 'Name'
-            }
-          }, {
-            n: 'title',
-            en: {
-              lp: 'Title'
-            }
-          }, {
-            n: '_abstract',
-            en: {
-              lp: 'Abstract'
-            }
-          }, {
-            n: 'styleURL',
-            en: {
-              lp: 'StyleURL'
-            }
-          }]
+        ln: 'SVG'
       }, {
-        ln: 'VendorSpecificCapabilities'
-      }, {
-        ln: 'Service',
-        ps: [{
-            n: 'name',
-            en: {
-              lp: 'Name'
-            }
-          }, {
-            n: 'title',
-            en: {
-              lp: 'Title'
-            }
-          }, {
-            n: '_abstract',
-            en: {
-              lp: 'Abstract'
-            }
-          }, {
-            n: 'keywords',
-            en: {
-              lp: 'Keywords'
-            }
-          }, {
-            n: 'onlineResource',
-            en: {
-              lp: 'OnlineResource'
-            }
-          }, {
-            n: 'fees',
-            en: {
-              lp: 'Fees'
-            }
-          }, {
-            n: 'accessConstraints',
-            en: {
-              lp: 'AccessConstraints'
-            }
-          }]
-      }, {
-        ln: 'DCPType',
-        ps: [{
-            n: 'http',
-            en: {
-              lp: 'HTTP'
-            },
-            ti: '.HTTP'
-          }]
-      }, {
-        ln: 'WebCGM'
+        ln: 'WMSXML'
       }, {
         ln: 'Layer',
         ps: [{
@@ -202,64 +98,9 @@ var WMS_1_0_0_Module_Factory = function () {
             ti: '.Layer'
           }]
       }, {
-        ln: 'HTTP',
-        ps: [{
-            n: 'getOrPost',
-            col: true,
-            etis: [{
-                en: {
-                  lp: 'Get'
-                },
-                ti: '.Get'
-              }, {
-                en: {
-                  lp: 'Post'
-                },
-                ti: '.Post'
-              }],
-            t: 'es'
-          }]
+        ln: 'WebCGM'
       }, {
-        ln: 'PPM'
-      }, {
-        ln: 'LatLonBoundingBox',
-        ps: [{
-            n: 'minx',
-            an: {
-              lp: 'minx'
-            },
-            t: 'a'
-          }, {
-            n: 'miny',
-            an: {
-              lp: 'miny'
-            },
-            t: 'a'
-          }, {
-            n: 'maxx',
-            an: {
-              lp: 'maxx'
-            },
-            t: 'a'
-          }, {
-            n: 'maxy',
-            an: {
-              lp: 'maxy'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'WMSXML'
-      }, {
-        ln: 'JPEG'
-      }, {
-        ln: 'GeoTIFF'
-      }, {
-        ln: 'GML2'
-      }, {
-        ln: 'SVG'
-      }, {
-        ln: 'Capabilities',
+        ln: 'Map',
         ps: [{
             n: 'format',
             en: {
@@ -298,70 +139,87 @@ var WMS_1_0_0_Module_Factory = function () {
             t: 'es'
           }]
       }, {
-        ln: 'Map',
+        ln: 'PPM'
+      }, {
+        ln: 'HTTP',
         ps: [{
-            n: 'format',
-            en: {
-              lp: 'Format'
-            },
-            ti: '.Format'
-          }, {
-            n: 'dcpType',
+            n: 'getOrPost',
             col: true,
-            en: {
-              lp: 'DCPType'
-            },
-            ti: '.DCPType'
+            etis: [{
+                en: {
+                  lp: 'Get'
+                },
+                ti: '.Get'
+              }, {
+                en: {
+                  lp: 'Post'
+                },
+                ti: '.Post'
+              }],
+            t: 'es'
           }]
       }, {
-        ln: 'INIMAGE'
+        ln: 'WBMP'
       }, {
-        ln: 'Exception',
+        ln: 'GML1'
+      }, {
+        ln: 'PNG'
+      }, {
+        ln: 'ScaleHint',
         ps: [{
-            n: 'format',
-            en: {
-              lp: 'Format'
-            },
-            ti: '.Format'
-          }]
-      }, {
-        ln: 'BLANK'
-      }, {
-        ln: 'Capability',
-        ps: [{
-            n: 'request',
-            en: {
-              lp: 'Request'
-            },
-            ti: '.Request'
-          }, {
-            n: 'exception',
-            en: {
-              lp: 'Exception'
-            },
-            ti: '.Exception'
-          }, {
-            n: 'vendorSpecificCapabilities',
-            en: {
-              lp: 'VendorSpecificCapabilities'
-            },
-            ti: '.VendorSpecificCapabilities'
-          }, {
-            n: 'layer',
-            en: {
-              lp: 'Layer'
-            },
-            ti: '.Layer'
-          }]
-      }, {
-        ln: 'BoundingBox',
-        ps: [{
-            n: 'srs',
+            n: 'min',
             an: {
-              lp: 'SRS'
+              lp: 'min'
             },
             t: 'a'
           }, {
+            n: 'max',
+            an: {
+              lp: 'max'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TIFF'
+      }, {
+        ln: 'Get',
+        ps: [{
+            n: 'onlineResource',
+            an: {
+              lp: 'onlineResource'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'WMTMSCapabilities',
+        ps: [{
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
+            },
+            t: 'a'
+          }, {
+            n: 'service',
+            en: {
+              lp: 'Service'
+            },
+            ti: '.Service'
+          }, {
+            n: 'capability',
+            en: {
+              lp: 'Capability'
+            },
+            ti: '.Capability'
+          }]
+      }, {
+        ln: 'LatLonBoundingBox',
+        ps: [{
             n: 'minx',
             an: {
               lp: 'minx'
@@ -386,6 +244,10 @@ var WMS_1_0_0_Module_Factory = function () {
             },
             t: 'a'
           }]
+      }, {
+        ln: 'VendorSpecificCapabilities'
+      }, {
+        ln: 'JPEG'
       }, {
         ln: 'Format',
         ps: [{
@@ -475,31 +337,64 @@ var WMS_1_0_0_Module_Factory = function () {
             t: 'es'
           }]
       }, {
-        ln: 'WMTMSCapabilities',
+        ln: 'Service',
         ps: [{
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }, {
-            n: 'service',
+            n: 'name',
             en: {
-              lp: 'Service'
-            },
-            ti: '.Service'
+              lp: 'Name'
+            }
           }, {
-            n: 'capability',
+            n: 'title',
             en: {
-              lp: 'Capability'
+              lp: 'Title'
+            }
+          }, {
+            n: '_abstract',
+            en: {
+              lp: 'Abstract'
+            }
+          }, {
+            n: 'keywords',
+            en: {
+              lp: 'Keywords'
+            }
+          }, {
+            n: 'onlineResource',
+            en: {
+              lp: 'OnlineResource'
+            }
+          }, {
+            n: 'fees',
+            en: {
+              lp: 'Fees'
+            }
+          }, {
+            n: 'accessConstraints',
+            en: {
+              lp: 'AccessConstraints'
+            }
+          }]
+      }, {
+        ln: 'MIME'
+      }, {
+        ln: 'DCPType',
+        ps: [{
+            n: 'http',
+            en: {
+              lp: 'HTTP'
             },
-            ti: '.Capability'
+            ti: '.HTTP'
+          }]
+      }, {
+        ln: 'GML2'
+      }, {
+        ln: 'Exception',
+        ps: [{
+            n: 'format',
+            en: {
+              lp: 'Format'
+            },
+            ti: '.Format'
           }]
       }, {
         ln: 'Post',
@@ -510,27 +405,132 @@ var WMS_1_0_0_Module_Factory = function () {
             },
             t: 'a'
           }]
+      }, {
+        ln: 'BoundingBox',
+        ps: [{
+            n: 'srs',
+            an: {
+              lp: 'SRS'
+            },
+            t: 'a'
+          }, {
+            n: 'minx',
+            an: {
+              lp: 'minx'
+            },
+            t: 'a'
+          }, {
+            n: 'miny',
+            an: {
+              lp: 'miny'
+            },
+            t: 'a'
+          }, {
+            n: 'maxx',
+            an: {
+              lp: 'maxx'
+            },
+            t: 'a'
+          }, {
+            n: 'maxy',
+            an: {
+              lp: 'maxy'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Capabilities',
+        ps: [{
+            n: 'format',
+            en: {
+              lp: 'Format'
+            },
+            ti: '.Format'
+          }, {
+            n: 'dcpType',
+            col: true,
+            en: {
+              lp: 'DCPType'
+            },
+            ti: '.DCPType'
+          }]
+      }, {
+        ln: 'GIF'
+      }, {
+        ln: 'Style',
+        ps: [{
+            n: 'name',
+            en: {
+              lp: 'Name'
+            }
+          }, {
+            n: 'title',
+            en: {
+              lp: 'Title'
+            }
+          }, {
+            n: '_abstract',
+            en: {
+              lp: 'Abstract'
+            }
+          }, {
+            n: 'styleURL',
+            en: {
+              lp: 'StyleURL'
+            }
+          }]
+      }, {
+        ln: 'BLANK'
+      }, {
+        ln: 'Capability',
+        ps: [{
+            n: 'request',
+            en: {
+              lp: 'Request'
+            },
+            ti: '.Request'
+          }, {
+            n: 'exception',
+            en: {
+              lp: 'Exception'
+            },
+            ti: '.Exception'
+          }, {
+            n: 'vendorSpecificCapabilities',
+            en: {
+              lp: 'VendorSpecificCapabilities'
+            },
+            ti: '.VendorSpecificCapabilities'
+          }, {
+            n: 'layer',
+            en: {
+              lp: 'Layer'
+            },
+            ti: '.Layer'
+          }]
+      }, {
+        ln: 'GML3'
       }],
     eis: [{
         en: {
-          lp: 'VendorSpecificCapabilities'
+          lp: 'GML.2'
         },
-        ti: '.VendorSpecificCapabilities'
+        ti: '.GML2'
       }, {
         en: {
-          lp: 'BLANK'
+          lp: 'FeatureInfo'
         },
-        ti: '.BLANK'
+        ti: '.FeatureInfo'
       }, {
         en: {
-          lp: 'Capability'
+          lp: 'GIF'
         },
-        ti: '.Capability'
+        ti: '.GIF'
       }, {
         en: {
-          lp: 'Style'
+          lp: 'INIMAGE'
         },
-        ti: '.Style'
+        ti: '.INIMAGE'
       }, {
         en: {
           lp: 'Exception'
@@ -538,9 +538,44 @@ var WMS_1_0_0_Module_Factory = function () {
         ti: '.Exception'
       }, {
         en: {
+          lp: 'JPEG'
+        },
+        ti: '.JPEG'
+      }, {
+        en: {
+          lp: 'TIFF'
+        },
+        ti: '.TIFF'
+      }, {
+        en: {
           lp: 'Post'
         },
         ti: '.Post'
+      }, {
+        en: {
+          lp: 'Layer'
+        },
+        ti: '.Layer'
+      }, {
+        en: {
+          lp: 'PNG'
+        },
+        ti: '.PNG'
+      }, {
+        en: {
+          lp: 'Get'
+        },
+        ti: '.Get'
+      }, {
+        en: {
+          lp: 'ScaleHint'
+        },
+        ti: '.ScaleHint'
+      }, {
+        en: {
+          lp: 'Capability'
+        },
+        ti: '.Capability'
       }, {
         en: {
           lp: 'DCPType'
@@ -553,44 +588,9 @@ var WMS_1_0_0_Module_Factory = function () {
         ti: '.GML3'
       }, {
         en: {
-          lp: 'GIF'
+          lp: 'GML.1'
         },
-        ti: '.GIF'
-      }, {
-        en: {
-          lp: 'FeatureInfo'
-        },
-        ti: '.FeatureInfo'
-      }, {
-        en: {
-          lp: 'SVG'
-        },
-        ti: '.SVG'
-      }, {
-        en: {
-          lp: 'Service'
-        },
-        ti: '.Service'
-      }, {
-        en: {
-          lp: 'LatLonBoundingBox'
-        },
-        ti: '.LatLonBoundingBox'
-      }, {
-        en: {
-          lp: 'ScaleHint'
-        },
-        ti: '.ScaleHint'
-      }, {
-        en: {
-          lp: 'WebCGM'
-        },
-        ti: '.WebCGM'
-      }, {
-        en: {
-          lp: 'PNG'
-        },
-        ti: '.PNG'
+        ti: '.GML1'
       }, {
         en: {
           lp: 'GeoTIFF'
@@ -598,34 +598,24 @@ var WMS_1_0_0_Module_Factory = function () {
         ti: '.GeoTIFF'
       }, {
         en: {
-          lp: 'INIMAGE'
+          lp: 'Style'
         },
-        ti: '.INIMAGE'
+        ti: '.Style'
+      }, {
+        en: {
+          lp: 'SVG'
+        },
+        ti: '.SVG'
+      }, {
+        en: {
+          lp: 'VendorSpecificCapabilities'
+        },
+        ti: '.VendorSpecificCapabilities'
       }, {
         en: {
           lp: 'WBMP'
         },
         ti: '.WBMP'
-      }, {
-        en: {
-          lp: 'JPEG'
-        },
-        ti: '.JPEG'
-      }, {
-        en: {
-          lp: 'Layer'
-        },
-        ti: '.Layer'
-      }, {
-        en: {
-          lp: 'Map'
-        },
-        ti: '.Map'
-      }, {
-        en: {
-          lp: 'BoundingBox'
-        },
-        ti: '.BoundingBox'
       }, {
         en: {
           lp: 'PPM'
@@ -638,44 +628,14 @@ var WMS_1_0_0_Module_Factory = function () {
         ti: '.Format'
       }, {
         en: {
-          lp: 'Get'
+          lp: 'LatLonBoundingBox'
         },
-        ti: '.Get'
+        ti: '.LatLonBoundingBox'
       }, {
         en: {
-          lp: 'GML.1'
+          lp: 'BLANK'
         },
-        ti: '.GML1'
-      }, {
-        en: {
-          lp: 'Request'
-        },
-        ti: '.Request'
-      }, {
-        en: {
-          lp: 'TIFF'
-        },
-        ti: '.TIFF'
-      }, {
-        en: {
-          lp: 'GML.2'
-        },
-        ti: '.GML2'
-      }, {
-        en: {
-          lp: 'MIME'
-        },
-        ti: '.MIME'
-      }, {
-        en: {
-          lp: 'HTTP'
-        },
-        ti: '.HTTP'
-      }, {
-        en: {
-          lp: 'WMT_MS_Capabilities'
-        },
-        ti: '.WMTMSCapabilities'
+        ti: '.BLANK'
       }, {
         en: {
           lp: 'WMS_XML'
@@ -683,9 +643,49 @@ var WMS_1_0_0_Module_Factory = function () {
         ti: '.WMSXML'
       }, {
         en: {
+          lp: 'WebCGM'
+        },
+        ti: '.WebCGM'
+      }, {
+        en: {
+          lp: 'MIME'
+        },
+        ti: '.MIME'
+      }, {
+        en: {
+          lp: 'WMT_MS_Capabilities'
+        },
+        ti: '.WMTMSCapabilities'
+      }, {
+        en: {
+          lp: 'Service'
+        },
+        ti: '.Service'
+      }, {
+        en: {
+          lp: 'HTTP'
+        },
+        ti: '.HTTP'
+      }, {
+        en: {
+          lp: 'Request'
+        },
+        ti: '.Request'
+      }, {
+        en: {
+          lp: 'BoundingBox'
+        },
+        ti: '.BoundingBox'
+      }, {
+        en: {
           lp: 'Capabilities'
         },
         ti: '.Capabilities'
+      }, {
+        en: {
+          lp: 'Map'
+        },
+        ti: '.Map'
       }]
   };
   return {
