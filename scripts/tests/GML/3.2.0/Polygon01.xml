@@ -1,0 +1,7 @@
+<gml:Polygon gml:id="P1" srsName="urn:ogc:def:crs:EPSG::4326" xmlns:gml="http://www.opengis.net/gml">
+   <gml:exterior>
+      <gml:LinearRing>
+         <gml:posList>10 10 20 20 30 30 40 40 10 10</gml:posList>
+      </gml:LinearRing>
+   </gml:exterior>
+</gml:Polygon>
