@@ -19,7 +19,7 @@ module.exports =
 		"WMC" : require('./WMC/WMC.js'),
 		"WCS" : require('./WCS/WCS.js'),
 		"WFS" : require('./WFS/WFS.js'),
-		"WMS" : require('./WMS/WMS.js'),
-		"WPS" : require('./WPS/WPS.js'),
+		"WMTS" : require('./WMTS/WMTS.js'),
+		"WPS" : require('./WPS/WPS.js')
 	}
 };

@@ -14,6 +14,7 @@ Supports the following schemas:
 * `Filter_2_0`
 * `GML_2_1_2`
 * `GML_3_1_1`
+* `GML_3_2_0`
 * `GML_3_2_1`
 * `GMLCOV_1_0`
 * `SMIL_2_0`
@@ -26,6 +27,13 @@ Supports the following schemas:
 * `ISO19139_GSR_20070417`
 * `ISO19139_GSS_20070417`
 * `ISO19139_GTS_20070417`
+* `ISO19139_GCO_20060504`
+* `ISO19139_GMD_20060504`
+* `ISO19139_GMX_20060504`
+* `ISO19139_GSR_20060504`
+* `ISO19139_GSS_20060504`
+* `ISO19139_GTS_20060504`
+* `ISO19139_SRV_20060504`
 * `KML_2_2_0`
   * `Atom_1_0`
   * `xAL_2_0`
@@ -56,6 +64,7 @@ Supports the following schemas:
 * `WMS_1_0_0`
 * `WMS_1_1_0`
 * `WPS_1_0_0`
+* `WPS_2_0_0`
 
 # Example
 
