@@ -11,6 +11,7 @@
 		<version>2.1.0-SNAPSHOT</version>
 	</parent>
 	<modules>
+		<module>20060504</module>
 		<module>20070417</module>
 	</modules>
 	<build>

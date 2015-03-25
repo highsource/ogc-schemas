@@ -1,0 +1,55 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.iso19139.gmd.v_20060504"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20060504/gco/gco.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.iso19139.gco.v_20060504"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20060504/gmx/gmx.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.iso19139.gmx.v_20060504"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20060504/gsr/gsr.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.iso19139.gsr.v_20060504"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20060504/gss/gss.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.iso19139.gss.v_20060504"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20060504/gts/gts.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.iso19139.gts.v_20060504"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.iso19139.srv.v_20060504"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+</jaxb:bindings>
