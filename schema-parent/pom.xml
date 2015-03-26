@@ -156,9 +156,41 @@
 								</artifacts>
 							</configuration>
 						</execution>
+						<execution>
+							<id>add-resource</id>
+							<phase>generate-resources</phase>
+							<goals>
+								<goal>add-resource</goal>
+							</goals>
+							<configuration>
+								<resources>
+									<resource>
+										<directory>${project.build.directory}/generated-resources/dependencies</directory>
+									</resource>
+								</resources>
+							</configuration>
+						</execution>
 					</executions>
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		<plugins>
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>list-dependencies</id>
+						<inherited>true</inherited>
+						<phase>generate-resources</phase>
+						<goals>
+							 <goal>list</goal>
+						</goals>
+						<configuration>
+							<outputFile>${project.build.directory}/generated-resources/dependencies/META-INF/maven/${project.groupId}/${project.artifactId}/dependencies.txt</outputFile>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>
