@@ -1,0 +1,116 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ogc-schemas-dist</artifactId>
+	<packaging>pom</packaging>
+	<name>OGC Schemas Distribution</name>
+	<parent>
+		<groupId>org.jvnet.ogc</groupId>
+		<artifactId>ogc-schemas-project</artifactId>
+		<version>2.1.0-SNAPSHOT</version>
+	</parent>
+	<dependencies>
+		<dependency><artifactId>csw-v_2_0_2</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>filter-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>filter-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>filter-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>gml-v_2_1_2</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>gml-v_3_1_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>gml-v_3_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>gml-v_3_2_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>gmlcov-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>iso19139-v_20070417</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>iso19139-v_20060504</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>ic-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>ic-v_2_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>kml-v_2_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>om-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>om-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>owc-v_0_3_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>ows-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>ows-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>ows-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>sampling-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>sensorML-v_1_0_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>sensorML-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>sld-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>sps-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>sos-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>sos-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>sweCommon-v_1_0_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>sweCommon-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>swes-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>wami-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>wami-v_1_0_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>wami-v_1_0_2</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>wcs-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>wcs-v_1_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>wcs-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>wfs-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>wfs-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>wfs-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>wmc-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>wmc-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>wms-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>wms-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>wms-v_1_1_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>wms-v_1_3_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>wmts-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>wps-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>wps-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<inherited>true</inherited>
+				<executions>
+					<execution>
+						<id>maven-assembly</id>
+						<phase>package</phase>
+						<goals>
+							 <goal>attached</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>files</outputDirectory>
+							<descriptors>
+								<descriptor>src/main/assembly/jars.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

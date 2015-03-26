@@ -87,6 +87,7 @@
 		<module>wmts</module>
 		<module>wps</module>
 		<module>scripts</module>
+		<module>dist</module>
 	</modules>
 	<profiles>
 		<profile>
