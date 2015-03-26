@@ -9,6 +9,7 @@ module.exports =
 		"KML" : require('./KML/KML.js'),
 		"OM" : require('./OM/OM.js'),
 		"OWC" : require('./OWC/OWC.js'),
+		"OWS" : require('./OWS/OWS.js'),
 		"Sampling" : require('./Sampling/Sampling.js'),
 		"SensorML" : require('./SensorML/SensorML.js'),
 		"SLD" : require('./SLD/SLD.js'),
