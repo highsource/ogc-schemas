@@ -4,59 +4,95 @@ var WMS_1_3_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/wms',
     deps: ['XLink_1_0'],
     tis: [{
-        ln: 'HTTP',
+        ln: 'KeywordList',
         ps: [{
-            n: 'get',
-            en: 'Get',
-            ti: '.Get'
-          }, {
-            n: 'post',
-            en: 'Post',
-            ti: '.Post'
+            n: 'keyword',
+            col: true,
+            en: 'Keyword',
+            ti: '.Keyword'
           }]
       }, {
-        ln: 'ContactPersonPrimary',
+        ln: 'Service',
         ps: [{
-            n: 'contactPerson',
-            en: 'ContactPerson'
+            n: 'name',
+            en: 'Name'
           }, {
-            n: 'contactOrganization',
-            en: 'ContactOrganization'
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'keywordList',
+            en: 'KeywordList',
+            ti: '.KeywordList'
+          }, {
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResource'
+          }, {
+            n: 'contactInformation',
+            en: 'ContactInformation',
+            ti: '.ContactInformation'
+          }, {
+            n: 'fees',
+            en: 'Fees'
+          }, {
+            n: 'accessConstraints',
+            en: 'AccessConstraints'
+          }, {
+            n: 'layerLimit',
+            en: 'LayerLimit',
+            ti: 'Integer'
+          }, {
+            n: 'maxWidth',
+            en: 'MaxWidth',
+            ti: 'Integer'
+          }, {
+            n: 'maxHeight',
+            en: 'MaxHeight',
+            ti: 'Integer'
           }]
       }, {
-        ln: 'Identifier',
+        ln: 'ServiceExceptionReport',
         ps: [{
-            n: 'value',
-            t: 'v'
+            n: 'serviceException',
+            col: true,
+            en: {
+              lp: 'ServiceException',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: '.ServiceExceptionType'
           }, {
-            n: 'authority',
+            n: 'version',
             an: {
-              lp: 'authority'
+              lp: 'version'
             },
             t: 'a'
           }]
       }, {
-        ln: 'Request',
+        ln: 'Attribution',
         ps: [{
-            n: 'getCapabilities',
-            en: 'GetCapabilities',
-            ti: '.OperationType'
+            n: 'title',
+            en: 'Title'
           }, {
-            n: 'getMap',
-            en: 'GetMap',
-            ti: '.OperationType'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResource'
           }, {
-            n: 'getFeatureInfo',
-            en: 'GetFeatureInfo',
-            ti: '.OperationType'
-          }, {
-            n: 'extendedOperation',
-            col: true,
-            en: '_ExtendedOperation',
-            ti: '.OperationType'
+            n: 'logoURL',
+            en: 'LogoURL',
+            ti: '.LogoURL'
           }]
       }, {
-        ln: 'StyleURL',
+        ln: 'DCPType',
+        ps: [{
+            n: 'http',
+            en: 'HTTP',
+            ti: '.HTTP'
+          }]
+      }, {
+        ln: 'StyleSheetURL',
         ps: [{
             n: 'format',
             en: 'Format'
@@ -64,18 +100,6 @@ var WMS_1_3_0_Module_Factory = function () {
             n: 'onlineResource',
             en: 'OnlineResource',
             ti: '.OnlineResource'
-          }]
-      }, {
-        ln: 'OperationType',
-        ps: [{
-            n: 'format',
-            col: true,
-            en: 'Format'
-          }, {
-            n: 'dcpType',
-            col: true,
-            en: 'DCPType',
-            ti: '.DCPType'
           }]
       }, {
         ln: 'LegendURL',
@@ -102,6 +126,84 @@ var WMS_1_3_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'LogoURL',
+        ps: [{
+            n: 'format',
+            en: 'Format'
+          }, {
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResource'
+          }, {
+            n: 'width',
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FeatureListURL',
+        ps: [{
+            n: 'format',
+            en: 'Format'
+          }, {
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResource'
+          }]
+      }, {
+        ln: 'ContactAddress',
+        ps: [{
+            n: 'addressType',
+            en: 'AddressType'
+          }, {
+            n: 'address',
+            en: 'Address'
+          }, {
+            n: 'city',
+            en: 'City'
+          }, {
+            n: 'stateOrProvince',
+            en: 'StateOrProvince'
+          }, {
+            n: 'postCode',
+            en: 'PostCode'
+          }, {
+            n: 'country',
+            en: 'Country'
+          }]
+      }, {
+        ln: 'WMSCapabilities',
+        ps: [{
+            n: 'service',
+            en: 'Service',
+            ti: '.Service'
+          }, {
+            n: 'capability',
+            en: 'Capability',
+            ti: '.Capability'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'EXGeographicBoundingBox',
         ps: [{
             n: 'westBoundLongitude',
@@ -115,6 +217,29 @@ var WMS_1_3_0_Module_Factory = function () {
           }, {
             n: 'northBoundLatitude',
             ti: 'Double'
+          }]
+      }, {
+        ln: 'ContactInformation',
+        ps: [{
+            n: 'contactPersonPrimary',
+            en: 'ContactPersonPrimary',
+            ti: '.ContactPersonPrimary'
+          }, {
+            n: 'contactPosition',
+            en: 'ContactPosition'
+          }, {
+            n: 'contactAddress',
+            en: 'ContactAddress',
+            ti: '.ContactAddress'
+          }, {
+            n: 'contactVoiceTelephone',
+            en: 'ContactVoiceTelephone'
+          }, {
+            n: 'contactFacsimileTelephone',
+            en: 'ContactFacsimileTelephone'
+          }, {
+            n: 'contactElectronicMailAddress',
+            en: 'ContactElectronicMailAddress'
           }]
       }, {
         ln: 'Style',
@@ -142,20 +267,11 @@ var WMS_1_3_0_Module_Factory = function () {
             ti: '.StyleURL'
           }]
       }, {
-        ln: 'MetadataURL',
+        ln: 'Get',
         ps: [{
-            n: 'format',
-            en: 'Format'
-          }, {
             n: 'onlineResource',
             en: 'OnlineResource',
             ti: '.OnlineResource'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'type'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'Post',
@@ -165,55 +281,97 @@ var WMS_1_3_0_Module_Factory = function () {
             ti: '.OnlineResource'
           }]
       }, {
-        ln: 'DataURL',
+        ln: 'ServiceExceptionType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'code'
+            },
+            t: 'a'
+          }, {
+            n: 'locator',
+            an: {
+              lp: 'locator'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'OperationType',
         ps: [{
             n: 'format',
+            col: true,
             en: 'Format'
           }, {
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResource'
-          }]
-      }, {
-        ln: 'Attribution',
-        ps: [{
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResource'
-          }, {
-            n: 'logoURL',
-            en: 'LogoURL',
-            ti: '.LogoURL'
-          }]
-      }, {
-        ln: 'DCPType',
-        ps: [{
-            n: 'http',
-            en: 'HTTP',
-            ti: '.HTTP'
-          }]
-      }, {
-        ln: 'Capability',
-        ps: [{
-            n: 'request',
-            en: 'Request',
-            ti: '.Request'
-          }, {
-            n: 'exception',
-            en: 'Exception',
-            ti: '.Exception'
-          }, {
-            n: 'extendedCapabilities',
+            n: 'dcpType',
             col: true,
-            en: '_ExtendedCapabilities',
-            ti: 'AnyType'
+            en: 'DCPType',
+            ti: '.DCPType'
+          }]
+      }, {
+        ln: 'Keyword',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            n: 'layer',
-            en: 'Layer',
-            ti: '.Layer'
+            n: 'vocabulary',
+            an: {
+              lp: 'vocabulary'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'BoundingBox',
+        ps: [{
+            n: 'crs',
+            an: {
+              lp: 'CRS'
+            },
+            t: 'a'
+          }, {
+            n: 'minx',
+            ti: 'Double',
+            an: {
+              lp: 'minx'
+            },
+            t: 'a'
+          }, {
+            n: 'miny',
+            ti: 'Double',
+            an: {
+              lp: 'miny'
+            },
+            t: 'a'
+          }, {
+            n: 'maxx',
+            ti: 'Double',
+            an: {
+              lp: 'maxx'
+            },
+            t: 'a'
+          }, {
+            n: 'maxy',
+            ti: 'Double',
+            an: {
+              lp: 'maxy'
+            },
+            t: 'a'
+          }, {
+            n: 'resx',
+            ti: 'Double',
+            an: {
+              lp: 'resx'
+            },
+            t: 'a'
+          }, {
+            n: 'resy',
+            ti: 'Double',
+            an: {
+              lp: 'resy'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'Layer',
@@ -390,87 +548,37 @@ var WMS_1_3_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Service',
+        ln: 'StyleURL',
         ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'keywordList',
-            en: 'KeywordList',
-            ti: '.KeywordList'
+            n: 'format',
+            en: 'Format'
           }, {
             n: 'onlineResource',
             en: 'OnlineResource',
             ti: '.OnlineResource'
-          }, {
-            n: 'contactInformation',
-            en: 'ContactInformation',
-            ti: '.ContactInformation'
-          }, {
-            n: 'fees',
-            en: 'Fees'
-          }, {
-            n: 'accessConstraints',
-            en: 'AccessConstraints'
-          }, {
-            n: 'layerLimit',
-            en: 'LayerLimit',
-            ti: 'Integer'
-          }, {
-            n: 'maxWidth',
-            en: 'MaxWidth',
-            ti: 'Integer'
-          }, {
-            n: 'maxHeight',
-            en: 'MaxHeight',
-            ti: 'Integer'
           }]
       }, {
-        ln: 'ContactInformation',
+        ln: 'Request',
         ps: [{
-            n: 'contactPersonPrimary',
-            en: 'ContactPersonPrimary',
-            ti: '.ContactPersonPrimary'
+            n: 'getCapabilities',
+            en: 'GetCapabilities',
+            ti: '.OperationType'
           }, {
-            n: 'contactPosition',
-            en: 'ContactPosition'
+            n: 'getMap',
+            en: 'GetMap',
+            ti: '.OperationType'
           }, {
-            n: 'contactAddress',
-            en: 'ContactAddress',
-            ti: '.ContactAddress'
+            n: 'getFeatureInfo',
+            en: 'GetFeatureInfo',
+            ti: '.OperationType'
           }, {
-            n: 'contactVoiceTelephone',
-            en: 'ContactVoiceTelephone'
-          }, {
-            n: 'contactFacsimileTelephone',
-            en: 'ContactFacsimileTelephone'
-          }, {
-            n: 'contactElectronicMailAddress',
-            en: 'ContactElectronicMailAddress'
-          }]
-      }, {
-        ln: 'KeywordList',
-        ps: [{
-            n: 'keyword',
+            n: 'extendedOperation',
             col: true,
-            en: 'Keyword',
-            ti: '.Keyword'
+            en: '_ExtendedOperation',
+            ti: '.OperationType'
           }]
       }, {
-        ln: 'Get',
-        ps: [{
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResource'
-          }]
-      }, {
-        ln: 'LogoURL',
+        ln: 'MetadataURL',
         ps: [{
             n: 'format',
             en: 'Format'
@@ -479,19 +587,61 @@ var WMS_1_3_0_Module_Factory = function () {
             en: 'OnlineResource',
             ti: '.OnlineResource'
           }, {
-            n: 'width',
-            ti: 'Integer',
+            n: 'type',
             an: {
-              lp: 'width'
+              lp: 'type'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'Capability',
+        ps: [{
+            n: 'request',
+            en: 'Request',
+            ti: '.Request'
           }, {
-            n: 'height',
-            ti: 'Integer',
+            n: 'exception',
+            en: 'Exception',
+            ti: '.Exception'
+          }, {
+            n: 'extendedCapabilities',
+            col: true,
+            en: '_ExtendedCapabilities',
+            ti: 'AnyType'
+          }, {
+            n: 'layer',
+            en: 'Layer',
+            ti: '.Layer'
+          }]
+      }, {
+        ln: 'Identifier',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'authority',
             an: {
-              lp: 'height'
+              lp: 'authority'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'HTTP',
+        ps: [{
+            n: 'get',
+            en: 'Get',
+            ti: '.Get'
+          }, {
+            n: 'post',
+            en: 'Post',
+            ti: '.Post'
+          }]
+      }, {
+        ln: 'Exception',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format'
           }]
       }, {
         ln: 'AuthorityURL',
@@ -507,70 +657,7 @@ var WMS_1_3_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ContactAddress',
-        ps: [{
-            n: 'addressType',
-            en: 'AddressType'
-          }, {
-            n: 'address',
-            en: 'Address'
-          }, {
-            n: 'city',
-            en: 'City'
-          }, {
-            n: 'stateOrProvince',
-            en: 'StateOrProvince'
-          }, {
-            n: 'postCode',
-            en: 'PostCode'
-          }, {
-            n: 'country',
-            en: 'Country'
-          }]
-      }, {
-        ln: 'Exception',
-        ps: [{
-            n: 'format',
-            col: true,
-            en: 'Format'
-          }]
-      }, {
-        ln: 'Keyword',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'vocabulary',
-            an: {
-              lp: 'vocabulary'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'WMSCapabilities',
-        ps: [{
-            n: 'service',
-            en: 'Service',
-            ti: '.Service'
-          }, {
-            n: 'capability',
-            en: 'Capability',
-            ti: '.Capability'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'StyleSheetURL',
+        ln: 'DataURL',
         ps: [{
             n: 'format',
             en: 'Format'
@@ -580,82 +667,13 @@ var WMS_1_3_0_Module_Factory = function () {
             ti: '.OnlineResource'
           }]
       }, {
-        ln: 'FeatureListURL',
+        ln: 'ContactPersonPrimary',
         ps: [{
-            n: 'format',
-            en: 'Format'
+            n: 'contactPerson',
+            en: 'ContactPerson'
           }, {
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResource'
-          }]
-      }, {
-        ln: 'ServiceExceptionReport',
-        ps: [{
-            n: 'serviceException',
-            col: true,
-            en: {
-              lp: 'ServiceException',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: '.ServiceExceptionType'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'BoundingBox',
-        ps: [{
-            n: 'crs',
-            an: {
-              lp: 'CRS'
-            },
-            t: 'a'
-          }, {
-            n: 'minx',
-            ti: 'Double',
-            an: {
-              lp: 'minx'
-            },
-            t: 'a'
-          }, {
-            n: 'miny',
-            ti: 'Double',
-            an: {
-              lp: 'miny'
-            },
-            t: 'a'
-          }, {
-            n: 'maxx',
-            ti: 'Double',
-            an: {
-              lp: 'maxx'
-            },
-            t: 'a'
-          }, {
-            n: 'maxy',
-            ti: 'Double',
-            an: {
-              lp: 'maxy'
-            },
-            t: 'a'
-          }, {
-            n: 'resx',
-            ti: 'Double',
-            an: {
-              lp: 'resx'
-            },
-            t: 'a'
-          }, {
-            n: 'resy',
-            ti: 'Double',
-            an: {
-              lp: 'resy'
-            },
-            t: 'a'
+            n: 'contactOrganization',
+            en: 'ContactOrganization'
           }]
       }, {
         ln: 'OnlineResource',
@@ -712,30 +730,60 @@ var WMS_1_3_0_Module_Factory = function () {
             },
             t: 'a'
           }]
-      }, {
-        ln: 'ServiceExceptionType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'code'
-            },
-            t: 'a'
-          }, {
-            n: 'locator',
-            an: {
-              lp: 'locator'
-            },
-            t: 'a'
-          }]
       }],
     eis: [{
+        en: 'PostCode'
+      }, {
         en: 'StateOrProvince'
       }, {
-        en: 'Exception',
-        ti: '.Exception'
+        en: 'ContactPerson'
+      }, {
+        en: 'ContactVoiceTelephone'
+      }, {
+        en: 'DCPType',
+        ti: '.DCPType'
+      }, {
+        en: 'MetadataURL',
+        ti: '.MetadataURL'
+      }, {
+        en: 'BoundingBox',
+        ti: '.BoundingBox'
+      }, {
+        en: 'GetMap',
+        ti: '.OperationType'
+      }, {
+        en: 'Identifier',
+        ti: '.Identifier'
+      }, {
+        en: 'Request',
+        ti: '.Request'
+      }, {
+        en: 'Capability',
+        ti: '.Capability'
+      }, {
+        en: 'ContactOrganization'
+      }, {
+        en: 'City'
+      }, {
+        en: 'Address'
+      }, {
+        en: 'MaxScaleDenominator',
+        ti: 'Double'
+      }, {
+        en: 'MaxWidth',
+        ti: 'Integer'
+      }, {
+        en: 'Format'
+      }, {
+        en: 'MaxHeight',
+        ti: 'Integer'
+      }, {
+        en: 'DataURL',
+        ti: '.DataURL'
+      }, {
+        en: 'ContactFacsimileTelephone'
+      }, {
+        en: 'Name'
       }, {
         en: {
           lp: 'ServiceExceptionReport',
@@ -743,90 +791,46 @@ var WMS_1_3_0_Module_Factory = function () {
         },
         ti: '.ServiceExceptionReport'
       }, {
-        en: 'City'
+        en: 'LogoURL',
+        ti: '.LogoURL'
       }, {
-        en: 'Attribution',
-        ti: '.Attribution'
+        en: 'AddressType'
       }, {
-        en: 'GetMap',
-        ti: '.OperationType'
-      }, {
-        en: 'PostCode'
-      }, {
-        en: 'WMS_Capabilities',
-        ti: '.WMSCapabilities'
-      }, {
-        en: 'ContactElectronicMailAddress'
-      }, {
-        en: 'MaxHeight',
-        ti: 'Integer'
-      }, {
-        en: 'Service',
-        ti: '.Service'
-      }, {
-        en: 'Get',
-        ti: '.Get'
-      }, {
-        en: 'ContactVoiceTelephone'
-      }, {
-        en: 'Identifier',
-        ti: '.Identifier'
-      }, {
-        en: 'Post',
-        ti: '.Post'
-      }, {
-        en: 'ContactAddress',
-        ti: '.ContactAddress'
-      }, {
-        en: '_ExtendedOperation',
-        ti: '.OperationType'
-      }, {
-        en: 'DCPType',
-        ti: '.DCPType'
-      }, {
-        en: 'Fees'
+        en: 'StyleURL',
+        ti: '.StyleURL'
       }, {
         en: 'LegendURL',
         ti: '.LegendURL'
       }, {
-        en: 'EX_GeographicBoundingBox',
-        ti: '.EXGeographicBoundingBox'
-      }, {
-        en: 'Country'
+        en: 'WMS_Capabilities',
+        ti: '.WMSCapabilities'
       }, {
         en: 'MinScaleDenominator',
         ti: 'Double'
       }, {
-        en: 'Title'
+        en: 'Service',
+        ti: '.Service'
       }, {
-        en: 'MaxScaleDenominator',
-        ti: 'Double'
+        en: 'Layer',
+        ti: '.Layer'
       }, {
-        en: 'MetadataURL',
-        ti: '.MetadataURL'
+        en: 'OnlineResource',
+        ti: '.OnlineResource'
       }, {
-        en: 'LayerLimit',
-        ti: 'Integer'
+        en: '_ExtendedOperation',
+        ti: '.OperationType'
       }, {
-        en: 'StyleSheetURL',
-        ti: '.StyleSheetURL'
+        en: 'Post',
+        ti: '.Post'
       }, {
-        en: 'Capability',
-        ti: '.Capability'
-      }, {
-        en: 'Abstract'
+        en: 'Fees'
       }, {
         en: 'CRS'
       }, {
-        en: 'Format'
+        en: 'AccessConstraints'
       }, {
-        en: 'Name'
-      }, {
-        en: 'Request',
-        ti: '.Request'
-      }, {
-        en: 'Dimension',
-        ti: '.Dimension'
+        en: 'Exception',
+        ti: '.Exception'
       }, {
         en: 'FeatureListURL',
         ti: '.FeatureListURL'
@@ -834,67 +838,63 @@ var WMS_1_3_0_Module_Factory = function () {
         en: 'AuthorityURL',
         ti: '.AuthorityURL'
       }, {
-        en: 'OnlineResource',
-        ti: '.OnlineResource'
-      }, {
-        en: 'ContactInformation',
-        ti: '.ContactInformation'
-      }, {
-        en: 'HTTP',
-        ti: '.HTTP'
-      }, {
-        en: 'ContactPosition'
-      }, {
-        en: 'KeywordList',
-        ti: '.KeywordList'
-      }, {
-        en: 'ContactPerson'
-      }, {
-        en: 'BoundingBox',
-        ti: '.BoundingBox'
-      }, {
-        en: 'Style',
-        ti: '.Style'
-      }, {
-        en: 'Address'
-      }, {
-        en: '_ExtendedCapabilities',
-        ti: 'AnyType'
-      }, {
-        en: 'ContactOrganization'
-      }, {
-        en: 'ContactFacsimileTelephone'
-      }, {
-        en: 'AccessConstraints'
-      }, {
-        en: 'DataURL',
-        ti: '.DataURL'
-      }, {
-        en: 'MaxWidth',
-        ti: 'Integer'
-      }, {
-        en: 'GetCapabilities',
-        ti: '.OperationType'
-      }, {
-        en: 'LogoURL',
-        ti: '.LogoURL'
+        en: 'Keyword',
+        ti: '.Keyword'
       }, {
         en: 'ContactPersonPrimary',
         ti: '.ContactPersonPrimary'
       }, {
-        en: 'Layer',
-        ti: '.Layer'
+        en: 'StyleSheetURL',
+        ti: '.StyleSheetURL'
       }, {
-        en: 'Keyword',
-        ti: '.Keyword'
+        en: 'EX_GeographicBoundingBox',
+        ti: '.EXGeographicBoundingBox'
       }, {
-        en: 'AddressType'
+        en: 'Get',
+        ti: '.Get'
+      }, {
+        en: 'ContactPosition'
+      }, {
+        en: 'LayerLimit',
+        ti: 'Integer'
+      }, {
+        en: 'Attribution',
+        ti: '.Attribution'
+      }, {
+        en: 'Style',
+        ti: '.Style'
+      }, {
+        en: 'ContactElectronicMailAddress'
+      }, {
+        en: 'ContactInformation',
+        ti: '.ContactInformation'
+      }, {
+        en: 'KeywordList',
+        ti: '.KeywordList'
+      }, {
+        en: 'Country'
+      }, {
+        en: '_ExtendedCapabilities',
+        ti: 'AnyType'
       }, {
         en: 'GetFeatureInfo',
         ti: '.OperationType'
       }, {
-        en: 'StyleURL',
-        ti: '.StyleURL'
+        en: 'Dimension',
+        ti: '.Dimension'
+      }, {
+        en: 'GetCapabilities',
+        ti: '.OperationType'
+      }, {
+        en: 'ContactAddress',
+        ti: '.ContactAddress'
+      }, {
+        en: 'Abstract'
+      }, {
+        en: 'HTTP',
+        ti: '.HTTP'
+      }, {
+        en: 'Title'
       }]
   };
   return {

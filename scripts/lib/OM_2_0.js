@@ -3,119 +3,13 @@ var OM_2_0_Module_Factory = function () {
     n: 'OM_2_0',
     dens: 'http:\/\/www.opengis.net\/om\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'ISO19139_GMD_20070417', 'GML_3_2_1'],
+    deps: ['XLink_1_0', 'GML_3_2_1', 'ISO19139_GMD_20070417'],
     tis: [{
-        ln: 'TimeObjectPropertyType',
-        ps: [{
-            n: 'abstractTimeObject',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'AbstractTimeObject',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.AbstractTimeObjectType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
         ln: 'ObservationContextPropertyType',
         ps: [{
             n: 'observationContext',
             en: 'ObservationContext',
             ti: '.ObservationContextType'
-          }]
-      }, {
-        ln: 'ObservationContextType',
-        ps: [{
-            n: 'role',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'relatedObservation',
-            ti: 'GML_3_2_1.ReferenceType'
-          }]
-      }, {
-        ln: 'OMObservationType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'type',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'metadata',
-            ti: 'ISO19139_GMD_20070417.MDMetadataPropertyType'
-          }, {
-            n: 'relatedObservation',
-            col: true,
-            ti: '.ObservationContextPropertyType'
-          }, {
-            n: 'phenomenonTime',
-            ti: '.TimeObjectPropertyType'
-          }, {
-            n: 'resultTime',
-            ti: 'GML_3_2_1.TimeInstantPropertyType'
-          }, {
-            n: 'validTime',
-            ti: 'GML_3_2_1.TimePeriodPropertyType'
-          }, {
-            n: 'procedure',
-            ti: '.OMProcessPropertyType'
-          }, {
-            n: 'parameter',
-            col: true,
-            ti: '.NamedValuePropertyType'
-          }, {
-            n: 'observedProperty',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'featureOfInterest',
-            ti: 'GML_3_2_1.FeaturePropertyType'
-          }, {
-            n: 'resultQuality',
-            col: true,
-            ti: 'ISO19139_GMD_20070417.DQElementPropertyType'
-          }, {
-            n: 'result',
-            ti: 'AnyType'
           }]
       }, {
         ln: 'NamedValueType',
@@ -174,11 +68,18 @@ var OM_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'OMProcessPropertyType',
+        ln: 'TimeObjectPropertyType',
         ps: [{
-            n: 'any',
+            n: 'abstractTimeObject',
             mx: false,
-            t: 'ae'
+            dom: false,
+            typed: false,
+            en: {
+              lp: 'AbstractTimeObject',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.AbstractTimeObjectType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -219,6 +120,15 @@ var OM_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'ObservationContextType',
+        ps: [{
+            n: 'role',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'relatedObservation',
+            ti: 'GML_3_2_1.ReferenceType'
           }]
       }, {
         ln: 'NamedValuePropertyType',
@@ -267,13 +177,103 @@ var OM_2_0_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
+      }, {
+        ln: 'OMObservationType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'type',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'metadata',
+            ti: 'ISO19139_GMD_20070417.MDMetadataPropertyType'
+          }, {
+            n: 'relatedObservation',
+            col: true,
+            ti: '.ObservationContextPropertyType'
+          }, {
+            n: 'phenomenonTime',
+            ti: '.TimeObjectPropertyType'
+          }, {
+            n: 'resultTime',
+            ti: 'GML_3_2_1.TimeInstantPropertyType'
+          }, {
+            n: 'validTime',
+            ti: 'GML_3_2_1.TimePeriodPropertyType'
+          }, {
+            n: 'procedure',
+            ti: '.OMProcessPropertyType'
+          }, {
+            n: 'parameter',
+            col: true,
+            ti: '.NamedValuePropertyType'
+          }, {
+            n: 'observedProperty',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'featureOfInterest',
+            ti: 'GML_3_2_1.FeaturePropertyType'
+          }, {
+            n: 'resultQuality',
+            col: true,
+            ti: 'ISO19139_GMD_20070417.DQElementPropertyType'
+          }, {
+            n: 'result',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'OMProcessPropertyType',
+        ps: [{
+            n: 'any',
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
       }],
     eis: [{
-        en: 'NamedValue',
-        ti: '.NamedValueType'
-      }, {
         en: 'result',
         ti: 'AnyType'
+      }, {
+        en: 'NamedValue',
+        ti: '.NamedValueType'
       }, {
         en: 'ObservationContext',
         ti: '.ObservationContextType'

@@ -5,22 +5,6 @@ var ISO19139_GTS_20060504_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_2_0'],
     tis: [{
-        ln: 'TMPeriodDurationPropertyType',
-        ps: [{
-            n: 'tmPeriodDuration',
-            en: 'TM_PeriodDuration'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'TMPrimitivePropertyType',
         ps: [{
             n: 'abstractTimePrimitive',
@@ -72,6 +56,22 @@ var ISO19139_GTS_20060504_Module_Factory = function () {
           }, {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TMPeriodDurationPropertyType',
+        ps: [{
+            n: 'tmPeriodDuration',
+            en: 'TM_PeriodDuration'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
             t: 'a'
           }]
       }],

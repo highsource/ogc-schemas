@@ -4,105 +4,82 @@ var WMC_1_0_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/context',
     deps: ['XLink_1_0', 'SLD_1_0_0'],
     tis: [{
-        ln: 'SLDType',
+        ln: 'StyleListType',
         ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'title',
-            en: 'Title'
-          }, {
+            n: 'style',
+            col: true,
+            en: 'Style',
+            ti: '.StyleType'
+          }]
+      }, {
+        ln: 'ServerType',
+        ps: [{
             n: 'onlineResource',
             en: 'OnlineResource',
             ti: '.OnlineResourceType'
           }, {
-            n: 'styledLayerDescriptor',
-            en: {
-              lp: 'StyledLayerDescriptor',
-              ns: 'http:\/\/www.opengis.net\/sld'
+            n: 'service',
+            an: {
+              lp: 'service'
             },
-            ti: 'SLD_1_0_0.StyledLayerDescriptor'
-          }, {
-            n: 'featureTypeStyle',
-            en: {
-              lp: 'FeatureTypeStyle',
-              ns: 'http:\/\/www.opengis.net\/sld'
-            },
-            ti: 'SLD_1_0_0.FeatureTypeStyle'
-          }]
-      }, {
-        ln: 'ViewContextCollectionType',
-        ps: [{
-            n: 'viewContextReference',
-            col: true,
-            en: 'ViewContextReference',
-            ti: '.ViewContextReferenceType'
+            t: 'a'
           }, {
             n: 'version',
             an: {
               lp: 'version'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'AddressType',
-        ps: [{
-            n: 'addressType',
-            en: 'AddressType'
           }, {
-            n: 'address',
-            en: 'Address'
-          }, {
-            n: 'city',
-            en: 'City'
-          }, {
-            n: 'stateOrProvince',
-            en: 'StateOrProvince'
-          }, {
-            n: 'postCode',
-            en: 'PostCode'
-          }, {
-            n: 'country',
-            en: 'Country'
-          }]
-      }, {
-        ln: 'FormatListType',
-        ps: [{
-            n: 'format',
-            col: true,
-            en: 'Format',
-            ti: '.FormatType'
-          }]
-      }, {
-        ln: 'WindowType',
-        ps: [{
-            n: 'width',
-            ti: 'Integer',
+            n: 'title',
             an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            ti: 'Integer',
-            an: {
-              lp: 'height'
+              lp: 'title'
             },
             t: 'a'
           }]
       }, {
-        ln: 'KeywordListType',
+        ln: 'LayerListType',
         ps: [{
-            n: 'keyword',
+            n: 'layer',
             col: true,
-            en: 'Keyword'
+            en: 'Layer',
+            ti: '.LayerType'
           }]
       }, {
-        ln: 'ContextURLType',
+        ln: 'BoundingBoxType',
         ps: [{
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
+            n: 'srs',
+            an: {
+              lp: 'SRS'
+            },
+            t: 'a'
+          }, {
+            n: 'minx',
+            ti: 'Decimal',
+            an: {
+              lp: 'minx'
+            },
+            t: 'a'
+          }, {
+            n: 'miny',
+            ti: 'Decimal',
+            an: {
+              lp: 'miny'
+            },
+            t: 'a'
+          }, {
+            n: 'maxx',
+            ti: 'Decimal',
+            an: {
+              lp: 'maxx'
+            },
+            t: 'a'
+          }, {
+            n: 'maxy',
+            ti: 'Decimal',
+            an: {
+              lp: 'maxy'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'ContactPersonPrimaryType',
@@ -112,6 +89,49 @@ var WMC_1_0_0_Module_Factory = function () {
           }, {
             n: 'contactOrganization',
             en: 'ContactOrganization'
+          }]
+      }, {
+        ln: 'ExtensionType',
+        ps: [{
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'StyleType',
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'legendURL',
+            en: 'LegendURL',
+            ti: '.URLType'
+          }, {
+            n: 'sld',
+            en: 'SLD',
+            ti: '.SLDType'
+          }, {
+            n: 'current',
+            ti: 'Boolean',
+            an: {
+              lp: 'current'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FormatListType',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: '.FormatType'
           }]
       }, {
         ln: 'ViewContextReferenceType',
@@ -136,107 +156,25 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ViewContextType',
+        ln: 'AddressType',
         ps: [{
-            n: 'general',
-            en: 'General',
-            ti: '.GeneralType'
+            n: 'addressType',
+            en: 'AddressType'
           }, {
-            n: 'layerList',
-            en: 'LayerList',
-            ti: '.LayerListType'
+            n: 'address',
+            en: 'Address'
           }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
+            n: 'city',
+            en: 'City'
           }, {
-            n: 'id',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LayerType',
-        ps: [{
-            n: 'server',
-            en: 'Server',
-            ti: '.ServerType'
+            n: 'stateOrProvince',
+            en: 'StateOrProvince'
           }, {
-            n: 'name',
-            en: 'Name'
+            n: 'postCode',
+            en: 'PostCode'
           }, {
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'dataURL',
-            en: 'DataURL',
-            ti: '.URLType'
-          }, {
-            n: 'metadataURL',
-            en: 'MetadataURL',
-            ti: '.URLType'
-          }, {
-            n: 'srs',
-            en: 'SRS'
-          }, {
-            n: 'formatList',
-            en: 'FormatList',
-            ti: '.FormatListType'
-          }, {
-            n: 'styleList',
-            en: 'StyleList',
-            ti: '.StyleListType'
-          }, {
-            n: 'extension',
-            en: 'Extension',
-            ti: '.ExtensionType'
-          }, {
-            n: 'queryable',
-            ti: 'Boolean',
-            an: {
-              lp: 'queryable'
-            },
-            t: 'a'
-          }, {
-            n: 'hidden',
-            ti: 'Boolean',
-            an: {
-              lp: 'hidden'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'URLType',
-        ps: [{
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'width',
-            ti: 'Integer',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            ti: 'Integer',
-            an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }, {
-            n: 'format',
-            an: {
-              lp: 'format'
-            },
-            t: 'a'
+            n: 'country',
+            en: 'Country'
           }]
       }, {
         ln: 'GeneralType',
@@ -276,54 +214,24 @@ var WMC_1_0_0_Module_Factory = function () {
             ti: '.ExtensionType'
           }]
       }, {
-        ln: 'LayerListType',
+        ln: 'WindowType',
         ps: [{
-            n: 'layer',
-            col: true,
-            en: 'Layer',
-            ti: '.LayerType'
+            n: 'width',
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'StyleListType',
-        ps: [{
-            n: 'style',
-            col: true,
-            en: 'Style',
-            ti: '.StyleType'
-          }]
-      }, {
-        ln: 'ExtensionType',
-        ps: [{
-            n: 'any',
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'ContactInformationType',
-        ps: [{
-            n: 'contactPersonPrimary',
-            en: 'ContactPersonPrimary',
-            ti: '.ContactPersonPrimaryType'
-          }, {
-            n: 'contactPosition',
-            en: 'ContactPosition'
-          }, {
-            n: 'contactAddress',
-            en: 'ContactAddress',
-            ti: '.AddressType'
-          }, {
-            n: 'contactVoiceTelephone',
-            en: 'ContactVoiceTelephone'
-          }, {
-            n: 'contactFacsimileTelephone',
-            en: 'ContactFacsimileTelephone'
-          }, {
-            n: 'contactElectronicMailAddress',
-            en: 'ContactElectronicMailAddress'
-          }]
-      }, {
-        ln: 'StyleType',
+        ln: 'SLDType',
         ps: [{
             n: 'name',
             en: 'Name'
@@ -331,21 +239,35 @@ var WMC_1_0_0_Module_Factory = function () {
             n: 'title',
             en: 'Title'
           }, {
-            n: '_abstract',
-            en: 'Abstract'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
           }, {
-            n: 'legendURL',
-            en: 'LegendURL',
-            ti: '.URLType'
+            n: 'styledLayerDescriptor',
+            en: {
+              lp: 'StyledLayerDescriptor',
+              ns: 'http:\/\/www.opengis.net\/sld'
+            },
+            ti: 'SLD_1_0_0.StyledLayerDescriptor'
           }, {
-            n: 'sld',
-            en: 'SLD',
-            ti: '.SLDType'
+            n: 'featureTypeStyle',
+            en: {
+              lp: 'FeatureTypeStyle',
+              ns: 'http:\/\/www.opengis.net\/sld'
+            },
+            ti: 'SLD_1_0_0.FeatureTypeStyle'
+          }]
+      }, {
+        ln: 'ViewContextCollectionType',
+        ps: [{
+            n: 'viewContextReference',
+            col: true,
+            en: 'ViewContextReference',
+            ti: '.ViewContextReferenceType'
           }, {
-            n: 'current',
-            ti: 'Boolean',
+            n: 'version',
             an: {
-              lp: 'current'
+              lp: 'version'
             },
             t: 'a'
           }]
@@ -405,17 +327,75 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ServerType',
+        ln: 'LayerType',
+        ps: [{
+            n: 'server',
+            en: 'Server',
+            ti: '.ServerType'
+          }, {
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'dataURL',
+            en: 'DataURL',
+            ti: '.URLType'
+          }, {
+            n: 'metadataURL',
+            en: 'MetadataURL',
+            ti: '.URLType'
+          }, {
+            n: 'srs',
+            en: 'SRS'
+          }, {
+            n: 'formatList',
+            en: 'FormatList',
+            ti: '.FormatListType'
+          }, {
+            n: 'styleList',
+            en: 'StyleList',
+            ti: '.StyleListType'
+          }, {
+            n: 'extension',
+            en: 'Extension',
+            ti: '.ExtensionType'
+          }, {
+            n: 'queryable',
+            ti: 'Boolean',
+            an: {
+              lp: 'queryable'
+            },
+            t: 'a'
+          }, {
+            n: 'hidden',
+            ti: 'Boolean',
+            an: {
+              lp: 'hidden'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ContextURLType',
         ps: [{
             n: 'onlineResource',
             en: 'OnlineResource',
             ti: '.OnlineResourceType'
+          }]
+      }, {
+        ln: 'ViewContextType',
+        ps: [{
+            n: 'general',
+            en: 'General',
+            ti: '.GeneralType'
           }, {
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
+            n: 'layerList',
+            en: 'LayerList',
+            ti: '.LayerListType'
           }, {
             n: 'version',
             an: {
@@ -423,11 +403,68 @@ var WMC_1_0_0_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'title',
+            n: 'id',
             an: {
-              lp: 'title'
+              lp: 'id'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'KeywordListType',
+        ps: [{
+            n: 'keyword',
+            col: true,
+            en: 'Keyword'
+          }]
+      }, {
+        ln: 'URLType',
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'width',
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }, {
+            n: 'format',
+            an: {
+              lp: 'format'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ContactInformationType',
+        ps: [{
+            n: 'contactPersonPrimary',
+            en: 'ContactPersonPrimary',
+            ti: '.ContactPersonPrimaryType'
+          }, {
+            n: 'contactPosition',
+            en: 'ContactPosition'
+          }, {
+            n: 'contactAddress',
+            en: 'ContactAddress',
+            ti: '.AddressType'
+          }, {
+            n: 'contactVoiceTelephone',
+            en: 'ContactVoiceTelephone'
+          }, {
+            n: 'contactFacsimileTelephone',
+            en: 'ContactFacsimileTelephone'
+          }, {
+            n: 'contactElectronicMailAddress',
+            en: 'ContactElectronicMailAddress'
           }]
       }, {
         ln: 'FormatType',
@@ -439,43 +476,6 @@ var WMC_1_0_0_Module_Factory = function () {
             ti: 'Boolean',
             an: {
               lp: 'current'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'BoundingBoxType',
-        ps: [{
-            n: 'srs',
-            an: {
-              lp: 'SRS'
-            },
-            t: 'a'
-          }, {
-            n: 'minx',
-            ti: 'Decimal',
-            an: {
-              lp: 'minx'
-            },
-            t: 'a'
-          }, {
-            n: 'miny',
-            ti: 'Decimal',
-            an: {
-              lp: 'miny'
-            },
-            t: 'a'
-          }, {
-            n: 'maxx',
-            ti: 'Decimal',
-            an: {
-              lp: 'maxx'
-            },
-            t: 'a'
-          }, {
-            n: 'maxy',
-            ti: 'Decimal',
-            an: {
-              lp: 'maxy'
             },
             t: 'a'
           }]
