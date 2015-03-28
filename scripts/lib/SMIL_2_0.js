@@ -6,18 +6,6 @@ var SMIL_2_0_Module_Factory = function () {
     tis: [{
         ln: 'AnimatePrototype',
         ps: [{
-            n: 'additive',
-            an: {
-              lp: 'additive'
-            },
-            t: 'a'
-          }, {
-            n: 'accumulate',
-            an: {
-              lp: 'accumulate'
-            },
-            t: 'a'
-          }, {
             n: 'attributeName',
             an: {
               lp: 'attributeName'
@@ -51,24 +39,24 @@ var SMIL_2_0_Module_Factory = function () {
             n: 'to',
             an: {
               lp: 'to'
+            },
+            t: 'a'
+          }, {
+            n: 'additive',
+            an: {
+              lp: 'additive'
+            },
+            t: 'a'
+          }, {
+            n: 'accumulate',
+            an: {
+              lp: 'accumulate'
             },
             t: 'a'
           }]
       }, {
         ln: 'AnimateColorPrototype',
         ps: [{
-            n: 'additive',
-            an: {
-              lp: 'additive'
-            },
-            t: 'a'
-          }, {
-            n: 'accumulate',
-            an: {
-              lp: 'accumulate'
-            },
-            t: 'a'
-          }, {
             n: 'attributeName',
             an: {
               lp: 'attributeName'
@@ -104,25 +92,16 @@ var SMIL_2_0_Module_Factory = function () {
               lp: 'to'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'SetPrototype',
-        ps: [{
-            n: 'to',
+          }, {
+            n: 'additive',
             an: {
-              lp: 'to'
+              lp: 'additive'
             },
             t: 'a'
           }, {
-            n: 'attributeName',
+            n: 'accumulate',
             an: {
-              lp: 'attributeName'
-            },
-            t: 'a'
-          }, {
-            n: 'attributeType',
-            an: {
-              lp: 'attributeType'
+              lp: 'accumulate'
             },
             t: 'a'
           }]
@@ -172,45 +151,52 @@ var SMIL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        t: 'enum',
-        ln: 'FillTimingAttrsType',
-        vs: ['remove', 'freeze', 'hold', 'auto', 'default', 'transition']
+        ln: 'SetPrototype',
+        ps: [{
+            n: 'attributeName',
+            an: {
+              lp: 'attributeName'
+            },
+            t: 'a'
+          }, {
+            n: 'attributeType',
+            an: {
+              lp: 'attributeType'
+            },
+            t: 'a'
+          }, {
+            n: 'to',
+            an: {
+              lp: 'to'
+            },
+            t: 'a'
+          }]
       }, {
         t: 'enum',
         ln: 'SyncBehaviorType',
         vs: ['canSlip', 'locked', 'independent', 'default']
       }, {
         t: 'enum',
-        ln: 'RestartDefaultType',
-        vs: ['never', 'always', 'whenNotActive', 'inherit']
+        ln: 'FillTimingAttrsType',
+        vs: ['remove', 'freeze', 'hold', 'auto', 'default', 'transition']
       }, {
         t: 'enum',
         ln: 'SyncBehaviorDefaultType',
         vs: ['canSlip', 'locked', 'independent', 'inherit']
       }, {
         t: 'enum',
-        ln: 'FillDefaultType',
-        vs: ['remove', 'freeze', 'hold', 'auto', 'inherit', 'transition']
-      }, {
-        t: 'enum',
         ln: 'RestartTimingType',
         vs: ['never', 'always', 'whenNotActive', 'default']
+      }, {
+        t: 'enum',
+        ln: 'RestartDefaultType',
+        vs: ['never', 'always', 'whenNotActive', 'inherit']
+      }, {
+        t: 'enum',
+        ln: 'FillDefaultType',
+        vs: ['remove', 'freeze', 'hold', 'auto', 'inherit', 'transition']
       }],
     eis: [{
-        en: 'set',
-        ti: 'SMIL_2_0_Language.SetType',
-        sh: {
-          lp: 'set',
-          ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
-        }
-      }, {
-        en: 'animate',
-        ti: 'SMIL_2_0_Language.AnimateType',
-        sh: {
-          lp: 'animate',
-          ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
-        }
-      }, {
         en: 'animateColor',
         ti: 'SMIL_2_0_Language.AnimateColorType',
         sh: {
@@ -218,10 +204,24 @@ var SMIL_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
         }
       }, {
+        en: 'set',
+        ti: 'SMIL_2_0_Language.SetType',
+        sh: {
+          lp: 'set',
+          ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
+        }
+      }, {
         en: 'animateMotion',
         ti: 'SMIL_2_0_Language.AnimateMotionType',
         sh: {
           lp: 'animateMotion',
+          ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
+        }
+      }, {
+        en: 'animate',
+        ti: 'SMIL_2_0_Language.AnimateType',
+        sh: {
+          lp: 'animate',
           ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
         }
       }]

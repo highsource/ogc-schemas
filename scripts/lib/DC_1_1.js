@@ -31,15 +31,26 @@ var DC_1_1_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'rights',
+        en: 'coverage',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'publisher',
+        en: 'description',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'language',
+        en: 'DC-element',
+        ti: '.SimpleLiteral'
+      }, {
+        en: 'format',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'source',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'creator',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -51,15 +62,15 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'contributor',
+        en: 'date',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'source',
+        en: 'publisher',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'format',
+        en: 'rights',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -67,26 +78,15 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'description',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'creator',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'DC-element',
-        ti: '.SimpleLiteral'
-      }, {
         en: 'identifier',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'date',
+        en: 'language',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'coverage',
+        en: 'contributor',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {

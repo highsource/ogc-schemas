@@ -39,6 +39,19 @@ var WSN_T_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'TopicNamespaceType.Topic',
+        bti: '.TopicType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'parent',
+            an: {
+              lp: 'parent'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'TopicType',
         bti: '.ExtensibleDocumented',
         ps: [{
@@ -84,6 +97,18 @@ var WSN_T_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'TopicSetType',
+        bti: '.ExtensibleDocumented',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'any',
+            col: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
         ln: 'ExtensibleDocumented',
         ps: [{
             n: 'otherAttributes',
@@ -93,17 +118,11 @@ var WSN_T_1_Module_Factory = function () {
             ti: '.Documentation'
           }]
       }, {
-        ln: 'TopicNamespaceType.Topic',
-        bti: '.TopicType',
+        ln: 'Documentation',
         ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'parent',
-            an: {
-              lp: 'parent'
-            },
-            t: 'a'
+            n: 'content',
+            col: true,
+            t: 'ae'
           }]
       }, {
         ln: 'QueryExpressionType',
@@ -118,32 +137,13 @@ var WSN_T_1_Module_Factory = function () {
             },
             t: 'a'
           }]
-      }, {
-        ln: 'Documentation',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'TopicSetType',
-        bti: '.ExtensibleDocumented',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'any',
-            col: true,
-            mx: false,
-            t: 'ae'
-          }]
       }],
     eis: [{
-        en: 'TopicSet',
-        ti: '.TopicSetType'
-      }, {
         en: 'TopicNamespace',
         ti: '.TopicNamespaceType'
+      }, {
+        en: 'TopicSet',
+        ti: '.TopicSetType'
       }]
   };
   return {
