@@ -99,11 +99,11 @@
 	</profiles>
 	<properties> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
-		<jaxb2-basics.version>0.9.2</jaxb2-basics.version>
+		<jaxb2-basics.version>0.9.3</jaxb2-basics.version>
 		<jaxb.version>2.2.11</jaxb.version>
-		<maven-jaxb2-plugin.version>0.12.1</maven-jaxb2-plugin.version>
-		<w3c-schemas.version>1.0.4-SNAPSHOT</w3c-schemas.version>
-		<jsonix-schema-compiler.version>2.3.1</jsonix-schema-compiler.version>
+		<maven-jaxb2-plugin.version>0.12.3</maven-jaxb2-plugin.version>
+		<w3c-schemas.version>1.0.4</w3c-schemas.version>
+		<jsonix-schema-compiler.version>2.3.2</jsonix-schema-compiler.version>
 	</properties> 
 	<dependencies>
 		<dependency>

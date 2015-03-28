@@ -31,18 +31,7 @@ var DC_1_1_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'date',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'subject',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'DC-element',
-        ti: '.SimpleLiteral'
-      }, {
-        en: 'format',
+        en: 'rights',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -50,35 +39,11 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'source',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'contributor',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'rights',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'description',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'relation',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'coverage',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
         en: 'language',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'creator',
+        en: 'type',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -86,11 +51,46 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
+        en: 'contributor',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'source',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'format',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'relation',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'description',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'creator',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'DC-element',
+        ti: '.SimpleLiteral'
+      }, {
         en: 'identifier',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'type',
+        en: 'date',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'coverage',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'subject',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }]

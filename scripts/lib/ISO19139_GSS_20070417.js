@@ -3,7 +3,7 @@ var ISO19139_GSS_20070417_Module_Factory = function () {
     n: 'ISO19139_GSS_20070417',
     dens: 'http:\/\/www.opengis.net\/gml\/3.2',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'XLink_1_0', 'GML_3_2_1', 'XLink_1_0', 'GML_3_2_1', 'XLink_1_0', 'XLink_1_0', 'XLink_1_0'],
+    deps: ['XLink_1_0', 'GML_3_2_1'],
     tis: [{
         ln: 'GMObjectPropertyType',
         ps: [{

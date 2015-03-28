@@ -53,13 +53,13 @@
   <!-- ========================================================== -->
   <complexType name="AdditionalParametersType">
     <complexContent>
-      <restriction base="ows:AdditionalParametersBaseType">
+      <extension base="ows:AdditionalParametersBaseType">
         <sequence>
           <element ref="ows:AdditionalParameter"
                    minOccurs="0"
                    maxOccurs="unbounded" />
         </sequence>
-      </restriction>
+      </extension>
     </complexContent>
   </complexType>
   <!-- ========================================================== -->
