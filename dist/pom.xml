@@ -11,6 +11,8 @@
 		<version>2.1.1-SNAPSHOT</version>
 	</parent>
 	<dependencies>
+		<dependency><artifactId>arml-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
 		<dependency><artifactId>csw-v_2_0_2</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
 		<dependency><artifactId>filter-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>

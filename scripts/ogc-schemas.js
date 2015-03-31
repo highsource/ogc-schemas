@@ -1,4 +1,5 @@
 var schemas = [
+	"ARML_2_0",
 	"CSW_2_0_2",
 		"DC_1_1",
 		"DCT",

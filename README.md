@@ -11,6 +11,7 @@ This allows converting between XML (conforming to one of these schemas) and Java
 
 Supports the following schemas:
 
+* `ARML_2_0`
 * `CSW_2_0_2`
   * `DC_1_1`
   * `DCT`

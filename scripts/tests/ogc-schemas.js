@@ -1,6 +1,7 @@
 module.exports = 
 {
 	"ogc-schemas": {
+		"ARML" : require('./ARML/ARML.js'),
 		"CSW" : require('./CSW/CSW.js'),
 		"Filter" : require('./Filter/Filter.js'),
 		"GML" : require('./GML/GML.js'),

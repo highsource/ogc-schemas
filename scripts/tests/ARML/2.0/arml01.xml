@@ -1,0 +1,24 @@
+<arml:arml xmlns:arml="http://www.opengis.net/arml/2.0">
+ <arml:ARElements>
+ 
+  <!-- register the Tracker to track a generic image -->
+  <arml:Tracker id="defaultImageTracker">
+   <arml:uri xlink:href="http://opengeospatial.org/arml/tracker/genericImageTracker" />
+  </arml:Tracker>
+ 
+  <!-- define the artificial marker the Model will be placed on top of -->
+  <arml:Trackable>
+   <arml:assets>
+    <!-- define the 3D Model that should be visible on top of the marker -->
+    <arml:Model>
+     <arml:href xlink:href="http://www.myserver.com/myModel.dae" />
+    </arml:Model>
+   </arml:assets>
+   <arml:config>
+    <arml:tracker xlink:href="#defaultImageTracker" />
+    <arml:src>http://www.myserver.com/myMarker.jpg</arml:src>
+   </arml:config>
+   <arml:size>0.20</arml:size>
+  </arml:Trackable>
+ </arml:ARElements>
+</arml:arml>

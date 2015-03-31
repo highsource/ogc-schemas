@@ -22,6 +22,7 @@
 		"jsonix",
 		"mapping",
                 "OGC",
+		"ARML",
 		"WMC",
 		"CSW",
                 "Filter", "Filter Encoding",
