@@ -3,29 +3,27 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
     n: 'ISO19139_SRV_20060504',
     dens: 'http:\/\/www.isotc211.org\/2005\/srv',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'ISO19139_GCO_20060504', 'GML_3_2_0', 'ISO19139_GMD_20060504'],
+    deps: ['XLink_1_0', 'ISO19139_GMD_20060504', 'ISO19139_GCO_20060504', 'GML_3_2_0'],
     tis: [{
-        ln: 'SVOperationModelPropertyType',
+        ln: 'SVOperationChainMetadataType',
+        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
         ps: [{
-            n: 'svOperationModel',
-            en: 'SV_OperationModel'
+            n: 'name',
+            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
+            n: 'description',
+            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
+          }, {
+            n: 'operation',
+            col: true,
+            ti: '.SVOperationMetadataPropertyType'
           }]
       }, {
-        ln: 'SVOperationPropertyType',
+        ln: 'SVOperationMetadataPropertyType',
         ps: [{
-            n: 'svOperation',
-            en: 'SV_Operation',
-            ti: '.SVOperationType'
+            n: 'svOperationMetadata',
+            en: 'SV_OperationMetadata',
+            ti: '.SVOperationMetadataType'
           }, {
             n: 'nilReason',
             ti: {
@@ -68,11 +66,15 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SVCouplingTypePropertyType',
+        ln: 'SVServiceSpecificationPropertyType',
         ps: [{
-            n: 'svCouplingType',
-            en: 'SV_CouplingType',
-            ti: 'ISO19139_GCO_20060504.CodeListValueType'
+            n: 'svServiceSpecification',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'SV_ServiceSpecification',
+            ti: '.SVServiceSpecificationType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -83,75 +85,36 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
               ns: 'http:\/\/www.isotc211.org\/2005\/gco'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'SVOperationChainMetadataType',
-        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
-        ps: [{
-            n: 'name',
-            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
           }, {
-            n: 'description',
-            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
-          }, {
-            n: 'operation',
-            col: true,
-            ti: '.SVOperationMetadataPropertyType'
-          }]
-      }, {
-        ln: 'SVPortSpecificationType',
-        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
-        ps: [{
-            n: 'binding',
-            ti: '.DCPListPropertyType'
-          }, {
-            n: 'address',
-            ti: 'ISO19139_GMD_20060504.URLPropertyType'
-          }]
-      }, {
-        ln: 'SVServiceTypeType',
-        bti: 'ISO19139_GCO_20060504.AbstractObjectType'
-      }, {
-        ln: 'SVParameterDirectionPropertyType',
-        ps: [{
-            n: 'svParameterDirection',
-            en: 'SV_ParameterDirection'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
+            n: 'uuidref',
             an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+              lp: 'uuidref'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'SVOperationChainType',
-        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
-        ps: [{
-            n: 'name',
-            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
           }, {
-            n: 'description',
-            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            n: 'operation',
-            col: true,
-            ti: '.SVOperationPropertyType'
-          }]
-      }, {
-        ln: 'SVPlatformSpecificServiceSpecificationType',
-        bti: '.SVPlatformNeutralServiceSpecificationType',
-        ps: [{
-            n: 'dcp',
-            en: 'DCP',
-            ti: '.DCPListPropertyType'
+            n: 'href',
+            t: 'a'
           }, {
-            n: 'implementation',
-            col: true,
-            ti: '.SVServicePropertyType'
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'SVPortSpecificationPropertyType',
@@ -201,11 +164,11 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SVServiceTypePropertyType',
+        ln: 'SVCoupledResourcePropertyType',
         ps: [{
-            n: 'svServiceType',
-            en: 'SV_ServiceType',
-            ti: '.SVServiceTypeType'
+            n: 'svCoupledResource',
+            en: 'SV_CoupledResource',
+            ti: '.SVCoupledResourceType'
           }, {
             n: 'nilReason',
             ti: {
@@ -248,11 +211,24 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SVOperationMetadataPropertyType',
+        ln: 'SVServiceType',
+        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
         ps: [{
-            n: 'svOperationMetadata',
-            en: 'SV_OperationMetadata',
-            ti: '.SVOperationMetadataType'
+            n: 'specification',
+            col: true,
+            ti: '.SVPlatformSpecificServiceSpecificationPropertyType'
+          }, {
+            n: 'theSVPort',
+            col: true,
+            en: 'theSV_Port',
+            ti: '.SVPortPropertyType'
+          }]
+      }, {
+        ln: 'SVPortPropertyType',
+        ps: [{
+            n: 'svPort',
+            en: 'SV_Port',
+            ti: '.SVPortType'
           }, {
             n: 'nilReason',
             ti: {
@@ -335,11 +311,41 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
             ti: 'ISO19139_GMD_20060504.MDDataIdentificationPropertyType'
           }]
       }, {
-        ln: 'SVServiceIdentificationPropertyType',
+        ln: 'SVPlatformNeutralServiceSpecificationType',
+        bti: '.SVServiceSpecificationType',
         ps: [{
-            n: 'svServiceIdentification',
-            en: 'SV_ServiceIdentification',
-            ti: '.SVServiceIdentificationType'
+            n: 'serviceType',
+            ti: '.SVServiceTypePropertyType'
+          }, {
+            n: 'implSpec',
+            ti: '.SVPlatformSpecificServiceSpecificationPropertyType'
+          }]
+      }, {
+        ln: 'SVParameterDirectionPropertyType',
+        ps: [{
+            n: 'svParameterDirection',
+            en: 'SV_ParameterDirection'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SVPlatformNeutralServiceSpecificationPropertyType',
+        ps: [{
+            n: 'svPlatformNeutralServiceSpecification',
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'SV_PlatformNeutralServiceSpecification',
+            ti: '.SVPlatformNeutralServiceSpecificationType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -380,220 +386,6 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }]
-      }, {
-        ln: 'SVOperationChainPropertyType',
-        ps: [{
-            n: 'svOperationChain',
-            en: 'SV_OperationChain',
-            ti: '.SVOperationChainType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SVPlatformSpecificServiceSpecificationPropertyType',
-        ps: [{
-            n: 'svPlatformSpecificServiceSpecification',
-            en: 'SV_PlatformSpecificServiceSpecification',
-            ti: '.SVPlatformSpecificServiceSpecificationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SVInterfaceType',
-        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
-        ps: [{
-            n: 'typeName',
-            ti: 'ISO19139_GCO_20060504.TypeNamePropertyType'
-          }, {
-            n: 'theSVPort',
-            col: true,
-            en: 'theSV_Port',
-            ti: '.SVPortPropertyType'
-          }, {
-            n: 'operation',
-            ti: '.SVOperationPropertyType'
-          }]
-      }, {
-        ln: 'SVServiceSpecificationType',
-        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
-        ps: [{
-            n: 'name',
-            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
-          }, {
-            n: 'opModel',
-            ti: '.SVOperationModelPropertyType'
-          }, {
-            n: 'typeSpec',
-            ti: '.SVPlatformNeutralServiceSpecificationPropertyType'
-          }, {
-            n: 'theSVInterface',
-            col: true,
-            en: 'theSV_Interface',
-            ti: '.SVInterfacePropertyType'
-          }]
-      }, {
-        ln: 'SVInterfacePropertyType',
-        ps: [{
-            n: 'svInterface',
-            en: 'SV_Interface',
-            ti: '.SVInterfaceType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SVOperationType',
-        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
-        ps: [{
-            n: 'operationName',
-            ti: 'ISO19139_GCO_20060504.MemberNamePropertyType'
-          }, {
-            n: 'dependsOn',
-            col: true,
-            ti: '.SVOperationPropertyType'
-          }, {
-            n: 'parameter',
-            ti: '.SVParameterPropertyType'
-          }]
-      }, {
-        ln: 'SVCoupledResourceType',
-        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
-        ps: [{
-            n: 'operationName',
-            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
-          }, {
-            n: 'identifier',
-            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
-          }, {
-            n: 'scopedName',
-            en: {
-              lp: 'ScopedName',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            ti: 'GML_3_2_0.CodeType'
-          }]
-      }, {
-        ln: 'SVPortType',
-        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
-        ps: [{
-            n: 'theSVInterface',
-            col: true,
-            en: 'theSV_Interface',
-            ti: '.SVInterfacePropertyType'
           }]
       }, {
         ln: 'SVOperationChainMetadataPropertyType',
@@ -673,6 +465,53 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
             ti: '.SVOperationMetadataPropertyType'
           }]
       }, {
+        ln: 'SVParameterPropertyType',
+        ps: [{
+            n: 'svParameter',
+            en: 'SV_Parameter',
+            ti: '.SVParameterType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
         ln: 'DCPListPropertyType',
         ps: [{
             n: 'dcpList',
@@ -690,11 +529,11 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SVPortPropertyType',
+        ln: 'SVServiceIdentificationPropertyType',
         ps: [{
-            n: 'svPort',
-            en: 'SV_Port',
-            ti: '.SVPortType'
+            n: 'svServiceIdentification',
+            en: 'SV_ServiceIdentification',
+            ti: '.SVServiceIdentificationType'
           }, {
             n: 'nilReason',
             ti: {
@@ -737,15 +576,47 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SVPlatformNeutralServiceSpecificationPropertyType',
+        ln: 'SVPlatformSpecificServiceSpecificationType',
+        bti: '.SVPlatformNeutralServiceSpecificationType',
         ps: [{
-            n: 'svPlatformNeutralServiceSpecification',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'SV_PlatformNeutralServiceSpecification',
-            ti: '.SVPlatformNeutralServiceSpecificationType',
-            t: 'er'
+            n: 'dcp',
+            en: 'DCP',
+            ti: '.DCPListPropertyType'
+          }, {
+            n: 'implementation',
+            col: true,
+            ti: '.SVServicePropertyType'
+          }]
+      }, {
+        ln: 'SVInterfaceType',
+        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
+        ps: [{
+            n: 'typeName',
+            ti: 'ISO19139_GCO_20060504.TypeNamePropertyType'
+          }, {
+            n: 'theSVPort',
+            col: true,
+            en: 'theSV_Port',
+            ti: '.SVPortPropertyType'
+          }, {
+            n: 'operation',
+            ti: '.SVOperationPropertyType'
+          }]
+      }, {
+        ln: 'SVPortType',
+        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
+        ps: [{
+            n: 'theSVInterface',
+            col: true,
+            en: 'theSV_Interface',
+            ti: '.SVInterfacePropertyType'
+          }]
+      }, {
+        ln: 'SVServicePropertyType',
+        ps: [{
+            n: 'svService',
+            en: 'SV_Service',
+            ti: '.SVServiceType'
           }, {
             n: 'nilReason',
             ti: {
@@ -788,21 +659,90 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SVPlatformNeutralServiceSpecificationType',
-        bti: '.SVServiceSpecificationType',
+        ln: 'SVOperationType',
+        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
         ps: [{
-            n: 'serviceType',
-            ti: '.SVServiceTypePropertyType'
+            n: 'operationName',
+            ti: 'ISO19139_GCO_20060504.MemberNamePropertyType'
           }, {
-            n: 'implSpec',
-            ti: '.SVPlatformSpecificServiceSpecificationPropertyType'
+            n: 'dependsOn',
+            col: true,
+            ti: '.SVOperationPropertyType'
+          }, {
+            n: 'parameter',
+            ti: '.SVParameterPropertyType'
           }]
       }, {
-        ln: 'SVCoupledResourcePropertyType',
+        ln: 'SVOperationPropertyType',
         ps: [{
-            n: 'svCoupledResource',
-            en: 'SV_CoupledResource',
-            ti: '.SVCoupledResourceType'
+            n: 'svOperation',
+            en: 'SV_Operation',
+            ti: '.SVOperationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SVServiceSpecificationType',
+        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
+        ps: [{
+            n: 'name',
+            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
+          }, {
+            n: 'opModel',
+            ti: '.SVOperationModelPropertyType'
+          }, {
+            n: 'typeSpec',
+            ti: '.SVPlatformNeutralServiceSpecificationPropertyType'
+          }, {
+            n: 'theSVInterface',
+            col: true,
+            en: 'theSV_Interface',
+            ti: '.SVInterfacePropertyType'
+          }]
+      }, {
+        ln: 'SVOperationChainPropertyType',
+        ps: [{
+            n: 'svOperationChain',
+            en: 'SV_OperationChain',
+            ti: '.SVOperationChainType'
           }, {
             n: 'nilReason',
             ti: {
@@ -867,122 +807,24 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
             ti: 'ISO19139_GCO_20060504.TypeNamePropertyType'
           }]
       }, {
-        ln: 'SVParameterPropertyType',
-        ps: [{
-            n: 'svParameter',
-            en: 'SV_Parameter',
-            ti: '.SVParameterType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SVServicePropertyType',
-        ps: [{
-            n: 'svService',
-            en: 'SV_Service',
-            ti: '.SVServiceType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SVServiceType',
+        ln: 'SVPortSpecificationType',
         bti: 'ISO19139_GCO_20060504.AbstractObjectType',
         ps: [{
-            n: 'specification',
-            col: true,
-            ti: '.SVPlatformSpecificServiceSpecificationPropertyType'
+            n: 'binding',
+            ti: '.DCPListPropertyType'
           }, {
-            n: 'theSVPort',
-            col: true,
-            en: 'theSV_Port',
-            ti: '.SVPortPropertyType'
+            n: 'address',
+            ti: 'ISO19139_GMD_20060504.URLPropertyType'
           }]
       }, {
-        ln: 'SVServiceSpecificationPropertyType',
+        ln: 'SVServiceTypeType',
+        bti: 'ISO19139_GCO_20060504.AbstractObjectType'
+      }, {
+        ln: 'SVServiceTypePropertyType',
         ps: [{
-            n: 'svServiceSpecification',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'SV_ServiceSpecification',
-            ti: '.SVServiceSpecificationType',
-            t: 'er'
+            n: 'svServiceType',
+            en: 'SV_ServiceType',
+            ti: '.SVServiceTypeType'
           }, {
             n: 'nilReason',
             ti: {
@@ -1025,47 +867,173 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        t: 'enum',
-        ln: 'SVParameterDirectionType',
-        vs: ['in', 'out', 'in\/out']
+        ln: 'SVOperationModelPropertyType',
+        ps: [{
+            n: 'svOperationModel',
+            en: 'SV_OperationModel'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SVCouplingTypePropertyType',
+        ps: [{
+            n: 'svCouplingType',
+            en: 'SV_CouplingType',
+            ti: 'ISO19139_GCO_20060504.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SVInterfacePropertyType',
+        ps: [{
+            n: 'svInterface',
+            en: 'SV_Interface',
+            ti: '.SVInterfaceType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SVOperationChainType',
+        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
+        ps: [{
+            n: 'name',
+            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
+          }, {
+            n: 'description',
+            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
+          }, {
+            n: 'operation',
+            col: true,
+            ti: '.SVOperationPropertyType'
+          }]
+      }, {
+        ln: 'SVCoupledResourceType',
+        bti: 'ISO19139_GCO_20060504.AbstractObjectType',
+        ps: [{
+            n: 'operationName',
+            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
+          }, {
+            n: 'identifier',
+            ti: 'ISO19139_GCO_20060504.CharacterStringPropertyType'
+          }, {
+            n: 'scopedName',
+            en: {
+              lp: 'ScopedName',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            ti: 'GML_3_2_0.CodeType'
+          }]
+      }, {
+        ln: 'SVPlatformSpecificServiceSpecificationPropertyType',
+        ps: [{
+            n: 'svPlatformSpecificServiceSpecification',
+            en: 'SV_PlatformSpecificServiceSpecification',
+            ti: '.SVPlatformSpecificServiceSpecificationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
       }, {
         t: 'enum',
         ln: 'SVOperationModelType',
         vs: ['object', 'message']
+      }, {
+        t: 'enum',
+        ln: 'SVParameterDirectionType',
+        vs: ['in', 'out', 'in\/out']
       }],
     eis: [{
-        en: 'SV_PlatformSpecificServiceSpecification',
-        ti: '.SVPlatformSpecificServiceSpecificationType',
-        sh: 'SV_PlatformNeutralServiceSpecification'
-      }, {
-        en: 'SV_ServiceType',
-        ti: '.SVServiceTypeType'
-      }, {
-        en: 'SV_ParameterDirection',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'SV_OperationChainMetadata',
-        ti: '.SVOperationChainMetadataType'
-      }, {
-        en: 'SV_OperationMetadata',
-        ti: '.SVOperationMetadataType'
-      }, {
-        en: 'SV_PlatformNeutralServiceSpecification',
-        ti: '.SVPlatformNeutralServiceSpecificationType',
-        sh: 'SV_ServiceSpecification'
-      }, {
-        en: 'SV_Port',
-        ti: '.SVPortType'
-      }, {
-        en: 'SV_Operation',
-        ti: '.SVOperationType'
-      }, {
-        en: 'SV_Parameter',
-        ti: '.SVParameterType'
-      }, {
         en: 'SV_CouplingType',
         ti: 'ISO19139_GCO_20060504.CodeListValueType',
         sh: {
@@ -1073,27 +1041,33 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
           ns: 'http:\/\/www.isotc211.org\/2005\/gco'
         }
       }, {
-        en: 'SV_ServiceSpecification',
-        ti: '.SVServiceSpecificationType'
+        en: 'SV_OperationChain',
+        ti: '.SVOperationChainType'
+      }, {
+        en: 'SV_ParameterDirection',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'SV_Parameter',
+        ti: '.SVParameterType'
+      }, {
+        en: 'SV_OperationMetadata',
+        ti: '.SVOperationMetadataType'
+      }, {
+        en: 'SV_Port',
+        ti: '.SVPortType'
       }, {
         en: 'SV_PortSpecification',
         ti: '.SVPortSpecificationType'
       }, {
-        en: 'SV_CoupledResource',
-        ti: '.SVCoupledResourceType'
+        en: 'SV_PlatformNeutralServiceSpecification',
+        ti: '.SVPlatformNeutralServiceSpecificationType',
+        sh: 'SV_ServiceSpecification'
       }, {
-        en: 'DCPList',
-        ti: 'ISO19139_GCO_20060504.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'SV_OperationModel',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
+        en: 'SV_Service',
+        ti: '.SVServiceType'
       }, {
         en: 'SV_ServiceIdentification',
         ti: '.SVServiceIdentificationType',
@@ -1102,14 +1076,40 @@ var ISO19139_SRV_20060504_Module_Factory = function () {
           ns: 'http:\/\/www.isotc211.org\/2005\/gmd'
         }
       }, {
-        en: 'SV_OperationChain',
-        ti: '.SVOperationChainType'
+        en: 'SV_PlatformSpecificServiceSpecification',
+        ti: '.SVPlatformSpecificServiceSpecificationType',
+        sh: 'SV_PlatformNeutralServiceSpecification'
       }, {
-        en: 'SV_Service',
-        ti: '.SVServiceType'
+        en: 'SV_CoupledResource',
+        ti: '.SVCoupledResourceType'
       }, {
         en: 'SV_Interface',
         ti: '.SVInterfaceType'
+      }, {
+        en: 'SV_OperationModel',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'SV_ServiceType',
+        ti: '.SVServiceTypeType'
+      }, {
+        en: 'SV_OperationChainMetadata',
+        ti: '.SVOperationChainMetadataType'
+      }, {
+        en: 'SV_Operation',
+        ti: '.SVOperationType'
+      }, {
+        en: 'SV_ServiceSpecification',
+        ti: '.SVServiceSpecificationType'
+      }, {
+        en: 'DCPList',
+        ti: 'ISO19139_GCO_20060504.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
       }]
   };
   return {
