@@ -2,6 +2,9 @@ var Jsonix = require('jsonix').Jsonix;
 var fs = require('fs');
 var roundtrip = function (test, mappings, resource) {
 		var context = new Jsonix.Context(mappings);
+		return roundtripWithContext(test, context, resource);
+	};
+var roundtripWithContext = function (test, context, resource) {
 		var unmarshallerOne = context.createUnmarshaller();
 		var unmarshallerTwo = context.createUnmarshaller();
 		var marshallerOne = context.createMarshaller();
@@ -25,14 +28,12 @@ var roundtrip = function (test, mappings, resource) {
 			}
 		);
 	};
-module.exports = {
-	roundtrip: roundtrip,
-	roundtrips: function(mappings, directory)
+var roundtripsWithContext = function(context, directory)
 	{
-		var roundtripFactory = function (resource) {
+		var roundtripFactory = function (ctx, resource) {
 			return function(test) {
 				console.log('Testing [' + resource + '].');
-				roundtrip(test, mappings, resource);
+				roundtripWithContext(test, ctx, resource);
 			};
 		};
 		var files = fs.readdirSync(directory);
@@ -44,9 +45,19 @@ module.exports = {
 			{
 				var resourceName = directory + '/' + file;
 				console.log('Adding roundtrip test ['+ resourceName + ']');
-				result[file] = roundtripFactory(resourceName);
+				result[file] = roundtripFactory(context, resourceName);
 			}
 		}
 		return result
-	}
+	};
+var roundtrips = function(mappings, directory)
+{
+	var context = new Jsonix.Context(mappings);
+	return roundtripsWithContext(context, directory);
+};
+module.exports = {
+	roundtrip: roundtrip,
+	roundtripWithContext: roundtripWithContext,
+	roundtrips: roundtrips,
+	roundtripsWithContext: roundtripsWithContext
 }
