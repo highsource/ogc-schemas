@@ -1,0 +1,19 @@
+{
+	"name": "ogc-schemas-demons-csw-2.0.2",
+	"description": "OGC CSW 2.0.2 Full",
+	"version": "2.1.1",
+	"engines": [
+		"node >= 0.8.0"
+	],
+	"main": "index.js",
+	"dependencies": {
+		"jsonix": "2.x.x",
+		"jsonix-schema-compiler": "2.x.x"
+	},
+	"devDependencies" : {
+		"nodeunit" : "0.x.x"
+	},
+	"scripts": {
+		"prepublish" : "java -jar lib/jsonix-schema-compiler-full.jar -compact -catalog schemas/catalog.cat schemas/ogc/csw/2.0.2/csw.xsd schemas/w3c/1999/xlink.xsd -b schemas -d mappings"
+	}
+}
