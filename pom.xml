@@ -84,6 +84,7 @@
 		<module>sweCommon</module>
 		<module>swes</module>
 		<module>wami</module>
+		<module>waterml</module>
 		<module>wcs</module>
 		<module>wfs</module>
 		<module>wms</module>

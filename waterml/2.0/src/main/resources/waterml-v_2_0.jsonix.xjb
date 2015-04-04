@@ -1,0 +1,10 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:jsonix="http://jsonix.highsource.org/customizations"
+	jaxb:extensionBindingPrefixes="jsonix">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/waterml/2.0/waterml2.xsd" node="/xs:schema">
+		<jsonix:packageMapping packageName="net.opengis.waterml.v_2_0" spaceName="WaterML_2_0"/>
+	</jaxb:bindings>
+
+</jaxb:bindings>

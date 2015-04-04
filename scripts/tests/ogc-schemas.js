@@ -20,6 +20,7 @@ module.exports =
 		"SOS" : require('./SOS/SOS.js'),
 		"SWE" : require('./SWE/SWE.js'),
 		"SWES" : require('./SWES/SWES.js'),
+		"WaterML" : require('./WaterML/WaterML.js'),
 		"WMC" : require('./WMC/WMC.js'),
 		"WCS" : require('./WCS/WCS.js'),
 		"WFS" : require('./WFS/WFS.js'),

@@ -1,0 +1,18 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/waterml/2.0/waterml2.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.waterml.v_2_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/waterml/2.0/monitoringPoint.xsd" node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='MonitoringPointType']/xs:complexContent/xs:extension/xs:sequence/xs:element[@name='descriptionReference']">
+			<jaxb:property name="MonitoringPointDescriptionReference"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+</jaxb:bindings>

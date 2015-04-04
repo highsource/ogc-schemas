@@ -56,6 +56,7 @@ var schemas = [
 		"WAMI_Common_1_0_1",
 	"WAMI_1_0_2",
 		"WAMI_Common_1_0_0",
+	"WaterML_2_0",
 	"WCS_1_0_0",
 	"WCS_1_1",
 	"WCS_2_0",

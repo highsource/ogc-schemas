@@ -38,6 +38,7 @@
 * wami/1.0.0
 * wami/1.0.1
 * wami/1.0.2
+* waterml/2.0
 * wcs/1.0.0
 * wcs/1.1
 * wcs/2.0
@@ -84,7 +85,6 @@
 * sweCommon/1.0.0
 * tjs/1.0
 * tml/1.0.0
-* waterml/2.0
 * wcps/1.0
 * wcs/1.1.0
 * wcs/interpolation/1.0

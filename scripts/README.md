@@ -58,11 +58,12 @@ Supports the following schemas:
 * `SWE_2_0`
 * `SWES_2_0`
   * `WSN_T_1`
-* `WAMI_1_0_0.js`
-* `WAMI_1_0_1.js`
-  * `WAMI_Common_1_0_1.js`
-* `WAMI_1_0_2.js`
-  * `WAMI_Common_1_0_0.js`
+* `WAMI_1_0_0`
+* `WAMI_1_0_1`
+  * `WAMI_Common_1_0_1`
+* `WAMI_1_0_2`
+  * `WAMI_Common_1_0_0`
+* `WaterML_2_0`
 * `WCS_1_0_0`
 * `WCS_1_1`
 * `WCS_2_0`
