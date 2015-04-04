@@ -75,6 +75,7 @@
 		<module>owc</module>
 		<module>ows</module>
 		<module>sampling</module>
+		<module>samplingSpatial</module>
 		<module>se</module>
 		<module>sensorML</module>
 		<module>sld</module>

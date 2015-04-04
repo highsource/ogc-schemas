@@ -39,6 +39,7 @@
 		"OM",
 		"OWS",
                 "Sampling",
+                "SamplingSpatial", "Sampling Spatial",
                 "SE", "Symbology Encoding",
                 "SensorML",
                 "SLD",

@@ -45,6 +45,8 @@
 
 		<dependency><artifactId>sampling-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>samplingSpatial-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
 		<dependency><artifactId>se-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
 		<dependency><artifactId>sensorML-v_1_0_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>

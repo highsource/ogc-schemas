@@ -12,6 +12,7 @@ module.exports =
 		"OWC" : require('./OWC/OWC.js'),
 		"OWS" : require('./OWS/OWS.js'),
 		"Sampling" : require('./Sampling/Sampling.js'),
+		"SamplingSpatial" : require('./SamplingSpatial/SamplingSpatial.js'),
 		"SE" : require('./SE/SE.js'),
 		"SensorML" : require('./SensorML/SensorML.js'),
 		"SLD" : require('./SLD/SLD.js'),
