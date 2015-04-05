@@ -35,12 +35,27 @@
 						<phase>generate-sources</phase>
 						<configuration>
 							<target>
-								<!--delete dir="src/main/resources/ogc"/-->
-								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources/ogc">
+								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources-original/ogc">
 									<patternset>
 										<exclude name="**/*.zip"/>
 									</patternset>
 								</unzip>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>copy-original-resources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<target>
+								<copy todir="${basedir}/src/main/resources" overwrite="true">
+									<fileset dir="src/main/resources-original">
+										<include name="**/*.*"/>
+									</fileset>
+								</copy>
 							</target>
 						</configuration>
 						<goals>

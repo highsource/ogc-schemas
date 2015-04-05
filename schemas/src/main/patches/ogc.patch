@@ -1,70 +1,42 @@
-diff --git ogc/context/1.0.0/collection.xsd ogc/context/1.0.0/collection.xsd
-index 2a5a431..5ce6c03 100644
---- ogc/context/1.0.0/collection.xsd
-+++ ogc/context/1.0.0/collection.xsd
-@@ -8,6 +8,7 @@
- -->
- <xs:schema targetNamespace="http://www.opengis.net/context" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:context="http://www.opengis.net/context" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0.0.2">
- 	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
-+	<xs:include schemaLocation="context.xsd"/>
- 	<xs:element name="ViewContextCollection" type="context:ViewContextCollectionType"/>
- 	<xs:complexType name="ViewContextCollectionType">
- 		<xs:sequence>
-@@ -28,7 +29,9 @@
- 			<xs:element name="OnlineResource" type="context:OnlineResourceType"/>
- 		</xs:sequence>
- 	</xs:complexType>
-+	<!--
- 	<xs:complexType name="OnlineResourceType">
- 		<xs:attributeGroup ref="xlink:simpleAttrs"/>
- 	</xs:complexType>
-+	-->
- </xs:schema>
-diff --git ogc/gml/3.1.1/base/temporal.xsd ogc/gml/3.1.1/base/temporal.xsd
-index 96be3f7..19ef923 100644
---- ogc/gml/3.1.1/base/temporal.xsd
-+++ ogc/gml/3.1.1/base/temporal.xsd
-@@ -325,6 +325,16 @@
- 			<enumeration value="unknown"/>
- 		</restriction>
- 	</simpleType>
-+	<!-- ===================================== -->
-+	<simpleType name="TimeDurationType">
-+		<annotation>
-+			<documentation xml:lang="en">
-+      Base type for describing temporal length or distance. The value space is further 
-+      constrained by subtypes that conform to the ISO 8601 or ISO 11404 standards.
-+      </documentation>
-+		</annotation>
-+		<union memberTypes="duration decimal"/>
-+	</simpleType>
- 	<!-- ================================================================== -->
- 	<!-- ==== Convenience properties ==== -->
- 	<!-- ================================================================== -->
-diff --git ogc/ows/2.0/owsAdditionalParameters.xsd ogc/ows/2.0/owsAdditionalParameters.xsd
-index 8e91265..1f534a3 100644
---- ogc/ows/2.0/owsAdditionalParameters.xsd
-+++ ogc/ows/2.0/owsAdditionalParameters.xsd
-@@ -53,13 +53,13 @@
-   <!-- ========================================================== -->
-   <complexType name="AdditionalParametersType">
-     <complexContent>
--      <extension base="ows:AdditionalParametersBaseType">
-+      <restriction base="ows:AdditionalParametersBaseType">
-         <sequence>
-           <element ref="ows:AdditionalParameter"
-                    minOccurs="0"
-                    maxOccurs="unbounded" />
-         </sequence>
--      </extension>
-+      </restriction>
-     </complexContent>
-   </complexType>
-   <!-- ========================================================== -->
-diff --git ogc/wcs/1.0.0/describeCoverage.xsd ogc/wcs/1.0.0/describeCoverage.xsd
-index 0a544c4..5618894 100644
---- ogc/wcs/1.0.0/describeCoverage.xsd
-+++ ogc/wcs/1.0.0/describeCoverage.xsd
+diff -urN -S resources/ogc ../resources-original/ogc/sweCommon/1.0.0/aggregateTypes.xsd ogc/sweCommon/1.0.0/aggregateTypes.xsd
+--- ../resources-original/ogc/sweCommon/1.0.0/aggregateTypes.xsd	Sat Jul 21 21:59:38 2012
++++ ogc/sweCommon/1.0.0/aggregateTypes.xsd	Sun Apr  5 18:31:43 2015
+@@ -139,7 +139,7 @@
+ 		<xs:annotation>
+ 			<xs:documentation>Use to point or include data values inline</xs:documentation>
+ 		</xs:annotation>
+-		<xs:complexContent>
++		<xs:complexContent mixed="true">
+ 			<xs:extension base="xs:anyType">
+ 				<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+ 			</xs:extension>
+diff -urN -S resources/ogc ../resources-original/ogc/sweCommon/1.0.1/aggregateTypes.xsd ogc/sweCommon/1.0.1/aggregateTypes.xsd
+--- ../resources-original/ogc/sweCommon/1.0.1/aggregateTypes.xsd	Sat Jul 21 21:59:38 2012
++++ ogc/sweCommon/1.0.1/aggregateTypes.xsd	Sun Apr  5 18:32:16 2015
+@@ -138,7 +138,7 @@
+ 		<xs:annotation>
+ 			<xs:documentation>Use to point or include data values inline</xs:documentation>
+ 		</xs:annotation>
+-		<xs:complexContent>
++		<xs:complexContent mixed="true">
+ 			<xs:extension base="xs:anyType">
+ 				<xs:attribute name="recordCount" type="xs:positiveInteger"/>
+ 				<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+diff -urN -S resources/ogc ../resources-original/ogc/sweCommon/2.0/basic_types.xsd ogc/sweCommon/2.0/basic_types.xsd
+--- ../resources-original/ogc/sweCommon/2.0/basic_types.xsd	Sat Jul 21 21:59:38 2012
++++ ogc/sweCommon/2.0/basic_types.xsd	Sun Apr  5 18:32:39 2015
+@@ -78,7 +78,7 @@
+ 	</complexType>
+ 	<!-- ================================================= -->
+ 	<complexType name="EncodedValuesPropertyType">
+-		<complexContent>
++		<complexContent mixed="true">
+ 			<extension base="anyType">
+ 			  <attributeGroup ref="swe:AssociationAttributeGroup"/>
+ 			</extension>
+diff -urN -S resources/ogc ../resources-original/ogc/wcs/1.0.0/describeCoverage.xsd ogc/wcs/1.0.0/describeCoverage.xsd
+--- ../resources-original/ogc/wcs/1.0.0/describeCoverage.xsd	Sat Jul 21 21:59:38 2012
++++ ogc/wcs/1.0.0/describeCoverage.xsd	Sun Apr  5 18:30:57 2015
 @@ -41,7 +41,7 @@
  	<xs:include schemaLocation="./wcsAll.xsd"/>
  	<xs:include schemaLocation="./wcsCapabilities.xsd"/>
@@ -74,10 +46,9 @@ index 0a544c4..5618894 100644
  	<!-- ==============================================================
         elements and types
  	============================================================== -->
-diff --git ogc/wcs/1.0.0/getCoverage.xsd ogc/wcs/1.0.0/getCoverage.xsd
-index 94d4d17..0284607 100644
---- ogc/wcs/1.0.0/getCoverage.xsd
-+++ ogc/wcs/1.0.0/getCoverage.xsd
+diff -urN -S resources/ogc ../resources-original/ogc/wcs/1.0.0/getCoverage.xsd ogc/wcs/1.0.0/getCoverage.xsd
+--- ../resources-original/ogc/wcs/1.0.0/getCoverage.xsd	Sat Jul 21 21:59:38 2012
++++ ogc/wcs/1.0.0/getCoverage.xsd	Sun Apr  5 18:30:57 2015
 @@ -40,7 +40,7 @@
  	========================================================== -->
  	<xs:include schemaLocation="./wcsAll.xsd"/>
@@ -87,10 +58,9 @@ index 94d4d17..0284607 100644
  	<!-- ==============================================================
         elements and types
  	============================================================== -->
-diff --git ogc/wcs/1.0.0/owsBase.xsd ogc/wcs/1.0.0/owsBase.xsd
-index 6410894..fe7f039 100644
---- ogc/wcs/1.0.0/owsBase.xsd
-+++ ogc/wcs/1.0.0/owsBase.xsd
+diff -urN -S resources/ogc ../resources-original/ogc/wcs/1.0.0/owsBase.xsd ogc/wcs/1.0.0/owsBase.xsd
+--- ../resources-original/ogc/wcs/1.0.0/owsBase.xsd	Sat Jul 21 21:59:38 2012
++++ ogc/wcs/1.0.0/owsBase.xsd	Sun Apr  5 18:30:57 2015
 @@ -38,7 +38,7 @@
  	<!-- ==============================================================
             includes and imports
@@ -100,10 +70,9 @@ index 6410894..fe7f039 100644
  	<!-- ============================================================
  		 Elements and types		
  	============================================================== -->
-diff --git ogc/wcs/1.0.0/wcsCapabilities.xsd ogc/wcs/1.0.0/wcsCapabilities.xsd
-index 5997a13..7cad1a4 100644
---- ogc/wcs/1.0.0/wcsCapabilities.xsd
-+++ ogc/wcs/1.0.0/wcsCapabilities.xsd
+diff -urN -S resources/ogc ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd ogc/wcs/1.0.0/wcsCapabilities.xsd
+--- ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd	Sat Jul 21 21:59:38 2012
++++ ogc/wcs/1.0.0/wcsCapabilities.xsd	Sun Apr  5 18:30:57 2015
 @@ -45,7 +45,7 @@
      <!-- ========= includes and imports ================================ -->
      <xs:include schemaLocation="./wcsAll.xsd"/>
