@@ -1,0 +1,236 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:eosps="http://www.opengis.net/eosps/2.0" xmlns:eop="http://earth.esa.int/eop" targetNamespace="http://www.opengis.net/eosps/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+    <annotation>
+        <documentation>EO SPS schema for feasibility and task status report extensions.
+            
+            OGC EO SPS 2.0 is an OGC Standard.
+            Copyright (c) 2011 Open Geospatial Consortium.
+            To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <import namespace="http://earth.esa.int/eop" schemaLocation="http://schemas.opengis.net/eop/1.0/eop.xsd"/>
+		<!-- ================================================= -->
+    <element name="GridCell" substitutionGroup="gml:AbstractObject" type="eosps:GridCellType">
+        <annotation>
+            <documentation>Characteristics of a grid cell used to discretize the region of interest</documentation>
+        </annotation>
+    </element>
+    <complexType name="GridCellType">
+        <sequence>
+            <element name="footprint">
+                <annotation>
+                    <documentation>Ground footprint of the cell. Coordinates of the GML polygon shall be expressed in the EPSG 4326 reference system</documentation>
+                </annotation>
+                <complexType>
+                    <sequence>
+                        <element ref="gml:Polygon"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="status" type="eosps:StatusCodeType">
+                <annotation>
+                    <documentation>State of coverage of this cell. The value shall be &amp;lsquo;POTENTIAL&amp;rsquo; in the case of a feasibility study, unless the cell cannot be covered at all in which case the status shall be &amp;lsquo;REJECTED&amp;rsquo;</documentation>
+                </annotation>
+            </element>
+            <element name="successRate" type="double">
+                <annotation>
+                    <documentation>Probability that this cell will be covered by an acceptable image (i.e. depending on validation criteria) before the end of the requested period</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="estimatedSuccessDate" type="dateTime">
+                <annotation>
+                    <documentation>The estimated worst acquisition date (i.e. latest date at which the cell should be covered and validated). This value should be re-estimated in case the programming is delayed</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="lastAttemptDate" type="dateTime">
+                <annotation>
+                    <documentation>The date and time of the last acquisition attempt to cover this cell whether it was successful or not. This shall be omitted in the case of a feasibility study</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="nextAttemptDate" type="dateTime">
+                <annotation>
+                    <documentation>The date and time of the next acquisition attempt that can possibly be used to cover this cell. In the case of a feasibility study, this can be set to the time of the first possible attempt. It should be updated every time the status changes and usually omitted as soon as the cell state changes to &amp;lsquo;VALIDATED&amp;rsquo;</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="remainingAttempts" type="integer">
+                <annotation>
+                    <documentation>Number of remaining possible acquisition attempts within the requested period that allow covering the cell. In the case of a feasibility study this is the total number of attempts that are possible within the requested period. It is usually omitted as soon as the cell state changes to &amp;lsquo;VALIDATED&amp;rsquo;</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="extension" type="anyType">
+                <annotation>
+                    <documentation>Extension slot for mission specific information or future extensions to this standard</documentation>
+                </annotation>
+            </element>
+        </sequence>
+        <attribute ref="gml:id" use="required"/>
+    </complexType>
+    <complexType name="GridCellPropertyType">
+        <sequence minOccurs="0">
+            <element ref="eosps:GridCell"/>
+        </sequence>
+    </complexType>
+		<!-- ================================================= -->
+    <element name="Segment" substitutionGroup="gml:AbstractObject" type="eosps:SegmentType">
+        <annotation>
+            <documentation>Characteristics of an acquisition segment contributing to the requested coverage</documentation>
+        </annotation>
+    </element>
+    <complexType name="SegmentType">
+        <sequence>
+            <element name="footprint">
+                <annotation>
+                    <documentation>Ground footprint of the imagery segment</documentation>
+                </annotation>
+                <complexType>
+                    <sequence>
+                        <element ref="gml:Polygon"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="acquisitionStartTime" type="dateTime">
+                <annotation>
+                    <documentation>Date and time at the beginning of the acquisition</documentation>
+                </annotation>
+            </element>
+            <element name="acquisitionStopTime" type="dateTime">
+                <annotation>
+                    <documentation>Date and time at the end of the acquisition</documentation>
+                </annotation>
+            </element>
+            <element name="acquisitionMethod" type="eop:EarthObservationEquipmentPropertyType">
+                <annotation>
+                    <documentation>Description of the acquisition method including name of instrument and platform, sensor mode, acquisition angles, orbit information, etc.</documentation>
+                </annotation>
+            </element>
+            <element name="status" type="eosps:StatusCodeType">
+                <annotation>
+                    <documentation>Status code describing the state of this segment. Detailed descriptions of status codes are given in the specification. The value shall be &amp;lsquo;POTENTIAL&amp;rsquo; in the case of a feasibility study</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="relatedSegment" type="gml:ReferenceType">
+                <annotation>
+                    <appinfo>
+                        <gml:targetElement>Segment</gml:targetElement>
+                    </appinfo>
+                    <documentation>Reference to a coupled segment such as the other member of a stereo or interferometric pair</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="extension" type="anyType">
+                <annotation>
+                    <documentation>Extension slot for mission specific information or future extensions to this standard</documentation>
+                </annotation>
+            </element>
+        </sequence>
+        <attribute ref="gml:id" use="required"/>
+    </complexType>
+    <complexType name="SegmentPropertyType">
+        <sequence minOccurs="0">
+            <element ref="eosps:Segment"/>
+        </sequence>
+    </complexType>
+		<!-- ================================================= -->
+    <element name="ProgrammingStatus" substitutionGroup="gml:AbstractObject" type="eosps:ProgrammingStatusType">
+        <annotation>
+            <documentation>Status information about a satellite programming task, presented as a list of grid cells and/or segments</documentation>
+        </annotation>
+    </element>
+    <complexType name="ProgrammingStatusType">
+        <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" name="extension" type="anyType">
+                <annotation>
+                    <documentation>Extension slot for mission specific information or future extensions to this standard</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="1" name="segment" type="eosps:SegmentPropertyType"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="cell" type="eosps:GridCellPropertyType"/>
+        </sequence>
+        <attribute ref="gml:id" use="optional"/>
+    </complexType>
+    <complexType name="ProgrammingStatusPropertyType">
+        <sequence minOccurs="0">
+            <element ref="eosps:ProgrammingStatus"/>
+        </sequence>
+    </complexType>
+		<!-- ================================================= -->
+    <element name="FeasibilityStudy" substitutionGroup="gml:AbstractObject" type="eosps:FeasibilityStudyType">
+        <annotation>
+            <documentation>Results of a feasibiliy study presented as a list of grid cells and/or estimated segments</documentation>
+        </annotation>
+    </element>
+    <complexType name="FeasibilityStudyType">
+        <sequence>
+            <element name="expirationDate" type="dateTime">
+                <annotation>
+                    <documentation>Date of expiration of the feasibility study (i.e. the task is guaranteed to be executed as described in the feasibility study if submitted before this date)</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="estimatedCost" type="gml:MeasureType">
+                <annotation>
+                    <documentation>Estimated cost to cover the requested area with the requested parameters. This includes the cost of the programming and the cost of the acquired image themselves</documentation>
+                </annotation>
+            </element>
+            <element name="successRate" type="double">
+                <annotation>
+                    <documentation>Overall success rate of the proposed acquisition. This is the probability that the whole requested area will be covered (possibly N times in the case of time series) with the specified acquisition parameters before the end of the time period</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="1" name="informationUsed" type="eosps:InformationTypeType">
+                <annotation>
+                    <documentation>Type of information used to do the simulation and compute the feasibility result. Several ones can be specified</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="extension" type="anyType">
+                <annotation>
+                    <documentation>Extension slot for mission specific information or future extensions to this standard</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="segment" type="eosps:SegmentPropertyType"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="cell" type="eosps:GridCellPropertyType"/>
+        </sequence>
+        <attribute ref="gml:id" use="optional"/>
+    </complexType>
+    <complexType name="FeasibilityStudyPropertyType">
+        <sequence minOccurs="0">
+            <element ref="eosps:FeasibilityStudy"/>
+        </sequence>
+    </complexType>
+		<!-- ================================================= -->
+    <simpleType name="InformationTypeType">
+        <union memberTypes="eosps:InformationTypeEnumerationType eosps:InformationTypeOtherType"/>
+    </simpleType>
+    <simpleType name="InformationTypeEnumerationType">
+        <restriction base="string">
+            <enumeration value="KINEMATIC MODEL"/>
+            <enumeration value="CLIMATE STATISTICS"/>
+            <enumeration value="WEATHER FORECAST"/>
+            <enumeration value="ESTIMATED WORKLOAD"/>
+            <enumeration value="REAL WORKLOAD"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="InformationTypeOtherType">
+        <restriction base="string">
+            <pattern value="other: \w{2,}"/>
+        </restriction>
+    </simpleType>
+		<!-- ================================================= -->
+    <simpleType name="StatusCodeType">
+        <union memberTypes="eosps:StatusCodeEnumerationType eosps:StatusCodeOtherType"/>
+    </simpleType>
+    <simpleType name="StatusCodeEnumerationType">
+        <restriction base="string">
+            <enumeration value="PLANNED"/>
+            <enumeration value="POTENTIAL"/>
+            <enumeration value="ACQUIRED"/>
+            <enumeration value="VALIDATED"/>
+            <enumeration value="CANCELLED"/>
+            <enumeration value="FAILED"/>
+            <enumeration value="REJECTED"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="StatusCodeOtherType">
+        <restriction base="string">
+            <pattern value="other: \w{2,}"/>
+        </restriction>
+    </simpleType>
+</schema>

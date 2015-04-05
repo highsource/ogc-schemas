@@ -1,0 +1,36 @@
+<sps:GetFeasibilityResponse xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0">
+  <sps:latestResponseTime>2010-08-20T12:00:00+02:00</sps:latestResponseTime>
+  <sps:result>
+    <sps:StatusReport>
+      <sps:task>http://www.ogc.org/procedure/camera/1/tasks/5</sps:task>
+      <sps:procedure>http://www.ogc.org/procedure/camera/1</sps:procedure>
+      <sps:requestStatus>Rejected</sps:requestStatus>
+      <sps:statusMessage xml:lang="en">The task was not feasible because the requested time frame is not free</sps:statusMessage>
+      <sps:updateTime>2010-08-20T11:10:12+02:00</sps:updateTime>
+      <sps:alternative>
+        <sps:Alternative>
+          <sps:taskingParameters>
+            <sps:ParameterData>
+              <sps:encoding>
+                <swe:TextEncoding tokenSeparator="," blockSeparator="@@"/>
+              </sps:encoding>
+              <sps:values>2010-08-20T12:35:00+02:00,2010-08-20T14:30:00+02:00,N,N</sps:values>
+            </sps:ParameterData>
+          </sps:taskingParameters>
+        </sps:Alternative>
+      </sps:alternative>
+            <sps:alternative>
+        <sps:Alternative>
+          <sps:taskingParameters>
+            <sps:ParameterData>
+              <sps:encoding>
+                <swe:TextEncoding tokenSeparator="," blockSeparator="@@"/>
+              </sps:encoding>
+              <sps:values>2010-08-20T15:10:00+02:00,2010-08-20T17:00:00+02:00,N,N</sps:values>
+            </sps:ParameterData>
+          </sps:taskingParameters>
+        </sps:Alternative>
+      </sps:alternative>
+    </sps:StatusReport>
+  </sps:result>
+</sps:GetFeasibilityResponse>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sps="http://www.opengis.net/sps/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.opengis.net/sps/1.0"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0.2">
+    
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+    <xs:include schemaLocation="./spsAll.xsd"/>
+    <xs:include schemaLocation="./spsCommon.xsd"/>
+    <xs:annotation>
+        <xs:documentation>
+            <copyright>
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+            </copyright> 
+        </xs:documentation>
+    </xs:annotation>
+    <!--Schema of the sps:SubmitRequest-->
+    <xs:element name="Submit" type="sps:SubmitRequestType"/>
+    <xs:complexType name="SubmitRequestType">
+        <xs:complexContent>
+            <xs:extension base="sps:RequestBaseType">
+                <xs:sequence>
+                    <xs:element ref="sps:notificationTarget"/>
+                    <xs:choice>
+                        <xs:element name="sensorParam">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element ref="sps:sensorID"/>
+                                    <xs:element ref="sps:parameters"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="sps:feasibilityID"/>
+                    </xs:choice>
+                    <xs:element ref="sps:timeFrame" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<!--
+This example illustrates how complex properties of
+features may be referenced using XPath expressions.
+Consider the feature type Person defined as: 
+-->
+<schema
+   targetNamespace="http://www.someserver.example.com/abc"
+   xmlns:abc="http://www.someserver.example.com/abc"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns="http://www.w3.org/2001/XMLSchema"
+   elementFormDefault="qualified"
+   version="1.0">
+
+   <import namespace="http://www.opengis.net/gml/3.2"
+           schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+
+   <element name="Road" type="abc:RoadType"
+            substitutionGroup="gml:AbstractFeature"/>
+   <complexType name="RoadType">
+      <complexContent>
+         <extension base="gml:AbstractFeatureType">
+            <sequence>
+               <element name="name" type="xsd:string" minOccurs="0"/>
+               <element name="numLanes" type="xsd:nonNegativeInteger"/>
+               <element name="centerLineOf" type="gml:CurvePropertyType"/>
+            </sequence>
+         </extension>
+      </complexContent>
+   </complexType>
+   <complexType name="RoadPropertyType">
+      <sequence>
+         <element ref="abc:Road" minOccurs="0"/>
+      </sequence>
+      <attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </complexType>
+
+
+   <element name="RoadNetwork" type="abc:RoadNetworkType"
+            substitutionGroup="gml:AbstractFeature"/>
+   <complexType name="RoadNetworkType">
+      <complexContent>
+         <extension base="gml:AbstractFeatureType">
+            <sequence>
+               <element name="operator" type="xsd:string"/>
+               <element name="members" type="abc:RoadPropertyType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+               <element name="topology" type="gml:TopoComplexPropertyType"/>
+            </sequence>
+         </extension>
+      </complexContent>
+   </complexType>
+
+</schema>

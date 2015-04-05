@@ -1,0 +1,25 @@
+# -*- rnc -*-
+   # RELAX NG Compact Syntax Grammar for
+   # OpenSearch Query element
+   #
+   # OGC OpenSearch Geo and Time Extensions 1.0 is an OGC Standard.
+   # Copyright (c) 2014 Open Geospatial Consortium.
+   # To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+   #
+   # Version: 1.0.0
+   #
+
+namespace os = "http://a9.com/-/spec/opensearch/1.1/"
+namespace s = "http://purl.oclc.org/dsdl/schematron"
+namespace local = ""
+
+osQueryAttr = attribute role { osQueryRoleValues },
+     attribute title { xsd:string { maxLength="256"}}?, attribute searchTerms { text }?,
+     attribute totalResults { xsd:int }?, attribute count { text }?,
+     attribute startIndex { text }?, attribute startPage { text }?,
+     attribute inputEncoding { text }?, attribute outputEncoding { text }?,
+	 attribute language { text }?
+    
+osQueryRoleValues = "request" | "example" | "related" | "correction" | "subset" | "superset"   
+
+# EOF

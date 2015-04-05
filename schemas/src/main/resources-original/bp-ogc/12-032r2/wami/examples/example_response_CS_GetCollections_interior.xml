@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CS_Collections
+  xmlns="http://www.pixia.com/wami/v102"
+  xmlns:ows="http://www.opengis.net/ows/2.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.pixia.com/wami/v102 ../xsd/wami_1_0_2.xsd
+      http://www.opengis.net/ows/2.0
+      http://www.w3.org/1999/xlink">
+
+  <Parent NID="2010">
+    <Service name="CS">
+        <Request xlink:href="http://example.com/CS" get="true" post="true"/>
+    </Service>
+  </Parent>
+  <Node NID="2010/2010-MISSION1" CID="2010-MISSION1" name="MISSION 1" parentNID="2010">
+    <Description>Info about Mission 1</Description>
+    <Service name="IS">
+        <Request xlink:href="http://example.com/IS" get="true" post="true"/>
+    </Service>
+  </Node>
+</CS_Collections>

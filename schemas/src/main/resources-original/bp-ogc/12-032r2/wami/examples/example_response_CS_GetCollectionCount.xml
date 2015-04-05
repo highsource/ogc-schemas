@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CS_CollectionCount 
+  xmlns="http://www.pixia.com/wami/v102"
+  xmlns:ows="http://www.opengis.net/ows/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.pixia.com/wami/v102 ../xsd/wami_1_0_2.xsd
+      http://www.opengis.net/ows/2.0 http://schemas.opengis.net/ows/2.0/owsAll.xsd"
+	childNodes="3" 
+	collections="5" 
+	depth="1" 
+	edgeDepth="2" 
+	NID="ROOT" 
+	root="true" 
+	totalNodes="25" 
+	version="1.0.2">
+  <!-- depth could have been "All" -->
+  <Description>Detailed statistics about a snapshot of the tree from a given Node ID (NID)</Description>
+</CS_CollectionCount>

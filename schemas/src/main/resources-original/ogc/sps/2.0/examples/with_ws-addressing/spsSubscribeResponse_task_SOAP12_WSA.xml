@@ -1,0 +1,15 @@
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd http://docs.oasis-open.org/wsn/b-2 http://docs.oasis-open.org/wsn/b-2.xsd" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsn-b="http://docs.oasis-open.org/wsn/b-2">
+  <soap12:Header>
+    <wsa:To>http://my.client.com/client/myReceiver</wsa:To>
+    <wsa:Action>http://docs.oasis-open.org/wsn/bw-2/NotificationProducer/SubscribeResponse</wsa:Action>
+    <wsa:RelatesTo>http://my.client.com/uid/msg-Sub1</wsa:RelatesTo>
+  </soap12:Header>
+  <soap12:Body>
+    <wsn-b:SubscribeResponse>
+      <wsn-b:SubscriptionReference>
+        <wsa:Address>http://www.ogc.org/SPS/Producer/subscriptions/792</wsa:Address>
+      </wsn-b:SubscriptionReference>
+      <wsn-b:TerminationTime>2010-08-20T14:31:00+02:00</wsn-b:TerminationTime>
+    </wsn-b:SubscribeResponse>
+  </soap12:Body>
+</soap12:Envelope>

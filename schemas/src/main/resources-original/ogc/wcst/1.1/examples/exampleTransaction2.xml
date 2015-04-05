@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Transaction xmlns="http://www.opengis.net/wcs/1.1/wcst" 
+	xmlns:ows="http://www.opengis.net/ows/1.1" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.opengis.net/wcs/1.1/wcst http://schemas.opengis.net/wcst/1.1/wcstTransaction.xsd" 
+	service="WCS" version="1.1">
+	<InputCoverages>
+		<Coverage>
+			<ows:Identifier codeSpace="TBD">CoverageIdentifierTBD1</ows:Identifier>
+			<ows:Reference xlink:href="http://foo.bar.com/Images/abcd1234Pixels" 
+xlink:role="urn:ogc:def:role:WCS:1.1:Pixels"/>
+			<ows:Reference xlink:href="http://foo.bar.com/Images/abcd1234Metadata2" 
+xlink:role="urn:ogc:def:role:WCS:1.1:CoverageDescription"/>
+			<ows:Reference xlink:href="http://foo.bar.com/Images/abcd1234Metadata3" 
+xlink:role="urn:ogc:def:role:WCS:1.1:GeoreferencingTransformation"/>
+			<Action>Add</Action>
+		</Coverage>
+		<Coverage>
+			<ows:Identifier codeSpace="TBD">CoverageIdentifierTBD2</ows:Identifier>
+			<ows:Reference xlink:href="http://foo.bar.com/Images/abcd3456Metadata2" 
+xlink:role="urn:ogc:def:role:WCS:1.1:CoverageDescription"/>
+			<ows:Reference xlink:href="http://foo.bar.com/Images/abcd3456Metadata3" 
+xlink:role="urn:ogc:def:role:WCS:1.1:GeoreferencingTransformation"/>
+			<Action>UpdateMetadata</Action>
+		</Coverage>
+		<Coverage>
+			<ows:Identifier codeSpace="TBD">CoverageIdentifierTBD3</ows:Identifier>
+			<ows:Reference xlink:href="http://foo.bar.com/Images/abcd1234Pixels" 
+xlink:role="urn:ogc:def:role:WCS:1.1:Pixels"/>
+			<ows:Reference xlink:href="http://foo.bar.com/Images/abcd5678Metadata2" 
+xlink:role="urn:ogc:def:role:WCS:1.1:CoverageDescription"/>
+			<ows:Reference xlink:href="http://foo.bar.com/Images/abcd5678Metadata3" 
+xlink:role="urn:ogc:def:role:WCS:1.1:GeoreferencingTransformation"/>
+			<Action>UpdateAll</Action>
+		</Coverage>
+		<Coverage>
+			<ows:Identifier codeSpace="TBD">CoverageIdentifierTBD4</ows:Identifier>
+			<ows:Reference xlink:href=""/>
+			<Action>Delete</Action>
+		</Coverage>
+	</InputCoverages>
+</Transaction>

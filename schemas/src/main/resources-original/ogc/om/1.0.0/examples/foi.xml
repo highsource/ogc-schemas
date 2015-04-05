@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<sa:SamplingFeatureCollection gml:id="foi" xmlns:sa="http://www.opengis.net/sampling/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml"
+                              xsi:schemaLocation="http://www.opengis.net/sampling/1.0 http://schemas.opengis.net/sampling/1.0.0/sampling.xsd">
+	<gml:description>This SamplingFeature serves as a container for a collection composed of a single Station and another SamplingFeature containing a collection of Stations</gml:description>
+	<gml:boundedBy>
+		<gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.3:62836405">
+			<gml:lowerCorner>-90 -180</gml:lowerCorner>
+			<gml:upperCorner>90 180</gml:upperCorner>
+		</gml:Envelope>
+	</gml:boundedBy>
+	<sa:sampledFeature xlink:href="http://wfs.flakey.org?request=getFeature&amp;featureid=tract470"/>
+	<sa:surveyDetails xlink:href="urn:ogc:def:nil:OGC:unknown"/>
+	<sa:member>
+		<sa:SamplingPoint gml:id="ot2s">
+			<gml:name>8903</gml:name>
+			<sa:sampledFeature xlink:href="http://wfs.flakey.org?request=getFeature&amp;featureid=tract470"/>
+			<sa:position>
+				<gml:Point gml:id="ot2p">
+					<gml:pos srsName="urn:ogc:def:crs:EPSG:6.3:62836405">-30.7025065 134.1997256</gml:pos>
+				</gml:Point>
+			</sa:position>
+		</sa:SamplingPoint>
+	</sa:member>
+	<sa:member>
+		<sa:SamplingFeatureCollection gml:id="stc1">
+			<gml:description>This  serves as a container for a set of Stations</gml:description>
+			<gml:boundedBy>
+				<gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.3:62836405">
+					<gml:lowerCorner>-30.702 134.199</gml:lowerCorner>
+					<gml:upperCorner>-30.692 134.209</gml:upperCorner>
+				</gml:Envelope>
+			</gml:boundedBy>
+			<sa:sampledFeature xlink:href="urn:ogc:def:nil:OGC:unknown"/>
+			<sa:member>
+				<sa:SamplingPoint gml:id="st1">
+					<sa:sampledFeature xlink:href="http://wfs.flakey.org?request=getFeature&amp;featureid=tract470"/>
+					<sa:position>
+						<gml:Point gml:id="st1p">
+							<gml:pos>-30.702 134.199</gml:pos>
+						</gml:Point>
+					</sa:position>
+				</sa:SamplingPoint>
+			</sa:member>
+			<sa:member>
+				<sa:SamplingPoint gml:id="st2">
+					<sa:sampledFeature xlink:href="http://wfs.flakey.org?request=getFeature&amp;featureid=tract470"/>
+					<sa:position>
+						<gml:Point gml:id="st2p">
+							<gml:pos>-30.692 134.199</gml:pos>
+						</gml:Point>
+					</sa:position>
+				</sa:SamplingPoint>
+			</sa:member>
+			<sa:member>
+				<sa:SamplingPoint gml:id="st3">
+					<sa:sampledFeature xlink:href="http://wfs.flakey.org?request=getFeature&amp;featureid=tract470"/>
+					<sa:position>
+						<gml:Point gml:id="st3p">
+							<gml:pos>-30.702 134.209</gml:pos>
+						</gml:Point>
+					</sa:position>
+				</sa:SamplingPoint>
+			</sa:member>
+			<sa:member>
+				<sa:SamplingPoint gml:id="st4">
+					<sa:sampledFeature xlink:href="http://wfs.flakey.org?request=getFeature&amp;featureid=tract470"/>
+					<sa:position>
+						<gml:Point gml:id="st4p">
+							<gml:pos>-30.692 134.209</gml:pos>
+						</gml:Point>
+					</sa:position>
+				</sa:SamplingPoint>
+			</sa:member>
+		</sa:SamplingFeatureCollection>
+	</sa:member>
+</sa:SamplingFeatureCollection>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:gml="http://www.opengis.net/gml" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.opengis.net/sps/1.0" targetNamespace="http://www.opengis.net/sps/1.0"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0.2">
+    
+    <xs:include schemaLocation="./spsAll.xsd"/>
+    <xs:include schemaLocation="./spsCommon.xsd"/>
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+    <xs:annotation>
+        <xs:documentation>
+            <copyright>
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+            </copyright> 
+        </xs:documentation>
+    </xs:annotation>
+    <!--Normal XML Message-->
+    <xs:element name="SPSMessage">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="FeasibilityResponse">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="feasibility">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:token">
+                                        <xs:enumeration value="feasible"/>
+                                        <xs:enumeration value="not feasible"/>
+                                        <xs:enumeration value="not feasible, alternatives available"
+                                        />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element ref="gml:description" minOccurs="0"/>
+                            <xs:element name="alternative" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element ref="InputParameter" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="SubmitResponse">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="status">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:token">
+                                        <xs:enumeration value="confirmed"/>
+                                        <xs:enumeration value="rejected"/>
+                                        <xs:enumeration value="rejected, alternatives available"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element ref="gml:description" minOccurs="0"/>
+                            <xs:element ref="estimatedToC" minOccurs="0"/>
+                            <xs:element name="alternative" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element ref="InputParameter" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="StatusInformation">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="status">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:token">
+                                        <xs:enumeration value="Operation commencing"/>
+                                        <xs:enumeration value="Operation completed"/>
+                                        <xs:enumeration value="Operation failed"/>
+                                        <xs:enumeration value="Operation cancelled"/>
+                                        <xs:enumeration value="Operation delayed"/>
+                                        <xs:enumeration value="Operation delayed, update needed"/>
+                                        <xs:enumeration value="New data available"/>
+                                        <xs:enumeration value="status unknown"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element ref="gml:description" minOccurs="0"/>
+                            <xs:element ref="estimatedToC" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="UpdateRequest">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="InputDescriptor" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="UpdateResponse">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="InputParameter" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+            <xs:attribute name="SPSCorrID" type="xs:token" use="required">
+                <xs:annotation>
+                    <xs:documentation>Used to correlate an incoming message with a certain
+                        feasibility study or task performed by the SPS.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

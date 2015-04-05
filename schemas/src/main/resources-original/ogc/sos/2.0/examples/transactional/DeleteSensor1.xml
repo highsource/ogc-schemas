@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example Request for DeleteSensor operation which contains the identifier of the sensor which shall be deleted in the SOS. The response contains the ID of the sensor which has been updated.
+=======================================================================-->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/swes/2.0 http://schemas.opengis.net/swes/2.0/swes.xsd" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<soap12:Header>
+		<wsa:To>http://www.ogc.org/SOS</wsa:To>
+		<wsa:Action>http://www.opengis.net/swes/2.0/DeleteSensor</wsa:Action>
+		<wsa:ReplyTo>
+			<wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
+		</wsa:ReplyTo>
+		<wsa:MessageID>http://my.client.com/uid/msg-0010</wsa:MessageID>
+	</soap12:Header>
+	<soap12:Body>
+		<swes:DeleteSensor service="SOS" version="2.0.0">
+	
+	<!--identifier of the sensor which shall be deleted-->
+	<swes:procedure>http://www.example.org/register/process/Water_Gage_2</swes:procedure>
+	
+</swes:DeleteSensor>
+	</soap12:Body>
+</soap12:Envelope>

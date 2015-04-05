@@ -1,0 +1,53 @@
+<GetOptionsResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/oseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd">
+	<status>success</status>
+	<orderOptions>
+		<productOrderOptionsId>TerraSAR-X_SubscriptionOptions</productOrderOptionsId>
+		<description>Order Options for Subscription</description>
+		<orderType>SUBSCRIPTION_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="dateRange">
+					<swe:TimeRange updatable="false" optional="false" definition="http://www.opengis.net/def/dataType:ISO-19108:2002:TM_Period">
+						<swe:uom code="s"/>
+						<swe:value>2008-01-01T02:27:08.80Z 2008-01-31T02:27:08.80Z</swe:value>
+					</swe:TimeRange>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataArray>
+				<swe:elementCount>
+					<swe:Count>
+						<swe:value>1</swe:value>
+					</swe:Count>
+				</swe:elementCount>
+				<swe:elementType name="frequencyObservation">
+					<swe:DataRecord optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/frequencyObservation">
+						<swe:identifier>frequencyObservation</swe:identifier>
+						<swe:field name="numberOfObservations">
+							<swe:Count definition="http://www.opengis.net/def/parameter/ESA/1.0/numberObservation">
+								<swe:value>20</swe:value>
+							</swe:Count>
+						</swe:field>
+						<swe:field name="observationGap">
+							<swe:Count definition="http://www.opengis.net/def/parameter/ESA/1.0/observationGap">
+								<swe:value>2</swe:value>
+							</swe:Count>
+						</swe:field>
+					</swe:DataRecord>
+				</swe:elementType>
+			</swe:DataArray>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+			<mediaDelivery>
+				<packageMedium>CD-ROM</packageMedium>
+			</mediaDelivery>
+		</productDeliveryOptions>
+		<orderOptionInfoURL>http://www.provider.com/TerraSAR-X/orderoptions.html</orderOptionInfoURL>
+		<paymentOptions>
+			<paymentMethod>quota</paymentMethod>
+		</paymentOptions>
+	</orderOptions>
+</GetOptionsResponse>

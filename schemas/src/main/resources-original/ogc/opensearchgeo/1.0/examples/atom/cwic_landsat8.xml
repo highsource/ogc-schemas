@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:georss="http://www.georss.org/georss/10" xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/" xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/">
+<title>CWIC OpenSearch Response</title>
+<updated>2014-01-14T07:55:49Z</updated>
+<author>
+    <name>CEOS WGISS Integrated Catalog (CWIC) - CWIC Contact - Email: cwic-help@wgiss.ceos.org - Web: http://wgiss.ceos.org/cwic</name>
+    <email>cwic-help@wgiss.ceos.org</email>
+</author>
+<id>http://cwic.wgiss.ceos.org/opensearch/granules.atom</id>
+<link rel="self" href="datasetId=Landsat_8&amp;startIndex=1&amp;count=10&amp;timeStart=&amp;timeEnd=&amp;geoBox="/>
+<opensearch:totalResults>147446</opensearch:totalResults>
+<opensearch:startIndex>1</opensearch:startIndex>
+<opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+<opensearch:Query role="request" datasetId="Landsat_8" startIndex="1" startPage="1" count="10"/>
+<!-- Remote search completed in 2 seconds. -->
+<entry>
+    <title>Entity ID: LC81240182014014LGN00, Acquisition Date: 14-JAN-14, Path: 124, Row: 18</title>
+    <id>http://cwic.wgiss.ceos.org/opensearch/granules.atom?uid=Landsat_8:LC81240182014014LGN00</id>
+    <updated>2014-01-14T00:01:46Z</updated>
+    <author>
+        <name>EROS DATA CENTER - TECHNICAL CONTACT - Customer Services; U.S. Geological Survey; EROS Data Center; 47914 252nd Street;  Sioux Falls, SD 57198-0001; USA - Email: custserv@usgs.gov - Phone: 605-594-6151 - FAX: 605-594-6589</name>
+        <email>custserv@usgs.gov</email>
+    </author>
+    <georss:box>58.97655 121.82161 61.19202 126.21276</georss:box>
+    <dc:date>2014-01-14T02:55:02Z/2014-01-14T02:55:34Z</dc:date>
+    <link title="Original source metadata" rel="via" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81240182014014LGN00"/>
+    <link title="Alternate metadata URL" rel="alternate" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81240182014014LGN00"/>
+    <link title="Browse image URL" rel="icon" type="image/jpeg" href="http://earthexplorer.usgs.gov/browse/landsat_8/2014/124/018/LC81240182014014LGN00.jpg"/>
+    <link title="Granule download URL" rel="enclosure" type="text/html" href="http://earthexplorer.usgs.gov/download/external/options/Landsat_8/LC81240182014014LGN00/INVSVC/"/>
+    <summary>Granule metadata for Entity ID: LC81240182014014LGN00, Acquisition Date: 14-JAN-14, Path: 124, Row: 18</summary>
+</entry>
+<entry>
+    <title>Entity ID: LC81561192014014LGN00, Acquisition Date: 14-JAN-14, Path: 156, Row: 119</title>
+    <id>http://cwic.wgiss.ceos.org/opensearch/granules.atom?uid=Landsat_8:LC81561192014014LGN00</id>
+    <updated>2014-01-14T06:01:32Z</updated>
+    <author>
+        <name>EROS DATA CENTER - TECHNICAL CONTACT - Customer Services; U.S. Geological Survey; EROS Data Center; 47914 252nd Street;  Sioux Falls, SD 57198-0001; USA - Email: custserv@usgs.gov - Phone: 605-594-6151 - FAX: 605-594-6589</name>
+        <email>custserv@usgs.gov</email>
+    </author>
+    <georss:box>-81.97031 -18.80794 -79.60027 -4.11049</georss:box>
+    <dc:date>2014-01-14T06:53:05Z/2014-01-14T06:53:37Z</dc:date>
+    <link title="Original source metadata" rel="via" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81561192014014LGN00"/>
+    <link title="Alternate metadata URL" rel="alternate" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81561192014014LGN00"/>
+    <link title="Browse image URL" rel="icon" type="image/jpeg" href="http://earthexplorer.usgs.gov/browse/landsat_8/2014/156/119/LC81561192014014LGN00.jpg"/>
+    <link title="Granule download URL" rel="enclosure" type="text/html" href="http://earthexplorer.usgs.gov/download/external/options/Landsat_8/LC81561192014014LGN00/INVSVC/"/>
+    <summary>Granule metadata for Entity ID: LC81561192014014LGN00, Acquisition Date: 14-JAN-14, Path: 156, Row: 119</summary>
+</entry>
+<entry>
+    <title>Entity ID: LC81561232014014LGN00, Acquisition Date: 14-JAN-14, Path: 156, Row: 123</title>
+    <id>http://cwic.wgiss.ceos.org/opensearch/granules.atom?uid=Landsat_8:LC81561232014014LGN00</id>
+    <updated>2014-01-14T06:01:10Z</updated>
+    <author>
+        <name>EROS DATA CENTER - TECHNICAL CONTACT - Customer Services; U.S. Geological Survey; EROS Data Center; 47914 252nd Street;  Sioux Falls, SD 57198-0001; USA - Email: custserv@usgs.gov - Phone: 605-594-6151 - FAX: 605-594-6589</name>
+        <email>custserv@usgs.gov</email>
+    </author>
+    <georss:box>-82.73051 -58.01334 -80.70049 -43.92955</georss:box>
+    <dc:date>2014-01-14T06:54:41Z/2014-01-14T06:55:12Z</dc:date>
+    <link title="Original source metadata" rel="via" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81561232014014LGN00"/>
+    <link title="Alternate metadata URL" rel="alternate" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81561232014014LGN00"/>
+    <link title="Browse image URL" rel="icon" type="image/jpeg" href="http://earthexplorer.usgs.gov/browse/landsat_8/2014/156/123/LC81561232014014LGN00.jpg"/>
+    <link title="Granule download URL" rel="enclosure" type="text/html" href="http://earthexplorer.usgs.gov/download/external/options/Landsat_8/LC81561232014014LGN00/INVSVC/"/>
+    <summary>Granule metadata for Entity ID: LC81561232014014LGN00, Acquisition Date: 14-JAN-14, Path: 156, Row: 123</summary>
+</entry>
+<entry>
+    <title>Entity ID: LC81561252014014LGN00, Acquisition Date: 14-JAN-14, Path: 156, Row: 125</title>
+    <id>http://cwic.wgiss.ceos.org/opensearch/granules.atom?uid=Landsat_8:LC81561252014014LGN00</id>
+    <updated>2014-01-14T06:01:19Z</updated>
+    <author>
+        <name>EROS DATA CENTER - TECHNICAL CONTACT - Customer Services; U.S. Geological Survey; EROS Data Center; 47914 252nd Street;  Sioux Falls, SD 57198-0001; USA - Email: custserv@usgs.gov - Phone: 605-594-6151 - FAX: 605-594-6589</name>
+        <email>custserv@usgs.gov</email>
+    </author>
+    <georss:box>-81.97882 -76.28358 -79.61062 -61.57568</georss:box>
+    <dc:date>2014-01-14T06:55:29Z/2014-01-14T06:56:00Z</dc:date>
+    <link title="Original source metadata" rel="via" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81561252014014LGN00"/>
+    <link title="Alternate metadata URL" rel="alternate" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81561252014014LGN00"/>
+    <link title="Browse image URL" rel="icon" type="image/jpeg" href="http://earthexplorer.usgs.gov/browse/landsat_8/2014/156/125/LC81561252014014LGN00.jpg"/>
+    <link title="Granule download URL" rel="enclosure" type="text/html" href="http://earthexplorer.usgs.gov/download/external/options/Landsat_8/LC81561252014014LGN00/INVSVC/"/>
+    <summary>Granule metadata for Entity ID: LC81561252014014LGN00, Acquisition Date: 14-JAN-14, Path: 156, Row: 125</summary>
+</entry>
+<entry>
+    <title>Entity ID: LC81401212014014LGN00, Acquisition Date: 14-JAN-14, Path: 140, Row: 121</title>
+    <id>http://cwic.wgiss.ceos.org/opensearch/granules.atom?uid=Landsat_8:LC81401212014014LGN00</id>
+    <updated>2014-01-14T02:01:20Z</updated>
+    <author>
+        <name>EROS DATA CENTER - TECHNICAL CONTACT - Customer Services; U.S. Geological Survey; EROS Data Center; 47914 252nd Street;  Sioux Falls, SD 57198-0001; USA - Email: custserv@usgs.gov - Phone: 605-594-6151 - FAX: 605-594-6589</name>
+        <email>custserv@usgs.gov</email>
+    </author>
+    <georss:box>-82.72919 -11.71826 -80.69568 2.37710</georss:box>
+    <dc:date>2014-01-14T05:15:00Z/2014-01-14T05:15:31Z</dc:date>
+    <link title="Original source metadata" rel="via" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81401212014014LGN00"/>
+    <link title="Alternate metadata URL" rel="alternate" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81401212014014LGN00"/>
+    <link title="Browse image URL" rel="icon" type="image/jpeg" href="http://earthexplorer.usgs.gov/browse/landsat_8/2014/140/121/LC81401212014014LGN00.jpg"/>
+    <link title="Granule download URL" rel="enclosure" type="text/html" href="http://earthexplorer.usgs.gov/download/external/options/Landsat_8/LC81401212014014LGN00/INVSVC/"/>
+    <summary>Granule metadata for Entity ID: LC81401212014014LGN00, Acquisition Date: 14-JAN-14, Path: 140, Row: 121</summary>
+</entry>
+<entry>
+    <title>Entity ID: LC81401082014014LGN00, Acquisition Date: 14-JAN-14, Path: 140, Row: 108</title>
+    <id>http://cwic.wgiss.ceos.org/opensearch/granules.atom?uid=Landsat_8:LC81401082014014LGN00</id>
+    <updated>2014-01-14T02:01:29Z</updated>
+    <author>
+        <name>EROS DATA CENTER - TECHNICAL CONTACT - Customer Services; U.S. Geological Survey; EROS Data Center; 47914 252nd Street;  Sioux Falls, SD 57198-0001; USA - Email: custserv@usgs.gov - Phone: 605-594-6151 - FAX: 605-594-6589</name>
+        <email>custserv@usgs.gov</email>
+    </author>
+    <georss:box>-69.43129 51.66918 -67.12298 57.92192</georss:box>
+    <dc:date>2014-01-14T05:09:48Z/2014-01-14T05:10:20Z</dc:date>
+    <link title="Original source metadata" rel="via" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81401082014014LGN00"/>
+    <link title="Alternate metadata URL" rel="alternate" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81401082014014LGN00"/>
+    <link title="Browse image URL" rel="icon" type="image/jpeg" href="http://earthexplorer.usgs.gov/browse/landsat_8/2014/140/108/LC81401082014014LGN00.jpg"/>
+    <link title="Granule download URL" rel="enclosure" type="text/html" href="http://earthexplorer.usgs.gov/download/external/options/Landsat_8/LC81401082014014LGN00/INVSVC/"/>
+    <summary>Granule metadata for Entity ID: LC81401082014014LGN00, Acquisition Date: 14-JAN-14, Path: 140, Row: 108</summary>
+</entry>
+<entry>
+    <title>Entity ID: LC81400212014014LGN00, Acquisition Date: 14-JAN-14, Path: 140, Row: 21</title>
+    <id>http://cwic.wgiss.ceos.org/opensearch/granules.atom?uid=Landsat_8:LC81400212014014LGN00</id>
+    <updated>2014-01-14T02:01:56Z</updated>
+    <author>
+        <name>EROS DATA CENTER - TECHNICAL CONTACT - Customer Services; U.S. Geological Survey; EROS Data Center; 47914 252nd Street;  Sioux Falls, SD 57198-0001; USA - Email: custserv@usgs.gov - Phone: 605-594-6151 - FAX: 605-594-6589</name>
+        <email>custserv@usgs.gov</email>
+    </author>
+    <georss:box>54.80894 94.86544 56.99469 98.71168</georss:box>
+    <dc:date>2014-01-14T04:35:07Z/2014-01-14T04:35:38Z</dc:date>
+    <link title="Original source metadata" rel="via" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81400212014014LGN00"/>
+    <link title="Alternate metadata URL" rel="alternate" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81400212014014LGN00"/>
+    <link title="Browse image URL" rel="icon" type="image/jpeg" href="http://earthexplorer.usgs.gov/browse/landsat_8/2014/140/021/LC81400212014014LGN00.jpg"/>
+    <link title="Granule download URL" rel="enclosure" type="text/html" href="http://earthexplorer.usgs.gov/download/external/options/Landsat_8/LC81400212014014LGN00/INVSVC/"/>
+    <summary>Granule metadata for Entity ID: LC81400212014014LGN00, Acquisition Date: 14-JAN-14, Path: 140, Row: 21</summary>
+</entry>
+<entry>
+    <title>Entity ID: LC81401312014014LGN00, Acquisition Date: 14-JAN-14, Path: 140, Row: 131</title>
+    <id>http://cwic.wgiss.ceos.org/opensearch/granules.atom?uid=Landsat_8:LC81401312014014LGN00</id>
+    <updated>2014-01-14T02:01:27Z</updated>
+    <author>
+        <name>EROS DATA CENTER - TECHNICAL CONTACT - Customer Services; U.S. Geological Survey; EROS Data Center; 47914 252nd Street;  Sioux Falls, SD 57198-0001; USA - Email: custserv@usgs.gov - Phone: 605-594-6151 - FAX: 605-594-6589</name>
+        <email>custserv@usgs.gov</email>
+    </author>
+    <georss:box>-75.91381 -79.46716 -73.48925 -70.26858</georss:box>
+    <dc:date>2014-01-14T05:19:00Z/2014-01-14T05:19:32Z</dc:date>
+    <link title="Original source metadata" rel="via" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81401312014014LGN00"/>
+    <link title="Alternate metadata URL" rel="alternate" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81401312014014LGN00"/>
+    <link title="Browse image URL" rel="icon" type="image/jpeg" href="http://earthexplorer.usgs.gov/browse/landsat_8/2014/140/131/LC81401312014014LGN00.jpg"/>
+    <link title="Granule download URL" rel="enclosure" type="text/html" href="http://earthexplorer.usgs.gov/download/external/options/Landsat_8/LC81401312014014LGN00/INVSVC/"/>
+    <summary>Granule metadata for Entity ID: LC81401312014014LGN00, Acquisition Date: 14-JAN-14, Path: 140, Row: 131</summary>
+</entry>
+<entry>
+    <title>Entity ID: LC81240172014014LGN00, Acquisition Date: 14-JAN-14, Path: 124, Row: 17</title>
+    <id>http://cwic.wgiss.ceos.org/opensearch/granules.atom?uid=Landsat_8:LC81240172014014LGN00</id>
+    <updated>2014-01-14T00:01:42Z</updated>
+    <author>
+        <name>EROS DATA CENTER - TECHNICAL CONTACT - Customer Services; U.S. Geological Survey; EROS Data Center; 47914 252nd Street;  Sioux Falls, SD 57198-0001; USA - Email: custserv@usgs.gov - Phone: 605-594-6151 - FAX: 605-594-6589</name>
+        <email>custserv@usgs.gov</email>
+    </author>
+    <georss:box>60.35441 122.67556 62.58145 127.28577</georss:box>
+    <dc:date>2014-01-14T02:54:38Z/2014-01-14T02:55:10Z</dc:date>
+    <link title="Original source metadata" rel="via" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81240172014014LGN00"/>
+    <link title="Alternate metadata URL" rel="alternate" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81240172014014LGN00"/>
+    <link title="Browse image URL" rel="icon" type="image/jpeg" href="http://earthexplorer.usgs.gov/browse/landsat_8/2014/124/017/LC81240172014014LGN00.jpg"/>
+    <link title="Granule download URL" rel="enclosure" type="text/html" href="http://earthexplorer.usgs.gov/download/external/options/Landsat_8/LC81240172014014LGN00/INVSVC/"/>
+    <summary>Granule metadata for Entity ID: LC81240172014014LGN00, Acquisition Date: 14-JAN-14, Path: 124, Row: 17</summary>
+</entry>
+<entry>
+    <title>Entity ID: LC81240602014014LGN00, Acquisition Date: 14-JAN-14, Path: 124, Row: 60</title>
+    <id>http://cwic.wgiss.ceos.org/opensearch/granules.atom?uid=Landsat_8:LC81240602014014LGN00</id>
+    <updated>2014-01-14T00:01:40Z</updated>
+    <author>
+        <name>EROS DATA CENTER - TECHNICAL CONTACT - Customer Services; U.S. Geological Survey; EROS Data Center; 47914 252nd Street;  Sioux Falls, SD 57198-0001; USA - Email: custserv@usgs.gov - Phone: 605-594-6151 - FAX: 605-594-6589</name>
+        <email>custserv@usgs.gov</email>
+    </author>
+    <georss:box>-1.05426 104.36788 1.04721 106.41068</georss:box>
+    <dc:date>2014-01-14T03:11:45Z/2014-01-14T03:12:17Z</dc:date>
+    <link title="Original source metadata" rel="via" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81240602014014LGN00"/>
+    <link title="Alternate metadata URL" rel="alternate" type="text/xml" href="http://cwic.csiss.gmu.edu:9003/CWICMetaHandler/handler?recordId=Landsat_8:LC81240602014014LGN00"/>
+    <link title="Browse image URL" rel="icon" type="image/jpeg" href="http://earthexplorer.usgs.gov/browse/landsat_8/2014/124/060/LC81240602014014LGN00.jpg"/>
+    <link title="Granule download URL" rel="enclosure" type="text/html" href="http://earthexplorer.usgs.gov/download/external/options/Landsat_8/LC81240602014014LGN00/INVSVC/"/>
+    <summary>Granule metadata for Entity ID: LC81240602014014LGN00, Acquisition Date: 14-JAN-14, Path: 124, Row: 60</summary>
+</entry>
+<!-- Atom response generation completed in 2ms. -->
+</feed>
+<!-- Atom response generation completed in 2351ms. -->
+

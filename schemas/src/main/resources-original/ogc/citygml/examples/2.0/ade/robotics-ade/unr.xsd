@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://unr.crl.hitachi.co.jp/ade/unr" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:gml="http://www.opengis.net/gml" xmlns:core="http://www.opengis.net/citygml/2.0"
+	xmlns:bldg="http://www.opengis.net/citygml/building/2.0" xmlns:grp="http://www.opengis.net/citygml/cityobjectgroup/2.0"
+	targetNamespace="http://unr.crl.hitachi.co.jp/ade/unr" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<xsd:import namespace="http://www.opengis.net/citygml/building/2.0" schemaLocation="http://schemas.opengis.net/citygml/building/2.0/building.xsd"/>
+	<xsd:import namespace="http://www.opengis.net/citygml/cityobjectgroup/2.0" schemaLocation="http://schemas.opengis.net/citygml/cityobjectgroup/2.0/cityObjectGroup.xsd"/>
+
+	<!-- Opening -->
+	<xsd:element name="openingMaterialType" type="gml:CodeType" substitutionGroup="bldg:_GenericApplicationPropertyOfOpening"/>
+	<xsd:element name="openingRoofType" type="gml:CodeType" substitutionGroup="bldg:_GenericApplicationPropertyOfOpening"/>
+	<xsd:element name="openingJointType" type="gml:CodeType" substitutionGroup="bldg:_GenericApplicationPropertyOfOpening"/>
+
+	<!-- Door -->
+	<xsd:element name="autoType" type="gml:CodeType" substitutionGroup="bldg:_GenericApplicationPropertyOfDoor"/>
+
+	<!-- BoundarySurface -->
+	<xsd:element name="surfaceMaterialType" type="gml:CodeType" substitutionGroup="bldg:_GenericApplicationPropertyOfBoundarySurface"/>
+	<xsd:element name="surfaceRoofType" type="gml:CodeType" substitutionGroup="bldg:_GenericApplicationPropertyOfBoundarySurface"/>
+	<xsd:element name="surfaceJointType" type="gml:CodeType" substitutionGroup="bldg:_GenericApplicationPropertyOfBoundarySurface"/>
+	<xsd:element name="surfaceInOutdoorType" type="gml:CodeType" substitutionGroup="bldg:_GenericApplicationPropertyOfBoundarySurface"/>
+
+	<!-- Storey -->
+	<xsd:complexType name="StoreyPropertyType">
+		<xsd:sequence minOccurs="0">
+			<xsd:element ref="Storey"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</xsd:complexType>
+	<xsd:element name="storeyProperty" type="StoreyPropertyType" substitutionGroup="grp:_GenericApplicationPropertyOfCityObjectGroup"/>
+
+	<xsd:complexType name="StoreyType">
+		<xsd:complexContent>
+			<xsd:extension base="grp:CityObjectGroupType">
+				<xsd:sequence>
+					<xsd:element name="heightAboveGround" type="gml:LengthType" minOccurs="0" maxOccurs="1"/>
+					<xsd:element name="heightToCeiling" type="gml:LengthType" minOccurs="0" maxOccurs="1"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:element name="Storey" type="StoreyType" substitutionGroup="grp:CityObjectGroup"/>
+
+</xsd:schema>

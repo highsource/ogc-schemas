@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example SOAP Respone for GetFeatureOfInterest operation matching the filter of the GetFeatureOfInterest request.
+=======================================================================-->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+ http://www.opengis.net/sos/2.0
+http://schemas.opengis.net/sos/2.0/sos.xsd http://www.opengis.net/samplingSpatial/2.0 
+http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:sam="http://www.opengis.net/sampling/2.0"
+	xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<soap12:Header>
+		<wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/foiRetrieval/2.0/GetFeatureOfInterestResponse</wsa:Action>
+		<wsa:RelatesTo>http://my.client.com/uid/msg-0010</wsa:RelatesTo>
+	</soap12:Header>
+	<soap12:Body>
+		<sos:GetFeatureOfInterestResponse>
+	<sos:featureMember>
+		<sams:SF_SpatialSamplingFeature gml:id="st1">
+			<gml:identifier codeSpace="">http://www.my_namespace.org/fois/st1</gml:identifier>
+			<sam:type xlink:href="http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingPoint"/>
+			<sam:sampledFeature xlink:href="http://wfs.example.org?request=getFeature&amp;featureid=Rhine_Sandbank_123"/>
+			<sams:shape>
+				<gml:Point gml:id="st1p">
+					<gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">50.7167 7.76667</gml:pos>
+				</gml:Point>
+			</sams:shape>
+		</sams:SF_SpatialSamplingFeature>
+	</sos:featureMember>
+	<sos:featureMember>
+		<sams:SF_SpatialSamplingFeature gml:id="st2">
+			<gml:identifier codeSpace="">http://www.my_namespace.org/fois/st2</gml:identifier>
+			<sam:type xlink:href="http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingPoint"/>
+			<sam:sampledFeature xlink:href="http://wfs.example.org?request=getFeature&amp;featureid=Rhine_Sandbank_123"/>
+			<sams:shape>
+				<gml:Point gml:id="st2p">
+					<gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">51.7167 8.76667</gml:pos>
+				</gml:Point>
+			</sams:shape>
+		</sams:SF_SpatialSamplingFeature>
+	</sos:featureMember>
+	<sos:featureMember>
+		<sams:SF_SpatialSamplingFeature gml:id="st3">
+			<gml:identifier codeSpace="">http://www.my_namespace.org/fois/st3</gml:identifier>
+			<sam:type xlink:href="http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingPoint"/>
+			<sam:sampledFeature xlink:href="http://wfs.example.org?request=getFeature&amp;featureid=Rhine_Sandbank_123"/>
+			<sams:shape>
+				<gml:Point gml:id="st3p">
+					<gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">52.7167 9.76667</gml:pos>
+				</gml:Point>
+			</sams:shape>
+		</sams:SF_SpatialSamplingFeature>
+	</sos:featureMember>
+</sos:GetFeatureOfInterestResponse>
+</soap12:Body>
+</soap12:Envelope>

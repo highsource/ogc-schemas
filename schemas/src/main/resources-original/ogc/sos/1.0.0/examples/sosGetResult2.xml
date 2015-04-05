@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sos:GetResult xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:ows="http://www.opengis.net/ows/1.1"
+  xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc"
+  xmlns:om="http://www.opengis.net/om/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosAll.xsd"
+  service="SOS" version="1.0.0">
+  <sos:ObservationTemplateId>urn:MyOrg:ObservationTemplate:1234abcde</sos:ObservationTemplateId>
+  <sos:eventTime>
+    <ogc:TM_After>
+      <ogc:PropertyName>om:samplingTime</ogc:PropertyName>
+      <gml:TimeInstant>
+        <!-- This time is the last sensor reading that was received.  The client doesn't want to get duplicate records -->
+        <gml:timePosition>2005-08-05T12:02:13Z</gml:timePosition>
+      </gml:TimeInstant>
+    </ogc:TM_After>
+  </sos:eventTime>
+</sos:GetResult>

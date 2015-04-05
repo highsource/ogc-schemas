@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IS_Map
+  xmlns="http://www.pixia.com/wami/v102"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.pixia.com/wami/v102 ../xsd/wami_1_0_2.xsd">
+
+    <Reference imageReference="image1" metadataReference="metadata1" />
+    <Reference imageReference="image2" metadataReference="metadata2" />
+    <Reference imageReference="image3" metadataReference="metadata3" />
+</IS_Map>

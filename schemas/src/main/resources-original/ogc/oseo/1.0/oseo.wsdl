@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.opengis.net/oseo/1.0" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:ns="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.isotc211.org/2005/gmd" xmlns:ns3="http://www.isotc211.org/2005/gsr" xmlns:ns4="http://www.isotc211.org/2005/gss" xmlns:ns5="http://www.isotc211.org/2005/gts" xmlns:ns6="http://www.opengis.net/gml/3.2" xmlns:ns7="http://www.opengis.net/ows/2.0" xmlns:ns8="http://www.opengis.net/sps/2.0" xmlns:ns9="http://www.opengis.net/swe/2.0" xmlns:ns10="http://www.opengis.net/swe/st/0" xmlns:ns11="http://www.w3.org/2001/SMIL20/" xmlns:ns12="http://www.w3.org/2001/SMIL20/Language" xmlns:ns13="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="OSEO_V100" targetNamespace="http://www.opengis.net/oseo/1.0">
+	<!-- 
+	Ordering Services For Earth Observation Products is an OGC Standard.
+	Copyright (c) 2010 Open Geospatial Consortium. 
+	To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+	-->
+	<types>
+		<schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="http://www.opengis.net/oseo/1.0" schemaLocation="http://schemas.opengis.net/oseo/1.0/oseo.xsd"/>
+			<import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsAll.xsd"/>
+		</schema>
+	</types>
+	<message name="GetCapabilitiesRequest">
+		<part name="parameters" element="tns:GetCapabilities"/>
+	</message>
+	<message name="GetCapabilitiesResponse">
+		<part name="parameters" element="tns:Capabilities"/>
+	</message>
+	<message name="GetOptionsRequestParameter">
+		<part name="parameters" element="tns:GetOptions"/>
+	</message>
+	<message name="GetOptionsResponseParameter">
+		<part name="parameters" element="tns:GetOptionsResponse"/>
+	</message>
+	<message name="GetQuotationRequestParameter">
+		<part name="parameters" element="tns:GetQuotation"/>
+	</message>
+	<message name="GetQuotationAckParameter">
+		<part name="parameters" element="tns:GetQuotationAck"/>
+	</message>
+	<message name="GetQuotationResponseParameter">
+		<part name="parameters" element="tns:GetQuotationResponse"/>
+	</message>
+	<message name="GetQuotationResponseAckParameter">
+		<part name="parameters" element="tns:GetQuotationResponseAck"/>
+	</message>
+	<message name="SubmitRequestParameter">
+		<part name="parameters" element="tns:Submit"/>
+	</message>
+	<message name="SubmitAckParameter">
+		<part name="parameters" element="tns:SubmitAck"/>
+	</message>
+	<message name="SubmitResponseParameter">
+		<part name="parameters" element="tns:SubmitResponse"/>
+	</message>
+	<message name="SubmitResponseAckParameter">
+		<part name="parameters" element="tns:SubmitResponseAck"/>
+	</message>
+	<message name="GetStatusRequestParameter">
+		<part name="parameters" element="tns:GetStatus"/>
+	</message>
+	<message name="GetStatusResponseParameter">
+		<part name="parameters" element="tns:GetStatusResponse"/>
+	</message>
+	<message name="CancelRequestParameter">
+		<part name="parameters" element="tns:Cancel"/>
+	</message>
+	<message name="CancelAckParameter">
+		<part name="parameters" element="tns:CancelAck"/>
+	</message>
+	<message name="CancelResponseParameter">
+		<part name="parameters" element="tns:CancelResponse"/>
+	</message>
+	<message name="CancelResponseAckParameter">
+		<part name="parameters" element="tns:CancelResponseAck"/>
+	</message>
+	<message name="DescribeResultAccessParameter">
+		<part name="parameters" element="tns:DescribeResultAccess"/>
+	</message>
+	<message name="DescribeResultAccessResponseParameter">
+		<part name="parameters" element="tns:DescribeResultAccessResponse"/>
+	</message>
+	<message name="StartHeader">
+		<part name="MessageID" element="wsa:MessageID"/>
+		<part name="ReplyTo" element="wsa:ReplyTo"/>
+	</message>
+	<message name="ContinueHeader">
+		<part name="RelatesTo" element="wsa:RelatesTo"/>
+	</message>
+	<message name="ServiceExceptionReport">
+		<part name="fault" element="ns7:ExceptionReport"/>
+	</message>
+	<portType name="OSEO_V100_Service">
+		<operation name="GetCapabilities">
+			<input message="tns:GetCapabilitiesRequest"/>
+			<output message="tns:GetCapabilitiesResponse"/>
+			<fault name="ServiceExceptionReport" message="tns:ServiceExceptionReport"/>
+		</operation>
+		<operation name="GetOptions">
+			<input message="tns:GetOptionsRequestParameter"/>
+			<output message="tns:GetOptionsResponseParameter"/>
+			<fault name="ServiceExceptionReport" message="tns:ServiceExceptionReport"/>
+		</operation>
+		<operation name="GetQuotation">
+			<input message="tns:GetQuotationRequestParameter"/>
+			<output message="tns:GetQuotationAckParameter"/>
+			<fault name="ServiceExceptionReport" message="tns:ServiceExceptionReport"/>
+		</operation>
+		<operation name="Submit">
+			<input message="tns:SubmitRequestParameter"/>
+			<output message="tns:SubmitAckParameter"/>
+			<fault name="ServiceExceptionReport" message="tns:ServiceExceptionReport"/>
+		</operation>
+		<operation name="GetStatus">
+			<input message="tns:GetStatusRequestParameter"/>
+			<output message="tns:GetStatusResponseParameter"/>
+			<fault name="ServiceExceptionReport" message="tns:ServiceExceptionReport"/>
+		</operation>
+		<operation name="Cancel">
+			<input message="tns:CancelRequestParameter"/>
+			<output message="tns:CancelAckParameter"/>
+			<fault name="ServiceExceptionReport" message="tns:ServiceExceptionReport"/>
+		</operation>
+		<operation name="DescribeResultAccess">
+			<input message="tns:DescribeResultAccessParameter"/>
+			<output message="tns:DescribeResultAccessResponseParameter"/>
+			<fault name="ServiceExceptionReport" message="tns:ServiceExceptionReport"/>
+		</operation>
+	</portType>
+	<portType name="OSEO_V100_AsyncClient">
+		<operation name="GetQuotationResponse">
+			<input message="tns:GetQuotationResponseParameter"/>
+			<output message="tns:GetQuotationResponseAckParameter"/>
+			<fault name="ServiceExceptionReport" message="tns:ServiceExceptionReport"/>
+		</operation>
+		<operation name="SubmitResponse">
+			<input message="tns:SubmitResponseParameter"/>
+			<output message="tns:SubmitResponseAckParameter"/>
+			<fault name="ServiceExceptionReport" message="tns:ServiceExceptionReport"/>
+		</operation>
+		<operation name="CancelResponse">
+			<input message="tns:CancelResponseParameter"/>
+			<output message="tns:CancelResponseAckParameter"/>
+			<fault name="ServiceExceptionReport" message="tns:ServiceExceptionReport"/>
+		</operation>
+	</portType>
+	<binding name="OSEO_V100_ServicePortBinding" type="tns:OSEO_V100_Service">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetCapabilities">
+			<soap:operation soapAction="GetCapabilities"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="ServiceExceptionReport">
+				<soap:fault name="ServiceExceptionReport" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="GetOptions">
+			<soap:operation soapAction="GetOptions"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="ServiceExceptionReport">
+				<soap:fault name="ServiceExceptionReport" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="GetQuotation">
+			<soap:operation soapAction="GetQuotation"/>
+			<input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:StartHeader" part="ReplyTo" use="literal"/>
+				<soap:header message="tns:StartHeader" part="MessageID" use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="ServiceExceptionReport">
+				<soap:fault name="ServiceExceptionReport" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="Submit">
+			<soap:operation soapAction="Submit"/>
+			<input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:StartHeader" part="ReplyTo" use="literal"/>
+				<soap:header message="tns:StartHeader" part="MessageID" use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="ServiceExceptionReport">
+				<soap:fault name="ServiceExceptionReport" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="GetStatus">
+			<soap:operation soapAction="GetStatus"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="ServiceExceptionReport">
+				<soap:fault name="ServiceExceptionReport" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="Cancel">
+			<soap:operation soapAction="Cancel"/>
+			<input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:StartHeader" part="ReplyTo" use="literal"/>
+				<soap:header message="tns:StartHeader" part="MessageID" use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="ServiceExceptionReport">
+				<soap:fault name="ServiceExceptionReport" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="DescribeResultAccess">
+			<soap:operation soapAction="DescribeResultAccess"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="ServiceExceptionReport">
+				<soap:fault name="ServiceExceptionReport" use="literal"/>
+			</fault>
+		</operation>
+	</binding>
+	<binding name="OSEO_V100_AsyncClientPortBinding" type="tns:OSEO_V100_AsyncClient">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetQuotationResponse">
+			<soap:operation soapAction="GetQuotationResponse"/>
+			<input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:ContinueHeader" part="RelatesTo" use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="ServiceExceptionReport">
+				<soap:fault name="ServiceExceptionReport" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="SubmitResponse">
+			<soap:operation soapAction="SubmitResponse"/>
+			<input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:ContinueHeader" part="RelatesTo" use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="ServiceExceptionReport">
+				<soap:fault name="ServiceExceptionReport" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="CancelResponse">
+			<soap:operation soapAction="CancelResponse"/>
+			<input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:ContinueHeader" part="RelatesTo" use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="ServiceExceptionReport">
+				<soap:fault name="ServiceExceptionReport" use="literal"/>
+			</fault>
+		</operation>
+	</binding>
+	<service name="OSEO_V100">
+		<port name="OSEO_V1.0.0_Port" binding="tns:OSEO_V100_ServicePortBinding">
+			<soap:address location="No Target Address"/>
+		</port>
+	</service>
+	<service name="OSEO_V100_AsyncClient">
+		<port name="OSEO_V1.0.0_AsyncClientPort" binding="tns:OSEO_V100_AsyncClientPortBinding">
+			<soap:address location="No Target Address"/>
+		</port>
+	</service>
+</definitions>

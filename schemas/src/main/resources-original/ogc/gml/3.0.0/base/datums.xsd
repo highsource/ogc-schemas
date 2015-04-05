@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.opengis.net/gml" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" elementFormDefault="qualified" xml:lang="en" version="3.0.0.1">
+  <xsd:annotation>
+    <xsd:appinfo source="urn:opengis:specification:gml:schema-datums:v3.0.0"/>
+    <xsd:documentation>
+      <name>datums.xsd</name>
+      <version>3.0 updated 2010-01-26</version>
+      <scope>How to encode datum definitions. </scope>
+      <description>Builds on referenceSystems.xsd to encode the data needed to define datums, including the specific subtypes of datums. GML 3.0 candidate schema, primary editor: Arliss Whiteside.</description>
+      <copyright>
+        GML is an OGC Standard.
+        Copyright (c) 2001,2002,2010 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+      </copyright>
+      <conformance>This schema encodes the Datum (CD_) package of the extended UML Model for OGC Abstract Specification Topic 2: Spatial Referencing by Coordinates. That UML model is adapted from ISO 19111 - Spatial referencing by coordinates, as described in Annex B of Topic 2. </conformance>
+    </xsd:documentation>
+  </xsd:annotation>
+  <!-- ==============================================================
+       includes and imports
+	============================================================== -->
+  <xsd:include schemaLocation="referenceSystems.xsd"/>
+  <!-- ==============================================================
+       elements and types
+	============================================================== -->
+  <xsd:element name="_Datum" type="gml:AbstractDatumType" abstract="true" substitutionGroup="gml:_CRSObject"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="AbstractDatumType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A datum specifies the relationship of a coordinate system to the earth, thus creating a coordinate reference system. A datum uses a parameter or set of parameters that determine the location of the origin, the orientation, and the scale of a coordinate reference system. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractCRSObjectType">
+        <xsd:sequence>
+          <xsd:element name="datumID" type="gml:ExtendedIdentifierType">
+            <xsd:annotation>
+              <xsd:documentation>Identification of this datum. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="anchorPoint" type="string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation>Description, possibly including coordinates, of the point or points used to anchor the datum to the Earth. Also known as the "origin", especially for Engineering and Image Datums.
+- For a geodetic datum, this point is also known as the fundamental point, which is traditionally the point where the relationship between geoid and ellipsoid is defined. In some cases, the "fundamental point" may consist of a number of points; and the parameters defining the geoid/ellipsoid relationship have then been averaged for a number of points and adopted as the datum definition.
+- For an engineering datum, the anchor point may be a physical point, or it may be a point with defined coordinates in another CRS.
+- For an image datum, the anchor point is usually either the centre of the image or the corner of the image.
+- For a temporal datum, this attribute is not defined. Instead of the anchor point, a temporal datum carries a separate time origin of type DateTime. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="realizationEpoch" type="date" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation>The time for which this datum definition is valid. This time may be precise (e.g. 1997.0 for IRTF97) or merely a year (e.g. 1983 for NAD83). In the latter case, the epoch usually refers to the year in which a major recalculation of the geodetic control network, underlying the datum, was executed or initiated. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="datumRef" type="gml:DatumRefType"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="DatumRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a Datum, either referencing or containing the definition of that Datum. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ref="gml:_Datum" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="EngineeringDatum" type="gml:EngineeringDatumType" substitutionGroup="gml:_Datum"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="EngineeringDatumType">
+    <xsd:annotation>
+      <xsd:documentation>Defines the origin and axes directions of an engineering coordinate reference system. Used in a local context only: </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractDatumType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="engineeringDatumRef" type="gml:EngineeringDatumRefType" substitutionGroup="gml:datumRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="EngineeringDatumRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to an Engineering Datum, either referencing or containing the definition of that Datum. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:DatumRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:EngineeringDatum" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="ImageDatum" type="gml:ImageDatumType" substitutionGroup="gml:_Datum"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="ImageDatumType">
+    <xsd:annotation>
+      <xsd:documentation>Defines the origin of an image coordinate reference system. Used in a local context only: For more information, see OGC Abstract Specification Topic 2. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractDatumType">
+        <xsd:sequence>
+          <xsd:element ref="gml:pixelInCell"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="imageDatumRef" type="gml:ImageDatumRefType" substitutionGroup="gml:datumRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="ImageDatumRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to an Image Datum, either referencing or containing the definition of that Datum. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:DatumRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:ImageDatum" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="pixelInCell" type="gml:PixelInCellType"/>
+  <!-- =========================================================== -->
+  <xsd:simpleType name="PixelInCellType">
+    <xsd:annotation>
+      <xsd:documentation>Specification of the way the image grid is associated with the image data attributes. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="string">
+      <xsd:enumeration value="cellCenter">
+        <xsd:annotation>
+          <xsd:documentation>The origin of the image coordinate system is the center of a grid cell or image pixel. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="cellCorner">
+        <xsd:annotation>
+          <xsd:documentation>The origin of the image coordinate system is the corner of a grid cell, or half-way between adjacent image pixel centres. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- =========================================================== -->
+  <xsd:element name="VerticalDatum" type="gml:VerticalDatumType" substitutionGroup="gml:_Datum"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="VerticalDatumType">
+    <xsd:annotation>
+      <xsd:documentation>A textual description and/or a set of parameters identifying a particular reference level surface used as a zero-height surface, including its position and orientation with respect to the Earth for any of the height types recognized by this standard. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractDatumType">
+        <xsd:sequence>
+          <xsd:element ref="gml:verticalDatumType" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="verticalDatumRef" type="gml:VerticalDatumRefType" substitutionGroup="gml:datumRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="VerticalDatumRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a Vertical Datum, either referencing or containing the definition of that Datum. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:DatumRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:VerticalDatum" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="verticalDatumType" type="gml:VerticalDatumTypeType"/>
+  <!-- =========================================================== -->
+  <xsd:simpleType name="VerticalDatumTypeType">
+    <xsd:annotation>
+      <xsd:documentation>Type of a vertical datum.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="string">
+      <xsd:enumeration value="geoidal">
+        <xsd:annotation>
+          <xsd:documentation>The zero value of the associated vertical coordinate system axis is defined to approximate a constant potential surface, usually the geoid. Such a reference surface is usually determined by a national or scientific authority, and is then a well-known, named datum. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="depth">
+        <xsd:annotation>
+          <xsd:documentation>The zero point of the vertical axis is defined by a surface that has meaning for the purpose which the associated vertical measurements are used for. For hydrographic charts, this is often a predicted nominal sea surface (i.e. without waves or other wind and current effects) that occurs at low tide. For some examples, see OGC Abstract Specification Topic 2. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="barometric">
+        <xsd:annotation>
+          <xsd:documentation>Atmospheric pressure is the basis for the definition of the origin of the associated vertical coordinate system axis. For more information, see OGC Abstract Specification Topic 2. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="othersurface">
+        <xsd:annotation>
+          <xsd:documentation>In some cases, e.g. oil exploration and production, a geological feature, such as the top or bottom of a geologically identifiable and meaningful subsurface layer, is used as a vertical datum. Other variations to the above three vertical datum types may exist and are all included in this type. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- =========================================================== -->
+  <xsd:complexType name="TemporalDatumRestrictionType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Partially defines the origin of a temporal coordinate reference system. This type restricts the AbstractDatumType to remove the "anchorPoint" and "realizationEpoch" elements. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:AbstractDatumType">
+        <xsd:sequence>
+          <xsd:element ref="gml:metaDataProperty" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element name="datumID" type="gml:ExtendedIdentifierType"/>
+        </xsd:sequence>
+        <xsd:attribute ref="gml:id" use="optional"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="TemporalDatum" type="gml:TemporalDatumType" substitutionGroup="gml:_Datum"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="TemporalDatumType">
+    <xsd:annotation>
+      <xsd:documentation>Defines the origin of a temporal coordinate reference system. This type extends the TemporalDatumRestrictionType to add the "origin" element with the dateTime type. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:TemporalDatumRestrictionType">
+        <xsd:sequence>
+          <xsd:element name="origin" type="dateTime">
+            <xsd:annotation>
+              <xsd:documentation>The date and time origin of this temporal datum. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="temporalDatumRef" type="gml:TemporalDatumRefType" substitutionGroup="gml:datumRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="TemporalDatumRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a Temporal Datum, either referencing or containing the definition of that Datum. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:DatumRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:TemporalDatum" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="GeodeticDatum" type="gml:GeodeticDatumType" substitutionGroup="gml:_Datum"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="GeodeticDatumType">
+    <xsd:annotation>
+      <xsd:documentation>The Geodetic Datum is an ellipsoid with its position and orientation with respect to the Earth. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractDatumType">
+        <xsd:sequence>
+          <xsd:element name="usesPrimeMeridian" type="gml:PrimeMeridianRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the prime meridian used by this geodetic datum. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="usesEllipsoid" type="gml:EllipsoidRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the ellipsoid used by this geodetic datum. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="geodeticDatumRef" type="gml:GeodeticDatumRefType" substitutionGroup="gml:datumRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="GeodeticDatumRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a Geodetic Datum, either referencing or containing the definition of that Datum. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:DatumRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:GeodeticDatum" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="PrimeMeridian" type="gml:PrimeMeridianType" substitutionGroup="gml:_CRSObject"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="PrimeMeridianType">
+    <xsd:annotation>
+      <xsd:documentation>A prime meridian defines the origin from which longitude values are determined.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractCRSObjectType">
+        <xsd:sequence>
+          <xsd:element name="meridianID" type="gml:IdentifierType">
+            <xsd:annotation>
+              <xsd:documentation>Identification of this prime meridian. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="greenwichLongitude" type="gml:AngleChoiceType">
+            <xsd:annotation>
+              <xsd:documentation>Longitude of the prime meridian measured from the Greenwich meridian, positive eastward. If the datum type is geodetic and the prime meridian name is not supplied, then the prime meridian name is taken to be "Greenwich" and the Greenwich longitude value is taken to be zero. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="primeMeridianRef" type="gml:PrimeMeridianRefType"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="PrimeMeridianRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a Prime Meridian, either referencing or containing the definition of that Prime Meridian. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ref="gml:PrimeMeridian" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="Ellipsoid" type="gml:EllipsoidType" substitutionGroup="gml:_CRSObject"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="EllipsoidType">
+    <xsd:annotation>
+      <xsd:documentation>An ellipsoid is a geometric figure that can be used to describe the approximate shape of the earth. In mathematical terms, it is a surface formed by the rotation of an ellipse about an axis.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractCRSObjectType">
+        <xsd:sequence>
+          <xsd:element name="ellipsoidID" type="gml:IdentifierType">
+            <xsd:annotation>
+              <xsd:documentation>Identification of this ellipsoid. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="semiMajorAxis" type="gml:LengthType">
+            <xsd:annotation>
+              <xsd:documentation>Length of the semi-major axis of the ellipsoid. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element ref="gml:SecondDefiningParameter"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="ellipsoidRef" type="gml:EllipsoidRefType"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="EllipsoidRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to an Ellipsoid, either referencing or containing the definition of that Ellipsoid. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ref="gml:Ellipsoid" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="SecondDefiningParameter" type="gml:SecondDefiningParameterType"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="SecondDefiningParameterType">
+    <xsd:annotation>
+      <xsd:documentation>Definition of the second parameter which defines the shape of an ellipsoid. An ellipsoid requires two defining parameters: semi-major axis and inverse flattening or semi-major axis and semi-minor axis. When the reference body is a sphere rather than an ellipsoid, only a single defining parameter is required, namely the radius of the sphere; in that case, the semi-major axis "degenerates" into the radius of the sphere.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice>
+      <xsd:element name="inverseFlattening" type="gml:ScaleType">
+        <xsd:annotation>
+          <xsd:documentation>Inverse flattening value of the ellipsoid. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="semiMinorAxis" type="gml:LengthType">
+        <xsd:annotation>
+          <xsd:documentation>Length of the semi-minor axis of the ellipsoid. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="isSphere">
+        <xsd:annotation>
+          <xsd:documentation>The ellipsoid is degenerate and is actually a sphere. The sphere is completely defined by the semi-major axis, which is the radius of the sphere. </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="string">
+            <xsd:enumeration value="Sphere"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:choice>
+  </xsd:complexType>
+</xsd:schema>

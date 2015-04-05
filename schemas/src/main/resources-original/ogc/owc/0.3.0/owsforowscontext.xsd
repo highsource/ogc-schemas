@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="0.1.0" targetNamespace="http://www.opengis.net/ows" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:annotation>
+		<xs:appinfo>owsforowscontext.xsd 2008/03/10</xs:appinfo>
+		<xs:documentation>This XML Schema is a convenience for importing OWS schema files.  Primary editor: Raj Singh.  Copyright (c) 2008 OpenGIS, All Rights Reserved.</xs:documentation>
+	</xs:annotation>
+	
+	<xs:include schemaLocation="../../ows/1.0.0/owsCommon.xsd"/>
+	<xs:include schemaLocation="../../ows/1.0.0/owsServiceProvider.xsd"/>
+	<xs:include schemaLocation="../../ows/1.0.0/owsDataIdentification.xsd"/>
+	<xs:include schemaLocation="../../ows/1.0.0/ows19115subset.xsd"/>
+</xs:schema>

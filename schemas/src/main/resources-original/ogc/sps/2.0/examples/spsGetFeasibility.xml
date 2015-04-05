@@ -1,0 +1,12 @@
+<sps:GetFeasibility service="SPS" version="2.0.0" xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <sps:procedure>http://www.ogc.org/procedure/camera/1</sps:procedure>
+  <sps:taskingParameters>
+    <sps:ParameterData>
+      <sps:encoding>
+        <swe:TextEncoding tokenSeparator="," blockSeparator="@@" />
+      </sps:encoding>
+      <sps:values>2010-08-20T12:15:00+02:00,2010-08-20T14:45:00+02:00,N,N</sps:values>
+    </sps:ParameterData>
+  </sps:taskingParameters>
+  <sps:latestResponseTime>2010-08-20T11:15:00+02:00</sps:latestResponseTime>
+</sps:GetFeasibility>

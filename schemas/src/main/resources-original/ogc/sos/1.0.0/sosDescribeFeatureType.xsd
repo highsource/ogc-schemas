@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/sos/1.0" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+	<annotation>
+		<documentation>
+			<description>
+				This XML Schema defines the DescribeFeatureType request and response XML elements and types.
+				
+				SOS is an OGC Standard.
+				Copyright (c) 2006,2010 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</description>
+		</documentation>
+	</annotation>
+	<!-- ==============================================================
+		includes and imports
+	============================================================== -->
+	<include schemaLocation="sosAll.xsd"/>
+	<include schemaLocation="sosCommon.xsd"/>
+	<!-- ==============================================================
+	request
+	============================================================== -->
+	<element name="DescribeFeatureType">
+		<annotation>
+			<documentation>Request to a SOS to perform the DescribeFeatureType operation. This operation is designed to request detailed information concerning the observation's target</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="sos:RequestBaseType">
+					<sequence>
+						<element name="FeatureId" type="anyURI">
+							<annotation>
+								<documentation>Identifier of the feature for which detailed information is requested. These identifiers are usually listed in the Contents section of the service metadata (Capabilities) document. </documentation>
+							</annotation>
+						</element>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ==============================================================
+		response
+	============================================================== -->
+	<!--the response is a XML schema-->
+</schema>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <feed xmlns="http://www.w3.org/2005/Atom" 
+          xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/"
+          xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/"
+          xmlns:georss="http://www.georss.org/georss"
+          xmlns:dc="http://purl.org/dc/elements/1.1/">
+      <title>Example.com Search: New York history</title> 
+      <link href="http://example.com/New+York+history"/>
+      <updated>2003-12-13T18:30:02Z</updated>
+      <author> <name>Example.com, Inc.</name></author>
+      <id>urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6</id>
+      <opensearch:totalResults>4230000</opensearch:totalResults>
+      <opensearch:startIndex>21</opensearch:startIndex>
+      <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+      <opensearch:Query role="request" searchTerms="New York History" startPage="3" geo:box="-74.0667,40.69418,-73.9116,40.7722"/>
+      <link rel="alternate" href="http://example.com/New+York+History?pw=3&amp;bbox=-74.0667,40.69418,-73.9116,40.7722" type="text/html"/>
+       <link rel="search" type="application/opensearchdescription+xml" href="http://example.com/opensearchdescription.xml"/>
+      <georss:box>40.69418 -74.0667 40.7722 -73.9116</georss:box>
+      <entry>
+        <title>New York History</title>
+        <link href="http://www.columbia.edu/cu/lweb/eguids/amerihist/nyc.html"/>
+        <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+        <dc:identifier>1225c695-cfb8-4ebb-aaaa-80da344efa6a</dc:identifier>
+        <updated>2003-12-13T18:30:02Z</updated>
+        <georss:line>40.73763 -73.9972 40.73519 -73.99167 40.737015 -73.99035 40.73643 -73.98914 40.734640 -73.990431 40.731617 -73.991504</georss:line>
+        <content type="text">
+          ... Union Square.NYC - A virtual tour and information on 
+          businesses ...with historic photos of Columbia's own New York 
+          neighborhood ... Internet Resources for the City's History...
+        </content>
+      </entry>
+    </feed>

@@ -1,0 +1,38 @@
+<sps:GetTaskResponse xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <sps:task>
+    <sps:Task>
+      <swes:identifier>http://www.ogc.org/procedure/camera/1/tasks/6</swes:identifier>
+      <sps:status>
+        <sps:ReservationReport>
+          <sps:task>http://www.ogc.org/procedure/camera/1/tasks/6</sps:task>
+          <sps:estimatedToC>2010-08-20T14:30:00+02:00</sps:estimatedToC>
+          <sps:event>TaskReserved</sps:event>
+          <sps:procedure>http://www.ogc.org/procedure/camera/1</sps:procedure>
+          <sps:requestStatus>Accepted</sps:requestStatus>
+          <sps:taskStatus>Reserved</sps:taskStatus>
+          <sps:updateTime>2010-08-20T11:12:01+02:00</sps:updateTime>
+          <sps:taskingParameters>
+            <sps:ParameterData>
+              <sps:encoding>
+                <swe:TextEncoding tokenSeparator="," blockSeparator="@@"/>
+              </sps:encoding>
+              <sps:values>2010-08-20T12:37:00+02:00,2010-08-20T14:30:00+02:00,Y,pointToLookAt,51.902112,8.192728,0,Y,3.5</sps:values>
+            </sps:ParameterData>
+          </sps:taskingParameters>
+          <sps:reservationExpiration>2010-08-20T11:30:00+02:00</sps:reservationExpiration>
+        </sps:ReservationReport>
+      </sps:status>
+      <sps:status>
+        <sps:StatusReport>
+          <sps:task>http://www.ogc.org/procedure/camera/1/tasks/6</sps:task>
+          <sps:event>TaskConfirmed</sps:event>
+          <sps:percentCompletion>0</sps:percentCompletion>
+          <sps:procedure>http://www.ogc.org/procedure/camera/1</sps:procedure>
+          <sps:requestStatus>Accepted</sps:requestStatus>
+          <sps:taskStatus>InExecution</sps:taskStatus>
+          <sps:updateTime>2010-08-20T11:23:08+02:00</sps:updateTime>
+        </sps:StatusReport>
+      </sps:status>
+    </sps:Task>
+  </sps:task>
+</sps:GetTaskResponse>

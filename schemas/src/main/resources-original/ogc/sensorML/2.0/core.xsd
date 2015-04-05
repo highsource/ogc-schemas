@@ -1,0 +1,692 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" targetNamespace="http://www.opengis.net/sensorml/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+    <annotation>
+        <documentation>The core elements of an abstract process from which all major elements of SensorML are derived.
+        
+        SensorML is an OGC Standard.
+        Copyright (c) 2014 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    <import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
+    <import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd"/>
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+    <import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+    <!-- ================================================= -->
+    <element abstract="true" name="DescribedObject" substitutionGroup="gml:AbstractFeature" type="sml:DescribedObjectType">
+        <annotation>
+            <documentation>A feature with generic metadata which further clarifies the object and supports object discovery.</documentation>
+        </annotation>
+    </element>
+    <complexType abstract="true" name="DescribedObjectType">
+        <complexContent>
+            <extension base="gml:AbstractFeatureType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="extension" type="anyType">
+                        <annotation>
+                            <documentation>A property that allows one to extend a document using a schema in a different namespace from the current schema.</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="keywords" type="sml:KeywordListPropertyType">
+                        <annotation>
+                            <documentation>Short keywords describing the context of this document to aid in discovery.</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="identification" type="sml:IdentifierListPropertyType">
+                        <annotation>
+                            <documentation>Identifiers useful for discovery of the process (e.g. short name, mission id, wing id, serial number, etc.)</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="classification" type="sml:ClassifierListPropertyType">
+                        <annotation>
+                            <documentation>Classifiers useful for discovery of the process (e.g. process type, sensor type, intended application, etc.)</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="validTime">
+                        <annotation>
+                            <documentation>The time instance or time range during which this instance description is valid.</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <group ref="sml:TimeInstantOrPeriod"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="securityConstraints" type="anyType">
+                        <annotation>
+                            <documentation>Overall security tagging of process description; individual tagging of properties can be done using extension element.</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="legalConstraints" type="gmd:MD_LegalConstraints_PropertyType">
+                        <annotation>
+                            <documentation>Legal constraints applied to this description (e.g. copyrights, legal use, etc.)</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="characteristics">
+                        <annotation>
+                            <documentation>Useful properties of this process that do not further qualify the output values (e.g. component dimensions, battery life, operational limits, etc).</documentation>
+                        </annotation>
+                        <complexType>
+                            <complexContent>
+                                <extension base="sml:CharacteristicListPropertyType">
+                                    <attribute name="name" type="NCName" use="required"/>
+                                </extension>
+                            </complexContent>
+                        </complexType>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="capabilities">
+                        <annotation>
+                            <documentation>Properties that further clarify or quantify the output of the process (e.g. dynamic range, sensitivity, threshold, etc.). These can assist in the discovery of processes that meet particular requirements.</documentation>
+                        </annotation>
+                        <complexType>
+                            <complexContent>
+                                <extension base="sml:CapabilityListPropertyType">
+                                    <attribute name="name" type="NCName" use="required"/>
+                                </extension>
+                            </complexContent>
+                        </complexType>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="contacts" type="sml:ContactListPropertyType">
+                        <annotation>
+                            <documentation>Persons or responsible parties that are relevant to this process (e.g. designer, manufacturer, expert, etc.)</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="documentation" type="sml:DocumentListPropertyType">
+                        <annotation>
+                            <documentation>Additional external online documentation of relevance to this process (e.g. user's guides, product manuals, specification sheets, images, technical papers, etc.)</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="history" type="sml:EventListPropertyType">
+                        <annotation>
+                            <documentation>A collection of time-tagged events relevant to this process.</documentation>
+                        </annotation>
+                    </element>
+                </sequence>
+                <attribute ref="xml:lang" use="optional">
+                    <annotation>
+                        <documentation>A tag that identifies the language (e.g. english, french, etc.) for the overall document using a two-letters code as defined by ISO 639-1.</documentation>
+                    </annotation>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="DescribedObjectPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:DescribedObject"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element abstract="true" name="AbstractProcess" substitutionGroup="sml:DescribedObject" type="sml:AbstractProcessType">
+        <annotation>
+            <documentation>The general base model for any process.</documentation>
+        </annotation>
+    </element>
+    <complexType abstract="true" name="AbstractProcessType">
+        <complexContent>
+            <extension base="sml:DescribedObjectType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="typeOf" type="gml:ReferenceType">
+                        <annotation>
+                            <appinfo>
+                                <gml:targetElement>sml:AbstractProcess</gml:targetElement>
+                            </appinfo>
+                            <documentation>A reference to a base process from which this process inherits properties and constraints (e.g. original equipment manufacturer's model description, generic equation, etc.). The uniqueID of the referenced process must be provided using the xlink:title attribute while the URL to the process description must be provided by the xlink:href attribute.</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="configuration">
+                        <annotation>
+                            <documentation>Value settings that further constrain the properties of the base process.</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:AbstractSettings"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="featuresOfInterest">
+                        <annotation>
+                            <documentation>A collection of features relevant to a process (e.g. the Gulf of Mexico, the White House, the set of all Fibonacci Numbers, etc.); can also support a sampling feature. The primary purpose of the Features of Interest is to support discovery.</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:FeatureList"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="inputs">
+                        <annotation>
+                            <documentation>The list of data components (and their properties and semantics) that the process will accept as input; In the standard linear equation y=mx+b; x is the input, m and b are the parameters, and y is the output.</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:InputList"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="outputs">
+                        <annotation>
+                            <documentation>The list of data components (and their properties and semantics) that the process will accept as output; In the standard linear equation y=mx+b; x is the input, m and b are the parameters, and y is the output.</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:OutputList"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="parameters">
+                        <annotation>
+                            <documentation>The list of data components (and their properties and semantics) that the process will accept as parameters; In the standard linear equation y=mx+b; x is the input, m and b are the parameters, and y is the output.</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:ParameterList"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="modes">
+                        <annotation>
+                            <documentation>A collection of parameters that can be set at once through the selection of a particular predefined mode.</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:AbstractModes"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+                <attribute name="definition" type="anyURI" use="optional">
+                    <annotation>
+                        <documentation>An optional property that allows one to reference the process instance in an online ontology or dictionary. The value of the property must be a resolvable URI.</documentation>
+                    </annotation>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="AbstractProcessPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:AbstractProcess"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="AbstractSettings" substitutionGroup="swe:AbstractSWE" type="sml:AbstractSettingsType"/>
+    <complexType name="AbstractSettingsType">
+        <complexContent>
+            <extension base="swe:AbstractSWEType"/>
+        </complexContent>
+    </complexType>
+    <complexType name="AbstractSettingsPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:AbstractSettings"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="OutputList" substitutionGroup="swe:AbstractSWE" type="sml:OutputListType"/>
+    <complexType name="OutputListType">
+        <complexContent>
+            <extension base="swe:AbstractSWEType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="output">
+                        <complexType>
+                            <complexContent>
+                                <extension base="sml:DataComponentOrObservablePropertyType">
+                                    <attribute name="name" type="NCName" use="required"/>
+                                </extension>
+                            </complexContent>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="OutputListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:OutputList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="IdentifierList" substitutionGroup="sml:AbstractMetadataList" type="sml:IdentifierListType"/>
+    <complexType name="IdentifierListType">
+        <complexContent>
+            <extension base="sml:AbstractMetadataListType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="identifier">
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:Term"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="IdentifierListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:IdentifierList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="InputList" substitutionGroup="swe:AbstractSWE" type="sml:InputListType"/>
+    <complexType name="InputListType">
+        <complexContent>
+            <extension base="swe:AbstractSWEType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="input">
+                        <complexType>
+                            <complexContent>
+                                <extension base="sml:DataComponentOrObservablePropertyType">
+                                    <attribute name="name" type="NCName" use="required"/>
+                                </extension>
+                            </complexContent>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="InputListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:InputList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="DocumentList" substitutionGroup="sml:AbstractMetadataList" type="sml:DocumentListType"/>
+    <complexType name="DocumentListType">
+        <complexContent>
+            <extension base="sml:AbstractMetadataListType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="document" type="gmd:CI_OnlineResource_PropertyType"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="DocumentListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:DocumentList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="CharacteristicList" substitutionGroup="sml:AbstractMetadataList" type="sml:CharacteristicListType"/>
+    <complexType name="CharacteristicListType">
+        <complexContent>
+            <extension base="sml:AbstractMetadataListType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="characteristic">
+                        <complexType>
+                            <complexContent>
+                                <extension base="swe:AbstractDataComponentPropertyType">
+                                    <attribute name="name" type="NCName" use="required"/>
+                                </extension>
+                            </complexContent>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="CharacteristicListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:CharacteristicList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="FeatureList" substitutionGroup="sml:AbstractMetadataList" type="sml:FeatureListType"/>
+    <complexType name="FeatureListType">
+        <complexContent>
+            <extension base="sml:AbstractMetadataListType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="feature" type="gml:FeaturePropertyType"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="FeatureListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:FeatureList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="Event" substitutionGroup="swe:AbstractSWEIdentifiable" type="sml:EventType">
+        <annotation>
+            <documentation>A time tagged Event with description and relevant property values.</documentation>
+        </annotation>
+    </element>
+    <complexType name="EventType">
+        <complexContent>
+            <extension base="swe:AbstractSWEIdentifiableType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="keywords" type="gmd:MD_Keywords_PropertyType">
+                        <annotation>
+                            <documentation>keywords useful for discovery of the event</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="identification" type="sml:IdentifierListPropertyType">
+                        <annotation>
+                            <documentation>Identifiers relevant to the event</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="classification" type="sml:ClassifierListPropertyType">
+                        <annotation>
+                            <documentation>Type of event (useful for discovery)</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="contacts" type="sml:ContactListPropertyType">
+                        <annotation>
+                            <documentation>Persons or parties relevant to this event</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="documentation" type="sml:DocumentListPropertyType">
+                        <annotation>
+                            <documentation>Additional documentation relevant to this event</documentation>
+                        </annotation>
+                    </element>
+                    <element name="time">
+                        <annotation>
+                            <documentation>DateTime of the event</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <group ref="sml:TimeInstantOrPeriod"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="property" type="swe:AbstractDataComponentPropertyType">
+                        <annotation>
+                            <documentation>Properties of interest to the event (e.g. calibration values, condition category, error codes, etc)</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="configuration">
+                        <annotation>
+                            <documentation>Configuration settings adjusted during event</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:AbstractSettings"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+                <attribute name="definition" type="anyURI" use="optional"/>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="EventPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:Event"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="CapabilityList" substitutionGroup="sml:AbstractMetadataList" type="sml:CapabilityListType"/>
+    <complexType name="CapabilityListType">
+        <complexContent>
+            <extension base="sml:AbstractMetadataListType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="capability">
+                        <complexType>
+                            <complexContent>
+                                <extension base="swe:AbstractDataComponentPropertyType">
+                                    <attribute name="name" type="NCName" use="required"/>
+                                </extension>
+                            </complexContent>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="CapabilityListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:CapabilityList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="EventList" substitutionGroup="sml:AbstractMetadataList" type="sml:EventListType"/>
+    <complexType name="EventListType">
+        <complexContent>
+            <extension base="sml:AbstractMetadataListType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="event" type="sml:EventPropertyType"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="EventListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:EventList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="AbstractMetadataList" substitutionGroup="swe:AbstractSWEIdentifiable" type="sml:AbstractMetadataListType"/>
+    <complexType name="AbstractMetadataListType">
+        <complexContent>
+            <extension base="swe:AbstractSWEIdentifiableType">
+                <attribute name="definition" type="anyURI" use="optional"/>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="AbstractMetadataListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:AbstractMetadataList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="ContactList" substitutionGroup="sml:AbstractMetadataList" type="sml:ContactListType"/>
+    <complexType name="ContactListType">
+        <complexContent>
+            <extension base="sml:AbstractMetadataListType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="contact" type="gmd:CI_ResponsibleParty_PropertyType"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="ContactListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:ContactList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="KeywordList" substitutionGroup="sml:AbstractMetadataList" type="sml:KeywordListType"/>
+    <complexType name="KeywordListType">
+        <complexContent>
+            <extension base="sml:AbstractMetadataListType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="codeSpace" type="swe:Reference">
+                        <annotation>
+                            <documentation>online dictionary or ontology which defines a collection of possible keywords</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="1" name="keyword" type="string">
+                        <annotation>
+                            <documentation>a short word or phrase that will aid in discovery of this object</documentation>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="KeywordListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:KeywordList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="Term" substitutionGroup="swe:AbstractSWE" type="sml:TermType"/>
+    <complexType name="TermType">
+        <complexContent>
+            <extension base="swe:AbstractSWEType">
+                <sequence>
+                    <element name="label" type="string"/>
+                    <element maxOccurs="1" minOccurs="0" name="codeSpace" type="swe:Reference"/>
+                    <element name="value" type="string"/>
+                </sequence>
+                <attribute name="definition" type="anyURI" use="optional"/>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="TermPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:Term"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="ClassifierList" substitutionGroup="sml:AbstractMetadataList" type="sml:ClassifierListType"/>
+    <complexType name="ClassifierListType">
+        <complexContent>
+            <extension base="sml:AbstractMetadataListType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="classifier">
+                        <complexType>
+                            <sequence>
+                                <element ref="sml:Term"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="ClassifierListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:ClassifierList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="ParameterList" substitutionGroup="swe:AbstractSWE" type="sml:ParameterListType"/>
+    <complexType name="ParameterListType">
+        <complexContent>
+            <extension base="swe:AbstractSWEType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="parameter">
+                        <complexType>
+                            <complexContent>
+                                <extension base="sml:DataComponentOrObservablePropertyType">
+                                    <attribute name="name" type="NCName" use="required"/>
+                                </extension>
+                            </complexContent>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="ParameterListPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:ParameterList"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="AbstractModes" substitutionGroup="swe:AbstractSWE" type="sml:AbstractModesType"/>
+    <complexType name="AbstractModesType">
+        <complexContent>
+            <extension base="swe:AbstractSWEType"/>
+        </complexContent>
+    </complexType>
+    <complexType name="AbstractModesPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:AbstractModes"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="DataInterface" substitutionGroup="swe:AbstractSWEIdentifiable" type="sml:DataInterfaceType">
+        <annotation>
+            <documentation>The DataInterface description provides information sufficient for "plug-and-play" access to and parsing of the data stream or file at the particular IO port.</documentation>
+        </annotation>
+    </element>
+    <complexType name="DataInterfaceType">
+        <complexContent>
+            <extension base="swe:AbstractSWEIdentifiableType">
+                <sequence>
+                    <element name="data" type="swe:DataStreamPropertyType">
+                        <annotation>
+                            <documentation>The definition of the digital data components and encoding accessed through the data interface.</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="interfaceParameters" type="swe:DataRecordPropertyType">
+                        <annotation>
+                            <documentation>A set of property values that define the type and configuration of a data interface (e.g. the port settings of an RS232 interface).</documentation>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="DataInterfacePropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:DataInterface"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="ObservableProperty" substitutionGroup="swe:AbstractSWEIdentifiable" type="sml:ObservablePropertyType">
+        <annotation>
+            <documentation>A physical property that can be observed and possibly measured (e.g. temperature, color, position). An ObservableProperty has unambiguous definition, but does not have units of measure.</documentation>
+        </annotation>
+    </element>
+    <complexType name="ObservablePropertyType">
+        <complexContent>
+            <extension base="swe:AbstractSWEIdentifiableType">
+                <attribute name="definition" type="anyURI" use="required"/>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="ObservablePropertyPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:ObservableProperty"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <group name="TimeInstantOrPeriod">
+        <annotation>
+            <documentation>Either a Time Instant or Time Period</documentation>
+        </annotation>
+        <choice>
+            <element ref="gml:TimePeriod"/>
+            <element ref="gml:TimeInstant"/>
+        </choice>
+    </group>
+    <complexType name="TimeInstantOrPeriodPropertyType">
+        <sequence minOccurs="0">
+            <group ref="sml:TimeInstantOrPeriod"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType>
+    <simpleType name="ComponentValue">
+        <union memberTypes="boolean integer double string swe:TimePosition"/>
+    </simpleType><!-- ================================================= -->
+    <group name="DataComponentOrObservable">
+        <choice>
+            <element ref="swe:AbstractDataComponent">
+                <annotation>
+                    <documentation>A single digital number (DN) or aggregate of DNs that represent the value of some property. Single data components can be of type Quantity, Count, Category, Boolean, Text, or Time; these can be aggregated in records, arrays, vector, and matrices.</documentation>
+                </annotation>
+            </element>
+            <element ref="sml:ObservableProperty">
+                <annotation>
+                    <documentation>A physical property of the environment that can be observed by an appropriate detector (e.g. temperature, pressure, etc.); Typically,an ObservableProperty serves as the input of a detector and the output of an actuator.</documentation>
+                </annotation>
+            </element>
+            <element ref="sml:DataInterface">
+                <annotation>
+                    <documentation>A data interface serves as an intermediary between the pure digital domain and the physical domain where DN are encoded into a format and perhaps transmitted through physical connections using some well-defined protocol. The DataInterface element allows one to define the components, semantics, encoding, connections, and protocol at an input, output, or parameter port.</documentation>
+                </annotation>
+            </element>
+        </choice>
+    </group>
+    <complexType name="DataComponentOrObservablePropertyType">
+        <sequence minOccurs="0">
+            <group ref="sml:DataComponentOrObservable"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType>
+    <!-- ================================================= -->
+    <complexType name="DataComponentRefPropertyType">
+        <attribute name="ref" type="sml:DataComponentPathPropertyType" use="required"/>
+    </complexType>
+    <simpleType name="DataComponentPathPropertyType">
+        <restriction base="token">
+            <pattern value="([a-zA-Z_][a-zA-Z0-9_\-\.]*)(/[a-zA-Z_][a-zA-Z0-9_\-\.]*)*"/>
+        </restriction>
+    </simpleType>    
+</schema>

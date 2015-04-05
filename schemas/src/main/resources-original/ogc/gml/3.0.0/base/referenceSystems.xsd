@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="3.0.0.1" xml:lang="en">
+  <annotation>
+    <appinfo source="urn:opengis:specification:gml:schema-referenceSystems:v3.0.0"/>
+    <documentation>
+      <name>referenceSystems.xsd</name>
+      <version>3.0 updated 2010-01-26</version>
+      <scope>How to encode reference system definitions. </scope>
+      <description>Builds on gmlBase.xsd to encode the data needed to define reference systems. GML 3.0 candidate schema, primary editor: Arliss Whiteside.</description>
+      <copyright>
+        GML is an OGC Standard.
+        Copyright (c) 2001,2002,2010 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+      </copyright>
+      <conformance>This schema encodes the Reference System (RS_) package of the extended UML Model for OGC Abstract Specification Topic 2: Spatial Referencing by Coordinates. That UML model is adapted from ISO 19111 - Spatial referencing by coordinates, as described in Annex B of Topic 2. The CS_CRS class is also encoded here, to eliminate the (circular) references from coordonateOperations.xsd to coordinateReferenceSystems.xsd. A modified version of the EX_Extent (DataType) class is also currently encoded here, using GML 3 schema types. (A more extensive version of the EX_Extent package might be XML encoded in the future, probably in a separate extent.xsd schema.) </conformance>
+    </documentation>
+  </annotation>
+  <!-- ==============================================================        includes and imports 	============================================================== -->
+  <include schemaLocation="geometryBasic2d.xsd"/>
+  <include schemaLocation="temporal.xsd"/>
+  <!-- ==============================================================        elements and types 	============================================================== -->
+  <element name="_CRSObject" type="gml:AbstractCRSObjectType" abstract="true" substitutionGroup="gml:_Object"/>
+  <!-- =========================================================== -->
+  <complexType name="AbstractCRSObjectType" abstract="true">
+    <annotation>
+      <documentation>Basic encoding for objects in the CRS model, simplifying the AbstracGMLType as needed for CRS objects. </documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="gml:AbstractGMLType">
+        <sequence>
+          <element ref="gml:metaDataProperty" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute ref="gml:id" use="optional"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <!-- =========================================================== -->
+  <element name="_ReferenceSystem" type="gml:AbstractReferenceSystemType" abstract="true" substitutionGroup="gml:_CRSObject"/>
+  <!-- =========================================================== -->
+  <complexType name="AbstractReferenceSystemType" abstract="true">
+    <annotation>
+      <documentation>Description of a spatial and/or temporal reference system used by a dataset.</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="gml:AbstractCRSObjectType">
+        <sequence>
+          <element name="crsID" type="gml:ExtendedIdentifierType">
+            <annotation>
+              <documentation>Identification of this Reference System. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <!-- =========================================================== -->
+  <element name="referenceSystemRef" type="gml:ReferenceSystemRefType"/>
+  <!-- =========================================================== -->
+  <complexType name="ReferenceSystemRefType">
+    <annotation>
+      <documentation>Association to a Reference System, either referencing or containing the definition of that Reference System. </documentation>
+    </annotation>
+    <sequence>
+      <element ref="gml:_ReferenceSystem" minOccurs="0"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- =========================================================== -->
+  <element name="_CRS" type="gml:AbstractCRSType" abstract="true" substitutionGroup="gml:_ReferenceSystem"/>
+  <!-- =========================================================== -->
+  <complexType name="AbstractCRSType" abstract="true">
+    <annotation>
+      <documentation>Abstract coordinate reference system, usually defined by a coordinate system and a datum. </documentation>
+    </annotation>
+    <complexContent>
+      <extension base="gml:AbstractReferenceSystemType"/>
+    </complexContent>
+  </complexType>
+  <!-- =========================================================== -->
+  <element name="crsRef" type="gml:CRSRefType" substitutionGroup="gml:referenceSystemRef"/>
+  <!-- =========================================================== -->
+  <complexType name="CRSRefType">
+    <annotation>
+      <documentation>Association to a CRS abstract coordinate reference system, either referencing or containing the definition of that CRS. </documentation>
+    </annotation>
+    <complexContent>
+      <restriction base="gml:ReferenceSystemRefType">
+        <sequence>
+          <element ref="gml:_CRS" minOccurs="0"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <!-- =========================================================== -->
+  <!-- =========================================================== -->
+  <complexType name="IdentifierType">
+    <annotation>
+      <documentation>Identification of a reference system object. All of the attributes are optional, but there is a constraint that one or both of the "code" and "name" attributes must be included. </documentation>
+    </annotation>
+    <sequence>
+      <element name="code" type="string" minOccurs="0">
+        <annotation>
+          <documentation>Identifier code or name, optionally from a controlled list or pattern defined by a code space. </documentation>
+        </annotation>
+      </element>
+      <element name="codeSpace" type="string" minOccurs="0">
+        <annotation>
+          <documentation>Identifier of a code space within which one or more codes are defined. This attribute is optionally included only when the "code" attribute is included. This code space is often defined by some authority organization, where one organization may define multiple code spaces. The range and format of each Code Space identifier is defined by that code space authority. </documentation>
+        </annotation>
+      </element>
+      <element name="version" type="string" minOccurs="0">
+        <annotation>
+          <documentation>Identifier of the version of the associated codeSpace or code, as specified by the codeSpace or code authority. This attribute is optionally included only when the "code" attribute is included. When appropriate, the version is identified by the effective date, coded using ISO 8601 date format. </documentation>
+        </annotation>
+      </element>
+      <element name="name" type="string" minOccurs="0">
+        <annotation>
+          <documentation>The name by which this object is identified. </documentation>
+        </annotation>
+      </element>
+      <element name="alias" type="gml:AliasType" minOccurs="0" maxOccurs="unbounded">
+        <annotation>
+          <documentation>Unordered list of aliases by which this object is known. </documentation>
+        </annotation>
+      </element>
+      <element name="remarks" type="string" minOccurs="0">
+        <annotation>
+          <documentation>Comments on or information about this object, including data source information. </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <!-- =========================================================== -->
+  <complexType name="AliasType">
+    <annotation>
+      <documentation>Alternative identifier or name by which this object is known. </documentation>
+    </annotation>
+    <sequence>
+      <element name="aliasName" type="string">
+        <annotation>
+          <documentation>An alias of this object, as defined in the alias name space. </documentation>
+        </annotation>
+      </element>
+      <element name="aliasNameSpace" type="string">
+        <annotation>
+          <documentation>Identifier of the namespace that this alias name is defined in; for example, "ISO 2-char country code" or "EPSG abbreviation". </documentation>
+        </annotation>
+      </element>
+      <element name="aliasRemarks" type="string" minOccurs="0">
+        <annotation>
+          <documentation>Remarks applying to this alias. </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <!-- =========================================================== -->
+  <complexType name="ExtendedIdentifierType">
+    <annotation>
+      <documentation>Extended identification and description of a reference system object. </documentation>
+    </annotation>
+    <complexContent>
+      <extension base="gml:IdentifierType">
+        <sequence>
+          <element name="validArea" type="gml:ExtentType" minOccurs="0">
+            <annotation>
+              <documentation>Area or region in which this object is valid. </documentation>
+            </annotation>
+          </element>
+          <element name="scope" type="string" minOccurs="0">
+            <annotation>
+              <documentation>Description of domain of usage, or limitations of usage, for which this object is valid. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <!-- =========================================================== -->
+  <complexType name="ExtentType">
+    <annotation>
+      <documentation>Information about the spatial, vertical, and/or temporal extent of a reference system object. Constraints: At least one of the elements "description", "boundingBox", "boundingPolygon", "verticalExtent", and temporalExtent" must be included, but more that one can be included when appropriate. Furthermore, more than one "boundingBox", "boundingPolygon", "verticalExtent", or temporalExtent" element can be included, with more than one meaning the union of the individual domains. </documentation>
+    </annotation>
+    <sequence>
+      <element ref="gml:description" minOccurs="0">
+        <annotation>
+          <documentation>Description of spatial and/or temporal extent of this object. </documentation>
+        </annotation>
+      </element>
+      <choice minOccurs="0" maxOccurs="unbounded">
+        <annotation>
+          <documentation>Geographic domain of this reference system object. </documentation>
+        </annotation>
+        <element name="boundingBox" type="gml:EnvelopeType">
+          <annotation>
+            <documentation>Bounding box (or envelope) spatial domain of this object. </documentation>
+          </annotation>
+        </element>
+        <element name="boundingPolygon" type="gml:PolygonType">
+          <annotation>
+            <documentation>Bounding polygon horizontal spatial domain of this object. </documentation>
+          </annotation>
+        </element>
+      </choice>
+      <element name="verticalExtent" type="gml:EnvelopeType" minOccurs="0" maxOccurs="unbounded">
+        <annotation>
+          <documentation>Vertical spatial domain of this object. </documentation>
+        </annotation>
+      </element>
+      <element name="temporalExtent" type="gml:TimePeriodType" minOccurs="0" maxOccurs="unbounded">
+        <annotation>
+          <documentation>Time period domain of this object. </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

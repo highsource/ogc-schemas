@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This example illustrates how to use the XML Schema Document that defines the GMLJP2 XML encoding described in OGC 08-085r4.
+  GMLJP2 is an OGC Standard.
+  Copyright (c) 2014 Open Geospatial Consortium.
+  To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+-->
+<!--It illustrates several posibilities in a single instance such as including GML features, KML annotations and several forms of metadata. Common GMLJP2 instances are expected to be simpler and smaller.-->
+<gmljp2:GMLJP2CoverageCollection gml:id="ID_JPEG2000_0"
+			xmlns="http://www.opengis.net/gml/3.2" 
+			xmlns:gmljp2="http://www.opengis.net/gmljp2/2.0" 
+			xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" 
+			xmlns:gml="http://www.opengis.net/gml/3.2" 
+ 			xmlns:swe="http://www.opengis.net/swe/2.0" 
+			xmlns:xlink="http://www.w3.org/1999/xlink" 
+			xmlns:dc="http://purl.org/dc/elements/1.1/" 
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:schemaLocation="http://www.opengis.net/gmljp2/2.0 ../gmljp2.xsd">
+	<boundedBy>
+		<Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326" axisLabels="Lat Long" uomLabels="deg deg" srsDimension="2">
+			<lowerCorner>1 1</lowerCorner>
+			<upperCorner>3 10</upperCorner>
+		</Envelope>
+	</boundedBy>
+	<domainSet/>
+	<rangeSet>
+		<File>
+			<rangeParameters>
+				<QuantityList uom="urn:ogc:def:uom:EPSG::9001"/>
+			</rangeParameters>
+			<fileName>gmljp2://codestream</fileName>
+			<fileStructure>inapplicable</fileStructure>
+		</File>
+	</rangeSet>
+	<gmlcov:rangeType/>
+	<gmlcov:metadata>
+		<gmljp2:Metadata>
+			<gmljp2:dcMetadata>
+				<dc:title>Multi-codestream example</dc:title>
+				<dc:publisher>ogc</dc:publisher>
+			</gmljp2:dcMetadata>
+		</gmljp2:Metadata>
+	</gmlcov:metadata>
+	<gmlcov:metadata>
+		<gmljp2:Metadata>
+			<gmljp2:metadata>Some simple textual metadata</gmljp2:metadata>
+		</gmljp2:Metadata>
+	</gmlcov:metadata>
+	<gmljp2:featureMember>
+		<gmljp2:GMLJP2RectifiedGridCoverage gml:id="ID_1">
+			<domainSet>
+				<RectifiedGrid gml:id="RG_CodeStream0" dimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+					<limits>
+						<GridEnvelope>
+							<low>0 0</low>
+							<high>1111 1109</high>
+						</GridEnvelope>
+					</limits>
+					<axisName>x</axisName>
+					<axisName>y</axisName>
+					<origin>
+						<Point gml:id="PointCodeStream0" srsName="crsdictionary.gml#crs1">
+							<pos>317927.000000000000 3319124.999999999500</pos>
+						</Point>
+					</origin>
+					<offsetVector>2.799999999988 0.000000000000</offsetVector>
+					<offsetVector>0.000000000000 -0.799999999814</offsetVector>
+				</RectifiedGrid>
+			</domainSet>	
+			<rangeSet>
+				<File>
+					<rangeParameters>
+						<QuantityList uom="urn:ogc:def:uom:EPSG::9001"/>
+					</rangeParameters>
+					<fileName>gmljp2://codestream/0</fileName>
+					<fileStructure>inapplicable</fileStructure>
+				</File>
+			</rangeSet>
+			<gmlcov:rangeType>
+				<swe:DataRecord>
+					<swe:field name="red">
+						<swe:Quantity definition="http://opengis.net/def/property/OGC/0/Radiance">
+							<swe:description>Red Channel</swe:description>
+							<swe:nilValues>
+								<swe:NilValues id="NilValuesCodeStream0">
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">0</swe:nilValue>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/AboveDetectionRange">255</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="W/cm2"/>
+							<swe:constraint>
+								<swe:AllowedValues id="ValueSpaceCodeStream0">
+									<swe:interval>0 255</swe:interval>
+									<swe:significantFigures>3</swe:significantFigures>
+								</swe:AllowedValues>
+							</swe:constraint>
+						</swe:Quantity>
+					</swe:field>
+				</swe:DataRecord>
+			</gmlcov:rangeType>
+			<gmlcov:metadata>
+				<gmljp2:Metadata>
+					<gmljp2:isoMetadata>
+						<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd">
+							<gmd:fileIdentifier><gco:CharacterString>111111</gco:CharacterString></gmd:fileIdentifier>
+							<gmd:hierarchyLevel><gmd:MD_ScopeCode codeListValue="http://schemas.opengis.net/iso/19139/20070417/resources/Codelist/ML_gmxCodelists.xml#MD_ScopeCode" codeList="dataset">dataset</gmd:MD_ScopeCode></gmd:hierarchyLevel>
+							  <gmd:hierarchyLevelName>
+								<gco:CharacterString>dataset</gco:CharacterString>
+							  </gmd:hierarchyLevelName>
+							  <gmd:contact>
+								<gmd:CI_ResponsibleParty>
+								  <gmd:individualName>
+									<gco:CharacterString>GRAMP</gco:CharacterString>
+								  </gmd:individualName>
+								  <gmd:organisationName>
+									<gco:CharacterString>Departament de Geografia, UAB</gco:CharacterString>
+								  </gmd:organisationName>
+								  <gmd:contactInfo>
+									<gmd:CI_Contact>
+									  <gmd:phone>
+										<gmd:CI_Telephone>
+										  <gmd:voice>
+											<gco:CharacterString>+34 93 581 41 33</gco:CharacterString>
+										  </gmd:voice>
+										</gmd:CI_Telephone>
+									  </gmd:phone>
+									  <gmd:address>
+										<gmd:CI_Address>
+										  <gmd:city>
+											<gco:CharacterString>Cerdanyola del Valles</gco:CharacterString>
+										  </gmd:city>
+										  <gmd:postalCode>
+											<gco:CharacterString>08193</gco:CharacterString>
+										  </gmd:postalCode>
+										  <gmd:electronicMailAddress>
+											<gco:CharacterString>joanmanuel.soriano@uab.cat</gco:CharacterString>
+										  </gmd:electronicMailAddress>
+										</gmd:CI_Address>
+									  </gmd:address>
+									  <gmd:onlineResource>
+										<gmd:CI_OnlineResource>
+										  <gmd:linkage>
+											<gmd:URL>http://mediterrani.uab.es/web/catala/index.htm</gmd:URL>
+										  </gmd:linkage>
+										  <gmd:function>
+											<gmd:CI_OnLineFunctionCode codeList="http://idec.icc.cat/schema/resources/Codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">Informacio</gmd:CI_OnLineFunctionCode>
+										  </gmd:function>
+										</gmd:CI_OnlineResource>
+									  </gmd:onlineResource>
+									</gmd:CI_Contact>
+								  </gmd:contactInfo>
+								  <gmd:role>
+									<gmd:CI_RoleCode codeList="http://idec.icc.cat/schema/resources/Codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="originator">Creador</gmd:CI_RoleCode>
+								  </gmd:role>
+								  </gmd:CI_ResponsibleParty>
+							  </gmd:contact>
+							  <gmd:dateStamp>
+								<gco:Date>2006-12-13</gco:Date>
+							  </gmd:dateStamp>
+							  <gmd:metadataStandardName>
+								<gco:CharacterString>ISO 19115:2003/Cor.1:2006 Geographic Information - Metadata</gco:CharacterString>
+							  </gmd:metadataStandardName>
+							  <gmd:metadataStandardVersion>
+								<gco:CharacterString>IS</gco:CharacterString>
+							  </gmd:metadataStandardVersion>
+							  <gmd:spatialRepresentationInfo>
+								<gmd:MD_Georectified>
+								  <gmd:numberOfDimensions>
+									<gco:Integer>2</gco:Integer>
+								  </gmd:numberOfDimensions>
+								  <gmd:axisDimensionProperties>
+									<gmd:MD_Dimension>
+									  <gmd:dimensionName>
+										<gmd:MD_DimensionNameTypeCode codeList="http://idec.icc.cat/schema/resources/Codelist/ML_gmxCodelists.xml#MD_DimensionNameTypeCode" codeListValue="row">Fila</gmd:MD_DimensionNameTypeCode>
+									  </gmd:dimensionName>
+									  <gmd:dimensionSize>
+										<gco:Integer>7734</gco:Integer>
+									  </gmd:dimensionSize>
+									  <gmd:resolution>
+										<gco:Length uom="m">1</gco:Length>
+									  </gmd:resolution>
+									</gmd:MD_Dimension>
+								  </gmd:axisDimensionProperties>
+								  <gmd:axisDimensionProperties>
+									<gmd:MD_Dimension>
+									  <gmd:dimensionName>
+										<gmd:MD_DimensionNameTypeCode codeList="http://idec.icc.cat/schema/resources/Codelist/ML_gmxCodelists.xml#MD_DimensionNameTypeCode" codeListValue="column">Columna</gmd:MD_DimensionNameTypeCode>
+									  </gmd:dimensionName>
+									  <gmd:dimensionSize>
+										<gco:Integer>7950</gco:Integer>
+									  </gmd:dimensionSize>
+									  <gmd:resolution>
+										<gco:Length uom="m">1</gco:Length>
+									  </gmd:resolution>
+									</gmd:MD_Dimension>
+								  </gmd:axisDimensionProperties>
+								  <gmd:cellGeometry>
+									<gmd:MD_CellGeometryCode codeList="http://idec.icc.cat/schema/resources/Codelist/ML_gmxCodelists.xml#MD_CellGeometryCode" codeListValue="area">Area</gmd:MD_CellGeometryCode>
+								  </gmd:cellGeometry>
+								  <gmd:transformationParameterAvailability>
+									<gco:Boolean>true</gco:Boolean>
+								  </gmd:transformationParameterAvailability>
+								  <gmd:checkPointAvailability>
+									<gco:Boolean>false</gco:Boolean>
+								  </gmd:checkPointAvailability>						  
+								  <gmd:pointInPixel>
+									<gmd:MD_PixelOrientationCode>center</gmd:MD_PixelOrientationCode>
+								  </gmd:pointInPixel>
+								</gmd:MD_Georectified>
+							  </gmd:spatialRepresentationInfo>
+							  <gmd:referenceSystemInfo>
+								<gmd:MD_ReferenceSystem>
+								  <gmd:referenceSystemIdentifier>
+									<gmd:RS_Identifier>
+									  <gmd:code>
+										<gco:CharacterString>EPSG:23031</gco:CharacterString>
+									  </gmd:code>
+									</gmd:RS_Identifier>
+								  </gmd:referenceSystemIdentifier>
+								</gmd:MD_ReferenceSystem>
+							  </gmd:referenceSystemInfo>
+							  <gmd:identificationInfo>
+								<gmd:MD_DataIdentification>
+								  <gmd:citation>
+									<gmd:CI_Citation>
+									  <gmd:title>
+										<gco:CharacterString>Finestra de Vol america 1956-57. Fotograma: 28464; passada: 280; full IGN: 445; data: 05-10-1956</gco:CharacterString>
+									  </gmd:title>
+									  <gmd:date>
+										<gmd:CI_Date>
+										  <gmd:date>
+											<gco:Date>2006-12-01</gco:Date>
+										  </gmd:date>
+										  <gmd:dateType>
+											<gmd:CI_DateTypeCode codeList="http://idec.icc.cat/schema/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation">Creacio</gmd:CI_DateTypeCode>
+										  </gmd:dateType>
+										</gmd:CI_Date>
+									  </gmd:date>
+									  <gmd:editionDate>
+										<gco:Date>2006-12-01</gco:Date>
+									  </gmd:editionDate>
+									</gmd:CI_Citation>
+								  </gmd:citation>
+								  <gmd:abstract>
+									<gco:CharacterString>Correccio geometrica d'un fotograma escanejat, a resolucio de 800 DPI, corresponent al vol america realitzat entre 1956 i 1957. Es tracta del full 445 del Instituto Geografico Nacional (IGN).</gco:CharacterString>
+								  </gmd:abstract>
+								  <gmd:pointOfContact>
+									<gmd:CI_ResponsibleParty>
+									  <gmd:individualName>
+										<gco:CharacterString>GRAMP</gco:CharacterString>
+									  </gmd:individualName>
+									  <gmd:organisationName>
+										<gco:CharacterString>Departament de Geografia, UAB</gco:CharacterString>
+									  </gmd:organisationName>
+									  <gmd:contactInfo>
+										<gmd:CI_Contact>
+										  <gmd:address>
+											<gmd:CI_Address>
+											  <gmd:city>
+												<gco:CharacterString>Cerdanyola del Valles</gco:CharacterString>
+											  </gmd:city>
+											  <gmd:postalCode>
+												<gco:CharacterString>08193</gco:CharacterString>
+											  </gmd:postalCode>
+											  <gmd:electronicMailAddress>
+												<gco:CharacterString>joanmanuel.soriano@uab.cat</gco:CharacterString>
+											  </gmd:electronicMailAddress>
+											</gmd:CI_Address>
+										  </gmd:address>
+										</gmd:CI_Contact>
+									  </gmd:contactInfo>
+									  <gmd:role>
+										<gmd:CI_RoleCode codeList="http://idec.icc.cat/schema/resources/Codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="originator">Creador</gmd:CI_RoleCode>
+									  </gmd:role>
+									</gmd:CI_ResponsibleParty>
+								  </gmd:pointOfContact>
+								  <gmd:descriptiveKeywords>
+									<gmd:MD_Keywords>
+									  <gmd:keyword>
+										<gco:CharacterString>Fotografia Aeria</gco:CharacterString>
+									  </gmd:keyword>
+									  <gmd:type>
+										<gmd:MD_KeywordTypeCode codeList="http://idec.icc.cat/schema/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">Tema</gmd:MD_KeywordTypeCode>
+									  </gmd:type>
+									</gmd:MD_Keywords>
+								  </gmd:descriptiveKeywords>
+								  <gmd:language>
+									<gmd:LanguageCode codeList="http://idec.icc.cat/schema/resources/Codelist/ML_gmxCodelists.xml#LanguageCode" codeListValue="cat">Catala</gmd:LanguageCode>
+								  </gmd:language>
+								  <gmd:topicCategory>
+									<gmd:MD_TopicCategoryCode>imageryBaseMapsEarthCover</gmd:MD_TopicCategoryCode>
+								  </gmd:topicCategory>
+								  <gmd:extent>
+									<gmd:EX_Extent>
+									  <gmd:geographicElement>
+										<gmd:EX_GeographicBoundingBox>
+										  <gmd:extentTypeCode>
+											<gco:Boolean>true</gco:Boolean>
+										  </gmd:extentTypeCode>
+										  <gmd:westBoundLongitude>
+											<gco:Decimal>1.06474287929127</gco:Decimal>
+										  </gmd:westBoundLongitude>
+										  <gmd:eastBoundLongitude>
+											<gco:Decimal>1.16161798316134</gco:Decimal>
+										  </gmd:eastBoundLongitude>
+										  <gmd:southBoundLatitude>
+											<gco:Decimal>41.240141115081</gco:Decimal>
+										  </gmd:southBoundLatitude>
+										  <gmd:northBoundLatitude>
+											<gco:Decimal>41.3113229349326</gco:Decimal>
+										  </gmd:northBoundLatitude>
+										</gmd:EX_GeographicBoundingBox>
+									  </gmd:geographicElement>
+									</gmd:EX_Extent>
+								  </gmd:extent>
+								</gmd:MD_DataIdentification>
+							</gmd:identificationInfo>				  
+						</gmd:MD_Metadata>
+					</gmljp2:isoMetadata>
+				</gmljp2:Metadata>
+			</gmlcov:metadata>
+			<gmlcov:metadata>
+				<gmljp2:Metadata>
+					<gmljp2:eopMetadata>
+						<eop:EarthObservation xmlns:eop="http://www.opengis.net/eop/2.0" xmlns:om="http://www.opengis.net/om/2.0" gml:id="EOP1">
+							<om:phenomenonTime></om:phenomenonTime>
+							<om:resultTime></om:resultTime>
+							<om:procedure></om:procedure>
+							<om:observedProperty></om:observedProperty>
+							<om:featureOfInterest></om:featureOfInterest>
+							<om:result></om:result>
+							<eop:metaDataProperty>
+								<eop:EarthObservationMetaData>
+									<eop:identifier></eop:identifier>
+									<eop:acquisitionType>NOMINAL</eop:acquisitionType>
+									<eop:status>ACQUIRED</eop:status>
+								</eop:EarthObservationMetaData>
+							</eop:metaDataProperty>
+						</eop:EarthObservation>
+					</gmljp2:eopMetadata>
+				</gmljp2:Metadata>
+			</gmlcov:metadata>
+			<gmljp2:feature>
+				<FeatureCollection gml:id="ID_07">
+					<featureMember>
+						<Observation gml:id="ID_08">
+							<validTime xmlns:n1="http://www.opengis.net/gml/3.2"/>
+							<resultOf/>
+						</Observation>
+					</featureMember>
+				</FeatureCollection>
+			</gmljp2:feature>
+			<gmljp2:annotation>
+				<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xsi:schemaLocation="http://www.opengis.net/kml/2.2 http://schemas.opengis.net/kml/2.2.0/ogckml22.xsd">
+					<Document>
+						<name>Annotation example: Barcelona</name>
+						<Style id="anchor">
+							<IconStyle>
+								<scale>1</scale>
+								<heading>0</heading>
+								 <Icon> 
+									<href>http://maps.google.com/mapfiles/kml/shapes/cross-hairs_highlight.png</href> 
+								 </Icon> 
+								<hotSpot x="20" y="20" xunits="pixels" yunits="pixels"/>
+							</IconStyle>
+							<LineStyle>
+								<color>ff00ff55</color>
+								<width>3</width>
+							</LineStyle>
+							<PolyStyle>
+								<color>ffffffff</color>
+								<fill>0</fill>
+							</PolyStyle>
+						</Style>
+						<Style id="connector">
+							<LineStyle>
+								<color>ff0000ff</color>
+								<width>5</width>
+							</LineStyle>
+							<PolyStyle>
+								<color>ff0000ff</color>
+							</PolyStyle>
+						</Style>
+						<Style id="label">
+							<IconStyle>
+								<scale>1</scale>
+								<heading>0</heading>
+								 <Icon> 
+									<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href> 
+								 </Icon> 
+								<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+							</IconStyle>
+							<LabelStyle>
+								<scale>1.6</scale>
+							</LabelStyle>
+						</Style>
+						<Folder id="ID_204">
+							<name>Barcelona Annotation</name>
+							<open>0</open>
+							<atom:link href="http://metadata.usgs.gov/barcelona" rel="via"/>
+							<LookAt>
+								<longitude>2.30</longitude>
+								<latitude>41.35</latitude>
+								<tilt>0</tilt>
+								<range>35000</range>
+							</LookAt>
+							<Placemark>
+								<name>location</name>
+								<atom:link href="http://features.server.org/gml#id" rel="related"/>
+								<styleUrl>#anchor</styleUrl>
+								<Polygon>
+									<outerBoundaryIs>
+										<LinearRing>
+											<coordinates>
+												2.073639824519578,41.37452244462061,0 2.05804577339133,41.35406278582955,0 2.075388103255338,41.34712555059506,0 2.107622294113374,41.3360311338853,0 2.121911163609469,41.31652845586448,0 2.152920003107866,41.28913819473688,0 2.176382914536645,41.31381322978167,0 2.176950008147636,41.3393838649064,0 2.207216433538022,41.38450586742957,0 2.232587379144657,41.41428095733288,0 2.211479776812355,41.43005352266692,0 2.202149839451644,41.44722711183467,0 2.19158871068049,41.45406371124539,0 2.149643194095574,41.43521126968913,0 2.133102307936627,41.4133862970405,0 2.104176167331617,41.38794227385851,0 2.073639824519578,41.37452244462061,0 
+											</coordinates>
+										</LinearRing>
+									</outerBoundaryIs>
+								</Polygon>
+							</Placemark>
+							<Placemark>
+								<styleUrl>#anchor</styleUrl>
+								<Point>
+									<coordinates>2.181361931153667,41.40640566656117,0</coordinates>
+								</Point>
+							</Placemark>
+							<Placemark>
+								<name>Connector</name>
+								<styleUrl>#connector</styleUrl>
+								<LineString>
+									<tessellate>1</tessellate>
+									<coordinates>
+										2.389738560344565,41.44643286255504,0 2.281305678929304,41.44567833933932,0 2.181361931153667,41.40640566656117,0 
+									</coordinates>
+								</LineString>
+							</Placemark>
+							<Placemark>
+								<name>ConnectorArrowCap</name>
+								<styleUrl>#connector</styleUrl>
+								<Polygon>
+									<outerBoundaryIs>
+										<LinearRing>
+											<coordinates>
+					2.181361931153667,41.40640566656117,0 2.190231576991641,41.4180151568839,0 2.198322244853606,41.40420441241492,0 2.181361931153667,41.40640566656117,0 
+											</coordinates>
+										</LinearRing>
+									</outerBoundaryIs>
+								</Polygon>
+							</Placemark>
+							<Placemark>
+								<name>Barcelona</name>
+								<styleUrl>#label</styleUrl>
+								<Point>
+									<coordinates>2.389738560344565,41.44643286255504,0</coordinates>
+								</Point>
+							</Placemark>
+						</Folder>
+					</Document>
+				</kml>
+			</gmljp2:annotation>
+		</gmljp2:GMLJP2RectifiedGridCoverage>
+	</gmljp2:featureMember>
+	<gmljp2:featureMember>
+		<gmljp2:GMLJP2RectifiedGridCoverage gml:id="CodeStream_1">
+			<domainSet>
+				<RectifiedGrid gml:id="RG_CodeStream1" dimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+					<limits>
+						<GridEnvelope>
+							<low>0 0</low>
+							<high>1111 1109</high>
+						</GridEnvelope>
+					</limits>
+					<axisName>x</axisName>
+					<axisName>y</axisName>
+					<origin>
+						<Point gml:id="PointCodeStream1" srsName="crsdictionary.gml#crs1">
+							<pos>317927.000000000000 3319124.999999999500</pos>
+						</Point>
+					</origin>
+					<offsetVector>2.799999999988 0.000000000000</offsetVector>
+					<offsetVector>0.000000000000 -0.799999999814</offsetVector>
+				</RectifiedGrid>
+			</domainSet>	
+			<rangeSet>
+				<File>
+					<rangeParameters>
+						<QuantityList uom="urn:ogc:def:uom:EPSG::9001"/>
+					</rangeParameters>
+					<fileName>gmljp2://codestream/1</fileName>
+					<fileStructure>Record Interleaved</fileStructure>
+				</File>
+			</rangeSet>
+			<gmlcov:rangeType>
+				<swe:DataRecord>
+					<swe:field name="red">
+						<swe:Quantity definition="http://opengis.net/def/property/OGC/0/Radiance">
+							<swe:description>Red Channel</swe:description>
+							<swe:nilValues>
+								<swe:NilValues id="NilValuesCodeStream1">
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">0</swe:nilValue>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/AboveDetectionRange">255</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="W/cm2"/>
+							<swe:constraint>
+								<swe:AllowedValues id="ValueSpaceCodeStream1">
+									<swe:interval>0 255</swe:interval>
+									<swe:significantFigures>3</swe:significantFigures>
+								</swe:AllowedValues>
+							</swe:constraint>
+						</swe:Quantity>
+					</swe:field>
+				</swe:DataRecord>
+			</gmlcov:rangeType>
+		</gmljp2:GMLJP2RectifiedGridCoverage>
+	</gmljp2:featureMember>
+	<gmljp2:featureMember>
+		<gmljp2:GMLJP2RectifiedGridCoverage gml:id="CodeStream_2">
+			<domainSet>
+				<RectifiedGrid gml:id="RG_CodeStream2" dimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+					<limits>
+						<GridEnvelope>
+							<low>0 0</low>
+							<high>1111 1109</high>
+						</GridEnvelope>
+					</limits>
+					<axisName>x</axisName>
+					<axisName>y</axisName>
+					<origin>
+						<Point gml:id="PointCodeStream2" srsName="crsdictionary.gml#crs1">
+							<pos>317927.000000000000 3319124.999999999500</pos>
+						</Point>
+					</origin>
+					<offsetVector>2.799999999988 0.000000000000</offsetVector>
+					<offsetVector>0.000000000000 -0.799999999814</offsetVector>
+				</RectifiedGrid>
+			</domainSet>	
+			<rangeSet>
+				<File>
+					<rangeParameters>
+						<QuantityList uom="urn:ogc:def:uom:EPSG::9001"/>
+					</rangeParameters>
+					<fileName>gmljp2://codestream/1</fileName>
+					<fileStructure>Record Interleaved</fileStructure>
+				</File>
+			</rangeSet>
+			<gmlcov:rangeType>
+				<swe:DataRecord>
+					<swe:field name="red">
+						<swe:Quantity definition="http://opengis.net/def/property/OGC/0/Radiance">
+							<swe:description>Red Channel</swe:description>
+							<swe:nilValues>
+								<swe:NilValues id="NilValuesCodeStream2">
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">0</swe:nilValue>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/AboveDetectionRange">255</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="W/cm2"/>
+							<swe:constraint>
+								<swe:AllowedValues id="ValueSpaceCodeStream2">
+									<swe:interval>0 255</swe:interval>
+									<swe:significantFigures>3</swe:significantFigures>
+								</swe:AllowedValues>
+							</swe:constraint>
+						</swe:Quantity>
+					</swe:field>
+				</swe:DataRecord>
+			</gmlcov:rangeType>
+		</gmljp2:GMLJP2RectifiedGridCoverage>
+	</gmljp2:featureMember>
+	<gmljp2:featureMember>
+		<gmljp2:GMLJP2Features gml:id="ID_FE_2">
+			<metaDataProperty>
+				<GenericMetaData>
+					<gmljp2:Metadata>
+						<gmljp2:metadata>Some simple textual metadata</gmljp2:metadata>
+					</gmljp2:Metadata>
+				</GenericMetaData>
+			</metaDataProperty>
+			<gmljp2:feature>
+				<FeatureCollection gml:id="ID_FC_07">
+					<metaDataProperty>
+						<GenericMetaData>
+							<gmljp2:dcMetadata>
+								<dc:title>Features that are common to all codestreams</dc:title>
+								<dc:publisher>ogc</dc:publisher>
+							</gmljp2:dcMetadata>
+						</GenericMetaData>
+					</metaDataProperty>
+					<featureMember>
+						<Observation gml:id="ID_OBR_08">
+							<validTime/>
+							<resultOf/>
+						</Observation>
+					</featureMember>
+				</FeatureCollection>
+			</gmljp2:feature>
+		</gmljp2:GMLJP2Features>
+	</gmljp2:featureMember>
+	<gmljp2:featureMember>
+		<gmljp2:GMLJP2Features gml:id="ID_FE_3">
+			<gmljp2:feature xlink:href="http://myserver.bob/roadsnetwork.gml"/>
+		</gmljp2:GMLJP2Features>
+	</gmljp2:featureMember>
+</gmljp2:GMLJP2CoverageCollection>

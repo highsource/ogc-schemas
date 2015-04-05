@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.opengis.net/wcps/1.0"
+	targetNamespace="http://www.opengis.net/wcps/1.0"
+	xmlns:wcs="http://www.opengis.net/wcs/1.1"
+	xmlns:gml="http://www.opengis.net/gml"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0" xml:lang="en">
+	<xs:annotation>
+		<xs:appinfo>wcpsProcessCoverages.xsd</xs:appinfo>
+		<xs:documentation>
+			This schema defines the ProcessCoverages operation request elements and types, used by an OGC Web Coverage Service (WCS) Processing Extension, see OGC 08-059r3.
+			A WCPS query can be sent either as XML tree or as a string encoded in the Abstract Syntax defined in OGC Web Coverage Processing Service (WCPS), see OGC 08-068r2.
+			Copyright (c) 2008 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+	</xs:documentation>
+	</xs:annotation>
+	<!-- =============================================================
+	includes and imports
+	============================================================== -->
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<xs:import namespace="http://www.opengis.net/wcs/1.1" schemaLocation="http://schemas.opengis.net/wcs/1.1/wcsAll.xsd"/>
+	<!-- ==============================================================
+	elements and types
+	=============================================================== -->
+	<xs:element name="ProcessCoveragesRequest" type="ProcessCoveragesRequestType">
+		<xs:annotation>
+			<xs:documentation>Request to a WCS, which must implement WCPS, to perform a ProcessCoverages operation.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ProcessCoveragesRequestType">
+	<xs:complexContent>
+		<xs:extension base="wcs:RequestBaseType">
+		<xs:sequence>
+			<xs:element name="query" type="ProcessOneCoverageType"/>
+		</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ProcessOneCoverageType">
+		<xs:choice>
+			<xs:element name="xmlSyntax" type="ProcessCoverageXmlRequestType"/>
+			<xs:element name="abstractSyntax" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="ProcessCoverageXmlRequestType">
+		<xs:annotation>
+			<xs:documentation>ProcessCoverage XML query structure.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="coverageIterator" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="iteratorVar" type="VariableNameType"/>
+						<xs:element name="coverageName" type="wcs:IdentifierType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="where" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="BooleanScalarExprType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:group ref="ProcessingExprType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:group name="ProcessingExprType">
+		<xs:choice>
+			<xs:element name="encode" type="EncodeDataExprType"/>
+			<xs:group ref="ScalarExprType"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="EncodeDataExprType">
+		<xs:sequence>
+			<xs:group ref="CoverageExprType"/>
+			<xs:element name="format" type="xs:string"/>
+			<xs:element name="extraParameters" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="store" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:group name="ScalarExprType">
+		<xs:choice>
+			<xs:group ref="MetadataScalarExprType"/>
+			<xs:group ref="BooleanScalarExprType"/>
+			<xs:group ref="NumericScalarExprType"/>
+			<xs:group ref="ReduceScalarExprType"/>
+			<xs:group ref="StringScalarExprType"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="ScalarExprType">
+		<xs:group ref="ScalarExprType"/>
+	</xs:complexType>
+	<xs:group name="MetadataScalarExprType">
+		<xs:choice>
+			<xs:element name="identifier" type="CoverageExprElementType"/>
+			<xs:element name="imageCrs" type="CoverageExprElementType"/>
+			<xs:element name="imageCrsDomain">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="CoverageExprType"/>
+						<xs:element name="axis" type="AxisNameType" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="crsSet" type="CoverageExprElementType"/>
+			<xs:element name="DomainMetadata" type="DomainMetadataExprType"/>
+			<xs:element name="nullSet" type="CoverageExprElementType"/>
+			<xs:element name="interpolationDefault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="CoverageExprType"/>
+						<xs:group ref="FieldNameType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="interpolationSet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="CoverageExprType"/>
+						<xs:group ref="FieldNameType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="DomainMetadataExprType">
+		<xs:group ref="DomainMetadataExprType"/>
+	</xs:complexType>
+	<xs:group name="DomainMetadataExprType">
+		<xs:sequence>
+			<xs:group ref="CoverageExprType"/>
+			<xs:element name="axis" type="AxisNameType"/>
+			<xs:group ref="CrsNameType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="BooleanScalarExprType">
+		<xs:choice>
+			<xs:element name="booleanConstant" type="xs:boolean"/>
+			<xs:element name="booleanNot" type="BooleanScalarExprType"/>
+			<xs:element name="booleanAnd" type="BooleanScalarExprPairType"/>
+			<xs:element name="booleanOr" type="BooleanScalarExprPairType"/>
+			<xs:element name="booleanXor" type="BooleanScalarExprPairType"/>
+			<xs:element name="booleanLessThan" type="NumericScalarExprPairType"/>
+			<xs:element name="booleanLessOrEqual" type="NumericScalarExprPairType"/>
+			<xs:element name="booleanGreaterThan" type="NumericScalarExprPairType"/>
+			<xs:element name="booleanGreaterOrEqual" type="NumericScalarExprPairType"/>
+			<xs:element name="booleanEqualNumeric" type="NumericScalarExprPairType"/>
+			<xs:element name="booleanNotEqualNumeric" type="NumericScalarExprPairType"/>
+			<xs:element name="booleanEqualString" type="StringScalarExprPairType"/>
+			<xs:element name="booleanNotEqualString" type="StringScalarExprPairType"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="BooleanScalarExprType">
+		<xs:group ref="BooleanScalarExprType"/>
+	</xs:complexType>
+	<xs:complexType name="BooleanScalarExprPairType">
+		<xs:sequence>
+			<xs:group ref="BooleanScalarExprType"/>
+			<xs:group ref="BooleanScalarExprType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NumericScalarExprPairType">
+		<xs:sequence>
+			<xs:group ref="NumericScalarExprType"/>
+			<xs:group ref="NumericScalarExprType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StringScalarExprPairType">
+		<xs:sequence>
+			<xs:group ref="StringScalarExprType"/>
+			<xs:group ref="StringScalarExprType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:group name="NumericScalarExprType">
+		<xs:choice>
+			<xs:element name="numericConstant" type="xs:double"/>
+			<xs:element name="complexConstant" type="ComplexConstantType"/>
+			<xs:element name="numericUnaryMinus">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="NumericScalarExprType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="numericAdd" type="NumericScalarExprPairType"/>
+			<xs:element name="numericMinus" type="NumericScalarExprPairType"/>
+			<xs:element name="numericMult" type="NumericScalarExprPairType"/>
+			<xs:element name="numericDiv" type="NumericScalarExprPairType"/>
+			<xs:element name="condense" type="CondenseScalarExprType"/>
+			<xs:element name="reduce" type="ReduceScalarExprType"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="StringScalarExprType">
+		<xs:choice>
+			<xs:element name="stringIdentifier" type="CoverageExprElementType"/>
+			<xs:element name="stringConstant" type="xs:string"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="SetMetadataCoverageExprType">
+		<xs:choice>
+			<xs:element name="setIdentifier">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="identifier" type="wcs:IdentifierType"/>
+						<xs:group ref="CoverageExprType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setCrsSet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="CoverageExprType"/>
+						<xs:group ref="CrsNameType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setNullSet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="CoverageExprType"/>
+						<xs:element name="null" type="RangeExprType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setInterpolationDefault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="CoverageExprType"/>
+						<xs:element name="field" type="FieldNameType"/>
+						<xs:group ref="InterpolationMethodType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="setInterpolationSet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="CoverageExprType"/>
+						<xs:element name="field" type="FieldNameType"/>
+						<xs:group ref="InterpolationMethodType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="RangeExprType">
+		<xs:sequence>
+			<xs:element name="component" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="field" type="FieldNameType"/>
+						<xs:group ref="ScalarExprType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:group name="InterpolationMethodType">
+		<xs:sequence>
+			<xs:element name="interpolationMethod" type="xs:string"/>
+			<xs:element name="nullResistance" type="xs:string"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="CoverageExprElementType">
+		<xs:sequence>
+			<xs:group ref="CoverageExprType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:group name="CoverageExprType">
+		<xs:choice>
+			<xs:element name="coverage" type="wcs:IdentifierType"/>
+			<xs:group ref="SetMetadataCoverageExprType"/>
+			<xs:group ref="InducedOperationCoverageExprType"/>
+			<xs:group ref="SubsetOperationCoverageExprType"/>
+			<xs:element name="crsTransform" type="CrsTransformCoverageExprType"/>
+			<xs:element name="scale" type="ScaleCoverageExprType"/>
+			<xs:element name="construct" type="ConstructCoverageExprType"/>
+			<xs:element name="const" type="ConstantCoverageExprType"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="InducedOperationCoverageExprType">
+		<xs:choice>
+			<xs:group ref="UnaryOperationCoverageExprType"/>
+			<xs:group ref="BinaryOperationCoverageExprType"/>
+			<xs:element name="rangeConstructor" type="RangeCoverageExprType"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="UnaryOperationCoverageExprType">
+		<xs:choice>
+			<xs:element name="unaryPlus" type="CoverageExprElementType"/>
+			<xs:element name="unaryMinus" type="CoverageExprElementType"/>
+			<xs:element name="sqrt" type="CoverageExprElementType"/>
+			<xs:element name="abs" type="CoverageExprElementType"/>
+			<xs:element name="exp" type="CoverageExprElementType"/>
+			<xs:element name="log" type="CoverageExprElementType"/>
+			<xs:element name="ln" type="CoverageExprElementType"/>
+			<xs:element name="sin" type="CoverageExprElementType"/>
+			<xs:element name="cos" type="CoverageExprElementType"/>
+			<xs:element name="tan" type="CoverageExprElementType"/>
+			<xs:element name="sinh" type="CoverageExprElementType"/>
+			<xs:element name="cosh" type="CoverageExprElementType"/>
+			<xs:element name="tanh" type="CoverageExprElementType"/>
+			<xs:element name="arcsin" type="CoverageExprElementType"/>
+			<xs:element name="arccos" type="CoverageExprElementType"/>
+			<xs:element name="arctan" type="CoverageExprElementType"/>
+			<xs:element name="not" type="CoverageExprElementType"/>
+			<xs:element name="re" type="CoverageExprElementType"/>
+			<xs:element name="im" type="CoverageExprElementType"/>
+			<xs:element name="bit">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="CoverageExprType"/>
+						<xs:element name="bitIndex" type="xs:integer"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="cast">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="CoverageExprType"/>
+						<xs:element name="type" type="RangeFieldType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="fieldSelect">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="CoverageExprType"/>
+						<xs:element name="field" type="FieldNameType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	<xs:simpleType name="RangeFieldType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bool"/>
+			<xs:enumeration value="char"/>
+			<xs:enumeration value="unsigned char"/>
+			<xs:enumeration value="short"/>
+			<xs:enumeration value="unsigned short"/>
+			<xs:enumeration value="long"/>
+			<xs:enumeration value="unsigned long"/>
+			<xs:enumeration value="float"/>
+			<xs:enumeration value="double"/>
+			<xs:enumeration value="complex"/>
+			<xs:enumeration value="complex2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:group name="BinaryOperationCoverageExprType">
+		<xs:choice>
+			<xs:element name="plus" type="CoverageExprPairType"/>
+			<xs:element name="minus" type="CoverageExprPairType"/>
+			<xs:element name="mult" type="CoverageExprPairType"/>
+			<xs:element name="div" type="CoverageExprPairType"/>
+			<xs:element name="and" type="CoverageExprPairType"/>
+			<xs:element name="or" type="CoverageExprPairType"/>
+			<xs:element name="xor" type="CoverageExprPairType"/>
+			<xs:element name="equals" type="CoverageExprPairType"/>
+			<xs:element name="lessThan" type="CoverageExprPairType"/>
+			<xs:element name="greaterThan" type="CoverageExprPairType"/>
+			<xs:element name="lessOrEqual" type="CoverageExprPairType"/>
+			<xs:element name="greaterOrEqual" type="CoverageExprPairType"/>
+			<xs:element name="notEqual" type="CoverageExprPairType"/>
+			<xs:element name="overlay" type="CoverageExprPairType"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="CoverageExprPairType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:group ref="CoverageExprType"/>
+				<xs:choice>
+					<xs:group ref="CoverageExprType"/>
+					<xs:group ref="ScalarExprType"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:group ref="ScalarExprType"/>
+				<xs:group ref="CoverageExprType"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="RangeCoverageExprType">
+		<xs:sequence>
+			<xs:element name="component" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="field" type="FieldNameType"/>
+						<xs:group ref="CoverageExprType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:group name="SubsetOperationCoverageExprType">
+		<xs:choice>
+			<xs:element name="trim" type="TrimCoverageExprType"/>
+			<xs:element name="slice" type="SliceCoverageExprType"/>
+			<xs:element name="extend" type="ExtendCoverageExprType"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="TrimCoverageExprType">
+		<xs:sequence>
+			<xs:group ref="CoverageExprType"/>
+			<xs:group ref="DimensionIntervalElementType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SliceCoverageExprType">
+		<xs:sequence>
+			<xs:group ref="CoverageExprType"/>
+			<xs:group ref="DimensionPointElementType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExtendCoverageExprType">
+		<xs:sequence>
+			<xs:group ref="CoverageExprType"/>
+			<xs:group ref="DimensionIntervalElementType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ScaleCoverageExprType">
+		<xs:sequence>
+			<xs:group ref="CoverageExprType"/>
+			<xs:group ref="DimensionIntervalElementType" maxOccurs="unbounded"/>
+			<xs:group ref="FieldInterpolationElementType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CrsTransformCoverageExprType">
+		<xs:sequence>
+			<xs:group ref="CoverageExprType"/>
+			<xs:group ref="DimensionIntervalElementType" maxOccurs="unbounded"/>
+			<xs:group ref="FieldInterpolationElementType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:group name="DimensionIntervalElementType">
+		<xs:sequence>
+			<xs:element name="axis" type="AxisNameType"/>
+			<xs:group ref="CrsNameType" minOccurs="0"/>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="lowerBound" type="ScalarExprType"/>
+					<xs:element name="upperBound" type="ScalarExprType"/>
+				</xs:sequence>
+				<xs:group ref="DomainMetadataExprType"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="DimensionPointElementType">
+		<xs:sequence>
+			<xs:element name="axis" type="AxisNameType"/>
+			<xs:group ref="CrsNameType" minOccurs="0"/>
+			<xs:element name="slicingPosition" type="ScalarExprType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="FieldInterpolationElementType">
+		<xs:sequence>
+			<xs:group ref="FieldNameType"/>
+			<xs:group ref="InterpolationMethodType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="ConstructCoverageExprType">
+		<xs:sequence>
+			<xs:group ref="CoverageNameType"/>
+			<xs:element name="axisIterator" type="AxisIteratorType" maxOccurs="unbounded"/>
+			<xs:group ref="ScalarExprType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConstantCoverageExprType">
+		<xs:sequence>
+			<xs:group ref="CoverageNameType"/>
+			<xs:element name="axisIterator" type="AxisIteratorType" maxOccurs="unbounded"/>
+			<xs:element name="value" type="ConstantType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AxisIteratorType">
+		<xs:sequence>
+			<xs:element name="iteratorVar" type="VariableNameType"/>
+			<xs:element name="axis" type="AxisNameType"/>
+			<xs:choice>
+				<xs:sequence>
+					<xs:group ref="NumericScalarExprType"/>
+					<xs:group ref="NumericScalarExprType"/>
+				</xs:sequence>
+				<xs:group ref="ImageCrsDomainMetadataExprType"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:group name="ImageCrsDomainMetadataExprType">
+		<xs:sequence>
+			<xs:group ref="CoverageExprType"/>
+			<xs:element name="axis" type="AxisNameType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ReduceScalarExprType">
+		<xs:choice>
+			<xs:element name="all" type="CoverageExprElementType"/>
+			<xs:element name="some" type="CoverageExprElementType"/>
+			<xs:element name="count" type="CoverageExprElementType"/>
+			<xs:element name="add" type="CoverageExprElementType"/>
+			<xs:element name="avg" type="CoverageExprElementType"/>
+			<xs:element name="min" type="CoverageExprElementType"/>
+			<xs:element name="max" type="CoverageExprElementType"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="ReduceScalarExprType">
+		<xs:group ref="ReduceScalarExprType"/>
+	</xs:complexType>
+	<xs:complexType name="CondenseScalarExprType">
+		<xs:choice>
+			<xs:group ref="ReduceScalarExprType"/>
+			<xs:group ref="GeneralCondenseExprType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:group name="GeneralCondenseExprType">
+		<xs:sequence>
+			<xs:group ref="CondenseOperationType"/>
+			<xs:element name="iterator" type="AxisIteratorType" maxOccurs="unbounded"/>
+			<xs:element name="where" type="BooleanScalarExprType" minOccurs="0"/>
+			<xs:group ref="ScalarExprType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="CondenseOperationType">
+		<xs:choice>
+			<xs:element name="opPlus"/>
+			<xs:element name="opMult"/>
+			<xs:element name="opMax"/>
+			<xs:element name="opMin"/>
+			<xs:element name="opAnd"/>
+			<xs:element name="opOr"/>
+		</xs:choice>
+	</xs:group>
+	<xs:simpleType name="VariableNameType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[$a-zA-Z_][0-9a-zA-Z_]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:group name="CoverageNameType">
+		<xs:choice>
+			<xs:element name="name" type="wcs:IdentifierType"/>
+		</xs:choice>
+	</xs:group>
+	<xs:simpleType name="AxisNameType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="x"/>
+			<xs:enumeration value="y"/>
+			<xs:enumeration value="z"/>
+			<xs:enumeration value="t"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:group name="CrsNameType">
+		<xs:choice>
+			<xs:element ref="gml:srsName"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="FieldNameType">
+		<xs:choice>
+			<xs:element name="name" type="wcs:IdentifierType"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="FieldNameType">
+		<xs:group ref="FieldNameType"/>
+	</xs:complexType>
+	<xs:complexType name="ConstantType">
+		<xs:sequence>
+			<xs:group ref="ConstantType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:group name="ConstantType">
+		<xs:choice>
+			<xs:element name="stringConstant" type="xs:string"/>
+			<xs:element name="booleanConstant" type="xs:boolean"/>
+			<xs:element name="integerConstant" type="xs:integer"/>
+			<xs:element name="floatConstant" type="xs:double"/>
+			<xs:element name="complexConstant" type="ComplexConstantType"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="ComplexConstantType">
+		<xs:sequence>
+			<xs:element name="re" type="xs:double"/>
+			<xs:element name="im" type="xs:double"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

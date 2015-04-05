@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" 
+xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/"> 
+<ShortName>CubeWerx</ShortName> 
+<Description>CubeWerx CSW </Description> 
+<Tags>CSW</Tags> 
+<Url type="application/atom+xml"
+     xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/"
+     template="http://www.cubewerx.com/wrs.cgi?service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;typeNames=csw:Record&amp;outputFormat=RSS&amp;
+resultType=hits&amp;startPosition={startIndex?}&amp;maxRecords={count?}&amp;bbox={geo:box?}&amp;crs=urn:ogc:def:crs:EPSG::4326&amp;anyText={searchTerms?}"/>
+</OpenSearchDescription>

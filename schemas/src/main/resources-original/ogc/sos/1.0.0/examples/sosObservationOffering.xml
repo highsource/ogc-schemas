@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Contents xmlns="http://www.opengis.net/sos/1.0" xmlns:gml="http://www.opengis.net/gml"
+  xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:om="http://www.opengis.net/om/1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosAll.xsd">
+  <ObservationOfferingList>
+    <ObservationOffering gml:id="offering-3">
+      <gml:name>urn:MyOrg:offering:3</gml:name>
+      <gml:srsName>EPSG:4326</gml:srsName>
+      <gml:boundedBy>
+        <gml:Envelope srsName="EPSG:4326">
+          <gml:lowerCorner>39.11111 -77.17695</gml:lowerCorner>
+          <gml:upperCorner>40.11111 -77.17695</gml:upperCorner>
+        </gml:Envelope>
+      </gml:boundedBy>
+      <time>
+        <gml:TimePeriod>
+          <gml:beginPosition>2005-10-18T19:54:13.000Z</gml:beginPosition>
+          <gml:endPosition indeterminatePosition="unknown"/>
+        </gml:TimePeriod>
+      </time>
+      <procedure xlink:href="urn:ogc:object:Sensor:MyOrg:12349"/>
+      <procedure xlink:href="urn:ogc:object:Sensor:MyOrg:12350"/>
+      <observedProperty>
+        <swe:CompositePhenomenon gml:id="AggregateChemicalPresence" dimension="2">
+          <gml:name>urn:ogc:def:property:MyOrg:AggregateChemicalPresence</gml:name>
+          <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirDPM"/>
+          <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirMS"/>
+        </swe:CompositePhenomenon>
+      </observedProperty>
+      <featureOfInterest xlink:href="urn:ogc:def:feature:OGC-SWE:3:transient"/>
+      <responseFormat>text/xml; subtype=&quot;om/1.0.0&quot;</responseFormat>
+      <resultModel>om:Observation</resultModel>
+      <responseMode>inline</responseMode>
+    </ObservationOffering>
+  </ObservationOfferingList>
+</Contents>

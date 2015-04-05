@@ -1,0 +1,17 @@
+<wfs:DescribeStoredQueriesResponse
+  xmlns:wfs="http://www.opengis.net/wfs/2.0"
+  xmlns:cw="http://schemas.cubewerx.com/namespaces/null"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+  <wfs:StoredQueryDescription id="urn:ogc:def:query:OGC-WFS::GetFeatureById">
+    <wfs:Title>Get Feature By Identifier</wfs:Title>
+    <wfs:Abstract>This stored query will retrieve the feature whose identifier matches the one specified as the argument to this method.</wfs:Abstract>
+    <wfs:Parameter name="id" type="xsd:string">
+      <wfs:Title>Feature Identifier</wfs:Title>
+    </wfs:Parameter>
+    <wfs:QueryExpressionText
+      returnFeatureTypes="cw:AEROFACP_1M cw:AQUECANL_1M cw:BARRIERL_1M cw:BNDTXT_1M cw:BUILTUPA_1M cw:BUILTUPP_1M cw:COASTL_1M cw:CONTOURL_1M cw:CROPA_1M cw:DANGERP_1M cw:DEPTHL_1M cw:DQAREA_DQ_1M cw:DQLINE_DQ_1M cw:DQLINE_TRANS_1M cw:DQLINE_UTIL_1M cw:DQTXT_DQ_1M cw:ELEVP_1M cw:EXTRACTA_1M cw:EXTRACTP_1M cw:FISHINDA_1M cw:GRASSA_1M cw:GROUNDA_1M cw:HYDROTXT_1M cw:INDTXT_1M cw:INWATERA_1M cw:LANDICEA_1M cw:LNDFRML_1M cw:MISCL_HYDRO_1M cw:MISCP_HYDRO_1M cw:MISINDP_1M cw:MISPOPA_1M cw:MISPOPP_1M cw:MISTRANL_1M cw:OCEANSEA_1M cw:PHYSTXT_1M cw:PIPEL_1M cw:POLBNDA_1M cw:POLBNDL_1M cw:POLBNDP_1M cw:POPTXT_1M cw:RAILRDL_1M cw:ROADL_1M cw:RRYARDP_1M cw:SEAICEA_1M cw:STORAGEP_1M cw:SWAMPA_1M cw:TRAILL_1M cw:TRANSTRC_1M cw:TRANSTRL_1M cw:TRANSTXT_1M cw:TREESA_1M cw:TUNDRAA_1M cw:UTILL_1M cw:UTILP_1M cw:UTILTXT_1M cw:WATRCRSL_1M"
+      language="C" isPrivate="true"/>
+  </wfs:StoredQueryDescription>
+</wfs:DescribeStoredQueriesResponse>

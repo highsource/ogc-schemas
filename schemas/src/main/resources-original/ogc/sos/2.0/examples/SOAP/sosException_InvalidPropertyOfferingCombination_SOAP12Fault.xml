@@ -1,0 +1,21 @@
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/1.1">
+  <soap12:Body>
+    <soap12:Fault>
+      <soap12:Code>
+        <soap12:Value>soap12:Sender</soap12:Value>
+        <soap12:Subcode>
+          <soap12:Value>sos:InvalidPropertyOfferingCombination</soap12:Value>
+        </soap12:Subcode>
+      </soap12:Code>
+      <soap12:Reason>
+        <soap12:Text xml:lang="en">The request contained an invalid parameter value.</soap12:Text>
+      </soap12:Reason>
+      <soap12:Detail>
+        <ows:Exception exceptionCode="InvalidPropertyOfferingCombination ">
+          <ows:ExceptionText>Observations of property X assigned to offering Y do not use SWE Common encoded results.</ows:ExceptionText>
+        </ows:Exception>
+      </soap12:Detail>
+    </soap12:Fault>
+  </soap12:Body>
+</soap12:Envelope>

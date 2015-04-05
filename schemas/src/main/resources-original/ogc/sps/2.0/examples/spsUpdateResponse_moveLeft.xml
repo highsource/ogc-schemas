@@ -1,0 +1,13 @@
+<sps:UpdateResponse xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0">
+  <sps:result>
+    <sps:StatusReport>
+      <sps:task>http://www.ogc.org/procedure/camera/1/tasks/6/updates/1</sps:task>
+      <sps:event>TaskUpdated</sps:event>
+      <sps:procedure>http://www.ogc.org/procedure/camera/1</sps:procedure>
+      <sps:requestStatus>Accepted</sps:requestStatus>
+      <sps:taskStatus>InExecution</sps:taskStatus>
+      <sps:updateTime>2010-08-20T11:12:04+02:00</sps:updateTime>
+    </sps:StatusReport>
+  </sps:result>
+  <sps:targetTask>http://www.ogc.org/procedure/camera/1/tasks/6</sps:targetTask>
+</sps:UpdateResponse>

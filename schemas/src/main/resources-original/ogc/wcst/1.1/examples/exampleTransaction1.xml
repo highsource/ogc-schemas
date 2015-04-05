@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Transaction xmlns="http://www.opengis.net/wcs/1.1/wcst" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:ows="http://www.opengis.net/ows/1.1" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.opengis.net/wcs/1.1/wcst http://schemas.opengis.net/wcst/1.1/wcstTransaction.xsd" 
+service="WCS" version="1.1">
+	<InputCoverages>
+		<Coverage>
+			<ows:Reference xlink:href="http://foo.bar.com/Images/abcd1234Pixels" 
+xlink:role="urn:ogc:def:role:WCS:1.1:Pixels"/>
+			<ows:Reference xlink:href="http://foo.bar.com/Images/abcd1234Metadata2" 
+xlink:role="urn:ogc:def:role:WCS:1.1:CoverageDescription"/>
+			<ows:Reference xlink:href="http://foo.bar.com/Images/abcd1234Metadata3" 
+xlink:role="urn:ogc:def:role:WCS:1.1:GeoreferencingTransformation"/>
+			<Action>Add</Action>
+		</Coverage>
+	</InputCoverages>
+</Transaction>

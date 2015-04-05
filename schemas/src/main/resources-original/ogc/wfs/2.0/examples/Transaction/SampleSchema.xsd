@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+   targetNamespace="http://www.someserver.example.com/myns"
+   xmlns:myns="http://www.someserver.example.com/myns"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   elementFormDefault="qualified"
+   version="1.0">
+
+   <xs:import namespace="http://www.opengis.net/gml/3.2"
+              schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+
+   <!-- === RoadL_1M ============================================ -->
+   <xs:element name="RoadL_1M"
+               type="myns:RoadL_1MType"
+               substitutionGroup="gml:AbstractFeature"/>
+   <xs:complexType name="RoadL_1MType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType">
+            <xs:sequence>
+               <xs:element name="name" type="xs:string"/>
+               <xs:element name="segment" type="myns:SegmentDescPropertyType"/>
+               <xs:element name="roadType" type="myns:RoadDescPropertyType"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:element name="SegmentDesc">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="designation" type="xs:string"/>
+            <xs:element name="geometry" type="gml:CurvePropertyType"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:complexType name="SegmentDescPropertyType">
+      <xs:sequence>
+         <xs:element ref="myns:SegmentDesc" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="RoadDesc">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="surfaceType" type="xs:string"/>
+            <xs:element name="nLanes" type="xs:nonNegativeInteger"/>
+            <xs:element name="grade" type="xs:double"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:complexType name="RoadDescPropertyType">
+      <xs:sequence>
+         <xs:element ref="myns:RoadDesc" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+
+   <!-- === ElevP_1M ============================================ -->
+   <xs:element name="ElevP_1M"
+               type="myns:ElevP_1MType"
+               substitutionGroup="gml:AbstractFeature"/>
+   <xs:complexType name="ElevP_1MType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType">
+            <xs:sequence>
+               <xs:element name="location" type="gml:PointPropertyType"/>
+               <xs:element name="id">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="10"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="fCode" minOccurs="0" maxOccurs="1">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:string">
+                        <xs:length value="5"/>
+                        <xs:enumeration value="CA030"/>
+                        <xs:enumeration value="CA035"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="acc" minOccurs="0" maxOccurs="1">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="5"/>
+                        <xs:enumeration value="1"/>
+                        <xs:enumeration value="2"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="ela" minOccurs="0" maxOccurs="1">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="5"/>
+                        <xs:enumeration value="0"/>
+                        <xs:enumeration value="1"/>
+                        <xs:enumeration value="2"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="zv2" minOccurs="0" maxOccurs="1">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="5"/>
+                        <xs:enumeration value="29999"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="tileId" minOccurs="0" maxOccurs="1">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="5"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="endId" minOccurs="0" maxOccurs="1">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="10"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+
+   <!-- === BuiltUpA_1M ========================================= -->
+   <xs:element name="BuiltUpA_1M"
+               type="myns:BuiltUpA_1MType"
+               substitutionGroup="gml:AbstractFeature"/>
+   <xs:complexType name="BuiltUpA_1MType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType">
+            <xs:sequence>
+               <xs:element name="placeId">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="10"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="name" type="xs:string"/>
+               <xs:element name="population" type="xs:double"/>
+               <xs:element name="bndry" type="gml:SurfacePropertyType"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+
+   <!-- === InWaterA_1M ========================================= -->
+   <xs:element name="InWaterA_1M"
+               type="myns:InWaterA_1MType"
+               substitutionGroup="gml:AbstractFeature"/>
+   <xs:complexType name="InWaterA_1MType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType">
+            <xs:sequence>
+               <xs:element name="wkbGeom" type="gml:SurfacePropertyType"/>
+               <xs:element name="id">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="10"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="fCode" minOccurs="0" maxOccurs="1">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:string">
+                        <xs:length value="5"/>
+                        <xs:enumeration value="BH000"/>
+                        <xs:enumeration value="BH090"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="hyc" minOccurs="0" maxOccurs="1">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="5"/>
+                        <xs:enumeration value="6"/>
+                        <xs:enumeration value="8"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="tileId" minOccurs="0" maxOccurs="1">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="5"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="facId" minOccurs="0" maxOccurs="1">
+                  <xs:simpleType>
+                     <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="10"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema>

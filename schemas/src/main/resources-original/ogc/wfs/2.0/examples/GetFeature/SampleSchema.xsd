@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+   targetNamespace="http://www.someserver.example.com/myns"
+   xmlns:myns="http://www.someserver.example.com/myns"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   elementFormDefault="qualified"
+   version="1.0">
+
+   <xs:import namespace="http://www.opengis.net/gml/3.2"
+              schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+
+   <!-- === Parks ========================================= -->
+   <xs:element name="Parks"
+               type="myns:ParksType"
+               substitutionGroup="gml:AbstractFeature"/>
+   <xs:complexType name="ParksType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType">
+            <xs:sequence>
+               <xs:element name="Name" type="xs:string"/>
+               <xs:element name="Boundary" type="gml:SurfacePropertyType"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+
+   <!-- === Lakes ========================================= -->
+   <xs:element name="Lakes"
+               type="myns:LakesType"
+               substitutionGroup="gml:AbstractFeature"/>
+   <xs:complexType name="LakesType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType">
+            <xs:sequence>
+               <xs:element name="Name" type="xs:string"/>
+               <xs:element name="Boundary" type="gml:SurfacePropertyType"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+
+</xs:schema>

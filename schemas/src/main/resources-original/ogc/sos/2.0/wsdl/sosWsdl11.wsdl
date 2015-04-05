@@ -1,0 +1,185 @@
+<wsdl:definitions targetNamespace="http://www.opengis.net/sos/2.0/wsdl" xmlns:sosw="http://www.opengis.net/sos/2.0/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/2.0">
+  <wsdl:documentation xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:description>
+        This is the abstract definition for the Sensor Observation Service v2.0 [OGC 10-037] interfaces. It can be used as a template to build a concrete WSDL file for an SOS 2.0 server instance. It can also be imported in such a WSDL file. A concreate SOS 2.0 service WSDL file then also needs to include a binding and service description. The WSDL 1.1 syntax is used to describe the interface signatures and message structures. The operations inherited by the SOS 2.0 from the SWE Service Model [OGC 09-001 - the SWES DescribeSensor, InsertSensor and DeleteSensor operations are reused by SOS] are not defined here, but in the abstract service interface definition which is part of the SWE Service Model bundle.
+        </dc:description>
+  </wsdl:documentation>
+  <!-- ============================================== -->
+  <!-- ====================  Types ==================== -->
+  <!-- ============================================== -->
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.opengis.net/sos/2.0">
+      <xsd:include schemaLocation="http://schemas.opengis.net/sos/2.0/sos.xsd"/>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.opengis.net/ows/1.1">
+      <xsd:include schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <!-- ================================================= -->
+  <!-- ====================  Messages ==================== -->
+  <!-- ================================================= -->
+  <wsdl:message name="GetCapabilitiesRequestMessage">
+    <wsdl:part name="body" element="sos:GetCapabilities"/>
+  </wsdl:message>
+  <wsdl:message name="GetCapabilitiesResponseMessage">
+    <wsdl:part name="body" element="sos:Capabilities"/>
+  </wsdl:message>
+  <wsdl:message name="GetObservationRequestMessage">
+    <wsdl:part name="body" element="sos:GetObservation"/>
+  </wsdl:message>
+  <wsdl:message name="GetObservationResponseMessage">
+    <wsdl:part name="body" element="sos:GetObservationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="InsertObservationRequestMessage">
+    <wsdl:part name="body" element="sos:InsertObservation"/>
+  </wsdl:message>
+  <wsdl:message name="InsertObservationResponseMessage">
+    <wsdl:part name="body" element="sos:InsertObservationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="InsertResultRequestMessage">
+    <wsdl:part name="body" element="sos:InsertResult"/>
+  </wsdl:message>
+  <wsdl:message name="InsertResultResponseMessage">
+    <wsdl:part name="body" element="sos:InsertResultResponse"/>
+  </wsdl:message>
+  <wsdl:message name="InsertResultTemplateRequestMessage">
+    <wsdl:part name="body" element="sos:InsertResultTemplate"/>
+  </wsdl:message>
+  <wsdl:message name="InsertResultTemplateResponseMessage">
+    <wsdl:part name="body" element="sos:InsertResultTemplateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetResultRequestMessage">
+    <wsdl:part name="body" element="sos:GetResult"/>
+  </wsdl:message>
+  <wsdl:message name="GetResultResponseMessage">
+    <wsdl:part name="body" element="sos:GetResultResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetResultTemplateRequestMessage">
+    <wsdl:part name="body" element="sos:GetResultTemplate"/>
+  </wsdl:message>
+  <wsdl:message name="GetResultTemplateResponseMessage">
+    <wsdl:part name="body" element="sos:GetResultTemplateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetObservationByIdRequestMessage">
+    <wsdl:part name="body" element="sos:GetObservationById"/>
+  </wsdl:message>
+  <wsdl:message name="GetObservationByIdResponseMessage">
+    <wsdl:part name="body" element="sos:GetObservationByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetFeatureOfInterestRequestMessage">
+    <wsdl:part name="body" element="sos:GetFeatureOfInterest"/>
+  </wsdl:message>
+  <wsdl:message name="GetFeatureOfInterestResponseMessage">
+    <wsdl:part name="body" element="sos:GetFeatureOfInterestResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ExceptionMessage">
+    <wsdl:part name="fault" element="ows:Exception"/>
+  </wsdl:message>
+  <!-- ================================================= -->
+  <!-- ====================  Port Types ==================== -->
+  <!-- ================================================= -->
+  <wsdl:portType name="CoreInterface">
+    <wsdl:operation name="GetCapabilities">
+      <wsdl:input wsam:Action="http://www.opengis.net/sos/2.0/GetCapabilities" message="sosw:GetCapabilitiesRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sos/2.0/GetCapabilitiesResponse" message="sosw:GetCapabilitiesResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="VersionNegotiationFailedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidUpdateSequenceException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetObservation">
+      <wsdl:input wsam:Action="http://www.opengis.net/sos/2.0/GetObservation" message="sosw:GetObservationRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sos/2.0/GetObservationResponse" message="sosw:GetObservationResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="FeatureOfInterestRetrievalInterface">
+    <wsdl:operation name="GetFeatureOfInterest">
+      <wsdl:input wsam:Action="http://www.opengis.net/sos/2.0/GetFeatureOfInterest" message="sosw:GetFeatureOfInterestRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sos/2.0/GetFeatureOfInterestResponse" message="sosw:GetFeatureOfInterestResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ObservationRetrievalByIdInterface">
+    <wsdl:operation name="GetObservationById">
+      <wsdl:input wsam:Action="http://www.opengis.net/sos/2.0/GetObservationById" message="sosw:GetObservationByIdRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sos/2.0/GetObservationByIdResponse" message="sosw:GetObservationByIdResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ObservationInsertionInterface">
+    <wsdl:operation name="InsertObservation">
+      <wsdl:input wsam:Action="http://www.opengis.net/sos/2.0/InsertObservation" message="sosw:InsertObservationRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sos/2.0/InsertObservationResponse" message="sosw:InsertObservationResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ResultInsertionInterface">
+    <wsdl:operation name="InsertResultTemplate">
+      <wsdl:input wsam:Action="http://www.opengis.net/sos/2.0/InsertResultTemplate" message="sosw:InsertResultTemplateRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sos/2.0/InsertResultTemplateResponse" message="sosw:InsertResultTemplateResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="InsertResult">
+      <wsdl:input wsam:Action="http://www.opengis.net/sos/2.0/InsertResult" message="sosw:InsertResultRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sos/2.0/InsertResultResponse" message="sosw:InsertResultResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ResultRetrievalInterface">
+    <wsdl:operation name="GetResultTemplate">
+      <wsdl:input wsam:Action="http://www.opengis.net/sos/2.0/GetResultTemplate" message="sosw:GetResultTemplateRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sos/2.0/GetResultTemplateResponse" message="sosw:GetResultTemplateResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetResult">
+      <wsdl:input wsam:Action="http://www.opengis.net/sos/2.0/GetResult" message="sosw:GetResultRequestMessage"/>
+      <wsdl:output wsam:Action="http://www.opengis.net/sos/2.0/GetResultResponse" message="sosw:GetResultResponseMessage"/>
+      <wsdl:fault name="MissingParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidParameterValueException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="OptionNotSupportedException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="NoApplicableCodeException" wsam:Action="http://www.opengis.net/ows/1.1/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="InvalidRequestException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+      <wsdl:fault name="RequestExtensionNotSupportedException" wsam:Action="http://www.opengis.net/swes/2.0/Exception" message="sosw:ExceptionMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

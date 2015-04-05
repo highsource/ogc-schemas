@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataStream xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 ../../swe.xsd">
+	<!-- -->
+	<swe:elementType name="ctd_data">
+		<swe:DataRecord>
+			<!-- -->
+			<swe:field name="pressure_value">
+				<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/air_pressure_at_sea_level">
+				  <swe:label>Water Pressure</swe:label>
+				  <swe:description>Water pressure measured by CTD</swe:description>
+					<swe:quality xlink:href="#PRESS_QC"/>
+					<swe:uom code="dbar"/>
+				</swe:Quantity>
+			</swe:field>
+			<!-- -->
+			<swe:field name="pressure_quality">
+				<swe:Category id="PRESS_QC" definition="http://mmisw.org/ont/q2o/test/pointsGoodTest">
+					<swe:label>QC Flag</swe:label>
+					<swe:codeSpace xlink:href="http://mmisw.org/ont/q2o/flag"/>
+				</swe:Category>
+			</swe:field>
+			<!-- -->
+		</swe:DataRecord>
+	</swe:elementType>
+	<!-- -->
+	<swe:encoding>
+		<swe:TextEncoding tokenSeparator="," blockSeparator="&#10;"/>
+	</swe:encoding>
+	<!-- -->
+	<swe:values>
+	  10.2,pass
+	</swe:values>
+</swe:DataStream>

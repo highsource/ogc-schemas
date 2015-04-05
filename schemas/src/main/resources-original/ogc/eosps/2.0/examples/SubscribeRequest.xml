@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsnt:Subscribe xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2">
+  <wsnt:ConsumerReference>
+    <wsa:Address xmlns:wsa="http://www.w3.org/2005/08/addressing">http://ws.spotimage.com/axis2/services/SimpleWNS</wsa:Address>
+  </wsnt:ConsumerReference>
+  <wsnt:Filter>
+    <wsnt:TopicExpression
+      Dialect="http://docs.oasis-open.org/wsn/t-1/TopicExpression/Full"
+      xmlns:eosps="http://www.opengis.net/eosps/2.0" xmlns:sps="http://www.opengis.net/sps/2.0">sps:TaskingRequestAcceptance|sps:TaskCompletion|eosps:SegmentAcquired</wsnt:TopicExpression>
+    <wsnt:MessageContent Dialect="http://www.w3.org/TR/1999/REC-xpath-19991116">//*[local-name()='taskID']='http://ws.spotimage.com/sps/PR-decbbda4-4071-45f5-845d-c167c30fc515'</wsnt:MessageContent>
+  </wsnt:Filter>
+</wsnt:Subscribe>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sps:GetFeasibility service="SPS" version="2.0.0" xmlns:sps="http://www.opengis.net/sps/2.0">
+  <swes:extension xmlns:swes="http://www.opengis.net/swes/2.0">
+    <eot:FeasibilityLevel xmlns:eot="http://www.opengis.net/eosps/2.0">COMPLETE</eot:FeasibilityLevel>
+  </swes:extension>
+  <sps:procedure>urn:spot:sensors:SPOT5:HRG</sps:procedure>
+  <sps:taskingParameters>
+    <sps:ParameterData>
+      <sps:encoding>
+        <swe:XMLEncoding xmlns:swe="http://www.opengis.net/swe/2.0"/>
+      </sps:encoding>
+      <sps:values>
+        <eot:CoverageProgrammingRequest xmlns:eot="http://www.opengis.net/eosps/2.0">
+          <eot:QualityOfService>
+            <eot:PriorityLevel>HIGH</eot:PriorityLevel>
+          </eot:QualityOfService>
+          <eot:RegionOfInterest>
+            <eot:Polygon>
+              <eot:Exterior elementCount="5">
+                <eot:Point>
+                  <eot:Lat>0.0</eot:Lat>
+                  <eot:Lon>0.0</eot:Lon>
+                </eot:Point>
+                <eot:Point>
+                  <eot:Lat>0.0</eot:Lat>
+                  <eot:Lon>1.0</eot:Lon>
+                </eot:Point>
+                <eot:Point>
+                  <eot:Lat>1.0</eot:Lat>
+                  <eot:Lon>1.0</eot:Lon>
+                </eot:Point>
+                <eot:Point>
+                  <eot:Lat>1.0</eot:Lat>
+                  <eot:Lon>0.0</eot:Lon>
+                </eot:Point>
+                <eot:Point>
+                  <eot:Lat>0.0</eot:Lat>
+                  <eot:Lon>0.0</eot:Lon>
+                </eot:Point>
+              </eot:Exterior>
+            </eot:Polygon>
+          </eot:RegionOfInterest>
+          <eot:TimeOfInterest>
+            <eot:SurveyPeriod>
+              <eot:min>2011-01-19T15:38:53.336Z</eot:min>
+              <eot:max>2011-02-08T15:38:53.336Z</eot:max>
+            </eot:SurveyPeriod>
+          </eot:TimeOfInterest>
+          <eot:AcquisitionType>
+            <eot:MonoscopicAcquisition>
+              <eot:CoverageType>MULTIPASS</eot:CoverageType>
+              <eot:AcquisitionAngle>
+                <eot:AzimuthAngle>
+                  <eot:min>-180.0</eot:min>
+                  <eot:max>180.0</eot:max>
+                </eot:AzimuthAngle>
+                <eot:ElevationAngle>
+                  <eot:min>0.0</eot:min>
+                  <eot:max>30.0</eot:max>
+                </eot:ElevationAngle>
+              </eot:AcquisitionAngle>
+              <eot:AcquisitionParameters>
+                <eot:GroundResolution>
+                  <eot:min>2.5</eot:min>
+                  <eot:max>10.0</eot:max>
+                </eot:GroundResolution>
+                <eot:InstrumentMode>PANCHROMATIC</eot:InstrumentMode>
+                <eot:FusionAccepted>false</eot:FusionAccepted>
+              </eot:AcquisitionParameters>
+            </eot:MonoscopicAcquisition>
+          </eot:AcquisitionType>
+          <eot:ValidationParameters>
+            <eot:MaxCloudCover>100.0</eot:MaxCloudCover>
+            <eot:MaxSnowCover>100.0</eot:MaxSnowCover>
+            <eot:HazeAccepted>true</eot:HazeAccepted>
+            <eot:SandWindAccepted>false</eot:SandWindAccepted>
+          </eot:ValidationParameters>
+        </eot:CoverageProgrammingRequest>
+      </sps:values>
+    </sps:ParameterData>
+  </sps:taskingParameters>
+</sps:GetFeasibility>

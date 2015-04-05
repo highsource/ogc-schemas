@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This sample file contains the list of scene selection options identified for the following products: Envisat AATSR -->
+<!-- The reported values are just examples and are not the actual values. -->
+<GetOptionsResponse xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" xmlns="http://www.opengis.net/oseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<status>success</status>
+	<orderOptions>
+		<productOrderOptionsId>options_001</productOrderOptionsId>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="XXX1">
+					<swe:Count optional="false" updatable="false" definition="def:property:OGC::XXX1">
+						<swe:identifier>XXX1</swe:identifier>
+						<swe:description>XXXXX</swe:description>
+						<swe:constraint>
+							<swe:AllowedValues>
+								<swe:interval>1 10</swe:interval>
+							</swe:AllowedValues>
+						</swe:constraint>
+					</swe:Count>
+				</swe:field>
+			</swe:DataRecord>
+		</option> 
+		<productDeliveryOptions>
+			<mediaDelivery>
+				<packageMedium>DVD</packageMedium>
+			</mediaDelivery>
+		</productDeliveryOptions>
+		<sceneSelectionOption>
+			<name>Envisat AATSR Floating Scene (Time)</name>
+			<description>Scene Selection Options for Envisat AATSR Floating Scenes (by times)</description>
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="sceneType">
+					<swe:Category optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/sceneType" >
+						<swe:identifier>sceneType</swe:identifier>
+						<swe:description>First and last column on the parent product for scene extraction</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>FloatingScene</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+			</sceneSelectionParameter> 
+			<!--sceneStartStopTime Parameter with WRSInformation restriction -->
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="sceneStartStopTime">
+						<swe:TimeRange optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/sceneStartStopTime">
+							<swe:identifier>sceneStartStopTime</swe:identifier>
+							<swe:description>Start and Stop time of the selected scene within the parent product</swe:description>
+							<swe:uom code="s"/>
+							<swe:constraint>
+								<swe:AllowedTimes>
+									<swe:interval>2010-01-01T11:55:00.00Z 2010-01-01T12:00:00.00Z</swe:interval>
+								</swe:AllowedTimes>
+							</swe:constraint>
+						</swe:TimeRange>
+					</swe:field>
+				</swe:DataRecord>
+				<!--WRS Parameters definition -->
+				<!--Definition taken from EOLI SA configuration file -->
+					<sceneRestriction>
+					<swe:DataArray optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/WRSInformation">
+						<swe:identifier>WRSInformation</swe:identifier>
+						<swe:elementCount>
+							<swe:Count>
+								<swe:value>2</swe:value>
+							</swe:Count>
+						</swe:elementCount>
+						<swe:elementType name="WRSInformation">
+							<swe:DataRecord>
+								<swe:field name="FromOrbit">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="ToOrbit">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="TimePerFrame">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+										<swe:constraint></swe:constraint>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="TimeBetweenFrameCenter">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="FrameNumberStep">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="FirstFrameNumber">
+									<swe:Count></swe:Count>
+								</swe:field>
+								<swe:field name="FirstFrameCenterTime">
+									<swe:Quantity>
+										<swe:uom code="s"/>
+									</swe:Quantity>
+								</swe:field>
+								<swe:field name="LastFrameNumber">
+									<swe:Count></swe:Count>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:elementType>
+						<swe:encoding>
+							<swe:TextEncoding blockSeparator="&#10;" tokenSeparator=","/>
+						</swe:encoding>
+						<swe:values>
+					126,2104,15069.767,837.209,1,0,0.0000,7199
+					2354,3713,15069.767,837.209,1,0,0.0000,7199
+					</swe:values>
+					</swe:DataArray>
+				</sceneRestriction>
+			</sceneSelectionParameter>
+		</sceneSelectionOption>		
+		<sceneSelectionOption>
+			<name>Envisat AATSR Floating Pass</name>
+			<description>Scene Selection Options for Envisat AATSR Floating Pass</description>
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="sceneType">
+					<swe:Category optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/sceneType" >
+						<swe:identifier>sceneType</swe:identifier>
+						<swe:description>First and last column on the parent product for scene extraction</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>FloatingPass</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+			</sceneSelectionParameter> 
+			<!--sceneStartStopTime Parameter with FloatingPassLength restriction -->
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="sceneStartStopTime">
+						<swe:TimeRange optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/sceneStartStopTime">
+							<swe:identifier>sceneStartStopTime</swe:identifier>
+							<swe:description>Start and Stop time of the selected scene within the parent product</swe:description>
+							<swe:uom code="s"/>
+							<swe:constraint>
+								<swe:AllowedTimes>
+									<swe:interval>2010-01-01T11:55:00.00Z 2010-01-01T12:00:00.00Z</swe:interval>
+								</swe:AllowedTimes>
+							</swe:constraint>
+						</swe:TimeRange>
+					</swe:field>
+				</swe:DataRecord>
+				<!-- FloatingPassLength definition -->
+				<sceneRestriction>
+				  <swe:DataArray>
+							<swe:elementCount><swe:Count><swe:value>1</swe:value></swe:Count></swe:elementCount>
+							<swe:elementType name="FloatingPassLenght">
+							<swe:DataRecord definition="http://www.opengis.net/def/parameter/ESA/1.0/FloatingPassLength">
+								<swe:identifier>FloatingPassLength</swe:identifier>
+										<swe:field name="Length">
+											<swe:QuantityRange>
+												<swe:uom code="km"></swe:uom>
+											</swe:QuantityRange>
+										</swe:field>
+										<swe:field name="Step">
+											<swe:Quantity>
+											<swe:uom code="km"></swe:uom>
+											</swe:Quantity>
+										</swe:field>
+							</swe:DataRecord>
+							</swe:elementType>
+							<swe:encoding>
+								<swe:XMLEncoding/>
+							</swe:encoding>
+							<swe:values>
+								<FloatingPassLenght>
+									<Lenght><min>15.08</min><max>120</max></Lenght>
+									<Step>0.02</Step>
+								</FloatingPassLenght>
+							</swe:values>
+						</swe:DataArray>	
+				</sceneRestriction> 
+			</sceneSelectionParameter>
+		</sceneSelectionOption>
+		<sceneSelectionOption>
+			<name>Envisat AATSR Full Pass</name>
+			<description>No scene selection options can be specified in this case, because the product is ordered as it is</description>
+		</sceneSelectionOption>
+	</orderOptions>
+</GetOptionsResponse>

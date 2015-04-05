@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/wcs/1.1/wcst" 
+	xmlns:wcst="http://www.opengis.net/wcs/1.1/wcst" 
+	xmlns:ows="http://www.opengis.net/ows/1.1" 
+	xmlns="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified" xml:lang="en"
+	version="1.1.4">
+	<annotation>
+		<appinfo>wcstTransaction.xsd</appinfo>
+		<documentation>This XML Schema Document defines the Transaction operation request and response elements and types, for the Transaction operation extension to the OGC Web Coverage Service (WCS) version 1.1 corrigendum 2. 
+		Copyright (c) 2008 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
+	</annotation>
+	<!-- ==============================================================
+           includes and imports
+	============================================================== -->
+	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+	<!-- ==============================================================
+		elements and types
+	============================================================== -->
+	<element name="Transaction" type="wcst:TransactionType">
+		<annotation>
+			<documentation>Request to perform the Transaction operation, to a WCS that implements the Transaction operation extension. In this XML encoding, no "request" parameter is included, since the element name specifies the specific operation. </documentation>
+		</annotation>
+	</element>
+	<!-- =========================================================== -->
+	<complexType name="TransactionType">
+		<sequence>
+			<element name="InputCoverages" type="ows:ManifestType">
+				<annotation>
+					<documentation>Ordered list of one or more coverages to be added, modified, or deleted, in the specified sequence. Each coverage with its metadata shall be referenced by one wcst:Coverage element within this ManifestType. Each new or modified coverage provided to a WCS server shall include all the metadata needed to populate one CoverageDescription object, as specified in Subclause 9.3 with the exception of the metadata that is specific to a specific server. If the WCS offers CoverageSummary elements, each new or modified coverage shall also include all the metadata needed to populate one or more CoverageSummary objects, as specified in Subclause 8.3.3 with the exception of the metadata that is specific to a specific server. In addition, each new unrectified but georeferenced coverage (image) shall include the georeferencing coordinate Transformation(s). The coverage data is normally referenced remotely, but can be included in the Transaction request message. </documentation>
+				</annotation>
+			</element>
+			<element ref="wcst:RequestId" minOccurs="0">
+				<annotation>
+					<documentation>Unique identifier of this operation request, included if assigned by the client. </documentation>
+				</annotation>
+			</element>
+			<element name="ResponseHandler" type="anyURI" minOccurs="0">
+				<annotation>
+					<documentation>Location to respond to when server has completed processing this operation request. When this parameter is omitted from the Transaction operation request, this operation shall be executed synchronously and immediately by the server, with the operation response returned to the client following operation execution. When this parameter is included, this operation shall be executed asynchronously by the server. In that case, the server shall return an operation acknowledgement to the client immediately following operation acceptance. When operation execution is later completed, the (normal or exception) operation response shall be sent by the server to the response handler referenced by this parameter value. </documentation>
+				</annotation>
+			</element>
+		</sequence>
+		<attribute name="service" type="string" use="required" fixed="WCS">
+			<annotation>
+				<documentation>Service type identifier, where the value is the OWS type abbreviation. For WCS operation requests, the value is "WCS". </documentation>
+			</annotation>
+		</attribute>
+		<attribute name="version" type="string" use="required" fixed="1.1">
+			<annotation>
+				<documentation>Specification version for WCS version and operation. See Version parameter Subclause 7.3.1 of OWS Common for more information. </documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+	<!-- ========================================================== -->
+	<element name="Coverage" type="wcst:CoverageType" substitutionGroup="ows:ReferenceGroup">
+		<annotation>
+			<documentation>Complete data and metadata for one coverage, referencing each coverage file either remotely or locally in the same message. The Identifier in this data structure shall identify the coverage being updated or deleted, and optionally the suggested identifier for a coverage being added. </documentation>
+		</annotation>
+	</element>
+	<!-- ========================================================== -->
+	<complexType name="CoverageType">
+		<complexContent>
+			<extension base="ows:ReferenceGroupType">
+				<sequence>
+					<element ref="wcst:Action">
+						<annotation>
+							<documentation>The specific add, update, or delete action to be performed on this coverage. </documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- =========================================================== -->
+	<element name="Action">
+		<annotation>
+			<documentation>Identifier of an action. </documentation>
+		</annotation>
+		<complexType>
+			<simpleContent>
+				<restriction base="ows:CodeType">
+					<attribute name="codeSpace" type="anyURI" use="optional" default="http://schemas.opengis.net/wcs/1.1.0/actions.xml">
+						<annotation>
+							<documentation>Reference to a dictionary that specifies allowed values for action identifier strings. This reference defaults to the standard actions dictionary specified in WCST 1.1.0. </documentation>
+						</annotation>
+					</attribute>
+				</restriction>
+			</simpleContent>
+		</complexType>
+	</element>
+	<!-- ========================================================== -->
+	<!-- ========================================================== -->
+	<element name="Acknowledgement" type="wcst:AcknowledgementType">
+		<annotation>
+			<documentation>XML encoded acknowledgement of an operation request. </documentation>
+		</annotation>
+	</element>
+	<!-- =========================================================== -->
+	<complexType name="AcknowledgementType">
+		<sequence>
+			<element name="TimeStamp" type="dateTime">
+				<annotation>
+					<documentation>Data and time this Acknowledgement message was generated. </documentation>
+				</annotation>
+			</element>
+			<element ref="wcst:RequestId">
+				<annotation>
+					<documentation>Unique identifier of the operation request to which this acknowledgement corresponds. If the client specifies a RequestId in the operation request, this element shall have that value. If the client does not specify a RequestId in the operation request, the server shall generate a unique RequestId and put this value in this acknowledgement message and in the operation response. </documentation>
+				</annotation>
+			</element>
+			<element name="OperationRequest" type="wcst:TransactionType" minOccurs="0">
+				<annotation>
+					<documentation>Copy of Transaction operation request being acknowledged. This copy may be included when expected to be useful to clients. </documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<!-- =========================================================== -->
+	<!-- =========================================================== -->
+	<element name="TransactionResponse" type="wcst:TransactionResponseType">
+		<annotation>
+			<documentation>Response from successfully performing the Transaction operation, from a WCS that implements the Transaction operation extension. </documentation>
+		</annotation>
+	</element>
+	<!-- =========================================================== -->
+	<complexType name="TransactionResponseType">
+		<sequence>
+			<element ref="wcst:RequestId">
+				<annotation>
+					<documentation>Unique identifier of the operation request to which this response corresponds. If the client specifies a RequestId in the operation request, this element shall have that value. If the client does not specify a RequestId in the operation request, the server shall generate a unique RequestId and put this value in the acknowledgement message and in this operation response. </documentation>
+				</annotation>
+			</element>
+			<element ref="ows:Identifier" maxOccurs="unbounded">
+				<annotation>
+					<documentation>The coverage identifier for each coverage added, modified, or deleted by the Transaction operation. These Identifier elements shall be listed in the same order as the corresponding input coverages in the Transaction request. </documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<!-- =========================================================== -->
+	<element name="RequestId" type="anyURI">
+		<annotation>
+			<documentation>Unique identifier of an operation request, which may be generated by the client or the server. </documentation>
+		</annotation>
+	</element>
+</schema>

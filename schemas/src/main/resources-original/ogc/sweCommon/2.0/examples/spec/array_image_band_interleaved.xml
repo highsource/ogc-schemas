@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Raster" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<swe:field name="band1">
+		<swe:DataArray definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Band">
+			<swe:elementCount>
+				<swe:Count>
+					<swe:value>3000</swe:value>
+				</swe:Count>
+			</swe:elementCount>
+			<swe:elementType name="row">
+				<swe:DataArray definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Row">
+					<swe:elementCount>
+						<swe:Count>
+							<swe:value>3000</swe:value>
+						</swe:Count>
+					</swe:elementCount>
+					<swe:elementType name="pixel">
+						<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance">
+							<swe:description>Radiance measured on band1</swe:description>
+							<swe:uom code="W.m-2.Sr-1"/>
+						</swe:Quantity>
+					</swe:elementType>
+				</swe:DataArray>
+			</swe:elementType>
+		</swe:DataArray>
+	</swe:field>
+	<swe:field name="green">
+		<swe:DataArray definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Band">
+			<swe:elementCount>
+				<swe:Count>
+					<swe:value>3000</swe:value>
+				</swe:Count>
+			</swe:elementCount>
+			<swe:elementType name="row">
+				<swe:DataArray definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Row">
+					<swe:elementCount>
+						<swe:Count>
+							<swe:value>3000</swe:value>
+						</swe:Count>
+					</swe:elementCount>
+					<swe:elementType name="pixel">
+						<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance">
+							<swe:description>Radiance measured on band2</swe:description>
+							<swe:uom code="W.m-2.Sr-1.um-1"/>
+						</swe:Quantity>
+					</swe:elementType>
+				</swe:DataArray>
+			</swe:elementType>
+		</swe:DataArray>
+	</swe:field>
+	<swe:field name="blue">
+		<swe:DataArray definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Band">
+			<swe:elementCount>
+				<swe:Count>
+					<swe:value>3000</swe:value>
+				</swe:Count>
+			</swe:elementCount>
+			<swe:elementType name="row">
+				<swe:DataArray definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Row">
+					<swe:elementCount>
+						<swe:Count>
+							<swe:value>3000</swe:value>
+						</swe:Count>
+					</swe:elementCount>
+					<swe:elementType name="pixel">
+						<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance">
+							<swe:description>Radiance measured on band3</swe:description>
+							<swe:uom code="W.m-2.Sr-1"/>
+						</swe:Quantity>
+					</swe:elementType>
+				</swe:DataArray>
+			</swe:elementType>
+		</swe:DataArray>
+	</swe:field>
+</swe:DataRecord>

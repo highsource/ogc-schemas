@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:Vector definition="http://sweet.jpl.nasa.gov/2.0/space.owl#Location" referenceFrame="http://www.opengis.net/def/crs/EPSG/0/4326" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<swe:coordinate name="lat">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Latitude" axisID="Lat">
+			<swe:label>Latitude</swe:label>
+			<swe:uom xlink:href="deg"/>
+			<swe:value>45.36</swe:value>
+		</swe:Quantity>
+	</swe:coordinate>
+	<swe:coordinate name="lon">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Longitude" axisID="Long">
+			<swe:label>Longitude</swe:label>
+			<swe:uom code="deg"/>
+			<swe:value>5.2</swe:value>
+		</swe:Quantity>
+	</swe:coordinate>
+</swe:Vector>

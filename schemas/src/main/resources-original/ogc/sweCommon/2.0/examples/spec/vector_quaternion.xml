@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:Vector definition="http://sweet.jpl.nasa.gov/2.0/mathVect.owl#Quaternion" referenceFrame="http://www.opengis.net/def/crs/OGC/0/ECI_WGS84" localFrame="#PLATFORM_FRAME" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<swe:coordinate name="qx">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/mathVector.owl#Coordinate" axisID="X">
+			<swe:uom code="1"/>
+			<swe:value>0.14</swe:value>
+		</swe:Quantity>
+	</swe:coordinate>
+	<swe:coordinate name="qy">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/mathVector.owl#Coordinate" axisID="Y">
+			<swe:uom code="1"/>
+			<swe:value>0.22</swe:value>
+		</swe:Quantity>
+	</swe:coordinate>
+	<swe:coordinate name="qz">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/mathVector.owl#Coordinate" axisID="Z">
+			<swe:uom code="1"/>
+			<swe:value>0.05</swe:value>
+		</swe:Quantity>
+	</swe:coordinate>
+	<swe:coordinate name="qw">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/mathVector.owl#Coordinate" axisID="">
+			<swe:uom code="1"/>
+			<swe:value>0.33</swe:value>
+		</swe:Quantity>
+	</swe:coordinate>
+</swe:Vector>

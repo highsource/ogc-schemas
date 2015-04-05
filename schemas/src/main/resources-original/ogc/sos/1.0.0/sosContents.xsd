@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/sos/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:gml="http://www.opengis.net/gml" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+	<annotation>
+		<documentation>
+			<description>
+				This XML Schema encodes the Contents section of the SOS GetCapabilities operation response.
+				
+				SOS is an OGC Standard.
+				Copyright (c) 2006,2010 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</description>
+		</documentation>
+	</annotation>
+	<!-- ==============================================================
+		includes and imports
+	============================================================== -->
+	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd"/>
+	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<include schemaLocation="sosAll.xsd"/>
+	<include schemaLocation="sosCommon.xsd"/>
+	<!-- ==============================================================
+		elements and types
+	============================================================== -->
+	<element name="Contents">
+		<annotation>
+			<documentation>Contents section of SOS service metadata (or Capabilites) XML document. For the SOS, these contents are data and functions that the SOS server provides.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ObservationOfferingList">
+					<complexType>
+						<sequence>
+							<element name="ObservationOffering" type="sos:ObservationOfferingType" maxOccurs="unbounded"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- ============================ -->
+	<complexType name="ObservationOfferingBaseType" abstract="true">
+		<annotation>
+			<documentation>Makes boundedBy mandatory</documentation>
+		</annotation>
+		<complexContent>
+			<restriction base="gml:AbstractFeatureType">
+				<sequence>
+					<group ref="gml:StandardObjectProperties"/>
+					<element ref="gml:boundedBy"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<!-- ============================-->
+	<complexType name="ObservationOfferingType">
+		<complexContent>
+			<extension base="sos:ObservationOfferingBaseType">
+				<sequence>
+					<element name="intendedApplication" type="token" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="time" type="swe:TimeGeometricPrimitivePropertyType"/>
+					<element name="procedure" type="gml:ReferenceType" maxOccurs="unbounded"/>
+					<element name="observedProperty" type="swe:PhenomenonPropertyType" maxOccurs="unbounded"/>
+					<element name="featureOfInterest" type="gml:ReferenceType" maxOccurs="unbounded"/>
+					<element name="responseFormat" type="ows:MimeType" maxOccurs="unbounded"/>
+					<element name="resultModel" type="QName" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>
+							Indicates the qualified name of the observation element that will be returned from a call to GetObservation for this offering.  
+							This element must be in the om:AbstractObservation substitution group and is typically the om:Observation or a specialized extension.
+							</documentation>
+						</annotation>
+					</element>
+					<element name="responseMode" type="sos:responseModeType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>This element allows the client to request the form of the response.  The value of resultTemplate is used to retrieve an observation template 
+							that will later be used in calls to GetResult.  The other options allow results to appear inline in a resultTag (inline), external to the observation element (out-of-band)
+							or as a MIME attachment (attached)</documentation>
+						</annotation>
+					</element>
+					<!-- intendedApplication and slotID can be supported by a more generic identifier/classifier section-->
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="srsName" type="gml:CodeType" substitutionGroup="ows:AbstractMetaData"/>
+	<element name="supportedSensorDescription" type="QName" substitutionGroup="ows:AbstractMetaData">
+		<annotation>
+			<documentation>The QName of the root of a sensor desription that is supported by this service.  Examples are "sml:_Process" and "tml:system"</documentation>
+		</annotation>
+	</element>
+	<element name="supportedSRS" type="gml:CodeType" substitutionGroup="gml:name">
+		<annotation>
+			<documentation>The name by which this reference system is identified.</documentation>
+		</annotation>
+	</element>
+</schema>

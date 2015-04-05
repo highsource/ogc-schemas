@@ -1,0 +1,114 @@
+# -*- rnc -*-
+# RELAX NG Compact Syntax Grammar for OGC Context Atom Encoding
+# ATOM encoding and OWC classes as defined in OGC 12-084 
+#
+# OGC Web Services Context Atom Encoding 1.0 is an OGC Standard.
+# Copyright (c) 2014 Open Geospatial Consortium.
+# To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+#
+# Version: 1.0.0 modified 2014-05-08
+#
+
+namespace owc = "http://www.opengis.net/owc/1.0"
+namespace s = "http://purl.oclc.org/dsdl/schematron"
+namespace dc="http://purl.org/dc/elements/1.1/" 
+namespace georss="http://www.georss.org/georss" 
+namespace atom = "http://www.w3.org/2005/Atom"
+
+# Define date time interval
+datetimeInterval= xsd:string { pattern ="\s*[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[\+\-][0-9]{2}:[0-9]{2})?(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?(Z|[\+\-][0-9]{2}:[0-9]{2})|)\s*"}
+
+# Redefine atom:feed to include new owc and dc elements
+atomFeedConstruct &= owcDisplay? & element dc:publisher { text } ? 
+    & element dc:date { datetimeInterval }? & georssWhere?
+                  
+# Redefine atom:entry to include new owc and dc elements
+atomEntryConstruct &= owcOffering* & element dc:publisher { text }? 
+    & element dc:date { datetimeInterval }? & georssWhere ?
+    & element owc:minScaleDenominator { xsd:double }?
+    & element owc:maxScaleDenominator { xsd:double }?
+
+# owcContent attribute extensions
+owcCommonAttributes = undefinedAttribute*
+
+owcURL = xsd:string { pattern = "(ftp|http)s?://.*"}
+	
+# owcOffering 
+owcOffering = element owc:offering { owcCommonAttributes, 
+   attribute code { text },
+   ( owcOperation* & owcContent* & owcStyleSet* & extensionElement*)}
+   
+# owcOperation 
+owcOperation = element owc:operation { owcCommonAttributes, 
+   attribute code { text }, attribute href { owcURL },
+   attribute type { text }?, 
+   ( attribute method { text } &  
+   element owc:result{( owcContentConstruct )}? 
+   & element owc:request {( owcContentConstruct )}? 
+   & extensionElement* )
+}
+   
+# owcContent 
+owcContentConstruct = owcCommonAttributes &
+   ( ( attribute type { text }, attribute href { owcURL }) |
+     ( attribute type { text }, ( text | anyElement)* )  )
+
+owcContent = element owc:content { owcContentConstruct } 
+
+# owcStyleSet 
+owcStyleSet = element owc:styleSet { owcCommonAttributes, 
+   attribute default {  xsd:boolean } ?,
+   (element owc:name { text } & element owc:title { text }
+    &element owc:abstract { text }?
+    &element owc:legendURL { attribute type { text },
+    				attribute href { owcURL } }?
+    &owcContent? & extensionElement*)}  
+
+# owc:display  
+owcDisplay = element owc:display {      
+   (element owc:pixelWidth { xsd:integer }?
+    & element owc:pixelHeight { xsd:integer }?
+    & element owc:mmPerPixel { xsd:float }?)
+    & extensionElement*
+}   
+
+# Define georss:where on georss/1.1
+include "georss.rnc"
+
+# Replacing definitions on RFC4287 atom/2005
+include "atom_feed.rnc"{
+   # Redefine the Simple Extension to exclude owc:* elements
+   simpleExtensionElement = element * - 
+       (atom:* | owc:* | dc:publisher | dc:date |  georss:where) { text }
+
+   # Redefine the Structured Extension to exclude owc:* elements
+   structuredExtensionElement = element * - 
+       (atom:* | owc:* | dc:publisher | dc:date | georss:where) {
+          (attribute * { text }+,(text|anyElement)*)
+        | (attribute * { text }*, (text?, anyElement+, (text|anyElement)*))} 
+
+   # Redefine Atom rules    
+   atomFeed = [
+   
+   s:pattern [ name="check profile link" 
+    s:rule [ context = "atom:feed"
+      s:assert [ test = 
+        "atom:link[@href='http://www.opengis.net/spec/owc-atom/1.0/req/core' and @rel='profile']"
+        "An atom:feed must have an atom:link with the @rel attribute equal to 'profile' "
+        ~ "and the OGC specification reference identified with the "
+        ~ "  @href='http://www.opengis.net/spec/owc-atom/1.0/req/core' "]]]
+    ]
+    element atom:feed { atomFeedConstruct }     
+    
+ atomEntry =[
+   s:pattern [ name="check entry content" 
+    s:rule [ context = "atom:entry"
+      s:assert [ test = "atom:content"
+       "An atom:entry must have one atom:content MUST have content "
+       ~ "element in a format understandable by generic Atom readers"
+       ~ " ( @type equal to 'html' is recommended)"]]]
+
+    ]
+   element atom:entry { atomEntryConstruct } 
+}
+# EOF

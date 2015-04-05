@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+ http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<soap12:Header>
+		<wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/core/2.0/GetCapabilitiesResponse</wsa:Action>
+		<wsa:RelatesTo>http://my.client.com/uid/msg-0010</wsa:RelatesTo>
+	</soap12:Header>
+	<soap12:Body>
+	
+		<sos:Capabilities version="2.0.0">
+		  
+		  <ows:ServiceIdentification>
+			<ows:Title>My SOS</ows:Title>
+			<ows:Abstract>SOS serving air quality data measured at airbase stations</ows:Abstract>
+			<ows:ServiceType codeSpace="http://opengeospatial.net">OGC:SOS</ows:ServiceType>
+			<ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+			<ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/gfoi</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/obsByIdRetrieval</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/sensorInsertion</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/sensorDeletion</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/obsInsertion</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/resultInsertion</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/resultRetrieval</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/spatialFilteringProfile</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/soap</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/uml-block-components</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/uml-record-components</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/xsd-record-components</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/SWE/2.0/conf/xsd-block-components</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/OMXML/2.0/conf/samplingPoint</ows:Profile>
+			<ows:Profile>http://www.opengis.net/spec/OMXML/2.0/conf/observation</ows:Profile>
+			<ows:Fees>NONE</ows:Fees>
+			<ows:AccessConstraints>NONE</ows:AccessConstraints>
+		  </ows:ServiceIdentification>  
+		  
+		  <sos:extension>
+			<sos:InsertionCapabilities>
+			  <sos:procedureDescriptionFormat>http://www.opengis.net/sensorML/1.0.1</sos:procedureDescriptionFormat>
+			  <sos:featureOfInterestType>http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingPoint</sos:featureOfInterestType>
+			   <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement</sos:observationType>
+			  <sos:supportedEncoding>http://www.opengis.net/swe/2.0/TextEncoding</sos:supportedEncoding>
+			</sos:InsertionCapabilities>
+		  </sos:extension> 
+		
+		  <!-- the filterCapabilities section lists the filters and operands which are supported in the observation, result and feature retrieval operations -->
+		  <sos:filterCapabilities>
+			<fes:Filter_Capabilities>
+			  <fes:Conformance>
+				<fes:Constraint name="ImplementsQuery">
+				  <ows:NoValues/>
+				  <ows:DefaultValue>false</ows:DefaultValue>
+				</fes:Constraint>
+				<fes:Constraint name="ImplementsAdHocQuery">
+				  <ows:NoValues/>
+				  <ows:DefaultValue>false</ows:DefaultValue>
+				</fes:Constraint>
+				<fes:Constraint name="ImplementsFunctions">
+				  <ows:NoValues/>
+				  <ows:DefaultValue>false</ows:DefaultValue>
+				</fes:Constraint>
+				<fes:Constraint name="ImplementsMinStandardFilter">
+				  <ows:NoValues/>
+				  <ows:DefaultValue>false</ows:DefaultValue>
+				</fes:Constraint>
+				<fes:Constraint name="ImplementsStandardFilter">
+				  <ows:NoValues/>
+				  <ows:DefaultValue>false</ows:DefaultValue>
+				</fes:Constraint>
+				<fes:Constraint name="ImplementsMinSpatialFilter">
+				  <ows:NoValues/>
+				  <ows:DefaultValue>true</ows:DefaultValue>
+				</fes:Constraint>
+				<fes:Constraint name="ImplementsSpatialFilter">
+				  <ows:NoValues/>
+				  <ows:DefaultValue>true</ows:DefaultValue>
+				</fes:Constraint>
+				<fes:Constraint name="ImplementsMinTemporalFilter">
+				  <ows:NoValues/>
+				  <ows:DefaultValue>true</ows:DefaultValue>
+				</fes:Constraint>
+				<fes:Constraint name="ImplementsTemporalFilter">
+				  <ows:NoValues/>
+				  <ows:DefaultValue>true</ows:DefaultValue>
+				</fes:Constraint>
+				<fes:Constraint name="ImplementsVersionNav">
+				  <ows:NoValues/>
+				  <ows:DefaultValue>false</ows:DefaultValue>
+				</fes:Constraint>
+				<fes:Constraint name="ImplementsSorting">
+				  <ows:NoValues/>
+				  <ows:DefaultValue>false</ows:DefaultValue>
+				</fes:Constraint>
+				<fes:Constraint name="ImplementsExtendedOperators">
+				  <ows:NoValues/>
+				  <ows:DefaultValue>false</ows:DefaultValue>
+				</fes:Constraint>
+			  </fes:Conformance>
+			  <fes:Spatial_Capabilities>
+				<fes:GeometryOperands>
+				  <fes:GeometryOperand name="gml:Point"/>
+				  <fes:GeometryOperand name="gml:Polygon"/>
+				</fes:GeometryOperands>
+				<fes:SpatialOperators>
+				  <fes:SpatialOperator name="BBOX"/>
+				  <fes:SpatialOperator name="Intersects"/>
+				  <fes:SpatialOperator name="Within"/>
+				</fes:SpatialOperators>
+			  </fes:Spatial_Capabilities>
+			  <fes:Temporal_Capabilities>
+				<fes:TemporalOperands>
+				  <fes:TemporalOperand name="gml:TimePeriod"/>
+				  <fes:TemporalOperand name="gml:TimeInstant"/>
+				</fes:TemporalOperands>
+				<fes:TemporalOperators>
+				  <fes:TemporalOperator name="During"/>
+				  <fes:TemporalOperator name="After"/>
+				  <fes:TemporalOperator name="TEquals"/>
+				</fes:TemporalOperators>
+			  </fes:Temporal_Capabilities>
+			</fes:Filter_Capabilities>
+		  </sos:filterCapabilities> 
+		 
+		  <sos:contents>
+			<sos:Contents>
+			
+			  <swes:procedureDescriptionFormat>http://www.opengis.net/sensorML/1.0.1</swes:procedureDescriptionFormat>
+			  
+			  <swes:observableProperty>http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[NH3]</swes:observableProperty>
+			  <swes:observableProperty>http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[CO]</swes:observableProperty>
+			  <swes:observableProperty>http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[H2S]</swes:observableProperty>
+			  <swes:observableProperty>http://giv-genesis.uni-muenster.de:8080/SOR/REST/phenomenon/OGC/Concentration[SO2]</swes:observableProperty>
+			  
+				<!-- ... -->
+				<!-- relatedFeature for discovery purposes. Not the sampling features!! sampling features are queried via GetFeatureOfInterest-->
+				<!-- The country within which the measurements were taken-->
+				<swes:relatedFeature>
+					<swes:FeatureRelationship>
+						<swes:target xlink:href="http://myServer.org/features/Germany"/>
+					</swes:FeatureRelationship>
+				</swes:relatedFeature>
+				<swes:relatedFeature>
+					<swes:FeatureRelationship>
+						<swes:target xlink:href="http://myServer.org/features/Netherlands"/>
+					</swes:FeatureRelationship>
+				</swes:relatedFeature>
+				<!-- Airbases at which the air quality stations are located -->
+				<swes:relatedFeature>
+					<swes:FeatureRelationship>
+						<swes:target xlink:href="http://myServer.org/features/Raansdonkveer"/>
+					</swes:FeatureRelationship>
+				</swes:relatedFeature>
+				<swes:relatedFeature>
+					<swes:FeatureRelationship>
+						<swes:target xlink:href="http://myServer.org/features/Marknesse"/>
+					</swes:FeatureRelationship>
+				</swes:relatedFeature>
+				<swes:relatedFeature>
+					<swes:FeatureRelationship>
+						<swes:target xlink:href="http://myServer.org/features/HoheMark"/>
+					</swes:FeatureRelationship>
+				</swes:relatedFeature>
+				<swes:relatedFeature>
+					<swes:FeatureRelationship>
+						<swes:target xlink:href="http://myServer.org/features/Moersbach"/>
+					</swes:FeatureRelationship>
+				</swes:relatedFeature>
+				  
+			  <swes:offering>
+				<sos:ObservationOffering>
+				  <swes:description>Offering of observations measured by a network of homogeneous air quality sensor stations in Germany / the Netherlands</swes:description>
+				  <swes:identifier>http://myServer.org/offerings/Observations_of_airquality_network</swes:identifier>
+				  <swes:name>Offering of airquality network</swes:name>
+				  <swes:procedure>http://myServer.org/sensors/airquality_network</swes:procedure>
+				  <sos:observedArea>
+					<gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+					  <gml:lowerCorner>50 4</gml:lowerCorner>
+					  <gml:upperCorner>53 8</gml:upperCorner>
+					</gml:Envelope>
+				  </sos:observedArea>
+				  <sos:phenomenonTime>
+					<gml:TimePeriod gml:id="phenomenonTime">
+					  <gml:beginPosition>2008-01-11</gml:beginPosition>
+					  <gml:endPosition>2011-08-21</gml:endPosition>
+					</gml:TimePeriod>
+				  </sos:phenomenonTime>
+				</sos:ObservationOffering>
+			  </swes:offering>
+					
+			  <sos:responseFormat>http://www.opengis.net/om/2.0</sos:responseFormat>
+			  <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement</sos:observationType>
+		
+			</sos:Contents>
+		  </sos:contents>
+		</sos:Capabilities>
+
+	</soap12:Body>
+</soap12:Envelope>

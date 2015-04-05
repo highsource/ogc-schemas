@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TransactionResponse xmlns="http://www.opengis.net/wcs/1.1/wcst" 
+	xmlns:ows="http://www.opengis.net/ows/1.1" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.opengis.net/wcs/1.1/wcst http://schemas.opengis.net/wcst/1.1/wcstTransaction.xsd">
+	<RequestId>RequestIdentifierTBD</RequestId>
+	<ows:Identifier>CoverageTBD1</ows:Identifier>
+	<ows:Identifier>CoverageTBD2</ows:Identifier>
+	<ows:Identifier>CoverageTBD3</ows:Identifier>
+	<ows:Identifier>CoverageTBD4</ows:Identifier>
+	<ows:Identifier>CoverageTBD5</ows:Identifier>
+</TransactionResponse>

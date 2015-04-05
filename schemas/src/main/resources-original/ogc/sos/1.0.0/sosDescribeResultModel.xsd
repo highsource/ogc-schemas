@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/sos/1.0" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+	<annotation>
+		<documentation>
+			<description>
+				This XML Schema defines the DescribeResultModel request and response XML elements and types.
+				
+				SOS is an OGC Standard.
+				Copyright (c) 2006,2010 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</description>
+		</documentation>
+	</annotation>
+	<!-- ==============================================================
+		includes and imports
+	============================================================== -->
+	<include schemaLocation="sosAll.xsd"/>
+	<include schemaLocation="sosCommon.xsd"/>
+	<!-- ==============================================================
+	request
+	============================================================== -->
+	<element name="DescribeResultModel">
+		<annotation>
+			<documentation>Request to a SOS to perform the DescribeResultModel operation. 
+			This operation is designed to request detailed information concerning the format of the observation's result</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="sos:RequestBaseType">
+					<sequence>
+						<element name="ResultName" type="QName">
+							<annotation>
+								<documentation>Identifier of the type of the result, for which detailed information is requested.</documentation>
+							</annotation>
+						</element>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ==============================================================
+		response
+	============================================================== -->
+	<!--the response is an XML schema-->
+</schema>

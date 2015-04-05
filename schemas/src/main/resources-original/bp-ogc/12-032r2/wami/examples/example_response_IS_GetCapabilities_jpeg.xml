@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wami:Capabilities
+  xmlns:wami="http://www.pixia.com/wami/v102"
+  xmlns="http://www.opengis.net/ows/2.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.pixia.com/wami/v102 ../xsd/wami_1_0_2.xsd
+      http://www.opengis.net/ows/2.0
+      http://www.w3.org/1999/xlink"
+  version="1.0.2" updateSequence="1">
+
+  <ServiceIdentification>
+    <Title>Image Service</Title>
+    <ServiceType>IS</ServiceType>
+    <ServiceTypeVersion>1.0.2</ServiceTypeVersion>
+  </ServiceIdentification>
+  <ServiceProvider>
+    <ProviderName>Acme Corp</ProviderName>
+    <ServiceContact>
+      <IndividualName>John Doe</IndividualName>
+    </ServiceContact>
+  </ServiceProvider>
+  <OperationsMetadata>
+    <Operation name="GetMap">
+      <DCP>
+        <HTTP>
+          <Get xlink:href="http://example.com/IS?"/>
+        </HTTP>
+      </DCP>
+      <Parameter name="Service">
+        <AllowedValues>
+          <Value>IS</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Request">
+        <AllowedValues>
+          <Value>GetMap</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Version">
+        <AllowedValues>
+          <Value>1.0.0</Value>
+          <Value>1.0.1</Value>
+          <Value>1.0.2</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Format">
+        <AllowedValues>
+          <Value>application/xml</Value>
+          <Value>application/x-json</Value>
+        </AllowedValues>
+        <DefaultValue>application/xml</DefaultValue>
+      </Parameter>
+      <Parameter name="AcceptLanguages">
+        <AllowedValues>
+          <Value>en-US</Value>
+          <Value>en</Value>
+        </AllowedValues>
+        <DefaultValue>en-US</DefaultValue>
+      </Parameter>
+      <Parameter name="ID">
+        <AnyValue/>
+        <Meaning>A comma-separated ordered list of collection identifiers.
+                    Each identifier is unique to a collection.
+                    A multi-valued ID parameter implies compositing of collections.
+                    Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="Disposition">
+        <AllowedValues>
+          <Value>ordered</Value>
+          <Value>unordered</Value>
+          <Value>replace</Value>
+        </AllowedValues>
+        <DefaultValue>ordered</DefaultValue>
+        <Meaning>
+                    This field is required if Metadata is requested or if multiple images are requested
+                    (via specifying a Time Range).
+                    Valid values are “ordered”, “unordered”, “replace”.
+                    Servers that support multipart responses MUST implement “ordered”.
+                    The “unordered” and “replace” values are optional both for client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="CRS">
+        <AnyValue/>
+        <Meaning>
+                    The coordinate reference system of the requested map.
+                    Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="BBox">
+        <AnyValue/>
+        <Meaning>
+                    The bounding box of the map in the specified CRS.
+                    General model: Bbox=minx,miny, maxx,maxy.
+                    Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="Time">
+        <AnyValue/>
+        <Meaning>
+                    ISO 8601 time-range (in UTC time) or absolute frame-number range and optional step value.
+                    Shall be implemented by both client and server.
+                    For implementation purposes, if the first character is ‘F’, then it is a frame or frame-range based request.
+                    Otherwise it must comply with ISO 8601 time or time-range.
+                    For the frame-range the format is ‘F’ \d+ ( ‘/F’ \d+ ( ‘/FS’ \d+ )? )?
+                </Meaning>
+      </Parameter>
+      <Parameter name="Width">
+        <AnyValue/>
+        <Meaning>
+                    Width in pixels of the output map pictures.
+                    Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="Height">
+        <AnyValue/>
+        <Meaning>
+                    Height in pixels of the output map pictures.
+                    Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="Styles">
+        <AnyValue/>
+        <Meaning>
+                    Comma-separated list of one rendering style per requested collection.
+                    An empty list implies default styles.
+                    Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="Transparent">
+        <AllowedValues>
+          <Value>TRUE</Value>
+          <Value>FALSE</Value>
+        </AllowedValues>
+        <DefaultValue>FALSE</DefaultValue>
+        <Meaning>
+                    Background transparency of the maps (Default: Transparent=FALSE).
+                    Shall be implemented by both client and server.
+                </Meaning>
+        <DataType>Boolean</DataType>
+      </Parameter>
+      <Parameter name="BgColor">
+        <AnyValue/>
+        <DefaultValue>000000</DefaultValue>
+        <Meaning>
+                    Hexadecimal red-green-blue color value for the background color.
+                    (Default: Bgcolor=0x000000). Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="Metadata">
+        <AllowedValues>
+          <Value>All</Value>
+          <Value>Basic</Value>
+          <Value>Geospatial</Value>
+        </AllowedValues>
+        <Meaning>
+                    A comma-separated ordered list of zero or more names of sections of metadata to be returned.
+                    If not set or empty, it means do not send metadata with image data.
+                    Shall be optionally implemented by both client and server.
+                    When specified, the Disposition parameter needs to be set to allow multipart documents.
+                </Meaning>
+      </Parameter>
+    </Operation>
+    <Operation name="GetMapInfo">
+      <DCP>
+        <HTTP>
+          <Get xlink:href="http://example.com/IS?"/>
+        </HTTP>
+      </DCP>
+      <Parameter name="Service">
+        <AllowedValues>
+          <Value>IS</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Request">
+        <AllowedValues>
+          <Value>GetMap</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Version">
+        <AllowedValues>
+          <Value>1.0.0</Value>
+          <Value>1.0.1</Value>
+          <Value>1.0.2</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Format">
+        <AllowedValues>
+          <Value>application/xml</Value>
+          <Value>application/x-json</Value>
+        </AllowedValues>
+        <DefaultValue>application/xml</DefaultValue>
+      </Parameter>
+      <Parameter name="AcceptLanguages">
+        <AllowedValues>
+          <Value>en-US</Value>
+          <Value>en</Value>
+        </AllowedValues>
+        <DefaultValue>en-US</DefaultValue>
+      </Parameter>
+      <Parameter name="ID">
+        <AnyValue/>
+        <Meaning>A comma-separated ordered list of collection identifiers.
+                    Each identifier is unique to a collection.
+                    A multi-valued ID parameter implies compositing of collections.
+                    Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="CRS">
+        <AnyValue/>
+        <Meaning>
+                    The coordinate reference system of the requested map.
+                    Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="BBox">
+        <AnyValue/>
+        <Meaning>
+                    The bounding box of the map in the specified CRS.
+                    General model: Bbox=minx,miny, maxx,maxy.
+                    Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="Time">
+        <AnyValue/>
+        <Meaning>
+                    ISO 8601 time-range (in UTC time) or absolute frame-number range and optional step value.
+                    Shall be implemented by both client and server.
+                    For implementation purposes, if the first character is ‘F’, then it is a frame or frame-range based request.
+                    Otherwise it must comply with ISO 8601 time or time-range.
+                    For the frame-range the format is ‘F’ \d+ ( ‘/F’ \d+ ( ‘/FS’ \d+ )? )?
+                </Meaning>
+      </Parameter>
+      <Parameter name="Metadata">
+        <AllowedValues>
+          <Value>All</Value>
+          <Value>Basic</Value>
+          <Value>Geospatial</Value>
+        </AllowedValues>
+        <Meaning>
+                    A comma-separated ordered list of zero or more names of sections of metadata to be returned.
+                    If not set or empty, it means do not send metadata with image data.
+                    Shall be optionally implemented by both client and server.
+                    When specified, the Disposition parameter needs to be set to allow multipart documents.
+                </Meaning>
+      </Parameter>
+    </Operation>
+    <Operation name="GetPathMap">
+      <DCP>
+        <HTTP>
+          <Get xlink:href="http://example.com/IS?"/>
+        </HTTP>
+      </DCP>
+      <Parameter name="Service">
+        <AllowedValues>
+          <Value>IS</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Request">
+        <AllowedValues>
+          <Value>GetMap</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Version">
+        <AllowedValues>
+          <Value>1.0.0</Value>
+          <Value>1.0.1</Value>
+          <Value>1.0.2</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Format">
+        <AllowedValues>
+          <Value>application/xml</Value>
+          <Value>application/x-json</Value>
+        </AllowedValues>
+        <DefaultValue>application/xml</DefaultValue>
+      </Parameter>
+      <Parameter name="AcceptLanguages">
+        <AllowedValues>
+          <Value>en-US</Value>
+          <Value>en</Value>
+        </AllowedValues>
+        <DefaultValue>en-US</DefaultValue>
+      </Parameter>
+      <Parameter name="ID">
+        <AnyValue/>
+        <Meaning>A comma-separated ordered list of collection identifiers.
+                       Each identifier is unique to a collection.
+                       A multi-valued ID parameter implies compositing of collections.
+                       Shall be implemented by both client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="Disposition">
+        <AllowedValues>
+          <Value>ordered</Value>
+          <Value>unordered</Value>
+          <Value>replace</Value>
+        </AllowedValues>
+        <DefaultValue>ordered</DefaultValue>
+        <Meaning>
+                       This field is required if Metadata is requested or if multiple images are requested
+                       (via specifying a Time Range).
+                       Valid values are “ordered”, “unordered”, “replace”.
+                       Servers that support multipart responses MUST implement “ordered”.
+                       The “unordered” and “replace” values are optional both for client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="CRS">
+        <AnyValue/>
+        <Meaning>
+                       The coordinate reference system of the requested map.
+                       Shall be implemented by both client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="BBox">
+        <AnyValue/>
+        <Meaning>
+                       The bounding box of the map in the specified CRS.
+                       General model: Bbox=minx,miny, maxx,maxy.
+                       Shall be implemented by both client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="Path">
+        <AnyValue/>
+        <Meaning>
+                       Specifies the tracks to be rendered by the service. Shall be implemented by both client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="Width">
+        <AnyValue/>
+        <Meaning>
+                       Width in pixels of the output map pictures.
+                       Shall be implemented by both client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="Height">
+        <AnyValue/>
+        <Meaning>
+                       Height in pixels of the output map pictures.
+                       Shall be implemented by both client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="Styles">
+        <AnyValue/>
+        <Meaning>
+                       Comma-separated list of one rendering style per requested collection.
+                       An empty list implies default styles.
+                       Shall be implemented by both client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="Transparent">
+        <AllowedValues>
+          <Value>TRUE</Value>
+          <Value>FALSE</Value>
+        </AllowedValues>
+        <DefaultValue>FALSE</DefaultValue>
+        <Meaning>
+                       Background transparency of the maps (Default: Transparent=FALSE).
+                       Shall be implemented by both client and server.
+                   </Meaning>
+        <DataType>Boolean</DataType>
+      </Parameter>
+      <Parameter name="BgColor">
+        <AnyValue/>
+        <DefaultValue>000000</DefaultValue>
+        <Meaning>
+                       Hexadecimal red-green-blue color value for the background color.
+                       (Default: Bgcolor=0x000000). Shall be implemented by both client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="Metadata">
+        <AllowedValues>
+          <Value>All</Value>
+          <Value>Basic</Value>
+          <Value>Geospatial</Value>
+        </AllowedValues>
+        <Meaning>
+                       A comma-separated ordered list of zero or more names of sections of metadata to be returned.
+                       If not set or empty, it means do not send metadata with image data.
+                       Shall be optionally implemented by both client and server.
+                       When specified, the Disposition parameter needs to be set to allow multipart documents.
+                   </Meaning>
+      </Parameter>
+    </Operation>
+    <Operation name="GetPathMapInfo">
+      <DCP>
+        <HTTP>
+          <Get xlink:href="http://example.com/IS?"/>
+        </HTTP>
+      </DCP>
+      <Parameter name="Service">
+        <AllowedValues>
+          <Value>IS</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Request">
+        <AllowedValues>
+          <Value>GetMap</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Version">
+        <AllowedValues>
+          <Value>1.0.0</Value>
+          <Value>1.0.1</Value>
+          <Value>1.0.2</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Format">
+        <AllowedValues>
+          <Value>application/xml</Value>
+          <Value>application/x-json</Value>
+        </AllowedValues>
+        <DefaultValue>application/xml</DefaultValue>
+      </Parameter>
+      <Parameter name="AcceptLanguages">
+        <AllowedValues>
+          <Value>en-US</Value>
+          <Value>en</Value>
+        </AllowedValues>
+        <DefaultValue>en-US</DefaultValue>
+      </Parameter>
+      <Parameter name="ID">
+        <AnyValue/>
+        <Meaning>A comma-separated ordered list of collection identifiers.
+                       Each identifier is unique to a collection.
+                       A multi-valued ID parameter implies compositing of collections.
+                       Shall be implemented by both client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="CRS">
+        <AnyValue/>
+        <Meaning>
+                       The coordinate reference system of the requested map.
+                       Shall be implemented by both client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="BBox">
+        <AnyValue/>
+        <Meaning>
+                       The bounding box of the map in the specified CRS.
+                       General model: Bbox=minx,miny, maxx,maxy.
+                       Shall be implemented by both client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="Path">
+        <AnyValue/>
+        <Meaning>
+                       Specifies the tracks to be rendered by the service. Shall be implemented by both client and server.
+                   </Meaning>
+      </Parameter>
+      <Parameter name="Metadata">
+        <AllowedValues>
+          <Value>All</Value>
+          <Value>Basic</Value>
+          <Value>Geospatial</Value>
+        </AllowedValues>
+        <Meaning>
+                       A comma-separated ordered list of zero or more names of sections of metadata to be returned.
+                       If not set or empty, it means do not send metadata with image data.
+                       Shall be optionally implemented by both client and server.
+                       When specified, the Disposition parameter needs to be set to allow multipart documents.
+                   </Meaning>
+      </Parameter>
+    </Operation>
+  </OperationsMetadata>
+  <wami:Language>en-US</wami:Language>
+  <wami:Language>en</wami:Language>
+</wami:Capabilities>

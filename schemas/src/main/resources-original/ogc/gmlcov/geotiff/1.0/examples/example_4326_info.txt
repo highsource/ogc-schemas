@@ -1,0 +1,117 @@
+This file holds some information about the example_4326.tif file generated 
+using the given commands.
+
+
+########################
+listgeo example_4326.tif
+########################
+Geotiff_Information:
+   Version: 1
+   Key_Revision: 1.0
+   Tagged_Information:
+      ModelTiepointTag (2,3):
+         0                0                0                
+         0.0008983152841195220.003144103492833890                
+      ModelPixelScaleTag (1,3):
+         8.98315283930599e-058.98315283930599e-050                
+      End_Of_Tags.
+   Keyed_Information:
+      GTModelTypeGeoKey (Short,1): ModelTypeGeographic
+      GTRasterTypeGeoKey (Short,1): RasterPixelIsArea
+      GeographicTypeGeoKey (Short,1): GCS_WGS_84
+      GeogCitationGeoKey (Ascii,7): "WGS 84"
+      GeogAngularUnitsGeoKey (Short,1): Angular_Degree
+      GeogSemiMajorAxisGeoKey (Double,1): 6378137          
+      GeogInvFlatteningGeoKey (Double,1): 298.257223563    
+      End_Of_Keys.
+   End_Of_Geotiff.
+
+GCS: 4326/WGS 84
+Datum: 6326/World Geodetic System 1984
+Ellipsoid: 7030/WGS 84 (6378137.00,6356752.31)
+Prime Meridian: 8901/Greenwich (0.000000/  0d 0' 0.00"E)
+
+Corner Coordinates:
+Upper Left    (  0d 0' 3.23"E,  0d 0'11.32"N)
+Lower Left    (  0d 0' 3.23"E,  0d 0' 1.62"N)
+Upper Right   (  0d 0'16.17"E,  0d 0'11.32"N)
+Lower Right   (  0d 0'16.17"E,  0d 0' 1.62"N)
+Center        (  0d 0' 9.70"E,  0d 0' 6.47"N)
+
+
+#########################
+gdalinfo example_4326.tif
+#########################
+Driver: GTiff/GeoTIFF
+Files: example_4326.tif
+Size is 40, 30
+Coordinate System is:
+GEOGCS["WGS 84",
+    DATUM["WGS_1984",
+        SPHEROID["WGS 84",6378137,298.257223563,
+            AUTHORITY["EPSG","7030"]],
+        AUTHORITY["EPSG","6326"]],
+    PRIMEM["Greenwich",0],
+    UNIT["degree",0.0174532925199433],
+    AUTHORITY["EPSG","4326"]]
+Origin = (0.000898315284120,0.003144103492834)
+Pixel Size = (0.000089831528393,-0.000089831528393)
+Metadata:
+  AREA_OR_POINT=Area
+Image Structure Metadata:
+  INTERLEAVE=BAND
+Corner Coordinates:
+Upper Left  (   0.0008983,   0.0031441) (  0d 0'3.23"E,  0d 0'11.32"N)
+Lower Left  (   0.0008983,   0.0004492) (  0d 0'3.23"E,  0d 0'1.62"N)
+Upper Right (   0.0044916,   0.0031441) (  0d 0'16.17"E,  0d 0'11.32"N)
+Lower Right (   0.0044916,   0.0004492) (  0d 0'16.17"E,  0d 0'1.62"N)
+Center      (   0.0026949,   0.0017966) (  0d 0'9.70"E,  0d 0'6.47"N)
+Band 1 Block=40x30 Type=Byte, ColorInterp=Gray
+
+
+#########################
+tiffinfo example_4326.tif
+#########################
+TIFFReadDirectory: Warning, example_4326.tif: unknown field with tag 33550 (0x830e) encountered.
+TIFFReadDirectory: Warning, example_4326.tif: unknown field with tag 33922 (0x8482) encountered.
+TIFFReadDirectory: Warning, example_4326.tif: unknown field with tag 34735 (0x87af) encountered.
+TIFFReadDirectory: Warning, example_4326.tif: unknown field with tag 34736 (0x87b0) encountered.
+TIFFReadDirectory: Warning, example_4326.tif: unknown field with tag 34737 (0x87b1) encountered.
+TIFF Directory at offset 0x8 (8)
+  Image Width: 40 Image Length: 30
+  Bits/Sample: 8
+  Sample Format: unsigned integer
+  Compression Scheme: None
+  Photometric Interpretation: min-is-black
+  Samples/Pixel: 1
+  Rows/Strip: 30
+  Planar Configuration: single image plane
+  Tag 33550: 0.000090,0.000090,0.000000
+  Tag 33922: 0.000000,0.000000,0.000000,0.000898,0.003144,0.000000
+  Tag 34735: 1,1,0,7,1024,0,1,2,1025,0,1,1,2048,0,1,4326,2049,34737,7,0,2054,0,1,9102,2057,34736,1,1,2059,34736,1,0
+  Tag 34736: 298.257224,6378137.000000
+  Tag 34737: WGS 84|
+
+
+#########################
+tiffdump example_4326.tif
+#########################
+example_4326.tif:
+Magic: 0x4949 <little-endian> Version: 0x2a
+Directory 0: offset 8 (0x8) next 0 (0)
+ImageWidth (256) SHORT (3) 1<40>
+ImageLength (257) SHORT (3) 1<30>
+BitsPerSample (258) SHORT (3) 1<8>
+Compression (259) SHORT (3) 1<1>
+Photometric (262) SHORT (3) 1<1>
+StripOffsets (273) LONG (4) 1<366>
+SamplesPerPixel (277) SHORT (3) 1<1>
+RowsPerStrip (278) SHORT (3) 1<30>
+StripByteCounts (279) LONG (4) 1<1200>
+PlanarConfig (284) SHORT (3) 1<1>
+SampleFormat (339) SHORT (3) 1<1>
+33550 (0x830e) DOUBLE (12) 3<8.98315e-05 8.98315e-05 0>
+33922 (0x8482) DOUBLE (12) 6<0 0 0 0.000898315 0.0031441 0>
+34735 (0x87af) SHORT (3) 32<1 1 0 7 1024 0 1 2 1025 0 1 1 2048 0 1 4326 2049 34737 7 0 2054 0 1 9102 ...>
+34736 (0x87b0) DOUBLE (12) 2<298.257 6.37814e+06>
+34737 (0x87b1) ASCII (2) 8<WGS 84|\0>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<om:ObservationCollection xmlns:gml="http://www.opengis.net/gml"
+  xmlns:om="http://www.opengis.net/om/1.0" xmlns:swe="http://www.opengis.net/swe/1.0.1"
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/om/1.0 http://schemas.opengis.net/om/1.0.0/om.xsd">
+  <om:member>
+    <om:Observation>
+      <gml:name>urn:MyOrg:ObservationTemplate:1234abcde</gml:name>
+      <om:samplingTime>
+        <!-- template is valid for one hour -->
+        <gml:TimePeriod>
+          <gml:beginPosition>2005-08-05T12:01:32</gml:beginPosition>
+          <gml:endPosition>2005-08-05T13:01:32</gml:endPosition>
+        </gml:TimePeriod>
+      </om:samplingTime>
+      <om:procedure xlink:href="urn:ogc:object:Sensor:MyOrg:12349"/>
+      <om:observedProperty xlink:href="urn:ogc:def:property:MyOrg:WindSpeed"/>
+      <om:featureOfInterest xlink:href="urn:ogc:def:feature:OGC-SWE:3:transient"/>
+      <om:result>
+        <swe:DataArray gml:id="ChemicalRecords">
+          <swe:elementCount>
+            <swe:Count>
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:min>0</swe:min>
+                </swe:AllowedValues>
+              </swe:constraint>
+            </swe:Count>
+          </swe:elementCount>
+          <swe:elementType name="Components">
+            <swe:SimpleDataRecord>
+              <swe:field name="time">
+                <swe:Time definition="urn:ogc:property:time:iso8601"/>
+              </swe:field>
+              <swe:field name="longitude">
+                <swe:Quantity definition="urn:ogc:property:location:EPSG:4326:longitude">
+                  <swe:uom code="deg"/>
+                </swe:Quantity>
+              </swe:field>
+              <swe:field name="latitude">
+                <swe:Quantity definition="urn:ogc:property:location:EPSG:4326:latitude">
+                  <swe:uom code="deg"/>
+                </swe:Quantity>
+              </swe:field>
+              <swe:field name="windSpeed">
+                <swe:Quantity definition="urn:ogc:def:property:MyOrg:WindSpeed">
+                  <swe:uom code="ms-1"/>
+                </swe:Quantity>
+              </swe:field>
+            </swe:SimpleDataRecord>
+          </swe:elementType>
+          <swe:encoding>
+            <swe:TextBlock tokenSeparator="," decimalSeparator="." blockSeparator="@@"/>
+          </swe:encoding>
+          <swe:values/>
+        </swe:DataArray>
+      </om:result>
+    </om:Observation>
+  </om:member>
+</om:ObservationCollection>

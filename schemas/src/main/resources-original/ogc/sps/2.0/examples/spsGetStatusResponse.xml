@@ -1,0 +1,13 @@
+<sps:GetStatusResponse xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <sps:status>
+    <sps:StatusReport>
+      <sps:task>http://www.ogc.org/procedure/camera/1/tasks/6</sps:task>
+      <sps:event>TaskFailed</sps:event>
+      <sps:procedure>http://www.ogc.org/procedure/camera/1</sps:procedure>
+      <sps:requestStatus>Accepted</sps:requestStatus>
+      <sps:statusMessage xml:lang="en">Your reservation failed because an emergency tasking action required use of the resources that were reserved for your task.</sps:statusMessage>
+      <sps:taskStatus>Failed</sps:taskStatus>
+      <sps:updateTime>2010-08-20T11:28:30+02:00</sps:updateTime>
+    </sps:StatusReport>
+  </sps:status>
+</sps:GetStatusResponse>

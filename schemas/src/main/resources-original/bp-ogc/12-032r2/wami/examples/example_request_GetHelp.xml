@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetHelpRequest xmlns="http://www.pixia.com/wami/v102" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.pixia.com/wami/v102 ../xsd/wami_1_0_2.xsd" service="CS" request="GetHelp" version="1.0.2" acceptLanguages="en-US" exceptions="XML" format="application/xml" topic="SupportBlog"/>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example SOAP Request GetObservation operation which contains filters for offering, observedProperty and the phenomenonTime. The response contains observations for the observed property and with phenomenonTime matching the temporalFilter.
+=======================================================================-->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:om="http://www.opengis.net/om/1.0">
+	<soap12:Header>
+		<wsa:To>http://www.ogc.org/SOS</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/core/2.0/GetObservation</wsa:Action>
+		<wsa:ReplyTo>
+			<wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
+		</wsa:ReplyTo>
+		<wsa:MessageID>http://my.client.com/uid/msg-0010</wsa:MessageID>
+	</soap12:Header>
+	<soap12:Body>
+		<sos:GetObservation service="SOS" version="2.0.0">
+			<!--identifier of a procedure-->
+			<sos:procedure>http://www.my_namespace.org/sensors/Water_Gage_1</sos:procedure>
+			<!--identifier of an offering-->
+			<sos:offering>http://www.my_namespace.org/water_gage_1_observations</sos:offering>
+			<!--identifier of an observed property-->
+			<sos:observedProperty>http://sweet.jpl.nasa.gov/2.0/hydroSurface.owl#WaterHeight</sos:observedProperty>
+			<!--the observations returned shall match the spatial filter defined in this request (the spatial property defined in the ValueReference element must be within the passed polygon)-->
+			<sos:spatialFilter>
+				<fes:Within>
+					<fes:ValueReference>om:featureOfInterest/sams:SF_SpatialSamplingFeature/sams:shape</fes:ValueReference>
+					<gml:Polygon gml:id="Muenster" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+						<gml:exterior>
+							<gml:LinearRing>
+								<gml:posList>
+              52.90 7.52 52.92 7.51 52.96 7.54 52.90 7.52
+            </gml:posList>
+							</gml:LinearRing>
+						</gml:exterior>
+					</gml:Polygon>
+				</fes:Within>
+			</sos:spatialFilter>
+		</sos:GetObservation>
+	</soap12:Body>
+</soap12:Envelope>

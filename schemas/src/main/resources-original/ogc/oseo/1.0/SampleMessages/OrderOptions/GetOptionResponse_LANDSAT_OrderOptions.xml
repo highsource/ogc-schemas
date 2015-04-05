@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This sample file contains the list of order options identified for the following products: LANDSAT 7 -->
+<!-- The reported values are just examples and are not the actual values. -->
+<GetOptionsResponse xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" xmlns="http://www.opengis.net/oseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<status>success</status>
+	<orderOptions>
+		<productOrderOptionsId>options_001</productOrderOptionsId>
+		<description>Order Options for producing LANDSAT 7 - RAW product</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="productType">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/productType">
+						<swe:identifier>productType</swe:identifier>
+						<swe:description>Product Type for LandSa</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>ETM_RCI_1P</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="format">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/format">
+						<swe:identifier>format</swe:identifier>
+						<swe:description>Format file for LandSat</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>CEOS</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="radioCorrection">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/radioCorrection">
+						<swe:identifier>radioCorrection</swe:identifier>
+						<swe:description>radioCorrection LANDSAT 7 for RCI level</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>pre-flight</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="spectralBandComposition">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/spectralBandComposition">
+						<swe:identifier>spectralBandComposition</swe:identifier>
+						<swe:description>Band Selection LANDSAT 7 for RAW level</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>SEVEN_BANDS_PLUS_PAN</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+		<mediaDelivery>
+			<packageMedium>DVD</packageMedium>
+		</mediaDelivery>
+		</productDeliveryOptions>
+		<productDeliveryOptions>
+		<onlineDataDelivery>
+			<protocol>ftp</protocol>
+		</onlineDataDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+</GetOptionsResponse>

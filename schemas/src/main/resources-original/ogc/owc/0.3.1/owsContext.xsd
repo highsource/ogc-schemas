@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema targetNamespace="http://www.opengis.net/ows-context" elementFormDefault="qualified"
+	version="0.3.1" xmlns:owc="http://www.opengis.net/ows-context"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml"
+	xmlns:ows="http://www.opengis.net/ows" xmlns:ogc="http://www.opengis.net/ogc"
+	xmlns:sld="http://www.opengis.net/sld" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:kml="http://www.opengis.net/kml/2.2">
+	<xs:annotation>
+		<xs:appinfo>context.xsd 2009/05/08</xs:appinfo>
+		<xs:documentation>This XML Schema defines the encoding of an OWS Context Document. Primary
+			editor: Tom Kralidis. Copyright (c) 2007 OpenGIS, All Rights Reserved.</xs:documentation>
+	</xs:annotation>
+
+	<!-- ==============================================================
+	     includes and imports
+	     ============================================================== -->
+	<xs:import namespace="http://www.w3.org/1999/xlink"
+		schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml"
+		schemaLocation="../../gml/2.1.2/feature.xsd"/>
+	<xs:import namespace="http://www.opengis.net/ogc"
+		schemaLocation="../../filter/1.0.0/filter.xsd"/>
+	<xs:import namespace="http://www.opengis.net/sld"
+		schemaLocation="../../sld/1.0.0/StyledLayerDescriptor.xsd"/>
+	<xs:import namespace="http://www.opengis.net/ows"
+		schemaLocation="../../owc/0.3.0/owsforowscontext.xsd"/>
+	<xs:import namespace="http://www.opengis.net/kml/2.2"
+		schemaLocation="../../kml/2.2.0/ogckml22.xsd"/>
+	<!-- ==============================================================
+	     elements and types
+	     ============================================================== -->
+	<xs:element name="ResourceList" type="owc:ResourceListType">
+		<xs:annotation>
+			<xs:documentation>A Context document contains one map defined within a ResourceList.
+				This element describes the list of all resources to build a required application
+				view. The Layer/FeatureType/Coverage elements are presented in a bottom to top
+				approach. Each Resource is defined in a Layer OR FeatureType OR Coverage element in
+				the Context document XML. If desired, Resources may be repeated with different
+				attributes (e.g. different styles).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OWSContext" type="owc:OWSContextType">
+		<xs:annotation>
+			<xs:documentation>The root element of the Context, this element must contain the version
+				number of the Context Specification which the current Context document complies
+				with. This element is composed of two elements, one for general information and
+				another defining a list of resources.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="OWSContextType">
+		<xs:sequence>
+			<xs:element name="General" type="owc:GeneralType">
+				<xs:annotation>
+					<xs:documentation>An element "General" that contains
+						layer-independent information about the current Context document such as the
+						bounding box and the spatial reference system and also some information
+						describing the Context document itself such as title, abstract, etc. This
+						element is required.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="owc:ResourceList"/>
+		</xs:sequence>
+		<xs:attribute name="version" type="xs:string" use="required" fixed="0.3.1">
+			<xs:annotation>
+				<xs:appinfo source="An attribute &quot;version&quot; representing the published specification version number, contains three positive integers, separated by decimal points, in the form &quot;x.y.z&quot;. Each context specification is numbered independently. This attribute is required."/>
+				<xs:documentation>The version of the specification. Fixed value of 'x.y.z'.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:appinfo source="An attribute &quot;id&quot; which should be unique and that represents a unique identifier of the Context. This attribute is required."/>
+				<xs:documentation>An identifier for the document. This identifier may further be
+					used to identify the document in catalogs.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="GeneralType">
+		<xs:sequence>
+			<xs:element name="Window" type="owc:WindowType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>An element "Window" presenting the size in
+						pixels of the map the Context document describes. Negotiation between
+						Context defined aspect ratio and typical client aspect ratio (according to
+						the client’s vendor) is left to the client. This element is
+					optional.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ows:BoundingBox"/>
+			<xs:element ref="sld:MinScaleDenominator" minOccurs="0"/>
+			<xs:element ref="sld:MaxScaleDenominator" minOccurs="0"/>
+			<xs:element ref="ows:Title" minOccurs="0"/>
+			<xs:element ref="ows:Abstract" minOccurs="0"/>
+			<xs:element ref="ows:Keywords" minOccurs="0"/>
+			<xs:element name="LogoURL" type="owc:URLType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A reference to an image that might be attached to the Context
+						document. It can be, for instance, the logo of the project for which the
+						context has been setup, or an overview of the map the context describes.
+						This element contains a link to the image as well as the dimension of the
+						image (in pixels) and its format. This element is
+					optional.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DescriptionURL" type="owc:URLType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A URL reference to a webpage which contains relevant
+						information to the view. This element is optional.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="ows:ServiceProvider" minOccurs="0"/>
+			<xs:element name="Extension" type="owc:ExtensionType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Extension element is a container tag in which arbitrary
+						vendor specific information can be included without compromising the ability
+						of other clients to enforce schema validation. This tag should not be used
+						to introduce new candidate elements that are intended to promote
+						interoperability. Content in an &lt;Extension&gt; element should not
+						be expected to be preserved in transfers of Context documents between
+						different systems.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WindowType">
+		<xs:attribute name="width" type="xs:integer" use="required">
+			<xs:annotation>
+				<xs:documentation>The width of the Window. In dimensions pixels.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="height" type="xs:integer" use="required">
+			<xs:annotation>
+				<xs:documentation>The height of the Window, in dimensions pixels</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="URLType">
+		<xs:sequence>
+			<xs:element name="OnlineResource" type="owc:OnlineResourceType">
+				<xs:annotation>
+					<xs:documentation>Connect point URL prefix for the HTTP request method for this
+						operation request. The xlink:href attribute in the xlink:simpleLink
+						attribute group shall be used to contain this URL prefix. The other
+						attributes in the xlink:simpleLink attribute group should not be
+					used</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="width" type="xs:integer" use="optional">
+			<xs:annotation>
+				<xs:appinfo source="width of the resource (typically an image)"/>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="height" type="xs:integer" use="optional">
+			<xs:annotation>
+				<xs:appinfo source="height of the resource (typically an image)"/>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="format" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:appinfo source="MIME type format of the resource"/>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="ResourceListType">
+		<xs:sequence>
+			<xs:element ref="owc:Layer" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="Layer" type="owc:LayerType">
+		<xs:annotation>
+			<xs:documentation>The Layer element must enclose one or more child elements
+				providing information about the Layer. The meaning of these elements is
+				defined hereunder.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="InlineFeatureCollectionType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureCollectionType"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="LayerType">
+		<xs:complexContent>
+			<xs:extension base="owc:AbstractResourceType">
+				<xs:sequence>
+					<!-- useful for WMS and WCS -->
+					<xs:element name="DimensionList" type="owc:DimensionListType" minOccurs="0"/>
+					<!-- useful for WCS -->
+					<xs:element name="ResponseCRS" type="xs:string" minOccurs="0"/>
+					<xs:element name="ParameterList" type="owc:ParameterListType" minOccurs="0"/>
+					<xs:element name="Depth" type="xs:string" minOccurs="0"/>
+					<xs:element name="Resx" type="xs:string" minOccurs="0"/>
+					<xs:element name="Resy" type="xs:string" minOccurs="0"/>
+					<xs:element name="Resz" type="xs:string" minOccurs="0"/>
+					<!-- useful for WFS -->
+					<xs:element name="MaxFeatures" type="xs:integer" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Maximum features that should be used to query the
+								layer. A FeatureType can potentially contain a very large dataset
+								that is impractical to download to a client, and/or too large for a
+								client's renderer.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="ogc:Filter" minOccurs="0"/>
+					<!-- needed for inline GML -->
+					<xs:element name="InlineGeometry" type="owc:InlineFeatureCollectionType"
+						minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>A GML FeatureCollection provided inline within the document.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<!-- needed for inline KML -->
+					<xs:element ref="kml:Document" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="VendorExtension" type="owc:ExtensionType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The Extension element is a container tag in which arbitrary
+								vendor specific information can be included without compromising the ability
+								of other clients to enforce schema validation. This tag should not be used
+								to introduce new candidate elements that are intended to promote
+								interoperability. Content in an &lt;Extension&gt; element should not
+								be expected to be preserved in transfers of Context documents between
+								different systems.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="queryable" type="xs:boolean" use="optional" default="0">
+					<xs:annotation>
+						<xs:documentation>queryable : contains true if the layer is set queryable
+							(required for a WMS layer)"</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AbstractResourceType" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="ows:IdentificationType">
+				<xs:sequence>
+					<xs:element name="Server" type="owc:ServerType" minOccurs="0"
+						maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>The element defining the service from which the named
+								Layer may be requested</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="DataURL" type="owc:URLType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>This element contains a link to an online resource
+								where data corresponding to the layer can be found. This element is
+								optional.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="MetadataURL" type="owc:URLType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>This element contains a link to an online resource
+								where descriptive metadata corresponding to the layer can be found.
+								This element is optional.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="sld:MinScaleDenominator" minOccurs="0"/>
+					<xs:element ref="sld:MaxScaleDenominator" minOccurs="0"/>
+					<xs:element name="StyleList" type="owc:StyleListType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The parent element containing the list of available
+								styles for this layer. Each style is defined in a Style element. A
+								StyleList shall include at least one Style
+							element.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Extension" type="owc:ExtensionType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The Extension element is a container tag in which
+								arbitrary vendor specific information can be included without
+								compromising the ability of other clients to enforce schema
+								validation. This tag should not be used to introduce new candidate
+								elements that are intended to promote interoperability. Content in
+								an &lt;Extension&gt; element should not be expected to be
+								preserved in transfers of Context documents between different
+								systems.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<!-- needed for nesting Layers -->
+					<xs:element ref="owc:Layer" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="name">
+					<xs:annotation>
+						<xs:documentation>An human-readable identifier for the
+						object.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="id">
+					<xs:annotation>
+						<xs:documentation>An identifier for the document. This identifier may
+							further be used to identify the document in catalogs.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="group" use="optional">
+					<xs:annotation>
+						<xs:documentation>group: name which enables a viewer client generator to
+							group in providing grouped themes of layers/feature
+						types/coverages</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="hidden" type="xs:boolean" use="optional" default="0">
+					<xs:annotation>
+						<xs:documentation>hidden : contains true if the layer should be hidden in
+							the client result map (required)</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="opacity" type="xs:decimal" use="optional" default="1">
+					<xs:annotation>
+						<xs:documentation>opacity:0: map data represents vector features that
+							probably do not completely fill space. 1: map data are mostly or
+							completely opaque.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ServerType">
+		<xs:sequence>
+			<xs:element name="OnlineResource" type="owc:OnlineResourceType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Online Resource element: the link to the online resource
+						(required)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="default" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Whether this is the default binding endpoint for this resource.
+					Resources may have multiple bindings (for example, as a means to associate a WMS
+					and WFS)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="service" type="owc:serviceType" use="required">
+			<xs:annotation>
+				<xs:documentation>Service : the type of the service according to OGC interfaces,
+					such as WMS, WFS. (required)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="version" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Version : Version number of the OGC interface specification which
+					corresponds to the service (required)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="title" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Title : the title of the service (extracted from the Capabilities
+					by the Context document creator) (optional)"</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="serviceType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="urn:ogc:serviceType:WMS"/>
+			<xs:enumeration value="urn:ogc:serviceType:WFS"/>
+			<xs:enumeration value="urn:ogc:serviceType:WCS"/>
+			<xs:enumeration value="urn:ogc:serviceType:GML"/>
+			<xs:enumeration value="urn:ogc:serviceType:SLD"/>
+			<xs:enumeration value="urn:ogc:serviceType:FES"/>
+			<xs:enumeration value="urn:ogc:serviceType:KML"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FormatListType">
+		<xs:sequence>
+			<xs:element name="Format" type="owc:FormatType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Describe one output image format for the
+					resource.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FormatType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="current" type="xs:boolean">
+					<xs:annotation>
+						<xs:documentation>current : contains 1 if the current image format is
+							selected."</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="StyleListType">
+		<xs:sequence>
+			<xs:element name="Style" type="owc:StyleType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A Style element may be composed in two different ways: named
+						style or SLD.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StyleType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="Name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>The name of the style (extracted from Capabilities by the
+							Context document creator). This element is required.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Title" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>The human-readable title of the style (extracted from
+							Capabilities by the Context document creator). This element is
+						required.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Abstract" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>A narrative description of the current style (extracted
+							from Capabilities by the Context document creator). This element is
+							optional.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="LegendURL" type="owc:URLType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The location of an image of a map legend describing the
+							current style (extracted from Capabilities by the Context document
+							creator). This element is optional.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:element name="SLD" type="owc:SLDType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Each Style element may alternatively define the style(s) of
+						the layer with a SLD element. The SLD element must contain required Name and
+						optional Title elements which identify the particular element of a Styled
+						Layer Descriptor to be used for this style.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="current" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:complexType name="SLDType">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Name of the Style</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Title" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Title of the Style</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LegendURL" type="owc:URLType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>HTTP URL of a legend icon idicative of the
+					Style</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="OnlineResource" type="owc:OnlineResourceType">
+					<xs:annotation>
+						<xs:documentation>HTTP URL of SLD document</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="sld:StyledLayerDescriptor"/>
+				<xs:element ref="sld:FeatureTypeStyle"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DimensionListType">
+		<xs:sequence>
+			<xs:element name="Dimension" type="owc:DimensionType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DimensionType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" type="xs:string" use="required"/>
+				<xs:attribute name="units" type="xs:string" use="required"/>
+				<xs:attribute name="unitSymbol" type="xs:string"/>
+				<xs:attribute name="userValue" type="xs:string"/>
+				<xs:attribute name="default" type="xs:string"/>
+				<xs:attribute name="multipleValues" type="xs:boolean"/>
+				<xs:attribute name="nearestValue" type="xs:boolean"/>
+				<xs:attribute name="current" type="xs:boolean"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="OnlineResourceType">
+		<xs:complexContent>
+			<xs:extension base="ows:OnlineResourceType">
+				<xs:attribute name="method" type="owc:methodType" use="optional">
+					<xs:annotation>
+						<xs:documentation>Provides the name of the HTTP method to be performed on
+							this resource (either GET or POST). Note: we should use OWS Common for
+							this</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="methodType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="GET"/>
+			<xs:enumeration value="POST"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ParameterListType">
+		<xs:annotation>
+			<xs:documentation>This allows additional elements to be added to support special
+				parameters which are not supported by this schema.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Parameter" type="owc:ExtensionType" minOccurs="0"
+				maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExtensionType">
+		<xs:annotation>
+			<xs:documentation>This allows additional elements to be added to support non WMS Layer
+				services.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:any namespace="##any" processContents="lax"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

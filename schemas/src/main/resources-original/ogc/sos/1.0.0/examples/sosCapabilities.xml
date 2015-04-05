@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Capabilities xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:om="http://www.opengis.net/om/1.0"
+  xmlns="http://www.opengis.net/sos/1.0" xmlns:sos="http://www.opengis.net/sos/1.0"
+  xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:ogc="http://www.opengis.net/ogc"
+  xmlns:tml="http://www.opengis.net/tml" xmlns:sml="http://www.opengis.net/sensorML/1.0.1"
+  xmlns:myorg="http://www.myorg.org/features" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/sos/1.0  http://schemas.opengis.net/sos/1.0.0/sosGetCapabilities.xsd "
+  updateSequence="2007-06-01T11:12:39+02" version="1.0.0">
+  <ows:ServiceIdentification>
+    <ows:Title>MyOrg SOS</ows:Title>
+    <ows:Abstract>MyOrg SOS Server</ows:Abstract>
+    <ows:Keywords>
+      <ows:Keyword>Weather, Chemical</ows:Keyword>
+    </ows:Keywords>
+    <ows:ServiceType codeSpace="http://opengeospatial.net">OGC:SOS</ows:ServiceType>
+    <ows:ServiceTypeVersion>0.0.0</ows:ServiceTypeVersion>
+    <ows:Fees>NONE</ows:Fees>
+    <ows:AccessConstraints>NONE</ows:AccessConstraints>
+  </ows:ServiceIdentification>
+  <ows:ServiceProvider>
+    <ows:ProviderName>MyOrg</ows:ProviderName>
+    <ows:ProviderSite xlink:href="http://www.myorg.org"/>
+    <ows:ServiceContact>
+      <ows:IndividualName>John Smith</ows:IndividualName>
+      <ows:PositionName>Sales Manager</ows:PositionName>
+      <ows:ContactInfo>
+        <ows:Phone>
+          <ows:Voice>222-222-2222</ows:Voice>
+          <ows:Facsimile>333-333-3333</ows:Facsimile>
+        </ows:Phone>
+        <ows:Address>
+          <ows:DeliveryPoint>MyOrg</ows:DeliveryPoint>
+          <ows:City>Chicago</ows:City>
+          <ows:AdministrativeArea>IL</ows:AdministrativeArea>
+          <ows:PostalCode>60606</ows:PostalCode>
+          <ows:Country>USA</ows:Country>
+        </ows:Address>
+      </ows:ContactInfo>
+    </ows:ServiceContact>
+  </ows:ServiceProvider>
+  <ows:OperationsMetadata>
+    <ows:Operation name="GetCapabilities">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://www.myorg.org/sos/GetCapabilities"/>
+          <ows:Post xlink:href="http://www.myorg.org/sos/GetCapabilities"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="Sections">
+        <ows:AllowedValues>
+          <ows:Value>ServiceIdentification</ows:Value>
+          <ows:Value>ServiceProvider</ows:Value>
+          <ows:Value>OperationsMetadata</ows:Value>
+          <ows:Value>Contents</ows:Value>
+          <ows:Value>Filter_Capabilities</ows:Value>
+          <ows:Value>All</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="GetObservation">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Post xlink:href="http://www.myorg.org/sos/GetObservation"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="RegisterSensor">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Post xlink:href="http://www.myorg.org/sos/RegisterSensor"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Constraint name="'SupportedSensorDescription">
+        <ows:AllowedValues>
+          <ows:Value>sml:System</ows:Value>
+          <ows:Value>tml:system</ows:Value>
+        </ows:AllowedValues>
+        <ows:Meaning ows:reference="urn:ogc:def:swe:SupportedSensorDescription">The service will
+          only accept sensor descriptions that comply with the listed ones.</ows:Meaning>
+      </ows:Constraint>
+    </ows:Operation>
+    <ows:Operation name="InsertObservation">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Post xlink:href="http://www.myorg.org/sos/InsertObservation"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="DescribeSensor">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Post xlink:href="http://www.myorg.org/sos/DescribeSensor"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Parameter name="service">
+      <ows:AllowedValues>
+        <ows:Value>SOS</ows:Value>
+      </ows:AllowedValues>
+    </ows:Parameter>
+    <ows:Parameter name="version">
+      <ows:AllowedValues>
+        <ows:Value>1.0.0</ows:Value>
+      </ows:AllowedValues>
+    </ows:Parameter>
+  </ows:OperationsMetadata>
+  <Contents>
+    <ObservationOfferingList>
+      <ObservationOffering gml:id="offering-1">
+        <gml:name>urn:MyOrg:offering:1</gml:name>
+        <gml:srsName>EPSG:4326</gml:srsName>
+        <gml:boundedBy>
+          <gml:Envelope srsName="EPSG:4326">
+            <gml:lowerCorner>39.11111 -77.17695</gml:lowerCorner>
+            <gml:upperCorner>40.11111 -77.17695</gml:upperCorner>
+          </gml:Envelope>
+        </gml:boundedBy>
+        <time>
+          <gml:TimePeriod>
+            <gml:beginPosition>2005-10-18T19:54:13.000Z</gml:beginPosition>
+            <gml:endPosition indeterminatePosition="unknown"/>
+          </gml:TimePeriod>
+        </time>
+        <procedure xlink:href="urn:ogc:object:Sensor:MyOrg:12345"/>
+        <procedure xlink:href="urn:ogc:object:Sensor:MyOrg:12346"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:AirTemperature"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:AverageAirTemperature15Minute"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:WindDirection"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:Humidity"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:MaximumRelativeHumidity15Minute"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:WindSpeed"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:MaximumWindSpeed15Minute"/>
+        <featureOfInterest xlink:href="urn:MyOrg:feature:station1"/>
+        <responseFormat>text/xml; subtype=&quot;om/1.0.0&quot;</responseFormat>
+        <resultModel>om:Observation</resultModel>
+        <responseMode>inline</responseMode>
+      </ObservationOffering>
+      <ObservationOffering gml:id="offering-2">
+        <gml:name>urn:MyOrg:offering:2</gml:name>
+        <gml:srsName>EPSG:4326</gml:srsName>
+        <gml:boundedBy>
+          <gml:Envelope srsName="EPSG:4326">
+            <gml:lowerCorner>33.062018 -116.616526</gml:lowerCorner>
+            <gml:upperCorner>33.06351 -116.61463</gml:upperCorner>
+          </gml:Envelope>
+        </gml:boundedBy>
+        <time>
+          <gml:TimePeriod>
+            <gml:beginPosition>2005-10-25T14:44:10.000Z</gml:beginPosition>
+            <gml:endPosition indeterminatePosition="unknown"/>
+          </gml:TimePeriod>
+        </time>
+        <procedure xlink:href="urn:ogc:object:Sensor:MyOrg:12347"/>
+        <procedure xlink:href="urn:ogc:object:Sensor:MyOrg:12348"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:AirTemperature"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:AverageAirTemperature15Minute"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:WindDirection"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:Humidity"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:MaximumRelativeHumidity15Minute"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:WindSpeed"/>
+        <observedProperty xlink:href="urn:ogc:def:property:OGC:MaximumWindSpeed15Minute"/>
+        <featureOfInterest xlink:href="urn:ogc:def:feature:OGC-SWE:3:transient"/>
+        <responseFormat>text/xml; subtype=&quot;om/1.0.0&quot;</responseFormat>
+        <resultModel>om:Observation</resultModel>
+        <responseMode>inline</responseMode>
+      </ObservationOffering>
+      <ObservationOffering gml:id="offering-3">
+        <gml:name>urn:MyOrg:offering:3</gml:name>
+        <gml:srsName>EPSG:4326</gml:srsName>
+        <gml:boundedBy>
+          <gml:Envelope srsName="EPSG:4326">
+            <gml:lowerCorner>39.11111 -77.17695</gml:lowerCorner>
+            <gml:upperCorner>40.11111 -77.17695</gml:upperCorner>
+          </gml:Envelope>
+        </gml:boundedBy>
+        <time>
+          <gml:TimePeriod>
+            <gml:beginPosition>2005-10-18T19:54:13.000Z</gml:beginPosition>
+            <gml:endPosition indeterminatePosition="unknown"/>
+          </gml:TimePeriod>
+        </time>
+        <procedure xlink:href="urn:ogc:object:Sensor:MyOrg:12349"/>
+        <procedure xlink:href="urn:ogc:object:Sensor:MyOrg:12350"/>
+        <observedProperty>
+          <swe:CompositePhenomenon dimension="7" gml:id="AggregateChemicalPresence">
+            <gml:name>urn:ogc:def:property:MyOrg:AggregateChemicalPresence</gml:name>
+            <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirDPM"/>
+            <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirMS"/>
+            <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirGA"/>
+            <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirGB"/>
+            <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirGD_GF"/>
+            <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirVX"/>
+            <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirHD"/>
+          </swe:CompositePhenomenon>
+        </observedProperty>
+        <featureOfInterest xlink:href="urn:ogc:def:feature:OGC-SWE:3:transient"/>
+        <responseFormat>text/xml; subtype=&quot;om/1.0.0&quot;</responseFormat>
+        <resultModel>om:Observation</resultModel>
+        <responseMode>inline</responseMode>
+      </ObservationOffering>
+      <ObservationOffering gml:id="offering-4">
+        <gml:name>urn:MyOrg:offering:4</gml:name>
+        <gml:srsName>EPSG:4326</gml:srsName>
+        <gml:boundedBy>
+          <gml:Envelope srsName="EPSG:4326">
+            <gml:lowerCorner>33.062018 -116.616526</gml:lowerCorner>
+            <gml:upperCorner>33.06351 -116.61463</gml:upperCorner>
+          </gml:Envelope>
+        </gml:boundedBy>
+        <time>
+          <gml:TimePeriod>
+            <gml:beginPosition>2005-10-25T14:44:10.000Z</gml:beginPosition>
+            <gml:endPosition indeterminatePosition="unknown"/>
+          </gml:TimePeriod>
+        </time>
+        <procedure xlink:href="urn:ogc:object:Sensor:MyOrg:12351"/>
+        <procedure xlink:href="urn:ogc:object:Sensor:MyOrg:12352"/>
+        <observedProperty xlink:href="#AggregateChemicalPresence"/>
+        <featureOfInterest xlink:href="urn:ogc:def:feature:OGC-SWE:3:transient"/>
+        <responseFormat>text/xml; subtype=&quot;om/1.0.0&quot;</responseFormat>
+        <resultModel>om:Observation</resultModel>
+        <responseMode>inline</responseMode>
+      </ObservationOffering>
+      <ObservationOffering gml:id="offering-5">
+        <gml:description>Airdas 4-bands Scanner Data</gml:description>
+        <gml:name>urn:MyOrg:offering:4</gml:name>
+        <gml:srsName>EPSG:4326</gml:srsName>
+        <gml:boundedBy>
+          <gml:Null/>
+        </gml:boundedBy>
+        <time>
+          <gml:TimePeriod>
+            <gml:beginPosition>2003-11-05T19:18:58-08:00</gml:beginPosition>
+            <gml:endPosition>2003-11-05T20:57:40-08:00</gml:endPosition>
+          </gml:TimePeriod>
+        </time>
+        <procedure xlink:href="urn:ogc:object:Sensor:vast:airdas:scanner"/>
+        <observedProperty>
+          <swe:ConstrainedPhenomenon gml:id="BAND1">
+            <gml:description>Radiance measurement in the IR band 0.61-0.68 nm</gml:description>
+            <gml:name>urn:ogc:def:property:MyOrg:RADIANCE_IR_1</gml:name>
+            <swe:base xlink:href="http://vast.uah.edu/dictionary/phenomena.xml#RadiationIR"/>
+            <swe:singleConstraint>
+              <swe:Quantity definition="urn:ogc:property:waveLength">
+                <swe:uom code="um"/>
+                <swe:value>0.68</swe:value>
+                </swe:Quantity>
+            </swe:singleConstraint>
+          </swe:ConstrainedPhenomenon>
+        </observedProperty>
+        <observedProperty>
+          <swe:ConstrainedPhenomenon gml:id="BAND2">
+            <gml:description>Radiance measurement in the IR band 1.57-1.70 nm</gml:description>
+            <gml:name>urn:ogc:def:property:MyOrg:RADIANCE_IR_2</gml:name>
+            <swe:base xlink:href="http://vast.uah.edu/dictionary/phenomena.xml#RadiationIR"/>
+            <swe:singleConstraint>
+              <swe:Quantity definition="urn:ogc:property:waveLength">
+                <swe:uom code="um"/>
+                <swe:value>1.70</swe:value>
+                </swe:Quantity>
+            </swe:singleConstraint>
+          </swe:ConstrainedPhenomenon>
+        </observedProperty>
+        <observedProperty>
+          <swe:ConstrainedPhenomenon gml:id="BAND3">
+            <gml:description>Radiance measurement in the IR band 3.60-5.50 nm</gml:description>
+            <gml:name>urn:ogc:def:property:MyOrg:RADIANCE_IR_3</gml:name>
+            <swe:base xlink:href="http://vast.uah.edu/dictionary/phenomena.xml#RadiationIR"/>
+            <swe:singleConstraint>
+              <swe:Quantity definition="urn:ogc:property:waveLength">
+                <swe:uom code="um"/>
+                <swe:value>5.50</swe:value>
+              </swe:Quantity>
+            </swe:singleConstraint>
+          </swe:ConstrainedPhenomenon>
+        </observedProperty>
+        <observedProperty>
+          <swe:ConstrainedPhenomenon gml:id="BAND4">
+            <gml:description>Radiance measurement in the IR band 5.50-13.0 nm</gml:description>
+            <gml:name>urn:ogc:def:property:MyOrg:RADIANCE_IR_4</gml:name>
+            <swe:base xlink:href="http://vast.uah.edu/dictionary/phenomena.xml#RadiationIR"/>
+            <swe:singleConstraint>
+              <swe:Quantity definition="urn:ogc:property:waveLength">
+                <swe:uom code="um"/>
+                <swe:value>13.0</swe:value>
+              </swe:Quantity>
+            </swe:singleConstraint>
+          </swe:ConstrainedPhenomenon>
+        </observedProperty>
+        <featureOfInterest xlink:href="http://vast.uah.edu/dictionary/features/WesternUS"/>
+        <responseFormat>application/com-binary-base64</responseFormat>
+        <resultModel>om:Observation</resultModel>
+      </ObservationOffering>
+    </ObservationOfferingList>
+  </Contents>
+</Capabilities>

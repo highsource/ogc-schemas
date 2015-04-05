@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This sample file contains the list of order options identified for the following products: Envisat ASAR AP -->
+<!-- The reported values are just examples and are not the actual values. -->
+<GetOptionsResponse xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" xmlns="http://www.opengis.net/oseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<status>success</status>
+	<orderOptions>
+		<productOrderOptionsId>options_001</productOrderOptionsId>
+		<description>Order Options for producing ASAR AP: SLC, medium resolution</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="productType">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/productType">
+						<swe:identifier>productType</swe:identifier>
+						<swe:description>productType for ENVISAT ASAR AP</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>ASA_APS_1P</swe:value>
+								<swe:value>ASA_APM_1P</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>	
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+		<mediaDelivery>
+			<packageMedium>DVD</packageMedium>
+		</mediaDelivery>
+		</productDeliveryOptions>
+		<productDeliveryOptions>
+		<onlineDataDelivery>
+			<protocol>ftp</protocol>
+		</onlineDataDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+	<orderOptions>
+		<productOrderOptionsId>options_002</productOrderOptionsId>
+		<description>Order Options for producing ASAR AP: ASA_APC_0P</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="productType">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/productType">
+						<swe:identifier>productType</swe:identifier>
+						<swe:description>productType for ENVISAT ASAR APC</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>ASA_APC_0P</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="polarisation">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/polarisation">
+						<swe:identifier>polarisation</swe:identifier>
+						<swe:description>Polarisation for ENVISAT ASA_APC_0P</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>HH/VV</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+		<mediaDelivery>
+			<packageMedium>DVD</packageMedium>
+		</mediaDelivery>
+		</productDeliveryOptions>
+		<productDeliveryOptions>
+		<onlineDataDelivery>
+			<protocol>ftp</protocol>
+		</onlineDataDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+	
+	<orderOptions>
+		<productOrderOptionsId>options_003</productOrderOptionsId>
+		<description>Order Options for producing ASAR AP: ASA_APH_0P</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="productType">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/productType">
+						<swe:identifier>productType</swe:identifier>
+						<swe:description>productType for ENVISAT ASAR APC</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>ASA_APH_0P</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="polarisation">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/polarisation">
+						<swe:identifier>polarisation</swe:identifier>
+						<swe:description>Polarisation for ENVISAT ASA_APH_0P</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>HH/HV</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+		<mediaDelivery>
+			<packageMedium>DVD</packageMedium>
+		</mediaDelivery>
+		</productDeliveryOptions>
+		<productDeliveryOptions>
+		<onlineDataDelivery>
+			<protocol>ftp</protocol>
+		</onlineDataDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+	
+	<orderOptions>
+		<productOrderOptionsId>options_004</productOrderOptionsId>
+		<description>Order Options for producing ASAR AP: ASA_APV_0P</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="productType">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/productType">
+						<swe:identifier>productType</swe:identifier>
+						<swe:description>productType for ENVISAT ASAR APV</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>ASA_APV_0P</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="polarisation">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/polarisation">
+						<swe:identifier>polarisation</swe:identifier>
+						<swe:description>Polarisation for ENVISAT ASA_APV_0P</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>VV/VH</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+		<mediaDelivery>
+			<packageMedium>DVD</packageMedium>
+		</mediaDelivery>
+		</productDeliveryOptions>
+		<productDeliveryOptions>
+		<onlineDataDelivery>
+			<protocol>ftp</protocol>
+		</onlineDataDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+	<orderOptions>
+		<productOrderOptionsId>options_005</productOrderOptionsId>
+		<description>Order Options for producing ASAR AP: PRI and GEC in ENVISAT format</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="productType">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/productType">
+						<swe:identifier>productType</swe:identifier>
+						<swe:description>productType for ENVISAT ASAR AP PRI and GEC</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>ASA_APP_1P</swe:value>
+								<swe:value>ASA_APG_1P</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="format">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/format">
+						<swe:identifier>format</swe:identifier>
+						<swe:description>Format file for ENVISAT ASA_AP PRI and GEC</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>ENVISAT</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+		<mediaDelivery>
+			<packageMedium>DVD</packageMedium>
+		</mediaDelivery>
+		</productDeliveryOptions>
+		<productDeliveryOptions>
+		<onlineDataDelivery>
+			<protocol>ftp</protocol>
+		</onlineDataDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+	<orderOptions>
+		<productOrderOptionsId>options_006</productOrderOptionsId>
+		<description>Order Options for producing ASAR AP: PRI and GEC in JPEG2000 format</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="productType">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/productType">
+						<swe:identifier>productType</swe:identifier>
+						<swe:description>productType for ENVISAT ASAR AP PRI and GEC</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>ASA_APP_1P</swe:value>
+								<swe:value>ASA_APG_1P</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="format">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/format">
+						<swe:identifier>format</swe:identifier>
+						<swe:description>Format file for ENVISAT ASA_AP PRI and GEC</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>jpeg2000LL</swe:value>
+								<swe:value>jpeg2000LS</swe:value>
+								<swe:value>jpeg2000VL</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+		<onlineDataDelivery>
+			<protocol>ftp</protocol>
+		</onlineDataDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+</GetOptionsResponse>

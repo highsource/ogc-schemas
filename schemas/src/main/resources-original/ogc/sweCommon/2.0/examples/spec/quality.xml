@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<!-- -->
+	<swe:field name="quality_as_quantity">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/sciUncertainty.owl#Accuracy">
+			<swe:label>Relative Accuracy</swe:label>
+			<swe:uom code="%"/>
+			<swe:value>5</swe:value>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="quantity_field_with_accuracy">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/physDynamics.owl#Velocity">
+		  <swe:label>Velocity</swe:label>
+		  <swe:description>Linear velocity of the vehicle</swe:description>
+			<swe:quality>
+				<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/sciUncertainty.owl#Accuracy">
+					<swe:label>Relative Accuracy</swe:label>
+					<swe:uom code="%"/>
+					<swe:value>5</swe:value>
+				</swe:Quantity>
+			</swe:quality>
+			<swe:uom code="m/s"/>
+			<swe:value>23.5</swe:value>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="quantity_field_with_tolerance">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceExtent.owl#Thickness">
+			<swe:label>Thickness</swe:label>
+			<swe:description>Thickness measured by the sheet metal gauge</swe:description>
+			<swe:quality>
+				<swe:QuantityRange definition="http://sweet.jpl.nasa.gov/2.0/sciUncertainty.owl#Tolerance">
+					<swe:label>Dimensional Tolerance</swe:label>
+					<swe:uom code="um"/>
+					<swe:value>-2 +0</swe:value>
+				</swe:QuantityRange>
+			</swe:quality>
+			<swe:uom code="mm"/>
+			<swe:value>5.6</swe:value>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+	<swe:field name="quantity_field_with_qc">
+		<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/physPressure.owl#Pressure">
+		  <swe:label>Water Pressure</swe:label>
+		  <swe:description>Water pressure measured by CTD</swe:description>
+			<swe:quality>
+				<swe:Category definition="http://mmisw.org/ont/q2o/test/pointsGoodTest">
+					<swe:label>QC Flag</swe:label>
+					<swe:codeSpace xlink:href="http://mmisw.org/ont/q2o/flag"/>
+					<swe:value>fail</swe:value>
+				</swe:Category>
+			</swe:quality>
+			<swe:uom code="dbar"/>
+			<swe:value>1084</swe:value>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+</swe:DataRecord>

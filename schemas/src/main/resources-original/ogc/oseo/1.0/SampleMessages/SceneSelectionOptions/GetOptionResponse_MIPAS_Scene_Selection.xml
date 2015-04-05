@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This sample file contains the list of scene selection options identified for the following products: Envisat MIPAS -->
+<!-- The reported values are just examples and are not the actual values. -->
+<GetOptionsResponse xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" xmlns="http://www.opengis.net/oseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<status>success</status>
+	<orderOptions>
+		<productOrderOptionsId>options_001</productOrderOptionsId>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="XXX1">
+					<swe:Count optional="false" updatable="false" definition="def:property:OGC::XXX1">
+						<swe:identifier>XXX1</swe:identifier>
+						<swe:description>XXXXX</swe:description>
+						<swe:constraint>
+							<swe:AllowedValues>
+								<swe:interval>1 10</swe:interval>
+							</swe:AllowedValues>
+						</swe:constraint>
+					</swe:Count>
+				</swe:field>
+			</swe:DataRecord>
+		</option> 
+		<productDeliveryOptions>
+			<mediaDelivery>
+				<packageMedium>DVD</packageMedium>
+			</mediaDelivery>
+		</productDeliveryOptions>
+		<sceneSelectionOption>
+			<name>Envisat MIPAS Floating Pass</name>
+			<description>Scene Selection Options for Envisat MIPAS Floating Pass</description>
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="sceneType">
+					<swe:Category optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/sceneType" >
+						<swe:identifier>sceneType</swe:identifier>
+						<swe:description>First and last column on the parent product for scene extraction</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>FloatingPass</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+			</sceneSelectionParameter> 
+			<!--sceneStartStopTime Parameter with FloatingPassLength restriction -->
+			<sceneSelectionParameter>
+				<swe:DataRecord>
+					<swe:field name="sceneStartStopTime">
+						<swe:TimeRange optional="false" updatable="false" definition="http://www.opengis.net/def/parameter/ESA/1.0/sceneStartStopTime">
+							<swe:identifier>sceneStartStopTime</swe:identifier>
+							<swe:description>Start and Stop time of the selected scene within the parent product</swe:description>
+							<swe:uom code="s"/>
+							<swe:constraint>
+								<swe:AllowedTimes>
+									<swe:interval>2010-01-01T11:55:00.00Z 2010-01-01T12:00:00.00Z</swe:interval>
+								</swe:AllowedTimes>
+							</swe:constraint>
+						</swe:TimeRange>
+					</swe:field>
+				</swe:DataRecord>
+				<!-- FloatingPassLength definition -->
+				<sceneRestriction>
+				  <swe:DataArray>
+							<swe:elementCount><swe:Count><swe:value>1</swe:value></swe:Count></swe:elementCount>
+							<swe:elementType name="FloatingPassLenght">
+							<swe:DataRecord definition="http://www.opengis.net/def/parameter/ESA/1.0/FloatingPassLength">
+								<swe:identifier>FloatingPassLength</swe:identifier>
+										<swe:field name="Length">
+											<swe:QuantityRange>
+												<swe:uom code="km"></swe:uom>
+											</swe:QuantityRange>
+										</swe:field>
+										<swe:field name="Step">
+											<swe:Quantity>
+											<swe:uom code="km"></swe:uom>
+											</swe:Quantity>
+										</swe:field>
+							</swe:DataRecord>
+							</swe:elementType>
+							<swe:encoding>
+								<swe:XMLEncoding />
+							</swe:encoding>
+							<swe:values>
+								<FloatingPassLenght>
+									<Lenght><min>15.08</min><max>120</max></Lenght>
+									<Step>0.02</Step>
+								</FloatingPassLenght>
+							</swe:values>
+						</swe:DataArray>	
+				</sceneRestriction> 
+			</sceneSelectionParameter>
+		</sceneSelectionOption>
+	</orderOptions>
+</GetOptionsResponse>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RegisterSensor xmlns="http://www.opengis.net/sos/1.0" xmlns:tml="http://www.opengis.net/tml"
+  xmlns:om="http://www.opengis.net/om/1.0" xmlns:swe="http://www.opengis.net/swe/1.0.1"
+  xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosAll.xsd"
+  service="SOS" version="1.0.0">
+  <SensorDescription>
+    <tml:system>
+      <tml:transducers>
+        <tml:transducer>
+          <tml:identification>
+            <tml:description>GID3 Chemical Sensor</tml:description>
+            <tml:manufacture>Smiths Detection</tml:manufacture>
+            <tml:modelNumber>GID3</tml:modelNumber>
+            <tml:serialNumber>333334444</tml:serialNumber>
+          </tml:identification>
+          <tml:transducerClass>
+            <tml:transmitterReceiver>receiver</tml:transmitterReceiver>
+            <tml:insituRemote>insitu</tml:insituRemote>
+            <tml:spatialDependancy>attitudeIndependent</tml:spatialDependancy>
+          </tml:transducerClass>
+          <tml:logicalDataStructure>
+            <tml:ldsDimensionality>0</tml:ldsDimensionality>
+            <tml:numOfDataSetsInCf>1</tml:numOfDataSetsInCf>
+            <tml:cfDataArray>
+              <tml:numObjInArray>1</tml:numObjInArray>
+              <tml:dataSet>
+                <tml:uid>urn:ogc:def:property:MyOrg:AggregateChemicalPresence</tml:uid>
+                <tml:numObjInSet>6</tml:numObjInSet>
+                <tml:dataUnit>
+                  <tml:uid>urn:ogc:def:property:OGC:ChemicalPresenceInAirDPM</tml:uid>
+                  <tml:name>ChemicalPresenceInAirDPM</tml:name>
+                  <tml:dataType>number</tml:dataType>
+                </tml:dataUnit>
+                <tml:dataUnit>
+                  <tml:uid>urn:ogc:def:property:OGC:ChemicalPresenceInAirMS</tml:uid>
+                  <tml:name>ChemicalPresenceInAirMS</tml:name>
+                  <tml:dataType>number</tml:dataType>
+                </tml:dataUnit>
+                <tml:dataUnit>
+                  <tml:uid>urn:ogc:def:property:OGC:ChemicalPresenceInAirGA</tml:uid>
+                  <tml:name>ChemicalPresenceInAirGA</tml:name>
+                  <tml:dataType>number</tml:dataType>
+                </tml:dataUnit>
+              </tml:dataSet>
+            </tml:cfDataArray>
+          </tml:logicalDataStructure>
+          <tml:responseModels>
+            <tml:steadyStateResponse name="urn:ogc:def:property:OGC:ChemicalPresenceInAirDPM">
+              <tml:responseParameters>
+                <tml:interCfInterpolate>lastValue</tml:interCfInterpolate>
+              </tml:responseParameters>
+              <tml:propValues>
+                <tml:numValues>2</tml:numValues>
+                <tml:arrayType>fcn</tml:arrayType>
+                <tml:fcnInterpol>continuous</tml:fcnInterpol>
+                <tml:valueDataType>Number</tml:valueDataType>
+                <tml:values>0,9999999</tml:values>
+                <tml:inputOutput>input</tml:inputOutput>
+                <tml:propName>urn:ogc:def:property:OGC:ChemicalPresenceInAirDPM</tml:propName>
+                <tml:UOM>ppm</tml:UOM>
+              </tml:propValues>
+              <tml:dataValues>
+                <tml:numValues>2</tml:numValues>
+                <tml:arrayType>fcn</tml:arrayType>
+                <tml:fcnInterpol>continuous</tml:fcnInterpol>
+                <tml:valueDataType>Number</tml:valueDataType>
+                <tml:values>0,9999999</tml:values>
+                <tml:inputOutput>output</tml:inputOutput>
+                <tml:dataUidRef>urn:ogc:def:property:OGC:ChemicalPresenceInAirDPM</tml:dataUidRef>
+              </tml:dataValues>
+            </tml:steadyStateResponse>
+            <tml:steadyStateResponse name="urn:ogc:def:property:OGC:ChemicalPresenceInAirMS">
+              <tml:responseParameters>
+                <tml:interCfInterpolate>lastValue</tml:interCfInterpolate>
+              </tml:responseParameters>
+              <tml:propValues>
+                <tml:numValues>2</tml:numValues>
+                <tml:arrayType>fcn</tml:arrayType>
+                <tml:fcnInterpol>continuous</tml:fcnInterpol>
+                <tml:valueDataType>Number</tml:valueDataType>
+                <tml:values>0,9999999</tml:values>
+                <tml:inputOutput>input</tml:inputOutput>
+                <tml:propName>urn:ogc:def:property:OGC:ChemicalPresenceInAirMS</tml:propName>
+                <tml:UOM>ppm</tml:UOM>
+              </tml:propValues>
+              <tml:dataValues>
+                <tml:numValues>2</tml:numValues>
+                <tml:arrayType>fcn</tml:arrayType>
+                <tml:fcnInterpol>continuous</tml:fcnInterpol>
+                <tml:valueDataType>Number</tml:valueDataType>
+                <tml:values>0,9999999</tml:values>
+                <tml:inputOutput>output</tml:inputOutput>
+                <tml:dataUidRef>urn:ogc:def:property:OGC:ChemicalPresenceInAirMS</tml:dataUidRef>
+              </tml:dataValues>
+            </tml:steadyStateResponse>
+            <tml:steadyStateResponse name="urn:ogc:def:property:OGC:ChemicalPresenceInAirGA">
+              <tml:responseParameters>
+                <tml:interCfInterpolate>lastValue</tml:interCfInterpolate>
+              </tml:responseParameters>
+              <tml:propValues>
+                <tml:numValues>2</tml:numValues>
+                <tml:arrayType>fcn</tml:arrayType>
+                <tml:fcnInterpol>continuous</tml:fcnInterpol>
+                <tml:valueDataType>Number</tml:valueDataType>
+                <tml:values>0,9999999</tml:values>
+                <tml:inputOutput>input</tml:inputOutput>
+                <tml:propName>urn:ogc:def:property:OGC:ChemicalPresenceInAirGA</tml:propName>
+                <tml:UOM>ppm</tml:UOM>
+              </tml:propValues>
+              <tml:dataValues>
+                <tml:numValues>2</tml:numValues>
+                <tml:arrayType>fcn</tml:arrayType>
+                <tml:fcnInterpol>continuous</tml:fcnInterpol>
+                <tml:valueDataType>Number</tml:valueDataType>
+                <tml:values>0,9999999</tml:values>
+                <tml:inputOutput>output</tml:inputOutput>
+                <tml:dataUidRef>urn:ogc:def:property:OGC:ChemicalPresenceInAirGA</tml:dataUidRef>
+              </tml:dataValues>
+            </tml:steadyStateResponse>
+          </tml:responseModels>
+          <tml:temporalModel>
+            <tml:tcfTrigger>
+              <tml:trigType>pvtOnChgOutput</tml:trigType>
+            </tml:tcfTrigger>
+            <tml:ambiguityTime>
+              <tml:numValues>1</tml:numValues>
+              <tml:arrayType>singleValue</tml:arrayType>
+              <tml:fcnInterpol>continuous</tml:fcnInterpol>
+              <tml:valueDataType>Number</tml:valueDataType>
+              <tml:values>.01</tml:values>
+              <tml:mult>1</tml:mult>
+              <tml:offset>0</tml:offset>
+              <tml:dataUidRef>urn:ogc:def:property:MyOrg:AggregateChemicalPresence</tml:dataUidRef>
+            </tml:ambiguityTime>
+          </tml:temporalModel>
+        </tml:transducer>
+      </tml:transducers>
+      <tml:clusterDescriptions>
+        <tml:clusterDesc>
+          <tml:description>Text</tml:description>
+          <tml:idMapping>
+            <tml:tapPointUidRef>ChemDataSet</tml:tapPointUidRef>
+            <tml:localID>GID3</tml:localID>
+          </tml:idMapping>
+          <tml:clusterProperties>
+            <tml:direction>fromSystem</tml:direction>
+            <tml:complexity>1A</tml:complexity>
+            <tml:clusterType>XML</tml:clusterType>
+          </tml:clusterProperties>
+          <tml:timeTag>
+            <tml:accuracy>
+              <tml:type>absolute</tml:type>
+              <tml:errorDistribution>gaussian</tml:errorDistribution>
+              <tml:factor>1sigma</tml:factor>
+              <tml:accyValues>120</tml:accyValues>
+            </tml:accuracy>
+          </tml:timeTag>
+          <tml:dataUnitEncoding name="ChemicalPresenceInAirDPM">
+            <tml:dataUnitUidRef>urn:ogc:def:property:OGC:ChemicalPresenceInAirDPM</tml:dataUnitUidRef>
+            <tml:dataType>Number</tml:dataType>
+            <tml:dataUnitFieldSize>
+              <tml:endTextDelimiter>@@</tml:endTextDelimiter>
+            </tml:dataUnitFieldSize>
+            <tml:encode>UTF8</tml:encode>
+            <tml:numBase>10</tml:numBase>
+            <tml:handleAsType>integer</tml:handleAsType>
+          </tml:dataUnitEncoding>
+          <tml:dataUnitEncoding name="ChemicalPresenceInAirMS">
+            <tml:dataUnitUidRef>urn:ogc:def:property:OGC:ChemicalPresenceInAirMS</tml:dataUnitUidRef>
+            <tml:dataType>Number</tml:dataType>
+            <tml:dataUnitFieldSize>
+              <tml:endTextDelimiter>@@</tml:endTextDelimiter>
+            </tml:dataUnitFieldSize>
+            <tml:encode>UTF8</tml:encode>
+            <tml:numBase>10</tml:numBase>
+            <tml:handleAsType>integer</tml:handleAsType>
+          </tml:dataUnitEncoding>
+          <tml:dataUnitEncoding name="ChemicalPresenceInAirGA">
+            <tml:dataUnitUidRef>urn:ogc:def:property:OGC:ChemicalPresenceInAirGA</tml:dataUnitUidRef>
+            <tml:dataType>Number</tml:dataType>
+            <tml:dataUnitFieldSize>
+              <tml:endTextDelimiter>@@</tml:endTextDelimiter>
+            </tml:dataUnitFieldSize>
+            <tml:encode>UTF8</tml:encode>
+            <tml:numBase>10</tml:numBase>
+            <tml:handleAsType>integer</tml:handleAsType>
+          </tml:dataUnitEncoding>
+          <tml:numCfInCluster>1</tml:numCfInCluster>
+        </tml:clusterDesc>
+      </tml:clusterDescriptions>
+    </tml:system>
+  </SensorDescription>
+  <ObservationTemplate>
+    <om:Observation>
+      <om:samplingTime>
+        <gml:TimePeriod>
+          <gml:beginPosition indeterminatePosition="now"/>
+          <gml:endPosition indeterminatePosition="unknown"/>
+        </gml:TimePeriod>
+      </om:samplingTime>
+      <om:procedure/>
+      <om:observedProperty>
+        <swe:CompositePhenomenon gml:id="composite1" dimension="3">
+          <gml:name codeSpace="urn:MyOrg">urn:ogc:def:property:MyOrg:AggregateChemicalPresence</gml:name>
+          <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirDPM"/>
+          <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirMS"/>
+          <swe:component xlink:href="urn:ogc:def:property:OGC:ChemicalPresenceInAirGA"/>
+        </swe:CompositePhenomenon>
+      </om:observedProperty>
+      <om:featureOfInterest/>
+      <om:result>
+        <swe:DataArray gml:id="ChemicalRecords">
+          <swe:elementCount>
+            <swe:Count>
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:min>0</swe:min>
+                </swe:AllowedValues>
+              </swe:constraint>
+            </swe:Count>
+          </swe:elementCount>
+          <swe:elementType name="Components">
+            <swe:SimpleDataRecord gml:id="DataDefinition">
+              <swe:field name="time">
+                <swe:Time definition="urn:ogc:def:property:OGC:OriginTime"/>
+              </swe:field>
+              <swe:field name="latitude">
+                <swe:Quantity definition="urn:ogc:def:property:OGC:Latitude:wgs84">
+                  <swe:uom code="deg"/>
+                </swe:Quantity>
+              </swe:field>
+              <swe:field name="longitude">
+                <swe:Quantity definition="urn:ogc:def:property:OGC:Longitude:wgs84">
+                  <swe:uom code="deg"/>
+                </swe:Quantity>
+              </swe:field>
+              <swe:field name="altitude">
+                <swe:Quantity definition="urn:ogc:def:property:OGC:Altitude:wgs84">
+                  <swe:uom code="m"/>
+                </swe:Quantity>
+              </swe:field>
+              <swe:field name="chemicalPresenceDPM">
+                <swe:Quantity definition="urn:ogc:def:property:OGC:ChemicalPresenceInAirDPM">
+                  <swe:uom code="ppm"/>
+                </swe:Quantity>
+              </swe:field>
+              <swe:field name="chemicalPresenceMS">
+                <swe:Quantity definition="urn:ogc:def:property:OGC:ChemicalPresenceInAirMS">
+                  <swe:uom code="ppm"/>
+                </swe:Quantity>
+              </swe:field>
+              <swe:field name="chemicalPresenceGA">
+                <swe:Quantity definition="urn:ogc:def:property:OGC:ChemicalPresenceInAirGA">
+                  <swe:uom code="ppm"/>
+                </swe:Quantity>
+              </swe:field>
+            </swe:SimpleDataRecord>
+          </swe:elementType>
+          <swe:encoding>
+            <swe:TextBlock tokenSeparator="," decimalSeparator="." blockSeparator="@@"/>
+          </swe:encoding>
+          <swe:values/>
+        </swe:DataArray>
+      </om:result>
+    </om:Observation>
+  </ObservationTemplate>
+</RegisterSensor>

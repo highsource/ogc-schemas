@@ -1,0 +1,151 @@
+<!-- ============================================================== --> 
+<!--        G e o g r a p h y                                       --> 
+<!--        M a r k u p                                             --> 
+<!--        L a n g u a g e                                         --> 
+<!--                                                                --> 
+<!--        ( G M L )                                               --> 
+<!--                                                                --> 
+<!--        G E O M E T R Y   D T D                                 --> 
+<!--                                                                --> 
+<!--  Copyright (c) 2000 Open Geospatial Consortium.                --> 
+<!-- ============================================================== --> 
+
+<!-- the coordinate element holds a list of coordinates as parsed character data. Note that it
+does not reference a SRS and does not constitute a proper geometry class. --> 
+<!ELEMENT coordinates (#PCDATA) > 
+<!ATTLIST coordinates  
+   decimal  CDATA    #IMPLIED 
+   cs       CDATA    #IMPLIED 
+   ts       CDATA    #IMPLIED > 
+
+<!-- the Box element defines an extent using a pair of coordinates and a SRS name. --> 
+<!ELEMENT Box (coordinates) > 
+<!ATTLIST Box  
+   ID       CDATA    #IMPLIED 
+   srsName  CDATA    #REQUIRED > 
+
+<!-- ============================================================== --> 
+<!--  G E O M E T R Y   C L A S S   D e f i n i t i o n s           --> 
+<!-- ============================================================== --> 
+
+<!-- a Point is defined by a single coordinate. --> 
+<!ELEMENT Point (coordinates) > 
+<!ATTLIST Point  
+   ID       CDATA    #IMPLIED 
+   srsName  CDATA    #IMPLIED > 
+
+<!-- a LineString is defined by two or more coordinates, with linear interoplation between
+them. --> 
+<!ELEMENT LineString (coordinates) > 
+<!ATTLIST LineString  
+   ID       CDATA    #IMPLIED 
+   srsName  CDATA    #IMPLIED > 
+
+<!-- a Polygon is defined by an outer boundary and zero or more inner boundaries. These
+boundaries are themselves defined by LinerRings. --> 
+<!ELEMENT Polygon (outerBoundaryIs, innerBoundaryIs*) > 
+<!ATTLIST Polygon  
+   ID       CDATA    #IMPLIED 
+   srsName  CDATA    #IMPLIED > 
+<!ELEMENT outerBoundaryIs (LinearRing) > 
+<!ELEMENT innerBoundaryIs (LinearRing) > 
+
+<!-- a LinearRing is defined by four or more coordinates, with linear interpolation between
+them. The first and last coordinates must be coincident. --> 
+<!ELEMENT LinearRing (coordinates) > 
+<!ATTLIST LinearRing  
+   ID       CDATA    #IMPLIED > 
+
+<!-- a MultiPoint is defined by zero or more Points, referenced through a pointMember element.
+--> 
+<!ELEMENT MultiPoint (pointMember+) > 
+<!ATTLIST MultiPoint  
+   ID       CDATA    #IMPLIED 
+   srsName  CDATA    #IMPLIED > 
+<!ELEMENT pointMember (Point) > 
+
+<!-- a MultiLineString is defined by zero or more LineStrings, referenced through a
+lineStringMember element. --> 
+<!ELEMENT MultiLineString (lineStringMember+) > 
+<!ATTLIST MultiLineString  
+   ID       CDATA    #IMPLIED 
+   srsName  CDATA    #IMPLIED > 
+<!ELEMENT lineStringMember (LineString) > 
+
+<!-- a MultiPolygon is defined by zero or more Polygons, referenced through a polygonMember
+element. --> 
+<!ELEMENT MultiPolygon (polygonMember+) > 
+<!ATTLIST MultiPolygon  
+   ID       CDATA    #IMPLIED 
+   srsName  CDATA    #IMPLIED > 
+<!ELEMENT polygonMember (Polygon) > 
+
+<!-- a GeometryCollection is defined by zero or more geometries, referenced through a
+geometryMember element. A geometryMember element may be any one of the geometry classes. --> 
+<!ENTITY % GeometryClasses "( 
+   Point | LineString | Polygon | 
+   MultiPoint | MultiLineString | MultiPolygon | 
+   GeometryCollection )" > 
+
+<!ELEMENT GeometryCollection (geometryMember+) > 
+<!ATTLIST GeometryCollection  
+   ID       CDATA    #IMPLIED 
+   srsName  CDATA    #IMPLIED > 
+<!ELEMENT geometryMember %GeometryClasses; > 
+
+<!-- ============================================================== --> 
+<!--   G E O M E T R Y   P R O P E R T Y   D e f i n i t i o n s    --> 
+<!-- ============================================================== --> 
+
+<!-- GML provides an 'endorsed' name to define the extent of a feature. The extent is defined
+by a Box element, the name of the property is boundedBy. --> 
+<!ELEMENT boundedBy (Box) > 
+
+<!-- the generic geometryProperty can accept a geometry of any class. --> 
+<!ELEMENT geometryProperty (%GeometryClasses;) > 
+
+<!-- the pointProperty has three descriptive names: centerOf, location and position. --> 
+<!ELEMENT pointProperty (Point) > 
+<!ELEMENT centerOf (Point) > 
+<!ELEMENT location (Point) > 
+<!ELEMENT position (Point) > 
+
+<!-- the lineStringProperty has two descriptive names: centerLineOf and edgeOf. --> 
+<!ELEMENT lineStringProperty (LineString) > 
+<!ELEMENT centerLineOf (LineString)> 
+<!ELEMENT edgeOf (LineString)> 
+
+<!-- the polygonProperty has two descriptive names: coverage and extentOf. --> 
+<!ELEMENT polygonProperty (Polygon) > 
+<!ELEMENT coverage (Polygon)> 
+<!ELEMENT extentOf (Polygon)> 
+
+<!-- the multiPointProperty has three descriptive names: multiCenterOf, multiLocation and
+multiPosition. --> 
+<!ELEMENT multiPointProperty (MultiPoint) > 
+<!ELEMENT multiCenterOf (MultiPoint) > 
+<!ELEMENT multiLocation (MultiPoint) > 
+<!ELEMENT multiPosition (MultiPoint) > 
+
+<!-- the multiLineStringProperty has two descriptive names: multiCenterLineOf and multiEdgeOf.
+--> 
+<!ELEMENT multiLineStringProperty (MultiLineString) > 
+<!ELEMENT multiCenterLineOf (MultiLineString) > 
+<!ELEMENT multiEdgeOf (MultiLineString) > 
+
+<!-- the multiPolygonProperty has two descriptive names: multiCoverage and multiExtentOf. --> 
+<!ELEMENT multiPolygonProperty (MultiPolygon) > 
+<!ELEMENT multiCoverage (MultiPolygon) > 
+<!ELEMENT multiExtentOf (MultiPolygon) > 
+
+<!ELEMENT geometryCollectionProperty (GeometryCollection) > 
+
+<!-- ============================================================== --> 
+<!--     F E A T U R E   M E T A D A T A   D e f i n i t i o n s    --> 
+<!-- ============================================================== --> 
+
+<!-- Feature metadata, included in GML Geometry DTD for convenience; name and description are
+two 'standard' string properties defined by GML. --> 
+
+<!ELEMENT name (#PCDATA)> 
+<!ELEMENT description (#PCDATA)>

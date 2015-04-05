@@ -1,0 +1,38 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:eosps="http://www.opengis.net/eosps/2.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" targetNamespace="http://www.opengis.net/eosps/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+    <annotation>
+        <documentation>EO SPS schema for the optional SubmitSegmentByID operation.
+        
+        OGC EO SPS 2.0 is an OGC Standard.
+        Copyright (c) 2011 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <import namespace="http://www.opengis.net/swes/2.0" schemaLocation="http://schemas.opengis.net/swes/2.0/swes.xsd"/>
+	<!-- ================================================= -->
+    <element name="SubmitSegmentByID" substitutionGroup="swes:ExtensibleRequest" type="eosps:SubmitSegmentByIDType"/>
+    <complexType name="SubmitSegmentByIDType">
+        <complexContent>
+            <extension base="swes:ExtensibleRequestType">
+                <sequence>
+                    <element name="task" type="anyURI">
+                        <annotation>
+                            <documentation>Identifier of the task that contains the segment to be acquired</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="1" name="segmentID" type="NCName">
+                        <annotation>
+                            <documentation>Identifier of the planned or potential segment to be acquired</documentation>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="SubmitSegmentByIDPropertyType">
+        <sequence minOccurs="0">
+            <element ref="eosps:SubmitSegmentByID"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    </complexType>
+</schema>

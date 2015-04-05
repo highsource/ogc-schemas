@@ -1,0 +1,158 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" targetNamespace="http://www.opengis.net/sensorml/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+    <annotation>
+        <documentation>The elements supporting configurability and configuration settings of a instance of any process.
+        
+        SensorML is an OGC Standard.
+        Copyright (c) 2014 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    <import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+    <include schemaLocation="simple_process.xsd"/><!-- ================================================= -->
+    <element name="Mode" substitutionGroup="sml:DescribedObject" type="sml:ModeType"/>
+    <complexType name="ModeType">
+        <complexContent>
+            <extension base="sml:DescribedObjectType">
+                <sequence>
+                    <element name="configuration" type="sml:SettingsPropertyType"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="ModePropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:Mode"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="ModeChoice" substitutionGroup="sml:AbstractModes" type="sml:ModeChoiceType">
+        <annotation>
+            <documentation>A collection of modes from which one can exclusively select during configuration of a process.</documentation>
+        </annotation>
+    </element>
+    <complexType name="ModeChoiceType">
+        <complexContent>
+            <extension base="sml:AbstractModesType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="mode" type="sml:ModePropertyType"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="ModeChoicePropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:ModeChoice"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="Settings" substitutionGroup="sml:AbstractSettings" type="sml:SettingsType"/>
+    <complexType name="SettingsType">
+        <complexContent>
+            <extension base="sml:AbstractSettingsType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="setValue" type="sml:ValueSettingPropertyType">
+                        <annotation>
+                            <documentation>Allows the setting of a particular property value.</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="setArrayValues" type="sml:ArraySettingPropertyType">
+                        <annotation>
+                            <documentation>Allows the setting of array values for a particular property.</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="setConstraint" type="sml:ConstraintSettingPropertyType">
+                        <annotation>
+                            <documentation>Allows one to further restrain the allowed values of a particular property.</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="setMode" type="sml:ModeSettingPropertyType">
+                        <annotation>
+                            <documentation>Allows one to select a predefined mode, which by inference sets a collection of property values according to the definition of that mode.</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="setStatus" type="sml:StatusSettingPropertyType">
+                        <annotation>
+                            <documentation>Allows one to set the status (enabled, disabled, etc) of a particular input, output, or parameter.</documentation>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="SettingsPropertyType">
+        <sequence minOccurs="0">
+            <element ref="sml:Settings"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType> <!-- ================================================= -->
+    <complexType name="ArraySettingPropertyType">
+        <sequence>
+           <element name="ArrayValues">
+               <complexType>
+                   <sequence>
+                       <element name="encoding">
+                           <complexType>
+                               <sequence>
+                                   <element ref="swe:AbstractEncoding"/>
+                               </sequence>
+                           </complexType>
+                       </element>
+                       <element name="value" type="swe:EncodedValuesPropertyType"/>
+                   </sequence>
+               </complexType>
+           </element>
+       </sequence>
+        <attribute name="ref" type="sml:DataComponentPathPropertyType" use="required"/>
+    </complexType>
+    <!-- ================================================= -->
+    <complexType name="ModeSettingPropertyType">
+        <simpleContent>
+            <extension base="NCName">
+                <attribute name="ref" type="sml:DataComponentPathPropertyType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- ================================================= -->
+    <complexType name="ValueSettingPropertyType">
+        <simpleContent>
+            <extension base="token">
+                <attribute name="ref" type="sml:DataComponentPathPropertyType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- ================================================= -->
+    <complexType name="ConstraintSettingPropertyType">
+        <sequence>
+            <group ref="sml:Constraint"/>
+        </sequence>
+        <attribute name="ref" type="sml:DataComponentPathPropertyType" use="required"/>
+    </complexType>
+    <!-- ================================================= -->
+    <complexType name="StatusSettingPropertyType">
+        <simpleContent>
+            <extension base="sml:StatusType">
+                <attribute name="ref" type="sml:DataComponentPathPropertyType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- ================================================= -->
+    <group name="Constraint">
+        <choice>
+            <element ref="swe:AllowedTimes"/>
+            <element ref="swe:AllowedTokens"/>
+            <element ref="swe:AllowedValues"/>
+        </choice>
+    </group>
+    <complexType name="ConstraintPropertyType">
+        <sequence minOccurs="0">
+            <group ref="sml:Constraint"/>
+        </sequence>
+        <attributeGroup ref="swe:AssociationAttributeGroup"/>
+    </complexType>
+    <simpleType name="StatusType">
+        <restriction base="string">
+            <enumeration value="enabled"/>
+            <enumeration value="disabled"/>
+        </restriction>
+    </simpleType>
+</schema>

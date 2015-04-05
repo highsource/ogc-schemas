@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sps="http://www.opengis.net/sps/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.opengis.net/sps/1.0"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0.2">
+    
+    <xs:include schemaLocation="./spsAll.xsd"/>
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+    <xs:annotation>
+        <xs:documentation>
+            <copyright>
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+            </copyright> 
+        </xs:documentation>
+    </xs:annotation>
+    <xs:element name="TaskMessageDictionary" type="gml:DictionaryType"/>
+    <xs:element name="TaskMessageDefinition" type="sps:TaskMessageDefinitionType"
+        substitutionGroup="gml:Definition">
+        <xs:annotation>
+            <xs:documentation>Derived from gml:Definition, the TaskMessageDefinition describes the
+                task message</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="TaskMessageDefinitionType">
+        <xs:complexContent>
+            <xs:extension base="gml:DefinitionType">
+                <xs:sequence>
+                    <xs:element name="externalDefinition" type="xs:anyURI" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>in case that further information can be found
+                                externally.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="type" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>differentiates alpanumerical, symbol and numerical
+                                values.</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="symbol"/>
+                                <xs:enumeration value="numerical"/>
+                                <xs:enumeration value="alphanumeric"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="length" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>describes the number of charakters of the
+                            value.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="min" minOccurs="0"/>
+                    <xs:element name="max" minOccurs="0"/>
+                    <xs:element name="structureSchema" type="xs:anyURI" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>links to the schema describing the structure of this
+                                task message.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

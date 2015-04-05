@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<om:Observation gml:id="obsTest4" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:om="http://www.opengis.net/om/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml"
+                xsi:schemaLocation="http://www.opengis.net/om/1.0 ../om.xsd http://www.opengis.net/swe/1.0.1 http://schemas.opengis.net/sweCommon/1.0.1/data.xsd">
+	<gml:description>Observation test instance - soft-typed result using swe:Data element</gml:description>
+	<gml:name>Observation test 4</gml:name>
+	<om:samplingTime>
+		<gml:TimeInstant gml:id="ot1t">
+			<gml:timePosition>2005-01-11T17:22:25.00</gml:timePosition>
+		</gml:TimeInstant>
+	</om:samplingTime>
+	<om:procedure xlink:href="urn:x-seegrid:definition:procedure:person:cox075"/>
+	<om:observedProperty xlink:href="urn:x-seegrid:definition:phenomenon:species:vegetable"/>
+	<om:featureOfInterest xlink:href="http://my.big.org/feature?type=station%26name=ot1s"/>
+	<om:result>
+	<!-- This is the soft-typed Observation feature. In this example, the value of the result is a swe:Category element, substituting for anyType-->
+		<swe:Category>
+			<swe:codeSpace xlink:href="http://en.wikipedia.org/wiki/List_of_fruit"/>
+			<swe:value>banana</swe:value>
+		</swe:Category>
+	</om:result>
+</om:Observation>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataArray definition="http://sweet.jpl.nasa.gov/2.0/info.owl#TimeSeries" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<swe:description>Array of synchronous weather measurements</swe:description>
+	<swe:elementCount>
+	  <swe:Count>
+			<swe:value>5</swe:value>
+		</swe:Count>
+	</swe:elementCount>
+	<swe:elementType name="weather_measurement">
+		<swe:DataRecord>
+			<swe:label>Weather Data Record</swe:label>
+			<swe:field name="time">
+				<swe:Time definition="http://www.opengis.net/def/property/OGC/0/SamplingTime">
+					<swe:label>Sampling Time</swe:label>
+					<swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+				</swe:Time>
+			</swe:field>
+			<swe:field name="temperature">
+				<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/air_temperature">
+					<swe:label>Air Temperature</swe:label>
+					<swe:uom xlink:href="Cel"/>
+				</swe:Quantity>
+			</swe:field>
+			<swe:field name="pressure">
+				<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/air_pressure_at_sea_level">
+					<swe:label>Atmospheric Pressure</swe:label>
+					<swe:uom code="mbar"/>
+				</swe:Quantity>
+			</swe:field>
+		</swe:DataRecord>
+	</swe:elementType>
+	<swe:encoding>
+		<swe:TextEncoding blockSeparator="&#10;" tokenSeparator=","/>
+	</swe:encoding>
+	<swe:values>
+		2009-02-10T10:42:56Z,25.4,1020
+		2009-02-10T10:43:06Z,25.3,1021
+		2009-02-10T10:44:16Z,25.3,1020
+		2009-02-10T10:45:26Z,25.4,1022
+		2009-02-10T10:46:36Z,25.4,1022
+	</swe:values>
+</swe:DataArray>

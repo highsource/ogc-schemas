@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example Request for InsertResultTemplate operation containing the result template including identifier of the offering for which the results shall be inserted. This request also contains an observation template containing the static metadata which is the same for all results as well as information about the result structure and its encoding. The response contains the identifier of the template, if it has been accepted by the SOS.
+
+In this example, the sequence of operations for inserting results is as follows:
+1. InsertResultTemplate1.xml request is sent to SOS.
+2. InsertResultTemplate1_response.xml is returned from SOS.
+3. InsertResult1.xml is sent to SOS
+4. InsertResult1_response is returned from SOS
+=======================================================================-->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<soap12:Header>
+		<wsa:To>http://www.ogc.org/SOS</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/resultInsertion/2.0/InsertResultTemplate</wsa:Action>
+		<wsa:ReplyTo>
+			<wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
+		</wsa:ReplyTo>
+		<wsa:MessageID>http://my.client.com/uid/msg-0010</wsa:MessageID>
+	</soap12:Header>
+	<soap12:Body>
+		<sos:InsertResultTemplate service="SOS" version="2.0.0">
+			<sos:proposedTemplate>
+				<!-- definition of result template-->
+				<sos:ResultTemplate>
+					<!--identifier of offering to which the observations shall be added -->
+					<sos:offering>http://www.my_namespace.org/water_gage_2_observations</sos:offering>
+					<!--template containing the static observation elements which are the same for all results which are inserted-->
+					<sos:observationTemplate>
+						<om:OM_Observation gml:id="sensor2obsTemplate">
+							<om:phenomenonTime nilReason="template"/>
+							<om:resultTime nilReason="template"/>
+							<om:procedure xlink:href="http://www.example.org/register/process/Water_Gage_2"/>
+							<om:observedProperty xlink:href="http://sweet.jpl.nasa.gov/2.0/hydroSurface.owl#WaterHeight"/>
+							<om:featureOfInterest xlink:href="http://wfs.example.org?request=getFeature&amp;featureid=Rhine_Sandbank_123 "/>
+							<om:result/>
+						</om:OM_Observation>
+					</sos:observationTemplate>
+					<!--definition of result structure; result in this case is swe:DataRecord consisting of three elements: phenomenonTime, waterlevel and flowrate-->
+					<sos:resultStructure>
+						<swe:DataRecord>
+							<swe:field name="phenomenonTime">
+								<swe:Time definition="http://www.opengis.net/def/property/OGC/0/PhenomenonTime">
+									<swe:uom code="ms"/>
+								</swe:Time>
+							</swe:field>
+							<swe:field name="waterlevel">
+								<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/hydroSurface.owl#WaterHeight">
+									<swe:uom code="cm"/>
+								</swe:Quantity>
+							</swe:field>
+						</swe:DataRecord>
+					</sos:resultStructure>
+					<!--definition of result encoding; in this example, the results are encoded as text with the seperators defined in this element-->
+					<sos:resultEncoding>
+						<swe:TextEncoding tokenSeparator="," blockSeparator="@@"/>
+					</sos:resultEncoding>
+				</sos:ResultTemplate>
+			</sos:proposedTemplate>
+		</sos:InsertResultTemplate>
+	</soap12:Body>
+</soap12:Envelope>

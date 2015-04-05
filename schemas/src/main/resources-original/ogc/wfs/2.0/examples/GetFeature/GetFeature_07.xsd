@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<xsd:schema 
+   targetNamespace="http://www.someserver.example.com/myns"
+   xmlns:myns="http://www.someserver.example.com/myns"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   elementFormDefault="qualified"
+   version="2.0.2">
+
+   <xsd:import namespace="http://www.opengis.net/gml/3.2"
+               schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+
+   <!-- =============================================
+        Road 
+        ============================================= -->
+   <xsd:element name="Hydrography"
+                type="myns:HydrographyType"
+                substitutionGroup="gml:AbstractFeature"/>
+   <xsd:complexType name="HydrographyType">
+      <xsd:complexContent>
+         <xsd:extension base="gml:AbstractFeatureType">
+            <xsd:sequence>
+               <xsd:element name="geoTemp" type="gml:PointPropertyType"/>
+               <xsd:element name="depth" type="gml:MeasureType"/>
+               <xsd:element name="temperature" type="gml:MeasureType"/>
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+
+</xsd:schema>

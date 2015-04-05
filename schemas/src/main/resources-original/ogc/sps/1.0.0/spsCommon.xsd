@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:swe="http://www.opengis.net/swe/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:sps="http://www.opengis.net/sps/1.0" xmlns:gml="http://www.opengis.net/gml"
+    targetNamespace="http://www.opengis.net/sps/1.0" elementFormDefault="qualified"
+    attributeFormDefault="unqualified" xml:lang="en" version="1.0.0.2">
+    <!-- ==============================================================
+        includes and imports
+        ============================================================== -->
+    <xs:include schemaLocation="spsAll.xsd"/>
+    <xs:import namespace="http://www.opengis.net/swe/1.0" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.0/swe.xsd"/>
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+    <xs:annotation>
+        <xs:appinfo>spsCommon.xsd 2010-02-01</xs:appinfo>
+        <xs:documentation>
+            <description>This XML Schema encodes the elements and types that are shared by muliple
+            SPS operations.</description>
+            <copyright>
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+            </copyright> 
+        </xs:documentation>
+    </xs:annotation>
+    <!-- ==============================================================
+        elements and types
+        ============================================================== -->
+    <xs:complexType name="RequestBaseType">
+        <xs:annotation>
+            <xs:documentation>XML encoded SPS operation request base, for all operations except Get
+                Capabilities. In this XML encoding, no "request" parameter is included, since the
+                element name specifies the specific operation. </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="service" type="xs:string" use="required" fixed="SPS">
+            <xs:annotation>
+                <xs:documentation>Service type identifier. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="version" type="xs:string" use="required" fixed="1.0.0">
+            <xs:annotation>
+                <xs:documentation>Specification version for SPS version and
+                operation.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:element name="sensorID" type="sps:sensorIDType"/>
+    <xs:complexType name="sensorIDType">
+        <xs:simpleContent>
+            <xs:extension base="xs:token"/>
+        </xs:simpleContent>
+    </xs:complexType>
+    <!---->
+    <xs:element name="feasibilityID" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>ID used by SPS to identify a specific feasibility study. Could be used
+                by user for later reference.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!--InputParameter; used in GetFeasibilityRequest,SubmitRequest and UpdateRequest-->
+    <xs:element name="InputParameter" type="sps:InputParameterType"/>
+    <xs:complexType name="InputParameterType">
+        <xs:sequence>
+            <xs:element name="value" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:any processContents="skip"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="parameterID" type="xs:ID" use="required"/>
+    </xs:complexType>
+    <!--Contains a List of InputParameters-->
+    <xs:element name="parameters" type="sps:parametersType"/>
+    <xs:complexType name="parametersType">
+        <xs:sequence>
+            <xs:element ref="sps:InputParameter" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--ID of a specific SPS task-->
+    <xs:element name="taskID" type="xs:token">
+        <xs:annotation>
+            <xs:documentation>identifies the task. Unique to every SPS instance.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!--elements used to send notifications to the user-->
+    <xs:element name="notificationTarget" type="sps:notificationTargetType"/>
+    <xs:complexType name="notificationTargetType">
+        <xs:sequence>
+            <xs:element name="notificationID" type="xs:token"/>
+            <xs:element name="notificationURL" type="xs:anyURI"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--TimeFrame-->
+    <xs:element name="timeFrame">
+        <xs:annotation>
+            <xs:documentation>maximum point in time a request keeps being valid. </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gml:TimeInstant"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!--InputDescriptor: used in DescribeCollectionRequestResponse and UpdateRequestResponse.-->
+    <xs:element name="InputDescriptor">
+        <xs:annotation>
+            <xs:documentation>defines the input required to task a sensor</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="sps:InputDescriptorType"/>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="InputDescriptorType">
+        <xs:sequence>
+            <xs:element ref="gml:description" minOccurs="0"/>
+            <xs:element name="definition">
+                <xs:annotation>
+                    <xs:documentation>defines the data block. See sml for further
+                    information</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:choice>
+                        <!-- <xs:element ref="swe:DataDefinition"/> -->
+                        <xs:element name="commonData">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:group ref="swe:AnyData"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="TaskMessageDefinition" type="xs:anyURI">
+                            <xs:annotation>
+                                <xs:documentation>links to a URI dictionary whrere the taskMessage
+                                    is defined properly.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="GeometryDefinition">
+                            <xs:annotation>
+                                <xs:documentation>enumerates gml:Point, gml:Line, gml:Polygon as
+                                    possible values</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:QName">
+                                    <xs:enumeration value="gml:Point"/>
+                                    <xs:enumeration value="gml:Line"/>
+                                    <xs:enumeration value="gml:Polygon"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="TemporalDefinition">
+                            <xs:annotation>
+                                <xs:documentation>enumerates gml:TimeInstant and gml:TimePeriod as
+                                    possible values</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:QName">
+                                    <xs:enumeration value="gml:TimeInstant"/>
+                                    <xs:enumeration value="gml:TimePeriod"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="restriction" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>optional. Only used if the client has to choose one or many of
+                        the provided values.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="sps:InputParameter"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="cardinality" type="sps:cardinalityType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Defines the number of input objects that could be
+                    provided.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="parameterID" type="xs:ID" use="required"/>
+        <xs:attribute name="use" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="required"/>
+                    <xs:enumeration value="optional"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="updateable" type="xs:boolean" use="optional" default="true"/>
+    </xs:complexType>
+    <xs:simpleType name="cardinalityType">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:int">
+                    <xs:minExclusive value="0"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="unbounded"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+    <xs:element name="LatestResponseTime">
+        <xs:annotation>
+            <xs:documentation>Denotes the point in time when the notification that contains the
+                definite response to a delayed operation request will be sent. If no notification
+                has been received until that time the operation shall be deemed to have been
+                rejected or failed.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gml:TimeInstant"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="estimatedToC">
+        <xs:annotation>
+            <xs:documentation>Estimated Time of Completion gives a hint when a requested operation
+                might be completed.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gml:TimeInstant"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

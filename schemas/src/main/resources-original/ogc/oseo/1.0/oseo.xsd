@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.opengis.net/oseo/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:oseo="http://www.opengis.net/oseo/1.0" targetNamespace="http://www.opengis.net/oseo/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
+	<xs:annotation>
+		<xs:documentation>		
+Ordering Services For Earth Observation Products is an OGC Standard.
+Copyright (c) 2010 Open Geospatial Consortium. 
+To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+	<xs:import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsAll.xsd"/>
+	<xs:import namespace="http://www.opengis.net/swes/2.0" schemaLocation="http://schemas.opengis.net/swes/2.0/swes.xsd"/>
+	<!-- ====================================================================== -->
+	<!-- ======================= Operations root element ============================-->
+	<!-- ====================================================================== -->
+	<xs:element name="GetCapabilities">
+		<xs:annotation>
+			<xs:documentation>Request to a Order Service to perform the GetCapabilities operation. This operation allows a client to retrieve service metadata (capabilities XML) providing metadata for the specific Order server. In this XML encoding, no "request" parameter is included, since the element name specifies the specific operation. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ows:GetCapabilitiesType">
+					<xs:attribute name="service" type="ows:ServiceType" use="required" fixed="OS"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Capabilities">
+		<xs:annotation>
+			<xs:documentation>XML encoded Order Service GetCapabilities operation response. This document provides clients with service metadata about a specific service instance. If the server does not implement the updateSequence parameter, the server shall always return the complete Capabilities document, without the updateSequence parameter. When the server implements the updateSequence parameter and the GetCapabilities operation request included the updateSequence parameter with the current value, the server shall return this element with only the "version" and "updateSequence" attributes. Otherwise, all optional elements shall be included or not depending on the actual value of the Sections parameter in the GetCapabilities operation request. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ows:CapabilitiesBaseType">
+					<xs:sequence>
+						<xs:element name="Contents" type="OrderingServiceContentsType" minOccurs="0"/>
+						<xs:element name="Notifications" type="swes:NotificationProducerMetadataPropertyType" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetOptions" type="OrderOptionsRequestType"/>
+	<xs:element name="GetOptionsResponse" type="OrderOptionsResponseType"/>
+	<xs:element name="GetQuotation" type="GetQuotationRequestType">
+		<xs:annotation>
+			<xs:documentation>GetQuotation operation - request message</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetQuotationAck" type="GetQuotationAckType">
+		<xs:annotation>
+			<xs:documentation>GetQuotation operation - response message</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetQuotationResponse" type="GetQuotationResponseRequestType">
+		<xs:annotation>
+			<xs:documentation>Async reply to GetQuotation  - This message carries on the quotation.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetQuotationResponseAck" type="GetQuotationResponseAckType">
+		<xs:annotation>
+			<xs:documentation>Response to acknowledge the receiption of quotation.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Submit" type="SubmitOrderRequestType"/>
+	<xs:element name="SubmitAck" type="SubmitOrderResponseType"/>
+	<xs:element name="SubmitResponse" type="StatusNotificationType"/>
+	<xs:element name="SubmitResponseAck" type="StatusNotificationAckType">
+		<xs:annotation>
+			<xs:documentation>Response to acknowledge the receiption of order status notification.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetStatus" type="GetStatusRequestType"/>
+	<xs:element name="GetStatusResponse" type="GetStatusResponseType"/>
+	<xs:element name="DescribeResultAccess" type="DescribeResultAccessRequestType"/>
+	<xs:element name="DescribeResultAccessResponse" type="DescribeResultAccessResponseType"/>
+	<xs:element name="Cancel" type="CancelRequestType"/>
+	<xs:element name="CancelAck" type="CancelRequestAckType"/>
+	<xs:element name="CancelResponse" type="StatusNotificationType"/>
+	<xs:element name="CancelResponseAck" type="StatusNotificationAckType"/>
+	<!-- ====================================================================== -->
+	<!-- ======================= Elements Definition Section  ========================= -->
+	<!-- ====================================================================== -->
+	<xs:element name="orderId" type="xs:anyURI"/>
+	<xs:element name="priority" type="PriorityType"/>
+	<xs:element name="statusNotification">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="None"/>
+				<xs:enumeration value="Final"/>
+				<xs:enumeration value="All"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="collectionId">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<!--======================================================================= -->
+	<!--===================== ComplexType  Definition Section ======================= -->
+	<!--======================================================================= -->
+	<xs:complexType name="OrderRequestBaseType">
+		<xs:annotation>
+			<xs:documentation>XML encoded SPS operation request base, for all operations except Get Capabilities. In this XML encoding, no "request" parameter is included, since the element name specifies the specific operation. </xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="service" type="xs:string" use="required" fixed="OS">
+			<xs:annotation>
+				<xs:documentation>Service type identifier. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="version" use="required">
+			<xs:annotation>
+				<xs:documentation>Specification version for SPS version and operation.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="5"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="OrderResponseBaseType">
+		<xs:annotation>
+			<xs:documentation>Base type for all Ordering Service operation responses.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="status" type="OrderResponseStatusType" nillable="false"/>
+			<xs:element name="errorMessage" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This field is set when status element is different from success. It provides some information about the occurred problem.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrderingServiceContentsType">
+		<xs:sequence>
+			<xs:element name="ProductOrders">
+				<xs:complexType>
+					<xs:attribute name="supported" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SubscriptionOrders">
+				<xs:complexType>
+					<xs:attribute name="supported" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ProgrammingOrders">
+				<xs:annotation>
+					<xs:documentation>Specifies whether the Ordering Services supports future products ordering and the corresponding SPS URL.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="supported" type="xs:boolean" use="required"/>
+					<xs:attribute name="SPS_URL" type="xs:anyURI"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetQuotationCapabilities">
+				<xs:annotation>
+					<xs:documentation>This element specifies if and how the order quotation is supported: synchronously, asynchronously, synchronous with polling.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="supported" type="xs:boolean" use="required"/>
+					<xs:attribute name="synchronous" type="xs:boolean" use="required"/>
+					<xs:attribute name="asynchronous" type="xs:boolean" use="required"/>
+					<xs:attribute name="monitoring" type="xs:boolean" use="required"/>
+					<xs:attribute name="off-line" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SubmitCapabilities">
+				<xs:annotation>
+					<xs:documentation>This element specifies the capabilities of Submit Operation e.g. synchronous, async, max number of products, etc.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="asynchronous" type="xs:boolean" use="required"/>
+					<xs:attribute name="maxNumberOfProducts" type="xs:integer"/>
+					<xs:attribute name="globalDeliveryOptions" type="xs:boolean" use="required"/>
+					<xs:attribute name="localDeliveryOptions" type="xs:boolean" use="required"/>
+					<xs:attribute name="globalOrderOptions" type="xs:boolean" use="required"/>
+					<xs:attribute name="localOrderOptions" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetStatusCapabilities">
+				<xs:complexType>
+					<xs:attribute name="orderSearch" type="xs:boolean" use="required"/>
+					<xs:attribute name="orderRetrieve" type="xs:boolean" use="required"/>
+					<xs:attribute name="full" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DescribeResultAccessCapabilities">
+				<xs:complexType>
+					<xs:attribute name="supported" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CancelCapabilities">
+				<xs:annotation>
+					<xs:documentation>This element specifies the capabilities of Submit Operation e.g. synchronous, async, max number of products, etc.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="supported" type="xs:boolean" use="required"/>
+					<xs:attribute name="asynchronous" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SupportedCollection" type="CollectionCapability" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>List of collections allowed for ordering.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContentsType" type="EncodingType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CollectionCapability">
+		<xs:sequence>
+			<xs:element ref="collectionId"/>
+			<xs:element name="ProductOrders" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="supported" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SubscriptionOrders" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="supported" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DescribeResultAccessCapabilities" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="supported" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CancelCapabilities" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This element specifies the capabilities of Submit Operation e.g. synchronous, async, max number of products, etc.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="supported" type="xs:boolean" use="required"/>
+					<xs:attribute name="asynchronous" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EncodingType">
+		<xs:annotation>
+			<xs:documentation>Type of encoding provided by the server</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="supportedEncoding" type="SWEEncoding" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="SWEEncoding">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="XMLEncoding"/>
+			<xs:enumeration value="TextEncoding"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- ====================================================================== -->
+	<!--=====================    Order Submission    ======================= -->
+	<!-- ====================================================================== -->
+	<xs:complexType name="SubmitOrderRequestType">
+		<xs:complexContent>
+			<xs:extension base="OrderRequestBaseType">
+				<xs:sequence>
+					<xs:element name="timeStamp" type="xs:dateTime" minOccurs="0"/>
+					<xs:choice>
+						<xs:element ref="orderSpecification"/>
+						<xs:element name="quotationId" type="QuotationIdType"/>
+					</xs:choice>
+					<xs:element ref="statusNotification">
+						<xs:annotation>
+							<xs:documentation>This element specifies how many status notifications are sent back to the caller of the Submit operation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SubmitOrderResponseType">
+		<xs:complexContent>
+			<xs:extension base="OrderResponseBaseType">
+				<xs:sequence>
+					<xs:element ref="orderId"/>
+					<xs:element ref="orderReference" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OrderSpecification">
+		<xs:complexContent>
+			<xs:extension base="CommonOrderSpecification">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="orderItem" type="CommonOrderItemType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CommonOrderSpecification">
+		<xs:sequence>
+			<xs:element ref="orderReference" minOccurs="0"/>
+			<xs:element name="orderRemark" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4000"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="deliveryInformation" type="DeliveryInformationType" minOccurs="0"/>
+			<xs:element name="invoiceAddress" type="DeliveryAddressType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Address for sending the invoice.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="packaging" type="EnumPackagingType" nillable="true" minOccurs="0"/>
+			<xs:element name="option" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ParameterData"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="deliveryOptions" minOccurs="0"/>
+			<xs:element ref="priority" minOccurs="0"/>
+			<xs:element name="orderType" type="EnumOrderType"/>
+			<xs:element ref="extension" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="orderSpecification" type="OrderSpecification" abstract="false"/>
+	<xs:complexType name="CreditCardInfoType">
+		<xs:sequence>
+			<xs:element name="creditCardInstitute"/>
+			<xs:element name="nameOnCard"/>
+			<xs:element name="cardNumber"/>
+			<xs:element name="expirationDate"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PaymentOptionSelectedValue">
+		<xs:sequence>
+			<xs:element ref="paymentMethod"/>
+			<xs:choice>
+				<xs:element name="orderAccount" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="creditCardInfo" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>This element should be managed in more secure way</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ====================================================================== -->
+	<!--=====================      Order Monitoring      ======================= -->
+	<!-- ====================================================================== -->
+	<xs:complexType name="GetStatusRequestType">
+		<xs:complexContent>
+			<xs:extension base="OrderRequestBaseType">
+				<xs:sequence>
+					<xs:element name="timeStamp" type="xs:dateTime" minOccurs="0"/>
+					<xs:choice>
+						<xs:element ref="orderId"/>
+						<xs:element name="filteringCriteria" type="OrderSearchCriteriaType"/>
+					</xs:choice>
+					<xs:element name="presentation" type="PresentationType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetStatusResponseType">
+		<xs:complexContent>
+			<xs:extension base="OrderResponseBaseType">
+				<xs:sequence>
+					<xs:element ref="orderMonitorSpecification" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CommonOrderMonitorSpecification">
+		<xs:complexContent>
+			<xs:extension base="CommonOrderSpecification">
+				<xs:sequence>
+					<xs:element ref="orderId"/>
+					<xs:element name="orderStatusInfo" type="StatusType"/>
+					<xs:element name="orderDateTime" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="orderItem" type="CommonOrderStatusItemType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>The orderItem has been defined optional in order to  perform GetStatus request with brief presentation. Of course orders without order items cannot be submitted.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="orderMonitorSpecification" type="CommonOrderMonitorSpecification" abstract="false"/>
+	<xs:complexType name="OrderSearchCriteriaType">
+		<xs:sequence>
+			<xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="lastUpdateEnd" minOccurs="0"/>
+			<xs:element name="orderStatus" type="EnumStatusType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="orderReference" minOccurs="0"/>
+			<xs:element ref="extension" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ====================================================================== -->
+	<!--=====================      Order Item      ======================= -->
+	<!-- ====================================================================== -->
+	<xs:complexType name="CommonOrderItemType">
+		<xs:sequence>
+			<xs:element ref="itemId"/>
+			<xs:element ref="productOrderOptionsId" minOccurs="0"/>
+			<xs:element name="orderItemRemark" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="option" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ParameterData"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="sceneSelection" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ParameterData"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="deliveryOptions" minOccurs="0"/>
+			<xs:element name="payment" type="PaymentOptionSelectedValue" minOccurs="0"/>
+			<xs:element ref="extension" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:choice>
+				<xs:element ref="productId"/>
+				<xs:element ref="taskingRequestId"/>
+				<xs:element ref="subscriptionId"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeliveryOptionsType">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="onlineDataAccess">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="protocol"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="onlineDataDelivery">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="protocol"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="mediaDelivery">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="packageMedium" type="PackageMedium"/>
+							<xs:element name="shippingInstructions" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="as each product is ready"/>
+										<xs:enumeration value="once all products are ready"/>
+										<xs:enumeration value="other"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="numberOfCopies" type="xs:int" minOccurs="0"/>
+			<xs:element name="productAnnotation" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="specialInstructions" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrderItemIdType" abstract="false">
+		<xs:annotation>
+			<xs:documentation>Root type of the hierarchy of order item identifiers</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="ProductIdType">
+		<xs:annotation>
+			<xs:documentation>Identifier of catalogued product</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="OrderItemIdType">
+				<xs:sequence>
+					<xs:element ref="identifier"/>
+					<xs:element ref="collectionId" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="productId" type="ProductIdType"/>
+	<xs:complexType name="SubscriptionIdType">
+		<xs:annotation>
+			<xs:documentation>Identifier of subscription</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="OrderItemIdType">
+				<xs:sequence>
+					<xs:element ref="collectionId"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TaskingRequestIdType">
+		<xs:complexContent>
+			<xs:extension base="OrderItemIdType">
+				<xs:sequence>
+					<xs:element name="ID" type="xs:anyURI"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="taskingRequestId" type="TaskingRequestIdType"/>
+	<xs:element name="subscriptionId" type="SubscriptionIdType"/>
+	<!-- ====================================================================== -->
+	<!--=====================           Order Item Monitor               ======================= -->
+	<!-- ====================================================================== -->
+	<xs:complexType name="CommonOrderStatusItemType">
+		<xs:complexContent>
+			<xs:extension base="CommonOrderItemType">
+				<xs:sequence>
+					<xs:element name="orderItemStatusInfo" type="StatusType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ====================================================================== -->
+	<!--===================         Order Options Definitions   =======================-->
+	<!-- ====================================================================== -->
+	<xs:element name="ParameterData" type="ParameterDataType"/>
+	<xs:complexType name="ParameterDataType">
+		<xs:sequence>
+			<xs:element name="encoding" type="SWEEncoding"/>
+			<xs:element name="values" type="xs:anyType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="PackageMedium">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NTP"/>
+			<xs:enumeration value="DAT"/>
+			<xs:enumeration value="Exabyte"/>
+			<xs:enumeration value="CD-ROM"/>
+			<xs:enumeration value="DLT"/>
+			<xs:enumeration value="D1"/>
+			<xs:enumeration value="DVD"/>
+			<xs:enumeration value="BD"/>
+			<xs:enumeration value="LTO"/>
+			<xs:enumeration value="LTO2"/>
+			<xs:enumeration value="LTO4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProtocolType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ftp"/>
+			<xs:enumeration value="ftps"/>
+			<xs:enumeration value="sftp"/>
+			<xs:enumeration value="P2P"/>
+			<xs:enumeration value="wcs"/>
+			<xs:enumeration value="wms"/>
+			<xs:enumeration value="e-mail"/>
+			<xs:enumeration value="dds"/>
+			<xs:enumeration value="http"/>
+			<xs:enumeration value="https"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="OrderOptionsRequestType">
+		<xs:complexContent>
+			<xs:extension base="OrderRequestBaseType">
+				<xs:sequence>
+					<xs:element name="timeStamp" type="xs:dateTime" minOccurs="0"/>
+					<xs:choice>
+						<xs:element ref="collectionId"/>
+						<xs:element ref="identifier" maxOccurs="unbounded"/>
+						<xs:element ref="taskingRequestId"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OrderOptionsResponseType">
+		<xs:complexContent>
+			<xs:extension base="OrderResponseBaseType">
+				<xs:sequence>
+					<xs:element ref="orderOptions" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CommonOrderOptionsType">
+		<xs:sequence>
+			<xs:element ref="productOrderOptionsId"/>
+			<xs:element ref="identifier" minOccurs="0"/>
+			<xs:element name="description" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="orderType" type="EnumOrderType"/>
+			<xs:element name="option" type="ParameterDescriptorType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="productDeliveryOptions" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="onlineDataAccess">
+							<xs:annotation>
+								<xs:documentation>This option says that the Server will specify the URL for accessing the products via DescribeResultAccess operation.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="protocol" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="onlineDataDelivery">
+							<xs:annotation>
+								<xs:documentation>This option says that the URLs for deliverying the products are defined by the client. No DescribeResultAccess operation to be called.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="protocol" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="mediaDelivery">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="packageMedium" type="PackageMedium" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="orderOptionInfoURL" type="xs:anyURI" minOccurs="0"/>
+			<xs:element name="paymentOptions" type="PaymentOptionDefinitionType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>List of possible payment options for ordering the product. This element is not specified if the payment options are defined in the user profile.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="sceneSelectionOption" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Each istance represents a valid combination of scene selection options parameters. Several istances are possible because different policies are possible for the same product (e.g. floating scene, floating pass, full pass)</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="name" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="60"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="description" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="4000"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="sceneSelectionParameter" type="SceneSelectionDescriptorType" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Each istance represents a scene selection parameter with its description and constraints. It is possible a sceneSelectionOption with no parameters because in some cases the product can be ordered in scenes or as it is. In the second case no scene selection parameters can be provided.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="orderOptions" type="CommonOrderOptionsType" abstract="false"/>
+	<xs:complexType name="PaymentOptionDefinitionType">
+		<xs:sequence>
+			<xs:element ref="paymentMethod"/>
+			<xs:element name="paymentOptionInfoURL" type="xs:anyURI" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ParameterDescriptorType">
+		<xs:complexContent>
+			<xs:extension base="swe:AbstractDataComponentPropertyType">
+				<xs:sequence>
+					<xs:element name="grouping" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>It identifies the group the option belong to e.g. processing option, etc.</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="40"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SceneSelectionDescriptorType">
+		<xs:complexContent>
+			<xs:extension base="swe:AbstractDataComponentPropertyType">
+				<xs:sequence>
+					<xs:element name="sceneRestriction" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="swe:AbstractDataComponentPropertyType"/>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ====================================================================== -->
+	<!--============    Order Quotation Definitions    ========================-->
+	<!-- ====================================================================== -->
+	<xs:complexType name="GetQuotationRequestType">
+		<xs:complexContent>
+			<xs:extension base="OrderRequestBaseType">
+				<xs:sequence>
+					<xs:element name="timeStamp" type="xs:dateTime" minOccurs="0"/>
+					<xs:choice>
+						<xs:element ref="orderSpecification">
+							<xs:annotation>
+								<xs:documentation>This choice is set for getting the quotation of an order.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="quotationId" type="QuotationIdType">
+							<xs:annotation>
+								<xs:documentation>This choice is set when quotation monitoring is supported and a quotation request has been already submitted.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetQuotationAckType">
+		<xs:complexContent>
+			<xs:extension base="OrderResponseBaseType">
+				<xs:sequence minOccurs="0">
+					<xs:choice>
+						<xs:element name="quotationId" type="QuotationIdType">
+							<xs:annotation>
+								<xs:documentation>This choice is set in case of non sync quotations.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="quotation" type="OrderQuotation">
+							<xs:annotation>
+								<xs:documentation>This choice is set in case of synchronous quotations or as answer to quotation monitoring.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetQuotationResponseRequestType">
+		<xs:complexContent>
+			<xs:extension base="OrderRequestBaseType">
+				<xs:sequence>
+					<xs:element name="status" type="OrderResponseStatusType" nillable="false"/>
+					<xs:element name="errorMessage" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>This field is set when status element is different from success. It provides some information about the occurred problem.</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="quotation" type="OrderQuotation"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetQuotationResponseAckType">
+		<xs:complexContent>
+			<xs:extension base="OrderResponseBaseType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OrderQuotation">
+		<xs:sequence>
+			<xs:element name="quotationId" type="QuotationIdType"/>
+			<xs:element name="validityTime" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="price" type="CurrencyType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Price of the whole order; mandatory unless the provider uses quota concept or products are free of charge.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="orderItemGroupPrice" type="OrderItemGroupPrice" maxOccurs="unbounded"/>
+			<xs:element ref="contractInformation" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrderItemGroupPrice">
+		<xs:sequence>
+			<xs:element name="provider" type="ProviderType"/>
+			<xs:element name="quotationId" type="QuotationIdType" minOccurs="0"/>
+			<xs:element name="validityTime" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="price" type="CurrencyType">
+				<xs:annotation>
+					<xs:documentation>Price of the whole order item gruop.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="balance" type="CurrencyType" minOccurs="0"/>
+			<xs:element name="orderItemPrice" type="OrderItemPrice" maxOccurs="unbounded"/>
+			<xs:element ref="contractInformation" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrderItemPrice">
+		<xs:sequence>
+			<xs:element ref="itemId">
+				<xs:annotation>
+					<xs:documentation>string identifying the order item within the whole order.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element ref="productId"/>
+				<xs:element ref="taskingRequestId"/>
+				<xs:element ref="subscriptionId"/>
+			</xs:choice>
+			<xs:element name="price" type="CurrencyType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Price of the item; is optional if the price at group level is provided; not supported in case the products are free of charge.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceInformation" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="contractInformation" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CurrencyType">
+		<xs:sequence>
+			<xs:element name="value" type="xs:double"/>
+			<xs:element name="currency">
+				<xs:annotation>
+					<xs:documentation>Currency including ISO 4217 (e.g.: EUR, USD (US Dollar), CAD (Canada Dollar), AUD (Australia Dollar), GBP (United Kindom Pounds), etc.) and also special values for representing quota.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProviderType">
+		<xs:sequence>
+			<xs:element name="serviceName">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="40"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="organization">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="40"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="QuotationIdType">
+		<xs:restriction base="xs:anyURI"/>
+	</xs:simpleType>
+	<!-- ====================================================================== -->
+	<!--============    DescribeResultAccess Definitions    ========================-->
+	<!-- ====================================================================== -->
+	<xs:complexType name="DescribeResultAccessRequestType">
+		<xs:complexContent>
+			<xs:extension base="OrderRequestBaseType">
+				<xs:sequence>
+					<xs:element name="timeStamp" type="xs:dateTime" minOccurs="0"/>
+					<xs:element ref="orderId"/>
+					<xs:element name="subFunction">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="allReady"/>
+								<xs:enumeration value="nextReady"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DescribeResultAccessResponseType">
+		<xs:complexContent>
+			<xs:extension base="OrderResponseBaseType">
+				<xs:sequence>
+					<xs:element name="URLs" type="ItemURLType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ====================================================================== -->
+	<!--Generic Definitions-->
+	<!-- ====================================================================== -->
+	<xs:simpleType name="EnumStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Submitted"/>
+			<xs:enumeration value="Accepted"/>
+			<xs:enumeration value="Cancelled"/>
+			<xs:enumeration value="Completed"/>
+			<xs:enumeration value="InProduction"/>
+			<xs:enumeration value="Suspended"/>
+			<xs:enumeration value="Failed"/>
+			<xs:enumeration value="Terminated"/>
+			<xs:enumeration value="Downloaded"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="StatusType">
+		<xs:sequence>
+			<xs:element name="status" type="EnumStatusType"/>
+			<xs:element name="additionalStatusInfo" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="missionSpecificStatusInfo" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeliveryInformationType">
+		<xs:sequence>
+			<xs:element name="onlineAddress" type="OnlineAddressType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="mailAddress" type="DeliveryAddressType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeliveryAddressType">
+		<xs:sequence>
+			<xs:element name="firstName" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>FirstName to identify the receiving person</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="40"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="lastName" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Last Name to identify the receiving person</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="40"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="companyRef" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="40"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="postalAddress" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="streetAddress">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="40"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="city">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="40"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="state">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="40"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="postalCode">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="12"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="country">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="40"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="postBox" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>only number part, only digits allowed</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="12"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="telephoneNumber" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>including country code, prefix, without special sign or intermediate blanks</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="18"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="facsimileTelephoneNumber" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>including country code, prefix, without special sign or intermediate blanks</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="18"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CancelRequestType">
+		<xs:complexContent>
+			<xs:extension base="OrderRequestBaseType">
+				<xs:sequence>
+					<xs:element name="timeStamp" type="xs:dateTime" minOccurs="0"/>
+					<xs:element ref="orderId"/>
+					<xs:element ref="statusNotification"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CancelRequestAckType">
+		<xs:complexContent>
+			<xs:extension base="OrderResponseBaseType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StatusNotificationType">
+		<xs:complexContent>
+			<xs:extension base="OrderRequestBaseType">
+				<xs:sequence>
+					<xs:element name="timeStamp" type="xs:dateTime" minOccurs="0"/>
+					<xs:element ref="orderMonitorSpecification"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StatusNotificationAckType">
+		<xs:complexContent>
+			<xs:extension base="OrderResponseBaseType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OnlineAddressType">
+		<xs:sequence>
+			<xs:element ref="protocol"/>
+			<xs:element name="serverAddress">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="userName" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="8"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="userPassword" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="path" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="1024"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OnLineAccessAddressType">
+		<xs:sequence>
+			<xs:element name="ServiceAddress" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Address information related to the Server hosting the item to be accessed.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="type" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>It specifies the type of the service hosting the resource e.g. WCS, WMS, etc. This field is optional, since full information about the server can be retrieved from info_URL and infoRequest elements.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="URL" type="xs:anyURI">
+							<xs:annotation>
+								<xs:documentation>Address of the Server</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="info_URL" type="xs:anyURI">
+							<xs:annotation>
+								<xs:documentation>Address for getting information about the server. In case of OGC Web Services it can refer to GetCapabilities operation with HTTP GET binding.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="infoRequest" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>In case the information can be retrieved by sending a request message, this field stores the message to be sent. In case of OGC Web Services supporitng SOAP GetCapabilities, this field specifies the GetCapabilities message to send at the address specified in info_URL element.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:any namespace="##any"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ResourceAddress">
+				<xs:annotation>
+					<xs:documentation>Address information of the resource to be accessed.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="URL" type="xs:anyURI">
+							<xs:annotation>
+								<xs:documentation>URL for accessing the resource.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="serviceRequest" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>In case the resource cannot be accessed simply via the URL, but a message needs to be sent, then this field specifies the message to send.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:any namespace="##any"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ItemURLType">
+		<xs:sequence>
+			<xs:element ref="itemId"/>
+			<xs:element ref="productId" minOccurs="0"/>
+			<xs:element name="itemAddress" type="OnLineAccessAddressType">
+				<xs:annotation>
+					<xs:documentation>This field specifies the full information for accessing the ordered item.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="expirationDate" type="xs:dateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="EnumOrderType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PRODUCT_ORDER"/>
+			<xs:enumeration value="SUBSCRIPTION_ORDER"/>
+			<xs:enumeration value="TASKING_ORDER"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- ====================================================================== -->
+	<!--=========================== Simple Types-->
+	<!-- ====================================================================== -->
+	<xs:simpleType name="EnumPackagingType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="zip"/>
+			<xs:enumeration value="tar"/>
+			<xs:enumeration value="tgz"/>
+			<xs:enumeration value="compress"/>
+			<xs:enumeration value="bzip"/>
+			<xs:enumeration value="bzip2"/>
+			<xs:enumeration value="gzip"/>
+			<xs:enumeration value="rar"/>
+			<xs:enumeration value="7z"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OrderResponseStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="success"/>
+			<xs:enumeration value="partial"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PresentationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="brief"/>
+			<xs:enumeration value="full"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriorityType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="STANDARD"/>
+			<xs:enumeration value="FAST_TRACK"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- ====================================================================== -->
+	<!-- ====================================================================== -->
+	<!--Types & Elements taken from hma.xsd-->
+	<!-- ====================================================================== -->
+	<!-- ====================================================================== -->
+	<xs:element name="identifier" type="xs:string"/>
+	<xs:element name="itemId">
+		<xs:annotation>
+			<xs:documentation>string identifying the order item within the order.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="80"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="paymentMethod">
+		<xs:annotation>
+			<xs:documentation>Examples:
+quota, invoice, prepay (to be indicated for free products), deposit account, credit card, credit card previously supplied</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="40"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="contractInformation">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="1024"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="orderReference">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="30"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="productOrderOptionsId">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="40"/>
+				<xs:minLength value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="deliveryOptions" type="DeliveryOptionsType"/>
+	<xs:element name="protocol" type="ProtocolType"/>
+	<xs:element name="extension" type="xs:anySimpleType"/>
+</xs:schema>

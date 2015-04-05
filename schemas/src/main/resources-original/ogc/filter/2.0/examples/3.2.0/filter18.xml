@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<fes:Filter
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:gml="http://www.opengis.net/gml"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/fes/2.0
+   http://schemas.opengis.net/filter/2.0/filterAll.xsd
+   http://www.opengis.net/gml
+   http://schemas.opengis.net/gml/3.2.0/base/gml.xsd">
+  <fes:TOverlaps>
+    <fes:ValueReference>SimpleTrajectory/gml:TimePeriod</fes:ValueReference>
+    <gml:TimePeriod gml:id="TP1">
+      <gml:begin>
+        <gml:TimeInstant gml:id="TI1">
+          <gml:timePosition>2005-05-17T08:00:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </gml:begin>
+      <gml:end>
+        <gml:TimeInstant gml:id="TI2">
+          <gml:timePosition>2005-05-23T11:00:00Z</gml:timePosition>
+        </gml:TimeInstant>
+      </gml:end>
+    </gml:TimePeriod>
+  </fes:TOverlaps>
+</fes:Filter>
+
+
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:Matrix definition="http://sweet.jpl.nasa.gov/2.0/spaceDirection.owl#Orientation" referenceFrame="http://www.opengis.net/def/crs/OGC/0/ECI_WGS84" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<swe:elementCount>
+	  <swe:Count>
+			<swe:value>3</swe:value>
+		</swe:Count>
+	</swe:elementCount>
+	<swe:elementType name="row">
+		<swe:Matrix definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Row">
+			<swe:elementCount>
+			  <swe:Count>
+					<swe:value>3</swe:value>
+				</swe:Count>
+			</swe:elementCount>
+			<swe:elementType name="coef">
+				<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/mathVector.owl#Coordinate">
+					<swe:uom code="1"/>
+				</swe:Quantity>
+			</swe:elementType>
+		</swe:Matrix>
+	</swe:elementType>
+	<swe:encoding>
+		<swe:TextEncoding blockSeparator=" " tokenSeparator=","/>
+	</swe:encoding>
+	<swe:values>0.36,0.48,-0.8 -0.8,0.6,0 0.48,0.64,0.6</swe:values>
+</swe:Matrix>

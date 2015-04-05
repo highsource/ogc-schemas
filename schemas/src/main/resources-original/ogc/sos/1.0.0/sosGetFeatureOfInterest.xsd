@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/sos/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:gml="http://www.opengis.net/gml" elementFormDefault="qualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+	<annotation>
+		<documentation>
+			<description>
+				This XML Schema defines the GetFeatureOfInterest request and response XML elements and types.
+				
+				SOS is an OGC Standard.
+				Copyright (c) 2006,2010 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</description>
+		</documentation>
+	</annotation>
+	<!-- ==============================================================
+		includes and imports
+	============================================================== -->
+	<import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd"/>
+	<include schemaLocation="sosAll.xsd"/>
+	<include schemaLocation="sosCommon.xsd"/>
+	<!-- ==============================================================
+		request
+	============================================================== -->
+	<element name="GetFeatureOfInterest">
+		<annotation>
+			<documentation>Request to a SOS to perform the GetFeatureOfInterest operation. This operation is designed to request target feaure instances</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="sos:RequestBaseType">
+					<sequence>
+						<choice>
+							<element name="FeatureOfInterestId" type="anyURI" maxOccurs="unbounded">
+								<annotation>
+									<documentation>Identifier of the feature of interest, for which detailed information is requested. These identifiers are usually listed in the Contents section of the service metadata (Capabilities) document. </documentation>
+								</annotation>
+							</element>
+							<element name="location">
+								<annotation>
+									<documentation>Uses modified version of filter.xsd</documentation>
+								</annotation>
+								<complexType>
+									<sequence>
+										<element ref="ogc:spatialOps"/>
+									</sequence>
+								</complexType>
+							</element>
+						</choice>
+						<element name="eventTime" minOccurs="0" maxOccurs="unbounded">
+							<annotation>
+								<documentation>Uses modified version of filter.xsd 
+								
+								Allows a client to request targets from a specific instant, multiple instances or periods of time in the past, present and future. 
+								This is useful for dynamic sensors for which the properties of the target are time-dependent. 
+								Multiple time paramters may be indicated so that the client may request details of the observation target at multiple times. 
+								The supported range is listed in the contents section of the service metadata.</documentation>
+							</annotation>
+							<complexType>
+								<sequence>
+									<element ref="ogc:temporalOps"/>
+								</sequence>
+							</complexType>
+						</element>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ====================================================
+	response
+	=======================================================-->
+	<!-- The response is an GML feature, the schema of the feature instance can be retrieved using the DescribeFeatureType request.-->
+</schema>

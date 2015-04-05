@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xls="http://www.opengis.net/xls" xmlns:nav="http://www.opengis.net/ols/nav" targetNamespace="http://www.opengis.net/ols/nav" elementFormDefault="qualified" version="1.3.0">
+	<annotation>
+		<documentation>
+			OLS is an OGC Standard.
+			Copyright (c) 2005,2010,2014 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
+	</annotation>
+	<include schemaLocation="nav-All.xsd"/>
+	<import namespace="http://www.opengis.net/xls" schemaLocation="http://schemas.opengis.net/ols/1.2/XLS.xsd"/>
+	<include schemaLocation="nav-UOM.xsd"/>
+	<!-- ====================================== -->
+	<!--	Large Result Set Utilities (requests) -->
+	<!-- ====================================== -->
+	<complexType name="CursorFetchRequest">
+		<annotation>
+			<documentation>get a bucket from the cursor (of requested size)</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="xls:AbstractRequestParametersType">
+				<sequence>
+					<element name="CursorID" type="nav:CursorIDType"/>
+					<element name="FetchDirection" type="nav:FetchDirectionType"/>
+					<element name="NumRecordsToFetch" type="xsd:unsignedLong"/>
+				</sequence>
+				<attribute name="priority" type="nav:PriorityType" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GetCursorInfoRequest">
+		<complexContent>
+			<extension base="xls:AbstractRequestParametersType">
+				<sequence>
+					<element name="CursorID" type="nav:CursorIDType"/>
+				</sequence>
+				<attribute name="priority" type="nav:PriorityType" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GetCursorPositionRequest">
+		<annotation>
+			<documentation>The cursor is considered to be positioned in a gap between records.  Gap number 0 is the gap before the first record.  Gap number J is the gap between the Jth and (J+1)st records.  If there are N records in total, gap number N is the gap after the last record. The value returned by this request is the current cursor position.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="xls:AbstractRequestParametersType">
+				<sequence>
+					<element name="CursorID" type="nav:CursorIDType"/>
+				</sequence>
+				<attribute name="priority" type="nav:PriorityType" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SetCursorPositionRequest">
+		<annotation>
+			<documentation>This request positions a large result set cursor current position (CP) to a specified record within the complete result set. The action of this request  can be described in two steps as follows, although there is no implication that the actual implementation of the request must be implemented in this way: First, if the "CursorStartPosition" element is RESULT_SET_START, the CP is moved to the gap before the first record; if the "CursorStartPosition" element is RESULT_SET_END, the CP is moved to the gap after the last record; and if the "CursorStartPosition" element is CURRENT_POSITION, the CP is not moved.  Second, if NumOfPositions is positive, the CP is moved forward (toward the end of the result set) by NumOfPositions records; if NumOfPositions is negative, the CP is moved backward (toward the beginning of the result set) by NumOfPositions records; if NumOfPositions is zero, the CP is not moved.  However, if this movement would move the CP before the gap at the beginning of the large result set  or after the gap at the end of the large result set, the CP is instead left at that gap.
+</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="xls:AbstractRequestParametersType">
+				<sequence>
+					<element name="CursorID" type="nav:CursorIDType"/>
+					<element name="CursorStartPosition" type="nav:CursorOriginEnum"/>
+					<element name="NumOfPositions" type="xsd:long" default="0"/>
+				</sequence>
+				<attribute name="priority" type="nav:PriorityType" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ProcessCursorRequest">
+		<annotation>
+			<documentation>This request is for the server to process all of the records in the result set starting with the first record regardless of where the cursor's current position is currently positioned. Upon completion of this request, the cursor current position is positioned at the end of the complete result set.
+The action function's first parameter is a pointer to a structure of the type contained in the cursor's records.  The second is an application-defined structure, or NULL. In processing each cursor element, the third element  of ProcessCursorRequest is passed in as the second argument of ActionFunc.  If ActionFunc yields a negative result value, processing will be aborted.
+ProcessCursorResponse returns the number of records processed.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="xls:AbstractRequestParametersType">
+				<sequence>
+					<element name="CursorID" type="nav:CursorIDType"/>
+					<element name="ActionFunc" type="xsd:anyType"/>
+					<element name="ActionFuncParam" type="xsd:anyType"/>
+				</sequence>
+				<attribute name="priority" type="nav:PriorityType" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CloseCursorRequest">
+		<complexContent>
+			<extension base="xls:AbstractRequestParametersType">
+				<sequence>
+					<element name="CursorID" type="nav:CursorIDType"/>
+				</sequence>
+				<attribute name="priority" type="nav:PriorityType" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ====================================== -->
+	<!--	Large Result Set Utilities (responses) -->
+	<!-- ====================================== -->
+	<complexType name="CursorFetchResponse">
+		<complexContent>
+			<extension base="xls:AbstractResponseParametersType">
+				<sequence>
+					<element name="NumFetchedRecords" type="long">
+						<annotation>
+							<documentation>How many records actually got returned.</documentation>
+						</annotation>
+					</element>
+					<element name="CursorType" type="nav:CursorTypeEnum"/>
+					<element name="RetrievedRecords" type="xsd:anyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GetCursorInfoResponse">
+		<complexContent>
+			<extension base="xls:AbstractResponseParametersType">
+				<sequence>
+					<element name="CursorInfo" type="nav:CursorInfoType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GetCursorPositionResponse">
+		<complexContent>
+			<extension base="xls:AbstractResponseParametersType">
+				<sequence>
+					<element name="CursorPosition" type="xsd:long"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SetCursorPositionResponse">
+		<complexContent>
+			<extension base="xls:AbstractResponseParametersType">
+				<sequence>
+					<element name="GapNum" type="long">
+						<annotation>
+							<documentation>the number of the gap at which the cursor is left</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ProcessCursorResponse">
+		<complexContent>
+			<extension base="xls:AbstractResponseParametersType">
+				<sequence>
+					<element name="NumRecordsProcessed" type="long"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ====================================== -->
+	<!--	Cursor Types                   	  -->
+	<!-- ====================================== -->
+	<complexType name="CursorType">
+		<sequence>
+			<element name="CursorID" type="nav:CursorIDType"/>
+			<element name="CursorType" type="nav:CursorTypeEnum"/>
+		</sequence>
+	</complexType>
+	<complexType name="CursorIDType">
+		<complexContent>
+			<extension base="nav:AbstractIDType"/>
+		</complexContent>
+	</complexType>
+	<complexType name="CursorInfoType">
+		<sequence>
+			<element name="CursorBufferStart" type="xsd:long">
+				<annotation>
+					<documentation>Number of the gap before the set of records in the server's buffer, ready to be returned.</documentation>
+				</annotation>
+			</element>
+			<element name="CursorBufferEnd" type="xsd:long">
+				<annotation>
+					<documentation>Number of the gap after the set of records in the server's buffer, ready to be returned.</documentation>
+				</annotation>
+			</element>
+			<element name="ResultsSetComplete" type="xsd:boolean">
+				<annotation>
+					<documentation>Indication of whether last result record is ready to be returned.  This field is true if and only if CursorBufferEnd describes the gap after the last bucket record.
+</documentation>
+				</annotation>
+			</element>
+			<element name="CurrentCursorPosition" type="xsd:long">
+				<annotation>
+					<documentation>Current cursor position, as a gap number.  Reading forward will start after this gap; reading backward will start before this gap.</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<simpleType name="CursorTypeEnum">
+		<restriction base="xsd:string">
+			<enumeration value="RouteLinkAndCostType"/>
+			<enumeration value="MapObjType"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="FetchDirectionType">
+		<restriction base="xsd:string">
+			<enumeration value="FetchForward"/>
+			<enumeration value="FetchBackward"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="CursorOriginEnum">
+		<restriction base="xsd:string">
+			<enumeration value="CURRENT_POSITION"/>
+			<enumeration value="RESULT_SET_START"/>
+			<enumeration value="RESULT_SET_END"/>
+		</restriction>
+	</simpleType>
+</schema>
+

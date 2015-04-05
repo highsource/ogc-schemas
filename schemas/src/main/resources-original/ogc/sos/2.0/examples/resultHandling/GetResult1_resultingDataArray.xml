@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataArray xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<swe:elementCount>
+		<swe:Count/>
+	</swe:elementCount>
+	<swe:elementType name="tupleDefinition">
+		<swe:DataRecord>
+			<swe:field name="phenomenonTime">
+				<swe:Time definition="http://www.opengis.net/def/property/OGC/0/PhenomenonTime">
+					<swe:uom code="ms"/>
+				</swe:Time>
+			</swe:field>
+			<swe:field name="waterlevel">
+				<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/hydroSurface.owl#WaterHeight">
+					<swe:uom code="cm"/>
+				</swe:Quantity>
+			</swe:field>
+		</swe:DataRecord>
+	</swe:elementType>
+	<swe:encoding>
+		<swe:TextEncoding tokenSeparator="," blockSeparator="@@"/>
+	</swe:encoding>
+	<swe:values>3@@2008-03-01T17:44:15.000+00:00,32.0@@2008-03-01T17:45:15.000+00:00,32.1@@2008-03-01T17:46:15.000+00:00,32.2</swe:values>
+</swe:DataArray>

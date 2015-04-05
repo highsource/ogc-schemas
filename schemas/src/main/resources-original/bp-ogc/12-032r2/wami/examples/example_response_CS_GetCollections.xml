@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CS_Collections
+  xmlns="http://www.pixia.com/wami/v102"
+  xmlns:ows="http://www.opengis.net/ows/2.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.pixia.com/wami/v102 ../xsd/wami_1_0_2.xsd
+      http://www.opengis.net/ows/2.0
+      http://www.w3.org/1999/xlink"
+  updateSequence="5">
+
+  <!-- depth could have been "All" -->
+  <Description>Detailed statistics about a snapshot of the tree from a given Node ID (NID)</Description>
+  <Parent NID="node5">
+    <Service name="CS">
+        <Request xlink:href="http://example.com/CS" get="true" post="true"/>
+    </Service>
+  </Parent>
+  <Node NID="node6" parentNID="node5" updateSequence="7">
+    <Description>Node 6 description</Description>
+    <Node NID="node7" CID="collection7" parentNID="node6" updateSequence="6">
+      <Metadata>
+        <Collection 
+          startFrame="0"
+          endFrame="15"
+          frameCount="16"
+          startTime="2010-01-01T15:15:15.0Z"
+          endTime="2010-01-01T11:15:15.0Z"
+          timeSpan="3600.0"
+          frameInterval="1.0"
+		  live="false"
+          />
+        <GeoBox nativeCRS="EPSG:4236">
+          <BoundingBox crs="EPSG:4326" minx="1.0" maxx="2.0" miny="1.0" maxy="2.0" resx="50" resy="50"/>
+        </GeoBox>
+      </Metadata>
+    </Node>
+  </Node>
+</CS_Collections>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord definition="urn:x-ogc:def:property:CSM::RadialDistortionCoefficients" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<!-- -->
+	<swe:label>Radial Distortion Coefficients</swe:label>
+	<!-- -->
+	<swe:field name="k1">
+		<swe:Quantity definition="urn:x-ogc:def:property:CSM::DISTOR_RAD1">
+			<swe:uom code="mm-2"/>
+			<swe:value>1.92709e-005</swe:value>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="k2">
+		<swe:Quantity definition="urn:x-ogc:def:property:CSM::DISTOR_RAD2">
+			<swe:uom code="mm-2"/>
+			<swe:value>-5.14206e-010</swe:value>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="k3">
+		<swe:Quantity definition="urn:x-ogc:def:property:CSM::DISTOR_RAD3">
+			<swe:uom code="mm-2"/>
+			<swe:value>-3.33356e-012</swe:value>
+		</swe:Quantity>
+	</swe:field>
+	<!-- -->
+</swe:DataRecord>

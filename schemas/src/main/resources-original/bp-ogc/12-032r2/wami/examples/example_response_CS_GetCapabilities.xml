@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wami:Capabilities
+  xmlns:wami="http://www.pixia.com/wami/v102"
+  xmlns="http://www.opengis.net/ows/2.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.pixia.com/wami/v102 ../xsd/wami_1_0_2.xsd
+  http://www.opengis.net/ows/2.0 http://schemas.opengis.net/ows/2.0/owsAll.xsd
+  http://www.w3.org/1999/xlink http://www.w3.org/1999/xlink.xsd"
+  version="1.0.2" updateSequence="1">
+
+  <ServiceIdentification>
+    <Title>Collection Service</Title>
+    <ServiceType>CS</ServiceType>
+    <ServiceTypeVersion>1.0.2</ServiceTypeVersion>
+  </ServiceIdentification>
+  <ServiceProvider>
+    <ProviderName>Acme Corp</ProviderName>
+    <ServiceContact>
+      <IndividualName>John Doe</IndividualName>
+    </ServiceContact>
+  </ServiceProvider>
+  <OperationsMetadata>
+    <Operation name="GetCollectionCount">
+      <DCP>
+        <HTTP>
+          <Get xlink:href="http://example.com/CS?"/>
+        </HTTP>
+      </DCP>
+      <Parameter name="Service">
+        <AllowedValues>
+          <Value>CS</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Request">
+        <AllowedValues>
+          <Value>GetCollectionCount</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Version">
+        <AllowedValues>
+          <Value>1.0.0</Value>
+          <Value>1.0.1</Value>
+          <Value>1.0.2</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Format">
+        <AllowedValues>
+          <Value>application/xml</Value>
+          <Value>application/x-json</Value>
+        </AllowedValues>
+        <DefaultValue>application/xml</DefaultValue>
+      </Parameter>
+      <Parameter name="AcceptLanguages">
+        <AllowedValues>
+          <Value>en-US</Value>
+          <Value>en</Value>
+        </AllowedValues>
+        <DefaultValue>en-US</DefaultValue>
+      </Parameter>
+      <Parameter name="NID">
+        <AnyValue/>
+        <Meaning>Client sets one Node ID.
+                    The service returns collection count information starting from this node.
+                    If not set or empty, implies root node.
+                    Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="Depth">
+        <AllowedValues>
+          <Value>1</Value>
+          <Value>All</Value>
+        </AllowedValues>
+        <DefaultValue>All</DefaultValue>
+        <Meaning>Specifies how deep the collection counter shall go down the tree.
+                    It has two possible values: 1 or All.
+                    If not set or empty, implies Depth=All.
+                    Shall be implemented by both client and server.
+                    1: Client received number of child nodes under root or specified node.
+                    All: Client receives all the node counts below specified node.
+                </Meaning>
+      </Parameter>
+    </Operation>
+    <Operation name="GetCollections">
+      <DCP>
+        <HTTP>
+          <Get xlink:href="http://example.com/CS?"/>
+        </HTTP>
+      </DCP>
+      <Parameter name="Service">
+        <AllowedValues>
+          <Value>CS</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Request">
+        <AllowedValues>
+          <Value>GetCollections</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Version">
+        <AllowedValues>
+          <Value>1.0.0</Value>
+          <Value>1.0.1</Value>
+          <Value>1.0.2</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Format">
+        <AllowedValues>
+          <Value>application/xml</Value>
+          <Value>application/x-json</Value>
+        </AllowedValues>
+        <DefaultValue>application/xml</DefaultValue>
+      </Parameter>
+      <Parameter name="AcceptLanguages">
+        <AllowedValues>
+          <Value>en-US</Value>
+          <Value>en</Value>
+        </AllowedValues>
+        <DefaultValue>en-US</DefaultValue>
+      </Parameter>
+      <Parameter name="NID">
+        <AnyValue/>
+        <Meaning>Client sets one Node ID.
+                    The service returns collection count information starting from this node.
+                    If not set or empty, implies root node.
+                    Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="Metadata">
+        <AnyValue/>
+        <Meaning>
+                    A comma-separated ordered list of zero or more names of sections of metadata to be returned.
+                    If not set or empty, it means do not send metadata with node information.
+                    If set to All, it means send all metadata with node information.
+                    At least the value of All shall be implemented.
+                    A complete list shall be provided as part of the Capabilities response to the GetCollections request.
+                    Shall be implemented by both client and server.
+                </Meaning>
+      </Parameter>
+      <Parameter name="Depth">
+        <AllowedValues>
+          <Value>0</Value>
+          <Value>1</Value>
+          <Value>All</Value>
+        </AllowedValues>
+        <DefaultValue>0</DefaultValue>
+        <Meaning>Specifies how deep the collection counter shall go down the tree.
+                    It has three possible values: 0, 1 or All.
+                    If not set or empty, implies Depth=0.
+                    Shall be implemented by both client and server.
+                    0: only send information about this node.
+                    1: Client received number of child nodes under root or specified node.
+                    All: Client receives all the node counts below specified node.
+                </Meaning>
+      </Parameter>
+    </Operation>
+  </OperationsMetadata>
+  <wami:Language>en-US</wami:Language>
+  <wami:Language>en</wami:Language>
+</wami:Capabilities>

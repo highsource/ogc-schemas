@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wstop:TopicNamespace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/wsn/t-1 http://docs.oasis-open.org/wsn/t-1.xsd" xmlns:wstop="http://docs.oasis-open.org/wsn/t-1" xmlns:sps="http://www.opengis.net/sps/2.0" name="SPS-Topic-Namespace" targetNamespace="http://www.opengis.net/sps/2.0" final="true">
+  <wstop:Topic name="TaskEvent">
+    <wstop:Topic name="TaskFailure" messageTypes="sps:StatusReport"/>
+    <wstop:Topic name="TaskCancellation" messageTypes="sps:StatusReport"/>
+    <wstop:Topic name="TaskCompletion" messageTypes="sps:StatusReport"/>
+    <wstop:Topic name="TaskConfirmation" messageTypes="sps:StatusReport"/>
+    <wstop:Topic name="TaskUpdate" messageTypes="sps:StatusReport"/>
+    <wstop:Topic name="DataPublication" messageTypes="sps:StatusReport"/>
+    <wstop:Topic name="TaskReservation" messageTypes="sps:ReservationReport"/>
+    <wstop:Topic name="TaskSubmission" messageTypes="sps:StatusReport"/>
+    <wstop:Topic name="ReservationExpiration" messageTypes="sps:ReservationReport"/>
+  </wstop:Topic>
+  <wstop:Topic name="TaskingRequestEvent">
+    <wstop:Topic name="TaskingRequestExpiration" messageTypes="sps:StatusReport"/>
+    <wstop:Topic name="TaskingRequestRejection" messageTypes="sps:StatusReport"/>
+    <wstop:Topic name="TaskingRequestAcceptance" messageTypes="sps:StatusReport"/>
+    <wstop:Topic name="TaskingRequestPending" messageTypes="sps:StatusReport"/>
+  </wstop:Topic>
+</wstop:TopicNamespace>

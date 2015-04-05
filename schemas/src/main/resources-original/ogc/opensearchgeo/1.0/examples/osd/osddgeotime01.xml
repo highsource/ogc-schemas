@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OpenSearchDescription 
+xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/" xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/" xmlns="http://a9.com/-/spec/opensearch/1.1/">
+	<ShortName>Supersite</ShortName>
+	<LongName>GEO Geohazards Supersite Natural Laboratories</LongName>
+	<Description>
+The Supersites have data for the study of natural hazards in geologically active regions, including information from Synthetic Aperture Radar (SAR), GPS crustal deformation measurements, and earthquakes. The data are provided in the spirit of GEO, ESA, NASA and the National Science Foundation (NSF), that easy access to Earth science data will promote their use and advance scientific research, ultimately leading to reduced loss of life from natural hazards. This OpenSearch Service allows the discovery of the different search feeds available at this Supersite.
+	</Description>
+	<Tags>Supersite  ASAR SAR GPS GEO</Tags>
+	<Contact>info@terradue.com</Contact>
+	<Image height="38" width="120" type="image/png">
+http://www.terradue.com/images/terradue.png
+	</Image>
+	<Image height="16" width="16" type="image/vnd.microsoft.icon">
+http://www.terradue.com/images/terradue.ico
+	</Image>
+	<Query role="example" geo:box="138,35,143,41" searchTerms="ASAR Wide Swath"/>
+	<Developer>Terradue GeoSpatial Development Team</Developer>
+	<Attribution>
+Terradue Srl. Copyright 2008-11, All Rights Reserved
+	</Attribution>
+	<SyndicationRight>open</SyndicationRight>
+	<AdultContent>false</AdultContent>
+	<Language>en-us</Language>
+	<OutputEncoding>UTF-8</OutputEncoding>
+	<InputEncoding>UTF-8</InputEncoding>
+	<Url type="application/rdf+xml" indexOffset="0" pageOffset="0"
+			template="http://eo-virtual-archive4.esa.int/search/rdf/?count={count?}&amp;startIndex={startIndex?}&amp;q={searchTerms?}&amp;bbox={geo:box?}&amp;start={time:start?}&amp;stop={time:end?}"/>
+	<Url type="text/html" indexOffset="0" pageOffset="0" 
+			template="http://eo-virtual-archive4.esa.int/search/html/?count={count?}&amp;startIndex={startIndex?}&amp;q={searchTerms?}&amp;bbox={geo:box?}&amp;start={time:start?}&amp;stop={time:end?}"/>
+	<Url type="application/atom+xml" indexOffset="0" pageOffset="0" 
+			template="http://eo-virtual-archive4.esa.int/search/atom/?count={count?}&amp;startIndex={startIndex?}&amp;q={searchTerms?}&amp;bbox={geo:box?}&amp;start={time:start?}&amp;stop={time:end?}"/>
+</OpenSearchDescription>

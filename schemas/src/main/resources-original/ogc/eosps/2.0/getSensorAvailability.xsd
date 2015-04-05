@@ -1,0 +1,79 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:eosps="http://www.opengis.net/eosps/2.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" targetNamespace="http://www.opengis.net/eosps/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+    <annotation>
+        <documentation>EO SPS schema for the optional GetSensorAvailability operation.
+            
+            OGC EO SPS 2.0 is an OGC Standard.
+            Copyright (c) 2011 Open Geospatial Consortium.
+            To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <import namespace="http://www.opengis.net/swes/2.0" schemaLocation="http://schemas.opengis.net/swes/2.0/swes.xsd"/>
+	<!-- ================================================= -->
+    <element name="GetSensorAvailability" substitutionGroup="swes:ExtensibleRequest" type="eosps:GetSensorAvailabilityType"/>
+    <complexType name="GetSensorAvailabilityType">
+        <complexContent>
+            <extension base="swes:ExtensibleRequestType">
+                <sequence>
+                    <element name="sensor" type="anyURI">
+                        <annotation>
+                            <documentation>Identifier of a sensor as listed in the capabilities</documentation>
+                        </annotation>
+                    </element>
+                    <element name="requestPeriod">
+                        <annotation>
+                            <documentation>Period during which the client asks for sensor availability</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="gml:TimePeriod"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="GetSensorAvailabilityPropertyType">
+        <sequence minOccurs="0">
+            <element ref="eosps:GetSensorAvailability"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    </complexType>
+	<!-- ================================================= -->
+    <element name="GetSensorAvailabilityResponse" substitutionGroup="swes:ExtensibleResponse" type="eosps:GetSensorAvailabilityResponseType"/>
+    <complexType name="GetSensorAvailabilityResponseType">
+        <complexContent>
+            <extension base="swes:ExtensibleResponseType">
+                <sequence>
+                    <element name="responsePeriod">
+                        <annotation>
+                            <documentation>Period for which availability has been assessed by the server. It can be different from the requested period as explained in the specification</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="gml:TimePeriod"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="availabilityPeriod">
+                        <annotation>
+                            <documentation>Period(s) of availability of the sensor. When no periods are listed, the sensor is not available at all during the response period</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="gml:TimePeriod"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="GetSensorAvailabilityResponsePropertyType">
+        <sequence minOccurs="0">
+            <element ref="eosps:GetSensorAvailabilityResponse"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    </complexType>
+</schema>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/sos/1.0" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+	<annotation>
+		<documentation>
+			<description>
+				This XML Schema defines the DescribeSensor request and response XML elements and types.
+				
+				SOS is an OGC Standard.
+				Copyright (c) 2006,2010 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</description>
+		</documentation>
+	</annotation>
+	<!-- ==============================================================
+		includes and imports
+	============================================================== -->
+	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+	<include schemaLocation="sosAll.xsd"/>
+	<include schemaLocation="sosCommon.xsd"/>
+	<!-- ==============================================================
+		request
+	============================================================== -->
+	<element name="DescribeSensor">
+		<annotation>
+			<documentation>Request to a SOS to perform the DescribeSensor operation. This operation is designed to request detailed sensor metadata.	</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="sos:RequestBaseType">
+					<sequence>
+						<element name="procedure" type="anyURI">
+							<annotation>
+								<documentation>Identifier of the sensor, for which detailed metadata is requested.</documentation>
+							</annotation>
+						</element>
+					</sequence>
+					<attribute name="outputFormat" type="ows:MimeType" use="required">
+						<annotation>
+							<documentation>Identifier of the output format to be used for the requested data. The outputFormats supported by a SOS server are listed in the operations metadata section of the service metadata (capabilities XML). If this attribute is omitted, the outputFormat should be tex/xml;subtype="sensorML/1.0.0". If the requested outputFormat is not supported by the SOS server, an exception message shall be returned.
+				</documentation>
+						</annotation>
+					</attribute>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ==============================================================
+		response
+	============================================================== -->
+</schema>

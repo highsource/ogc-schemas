@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This sample file contains the list of order options identified for the following products: ALOS PALSAR/FBS -->
+<!-- The reported values are just examples and are not the actual values. -->
+<GetOptionsResponse xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" xmlns="http://www.opengis.net/oseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<status>success</status>
+	<orderOptions>
+		<productOrderOptionsId>options_001</productOrderOptionsId>
+		<description>Order Options for producing PALSAR/FBS</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="processingLevel">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/processingLevel">
+						<swe:identifier>processingLevel</swe:identifier>
+						<swe:description>Product Level</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>0</swe:value>
+								<swe:value>1</swe:value>
+								<swe:value>1A</swe:value>
+								<swe:value>1B</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="qualityOfService">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/qualityOfService">
+						<swe:identifier>qualityOfService</swe:identifier>
+						<swe:description>Quality of the Service for ALOS PALSAR</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>STANDARD</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+		<mediaDelivery>
+			<packageMedium>DVD</packageMedium>
+		</mediaDelivery>
+		</productDeliveryOptions>
+		<productDeliveryOptions>
+		<onlineDataDelivery>
+			<protocol>ftp</protocol>
+		</onlineDataDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+	<orderOptions>
+		<productOrderOptionsId>options_002</productOrderOptionsId>
+		<description>Order Options for producing PALSAR/FBS</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="processingLevel">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/processingLevel">
+						<swe:identifier>processingLevel</swe:identifier>
+						<swe:description>Product Level for ALOS PALSAR</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>1B</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="qualityOfService">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/qualityOfService">
+						<swe:identifier>qualityOfService</swe:identifier>
+						<swe:description>Quality of the Service for ALOS PALSAR</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>STANDARD</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="mapProjection">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/mapProjection">
+						<swe:identifier>mapProjection</swe:identifier>
+						<swe:description>Map Projection for ALOS PALSAR</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>UTM</swe:value>
+								<swe:value>PS</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="resampling">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/resampling">
+					<swe:identifier>resampling</swe:identifier>
+					<swe:description>Resampling for ALOS PALSAR</swe:description>
+					<swe:constraint>
+						<swe:AllowedTokens>
+							<swe:value>cubic convolution</swe:value>
+							<swe:value>nearest neighbour</swe:value>
+							<swe:value>bi-linear</swe:value>
+						</swe:AllowedTokens>
+					</swe:constraint>
+				</swe:Category>
+				</swe:field>
+			</swe:DataRecord>	
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="geoCorrection">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/geoCorrection">
+						<swe:identifier>geoCorrection</swe:identifier>
+						<swe:description>Geometric Correction</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>geo-coded</swe:value>
+								<swe:value>geo-referenced</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="mapDirection">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/mapDirection">
+						<swe:identifier>mapDirection</swe:identifier>
+						<swe:description>Map Direction</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>map north</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="pixelSpacing">
+					<swe:Quantity updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/pixelSpacing">
+						<swe:identifier>pixelSpacing</swe:identifier>
+						<swe:description>Pixel Spacing in metres</swe:description>
+						<swe:uom code="km"></swe:uom>
+						<swe:constraint>
+							<swe:AllowedValues>
+								<swe:value>6.25</swe:value>
+								<swe:value>12.5</swe:value>
+							</swe:AllowedValues>
+						</swe:constraint>
+					</swe:Quantity>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+		<mediaDelivery>
+			<packageMedium>DVD</packageMedium>
+		</mediaDelivery>
+		</productDeliveryOptions>
+		<productDeliveryOptions>
+		<onlineDataDelivery>
+			<protocol>ftp</protocol>
+		</onlineDataDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+	<orderOptions>
+		<productOrderOptionsId>options_003</productOrderOptionsId>
+		<description>Order Options for producing PALSAR/FBS L1</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="processingLevel">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/processingLevel">
+						<swe:identifier>processingLevel</swe:identifier>
+						<swe:description>Product Level</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>1</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="format">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/format">
+						<swe:identifier>format</swe:identifier>
+						<swe:description>Format file fro ALOS PALSAR</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>CEOS</swe:value>
+								<swe:value>ESA</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="qualityOfService">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/qualityOfService">
+						<swe:identifier>qualityOfService</swe:identifier>
+						<swe:description>Quality of service for ALOS PALSAR</swe:description>
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>STANDARD</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+		<mediaDelivery>
+			<packageMedium>DVD</packageMedium>
+		</mediaDelivery>
+		</productDeliveryOptions>
+		<productDeliveryOptions>
+		<onlineDataDelivery>
+			<protocol>ftp</protocol>
+		</onlineDataDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+</GetOptionsResponse>

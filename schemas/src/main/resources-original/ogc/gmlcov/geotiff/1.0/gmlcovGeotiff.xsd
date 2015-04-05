@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/gmlcov/geotiff/1.0" 
+    xmlns:geotiff="http://www.opengis.net/gmlcov/geotiff/1.0"
+    xmlns="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified" version="1.0.0" xml:lang="en">
+    <annotation>
+        <appinfo>gmlcovGeotiff.xsd</appinfo>
+        <documentation>This XML Schema Document is part of the GMLCOV GeoTIFF 
+        Encoding Profile [OGC 12-100r1]. It encodes the elements and types that 
+        allow expressing GeoTIFF features in GMLCOV coverages as used for 
+        example in WCS client/server communication.
+            Last updated: 2014-11-18
+            
+            GMLCOV GeoTIFF is an OGC Standard.
+            Copyright (c) 2012, 2013, 2014 Open Geospatial Consortium.
+            To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+        </documentation>
+    </annotation>
+    <!-- ============================================================== -->
+    <!-- includes and imports                                           -->
+    <!-- ============================================================== -->
+    <import namespace="http://www.opengis.net/gmlcov/1.0" schemaLocation="http://schemas.opengis.net/gmlcov/1.0/gmlcovAll.xsd"/>
+    <!-- ============================================================== -->
+    <!-- elements and types                                             -->
+    <!-- ============================================================== -->
+    <element name="parameters" type="geotiff:parametersType">
+        <annotation>
+            <documentation>Element used to capsule all GeoTIFF related request parameters.</documentation>
+        </annotation>
+    </element>
+    <complexType name="parametersType">
+        <sequence>
+            <element name="compression" type="geotiff:compressionType" default="None"/>
+            <element name="jpeg_quality" type="geotiff:jpeg_qualityType" default="75"/>
+            <element name="predictor" type="geotiff:predictorType" default="None"/>
+            <element name="interleave" type="geotiff:interleaveType" default="Pixel"/>
+            <element name="tiling" type="boolean">
+                <annotation>
+                    <documentation>Determines if tiling is used in GeoTIFF.</documentation>
+                </annotation>
+            </element>
+            <element name="tileheight" type="geotiff:tileheightType"/>
+            <element name="tilewidth" type="geotiff:tilewidthType"/>
+        </sequence>
+    </complexType>
+    <!-- ============================================================== -->
+    <simpleType name="compressionType">
+        <annotation>
+            <documentation>Compression used in GeoTIFF.</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="None"/>
+            <enumeration value="PackBits"/>
+            <enumeration value="Huffman"/>
+            <enumeration value="LZW"/>
+            <enumeration value="JPEG"/>
+            <enumeration value="Deflate"/>
+        </restriction>
+    </simpleType>
+    <!-- ============================================================== -->
+    <simpleType name="jpeg_qualityType">
+        <annotation>
+            <documentation>Quality used in JPEG compression in GeoTIFF.</documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="1"/>
+            <maxInclusive value="100"/>
+        </restriction>
+    </simpleType>
+    <!-- ============================================================== -->
+    <simpleType name="predictorType">
+        <annotation>
+            <documentation>Predictor used in GeoTIFF.</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="None"/>
+            <enumeration value="Horizontal"/>
+            <enumeration value="FloatingPoint"/>
+        </restriction>
+    </simpleType>
+    <!-- ============================================================== -->
+    <simpleType name="interleaveType">
+        <annotation>
+            <documentation>Interleaving used in GeoTIFF.</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Pixel"/>
+            <enumeration value="Band"/>
+        </restriction>
+    </simpleType>
+    <!-- ============================================================== -->
+    <simpleType name="tileheightType">
+        <annotation>
+            <documentation>tileheight used in tiling in GeoTIFF.</documentation>
+        </annotation>
+        <restriction base="integer">
+            <minExclusive value="0"/>
+        </restriction>
+    </simpleType>
+    <!-- ============================================================== -->
+    <simpleType name="tilewidthType">
+        <annotation>
+            <documentation>tilewidth used in tiling in GeoTIFF.</documentation>
+        </annotation>
+        <restriction base="integer">
+            <minExclusive value="0"/>
+        </restriction>
+    </simpleType>
+</schema>

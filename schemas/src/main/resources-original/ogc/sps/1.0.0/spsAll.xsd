@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/sps/1.0" xmlns:sps="http://www.opengis.net/sps/1.0"
+    xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0.0.2"
+    xml:lang="en">
+    <annotation>
+        <appinfo>spsAll.xsd</appinfo>
+        <documentation>
+            <description>This XML Schema includes and imports, directly and indirectly, all the XML
+            Schemas defined by the OGC Sensor Planning Service (SPS).</description>
+            <copyright>
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+            </copyright> 
+        </documentation>
+    </annotation>
+    <!-- ==============================================================
+        includes and imports
+        ============================================================== -->
+    <include schemaLocation="spsCancelRequest.xsd"/>
+    <include schemaLocation="spsCancelRequestResponse.xsd"/>
+    <include schemaLocation="spsDescribeTaskingRequest.xsd"/>
+    <include schemaLocation="spsDescribeTaskingRequestResponse.xsd"/>
+    <include schemaLocation="spsDescribeResultAccessRequest.xsd"/>
+    <include schemaLocation="spsDescribeResultAccessRequestResponse.xsd"/>
+    <include schemaLocation="spsGetCapabilities.xsd"/>
+    <include schemaLocation="spsGetFeasibilityRequest.xsd"/>
+    <include schemaLocation="spsGetFeasibilityRequestResponse.xsd"/>
+    <include schemaLocation="spsGetStatusRequest.xsd"/>
+    <include schemaLocation="spsGetStatusRequestResponse.xsd"/>
+    <include schemaLocation="spsSubmitRequest.xsd"/>
+    <include schemaLocation="spsSubmitRequestResponse.xsd"/>
+    <include schemaLocation="spsUpdateRequest.xsd"/>
+    <include schemaLocation="spsUpdateRequestResponse.xsd"/>
+    <include schemaLocation="spsTaskMessageDictionary.xsd"/>
+    <include schemaLocation="spsMessageSchema.xsd"/>
+</schema>

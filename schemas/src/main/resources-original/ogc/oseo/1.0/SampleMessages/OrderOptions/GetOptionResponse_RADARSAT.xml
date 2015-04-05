@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This sample file contains the list of order options identified for the following products: Envisat ASAR EC -->
+<!-- The reported values are just examples and are not the actual values. -->
+<GetOptionsResponse xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" xmlns="http://www.opengis.net/oseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<status>success</status>
+	<orderOptions>
+		<productOrderOptionsId>options_001</productOrderOptionsId>
+		<description>Order Options for producing ASAR EC</description>
+		<orderType>PRODUCT_ORDER</orderType>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="bitsOutput">
+					<swe:Count updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/bitsOutput">
+						<swe:identifier>bitsPerOutput</swe:identifier>
+						<swe:description>Number of Bits for output</swe:description>
+						<swe:constraint>
+							<swe:AllowedValues>
+								<swe:value>8</swe:value>
+								<swe:value>16</swe:value>
+							</swe:AllowedValues>
+						</swe:constraint>
+					</swe:Count>
+			</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+			</option>
+			<option>
+				<swe:DataRecord>
+					<swe:field name="dopplerGrid">
+						<swe:Boolean updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/dopplerGrid">
+						</swe:Boolean>
+					</swe:field>
+				</swe:DataRecord>
+				<grouping>Processing Option</grouping>
+			</option>
+			<option>
+				<swe:DataRecord>
+					<swe:field name="earthModel">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/earthModel">
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>WSG 1984</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<grouping>Processing Option</grouping>
+			</option>
+			<option>
+				<swe:DataRecord>
+					<swe:field name="mapDirection">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/mapDirection">
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>satellite</swe:value>
+									<swe:value>map north</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<grouping>Processing Option</grouping>
+			</option>
+			<option>
+				<swe:DataRecord>
+					<swe:field name="mapProjection">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/mapProjection">
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>ARC</swe:value>
+									<swe:value>TPL</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<grouping>Processing Option</grouping>
+			</option>
+			<option>
+				<swe:DataRecord>
+					<swe:field name="processingMode">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/processingMode">
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>STANDARD</swe:value>
+									<swe:value>short latency</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<grouping>Processing Option</grouping>
+			</option>
+		<productDeliveryOptions>
+		<mediaDelivery>
+			<packageMedium>DVD</packageMedium>
+		</mediaDelivery>
+		</productDeliveryOptions>
+	</orderOptions>
+</GetOptionsResponse>

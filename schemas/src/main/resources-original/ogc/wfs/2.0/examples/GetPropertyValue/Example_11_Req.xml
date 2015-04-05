@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<!--
+Q. Get the fids of all the features that satisfy a particular query.
+-->
+<GetPropertyValue
+   service="WFS"
+   version="2.0.2"
+   valueReference="abc:Road/@gml:id"
+   resolve="local"
+   resolveDepth="*"
+   outputFormat="application/xml; subtype=gml/3.2"
+   xmlns="http://www.opengis.net/wfs/2.0"
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:abc="http://www.myserver.com/abc"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+                       http://www.someserver.example.com/abc ./abc.xsd">
+   <Query typeNames="abc:Road">
+      <fes:Filter>
+         <fes:Within>
+            <fes:ValueReference>abc:track</fes:ValueReference>
+            <fes:Literal>
+               <gml:Envelope srsName="urn:fes:def:crs:EPSG::4326">
+                  <gml:lowerCorner>50 40</gml:lowerCorner>
+                  <gml:upperCorner>100 60</gml:upperCorner>
+               </gml:Envelope>
+            </fes:Literal>
+         </fes:Within>
+      </fes:Filter>
+   </Query>
+</GetPropertyValue>

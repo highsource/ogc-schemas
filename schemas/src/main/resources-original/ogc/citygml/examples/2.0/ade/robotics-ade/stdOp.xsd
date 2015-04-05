@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://unr.crl.hitachi.co.jp/ade/standard_opening" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:gml="http://www.opengis.net/gml" xmlns:bldg="http://www.opengis.net/citygml/building/2.0"
+	targetNamespace="http://unr.crl.hitachi.co.jp/ade/standard_opening" elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+
+	<xsd:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<xsd:import namespace="http://www.opengis.net/citygml/building/2.0" schemaLocation="http://schemas.opengis.net/citygml/building/2.0/building.xsd"/>
+
+	<!-- Door -->
+	<xsd:element name="doorOperationType" type="DoorOperationTypeType" substitutionGroup="bldg:_GenericApplicationPropertyOfDoor"/>
+	<xsd:simpleType name="DoorOperationTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="swinging"/>
+			<xsd:enumeration value="double_acting"/>
+			<xsd:enumeration value="sliding"/>
+			<xsd:enumeration value="folding"/>
+			<xsd:enumeration value="revolving"/>
+			<xsd:enumeration value="rollingup"/>
+			<xsd:enumeration value="userdefined"/>
+			<xsd:enumeration value="notdefined"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Window -->
+	<xsd:element name="windowOperationType" type="WindowOperationTypeType"
+		substitutionGroup="bldg:_GenericApplicationPropertyOfDoor"/>
+	<xsd:simpleType name="WindowOperationTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="sidehungrighthand"/>
+			<xsd:enumeration value="sidehunglefthand"/>
+			<xsd:enumeration value="tiltandturnrighthand"/>
+			<xsd:enumeration value="tiltandturnlefthand"/>
+			<xsd:enumeration value="tophung"/>
+			<xsd:enumeration value="bottomhung"/>
+			<xsd:enumeration value="pivothorizontal"/>
+			<xsd:enumeration value="pivotvertical"/>
+			<xsd:enumeration value="slidinghorizontal"/>
+			<xsd:enumeration value="slidingvertical"/>
+			<xsd:enumeration value="removablecasement"/>
+			<xsd:enumeration value="fixedcasement"/>
+			<xsd:enumeration value="otheroperation"/>
+			<xsd:enumeration value="notdefined"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

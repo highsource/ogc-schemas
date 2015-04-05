@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<fes:Filter
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/fes/2.0
+   http://schemas.opengis.net/filter/2.0/filterAll.xsd">
+   <fes:PropertyIsBetween>
+      <fes:ValueReference>SAMPLE_DATE</fes:ValueReference>
+      <fes:LowerBoundary>
+         <fes:Literal>2001-01-15T20:07:48.11</fes:Literal>
+      </fes:LowerBoundary>
+      <fes:UpperBoundary>
+         <fes:Literal>2001-03-06T12:00:00.00</fes:Literal>
+      </fes:UpperBoundary>
+   </fes:PropertyIsBetween>
+</fes:Filter>

@@ -1,0 +1,133 @@
+This file holds some information about the example_3857.tif file generated 
+using the given commands.
+
+
+########################
+listgeo example_3857.tif
+########################
+Geotiff_Information:
+   Version: 1
+   Key_Revision: 1.0
+   Tagged_Information:
+      ModelTiepointTag (2,3):
+         0                0                0                
+         100              350              0                
+      ModelPixelScaleTag (1,3):
+         10               10               0                
+      End_Of_Tags.
+   Keyed_Information:
+      GTModelTypeGeoKey (Short,1): ModelTypeProjected
+      GTRasterTypeGeoKey (Short,1): RasterPixelIsArea
+      GTCitationGeoKey (Ascii,25): "WGS 84 / Pseudo-Mercator"
+      GeogCitationGeoKey (Ascii,7): "WGS 84"
+      GeogAngularUnitsGeoKey (Short,1): Angular_Degree
+      ProjectedCSTypeGeoKey (Short,1): Unknown-3857
+      ProjLinearUnitsGeoKey (Short,1): Linear_Meter
+      End_Of_Keys.
+   End_Of_Geotiff.
+
+PCS = 3857 (WGS 84 / Pseudo-Mercator)
+Projection = 3856 (Popular Visualisation Pseudo-Mercator)
+Projection Method: CT_Mercator
+   ProjNatOriginLatGeoKey: 0.000000 (  0d 0' 0.00"N)
+   ProjNatOriginLongGeoKey: 0.000000 (  0d 0' 0.00"E)
+   ProjScaleAtNatOriginGeoKey: 1.000000
+   ProjFalseEastingGeoKey: 0.000000 m
+   ProjFalseNorthingGeoKey: 0.000000 m
+GCS: 4326/WGS 84
+Datum: 6326/World Geodetic System 1984
+Ellipsoid: 7030/WGS 84 (6378137.00,6356752.31)
+Prime Meridian: 8901/Greenwich (0.000000/  0d 0' 0.00"E)
+Projection Linear Units: 9001/metre (1.000000m)
+
+Corner Coordinates:
+Upper Left    (     100.000,     350.000)  (  0d 0' 3.23"E,  0d 0'11.40"N)
+Lower Left    (     100.000,      50.000)  (  0d 0' 3.23"E,  0d 0' 1.63"N)
+Upper Right   (     500.000,     350.000)  (  0d 0'16.17"E,  0d 0'11.40"N)
+Lower Right   (     500.000,      50.000)  (  0d 0'16.17"E,  0d 0' 1.63"N)
+Center        (     300.000,     200.000)  (  0d 0' 9.70"E,  0d 0' 6.51"N)
+
+
+#########################
+gdalinfo example_3857.tif
+#########################
+Driver: GTiff/GeoTIFF
+Files: example_3857.tif
+Size is 40, 30
+Coordinate System is:
+PROJCS["WGS 84 / Pseudo-Mercator",
+    GEOGCS["WGS 84",
+        DATUM["WGS_1984",
+            SPHEROID["WGS 84",6378137,298.257223563,
+                AUTHORITY["EPSG","7030"]],
+            AUTHORITY["EPSG","6326"]],
+        PRIMEM["Greenwich",0],
+        UNIT["degree",0.0174532925199433],
+        AUTHORITY["EPSG","4326"]],
+    PROJECTION["Mercator_1SP"],
+    PARAMETER["central_meridian",0],
+    PARAMETER["scale_factor",1],
+    PARAMETER["false_easting",0],
+    PARAMETER["false_northing",0],
+    AUTHORITY["EPSG","3857"],
+    EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs"],
+    UNIT["metre",1,
+        AUTHORITY["EPSG","9001"]]]
+Origin = (100.000000000000000,350.000000000000000)
+Pixel Size = (10.000000000000000,-10.000000000000000)
+Metadata:
+  AREA_OR_POINT=Area
+Image Structure Metadata:
+  INTERLEAVE=BAND
+Corner Coordinates:
+Upper Left  (     100.000,     350.000) (  0d 0'3.23"E,  0d 0'11.32"N)
+Lower Left  ( 100.0000000,  50.0000000) (  0d 0'3.23"E,  0d 0'1.62"N)
+Upper Right (     500.000,     350.000) (  0d 0'16.17"E,  0d 0'11.32"N)
+Lower Right (     500.000,      50.000) (  0d 0'16.17"E,  0d 0'1.62"N)
+Center      (     300.000,     200.000) (  0d 0'9.70"E,  0d 0'6.47"N)
+Band 1 Block=40x30 Type=Byte, ColorInterp=Gray
+
+
+#########################
+tiffinfo example_3857.tif
+#########################
+TIFFReadDirectory: Warning, example_3857.tif: unknown field with tag 33550 (0x830e) encountered.
+TIFFReadDirectory: Warning, example_3857.tif: unknown field with tag 33922 (0x8482) encountered.
+TIFFReadDirectory: Warning, example_3857.tif: unknown field with tag 34735 (0x87af) encountered.
+TIFFReadDirectory: Warning, example_3857.tif: unknown field with tag 34737 (0x87b1) encountered.
+TIFF Directory at offset 0x8 (8)
+  Image Width: 40 Image Length: 30
+  Bits/Sample: 8
+  Sample Format: unsigned integer
+  Compression Scheme: None
+  Photometric Interpretation: min-is-black
+  Samples/Pixel: 1
+  Rows/Strip: 30
+  Planar Configuration: single image plane
+  Tag 33550: 10.000000,10.000000,0.000000
+  Tag 33922: 0.000000,0.000000,0.000000,100.000000,350.000000,0.000000
+  Tag 34735: 1,1,0,7,1024,0,1,1,1025,0,1,1,1026,34737,25,0,2049,34737,7,25,2054,0,1,9102,3072,0,1,3857,3076,0,1,9001
+  Tag 34737: WGS 84 / Pseudo-Mercator|WGS 84|
+
+
+#########################
+tiffdump example_3857.tif
+#########################
+example_3857.tif:
+Magic: 0x4949 <little-endian> Version: 0x2a
+Directory 0: offset 8 (0x8) next 0 (0)
+ImageWidth (256) SHORT (3) 1<40>
+ImageLength (257) SHORT (3) 1<30>
+BitsPerSample (258) SHORT (3) 1<8>
+Compression (259) SHORT (3) 1<1>
+Photometric (262) SHORT (3) 1<1>
+StripOffsets (273) LONG (4) 1<363>
+SamplesPerPixel (277) SHORT (3) 1<1>
+RowsPerStrip (278) SHORT (3) 1<30>
+StripByteCounts (279) LONG (4) 1<1200>
+PlanarConfig (284) SHORT (3) 1<1>
+SampleFormat (339) SHORT (3) 1<1>
+33550 (0x830e) DOUBLE (12) 3<10 10 0>
+33922 (0x8482) DOUBLE (12) 6<0 0 0 100 350 0>
+34735 (0x87af) SHORT (3) 32<1 1 0 7 1024 0 1 1 1025 0 1 1 1026 34737 25 0 2049 34737 7 25 2054 0 1 9102 ...>
+34737 (0x87b1) ASCII (2) 33<WGS 84 / Pseudo-Mercator ...>

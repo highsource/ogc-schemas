@@ -1,0 +1,76 @@
+# -*- rnc -*-
+   # RELAX NG Compact Syntax Grammar for 
+   # ATOM encoding and foreign elements as defined in OGC 10-032 
+   # for the geo extension
+   #
+   # OGC OpenSearch Geo and Time Extensions 1.0 is an OGC Standard.
+   # Copyright (c) 2014 Open Geospatial Consortium.
+   # To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+   #
+   # Version: 1.0.0
+   #
+   
+namespace atom = "http://www.w3.org/2005/Atom"
+namespace os = "http://a9.com/-/spec/opensearch/1.1/"
+namespace dc="http://purl.org/dc/elements/1.1/" 
+namespace geo = "http://a9.com/-/opensearch/extensions/geo/1.0/"
+namespace georss="http://www.georss.org/georss" 
+namespace s = "http://purl.oclc.org/dsdl/schematron"
+namespace local = ""
+
+# Redefine atom:feed to include new OGC10-032 elements 
+atomFeedConstruct &= georssElement ? & element dc:identifier { xsd:token } ?
+                     
+# Redefine atom:entry to include new OGC10-032 elements 
+atomEntryConstruct &= georssElement ? & element dc:identifier { xsd:token } ?
+
+include "geo.rnc"
+# relative path schemas/georss folder 
+include "georss.rnc" 
+
+# Replacing definitions on RFC4287 plus OpenSearch 
+# relative path schemas/opensearch/1.1/ folder
+include "osatom.rnc"{
+
+      undefinedAttribute = attribute * - (xml:base | xml:lang | local:* | geo:* ) { text }
+       
+      # Redefine the Simple Extension to exclude atom geo elements
+      simpleExtensionElement = element * - 
+          (atom:* |  georss:* | os:* | dc:identifier ) { text }
+
+      # Redefine the Structured Extension to exclude atom geo elements
+      structuredExtensionElement = element * - 
+          (atom:* |  georss:* | os:* | dc:identifier ) {
+             (attribute * { text }+,(text|anyElement)*)
+           | (attribute * { text }*, (text?, anyElement+, (text|anyElement)*))} 
+
+      # Redefine Atom rules    
+      atomFeed = [
+         s:pattern [  name="Check for georss element "      
+        s:rule [ context = "atom:feed"
+         s:assert [ test = "georss:* or not(atom:entry[not(georss:*)])"
+             "An atom:feed must have an georss element unless all "
+           ~ "of its atom:entry children have one."]]]
+       ]
+       element atom:feed { atomFeedConstruct }     
+       
+      atomEntry =[
+       s:pattern [  name="Check for HTML Content"
+        s:rule [ context = "atom:entry"
+         s:assert [ test = "atom:content"
+          "An atom:entry must have one atom:content MUST have content "
+          ~ "element in a format understandable by generic Atom readers"
+          ~ " ( @type equal to 'html' is recommended)"]]]
+
+       s:pattern [  name="Check for georss element "
+	    s:rule [ context = "atom:entry"
+         s:assert [ test = "georss:* or "
+	       ~ "../georss:* "
+	       "An atom:entry must have an georss element "
+	       ~ "if its feed does not."]]]
+	       
+       ]
+      element atom:entry { atomEntryConstruct } 
+}
+# EOF
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" 
+xmlns:time="http://a9.com/-/opensearch/extensions/time/1.0/"
+xmlns:geo="http://a9.com/-/opensearch/extensions/geo/1.0/">
+<ShortName>Web Search</ShortName> 
+<LongName>Example.com with no geo:box search</LongName> 
+<Description>Use Example.com to search the Web.</Description> 
+<Tags>example web</Tags> 
+<Contact>admin@example.com</Contact> 
+<Url type="application/atom+xml" 
+     template="http://example.com/myatom/?pw={startPage?}&amp;start={time:start?}&amp;end={time:end?}"/> 
+<Attribution>Copyright 2005, Example.com, Inc.</Attribution>
+<SyndicationRight>open</SyndicationRight> 
+
+</OpenSearchDescription>

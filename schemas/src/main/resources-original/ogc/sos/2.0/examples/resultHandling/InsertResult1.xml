@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example Request for InsertResult operation containing the result values which shall be inserted. The result values have to match the structure defined in the InsertResultTemplate which has been sent to SOS beforehand. This template is identified by the template identifier which his also contained in this request. The response is empty, if the insertion has been successfull. Otherwise an exception response is returned.
+
+In this example, the sequence of operations for inserting results is as follows:
+1. InsertResultTemplate1.xml request is sent to SOS.
+2. InsertResultTemplate1_response.xml is returned from SOS.
+3. InsertResult1.xml is sent to SOS
+4. InsertResult1_response is returned from SOS
+=======================================================================-->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:om="http://www.opengis.net/om/1.0">
+	<soap12:Header>
+		<wsa:To>http://www.ogc.org/SOS</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/resultInsertion/2.0/InsertResult</wsa:Action>
+		<wsa:ReplyTo>
+			<wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
+		</wsa:ReplyTo>
+		<wsa:MessageID>http://my.client.com/uid/msg-0010</wsa:MessageID>
+	</soap12:Header>
+	<soap12:Body>
+		<sos:InsertResult service="SOS" version="2.0.0">
+
+<!--identifier of the result template which has been inserted beforehand by using the  InsertResultTemplate operation-->
+<sos:template>http://my.organization.org/sos/resultTemplate1</sos:template>
+
+<!--result values which shall be inserted-->
+<sos:resultValues>2008-03-01T17:44:15.000+00:00,32.0@@2008-03-01T17:45:15.000+00:00,32.1@@2008-03-01T17:46:15.000+00:00,32.2</sos:resultValues>
+
+</sos:InsertResult>
+	</soap12:Body>
+</soap12:Envelope>

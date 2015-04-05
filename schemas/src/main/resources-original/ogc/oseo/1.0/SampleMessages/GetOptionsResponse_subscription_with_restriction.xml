@@ -1,0 +1,103 @@
+<GetOptionsResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/oseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd">
+	<status>success</status>
+	<orderOptions>
+		<productOrderOptionsId>TerraSAR-X_SubscriptionOptions</productOrderOptionsId>
+		<description>Order Options for Subscription</description>
+		<orderType>SUBSCRIPTION_ORDER</orderType>
+		<option>
+			<swe:DataArray definition="http://www.opengis.net/def/parameter/ESA/1.0/regionOfInterest" optional="false" updatable="false">
+				<swe:identifier>regionOfInterest</swe:identifier>
+				<swe:elementCount>
+					<swe:Count definition="http://www.opengis.net/def/parameter/ESA/1.0/SpatialDimension"/>
+				</swe:elementCount>
+				<swe:elementType name="point">
+					<swe:Vector definition="http://www.opengis.net/def/parameter/ESA/1.0/LocationVector" referenceFrame="http://www.opengis.net/def/crs/EPSG/7.1/4326">
+						<swe:identifier>Location Point</swe:identifier>
+						<swe:coordinate name="latitude">
+							<swe:Quantity definition="http://www.opengis.net/def/parameter/ESA/1.0/latitude" axisID="Lat">
+								<swe:identifier>Latitude</swe:identifier>
+								<swe:uom code="deg"/>
+							</swe:Quantity>
+						</swe:coordinate>
+						<swe:coordinate name="longitude">
+							<swe:Quantity definition="http://www.opengis.net/def/parameter/ESA/1.0/longitude" axisID="Long">
+								<swe:identifier>Longitude</swe:identifier>
+								<swe:uom code="deg"/>
+							</swe:Quantity>
+						</swe:coordinate>
+					</swe:Vector>
+				</swe:elementType>
+				<swe:encoding>
+					<swe:XMLEncoding/>
+				</swe:encoding>
+				<swe:values>
+					<point>
+						<latitude>48.0</latitude>
+						<longitude>18.0</longitude>
+					</point>
+					<point>
+						<latitude>48.0</latitude>
+						<longitude>47.0</longitude>
+					</point>
+					<point>
+						<latitude>21.0</latitude>
+						<longitude>47.0</longitude>
+					</point>
+					<point>
+						<latitude>21.0</latitude>
+						<longitude>18.0</longitude>
+					</point>
+					<point>
+						<latitude>48.0</latitude>
+						<longitude>18.0</longitude>
+					</point>
+				</swe:values>
+			</swe:DataArray>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataRecord>
+				<swe:field name="dateRange">
+					<swe:TimeRange updatable="false" optional="false" definition="http://www.opengis.net/def/dataType:ISO-19108:2002:TM_Period">
+						<swe:uom code="s"/>
+						<swe:value>2008-01-01T02:27:08.80Z 2008-01-31T02:27:08.80Z</swe:value>
+					</swe:TimeRange>
+				</swe:field>
+			</swe:DataRecord>
+			<grouping>Processing Option</grouping>
+		</option>
+		<option>
+			<swe:DataArray>
+				<swe:elementCount>
+					<swe:Count>
+						<swe:value>1</swe:value>
+					</swe:Count>
+				</swe:elementCount>
+				<swe:elementType name="frequencyObservation">
+					<swe:DataRecord>
+						<swe:field name="numberOfObservations">
+							<swe:Count definition="http://www.opengis.net/def/parameter/ESA/1.0/numberOfObservations">
+								<swe:value>20</swe:value>
+							</swe:Count>
+						</swe:field>
+						<swe:field name="observationGap">
+							<swe:Count definition="http://www.opengis.net/def/parameter/ESA/1.0/observationGap">
+								<swe:value>2</swe:value>
+							</swe:Count>
+						</swe:field>
+					</swe:DataRecord>
+				</swe:elementType>
+			</swe:DataArray>
+			<grouping>Processing Option</grouping>
+		</option>
+		<productDeliveryOptions>
+			<mediaDelivery>
+				<packageMedium>CD-ROM</packageMedium>
+			</mediaDelivery>
+		</productDeliveryOptions>
+		<orderOptionInfoURL>http://www.provider.com/TerraSAR-X/orderoptions.html</orderOptionInfoURL>
+		<paymentOptions>
+			<paymentMethod>quota</paymentMethod>
+		</paymentOptions>
+	</orderOptions>
+</GetOptionsResponse>

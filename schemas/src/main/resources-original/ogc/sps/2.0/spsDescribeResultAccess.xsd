@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sps="http://www.opengis.net/sps/2.0" targetNamespace="http://www.opengis.net/sps/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+  <annotation>
+    <documentation>
+      SPS is an OGC Standard.
+      Copyright (c) 2010, 2011 Open Geospatial Consortium. 
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    </documentation>
+  </annotation>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+  <import namespace="http://www.opengis.net/swes/2.0" schemaLocation="http://schemas.opengis.net/swes/2.0/swes.xsd"/>
+  <include schemaLocation="sps.xsd"/>
+  <include schemaLocation="spsCommon.xsd"/>
+  <!-- ================================================= -->
+  <element name="DataAvailable" type="sps:DataAvailableType"/>
+  <complexType name="DataAvailableType">
+    <sequence>
+      <element name="dataReference" maxOccurs="unbounded">
+        <annotation>
+          <documentation>group of (service) references with which the complete set of data gathered for a task can be retrieved</documentation>
+        </annotation>
+        <complexType>
+          <sequence>
+            <element ref="ows:ReferenceGroup"/>
+          </sequence>
+        </complexType>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="DataAvailablePropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:DataAvailable"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="DescribeResultAccess" type="sps:DescribeResultAccessType" substitutionGroup="swes:ExtensibleRequest"/>
+  <complexType name="DescribeResultAccessType">
+    <complexContent>
+      <extension base="swes:ExtensibleRequestType">
+        <sequence>
+          <element name="target">
+            <annotation>
+              <documentation>Pointer to either a task or procedure.</documentation>
+            </annotation>
+            <complexType>
+              <sequence>
+                <group ref="sps:TaskOrProcess"/>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DescribeResultAccessPropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:DescribeResultAccess"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="DescribeResultAccessResponse" type="sps:DescribeResultAccessResponseType" substitutionGroup="swes:ExtensibleResponse"/>
+  <complexType name="DescribeResultAccessResponseType">
+    <complexContent>
+      <extension base="swes:ExtensibleResponseType">
+        <sequence>
+          <element name="availability">
+            <annotation>
+              <documentation>indicates that data is available or not</documentation>
+            </annotation>
+            <complexType>
+              <sequence>
+                <group ref="sps:AvailableOrNot"/>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DescribeResultAccessResponsePropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:DescribeResultAccessResponse"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="SPSMetadata" type="sps:SPSMetadataType" substitutionGroup="ows:AbstractMetaData">
+    <annotation>
+      <documentation>provides SPS specific metadata for (service) references given in a DescribeResultAccessResponse</documentation>
+    </annotation>
+  </element>
+  <complexType name="SPSMetadataType">
+    <sequence>
+      <element name="dataAccessType" type="anyURI">
+        <annotation>
+          <documentation>Identifies the specification that defines the type of service/method used for accessing data.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="SPSMetadataPropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:SPSMetadata"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="DataNotAvailable" type="sps:DataNotAvailableType">
+    <annotation>
+      <documentation>expresses that no data is available</documentation>
+    </annotation>
+  </element>
+  <complexType name="DataNotAvailableType">
+    <sequence>
+      <element name="unavailableCode" type="sps:UnavailableCodeType">
+        <annotation>
+          <documentation>identifies the reason why data is unavailable</documentation>
+        </annotation>
+      </element>
+      <element name="message" type="ows:LanguageStringType" minOccurs="0" maxOccurs="unbounded">
+        <annotation>
+          <documentation>human readable message that provides further information or reason why no data is available</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="DataNotAvailablePropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:DataNotAvailable"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <group name="TaskOrProcess">
+    <choice>
+      <element name="task" type="anyURI">
+        <annotation>
+          <appinfo>
+            <gml:targetElement>sps:Task</gml:targetElement>
+          </appinfo>
+          <documentation>Pointer to a task.</documentation>
+        </annotation>
+      </element>
+      <element name="procedure" type="anyURI">
+        <annotation>
+          <appinfo>
+            <gml:targetElement>unknown</gml:targetElement>
+          </appinfo>
+          <documentation>Pointer to a procedure tasked by the service.</documentation>
+        </annotation>
+      </element>
+    </choice>
+  </group>
+  <complexType name="TaskOrProcessPropertyType">
+    <sequence minOccurs="0">
+      <group ref="sps:TaskOrProcess"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attribute name="unionSemantics" type="sps:TaskOrProcessUnionSemantics"/>
+  </complexType>
+  <simpleType name="TaskOrProcessUnionSemantics">
+    <restriction base="string">
+      <enumeration value="task"/>
+      <enumeration value="procedure"/>
+    </restriction>
+  </simpleType>
+  <!-- ================================================= -->
+  <group name="AvailableOrNot">
+    <choice>
+      <element name="available">
+        <annotation>
+          <documentation>indicates that task data is available and contains (service) reference(s) to retrieve the data</documentation>
+        </annotation>
+        <complexType>
+          <sequence>
+            <element ref="sps:DataAvailable"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="unavailable">
+        <annotation>
+          <documentation>indicates that data is not available and explains why it is not available</documentation>
+        </annotation>
+        <complexType>
+          <sequence>
+            <element ref="sps:DataNotAvailable"/>
+          </sequence>
+        </complexType>
+      </element>
+    </choice>
+  </group>
+  <complexType name="AvailableOrNotPropertyType">
+    <sequence minOccurs="0">
+      <group ref="sps:AvailableOrNot"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attribute name="unionSemantics" type="sps:AvailableOrNotUnionSemantics"/>
+  </complexType>
+  <simpleType name="AvailableOrNotUnionSemantics">
+    <restriction base="string">
+      <enumeration value="available"/>
+      <enumeration value="unavailable"/>
+    </restriction>
+  </simpleType>
+  <!-- ================================================= -->
+  <simpleType name="UnavailableCodeType">
+    <union memberTypes="sps:UnavailableCodeEnumerationType sps:UnavailableCodeOtherType"/>
+  </simpleType>
+  <simpleType name="UnavailableCodeEnumerationType">
+    <restriction base="string">
+      <enumeration value="DataNotAvailable">
+        <annotation>
+          <documentation>Result access information is not available because no data has been gathered yet.</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="DataServiceUnavailable">
+        <annotation>
+          <documentation>Result access information is not available because one or more of the services that are assigned to store the data gathered in a task is currently unavailable.</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <simpleType name="UnavailableCodeOtherType">
+    <restriction base="string">
+      <pattern value="other: [A-Za-z0-9_]{2,}"/>
+    </restriction>
+  </simpleType>
+</schema>

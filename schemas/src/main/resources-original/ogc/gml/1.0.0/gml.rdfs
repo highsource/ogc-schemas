@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<!-- ============================================================== --> 
+<!--        G e o g r a p h y                                       --> 
+<!--        M a r k u p                                             --> 
+<!--        L a n g u a g e                                         --> 
+<!--                                                                --> 
+<!--        ( G M L )                                               --> 
+<!--                                                                --> 
+<!--        R D F    S c h e m a    D e f i n i t i o n s           --> 
+<!--                                                                --> 
+<!--  Copyright (c) 2000 Open Geospatial Consortium.                --> 
+<!-- ============================================================== --> 
+
+<rdf:RDF xml:lang="en"  
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+   xmlns:rdfs="http://www.w3.org/TR/1999/PR-rdf-schema-19990303#"> 
+
+<!--======================================================================================--> 
+<!--===  This section describes the abstract classes and properties for core GML =========--> 
+<!--======================================================================================--> 
+
+   <rdfs:Class rdf:ID="Geometry"> 
+      <rdfs:comment> 
+Geometry is the root class of the hierarchy. Geometry is an abstract (non-instantiable) class. 
+All instantiable geometry classes referenced in this specification are defined so that valid
+instances of a geometry class are topologically closed (i.e. all defined  geometries include
+their boundary). 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdfs:Class rdf:ID="Feature"> 
+      <rdfs:comment> 
+A Feature is a Property List, some of whose properties are of type geometry. Specific classes
+of geographic feature are created by subtyping from the GML Feature class in the application
+namespace. 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdfs:Class rdf:ID="GeometryCollection"> 
+      <rdfs:subClassOf rdf:resource="#Geometry"/> 
+      <rdfs:subClassOf
+rdf:resource="http://www.w3.org/TR/1999/PR-rdf-schema-19990303#Container"/> 
+      <rdfs:comment> 
+A GeometryCollection is a geometry that is a collection of 1 or more geometries. All the
+elements in a GeometryCollection must be in the same Spatial Reference. This is also the
+Spatial Reference for the GeometryCollection. GeometryCollection places no other constraints on
+its elements. Subclasses of GeometryCollection may restrict membership based on dimension and
+may also place other constraints on the degree of spatial overlap between elements. 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdfs:Class rdf:ID="Box"> 
+      <rdfs:subClassOf rdf:resource="#Geometry"/> 
+      <rdfs:comment> 
+A rectangular area defined by two points and the four orthogonal geodesic curves defined by
+these two points 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdf:Property ID="geometryMember"> 
+      <rdfs:range rdf:resource="#Geometry"/> 
+      <rdfs:domain rdf:resource="#GeometryCollection"/> 
+      <rdfs:comment> 
+selects next member in the geometry collection. Plays same role as li tag in rdf 
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="geometryProperty"> 
+      <rdfs:range rdf:resource="#Geometry"/> 
+      <rdfs:domain rdf:resource="#Feature"/> 
+      <rdfs:comment> 
+Abstract property which is the parent of all geospatial properties.  While OGC provides some
+standard geometry properties users can create additional properties by using the subProperty
+relationship and deriving from the OGC properties. 
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdfs:Class rdf:ID="FeatureCollection"> 
+      <rdfs:subClassOf rdf:resource="#Feature"/> 
+      <rdfs:comment> 
+A collection (set) of Features 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdf:Property ID="featureMember"> 
+      <rdfs:range rdf:resource="#Feature"/> 
+      <rdfs:domain rdf:resource="#FeatureCollection"/> 
+      <rdfs:comment> 
+Function which returns next Feature in a FeatureCollection 
+      </rdfs:comment> 
+   </rdf:Property> 
+
+<!--=============================================================================--> 
+<!--============== This next section defines common metadata properties =========--> 
+<!--=============================================================================--> 
+
+   <rdf:Property ID="name"> 
+      <rdfs:range rdf:resource="http://www.w3.org/TR/1999/PR-rdf-schema-19990303#Literal"/> 
+      <rdfs:domain rdf:resource="#Feature"/> 
+   </rdf:Property> 
+
+   <rdf:Property ID="boundedBy"> 
+      <rdfs:range rdf:resource="#Box"/> 
+      <rdfs:domain rdf:resource="#Feature"/> 
+   </rdf:Property> 
+
+   <rdf:Property ID="description"> 
+      <rdfs:range rdf:resource="http://www.w3.org/TR/1999/PR-rdf-schema-19990303#Literal"/> 
+      <rdfs:domain rdf:resource="#Feature"/> 
+   </rdf:Property> 
+
+   <rdf:Property ID="srsName"> 
+      <rdfs:range rdf:resource="http://www.w3.org/TR/1999/PR-rdf-schema-19990303#Literal"/> 
+      <rdfs:domain rdf:resource="#Geometry"/> 
+   </rdf:Property> 
+
+   <rdf:Property ID="coordinates"> 
+      <rdfs:domain rdf:resource="#Curve"/> 
+      <rdfs:domain rdf:resource="#Box"/>  
+      <rdfs:domain rdf:resource="#Point"/> 
+      <rdfs:range  rdf:resource="http://www.w3.org/TR/1999/PR-rdf-schema-19990303#Literal"/> 
+   </rdf:Property> 
+
+<!--=============================================================================--> 
+<!--=======  This next section defines the GML Geometry Classes =================--> 
+<!--=============================================================================--> 
+
+   <rdfs:Class rdf:ID="Point"> 
+      <rdfs:subClassOf rdf:resource="#Geometry"/> 
+      <rdfs:comment> 
+Point geometry class. A Point is a 0-dimensional geometry and represents a single location in
+coordinate space. A Point has an x-coordinate value and a y-coordinate value. Note that GML is
+more general than the OGC SQL v1.1 specification and does allow Points of 0-4 (or larger)
+dimension. The boundary of a Point is the empty set. 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdfs:Class rdf:ID="Curve"> 
+      <rdfs:subClassOf rdf:resource="#Geometry"/> 
+      <rdfs:comment> 
+A Curve is a one-dimensional geometric object usually stored as a sequence of points, with the
+subtype of Curve specifying the form of the interpolation between points. This specification
+defines only one subclass of Curve, LineString, which uses linear interpolation between
+points.  This is the only 1-D Geometry class which appears in the GML DTD. Topologically a
+Curve is a one-dimensional geometric object that is the homeomorphic image of a real, closed,
+interval D [a, b] {x in R2| a le x le b} under a mapping f:[a,b] --- R2 as defined in [1],
+section 3.12.7.2. 
+
+A Curve is simple if it does not pass through the same point twice ([1], section 3.12.7.3). 
+
+A Curve is closed if its start point is equal to its end point. ([1], section 3.12.7.3). 
+
+The boundary of a closed Curve is empty. 
+
+A Curve that is simple and closed is a Ring. 
+
+The boundary of a non-closed Curve consists of its two end points. ([1], section 3.12.3.2). 
+
+A Curve is defined as topologically closed. 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdfs:Class rdf:ID="LineString"> 
+      <rdfs:subClassOf rdf:resource="#Curve"/> 
+      <rdfs:comment> 
+Lines, LineStrings and LinearRings are all Curves. A Line String is a Curve with linear
+interpolation between points. Each consecutive pair of points defines a line segment. A Line is
+a LineString with exactly 2 points. In GML the points of a LineString are defined by a
+coordinate list and are not defined by GML Points. 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdfs:Class rdf:ID="LinearRing"> 
+      <rdfs:subClassOf rdf:resource="#Curve"/> 
+      <rdfs:comment> 
+A LinearRing is a LineString that is both closed and simple.  In GML, the points of a
+LinearRing are defined by a coordinate list and are not defined by GML Points. 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdfs:Class rdf:ID="Surface"> 
+      <rdfs:subClassOf rdf:resource="#Geometry"/> 
+      <rdfs:comment> 
+Abstract geometry class for 2D geometries 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdfs:Class rdf:ID="Polygon"> 
+      <rdfs:subClassOf rdf:resource="#Surface"/> 
+      <rdfs:comment> 
+A Polygon is a planar Surface, defined by 1 exterior boundary and 0 or more interior
+boundaries. Each interior boundary defines a hole in the Polygon. The assertions for polygons
+(the rules that define valid polygons) are: 
+
+1.  Polygons are topologically closed. 
+
+2.  The boundary of a Polygon consists of a set of LinearRings that make up its exterior and
+interior boundaries.  Note that these are captured in GML via the eboundaryis and iboundaryis
+properties of the Polygon. 
+
+3.  No two rings in the boundary cross, the rings in the boundary of a Polygon may intersect at
+a Point but only as a tangent. 
+
+4.  A Polygon may not have cut lines, spikes or punctures: 
+
+5.  The Interior of every Polygon is a connected point set. 
+
+6.  The Exterior of a Polygon with 1 or more holes is not connected. Each hole defines a
+connected component of the Exterior. 
+
+In the above assertions, Interior, Closure and Exterior have the standard topological
+definitions. The combination of 1 and 3 make a Polygon a Regular Closed point set. Polygons are
+simple geometries in accordance with the terminology of the OGC Abstract Specififcation 99-101.
+
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdf:Property ID="outerBoundaryIs"> 
+      <rdfs:range rdf:resource="#LinearRing"/> 
+      <rdfs:domain rdf:resource="#Polygon"/> 
+      <rdfs:comment> 
+This property returns the outer boundary of a polygon 
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="innerBoundaryIs"> 
+      <rdfs:range rdf:resource="#LinearRing"/> 
+      <rdfs:domain rdf:resource="#Polygon"/> 
+      <rdfs:comment> 
+This property returns a connected component of the interior boundary of a polygon. A polygon
+can have zero or more iboundaryis properties 
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdfs:Class rdf:ID="MultiPoint"> 
+      <rdfs:subClassOf rdf:resource="#GeometryCollection"/> 
+      <rdfs:comment> 
+A MultiPoint is a 0 dimensional geometric collection. The elements of a MultiPoint are
+restricted to Points. The points are not connected or ordered.  A MultiPoint is simple if no
+two Points in the MultiPoint are equal (have identical coordinate values). The boundary of a
+MultiPoint is the empty set. 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdf:Property ID="pointMember"> 
+      <rdfs:range rdf:resource="#Point"/> 
+      <rdfs:domain rdf:resource="#MultiPoint"/> 
+      <rdfs:comment> 
+Returns the next point in a multipoint 
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdfs:Class rdf:ID="MultiCurve"> 
+      <rdfs:subClassOf rdf:resource="#GeometryCollection"/> 
+      <rdfs:comment> 
+A MultiCurve is a one-dimensional eometryCollection whose elements are Curves. MultiCurve is
+present in this specification only to provide the context for the definition of a Multi-Line
+String.  MultiCurve is simple if and only if all of its elements are simple, the only
+intersections between any two elements occur at points that are on the boundary.  The boundary
+of a MultiCurve is obtained by applying the 'mod 2' union rule: A point is in the boundary of a
+MultiCurve if it is in the boundaries of an odd number of elements of the MultiCurve ([1],
+section 3.12.3.2).  
+
+MultiCurve is closed if all of its elements are closed. 
+
+The boundary of a closed MultiCurve is always empty.  MultiCurve is defined as topologically
+closed. 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdfs:Class rdf:ID="MultiLineString"> 
+      <rdfs:subClassOf rdf:resource="#GeometryCollection"/> 
+      <rdfs:comment> 
+A MultiLineString is a MultiCurve whose elements are LineStrings 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdf:Property ID="lineStringMember"> 
+      <rdfs:range rdf:resource="#LineString"/> 
+      <rdfs:domain rdf:resource="#MultiLineString"/> 
+      <rdfs:comment> 
+Returns the next linestring in a multilinestring 
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdfs:Class rdf:ID="MultiSurface"> 
+      <rdfs:subClassOf rdf:resource="#GeometryCollection"/> 
+      <rdfs:comment> 
+Abstract class for complex 2-D geometries 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdfs:Class rdf:ID="MultiPolygon"> 
+      <rdfs:subClassOf rdf:resource="#MultiSurface"/> 
+      <rdfs:comment> 
+A MultiPolygon is a MultiSurface whose elements are Polygons. The assertions for MultiPolygons
+are: 
+
+1.  The interiors of 2 Polygons that are elements of a MultiPolygon may not intersect. 
+
+2.  The Boundaries of any 2 Polygons that are elements of a MultiPolygon may not 'cross' and
+may touch at only a finite number of points. (Note that crossing is prevented by assertion 1
+above). 
+
+3.  A MultiPolygon is defined as topologically closed. 
+
+4.  A MultiPolygon may not have cut lines, spikes or punctures; a MultiPolygon is a Regular,
+Closed point set: 
+
+5.  The interior of a MultiPolygon with more than 1 Polygon is not connected, the number of
+connected components of the interior of a MultiPolygon is equal to the number of Polygons in
+the MultiPolygon. 
+
+The boundary of a MultiPolygon is a set of closed curves (LinearRings) corresponding to the
+boundaries of its element Polygons.  Each Curve in the boundary of the MultiPolygon is in the
+boundary of exactly 1 element Polygon, and every Curve in the boundary of an element Polygon is
+in the boundary of the MultiPolygon. 
+      </rdfs:comment> 
+   </rdfs:Class> 
+
+   <rdf:Property ID="polygonMember"> 
+      <rdfs:range rdf:resource="#Polygon"/> 
+      <rdfs:domain rdf:resource="#MultiPolygon"/> 
+      <rdfs:comment> 
+Returns the next polygon in a multipolygon 
+      </rdfs:comment> 
+   </rdf:Property> 
+
+<!--=================================================================================--> 
+<!--============= This section defines the GML geometry properties. =================--> 
+<!--========== All of these properties are sub-Properties of geometryproperty =======--> 
+<!--=================================================================================--> 
+
+   <rdf:Property ID="pointProperty"> 
+      <rdfs:range rdf:resource="#Point"/> 
+      <rdfs:subPropertyOf rdf:resource="#geometryProperty"/> 
+      <rdfs:comment> 
+Abstract property function that returns a point of the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="lineStringProperty"> 
+      <rdfs:range rdf:resource="#LineString"/> 
+      <rdfs:subPropertyOf rdf:resource="#geometryProperty"/> 
+      <rdfs:comment> 
+Abstract property function that returns a linestring of the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="polygonProperty"> 
+      <rdfs:range rdf:resource="#Polygon"/> 
+      <rdfs:subPropertyOf rdf:resource="#geometryProperty"/> 
+      <rdfs:comment> 
+Abstract property function that returns a polygon of the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="location"> 
+      <rdfs:subPropertyOf rdf:resource="#pointProperty"/> 
+      <rdfs:comment> 
+Returns a point of the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="position"> 
+      <rdfs:subPropertyOf rdf:resource="#pointProperty"/> 
+      <rdfs:comment> 
+Returns a point of the selected feature. 
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="centerOf"> 
+      <rdfs:subPropertyOf rdf:resource="#pointProperty"/> 
+      <rdfs:comment> 
+Returns the center point of the selected feature. 
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="centerLineOf"> 
+      <rdfs:subPropertyOf rdf:resource="#lineStringProperty"/> 
+      <rdfs:comment> 
+Returns a linestring which is the centerline of  the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="edgeOf"> 
+      <rdfs:subPropertyOf rdf:resource="#lineStringProperty"/> 
+      <rdfs:comment> 
+Returns a linestring which is an edge of the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="extentOf"> 
+      <rdfs:subPropertyOf rdf:resource="#polygonProperty"/> 
+      <rdfs:comment> 
+Returns a polygon which is the centerline of  the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="coverage"> 
+      <rdfs:subPropertyOf rdf:resource="#polygonProperty"/> 
+      <rdfs:comment> 
+Returns a polygon which is the centerline of  the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="multiPointProperty"> 
+      <rdfs:range rdf:resource="#MultiPoint"/> 
+      <rdfs:subPropertyOf rdf:resource="#geometryProperty"/> 
+      <rdfs:comment> 
+Abstract property function that returns a multipoint of the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="multiLineStringProperty"> 
+      <rdfs:range rdf:resource="#MultiLineString"/> 
+      <rdfs:subPropertyOf rdf:resource="#geometryProperty"/> 
+      <rdfs:comment> 
+Abstract property function that returns a multilinestring of the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="multiPolygonProperty"> 
+      <rdfs:range rdf:resource="#MultiPolygon"/> 
+      <rdfs:subPropertyOf rdf:resource="#geometryProperty"/> 
+      <rdfs:comment> 
+Abstract property function that returns a MultiPolygon of the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="multiLocation"> 
+      <rdfs:subPropertyOf rdf:resource="#multiPointProperty"/> 
+      <rdfs:comment> 
+Returns a multipoint of the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="multiPosition"> 
+      <rdfs:subPropertyOf rdf:resource="#multiPointProperty"/> 
+      <rdfs:comment> 
+Returns a multipoint of the selected feature. 
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="multiCenterOf"> 
+      <rdfs:subPropertyOf rdf:resource="#multiPointProperty"/> 
+      <rdfs:comment> 
+Returns the multi-center point of the selected feature. 
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="multiCenterLineOf"> 
+      <rdfs:subPropertyOf rdf:resource="#multiLineStringProperty"/> 
+      <rdfs:comment> 
+Returns a multilinestring which is the multicenterline of  the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="multiEdgeOf"> 
+      <rdfs:subPropertyOf rdf:resource="#multiLineStringProperty"/> 
+      <rdfs:comment> 
+Returns a multilinestring which is a set of edges of the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="multiExtentOf"> 
+      <rdfs:subPropertyOf rdf:resource="#multiPolygonProperty"/> 
+      <rdfs:comment> 
+Returns a MultiPolygon which is the extent of  the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+
+   <rdf:Property ID="multiCoverage"> 
+      <rdfs:subPropertyOf rdf:resource="#multiPolygonProperty"/> 
+      <rdfs:comment> 
+Returns a MultiPolygon which is the coverage of  the selected feature.  
+      </rdfs:comment> 
+   </rdf:Property> 
+</rdf:RDF>

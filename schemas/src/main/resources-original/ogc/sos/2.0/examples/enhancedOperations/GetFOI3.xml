@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example SOAP Request for GetFeatureOfInterest operation which contains filters for observable property and spatial property of features.
+=======================================================================-->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soap12:Header>
+		<wsa:To>http://mySOSURL</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/foiRetrieval/2.0/GetFeatureOfInterest</wsa:Action>
+		<wsa:ReplyTo>
+			<wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
+		</wsa:ReplyTo>
+		<wsa:MessageID>http://my.client.com/uid/msg-0010</wsa:MessageID>
+	</soap12:Header>
+	<soap12:Body>
+		<sos:GetFeatureOfInterest service="SOS" version="2.0.0">
+			<!--Features returned shall have property identified by this URN-->
+			<sos:observedProperty>http://sweet.jpl.nasa.gov/2.0/hydroSurface.owl#WaterHeight</sos:observedProperty>
+			<!-- Features returned shall matcht the spatial filter defined in this request-->
+			<sos:spatialFilter>
+				<fes:Intersects>
+					<fes:ValueReference>om:featureOfInterest/*/sams:shape</fes:ValueReference>
+					<gml:Point gml:id="point1" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+						<gml:pos>52.90 7.52</gml:pos>
+					</gml:Point>
+				</fes:Intersects>
+			</sos:spatialFilter>
+		</sos:GetFeatureOfInterest>
+	</soap12:Body>
+</soap12:Envelope>

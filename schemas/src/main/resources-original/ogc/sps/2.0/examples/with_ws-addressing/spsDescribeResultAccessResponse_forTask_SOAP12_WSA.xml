@@ -1,0 +1,61 @@
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd http://www.w3.org/2005/08/addressing http://www.w3.org/2005/08/addressing/ws-addr.xsd http://www.opengis.net/sos/2.0
+http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <soap12:Header>
+    <wsa:To>http://my.client.com/client/myReceiver</wsa:To>
+    <wsa:Action>http://www.opengis.net/sps/2.0/DescribeResultAccessResponse</wsa:Action>
+    <wsa:RelatesTo>http://my.client.com/uid/msg-0025</wsa:RelatesTo>
+  </soap12:Header>
+  <soap12:Body>
+    <sps:DescribeResultAccessResponse>
+      <sps:availability>
+        <sps:available>
+          <sps:DataAvailable>
+            <sps:dataReference>
+              <ows:ReferenceGroup>
+                <ows:Identifier>http://www.ogc.org/procedure/camera/1/tasks/6/accessReferenceGroups/1</ows:Identifier>
+                <ows:ServiceReference xlink:href="http://www.ogc.org/SOS" xlink:role="http://www.opengis.net/spec/SPS/2.0/referenceType/FullServiceAccess">
+                  <ows:Identifier>http://www.ogc.org/procedure/camera/1/accessReferenceGroups/1/references/1</ows:Identifier>
+                  <ows:Format>application/xml</ows:Format>
+                  <ows:Metadata>
+                    <sps:SPSMetadata>
+                      <sps:dataAccessType>http://www.opengis.net/sos/2.0/GetObservation</sps:dataAccessType>
+                    </sps:SPSMetadata>
+                  </ows:Metadata>
+                  <ows:RequestMessage>
+                    <soap12:Envelope>
+                      <soap12:Body>
+                        <sos:GetObservation service="SOS" version="2.0.0">
+                          <sos:observedProperty>http://www.opengis.net/def/propertyType/x-radiance</sos:observedProperty>
+                          <sos:procedure>http://www.ogc.org/procedure/camera/1</sos:procedure>
+                          <sos:temporalFilter>
+                            <fes:During>
+                              <fes:ValueReference>phenomenonTime</fes:ValueReference>
+                              <gml:TimePeriod gml:id="gid01">
+                                <gml:beginPosition>2010-08-20T12:37:00+02:00</gml:beginPosition>
+                                <gml:endPosition>2010-08-20T14:30:00+02:00</gml:endPosition>
+                              </gml:TimePeriod>
+                            </fes:During>
+                          </sos:temporalFilter>
+                        </sos:GetObservation>
+                      </soap12:Body>
+                    </soap12:Envelope>
+                  </ows:RequestMessage>
+                </ows:ServiceReference>
+              </ows:ReferenceGroup>
+            </sps:dataReference>
+            <sps:dataReference>
+              <ows:ReferenceGroup>
+                <ows:Identifier>http://www.ogc.org/procedure/camera/1/tasks/6/accessReferenceGroups/2</ows:Identifier>
+                <ows:Reference xlink:href="http://www.ogc.org/procedure/camera/1/videos/task_6.mj2" xlink:role="http://www.opengis.net/spec/SPS/2.0/referenceType/Resource">
+                  <ows:Identifier>http://www.ogc.org/procedure/camera/1/tasks/6/accessReferenceGroups/2/references/1</ows:Identifier>
+                  <ows:Format>video/mj2</ows:Format>
+                </ows:Reference>
+              </ows:ReferenceGroup>
+            </sps:dataReference>
+          </sps:DataAvailable>
+        </sps:available>
+      </sps:availability>
+    </sps:DescribeResultAccessResponse>
+  </soap12:Body>
+</soap12:Envelope>

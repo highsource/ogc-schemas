@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sps="http://www.opengis.net/sps/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.opengis.net/sps/1.0" elementFormDefault="qualified"
+    attributeFormDefault="unqualified" version="1.0.0.2">
+    
+    <xs:include schemaLocation="./spsAll.xsd"/>
+    <xs:include schemaLocation="./spsCommon.xsd"/>
+    <xs:annotation>
+        <xs:documentation>
+            <copyright>
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+            </copyright> 
+        </xs:documentation>
+    </xs:annotation>
+    <!--Schema of the sps:CancelRequest-->
+    <xs:element name="Cancel" type="sps:CancelRequestType">
+        <xs:annotation>
+            <xs:documentation>Comment describing your root element</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="CancelRequestType">
+        <xs:complexContent>
+            <xs:extension base="sps:RequestBaseType">
+                <xs:sequence>
+                    <xs:element ref="sps:taskID"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,15 @@
+<schema targetNamespace="urn:us:gov:ic:ism:v2"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:ism="urn:us:gov:ic:ism:v2"
+	xmlns:swe="http://www.opengis.net/swe/2.0"
+	elementFormDefault="qualified">
+	<!-- -->
+	<include schemaLocation="http://schemas.opengis.net/ic/2.0/IC-ISM-v2.xsd"/>
+	<import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+	<!-- -->
+	<element name="security">
+		<complexType>
+			<attributeGroup ref="ism:SecurityAttributesGroup"/>
+		</complexType>
+	</element>
+</schema>

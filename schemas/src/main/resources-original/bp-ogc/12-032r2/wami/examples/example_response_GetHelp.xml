@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Help
+  xmlns="http://www.pixia.com/wami/v102"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.pixia.com/wami/v102 ../xsd/wami_1_0_2.xsd"
+  lang="en"
+  service="CS" 
+  request="GetMap" 
+  version="1.0.2">
+  <h1>Help Title</h1>
+  <dl>
+    <dt>Topic 1</dt>
+    <dd>Data 1</dd>
+    <dt>Topic 2</dt>
+    <dd>Data 2</dd>
+  </dl>
+</Help>

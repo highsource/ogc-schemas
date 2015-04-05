@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    OGC LICENSE HEADER
+
+    The official OGC XML schemas can be accessed under http://schemas.opengis.net.
+    Please consider the schema copyright notices: http://www.opengeospatial.org/ogc/document
+    and the OGC Copyright Notice and Disclaimers: http://www.opengeospatial.org/ogc/legal
+    If there are any questions left there is also a copyright FAQ: http://www.opengeospatial.org/ogc/legalfaq
+-->
+<!--This example describes a buffer command that accepts geometries 
+	in GML, and uses a buffer distance in meters to produce buffered polygon 
+	features, which is output in GML in UTF-8 encoding. -->
+<wps:Process xmlns:wps="http://www.opengis.net/wps/2.0.0"
+	xmlns:ows="http://www.opengis.net/ows/2.0"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.opengis.net/wps/2.0.0 ../../wps.xsd">
+	
+	<ows:Title>Planar Buffer operation for GML features</ows:Title>
+	<ows:Abstract>Create a buffer around a GML feature. Accepts any valid GML feature and computes the joint buffer.</ows:Abstract>
+	<ows:Identifier>http://some.host/profileregistry/implementation/Planar-GML-Buffer</ows:Identifier>
+	<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process-profile/concept" xlink:href="http://some.host/profileregistry/concept/buffer"/>
+	<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process-profile/concept" xlink:href="http://some.host/profileregistry/concept/planarbuffer"/>
+	<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process-profile/generic" xlink:href="http://some.host/profileregistry/generic/SF-Buffer"/>
+	<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://some.host/profileregistry/implementation/Planar-GML-Buffer.html"/>
+	<wps:Input>
+		<ows:Title>Geometry to be buffered</ows:Title>
+		<ows:Abstract>Geometry input in GML</ows:Abstract>
+		<ows:Identifier>INPUT_GEOMETRY</ows:Identifier>
+		<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://some.host/profileregistry/implementation/Planar-GML-Buffer.html#input_geometry"/>
+		<wps:ComplexData>
+			<wps:Format mimeType="text/xml" encoding="UTF-8" schema="http://schemas.opengis.net/gml/3.2.1/feature.xsd" default="true"/>
+		</wps:ComplexData>
+	</wps:Input>
+	<wps:Input minOccurs="0">
+		<ows:Title>Distance</ows:Title>
+		<ows:Abstract>Distance to be used to calculate buffer.</ows:Abstract>
+		<ows:Identifier>DISTANCE</ows:Identifier>
+		<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://some.host/profileregistry/implementation/Planar-GML-Buffer.html#distance"/>
+		<wps:LiteralData>
+			<wps:Format mimeType="text/plain" default="true"/>
+			<wps:Format mimeType="text/xml"/>
+			<LiteralDataDomain default="true">
+				<ows:AllowedValues>
+					<ows:Range>
+						<ows:MinimumValue>1</ows:MinimumValue>
+						<ows:MaximumValue>unbounded</ows:MaximumValue>
+					</ows:Range>
+				</ows:AllowedValues>
+				<ows:DataType ows:reference="http://www.w3.org/2001/XMLSchema#double">Double</ows:DataType>
+			</LiteralDataDomain>
+		</wps:LiteralData>
+	</wps:Input>
+	<wps:Output>
+		<ows:Title>Buffered Geometry</ows:Title>
+		<ows:Abstract>GML stream describing the buffered Geometry.</ows:Abstract>
+		<ows:Identifier>BUFFERED_GEOMETRY</ows:Identifier>
+		<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://some.host/profileregistry/implementation/Planar-GML-Buffer.html#buffered_geometry"/>
+		<wps:ComplexData>
+			<wps:Format mimeType="text/xml" encoding="UTF-8" schema="http://schemas.opengis.net/gml/3.2.1/feature.xsd" default="true"/>
+		</wps:ComplexData>
+	</wps:Output>
+</wps:Process>

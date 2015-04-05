@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wami:Capabilities
+  xmlns:wami="http://www.pixia.com/wami/v102"
+  xmlns="http://www.opengis.net/ows/2.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.pixia.com/wami/v102 ../xsd/wami_1_0_2.xsd
+      http://www.opengis.net/ows/2.0
+      http://www.w3.org/1999/xlink"
+  version="1.0.2" updateSequence="1">
+
+  <ServiceIdentification>
+    <Title>Collection Service</Title>
+    <ServiceType>CS</ServiceType>
+    <ServiceTypeVersion>1.0.2</ServiceTypeVersion>
+  </ServiceIdentification>
+  <ServiceProvider>
+    <ProviderName>Acme Corp</ProviderName>
+    <ServiceContact>
+      <IndividualName>John Doe</IndividualName>
+    </ServiceContact>
+  </ServiceProvider>
+  <OperationsMetadata>
+    <Operation name="GetCapabilities">
+      <DCP>
+        <HTTP>
+          <Get xlink:href="http://wxample.com/CS?"/>
+        </HTTP>
+      </DCP>
+    </Operation>
+    <Operation name="GetHelp">
+      <DCP>
+        <HTTP>
+          <Get xlink:href="http://wxample.com/CS?"/>
+        </HTTP>
+      </DCP>
+    </Operation>
+    <Operation name="GetCollectionCount">
+      <DCP>
+        <HTTP>
+          <Get xlink:href="http://example.com/CS?"/>
+        </HTTP>
+      </DCP>
+      <Parameter name="Service">
+        <AllowedValues>
+          <Value>CS</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Request">
+        <AllowedValues>
+          <Value>GetCollectionCount</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Version">
+        <AllowedValues>
+          <Value>1.0.0</Value>
+          <Value>1.0.1</Value>
+          <Value>1.0.2</Value>
+        </AllowedValues>
+      </Parameter>
+      <Parameter name="Format">
+        <AllowedValues>
+          <Value>application/xml</Value>
+          <Value>application/x-json</Value>
+        </AllowedValues>
+        <DefaultValue>application/xml</DefaultValue>
+      </Parameter>
+      <Parameter name="AcceptLanguages">
+        <AllowedValues>
+          <Value>en-US</Value>
+          <Value>en</Value>
+        </AllowedValues>
+        <DefaultValue>en-US</DefaultValue>
+      </Parameter>
+      <Parameter name="NID">
+        <AnyValue/>
+      </Parameter>
+      <Parameter name="Depth">
+        <AllowedValues>
+          <Value>1</Value>
+          <Value>All</Value>
+        </AllowedValues>
+        <DefaultValue>All</DefaultValue>
+      </Parameter>
+      <Metadata>
+        <wami:PostContentTypeMetaData>
+          <wami:KVP/>
+          <wami:XML schemaElement="CS_GetCollectionCountRequest"/>
+        </wami:PostContentTypeMetaData>
+      </Metadata>
+    </Operation>
+  </OperationsMetadata>
+  <wami:Language>en</wami:Language>
+</wami:Capabilities>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" targetNamespace="http://www.opengis.net/ogc" elementFormDefault="qualified" version="1.0.0.2">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+  <xs:annotation>
+    <xs:documentation>ogc4sos.xsd
+    Utility schema which simply includes the OGC schema documents required for the OGC SOS schemas
+    
+    SOS is an OGC Standard.
+    Copyright (c) 2006,2010 Open Geospatial Consortium.
+    To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    </xs:documentation>
+  </xs:annotation>
+  <!-- ==============================================================
+       includes and imports
+       ============================================================== -->
+  <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+  <xs:include schemaLocation="http://schemas.opengis.net/filter/1.1.0/filter.xsd"/>
+  <!-- =================================================================== -->
+  <!-- TEMPORAL OPERATORS                                                  -->
+  <!-- =================================================================== -->
+  <xs:element name="temporalOps" type="ogc:TemporalOpsType" abstract="true"/>
+  <xs:complexType name="TemporalOpsType" abstract="true"/>
+  <xs:element name="TM_After" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:element name="TM_Before" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:element name="TM_Begins" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:element name="TM_BegunBy" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:element name="TM_Contains" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:element name="TM_During" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:element name="TM_EndedBy" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:element name="TM_Ends" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:element name="TM_Equals" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:element name="TM_Meets" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:element name="TM_MetBy" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:element name="TM_Overalps" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:element name="TM_OverlappedBy" type="ogc:BinaryTemporalOpType" substitutionGroup="ogc:temporalOps"/>
+  <xs:complexType name="BinaryTemporalOpType">
+    <xs:complexContent>
+      <xs:extension base="ogc:TemporalOpsType">
+        <xs:sequence>
+          <xs:element ref="ogc:PropertyName" minOccurs="1"/>
+          <xs:choice>
+            <xs:element ref="ogc:PropertyName"/>
+            <xs:element ref="gml:_TimeObject"/>
+          </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Temporal_CapabilitiesType">
+    <xs:sequence>
+      <xs:element name="TemporalOperands" type="ogc:TemporalOperandsType"/>
+      <xs:element name="TemporalOperators" type="ogc:TemporalOperatorsType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TemporalOperandsType">
+    <xs:sequence>
+      <xs:element name="TemporalOperand" type="ogc:TemporalOperandType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TemporalOperandType">
+    <xs:restriction base="xs:QName">
+      <xs:enumeration value="gml:validTime"/>
+      <xs:enumeration value="gml:TimeInstant"/>
+      <xs:enumeration value="gml:TimePeriod"/>
+      <xs:enumeration value="gml:timePosition"/>
+      <xs:enumeration value="gml:timeInterval"/>
+      <xs:enumeration value="gml:duration"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TemporalOperatorsType">
+    <xs:sequence>
+      <xs:element name="TemporalOperator" type="ogc:TemporalOperatorType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TemporalOperatorType">
+    <xs:sequence>
+      <xs:element name="TemporalOperands" type="ogc:TemporalOperandsType" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="ogc:TemporalOperatorNameType"/>
+  </xs:complexType>
+  <xs:simpleType name="TemporalOperatorNameType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TM_After"/>
+      <xs:enumeration value="TM_Before"/>
+      <xs:enumeration value="TM_Begins"/>
+      <xs:enumeration value="TM_BegunBy"/>
+      <xs:enumeration value="TM_Contains"/>
+      <xs:enumeration value="TM_During"/>
+      <xs:enumeration value="TM_Equals"/>
+      <xs:enumeration value="TM_Overlaps"/>
+      <xs:enumeration value="TM_Meets"/>
+      <xs:enumeration value="TM_OverlappedBy"/>
+      <xs:enumeration value="TM_MetBy"/>
+      <xs:enumeration value="TM_EndedBy"/>
+      <xs:enumeration value="TM_Ends"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- ========================================== -->
+  <xs:element name="Spatial_Capabilities" type="ogc:Spatial_CapabilitiesType"/>
+  <xs:element name="Scalar_Capabilities" type="ogc:Scalar_CapabilitiesType"/>
+  <xs:element name="Id_Capabilities" type="ogc:Id_CapabilitiesType"/>
+  <xs:element name="Temporal_Capabilities" type="ogc:Temporal_CapabilitiesType"/>
+</xs:schema>

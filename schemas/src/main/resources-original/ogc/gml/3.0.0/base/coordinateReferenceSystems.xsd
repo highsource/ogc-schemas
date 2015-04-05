@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.opengis.net/gml" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" elementFormDefault="qualified" xml:lang="en" version="3.0.0.1">
+  <xsd:annotation>
+    <xsd:appinfo source="urn:opengis:specification:gml:schema-coordinateReferenceSystems:v3.0.0"/>
+    <xsd:documentation>
+      <name>coordinateReferenceSystems.xsd</name>
+      <version>3.0 updated 2010-01-26</version>
+      <scope>How to encode coordinate reference system definitions. </scope>
+      <description>Builds on referenceSystems.xsd to encode the data needed to define coordinate reference systems, including the specific subtypes of coordinate reference systems. GML 3.0 candidate schema, primary editor: Arliss Whiteside.</description>
+      <copyright>
+        GML is an OGC Standard.
+        Copyright (c) 2001,2002,2010 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+      </copyright>
+      <conformance>This schema encodes the Coordinate Reference System (SC_) package of the extended UML Model for OGC Abstract Specification Topic 2: Spatial Referencing by Coordinates, with the exception of the abstract "SC_CRS" class. The "SC_CRS" class is encoded in referenceSystems.xsd, to eliminate the (circular) references from coordinateOperations.xsd to coordinateReferenceSystems.xsd. That UML model is adapted from ISO 19111 - Spatial referencing by coordinates, as described in Annex B of Topic 2. </conformance>
+    </xsd:documentation>
+  </xsd:annotation>
+  <!-- ==============================================================
+       includes and imports
+	============================================================== -->
+  <xsd:include schemaLocation="coordinateSystems.xsd"/>
+  <xsd:include schemaLocation="datums.xsd"/>
+  <xsd:include schemaLocation="coordinateOperations.xsd"/>
+  <!-- ==============================================================
+       elements and types
+	============================================================== -->
+  <xsd:element name="_CoordinateReferenceSystem" type="gml:AbstractCoordinateReferenceSystemType" abstract="true" substitutionGroup="gml:_CRS"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="AbstractCoordinateReferenceSystemType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A coordinate reference system consists of a set of coordinate system axes that is related to the earth through a datum. A coordinate reference system is realised by a set of coordinates. A coordinate reference system is defined by one datum and by one coordinate system.
+
+For the purposes of this specification, a coordinate reference system shall not change with time with the exception of engineering coordinate reference systems defined on moving platforms such as cars, ships, aircraft, and spacecraft. The intention is to exclude the option to describe the time variability of geodetic coordinate reference systems as a result of e.g. tectonic motion. This variability is part of the subject matter of geophysical and geodetic science. The model for spatial referencing by coordinates described in this Abstract Specification is in principle not suitable for such zero-order geodetic problems. Such time-variability of coordinate reference systems shall be covered in the spatial referencing model described in this document by creating different coordinate reference systems each with a different datum for (consecutive) epochs. The date of realisation of the datum shall be included in its definition. It is further recommended to include the date of realisation also in the names of the datums and the coordinate reference systems.
+
+Coordinate reference systems are commonly divided into sub-types. The common classification criterion for sub-typing of coordinate reference systems is the way in which they deal with earth curvature. This has a direct effect on the portion of the earth's surface that can be covered by that type of CRS with an acceptable degree of error. The exception to the rule is the subtype "Temporal" which has been added by analogy. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractCRSType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="coordinateReferenceSystemRef" type="gml:CoordinateReferenceSystemRefType" substitutionGroup="gml:crsRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="CoordinateReferenceSystemRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a Coordinate Reference System, either referencing or containing the definition of that Reference System. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:CRSRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:_CoordinateReferenceSystem" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="CompoundCRS" type="gml:CompoundCRSType" substitutionGroup="gml:_CRS"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="CompoundCRSType">
+    <xsd:annotation>
+      <xsd:documentation>A coordinate reference system describing the position of points through two or more independent coordinate reference systems. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractCRSType">
+        <xsd:sequence>
+          <xsd:element name="includesCRS" type="gml:CoordinateReferenceSystemRefType" minOccurs="2" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation>Ordered sequence of associations to the component coordinate reference systems included in this compound coordinate reference system. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="compoundCRSRef" type="gml:CompoundCRSRefType" substitutionGroup="gml:crsRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="CompoundCRSRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a Compound Coordinate Reference System, either referencing or containing the definition of that Reference System. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:CRSRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:CompoundCRS" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="GeographicCRS" type="gml:GeographicCRSType" substitutionGroup="gml:_CoordinateReferenceSystem"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="GeographicCRSType">
+    <xsd:annotation>
+      <xsd:documentation>A coordinate reference system based on an ellipsoidal approximation of the geoid; this provides an accurate representation of the geometry of geographic features for a large portion of the earth's surface.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractCoordinateReferenceSystemType">
+        <xsd:sequence>
+          <xsd:element name="usesCS" type="gml:EllipsoidalCSRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the ellipsoidal coordinate system used by this geographic CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="usesDatum" type="gml:GeodeticDatumRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the geodetic datum used by this geographic CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="geographicCRSRef" type="gml:GeographicCRSRefType" substitutionGroup="gml:coordinateReferenceSystemRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="GeographicCRSRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a Geographic Coordinate Reference System, either referencing or containing the definition of that Reference System. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:CoordinateReferenceSystemRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:GeographicCRS" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="VerticalCRS" type="gml:VerticalCRSType" substitutionGroup="gml:_CoordinateReferenceSystem"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="VerticalCRSType">
+    <xsd:annotation>
+      <xsd:documentation>A coordinate reference system used for recording heights or depths. Vertical CRSs make use of the direction of gravity to define the concept of height or depth, but the relationship with gravity may not be straightforward. By implication, ellipsoidal heights (h) cannot be captured in a vertical coordinate reference system. Ellipsoidal heights cannot exist independently, but only as inseparable part of a 3D coordinate tuple defined in a geographic 3D coordinate reference system. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractCoordinateReferenceSystemType">
+        <xsd:sequence>
+          <xsd:element name="usesCS" type="gml:GravityRelatedCSRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the gravity related coordinate system used by this vertical CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="usesDatum" type="gml:VerticalDatumRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the vertical datum used by this vertical CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="verticalCRSRef" type="gml:VerticalCRSRefType" substitutionGroup="gml:coordinateReferenceSystemRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="VerticalCRSRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a Vertical Coordinate Reference System, either referencing or containing the definition of that Reference System. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:CoordinateReferenceSystemRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:VerticalCRS" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="GeocentricCRS" type="gml:GeocentricCRSType" substitutionGroup="gml:_CoordinateReferenceSystem"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="GeocentricCRSType">
+    <xsd:annotation>
+      <xsd:documentation>A coordinate reference system that deals with the earth's curvature by taking the 3D spatial view which obviates the need to model the earth's curvature. The origin of a geocentric CRS is at the approximate centre of mass of the earth. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractCoordinateReferenceSystemType">
+        <xsd:sequence>
+          <xsd:choice>
+            <xsd:element name="usesCartesianCS" type="gml:CartesianCSRefType">
+              <xsd:annotation>
+                <xsd:documentation>Association to the Cartesian coordinate system used by this geocentric CRS. </xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="usesSphericalCS" type="gml:SphericalCSRefType">
+              <xsd:annotation>
+                <xsd:documentation>Association to the spherical coordinate system used by this geocentric CRS.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:choice>
+          <xsd:element name="usesDatum" type="gml:GeodeticDatumRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the geodetic datum used by this geocentric CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="geocentricCRSRef" type="gml:GeocentricCRSRefType" substitutionGroup="gml:coordinateReferenceSystemRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="GeocentricCRSRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a Geocentric Coordinate Reference System, either referencing or containing the definition of that Reference System. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:CoordinateReferenceSystemRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:GeocentricCRS" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="_GeneralDerivedCRS" type="gml:AbstractGeneralDerivedCRSType" abstract="true" substitutionGroup="gml:_CoordinateReferenceSystem"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="AbstractGeneralDerivedCRSType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A coordinate reference system that is defined by its coordinate conversion from another coordinate reference system (not by a datum). </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractCoordinateReferenceSystemType">
+        <xsd:sequence>
+          <xsd:element name="sourceCRS" type="gml:CoordinateReferenceSystemRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the coordinate system used by this derived CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="definedByConversion" type="gml:GeneralConversionRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the coordinate conversion used to define this derived CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="generalDerivedCRSRef" type="gml:GeneralDerivedCRSRefType" substitutionGroup="gml:coordinateReferenceSystemRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="GeneralDerivedCRSRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a General Derived Coordinate Reference System, either referencing or containing the definition of that Reference System. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:CoordinateReferenceSystemRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:_GeneralDerivedCRS" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="ProjectedCRS" type="gml:ProjectedCRSType" substitutionGroup="gml:_GeneralDerivedCRS"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="ProjectedCRSType">
+    <xsd:annotation>
+      <xsd:documentation>A coordinate reference system used to approximate the shape of the earth on a planar surface, but in such a way that the distortion that is inherent to the approximation is carefully controlled and known. Distortion correction is commonly applied to calculated bearings and distances to produce values that are a close match to actual field values. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractGeneralDerivedCRSType">
+        <xsd:sequence>
+          <xsd:element name="usesCS" type="gml:CartesianCSRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the Cartesian coordinate system used by this projected CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="projectedCRSRef" type="gml:ProjectedCRSRefType" substitutionGroup="gml:generalDerivedCRSRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="ProjectedCRSRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a Projected Coordinate Reference System, either referencing or containing the definition of that Reference System. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:GeneralDerivedCRSRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:ProjectedCRS" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="DerivedCRS" type="gml:DerivedCRSType" substitutionGroup="gml:_GeneralDerivedCRS"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="DerivedCRSType">
+    <xsd:annotation>
+      <xsd:documentation>A coordinate reference system that is defined by its coordinate conversion from another coordinate reference system but is not a projected coordinate reference system. This category includes coordinate reference systems derived from a projected coordinate reference system. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractGeneralDerivedCRSType">
+        <xsd:sequence>
+          <xsd:element name="usesCS" type="gml:CoordinateSystemRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the coordinate system used by this derived CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute ref="gml:derivedCRSType" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Type of this derived coordinate reference system. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="derivedCRSRef" type="gml:DerivedCRSRefType" substitutionGroup="gml:generalDerivedCRSRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="DerivedCRSRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a non-projected derived Coordinate Reference System, either referencing or containing the definition of that Reference System. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:GeneralDerivedCRSRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:DerivedCRS" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:attribute name="derivedCRSType" type="gml:DerivedCRSTypeType"/>
+  <!-- =========================================================== -->
+  <xsd:simpleType name="DerivedCRSTypeType">
+    <xsd:annotation>
+      <xsd:documentation>Type of a derived coordinate reference system. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="string">
+      <xsd:enumeration value="engineering">
+        <xsd:annotation>
+          <xsd:documentation>A contextually local coordinate reference system; which can be divided into two broad categories:
+- earth-fixed systems applied to engineering activities on or near the surface of the earth;
+- CRSs on moving platforms such as road vehicles, vessels, aircraft, or spacecraft. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="image">
+        <xsd:annotation>
+          <xsd:documentation>An engineering coordinate reference system applied to locations in images. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="vertical">
+        <xsd:annotation>
+          <xsd:documentation>A coordinate reference system used for recording of heights or depths. Vertical CRSs make use of the direction of gravity to define the concept of height or depth, but the relationship with gravity may not be straightforward. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="temporal">
+        <xsd:annotation>
+          <xsd:documentation>A coordinate reference system used for the recording of time. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- =========================================================== -->
+  <xsd:element name="EngineeringCRS" type="gml:EngineeringCRSType" substitutionGroup="gml:_CoordinateReferenceSystem"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="EngineeringCRSType">
+    <xsd:annotation>
+      <xsd:documentation>A contextually local coordinate reference system; which can be divided into two broad categories:
+- earth-fixed systems applied to engineering activities on or near the surface of the earth;
+- CRSs on moving platforms such as road vehicles, vessels, aircraft, or spacecraft.
+For further information, see OGC Abstract Specification Topic 2. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractCoordinateReferenceSystemType">
+        <xsd:sequence>
+          <xsd:element name="usesCS" type="gml:CoordinateSystemRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the coordinate system used by this engineering CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="usesDatum" type="gml:EngineeringDatumRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the engineering datum used by this engineering CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="engineeringCRSRef" type="gml:EngineeringCRSRefType" substitutionGroup="gml:coordinateReferenceSystemRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="EngineeringCRSRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to an Engineering Coordinate Reference System, either referencing or containing the definition of that Reference System. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:CoordinateReferenceSystemRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:EngineeringCRS" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="ImageCRS" type="gml:ImageCRSType" substitutionGroup="gml:_CoordinateReferenceSystem"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="ImageCRSType">
+    <xsd:annotation>
+      <xsd:documentation>An engineering coordinate reference system applied to locations in images. Image coordinate reference systems are treated as a separate sub-type because a separate user community exists for images with its own terms of reference. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractCoordinateReferenceSystemType">
+        <xsd:sequence>
+          <xsd:choice>
+            <xsd:element name="usesCartesianCS" type="gml:CartesianCSRefType">
+              <xsd:annotation>
+                <xsd:documentation>Association to the Cartesian coordinate system used by this image CRS.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="usesObliqueCartesianCS" type="gml:ObliqueCartesianCSRefType">
+              <xsd:annotation>
+                <xsd:documentation>Association to the oblique Cartesian coordinate system used by this image CRS.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:choice>
+          <xsd:element name="usesDatum" type="gml:ImageDatumRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the image datum used by this image CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="imageCRSRef" type="gml:ImageCRSRefType" substitutionGroup="gml:coordinateReferenceSystemRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="ImageCRSRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to an Image Coordinate Reference System, either referencing or containing the definition of that Reference System. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:CoordinateReferenceSystemRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:ImageCRS" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="TemporalCRS" type="gml:TemporalCRSType" substitutionGroup="gml:_CoordinateReferenceSystem"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="TemporalCRSType">
+    <xsd:annotation>
+      <xsd:documentation>A coordinate reference system used for the recording of time. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractCoordinateReferenceSystemType">
+        <xsd:sequence>
+          <xsd:element name="usesCS" type="gml:TemporalCSRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the temporal coordinate system used by this temporal CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="usesDatum" type="gml:TemporalDatumRefType">
+            <xsd:annotation>
+              <xsd:documentation>Association to the temporal datum used by this temporal CRS. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- =========================================================== -->
+  <xsd:element name="temporalCRSRef" type="gml:TemporalCRSRefType" substitutionGroup="gml:coordinateReferenceSystemRef"/>
+  <!-- =========================================================== -->
+  <xsd:complexType name="TemporalCRSRefType">
+    <xsd:annotation>
+      <xsd:documentation>Association to a Temporal Coordinate Reference System, either referencing or containing the definition of that Reference System. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="gml:CoordinateReferenceSystemRefType">
+        <xsd:sequence>
+          <xsd:element ref="gml:TemporalCRS" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

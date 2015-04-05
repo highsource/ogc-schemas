@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/sos/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" elementFormDefault="qualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+	<annotation>
+		<documentation>
+			<description>
+				This XML Schema defines the GetResult request and response XML elements and types.
+				
+				SOS is an OGC Standard.
+				Copyright (c) 2006,2010 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</description>
+		</documentation>
+	</annotation>
+	<!-- ==============================================================
+		includes and imports
+	============================================================== -->
+	<import namespace="http://www.opengis.net/ogc" schemaLocation="http://schemas.opengis.net/sos/1.0.0/ogc4sos.xsd"/>
+	<include schemaLocation="sosAll.xsd"/>
+	<include schemaLocation="sosCommon.xsd"/>
+	<!-- ==============================================================
+		request
+	============================================================== -->
+	<element name="GetResult">
+		<annotation>
+			<documentation>request to a SOS to perform a GetResult operation. this operation is designed to request sensor data from live sensors. Instead of retriveing the observations as a full OM document, you will get an simple value and a link to the reference system</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="sos:RequestBaseType">
+					<sequence>
+						<element name="ObservationTemplateId" type="anyURI">
+							<annotation>
+								<documentation>The gml:id of an previous GetObservation request response indicating observations from a certain sensor for a certain target.
+								</documentation>
+							</annotation>
+						</element>
+						<element name="eventTime" minOccurs="0" maxOccurs="unbounded">
+							<annotation>
+								<documentation>Allows a client to request observations from a specific instant, multiple instances or periods of time in the past, present and future. The supported range is listed in the selected offering capabilities.
+								</documentation>
+							</annotation>
+							<complexType>
+								<sequence>
+									<element ref="ogc:temporalOps"/>
+								</sequence>
+							</complexType>
+						</element>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ==============================================================
+		response
+	============================================================== -->
+	<element name="GetResultResponse">
+		<annotation>
+			<documentation>the response of a GetResult operation</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="result">
+					<annotation>
+						<documentation>RS attribute points to the description of the reference system of the result. The description will contain all information necessary to understand what is provided within the result response. The most simple case would be a single value.</documentation>
+					</annotation>
+					<complexType>
+						<simpleContent>
+							<extension base="string">
+								<attribute name="RS" type="anyURI" use="required"/>
+							</extension>
+						</simpleContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

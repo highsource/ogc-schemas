@@ -1,0 +1,55 @@
+# -*- rnc -*-
+   # RELAX NG Compact Syntax Grammar for 
+   # ATOM encoding and foreign elements for OpenSearch
+   #
+   # OGC OpenSearch Geo and Time Extensions 1.0 is an OGC Standard.
+   # Copyright (c) 2014 Open Geospatial Consortium.
+   # To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+   #
+   # Version: 1.0.0
+   #
+   
+namespace s = "http://purl.oclc.org/dsdl/schematron"
+namespace atom = "http://www.w3.org/2005/Atom"
+namespace os = "http://a9.com/-/spec/opensearch/1.1/"
+
+  
+# Redefine atom:feed to include new OpenSearch elements 
+atomFeedConstruct &= osQuery ? & osTotalResults? &osStartIndex? &osItemsPerPage?                       
+
+osQuery = element os:Query { undefinedAttribute*, ( osQueryAttr ) } 
+osTotalResults = element os:totalResults { xsd:int }
+osStartIndex = element os:startIndex { xsd:int }
+osItemsPerPage = element os:itemsPerPage { xsd:int }
+
+include "osquery.rnc"
+
+# Replacing definitions on RFC4287 
+include "atom_feed.rnc"{
+
+      # Redefine the Simple Extension to exclude os:* elements
+      simpleExtensionElement = element * - (atom:* | os:*) { text }
+
+      # Redefine the Structured Extension to exclude os:* elements
+      structuredExtensionElement = element * - 
+          (atom:* |  os:* ) { (attribute * { text }+,(text|anyElement)*)
+           | (attribute * { text }*, (text?, anyElement+, (text|anyElement)*))} 
+
+      # Redefine Atom rules    
+      atomFeed = [
+       ]
+       element atom:feed { atomFeedConstruct }     
+       
+      atomEntry =[
+       s:pattern [ name="check entry content" 
+       s:rule [ context = "atom:entry"
+         s:assert [ test = "atom:content"
+          "An atom:entry must have one atom:content "
+          ~ "element in a format understandable by generic Atom readers"
+          ~ " ( @type equal to 'html' is recommended)"]]]
+
+       ]
+      element atom:entry { atomEntryConstruct } 
+}
+# EOF
+

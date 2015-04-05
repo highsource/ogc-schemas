@@ -1,0 +1,56 @@
+# -*- rnc -*-
+# Test Purpose:	Verify that the server generates a valid OpenSearch description document.
+   
+namespace os = "http://a9.com/-/spec/opensearch/1.1/"
+namespace s = "http://purl.oclc.org/dsdl/schematron"
+namespace local = ""   
+start = osDocument
+
+osDocument = element os:OpenSearchDescription { osDocumentConstruct } 
+
+osDocumentConstruct =
+      element os:ShortName { xsd:string { maxLength = "16" } } 
+      & element os:Description { xsd:string { maxLength = "1024" } } 
+      & element os:Url { osdUrlAttr } * 
+      & element os:Contact { xsd:string {pattern=".+@.+"}}? 
+      & element os:Tags { text }? & element os:LongName { xsd:string {maxLength="48"}}?
+      & element os:Image { osdImage } * 
+      & element os:Query { undefinedAttribute*, ( osQueryAttr ) }*
+      & element os:Developer { xsd:string { maxLength = "64" } }? 
+      & element os:Attribution { xsd:string { maxLength = "256" } }? 
+      & element os:SyndicationRight { osdSyndicationRightValues } ? 
+      & element os:AdultContent { "false" | "true" } ? 
+      & element os:Language {xsd:string { pattern="[A-Za-z]{1,8}(-[A-Za-z0-9]{1,8})*"}}? 
+      & element os:InputEncoding { text } ? & element os:OutputEncoding { text } ? 
+      & undefinedAttribute*
+      & extensionElement*
+
+osdUrlAttr = attribute template { text }, attribute type { text },
+	          attribute rel { osdRelationValues }?, attribute indexOffset { xsd:int }?,
+              attribute pageOffset { xsd:int }?, undefinedAttribute*, extensionElement*
+              
+osdImage = attribute height {xsd:int}, attribute width {xsd:int}, 
+           attribute type {xsd:string}, text 
+
+include "../schemas/osquery.rnc"
+    
+osdRelationValues = "results" | "suggestions" | "self" | "collection" 
+osdSyndicationRightValues = "open" | "limited" | "private" | "closed"
+
+# Simple Extension
+simpleExtensionElement = element * - os:* { text }
+
+# Structured Extension
+structuredExtensionElement = element * - os:* {
+         (attribute * { text }+, (text|anyElement)*)
+       | (attribute * { text }*, (text?, anyElement+, (text|anyElement)*))}
+
+# Other Extensibility
+extensionElement = simpleExtensionElement | structuredExtensionElement
+undefinedAttribute = attribute * - (local:* ) { text }
+undefinedContent = (text|anyForeignElement)*
+anyElement = element * { (attribute * { text } | text | anyElement)* }
+anyForeignElement = element * - os:* { (attribute * { text } | text | anyElement)* }
+
+
+# EOF

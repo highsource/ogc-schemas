@@ -1,0 +1,26 @@
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/1.1">
+	<soap12:Header>
+		<wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/core/2.0/Exception</wsa:Action>
+		<wsa:RelatesTo>http://my.client.com/uid/msg-0010</wsa:RelatesTo>
+	</soap12:Header>
+	<soap12:Body>
+		<soap12:Fault>
+			<soap12:Code>
+				<soap12:Value>soap12:Receiver</soap12:Value>
+				<soap12:Subcode>
+					<soap12:Value>sos:ResponseExceedsSizeLimit</soap12:Value>
+				</soap12:Subcode>
+			</soap12:Code>
+			<soap12:Reason>
+				<soap12:Text xml:lang="en">The requested result set exceeds the response size limit of this service and thus cannot be delivered.</soap12:Text>
+			</soap12:Reason>
+			<soap12:Detail>
+				<ows:Exception exceptionCode="ResponseExceedsSizeLimit">
+					<ows:ExceptionText>The requested result set exceeds the response size limit of this service and thus cannot be delivered.</ows:ExceptionText>
+				</ows:Exception>
+			</soap12:Detail>
+		</soap12:Fault>
+	</soap12:Body>
+</soap12:Envelope>

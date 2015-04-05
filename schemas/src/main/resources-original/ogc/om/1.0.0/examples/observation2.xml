@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<om:Observation gml:id="obsTest2" xmlns:om="http://www.opengis.net/om/1.0" xmlns:sml="http://www.opengis.net/sensorML/1.0.1" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.opengis.net/om/1.0 ../om.xsd http://www.opengis.net/sensorML/1.0.1 http://schemas.opengis.net/sensorML/1.0.1/sensorML.xsd">
+	<gml:description>Observation test instance: fruit identification</gml:description>
+	<gml:name>Observation test 2</gml:name>
+	<om:samplingTime>
+		<gml:TimeInstant gml:id="ot2t">
+			<gml:timePosition>2005-01-11T17:22:25.00</gml:timePosition>
+		</gml:TimeInstant>
+	</om:samplingTime>
+	<om:procedure>
+		<sml:ProcessModel>
+			<sml:method xlink:href="http://www.flakey.org/register/party/abc99"/>
+		</sml:ProcessModel>
+	</om:procedure>
+	<om:observedProperty xlink:href="urn:ogc:def:phenomenon:OGC:Species"/>
+	<om:featureOfInterest xlink:href="http://wfs.flakey.org?request=getFeature&amp;featureid=fruit37f "/>
+	<om:result xsi:type="swe:ScopedNameType" codeSpace="http://en.wikipedia.org/wiki/List_of_fruits">Banana</om:result>
+</om:Observation>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by Johannes Echterhoff (Westfälische Wilhelms-Universität Münster) -->
+<schema targetNamespace="http://www.opengis.net/sos/1.0" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:om="http://www.opengis.net/om/1.0" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0.2" xml:lang="en">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
+	<annotation>
+		<documentation>
+			<description>
+				This XML Schema defines the insert request and response XML elements and types.
+				
+				SOS is an OGC Standard.
+				Copyright (c) 2006,2010 Open Geospatial Consortium.
+				To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+			</description>
+		</documentation>
+	</annotation>
+	<!-- ==============================================================
+		includes and imports
+	============================================================== -->
+	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+	<import namespace="http://www.opengis.net/om/1.0" schemaLocation="http://schemas.opengis.net/om/1.0.0/om.xsd"/>
+	<include schemaLocation="sosAll.xsd"/>
+	<include schemaLocation="sosCommon.xsd"/>
+	<!-- ==============================================================
+		request
+	============================================================== -->
+	<element name="InsertObservation">
+		<annotation>
+			<documentation>Request to a SOS to perform the Insert operation. This operation is designed to insert new observations. The request is constraint by the following parameters: ID obtained by the registerSensor operation (identifying the sensor and the observyationType, and the observation encoded as OM</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="sos:RequestBaseType">
+					<sequence>
+						<element name="AssignedSensorId" type="anyURI">
+							<annotation>
+								<documentation>The id obtained by the registerSensor operation.</documentation>
+							</annotation>
+						</element>
+						<element ref="om:Observation">
+							<annotation>
+								<documentation>The observation to be inserted to the SOS.</documentation>
+							</annotation>
+						</element>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ====================================================
+	response
+	=======================================================-->
+	<element name="InsertObservationResponse">
+		<annotation>
+			<documentation>returns the Id of the Observation assigend by the SOS</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="AssignedObservationId" type="anyURI"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

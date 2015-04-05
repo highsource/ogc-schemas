@@ -1,0 +1,46 @@
+# -*- rnc -*-
+# Test Purpose: Verify that the server defines an URL template for the Atom response type.
+   
+namespace s = "http://purl.oclc.org/dsdl/schematron"
+namespace atom = "http://www.w3.org/2005/Atom"
+namespace os = "http://a9.com/-/spec/opensearch/1.1/"
+
+  
+# Redefine atom:feed to include new OpenSearch elements 
+atomFeedConstruct &= osQuery ? & osTotalResults? &osStartIndex? &osItemsPerPage?                       
+
+osQuery = element os:Query { undefinedAttribute*, ( osQueryAttr ) } 
+osTotalResults = element os:totalResults { xsd:int }
+osStartIndex = element os:startIndex { xsd:int }
+osItemsPerPage = element os:itemsPerPage { xsd:int }
+
+include "../schemas/osquery.rnc"
+
+# Replacing definitions on RFC4287 
+include "../schemas/atom_feed.rnc"{
+
+      # Redefine the Simple Extension to exclude os:* elements
+      simpleExtensionElement = element * - (atom:* | os:*) { text }
+
+      # Redefine the Structured Extension to exclude os:* elements
+      structuredExtensionElement = element * - 
+          (atom:* |  os:* ) { (attribute * { text }+,(text|anyElement)*)
+           | (attribute * { text }*, (text?, anyElement+, (text|anyElement)*))} 
+
+      # Redefine Atom rules    
+      atomFeed = [ ]
+       element atom:feed { atomFeedConstruct }     
+       
+      atomEntry =[
+       s:pattern [ name="check entry content" 
+       s:rule [ context = "atom:entry"
+         s:assert [ test = "atom:content"
+          "An atom:entry must have one atom:content "
+          ~ "element in a format understandable by generic Atom readers"
+          ~ " ( @type equal to 'html' is recommended)"]]]
+
+       ]
+      element atom:entry { atomEntryConstruct } 
+}
+# EOF
+

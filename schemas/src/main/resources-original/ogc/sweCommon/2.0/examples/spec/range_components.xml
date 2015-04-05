@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<!-- -->
+	<swe:field name="category_range_field">
+		<swe:CategoryRange definition="http://sweet.jpl.nasa.gov/2.0/timeGeologic.owl#GeologicTime">
+		  <swe:label>Approximate Age</swe:label>
+		  <swe:description>Approximate period expressed as a range of geological eras</swe:description>
+			<swe:codeSpace xlink:href="http://sweet.jpl.nasa.gov/2.0/timeGeologic.owl#Era"/>
+			<swe:value>Paleozoic Mesozoic</swe:value>
+		</swe:CategoryRange>
+	</swe:field>
+	<!-- -->
+	<swe:field name="count_range_field">
+		<swe:CountRange definition="http://www.opengis.net/def/property/OGC/0/ArrayIndex">
+			<swe:label>Index Range</swe:label>
+			<swe:value>0 9999</swe:value>
+		</swe:CountRange>
+	</swe:field>
+	<!-- -->
+	<swe:field name="quantity_range_field">
+		<swe:QuantityRange definition="http://mmisw.org/ont/mmi/device/OperationalRange">
+			<swe:label>Operational Range</swe:label>
+			<swe:description>Operational range of the cryogenic thermometer</swe:description>
+			<swe:uom code="K"/>
+			<swe:value>10 300</swe:value>
+		</swe:QuantityRange>
+	</swe:field>
+	<!-- -->
+	<swe:field name="time_range_field_iso">
+		<swe:TimeRange definition="http://www.opengis.net/def/property/EO/0/SurveyPeriod">
+			<swe:label>Survey Period</swe:label>
+			<swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+			<swe:value>2008-01-05T11:02:54Z 2009-11-05T16:29:26Z</swe:value>
+		</swe:TimeRange>
+	</swe:field>
+	<!-- -->
+</swe:DataRecord>

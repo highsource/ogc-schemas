@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<rdf:RDF
+	xml:base="http://ws.spotimage.com/ogc-def/SPOT/Modes/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<!-- ================================================= -->
+	<rdfs:comment>This ontology defines acquisition modes that are specific to the SPOT satellites</rdfs:comment>
+	<!-- ================================================= -->
+	<rdf:Description rdf:about="http://ws.spotimage.com/ogc-def/SPOT/Modes/PANCHROMATIC">
+		<dc:creator>Spot Image S.A.</dc:creator>
+		<dc:title>PANCHROMATIC</dc:title>
+		<dc:description>***</dc:description>
+		<rdf:type rdf:resource="skos:Concept"/>
+		<skos:prefLabel>Panchromatic</skos:prefLabel>
+		<skos:inScheme rdf:resource="http://www.opengis.net/def/property"/>
+		<skos:broader rdf:resource="http://www.opengis.net/def/property/OGC-EO/0/InstrumentMode"/>
+	</rdf:Description>
+	<!-- -->
+	<rdf:Description rdf:about="http://ws.spotimage.com/ogc-def/SPOT/Modes/MULTISPECTRAL">
+		<dc:creator>Spot Image S.A.</dc:creator>
+		<dc:title>MULTISPECTRAL</dc:title>
+		<dc:description>***</dc:description>
+		<rdf:type rdf:resource="skos:Concept"/>
+		<skos:prefLabel>Multispectral</skos:prefLabel>
+		<skos:inScheme rdf:resource="http://www.opengis.net/def/property"/>
+		<skos:broader rdf:resource="http://www.opengis.net/def/property/OGC-EO/0/InstrumentMode"/>
+	</rdf:Description>
+	<!-- -->
+	<rdf:Description rdf:about="http://ws.spotimage.com/ogc-def/SPOT/Modes/THR">
+		<dc:creator>Spot Image S.A.</dc:creator>
+		<dc:title>THR</dc:title>
+		<dc:description>***</dc:description>
+		<rdf:type rdf:resource="skos:Concept"/>
+		<skos:prefLabel>THR</skos:prefLabel>
+		<skos:inScheme rdf:resource="http://www.opengis.net/def/property"/>
+		<skos:broader rdf:resource="http://www.opengis.net/def/property/OGC-EO/0/InstrumentMode"/>
+	</rdf:Description>
+	<!-- -->
+	<rdf:Description rdf:about="http://ws.spotimage.com/ogc-def/SPOT/Modes/THX">
+		<dc:creator>Spot Image S.A.</dc:creator>
+		<dc:title>THX</dc:title>
+		<dc:description>***</dc:description>
+		<rdf:type rdf:resource="skos:Concept"/>
+		<skos:prefLabel>THX</skos:prefLabel>
+		<skos:inScheme rdf:resource="http://www.opengis.net/def/property"/>
+		<skos:broader rdf:resource="http://www.opengis.net/def/property/OGC-EO/0/InstrumentMode"/>
+	</rdf:Description>
+</rdf:RDF>
+

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:gmd="http://www.isotc211.org/2005/gmd"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:om="http://www.opengis.net/om/2.0"
+	xmlns:sam="http://www.opengis.net/sampling/2.0"
+	xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0"
+	targetNamespace="http://www.opengis.net/samplingSpecimen/2.0"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="2.0.0">
+	<annotation>
+		<documentation> specimen.xsd 
+			
+			Observations and Measurements - XML Implementation is an OGC Standard.
+			
+			Copyright (c) [2010] Open Geospatial Consortium. To
+			obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<!-- ====================================================================== -->
+	<!-- bring in other schemas -->
+	<import
+		namespace="http://www.opengis.net/gml/3.2"
+		schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import
+		namespace="http://www.isotc211.org/2005/gmd"
+		schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
+	<import
+		namespace="http://www.opengis.net/sampling/2.0"
+		schemaLocation="http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd"/>
+	<import
+		namespace="http://www.opengis.net/om/2.0"
+		schemaLocation="http://schemas.opengis.net/om/2.0/observation.xsd"/>
+	<!-- ====================================================================== -->
+	<!-- ====================================================================== -->
+	<complexType
+		name="SF_SpecimenType">
+		<annotation>
+			<documentation>An object on which measurements may be made, often ex-situ. Note that if
+				this specimen is a "processed" version of another (e.g. by grinding, sieving, etc)
+				then the predecessor (if known) may be recorded as a
+				relatedSamplingFeature</documentation>
+		</annotation>
+		<complexContent>
+			<extension
+				base="sam:SF_SamplingFeatureType">
+				<sequence>
+					<element
+						name="materialClass"
+						type="gml:ReferenceType"
+						nillable="true">
+						<annotation>
+							<documentation> The attribute materialClass:GenericName shall provide a
+								basic classification of the material type of the specimen. EXAMPLE
+								soil, water, rock, aqueous, liquid, tissue, vegetableMatter, food,
+								gas, solid. A basic register of material-classes may be provided by OGC
+								at http://www.opengis.net/def/material/OGC-OM/2.0/ </documentation>
+						</annotation>
+					</element>
+					<element
+						name="samplingTime"
+						type="om:TimeObjectPropertyType"
+						nillable="true">
+						<annotation>
+							<documentation> The attribute samplingTime:TM_Object shall record when
+								the specimen was retrieved from the sampled feature.
+							</documentation>
+						</annotation>
+					</element>
+					<element
+						name="samplingMethod"
+						type="sam:SF_ProcessPropertyType"
+						minOccurs="0">
+						<annotation>
+							<documentation> If present, the attribute samplingMethod:SF_Process
+								shall describe the method used to obtain the specimen from its
+								sampledFeature. </documentation>
+						</annotation>
+					</element>
+					<element
+						name="samplingLocation"
+						type="gml:GeometryPropertyType"
+						minOccurs="0">
+						<annotation>
+							<documentation> If present, the attribute samplingLocation:GM_Object
+								shall describe the location from where the specimen was obtained.
+								NOTE Where a specimen has a relatedSamplingFeature whose location
+								provides an unambiguous location then this attribute is not
+								required. However, if the specific sampling location within the
+								sampledFeature is important, then this attribute supports its
+								description. </documentation>
+						</annotation>
+					</element>
+					<element
+						name="processingDetails"
+						type="spec:PreparationStepPropertyType"
+						minOccurs="0"
+						maxOccurs="unbounded">
+						<annotation>
+							<documentation> In many applications specimen preparation procedures are
+								applied to the material prior to its use in an observation. The
+								class PreparationStep (Figure 13) shall link a SF_Specimen to a
+								OM_Process that describes a phase of the specimen preparation. It
+								shall support one attribute. </documentation>
+						</annotation>
+					</element>
+					<element
+						name="size"
+						minOccurs="0">
+						<annotation>
+							<documentation> If present, the attribute size:Measure shall describe a
+								physical extent of the specimen. This may be length, mass, volume,
+								etc as appropriate for the specimen instance and its material class.
+							</documentation>
+						</annotation>
+						<complexType>
+							<annotation>
+								<documentation>Xlink attributes added to enable rich annotation,
+									e.g. size-type</documentation>
+							</annotation>
+							<simpleContent>
+								<extension
+									base="gml:MeasureType">
+									<attributeGroup
+										ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</simpleContent>
+						</complexType>
+					</element>
+					<element
+						name="currentLocation"
+						type="spec:LocationPropertyType"
+						minOccurs="0">
+						<annotation>
+							<documentation> If present, the attribute currentLocation:Location shall
+								describe the location of a physical specimen. This may be a storage
+								location, such as a shelf in a warehouse or a drawer in a museum.
+								NOTE If a specimen no longer exists, for example it was destroyed in
+								connection with an observation act, then the currentLocation should
+								be omitted or carry a suitable null indicator. </documentation>
+						</annotation>
+					</element>
+					<element
+						name="specimenType"
+						type="gml:ReferenceType"
+						minOccurs="0">
+						<annotation>
+							<documentation>If present, the attribute specimenType:GenericName shall describe the basic form of the specimen. 
+								EXAMPLE	polished section; core; pulp; solution. 
+							</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- .................. -->
+	<element
+		name="SF_Specimen"
+		type="spec:SF_SpecimenType"
+		substitutionGroup="sam:SF_SamplingFeature"/>
+	<!-- .................. -->
+	<complexType
+		name="SF_SpecimenPropertyType">
+		<sequence
+			minOccurs="0">
+			<element
+				ref="spec:SF_Specimen"/>
+		</sequence>
+		<attributeGroup
+			ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!-- ====================================================================== -->
+	<complexType
+		name="PreparationStepType">
+		<annotation>
+			<documentation> In many applications specimen preparation procedures are applied to the
+				material prior to its use in an observation. The class PreparationStep (Figure 13)
+				shall link a SF_Specimen to a OM_Process that describes a phase of the specimen
+				preparation. </documentation>
+		</annotation>
+		<sequence>
+			<element
+				name="time">
+				<annotation>
+					<documentation> The attribute time:TM_Object shall describe the time that the
+						OM_Process was applied to the SFN_Specimen. It supports ordering of
+						preparation steps. </documentation>
+				</annotation>
+				<complexType>
+					<sequence
+						minOccurs="0">
+						<element
+							ref="gml:AbstractTimeObject"/>
+					</sequence>
+					<attributeGroup
+						ref="gml:AssociationAttributeGroup"/>
+				</complexType>
+
+			</element>
+			<element
+				name="processOperator"
+				type="gmd:CI_ResponsibleParty_PropertyType">
+				<annotation>
+					<documentation>If present, the attribute processOperator:CI_ResponsibleParty
+						shall describe the operator of the process involved in the preparation step.
+					</documentation>
+				</annotation>
+			</element>
+			<element
+				name="processingDetails"
+				type="gml:ReferenceType">
+				<annotation>
+					<appinfo>
+						<gml:targetElement>sam:SF_Process</gml:targetElement>
+					</appinfo>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<!-- .................. -->
+	<element
+		name="PreparationStep"
+		type="spec:PreparationStepType"/>
+	<!-- .................. -->
+	<complexType
+		name="PreparationStepPropertyType">
+		<sequence>
+			<element
+				ref="spec:PreparationStep"/>
+		</sequence>
+	</complexType>
+	<!-- ====================================================================== -->
+	<!-- ====================================================================== -->
+	<complexType
+		name="LocationPropertyType">
+		<annotation>
+			<documentation>Location (Figure 13) is a union class (choice) that shall support two
+				attributes. </documentation>
+		</annotation>
+		<sequence
+			minOccurs="0">
+			<choice>
+				<element
+					ref="gml:AbstractGeometry">
+					<annotation>
+						<documentation>The attribute geometryLocation:GM_Object shall select a
+							geometric representation of the location. </documentation>
+					</annotation>
+				</element>
+				<element
+					ref="gmd:EX_GeographicDescription">
+					<annotation>
+						<documentation>The attribute nameLocation:EX_GeographicDescription shall
+							select a description of the location using text or an identifier.
+						</documentation>
+					</annotation>
+				</element>
+			</choice>
+		</sequence>
+		<attributeGroup
+			ref="gml:AssociationAttributeGroup"/>
+		<attribute
+			name="unionSemantics">
+			<simpleType>
+				<restriction
+					base="string">
+					<enumeration
+						value="geometryLocation">
+						<annotation>
+							<documentation>The attribute geometryLocation:GM_Object shall select a
+								geometric representation of the location. </documentation>
+						</annotation>
+					</enumeration>
+					<enumeration
+						value="nameLocation">
+						<annotation>
+							<documentation>The attribute nameLocation:EX_GeographicDescription shall
+								select a description of the location using text or an identifier.
+							</documentation>
+						</annotation>
+					</enumeration>
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
+	<!-- ====================================================================== -->
+</schema>

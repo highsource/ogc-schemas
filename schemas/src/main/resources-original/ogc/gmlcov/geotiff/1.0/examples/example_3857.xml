@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Example for a rectified grid coverage as defined in the GML 3.2.1 Application
+  Schema for Coverages using GeoTIFF encoding in a multipart file.
+  This file holds the GML part of the multipart file.
+  Last updated 2012-Sep-13
+-->
+<gmlcov:RectifiedGridCoverage
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+  xmlns:swe="http://www.opengis.net/swe/2.0"
+  xsi:schemaLocation="http://www.opengis.net/gmlcov/1.0 http://schemas.opengis.net/gmlcov/1.0/gmlcovAll.xsd"
+  gml:id="grey">
+  <gml:boundedBy>
+    <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/3857" axisLabels="x y" uomLabels="m m" srsDimension="2">
+      <gml:lowerCorner>100 50</gml:lowerCorner>
+      <gml:upperCorner>500 350</gml:upperCorner>
+    </gml:Envelope>
+  </gml:boundedBy>
+  <gml:domainSet>
+    <gml:RectifiedGrid dimension="2" gml:id="grid_grey">
+      <gml:limits>
+        <gml:GridEnvelope>
+          <gml:low>0 0</gml:low>
+          <gml:high>39 29</gml:high>
+        </gml:GridEnvelope>
+      </gml:limits>
+      <gml:axisLabels>x y</gml:axisLabels>
+      <gml:origin>
+        <gml:Point gml:id="grid_origin_grey" srsName="http://www.opengis.net/def/crs/EPSG/0/3857">
+          <gml:pos>105 345</gml:pos>
+        </gml:Point>
+      </gml:origin>
+      <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/3857">10 0</gml:offsetVector>
+      <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/3857">0 -10</gml:offsetVector>
+    </gml:RectifiedGrid>
+  </gml:domainSet>
+  <gml:rangeSet>
+    <gml:File>
+      <gml:rangeParameters xlink:href="cid:grey.tif" xlink:role="http://www.opengis.net/spec/gmlcov_geotiff-coverages/1.0/conf/geotiff-coverage" xlink:arcrole="fileReference"/>
+      <gml:fileReference>cid:grey.tif</gml:fileReference>
+      <gml:fileStructure/>
+      <gml:mimeType>image/tiff</gml:mimeType>
+    </gml:File>
+  </gml:rangeSet>
+  <gmlcov:rangeType>
+    <swe:DataRecord>
+      <swe:field name="grey">
+        <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/Radiance">
+          <swe:description>Grey band</swe:description>
+          <swe:nilValues/>
+          <swe:uom code="W.m-2.sr-1.nm-1"/>
+          <swe:constraint>
+            <swe:AllowedValues>
+              <swe:interval>0 255</swe:interval>
+            </swe:AllowedValues>
+          </swe:constraint>
+        </swe:Quantity>
+      </swe:field>
+    </swe:DataRecord>
+  </gmlcov:rangeType>
+</gmlcov:RectifiedGridCoverage>

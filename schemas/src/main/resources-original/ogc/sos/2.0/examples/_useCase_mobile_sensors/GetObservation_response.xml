@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+ http://www.opengis.net/sos/2.0
+http://schemas.opengis.net/sos/2.0/sos.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ogc="http://www.opengis.net/ogc" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<soap12:Header>
+		<wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+		<wsa:Action>http://www.opengis.net/def/serviceOperation/sos/core/2.0/GetObservationResponse</wsa:Action>
+		<wsa:RelatesTo>http://my.client.com/uid/msg-0010</wsa:RelatesTo>
+	</soap12:Header>
+	<soap12:Body>
+<sos:GetObservationResponse 
+  xmlns="http://www.opengis.net/sos/2.0">
+
+	<observationData>
+		<om:OM_Observation gml:id="o1">
+			<om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"/>
+			<om:phenomenonTime>
+				<gml:TimeInstant gml:id="pt1">
+					<gml:timePosition>2008-01-01T08:34:26.00</gml:timePosition>
+				</gml:TimeInstant>
+			</om:phenomenonTime>
+			<om:resultTime xlink:href="#pt1"/>
+			<om:procedure xlink:href="http://myServer.org/sensors/glider1"/>
+			<om:parameter>
+				<om:NamedValue>
+					<om:name xlink:href="http://www.opengis.net/req/omxml/2.0/data/samplingGeometry"/>
+					<om:value>
+						<gml:Point gml:id="sp1">
+							<gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">21.3 -94.4</gml:pos>
+						</gml:Point>
+					</om:value>
+				</om:NamedValue>
+			</om:parameter>
+			<om:observedProperty xlink:href="http://marinemetadata.org/cf#sea_water_salinity"/>
+			<om:featureOfInterest xlink:href="http://myServer.org/features/GulfOfMexico"/>
+			<om:result xsi:type="gml:MeasureType" uom="%">5.2</om:result>
+		</om:OM_Observation>
+	</observationData>
+	
+	<observationData>
+		<om:OM_Observation gml:id="o2">
+			<om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"/>
+			<om:phenomenonTime>
+				<gml:TimeInstant gml:id="p2">
+					<gml:timePosition>2008-01-01T16:22:25.00</gml:timePosition>
+				</gml:TimeInstant>
+			</om:phenomenonTime>
+			<om:resultTime xlink:href="#pt2"/>
+			<om:procedure xlink:href="http://myServer.org/sensors/glider1"/>
+			<om:parameter>
+				<om:NamedValue>
+					<om:name xlink:href="http://www.opengis.net/req/omxml/2.0/data/samplingGeometry"/>
+					<om:value>
+						<gml:Point gml:id="sp2">
+							<gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">21.5 -93.2</gml:pos>
+						</gml:Point>
+					</om:value>
+				</om:NamedValue>
+			</om:parameter>
+			<om:observedProperty xlink:href="http://marinemetadata.org/cf#sea_water_salinity"/>
+			<om:featureOfInterest xlink:href="http://myServer.org/features/GulfOfMexico"/>
+			<om:result xsi:type="gml:MeasureType" uom="%">6.3</om:result>
+		</om:OM_Observation>
+	</observationData>
+	
+	<!-- ... -->
+	
+</sos:GetObservationResponse>
+
+</soap12:Body>
+</soap12:Envelope>

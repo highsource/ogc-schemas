@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:sps="http://www.opengis.net/sps/2.0" targetNamespace="http://www.opengis.net/sps/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+  <annotation>
+    <documentation>
+      SPS is an OGC Standard.
+      Copyright (c) 2010, 2011 Open Geospatial Consortium. 
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    </documentation>
+  </annotation>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.opengis.net/swes/2.0" schemaLocation="http://schemas.opengis.net/swes/2.0/swes.xsd"/>
+  <include schemaLocation="sps.xsd"/>
+  <include schemaLocation="spsCommon.xsd"/>
+  <!-- ================================================= -->
+  <element name="GetTask" type="sps:GetTaskType" substitutionGroup="swes:ExtensibleRequest"/>
+  <complexType name="GetTaskType">
+    <complexContent>
+      <extension base="swes:ExtensibleRequestType">
+        <sequence>
+          <element name="task" type="anyURI" maxOccurs="unbounded">
+            <annotation>
+              <appinfo>
+                <gml:targetElement>sps:Task</gml:targetElement>
+              </appinfo>
+              <documentation>Pointer to the task on which information is requested.</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GetTaskPropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:GetTask"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="GetTaskResponse" type="sps:GetTaskResponseType" substitutionGroup="swes:ExtensibleResponse"/>
+  <complexType name="GetTaskResponseType">
+    <complexContent>
+      <extension base="swes:ExtensibleResponseType">
+        <sequence>
+          <element name="task" maxOccurs="unbounded">
+            <annotation>
+              <documentation>the task that was requested</documentation>
+            </annotation>
+            <complexType>
+              <sequence>
+                <element ref="sps:Task"/>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GetTaskResponsePropertyType">
+    <sequence minOccurs="0">
+      <element ref="sps:GetTaskResponse"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+  </complexType>
+</schema>

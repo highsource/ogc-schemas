@@ -1,0 +1,5 @@
+<SubmitAck xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/oseo/1.0" xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd">
+	<status>success</status>
+	<orderId>urn:ESA:EECF:order_id_0001</orderId>
+	<orderReference>example_0001</orderReference>
+</SubmitAck>

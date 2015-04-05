@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataStream xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+	<swe:label>Aircraft Navigation</swe:label>
+	<swe:elementType name="navData">
+		<swe:DataRecord>
+			<swe:field name="time">
+				<swe:Time definition="http://www.opengis.net/def/property/OGC/0/SamplingTime" referenceFrame="http://www.opengis.net/def/trs/OGC/0/GPS">
+					<swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+				</swe:Time>
+			</swe:field>
+			<swe:field name="speed">
+				<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/humanTransportAir.owl#GroundSpeed">
+					<swe:uom code="m/s"/>
+				</swe:Quantity >
+			</swe:field>
+			<swe:field name="location">
+				<swe:Vector optional="true" referenceFrame="http://www.opengis.net/def/crs/EPSG/0/4979">
+					<swe:coordinate name="lat">
+						<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Latitude" axisID="Lat">
+							<swe:uom code="deg"/>
+						</swe:Quantity>
+					</swe:coordinate>
+					<swe:coordinate name="lon">
+						<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceCoordinates.owl#Longitude" axisID="Long">
+							<swe:uom code="deg"/>
+						</swe:Quantity>
+					</swe:coordinate>
+					<swe:coordinate name="alt">
+						<swe:Quantity definition="http://sweet.jpl.nasa.gov/2.0/spaceExtent.owl#Altitude" axisID="h">
+							<swe:uom code="m"/>
+						</swe:Quantity>
+					</swe:coordinate>
+				</swe:Vector>
+			</swe:field>
+		</swe:DataRecord>
+	</swe:elementType>
+	<swe:encoding>
+		<swe:XMLEncoding/>
+	</swe:encoding>
+	<swe:values xmlns:ns="urn:myorg:dataset:X156822">
+		<ns:navData>
+			<ns:time>2007-10-23T15:46:12Z</ns:time>
+			<ns:speed>15.3</ns:speed>
+			<ns:location>
+				<ns:lat>45.3</ns:lat>
+				<ns:lon>-90.5</ns:lon>
+				<ns:alt>311</ns:alt>
+			</ns:location>
+		</ns:navData>
+		<ns:navData>
+			<ns:time>2007-10-23T15:46:22Z</ns:time>
+			<ns:speed>25.3</ns:speed>
+		</ns:navData>
+		<ns:navData>
+			<ns:time>2007-10-23T15:46:32Z</ns:time>
+			<ns:speed>20.6</ns:speed>
+			<ns:location>
+				<ns:lat>45.3</ns:lat>
+				<ns:lon>-90.6</ns:lon>
+				<ns:alt>312</ns:alt>
+			</ns:location>
+		</ns:navData>
+	</swe:values>
+</swe:DataStream>

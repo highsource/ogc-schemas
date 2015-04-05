@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataStream id="EXAMPLE_03"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+   <!-- -->
+   <swe:elementType name="imageData">
+      <swe:DataArray definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Raster">
+         <swe:elementCount>
+            <swe:Count>
+               <swe:value>3000</swe:value>
+            </swe:Count>
+         </swe:elementCount>
+         <swe:elementType name="row">
+            <swe:DataArray definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Row">
+               <swe:elementCount>
+                  <swe:Count>
+                     <swe:value>3000</swe:value>
+                  </swe:Count>
+               </swe:elementCount>
+               <swe:elementType name="pixel">
+                  <swe:DataRecord definition="http://sweet.jpl.nasa.gov/2.0/info.owl#Cell">
+                     <swe:field name="red">
+                        <swe:Count definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance">
+                           <swe:description>Radiance measured on band1 usually assigned to red channel</swe:description>
+                           <swe:nilValues>
+                              <swe:NilValues id="NIL_VALUES">
+                                 <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">0</swe:nilValue>
+                                 <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/AboveDetectionRange">255</swe:nilValue>
+                              </swe:NilValues>
+                           </swe:nilValues>
+                        </swe:Count>
+                     </swe:field>
+                     <swe:field name="green">
+                        <swe:Count definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance">
+                           <swe:description>Radiance measured on band2 usually assigned to green channel</swe:description>
+                           <swe:nilValues xlink:href="#NIL_VALUES"/>
+                        </swe:Count>
+                     </swe:field>
+                     <swe:field name="blue">
+                        <swe:Count definition="http://sweet.jpl.nasa.gov/2.0/physRadiation.owl#Radiance">
+                           <swe:description>Radiance measured on band3 usually assigned to blue channel</swe:description>
+                           <swe:nilValues xlink:href="#NIL_VALUES"/>
+                        </swe:Count>
+                     </swe:field>
+                  </swe:DataRecord>
+               </swe:elementType>
+            </swe:DataArray>
+         </swe:elementType>
+      </swe:DataArray>
+   </swe:elementType>
+   <!-- -->
+   <swe:encoding>
+      <swe:BinaryEncoding byteEncoding="raw" byteOrder="bigEndian">
+         <swe:member>
+            <swe:Component ref="imageData/row/pixel/red" dataType="http://www.opengis.net/def/dataType/OGC/0/unsignedByte"/>
+         </swe:member>
+         <swe:member>
+            <swe:Component ref="imageData/row/pixel/green" dataType="uhttp://www.opengis.net/def/dataType/OGC/0/unsignedByte"/>
+         </swe:member>
+         <swe:member>
+            <swe:Component ref="imageData/row/pixel/blue" dataType="http://www.opengis.net/def/dataType/OGC/0/unsignedByte"/>
+         </swe:member>
+      </swe:BinaryEncoding>
+   </swe:encoding>
+   <!-- -->
+   <swe:values xlink:href="http://mydomain.net/myimage.raw"/>
+</swe:DataStream>
