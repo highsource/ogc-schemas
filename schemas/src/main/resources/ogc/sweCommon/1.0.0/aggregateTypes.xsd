@@ -139,7 +139,7 @@
 		<xs:annotation>
 			<xs:documentation>Use to point or include data values inline</xs:documentation>
 		</xs:annotation>
-		<xs:complexContent mixed="true">
+		<xs:complexContent>
 			<xs:extension base="xs:anyType">
 				<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
 			</xs:extension>
