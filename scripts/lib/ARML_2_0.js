@@ -5,7 +5,76 @@ var ARML_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['GML_3_2_1'],
     tis: [{
-        ln: 'ImageType.Href',
+        ln: 'ScaleType',
+        ps: [{
+            n: 'x',
+            ti: 'Double'
+          }, {
+            n: 'y',
+            ti: 'Double'
+          }, {
+            n: 'z',
+            ti: 'Double'
+          }]
+      }, {
+        ln: 'ModelType.Href',
+        ps: [{
+            n: 'href',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TrackerType.Uri',
+        ps: [{
+            n: 'href',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TrackerType',
+        bti: '.ARElementType',
+        ps: [{
+            n: 'uri',
+            ti: '.TrackerType.Uri'
+          }, {
+            n: 'src',
+            ti: '.TrackerType.Src'
+          }]
+      }, {
+        ln: 'VisualAssetType.Conditions',
+        ps: [{
+            n: 'condition',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'Condition',
+            ti: '.ConditionType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'ARElementType',
+        ps: [{
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ModelType',
+        bti: '.VisualAssetType',
+        ps: [{
+            n: 'href',
+            ti: '.ModelType.Href'
+          }, {
+            n: 'type'
+          }, {
+            n: 'scale',
+            en: 'Scale',
+            ti: '.ScaleType'
+          }]
+      }, {
+        ln: 'LabelType.Href',
         ps: [{
             n: 'href',
             t: 'a'
@@ -30,61 +99,48 @@ var ARML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'VisualAssetType.Conditions',
+        ln: 'FeatureType.Anchors',
         ps: [{
-            n: 'condition',
+            n: 'anchor',
             col: true,
             mx: false,
             dom: false,
             typed: false,
-            en: 'Condition',
-            ti: '.ConditionType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'ARAnchorType.Assets',
-        ps: [{
-            n: 'visualAsset',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'VisualAsset',
-            ti: '.VisualAssetType',
+            en: 'Anchor',
+            ti: '.AnchorType',
             t: 'er'
           }, {
-            n: 'assetRef',
+            n: 'anchorRef',
             col: true,
-            ti: '.ARAnchorType.Assets.AssetRef'
+            ti: '.FeatureType.Anchors.AnchorRef'
           }]
       }, {
-        ln: 'VisualAssetType',
+        ln: 'TrackableType.Config',
+        ps: [{
+            n: 'tracker',
+            ti: '.TrackableType.Config.Tracker'
+          }, {
+            n: 'src'
+          }, {
+            n: 'order',
+            ti: 'Int',
+            an: {
+              lp: 'order'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AnchorType',
         bti: '.ARElementType',
         ps: [{
             n: 'enabled',
             ti: 'Boolean'
-          }, {
-            n: 'zOrder',
-            ti: 'Int'
-          }, {
-            n: 'conditions',
-            ti: '.VisualAssetType.Conditions'
-          }, {
-            n: 'orientation',
-            en: 'Orientation',
-            ti: '.OrientationType'
-          }, {
-            n: 'scalingMode',
-            en: 'ScalingMode',
-            ti: '.ScalingModeType'
           }]
       }, {
-        ln: 'FeatureType.Metadata',
+        ln: 'ARAnchorType.Assets.AssetRef',
         ps: [{
-            n: 'any',
-            col: true,
-            mx: false,
-            t: 'ae'
+            n: 'href',
+            t: 'a'
           }]
       }, {
         ln: 'OrientationType',
@@ -99,46 +155,21 @@ var ARML_2_0_Module_Factory = function () {
             ti: 'Double'
           }]
       }, {
-        ln: 'VisualAsset2DType',
-        bti: '.VisualAssetType',
+        ln: 'ImageType',
+        bti: '.VisualAsset2DType',
         ps: [{
-            n: 'width'
-          }, {
-            n: 'height'
-          }, {
-            n: 'orientationMode'
-          }, {
-            n: 'backside'
+            n: 'href',
+            ti: '.ImageType.Href'
           }]
       }, {
-        ln: 'FeatureType',
-        bti: '.ARElementType',
+        ln: 'RelativeToType.Ref',
         ps: [{
-            n: 'name'
-          }, {
-            n: 'description'
-          }, {
-            n: 'enabled',
-            ti: 'Boolean'
-          }, {
-            n: 'metadata',
-            ti: '.FeatureType.Metadata'
-          }, {
-            n: 'anchors',
-            ti: '.FeatureType.Anchors'
-          }]
-      }, {
-        ln: 'ArmlType.Script',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'type'
-            },
+            n: 'href',
             t: 'a'
-          }, {
+          }]
+      }, {
+        ln: 'FeatureType.Anchors.AnchorRef',
+        ps: [{
             n: 'href',
             t: 'a'
           }]
@@ -158,129 +189,23 @@ var ARML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ArmlType.ARElements',
+        ln: 'ARAnchorType.Assets',
         ps: [{
-            n: 'arElement',
+            n: 'visualAsset',
             col: true,
             mx: false,
             dom: false,
             typed: false,
-            en: 'ARElement',
-            ti: '.ARElementType',
+            en: 'VisualAsset',
+            ti: '.VisualAssetType',
             t: 'er'
-          }]
-      }, {
-        ln: 'ARElementType',
-        ps: [{
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TrackableType',
-        bti: '.ARAnchorType',
-        ps: [{
-            n: 'config',
+          }, {
+            n: 'assetRef',
             col: true,
-            ti: '.TrackableType.Config'
-          }, {
-            n: 'size',
-            ti: 'Double'
+            ti: '.ARAnchorType.Assets.AssetRef'
           }]
       }, {
-        ln: 'ScaleType',
-        ps: [{
-            n: 'x',
-            ti: 'Double'
-          }, {
-            n: 'y',
-            ti: 'Double'
-          }, {
-            n: 'z',
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'ModelType',
-        bti: '.VisualAssetType',
-        ps: [{
-            n: 'href',
-            ti: '.ModelType.Href'
-          }, {
-            n: 'type'
-          }, {
-            n: 'scale',
-            en: 'Scale',
-            ti: '.ScaleType'
-          }]
-      }, {
-        ln: 'ScreenAnchorType.Assets.AssetRef',
-        ps: [{
-            n: 'href',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TrackableType.Config',
-        ps: [{
-            n: 'tracker',
-            ti: '.TrackableType.Config.Tracker'
-          }, {
-            n: 'src'
-          }, {
-            n: 'order',
-            ti: 'Int',
-            an: {
-              lp: 'order'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ARAnchorType',
-        bti: '.AnchorType',
-        ps: [{
-            n: 'assets',
-            ti: '.ARAnchorType.Assets'
-          }]
-      }, {
-        ln: 'ArmlType',
-        ps: [{
-            n: 'arElements',
-            en: 'ARElements',
-            ti: '.ArmlType.ARElements'
-          }, {
-            n: 'style',
-            col: true,
-            ti: '.ArmlType.Style'
-          }, {
-            n: 'script',
-            col: true,
-            ti: '.ArmlType.Script'
-          }]
-      }, {
-        ln: 'TextType',
-        bti: '.VisualAsset2DType',
-        ps: [{
-            n: 'src'
-          }, {
-            n: 'style'
-          }, {
-            n: 'clazz',
-            en: 'class'
-          }]
-      }, {
-        ln: 'TrackerType',
-        bti: '.ARElementType',
-        ps: [{
-            n: 'uri',
-            ti: '.TrackerType.Uri'
-          }, {
-            n: 'src',
-            ti: '.TrackerType.Src'
-          }]
-      }, {
-        ln: 'ARAnchorType.Assets.AssetRef',
+        ln: 'TrackerType.Src',
         ps: [{
             n: 'href',
             t: 'a'
@@ -298,159 +223,27 @@ var ARML_2_0_Module_Factory = function () {
             ti: '.ScreenAnchorType.Assets'
           }]
       }, {
-        ln: 'TrackerType.Uri',
+        ln: 'ImageType.Href',
         ps: [{
             n: 'href',
             t: 'a'
           }]
       }, {
-        ln: 'ScreenAnchorType.Assets',
-        ps: [{
-            n: 'label',
-            col: true,
-            en: 'Label',
-            ti: '.LabelType'
-          }, {
-            n: 'assetRef',
-            col: true,
-            ti: '.ScreenAnchorType.Assets.AssetRef'
-          }]
-      }, {
-        ln: 'FeatureType.Anchors.AnchorRef',
-        ps: [{
-            n: 'href',
-            t: 'a'
-          }]
-      }, {
-        ln: 'FeatureType.Anchors',
-        ps: [{
-            n: 'anchor',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'Anchor',
-            ti: '.AnchorType',
-            t: 'er'
-          }, {
-            n: 'anchorRef',
-            col: true,
-            ti: '.FeatureType.Anchors.AnchorRef'
-          }]
-      }, {
-        ln: 'SelectedConditionType',
-        bti: '.ConditionType',
-        ps: [{
-            n: 'listener'
-          }, {
-            n: 'selected',
-            ti: 'Boolean'
-          }]
-      }, {
-        ln: 'ImageType',
-        bti: '.VisualAsset2DType',
-        ps: [{
-            n: 'href',
-            ti: '.ImageType.Href'
-          }]
-      }, {
-        ln: 'LabelType',
-        bti: '.VisualAsset2DType',
-        ps: [{
-            n: 'href',
-            ti: '.LabelType.Href'
-          }, {
-            n: 'src',
-            ti: 'AnyType'
-          }, {
-            n: 'hyperlinkBehavior'
-          }, {
-            n: 'viewportWidth',
-            ti: 'Integer'
-          }]
-      }, {
-        ln: 'LabelType.Href',
-        ps: [{
-            n: 'href',
-            t: 'a'
-          }]
-      }, {
-        ln: 'FillType',
-        bti: '.VisualAsset2DType',
-        ps: [{
-            n: 'style'
-          }, {
-            n: 'clazz',
-            en: 'class'
-          }]
-      }, {
-        ln: 'DistanceConditionType',
-        bti: '.ConditionType',
-        ps: [{
-            n: 'max',
-            ti: 'Double'
-          }, {
-            n: 'min',
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'GeometryType',
-        bti: '.ARAnchorType',
-        ps: [{
-            n: 'point',
-            en: {
-              lp: 'Point',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.PointType'
-          }, {
-            n: 'lineString',
-            en: {
-              lp: 'LineString',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.LineStringType'
-          }, {
-            n: 'polygon',
-            en: {
-              lp: 'Polygon',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.PolygonType'
-          }]
-      }, {
-        ln: 'RelativeToType.Ref',
-        ps: [{
-            n: 'href',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ConditionType',
-        bti: '.ARElementType'
-      }, {
-        ln: 'AnchorType',
+        ln: 'FeatureType',
         bti: '.ARElementType',
         ps: [{
+            n: 'name'
+          }, {
+            n: 'description'
+          }, {
             n: 'enabled',
             ti: 'Boolean'
-          }]
-      }, {
-        ln: 'TrackerType.Src',
-        ps: [{
-            n: 'href',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ModelType.Href',
-        ps: [{
-            n: 'href',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TrackableType.Config.Tracker',
-        ps: [{
-            n: 'href',
-            t: 'a'
+          }, {
+            n: 'metadata',
+            ti: '.FeatureType.Metadata'
+          }, {
+            n: 'anchors',
+            ti: '.FeatureType.Anchors'
           }]
       }, {
         ln: 'RelativeToType',
@@ -480,69 +273,234 @@ var ARML_2_0_Module_Factory = function () {
             },
             ti: 'GML_3_2_1.PolygonType'
           }]
+      }, {
+        ln: 'GeometryType',
+        bti: '.ARAnchorType',
+        ps: [{
+            n: 'point',
+            en: {
+              lp: 'Point',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.PointType'
+          }, {
+            n: 'lineString',
+            en: {
+              lp: 'LineString',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.LineStringType'
+          }, {
+            n: 'polygon',
+            en: {
+              lp: 'Polygon',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.PolygonType'
+          }]
+      }, {
+        ln: 'ArmlType.ARElements',
+        ps: [{
+            n: 'arElement',
+            col: true,
+            mx: false,
+            dom: false,
+            typed: false,
+            en: 'ARElement',
+            ti: '.ARElementType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'DistanceConditionType',
+        bti: '.ConditionType',
+        ps: [{
+            n: 'max',
+            ti: 'Double'
+          }, {
+            n: 'min',
+            ti: 'Double'
+          }]
+      }, {
+        ln: 'ConditionType',
+        bti: '.ARElementType'
+      }, {
+        ln: 'VisualAsset2DType',
+        bti: '.VisualAssetType',
+        ps: [{
+            n: 'width'
+          }, {
+            n: 'height'
+          }, {
+            n: 'orientationMode'
+          }, {
+            n: 'backside'
+          }]
+      }, {
+        ln: 'FeatureType.Metadata',
+        ps: [{
+            n: 'any',
+            col: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'ARAnchorType',
+        bti: '.AnchorType',
+        ps: [{
+            n: 'assets',
+            ti: '.ARAnchorType.Assets'
+          }]
+      }, {
+        ln: 'ArmlType',
+        ps: [{
+            n: 'arElements',
+            en: 'ARElements',
+            ti: '.ArmlType.ARElements'
+          }, {
+            n: 'style',
+            col: true,
+            ti: '.ArmlType.Style'
+          }, {
+            n: 'script',
+            col: true,
+            ti: '.ArmlType.Script'
+          }]
+      }, {
+        ln: 'TrackableType.Config.Tracker',
+        ps: [{
+            n: 'href',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TextType',
+        bti: '.VisualAsset2DType',
+        ps: [{
+            n: 'src'
+          }, {
+            n: 'style'
+          }, {
+            n: 'clazz',
+            en: 'class'
+          }]
+      }, {
+        ln: 'FillType',
+        bti: '.VisualAsset2DType',
+        ps: [{
+            n: 'style'
+          }, {
+            n: 'clazz',
+            en: 'class'
+          }]
+      }, {
+        ln: 'VisualAssetType',
+        bti: '.ARElementType',
+        ps: [{
+            n: 'enabled',
+            ti: 'Boolean'
+          }, {
+            n: 'zOrder',
+            ti: 'Int'
+          }, {
+            n: 'conditions',
+            ti: '.VisualAssetType.Conditions'
+          }, {
+            n: 'orientation',
+            en: 'Orientation',
+            ti: '.OrientationType'
+          }, {
+            n: 'scalingMode',
+            en: 'ScalingMode',
+            ti: '.ScalingModeType'
+          }]
+      }, {
+        ln: 'SelectedConditionType',
+        bti: '.ConditionType',
+        ps: [{
+            n: 'listener'
+          }, {
+            n: 'selected',
+            ti: 'Boolean'
+          }]
+      }, {
+        ln: 'ArmlType.Script',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'type'
+            },
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ScreenAnchorType.Assets.AssetRef',
+        ps: [{
+            n: 'href',
+            t: 'a'
+          }]
+      }, {
+        ln: 'LabelType',
+        bti: '.VisualAsset2DType',
+        ps: [{
+            n: 'href',
+            ti: '.LabelType.Href'
+          }, {
+            n: 'src',
+            ti: 'AnyType'
+          }, {
+            n: 'hyperlinkBehavior'
+          }, {
+            n: 'viewportWidth',
+            ti: 'Integer'
+          }]
+      }, {
+        ln: 'ScreenAnchorType.Assets',
+        ps: [{
+            n: 'label',
+            col: true,
+            en: 'Label',
+            ti: '.LabelType'
+          }, {
+            n: 'assetRef',
+            col: true,
+            ti: '.ScreenAnchorType.Assets.AssetRef'
+          }]
+      }, {
+        ln: 'TrackableType',
+        bti: '.ARAnchorType',
+        ps: [{
+            n: 'config',
+            col: true,
+            ti: '.TrackableType.Config'
+          }, {
+            n: 'size',
+            ti: 'Double'
+          }]
       }],
     eis: [{
-        en: 'Fill',
-        ti: '.FillType',
-        sh: 'VisualAsset2D'
-      }, {
-        en: 'Tracker',
-        ti: '.TrackerType',
-        sh: 'ARElement'
-      }, {
-        en: 'Feature',
-        ti: '.FeatureType',
-        sh: 'ARElement'
-      }, {
-        en: 'RelativeTo',
-        ti: '.RelativeToType',
-        sh: 'ARAnchor'
-      }, {
-        en: 'ARElement',
-        ti: '.ARElementType'
-      }, {
         en: 'Image',
         ti: '.ImageType',
         sh: 'VisualAsset2D'
       }, {
-        en: 'Geometry',
-        ti: '.GeometryType',
-        sh: 'ARAnchor'
-      }, {
-        en: 'Anchor',
-        ti: '.AnchorType',
-        sh: 'ARElement'
-      }, {
-        en: 'Text',
-        ti: '.TextType',
-        sh: 'VisualAsset2D'
-      }, {
-        en: 'VisualAsset2D',
-        ti: '.VisualAsset2DType',
-        sh: 'VisualAsset'
-      }, {
-        en: 'ARAnchor',
-        ti: '.ARAnchorType',
-        sh: 'Anchor'
+        en: 'SelectedCondition',
+        ti: '.SelectedConditionType',
+        sh: 'Condition'
       }, {
         en: 'Model',
         ti: '.ModelType',
         sh: 'VisualAsset'
       }, {
-        en: 'Trackable',
-        ti: '.TrackableType',
+        en: 'RelativeTo',
+        ti: '.RelativeToType',
         sh: 'ARAnchor'
       }, {
-        en: 'arml',
-        ti: '.ArmlType'
-      }, {
-        en: 'VisualAsset',
-        ti: '.VisualAssetType',
-        sh: 'ARElement'
-      }, {
-        en: 'SelectedCondition',
-        ti: '.SelectedConditionType',
-        sh: 'Condition'
+        en: 'Fill',
+        ti: '.FillType',
+        sh: 'VisualAsset2D'
       }, {
         en: 'ScreenAnchor',
         ti: '.ScreenAnchorType',
@@ -552,13 +510,55 @@ var ARML_2_0_Module_Factory = function () {
         ti: '.ConditionType',
         sh: 'ARElement'
       }, {
-        en: 'DistanceCondition',
-        ti: '.DistanceConditionType',
-        sh: 'Condition'
+        en: 'Feature',
+        ti: '.FeatureType',
+        sh: 'ARElement'
+      }, {
+        en: 'ARElement',
+        ti: '.ARElementType'
+      }, {
+        en: 'Text',
+        ti: '.TextType',
+        sh: 'VisualAsset2D'
+      }, {
+        en: 'VisualAsset',
+        ti: '.VisualAssetType',
+        sh: 'ARElement'
+      }, {
+        en: 'ARAnchor',
+        ti: '.ARAnchorType',
+        sh: 'Anchor'
+      }, {
+        en: 'Anchor',
+        ti: '.AnchorType',
+        sh: 'ARElement'
+      }, {
+        en: 'Tracker',
+        ti: '.TrackerType',
+        sh: 'ARElement'
+      }, {
+        en: 'arml',
+        ti: '.ArmlType'
       }, {
         en: 'Label',
         ti: '.LabelType',
         sh: 'VisualAsset2D'
+      }, {
+        en: 'Trackable',
+        ti: '.TrackableType',
+        sh: 'ARAnchor'
+      }, {
+        en: 'Geometry',
+        ti: '.GeometryType',
+        sh: 'ARAnchor'
+      }, {
+        en: 'VisualAsset2D',
+        ti: '.VisualAsset2DType',
+        sh: 'VisualAsset'
+      }, {
+        en: 'DistanceCondition',
+        ti: '.DistanceConditionType',
+        sh: 'Condition'
       }]
   };
   return {
