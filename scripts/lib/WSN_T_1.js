@@ -60,37 +60,20 @@ var WSN_T_1_Module_Factory = function () {
             t: 'ae'
           }]
       }, {
+        ln: 'ExtensibleDocumented',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'documentation',
+            ti: '.Documentation'
+          }]
+      }, {
         ln: 'Documentation',
         ps: [{
             n: 'content',
             col: true,
             t: 'ae'
-          }]
-      }, {
-        ln: 'QueryExpressionType',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }, {
-            n: 'dialect',
-            an: {
-              lp: 'Dialect'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TopicNamespaceType.Topic',
-        bti: '.TopicType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'parent',
-            an: {
-              lp: 'parent'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'TopicNamespaceType',
@@ -129,21 +112,38 @@ var WSN_T_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ExtensibleDocumented',
+        ln: 'TopicNamespaceType.Topic',
+        bti: '.TopicType',
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
           }, {
-            n: 'documentation',
-            ti: '.Documentation'
+            n: 'parent',
+            an: {
+              lp: 'parent'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'QueryExpressionType',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }, {
+            n: 'dialect',
+            an: {
+              lp: 'Dialect'
+            },
+            t: 'a'
           }]
       }],
     eis: [{
-        en: 'TopicNamespace',
-        ti: '.TopicNamespaceType'
-      }, {
         en: 'TopicSet',
         ti: '.TopicSetType'
+      }, {
+        en: 'TopicNamespace',
+        ti: '.TopicNamespaceType'
       }]
   };
   return {

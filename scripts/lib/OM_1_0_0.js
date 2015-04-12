@@ -3,7 +3,7 @@ var OM_1_0_0_Module_Factory = function () {
     n: 'OM_1_0_0',
     dens: 'http:\/\/www.opengis.net\/om\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'SensorML_1_0_1', 'SWE_1_0_1', 'GML_3_1_1'],
+    deps: ['XLink_1_0', 'GML_3_1_1', 'SWE_1_0_1', 'SensorML_1_0_1'],
     tis: [{
         ln: 'ObservationCollectionType',
         bti: 'GML_3_1_1.AbstractFeatureType',
@@ -13,12 +13,22 @@ var OM_1_0_0_Module_Factory = function () {
             ti: '.ObservationPropertyType'
           }]
       }, {
-        ln: 'AnyOrReferenceType',
+        ln: 'ProcessPropertyType',
         ps: [{
-            n: 'any',
-            dom: false,
+            n: 'sensorMLProcess',
             mx: false,
-            t: 'ae'
+            dom: false,
+            typed: false,
+            en: {
+              lp: '_Process',
+              ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
+            },
+            ti: 'SensorML_1_0_1.AbstractProcessType',
+            t: 'er'
+          }, {
+            n: 'process',
+            en: 'Process',
+            ti: 'AnyType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -122,22 +132,12 @@ var OM_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ProcessPropertyType',
+        ln: 'AnyOrReferenceType',
         ps: [{
-            n: 'sensorMLProcess',
-            mx: false,
+            n: 'any',
             dom: false,
-            typed: false,
-            en: {
-              lp: '_Process',
-              ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
-            },
-            ti: 'SensorML_1_0_1.AbstractProcessType',
-            t: 'er'
-          }, {
-            n: 'process',
-            en: 'Process',
-            ti: 'AnyType'
+            mx: false,
+            t: 'ae'
           }, {
             n: 'remoteSchema',
             an: {

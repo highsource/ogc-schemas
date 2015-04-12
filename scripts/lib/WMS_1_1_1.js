@@ -2,51 +2,46 @@ var WMS_1_1_1_Module_Factory = function () {
   var WMS_1_1_1 = {
     n: 'WMS_1_1_1',
     tis: [{
-        ln: 'PutStyles',
+        ln: 'WMSDescribeLayerResponse',
         ps: [{
-            n: 'format',
-            col: true,
-            en: {
-              lp: 'Format'
-            },
-            ti: '.Format'
-          }, {
-            n: 'dcpType',
-            col: true,
-            en: {
-              lp: 'DCPType'
-            },
-            ti: '.DCPType'
-          }]
-      }, {
-        ln: 'GetLegendGraphic',
-        ps: [{
-            n: 'format',
-            col: true,
-            en: {
-              lp: 'Format'
-            },
-            ti: '.Format'
-          }, {
-            n: 'dcpType',
-            col: true,
-            en: {
-              lp: 'DCPType'
-            },
-            ti: '.DCPType'
-          }]
-      }, {
-        ln: 'LogoURL',
-        ps: [{
-            n: 'width',
+            n: 'version',
             an: {
-              lp: 'width'
+              lp: 'version'
             },
             t: 'a'
           }, {
-            n: 'height',
+            n: 'layerDescription',
+            col: true,
+            en: {
+              lp: 'LayerDescription'
+            },
+            ti: '.LayerDescription'
+          }]
+      }, {
+        ln: 'Exception',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: {
+              lp: 'Format'
+            },
+            ti: '.Format'
+          }]
+      }, {
+        ln: 'Post',
+        ps: [{
+            n: 'onlineResource',
+            en: {
+              lp: 'OnlineResource'
+            },
+            ti: '.OnlineResource'
+          }]
+      }, {
+        ln: 'MetadataURL',
+        ps: [{
+            n: 'type',
             an: {
-              lp: 'height'
+              lp: 'type'
             },
             t: 'a'
           }, {
@@ -108,20 +103,35 @@ var WMS_1_1_1_Module_Factory = function () {
             ti: '.PutStyles'
           }]
       }, {
-        ln: 'ServiceException',
+        ln: 'AuthorityURL',
         ps: [{
-            n: 'code',
+            n: 'name',
             an: {
-              lp: 'code'
+              lp: 'name'
             },
             t: 'a'
           }, {
-            n: 'value',
-            t: 'v'
+            n: 'onlineResource',
+            en: {
+              lp: 'OnlineResource'
+            },
+            ti: '.OnlineResource'
           }]
       }, {
-        ln: 'StyleSheetURL',
+        ln: 'LogoURL',
         ps: [{
+            n: 'width',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }, {
             n: 'format',
             en: {
               lp: 'Format'
@@ -135,40 +145,59 @@ var WMS_1_1_1_Module_Factory = function () {
             ti: '.OnlineResource'
           }]
       }, {
-        ln: 'Extent',
+        ln: 'HTTP',
+        ps: [{
+            n: 'getOrPost',
+            col: true,
+            etis: [{
+                en: {
+                  lp: 'Get'
+                },
+                ti: '.Get'
+              }, {
+                en: {
+                  lp: 'Post'
+                },
+                ti: '.Post'
+              }],
+            t: 'es'
+          }]
+      }, {
+        ln: 'Style',
         ps: [{
             n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
+            en: {
+              lp: 'Name'
+            }
           }, {
-            n: '_default',
-            an: {
-              lp: 'default'
-            },
-            t: 'a'
+            n: 'title',
+            en: {
+              lp: 'Title'
+            }
           }, {
-            n: 'nearestValue',
-            an: {
-              lp: 'nearestValue'
-            },
-            t: 'a'
+            n: '_abstract',
+            en: {
+              lp: 'Abstract'
+            }
           }, {
-            n: 'multipleValues',
-            an: {
-              lp: 'multipleValues'
+            n: 'legendURL',
+            col: true,
+            en: {
+              lp: 'LegendURL'
             },
-            t: 'a'
+            ti: '.LegendURL'
           }, {
-            n: 'current',
-            an: {
-              lp: 'current'
+            n: 'styleSheetURL',
+            en: {
+              lp: 'StyleSheetURL'
             },
-            t: 'a'
+            ti: '.StyleSheetURL'
           }, {
-            n: 'value',
-            t: 'v'
+            n: 'styleURL',
+            en: {
+              lp: 'StyleURL'
+            },
+            ti: '.StyleURL'
           }]
       }, {
         ln: 'GetCapabilities',
@@ -188,24 +217,166 @@ var WMS_1_1_1_Module_Factory = function () {
             ti: '.DCPType'
           }]
       }, {
-        ln: 'Attribution',
+        ln: 'DataURL',
         ps: [{
-            n: 'title',
+            n: 'format',
             en: {
-              lp: 'Title'
-            }
+              lp: 'Format'
+            },
+            ti: '.Format'
           }, {
             n: 'onlineResource',
             en: {
               lp: 'OnlineResource'
             },
             ti: '.OnlineResource'
-          }, {
-            n: 'logoURL',
+          }]
+      }, {
+        ln: 'DCPType',
+        ps: [{
+            n: 'http',
             en: {
-              lp: 'LogoURL'
+              lp: 'HTTP'
             },
-            ti: '.LogoURL'
+            ti: '.HTTP'
+          }]
+      }, {
+        ln: 'ContactPersonPrimary',
+        ps: [{
+            n: 'contactPerson',
+            en: {
+              lp: 'ContactPerson'
+            }
+          }, {
+            n: 'contactOrganization',
+            en: {
+              lp: 'ContactOrganization'
+            }
+          }]
+      }, {
+        ln: 'VendorSpecificCapabilities'
+      }, {
+        ln: 'Keyword',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }]
+      }, {
+        ln: 'FeatureListURL',
+        ps: [{
+            n: 'format',
+            en: {
+              lp: 'Format'
+            },
+            ti: '.Format'
+          }, {
+            n: 'onlineResource',
+            en: {
+              lp: 'OnlineResource'
+            },
+            ti: '.OnlineResource'
+          }]
+      }, {
+        ln: 'KeywordList',
+        ps: [{
+            n: 'keyword',
+            col: true,
+            en: {
+              lp: 'Keyword'
+            },
+            ti: '.Keyword'
+          }]
+      }, {
+        ln: 'LatLonBoundingBox',
+        ps: [{
+            n: 'minx',
+            an: {
+              lp: 'minx'
+            },
+            t: 'a'
+          }, {
+            n: 'miny',
+            an: {
+              lp: 'miny'
+            },
+            t: 'a'
+          }, {
+            n: 'maxx',
+            an: {
+              lp: 'maxx'
+            },
+            t: 'a'
+          }, {
+            n: 'maxy',
+            an: {
+              lp: 'maxy'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetLegendGraphic',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: {
+              lp: 'Format'
+            },
+            ti: '.Format'
+          }, {
+            n: 'dcpType',
+            col: true,
+            en: {
+              lp: 'DCPType'
+            },
+            ti: '.DCPType'
+          }]
+      }, {
+        ln: 'SRS',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }]
+      }, {
+        ln: 'GetMap',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: {
+              lp: 'Format'
+            },
+            ti: '.Format'
+          }, {
+            n: 'dcpType',
+            col: true,
+            en: {
+              lp: 'DCPType'
+            },
+            ti: '.DCPType'
+          }]
+      }, {
+        ln: 'ServiceExceptionReport',
+        ps: [{
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'serviceException',
+            col: true,
+            en: {
+              lp: 'ServiceException'
+            },
+            ti: '.ServiceException'
+          }]
+      }, {
+        ln: 'Query',
+        ps: [{
+            n: 'typeName',
+            an: {
+              lp: 'typeName'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'Layer',
@@ -363,27 +534,8 @@ var WMS_1_1_1_Module_Factory = function () {
             ti: '.Layer'
           }]
       }, {
-        ln: 'ContactPersonPrimary',
+        ln: 'Get',
         ps: [{
-            n: 'contactPerson',
-            en: {
-              lp: 'ContactPerson'
-            }
-          }, {
-            n: 'contactOrganization',
-            en: {
-              lp: 'ContactOrganization'
-            }
-          }]
-      }, {
-        ln: 'DataURL',
-        ps: [{
-            n: 'format',
-            en: {
-              lp: 'Format'
-            },
-            ti: '.Format'
-          }, {
             n: 'onlineResource',
             en: {
               lp: 'OnlineResource'
@@ -391,41 +543,7 @@ var WMS_1_1_1_Module_Factory = function () {
             ti: '.OnlineResource'
           }]
       }, {
-        ln: 'LayerDescription',
-        ps: [{
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'wfs',
-            an: {
-              lp: 'wfs'
-            },
-            t: 'a'
-          }, {
-            n: 'owsType',
-            an: {
-              lp: 'owsType'
-            },
-            t: 'a'
-          }, {
-            n: 'owsURL',
-            an: {
-              lp: 'owsURL'
-            },
-            t: 'a'
-          }, {
-            n: 'query',
-            col: true,
-            en: {
-              lp: 'Query'
-            },
-            ti: '.Query'
-          }]
-      }, {
-        ln: 'GetStyles',
+        ln: 'DescribeLayer',
         ps: [{
             n: 'format',
             col: true,
@@ -442,13 +560,56 @@ var WMS_1_1_1_Module_Factory = function () {
             ti: '.DCPType'
           }]
       }, {
-        ln: 'DCPType',
+        ln: 'ContactInformation',
         ps: [{
-            n: 'http',
+            n: 'contactPersonPrimary',
             en: {
-              lp: 'HTTP'
+              lp: 'ContactPersonPrimary'
             },
-            ti: '.HTTP'
+            ti: '.ContactPersonPrimary'
+          }, {
+            n: 'contactPosition',
+            en: {
+              lp: 'ContactPosition'
+            }
+          }, {
+            n: 'contactAddress',
+            en: {
+              lp: 'ContactAddress'
+            },
+            ti: '.ContactAddress'
+          }, {
+            n: 'contactVoiceTelephone',
+            en: {
+              lp: 'ContactVoiceTelephone'
+            }
+          }, {
+            n: 'contactFacsimileTelephone',
+            en: {
+              lp: 'ContactFacsimileTelephone'
+            }
+          }, {
+            n: 'contactElectronicMailAddress',
+            en: {
+              lp: 'ContactElectronicMailAddress'
+            }
+          }]
+      }, {
+        ln: 'PutStyles',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: {
+              lp: 'Format'
+            },
+            ti: '.Format'
+          }, {
+            n: 'dcpType',
+            col: true,
+            en: {
+              lp: 'DCPType'
+            },
+            ti: '.DCPType'
           }]
       }, {
         ln: 'Capability',
@@ -484,106 +645,73 @@ var WMS_1_1_1_Module_Factory = function () {
             ti: '.Layer'
           }]
       }, {
-        ln: 'WMTMSCapabilities',
+        ln: 'OnlineResource',
         ps: [{
-            n: 'version',
+            n: 'xmlnsXlink',
             an: {
-              lp: 'version'
+              lp: 'xmlns:xlink'
             },
             t: 'a'
           }, {
-            n: 'updateSequence',
+            n: 'xlinkType',
             an: {
-              lp: 'updateSequence'
+              lp: 'xlink:type'
             },
             t: 'a'
           }, {
-            n: 'service',
-            en: {
-              lp: 'Service'
-            },
-            ti: '.Service'
-          }, {
-            n: 'capability',
-            en: {
-              lp: 'Capability'
-            },
-            ti: '.Capability'
-          }]
-      }, {
-        ln: 'MetadataURL',
-        ps: [{
-            n: 'type',
+            n: 'xlinkHref',
             an: {
-              lp: 'type'
-            },
-            t: 'a'
-          }, {
-            n: 'format',
-            en: {
-              lp: 'Format'
-            },
-            ti: '.Format'
-          }, {
-            n: 'onlineResource',
-            en: {
-              lp: 'OnlineResource'
-            },
-            ti: '.OnlineResource'
-          }]
-      }, {
-        ln: 'LatLonBoundingBox',
-        ps: [{
-            n: 'minx',
-            an: {
-              lp: 'minx'
-            },
-            t: 'a'
-          }, {
-            n: 'miny',
-            an: {
-              lp: 'miny'
-            },
-            t: 'a'
-          }, {
-            n: 'maxx',
-            an: {
-              lp: 'maxx'
-            },
-            t: 'a'
-          }, {
-            n: 'maxy',
-            an: {
-              lp: 'maxy'
+              lp: 'xlink:href'
             },
             t: 'a'
           }]
       }, {
-        ln: 'Exception',
+        ln: 'Extent',
         ps: [{
-            n: 'format',
-            col: true,
-            en: {
-              lp: 'Format'
+            n: 'name',
+            an: {
+              lp: 'name'
             },
-            ti: '.Format'
-          }]
-      }, {
-        ln: 'Format',
-        ps: [{
+            t: 'a'
+          }, {
+            n: '_default',
+            an: {
+              lp: 'default'
+            },
+            t: 'a'
+          }, {
+            n: 'nearestValue',
+            an: {
+              lp: 'nearestValue'
+            },
+            t: 'a'
+          }, {
+            n: 'multipleValues',
+            an: {
+              lp: 'multipleValues'
+            },
+            t: 'a'
+          }, {
+            n: 'current',
+            an: {
+              lp: 'current'
+            },
+            t: 'a'
+          }, {
             n: 'value',
             t: 'v'
           }]
       }, {
-        ln: 'VendorSpecificCapabilities'
-      }, {
-        ln: 'Query',
+        ln: 'ServiceException',
         ps: [{
-            n: 'typeName',
+            n: 'code',
             an: {
-              lp: 'typeName'
+              lp: 'code'
             },
             t: 'a'
+          }, {
+            n: 'value',
+            t: 'v'
           }]
       }, {
         ln: 'GetFeatureInfo',
@@ -603,10 +731,104 @@ var WMS_1_1_1_Module_Factory = function () {
             ti: '.DCPType'
           }]
       }, {
-        ln: 'Keyword',
+        ln: 'Format',
         ps: [{
             n: 'value',
             t: 'v'
+          }]
+      }, {
+        ln: 'UserDefinedSymbolization',
+        ps: [{
+            n: 'supportSLD',
+            an: {
+              lp: 'SupportSLD'
+            },
+            t: 'a'
+          }, {
+            n: 'userLayer',
+            an: {
+              lp: 'UserLayer'
+            },
+            t: 'a'
+          }, {
+            n: 'userStyle',
+            an: {
+              lp: 'UserStyle'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteWFS',
+            an: {
+              lp: 'RemoteWFS'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ContactAddress',
+        ps: [{
+            n: 'addressType',
+            en: {
+              lp: 'AddressType'
+            }
+          }, {
+            n: 'address',
+            en: {
+              lp: 'Address'
+            }
+          }, {
+            n: 'city',
+            en: {
+              lp: 'City'
+            }
+          }, {
+            n: 'stateOrProvince',
+            en: {
+              lp: 'StateOrProvince'
+            }
+          }, {
+            n: 'postCode',
+            en: {
+              lp: 'PostCode'
+            }
+          }, {
+            n: 'country',
+            en: {
+              lp: 'Country'
+            }
+          }]
+      }, {
+        ln: 'LayerDescription',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'wfs',
+            an: {
+              lp: 'wfs'
+            },
+            t: 'a'
+          }, {
+            n: 'owsType',
+            an: {
+              lp: 'owsType'
+            },
+            t: 'a'
+          }, {
+            n: 'owsURL',
+            an: {
+              lp: 'owsURL'
+            },
+            t: 'a'
+          }, {
+            n: 'query',
+            col: true,
+            en: {
+              lp: 'Query'
+            },
+            ti: '.Query'
           }]
       }, {
         ln: 'Service',
@@ -670,192 +892,51 @@ var WMS_1_1_1_Module_Factory = function () {
             ti: '.OnlineResource'
           }]
       }, {
-        ln: 'LegendURL',
+        ln: 'Attribution',
         ps: [{
-            n: 'width',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }, {
-            n: 'format',
+            n: 'title',
             en: {
-              lp: 'Format'
-            },
-            ti: '.Format'
+              lp: 'Title'
+            }
           }, {
             n: 'onlineResource',
             en: {
               lp: 'OnlineResource'
             },
             ti: '.OnlineResource'
+          }, {
+            n: 'logoURL',
+            en: {
+              lp: 'LogoURL'
+            },
+            ti: '.LogoURL'
           }]
       }, {
-        ln: 'ContactAddress',
+        ln: 'WMTMSCapabilities',
         ps: [{
-            n: 'addressType',
-            en: {
-              lp: 'AddressType'
-            }
-          }, {
-            n: 'address',
-            en: {
-              lp: 'Address'
-            }
-          }, {
-            n: 'city',
-            en: {
-              lp: 'City'
-            }
-          }, {
-            n: 'stateOrProvince',
-            en: {
-              lp: 'StateOrProvince'
-            }
-          }, {
-            n: 'postCode',
-            en: {
-              lp: 'PostCode'
-            }
-          }, {
-            n: 'country',
-            en: {
-              lp: 'Country'
-            }
-          }]
-      }, {
-        ln: 'AuthorityURL',
-        ps: [{
-            n: 'name',
+            n: 'version',
             an: {
-              lp: 'name'
+              lp: 'version'
             },
             t: 'a'
           }, {
-            n: 'onlineResource',
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
+            },
+            t: 'a'
+          }, {
+            n: 'service',
             en: {
-              lp: 'OnlineResource'
+              lp: 'Service'
             },
-            ti: '.OnlineResource'
-          }]
-      }, {
-        ln: 'GetMap',
-        ps: [{
-            n: 'format',
-            col: true,
+            ti: '.Service'
+          }, {
+            n: 'capability',
             en: {
-              lp: 'Format'
+              lp: 'Capability'
             },
-            ti: '.Format'
-          }, {
-            n: 'dcpType',
-            col: true,
-            en: {
-              lp: 'DCPType'
-            },
-            ti: '.DCPType'
-          }]
-      }, {
-        ln: 'FeatureListURL',
-        ps: [{
-            n: 'format',
-            en: {
-              lp: 'Format'
-            },
-            ti: '.Format'
-          }, {
-            n: 'onlineResource',
-            en: {
-              lp: 'OnlineResource'
-            },
-            ti: '.OnlineResource'
-          }]
-      }, {
-        ln: 'ScaleHint',
-        ps: [{
-            n: 'min',
-            an: {
-              lp: 'min'
-            },
-            t: 'a'
-          }, {
-            n: 'max',
-            an: {
-              lp: 'max'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Dimension',
-        ps: [{
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'units',
-            an: {
-              lp: 'units'
-            },
-            t: 'a'
-          }, {
-            n: 'unitSymbol',
-            an: {
-              lp: 'unitSymbol'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SRS',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }]
-      }, {
-        ln: 'Identifier',
-        ps: [{
-            n: 'authority',
-            an: {
-              lp: 'authority'
-            },
-            t: 'a'
-          }, {
-            n: 'value',
-            t: 'v'
-          }]
-      }, {
-        ln: 'UserDefinedSymbolization',
-        ps: [{
-            n: 'supportSLD',
-            an: {
-              lp: 'SupportSLD'
-            },
-            t: 'a'
-          }, {
-            n: 'userLayer',
-            an: {
-              lp: 'UserLayer'
-            },
-            t: 'a'
-          }, {
-            n: 'userStyle',
-            an: {
-              lp: 'UserStyle'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteWFS',
-            an: {
-              lp: 'RemoteWFS'
-            },
-            t: 'a'
+            ti: '.Capability'
           }]
       }, {
         ln: 'BoundingBox',
@@ -903,51 +984,26 @@ var WMS_1_1_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Post',
+        ln: 'LegendURL',
         ps: [{
-            n: 'onlineResource',
-            en: {
-              lp: 'OnlineResource'
-            },
-            ti: '.OnlineResource'
-          }]
-      }, {
-        ln: 'ServiceExceptionReport',
-        ps: [{
-            n: 'version',
+            n: 'width',
             an: {
-              lp: 'version'
+              lp: 'width'
             },
             t: 'a'
           }, {
-            n: 'serviceException',
-            col: true,
-            en: {
-              lp: 'ServiceException'
+            n: 'height',
+            an: {
+              lp: 'height'
             },
-            ti: '.ServiceException'
-          }]
-      }, {
-        ln: 'HTTP',
-        ps: [{
-            n: 'getOrPost',
-            col: true,
-            etis: [{
-                en: {
-                  lp: 'Get'
-                },
-                ti: '.Get'
-              }, {
-                en: {
-                  lp: 'Post'
-                },
-                ti: '.Post'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'Get',
-        ps: [{
+            t: 'a'
+          }, {
+            n: 'format',
+            en: {
+              lp: 'Format'
+            },
+            ti: '.Format'
+          }, {
             n: 'onlineResource',
             en: {
               lp: 'OnlineResource'
@@ -955,126 +1011,70 @@ var WMS_1_1_1_Module_Factory = function () {
             ti: '.OnlineResource'
           }]
       }, {
-        ln: 'Style',
+        ln: 'Dimension',
         ps: [{
             n: 'name',
-            en: {
-              lp: 'Name'
-            }
-          }, {
-            n: 'title',
-            en: {
-              lp: 'Title'
-            }
-          }, {
-            n: '_abstract',
-            en: {
-              lp: 'Abstract'
-            }
-          }, {
-            n: 'legendURL',
-            col: true,
-            en: {
-              lp: 'LegendURL'
-            },
-            ti: '.LegendURL'
-          }, {
-            n: 'styleSheetURL',
-            en: {
-              lp: 'StyleSheetURL'
-            },
-            ti: '.StyleSheetURL'
-          }, {
-            n: 'styleURL',
-            en: {
-              lp: 'StyleURL'
-            },
-            ti: '.StyleURL'
-          }]
-      }, {
-        ln: 'KeywordList',
-        ps: [{
-            n: 'keyword',
-            col: true,
-            en: {
-              lp: 'Keyword'
-            },
-            ti: '.Keyword'
-          }]
-      }, {
-        ln: 'OnlineResource',
-        ps: [{
-            n: 'xmlnsXlink',
             an: {
-              lp: 'xmlns:xlink'
+              lp: 'name'
             },
             t: 'a'
           }, {
-            n: 'xlinkType',
+            n: 'units',
             an: {
-              lp: 'xlink:type'
+              lp: 'units'
             },
             t: 'a'
           }, {
-            n: 'xlinkHref',
+            n: 'unitSymbol',
             an: {
-              lp: 'xlink:href'
+              lp: 'unitSymbol'
             },
             t: 'a'
           }]
       }, {
-        ln: 'ContactInformation',
+        ln: 'ScaleHint',
         ps: [{
-            n: 'contactPersonPrimary',
-            en: {
-              lp: 'ContactPersonPrimary'
-            },
-            ti: '.ContactPersonPrimary'
-          }, {
-            n: 'contactPosition',
-            en: {
-              lp: 'ContactPosition'
-            }
-          }, {
-            n: 'contactAddress',
-            en: {
-              lp: 'ContactAddress'
-            },
-            ti: '.ContactAddress'
-          }, {
-            n: 'contactVoiceTelephone',
-            en: {
-              lp: 'ContactVoiceTelephone'
-            }
-          }, {
-            n: 'contactFacsimileTelephone',
-            en: {
-              lp: 'ContactFacsimileTelephone'
-            }
-          }, {
-            n: 'contactElectronicMailAddress',
-            en: {
-              lp: 'ContactElectronicMailAddress'
-            }
-          }]
-      }, {
-        ln: 'WMSDescribeLayerResponse',
-        ps: [{
-            n: 'version',
+            n: 'min',
             an: {
-              lp: 'version'
+              lp: 'min'
             },
             t: 'a'
           }, {
-            n: 'layerDescription',
-            col: true,
-            en: {
-              lp: 'LayerDescription'
+            n: 'max',
+            an: {
+              lp: 'max'
             },
-            ti: '.LayerDescription'
+            t: 'a'
           }]
       }, {
-        ln: 'DescribeLayer',
+        ln: 'Identifier',
+        ps: [{
+            n: 'authority',
+            an: {
+              lp: 'authority'
+            },
+            t: 'a'
+          }, {
+            n: 'value',
+            t: 'v'
+          }]
+      }, {
+        ln: 'StyleSheetURL',
+        ps: [{
+            n: 'format',
+            en: {
+              lp: 'Format'
+            },
+            ti: '.Format'
+          }, {
+            n: 'onlineResource',
+            en: {
+              lp: 'OnlineResource'
+            },
+            ti: '.OnlineResource'
+          }]
+      }, {
+        ln: 'GetStyles',
         ps: [{
             n: 'format',
             col: true,
@@ -1093,9 +1093,9 @@ var WMS_1_1_1_Module_Factory = function () {
       }],
     eis: [{
         en: {
-          lp: 'LogoURL'
+          lp: 'DCPType'
         },
-        ti: '.LogoURL'
+        ti: '.DCPType'
       }, {
         en: {
           lp: 'GetLegendGraphic'
@@ -1103,69 +1103,24 @@ var WMS_1_1_1_Module_Factory = function () {
         ti: '.GetLegendGraphic'
       }, {
         en: {
-          lp: 'ServiceException'
-        },
-        ti: '.ServiceException'
-      }, {
-        en: {
-          lp: 'Capability'
-        },
-        ti: '.Capability'
-      }, {
-        en: {
-          lp: 'HTTP'
-        },
-        ti: '.HTTP'
-      }, {
-        en: {
-          lp: 'GetFeatureInfo'
-        },
-        ti: '.GetFeatureInfo'
-      }, {
-        en: {
-          lp: 'Exception'
-        },
-        ti: '.Exception'
-      }, {
-        en: {
-          lp: 'ContactInformation'
-        },
-        ti: '.ContactInformation'
-      }, {
-        en: {
-          lp: 'Attribution'
-        },
-        ti: '.Attribution'
-      }, {
-        en: {
-          lp: 'Format'
-        },
-        ti: '.Format'
-      }, {
-        en: {
-          lp: 'Keyword'
-        },
-        ti: '.Keyword'
-      }, {
-        en: {
           lp: 'VendorSpecificCapabilities'
         },
         ti: '.VendorSpecificCapabilities'
       }, {
         en: {
-          lp: 'AuthorityURL'
+          lp: 'KeywordList'
         },
-        ti: '.AuthorityURL'
+        ti: '.KeywordList'
       }, {
         en: {
-          lp: 'WMS_DescribeLayerResponse'
+          lp: 'LegendURL'
         },
-        ti: '.WMSDescribeLayerResponse'
+        ti: '.LegendURL'
       }, {
         en: {
-          lp: 'GetStyles'
+          lp: 'Identifier'
         },
-        ti: '.GetStyles'
+        ti: '.Identifier'
       }, {
         en: {
           lp: 'DataURL'
@@ -1173,19 +1128,19 @@ var WMS_1_1_1_Module_Factory = function () {
         ti: '.DataURL'
       }, {
         en: {
-          lp: 'WMT_MS_Capabilities'
+          lp: 'Layer'
         },
-        ti: '.WMTMSCapabilities'
+        ti: '.Layer'
       }, {
         en: {
-          lp: 'OnlineResource'
+          lp: 'Exception'
         },
-        ti: '.OnlineResource'
+        ti: '.Exception'
       }, {
         en: {
-          lp: 'LayerDescription'
+          lp: 'Dimension'
         },
-        ti: '.LayerDescription'
+        ti: '.Dimension'
       }, {
         en: {
           lp: 'SRS'
@@ -1198,54 +1153,14 @@ var WMS_1_1_1_Module_Factory = function () {
         ti: '.FeatureListURL'
       }, {
         en: {
-          lp: 'KeywordList'
+          lp: 'Query'
         },
-        ti: '.KeywordList'
+        ti: '.Query'
       }, {
         en: {
-          lp: 'Service'
+          lp: 'AuthorityURL'
         },
-        ti: '.Service'
-      }, {
-        en: {
-          lp: 'DCPType'
-        },
-        ti: '.DCPType'
-      }, {
-        en: {
-          lp: 'StyleSheetURL'
-        },
-        ti: '.StyleSheetURL'
-      }, {
-        en: {
-          lp: 'StyleURL'
-        },
-        ti: '.StyleURL'
-      }, {
-        en: {
-          lp: 'ContactAddress'
-        },
-        ti: '.ContactAddress'
-      }, {
-        en: {
-          lp: 'Layer'
-        },
-        ti: '.Layer'
-      }, {
-        en: {
-          lp: 'Request'
-        },
-        ti: '.Request'
-      }, {
-        en: {
-          lp: 'BoundingBox'
-        },
-        ti: '.BoundingBox'
-      }, {
-        en: {
-          lp: 'ContactPersonPrimary'
-        },
-        ti: '.ContactPersonPrimary'
+        ti: '.AuthorityURL'
       }, {
         en: {
           lp: 'UserDefinedSymbolization'
@@ -1253,24 +1168,24 @@ var WMS_1_1_1_Module_Factory = function () {
         ti: '.UserDefinedSymbolization'
       }, {
         en: {
-          lp: 'LatLonBoundingBox'
+          lp: 'ContactInformation'
         },
-        ti: '.LatLonBoundingBox'
+        ti: '.ContactInformation'
       }, {
         en: {
-          lp: 'MetadataURL'
+          lp: 'WMS_DescribeLayerResponse'
         },
-        ti: '.MetadataURL'
+        ti: '.WMSDescribeLayerResponse'
       }, {
         en: {
-          lp: 'LegendURL'
+          lp: 'WMT_MS_Capabilities'
         },
-        ti: '.LegendURL'
+        ti: '.WMTMSCapabilities'
       }, {
         en: {
-          lp: 'PutStyles'
+          lp: 'ContactAddress'
         },
-        ti: '.PutStyles'
+        ti: '.ContactAddress'
       }, {
         en: {
           lp: 'Style'
@@ -1278,29 +1193,24 @@ var WMS_1_1_1_Module_Factory = function () {
         ti: '.Style'
       }, {
         en: {
-          lp: 'GetCapabilities'
+          lp: 'ServiceExceptionReport'
         },
-        ti: '.GetCapabilities'
+        ti: '.ServiceExceptionReport'
       }, {
         en: {
-          lp: 'Extent'
+          lp: 'LatLonBoundingBox'
         },
-        ti: '.Extent'
+        ti: '.LatLonBoundingBox'
       }, {
         en: {
-          lp: 'Post'
+          lp: 'LayerDescription'
         },
-        ti: '.Post'
+        ti: '.LayerDescription'
       }, {
         en: {
-          lp: 'Query'
+          lp: 'Request'
         },
-        ti: '.Query'
-      }, {
-        en: {
-          lp: 'ScaleHint'
-        },
-        ti: '.ScaleHint'
+        ti: '.Request'
       }, {
         en: {
           lp: 'DescribeLayer'
@@ -1308,9 +1218,19 @@ var WMS_1_1_1_Module_Factory = function () {
         ti: '.DescribeLayer'
       }, {
         en: {
-          lp: 'Dimension'
+          lp: 'Extent'
         },
-        ti: '.Dimension'
+        ti: '.Extent'
+      }, {
+        en: {
+          lp: 'GetCapabilities'
+        },
+        ti: '.GetCapabilities'
+      }, {
+        en: {
+          lp: 'HTTP'
+        },
+        ti: '.HTTP'
       }, {
         en: {
           lp: 'GetMap'
@@ -1318,19 +1238,99 @@ var WMS_1_1_1_Module_Factory = function () {
         ti: '.GetMap'
       }, {
         en: {
+          lp: 'Keyword'
+        },
+        ti: '.Keyword'
+      }, {
+        en: {
+          lp: 'Attribution'
+        },
+        ti: '.Attribution'
+      }, {
+        en: {
+          lp: 'PutStyles'
+        },
+        ti: '.PutStyles'
+      }, {
+        en: {
           lp: 'Get'
         },
         ti: '.Get'
       }, {
         en: {
-          lp: 'Identifier'
+          lp: 'MetadataURL'
         },
-        ti: '.Identifier'
+        ti: '.MetadataURL'
       }, {
         en: {
-          lp: 'ServiceExceptionReport'
+          lp: 'OnlineResource'
         },
-        ti: '.ServiceExceptionReport'
+        ti: '.OnlineResource'
+      }, {
+        en: {
+          lp: 'GetStyles'
+        },
+        ti: '.GetStyles'
+      }, {
+        en: {
+          lp: 'ServiceException'
+        },
+        ti: '.ServiceException'
+      }, {
+        en: {
+          lp: 'ContactPersonPrimary'
+        },
+        ti: '.ContactPersonPrimary'
+      }, {
+        en: {
+          lp: 'Post'
+        },
+        ti: '.Post'
+      }, {
+        en: {
+          lp: 'StyleSheetURL'
+        },
+        ti: '.StyleSheetURL'
+      }, {
+        en: {
+          lp: 'Capability'
+        },
+        ti: '.Capability'
+      }, {
+        en: {
+          lp: 'BoundingBox'
+        },
+        ti: '.BoundingBox'
+      }, {
+        en: {
+          lp: 'GetFeatureInfo'
+        },
+        ti: '.GetFeatureInfo'
+      }, {
+        en: {
+          lp: 'LogoURL'
+        },
+        ti: '.LogoURL'
+      }, {
+        en: {
+          lp: 'Service'
+        },
+        ti: '.Service'
+      }, {
+        en: {
+          lp: 'StyleURL'
+        },
+        ti: '.StyleURL'
+      }, {
+        en: {
+          lp: 'ScaleHint'
+        },
+        ti: '.ScaleHint'
+      }, {
+        en: {
+          lp: 'Format'
+        },
+        ti: '.Format'
       }]
   };
   return {
