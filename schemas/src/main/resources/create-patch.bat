@@ -1,1 +1,1 @@
-diff -urN ../resources-original/ogc ogc -S resources/ogc > ../../../src/main/patches/ogc.patch
+diff -urN ../resources-original/ogc ogc > ../../../src/main/patches/ogc.patch

@@ -1,6 +1,25 @@
-diff -urN -S resources/ogc ../resources-original/ogc/sweCommon/1.0.0/aggregateTypes.xsd ogc/sweCommon/1.0.0/aggregateTypes.xsd
+diff -urN ../resources-original/ogc/ows/2.0/owsAdditionalParameters.xsd ogc/ows/2.0/owsAdditionalParameters.xsd
+--- ../resources-original/ogc/ows/2.0/owsAdditionalParameters.xsd	Sat Jul 21 21:59:38 2012
++++ ogc/ows/2.0/owsAdditionalParameters.xsd	Sun Apr 12 20:16:43 2015
+@@ -53,13 +53,13 @@
+   <!-- ========================================================== -->
+   <complexType name="AdditionalParametersType">
+     <complexContent>
+-      <extension base="ows:AdditionalParametersBaseType">
++      <restriction base="ows:AdditionalParametersBaseType">
+         <sequence>
+           <element ref="ows:AdditionalParameter"
+                    minOccurs="0"
+                    maxOccurs="unbounded" />
+         </sequence>
+-      </extension>
++      </restriction>
+     </complexContent>
+   </complexType>
+   <!-- ========================================================== -->
+diff -urN ../resources-original/ogc/sweCommon/1.0.0/aggregateTypes.xsd ogc/sweCommon/1.0.0/aggregateTypes.xsd
 --- ../resources-original/ogc/sweCommon/1.0.0/aggregateTypes.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/sweCommon/1.0.0/aggregateTypes.xsd	Sun Apr  5 18:31:43 2015
++++ ogc/sweCommon/1.0.0/aggregateTypes.xsd	Sun Apr 12 20:12:53 2015
 @@ -139,7 +139,7 @@
  		<xs:annotation>
  			<xs:documentation>Use to point or include data values inline</xs:documentation>
@@ -10,9 +29,9 @@ diff -urN -S resources/ogc ../resources-original/ogc/sweCommon/1.0.0/aggregateTy
  			<xs:extension base="xs:anyType">
  				<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
  			</xs:extension>
-diff -urN -S resources/ogc ../resources-original/ogc/sweCommon/1.0.1/aggregateTypes.xsd ogc/sweCommon/1.0.1/aggregateTypes.xsd
+diff -urN ../resources-original/ogc/sweCommon/1.0.1/aggregateTypes.xsd ogc/sweCommon/1.0.1/aggregateTypes.xsd
 --- ../resources-original/ogc/sweCommon/1.0.1/aggregateTypes.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/sweCommon/1.0.1/aggregateTypes.xsd	Sun Apr  5 18:32:16 2015
++++ ogc/sweCommon/1.0.1/aggregateTypes.xsd	Sun Apr 12 20:12:53 2015
 @@ -138,7 +138,7 @@
  		<xs:annotation>
  			<xs:documentation>Use to point or include data values inline</xs:documentation>
@@ -22,9 +41,9 @@ diff -urN -S resources/ogc ../resources-original/ogc/sweCommon/1.0.1/aggregateTy
  			<xs:extension base="xs:anyType">
  				<xs:attribute name="recordCount" type="xs:positiveInteger"/>
  				<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
-diff -urN -S resources/ogc ../resources-original/ogc/sweCommon/2.0/basic_types.xsd ogc/sweCommon/2.0/basic_types.xsd
+diff -urN ../resources-original/ogc/sweCommon/2.0/basic_types.xsd ogc/sweCommon/2.0/basic_types.xsd
 --- ../resources-original/ogc/sweCommon/2.0/basic_types.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/sweCommon/2.0/basic_types.xsd	Sun Apr  5 18:32:39 2015
++++ ogc/sweCommon/2.0/basic_types.xsd	Sun Apr 12 20:12:53 2015
 @@ -78,7 +78,7 @@
  	</complexType>
  	<!-- ================================================= -->
@@ -34,9 +53,9 @@ diff -urN -S resources/ogc ../resources-original/ogc/sweCommon/2.0/basic_types.x
  			<extension base="anyType">
  			  <attributeGroup ref="swe:AssociationAttributeGroup"/>
  			</extension>
-diff -urN -S resources/ogc ../resources-original/ogc/wcs/1.0.0/describeCoverage.xsd ogc/wcs/1.0.0/describeCoverage.xsd
+diff -urN ../resources-original/ogc/wcs/1.0.0/describeCoverage.xsd ogc/wcs/1.0.0/describeCoverage.xsd
 --- ../resources-original/ogc/wcs/1.0.0/describeCoverage.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/wcs/1.0.0/describeCoverage.xsd	Sun Apr  5 18:30:57 2015
++++ ogc/wcs/1.0.0/describeCoverage.xsd	Sun Apr 12 20:12:53 2015
 @@ -41,7 +41,7 @@
  	<xs:include schemaLocation="./wcsAll.xsd"/>
  	<xs:include schemaLocation="./wcsCapabilities.xsd"/>
@@ -46,9 +65,9 @@ diff -urN -S resources/ogc ../resources-original/ogc/wcs/1.0.0/describeCoverage.
  	<!-- ==============================================================
         elements and types
  	============================================================== -->
-diff -urN -S resources/ogc ../resources-original/ogc/wcs/1.0.0/getCoverage.xsd ogc/wcs/1.0.0/getCoverage.xsd
+diff -urN ../resources-original/ogc/wcs/1.0.0/getCoverage.xsd ogc/wcs/1.0.0/getCoverage.xsd
 --- ../resources-original/ogc/wcs/1.0.0/getCoverage.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/wcs/1.0.0/getCoverage.xsd	Sun Apr  5 18:30:57 2015
++++ ogc/wcs/1.0.0/getCoverage.xsd	Sun Apr 12 20:12:53 2015
 @@ -40,7 +40,7 @@
  	========================================================== -->
  	<xs:include schemaLocation="./wcsAll.xsd"/>
@@ -58,9 +77,9 @@ diff -urN -S resources/ogc ../resources-original/ogc/wcs/1.0.0/getCoverage.xsd o
  	<!-- ==============================================================
         elements and types
  	============================================================== -->
-diff -urN -S resources/ogc ../resources-original/ogc/wcs/1.0.0/owsBase.xsd ogc/wcs/1.0.0/owsBase.xsd
+diff -urN ../resources-original/ogc/wcs/1.0.0/owsBase.xsd ogc/wcs/1.0.0/owsBase.xsd
 --- ../resources-original/ogc/wcs/1.0.0/owsBase.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/wcs/1.0.0/owsBase.xsd	Sun Apr  5 18:30:57 2015
++++ ogc/wcs/1.0.0/owsBase.xsd	Sun Apr 12 20:12:53 2015
 @@ -38,7 +38,7 @@
  	<!-- ==============================================================
             includes and imports
@@ -70,9 +89,9 @@ diff -urN -S resources/ogc ../resources-original/ogc/wcs/1.0.0/owsBase.xsd ogc/w
  	<!-- ============================================================
  		 Elements and types		
  	============================================================== -->
-diff -urN -S resources/ogc ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd ogc/wcs/1.0.0/wcsCapabilities.xsd
+diff -urN ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd ogc/wcs/1.0.0/wcsCapabilities.xsd
 --- ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/wcs/1.0.0/wcsCapabilities.xsd	Sun Apr  5 18:30:57 2015
++++ ogc/wcs/1.0.0/wcsCapabilities.xsd	Sun Apr 12 20:12:53 2015
 @@ -45,7 +45,7 @@
      <!-- ========= includes and imports ================================ -->
      <xs:include schemaLocation="./wcsAll.xsd"/>
