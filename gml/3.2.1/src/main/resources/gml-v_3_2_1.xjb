@@ -20,6 +20,16 @@
 		</jaxb:bindings>
 	</jaxb:bindings>
 
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/gml/3.2.1/grids.xsd" node="/xs:schema">
+		<jaxb:bindings>
+			<jaxb:bindings node="xs:complexType[@name='GridType']/xs:complexContent/xs:extension/xs:sequence/xs:choice/xs:element[@name='axisLabels']">
+				<!-- ** Backwards incompatible -->
+				<jaxb:property name="GridAxisLabels"/>
+			</jaxb:bindings>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
 	<jaxb:bindings schemaLocation="http://schemas.opengis.net/gml/3.2.1/datums.xsd" node="/xs:schema">
 		<jaxb:bindings>
 			<jaxb:bindings node="//xs:element[@name='secondDefiningParameter']">
