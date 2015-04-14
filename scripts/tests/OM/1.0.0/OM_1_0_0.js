@@ -21,7 +21,9 @@ module.exports = {
 		var context =  new Jsonix.Context(mappings);
 		var unmarshaller = context.createUnmarshaller();
 		unmarshaller.unmarshalFile(__dirname +"/observation1.xmltodo", function(result) {
-			test.equal('0.28', result.value.result.content[0]);
+			test.equal('GML_3_1_1.MeasureType', result.value.result.TYPE_NAME);
+			test.equal('urn:ogc:def:uom:OGC:kg', result.value.result.uom);
+			test.equal('0.28', result.value.result.value);
 			test.done();
 		});
 	},
