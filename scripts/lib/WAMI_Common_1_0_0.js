@@ -3,6 +3,10 @@ var WAMI_Common_1_0_0_Module_Factory = function () {
     n: 'WAMI_Common_1_0_0',
     tis: [{
         ln: 'CommonAbstractWamiRequestType',
+        tn: {
+          ns: 'http:\/\/www.pixia.com\/wami\/common',
+          lp: 'CommonAbstractWamiRequestType'
+        },
         ps: [{
             n: 'service',
             an: {

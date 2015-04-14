@@ -6,11 +6,14 @@ var ISO19139_GSR_20070417_Module_Factory = function () {
     deps: ['XLink_1_0', 'GML_3_2_1'],
     tis: [{
         ln: 'SCCRSPropertyType',
+        tn: {
+          ns: 'http:\/\/www.isotc211.org\/2005\/gsr',
+          lp: 'SC_CRS_PropertyType'
+        },
         ps: [{
             n: 'abstractCRS',
             mx: false,
             dom: false,
-            typed: false,
             en: 'AbstractCRS',
             ti: 'GML_3_2_1.AbstractCRSType',
             t: 'er'
