@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<sld:StyledLayerDescriptor xmlns:sld="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:uom="http://www.opengeospatial.org/se/units/metre" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0.0">
+    <sld:NamedLayer>
+        <sld:Name>Custom Style</sld:Name>
+        <sld:UserStyle>
+            <sld:Title>Default custom style</sld:Title>
+            <sld:Abstract>A sample style</sld:Abstract>
+            <sld:FeatureTypeStyle>
+                <sld:Rule>
+                    <sld:Name>Polygon</sld:Name>
+                    <sld:Title>Polygon Rule</sld:Title>
+                    <sld:Abstract>Default Style for Polygons</sld:Abstract>
+                    <sld:MinScaleDenominator>0</sld:MinScaleDenominator>
+                    <sld:MaxScaleDenominator>1</sld:MaxScaleDenominator>
+                    <sld:PolygonSymbolizer>
+                        <sld:Geometry>
+                            <ogc:Function name="offset">
+                                <ogc:PropertyName>the_geom</ogc:PropertyName>
+                                <ogc:Literal>0.00004</ogc:Literal>
+                                <ogc:Literal>-0.00004</ogc:Literal>
+                            </ogc:Function>                      
+                        </sld:Geometry>
+                        <sld:Fill>
+                            <sld:CssParameter name="fill">#AAAAAA</sld:CssParameter>
+                        </sld:Fill>
+                        <sld:Stroke>
+                            <sld:CssParameter name="stroke">#000000</sld:CssParameter>
+                            <sld:CssParameter name="stroke-width">1</sld:CssParameter>
+                        </sld:Stroke>
+                    </sld:PolygonSymbolizer>
+                </sld:Rule>
+            </sld:FeatureTypeStyle>
+        </sld:UserStyle>
+    </sld:NamedLayer>
+</sld:StyledLayerDescriptor>

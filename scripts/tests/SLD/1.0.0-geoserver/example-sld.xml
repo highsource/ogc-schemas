@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<sld:StyledLayerDescriptor version="1.0.0"
+   xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd"
+   xmlns="http://www.opengis.net/sld"
+   xmlns:sld="http://www.opengis.net/sld"
+   xmlns:ogc="http://www.opengis.net/ogc"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <sld:NamedLayer>
+      <sld:Name>OCEANSEA_1M:Foundation</sld:Name>
+      <sld:UserStyle>
+         <sld:Name>GEOSYM</sld:Name>
+         <sld:IsDefault>1</sld:IsDefault>
+         <sld:FeatureTypeStyle>
+            <sld:Rule>
+               <sld:Name>main</sld:Name>
+               <sld:PolygonSymbolizer>
+                  <sld:Geometry>
+                     <ogc:PropertyName>GEOMETRY</ogc:PropertyName>
+                  </sld:Geometry>
+                  <sld:Fill>
+                     <sld:CssParameter name="fill">#96C3F5</sld:CssParameter>
+                  </sld:Fill>
+               </sld:PolygonSymbolizer>
+            </sld:Rule>
+         </sld:FeatureTypeStyle>
+      </sld:UserStyle>
+   </sld:NamedLayer>
+
+</sld:StyledLayerDescriptor>
