@@ -53,6 +53,7 @@
 		<dependency><artifactId>sensorML-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
 		<dependency><artifactId>sld-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>sld-v_1_0_0-geoserver</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>sld-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
 		<dependency><artifactId>sps-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>

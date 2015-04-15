@@ -72,6 +72,14 @@
 							</catalog>
 							<catalog>
 								<dependencyResource>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>ogc-schemas</artifactId>
+									<resource>geoserver/catalog.cat</resource>
+									<version>${project.version}</version>
+								</dependencyResource>
+							</catalog>
+							<catalog>
+								<dependencyResource>
 									<groupId>org.hisrc.w3c</groupId>
 									<artifactId>w3c-schemas</artifactId>
 									<resource>w3c/catalog.cat</resource>
