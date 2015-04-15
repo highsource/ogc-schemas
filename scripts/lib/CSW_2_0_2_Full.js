@@ -4,7 +4,15 @@ var CSW_2_0_2_Full_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/cat\/csw\/2.0.2',
     deps: ['OWS_1_0_0', 'DC_1_1'],
     tis: [{
-        ln: 'EmptyType'
+        ln: 'GetCapabilitiesType',
+        bti: 'OWS_1_0_0.GetCapabilitiesType',
+        ps: [{
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }]
       }, {
         ln: 'RecordType',
         bti: '.DCMIRecordType',
@@ -18,7 +26,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             col: true,
             mx: false,
             dom: false,
-            typed: false,
             en: {
               lp: 'BoundingBox',
               ns: 'http:\/\/www.opengis.net\/ows'
@@ -27,412 +34,13 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'DistributedSearchType',
+        ln: 'CapabilitiesType',
+        bti: 'OWS_1_0_0.CapabilitiesBaseType',
         ps: [{
-            n: 'hopCount',
-            ti: 'Integer',
-            an: {
-              lp: 'hopCount'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'QueryType',
-        bti: '.AbstractQueryType',
-        ps: [{
-            n: 'elementSetName',
-            en: 'ElementSetName',
-            ti: '.ElementSetNameType'
-          }, {
-            n: 'elementName',
-            col: true,
-            en: 'ElementName',
-            ti: 'QName'
-          }, {
-            n: 'constraint',
-            en: 'Constraint',
-            ti: '.QueryConstraintType'
-          }, {
-            n: 'sortBy',
+            n: 'filterCapabilities',
             typed: false,
             mx: false,
             t: 'ae'
-          }, {
-            n: 'typeNames',
-            ti: {
-              t: 'l',
-              bti: 'QName'
-            },
-            an: {
-              lp: 'typeNames'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RangeOfValuesType',
-        ps: [{
-            n: 'minValue',
-            en: 'MinValue',
-            ti: 'AnyType'
-          }, {
-            n: 'maxValue',
-            en: 'MaxValue',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'GetDomainType',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'propertyName',
-            en: 'PropertyName'
-          }, {
-            n: 'parameterName',
-            en: 'ParameterName'
-          }]
-      }, {
-        ln: 'SummaryRecordType',
-        bti: '.AbstractRecordType',
-        ps: [{
-            n: 'identifier',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'identifier',
-              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-            },
-            ti: 'DC_1_1.SimpleLiteral',
-            t: 'er'
-          }, {
-            n: 'title',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'title',
-              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-            },
-            ti: 'DC_1_1.SimpleLiteral',
-            t: 'er'
-          }, {
-            n: 'type',
-            en: {
-              lp: 'type',
-              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-            },
-            ti: 'DC_1_1.SimpleLiteral'
-          }, {
-            n: 'subject',
-            col: true,
-            en: {
-              lp: 'subject',
-              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-            },
-            ti: 'DC_1_1.SimpleLiteral'
-          }, {
-            n: 'format',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'format',
-              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-            },
-            ti: 'DC_1_1.SimpleLiteral',
-            t: 'er'
-          }, {
-            n: 'relation',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'relation',
-              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-            },
-            ti: 'DC_1_1.SimpleLiteral',
-            t: 'er'
-          }, {
-            n: 'modified',
-            col: true,
-            en: {
-              lp: 'modified',
-              ns: 'http:\/\/purl.org\/dc\/terms\/'
-            },
-            ti: 'DC_1_1.SimpleLiteral'
-          }, {
-            n: '_abstract',
-            col: true,
-            en: {
-              lp: 'abstract',
-              ns: 'http:\/\/purl.org\/dc\/terms\/'
-            },
-            ti: 'DC_1_1.SimpleLiteral'
-          }, {
-            n: 'spatial',
-            col: true,
-            en: {
-              lp: 'spatial',
-              ns: 'http:\/\/purl.org\/dc\/terms\/'
-            },
-            ti: 'DC_1_1.SimpleLiteral'
-          }, {
-            n: 'boundingBox',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'BoundingBox',
-              ns: 'http:\/\/www.opengis.net\/ows'
-            },
-            ti: 'OWS_1_0_0.BoundingBoxType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'GetRecordsResponseType',
-        ps: [{
-            n: 'requestId',
-            en: 'RequestId'
-          }, {
-            n: 'searchStatus',
-            en: 'SearchStatus',
-            ti: '.RequestStatusType'
-          }, {
-            n: 'searchResults',
-            en: 'SearchResults',
-            ti: '.SearchResultsType'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ListOfValuesType',
-        ps: [{
-            n: 'value',
-            col: true,
-            en: 'Value',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'InsertType',
-        ps: [{
-            n: 'any',
-            col: true,
-            typed: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'typeName',
-            an: {
-              lp: 'typeName'
-            },
-            t: 'a'
-          }, {
-            n: 'handle',
-            ti: 'ID',
-            an: {
-              lp: 'handle'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TransactionSummaryType',
-        ps: [{
-            n: 'totalInserted',
-            ti: 'Integer'
-          }, {
-            n: 'totalUpdated',
-            ti: 'Integer'
-          }, {
-            n: 'totalDeleted',
-            ti: 'Integer'
-          }, {
-            n: 'requestId',
-            an: {
-              lp: 'requestId'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractQueryType'
-      }, {
-        ln: 'RecordPropertyType',
-        ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'value',
-            en: 'Value',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'GetDomainResponseType',
-        ps: [{
-            n: 'domainValues',
-            col: true,
-            en: 'DomainValues',
-            ti: '.DomainValuesType'
-          }]
-      }, {
-        ln: 'EchoedRequestType',
-        ps: [{
-            n: 'any',
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'GetRecordsType',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'distributedSearch',
-            en: 'DistributedSearch',
-            ti: '.DistributedSearchType'
-          }, {
-            n: 'responseHandler',
-            col: true,
-            en: 'ResponseHandler'
-          }, {
-            n: 'abstractQuery',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractQuery',
-            ti: '.AbstractQueryType',
-            t: 'er'
-          }, {
-            n: 'any',
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'requestId',
-            an: {
-              lp: 'requestId'
-            },
-            t: 'a'
-          }, {
-            n: 'resultType',
-            an: {
-              lp: 'resultType'
-            },
-            t: 'a'
-          }, {
-            n: 'outputFormat',
-            an: {
-              lp: 'outputFormat'
-            },
-            t: 'a'
-          }, {
-            n: 'outputSchema',
-            an: {
-              lp: 'outputSchema'
-            },
-            t: 'a'
-          }, {
-            n: 'startPosition',
-            ti: 'Integer',
-            an: {
-              lp: 'startPosition'
-            },
-            t: 'a'
-          }, {
-            n: 'maxRecords',
-            ti: 'Integer',
-            an: {
-              lp: 'maxRecords'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RequestStatusType',
-        ps: [{
-            n: 'timestamp',
-            ti: 'Calendar',
-            an: {
-              lp: 'timestamp'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AcknowledgementType',
-        ps: [{
-            n: 'echoedRequest',
-            en: 'EchoedRequest',
-            ti: '.EchoedRequestType'
-          }, {
-            n: 'requestId',
-            en: 'RequestId'
-          }, {
-            n: 'timeStamp',
-            ti: 'Calendar',
-            an: {
-              lp: 'timeStamp'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'HarvestType',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'source',
-            en: 'Source'
-          }, {
-            n: 'resourceType',
-            en: 'ResourceType'
-          }, {
-            n: 'resourceFormat',
-            en: 'ResourceFormat'
-          }, {
-            n: 'harvestInterval',
-            en: 'HarvestInterval'
-          }, {
-            n: 'responseHandler',
-            col: true,
-            en: 'ResponseHandler'
-          }]
-      }, {
-        ln: 'QueryConstraintType',
-        ps: [{
-            n: 'filter',
-            typed: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'cqlText',
-            en: 'CqlText'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeRecordResponseType',
-        ps: [{
-            n: 'schemaComponent',
-            col: true,
-            en: 'SchemaComponent',
-            ti: '.SchemaComponentType'
-          }]
-      }, {
-        ln: 'ConceptualSchemeType',
-        ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'document',
-            en: 'Document'
-          }, {
-            n: 'authority',
-            en: 'Authority'
           }]
       }, {
         ln: 'SearchResultsType',
@@ -441,7 +49,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             col: true,
             mx: false,
             dom: false,
-            typed: false,
             en: 'AbstractRecord',
             ti: '.AbstractRecordType',
             t: 'er'
@@ -499,16 +106,69 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GetRecordByIdType',
+        ln: 'AcknowledgementType',
+        ps: [{
+            n: 'echoedRequest',
+            en: 'EchoedRequest',
+            ti: '.EchoedRequestType'
+          }, {
+            n: 'requestId',
+            en: 'RequestId'
+          }, {
+            n: 'timeStamp',
+            ti: 'Calendar',
+            an: {
+              lp: 'timeStamp'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DistributedSearchType',
+        ps: [{
+            n: 'hopCount',
+            ti: 'Integer',
+            an: {
+              lp: 'hopCount'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractQueryType'
+      }, {
+        ln: 'GetRecordsType',
         bti: '.RequestBaseType',
         ps: [{
-            n: 'id',
-            col: true,
-            en: 'Id'
+            n: 'distributedSearch',
+            en: 'DistributedSearch',
+            ti: '.DistributedSearchType'
           }, {
-            n: 'elementSetName',
-            en: 'ElementSetName',
-            ti: '.ElementSetNameType'
+            n: 'responseHandler',
+            col: true,
+            en: 'ResponseHandler'
+          }, {
+            n: 'abstractQuery',
+            mx: false,
+            dom: false,
+            en: 'AbstractQuery',
+            ti: '.AbstractQueryType',
+            t: 'er'
+          }, {
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'requestId',
+            an: {
+              lp: 'requestId'
+            },
+            t: 'a'
+          }, {
+            n: 'resultType',
+            an: {
+              lp: 'resultType'
+            },
+            t: 'a'
           }, {
             n: 'outputFormat',
             an: {
@@ -521,128 +181,41 @@ var CSW_2_0_2_Full_Module_Factory = function () {
               lp: 'outputSchema'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'DescribeRecordType',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'typeName',
-            col: true,
-            en: 'TypeName',
-            ti: 'QName'
           }, {
-            n: 'outputFormat',
+            n: 'startPosition',
+            ti: 'Integer',
             an: {
-              lp: 'outputFormat'
+              lp: 'startPosition'
             },
             t: 'a'
           }, {
-            n: 'schemaLanguage',
+            n: 'maxRecords',
+            ti: 'Integer',
             an: {
-              lp: 'schemaLanguage'
+              lp: 'maxRecords'
             },
             t: 'a'
           }]
       }, {
-        ln: 'ElementSetNameType',
+        ln: 'ConceptualSchemeType',
         ps: [{
-            n: 'value',
-            t: 'v'
+            n: 'name',
+            en: 'Name'
           }, {
-            n: 'typeNames',
-            ti: {
-              t: 'l',
-              bti: 'QName'
-            },
-            an: {
-              lp: 'typeNames'
-            },
-            t: 'a'
+            n: 'document',
+            en: 'Document'
+          }, {
+            n: 'authority',
+            en: 'Authority'
           }]
       }, {
-        ln: 'AbstractRecordType'
-      }, {
-        ln: 'BriefRecordType',
-        bti: '.AbstractRecordType',
+        ln: 'InsertType',
         ps: [{
-            n: 'identifier',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'identifier',
-              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-            },
-            ti: 'DC_1_1.SimpleLiteral',
-            t: 'er'
-          }, {
-            n: 'title',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'title',
-              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-            },
-            ti: 'DC_1_1.SimpleLiteral',
-            t: 'er'
-          }, {
-            n: 'type',
-            en: {
-              lp: 'type',
-              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-            },
-            ti: 'DC_1_1.SimpleLiteral'
-          }, {
-            n: 'boundingBox',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'BoundingBox',
-              ns: 'http:\/\/www.opengis.net\/ows'
-            },
-            ti: 'OWS_1_0_0.BoundingBoxType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'GetRecordByIdResponseType',
-        ps: [{
-            n: 'abstractRecord',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'AbstractRecord',
-            ti: '.AbstractRecordType',
-            t: 'er'
-          }, {
             n: 'any',
             col: true,
-            dom: false,
+            typed: false,
             mx: false,
             t: 'ae'
-          }]
-      }, {
-        ln: 'HarvestResponseType',
-        ps: [{
-            n: 'acknowledgement',
-            en: 'Acknowledgement',
-            ti: '.AcknowledgementType'
-          }, {
-            n: 'transactionResponse',
-            en: 'TransactionResponse',
-            ti: '.TransactionResponseType'
-          }]
-      }, {
-        ln: 'DeleteType',
-        ps: [{
-            n: 'constraint',
-            en: 'Constraint',
-            ti: '.QueryConstraintType'
           }, {
             n: 'typeName',
             an: {
@@ -689,6 +262,123 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'AbstractRecordType'
+      }, {
+        ln: 'GetDomainType',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'propertyName',
+            en: 'PropertyName'
+          }, {
+            n: 'parameterName',
+            en: 'ParameterName'
+          }]
+      }, {
+        ln: 'QueryConstraintType',
+        ps: [{
+            n: 'filter',
+            typed: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'cqlText',
+            en: 'CqlText'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ListOfValuesType',
+        ps: [{
+            n: 'value',
+            col: true,
+            en: 'Value',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'InsertResultType',
+        ps: [{
+            n: 'briefRecord',
+            col: true,
+            en: 'BriefRecord',
+            ti: '.BriefRecordType'
+          }, {
+            n: 'handleRef',
+            an: {
+              lp: 'handleRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'RequestBaseType',
+        ps: [{
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeRecordResponseType',
+        ps: [{
+            n: 'schemaComponent',
+            col: true,
+            en: 'SchemaComponent',
+            ti: '.SchemaComponentType'
+          }]
+      }, {
+        ln: 'TransactionResponseType',
+        ps: [{
+            n: 'transactionSummary',
+            en: 'TransactionSummary',
+            ti: '.TransactionSummaryType'
+          }, {
+            n: 'insertResult',
+            col: true,
+            en: 'InsertResult',
+            ti: '.InsertResultType'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetDomainResponseType',
+        ps: [{
+            n: 'domainValues',
+            col: true,
+            en: 'DomainValues',
+            ti: '.DomainValuesType'
+          }]
+      }, {
+        ln: 'RecordPropertyType',
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'value',
+            en: 'Value',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'EchoedRequestType',
+        ps: [{
+            n: 'any',
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
         ln: 'DCMIRecordType',
         bti: '.AbstractRecordType',
         ps: [{
@@ -696,13 +386,181 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             col: true,
             mx: false,
             dom: false,
-            typed: false,
             en: {
               lp: 'DC-element',
               ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
             },
             ti: 'DC_1_1.SimpleLiteral',
             t: 'er'
+          }]
+      }, {
+        ln: 'RequestStatusType',
+        ps: [{
+            n: 'timestamp',
+            ti: 'Calendar',
+            an: {
+              lp: 'timestamp'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SummaryRecordType',
+        bti: '.AbstractRecordType',
+        ps: [{
+            n: 'identifier',
+            col: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'identifier',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            },
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
+          }, {
+            n: 'title',
+            col: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'title',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            },
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
+          }, {
+            n: 'type',
+            en: {
+              lp: 'type',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            },
+            ti: 'DC_1_1.SimpleLiteral'
+          }, {
+            n: 'subject',
+            col: true,
+            en: {
+              lp: 'subject',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            },
+            ti: 'DC_1_1.SimpleLiteral'
+          }, {
+            n: 'format',
+            col: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'format',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            },
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
+          }, {
+            n: 'relation',
+            col: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'relation',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            },
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
+          }, {
+            n: 'modified',
+            col: true,
+            en: {
+              lp: 'modified',
+              ns: 'http:\/\/purl.org\/dc\/terms\/'
+            },
+            ti: 'DC_1_1.SimpleLiteral'
+          }, {
+            n: '_abstract',
+            col: true,
+            en: {
+              lp: 'abstract',
+              ns: 'http:\/\/purl.org\/dc\/terms\/'
+            },
+            ti: 'DC_1_1.SimpleLiteral'
+          }, {
+            n: 'spatial',
+            col: true,
+            en: {
+              lp: 'spatial',
+              ns: 'http:\/\/purl.org\/dc\/terms\/'
+            },
+            ti: 'DC_1_1.SimpleLiteral'
+          }, {
+            n: 'boundingBox',
+            col: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'BoundingBox',
+              ns: 'http:\/\/www.opengis.net\/ows'
+            },
+            ti: 'OWS_1_0_0.BoundingBoxType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'GetRecordByIdResponseType',
+        ps: [{
+            n: 'abstractRecord',
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractRecord',
+            ti: '.AbstractRecordType',
+            t: 'er'
+          }, {
+            n: 'any',
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'GetRecordsResponseType',
+        ps: [{
+            n: 'requestId',
+            en: 'RequestId'
+          }, {
+            n: 'searchStatus',
+            en: 'SearchStatus',
+            ti: '.RequestStatusType'
+          }, {
+            n: 'searchResults',
+            en: 'SearchResults',
+            ti: '.SearchResultsType'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'UpdateType',
+        ps: [{
+            n: 'any',
+            typed: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'recordProperty',
+            col: true,
+            en: 'RecordProperty',
+            ti: '.RecordPropertyType'
+          }, {
+            n: 'constraint',
+            en: 'Constraint',
+            ti: '.QueryConstraintType'
+          }, {
+            n: 'handle',
+            ti: 'ID',
+            an: {
+              lp: 'handle'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'DomainValuesType',
@@ -739,61 +597,223 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TransactionResponseType',
+        ln: 'QueryType',
+        bti: '.AbstractQueryType',
         ps: [{
-            n: 'transactionSummary',
-            en: 'TransactionSummary',
-            ti: '.TransactionSummaryType'
+            n: 'elementSetName',
+            en: 'ElementSetName',
+            ti: '.ElementSetNameType'
           }, {
-            n: 'insertResult',
+            n: 'elementName',
             col: true,
-            en: 'InsertResult',
-            ti: '.InsertResultType'
+            en: 'ElementName',
+            ti: 'QName'
           }, {
-            n: 'version',
+            n: 'constraint',
+            en: 'Constraint',
+            ti: '.QueryConstraintType'
+          }, {
+            n: 'sortBy',
+            typed: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'typeNames',
+            ti: {
+              t: 'l',
+              bti: 'QName'
+            },
             an: {
-              lp: 'version'
+              lp: 'typeNames'
             },
             t: 'a'
           }]
       }, {
-        ln: 'RequestBaseType',
+        ln: 'ElementSetNameType',
         ps: [{
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
+            n: 'value',
+            t: 'v'
           }, {
-            n: 'version',
+            n: 'typeNames',
+            ti: {
+              t: 'l',
+              bti: 'QName'
+            },
             an: {
-              lp: 'version'
+              lp: 'typeNames'
             },
             t: 'a'
           }]
       }, {
-        ln: 'InsertResultType',
+        ln: 'TransactionSummaryType',
         ps: [{
-            n: 'briefRecord',
+            n: 'totalInserted',
+            ti: 'Integer'
+          }, {
+            n: 'totalUpdated',
+            ti: 'Integer'
+          }, {
+            n: 'totalDeleted',
+            ti: 'Integer'
+          }, {
+            n: 'requestId',
+            an: {
+              lp: 'requestId'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeRecordType',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'typeName',
             col: true,
-            en: 'BriefRecord',
-            ti: '.BriefRecordType'
+            en: 'TypeName',
+            ti: 'QName'
           }, {
-            n: 'handleRef',
+            n: 'outputFormat',
             an: {
-              lp: 'handleRef'
+              lp: 'outputFormat'
+            },
+            t: 'a'
+          }, {
+            n: 'schemaLanguage',
+            an: {
+              lp: 'schemaLanguage'
             },
             t: 'a'
           }]
       }, {
-        ln: 'GetCapabilitiesType',
-        bti: 'OWS_1_0_0.GetCapabilitiesType',
+        ln: 'HarvestResponseType',
         ps: [{
-            n: 'service',
+            n: 'acknowledgement',
+            en: 'Acknowledgement',
+            ti: '.AcknowledgementType'
+          }, {
+            n: 'transactionResponse',
+            en: 'TransactionResponse',
+            ti: '.TransactionResponseType'
+          }]
+      }, {
+        ln: 'BriefRecordType',
+        bti: '.AbstractRecordType',
+        ps: [{
+            n: 'identifier',
+            col: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'identifier',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            },
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
+          }, {
+            n: 'title',
+            col: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'title',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            },
+            ti: 'DC_1_1.SimpleLiteral',
+            t: 'er'
+          }, {
+            n: 'type',
+            en: {
+              lp: 'type',
+              ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+            },
+            ti: 'DC_1_1.SimpleLiteral'
+          }, {
+            n: 'boundingBox',
+            col: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'BoundingBox',
+              ns: 'http:\/\/www.opengis.net\/ows'
+            },
+            ti: 'OWS_1_0_0.BoundingBoxType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'DeleteType',
+        ps: [{
+            n: 'constraint',
+            en: 'Constraint',
+            ti: '.QueryConstraintType'
+          }, {
+            n: 'typeName',
             an: {
-              lp: 'service'
+              lp: 'typeName'
             },
             t: 'a'
+          }, {
+            n: 'handle',
+            ti: 'ID',
+            an: {
+              lp: 'handle'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetRecordByIdType',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'id',
+            col: true,
+            en: 'Id'
+          }, {
+            n: 'elementSetName',
+            en: 'ElementSetName',
+            ti: '.ElementSetNameType'
+          }, {
+            n: 'outputFormat',
+            an: {
+              lp: 'outputFormat'
+            },
+            t: 'a'
+          }, {
+            n: 'outputSchema',
+            an: {
+              lp: 'outputSchema'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EmptyType'
+      }, {
+        ln: 'RangeOfValuesType',
+        ps: [{
+            n: 'minValue',
+            en: 'MinValue',
+            ti: 'AnyType'
+          }, {
+            n: 'maxValue',
+            en: 'MaxValue',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'HarvestType',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'source',
+            en: 'Source'
+          }, {
+            n: 'resourceType',
+            en: 'ResourceType'
+          }, {
+            n: 'resourceFormat',
+            en: 'ResourceFormat'
+          }, {
+            n: 'harvestInterval',
+            en: 'HarvestInterval'
+          }, {
+            n: 'responseHandler',
+            col: true,
+            en: 'ResponseHandler'
           }]
       }, {
         ln: 'SchemaComponentType',
@@ -821,39 +841,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CapabilitiesType',
-        bti: 'OWS_1_0_0.CapabilitiesBaseType',
-        ps: [{
-            n: 'filterCapabilities',
-            typed: false,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'UpdateType',
-        ps: [{
-            n: 'any',
-            typed: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'recordProperty',
-            col: true,
-            en: 'RecordProperty',
-            ti: '.RecordPropertyType'
-          }, {
-            n: 'constraint',
-            en: 'Constraint',
-            ti: '.QueryConstraintType'
-          }, {
-            n: 'handle',
-            ti: 'ID',
-            an: {
-              lp: 'handle'
-            },
-            t: 'a'
-          }]
-      }, {
         t: 'enum',
         ln: 'ElementSetType',
         vs: ['brief', 'summary', 'full']
@@ -863,97 +850,108 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         vs: ['results', 'hits', 'validate']
       }],
     eis: [{
-        en: 'GetRecordById',
-        ti: '.GetRecordByIdType'
-      }, {
-        en: 'HarvestResponse',
-        ti: '.HarvestResponseType'
-      }, {
-        en: 'DCMIRecord',
-        ti: '.DCMIRecordType',
-        sh: 'AbstractRecord'
-      }, {
-        en: 'Constraint',
-        ti: '.QueryConstraintType'
-      }, {
-        en: 'GetRecords',
-        ti: '.GetRecordsType'
-      }, {
-        en: 'GetRecordByIdResponse',
-        ti: '.GetRecordByIdResponseType'
-      }, {
-        en: 'AbstractRecord',
-        ti: '.AbstractRecordType'
-      }, {
-        en: 'DescribeRecord',
-        ti: '.DescribeRecordType'
-      }, {
-        en: 'Harvest',
-        ti: '.HarvestType'
-      }, {
-        en: 'GetDomain',
-        ti: '.GetDomainType'
-      }, {
-        en: 'ElementSetName',
-        ti: '.ElementSetNameType'
-      }, {
-        en: 'TransactionResponse',
-        ti: '.TransactionResponseType'
-      }, {
         en: 'SummaryRecord',
         ti: '.SummaryRecordType',
         sh: 'AbstractRecord'
       }, {
-        en: 'RecordProperty',
-        ti: '.RecordPropertyType'
-      }, {
-        en: 'Capabilities',
-        ti: '.CapabilitiesType'
-      }, {
-        en: 'Acknowledgement',
-        ti: '.AcknowledgementType'
+        en: 'GetRecords',
+        ti: '.GetRecordsType'
       }, {
         en: 'AbstractQuery',
         ti: '.AbstractQueryType'
       }, {
-        en: 'DescribeRecordResponse',
-        ti: '.DescribeRecordResponseType'
+        en: 'GetRecordById',
+        ti: '.GetRecordByIdType'
       }, {
-        en: 'GetDomainResponse',
-        ti: '.GetDomainResponseType'
+        en: 'GetRecordByIdResponse',
+        ti: '.GetRecordByIdResponseType'
       }, {
-        en: 'BriefRecord',
-        ti: '.BriefRecordType',
+        en: 'Harvest',
+        ti: '.HarvestType'
+      }, {
+        en: 'RecordProperty',
+        ti: '.RecordPropertyType'
+      }, {
+        en: 'HarvestResponse',
+        ti: '.HarvestResponseType'
+      }, {
+        en: 'Record',
+        ti: '.RecordType',
         sh: 'AbstractRecord'
-      }, {
-        en: 'GetRecordsResponse',
-        ti: '.GetRecordsResponseType'
-      }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilitiesType'
-      }, {
-        en: 'Transaction',
-        ti: '.TransactionType'
       }, {
         en: 'Query',
         ti: '.QueryType',
         sh: 'AbstractQuery'
       }, {
-        en: 'Record',
-        ti: '.RecordType',
+        en: 'TransactionResponse',
+        ti: '.TransactionResponseType'
+      }, {
+        en: 'GetRecordsResponse',
+        ti: '.GetRecordsResponseType'
+      }, {
+        en: 'Acknowledgement',
+        ti: '.AcknowledgementType'
+      }, {
+        en: 'DescribeRecord',
+        ti: '.DescribeRecordType'
+      }, {
+        en: 'DCMIRecord',
+        ti: '.DCMIRecordType',
         sh: 'AbstractRecord'
+      }, {
+        en: 'GetDomainResponse',
+        ti: '.GetDomainResponseType'
+      }, {
+        en: 'Capabilities',
+        ti: '.CapabilitiesType'
+      }, {
+        en: 'Transaction',
+        ti: '.TransactionType'
+      }, {
+        en: 'Constraint',
+        ti: '.QueryConstraintType'
+      }, {
+        en: 'GetDomain',
+        ti: '.GetDomainType'
+      }, {
+        en: 'AbstractRecord',
+        ti: '.AbstractRecordType'
+      }, {
+        en: 'BriefRecord',
+        ti: '.BriefRecordType',
+        sh: 'AbstractRecord'
+      }, {
+        en: 'GetCapabilities',
+        ti: '.GetCapabilitiesType'
+      }, {
+        en: 'ElementSetName',
+        ti: '.ElementSetNameType'
+      }, {
+        en: 'DescribeRecordResponse',
+        ti: '.DescribeRecordResponseType'
       }]
   };
   var DC_1_1 = {
     n: 'DC_1_1',
     dens: 'http:\/\/purl.org\/dc\/elements\/1.1\/',
     tis: [{
+        ln: 'ElementContainer',
+        tn: 'elementContainer',
+        ps: [{
+            n: 'dcElement',
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'DC-element',
+            ti: '.SimpleLiteral',
+            t: 'er'
+          }]
+      }, {
         ln: 'SimpleLiteral',
         ps: [{
             n: 'content',
             col: true,
             dom: false,
-            typed: false,
             t: 'ers'
           }, {
             n: 'scheme',
@@ -962,29 +960,9 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             },
             t: 'a'
           }]
-      }, {
-        ln: 'ElementContainer',
-        ps: [{
-            n: 'dcElement',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'DC-element',
-            ti: '.SimpleLiteral',
-            t: 'er'
-          }]
       }],
     eis: [{
-        en: 'creator',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
         en: 'date',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'relation',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -992,19 +970,7 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'format',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'language',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'description',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'identifier',
+        en: 'contributor',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -1012,11 +978,7 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'contributor',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'source',
+        en: 'relation',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -1024,7 +986,7 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'subject',
+        en: 'rights',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -1032,7 +994,31 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'rights',
+        en: 'language',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'creator',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'identifier',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'format',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'description',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'source',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'subject',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }]
@@ -1043,17 +1029,24 @@ var CSW_2_0_2_Full_Module_Factory = function () {
     deps: ['DC_1_1'],
     tis: [],
     eis: [{
-        en: 'requires',
+        en: 'replaces',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'relation',
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        en: 'rightsHolder',
+        en: 'audience',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'DC-element',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'isPartOf',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
@@ -1061,6 +1054,48 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'identifier',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'requires',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'isRequiredBy',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'references',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'isReplacedBy',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'alternative',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'title',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'rightsHolder',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'DC-element',
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
@@ -1085,21 +1120,35 @@ var CSW_2_0_2_Full_Module_Factory = function () {
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        en: 'audience',
+        en: 'medium',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'format',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'provenance',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'DC-element',
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        en: 'hasPart',
+        en: 'hasVersion',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'relation',
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        en: 'hasVersion',
+        en: 'hasFormat',
+        ti: 'DC_1_1.SimpleLiteral',
+        sh: {
+          lp: 'relation',
+          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
+        }
+      }, {
+        en: 'isFormatOf',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'relation',
@@ -1113,70 +1162,7 @@ var CSW_2_0_2_Full_Module_Factory = function () {
           ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
         }
       }, {
-        en: 'alternative',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'title',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'medium',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'format',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'isFormatOf',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'relation',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'references',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'relation',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'isRequiredBy',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'relation',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'isReplacedBy',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'relation',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'replaces',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'relation',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'provenance',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'DC-element',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'isPartOf',
-        ti: 'DC_1_1.SimpleLiteral',
-        sh: {
-          lp: 'relation',
-          ns: 'http:\/\/purl.org\/dc\/elements\/1.1\/'
-        }
-      }, {
-        en: 'hasFormat',
+        en: 'hasPart',
         ti: 'DC_1_1.SimpleLiteral',
         sh: {
           lp: 'relation',
@@ -1190,19 +1176,13 @@ var CSW_2_0_2_Full_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0'],
     tis: [{
-        ln: 'AcceptVersionsType',
+        ln: 'Operation',
+        tn: null,
         ps: [{
-            n: 'version',
+            n: 'dcp',
             col: true,
-            en: 'Version'
-          }]
-      }, {
-        ln: 'OperationsMetadata',
-        ps: [{
-            n: 'operation',
-            col: true,
-            en: 'Operation',
-            ti: '.Operation'
+            en: 'DCP',
+            ti: '.DCP'
           }, {
             n: 'parameter',
             col: true,
@@ -1214,49 +1194,142 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             en: 'Constraint',
             ti: '.DomainType'
           }, {
-            n: 'extendedCapabilities',
-            en: 'ExtendedCapabilities',
-            ti: 'AnyType'
+            n: 'metadata',
+            col: true,
+            en: 'Metadata',
+            ti: '.MetadataType'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AcceptFormatsType',
+        ps: [{
+            n: 'outputFormat',
+            col: true,
+            en: 'OutputFormat'
+          }]
+      }, {
+        ln: 'HTTP',
+        tn: null,
+        ps: [{
+            n: 'getOrPost',
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'Post',
+                ti: '.RequestMethodType'
+              }, {
+                en: 'Get',
+                ti: '.RequestMethodType'
+              }],
+            t: 'ers'
           }]
       }, {
         ln: 'DCP',
+        tn: null,
         ps: [{
             n: 'http',
             en: 'HTTP',
             ti: '.HTTP'
           }]
       }, {
-        ln: 'BoundingBoxType',
+        ln: 'DescriptionType',
         ps: [{
-            n: 'lowerCorner',
-            en: 'LowerCorner',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
+            n: 'title',
+            en: 'Title'
           }, {
-            n: 'upperCorner',
-            en: 'UpperCorner',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
+            n: '_abstract',
+            en: 'Abstract'
           }, {
-            n: 'crs',
+            n: 'keywords',
+            col: true,
+            en: 'Keywords',
+            ti: '.KeywordsType'
+          }]
+      }, {
+        ln: 'AddressType',
+        ps: [{
+            n: 'deliveryPoint',
+            col: true,
+            en: 'DeliveryPoint'
+          }, {
+            n: 'city',
+            en: 'City'
+          }, {
+            n: 'administrativeArea',
+            en: 'AdministrativeArea'
+          }, {
+            n: 'postalCode',
+            en: 'PostalCode'
+          }, {
+            n: 'country',
+            en: 'Country'
+          }, {
+            n: 'electronicMailAddress',
+            col: true,
+            en: 'ElectronicMailAddress'
+          }]
+      }, {
+        ln: 'CapabilitiesBaseType',
+        ps: [{
+            n: 'serviceIdentification',
+            en: 'ServiceIdentification',
+            ti: '.ServiceIdentification'
+          }, {
+            n: 'serviceProvider',
+            en: 'ServiceProvider',
+            ti: '.ServiceProvider'
+          }, {
+            n: 'operationsMetadata',
+            en: 'OperationsMetadata',
+            ti: '.OperationsMetadata'
+          }, {
+            n: 'version',
             an: {
-              lp: 'crs'
+              lp: 'version'
             },
             t: 'a'
           }, {
-            n: 'dimensions',
-            ti: 'Integer',
+            n: 'updateSequence',
             an: {
-              lp: 'dimensions'
+              lp: 'updateSequence'
             },
             t: 'a'
           }]
       }, {
+        ln: 'ServiceProvider',
+        tn: null,
+        ps: [{
+            n: 'providerName',
+            en: 'ProviderName'
+          }, {
+            n: 'providerSite',
+            en: 'ProviderSite',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'serviceContact',
+            en: 'ServiceContact',
+            ti: '.ResponsiblePartySubsetType'
+          }]
+      }, {
+        ln: 'TelephoneType',
+        ps: [{
+            n: 'voice',
+            col: true,
+            en: 'Voice'
+          }, {
+            n: 'facsimile',
+            col: true,
+            en: 'Facsimile'
+          }]
+      }, {
         ln: 'ServiceIdentification',
+        tn: null,
         bti: '.DescriptionType',
         ps: [{
             n: 'serviceType',
@@ -1275,21 +1348,25 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             en: 'AccessConstraints'
           }]
       }, {
-        ln: 'ResponsiblePartySubsetType',
+        ln: 'GetCapabilitiesType',
         ps: [{
-            n: 'individualName',
-            en: 'IndividualName'
+            n: 'acceptVersions',
+            en: 'AcceptVersions',
+            ti: '.AcceptVersionsType'
           }, {
-            n: 'positionName',
-            en: 'PositionName'
+            n: 'sections',
+            en: 'Sections',
+            ti: '.SectionsType'
           }, {
-            n: 'contactInfo',
-            en: 'ContactInfo',
-            ti: '.ContactType'
+            n: 'acceptFormats',
+            en: 'AcceptFormats',
+            ti: '.AcceptFormatsType'
           }, {
-            n: 'role',
-            en: 'Role',
-            ti: '.CodeType'
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'SectionsType',
@@ -1298,6 +1375,9 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             col: true,
             en: 'Section'
           }]
+      }, {
+        ln: 'WGS84BoundingBoxType',
+        bti: '.BoundingBoxType'
       }, {
         ln: 'MetadataType',
         ps: [{
@@ -1333,141 +1413,17 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'HTTP',
+        ln: 'CodeType',
         ps: [{
-            n: 'getOrPost',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            etis: [{
-                en: 'Post',
-                ti: '.RequestMethodType'
-              }, {
-                en: 'Get',
-                ti: '.RequestMethodType'
-              }],
-            t: 'ers'
-          }]
-      }, {
-        ln: 'TelephoneType',
-        ps: [{
-            n: 'voice',
-            col: true,
-            en: 'Voice'
+            n: 'value',
+            t: 'v'
           }, {
-            n: 'facsimile',
-            col: true,
-            en: 'Facsimile'
-          }]
-      }, {
-        ln: 'Operation',
-        ps: [{
-            n: 'dcp',
-            col: true,
-            en: 'DCP',
-            ti: '.DCP'
-          }, {
-            n: 'parameter',
-            col: true,
-            en: 'Parameter',
-            ti: '.DomainType'
-          }, {
-            n: 'constraint',
-            col: true,
-            en: 'Constraint',
-            ti: '.DomainType'
-          }, {
-            n: 'metadata',
-            col: true,
-            en: 'Metadata',
-            ti: '.MetadataType'
-          }, {
-            n: 'name',
+            n: 'codeSpace',
             an: {
-              lp: 'name'
+              lp: 'codeSpace'
             },
             t: 'a'
           }]
-      }, {
-        ln: 'CapabilitiesBaseType',
-        ps: [{
-            n: 'serviceIdentification',
-            en: 'ServiceIdentification',
-            ti: '.ServiceIdentification'
-          }, {
-            n: 'serviceProvider',
-            en: 'ServiceProvider',
-            ti: '.ServiceProvider'
-          }, {
-            n: 'operationsMetadata',
-            en: 'OperationsMetadata',
-            ti: '.OperationsMetadata'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescriptionType',
-        ps: [{
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'keywords',
-            col: true,
-            en: 'Keywords',
-            ti: '.KeywordsType'
-          }]
-      }, {
-        ln: 'GetCapabilitiesType',
-        ps: [{
-            n: 'acceptVersions',
-            en: 'AcceptVersions',
-            ti: '.AcceptVersionsType'
-          }, {
-            n: 'sections',
-            en: 'Sections',
-            ti: '.SectionsType'
-          }, {
-            n: 'acceptFormats',
-            en: 'AcceptFormats',
-            ti: '.AcceptFormatsType'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ServiceProvider',
-        ps: [{
-            n: 'providerName',
-            en: 'ProviderName'
-          }, {
-            n: 'providerSite',
-            en: 'ProviderSite',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'serviceContact',
-            en: 'ServiceContact',
-            ti: '.ResponsiblePartySubsetType'
-          }]
-      }, {
-        ln: 'WGS84BoundingBoxType',
-        bti: '.BoundingBoxType'
       }, {
         ln: 'RequestMethodType',
         bti: '.OnlineResourceType',
@@ -1476,24 +1432,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             col: true,
             en: 'Constraint',
             ti: '.DomainType'
-          }]
-      }, {
-        ln: 'DomainType',
-        ps: [{
-            n: 'value',
-            col: true,
-            en: 'Value'
-          }, {
-            n: 'metadata',
-            col: true,
-            en: 'Metadata',
-            ti: '.MetadataType'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'IdentificationType',
@@ -1507,7 +1445,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             col: true,
             mx: false,
             dom: false,
-            typed: false,
             en: 'BoundingBox',
             ti: '.BoundingBoxType',
             t: 'er'
@@ -1520,7 +1457,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             col: true,
             mx: false,
             dom: false,
-            typed: false,
             en: 'AvailableCRS',
             t: 'er'
           }, {
@@ -1528,18 +1464,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             col: true,
             en: 'Metadata',
             ti: '.MetadataType'
-          }]
-      }, {
-        ln: 'CodeType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'OnlineResourceType',
@@ -1566,27 +1490,69 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AddressType',
+        ln: 'ResponsiblePartySubsetType',
         ps: [{
-            n: 'deliveryPoint',
+            n: 'individualName',
+            en: 'IndividualName'
+          }, {
+            n: 'positionName',
+            en: 'PositionName'
+          }, {
+            n: 'contactInfo',
+            en: 'ContactInfo',
+            ti: '.ContactType'
+          }, {
+            n: 'role',
+            en: 'Role',
+            ti: '.CodeType'
+          }]
+      }, {
+        ln: 'KeywordsType',
+        ps: [{
+            n: 'keyword',
             col: true,
-            en: 'DeliveryPoint'
+            en: 'Keyword'
           }, {
-            n: 'city',
-            en: 'City'
+            n: 'type',
+            en: 'Type',
+            ti: '.CodeType'
+          }]
+      }, {
+        ln: 'BoundingBoxType',
+        ps: [{
+            n: 'lowerCorner',
+            en: 'LowerCorner',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
           }, {
-            n: 'administrativeArea',
-            en: 'AdministrativeArea'
+            n: 'upperCorner',
+            en: 'UpperCorner',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
           }, {
-            n: 'postalCode',
-            en: 'PostalCode'
+            n: 'crs',
+            an: {
+              lp: 'crs'
+            },
+            t: 'a'
           }, {
-            n: 'country',
-            en: 'Country'
-          }, {
-            n: 'electronicMailAddress',
+            n: 'dimensions',
+            ti: 'Integer',
+            an: {
+              lp: 'dimensions'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AcceptVersionsType',
+        ps: [{
+            n: 'version',
             col: true,
-            en: 'ElectronicMailAddress'
+            en: 'Version'
           }]
       }, {
         ln: 'ContactType',
@@ -1610,31 +1576,54 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             en: 'ContactInstructions'
           }]
       }, {
-        ln: 'AcceptFormatsType',
+        ln: 'OperationsMetadata',
+        tn: null,
         ps: [{
-            n: 'outputFormat',
+            n: 'operation',
             col: true,
-            en: 'OutputFormat'
+            en: 'Operation',
+            ti: '.Operation'
+          }, {
+            n: 'parameter',
+            col: true,
+            en: 'Parameter',
+            ti: '.DomainType'
+          }, {
+            n: 'constraint',
+            col: true,
+            en: 'Constraint',
+            ti: '.DomainType'
+          }, {
+            n: 'extendedCapabilities',
+            en: 'ExtendedCapabilities',
+            ti: 'AnyType'
           }]
       }, {
-        ln: 'KeywordsType',
+        ln: 'DomainType',
         ps: [{
-            n: 'keyword',
+            n: 'value',
             col: true,
-            en: 'Keyword'
+            en: 'Value'
           }, {
-            n: 'type',
-            en: 'Type',
-            ti: '.CodeType'
+            n: 'metadata',
+            col: true,
+            en: 'Metadata',
+            ti: '.MetadataType'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
           }]
       }],
     eis: [{
-        en: 'SupportedCRS',
-        sh: 'AvailableCRS'
-      }, {
         en: 'WGS84BoundingBox',
         ti: '.WGS84BoundingBoxType',
         sh: 'BoundingBox'
+      }, {
+        en: 'SupportedCRS',
+        sh: 'AvailableCRS'
       }]
   };
   var Filter_1_1_0 = {
@@ -1642,114 +1631,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/ogc',
     deps: ['GML_3_1_1'],
     tis: [{
-        ln: 'FeatureIdType',
-        bti: '.AbstractIdType',
-        ps: [{
-            n: 'fid',
-            ti: 'ID',
-            an: {
-              lp: 'fid'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SpatialOperatorsType',
-        ps: [{
-            n: 'spatialOperator',
-            col: true,
-            en: 'SpatialOperator',
-            ti: '.SpatialOperatorType'
-          }]
-      }, {
-        ln: 'ComparisonOperatorsType',
-        ps: [{
-            n: 'comparisonOperator',
-            col: true,
-            en: 'ComparisonOperator'
-          }]
-      }, {
-        ln: 'PropertyNameType',
-        bti: '.ExpressionType'
-      }, {
-        ln: 'LowerBoundaryType',
-        ps: [{
-            n: 'expression',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.ExpressionType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'UpperBoundaryType',
-        ps: [{
-            n: 'expression',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.ExpressionType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'FilterType',
-        ps: [{
-            n: 'spatialOps',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.SpatialOpsType',
-            t: 'er'
-          }, {
-            n: 'comparisonOps',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.ComparisonOpsType',
-            t: 'er'
-          }, {
-            n: 'logicOps',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.LogicOpsType',
-            t: 'er'
-          }, {
-            n: 'id',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: '_Id',
-            ti: '.AbstractIdType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'ComparisonOpsType'
-      }, {
-        ln: 'BinaryLogicOpType',
-        bti: '.LogicOpsType',
-        ps: [{
-            n: 'ops',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            etis: [{
-                en: 'logicOps',
-                ti: '.LogicOpsType'
-              }, {
-                en: 'comparisonOps',
-                ti: '.ComparisonOpsType'
-              }, {
-                en: 'Function',
-                ti: '.FunctionType'
-              }, {
-                en: 'spatialOps',
-                ti: '.SpatialOpsType'
-              }],
-            t: 'ers'
-          }]
-      }, {
         ln: 'GmlObjectIdType',
         bti: '.AbstractIdType',
         ps: [{
@@ -1762,32 +1643,58 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'BinarySpatialOpType',
+        ln: 'ExpressionType'
+      }, {
+        ln: 'ArithmeticOperatorsType',
+        ps: [{
+            n: 'ops',
+            col: true,
+            etis: [{
+                en: 'SimpleArithmetic',
+                ti: '.SimpleArithmetic'
+              }, {
+                en: 'Functions',
+                ti: '.FunctionsType'
+              }],
+            t: 'es'
+          }]
+      }, {
+        ln: 'SortByType',
+        ps: [{
+            n: 'sortProperty',
+            col: true,
+            en: 'SortProperty',
+            ti: '.SortPropertyType'
+          }]
+      }, {
+        ln: 'FilterCapabilities',
+        tn: null,
+        ps: [{
+            n: 'spatialCapabilities',
+            en: 'Spatial_Capabilities',
+            ti: '.SpatialCapabilitiesType'
+          }, {
+            n: 'scalarCapabilities',
+            en: 'Scalar_Capabilities',
+            ti: '.ScalarCapabilitiesType'
+          }, {
+            n: 'idCapabilities',
+            en: 'Id_Capabilities',
+            ti: '.IdCapabilitiesType'
+          }]
+      }, {
+        ln: 'LogicOpsType'
+      }, {
+        ln: 'BBOXType',
         bti: '.SpatialOpsType',
         ps: [{
-            n: 'propertyName1',
+            n: 'propertyName',
             en: 'PropertyName',
             ti: '.PropertyNameType'
-          }, {
-            n: 'propertyName2',
-            en: 'PropertyName',
-            ti: '.PropertyNameType'
-          }, {
-            n: 'geometry',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: '_Geometry',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.AbstractGeometryType',
-            t: 'er'
           }, {
             n: 'envelope',
             mx: false,
             dom: false,
-            typed: false,
             en: {
               lp: 'Envelope',
               ns: 'http:\/\/www.opengis.net\/gml'
@@ -1796,6 +1703,24 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'er'
           }]
       }, {
+        ln: 'ScalarCapabilitiesType',
+        tn: 'Scalar_CapabilitiesType',
+        ps: [{
+            n: 'logicalOperators',
+            en: 'LogicalOperators',
+            ti: '.LogicalOperators'
+          }, {
+            n: 'comparisonOperators',
+            en: 'ComparisonOperators',
+            ti: '.ComparisonOperatorsType'
+          }, {
+            n: 'arithmeticOperators',
+            en: 'ArithmeticOperators',
+            ti: '.ArithmeticOperatorsType'
+          }]
+      }, {
+        ln: 'SpatialOpsType'
+      }, {
         ln: 'BinaryComparisonOpType',
         bti: '.ComparisonOpsType',
         ps: [{
@@ -1803,7 +1728,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             col: true,
             mx: false,
             dom: false,
-            typed: false,
             ti: '.ExpressionType',
             t: 'er'
           }, {
@@ -1815,24 +1739,19 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'BinaryOperatorType',
-        bti: '.ExpressionType',
+        ln: 'ComparisonOpsType'
+      }, {
+        ln: 'SortPropertyType',
         ps: [{
-            n: 'expression',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.ExpressionType',
-            t: 'er'
+            n: 'propertyName',
+            en: 'PropertyName',
+            ti: '.PropertyNameType'
+          }, {
+            n: 'sortOrder',
+            en: 'SortOrder'
           }]
       }, {
-        ln: 'FunctionsType',
-        ps: [{
-            n: 'functionNames',
-            en: 'FunctionNames',
-            ti: '.FunctionNamesType'
-          }]
+        ln: 'AbstractIdType'
       }, {
         ln: 'SpatialOperatorType',
         ps: [{
@@ -1847,7 +1766,26 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ExpressionType'
+        ln: 'PropertyNameType',
+        bti: '.ExpressionType'
+      }, {
+        ln: 'BinaryOperatorType',
+        bti: '.ExpressionType',
+        ps: [{
+            n: 'expression',
+            col: true,
+            mx: false,
+            dom: false,
+            ti: '.ExpressionType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'FunctionsType',
+        ps: [{
+            n: 'functionNames',
+            en: 'FunctionNames',
+            ti: '.FunctionNamesType'
+          }]
       }, {
         ln: 'PropertyIsLikeType',
         bti: '.ComparisonOpsType',
@@ -1886,12 +1824,15 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GeometryOperandsType',
+        ln: 'FeatureIdType',
+        bti: '.AbstractIdType',
         ps: [{
-            n: 'geometryOperand',
-            col: true,
-            en: 'GeometryOperand',
-            ti: 'QName'
+            n: 'fid',
+            ti: 'ID',
+            an: {
+              lp: 'fid'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'FunctionType',
@@ -1901,7 +1842,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             col: true,
             mx: false,
             dom: false,
-            typed: false,
             ti: '.ExpressionType',
             t: 'er'
           }, {
@@ -1912,6 +1852,30 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'PropertyIsBetweenType',
+        bti: '.ComparisonOpsType',
+        ps: [{
+            n: 'expression',
+            mx: false,
+            dom: false,
+            ti: '.ExpressionType',
+            t: 'er'
+          }, {
+            n: 'lowerBoundary',
+            en: 'LowerBoundary',
+            ti: '.LowerBoundaryType'
+          }, {
+            n: 'upperBoundary',
+            en: 'UpperBoundary',
+            ti: '.UpperBoundaryType'
+          }]
+      }, {
+        ln: 'EID',
+        tn: null
+      }, {
+        ln: 'SimpleArithmetic',
+        tn: null
+      }, {
         ln: 'FunctionNamesType',
         ps: [{
             n: 'functionName',
@@ -1919,77 +1883,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             en: 'FunctionName',
             ti: '.FunctionNameType'
           }]
-      }, {
-        ln: 'ScalarCapabilitiesType',
-        ps: [{
-            n: 'logicalOperators',
-            en: 'LogicalOperators',
-            ti: '.LogicalOperators'
-          }, {
-            n: 'comparisonOperators',
-            en: 'ComparisonOperators',
-            ti: '.ComparisonOperatorsType'
-          }, {
-            n: 'arithmeticOperators',
-            en: 'ArithmeticOperators',
-            ti: '.ArithmeticOperatorsType'
-          }]
-      }, {
-        ln: 'DistanceBufferType',
-        bti: '.SpatialOpsType',
-        ps: [{
-            n: 'propertyName',
-            en: 'PropertyName',
-            ti: '.PropertyNameType'
-          }, {
-            n: 'geometry',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: '_Geometry',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'distance',
-            en: 'Distance',
-            ti: '.DistanceType'
-          }]
-      }, {
-        ln: 'LogicOpsType'
-      }, {
-        ln: 'UnaryLogicOpType',
-        bti: '.LogicOpsType',
-        ps: [{
-            n: 'comparisonOps',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.ComparisonOpsType',
-            t: 'er'
-          }, {
-            n: 'spatialOps',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.SpatialOpsType',
-            t: 'er'
-          }, {
-            n: 'logicOps',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.LogicOpsType',
-            t: 'er'
-          }, {
-            n: 'function',
-            en: 'Function',
-            ti: '.FunctionType'
-          }]
-      }, {
-        ln: 'SpatialOpsType'
       }, {
         ln: 'DistanceType',
         ps: [{
@@ -2004,14 +1897,193 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LogicalOperators'
-      }, {
-        ln: 'SortByType',
+        ln: 'BinaryLogicOpType',
+        bti: '.LogicOpsType',
         ps: [{
-            n: 'sortProperty',
+            n: 'ops',
             col: true,
-            en: 'SortProperty',
-            ti: '.SortPropertyType'
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'logicOps',
+                ti: '.LogicOpsType'
+              }, {
+                en: 'comparisonOps',
+                ti: '.ComparisonOpsType'
+              }, {
+                en: 'Function',
+                ti: '.FunctionType'
+              }, {
+                en: 'spatialOps',
+                ti: '.SpatialOpsType'
+              }],
+            t: 'ers'
+          }]
+      }, {
+        ln: 'FilterType',
+        ps: [{
+            n: 'spatialOps',
+            mx: false,
+            dom: false,
+            ti: '.SpatialOpsType',
+            t: 'er'
+          }, {
+            n: 'comparisonOps',
+            mx: false,
+            dom: false,
+            ti: '.ComparisonOpsType',
+            t: 'er'
+          }, {
+            n: 'logicOps',
+            mx: false,
+            dom: false,
+            ti: '.LogicOpsType',
+            t: 'er'
+          }, {
+            n: 'id',
+            col: true,
+            mx: false,
+            dom: false,
+            en: '_Id',
+            ti: '.AbstractIdType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'LogicalOperators',
+        tn: null
+      }, {
+        ln: 'SpatialOperatorsType',
+        ps: [{
+            n: 'spatialOperator',
+            col: true,
+            en: 'SpatialOperator',
+            ti: '.SpatialOperatorType'
+          }]
+      }, {
+        ln: 'UnaryLogicOpType',
+        bti: '.LogicOpsType',
+        ps: [{
+            n: 'comparisonOps',
+            mx: false,
+            dom: false,
+            ti: '.ComparisonOpsType',
+            t: 'er'
+          }, {
+            n: 'spatialOps',
+            mx: false,
+            dom: false,
+            ti: '.SpatialOpsType',
+            t: 'er'
+          }, {
+            n: 'logicOps',
+            mx: false,
+            dom: false,
+            ti: '.LogicOpsType',
+            t: 'er'
+          }, {
+            n: 'function',
+            en: 'Function',
+            ti: '.FunctionType'
+          }]
+      }, {
+        ln: 'FID',
+        tn: null
+      }, {
+        ln: 'GeometryOperandsType',
+        ps: [{
+            n: 'geometryOperand',
+            col: true,
+            en: 'GeometryOperand',
+            ti: 'QName'
+          }]
+      }, {
+        ln: 'PropertyIsNullType',
+        bti: '.ComparisonOpsType',
+        ps: [{
+            n: 'propertyName',
+            en: 'PropertyName',
+            ti: '.PropertyNameType'
+          }]
+      }, {
+        ln: 'SpatialCapabilitiesType',
+        tn: 'Spatial_CapabilitiesType',
+        ps: [{
+            n: 'geometryOperands',
+            en: 'GeometryOperands',
+            ti: '.GeometryOperandsType'
+          }, {
+            n: 'spatialOperators',
+            en: 'SpatialOperators',
+            ti: '.SpatialOperatorsType'
+          }]
+      }, {
+        ln: 'LiteralType',
+        ps: [{
+            n: 'content',
+            col: true,
+            dom: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'ComparisonOperatorsType',
+        ps: [{
+            n: 'comparisonOperator',
+            col: true,
+            en: 'ComparisonOperator'
+          }]
+      }, {
+        ln: 'BinarySpatialOpType',
+        bti: '.SpatialOpsType',
+        ps: [{
+            n: 'propertyName1',
+            en: 'PropertyName',
+            ti: '.PropertyNameType'
+          }, {
+            n: 'propertyName2',
+            en: 'PropertyName',
+            ti: '.PropertyNameType'
+          }, {
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            en: {
+              lp: '_Geometry',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'envelope',
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'Envelope',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.EnvelopeType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'DistanceBufferType',
+        bti: '.SpatialOpsType',
+        ps: [{
+            n: 'propertyName',
+            en: 'PropertyName',
+            ti: '.PropertyNameType'
+          }, {
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            en: {
+              lp: '_Geometry',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'distance',
+            en: 'Distance',
+            ti: '.DistanceType'
           }]
       }, {
         ln: 'FunctionNameType',
@@ -2026,22 +2098,17 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'FilterCapabilities',
+        ln: 'LowerBoundaryType',
         ps: [{
-            n: 'spatialCapabilities',
-            en: 'Spatial_Capabilities',
-            ti: '.SpatialCapabilitiesType'
-          }, {
-            n: 'scalarCapabilities',
-            en: 'Scalar_Capabilities',
-            ti: '.ScalarCapabilitiesType'
-          }, {
-            n: 'idCapabilities',
-            en: 'Id_Capabilities',
-            ti: '.IdCapabilitiesType'
+            n: 'expression',
+            mx: false,
+            dom: false,
+            ti: '.ExpressionType',
+            t: 'er'
           }]
       }, {
         ln: 'IdCapabilitiesType',
+        tn: 'Id_CapabilitiesType',
         ps: [{
             n: 'ids',
             col: true,
@@ -2055,101 +2122,13 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'es'
           }]
       }, {
-        ln: 'EID'
-      }, {
-        ln: 'PropertyIsBetweenType',
-        bti: '.ComparisonOpsType',
+        ln: 'UpperBoundaryType',
         ps: [{
             n: 'expression',
             mx: false,
             dom: false,
-            typed: false,
             ti: '.ExpressionType',
             t: 'er'
-          }, {
-            n: 'lowerBoundary',
-            en: 'LowerBoundary',
-            ti: '.LowerBoundaryType'
-          }, {
-            n: 'upperBoundary',
-            en: 'UpperBoundary',
-            ti: '.UpperBoundaryType'
-          }]
-      }, {
-        ln: 'SimpleArithmetic'
-      }, {
-        ln: 'AbstractIdType'
-      }, {
-        ln: 'BBOXType',
-        bti: '.SpatialOpsType',
-        ps: [{
-            n: 'propertyName',
-            en: 'PropertyName',
-            ti: '.PropertyNameType'
-          }, {
-            n: 'envelope',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: {
-              lp: 'Envelope',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.EnvelopeType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'SortPropertyType',
-        ps: [{
-            n: 'propertyName',
-            en: 'PropertyName',
-            ti: '.PropertyNameType'
-          }, {
-            n: 'sortOrder',
-            en: 'SortOrder'
-          }]
-      }, {
-        ln: 'FID'
-      }, {
-        ln: 'SpatialCapabilitiesType',
-        ps: [{
-            n: 'geometryOperands',
-            en: 'GeometryOperands',
-            ti: '.GeometryOperandsType'
-          }, {
-            n: 'spatialOperators',
-            en: 'SpatialOperators',
-            ti: '.SpatialOperatorsType'
-          }]
-      }, {
-        ln: 'ArithmeticOperatorsType',
-        ps: [{
-            n: 'ops',
-            col: true,
-            etis: [{
-                en: 'SimpleArithmetic',
-                ti: '.SimpleArithmetic'
-              }, {
-                en: 'Functions',
-                ti: '.FunctionsType'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'LiteralType',
-        ps: [{
-            n: 'content',
-            col: true,
-            dom: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'PropertyIsNullType',
-        bti: '.ComparisonOpsType',
-        ps: [{
-            n: 'propertyName',
-            en: 'PropertyName',
-            ti: '.PropertyNameType'
           }]
       }, {
         t: 'enum',
@@ -2157,112 +2136,61 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         vs: ['DESC', 'ASC']
       }, {
         t: 'enum',
-        ln: 'SpatialOperatorNameType',
-        vs: ['BBOX', 'Equals', 'Disjoint', 'Intersects', 'Touches', 'Crosses', 'Within', 'Contains', 'Overlaps', 'Beyond', 'DWithin']
-      }, {
-        t: 'enum',
         ln: 'ComparisonOperatorType',
         vs: ['LessThan', 'GreaterThan', 'LessThanEqualTo', 'GreaterThanEqualTo', 'EqualTo', 'NotEqualTo', 'Like', 'Between', 'NullCheck']
+      }, {
+        t: 'enum',
+        ln: 'SpatialOperatorNameType',
+        vs: ['BBOX', 'Equals', 'Disjoint', 'Intersects', 'Touches', 'Crosses', 'Within', 'Contains', 'Overlaps', 'Beyond', 'DWithin']
       }],
     eis: [{
-        en: '_Id',
-        ti: '.AbstractIdType'
+        en: 'PropertyIsNotEqualTo',
+        ti: '.BinaryComparisonOpType',
+        sh: 'comparisonOps'
       }, {
-        en: 'PropertyName',
-        ti: '.PropertyNameType',
+        en: 'spatialOps',
+        ti: '.SpatialOpsType'
+      }, {
+        en: 'Literal',
+        ti: '.LiteralType',
         sh: 'expression'
-      }, {
-        en: 'DWithin',
-        ti: '.DistanceBufferType',
-        sh: 'spatialOps'
       }, {
         en: 'PropertyIsGreaterThan',
         ti: '.BinaryComparisonOpType',
         sh: 'comparisonOps'
       }, {
-        en: 'Add',
-        ti: '.BinaryOperatorType',
-        sh: 'expression'
-      }, {
-        en: 'Beyond',
-        ti: '.DistanceBufferType',
-        sh: 'spatialOps'
+        en: 'PropertyIsNull',
+        ti: '.PropertyIsNullType',
+        sh: 'comparisonOps'
       }, {
         en: 'PropertyIsLessThan',
         ti: '.BinaryComparisonOpType',
         sh: 'comparisonOps'
       }, {
-        en: 'expression',
-        ti: '.ExpressionType'
+        en: 'Mul',
+        ti: '.BinaryOperatorType',
+        sh: 'expression'
       }, {
-        en: 'Or',
-        ti: '.BinaryLogicOpType',
-        sh: 'logicOps'
-      }, {
-        en: 'Within',
-        ti: '.BinarySpatialOpType',
-        sh: 'spatialOps'
-      }, {
-        en: 'spatialOps',
-        ti: '.SpatialOpsType'
-      }, {
-        en: 'Equals',
-        ti: '.BinarySpatialOpType',
-        sh: 'spatialOps'
-      }, {
-        en: 'Overlaps',
-        ti: '.BinarySpatialOpType',
-        sh: 'spatialOps'
-      }, {
-        en: 'FeatureId',
-        ti: '.FeatureIdType',
-        sh: '_Id'
-      }, {
-        en: 'Filter_Capabilities',
-        ti: '.FilterCapabilities'
-      }, {
-        en: 'logicOps',
-        ti: '.LogicOpsType'
-      }, {
-        en: 'Not',
-        ti: '.UnaryLogicOpType',
-        sh: 'logicOps'
-      }, {
-        en: 'SortBy',
-        ti: '.SortByType'
-      }, {
-        en: 'PropertyIsNotEqualTo',
+        en: 'PropertyIsLessThanOrEqualTo',
         ti: '.BinaryComparisonOpType',
         sh: 'comparisonOps'
+      }, {
+        en: 'FID',
+        ti: '.FID'
+      }, {
+        en: 'Disjoint',
+        ti: '.BinarySpatialOpType',
+        sh: 'spatialOps'
       }, {
         en: 'And',
         ti: '.BinaryLogicOpType',
         sh: 'logicOps'
       }, {
-        en: 'Function',
-        ti: '.FunctionType',
-        sh: 'expression'
+        en: 'Contains',
+        ti: '.BinarySpatialOpType',
+        sh: 'spatialOps'
       }, {
         en: 'Touches',
-        ti: '.BinarySpatialOpType',
-        sh: 'spatialOps'
-      }, {
-        en: 'Crosses',
-        ti: '.BinarySpatialOpType',
-        sh: 'spatialOps'
-      }, {
-        en: 'PropertyIsEqualTo',
-        ti: '.BinaryComparisonOpType',
-        sh: 'comparisonOps'
-      }, {
-        en: 'Filter',
-        ti: '.FilterType'
-      }, {
-        en: 'Sub',
-        ti: '.BinaryOperatorType',
-        sh: 'expression'
-      }, {
-        en: 'Disjoint',
         ti: '.BinarySpatialOpType',
         sh: 'spatialOps'
       }, {
@@ -2270,64 +2198,115 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         ti: '.BinaryComparisonOpType',
         sh: 'comparisonOps'
       }, {
-        en: 'SimpleArithmetic',
-        ti: '.SimpleArithmetic'
-      }, {
-        en: 'LogicalOperators',
-        ti: '.LogicalOperators'
-      }, {
-        en: 'PropertyIsLike',
-        ti: '.PropertyIsLikeType',
-        sh: 'comparisonOps'
-      }, {
-        en: 'PropertyIsNull',
-        ti: '.PropertyIsNullType',
-        sh: 'comparisonOps'
-      }, {
-        en: 'Mul',
-        ti: '.BinaryOperatorType',
-        sh: 'expression'
-      }, {
-        en: 'Literal',
-        ti: '.LiteralType',
-        sh: 'expression'
-      }, {
-        en: 'PropertyIsLessThanOrEqualTo',
-        ti: '.BinaryComparisonOpType',
-        sh: 'comparisonOps'
-      }, {
-        en: 'Div',
-        ti: '.BinaryOperatorType',
-        sh: 'expression'
-      }, {
-        en: 'FID',
-        ti: '.FID'
-      }, {
         en: 'GmlObjectId',
         ti: '.GmlObjectIdType',
         sh: '_Id'
-      }, {
-        en: 'EID',
-        ti: '.EID'
       }, {
         en: 'BBOX',
         ti: '.BBOXType',
         sh: 'spatialOps'
       }, {
-        en: 'Contains',
+        en: 'Not',
+        ti: '.UnaryLogicOpType',
+        sh: 'logicOps'
+      }, {
+        en: 'DWithin',
+        ti: '.DistanceBufferType',
+        sh: 'spatialOps'
+      }, {
+        en: 'Equals',
         ti: '.BinarySpatialOpType',
         sh: 'spatialOps'
       }, {
-        en: 'comparisonOps',
-        ti: '.ComparisonOpsType'
+        en: 'SimpleArithmetic',
+        ti: '.SimpleArithmetic'
+      }, {
+        en: 'Div',
+        ti: '.BinaryOperatorType',
+        sh: 'expression'
+      }, {
+        en: '_Id',
+        ti: '.AbstractIdType'
+      }, {
+        en: 'Filter_Capabilities',
+        ti: '.FilterCapabilities'
+      }, {
+        en: 'SortBy',
+        ti: '.SortByType'
+      }, {
+        en: 'PropertyIsLike',
+        ti: '.PropertyIsLikeType',
+        sh: 'comparisonOps'
+      }, {
+        en: 'Within',
+        ti: '.BinarySpatialOpType',
+        sh: 'spatialOps'
+      }, {
+        en: 'Intersects',
+        ti: '.BinarySpatialOpType',
+        sh: 'spatialOps'
+      }, {
+        en: 'Overlaps',
+        ti: '.BinarySpatialOpType',
+        sh: 'spatialOps'
+      }, {
+        en: 'Beyond',
+        ti: '.DistanceBufferType',
+        sh: 'spatialOps'
       }, {
         en: 'PropertyIsBetween',
         ti: '.PropertyIsBetweenType',
         sh: 'comparisonOps'
       }, {
-        en: 'Intersects',
+        en: 'PropertyName',
+        ti: '.PropertyNameType',
+        sh: 'expression'
+      }, {
+        en: 'FeatureId',
+        ti: '.FeatureIdType',
+        sh: '_Id'
+      }, {
+        en: 'Filter',
+        ti: '.FilterType'
+      }, {
+        en: 'EID',
+        ti: '.EID'
+      }, {
+        en: 'comparisonOps',
+        ti: '.ComparisonOpsType'
+      }, {
+        en: 'logicOps',
+        ti: '.LogicOpsType'
+      }, {
+        en: 'Crosses',
         ti: '.BinarySpatialOpType',
         sh: 'spatialOps'
+      }, {
+        en: 'Function',
+        ti: '.FunctionType',
+        sh: 'expression'
+      }, {
+        en: 'Add',
+        ti: '.BinaryOperatorType',
+        sh: 'expression'
+      }, {
+        en: 'PropertyIsEqualTo',
+        ti: '.BinaryComparisonOpType',
+        sh: 'comparisonOps'
+      }, {
+        en: 'Or',
+        ti: '.BinaryLogicOpType',
+        sh: 'logicOps'
+      }, {
+        en: 'LogicalOperators',
+        ti: '.LogicalOperators'
+      }, {
+        en: 'Sub',
+        ti: '.BinaryOperatorType',
+        sh: 'expression'
+      }, {
+        en: 'expression',
+        ti: '.ExpressionType'
       }]
   };
   var GML_3_1_1 = {
@@ -2336,70 +2315,154 @@ var CSW_2_0_2_Full_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0'],
     tis: [{
-        ln: 'FileType',
+        ln: 'DirectionVectorType',
         ps: [{
-            n: 'rangeParameters',
-            ti: '.RangeParametersType'
+            n: 'vector',
+            ti: '.VectorType'
           }, {
-            n: 'fileName'
+            n: 'horizontalAngle',
+            ti: '.AngleType'
           }, {
-            n: 'fileStructure'
-          }, {
-            n: 'mimeType'
-          }, {
-            n: 'compression'
+            n: 'verticalAngle',
+            ti: '.AngleType'
           }]
       }, {
-        ln: 'EnvelopeType',
+        ln: 'AssociationType',
         ps: [{
-            n: 'lowerCorner',
-            ti: '.DirectPositionType'
+            n: 'object',
+            mx: false,
+            dom: false,
+            en: '_Object',
+            ti: 'AnyType',
+            t: 'er'
           }, {
-            n: 'upperCorner',
-            ti: '.DirectPositionType'
-          }, {
-            n: 'coord',
-            col: true,
-            ti: '.CoordType'
-          }, {
-            n: 'pos',
-            col: true,
-            ti: '.DirectPositionType'
-          }, {
-            n: 'coordinates',
-            ti: '.CoordinatesType'
-          }, {
-            n: 'srsName',
+            n: 'remoteSchema',
             an: {
-              lp: 'srsName'
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
             t: 'a'
           }, {
-            n: 'srsDimension',
-            ti: 'Integer',
+            n: 'type',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TargetPropertyType',
+        ps: [{
+            n: 'feature',
+            mx: false,
+            dom: false,
+            en: '_Feature',
+            ti: '.AbstractFeatureType',
+            t: 'er'
+          }, {
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            en: '_Geometry',
+            ti: '.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'remoteSchema',
             an: {
-              lp: 'srsDimension'
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
             t: 'a'
           }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
+            n: 'type',
             t: 'a'
           }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l'
-            },
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AngleType',
+        bti: '.MeasureType'
+      }, {
+        ln: 'RelatedTimeType',
+        bti: '.TimePrimitivePropertyType',
+        ps: [{
+            n: 'relativePosition',
             an: {
-              lp: 'uomLabels'
+              lp: 'relativePosition'
             },
             t: 'a'
           }]
+      }, {
+        ln: 'CoordType',
+        ps: [{
+            n: 'x',
+            en: 'X',
+            ti: 'Decimal'
+          }, {
+            n: 'y',
+            en: 'Y',
+            ti: 'Decimal'
+          }, {
+            n: 'z',
+            en: 'Z',
+            ti: 'Decimal'
+          }]
+      }, {
+        ln: 'AbstractMetaDataType',
+        ps: [{
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractTimeComplexType',
+        bti: '.AbstractTimeObjectType'
+      }, {
+        ln: 'CategoryExtentType',
+        bti: '.CodeOrNullListType'
+      }, {
+        ln: 'MultiSurfaceDomainType',
+        bti: '.DomainSetType'
+      }, {
+        ln: 'AbstractGeometricPrimitiveType',
+        bti: '.AbstractGeometryType'
       }, {
         ln: 'AbstractFeatureType',
         bti: '.AbstractGMLType',
@@ -2410,14 +2473,42 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             n: 'location',
             mx: false,
             dom: false,
-            typed: false,
             ti: '.LocationPropertyType',
             t: 'er'
           }]
       }, {
-        ln: 'AbstractTimeGeometricPrimitiveType',
-        bti: '.AbstractTimePrimitiveType',
+        ln: 'AbstractGMLType',
         ps: [{
+            n: 'metaDataProperty',
+            col: true,
+            ti: '.MetaDataPropertyType'
+          }, {
+            n: 'description',
+            ti: '.StringOrRefType'
+          }, {
+            n: 'name',
+            col: true,
+            mx: false,
+            dom: false,
+            ti: '.CodeType',
+            t: 'er'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EnvelopeWithTimePeriodType',
+        bti: '.EnvelopeType',
+        ps: [{
+            n: 'timePosition',
+            col: true,
+            ti: '.TimePositionType'
+          }, {
             n: 'frame',
             an: {
               lp: 'frame'
@@ -2425,22 +2516,13 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GeometricComplexType',
-        bti: '.AbstractGeometryType',
+        ln: 'TimePrimitivePropertyType',
         ps: [{
-            n: 'element',
-            col: true,
-            ti: '.GeometricPrimitivePropertyType'
-          }]
-      }, {
-        ln: 'FeaturePropertyType',
-        ps: [{
-            n: 'feature',
+            n: 'timePrimitive',
             mx: false,
             dom: false,
-            typed: false,
-            en: '_Feature',
-            ti: '.AbstractFeatureType',
+            en: '_TimePrimitive',
+            ti: '.AbstractTimePrimitiveType',
             t: 'er'
           }, {
             n: 'remoteSchema',
@@ -2471,178 +2553,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             n: 'actuate',
             t: 'a'
           }]
-      }, {
-        ln: 'PriorityLocationPropertyType',
-        bti: '.LocationPropertyType',
-        ps: [{
-            n: 'priority',
-            an: {
-              lp: 'priority'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractTimeSliceType',
-        bti: '.AbstractGMLType',
-        ps: [{
-            n: 'validTime',
-            ti: '.TimePrimitivePropertyType'
-          }, {
-            n: 'dataSource',
-            ti: '.StringOrRefType'
-          }]
-      }, {
-        ln: 'VectorType',
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            },
-            t: 'v'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'Integer',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DirectionPropertyType',
-        ps: [{
-            n: 'directionVector',
-            en: 'DirectionVector',
-            ti: '.DirectionVectorType'
-          }, {
-            n: 'compassPoint',
-            en: 'CompassPoint'
-          }, {
-            n: 'directionKeyword',
-            en: 'DirectionKeyword',
-            ti: '.CodeType'
-          }, {
-            n: 'directionString',
-            en: 'DirectionString',
-            ti: '.StringOrRefType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractCurveType',
-        bti: '.AbstractGeometricPrimitiveType'
-      }, {
-        ln: 'BoundingShapeType',
-        ps: [{
-            n: 'envelope',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: 'Envelope',
-            ti: '.EnvelopeType',
-            t: 'er'
-          }, {
-            n: '_null',
-            en: 'Null',
-            ti: {
-              t: 'l'
-            }
-          }]
-      }, {
-        ln: 'GeometryArrayPropertyType',
-        ps: [{
-            n: 'geometry',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: '_Geometry',
-            ti: '.AbstractGeometryType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'TimePositionType',
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l'
-            },
-            t: 'v'
-          }, {
-            n: 'frame',
-            an: {
-              lp: 'frame'
-            },
-            t: 'a'
-          }, {
-            n: 'calendarEraName',
-            an: {
-              lp: 'calendarEraName'
-            },
-            t: 'a'
-          }, {
-            n: 'indeterminatePosition',
-            an: {
-              lp: 'indeterminatePosition'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGeometricPrimitiveType',
-        bti: '.AbstractGeometryType'
-      }, {
-        ln: 'AngleType',
-        bti: '.MeasureType'
       }, {
         ln: 'RangeParametersType',
         ps: [{
@@ -2699,7 +2609,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             n: 'compositeValue',
             mx: false,
             dom: false,
-            typed: false,
             en: 'CompositeValue',
             ti: '.CompositeValueType',
             t: 'er'
@@ -2733,14 +2642,372 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'FeatureCollectionType',
-        bti: '.AbstractFeatureCollectionType'
+        ln: 'AbstractGeometricAggregateType',
+        bti: '.AbstractGeometryType'
       }, {
-        ln: 'MultiCurveDomainType',
-        bti: '.DomainSetType'
+        ln: 'BoundingShapeType',
+        ps: [{
+            n: 'envelope',
+            mx: false,
+            dom: false,
+            en: 'Envelope',
+            ti: '.EnvelopeType',
+            t: 'er'
+          }, {
+            n: '_null',
+            en: 'Null',
+            ti: {
+              t: 'l'
+            }
+          }]
+      }, {
+        ln: 'ValueArrayType',
+        bti: '.CompositeValueType',
+        ps: [{
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FeatureArrayPropertyType',
+        ps: [{
+            n: 'feature',
+            col: true,
+            mx: false,
+            dom: false,
+            en: '_Feature',
+            ti: '.AbstractFeatureType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'StringOrRefType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractFeatureCollectionType',
+        bti: '.AbstractFeatureType',
+        ps: [{
+            n: 'featureMember',
+            col: true,
+            ti: '.FeaturePropertyType'
+          }, {
+            n: 'featureMembers',
+            ti: '.FeatureArrayPropertyType'
+          }]
+      }, {
+        ln: 'ReferenceType',
+        ps: [{
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MeasureType',
+        ps: [{
+            n: 'value',
+            ti: 'Double',
+            t: 'v'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
       }, {
         ln: 'GridDomainType',
         bti: '.DomainSetType'
+      }, {
+        ln: 'CompositeValueType',
+        bti: '.AbstractGMLType',
+        ps: [{
+            n: 'valueComponent',
+            col: true,
+            ti: '.ValuePropertyType'
+          }, {
+            n: 'valueComponents',
+            ti: '.ValueArrayPropertyType'
+          }]
+      }, {
+        ln: 'QuantityExtentType',
+        bti: '.MeasureOrNullListType'
+      }, {
+        ln: 'ArrayAssociationType',
+        ps: [{
+            n: 'object',
+            col: true,
+            mx: false,
+            dom: false,
+            en: '_Object',
+            ti: 'AnyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'DirectionPropertyType',
+        ps: [{
+            n: 'directionVector',
+            en: 'DirectionVector',
+            ti: '.DirectionVectorType'
+          }, {
+            n: 'compassPoint',
+            en: 'CompassPoint'
+          }, {
+            n: 'directionKeyword',
+            en: 'DirectionKeyword',
+            ti: '.CodeType'
+          }, {
+            n: 'directionString',
+            en: 'DirectionString',
+            ti: '.StringOrRefType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractSolidType',
+        bti: '.AbstractGeometricPrimitiveType'
+      }, {
+        ln: 'CodeType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractCurveType',
+        bti: '.AbstractGeometricPrimitiveType'
+      }, {
+        ln: 'PriorityLocationPropertyType',
+        bti: '.LocationPropertyType',
+        ps: [{
+            n: 'priority',
+            an: {
+              lp: 'priority'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'IdentifierType',
+        ps: [{
+            n: 'name',
+            mx: false,
+            dom: false,
+            ti: '.CodeType',
+            t: 'er'
+          }, {
+            n: 'version'
+          }, {
+            n: 'remarks',
+            ti: '.StringOrRefType'
+          }]
+      }, {
+        ln: 'CoordinatesType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'decimal',
+            an: {
+              lp: 'decimal'
+            },
+            t: 'a'
+          }, {
+            n: 'cs',
+            an: {
+              lp: 'cs'
+            },
+            t: 'a'
+          }, {
+            n: 'ts',
+            an: {
+              lp: 'ts'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MetaDataPropertyType',
+        ps: [{
+            n: 'any',
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'about',
+            an: {
+              lp: 'about'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            t: 'a'
+          }]
+      }, {
+        ln: 'RectifiedGridDomainType',
+        bti: '.DomainSetType'
+      }, {
+        ln: 'FeaturePropertyType',
+        ps: [{
+            n: 'feature',
+            mx: false,
+            dom: false,
+            en: '_Feature',
+            ti: '.AbstractFeatureType',
+            t: 'er'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractTimeGeometricPrimitiveType',
+        bti: '.AbstractTimePrimitiveType',
+        ps: [{
+            n: 'frame',
+            an: {
+              lp: 'frame'
+            },
+            t: 'a'
+          }]
       }, {
         ln: 'CodeOrNullListType',
         ps: [{
@@ -2757,12 +3024,71 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'ValueArrayPropertyType',
+        ps: [{
+            n: 'value',
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'CountList',
+                ti: {
+                  t: 'l'
+                }
+              }, {
+                en: 'QuantityExtent',
+                ti: '.QuantityExtentType'
+              }, {
+                en: 'Boolean',
+                ti: 'Boolean'
+              }, {
+                en: '_Object',
+                ti: 'AnyType'
+              }, {
+                en: 'Quantity',
+                ti: '.MeasureType'
+              }, {
+                en: 'Null',
+                ti: {
+                  t: 'l'
+                }
+              }, {
+                en: 'BooleanList',
+                ti: {
+                  t: 'l'
+                }
+              }, {
+                en: 'CategoryExtent',
+                ti: '.CategoryExtentType'
+              }, {
+                en: 'CompositeValue',
+                ti: '.CompositeValueType'
+              }, {
+                en: 'CategoryList',
+                ti: '.CodeOrNullListType'
+              }, {
+                en: 'Count',
+                ti: 'Integer'
+              }, {
+                en: 'Category',
+                ti: '.CodeType'
+              }, {
+                en: 'QuantityList',
+                ti: '.MeasureOrNullListType'
+              }, {
+                en: 'CountExtent',
+                ti: {
+                  t: 'l'
+                }
+              }],
+            t: 'ers'
+          }]
+      }, {
         ln: 'GeometryPropertyType',
         ps: [{
             n: 'geometry',
             mx: false,
             dom: false,
-            typed: false,
             en: '_Geometry',
             ti: '.AbstractGeometryType',
             t: 'er'
@@ -2796,8 +3122,297 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractSolidType',
+        ln: 'DomainSetType',
+        ps: [{
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            en: '_Geometry',
+            ti: '.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'timeObject',
+            mx: false,
+            dom: false,
+            en: '_TimeObject',
+            ti: '.AbstractTimeObjectType',
+            t: 'er'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataBlockType',
+        ps: [{
+            n: 'rangeParameters',
+            ti: '.RangeParametersType'
+          }, {
+            n: 'tupleList',
+            ti: '.CoordinatesType'
+          }, {
+            n: 'doubleOrNullTupleList',
+            ti: {
+              t: 'l'
+            }
+          }]
+      }, {
+        ln: 'EnvelopeType',
+        ps: [{
+            n: 'lowerCorner',
+            ti: '.DirectPositionType'
+          }, {
+            n: 'upperCorner',
+            ti: '.DirectPositionType'
+          }, {
+            n: 'coord',
+            col: true,
+            ti: '.CoordType'
+          }, {
+            n: 'pos',
+            col: true,
+            ti: '.DirectPositionType'
+          }, {
+            n: 'coordinates',
+            ti: '.CoordinatesType'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractTimeSliceType',
+        bti: '.AbstractGMLType',
+        ps: [{
+            n: 'validTime',
+            ti: '.TimePrimitivePropertyType'
+          }, {
+            n: 'dataSource',
+            ti: '.StringOrRefType'
+          }]
+      }, {
+        ln: 'MovingObjectStatusType',
+        bti: '.AbstractTimeSliceType',
+        ps: [{
+            n: 'location',
+            mx: false,
+            dom: false,
+            ti: '.LocationPropertyType',
+            t: 'er'
+          }, {
+            n: 'speed',
+            ti: '.MeasureType'
+          }, {
+            n: 'bearing',
+            ti: '.DirectionPropertyType'
+          }, {
+            n: 'acceleration',
+            ti: '.MeasureType'
+          }, {
+            n: 'elevation',
+            ti: '.MeasureType'
+          }, {
+            n: 'status',
+            ti: '.StringOrRefType'
+          }]
+      }, {
+        ln: 'PointType',
+        bti: '.AbstractGeometricPrimitiveType',
+        ps: [{
+            n: 'pos',
+            ti: '.DirectPositionType'
+          }, {
+            n: 'coordinates',
+            ti: '.CoordinatesType'
+          }, {
+            n: 'coord',
+            ti: '.CoordType'
+          }]
+      }, {
+        ln: 'AbstractSurfaceType',
         bti: '.AbstractGeometricPrimitiveType'
+      }, {
+        ln: 'AbstractGeometryType',
+        bti: '.AbstractGMLType',
+        ps: [{
+            n: 'gid',
+            an: {
+              lp: 'gid'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimePositionType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
+            },
+            t: 'v'
+          }, {
+            n: 'frame',
+            an: {
+              lp: 'frame'
+            },
+            t: 'a'
+          }, {
+            n: 'calendarEraName',
+            an: {
+              lp: 'calendarEraName'
+            },
+            t: 'a'
+          }, {
+            n: 'indeterminatePosition',
+            an: {
+              lp: 'indeterminatePosition'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeometricPrimitivePropertyType',
+        ps: [{
+            n: 'geometricPrimitive',
+            mx: false,
+            dom: false,
+            en: '_GeometricPrimitive',
+            ti: '.AbstractGeometricPrimitiveType',
+            t: 'er'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MultiPointDomainType',
+        bti: '.DomainSetType'
+      }, {
+        ln: 'ObservationType',
+        bti: '.AbstractFeatureType',
+        ps: [{
+            n: 'validTime',
+            ti: '.TimePrimitivePropertyType'
+          }, {
+            n: 'using',
+            ti: '.FeaturePropertyType'
+          }, {
+            n: 'target',
+            mx: false,
+            dom: false,
+            ti: '.TargetPropertyType',
+            t: 'er'
+          }, {
+            n: 'resultOf',
+            ti: '.AssociationType'
+          }]
+      }, {
+        ln: 'AbstractRingType',
+        bti: '.AbstractGeometryType'
       }, {
         ln: 'ValuePropertyType',
         ps: [{
@@ -2854,7 +3469,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             n: 'compositeValue',
             mx: false,
             dom: false,
-            typed: false,
             en: 'CompositeValue',
             ti: '.CompositeValueType',
             t: 'er'
@@ -2862,7 +3476,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             n: 'object',
             mx: false,
             dom: false,
-            typed: false,
             en: '_Object',
             ti: 'AnyType',
             t: 'er'
@@ -2902,54 +3515,16 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractMetaDataType',
+        ln: 'MultiCurveDomainType',
+        bti: '.DomainSetType'
+      }, {
+        ln: 'MeasureOrNullListType',
         ps: [{
-            n: 'content',
+            n: 'value',
+            ti: {
+              t: 'l'
+            },
             t: 'v'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EnvelopeWithTimePeriodType',
-        bti: '.EnvelopeType',
-        ps: [{
-            n: 'timePosition',
-            col: true,
-            ti: '.TimePositionType'
-          }, {
-            n: 'frame',
-            an: {
-              lp: 'frame'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ArrayAssociationType',
-        ps: [{
-            n: 'object',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: '_Object',
-            ti: 'AnyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'ValueArrayType',
-        bti: '.CompositeValueType',
-        ps: [{
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
           }, {
             n: 'uom',
             an: {
@@ -2961,154 +3536,11 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         ln: 'MultiSolidDomainType',
         bti: '.DomainSetType'
       }, {
-        ln: 'PointType',
-        bti: '.AbstractGeometricPrimitiveType',
-        ps: [{
-            n: 'pos',
-            ti: '.DirectPositionType'
-          }, {
-            n: 'coordinates',
-            ti: '.CoordinatesType'
-          }, {
-            n: 'coord',
-            ti: '.CoordType'
-          }]
-      }, {
-        ln: 'RectifiedGridDomainType',
-        bti: '.DomainSetType'
-      }, {
-        ln: 'AbstractTimeComplexType',
-        bti: '.AbstractTimeObjectType'
-      }, {
-        ln: 'MeasureType',
-        ps: [{
-            n: 'value',
-            ti: 'Double',
-            t: 'v'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ReferenceType',
-        ps: [{
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TargetPropertyType',
-        ps: [{
-            n: 'feature',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: '_Feature',
-            ti: '.AbstractFeatureType',
-            t: 'er'
-          }, {
-            n: 'geometry',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: '_Geometry',
-            ti: '.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGeometricAggregateType',
-        bti: '.AbstractGeometryType'
-      }, {
-        ln: 'MovingObjectStatusType',
-        bti: '.AbstractTimeSliceType',
-        ps: [{
-            n: 'location',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.LocationPropertyType',
-            t: 'er'
-          }, {
-            n: 'speed',
-            ti: '.MeasureType'
-          }, {
-            n: 'bearing',
-            ti: '.DirectionPropertyType'
-          }, {
-            n: 'acceleration',
-            ti: '.MeasureType'
-          }, {
-            n: 'elevation',
-            ti: '.MeasureType'
-          }, {
-            n: 'status',
-            ti: '.StringOrRefType'
-          }]
-      }, {
-        ln: 'AbstractRingType',
-        bti: '.AbstractGeometryType'
-      }, {
         ln: 'LocationPropertyType',
         ps: [{
             n: 'geometry',
             mx: false,
             dom: false,
-            typed: false,
             en: '_Geometry',
             ti: '.AbstractGeometryType',
             t: 'er'
@@ -3156,9 +3588,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractSurfaceType',
-        bti: '.AbstractGeometricPrimitiveType'
-      }, {
         ln: 'AbstractTimeTopologyPrimitiveType',
         bti: '.AbstractTimePrimitiveType',
         ps: [{
@@ -3166,108 +3595,130 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             ti: '.ReferenceType'
           }]
       }, {
-        ln: 'ValueArrayPropertyType',
+        ln: 'RangeSetType',
         ps: [{
-            n: 'value',
+            n: 'valueArray',
+            col: true,
+            en: 'ValueArray',
+            ti: '.ValueArrayType'
+          }, {
+            n: 'scalarValueList',
             col: true,
             mx: false,
             dom: false,
-            typed: false,
             etis: [{
                 en: 'CountList',
                 ti: {
                   t: 'l'
                 }
               }, {
-                en: 'QuantityExtent',
-                ti: '.QuantityExtentType'
-              }, {
-                en: 'Boolean',
-                ti: 'Boolean'
-              }, {
-                en: '_Object',
-                ti: 'AnyType'
-              }, {
-                en: 'Quantity',
-                ti: '.MeasureType'
-              }, {
-                en: 'Null',
-                ti: {
-                  t: 'l'
-                }
+                en: 'CategoryList',
+                ti: '.CodeOrNullListType'
               }, {
                 en: 'BooleanList',
                 ti: {
                   t: 'l'
                 }
               }, {
-                en: 'CategoryExtent',
-                ti: '.CategoryExtentType'
-              }, {
-                en: 'CompositeValue',
-                ti: '.CompositeValueType'
-              }, {
-                en: 'CategoryList',
-                ti: '.CodeOrNullListType'
-              }, {
-                en: 'Count',
-                ti: 'Integer'
-              }, {
-                en: 'Category',
-                ti: '.CodeType'
-              }, {
                 en: 'QuantityList',
                 ti: '.MeasureOrNullListType'
-              }, {
-                en: 'CountExtent',
-                ti: {
-                  t: 'l'
-                }
               }],
             t: 'ers'
+          }, {
+            n: 'dataBlock',
+            en: 'DataBlock',
+            ti: '.DataBlockType'
+          }, {
+            n: 'file',
+            en: 'File',
+            ti: '.FileType'
           }]
       }, {
-        ln: 'AbstractTimePrimitiveType',
-        bti: '.AbstractTimeObjectType',
+        ln: 'GeometryArrayPropertyType',
         ps: [{
-            n: 'relatedTime',
+            n: 'geometry',
             col: true,
-            ti: '.RelatedTimeType'
+            mx: false,
+            dom: false,
+            en: '_Geometry',
+            ti: '.AbstractGeometryType',
+            t: 'er'
           }]
       }, {
-        ln: 'StringOrRefType',
+        ln: 'GeometricComplexType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'element',
+            col: true,
+            ti: '.GeometricPrimitivePropertyType'
+          }]
+      }, {
+        ln: 'AbstractTimeObjectType',
+        bti: '.AbstractGMLType'
+      }, {
+        ln: 'AbstractCoverageType',
+        bti: '.AbstractFeatureType',
+        ps: [{
+            n: 'domainSet',
+            mx: false,
+            dom: false,
+            ti: '.DomainSetType',
+            t: 'er'
+          }, {
+            n: 'rangeSet',
+            ti: '.RangeSetType'
+          }, {
+            n: 'dimension',
+            ti: 'Integer',
+            an: {
+              lp: 'dimension'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'VectorType',
         ps: [{
             n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            },
             t: 'v'
           }, {
-            n: 'remoteSchema',
+            n: 'srsName',
             an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
+              lp: 'srsName'
             },
             t: 'a'
           }, {
-            n: 'type',
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
+            },
             t: 'a'
           }, {
-            n: 'href',
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
             t: 'a'
           }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            t: 'a'
-          }, {
-            n: 'actuate',
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
             t: 'a'
           }]
+      }, {
+        ln: 'FeatureCollectionType',
+        bti: '.AbstractFeatureCollectionType'
       }, {
         ln: 'DirectPositionType',
         ps: [{
@@ -3310,528 +3761,27 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'FeatureArrayPropertyType',
+        ln: 'AbstractTimePrimitiveType',
+        bti: '.AbstractTimeObjectType',
         ps: [{
-            n: 'feature',
+            n: 'relatedTime',
             col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            en: '_Feature',
-            ti: '.AbstractFeatureType',
-            t: 'er'
+            ti: '.RelatedTimeType'
           }]
       }, {
-        ln: 'MetaDataPropertyType',
-        ps: [{
-            n: 'any',
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'about',
-            an: {
-              lp: 'about'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AssociationType',
-        ps: [{
-            n: 'object',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: '_Object',
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractTimeObjectType',
-        bti: '.AbstractGMLType'
-      }, {
-        ln: 'CategoryExtentType',
-        bti: '.CodeOrNullListType'
-      }, {
-        ln: 'CoordinatesType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'decimal',
-            an: {
-              lp: 'decimal'
-            },
-            t: 'a'
-          }, {
-            n: 'cs',
-            an: {
-              lp: 'cs'
-            },
-            t: 'a'
-          }, {
-            n: 'ts',
-            an: {
-              lp: 'ts'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimePrimitivePropertyType',
-        ps: [{
-            n: 'timePrimitive',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: '_TimePrimitive',
-            ti: '.AbstractTimePrimitiveType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CodeType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RelatedTimeType',
-        bti: '.TimePrimitivePropertyType',
-        ps: [{
-            n: 'relativePosition',
-            an: {
-              lp: 'relativePosition'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RangeSetType',
-        ps: [{
-            n: 'valueArray',
-            col: true,
-            en: 'ValueArray',
-            ti: '.ValueArrayType'
-          }, {
-            n: 'scalarValueList',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            etis: [{
-                en: 'CountList',
-                ti: {
-                  t: 'l'
-                }
-              }, {
-                en: 'CategoryList',
-                ti: '.CodeOrNullListType'
-              }, {
-                en: 'BooleanList',
-                ti: {
-                  t: 'l'
-                }
-              }, {
-                en: 'QuantityList',
-                ti: '.MeasureOrNullListType'
-              }],
-            t: 'ers'
-          }, {
-            n: 'dataBlock',
-            en: 'DataBlock',
-            ti: '.DataBlockType'
-          }, {
-            n: 'file',
-            en: 'File',
-            ti: '.FileType'
-          }]
-      }, {
-        ln: 'DataBlockType',
+        ln: 'FileType',
         ps: [{
             n: 'rangeParameters',
             ti: '.RangeParametersType'
           }, {
-            n: 'tupleList',
-            ti: '.CoordinatesType'
+            n: 'fileName'
           }, {
-            n: 'doubleOrNullTupleList',
-            ti: {
-              t: 'l'
-            }
+            n: 'fileStructure'
+          }, {
+            n: 'mimeType'
+          }, {
+            n: 'compression'
           }]
-      }, {
-        ln: 'CoordType',
-        ps: [{
-            n: 'x',
-            en: 'X',
-            ti: 'Decimal'
-          }, {
-            n: 'y',
-            en: 'Y',
-            ti: 'Decimal'
-          }, {
-            n: 'z',
-            en: 'Z',
-            ti: 'Decimal'
-          }]
-      }, {
-        ln: 'CompositeValueType',
-        bti: '.AbstractGMLType',
-        ps: [{
-            n: 'valueComponent',
-            col: true,
-            ti: '.ValuePropertyType'
-          }, {
-            n: 'valueComponents',
-            ti: '.ValueArrayPropertyType'
-          }]
-      }, {
-        ln: 'IdentifierType',
-        ps: [{
-            n: 'name',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.CodeType',
-            t: 'er'
-          }, {
-            n: 'version'
-          }, {
-            n: 'remarks',
-            ti: '.StringOrRefType'
-          }]
-      }, {
-        ln: 'AbstractCoverageType',
-        bti: '.AbstractFeatureType',
-        ps: [{
-            n: 'domainSet',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.DomainSetType',
-            t: 'er'
-          }, {
-            n: 'rangeSet',
-            ti: '.RangeSetType'
-          }, {
-            n: 'dimension',
-            ti: 'Integer',
-            an: {
-              lp: 'dimension'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'QuantityExtentType',
-        bti: '.MeasureOrNullListType'
-      }, {
-        ln: 'AbstractGMLType',
-        ps: [{
-            n: 'metaDataProperty',
-            col: true,
-            ti: '.MetaDataPropertyType'
-          }, {
-            n: 'description',
-            ti: '.StringOrRefType'
-          }, {
-            n: 'name',
-            col: true,
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.CodeType',
-            t: 'er'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DirectionVectorType',
-        ps: [{
-            n: 'vector',
-            ti: '.VectorType'
-          }, {
-            n: 'horizontalAngle',
-            ti: '.AngleType'
-          }, {
-            n: 'verticalAngle',
-            ti: '.AngleType'
-          }]
-      }, {
-        ln: 'ObservationType',
-        bti: '.AbstractFeatureType',
-        ps: [{
-            n: 'validTime',
-            ti: '.TimePrimitivePropertyType'
-          }, {
-            n: 'using',
-            ti: '.FeaturePropertyType'
-          }, {
-            n: 'target',
-            mx: false,
-            dom: false,
-            typed: false,
-            ti: '.TargetPropertyType',
-            t: 'er'
-          }, {
-            n: 'resultOf',
-            ti: '.AssociationType'
-          }]
-      }, {
-        ln: 'MeasureOrNullListType',
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l'
-            },
-            t: 'v'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GeometricPrimitivePropertyType',
-        ps: [{
-            n: 'geometricPrimitive',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: '_GeometricPrimitive',
-            ti: '.AbstractGeometricPrimitiveType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MultiSurfaceDomainType',
-        bti: '.DomainSetType'
-      }, {
-        ln: 'AbstractGeometryType',
-        bti: '.AbstractGMLType',
-        ps: [{
-            n: 'gid',
-            an: {
-              lp: 'gid'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'Integer',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractFeatureCollectionType',
-        bti: '.AbstractFeatureType',
-        ps: [{
-            n: 'featureMember',
-            col: true,
-            ti: '.FeaturePropertyType'
-          }, {
-            n: 'featureMembers',
-            ti: '.FeatureArrayPropertyType'
-          }]
-      }, {
-        ln: 'DomainSetType',
-        ps: [{
-            n: 'geometry',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: '_Geometry',
-            ti: '.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'timeObject',
-            mx: false,
-            dom: false,
-            typed: false,
-            en: '_TimeObject',
-            ti: '.AbstractTimeObjectType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MultiPointDomainType',
-        bti: '.DomainSetType'
-      }, {
-        t: 'enum',
-        ln: 'TimeIndeterminateValueType',
-        vs: ['after', 'before', 'now', 'unknown']
       }, {
         t: 'enum',
         ln: 'CompassPointEnumeration',
@@ -3840,125 +3790,21 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         t: 'enum',
         ln: 'FileValueModelType',
         vs: ['Record Interleaved']
+      }, {
+        t: 'enum',
+        ln: 'TimeIndeterminateValueType',
+        vs: ['after', 'before', 'now', 'unknown']
       }],
     eis: [{
-        en: '_Ring',
-        ti: '.AbstractRingType',
-        sh: '_Geometry'
-      }, {
-        en: '_GeometricAggregate',
-        ti: '.AbstractGeometricAggregateType',
-        sh: '_Geometry'
-      }, {
-        en: '_GML',
-        ti: '.AbstractGMLType',
-        sh: '_Object'
-      }, {
-        en: 'srsName',
-        ti: '.CodeType',
-        sh: 'name'
-      }, {
-        en: '_Solid',
-        ti: '.AbstractSolidType',
-        sh: '_GeometricPrimitive'
-      }, {
-        en: 'subject',
-        ti: '.TargetPropertyType',
-        sh: 'target'
-      }, {
-        en: '_FeatureCollection',
-        ti: '.AbstractFeatureCollectionType',
-        sh: '_Feature'
-      }, {
-        en: 'multiPointDomain',
-        ti: '.MultiPointDomainType',
-        sh: 'domainSet'
-      }, {
-        en: '_Coverage',
-        ti: '.AbstractCoverageType',
-        sh: '_Feature'
-      }, {
-        en: 'coordinateOperationName',
-        ti: '.CodeType',
-        sh: 'name'
-      }, {
-        en: 'Observation',
-        ti: '.ObservationType',
-        sh: '_Feature'
-      }, {
-        en: '_ImplicitGeometry',
-        ti: '.AbstractGeometryType',
-        sh: '_Geometry'
-      }, {
-        en: 'Point',
-        ti: '.PointType',
-        sh: '_GeometricPrimitive'
-      }, {
-        en: 'ValueArray',
-        ti: '.ValueArrayType',
-        sh: 'CompositeValue'
-      }, {
-        en: 'ellipsoidName',
-        ti: '.CodeType',
-        sh: 'name'
-      }, {
-        en: 'priorityLocation',
-        ti: '.PriorityLocationPropertyType',
-        sh: 'location'
-      }, {
-        en: 'multiCurveDomain',
-        ti: '.MultiCurveDomainType',
-        sh: 'domainSet'
-      }, {
-        en: 'multiSurfaceDomain',
-        ti: '.MultiSurfaceDomainType',
-        sh: 'domainSet'
-      }, {
-        en: '_MetaData',
-        ti: '.AbstractMetaDataType',
-        sh: '_Object'
-      }, {
-        en: 'groupName',
-        ti: '.CodeType',
-        sh: 'name'
-      }, {
-        en: '_TimeGeometricPrimitive',
-        ti: '.AbstractTimeGeometricPrimitiveType',
-        sh: '_TimePrimitive'
-      }, {
-        en: '_TimeTopologyPrimitive',
-        ti: '.AbstractTimeTopologyPrimitiveType',
-        sh: '_TimePrimitive'
-      }, {
-        en: 'rectifiedGridDomain',
-        ti: '.RectifiedGridDomainType',
-        sh: 'domainSet'
-      }, {
-        en: '_GeometricPrimitive',
-        ti: '.AbstractGeometricPrimitiveType',
-        sh: '_Geometry'
-      }, {
-        en: 'multiSolidDomain',
-        ti: '.MultiSolidDomainType',
-        sh: 'domainSet'
-      }, {
-        en: 'csName',
-        ti: '.CodeType',
-        sh: 'name'
-      }, {
-        en: 'GeometricComplex',
-        ti: '.GeometricComplexType',
-        sh: '_Geometry'
-      }, {
         en: '_Surface',
         ti: '.AbstractSurfaceType',
         sh: '_GeometricPrimitive'
       }, {
-        en: 'methodName',
-        ti: '.CodeType',
-        sh: 'name'
+        en: 'EnvelopeWithTimePeriod',
+        ti: '.EnvelopeWithTimePeriodType',
+        sh: 'Envelope'
       }, {
-        en: 'parameterName',
+        en: 'ellipsoidName',
         ti: '.CodeType',
         sh: 'name'
       }, {
@@ -3970,13 +3816,61 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         ti: '.GridDomainType',
         sh: 'domainSet'
       }, {
-        en: 'EnvelopeWithTimePeriod',
-        ti: '.EnvelopeWithTimePeriodType',
-        sh: 'Envelope'
+        en: '_GeometricAggregate',
+        ti: '.AbstractGeometricAggregateType',
+        sh: '_Geometry'
       }, {
-        en: '_Curve',
-        ti: '.AbstractCurveType',
-        sh: '_GeometricPrimitive'
+        en: '_Ring',
+        ti: '.AbstractRingType',
+        sh: '_Geometry'
+      }, {
+        en: 'meridianName',
+        ti: '.CodeType',
+        sh: 'name'
+      }, {
+        en: 'parameterName',
+        ti: '.CodeType',
+        sh: 'name'
+      }, {
+        en: 'groupName',
+        ti: '.CodeType',
+        sh: 'name'
+      }, {
+        en: 'multiSurfaceDomain',
+        ti: '.MultiSurfaceDomainType',
+        sh: 'domainSet'
+      }, {
+        en: 'multiSolidDomain',
+        ti: '.MultiSolidDomainType',
+        sh: 'domainSet'
+      }, {
+        en: '_TimeGeometricPrimitive',
+        ti: '.AbstractTimeGeometricPrimitiveType',
+        sh: '_TimePrimitive'
+      }, {
+        en: '_Coverage',
+        ti: '.AbstractCoverageType',
+        sh: '_Feature'
+      }, {
+        en: 'csName',
+        ti: '.CodeType',
+        sh: 'name'
+      }, {
+        en: 'rectifiedGridDomain',
+        ti: '.RectifiedGridDomainType',
+        sh: 'domainSet'
+      }, {
+        en: 'GeometricComplex',
+        ti: '.GeometricComplexType',
+        sh: '_Geometry'
+      }, {
+        en: 'Observation',
+        ti: '.ObservationType',
+        sh: '_Feature'
+      }, {
+        en: 'priorityLocation',
+        ti: '.PriorityLocationPropertyType',
+        sh: 'location'
       }, {
         en: 'FeatureCollection',
         ti: '.FeatureCollectionType',
@@ -3986,13 +3880,73 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         ti: '.CodeType',
         sh: 'name'
       }, {
-        en: 'meridianName',
-        ti: '.CodeType',
-        sh: 'name'
+        en: '_MetaData',
+        ti: '.AbstractMetaDataType',
+        sh: '_Object'
+      }, {
+        en: 'ValueArray',
+        ti: '.ValueArrayType',
+        sh: 'CompositeValue'
+      }, {
+        en: '_ImplicitGeometry',
+        ti: '.AbstractGeometryType',
+        sh: '_Geometry'
       }, {
         en: '_TimeComplex',
         ti: '.AbstractTimeComplexType',
         sh: '_TimeObject'
+      }, {
+        en: 'multiPointDomain',
+        ti: '.MultiPointDomainType',
+        sh: 'domainSet'
+      }, {
+        en: '_Solid',
+        ti: '.AbstractSolidType',
+        sh: '_GeometricPrimitive'
+      }, {
+        en: 'Point',
+        ti: '.PointType',
+        sh: '_GeometricPrimitive'
+      }, {
+        en: 'srsName',
+        ti: '.CodeType',
+        sh: 'name'
+      }, {
+        en: '_TimeTopologyPrimitive',
+        ti: '.AbstractTimeTopologyPrimitiveType',
+        sh: '_TimePrimitive'
+      }, {
+        en: 'coordinateOperationName',
+        ti: '.CodeType',
+        sh: 'name'
+      }, {
+        en: 'multiCurveDomain',
+        ti: '.MultiCurveDomainType',
+        sh: 'domainSet'
+      }, {
+        en: 'subject',
+        ti: '.TargetPropertyType',
+        sh: 'target'
+      }, {
+        en: '_GML',
+        ti: '.AbstractGMLType',
+        sh: '_Object'
+      }, {
+        en: 'methodName',
+        ti: '.CodeType',
+        sh: 'name'
+      }, {
+        en: '_GeometricPrimitive',
+        ti: '.AbstractGeometricPrimitiveType',
+        sh: '_Geometry'
+      }, {
+        en: '_FeatureCollection',
+        ti: '.AbstractFeatureCollectionType',
+        sh: '_Feature'
+      }, {
+        en: '_Curve',
+        ti: '.AbstractCurveType',
+        sh: '_GeometricPrimitive'
       }]
   };
   var XLink_1_0 = {
@@ -4001,16 +3955,16 @@ var CSW_2_0_2_Full_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     tis: [{
         t: 'enum',
-        ln: 'ActuateType',
-        vs: ['onLoad', 'onRequest', 'other', 'none']
-      }, {
-        t: 'enum',
         ln: 'ShowType',
         vs: ['new', 'replace', 'embed', 'other', 'none']
       }, {
         t: 'enum',
         ln: 'TypeType',
         vs: ['simple', 'extended', 'title', 'resource', 'locator', 'arc']
+      }, {
+        t: 'enum',
+        ln: 'ActuateType',
+        vs: ['onLoad', 'onRequest', 'other', 'none']
       }],
     eis: []
   };
