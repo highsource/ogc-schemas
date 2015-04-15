@@ -20,7 +20,7 @@
 		</jaxb:bindings>
 	</jaxb:bindings>
 
-	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20060504/gml/3.2.1/grids.xsd" node="/xs:schema">
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/iso/19139/20060504/gml/grids.xsd" node="/xs:schema">
 		<jaxb:bindings>
 			<jaxb:bindings node="xs:complexType[@name='GridType']/xs:complexContent/xs:extension/xs:sequence/xs:choice/xs:element[@name='axisLabels']">
 				<!-- ** Backwards incompatible -->
