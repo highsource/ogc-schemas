@@ -3,121 +3,13 @@ var SWE_1_0_1_Module_Factory = function () {
     n: 'SWE_1_0_1',
     dens: 'http:\/\/www.opengis.net\/swe\/1.0.1',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_1_1', 'XLink_1_0'],
+    deps: ['XLink_1_0', 'GML_3_1_1'],
     tis: [{
-        ln: 'DataArrayType',
-        bti: '.AbstractDataArrayType',
+        ln: 'EnvelopePropertyType',
         ps: [{
-            n: 'elementType',
-            ti: '.DataComponentPropertyType'
-          }, {
-            n: 'encoding',
-            ti: '.BlockEncodingPropertyType'
-          }, {
-            n: 'values',
-            ti: '.DataValuePropertyType'
-          }]
-      }, {
-        ln: 'CountRange',
-        tn: null,
-        bti: '.AbstractDataComponentType',
-        ps: [{
-            n: 'constraint',
-            ti: '.AllowedValuesPropertyType'
-          }, {
-            n: 'quality',
-            col: true,
-            ti: '.QualityPropertyType'
-          }, {
-            n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Integer'
-            }
-          }, {
-            n: 'referenceFrame',
-            an: {
-              lp: 'referenceFrame'
-            },
-            t: 'a'
-          }, {
-            n: 'axisID',
-            an: {
-              lp: 'axisID'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'VectorType.Coordinate',
-        tn: null,
-        ps: [{
-            n: 'count',
-            en: 'Count',
-            ti: '.Count'
-          }, {
-            n: 'quantity',
-            en: 'Quantity',
-            ti: '.Quantity'
-          }, {
-            n: 'time',
-            en: 'Time',
-            ti: '.Time'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MultiplexedStreamFormatType',
-        bti: '.AbstractEncodingType',
-        ps: [{
-            n: 'type',
-            an: {
-              lp: 'type'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Count',
-        tn: null,
-        bti: '.AbstractDataComponentType',
-        ps: [{
-            n: 'constraint',
-            ti: '.AllowedValuesPropertyType'
-          }, {
-            n: 'quality',
-            col: true,
-            ti: '.QualityPropertyType'
-          }, {
-            n: 'value',
-            ti: 'Integer'
-          }, {
-            n: 'referenceFrame',
-            an: {
-              lp: 'referenceFrame'
-            },
-            t: 'a'
-          }, {
-            n: 'axisID',
-            an: {
-              lp: 'axisID'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeInstantGridPropertyType',
-        ps: [{
-            n: 'timeInstantGrid',
-            en: 'TimeInstantGrid',
-            ti: '.TimeInstantGridType'
+            n: 'envelope',
+            en: 'Envelope',
+            ti: '.EnvelopeType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -151,75 +43,38 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DataStreamDefinitionType',
+        ln: 'RecordType',
         ps: [{
-            n: 'streamComponent',
+            n: 'field',
             col: true,
-            ti: '.DataBlockDefinitionPropertyType'
+            ti: '.ItemPropertyType'
           }, {
-            n: 'streamEncoding',
-            ti: '.MultiplexedStreamFormatPropertyType'
-          }, {
-            n: 'id',
-            ti: 'ID',
+            n: 'rs',
             an: {
-              lp: 'id'
+              lp: 'RS'
+            },
+            t: 'a'
+          }, {
+            n: 'fieldCount',
+            ti: 'Integer',
+            an: {
+              lp: 'fieldCount'
             },
             t: 'a'
           }]
       }, {
-        ln: 'TimeRange',
-        tn: null,
-        bti: '.AbstractDataComponentType',
+        ln: 'ConstrainedPhenomenonType',
+        bti: '.PhenomenonType',
         ps: [{
-            n: 'uom',
-            ti: '.UomPropertyType'
+            n: 'base',
+            ti: '.PhenomenonPropertyType'
           }, {
-            n: 'constraint',
-            ti: '.AllowedTimesPropertyType'
+            n: 'otherConstraint',
+            col: true
           }, {
-            n: 'quality',
-            ti: '.QualityPropertyType'
-          }, {
-            n: 'value',
-            ti: {
-              t: 'l'
-            }
-          }, {
-            n: 'referenceTime',
-            an: {
-              lp: 'referenceTime'
-            },
-            t: 'a'
-          }, {
-            n: 'referenceFrame',
-            an: {
-              lp: 'referenceFrame'
-            },
-            t: 'a'
-          }, {
-            n: 'localFrame',
-            an: {
-              lp: 'localFrame'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractDataComponentType',
-        bti: 'GML_3_1_1.AbstractGMLType',
-        ps: [{
-            n: 'fixed',
-            ti: 'Boolean',
-            an: {
-              lp: 'fixed'
-            },
-            t: 'a'
-          }, {
-            n: 'definition',
-            an: {
-              lp: 'definition'
-            },
-            t: 'a'
+            n: 'singleConstraint',
+            col: true,
+            ti: '.AnyDataPropertyType'
           }]
       }, {
         ln: 'DataComponentPropertyType',
@@ -312,11 +167,42 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ConditionalValueType',
-        bti: '.AbstractConditionalType',
+        ln: 'StandardFormat',
+        tn: null,
+        bti: '.AbstractEncodingType',
         ps: [{
-            n: 'data',
-            ti: '.ConditionalValueType.Data'
+            n: 'mimeType',
+            an: {
+              lp: 'mimeType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataRecordPropertyType',
+        ps: [{
+            n: 'dataRecord',
+            en: 'DataRecord',
+            ti: '.DataRecordType'
+          }]
+      }, {
+        ln: 'DataArrayType',
+        bti: '.AbstractDataArrayType',
+        ps: [{
+            n: 'elementType',
+            ti: '.DataComponentPropertyType'
+          }, {
+            n: 'encoding',
+            ti: '.BlockEncodingPropertyType'
+          }, {
+            n: 'values',
+            ti: '.DataValuePropertyType'
+          }]
+      }, {
+        ln: 'TimePropertyType',
+        ps: [{
+            n: 'time',
+            en: 'Time',
+            ti: '.Time'
           }]
       }, {
         ln: 'DataBlockDefinitionPropertyType',
@@ -357,19 +243,53 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DataBlockDefinitionType',
+        ln: 'UomPropertyType',
         ps: [{
-            n: 'components',
-            ti: '.DataComponentPropertyType'
-          }, {
-            n: 'encoding',
-            ti: '.BlockEncodingPropertyType'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
+            n: 'unitDefinition',
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'UnitDefinition',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
+            ti: 'GML_3_1_1.UnitDefinitionType',
+            t: 'er'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'code'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
@@ -411,22 +331,31 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DataValuePropertyType',
+        ln: 'SimpleDataRecordType',
+        bti: '.AbstractDataRecordType',
         ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
+            n: 'field',
             col: true,
-            typed: false,
-            t: 'ae'
+            ti: '.AnyScalarPropertyType'
+          }]
+      }, {
+        ln: 'QualityPropertyType',
+        ps: [{
+            n: 'quantity',
+            en: 'Quantity',
+            ti: '.Quantity'
           }, {
-            n: 'recordCount',
-            ti: 'Integer',
-            an: {
-              lp: 'recordCount'
-            },
-            t: 'a'
+            n: 'quantityRange',
+            en: 'QuantityRange',
+            ti: '.QuantityRange'
+          }, {
+            n: 'category',
+            en: 'Category',
+            ti: '.Category'
+          }, {
+            n: 'text',
+            en: 'Text',
+            ti: '.Text'
           }, {
             n: 'remoteSchema',
             an: {
@@ -460,49 +389,83 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MultiplexedStreamFormatPropertyType',
+        ln: 'XMLBlockType',
+        bti: '.AbstractEncodingType',
         ps: [{
-            n: 'multiplexedStreamFormat',
-            en: 'MultiplexedStreamFormat',
-            ti: '.MultiplexedStreamFormatType'
-          }, {
-            n: 'remoteSchema',
+            n: 'xmlElement',
+            ti: 'QName',
             an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
+              lp: 'xmlElement'
             },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
-        ln: 'ArrayPropertyType',
+        ln: 'DataBlockDefinitionType',
         ps: [{
-            n: 'array',
-            en: 'Array',
-            ti: '.ArrayType'
+            n: 'components',
+            ti: '.DataComponentPropertyType'
+          }, {
+            n: 'encoding',
+            ti: '.BlockEncodingPropertyType'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'VectorOrSquareMatrixPropertyType',
+        ps: [{
+            n: 'vector',
+            en: 'Vector',
+            ti: '.VectorType'
+          }, {
+            n: 'squareMatrix',
+            en: 'SquareMatrix',
+            ti: '.SquareMatrixType'
+          }]
+      }, {
+        ln: 'SquareMatrixType',
+        bti: '.AbstractMatrixType',
+        ps: [{
+            n: 'elementType',
+            ti: '.QuantityPropertyType'
+          }, {
+            n: 'encoding',
+            ti: '.BlockEncodingPropertyType'
+          }, {
+            n: 'values',
+            ti: '.DataValuePropertyType'
+          }]
+      }, {
+        ln: 'Category',
+        tn: null,
+        bti: '.AbstractDataComponentType',
+        ps: [{
+            n: 'codeSpace',
+            ti: '.CodeSpacePropertyType'
+          }, {
+            n: 'constraint',
+            ti: '.AllowedTokensPropertyType'
+          }, {
+            n: 'quality',
+            ti: '.QualityPropertyType'
+          }, {
+            n: 'value'
+          }, {
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
+            },
+            t: 'a'
+          }, {
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'AbstractMatrixType',
@@ -521,319 +484,11 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AllowedValues',
-        tn: null,
+        ln: 'TimeGridEnvelopePropertyType',
         ps: [{
-            n: 'min',
-            ti: 'Double'
-          }, {
-            n: 'max',
-            ti: 'Double'
-          }, {
-            n: 'intervalOrValueList',
-            col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'interval',
-                ti: {
-                  t: 'l',
-                  bti: 'Double'
-                }
-              }, {
-                en: 'valueList',
-                ti: {
-                  t: 'l',
-                  bti: 'Double'
-                }
-              }],
-            t: 'ers'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'VectorPropertyType',
-        ps: [{
-            n: 'vector',
-            en: 'Vector',
-            ti: '.VectorType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AllowedTokens',
-        tn: null,
-        ps: [{
-            n: 'valueList',
-            col: true,
-            mx: false,
-            dom: false,
-            ti: {
-              t: 'l'
-            },
-            t: 'er'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CompositePhenomenonType',
-        bti: '.CompoundPhenomenonType',
-        ps: [{
-            n: 'base',
-            ti: '.PhenomenonPropertyType'
-          }, {
-            n: 'component',
-            col: true,
-            ti: '.PhenomenonPropertyType'
-          }]
-      }, {
-        ln: 'DataRecordPropertyType',
-        ps: [{
-            n: 'dataRecord',
-            en: 'DataRecord',
-            ti: '.DataRecordType'
-          }]
-      }, {
-        ln: 'ConditionalDataType.Case',
-        tn: null,
-        ps: [{
-            n: 'conditionalValue',
-            en: 'ConditionalValue',
-            ti: '.ConditionalValueType'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AllowedTimes',
-        tn: null,
-        ps: [{
-            n: 'min',
-            ti: {
-              t: 'l'
-            }
-          }, {
-            n: 'max',
-            ti: {
-              t: 'l'
-            }
-          }, {
-            n: 'intervalOrValueList',
-            col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'valueList',
-                ti: {
-                  t: 'l'
-                }
-              }, {
-                en: 'interval',
-                ti: {
-                  t: 'l'
-                }
-              }],
-            t: 'ers'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CompoundPhenomenonType',
-        bti: '.PhenomenonType',
-        ps: [{
-            n: 'dimension',
-            ti: 'Integer',
-            an: {
-              lp: 'dimension'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RecordPropertyType',
-        ps: [{
-            n: 'record',
-            en: 'Record',
-            ti: '.RecordType'
-          }]
-      }, {
-        ln: 'TimeInstantGridType',
-        bti: '.TimeGridType'
-      }, {
-        ln: 'BinaryBlock.Member.Block',
-        tn: null,
-        ps: [{
-            n: 'ref',
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }, {
-            n: 'byteLength',
-            ti: 'Integer',
-            an: {
-              lp: 'byteLength'
-            },
-            t: 'a'
-          }, {
-            n: 'paddingBytesBefore',
-            ti: 'Integer',
-            an: {
-              lp: 'paddingBytes-before'
-            },
-            t: 'a'
-          }, {
-            n: 'paddingBytesAfter',
-            ti: 'Integer',
-            an: {
-              lp: 'paddingBytes-after'
-            },
-            t: 'a'
-          }, {
-            n: 'encryption',
-            an: {
-              lp: 'encryption'
-            },
-            t: 'a'
-          }, {
-            n: 'compression',
-            an: {
-              lp: 'compression'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeIntervalGridPropertyType',
-        ps: [{
-            n: 'timeIntervalGrid',
-            en: 'TimeIntervalGrid',
-            ti: '.TimeIntervalGridType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SimpleDataRecordPropertyType',
-        ps: [{
-            n: 'simpleDataRecord',
-            en: 'SimpleDataRecord',
-            ti: '.SimpleDataRecordType'
-          }]
-      }, {
-        ln: 'XMLBlockType',
-        bti: '.AbstractEncodingType',
-        ps: [{
-            n: 'xmlElement',
-            ti: 'QName',
-            an: {
-              lp: 'xmlElement'
-            },
-            t: 'a'
+            n: 'timeGridEnvelope',
+            en: 'TimeGridEnvelope',
+            ti: '.TimeGridEnvelopePropertyType.TimeGridEnvelope'
           }]
       }, {
         ln: 'ConditionalValueType.Data',
@@ -921,24 +576,108 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'RecordType',
+        ln: 'Boolean',
+        tn: null,
+        bti: '.AbstractDataComponentType',
         ps: [{
-            n: 'field',
+            n: 'quality',
+            ti: '.QualityPropertyType'
+          }, {
+            n: 'value',
+            ti: 'Boolean'
+          }, {
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
+            },
+            t: 'a'
+          }, {
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ScopedNameType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'VectorType',
+        bti: '.AbstractVectorType',
+        ps: [{
+            n: 'coordinate',
             col: true,
-            ti: '.ItemPropertyType'
+            ti: '.VectorType.Coordinate'
+          }]
+      }, {
+        ln: 'TimeGeometricComplexType',
+        bti: 'GML_3_1_1.AbstractTimeComplexType',
+        ps: [{
+            n: 'primitive',
+            col: true,
+            ti: '.TimeGeometricPrimitivePropertyType'
+          }]
+      }, {
+        ln: 'AllowedValuesPropertyType',
+        ps: [{
+            n: 'allowedValues',
+            en: 'AllowedValues',
+            ti: '.AllowedValues'
           }, {
-            n: 'rs',
+            n: 'remoteSchema',
             an: {
-              lp: 'RS'
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
             t: 'a'
           }, {
-            n: 'fieldCount',
-            ti: 'Integer',
-            an: {
-              lp: 'fieldCount'
-            },
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
             t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'XMLDataPropertyType',
+        ps: [{
+            n: 'item',
+            en: 'Item',
+            ti: 'AnyType'
+          }, {
+            n: 'record',
+            en: 'Record',
+            ti: '.RecordType'
+          }, {
+            n: 'array',
+            en: 'Array',
+            ti: '.ArrayType'
           }]
       }, {
         ln: 'BlockEncodingPropertyType',
@@ -991,6 +730,1237 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'ObservableProperty',
+        tn: null,
+        bti: '.AbstractDataComponentType'
+      }, {
+        ln: 'BinaryBlock.Member',
+        tn: null,
+        ps: [{
+            n: 'component',
+            en: 'Component',
+            ti: '.BinaryBlock.Member.Component'
+          }, {
+            n: 'block',
+            en: 'Block',
+            ti: '.BinaryBlock.Member.Block'
+          }]
+      }, {
+        ln: 'VectorType.Coordinate',
+        tn: null,
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: '.Count'
+          }, {
+            n: 'quantity',
+            en: 'Quantity',
+            ti: '.Quantity'
+          }, {
+            n: 'time',
+            en: 'Time',
+            ti: '.Time'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TextBlock',
+        tn: null,
+        bti: '.AbstractEncodingType',
+        ps: [{
+            n: 'tokenSeparator',
+            an: {
+              lp: 'tokenSeparator'
+            },
+            t: 'a'
+          }, {
+            n: 'blockSeparator',
+            an: {
+              lp: 'blockSeparator'
+            },
+            t: 'a'
+          }, {
+            n: 'decimalSeparator',
+            an: {
+              lp: 'decimalSeparator'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeGridType',
+        bti: 'GML_3_1_1.AbstractTimeComplexType',
+        ps: [{
+            n: 'extent',
+            ti: '.TimeGridEnvelopePropertyType'
+          }, {
+            n: 'originPos',
+            ti: 'GML_3_1_1.TimePositionType'
+          }, {
+            n: 'origin',
+            ti: 'GML_3_1_1.TimeInstantPropertyType'
+          }, {
+            n: 'offsetDuration'
+          }, {
+            n: 'offsetInterval',
+            ti: 'GML_3_1_1.TimeIntervalLengthType'
+          }, {
+            n: 'duration'
+          }]
+      }, {
+        ln: 'IntervalPropertyType',
+        ps: [{
+            n: 'interval',
+            en: 'Interval',
+            ti: '.IntervalType'
+          }]
+      }, {
+        ln: 'TimePositionListType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
+            },
+            t: 'v'
+          }, {
+            n: 'frame',
+            an: {
+              lp: 'frame'
+            },
+            t: 'a'
+          }, {
+            n: 'calendarEraName',
+            an: {
+              lp: 'calendarEraName'
+            },
+            t: 'a'
+          }, {
+            n: 'indeterminatePosition',
+            ti: 'GML_3_1_1.TimeIndeterminateValueType',
+            an: {
+              lp: 'indeterminatePosition'
+            },
+            t: 'a'
+          }, {
+            n: 'count',
+            ti: 'Integer',
+            an: {
+              lp: 'count'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeInstantGridType',
+        bti: '.TimeGridType'
+      }, {
+        ln: 'PhenomenonPropertyType',
+        ps: [{
+            n: 'phenomenon',
+            mx: false,
+            dom: false,
+            en: 'Phenomenon',
+            ti: '.PhenomenonType',
+            t: 'er'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataStreamDefinitionType',
+        ps: [{
+            n: 'streamComponent',
+            col: true,
+            ti: '.DataBlockDefinitionPropertyType'
+          }, {
+            n: 'streamEncoding',
+            ti: '.MultiplexedStreamFormatPropertyType'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'QuantityRange',
+        tn: null,
+        bti: '.AbstractDataComponentType',
+        ps: [{
+            n: 'uom',
+            ti: '.UomPropertyType'
+          }, {
+            n: 'constraint',
+            ti: '.AllowedValuesPropertyType'
+          }, {
+            n: 'quality',
+            col: true,
+            ti: '.QualityPropertyType'
+          }, {
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
+            },
+            t: 'a'
+          }, {
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CountRange',
+        tn: null,
+        bti: '.AbstractDataComponentType',
+        ps: [{
+            n: 'constraint',
+            ti: '.AllowedValuesPropertyType'
+          }, {
+            n: 'quality',
+            col: true,
+            ti: '.QualityPropertyType'
+          }, {
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Integer'
+            }
+          }, {
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
+            },
+            t: 'a'
+          }, {
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CurveType',
+        bti: '.AbstractDataArrayType',
+        ps: [{
+            n: 'elementType',
+            ti: '.SimpleDataRecordPropertyType'
+          }, {
+            n: 'encoding',
+            ti: '.BlockEncodingPropertyType'
+          }, {
+            n: 'values',
+            ti: '.DataValuePropertyType'
+          }]
+      }, {
+        ln: 'TimeGeometricPrimitivePropertyType',
+        ps: [{
+            n: 'timeGeometricPrimitive',
+            mx: false,
+            dom: false,
+            en: {
+              lp: '_TimeGeometricPrimitive',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.AbstractTimeGeometricPrimitiveType',
+            t: 'er'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'PositionType',
+        bti: '.AbstractVectorType',
+        ps: [{
+            n: 'time',
+            ti: '.TimePropertyType'
+          }, {
+            n: 'location',
+            ti: '.VectorPropertyType'
+          }, {
+            n: 'orientation',
+            ti: '.VectorOrSquareMatrixPropertyType'
+          }, {
+            n: 'velocity',
+            ti: '.VectorPropertyType'
+          }, {
+            n: 'angularVelocity',
+            ti: '.VectorOrSquareMatrixPropertyType'
+          }, {
+            n: 'acceleration',
+            ti: '.VectorPropertyType'
+          }, {
+            n: 'angularAcceleration',
+            ti: '.VectorOrSquareMatrixPropertyType'
+          }, {
+            n: 'state',
+            ti: '.VectorOrSquareMatrixPropertyType'
+          }]
+      }, {
+        ln: 'TimeRange',
+        tn: null,
+        bti: '.AbstractDataComponentType',
+        ps: [{
+            n: 'uom',
+            ti: '.UomPropertyType'
+          }, {
+            n: 'constraint',
+            ti: '.AllowedTimesPropertyType'
+          }, {
+            n: 'quality',
+            ti: '.QualityPropertyType'
+          }, {
+            n: 'value',
+            ti: {
+              t: 'l'
+            }
+          }, {
+            n: 'referenceTime',
+            an: {
+              lp: 'referenceTime'
+            },
+            t: 'a'
+          }, {
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
+            },
+            t: 'a'
+          }, {
+            n: 'localFrame',
+            an: {
+              lp: 'localFrame'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EnvelopeType',
+        bti: '.AbstractVectorType',
+        ps: [{
+            n: 'time',
+            ti: '.TimeRangePropertyType'
+          }, {
+            n: 'lowerCorner',
+            ti: '.VectorPropertyType'
+          }, {
+            n: 'upperCorner',
+            ti: '.VectorPropertyType'
+          }]
+      }, {
+        ln: 'TextPropertyType',
+        ps: [{
+            n: 'text',
+            en: 'Text',
+            ti: '.Text'
+          }]
+      }, {
+        ln: 'DataStreamDefinitionPropertyType',
+        ps: [{
+            n: 'dataStreamDefinition',
+            en: 'DataStreamDefinition',
+            ti: '.DataStreamDefinitionType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CategoryPropertyType',
+        ps: [{
+            n: 'category',
+            en: 'Category',
+            ti: '.Category'
+          }]
+      }, {
+        ln: 'AllowedValues',
+        tn: null,
+        ps: [{
+            n: 'min',
+            ti: 'Double'
+          }, {
+            n: 'max',
+            ti: 'Double'
+          }, {
+            n: 'intervalOrValueList',
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'interval',
+                ti: {
+                  t: 'l',
+                  bti: 'Double'
+                }
+              }, {
+                en: 'valueList',
+                ti: {
+                  t: 'l',
+                  bti: 'Double'
+                }
+              }],
+            t: 'ers'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'IntervalType',
+        ps: [{
+            n: 'lowerBound',
+            ti: 'AnyType'
+          }, {
+            n: 'upperBound',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TimeAggregatePropertyType',
+        ps: [{
+            n: 'timeAggregate',
+            en: 'TimeAggregate',
+            ti: '.TimeAggregateType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractVectorType',
+        bti: '.AbstractDataRecordType',
+        ps: [{
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
+            },
+            t: 'a'
+          }, {
+            n: 'localFrame',
+            an: {
+              lp: 'localFrame'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeoLocationArea',
+        tn: null,
+        bti: '.AbstractVectorType',
+        ps: [{
+            n: 'member',
+            col: true,
+            ti: '.EnvelopePropertyType'
+          }, {
+            n: 'geoLocationAreaName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'BooleanPropertyType',
+        ps: [{
+            n: '_boolean',
+            en: 'Boolean',
+            ti: '.Boolean'
+          }]
+      }, {
+        ln: 'QuantityPropertyType',
+        ps: [{
+            n: 'quantity',
+            en: 'Quantity',
+            ti: '.Quantity'
+          }]
+      }, {
+        ln: 'QuantityRangePropertyType',
+        ps: [{
+            n: 'quantityRange',
+            en: 'QuantityRange',
+            ti: '.QuantityRange'
+          }]
+      }, {
+        ln: 'AllowedTimes',
+        tn: null,
+        ps: [{
+            n: 'min',
+            ti: {
+              t: 'l'
+            }
+          }, {
+            n: 'max',
+            ti: {
+              t: 'l'
+            }
+          }, {
+            n: 'intervalOrValueList',
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'interval',
+                ti: {
+                  t: 'l'
+                }
+              }, {
+                en: 'valueList',
+                ti: {
+                  t: 'l'
+                }
+              }],
+            t: 'ers'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeIntervalGridPropertyType',
+        ps: [{
+            n: 'timeIntervalGrid',
+            en: 'TimeIntervalGrid',
+            ti: '.TimeIntervalGridType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'Quantity',
+        tn: null,
+        bti: '.AbstractDataComponentType',
+        ps: [{
+            n: 'uom',
+            ti: '.UomPropertyType'
+          }, {
+            n: 'constraint',
+            ti: '.AllowedValuesPropertyType'
+          }, {
+            n: 'quality',
+            col: true,
+            ti: '.QualityPropertyType'
+          }, {
+            n: 'value',
+            ti: 'Double'
+          }, {
+            n: 'referenceFrame',
+            an: {
+              lp: 'referenceFrame'
+            },
+            t: 'a'
+          }, {
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractConditionalType',
+        bti: '.AbstractDataRecordType',
+        ps: [{
+            n: 'condition',
+            col: true,
+            ti: '.AbstractConditionalType.Condition'
+          }]
+      }, {
+        ln: 'TimeInstantGridPropertyType',
+        ps: [{
+            n: 'timeInstantGrid',
+            en: 'TimeInstantGrid',
+            ti: '.TimeInstantGridType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MultiplexedStreamFormatPropertyType',
+        ps: [{
+            n: 'multiplexedStreamFormat',
+            en: 'MultiplexedStreamFormat',
+            ti: '.MultiplexedStreamFormatType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ConditionalDataType.Case',
+        tn: null,
+        ps: [{
+            n: 'conditionalValue',
+            en: 'ConditionalValue',
+            ti: '.ConditionalValueType'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AnyScalarPropertyType',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: '.Count'
+          }, {
+            n: 'quantity',
+            en: 'Quantity',
+            ti: '.Quantity'
+          }, {
+            n: 'time',
+            en: 'Time',
+            ti: '.Time'
+          }, {
+            n: '_boolean',
+            en: 'Boolean',
+            ti: '.Boolean'
+          }, {
+            n: 'category',
+            en: 'Category',
+            ti: '.Category'
+          }, {
+            n: 'text',
+            en: 'Text',
+            ti: '.Text'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'BinaryBlock.Member.Block',
+        tn: null,
+        ps: [{
+            n: 'ref',
+            an: {
+              lp: 'ref'
+            },
+            t: 'a'
+          }, {
+            n: 'byteLength',
+            ti: 'Integer',
+            an: {
+              lp: 'byteLength'
+            },
+            t: 'a'
+          }, {
+            n: 'paddingBytesBefore',
+            ti: 'Integer',
+            an: {
+              lp: 'paddingBytes-before'
+            },
+            t: 'a'
+          }, {
+            n: 'paddingBytesAfter',
+            ti: 'Integer',
+            an: {
+              lp: 'paddingBytes-after'
+            },
+            t: 'a'
+          }, {
+            n: 'encryption',
+            an: {
+              lp: 'encryption'
+            },
+            t: 'a'
+          }, {
+            n: 'compression',
+            an: {
+              lp: 'compression'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeObjectPropertyType',
+        ps: [{
+            n: 'timeObject',
+            mx: false,
+            dom: false,
+            en: {
+              lp: '_TimeObject',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.AbstractTimeObjectType',
+            t: 'er'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractDataComponentType',
+        bti: 'GML_3_1_1.AbstractGMLType',
+        ps: [{
+            n: 'fixed',
+            ti: 'Boolean',
+            an: {
+              lp: 'fixed'
+            },
+            t: 'a'
+          }, {
+            n: 'definition',
+            an: {
+              lp: 'definition'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PhenomenonSeriesType',
+        bti: '.CompoundPhenomenonType',
+        ps: [{
+            n: 'base',
+            ti: '.PhenomenonPropertyType'
+          }, {
+            n: 'constraintList',
+            col: true,
+            ti: '.DataArrayPropertyType'
+          }, {
+            n: 'otherConstraint',
+            col: true
+          }]
+      }, {
+        ln: 'AbstractDataRecordType',
+        bti: '.AbstractDataComponentType'
+      }, {
+        ln: 'TimeGridEnvelopePropertyType.TimeGridEnvelope',
+        tn: null,
+        ps: [{
+            n: 'low',
+            ti: 'Integer'
+          }, {
+            n: 'high',
+            ti: 'Integer'
+          }]
+      }, {
+        ln: 'CompoundPhenomenonType',
+        bti: '.PhenomenonType',
+        ps: [{
+            n: 'dimension',
+            ti: 'Integer',
+            an: {
+              lp: 'dimension'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'RecordPropertyType',
+        ps: [{
+            n: 'record',
+            en: 'Record',
+            ti: '.RecordType'
+          }]
+      }, {
+        ln: 'SimpleDataRecordPropertyType',
+        ps: [{
+            n: 'simpleDataRecord',
+            en: 'SimpleDataRecord',
+            ti: '.SimpleDataRecordType'
+          }]
+      }, {
+        ln: 'TimeIntervalGridType',
+        bti: '.TimeGridType',
+        ps: [{
+            n: 'windowDuration'
+          }, {
+            n: 'windowInterval',
+            ti: 'GML_3_1_1.TimeIntervalLengthType'
+          }]
+      }, {
+        ln: 'AbstractDataArrayType',
+        bti: '.AbstractDataComponentType',
+        ps: [{
+            n: 'elementCount',
+            ti: '.AbstractDataArrayType.ElementCount'
+          }]
+      }, {
+        ln: 'CompositePhenomenonType',
+        bti: '.CompoundPhenomenonType',
+        ps: [{
+            n: 'base',
+            ti: '.PhenomenonPropertyType'
+          }, {
+            n: 'component',
+            col: true,
+            ti: '.PhenomenonPropertyType'
+          }]
+      }, {
+        ln: 'TimeGeometricComplexPropertyType',
+        ps: [{
+            n: 'timeGeometricComplex',
+            en: 'TimeGeometricComplex',
+            ti: '.TimeGeometricComplexType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'BinaryBlock',
+        tn: null,
+        bti: '.AbstractEncodingType',
+        ps: [{
+            n: 'member',
+            col: true,
+            ti: '.BinaryBlock.Member'
+          }, {
+            n: 'byteLength',
+            ti: 'Integer',
+            an: {
+              lp: 'byteLength'
+            },
+            t: 'a'
+          }, {
+            n: 'byteEncoding',
+            an: {
+              lp: 'byteEncoding'
+            },
+            t: 'a'
+          }, {
+            n: 'byteOrder',
+            an: {
+              lp: 'byteOrder'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CodeSpacePropertyType',
+        ps: [{
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataRecordType',
+        bti: '.AbstractDataRecordType',
+        ps: [{
+            n: 'field',
+            col: true,
+            ti: '.DataComponentPropertyType'
+          }]
+      }, {
+        ln: 'ConditionalDataType',
+        bti: '.AbstractDataRecordType',
+        ps: [{
+            n: '_case',
+            col: true,
+            en: 'case',
+            ti: '.ConditionalDataType.Case'
+          }]
+      }, {
+        ln: 'DataValuePropertyType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            col: true,
+            typed: false,
+            t: 'ae'
+          }, {
+            n: 'recordCount',
+            ti: 'Integer',
+            an: {
+              lp: 'recordCount'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'Text',
+        tn: null,
+        bti: '.AbstractDataComponentType',
+        ps: [{
+            n: 'value'
+          }]
+      }, {
+        ln: 'ItemPropertyType',
+        ps: [{
+            n: 'item',
+            en: 'Item',
+            ti: 'AnyType'
+          }]
+      }, {
         ln: 'ArrayType',
         ps: [{
             n: 'element',
@@ -1011,82 +1981,38 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'BooleanPropertyType',
-        ps: [{
-            n: '_boolean',
-            en: 'Boolean',
-            ti: '.Boolean'
-          }]
-      }, {
-        ln: 'CountPropertyType',
-        ps: [{
-            n: 'count',
-            en: 'Count',
-            ti: '.Count'
-          }]
-      }, {
-        ln: 'VectorOrSquareMatrixPropertyType',
-        ps: [{
-            n: 'vector',
-            en: 'Vector',
-            ti: '.VectorType'
-          }, {
-            n: 'squareMatrix',
-            en: 'SquareMatrix',
-            ti: '.SquareMatrixType'
-          }]
-      }, {
-        ln: 'AbstractEncodingType',
-        ps: [{
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'IntervalType',
-        ps: [{
-            n: 'lowerBound',
-            ti: 'AnyType'
-          }, {
-            n: 'upperBound',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'ScopedNameType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CategoryPropertyType',
-        ps: [{
-            n: 'category',
-            en: 'Category',
-            ti: '.Category'
-          }]
-      }, {
-        ln: 'AbstractDataArrayType.ElementCount',
+        ln: 'Count',
         tn: null,
+        bti: '.AbstractDataComponentType',
         ps: [{
-            n: 'count',
-            en: 'Count',
-            ti: '.Count'
+            n: 'constraint',
+            ti: '.AllowedValuesPropertyType'
           }, {
-            n: 'ref',
-            ti: 'IDREF',
+            n: 'quality',
+            col: true,
+            ti: '.QualityPropertyType'
+          }, {
+            n: 'value',
+            ti: 'Integer'
+          }, {
+            n: 'referenceFrame',
             an: {
-              lp: 'ref'
+              lp: 'referenceFrame'
             },
             t: 'a'
+          }, {
+            n: 'axisID',
+            an: {
+              lp: 'axisID'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CurvePropertyType',
+        ps: [{
+            n: 'curve',
+            en: 'Curve',
+            ti: '.CurveType'
           }]
       }, {
         ln: 'AnyDataPropertyType',
@@ -1173,199 +2099,39 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TimeObjectPropertyType',
+        ln: 'AllowedTokens',
+        tn: null,
         ps: [{
-            n: 'timeObject',
+            n: 'valueList',
+            col: true,
             mx: false,
             dom: false,
-            en: {
-              lp: '_TimeObject',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.AbstractTimeObjectType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataRecordType',
-        bti: '.AbstractDataRecordType',
-        ps: [{
-            n: 'field',
-            col: true,
-            ti: '.DataComponentPropertyType'
-          }]
-      }, {
-        ln: 'StandardFormat',
-        tn: null,
-        bti: '.AbstractEncodingType',
-        ps: [{
-            n: 'mimeType',
-            an: {
-              lp: 'mimeType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataArrayPropertyType',
-        ps: [{
-            n: 'dataArray',
-            en: 'DataArray',
-            ti: '.DataArrayType'
-          }]
-      }, {
-        ln: 'Boolean',
-        tn: null,
-        bti: '.AbstractDataComponentType',
-        ps: [{
-            n: 'quality',
-            ti: '.QualityPropertyType'
-          }, {
-            n: 'value',
-            ti: 'Boolean'
-          }, {
-            n: 'referenceFrame',
-            an: {
-              lp: 'referenceFrame'
-            },
-            t: 'a'
-          }, {
-            n: 'axisID',
-            an: {
-              lp: 'axisID'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataStreamDefinitionPropertyType',
-        ps: [{
-            n: 'dataStreamDefinition',
-            en: 'DataStreamDefinition',
-            ti: '.DataStreamDefinitionType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeGridType',
-        bti: 'GML_3_1_1.AbstractTimeComplexType',
-        ps: [{
-            n: 'extent',
-            ti: '.TimeGridEnvelopePropertyType'
-          }, {
-            n: 'originPos',
-            ti: 'GML_3_1_1.TimePositionType'
-          }, {
-            n: 'origin',
-            ti: 'GML_3_1_1.TimeInstantPropertyType'
-          }, {
-            n: 'offsetDuration'
-          }, {
-            n: 'offsetInterval',
-            ti: 'GML_3_1_1.TimeIntervalLengthType'
-          }, {
-            n: 'duration'
-          }]
-      }, {
-        ln: 'TimePositionListType',
-        ps: [{
-            n: 'value',
             ti: {
               t: 'l'
             },
-            t: 'v'
+            t: 'er'
           }, {
-            n: 'frame',
+            n: 'id',
+            ti: 'ID',
             an: {
-              lp: 'frame'
-            },
-            t: 'a'
-          }, {
-            n: 'calendarEraName',
-            an: {
-              lp: 'calendarEraName'
-            },
-            t: 'a'
-          }, {
-            n: 'indeterminatePosition',
-            ti: 'GML_3_1_1.TimeIndeterminateValueType',
-            an: {
-              lp: 'indeterminatePosition'
-            },
-            t: 'a'
-          }, {
-            n: 'count',
-            ti: 'Integer',
-            an: {
-              lp: 'count'
+              lp: 'id'
             },
             t: 'a'
           }]
       }, {
-        ln: 'TimeIntervalGridType',
-        bti: '.TimeGridType',
+        ln: 'AbstractDataArrayType.ElementCount',
+        tn: null,
         ps: [{
-            n: 'windowDuration'
+            n: 'count',
+            en: 'Count',
+            ti: '.Count'
           }, {
-            n: 'windowInterval',
-            ti: 'GML_3_1_1.TimeIntervalLengthType'
+            n: 'ref',
+            ti: 'IDREF',
+            an: {
+              lp: 'ref'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'BinaryBlock.Member.Component',
@@ -1418,31 +2184,12 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'QuantityRangePropertyType',
+        ln: 'TimeGridPropertyType',
         ps: [{
-            n: 'quantityRange',
-            en: 'QuantityRange',
-            ti: '.QuantityRange'
-          }]
-      }, {
-        ln: 'AbstractConditionalType',
-        bti: '.AbstractDataRecordType',
-        ps: [{
-            n: 'condition',
-            col: true,
-            ti: '.AbstractConditionalType.Condition'
-          }]
-      }, {
-        ln: 'VectorType',
-        bti: '.AbstractVectorType',
-        ps: [{
-            n: 'coordinate',
-            col: true,
-            ti: '.VectorType.Coordinate'
-          }]
-      }, {
-        ln: 'CodeSpacePropertyType',
-        ps: [{
+            n: 'timeInstantGrid',
+            en: 'TimeInstantGrid',
+            ti: '.TimeInstantGridType'
+          }, {
             n: 'remoteSchema',
             an: {
               lp: 'remoteSchema',
@@ -1475,30 +2222,11 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TimeGridEnvelopePropertyType',
+        ln: 'AllowedTimesPropertyType',
         ps: [{
-            n: 'timeGridEnvelope',
-            en: 'TimeGridEnvelope',
-            ti: '.TimeGridEnvelopePropertyType.TimeGridEnvelope'
-          }]
-      }, {
-        ln: 'SimpleDataRecordType',
-        bti: '.AbstractDataRecordType',
-        ps: [{
-            n: 'field',
-            col: true,
-            ti: '.AnyScalarPropertyType'
-          }]
-      }, {
-        ln: 'ObservableProperty',
-        tn: null,
-        bti: '.AbstractDataComponentType'
-      }, {
-        ln: 'TimeGeometricComplexPropertyType',
-        ps: [{
-            n: 'timeGeometricComplex',
-            en: 'TimeGeometricComplex',
-            ti: '.TimeGeometricComplexType'
+            n: 'allowedTimes',
+            en: 'AllowedTimes',
+            ti: '.AllowedTimes'
           }, {
             n: 'remoteSchema',
             an: {
@@ -1530,6 +2258,13 @@ var SWE_1_0_1_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'CountPropertyType',
+        ps: [{
+            n: 'count',
+            en: 'Count',
+            ti: '.Count'
           }]
       }, {
         ln: 'Time',
@@ -1569,265 +2304,63 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TimeGeometricComplexType',
-        bti: 'GML_3_1_1.AbstractTimeComplexType',
+        ln: 'CountRangePropertyType',
         ps: [{
-            n: 'primitive',
-            col: true,
-            ti: '.TimeGeometricPrimitivePropertyType'
+            n: 'countRange',
+            en: 'CountRange',
+            ti: '.CountRange'
           }]
       }, {
-        ln: 'BinaryBlock',
-        tn: null,
-        bti: '.AbstractEncodingType',
+        ln: 'ArrayPropertyType',
         ps: [{
-            n: 'member',
-            col: true,
-            ti: '.BinaryBlock.Member'
-          }, {
-            n: 'byteLength',
-            ti: 'Integer',
+            n: 'array',
+            en: 'Array',
+            ti: '.ArrayType'
+          }]
+      }, {
+        ln: 'AbstractEncodingType',
+        ps: [{
+            n: 'id',
+            ti: 'ID',
             an: {
-              lp: 'byteLength'
-            },
-            t: 'a'
-          }, {
-            n: 'byteEncoding',
-            an: {
-              lp: 'byteEncoding'
-            },
-            t: 'a'
-          }, {
-            n: 'byteOrder',
-            an: {
-              lp: 'byteOrder'
+              lp: 'id'
             },
             t: 'a'
           }]
       }, {
-        ln: 'EnvelopePropertyType',
+        ln: 'PhenomenonType',
+        bti: 'GML_3_1_1.DefinitionType'
+      }, {
+        ln: 'DataArrayPropertyType',
         ps: [{
-            n: 'envelope',
-            en: 'Envelope',
-            ti: '.EnvelopeType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'dataArray',
+            en: 'DataArray',
+            ti: '.DataArrayType'
           }]
       }, {
-        ln: 'ItemPropertyType',
+        ln: 'NormalizedCurveType',
+        bti: '.AbstractDataRecordType',
         ps: [{
-            n: 'item',
-            en: 'Item',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'IntervalPropertyType',
-        ps: [{
-            n: 'interval',
-            en: 'Interval',
-            ti: '.IntervalType'
-          }]
-      }, {
-        ln: 'QuantityPropertyType',
-        ps: [{
-            n: 'quantity',
-            en: 'Quantity',
-            ti: '.Quantity'
-          }]
-      }, {
-        ln: 'GeoLocationArea',
-        tn: null,
-        bti: '.AbstractVectorType',
-        ps: [{
-            n: 'member',
-            col: true,
-            ti: '.EnvelopePropertyType'
+            n: 'inputGain',
+            ti: '.QuantityPropertyType'
           }, {
-            n: 'geoLocationAreaName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PositionType',
-        bti: '.AbstractVectorType',
-        ps: [{
-            n: 'time',
-            ti: '.TimePropertyType'
+            n: 'inputBias',
+            ti: '.QuantityPropertyType'
           }, {
-            n: 'location',
-            ti: '.VectorPropertyType'
+            n: 'outputGain',
+            ti: '.QuantityPropertyType'
           }, {
-            n: 'orientation',
-            ti: '.VectorOrSquareMatrixPropertyType'
+            n: 'outputBias',
+            ti: '.QuantityPropertyType'
           }, {
-            n: 'velocity',
-            ti: '.VectorPropertyType'
+            n: 'interpolationMethod',
+            ti: '.CategoryPropertyType'
           }, {
-            n: 'angularVelocity',
-            ti: '.VectorOrSquareMatrixPropertyType'
+            n: 'extrapolationMethod',
+            ti: '.CategoryPropertyType'
           }, {
-            n: 'acceleration',
-            ti: '.VectorPropertyType'
-          }, {
-            n: 'angularAcceleration',
-            ti: '.VectorOrSquareMatrixPropertyType'
-          }, {
-            n: 'state',
-            ti: '.VectorOrSquareMatrixPropertyType'
-          }]
-      }, {
-        ln: 'TextBlock',
-        tn: null,
-        bti: '.AbstractEncodingType',
-        ps: [{
-            n: 'tokenSeparator',
-            an: {
-              lp: 'tokenSeparator'
-            },
-            t: 'a'
-          }, {
-            n: 'blockSeparator',
-            an: {
-              lp: 'blockSeparator'
-            },
-            t: 'a'
-          }, {
-            n: 'decimalSeparator',
-            an: {
-              lp: 'decimalSeparator'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeGeometricPrimitivePropertyType',
-        ps: [{
-            n: 'timeGeometricPrimitive',
-            mx: false,
-            dom: false,
-            en: {
-              lp: '_TimeGeometricPrimitive',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.AbstractTimeGeometricPrimitiveType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractDataArrayType',
-        bti: '.AbstractDataComponentType',
-        ps: [{
-            n: 'elementCount',
-            ti: '.AbstractDataArrayType.ElementCount'
-          }]
-      }, {
-        ln: 'PhenomenonPropertyType',
-        ps: [{
-            n: 'phenomenon',
-            mx: false,
-            dom: false,
-            en: 'Phenomenon',
-            ti: '.PhenomenonType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeAggregateType',
-        bti: 'GML_3_1_1.AbstractTimeObjectType',
-        ps: [{
-            n: 'member',
-            col: true,
-            ti: '.TimeObjectPropertyType'
+            n: 'function',
+            ti: '.CurvePropertyType'
           }]
       }, {
         ln: 'AbstractConditionalType.Condition',
@@ -1921,18 +2454,11 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Text',
-        tn: null,
-        bti: '.AbstractDataComponentType',
+        ln: 'VectorPropertyType',
         ps: [{
-            n: 'value'
-          }]
-      }, {
-        ln: 'AllowedTimesPropertyType',
-        ps: [{
-            n: 'allowedTimes',
-            en: 'AllowedTimes',
-            ti: '.AllowedTimes'
+            n: 'vector',
+            en: 'Vector',
+            ti: '.VectorType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -1966,317 +2492,27 @@ var SWE_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TimeGridPropertyType',
+        ln: 'ConditionalValueType',
+        bti: '.AbstractConditionalType',
         ps: [{
-            n: 'timeInstantGrid',
-            en: 'TimeInstantGrid',
-            ti: '.TimeInstantGridType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
+            n: 'data',
+            ti: '.ConditionalValueType.Data'
+          }]
+      }, {
+        ln: 'MultiplexedStreamFormatType',
+        bti: '.AbstractEncodingType',
+        ps: [{
             n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'BinaryBlock.Member',
-        tn: null,
-        ps: [{
-            n: 'component',
-            en: 'Component',
-            ti: '.BinaryBlock.Member.Component'
-          }, {
-            n: 'block',
-            en: 'Block',
-            ti: '.BinaryBlock.Member.Block'
-          }]
-      }, {
-        ln: 'TimeGridEnvelopePropertyType.TimeGridEnvelope',
-        tn: null,
-        ps: [{
-            n: 'low',
-            ti: 'Integer'
-          }, {
-            n: 'high',
-            ti: 'Integer'
-          }]
-      }, {
-        ln: 'AbstractDataRecordType',
-        bti: '.AbstractDataComponentType'
-      }, {
-        ln: 'AbstractVectorType',
-        bti: '.AbstractDataRecordType',
-        ps: [{
-            n: 'referenceFrame',
             an: {
-              lp: 'referenceFrame'
+              lp: 'type'
             },
             t: 'a'
           }, {
-            n: 'localFrame',
+            n: 'version',
             an: {
-              lp: 'localFrame'
+              lp: 'version'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'QuantityRange',
-        tn: null,
-        bti: '.AbstractDataComponentType',
-        ps: [{
-            n: 'uom',
-            ti: '.UomPropertyType'
-          }, {
-            n: 'constraint',
-            ti: '.AllowedValuesPropertyType'
-          }, {
-            n: 'quality',
-            col: true,
-            ti: '.QualityPropertyType'
-          }, {
-            n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'referenceFrame',
-            an: {
-              lp: 'referenceFrame'
-            },
-            t: 'a'
-          }, {
-            n: 'axisID',
-            an: {
-              lp: 'axisID'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AllowedValuesPropertyType',
-        ps: [{
-            n: 'allowedValues',
-            en: 'AllowedValues',
-            ti: '.AllowedValues'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TextPropertyType',
-        ps: [{
-            n: 'text',
-            en: 'Text',
-            ti: '.Text'
-          }]
-      }, {
-        ln: 'CurveType',
-        bti: '.AbstractDataArrayType',
-        ps: [{
-            n: 'elementType',
-            ti: '.SimpleDataRecordPropertyType'
-          }, {
-            n: 'encoding',
-            ti: '.BlockEncodingPropertyType'
-          }, {
-            n: 'values',
-            ti: '.DataValuePropertyType'
-          }]
-      }, {
-        ln: 'QualityPropertyType',
-        ps: [{
-            n: 'quantity',
-            en: 'Quantity',
-            ti: '.Quantity'
-          }, {
-            n: 'quantityRange',
-            en: 'QuantityRange',
-            ti: '.QuantityRange'
-          }, {
-            n: 'category',
-            en: 'Category',
-            ti: '.Category'
-          }, {
-            n: 'text',
-            en: 'Text',
-            ti: '.Text'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'XMLDataPropertyType',
-        ps: [{
-            n: 'item',
-            en: 'Item',
-            ti: 'AnyType'
-          }, {
-            n: 'record',
-            en: 'Record',
-            ti: '.RecordType'
-          }, {
-            n: 'array',
-            en: 'Array',
-            ti: '.ArrayType'
-          }]
-      }, {
-        ln: 'AnyScalarPropertyType',
-        ps: [{
-            n: 'count',
-            en: 'Count',
-            ti: '.Count'
-          }, {
-            n: 'quantity',
-            en: 'Quantity',
-            ti: '.Quantity'
-          }, {
-            n: 'time',
-            en: 'Time',
-            ti: '.Time'
-          }, {
-            n: '_boolean',
-            en: 'Boolean',
-            ti: '.Boolean'
-          }, {
-            n: 'category',
-            en: 'Category',
-            ti: '.Category'
-          }, {
-            n: 'text',
-            en: 'Text',
-            ti: '.Text'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'PhenomenonSeriesType',
-        bti: '.CompoundPhenomenonType',
-        ps: [{
-            n: 'base',
-            ti: '.PhenomenonPropertyType'
-          }, {
-            n: 'constraintList',
-            col: true,
-            ti: '.DataArrayPropertyType'
-          }, {
-            n: 'otherConstraint',
-            col: true
           }]
       }, {
         ln: 'TimeRangePropertyType',
@@ -2286,276 +2522,64 @@ var SWE_1_0_1_Module_Factory = function () {
             ti: '.TimeRange'
           }]
       }, {
-        ln: 'PhenomenonType',
-        bti: 'GML_3_1_1.DefinitionType'
-      }, {
-        ln: 'Quantity',
-        tn: null,
-        bti: '.AbstractDataComponentType',
+        ln: 'TimeAggregateType',
+        bti: 'GML_3_1_1.AbstractTimeObjectType',
         ps: [{
-            n: 'uom',
-            ti: '.UomPropertyType'
-          }, {
-            n: 'constraint',
-            ti: '.AllowedValuesPropertyType'
-          }, {
-            n: 'quality',
+            n: 'member',
             col: true,
-            ti: '.QualityPropertyType'
-          }, {
-            n: 'value',
-            ti: 'Double'
-          }, {
-            n: 'referenceFrame',
-            an: {
-              lp: 'referenceFrame'
-            },
-            t: 'a'
-          }, {
-            n: 'axisID',
-            an: {
-              lp: 'axisID'
-            },
-            t: 'a'
+            ti: '.TimeObjectPropertyType'
           }]
-      }, {
-        ln: 'ConditionalDataType',
-        bti: '.AbstractDataRecordType',
-        ps: [{
-            n: '_case',
-            col: true,
-            en: 'case',
-            ti: '.ConditionalDataType.Case'
-          }]
-      }, {
-        ln: 'TimeAggregatePropertyType',
-        ps: [{
-            n: 'timeAggregate',
-            en: 'TimeAggregate',
-            ti: '.TimeAggregateType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CurvePropertyType',
-        ps: [{
-            n: 'curve',
-            en: 'Curve',
-            ti: '.CurveType'
-          }]
-      }, {
-        ln: 'TimePropertyType',
-        ps: [{
-            n: 'time',
-            en: 'Time',
-            ti: '.Time'
-          }]
-      }, {
-        ln: 'UomPropertyType',
-        ps: [{
-            n: 'unitDefinition',
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'UnitDefinition',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.UnitDefinitionType',
-            t: 'er'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'code'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'NormalizedCurveType',
-        bti: '.AbstractDataRecordType',
-        ps: [{
-            n: 'inputGain',
-            ti: '.QuantityPropertyType'
-          }, {
-            n: 'inputBias',
-            ti: '.QuantityPropertyType'
-          }, {
-            n: 'outputGain',
-            ti: '.QuantityPropertyType'
-          }, {
-            n: 'outputBias',
-            ti: '.QuantityPropertyType'
-          }, {
-            n: 'interpolationMethod',
-            ti: '.CategoryPropertyType'
-          }, {
-            n: 'extrapolationMethod',
-            ti: '.CategoryPropertyType'
-          }, {
-            n: 'function',
-            ti: '.CurvePropertyType'
-          }]
-      }, {
-        ln: 'CountRangePropertyType',
-        ps: [{
-            n: 'countRange',
-            en: 'CountRange',
-            ti: '.CountRange'
-          }]
-      }, {
-        ln: 'Category',
-        tn: null,
-        bti: '.AbstractDataComponentType',
-        ps: [{
-            n: 'codeSpace',
-            ti: '.CodeSpacePropertyType'
-          }, {
-            n: 'constraint',
-            ti: '.AllowedTokensPropertyType'
-          }, {
-            n: 'quality',
-            ti: '.QualityPropertyType'
-          }, {
-            n: 'value'
-          }, {
-            n: 'referenceFrame',
-            an: {
-              lp: 'referenceFrame'
-            },
-            t: 'a'
-          }, {
-            n: 'axisID',
-            an: {
-              lp: 'axisID'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ConstrainedPhenomenonType',
-        bti: '.PhenomenonType',
-        ps: [{
-            n: 'base',
-            ti: '.PhenomenonPropertyType'
-          }, {
-            n: 'otherConstraint',
-            col: true
-          }, {
-            n: 'singleConstraint',
-            col: true,
-            ti: '.AnyDataPropertyType'
-          }]
-      }, {
-        ln: 'EnvelopeType',
-        bti: '.AbstractVectorType',
-        ps: [{
-            n: 'time',
-            ti: '.TimeRangePropertyType'
-          }, {
-            n: 'lowerCorner',
-            ti: '.VectorPropertyType'
-          }, {
-            n: 'upperCorner',
-            ti: '.VectorPropertyType'
-          }]
-      }, {
-        ln: 'SquareMatrixType',
-        bti: '.AbstractMatrixType',
-        ps: [{
-            n: 'elementType',
-            ti: '.QuantityPropertyType'
-          }, {
-            n: 'encoding',
-            ti: '.BlockEncodingPropertyType'
-          }, {
-            n: 'values',
-            ti: '.DataValuePropertyType'
-          }]
-      }, {
-        t: 'enum',
-        ln: 'ByteEncoding',
-        vs: ['base64', 'raw', 'hex']
       }, {
         t: 'enum',
         ln: 'ByteOrder',
         vs: ['bigEndian', 'littleEndian']
+      }, {
+        t: 'enum',
+        ln: 'ByteEncoding',
+        vs: ['base64', 'raw', 'hex']
       }],
     eis: [{
+        en: 'ConditionalData',
+        ti: '.ConditionalDataType',
+        sh: 'AbstractDataRecord'
+      }, {
         en: 'SquareMatrix',
         ti: '.SquareMatrixType',
         sh: 'AbstractDataArray'
       }, {
-        en: 'PhenomenonSeries',
-        ti: '.PhenomenonSeriesType',
-        sh: 'CompoundPhenomenon'
+        en: 'TextBlock',
+        ti: '.TextBlock'
       }, {
-        en: 'Record',
-        ti: '.RecordType'
+        en: 'MultiplexedStreamFormat',
+        ti: '.MultiplexedStreamFormatType'
       }, {
-        en: 'QuantityRange',
-        ti: '.QuantityRange'
+        en: 'valueList',
+        ti: {
+          t: 'l'
+        },
+        sc: '.AllowedTimes'
       }, {
-        en: 'ConditionalData',
-        ti: '.ConditionalDataType',
-        sh: 'AbstractDataRecord'
+        en: 'TimeInstantGrid',
+        ti: '.TimeInstantGridType',
+        sh: 'TimeGrid'
+      }, {
+        en: 'CountRange',
+        ti: '.CountRange'
+      }, {
+        en: 'AllowedTokens',
+        ti: '.AllowedTokens'
+      }, {
+        en: 'AbstractDataRecord',
+        ti: '.AbstractDataRecordType'
+      }, {
+        en: 'Count',
+        ti: '.Count'
+      }, {
+        en: 'BinaryBlock',
+        ti: '.BinaryBlock'
+      }, {
+        en: 'Text',
+        ti: '.Text'
       }, {
         en: 'TimeGrid',
         ti: '.TimeGridType',
@@ -2564,132 +2588,43 @@ var SWE_1_0_1_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: 'Item',
-        ti: 'AnyType'
-      }, {
-        en: 'XMLBlock',
-        ti: '.XMLBlockType'
-      }, {
-        en: 'Array',
-        ti: '.ArrayType'
-      }, {
-        en: 'CountRange',
-        ti: '.CountRange'
+        en: 'PhenomenonSeries',
+        ti: '.PhenomenonSeriesType',
+        sh: 'CompoundPhenomenon'
       }, {
         en: 'AllowedTimes',
         ti: '.AllowedTimes'
       }, {
-        en: 'TimeIntervalGrid',
-        ti: '.TimeIntervalGridType',
-        sh: 'TimeGrid'
-      }, {
-        en: 'AllowedTokens',
-        ti: '.AllowedTokens'
-      }, {
-        en: 'Category',
-        ti: '.Category'
-      }, {
-        en: 'TimeInstantGrid',
-        ti: '.TimeInstantGridType',
-        sh: 'TimeGrid'
-      }, {
-        en: 'TimeGeometricComplex',
-        ti: '.TimeGeometricComplexType',
-        sh: {
-          lp: '_TimeComplex',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: 'valueList',
-        ti: {
-          t: 'l'
-        },
-        sc: '.AllowedTimes'
-      }, {
-        en: 'Position',
-        ti: '.PositionType',
-        sh: 'AbstractDataRecord'
-      }, {
-        en: 'ConditionalValue',
-        ti: '.ConditionalValueType',
-        sh: 'AbstractDataRecord'
-      }, {
-        en: 'Curve',
-        ti: '.CurveType',
-        sh: 'AbstractDataArray'
-      }, {
-        en: 'TimeRange',
-        ti: '.TimeRange'
-      }, {
-        en: 'Boolean',
-        ti: '.Boolean'
-      }, {
-        en: 'Envelope',
-        ti: '.EnvelopeType',
-        sh: 'AbstractDataRecord'
+        en: 'Item',
+        ti: 'AnyType'
       }, {
         en: 'StandardFormat',
         ti: '.StandardFormat'
-      }, {
-        en: 'Count',
-        ti: '.Count'
-      }, {
-        en: 'DataStreamDefinition',
-        ti: '.DataStreamDefinitionType'
-      }, {
-        en: 'ConstrainedPhenomenon',
-        ti: '.ConstrainedPhenomenonType',
-        sh: 'Phenomenon'
       }, {
         en: 'DataRecord',
         ti: '.DataRecordType',
         sh: 'AbstractDataRecord'
       }, {
-        en: 'AllowedValues',
-        ti: '.AllowedValues'
+        en: 'DataArray',
+        ti: '.DataArrayType',
+        sh: 'AbstractDataArray'
+      }, {
+        en: 'interval',
+        ti: {
+          t: 'l'
+        },
+        sc: '.AllowedTimes'
+      }, {
+        en: 'Boolean',
+        ti: '.Boolean'
       }, {
         en: 'GeoLocationArea',
         ti: '.GeoLocationArea',
         sh: 'AbstractDataRecord'
       }, {
-        en: 'TimeAggregate',
-        ti: '.TimeAggregateType',
-        sh: {
-          lp: '_TimeObject',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: 'DataBlockDefinition',
-        ti: '.DataBlockDefinitionType'
-      }, {
-        en: 'AbstractDataArray',
-        ti: '.AbstractDataArrayType'
-      }, {
-        en: 'Quantity',
-        ti: '.Quantity'
-      }, {
         en: 'CompoundPhenomenon',
         ti: '.CompoundPhenomenonType',
         sh: 'Phenomenon'
-      }, {
-        en: 'NormalizedCurve',
-        ti: '.NormalizedCurveType',
-        sh: 'AbstractDataRecord'
-      }, {
-        en: 'valueList',
-        ti: {
-          t: 'l'
-        },
-        sc: '.AllowedTokens'
-      }, {
-        en: 'Text',
-        ti: '.Text'
-      }, {
-        en: 'AbstractDataRecord',
-        ti: '.AbstractDataRecordType'
-      }, {
-        en: 'Interval',
-        ti: '.IntervalType'
       }, {
         en: 'interval',
         ti: {
@@ -2701,6 +2636,19 @@ var SWE_1_0_1_Module_Factory = function () {
         en: 'ObservableProperty',
         ti: '.ObservableProperty'
       }, {
+        en: 'Position',
+        ti: '.PositionType',
+        sh: 'AbstractDataRecord'
+      }, {
+        en: 'valueList',
+        ti: {
+          t: 'l'
+        },
+        sc: '.AllowedTokens'
+      }, {
+        en: 'Time',
+        ti: '.Time'
+      }, {
         en: 'Phenomenon',
         ti: '.PhenomenonType',
         sh: {
@@ -2708,25 +2656,73 @@ var SWE_1_0_1_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: 'CompositePhenomenon',
-        ti: '.CompositePhenomenonType',
-        sh: 'CompoundPhenomenon'
+        en: 'NormalizedCurve',
+        ti: '.NormalizedCurveType',
+        sh: 'AbstractDataRecord'
       }, {
-        en: 'TextBlock',
-        ti: '.TextBlock'
-      }, {
-        en: 'DataArray',
-        ti: '.DataArrayType',
+        en: 'Curve',
+        ti: '.CurveType',
         sh: 'AbstractDataArray'
       }, {
-        en: 'Time',
-        ti: '.Time'
+        en: 'AllowedValues',
+        ti: '.AllowedValues'
       }, {
-        en: 'interval',
-        ti: {
-          t: 'l'
-        },
-        sc: '.AllowedTimes'
+        en: 'Interval',
+        ti: '.IntervalType'
+      }, {
+        en: 'Category',
+        ti: '.Category'
+      }, {
+        en: 'TimeRange',
+        ti: '.TimeRange'
+      }, {
+        en: 'DataBlockDefinition',
+        ti: '.DataBlockDefinitionType'
+      }, {
+        en: 'DataStreamDefinition',
+        ti: '.DataStreamDefinitionType'
+      }, {
+        en: 'TimeIntervalGrid',
+        ti: '.TimeIntervalGridType',
+        sh: 'TimeGrid'
+      }, {
+        en: 'QuantityRange',
+        ti: '.QuantityRange'
+      }, {
+        en: 'Envelope',
+        ti: '.EnvelopeType',
+        sh: 'AbstractDataRecord'
+      }, {
+        en: 'XMLBlock',
+        ti: '.XMLBlockType'
+      }, {
+        en: 'Record',
+        ti: '.RecordType'
+      }, {
+        en: 'ConditionalValue',
+        ti: '.ConditionalValueType',
+        sh: 'AbstractDataRecord'
+      }, {
+        en: 'SimpleDataRecord',
+        ti: '.SimpleDataRecordType',
+        sh: 'AbstractDataRecord'
+      }, {
+        en: 'ConstrainedPhenomenon',
+        ti: '.ConstrainedPhenomenonType',
+        sh: 'Phenomenon'
+      }, {
+        en: 'TimeAggregate',
+        ti: '.TimeAggregateType',
+        sh: {
+          lp: '_TimeObject',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'Array',
+        ti: '.ArrayType'
+      }, {
+        en: 'Quantity',
+        ti: '.Quantity'
       }, {
         en: 'valueList',
         ti: {
@@ -2735,19 +2731,23 @@ var SWE_1_0_1_Module_Factory = function () {
         },
         sc: '.AllowedValues'
       }, {
-        en: 'MultiplexedStreamFormat',
-        ti: '.MultiplexedStreamFormatType'
-      }, {
-        en: 'BinaryBlock',
-        ti: '.BinaryBlock'
-      }, {
-        en: 'SimpleDataRecord',
-        ti: '.SimpleDataRecordType',
-        sh: 'AbstractDataRecord'
-      }, {
         en: 'Vector',
         ti: '.VectorType',
         sh: 'AbstractDataRecord'
+      }, {
+        en: 'CompositePhenomenon',
+        ti: '.CompositePhenomenonType',
+        sh: 'CompoundPhenomenon'
+      }, {
+        en: 'AbstractDataArray',
+        ti: '.AbstractDataArrayType'
+      }, {
+        en: 'TimeGeometricComplex',
+        ti: '.TimeGeometricComplexType',
+        sh: {
+          lp: '_TimeComplex',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
       }]
   };
   return {

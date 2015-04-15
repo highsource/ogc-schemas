@@ -3,123 +3,42 @@ var SensorML_2_0_Module_Factory = function () {
     n: 'SensorML_2_0',
     dens: 'http:\/\/www.opengis.net\/sensorml\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1', 'SWE_2_0', 'ISO19139_GMD_20070417'],
+    deps: ['XLink_1_0', 'SWE_2_0', 'GML_3_2_1', 'ISO19139_GMD_20070417'],
     tis: [{
-        ln: 'ParameterListType.Parameter',
-        tn: null,
-        bti: '.DataComponentOrObservablePropertyType',
-        ps: [{
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
+        ln: 'AbstractModesType',
+        bti: 'SWE_2_0.AbstractSWEType'
       }, {
-        ln: 'TermType',
-        bti: 'SWE_2_0.AbstractSWEType',
+        ln: 'AbstractPhysicalProcessPropertyType',
         ps: [{
-            n: 'label'
-          }, {
-            n: 'codeSpace',
-            ti: 'SWE_2_0.Reference'
-          }, {
-            n: 'value'
-          }, {
-            n: 'definition',
-            an: {
-              lp: 'definition'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ConstraintPropertyType',
-        ps: [{
-            n: 'allowedTimes',
-            en: {
-              lp: 'AllowedTimes',
-              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-            },
-            ti: 'SWE_2_0.AllowedTimesType'
-          }, {
-            n: 'allowedTokens',
-            en: {
-              lp: 'AllowedTokens',
-              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-            },
-            ti: 'SWE_2_0.AllowedTokensType'
-          }, {
-            n: 'allowedValues',
-            en: {
-              lp: 'AllowedValues',
-              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-            },
-            ti: 'SWE_2_0.AllowedValuesType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SettingsPropertyType',
-        ps: [{
-            n: 'settings',
-            en: 'Settings',
-            ti: '.SettingsType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractMetadataListPropertyType',
-        ps: [{
-            n: 'abstractMetadataList',
+            n: 'abstractPhysicalProcess',
             mx: false,
             dom: false,
-            en: 'AbstractMetadataList',
-            ti: '.AbstractMetadataListType',
+            en: 'AbstractPhysicalProcess',
+            ti: '.AbstractPhysicalProcessType',
             t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
           }, {
             n: 'type',
             ti: 'XLink_1_0.TypeType',
@@ -146,52 +65,19 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractProcessType.Parameters',
-        tn: null,
+        ln: 'PhysicalComponentType',
+        bti: '.AbstractPhysicalProcessType',
         ps: [{
-            n: 'parameterList',
-            en: 'ParameterList',
-            ti: '.ParameterListType'
+            n: 'method',
+            ti: '.ProcessMethodPropertyType'
           }]
       }, {
-        ln: 'EventType',
-        bti: 'SWE_2_0.AbstractSWEIdentifiableType',
+        ln: 'CapabilityListType',
+        bti: '.AbstractMetadataListType',
         ps: [{
-            n: 'keywords',
+            n: 'capability',
             col: true,
-            ti: 'ISO19139_GMD_20070417.MDKeywordsPropertyType'
-          }, {
-            n: 'identification',
-            col: true,
-            ti: '.IdentifierListPropertyType'
-          }, {
-            n: 'classification',
-            col: true,
-            ti: '.ClassifierListPropertyType'
-          }, {
-            n: 'contacts',
-            col: true,
-            ti: '.ContactListPropertyType'
-          }, {
-            n: 'documentation',
-            col: true,
-            ti: '.DocumentListPropertyType'
-          }, {
-            n: 'time',
-            ti: '.EventType.Time'
-          }, {
-            n: 'property',
-            col: true,
-            ti: 'SWE_2_0.AbstractDataComponentPropertyType'
-          }, {
-            n: 'configuration',
-            ti: '.EventType.Configuration'
-          }, {
-            n: 'definition',
-            an: {
-              lp: 'definition'
-            },
-            t: 'a'
+            ti: '.CapabilityListType.Capability'
           }]
       }, {
         ln: 'ModeType',
@@ -199,6 +85,118 @@ var SensorML_2_0_Module_Factory = function () {
         ps: [{
             n: 'configuration',
             ti: '.SettingsPropertyType'
+          }]
+      }, {
+        ln: 'SpatialFrameType',
+        bti: 'SWE_2_0.AbstractSWEIdentifiableType',
+        ps: [{
+            n: 'origin'
+          }, {
+            n: 'axis',
+            col: true,
+            ti: '.SpatialFrameType.Axis'
+          }]
+      }, {
+        ln: 'AbstractProcessType.Modes',
+        tn: null,
+        ps: [{
+            n: 'abstractModes',
+            mx: false,
+            dom: false,
+            en: 'AbstractModes',
+            ti: '.AbstractModesType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'EventType.Configuration',
+        tn: null,
+        ps: [{
+            n: 'abstractSettings',
+            mx: false,
+            dom: false,
+            en: 'AbstractSettings',
+            ti: '.AbstractSettingsType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'SimpleProcessPropertyType',
+        ps: [{
+            n: 'simpleProcess',
+            en: 'SimpleProcess',
+            ti: '.SimpleProcessType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractSettingsType',
+        bti: 'SWE_2_0.AbstractSWEType'
+      }, {
+        ln: 'AbstractPhysicalProcessType',
+        bti: '.AbstractProcessType',
+        ps: [{
+            n: 'attachedTo',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'localReferenceFrame',
+            col: true,
+            ti: '.AbstractPhysicalProcessType.LocalReferenceFrame'
+          }, {
+            n: 'localTimeFrame',
+            col: true,
+            ti: '.AbstractPhysicalProcessType.LocalTimeFrame'
+          }, {
+            n: 'position',
+            col: true,
+            ti: '.PositionUnionPropertyType'
+          }, {
+            n: 'timePosition',
+            col: true,
+            ti: 'SWE_2_0.TimePropertyType'
           }]
       }, {
         ln: 'EventListPropertyType',
@@ -232,75 +230,43 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractAlgorithmType',
+        ln: 'CharacteristicListPropertyType',
         ps: [{
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
+            n: 'characteristicList',
+            en: 'CharacteristicList',
+            ti: '.CharacteristicListType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
-        ln: 'InputListType',
-        bti: 'SWE_2_0.AbstractSWEType',
+        ln: 'DocumentListType',
+        bti: '.AbstractMetadataListType',
         ps: [{
-            n: 'input',
+            n: 'document',
             col: true,
-            ti: '.InputListType.Input'
-          }]
-      }, {
-        ln: 'ArraySettingPropertyType.ArrayValues.Encoding',
-        tn: null,
-        ps: [{
-            n: 'abstractEncoding',
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractEncoding',
-              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-            },
-            ti: 'SWE_2_0.AbstractEncodingType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'SimpleProcessType',
-        bti: '.AbstractProcessType',
-        ps: [{
-            n: 'method',
-            ti: '.ProcessMethodPropertyType'
-          }]
-      }, {
-        ln: 'ConnectionListType.Connection',
-        tn: null,
-        ps: [{
-            n: 'link',
-            en: 'Link',
-            ti: '.LinkType'
-          }]
-      }, {
-        ln: 'AbstractPhysicalProcessType',
-        bti: '.AbstractProcessType',
-        ps: [{
-            n: 'attachedTo',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'localReferenceFrame',
-            col: true,
-            ti: '.AbstractPhysicalProcessType.LocalReferenceFrame'
-          }, {
-            n: 'localTimeFrame',
-            col: true,
-            ti: '.AbstractPhysicalProcessType.LocalTimeFrame'
-          }, {
-            n: 'position',
-            col: true,
-            ti: '.PositionUnionPropertyType'
-          }, {
-            n: 'timePosition',
-            col: true,
-            ti: 'SWE_2_0.TimePropertyType'
+            ti: 'ISO19139_GMD_20070417.CIOnlineResourcePropertyType'
           }]
       }, {
         ln: 'ModeChoicePropertyType',
@@ -334,28 +300,35 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractProcessType.FeaturesOfInterest',
-        tn: null,
-        ps: [{
-            n: 'featureList',
-            en: 'FeatureList',
-            ti: '.FeatureListType'
-          }]
-      }, {
-        ln: 'FeatureListType',
+        ln: 'ContactListType',
         bti: '.AbstractMetadataListType',
         ps: [{
-            n: 'feature',
+            n: 'contact',
             col: true,
-            ti: 'GML_3_2_1.FeaturePropertyType'
+            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
           }]
       }, {
-        ln: 'IdentifierListType.Identifier',
+        ln: 'AbstractPhysicalProcessType.LocalReferenceFrame',
         tn: null,
         ps: [{
-            n: 'term',
-            en: 'Term',
-            ti: '.TermType'
+            n: 'spatialFrame',
+            en: 'SpatialFrame',
+            ti: '.SpatialFrameType'
+          }]
+      }, {
+        ln: 'ClassifierListType',
+        bti: '.AbstractMetadataListType',
+        ps: [{
+            n: 'classifier',
+            col: true,
+            ti: '.ClassifierListType.Classifier'
+          }]
+      }, {
+        ln: 'SimpleProcessType',
+        bti: '.AbstractProcessType',
+        ps: [{
+            n: 'method',
+            ti: '.ProcessMethodPropertyType'
           }]
       }, {
         ln: 'ModeChoiceType',
@@ -366,75 +339,11 @@ var SensorML_2_0_Module_Factory = function () {
             ti: '.ModePropertyType'
           }]
       }, {
-        ln: 'PhysicalSystemPropertyType',
+        ln: 'ObservablePropertyPropertyType',
         ps: [{
-            n: 'physicalSystem',
-            en: 'PhysicalSystem',
-            ti: '.PhysicalSystemType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PhysicalSystemType',
-        bti: '.AbstractPhysicalProcessType',
-        ps: [{
-            n: 'components',
-            ti: '.ComponentListPropertyType'
-          }, {
-            n: 'connections',
-            ti: '.ConnectionListPropertyType'
-          }]
-      }, {
-        ln: 'KeywordListPropertyType',
-        ps: [{
-            n: 'keywordList',
-            en: 'KeywordList',
-            ti: '.KeywordListType'
+            n: 'observableProperty',
+            en: 'ObservableProperty',
+            ti: '.ObservablePropertyType'
           }, {
             n: 'type',
             ti: 'XLink_1_0.TypeType',
@@ -461,107 +370,45 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ProcessMethodPropertyType',
+        ln: 'KeywordListType',
+        bti: '.AbstractMetadataListType',
         ps: [{
-            n: 'processMethod',
-            en: 'ProcessMethod',
-            ti: '.ProcessMethodType'
+            n: 'codeSpace',
+            ti: 'SWE_2_0.Reference'
           }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'keyword',
+            col: true
           }]
       }, {
-        ln: 'DescribedObjectPropertyType',
+        ln: 'SettingsType',
+        bti: '.AbstractSettingsType',
         ps: [{
-            n: 'describedObject',
-            mx: false,
-            dom: false,
-            en: 'DescribedObject',
-            ti: '.DescribedObjectType',
-            t: 'er'
+            n: 'setValue',
+            col: true,
+            ti: '.ValueSettingPropertyType'
           }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
+            n: 'setArrayValues',
+            col: true,
+            ti: '.ArraySettingPropertyType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
+            n: 'setConstraint',
+            col: true,
+            ti: '.ConstraintSettingPropertyType'
           }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
+            n: 'setMode',
+            col: true,
+            ti: '.ModeSettingPropertyType'
           }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'setStatus',
+            col: true,
+            ti: '.StatusSettingPropertyType'
           }]
       }, {
-        ln: 'AbstractPhysicalProcessType.LocalTimeFrame',
-        tn: null,
+        ln: 'SettingsPropertyType',
         ps: [{
-            n: 'temporalFrame',
-            en: 'TemporalFrame',
-            ti: '.TemporalFrameType'
-          }]
-      }, {
-        ln: 'FeatureListPropertyType',
-        ps: [{
-            n: 'featureList',
-            en: 'FeatureList',
-            ti: '.FeatureListType'
+            n: 'settings',
+            en: 'Settings',
+            ti: '.SettingsType'
           }, {
             n: 'type',
             ti: 'XLink_1_0.TypeType',
@@ -598,8 +445,228 @@ var SensorML_2_0_Module_Factory = function () {
             ti: 'SWE_2_0.DataRecordPropertyType'
           }]
       }, {
-        ln: 'DataComponentRefPropertyType',
+        ln: 'IdentifierListType.Identifier',
+        tn: null,
         ps: [{
+            n: 'term',
+            en: 'Term',
+            ti: '.TermType'
+          }]
+      }, {
+        ln: 'ProcessMethodType',
+        bti: 'SWE_2_0.AbstractSWEIdentifiableType',
+        ps: [{
+            n: 'algorithm',
+            col: true,
+            ti: '.ProcessMethodType.Algorithm'
+          }]
+      }, {
+        ln: 'EventPropertyType',
+        ps: [{
+            n: 'event',
+            en: 'Event',
+            ti: '.EventType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ComponentListType',
+        bti: 'SWE_2_0.AbstractSWEType',
+        ps: [{
+            n: 'component',
+            col: true,
+            ti: '.ComponentListType.Component'
+          }]
+      }, {
+        ln: 'InputListType.Input',
+        tn: null,
+        bti: '.DataComponentOrObservablePropertyType',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CapabilityListPropertyType',
+        ps: [{
+            n: 'capabilityList',
+            en: 'CapabilityList',
+            ti: '.CapabilityListType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ContactListPropertyType',
+        ps: [{
+            n: 'contactList',
+            en: 'ContactList',
+            ti: '.ContactListType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TermType',
+        bti: 'SWE_2_0.AbstractSWEType',
+        ps: [{
+            n: 'label'
+          }, {
+            n: 'codeSpace',
+            ti: 'SWE_2_0.Reference'
+          }, {
+            n: 'value'
+          }, {
+            n: 'definition',
+            an: {
+              lp: 'definition'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ModePropertyType',
+        ps: [{
+            n: 'mode',
+            en: 'Mode',
+            ti: '.ModeType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'PhysicalSystemType',
+        bti: '.AbstractPhysicalProcessType',
+        ps: [{
+            n: 'components',
+            ti: '.ComponentListPropertyType'
+          }, {
+            n: 'connections',
+            ti: '.ConnectionListPropertyType'
+          }]
+      }, {
+        ln: 'TemporalFramePropertyType',
+        ps: [{
+            n: 'temporalFrame',
+            en: 'TemporalFrame',
+            ti: '.TemporalFrameType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'StatusSettingPropertyType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
             n: 'ref',
             an: {
               lp: 'ref'
@@ -607,16 +674,50 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'IdentifierListType',
-        bti: '.AbstractMetadataListType',
+        ln: 'ClassifierListPropertyType',
         ps: [{
-            n: 'smlIdentifier',
-            col: true,
-            en: 'identifier',
-            ti: '.IdentifierListType.Identifier'
+            n: 'classifierList',
+            en: 'ClassifierList',
+            ti: '.ClassifierListType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'EventType.Time',
+        ln: 'ModeSettingPropertyType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'ref',
+            an: {
+              lp: 'ref'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribedObjectType.ValidTime',
         tn: null,
         ps: [{
             n: 'timePeriod',
@@ -634,9 +735,40 @@ var SensorML_2_0_Module_Factory = function () {
             ti: 'GML_3_2_1.TimeInstantType'
           }]
       }, {
-        ln: 'DescribedObjectType.Capabilities',
+        ln: 'OutputListPropertyType',
+        ps: [{
+            n: 'outputList',
+            en: 'OutputList',
+            ti: '.OutputListType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CharacteristicListType.Characteristic',
         tn: null,
-        bti: '.CapabilityListPropertyType',
+        bti: 'SWE_2_0.AbstractDataComponentPropertyType',
         ps: [{
             n: 'name',
             an: {
@@ -645,9 +777,40 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DescribedObjectType.Characteristics',
+        ln: 'TermPropertyType',
+        ps: [{
+            n: 'term',
+            en: 'Term',
+            ti: '.TermType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'OutputListType.Output',
         tn: null,
-        bti: '.CharacteristicListPropertyType',
+        bti: '.DataComponentOrObservablePropertyType',
         ps: [{
             n: 'name',
             an: {
@@ -656,14 +819,11 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractModesPropertyType',
+        ln: 'FeatureListPropertyType',
         ps: [{
-            n: 'abstractModes',
-            mx: false,
-            dom: false,
-            en: 'AbstractModes',
-            ti: '.AbstractModesType',
-            t: 'er'
+            n: 'featureList',
+            en: 'FeatureList',
+            ti: '.FeatureListType'
           }, {
             n: 'type',
             ti: 'XLink_1_0.TypeType',
@@ -721,331 +881,17 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CharacteristicListType',
-        bti: '.AbstractMetadataListType',
-        ps: [{
-            n: 'characteristic',
-            col: true,
-            ti: '.CharacteristicListType.Characteristic'
-          }]
-      }, {
-        ln: 'TemporalFrameType',
-        bti: 'SWE_2_0.AbstractSWEIdentifiableType',
-        ps: [{
-            n: 'origin'
-          }]
-      }, {
-        ln: 'AbstractProcessType.Inputs',
-        tn: null,
-        ps: [{
-            n: 'inputList',
-            en: 'InputList',
-            ti: '.InputListType'
-          }]
-      }, {
-        ln: 'PhysicalComponentType',
-        bti: '.AbstractPhysicalProcessType',
-        ps: [{
-            n: 'method',
-            ti: '.ProcessMethodPropertyType'
-          }]
-      }, {
-        ln: 'CapabilityListType.Capability',
-        tn: null,
-        bti: 'SWE_2_0.AbstractDataComponentPropertyType',
-        ps: [{
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EventType.Configuration',
-        tn: null,
-        ps: [{
-            n: 'abstractSettings',
-            mx: false,
-            dom: false,
-            en: 'AbstractSettings',
-            ti: '.AbstractSettingsType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'OutputListPropertyType',
-        ps: [{
-            n: 'outputList',
-            en: 'OutputList',
-            ti: '.OutputListType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'InputListPropertyType',
-        ps: [{
-            n: 'inputList',
-            en: 'InputList',
-            ti: '.InputListType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractSettingsType',
-        bti: 'SWE_2_0.AbstractSWEType'
-      }, {
-        ln: 'ComponentListType.Component',
-        tn: null,
-        bti: '.AbstractProcessPropertyType',
-        ps: [{
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AggregateProcessType',
-        bti: '.AbstractProcessType',
-        ps: [{
-            n: 'components',
-            ti: '.ComponentListPropertyType'
-          }, {
-            n: 'connections',
-            ti: '.ConnectionListPropertyType'
-          }]
-      }, {
-        ln: 'ParameterListPropertyType',
-        ps: [{
-            n: 'parameterList',
-            en: 'ParameterList',
-            ti: '.ParameterListType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'OutputListType.Output',
-        tn: null,
-        bti: '.DataComponentOrObservablePropertyType',
-        ps: [{
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ConnectionListPropertyType',
-        ps: [{
-            n: 'connectionList',
-            en: 'ConnectionList',
-            ti: '.ConnectionListType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractSettingsPropertyType',
-        ps: [{
-            n: 'abstractSettings',
-            mx: false,
-            dom: false,
-            en: 'AbstractSettings',
-            ti: '.AbstractSettingsType',
-            t: 'er'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ClassifierListPropertyType',
-        ps: [{
-            n: 'classifierList',
-            en: 'ClassifierList',
-            ti: '.ClassifierListType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ClassifierListType',
-        bti: '.AbstractMetadataListType',
-        ps: [{
-            n: 'classifier',
-            col: true,
-            ti: '.ClassifierListType.Classifier'
-          }]
-      }, {
-        ln: 'ComponentListType',
+        ln: 'ParameterListType',
         bti: 'SWE_2_0.AbstractSWEType',
         ps: [{
-            n: 'component',
+            n: 'parameter',
             col: true,
-            ti: '.ComponentListType.Component'
+            ti: '.ParameterListType.Parameter'
           }]
       }, {
-        ln: 'CapabilityListPropertyType',
-        ps: [{
-            n: 'capabilityList',
-            en: 'CapabilityList',
-            ti: '.CapabilityListType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'InputListType.Input',
+        ln: 'DescribedObjectType.Capabilities',
         tn: null,
-        bti: '.DataComponentOrObservablePropertyType',
+        bti: '.CapabilityListPropertyType',
         ps: [{
             n: 'name',
             an: {
@@ -1054,59 +900,12 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractPhysicalProcessPropertyType',
+        ln: 'ObservablePropertyType',
+        bti: 'SWE_2_0.AbstractSWEIdentifiableType',
         ps: [{
-            n: 'abstractPhysicalProcess',
-            mx: false,
-            dom: false,
-            en: 'AbstractPhysicalProcess',
-            ti: '.AbstractPhysicalProcessType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
+            n: 'definition',
             an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
+              lp: 'definition'
             },
             t: 'a'
           }]
@@ -1183,6 +982,125 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'ConstraintSettingPropertyType',
+        ps: [{
+            n: 'allowedTimes',
+            en: {
+              lp: 'AllowedTimes',
+              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            },
+            ti: 'SWE_2_0.AllowedTimesType'
+          }, {
+            n: 'allowedTokens',
+            en: {
+              lp: 'AllowedTokens',
+              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            },
+            ti: 'SWE_2_0.AllowedTokensType'
+          }, {
+            n: 'allowedValues',
+            en: {
+              lp: 'AllowedValues',
+              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            },
+            ti: 'SWE_2_0.AllowedValuesType'
+          }, {
+            n: 'ref',
+            an: {
+              lp: 'ref'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ConstraintPropertyType',
+        ps: [{
+            n: 'allowedTimes',
+            en: {
+              lp: 'AllowedTimes',
+              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            },
+            ti: 'SWE_2_0.AllowedTimesType'
+          }, {
+            n: 'allowedTokens',
+            en: {
+              lp: 'AllowedTokens',
+              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            },
+            ti: 'SWE_2_0.AllowedTokensType'
+          }, {
+            n: 'allowedValues',
+            en: {
+              lp: 'AllowedValues',
+              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            },
+            ti: 'SWE_2_0.AllowedValuesType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ConnectionListPropertyType',
+        ps: [{
+            n: 'connectionList',
+            en: 'ConnectionList',
+            ti: '.ConnectionListType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AggregateProcessType',
+        bti: '.AbstractProcessType',
+        ps: [{
+            n: 'components',
+            ti: '.ComponentListPropertyType'
+          }, {
+            n: 'connections',
+            ti: '.ConnectionListPropertyType'
+          }]
+      }, {
         ln: 'LinkPropertyType',
         ps: [{
             n: 'link',
@@ -1214,21 +1132,56 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ArraySettingPropertyType.ArrayValues',
+        ln: 'KeywordListPropertyType',
+        ps: [{
+            n: 'keywordList',
+            en: 'KeywordList',
+            ti: '.KeywordListType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractProcessType.Configuration',
         tn: null,
         ps: [{
-            n: 'encoding',
-            ti: '.ArraySettingPropertyType.ArrayValues.Encoding'
-          }, {
-            n: 'value',
-            ti: 'SWE_2_0.EncodedValuesPropertyType'
+            n: 'abstractSettings',
+            mx: false,
+            dom: false,
+            en: 'AbstractSettings',
+            ti: '.AbstractSettingsType',
+            t: 'er'
           }]
       }, {
-        ln: 'PhysicalComponentPropertyType',
+        ln: 'DescribedObjectPropertyType',
         ps: [{
-            n: 'physicalComponent',
-            en: 'PhysicalComponent',
-            ti: '.PhysicalComponentType'
+            n: 'describedObject',
+            mx: false,
+            dom: false,
+            en: 'DescribedObject',
+            ti: '.DescribedObjectType',
+            t: 'er'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -1278,11 +1231,28 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DocumentListPropertyType',
+        ln: 'CharacteristicListType',
+        bti: '.AbstractMetadataListType',
         ps: [{
-            n: 'documentList',
-            en: 'DocumentList',
-            ti: '.DocumentListType'
+            n: 'characteristic',
+            col: true,
+            ti: '.CharacteristicListType.Characteristic'
+          }]
+      }, {
+        ln: 'IdentifierListType',
+        bti: '.AbstractMetadataListType',
+        ps: [{
+            n: 'smlIdentifier',
+            col: true,
+            en: 'identifier',
+            ti: '.IdentifierListType.Identifier'
+          }]
+      }, {
+        ln: 'ParameterListPropertyType',
+        ps: [{
+            n: 'parameterList',
+            en: 'ParameterList',
+            ti: '.ParameterListType'
           }, {
             n: 'type',
             ti: 'XLink_1_0.TypeType',
@@ -1309,87 +1279,39 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractModesType',
-        bti: 'SWE_2_0.AbstractSWEType'
-      }, {
-        ln: 'KeywordListType',
+        ln: 'EventListType',
         bti: '.AbstractMetadataListType',
         ps: [{
-            n: 'codeSpace',
-            ti: 'SWE_2_0.Reference'
-          }, {
-            n: 'keyword',
-            col: true
+            n: 'event',
+            col: true,
+            ti: '.EventPropertyType'
           }]
       }, {
-        ln: 'ContactListType',
+        ln: 'FeatureListType',
         bti: '.AbstractMetadataListType',
         ps: [{
-            n: 'contact',
+            n: 'feature',
             col: true,
-            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
+            ti: 'GML_3_2_1.FeaturePropertyType'
           }]
       }, {
-        ln: 'OutputListType',
-        bti: 'SWE_2_0.AbstractSWEType',
+        ln: 'AbstractAlgorithmType',
         ps: [{
-            n: 'output',
-            col: true,
-            ti: '.OutputListType.Output'
-          }]
-      }, {
-        ln: 'AggregateProcessPropertyType',
-        ps: [{
-            n: 'aggregateProcess',
-            en: 'AggregateProcess',
-            ti: '.AggregateProcessType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
+            n: 'id',
+            ti: 'ID',
             an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
+              lp: 'id',
               ns: 'http:\/\/www.opengis.net\/gml\/3.2'
             },
             t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractPhysicalProcessType.LocalTimeFrame',
+        tn: null,
+        ps: [{
+            n: 'temporalFrame',
+            en: 'TemporalFrame',
+            ti: '.TemporalFrameType'
           }]
       }, {
         ln: 'DataComponentOrObservablePropertyType',
@@ -1411,6 +1333,346 @@ var SensorML_2_0_Module_Factory = function () {
             n: 'dataInterface',
             en: 'DataInterface',
             ti: '.DataInterfaceType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribedObjectType.Characteristics',
+        tn: null,
+        bti: '.CharacteristicListPropertyType',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessMethodPropertyType',
+        ps: [{
+            n: 'processMethod',
+            en: 'ProcessMethod',
+            ti: '.ProcessMethodType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ArraySettingPropertyType.ArrayValues.Encoding',
+        tn: null,
+        ps: [{
+            n: 'abstractEncoding',
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractEncoding',
+              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            },
+            ti: 'SWE_2_0.AbstractEncodingType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'DataComponentRefPropertyType',
+        ps: [{
+            n: 'ref',
+            an: {
+              lp: 'ref'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractProcessType.Outputs',
+        tn: null,
+        ps: [{
+            n: 'outputList',
+            en: 'OutputList',
+            ti: '.OutputListType'
+          }]
+      }, {
+        ln: 'AbstractProcessType.Parameters',
+        tn: null,
+        ps: [{
+            n: 'parameterList',
+            en: 'ParameterList',
+            ti: '.ParameterListType'
+          }]
+      }, {
+        ln: 'ProcessMethodType.Algorithm',
+        tn: null,
+        ps: [{
+            n: 'abstractAlgorithm',
+            en: 'AbstractAlgorithm',
+            ti: '.AbstractAlgorithmType'
+          }]
+      }, {
+        ln: 'ConnectionListType',
+        bti: 'SWE_2_0.AbstractSWEType',
+        ps: [{
+            n: 'connection',
+            col: true,
+            ti: '.ConnectionListType.Connection'
+          }]
+      }, {
+        ln: 'PhysicalSystemPropertyType',
+        ps: [{
+            n: 'physicalSystem',
+            en: 'PhysicalSystem',
+            ti: '.PhysicalSystemType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PhysicalComponentPropertyType',
+        ps: [{
+            n: 'physicalComponent',
+            en: 'PhysicalComponent',
+            ti: '.PhysicalComponentType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'InputListType',
+        bti: 'SWE_2_0.AbstractSWEType',
+        ps: [{
+            n: 'input',
+            col: true,
+            ti: '.InputListType.Input'
+          }]
+      }, {
+        ln: 'AbstractProcessType',
+        bti: '.DescribedObjectType',
+        ps: [{
+            n: 'typeOf',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'configuration',
+            ti: '.AbstractProcessType.Configuration'
+          }, {
+            n: 'featuresOfInterest',
+            ti: '.AbstractProcessType.FeaturesOfInterest'
+          }, {
+            n: 'inputs',
+            ti: '.AbstractProcessType.Inputs'
+          }, {
+            n: 'outputs',
+            ti: '.AbstractProcessType.Outputs'
+          }, {
+            n: 'parameters',
+            ti: '.AbstractProcessType.Parameters'
+          }, {
+            n: 'modes',
+            col: true,
+            ti: '.AbstractProcessType.Modes'
+          }, {
+            n: 'definition',
+            an: {
+              lp: 'definition'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'OutputListType',
+        bti: 'SWE_2_0.AbstractSWEType',
+        ps: [{
+            n: 'output',
+            col: true,
+            ti: '.OutputListType.Output'
+          }]
+      }, {
+        ln: 'AbstractMetadataListType',
+        bti: 'SWE_2_0.AbstractSWEIdentifiableType',
+        ps: [{
+            n: 'definition',
+            an: {
+              lp: 'definition'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractProcessType.FeaturesOfInterest',
+        tn: null,
+        ps: [{
+            n: 'featureList',
+            en: 'FeatureList',
+            ti: '.FeatureListType'
+          }]
+      }, {
+        ln: 'LinkType',
+        ps: [{
+            n: 'source',
+            ti: '.DataComponentRefPropertyType'
+          }, {
+            n: 'destination',
+            ti: '.DataComponentRefPropertyType'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ClassifierListType.Classifier',
+        tn: null,
+        ps: [{
+            n: 'term',
+            en: 'Term',
+            ti: '.TermType'
+          }]
+      }, {
+        ln: 'ArraySettingPropertyType',
+        ps: [{
+            n: 'arrayValues',
+            en: 'ArrayValues',
+            ti: '.ArraySettingPropertyType.ArrayValues'
+          }, {
+            n: 'ref',
+            an: {
+              lp: 'ref'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'IdentifierListPropertyType',
+        ps: [{
+            n: 'identifierList',
+            en: 'IdentifierList',
+            ti: '.IdentifierListType'
           }, {
             n: 'type',
             ti: 'XLink_1_0.TypeType',
@@ -1465,185 +1727,6 @@ var SensorML_2_0_Module_Factory = function () {
           }, {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ConnectionListType',
-        bti: 'SWE_2_0.AbstractSWEType',
-        ps: [{
-            n: 'connection',
-            col: true,
-            ti: '.ConnectionListType.Connection'
-          }]
-      }, {
-        ln: 'AbstractMetadataListType',
-        bti: 'SWE_2_0.AbstractSWEIdentifiableType',
-        ps: [{
-            n: 'definition',
-            an: {
-              lp: 'definition'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataInterfacePropertyType',
-        ps: [{
-            n: 'dataInterface',
-            en: 'DataInterface',
-            ti: '.DataInterfaceType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ValueSettingPropertyType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'ref',
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SpatialFrameType',
-        bti: 'SWE_2_0.AbstractSWEIdentifiableType',
-        ps: [{
-            n: 'origin'
-          }, {
-            n: 'axis',
-            col: true,
-            ti: '.SpatialFrameType.Axis'
-          }]
-      }, {
-        ln: 'SettingsType',
-        bti: '.AbstractSettingsType',
-        ps: [{
-            n: 'setValue',
-            col: true,
-            ti: '.ValueSettingPropertyType'
-          }, {
-            n: 'setArrayValues',
-            col: true,
-            ti: '.ArraySettingPropertyType'
-          }, {
-            n: 'setConstraint',
-            col: true,
-            ti: '.ConstraintSettingPropertyType'
-          }, {
-            n: 'setMode',
-            col: true,
-            ti: '.ModeSettingPropertyType'
-          }, {
-            n: 'setStatus',
-            col: true,
-            ti: '.StatusSettingPropertyType'
-          }]
-      }, {
-        ln: 'ClassifierListType.Classifier',
-        tn: null,
-        ps: [{
-            n: 'term',
-            en: 'Term',
-            ti: '.TermType'
-          }]
-      }, {
-        ln: 'AbstractProcessType.Outputs',
-        tn: null,
-        ps: [{
-            n: 'outputList',
-            en: 'OutputList',
-            ti: '.OutputListType'
-          }]
-      }, {
-        ln: 'SpatialFrameType.Axis',
-        tn: null,
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CharacteristicListPropertyType',
-        ps: [{
-            n: 'characteristicList',
-            en: 'CharacteristicList',
-            ti: '.CharacteristicListType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ModeSettingPropertyType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'ref',
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'StatusSettingPropertyType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'ref',
-            an: {
-              lp: 'ref'
-            },
             t: 'a'
           }]
       }, {
@@ -1706,282 +1789,6 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ObservablePropertyType',
-        bti: 'SWE_2_0.AbstractSWEIdentifiableType',
-        ps: [{
-            n: 'definition',
-            an: {
-              lp: 'definition'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ContactListPropertyType',
-        ps: [{
-            n: 'contactList',
-            en: 'ContactList',
-            ti: '.ContactListType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProcessMethodType.Algorithm',
-        tn: null,
-        ps: [{
-            n: 'abstractAlgorithm',
-            en: 'AbstractAlgorithm',
-            ti: '.AbstractAlgorithmType'
-          }]
-      }, {
-        ln: 'ConstraintSettingPropertyType',
-        ps: [{
-            n: 'allowedTimes',
-            en: {
-              lp: 'AllowedTimes',
-              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-            },
-            ti: 'SWE_2_0.AllowedTimesType'
-          }, {
-            n: 'allowedTokens',
-            en: {
-              lp: 'AllowedTokens',
-              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-            },
-            ti: 'SWE_2_0.AllowedTokensType'
-          }, {
-            n: 'allowedValues',
-            en: {
-              lp: 'AllowedValues',
-              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-            },
-            ti: 'SWE_2_0.AllowedValuesType'
-          }, {
-            n: 'ref',
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ArraySettingPropertyType',
-        ps: [{
-            n: 'arrayValues',
-            en: 'ArrayValues',
-            ti: '.ArraySettingPropertyType.ArrayValues'
-          }, {
-            n: 'ref',
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TermPropertyType',
-        ps: [{
-            n: 'term',
-            en: 'Term',
-            ti: '.TermType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'EventPropertyType',
-        ps: [{
-            n: 'event',
-            en: 'Event',
-            ti: '.EventType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeInstantOrPeriodPropertyType',
-        ps: [{
-            n: 'timePeriod',
-            en: {
-              lp: 'TimePeriod',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePeriodType'
-          }, {
-            n: 'timeInstant',
-            en: {
-              lp: 'TimeInstant',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimeInstantType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TemporalFramePropertyType',
-        ps: [{
-            n: 'temporalFrame',
-            en: 'TemporalFrame',
-            ti: '.TemporalFrameType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'IdentifierListPropertyType',
-        ps: [{
-            n: 'identifierList',
-            en: 'IdentifierList',
-            ti: '.IdentifierListType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractProcessType.Configuration',
-        tn: null,
-        ps: [{
-            n: 'abstractSettings',
-            mx: false,
-            dom: false,
-            en: 'AbstractSettings',
-            ti: '.AbstractSettingsType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'DocumentListType',
-        bti: '.AbstractMetadataListType',
-        ps: [{
-            n: 'document',
-            col: true,
-            ti: 'ISO19139_GMD_20070417.CIOnlineResourcePropertyType'
-          }]
-      }, {
         ln: 'AbstractProcessPropertyType',
         ps: [{
             n: 'abstractProcess',
@@ -2039,11 +1846,11 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SpatialFramePropertyType',
+        ln: 'InputListPropertyType',
         ps: [{
-            n: 'spatialFrame',
-            en: 'SpatialFrame',
-            ti: '.SpatialFrameType'
+            n: 'inputList',
+            en: 'InputList',
+            ti: '.InputListType'
           }, {
             n: 'type',
             ti: 'XLink_1_0.TypeType',
@@ -2070,11 +1877,11 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SimpleProcessPropertyType',
+        ln: 'AggregateProcessPropertyType',
         ps: [{
-            n: 'simpleProcess',
-            en: 'SimpleProcess',
-            ti: '.SimpleProcessType'
+            n: 'aggregateProcess',
+            en: 'AggregateProcess',
+            ti: '.AggregateProcessType'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -2124,8 +1931,95 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractProcessType.Modes',
+        ln: 'CapabilityListType.Capability',
         tn: null,
+        bti: 'SWE_2_0.AbstractDataComponentPropertyType',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DocumentListPropertyType',
+        ps: [{
+            n: 'documentList',
+            en: 'DocumentList',
+            ti: '.DocumentListType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TemporalFrameType',
+        bti: 'SWE_2_0.AbstractSWEIdentifiableType',
+        ps: [{
+            n: 'origin'
+          }]
+      }, {
+        ln: 'EventType',
+        bti: 'SWE_2_0.AbstractSWEIdentifiableType',
+        ps: [{
+            n: 'keywords',
+            col: true,
+            ti: 'ISO19139_GMD_20070417.MDKeywordsPropertyType'
+          }, {
+            n: 'identification',
+            col: true,
+            ti: '.IdentifierListPropertyType'
+          }, {
+            n: 'classification',
+            col: true,
+            ti: '.ClassifierListPropertyType'
+          }, {
+            n: 'contacts',
+            col: true,
+            ti: '.ContactListPropertyType'
+          }, {
+            n: 'documentation',
+            col: true,
+            ti: '.DocumentListPropertyType'
+          }, {
+            n: 'time',
+            ti: '.EventType.Time'
+          }, {
+            n: 'property',
+            col: true,
+            ti: 'SWE_2_0.AbstractDataComponentPropertyType'
+          }, {
+            n: 'configuration',
+            ti: '.EventType.Configuration'
+          }, {
+            n: 'definition',
+            an: {
+              lp: 'definition'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractModesPropertyType',
         ps: [{
             n: 'abstractModes',
             mx: false,
@@ -2133,104 +2027,118 @@ var SensorML_2_0_Module_Factory = function () {
             en: 'AbstractModes',
             ti: '.AbstractModesType',
             t: 'er'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'LinkType',
+        ln: 'ConnectionListType.Connection',
+        tn: null,
         ps: [{
-            n: 'source',
-            ti: '.DataComponentRefPropertyType'
+            n: 'link',
+            en: 'Link',
+            ti: '.LinkType'
+          }]
+      }, {
+        ln: 'DataInterfacePropertyType',
+        ps: [{
+            n: 'dataInterface',
+            en: 'DataInterface',
+            ti: '.DataInterfaceType'
           }, {
-            n: 'destination',
-            ti: '.DataComponentRefPropertyType'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            n: 'id',
-            ti: 'ID',
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractMetadataListPropertyType',
+        ps: [{
+            n: 'abstractMetadataList',
+            mx: false,
+            dom: false,
+            en: 'AbstractMetadataList',
+            ti: '.AbstractMetadataListType',
+            t: 'er'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ValueSettingPropertyType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'ref',
             an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+              lp: 'ref'
             },
             t: 'a'
           }]
       }, {
-        ln: 'ObservablePropertyPropertyType',
-        ps: [{
-            n: 'observableProperty',
-            en: 'ObservableProperty',
-            ti: '.ObservablePropertyType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ModePropertyType',
-        ps: [{
-            n: 'mode',
-            en: 'Mode',
-            ti: '.ModeType'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'EventListType',
-        bti: '.AbstractMetadataListType',
-        ps: [{
-            n: 'event',
-            col: true,
-            ti: '.EventPropertyType'
-          }]
-      }, {
-        ln: 'ParameterListType',
-        bti: 'SWE_2_0.AbstractSWEType',
-        ps: [{
-            n: 'parameter',
-            col: true,
-            ti: '.ParameterListType.Parameter'
-          }]
-      }, {
-        ln: 'DescribedObjectType.ValidTime',
+        ln: 'EventType.Time',
         tn: null,
         ps: [{
             n: 'timePeriod',
@@ -2248,57 +2156,27 @@ var SensorML_2_0_Module_Factory = function () {
             ti: 'GML_3_2_1.TimeInstantType'
           }]
       }, {
-        ln: 'AbstractProcessType',
-        bti: '.DescribedObjectType',
-        ps: [{
-            n: 'typeOf',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'configuration',
-            ti: '.AbstractProcessType.Configuration'
-          }, {
-            n: 'featuresOfInterest',
-            ti: '.AbstractProcessType.FeaturesOfInterest'
-          }, {
-            n: 'inputs',
-            ti: '.AbstractProcessType.Inputs'
-          }, {
-            n: 'outputs',
-            ti: '.AbstractProcessType.Outputs'
-          }, {
-            n: 'parameters',
-            ti: '.AbstractProcessType.Parameters'
-          }, {
-            n: 'modes',
-            col: true,
-            ti: '.AbstractProcessType.Modes'
-          }, {
-            n: 'definition',
-            an: {
-              lp: 'definition'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CapabilityListType',
-        bti: '.AbstractMetadataListType',
-        ps: [{
-            n: 'capability',
-            col: true,
-            ti: '.CapabilityListType.Capability'
-          }]
-      }, {
-        ln: 'AbstractPhysicalProcessType.LocalReferenceFrame',
+        ln: 'AbstractProcessType.Inputs',
         tn: null,
         ps: [{
-            n: 'spatialFrame',
-            en: 'SpatialFrame',
-            ti: '.SpatialFrameType'
+            n: 'inputList',
+            en: 'InputList',
+            ti: '.InputListType'
           }]
       }, {
-        ln: 'CharacteristicListType.Characteristic',
+        ln: 'ArraySettingPropertyType.ArrayValues',
         tn: null,
-        bti: 'SWE_2_0.AbstractDataComponentPropertyType',
+        ps: [{
+            n: 'encoding',
+            ti: '.ArraySettingPropertyType.ArrayValues.Encoding'
+          }, {
+            n: 'value',
+            ti: 'SWE_2_0.EncodedValuesPropertyType'
+          }]
+      }, {
+        ln: 'ParameterListType.Parameter',
+        tn: null,
+        bti: '.DataComponentOrObservablePropertyType',
         ps: [{
             n: 'name',
             an: {
@@ -2307,12 +2185,134 @@ var SensorML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ProcessMethodType',
-        bti: 'SWE_2_0.AbstractSWEIdentifiableType',
+        ln: 'TimeInstantOrPeriodPropertyType',
         ps: [{
-            n: 'algorithm',
-            col: true,
-            ti: '.ProcessMethodType.Algorithm'
+            n: 'timePeriod',
+            en: {
+              lp: 'TimePeriod',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePeriodType'
+          }, {
+            n: 'timeInstant',
+            en: {
+              lp: 'TimeInstant',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimeInstantType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ComponentListType.Component',
+        tn: null,
+        bti: '.AbstractProcessPropertyType',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractSettingsPropertyType',
+        ps: [{
+            n: 'abstractSettings',
+            mx: false,
+            dom: false,
+            en: 'AbstractSettings',
+            ti: '.AbstractSettingsType',
+            t: 'er'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SpatialFramePropertyType',
+        ps: [{
+            n: 'spatialFrame',
+            en: 'SpatialFrame',
+            ti: '.SpatialFrameType'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SpatialFrameType.Axis',
+        tn: null,
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
           }]
       }, {
         t: 'enum',
@@ -2320,43 +2320,40 @@ var SensorML_2_0_Module_Factory = function () {
         vs: ['enabled', 'disabled']
       }],
     eis: [{
-        en: 'CapabilityList',
-        ti: '.CapabilityListType',
-        sh: 'AbstractMetadataList'
+        en: 'DataInterface',
+        ti: '.DataInterfaceType',
+        sh: {
+          lp: 'AbstractSWEIdentifiable',
+          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+        }
       }, {
-        en: 'Link',
-        ti: '.LinkType',
+        en: 'AbstractAlgorithm',
+        ti: '.AbstractAlgorithmType',
         sh: {
           lp: 'AbstractObject',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'ProcessMethod',
-        ti: '.ProcessMethodType',
-        sh: {
-          lp: 'AbstractSWEIdentifiable',
-          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-        }
+        en: 'Settings',
+        ti: '.SettingsType',
+        sh: 'AbstractSettings'
       }, {
-        en: 'Event',
-        ti: '.EventType',
-        sh: {
-          lp: 'AbstractSWEIdentifiable',
-          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-        }
+        en: 'KeywordList',
+        ti: '.KeywordListType',
+        sh: 'AbstractMetadataList'
+      }, {
+        en: 'PhysicalSystem',
+        ti: '.PhysicalSystemType',
+        sh: 'AbstractPhysicalProcess'
       }, {
         en: 'AbstractProcess',
         ti: '.AbstractProcessType',
         sh: 'DescribedObject'
       }, {
-        en: 'Mode',
-        ti: '.ModeType',
-        sh: 'DescribedObject'
-      }, {
-        en: 'AbstractModes',
-        ti: '.AbstractModesType',
+        en: 'Event',
+        ti: '.EventType',
         sh: {
-          lp: 'AbstractSWE',
+          lp: 'AbstractSWEIdentifiable',
           ns: 'http:\/\/www.opengis.net\/swe\/2.0'
         }
       }, {
@@ -2368,34 +2365,20 @@ var SensorML_2_0_Module_Factory = function () {
         ti: '.DocumentListType',
         sh: 'AbstractMetadataList'
       }, {
-        en: 'PhysicalComponent',
-        ti: '.PhysicalComponentType',
-        sh: 'AbstractPhysicalProcess'
+        en: 'Mode',
+        ti: '.ModeType',
+        sh: 'DescribedObject'
       }, {
-        en: 'CharacteristicList',
-        ti: '.CharacteristicListType',
+        en: 'CapabilityList',
+        ti: '.CapabilityListType',
         sh: 'AbstractMetadataList'
       }, {
-        en: 'InputList',
-        ti: '.InputListType',
-        sh: {
-          lp: 'AbstractSWE',
-          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-        }
+        en: 'AbstractPhysicalProcess',
+        ti: '.AbstractPhysicalProcessType',
+        sh: 'AbstractProcess'
       }, {
-        en: 'AbstractAlgorithm',
-        ti: '.AbstractAlgorithmType',
-        sh: {
-          lp: 'AbstractObject',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'EventList',
-        ti: '.EventListType',
-        sh: 'AbstractMetadataList'
-      }, {
-        en: 'ObservableProperty',
-        ti: '.ObservablePropertyType',
+        en: 'AbstractMetadataList',
+        ti: '.AbstractMetadataListType',
         sh: {
           lp: 'AbstractSWEIdentifiable',
           ns: 'http:\/\/www.opengis.net\/swe\/2.0'
@@ -2405,31 +2388,25 @@ var SensorML_2_0_Module_Factory = function () {
         ti: '.SimpleProcessType',
         sh: 'AbstractProcess'
       }, {
-        en: 'AggregateProcess',
-        ti: '.AggregateProcessType',
-        sh: 'AbstractProcess'
-      }, {
-        en: 'ModeChoice',
-        ti: '.ModeChoiceType',
-        sh: 'AbstractModes'
-      }, {
-        en: 'PhysicalSystem',
-        ti: '.PhysicalSystemType',
-        sh: 'AbstractPhysicalProcess'
-      }, {
-        en: 'FeatureList',
-        ti: '.FeatureListType',
-        sh: 'AbstractMetadataList'
-      }, {
-        en: 'ClassifierList',
-        ti: '.ClassifierListType',
-        sh: 'AbstractMetadataList'
-      }, {
-        en: 'DescribedObject',
-        ti: '.DescribedObjectType',
+        en: 'TemporalFrame',
+        ti: '.TemporalFrameType',
         sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+          lp: 'AbstractSWEIdentifiable',
+          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+        }
+      }, {
+        en: 'ObservableProperty',
+        ti: '.ObservablePropertyType',
+        sh: {
+          lp: 'AbstractSWEIdentifiable',
+          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+        }
+      }, {
+        en: 'AbstractSettings',
+        ti: '.AbstractSettingsType',
+        sh: {
+          lp: 'AbstractSWE',
+          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
         }
       }, {
         en: 'ParameterList',
@@ -2439,41 +2416,29 @@ var SensorML_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swe\/2.0'
         }
       }, {
-        en: 'AbstractPhysicalProcess',
-        ti: '.AbstractPhysicalProcessType',
+        en: 'FeatureList',
+        ti: '.FeatureListType',
+        sh: 'AbstractMetadataList'
+      }, {
+        en: 'PhysicalComponent',
+        ti: '.PhysicalComponentType',
+        sh: 'AbstractPhysicalProcess'
+      }, {
+        en: 'AggregateProcess',
+        ti: '.AggregateProcessType',
         sh: 'AbstractProcess'
       }, {
-        en: 'OutputList',
-        ti: '.OutputListType',
-        sh: {
-          lp: 'AbstractSWE',
-          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-        }
+        en: 'ClassifierList',
+        ti: '.ClassifierListType',
+        sh: 'AbstractMetadataList'
       }, {
-        en: 'Settings',
-        ti: '.SettingsType',
-        sh: 'AbstractSettings'
+        en: 'EventList',
+        ti: '.EventListType',
+        sh: 'AbstractMetadataList'
       }, {
-        en: 'TemporalFrame',
-        ti: '.TemporalFrameType',
-        sh: {
-          lp: 'AbstractSWEIdentifiable',
-          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-        }
-      }, {
-        en: 'ComponentList',
-        ti: '.ComponentListType',
-        sh: {
-          lp: 'AbstractSWE',
-          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-        }
-      }, {
-        en: 'DataInterface',
-        ti: '.DataInterfaceType',
-        sh: {
-          lp: 'AbstractSWEIdentifiable',
-          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-        }
+        en: 'ContactList',
+        ti: '.ContactListType',
+        sh: 'AbstractMetadataList'
       }, {
         en: 'ConnectionList',
         ti: '.ConnectionListType',
@@ -2482,21 +2447,56 @@ var SensorML_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swe\/2.0'
         }
       }, {
-        en: 'KeywordList',
-        ti: '.KeywordListType',
-        sh: 'AbstractMetadataList'
-      }, {
-        en: 'AbstractSettings',
-        ti: '.AbstractSettingsType',
+        en: 'AbstractModes',
+        ti: '.AbstractModesType',
         sh: {
           lp: 'AbstractSWE',
           ns: 'http:\/\/www.opengis.net\/swe\/2.0'
         }
       }, {
-        en: 'AbstractMetadataList',
-        ti: '.AbstractMetadataListType',
+        en: 'ModeChoice',
+        ti: '.ModeChoiceType',
+        sh: 'AbstractModes'
+      }, {
+        en: 'SpatialFrame',
+        ti: '.SpatialFrameType',
         sh: {
           lp: 'AbstractSWEIdentifiable',
+          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+        }
+      }, {
+        en: 'ProcessMethod',
+        ti: '.ProcessMethodType',
+        sh: {
+          lp: 'AbstractSWEIdentifiable',
+          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+        }
+      }, {
+        en: 'OutputList',
+        ti: '.OutputListType',
+        sh: {
+          lp: 'AbstractSWE',
+          ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+        }
+      }, {
+        en: 'Link',
+        ti: '.LinkType',
+        sh: {
+          lp: 'AbstractObject',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'DescribedObject',
+        ti: '.DescribedObjectType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'InputList',
+        ti: '.InputListType',
+        sh: {
+          lp: 'AbstractSWE',
           ns: 'http:\/\/www.opengis.net\/swe\/2.0'
         }
       }, {
@@ -2507,16 +2507,16 @@ var SensorML_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swe\/2.0'
         }
       }, {
-        en: 'SpatialFrame',
-        ti: '.SpatialFrameType',
+        en: 'CharacteristicList',
+        ti: '.CharacteristicListType',
+        sh: 'AbstractMetadataList'
+      }, {
+        en: 'ComponentList',
+        ti: '.ComponentListType',
         sh: {
-          lp: 'AbstractSWEIdentifiable',
+          lp: 'AbstractSWE',
           ns: 'http:\/\/www.opengis.net\/swe\/2.0'
         }
-      }, {
-        en: 'ContactList',
-        ti: '.ContactListType',
-        sh: 'AbstractMetadataList'
       }]
   };
   return {

@@ -3,8 +3,48 @@ var OM_1_0_0_Module_Factory = function () {
     n: 'OM_1_0_0',
     dens: 'http:\/\/www.opengis.net\/om\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_1_1', 'SWE_1_0_1', 'SensorML_1_0_1'],
+    deps: ['XLink_1_0', 'SensorML_1_0_1', 'SWE_1_0_1', 'GML_3_1_1'],
     tis: [{
+        ln: 'ObservationType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'metadata',
+            ti: '.AnyOrReferenceType'
+          }, {
+            n: 'samplingTime',
+            ti: 'SWE_1_0_1.TimeObjectPropertyType'
+          }, {
+            n: 'resultTime',
+            ti: 'SWE_1_0_1.TimeObjectPropertyType'
+          }, {
+            n: 'procedure',
+            ti: '.ProcessPropertyType'
+          }, {
+            n: 'resultQuality',
+            ti: '.AnyOrReferenceType'
+          }, {
+            n: 'observedProperty',
+            ti: 'SWE_1_0_1.PhenomenonPropertyType'
+          }, {
+            n: 'featureOfInterest',
+            ti: 'GML_3_1_1.FeaturePropertyType'
+          }, {
+            n: 'parameter',
+            col: true,
+            ti: 'SWE_1_0_1.AnyDataPropertyType'
+          }, {
+            n: 'result',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'ObservationCollectionType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'member',
+            col: true,
+            ti: '.ObservationPropertyType'
+          }]
+      }, {
         ln: 'ObservationPropertyType',
         ps: [{
             n: 'observation',
@@ -82,14 +122,6 @@ var OM_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ObservationCollectionType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'member',
-            col: true,
-            ti: '.ObservationPropertyType'
-          }]
-      }, {
         ln: 'ProcessPropertyType',
         ps: [{
             n: 'sensorMLProcess',
@@ -136,38 +168,6 @@ var OM_1_0_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }]
-      }, {
-        ln: 'ObservationType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'metadata',
-            ti: '.AnyOrReferenceType'
-          }, {
-            n: 'samplingTime',
-            ti: 'SWE_1_0_1.TimeObjectPropertyType'
-          }, {
-            n: 'resultTime',
-            ti: 'SWE_1_0_1.TimeObjectPropertyType'
-          }, {
-            n: 'procedure',
-            ti: '.ProcessPropertyType'
-          }, {
-            n: 'resultQuality',
-            ti: '.AnyOrReferenceType'
-          }, {
-            n: 'observedProperty',
-            ti: 'SWE_1_0_1.PhenomenonPropertyType'
-          }, {
-            n: 'featureOfInterest',
-            ti: 'GML_3_1_1.FeaturePropertyType'
-          }, {
-            n: 'parameter',
-            col: true,
-            ti: 'SWE_1_0_1.AnyDataPropertyType'
-          }, {
-            n: 'result',
-            ti: 'AnyType'
           }]
       }],
     eis: [{
