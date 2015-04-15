@@ -2,9 +2,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>sld-v_1_1_0</artifactId>
+	<artifactId>sld-v_1_0_0-geoserver</artifactId>
 	<packaging>jar</packaging>
-	<name>OGC SLD 1.1.0</name>
+	<name>OGC SLD 1.0.0 GeoServer</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schema-parent</artifactId>
@@ -18,32 +18,12 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>gml-v_3_1_1</artifactId>
+			<artifactId>filter-v_1_0_0</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>filter-v_1_1_0</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>wfs-v_1_1_0</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>se-v_1_1_0</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>ows-v_1_0_0</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>wms-v_1_3_0</artifactId>
+			<artifactId>gml-v_2_1_2</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
@@ -56,7 +36,16 @@
 				<configuration>
 					<schemas>
 						<schema>
-							<url>http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd</url>
+							<url>https://raw.githubusercontent.com/geoserver/geoserver/master/src/main/src/main/resources/schemas/sld/StyledLayerDescriptor.xsd</url>
+						</schema>
+						<schema>
+							<url>http://schemas.opengis.net/filter/1.0.0/filter.xsd</url>
+						</schema>
+						<schema>
+							<url>http://schemas.opengis.net/filter/1.0.20/sort.xsd</url>
+						</schema>
+						<schema>
+							<url>http://schemas.opengis.net/gml/2.1.2/gml.xsd</url>
 						</schema>
 					</schemas>
 					<bindings>
@@ -71,48 +60,16 @@
 						<binding>
 							<dependencyResource>
 								<groupId>${project.groupId}</groupId>
-								<artifactId>gml-v_3_1_1</artifactId>
-								<resource>gml-v_3_1_1.jsonix.xjb</resource>
+								<artifactId>gml-v_2_1_2</artifactId>
+								<resource>gml-v_2_1_2.jsonix.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>
 						</binding>
 						<binding>
 							<dependencyResource>
 								<groupId>${project.groupId}</groupId>
-								<artifactId>filter-v_1_1_0</artifactId>
-								<resource>filter-v_1_1_0.jsonix.xjb</resource>
-								<version>${project.version}</version>
-							</dependencyResource>
-						</binding>
-						<binding>
-							<dependencyResource>
-								<groupId>${project.groupId}</groupId>
-								<artifactId>wfs-v_1_1_0</artifactId>
-								<resource>wfs-v_1_1_0.jsonix.xjb</resource>
-								<version>${project.version}</version>
-							</dependencyResource>
-						</binding>
-						<binding>
-							<dependencyResource>
-								<groupId>${project.groupId}</groupId>
-								<artifactId>se-v_1_1_0</artifactId>
-								<resource>se-v_1_1_0.jsonix.xjb</resource>
-								<version>${project.version}</version>
-							</dependencyResource>
-						</binding>
-						<binding>
-							<dependencyResource>
-								<groupId>${project.groupId}</groupId>
-								<artifactId>ows-v_1_0_0</artifactId>
-								<resource>ows-v_1_0_0.jsonix.xjb</resource>
-								<version>${project.version}</version>
-							</dependencyResource>
-						</binding>
-						<binding>
-							<dependencyResource>
-								<groupId>${project.groupId}</groupId>
-								<artifactId>wms-v_1_3_0</artifactId>
-								<resource>wms-v_1_3_0.jsonix.xjb</resource>
+								<artifactId>filter-v_1_0_0</artifactId>
+								<resource>filter-v_1_0_0.jsonix.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>
 						</binding>
@@ -135,12 +92,7 @@
 						<configuration>
 							<target>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/filter"/>
-								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
-								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/se"/>
-								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/wms"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="Filter*.*"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="SE*.*"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="WMS*.*"/>
 							</target>
 						</configuration>
 						<goals>

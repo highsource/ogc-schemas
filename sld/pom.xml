@@ -12,6 +12,7 @@
 	</parent>
 	<modules>
 		<module>1.0.0</module>
+		<module>1.0.0-geoserver</module>
 		<module>1.1.0</module>
 	</modules>
 	<build>

@@ -4,6 +4,6 @@
 	jaxb:extensionBindingPrefixes="jsonix">
 
 	<jaxb:bindings schemaLocation="http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
-		<jsonix:packageMapping packageName="net.opengis.sld.v_1_1_0" spaceName="SLD_1_0_0"/>
+		<jsonix:packageMapping packageName="net.opengis.sld.v_1_1_0" spaceName="SLD_1_1_0"/>
 	</jaxb:bindings>
 </jaxb:bindings>
