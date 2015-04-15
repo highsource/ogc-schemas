@@ -58,24 +58,6 @@
 						<schema>
 							<url>http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd</url>
 						</schema>
-						<!--schema>
-							<url>http://schemas.opengis.net/wfs/1.1.0/wfs.xsd</url>
-						</schema>
-						<schema>
-							<url>http://schemas.opengis.net/filter/1.1.0/filter.xsd</url>
-						</schema>
-						<schema>
-							<url>http://schemas.opengis.net/ows/1.0.0/owsAll.xsd</url>
-						</schema>
-						<schema>
-							<url>http://schemas.opengis.net/wms/1.3.0/exceptions_1_3_0.xsd</url>
-						</schema>
-						<schema>
-							<url>http://schemas.opengis.net/gml/3.1.1/base/gml.xsd</url>
-						</schema-->
-						<schema>
-							<url>http://schemas.opengis.net/wms/1.3.0/exceptions_1_3_0.xsd</url>
-						</schema>
 					</schemas>
 					<bindings>
 						<binding>
@@ -126,14 +108,14 @@
 								<version>${project.version}</version>
 							</dependencyResource>
 						</binding>
-						<!--binding>
+						<binding>
 							<dependencyResource>
 								<groupId>${project.groupId}</groupId>
 								<artifactId>wms-v_1_3_0</artifactId>
 								<resource>wms-v_1_3_0.jsonix.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>
-						</binding-->
+						</binding>
 						<binding>
 							<dependencyResource>
 								<groupId>org.hisrc.w3c</groupId>
@@ -152,8 +134,13 @@
 						<phase>process-sources</phase>
 						<configuration>
 							<target>
-								<!--delete dir="${basedir}/target/generated-sources/xjc/net/opengis/filter"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="Filter*.*"/-->
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/filter"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/se"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/wms"/>
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="Filter*.*"/>
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="SE*.*"/>
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="WMS*.*"/>
 							</target>
 						</configuration>
 						<goals>
