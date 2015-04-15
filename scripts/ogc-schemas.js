@@ -69,6 +69,7 @@ var schemas = [
 	"WMS_1_1_0",
 	"WMS_1_1_1",
 	"WMS_1_3_0",
+	"WMS_1_3_0_Exceptions",
 	"WMTS_1_0",
 	"WPS_1_0_0",
 	"WPS_2_0"

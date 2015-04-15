@@ -50,6 +50,7 @@ Supports the following schemas:
 * `SensorML_1_0_1`
 * `SensorML_2_0`
 * `SLD_1_0_0`
+* `SLD_1_1_0`
 * `SPS_2_0`
 * `SOS_1_0_0`
 * `SOS_1_0_0_Filter`
@@ -72,6 +73,9 @@ Supports the following schemas:
 * `WFS_2_0`
 * `WMS_1_0_0`
 * `WMS_1_1_0`
+* `WMS_1_1_1`
+* `WMS_1_3_0`
+* `WMS_1_3_0_Exceptions`
 * `WPS_1_0_0`
 * `WPS_2_0_0`
 

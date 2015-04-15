@@ -29,6 +29,7 @@
 * sensorML/1.0.1
 * sensorML/2.0
 * sld/1.0.0
+* sld/1.1.0
 * sos/1.0.0
 * sos/2.0
 * sps/2.0
@@ -80,7 +81,6 @@
 * samplingSpecimen/2.0
 * sensorML/1.0.0
 * sf/1.0
-* sld/1.1.0
 * sps/1.0.0
 * sweCommon/1.0.0
 * tjs/1.0

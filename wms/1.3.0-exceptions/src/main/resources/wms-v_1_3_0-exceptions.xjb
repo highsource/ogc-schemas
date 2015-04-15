@@ -4,10 +4,10 @@
 	jaxb:extensionBindingPrefixes="xjc">
 
 	<jaxb:bindings 
-		schemaLocation="http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd" 
+		schemaLocation="http://schemas.opengis.net/wms/1.3.0/exceptions_1_3_0.xsd" 
 		node="/xs:schema">
 		<jaxb:schemaBindings>
-			<jaxb:package name="net.opengis.wms.v_1_3_0"/>
+			<jaxb:package name="net.opengis.wms.v_1_3_0.exceptions"/>
 		</jaxb:schemaBindings>
 	</jaxb:bindings>
 
