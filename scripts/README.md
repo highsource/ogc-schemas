@@ -50,6 +50,7 @@ Supports the following schemas:
 * `SensorML_1_0_1`
 * `SensorML_2_0`
 * `SLD_1_0_0`
+* `SLD_1_0_0_GeoServer`
 * `SLD_1_1_0`
 * `SPS_2_0`
 * `SOS_1_0_0`
