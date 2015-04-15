@@ -2,12 +2,6 @@ setlocal
 echo Setting JAVA_HOME to %JAVA6_HOME%.
 set JAVA_HOME=%JAVA6_HOME%
 
-echo Performing a short clean build.
-rem pause
-call mvn clean install -DperformRelease
-echo Short clean build completed.
-rem pause
-
 echo Performing a full clean build.
 rem pause
 call mvn clean install -DperformRelease -Pall
@@ -21,12 +15,6 @@ echo Version was set to %1.
 rem pause
 call mvn versions:commit -Pall
 echo Version %1 committed.
-rem pause
-
-echo Performing a short clean build.
-rem pause
-call mvn clean install -DperformRelease
-echo Short clean build completed.
 rem pause
 
 echo Performing a full clean build.
@@ -67,12 +55,6 @@ echo Version was set to %2.
 rem pause
 call mvn versions:commit -Pall
 echo Version %2 was committed.
-rem pause
-
-echo Performing a short clean build.
-rem pause
-call mvn clean install -DperformRelease
-echo Short clean build completed.
 rem pause
 
 echo Performing a full clean build.
