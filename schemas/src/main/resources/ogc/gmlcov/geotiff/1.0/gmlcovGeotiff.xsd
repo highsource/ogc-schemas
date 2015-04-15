@@ -2,17 +2,18 @@
 <schema targetNamespace="http://www.opengis.net/gmlcov/geotiff/1.0" 
     xmlns:geotiff="http://www.opengis.net/gmlcov/geotiff/1.0"
     xmlns="http://www.w3.org/2001/XMLSchema" 
-    elementFormDefault="qualified" version="1.0.0" xml:lang="en">
+    elementFormDefault="qualified" version="1.0.1" xml:lang="en">
     <annotation>
         <appinfo>gmlcovGeotiff.xsd</appinfo>
         <documentation>This XML Schema Document is part of the GMLCOV GeoTIFF 
         Encoding Profile [OGC 12-100r1]. It encodes the elements and types that 
         allow expressing GeoTIFF features in GMLCOV coverages as used for 
         example in WCS client/server communication.
-            Last updated: 2014-11-18
+
+            Last updated: 2015-04-15
             
             GMLCOV GeoTIFF is an OGC Standard.
-            Copyright (c) 2012, 2013, 2014 Open Geospatial Consortium.
+            Copyright (c) 2012, 2013, 2014, 2015 Open Geospatial Consortium.
             To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
         </documentation>
     </annotation>
@@ -30,17 +31,17 @@
     </element>
     <complexType name="parametersType">
         <sequence>
-            <element name="compression" type="geotiff:compressionType" default="None"/>
-            <element name="jpeg_quality" type="geotiff:jpeg_qualityType" default="75"/>
-            <element name="predictor" type="geotiff:predictorType" default="None"/>
-            <element name="interleave" type="geotiff:interleaveType" default="Pixel"/>
-            <element name="tiling" type="boolean">
+            <element name="compression" type="geotiff:compressionType" default="None" minOccurs="0"/>
+            <element name="jpeg_quality" type="geotiff:jpeg_qualityType" default="75" minOccurs="0"/>
+            <element name="predictor" type="geotiff:predictorType" default="None" minOccurs="0"/>
+            <element name="interleave" type="geotiff:interleaveType" default="Pixel" minOccurs="0"/>
+            <element name="tiling" type="boolean" minOccurs="0">
                 <annotation>
                     <documentation>Determines if tiling is used in GeoTIFF.</documentation>
                 </annotation>
             </element>
-            <element name="tileheight" type="geotiff:tileheightType"/>
-            <element name="tilewidth" type="geotiff:tilewidthType"/>
+            <element name="tileheight" type="geotiff:tileheightType" minOccurs="0"/>
+            <element name="tilewidth" type="geotiff:tilewidthType" minOccurs="0"/>
         </sequence>
     </complexType>
     <!-- ============================================================== -->

@@ -679,6 +679,7 @@ gmlcov/1.0/schematron/req3_no-value-component.sch
 gmlcov/1.0/schematron/req4_admissible-datarecord-subtypes.sch
 gmlcov/1.0/schematron/req6_range-value-component-number.sch
 gmlcov/geotiff-1_0_0.zip
+gmlcov/geotiff-1_0_1.zip
 gmlcov/geotiff/1.0/examples/example_3857.dat
 gmlcov/geotiff/1.0/examples/example_3857_info.txt
 gmlcov/geotiff/1.0/examples/example_3857.tif

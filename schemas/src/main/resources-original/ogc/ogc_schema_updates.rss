@@ -18,17 +18,18 @@
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
 <dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2015-03-06T15:31:57:+00:00
+<dc:date>2015-04-15T15:15:03:+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2015-03-06T15:31:57:+00:00
+<syn:updateBase>2015-04-15T15:15:03:+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
+  <rdf:li rdf:resource="http://schemas.opengis.net/gmlcov/ReadMe.txt#20150415t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/arml/ReadMe.txt#20150225t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/indoorgml/ReadMe.txt#20141203t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20141126t15" />
@@ -96,6 +97,15 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
+<item rdf:about="http://schemas.opengis.net/gmlcov/ReadMe.txt#20150415t15">
+<title>OGC GML Application Schema - Coverages - GeoTIFF Coverage Encoding Profile 1.0 Schema Updated</title>
+<link>http://schemas.opengis.net/gmlcov/ReadMe.txt#20150415t15</link>
+<description>The GeoTiff schema has been corrected to align with the standard (12-100r1). The parametersType is optional for GeoTiff encoded coverage requests. See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2015-04-15T15:46:01:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC GMLCOV GeoTiff 1.0 Schema Updated</dc:subject>
+</item>
 <item rdf:about="http://schemas.opengis.net/arml/ReadMe.txt#20150225t15">
 <title>OGC ARML 2.0 - Schema Posted</title>
 <link>http://schemas.opengis.net/arml/ReadMe.txt#20150225t15</link>

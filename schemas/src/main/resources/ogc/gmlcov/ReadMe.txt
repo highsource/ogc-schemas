@@ -14,6 +14,10 @@ The most current schema is available at http://schemas.opengis.net/ .
 
 Change history:
 
+2015-04-15  Stephan Meissl
+  * gmlcov/geotiff/1.0: added correction to GMLCOV GeoTiff 1.0.1 so 
+    parametersType is optional for GeoTiff encoded coverage requests.
+
 2014-11-18  Stephan Meissl
   * gmlcov/geotiff/1.0: added GMLCOV GeoTiff 1.0.0 (OGC 12-100r1)
 
@@ -44,7 +48,7 @@ Note: check each OGC numbered document for detailed changes.
 Policies, Procedures, Terms, and Conditions of OGC(r) are available
   http://www.opengeospatial.org/ogc/legal/ .
 
-Copyright (c) 2014 Open Geospatial Consortium.
+Copyright (c) 2015 Open Geospatial Consortium.
 
 -----------------------------------------------------------------------
 
