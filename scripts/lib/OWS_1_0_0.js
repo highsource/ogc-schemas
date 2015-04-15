@@ -5,28 +5,48 @@ var OWS_1_0_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0'],
     tis: [{
-        ln: 'AddressType',
+        ln: 'GetCapabilitiesType',
         ps: [{
-            n: 'deliveryPoint',
-            col: true,
-            en: 'DeliveryPoint'
+            n: 'acceptVersions',
+            en: 'AcceptVersions',
+            ti: '.AcceptVersionsType'
           }, {
-            n: 'city',
-            en: 'City'
+            n: 'sections',
+            en: 'Sections',
+            ti: '.SectionsType'
           }, {
-            n: 'administrativeArea',
-            en: 'AdministrativeArea'
+            n: 'acceptFormats',
+            en: 'AcceptFormats',
+            ti: '.AcceptFormatsType'
           }, {
-            n: 'postalCode',
-            en: 'PostalCode'
-          }, {
-            n: 'country',
-            en: 'Country'
-          }, {
-            n: 'electronicMailAddress',
-            col: true,
-            en: 'ElectronicMailAddress'
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
+            },
+            t: 'a'
           }]
+      }, {
+        ln: 'ExceptionType',
+        ps: [{
+            n: 'exceptionText',
+            col: true,
+            en: 'ExceptionText'
+          }, {
+            n: 'exceptionCode',
+            an: {
+              lp: 'exceptionCode'
+            },
+            t: 'a'
+          }, {
+            n: 'locator',
+            an: {
+              lp: 'locator'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'WGS84BoundingBoxType',
+        bti: '.BoundingBoxType'
       }, {
         ln: 'ServiceIdentification',
         tn: null,
@@ -48,15 +68,167 @@ var OWS_1_0_0_Module_Factory = function () {
             en: 'AccessConstraints'
           }]
       }, {
-        ln: 'TelephoneType',
+        ln: 'IdentificationType',
+        bti: '.DescriptionType',
         ps: [{
-            n: 'voice',
-            col: true,
-            en: 'Voice'
+            n: 'identifier',
+            en: 'Identifier',
+            ti: '.CodeType'
           }, {
-            n: 'facsimile',
+            n: 'boundingBox',
             col: true,
-            en: 'Facsimile'
+            mx: false,
+            dom: false,
+            en: 'BoundingBox',
+            ti: '.BoundingBoxType',
+            t: 'er'
+          }, {
+            n: 'outputFormat',
+            col: true,
+            en: 'OutputFormat'
+          }, {
+            n: 'availableCRS',
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'AvailableCRS',
+            t: 'er'
+          }, {
+            n: 'metadata',
+            col: true,
+            en: 'Metadata',
+            ti: '.MetadataType'
+          }]
+      }, {
+        ln: 'BoundingBoxType',
+        ps: [{
+            n: 'lowerCorner',
+            en: 'LowerCorner',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'upperCorner',
+            en: 'UpperCorner',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'crs',
+            an: {
+              lp: 'crs'
+            },
+            t: 'a'
+          }, {
+            n: 'dimensions',
+            ti: 'Integer',
+            an: {
+              lp: 'dimensions'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'RequestMethodType',
+        bti: '.OnlineResourceType',
+        ps: [{
+            n: 'constraint',
+            col: true,
+            en: 'Constraint',
+            ti: '.DomainType'
+          }]
+      }, {
+        ln: 'DCP',
+        tn: null,
+        ps: [{
+            n: 'http',
+            en: 'HTTP',
+            ti: '.HTTP'
+          }]
+      }, {
+        ln: 'ResponsiblePartyType',
+        ps: [{
+            n: 'individualName',
+            en: 'IndividualName'
+          }, {
+            n: 'organisationName',
+            en: 'OrganisationName'
+          }, {
+            n: 'positionName',
+            en: 'PositionName'
+          }, {
+            n: 'contactInfo',
+            en: 'ContactInfo',
+            ti: '.ContactType'
+          }, {
+            n: 'role',
+            en: 'Role',
+            ti: '.CodeType'
+          }]
+      }, {
+        ln: 'ContactType',
+        ps: [{
+            n: 'phone',
+            en: 'Phone',
+            ti: '.TelephoneType'
+          }, {
+            n: 'address',
+            en: 'Address',
+            ti: '.AddressType'
+          }, {
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'hoursOfService',
+            en: 'HoursOfService'
+          }, {
+            n: 'contactInstructions',
+            en: 'ContactInstructions'
+          }]
+      }, {
+        ln: 'DomainType',
+        ps: [{
+            n: 'value',
+            col: true,
+            en: 'Value'
+          }, {
+            n: 'metadata',
+            col: true,
+            en: 'Metadata',
+            ti: '.MetadataType'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'KeywordsType',
+        ps: [{
+            n: 'keyword',
+            col: true,
+            en: 'Keyword'
+          }, {
+            n: 'type',
+            en: 'Type',
+            ti: '.CodeType'
+          }]
+      }, {
+        ln: 'AcceptVersionsType',
+        ps: [{
+            n: 'version',
+            col: true,
+            en: 'Version'
+          }]
+      }, {
+        ln: 'AcceptFormatsType',
+        ps: [{
+            n: 'outputFormat',
+            col: true,
+            en: 'OutputFormat'
           }]
       }, {
         ln: 'MetadataType',
@@ -96,71 +268,31 @@ var OWS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'RequestMethodType',
-        bti: '.OnlineResourceType',
+        ln: 'CapabilitiesBaseType',
         ps: [{
-            n: 'constraint',
-            col: true,
-            en: 'Constraint',
-            ti: '.DomainType'
-          }]
-      }, {
-        ln: 'ContactType',
-        ps: [{
-            n: 'phone',
-            en: 'Phone',
-            ti: '.TelephoneType'
+            n: 'serviceIdentification',
+            en: 'ServiceIdentification',
+            ti: '.ServiceIdentification'
           }, {
-            n: 'address',
-            en: 'Address',
-            ti: '.AddressType'
+            n: 'serviceProvider',
+            en: 'ServiceProvider',
+            ti: '.ServiceProvider'
           }, {
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
+            n: 'operationsMetadata',
+            en: 'OperationsMetadata',
+            ti: '.OperationsMetadata'
           }, {
-            n: 'hoursOfService',
-            en: 'HoursOfService'
-          }, {
-            n: 'contactInstructions',
-            en: 'ContactInstructions'
-          }]
-      }, {
-        ln: 'BoundingBoxType',
-        ps: [{
-            n: 'lowerCorner',
-            en: 'LowerCorner',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'upperCorner',
-            en: 'UpperCorner',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'crs',
-            an: {
-              lp: 'crs'
-            },
-            t: 'a'
-          }, {
-            n: 'dimensions',
-            ti: 'Integer',
-            an: {
-              lp: 'dimensions'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AcceptVersionsType',
-        ps: [{
             n: 'version',
-            col: true,
-            en: 'Version'
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'Operation',
@@ -193,22 +325,50 @@ var OWS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SectionsType',
+        ln: 'AddressType',
         ps: [{
-            n: 'section',
+            n: 'deliveryPoint',
             col: true,
-            en: 'Section'
+            en: 'DeliveryPoint'
+          }, {
+            n: 'city',
+            en: 'City'
+          }, {
+            n: 'administrativeArea',
+            en: 'AdministrativeArea'
+          }, {
+            n: 'postalCode',
+            en: 'PostalCode'
+          }, {
+            n: 'country',
+            en: 'Country'
+          }, {
+            n: 'electronicMailAddress',
+            col: true,
+            en: 'ElectronicMailAddress'
           }]
       }, {
-        ln: 'KeywordsType',
+        ln: 'CodeType',
         ps: [{
-            n: 'keyword',
-            col: true,
-            en: 'Keyword'
+            n: 'value',
+            t: 'v'
           }, {
-            n: 'type',
-            en: 'Type',
-            ti: '.CodeType'
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TelephoneType',
+        ps: [{
+            n: 'voice',
+            col: true,
+            en: 'Voice'
+          }, {
+            n: 'facsimile',
+            col: true,
+            en: 'Facsimile'
           }]
       }, {
         ln: 'HTTP',
@@ -228,61 +388,21 @@ var OWS_1_0_0_Module_Factory = function () {
             t: 'ers'
           }]
       }, {
-        ln: 'CodeType',
+        ln: 'ResponsiblePartySubsetType',
         ps: [{
-            n: 'value',
-            t: 'v'
+            n: 'individualName',
+            en: 'IndividualName'
           }, {
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ExceptionType',
-        ps: [{
-            n: 'exceptionText',
-            col: true,
-            en: 'ExceptionText'
+            n: 'positionName',
+            en: 'PositionName'
           }, {
-            n: 'exceptionCode',
-            an: {
-              lp: 'exceptionCode'
-            },
-            t: 'a'
+            n: 'contactInfo',
+            en: 'ContactInfo',
+            ti: '.ContactType'
           }, {
-            n: 'locator',
-            an: {
-              lp: 'locator'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DomainType',
-        ps: [{
-            n: 'value',
-            col: true,
-            en: 'Value'
-          }, {
-            n: 'metadata',
-            col: true,
-            en: 'Metadata',
-            ti: '.MetadataType'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DCP',
-        tn: null,
-        ps: [{
-            n: 'http',
-            en: 'HTTP',
-            ti: '.HTTP'
+            n: 'role',
+            en: 'Role',
+            ti: '.CodeType'
           }]
       }, {
         ln: 'OperationsMetadata',
@@ -308,43 +428,61 @@ var OWS_1_0_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'IdentificationType',
-        bti: '.DescriptionType',
+        ln: 'ExceptionReport',
+        tn: null,
         ps: [{
-            n: 'identifier',
-            en: 'Identifier',
-            ti: '.CodeType'
-          }, {
-            n: 'boundingBox',
+            n: 'exception',
             col: true,
-            mx: false,
-            dom: false,
-            en: 'BoundingBox',
-            ti: '.BoundingBoxType',
-            t: 'er'
+            en: 'Exception',
+            ti: '.ExceptionType'
           }, {
-            n: 'outputFormat',
-            col: true,
-            en: 'OutputFormat'
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
           }, {
-            n: 'availableCRS',
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'AvailableCRS',
-            t: 'er'
-          }, {
-            n: 'metadata',
-            col: true,
-            en: 'Metadata',
-            ti: '.MetadataType'
+            n: 'language',
+            an: {
+              lp: 'language'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'AcceptFormatsType',
+        ln: 'SectionsType',
         ps: [{
-            n: 'outputFormat',
+            n: 'section',
             col: true,
-            en: 'OutputFormat'
+            en: 'Section'
+          }]
+      }, {
+        ln: 'DescriptionType',
+        ps: [{
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'keywords',
+            col: true,
+            en: 'Keywords',
+            ti: '.KeywordsType'
+          }]
+      }, {
+        ln: 'ServiceProvider',
+        tn: null,
+        ps: [{
+            n: 'providerName',
+            en: 'ProviderName'
+          }, {
+            n: 'providerSite',
+            en: 'ProviderSite',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'serviceContact',
+            en: 'ServiceContact',
+            ti: '.ResponsiblePartySubsetType'
           }]
       }, {
         ln: 'OnlineResourceType',
@@ -373,234 +511,96 @@ var OWS_1_0_0_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
-      }, {
-        ln: 'DescriptionType',
-        ps: [{
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'keywords',
-            col: true,
-            en: 'Keywords',
-            ti: '.KeywordsType'
-          }]
-      }, {
-        ln: 'ResponsiblePartySubsetType',
-        ps: [{
-            n: 'individualName',
-            en: 'IndividualName'
-          }, {
-            n: 'positionName',
-            en: 'PositionName'
-          }, {
-            n: 'contactInfo',
-            en: 'ContactInfo',
-            ti: '.ContactType'
-          }, {
-            n: 'role',
-            en: 'Role',
-            ti: '.CodeType'
-          }]
-      }, {
-        ln: 'GetCapabilitiesType',
-        ps: [{
-            n: 'acceptVersions',
-            en: 'AcceptVersions',
-            ti: '.AcceptVersionsType'
-          }, {
-            n: 'sections',
-            en: 'Sections',
-            ti: '.SectionsType'
-          }, {
-            n: 'acceptFormats',
-            en: 'AcceptFormats',
-            ti: '.AcceptFormatsType'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ResponsiblePartyType',
-        ps: [{
-            n: 'individualName',
-            en: 'IndividualName'
-          }, {
-            n: 'organisationName',
-            en: 'OrganisationName'
-          }, {
-            n: 'positionName',
-            en: 'PositionName'
-          }, {
-            n: 'contactInfo',
-            en: 'ContactInfo',
-            ti: '.ContactType'
-          }, {
-            n: 'role',
-            en: 'Role',
-            ti: '.CodeType'
-          }]
-      }, {
-        ln: 'ExceptionReport',
-        tn: null,
-        ps: [{
-            n: 'exception',
-            col: true,
-            en: 'Exception',
-            ti: '.ExceptionType'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'language',
-            an: {
-              lp: 'language'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ServiceProvider',
-        tn: null,
-        ps: [{
-            n: 'providerName',
-            en: 'ProviderName'
-          }, {
-            n: 'providerSite',
-            en: 'ProviderSite',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'serviceContact',
-            en: 'ServiceContact',
-            ti: '.ResponsiblePartySubsetType'
-          }]
-      }, {
-        ln: 'WGS84BoundingBoxType',
-        bti: '.BoundingBoxType'
-      }, {
-        ln: 'CapabilitiesBaseType',
-        ps: [{
-            n: 'serviceIdentification',
-            en: 'ServiceIdentification',
-            ti: '.ServiceIdentification'
-          }, {
-            n: 'serviceProvider',
-            en: 'ServiceProvider',
-            ti: '.ServiceProvider'
-          }, {
-            n: 'operationsMetadata',
-            en: 'OperationsMetadata',
-            ti: '.OperationsMetadata'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }]
       }],
     eis: [{
-        en: 'ServiceIdentification',
-        ti: '.ServiceIdentification'
-      }, {
-        en: 'SupportedCRS',
-        sh: 'AvailableCRS'
-      }, {
-        en: 'Keywords',
-        ti: '.KeywordsType'
-      }, {
-        en: 'Identifier',
-        ti: '.CodeType'
-      }, {
-        en: 'OrganisationName'
-      }, {
-        en: 'Get',
-        ti: '.RequestMethodType',
-        sc: '.HTTP'
+        en: 'DCP',
+        ti: '.DCP'
       }, {
         en: 'HTTP',
         ti: '.HTTP'
       }, {
-        en: 'Fees'
+        en: 'IndividualName'
       }, {
-        en: 'ServiceProvider',
-        ti: '.ServiceProvider'
+        en: 'OrganisationName'
+      }, {
+        en: 'Language'
+      }, {
+        en: 'Role',
+        ti: '.CodeType'
+      }, {
+        en: 'SupportedCRS',
+        sh: 'AvailableCRS'
+      }, {
+        en: 'OutputFormat'
+      }, {
+        en: 'Fees'
       }, {
         en: 'GetCapabilities',
         ti: '.GetCapabilitiesType'
       }, {
-        en: 'Abstract'
+        en: 'Title'
       }, {
-        en: 'Metadata',
-        ti: '.MetadataType'
-      }, {
-        en: 'OperationsMetadata',
-        ti: '.OperationsMetadata'
-      }, {
-        en: 'Post',
-        ti: '.RequestMethodType',
-        sc: '.HTTP'
-      }, {
-        en: 'PositionName'
-      }, {
-        en: 'ExtendedCapabilities',
-        ti: 'AnyType'
-      }, {
-        en: 'AbstractMetaData',
-        ti: 'AnyType'
-      }, {
-        en: 'PointOfContact',
-        ti: '.ResponsiblePartyType'
-      }, {
-        en: 'AccessConstraints'
-      }, {
-        en: 'BoundingBox',
-        ti: '.BoundingBoxType'
-      }, {
-        en: 'AvailableCRS'
-      }, {
-        en: 'Language'
-      }, {
-        en: 'Operation',
-        ti: '.Operation'
-      }, {
-        en: 'ContactInfo',
-        ti: '.ContactType'
-      }, {
-        en: 'IndividualName'
-      }, {
-        en: 'Role',
+        en: 'Identifier',
         ti: '.CodeType'
       }, {
         en: 'WGS84BoundingBox',
         ti: '.WGS84BoundingBoxType',
         sh: 'BoundingBox'
       }, {
-        en: 'OutputFormat'
+        en: 'PointOfContact',
+        ti: '.ResponsiblePartyType'
       }, {
-        en: 'DCP',
-        ti: '.DCP'
+        en: 'AbstractMetaData',
+        ti: 'AnyType'
       }, {
-        en: 'Exception',
-        ti: '.ExceptionType'
+        en: 'ContactInfo',
+        ti: '.ContactType'
       }, {
-        en: 'Title'
+        en: 'AccessConstraints'
+      }, {
+        en: 'Abstract'
+      }, {
+        en: 'Post',
+        ti: '.RequestMethodType',
+        sc: '.HTTP'
       }, {
         en: 'ExceptionReport',
         ti: '.ExceptionReport'
+      }, {
+        en: 'ServiceIdentification',
+        ti: '.ServiceIdentification'
+      }, {
+        en: 'ExtendedCapabilities',
+        ti: 'AnyType'
+      }, {
+        en: 'Operation',
+        ti: '.Operation'
+      }, {
+        en: 'Get',
+        ti: '.RequestMethodType',
+        sc: '.HTTP'
+      }, {
+        en: 'BoundingBox',
+        ti: '.BoundingBoxType'
+      }, {
+        en: 'Keywords',
+        ti: '.KeywordsType'
+      }, {
+        en: 'ServiceProvider',
+        ti: '.ServiceProvider'
+      }, {
+        en: 'AvailableCRS'
+      }, {
+        en: 'OperationsMetadata',
+        ti: '.OperationsMetadata'
+      }, {
+        en: 'Metadata',
+        ti: '.MetadataType'
+      }, {
+        en: 'PositionName'
+      }, {
+        en: 'Exception',
+        ti: '.ExceptionType'
       }]
   };
   return {

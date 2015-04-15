@@ -4,6 +4,47 @@ var WMC_1_0_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/context',
     deps: ['XLink_1_0', 'SLD_1_0_0'],
     tis: [{
+        ln: 'FormatListType',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: '.FormatType'
+          }]
+      }, {
+        ln: 'WindowType',
+        ps: [{
+            n: 'width',
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ContactPersonPrimaryType',
+        ps: [{
+            n: 'contactPerson',
+            en: 'ContactPerson'
+          }, {
+            n: 'contactOrganization',
+            en: 'ContactOrganization'
+          }]
+      }, {
+        ln: 'ContextURLType',
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }]
+      }, {
         ln: 'FormatType',
         ps: [{
             n: 'value',
@@ -17,11 +58,63 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'KeywordListType',
+        ln: 'StyleListType',
         ps: [{
-            n: 'keyword',
+            n: 'style',
             col: true,
-            en: 'Keyword'
+            en: 'Style',
+            ti: '.StyleType'
+          }]
+      }, {
+        ln: 'ViewContextCollectionType',
+        ps: [{
+            n: 'viewContextReference',
+            col: true,
+            en: 'ViewContextReference',
+            ti: '.ViewContextReferenceType'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeneralType',
+        ps: [{
+            n: 'window',
+            en: 'Window',
+            ti: '.WindowType'
+          }, {
+            n: 'boundingBox',
+            en: 'BoundingBox',
+            ti: '.BoundingBoxType'
+          }, {
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: 'keywordList',
+            en: 'KeywordList',
+            ti: '.KeywordListType'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'logoURL',
+            en: 'LogoURL',
+            ti: '.URLType'
+          }, {
+            n: 'descriptionURL',
+            en: 'DescriptionURL',
+            ti: '.URLType'
+          }, {
+            n: 'contactInformation',
+            en: 'ContactInformation',
+            ti: '.ContactInformationType'
+          }, {
+            n: 'extension',
+            en: 'Extension',
+            ti: '.ExtensionType'
           }]
       }, {
         ln: 'ViewContextReferenceType',
@@ -44,154 +137,6 @@ var WMC_1_0_0_Module_Factory = function () {
               lp: 'id'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'ViewContextType',
-        ps: [{
-            n: 'general',
-            en: 'General',
-            ti: '.GeneralType'
-          }, {
-            n: 'layerList',
-            en: 'LayerList',
-            ti: '.LayerListType'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'id',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ExtensionType',
-        ps: [{
-            n: 'any',
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'FormatListType',
-        ps: [{
-            n: 'format',
-            col: true,
-            en: 'Format',
-            ti: '.FormatType'
-          }]
-      }, {
-        ln: 'ViewContextCollectionType',
-        ps: [{
-            n: 'viewContextReference',
-            col: true,
-            en: 'ViewContextReference',
-            ti: '.ViewContextReferenceType'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LayerListType',
-        ps: [{
-            n: 'layer',
-            col: true,
-            en: 'Layer',
-            ti: '.LayerType'
-          }]
-      }, {
-        ln: 'ContactPersonPrimaryType',
-        ps: [{
-            n: 'contactPerson',
-            en: 'ContactPerson'
-          }, {
-            n: 'contactOrganization',
-            en: 'ContactOrganization'
-          }]
-      }, {
-        ln: 'AddressType',
-        ps: [{
-            n: 'addressType',
-            en: 'AddressType'
-          }, {
-            n: 'address',
-            en: 'Address'
-          }, {
-            n: 'city',
-            en: 'City'
-          }, {
-            n: 'stateOrProvince',
-            en: 'StateOrProvince'
-          }, {
-            n: 'postCode',
-            en: 'PostCode'
-          }, {
-            n: 'country',
-            en: 'Country'
-          }]
-      }, {
-        ln: 'SLDType',
-        ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'styledLayerDescriptor',
-            en: {
-              lp: 'StyledLayerDescriptor',
-              ns: 'http:\/\/www.opengis.net\/sld'
-            },
-            ti: 'SLD_1_0_0.StyledLayerDescriptor'
-          }, {
-            n: 'featureTypeStyle',
-            en: {
-              lp: 'FeatureTypeStyle',
-              ns: 'http:\/\/www.opengis.net\/sld'
-            },
-            ti: 'SLD_1_0_0.FeatureTypeStyle'
-          }]
-      }, {
-        ln: 'ContextURLType',
-        ps: [{
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }]
-      }, {
-        ln: 'ContactInformationType',
-        ps: [{
-            n: 'contactPersonPrimary',
-            en: 'ContactPersonPrimary',
-            ti: '.ContactPersonPrimaryType'
-          }, {
-            n: 'contactPosition',
-            en: 'ContactPosition'
-          }, {
-            n: 'contactAddress',
-            en: 'ContactAddress',
-            ti: '.AddressType'
-          }, {
-            n: 'contactVoiceTelephone',
-            en: 'ContactVoiceTelephone'
-          }, {
-            n: 'contactFacsimileTelephone',
-            en: 'ContactFacsimileTelephone'
-          }, {
-            n: 'contactElectronicMailAddress',
-            en: 'ContactElectronicMailAddress'
           }]
       }, {
         ln: 'BoundingBoxType',
@@ -229,6 +174,40 @@ var WMC_1_0_0_Module_Factory = function () {
               lp: 'maxy'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'URLType',
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'width',
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }, {
+            n: 'format',
+            an: {
+              lp: 'format'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'KeywordListType',
+        ps: [{
+            n: 'keyword',
+            col: true,
+            en: 'Keyword'
           }]
       }, {
         ln: 'OnlineResourceType',
@@ -286,44 +265,7 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GeneralType',
-        ps: [{
-            n: 'window',
-            en: 'Window',
-            ti: '.WindowType'
-          }, {
-            n: 'boundingBox',
-            en: 'BoundingBox',
-            ti: '.BoundingBoxType'
-          }, {
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: 'keywordList',
-            en: 'KeywordList',
-            ti: '.KeywordListType'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'logoURL',
-            en: 'LogoURL',
-            ti: '.URLType'
-          }, {
-            n: 'descriptionURL',
-            en: 'DescriptionURL',
-            ti: '.URLType'
-          }, {
-            n: 'contactInformation',
-            en: 'ContactInformation',
-            ti: '.ContactInformationType'
-          }, {
-            n: 'extension',
-            en: 'Extension',
-            ti: '.ExtensionType'
-          }]
-      }, {
-        ln: 'StyleType',
+        ln: 'SLDType',
         ps: [{
             n: 'name',
             en: 'Name'
@@ -331,40 +273,23 @@ var WMC_1_0_0_Module_Factory = function () {
             n: 'title',
             en: 'Title'
           }, {
-            n: '_abstract',
-            en: 'Abstract'
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
           }, {
-            n: 'legendURL',
-            en: 'LegendURL',
-            ti: '.URLType'
-          }, {
-            n: 'sld',
-            en: 'SLD',
-            ti: '.SLDType'
-          }, {
-            n: 'current',
-            ti: 'Boolean',
-            an: {
-              lp: 'current'
+            n: 'styledLayerDescriptor',
+            en: {
+              lp: 'StyledLayerDescriptor',
+              ns: 'http:\/\/www.opengis.net\/sld'
             },
-            t: 'a'
-          }]
-      }, {
-        ln: 'WindowType',
-        ps: [{
-            n: 'width',
-            ti: 'Integer',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
+            ti: 'SLD_1_0_0.StyledLayerDescriptor'
           }, {
-            n: 'height',
-            ti: 'Integer',
-            an: {
-              lp: 'height'
+            n: 'featureTypeStyle',
+            en: {
+              lp: 'FeatureTypeStyle',
+              ns: 'http:\/\/www.opengis.net\/sld'
             },
-            t: 'a'
+            ti: 'SLD_1_0_0.FeatureTypeStyle'
           }]
       }, {
         ln: 'ServerType',
@@ -392,12 +317,33 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'StyleListType',
+        ln: 'AddressType',
         ps: [{
-            n: 'style',
+            n: 'addressType',
+            en: 'AddressType'
+          }, {
+            n: 'address',
+            en: 'Address'
+          }, {
+            n: 'city',
+            en: 'City'
+          }, {
+            n: 'stateOrProvince',
+            en: 'StateOrProvince'
+          }, {
+            n: 'postCode',
+            en: 'PostCode'
+          }, {
+            n: 'country',
+            en: 'Country'
+          }]
+      }, {
+        ln: 'LayerListType',
+        ps: [{
+            n: 'layer',
             col: true,
-            en: 'Style',
-            ti: '.StyleType'
+            en: 'Layer',
+            ti: '.LayerType'
           }]
       }, {
         ln: 'LayerType',
@@ -453,39 +399,93 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'URLType',
+        ln: 'StyleType',
         ps: [{
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
+            n: 'name',
+            en: 'Name'
           }, {
-            n: 'width',
-            ti: 'Integer',
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'legendURL',
+            en: 'LegendURL',
+            ti: '.URLType'
+          }, {
+            n: 'sld',
+            en: 'SLD',
+            ti: '.SLDType'
+          }, {
+            n: 'current',
+            ti: 'Boolean',
             an: {
-              lp: 'width'
+              lp: 'current'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ExtensionType',
+        ps: [{
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'ContactInformationType',
+        ps: [{
+            n: 'contactPersonPrimary',
+            en: 'ContactPersonPrimary',
+            ti: '.ContactPersonPrimaryType'
+          }, {
+            n: 'contactPosition',
+            en: 'ContactPosition'
+          }, {
+            n: 'contactAddress',
+            en: 'ContactAddress',
+            ti: '.AddressType'
+          }, {
+            n: 'contactVoiceTelephone',
+            en: 'ContactVoiceTelephone'
+          }, {
+            n: 'contactFacsimileTelephone',
+            en: 'ContactFacsimileTelephone'
+          }, {
+            n: 'contactElectronicMailAddress',
+            en: 'ContactElectronicMailAddress'
+          }]
+      }, {
+        ln: 'ViewContextType',
+        ps: [{
+            n: 'general',
+            en: 'General',
+            ti: '.GeneralType'
+          }, {
+            n: 'layerList',
+            en: 'LayerList',
+            ti: '.LayerListType'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
             },
             t: 'a'
           }, {
-            n: 'height',
-            ti: 'Integer',
+            n: 'id',
             an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }, {
-            n: 'format',
-            an: {
-              lp: 'format'
+              lp: 'id'
             },
             t: 'a'
           }]
       }],
     eis: [{
-        en: 'ViewContext',
-        ti: '.ViewContextType'
-      }, {
         en: 'ViewContextCollection',
         ti: '.ViewContextCollectionType'
+      }, {
+        en: 'ViewContext',
+        ti: '.ViewContextType'
       }]
   };
   return {
