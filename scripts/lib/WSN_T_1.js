@@ -3,25 +3,38 @@ var WSN_T_1_Module_Factory = function () {
     n: 'WSN_T_1',
     dens: 'http:\/\/docs.oasis-open.org\/wsn\/t-1',
     tis: [{
-        ln: 'Documentation',
+        ln: 'QueryExpressionType',
         ps: [{
             n: 'content',
             col: true,
             t: 'ae'
+          }, {
+            n: 'dialect',
+            an: {
+              lp: 'Dialect'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'TopicNamespaceType.Topic',
-        tn: null,
-        bti: '.TopicType',
+        ln: 'ExtensibleDocumented',
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
           }, {
-            n: 'parent',
-            an: {
-              lp: 'parent'
-            },
-            t: 'a'
+            n: 'documentation',
+            ti: '.Documentation'
+          }]
+      }, {
+        ln: 'TopicSetType',
+        bti: '.ExtensibleDocumented',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'any',
+            col: true,
+            mx: false,
+            t: 'ae'
           }]
       }, {
         ln: 'TopicType',
@@ -69,13 +82,25 @@ var WSN_T_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ExtensibleDocumented',
+        ln: 'Documentation',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'TopicNamespaceType.Topic',
+        tn: null,
+        bti: '.TopicType',
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
           }, {
-            n: 'documentation',
-            ti: '.Documentation'
+            n: 'parent',
+            an: {
+              lp: 'parent'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'TopicNamespaceType',
@@ -110,31 +135,6 @@ var WSN_T_1_Module_Factory = function () {
             ti: 'Boolean',
             an: {
               lp: 'final'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TopicSetType',
-        bti: '.ExtensibleDocumented',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'any',
-            col: true,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'QueryExpressionType',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }, {
-            n: 'dialect',
-            an: {
-              lp: 'Dialect'
             },
             t: 'a'
           }]

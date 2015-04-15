@@ -30,19 +30,11 @@ var DC_1_1_Module_Factory = function () {
           }]
       }],
     eis: [{
+        en: 'identifier',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
         en: 'subject',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'coverage',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'source',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'language',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -50,15 +42,10 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'description',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
+        en: 'DC-element',
+        ti: '.SimpleLiteral'
       }, {
-        en: 'contributor',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'creator',
+        en: 'rights',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -66,18 +53,19 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'DC-element',
-        ti: '.SimpleLiteral'
-      }, {
-        en: 'date',
+        en: 'source',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'rights',
+        en: 'coverage',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
         en: 'title',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'date',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -89,7 +77,19 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'identifier',
+        en: 'creator',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'contributor',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'language',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'description',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }]
