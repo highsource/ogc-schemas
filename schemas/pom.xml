@@ -83,6 +83,7 @@
 							<targetDirectory>src/main/resources</targetDirectory>
 							<patches>
 								<patch>ogc.patch</patch>
+								<patch>geoserver.patch</patch>
 							</patches>
 							<patchTrackingFile>${project.build.directory}/patch-log.txt</patchTrackingFile>
 							<naturalOrderProcessing>true</naturalOrderProcessing>
