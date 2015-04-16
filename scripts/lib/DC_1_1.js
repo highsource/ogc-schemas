@@ -3,18 +3,6 @@ var DC_1_1_Module_Factory = function () {
     n: 'DC_1_1',
     dens: 'http:\/\/purl.org\/dc\/elements\/1.1\/',
     tis: [{
-        ln: 'ElementContainer',
-        tn: 'elementContainer',
-        ps: [{
-            n: 'dcElement',
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'DC-element',
-            ti: '.SimpleLiteral',
-            t: 'er'
-          }]
-      }, {
         ln: 'SimpleLiteral',
         ps: [{
             n: 'content',
@@ -28,9 +16,21 @@ var DC_1_1_Module_Factory = function () {
             },
             t: 'a'
           }]
+      }, {
+        ln: 'ElementContainer',
+        tn: 'elementContainer',
+        ps: [{
+            n: 'dcElement',
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'DC-element',
+            ti: '.SimpleLiteral',
+            t: 'er'
+          }]
       }],
     eis: [{
-        en: 'language',
+        en: 'relation',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -38,15 +38,7 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'relation',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'title',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'type',
+        en: 'description',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -54,7 +46,18 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'subject',
+        en: 'format',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'language',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'DC-element',
+        ti: '.SimpleLiteral'
+      }, {
+        en: 'rights',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -62,7 +65,15 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'rights',
+        en: 'creator',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'type',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'title',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -70,11 +81,7 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'creator',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'format',
+        en: 'source',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -82,14 +89,7 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'description',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'DC-element',
-        ti: '.SimpleLiteral'
-      }, {
-        en: 'source',
+        en: 'subject',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }]

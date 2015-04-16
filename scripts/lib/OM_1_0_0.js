@@ -3,7 +3,7 @@ var OM_1_0_0_Module_Factory = function () {
     n: 'OM_1_0_0',
     dens: 'http:\/\/www.opengis.net\/om\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'SensorML_1_0_1', 'SWE_1_0_1', 'GML_3_1_1'],
+    deps: ['XLink_1_0', 'GML_3_1_1', 'SWE_1_0_1', 'SensorML_1_0_1'],
     tis: [{
         ln: 'ObservationType',
         bti: 'GML_3_1_1.AbstractFeatureType',
@@ -37,19 +37,21 @@ var OM_1_0_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'ObservationCollectionType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
+        ln: 'ProcessPropertyType',
         ps: [{
-            n: 'member',
-            col: true,
-            ti: '.ObservationPropertyType'
-          }]
-      }, {
-        ln: 'ObservationPropertyType',
-        ps: [{
-            n: 'observation',
-            en: 'Observation',
-            ti: '.ObservationType'
+            n: 'sensorMLProcess',
+            mx: false,
+            dom: false,
+            en: {
+              lp: '_Process',
+              ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
+            },
+            ti: 'SensorML_1_0_1.AbstractProcessType',
+            t: 'er'
+          }, {
+            n: 'process',
+            en: 'Process',
+            ti: 'AnyType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -122,21 +124,19 @@ var OM_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ProcessPropertyType',
+        ln: 'ObservationCollectionType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
         ps: [{
-            n: 'sensorMLProcess',
-            mx: false,
-            dom: false,
-            en: {
-              lp: '_Process',
-              ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
-            },
-            ti: 'SensorML_1_0_1.AbstractProcessType',
-            t: 'er'
-          }, {
-            n: 'process',
-            en: 'Process',
-            ti: 'AnyType'
+            n: 'member',
+            col: true,
+            ti: '.ObservationPropertyType'
+          }]
+      }, {
+        ln: 'ObservationPropertyType',
+        ps: [{
+            n: 'observation',
+            en: 'Observation',
+            ti: '.ObservationType'
           }, {
             n: 'remoteSchema',
             an: {

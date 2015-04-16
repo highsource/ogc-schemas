@@ -1,6 +1,6 @@
 {
 	"name": "ogc-schemas",
-	"version": "2.1.1-SNAPSHOT",
+	"version": "2.2.0",
 	"description": "Jsonix XML-JSON mappings for OGC Schemas.",
 	"keywords": [
 		"json",
@@ -75,7 +75,7 @@
 	},
 	"dependencies": {
 		"jsonix": ">=2.2.1",
-		"w3c-schemas": ">=1.0.4"
+		"w3c-schemas": ">=1.1.0"
 	},
 	"devDependencies" : {
 		"nodeunit" : "0.x.x",

@@ -6,9 +6,9 @@
             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             elementFormDefault="qualified">
   <xsd:import namespace="http://www.w3.org/1999/xlink"
-              schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+              schemaLocation="../xlink/1.0.0/xlinks.xsd"/>
   <xsd:import namespace="http://www.opengis.net/ogc"
-              schemaLocation="http://schemas.opengis.net/filter/1.0.0/filter.xsd"/>
+              schemaLocation="../filter/1.0.0/filter.xsd"/>
 
 <!-- *********************************************************************** -->
   <xsd:annotation>
@@ -146,7 +146,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:attributeGroup ref="xlink:simpleAttrs"/>
+      <xsd:attributeGroup ref="xlink:simpleLink"/>
     </xsd:complexType>
   </xsd:element>
 
