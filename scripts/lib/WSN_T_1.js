@@ -3,28 +3,6 @@ var WSN_T_1_Module_Factory = function () {
     n: 'WSN_T_1',
     dens: 'http:\/\/docs.oasis-open.org\/wsn\/t-1',
     tis: [{
-        ln: 'QueryExpressionType',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }, {
-            n: 'dialect',
-            an: {
-              lp: 'Dialect'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ExtensibleDocumented',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'documentation',
-            ti: '.Documentation'
-          }]
-      }, {
         ln: 'TopicNamespaceType',
         bti: '.ExtensibleDocumented',
         ps: [{
@@ -61,25 +39,24 @@ var WSN_T_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TopicNamespaceType.Topic',
-        tn: null,
-        bti: '.TopicType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'parent',
-            an: {
-              lp: 'parent'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'Documentation',
         ps: [{
             n: 'content',
             col: true,
             t: 'ae'
+          }]
+      }, {
+        ln: 'QueryExpressionType',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }, {
+            n: 'dialect',
+            an: {
+              lp: 'Dialect'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'TopicSetType',
@@ -92,6 +69,15 @@ var WSN_T_1_Module_Factory = function () {
             col: true,
             mx: false,
             t: 'ae'
+          }]
+      }, {
+        ln: 'ExtensibleDocumented',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'documentation',
+            ti: '.Documentation'
           }]
       }, {
         ln: 'TopicType',
@@ -138,13 +124,27 @@ var WSN_T_1_Module_Factory = function () {
             },
             t: 'a'
           }]
+      }, {
+        ln: 'TopicNamespaceType.Topic',
+        tn: null,
+        bti: '.TopicType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'parent',
+            an: {
+              lp: 'parent'
+            },
+            t: 'a'
+          }]
       }],
     eis: [{
-        en: 'TopicNamespace',
-        ti: '.TopicNamespaceType'
-      }, {
         en: 'TopicSet',
         ti: '.TopicSetType'
+      }, {
+        en: 'TopicNamespace',
+        ti: '.TopicNamespaceType'
       }]
   };
   return {

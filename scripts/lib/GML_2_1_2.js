@@ -5,72 +5,34 @@ var GML_2_1_2_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0'],
     tis: [{
-        ln: 'GeometryPropertyType',
-        ps: [{
-            n: 'geometry',
-            mx: false,
-            dom: false,
-            en: '_Geometry',
-            ti: '.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MultiPolygonPropertyType',
+        ln: 'PolygonMemberType',
         bti: '.GeometryAssociationType'
-      }, {
-        ln: 'GeometryCollectionType',
-        bti: '.AbstractGeometryCollectionBaseType',
-        ps: [{
-            n: 'geometryMember',
-            col: true,
-            mx: false,
-            dom: false,
-            ti: '.GeometryAssociationType',
-            t: 'er'
-          }]
       }, {
         ln: 'AbstractFeatureCollectionBaseType',
         bti: '.AbstractFeatureType'
       }, {
+        ln: 'LinearRingType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'coord',
+            col: true,
+            ti: '.CoordType'
+          }, {
+            n: 'coordinates',
+            ti: '.CoordinatesType'
+          }]
+      }, {
+        ln: 'MultiPointPropertyType',
+        bti: '.GeometryAssociationType'
+      }, {
+        ln: 'MultiPolygonPropertyType',
+        bti: '.GeometryAssociationType'
+      }, {
+        ln: 'MultiPointType',
+        bti: '.GeometryCollectionType'
+      }, {
         ln: 'AbstractGeometryCollectionBaseType',
         bti: '.AbstractGeometryType'
-      }, {
-        ln: 'PointPropertyType',
-        bti: '.GeometryAssociationType'
-      }, {
-        ln: 'PointMemberType',
-        bti: '.GeometryAssociationType'
       }, {
         ln: 'FeatureAssociationType',
         ps: [{
@@ -113,91 +75,32 @@ var GML_2_1_2_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MultiLineStringPropertyType',
+        ln: 'PolygonPropertyType',
         bti: '.GeometryAssociationType'
-      }, {
-        ln: 'CoordinatesType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'decimal',
-            an: {
-              lp: 'decimal'
-            },
-            t: 'a'
-          }, {
-            n: 'cs',
-            an: {
-              lp: 'cs'
-            },
-            t: 'a'
-          }, {
-            n: 'ts',
-            an: {
-              lp: 'ts'
-            },
-            t: 'a'
-          }]
       }, {
         ln: 'MultiPolygonType',
         bti: '.GeometryCollectionType'
       }, {
-        ln: 'LineStringPropertyType',
+        ln: 'CoordType',
+        ps: [{
+            n: 'x',
+            en: 'X',
+            ti: 'Decimal'
+          }, {
+            n: 'y',
+            en: 'Y',
+            ti: 'Decimal'
+          }, {
+            n: 'z',
+            en: 'Z',
+            ti: 'Decimal'
+          }]
+      }, {
+        ln: 'PointMemberType',
         bti: '.GeometryAssociationType'
       }, {
-        ln: 'MultiPointPropertyType',
-        bti: '.GeometryAssociationType'
-      }, {
-        ln: 'MultiPointType',
+        ln: 'MultiLineStringType',
         bti: '.GeometryCollectionType'
-      }, {
-        ln: 'AbstractFeatureCollectionType',
-        bti: '.AbstractFeatureCollectionBaseType',
-        ps: [{
-            n: 'featureMember',
-            col: true,
-            ti: '.FeatureAssociationType'
-          }]
-      }, {
-        ln: 'AbstractFeatureType',
-        ps: [{
-            n: 'description'
-          }, {
-            n: 'name'
-          }, {
-            n: 'boundedBy',
-            ti: '.BoundingShapeType'
-          }, {
-            n: 'fid',
-            ti: 'ID',
-            an: {
-              lp: 'fid'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LinearRingType',
-        bti: '.AbstractGeometryType',
-        ps: [{
-            n: 'coord',
-            col: true,
-            ti: '.CoordType'
-          }, {
-            n: 'coordinates',
-            ti: '.CoordinatesType'
-          }]
-      }, {
-        ln: 'BoxType',
-        bti: '.AbstractGeometryType',
-        ps: [{
-            n: 'coord',
-            col: true,
-            ti: '.CoordType'
-          }, {
-            n: 'coordinates',
-            ti: '.CoordinatesType'
-          }]
       }, {
         ln: 'LineStringType',
         bti: '.AbstractGeometryType',
@@ -210,54 +113,45 @@ var GML_2_1_2_Module_Factory = function () {
             ti: '.CoordinatesType'
           }]
       }, {
-        ln: 'PointType',
-        bti: '.AbstractGeometryType',
+        ln: 'GeometryPropertyType',
         ps: [{
-            n: 'coord',
-            ti: '.CoordType'
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            en: '_Geometry',
+            ti: '.AbstractGeometryType',
+            t: 'er'
           }, {
-            n: 'coordinates',
-            ti: '.CoordinatesType'
-          }]
-      }, {
-        ln: 'PolygonType',
-        bti: '.AbstractGeometryType',
-        ps: [{
-            n: 'outerBoundaryIs',
-            ti: '.LinearRingMemberType'
-          }, {
-            n: 'innerBoundaryIs',
-            col: true,
-            ti: '.LinearRingMemberType'
-          }]
-      }, {
-        ln: 'AbstractGeometryType',
-        ps: [{
-            n: 'gid',
-            ti: 'ID',
+            n: 'remoteSchema',
             an: {
-              lp: 'gid'
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
             t: 'a'
           }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
             t: 'a'
-          }]
-      }, {
-        ln: 'MultiLineStringType',
-        bti: '.GeometryCollectionType'
-      }, {
-        ln: 'BoundingShapeType',
-        ps: [{
-            n: 'box',
-            en: 'Box',
-            ti: '.BoxType'
           }, {
-            n: '_null',
-            en: 'null'
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'GeometryAssociationType',
@@ -301,55 +195,167 @@ var GML_2_1_2_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'AbstractFeatureType',
+        ps: [{
+            n: 'description'
+          }, {
+            n: 'name'
+          }, {
+            n: 'boundedBy',
+            ti: '.BoundingShapeType'
+          }, {
+            n: 'fid',
+            ti: 'ID',
+            an: {
+              lp: 'fid'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CoordinatesType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'decimal',
+            an: {
+              lp: 'decimal'
+            },
+            t: 'a'
+          }, {
+            n: 'cs',
+            an: {
+              lp: 'cs'
+            },
+            t: 'a'
+          }, {
+            n: 'ts',
+            an: {
+              lp: 'ts'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'BoxType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'coord',
+            col: true,
+            ti: '.CoordType'
+          }, {
+            n: 'coordinates',
+            ti: '.CoordinatesType'
+          }]
+      }, {
+        ln: 'PolygonType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'outerBoundaryIs',
+            ti: '.LinearRingMemberType'
+          }, {
+            n: 'innerBoundaryIs',
+            col: true,
+            ti: '.LinearRingMemberType'
+          }]
+      }, {
+        ln: 'MultiLineStringPropertyType',
+        bti: '.GeometryAssociationType'
+      }, {
+        ln: 'AbstractGeometryType',
+        ps: [{
+            n: 'gid',
+            ti: 'ID',
+            an: {
+              lp: 'gid'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PointType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'coord',
+            ti: '.CoordType'
+          }, {
+            n: 'coordinates',
+            ti: '.CoordinatesType'
+          }]
+      }, {
+        ln: 'BoundingShapeType',
+        ps: [{
+            n: 'box',
+            en: 'Box',
+            ti: '.BoxType'
+          }, {
+            n: '_null',
+            en: 'null'
+          }]
+      }, {
+        ln: 'LineStringPropertyType',
+        bti: '.GeometryAssociationType'
+      }, {
+        ln: 'GeometryCollectionType',
+        bti: '.AbstractGeometryCollectionBaseType',
+        ps: [{
+            n: 'geometryMember',
+            col: true,
+            mx: false,
+            dom: false,
+            ti: '.GeometryAssociationType',
+            t: 'er'
+          }]
+      }, {
         ln: 'LinearRingMemberType',
         bti: '.GeometryAssociationType'
       }, {
-        ln: 'PolygonMemberType',
-        bti: '.GeometryAssociationType'
+        ln: 'AbstractFeatureCollectionType',
+        bti: '.AbstractFeatureCollectionBaseType',
+        ps: [{
+            n: 'featureMember',
+            col: true,
+            ti: '.FeatureAssociationType'
+          }]
       }, {
         ln: 'MultiGeometryPropertyType',
         bti: '.GeometryAssociationType'
       }, {
-        ln: 'PolygonPropertyType',
+        ln: 'PointPropertyType',
         bti: '.GeometryAssociationType'
       }, {
         ln: 'LineStringMemberType',
         bti: '.GeometryAssociationType'
-      }, {
-        ln: 'CoordType',
-        ps: [{
-            n: 'x',
-            en: 'X',
-            ti: 'Decimal'
-          }, {
-            n: 'y',
-            en: 'Y',
-            ti: 'Decimal'
-          }, {
-            n: 'z',
-            en: 'Z',
-            ti: 'Decimal'
-          }]
       }, {
         t: 'enum',
         ln: 'NullType',
         vs: ['inapplicable', 'unknown', 'unavailable', 'missing']
       }],
     eis: [{
-        en: 'LineString',
-        ti: '.LineStringType',
-        sh: '_Geometry'
+        en: 'multiCoverage',
+        ti: '.MultiPolygonPropertyType',
+        sh: 'multiPolygonProperty'
       }, {
-        en: '_geometryProperty',
-        ti: '.GeometryAssociationType'
+        en: 'position',
+        ti: '.PointPropertyType',
+        sh: 'pointProperty'
       }, {
-        en: 'polygonProperty',
+        en: 'multiLocation',
+        ti: '.MultiPointPropertyType',
+        sh: 'multiPointProperty'
+      }, {
+        en: 'extentOf',
         ti: '.PolygonPropertyType',
-        sh: '_geometryProperty'
+        sh: 'polygonProperty'
       }, {
-        en: 'LinearRing',
-        ti: '.LinearRingType',
-        sh: '_Geometry'
+        en: 'innerBoundaryIs',
+        ti: '.LinearRingMemberType'
+      }, {
+        en: 'name'
       }, {
         en: '_GeometryCollection',
         ti: '.GeometryCollectionType',
@@ -359,34 +365,48 @@ var GML_2_1_2_Module_Factory = function () {
         ti: '.MultiPointPropertyType',
         sh: 'multiPointProperty'
       }, {
-        en: 'extentOf',
-        ti: '.PolygonPropertyType',
-        sh: 'polygonProperty'
+        en: 'MultiPolygon',
+        ti: '.MultiPolygonType',
+        sh: '_Geometry'
+      }, {
+        en: 'LineString',
+        ti: '.LineStringType',
+        sh: '_Geometry'
       }, {
         en: 'multiPosition',
         ti: '.MultiPointPropertyType',
         sh: 'multiPointProperty'
       }, {
-        en: 'MultiPolygon',
-        ti: '.MultiPolygonType',
+        en: 'multiGeometryProperty',
+        ti: '.MultiGeometryPropertyType',
+        sh: '_geometryProperty'
+      }, {
+        en: 'pointProperty',
+        ti: '.PointPropertyType',
+        sh: '_geometryProperty'
+      }, {
+        en: 'multiCenterLineOf',
+        ti: '.MultiLineStringPropertyType',
+        sh: 'multiLineStringProperty'
+      }, {
+        en: 'MultiPoint',
+        ti: '.MultiPointType',
         sh: '_Geometry'
+      }, {
+        en: 'multiExtentOf',
+        ti: '.MultiPolygonPropertyType',
+        sh: 'multiPolygonProperty'
+      }, {
+        en: 'lineStringProperty',
+        ti: '.LineStringPropertyType',
+        sh: '_geometryProperty'
       }, {
         en: 'lineStringMember',
         ti: '.LineStringMemberType',
         sh: 'geometryMember'
       }, {
-        en: 'boundedBy',
-        ti: '.BoundingShapeType'
-      }, {
-        en: 'description'
-      }, {
-        en: 'multiCoverage',
-        ti: '.MultiPolygonPropertyType',
-        sh: 'multiPolygonProperty'
-      }, {
-        en: 'edgeOf',
-        ti: '.LineStringPropertyType',
-        sh: 'lineStringProperty'
+        en: 'featureMember',
+        ti: '.FeatureAssociationType'
       }, {
         en: 'pointMember',
         ti: '.PointMemberType',
@@ -396,110 +416,57 @@ var GML_2_1_2_Module_Factory = function () {
         ti: '.PolygonType',
         sh: '_Geometry'
       }, {
-        en: 'multiLineStringProperty',
-        ti: '.MultiLineStringPropertyType',
-        sh: '_geometryProperty'
-      }, {
-        en: 'lineStringProperty',
-        ti: '.LineStringPropertyType',
-        sh: '_geometryProperty'
-      }, {
-        en: 'position',
-        ti: '.PointPropertyType',
-        sh: 'pointProperty'
-      }, {
         en: 'coord',
         ti: '.CoordType'
-      }, {
-        en: '_Feature',
-        ti: '.AbstractFeatureType'
-      }, {
-        en: 'geometryProperty',
-        ti: '.GeometryAssociationType'
-      }, {
-        en: 'multiPointProperty',
-        ti: '.MultiPointPropertyType',
-        sh: '_geometryProperty'
-      }, {
-        en: 'geometryMember',
-        ti: '.GeometryAssociationType'
-      }, {
-        en: 'multiCenterLineOf',
-        ti: '.MultiLineStringPropertyType',
-        sh: 'multiLineStringProperty'
-      }, {
-        en: 'location',
-        ti: '.PointPropertyType',
-        sh: 'pointProperty'
-      }, {
-        en: '_FeatureCollection',
-        ti: '.AbstractFeatureCollectionType',
-        sh: '_Feature'
-      }, {
-        en: 'innerBoundaryIs',
-        ti: '.LinearRingMemberType'
-      }, {
-        en: 'multiGeometryProperty',
-        ti: '.MultiGeometryPropertyType',
-        sh: '_geometryProperty'
-      }, {
-        en: 'name'
-      }, {
-        en: 'coordinates',
-        ti: '.CoordinatesType'
-      }, {
-        en: 'centerOf',
-        ti: '.PointPropertyType',
-        sh: 'pointProperty'
-      }, {
-        en: 'multiPolygonProperty',
-        ti: '.MultiPolygonPropertyType',
-        sh: '_geometryProperty'
-      }, {
-        en: 'MultiGeometry',
-        ti: '.GeometryCollectionType',
-        sh: '_Geometry'
       }, {
         en: 'MultiLineString',
         ti: '.MultiLineStringType',
         sh: '_Geometry'
       }, {
-        en: 'outerBoundaryIs',
-        ti: '.LinearRingMemberType'
+        en: '_FeatureCollection',
+        ti: '.AbstractFeatureCollectionType',
+        sh: '_Feature'
       }, {
-        en: 'multiEdgeOf',
+        en: 'centerOf',
+        ti: '.PointPropertyType',
+        sh: 'pointProperty'
+      }, {
+        en: 'geometryProperty',
+        ti: '.GeometryAssociationType'
+      }, {
+        en: '_geometryProperty',
+        ti: '.GeometryAssociationType'
+      }, {
+        en: 'multiLineStringProperty',
         ti: '.MultiLineStringPropertyType',
-        sh: 'multiLineStringProperty'
+        sh: '_geometryProperty'
       }, {
-        en: 'centerLineOf',
+        en: 'LinearRing',
+        ti: '.LinearRingType',
+        sh: '_Geometry'
+      }, {
+        en: 'edgeOf',
         ti: '.LineStringPropertyType',
         sh: 'lineStringProperty'
       }, {
-        en: 'MultiPoint',
-        ti: '.MultiPointType',
+        en: 'Point',
+        ti: '.PointType',
         sh: '_Geometry'
-      }, {
-        en: 'multiLocation',
-        ti: '.MultiPointPropertyType',
-        sh: 'multiPointProperty'
       }, {
         en: 'coverage',
         ti: '.PolygonPropertyType',
         sh: 'polygonProperty'
       }, {
-        en: 'pointProperty',
-        ti: '.PointPropertyType',
-        sh: '_geometryProperty'
+        en: 'outerBoundaryIs',
+        ti: '.LinearRingMemberType'
       }, {
-        en: '_Geometry',
-        ti: '.AbstractGeometryType'
+        en: 'MultiGeometry',
+        ti: '.GeometryCollectionType',
+        sh: '_Geometry'
       }, {
-        en: 'multiExtentOf',
+        en: 'multiPolygonProperty',
         ti: '.MultiPolygonPropertyType',
-        sh: 'multiPolygonProperty'
-      }, {
-        en: 'featureMember',
-        ti: '.FeatureAssociationType'
+        sh: '_geometryProperty'
       }, {
         en: 'polygonMember',
         ti: '.PolygonMemberType',
@@ -508,9 +475,42 @@ var GML_2_1_2_Module_Factory = function () {
         en: 'Box',
         ti: '.BoxType'
       }, {
-        en: 'Point',
-        ti: '.PointType',
-        sh: '_Geometry'
+        en: '_Geometry',
+        ti: '.AbstractGeometryType'
+      }, {
+        en: '_Feature',
+        ti: '.AbstractFeatureType'
+      }, {
+        en: 'boundedBy',
+        ti: '.BoundingShapeType'
+      }, {
+        en: 'location',
+        ti: '.PointPropertyType',
+        sh: 'pointProperty'
+      }, {
+        en: 'description'
+      }, {
+        en: 'multiEdgeOf',
+        ti: '.MultiLineStringPropertyType',
+        sh: 'multiLineStringProperty'
+      }, {
+        en: 'multiPointProperty',
+        ti: '.MultiPointPropertyType',
+        sh: '_geometryProperty'
+      }, {
+        en: 'coordinates',
+        ti: '.CoordinatesType'
+      }, {
+        en: 'centerLineOf',
+        ti: '.LineStringPropertyType',
+        sh: 'lineStringProperty'
+      }, {
+        en: 'polygonProperty',
+        ti: '.PolygonPropertyType',
+        sh: '_geometryProperty'
+      }, {
+        en: 'geometryMember',
+        ti: '.GeometryAssociationType'
       }]
   };
   return {
