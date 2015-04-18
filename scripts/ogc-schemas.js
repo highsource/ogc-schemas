@@ -1,83 +1,76 @@
-var schemas = [
-	"ARML_2_0",
-	"CSW_2_0_2",
-		"DC_1_1",
-		"DCT",
-	"Filter_1_0_0",
-	"Filter_1_1_0",
-	"Filter_2_0",
-	"GML_2_1_2",
-	"GML_3_1_1",
-	"GML_3_2_0",
-	"GML_3_2_1",
-	"GMLCOV_1_0",
-	"SMIL_2_0",
-	"SMIL_2_0_Language",
-	"IC_2_0",
-	"IC_2_1",
-	"ISO19139_GCO_20070417",
-	"ISO19139_GMD_20070417",
-	"ISO19139_GMX_20070417",
-	"ISO19139_GSR_20070417",
-	"ISO19139_GSS_20070417",
-	"ISO19139_GTS_20070417",
-	"ISO19139_GCO_20060504",
-	"ISO19139_GMD_20060504",
-	"ISO19139_GMX_20060504",
-	"ISO19139_GSR_20060504",
-	"ISO19139_GSS_20060504",
-	"ISO19139_GTS_20060504",
-	"ISO19139_SRV_20060504",
-	"KML_2_2_0",
-		"Atom_1_0",
-		"xAL_2_0",
-	"OM_1_0_0",
-	"OM_2_0",
-	"OWC_0_3_1",
-	"OWS_1_0_0",
-	"OWS_1_1_0",
-	"OWS_2_0",
-	"Sampling_2_0",
-	"SamplingSpatial_2_0",
-	"SE_1_1_0",
-	"SensorML_1_0_1",
-	"SensorML_2_0",
-	"SLD_1_0_0",
-	"SLD_1_0_0_GeoServer",
-	"SLD_1_1_0",
-	"SPS_2_0",
-	"SOS_1_0_0",
-	"SOS_1_0_0_Filter",
-	"SOS_2_0",
-	"SWE_1_0_1",
-	"SWE_2_0",
-	"SWES_2_0",
-		"WSN_T_1",
-	"WAMI_1_0_0",
-	"WAMI_1_0_1",
-		"WAMI_Common_1_0_1",
-	"WAMI_1_0_2",
-		"WAMI_Common_1_0_0",
-	"WaterML_2_0",
-	"WCS_1_0_0",
-	"WCS_1_1",
-	"WCS_2_0",
-	"WFS_1_0_0",
-	"WFS_1_1_0",
-	"WFS_2_0",
-	"WMC_1_0_0",
-	"WMC_1_1_0",
-	"WMS_1_0_0",
-	"WMS_1_1_0",
-	"WMS_1_1_1",
-	"WMS_1_3_0",
-	"WMS_1_3_0_Exceptions",
-	"WMTS_1_0",
-	"WPS_1_0_0",
-	"WPS_2_0"
-];
-for (var index = 0; index < schemas.length; index++)
-{
-	var schema = schemas[index];
-	module.exports[schema] = require('./lib/' + schema)[schema];
-}
+module.exports.ARML_2_0              = require('./lib/ARML_2_0'                     ).ARML_2_0             ;
+module.exports.CSW_2_0_2             = require('./lib/CSW_2_0_2'                    ).CSW_2_0_2            ;
+module.exports.DC_1_1                = require('./lib/DC_1_1'                       ).DC_1_1               ;
+module.exports.DCT                   = require('./lib/DCT'                          ).DCT                  ;
+module.exports.Filter_1_0_0          = require('./lib/Filter_1_0_0'                 ).Filter_1_0_0         ;
+module.exports.Filter_1_1_0          = require('./lib/Filter_1_1_0'                 ).Filter_1_1_0         ;
+module.exports.Filter_2_0            = require('./lib/Filter_2_0'                   ).Filter_2_0           ;
+module.exports.GML_2_1_2             = require('./lib/GML_2_1_2'                    ).GML_2_1_2            ;
+module.exports.GML_3_1_1             = require('./lib/GML_3_1_1'                    ).GML_3_1_1            ;
+module.exports.GML_3_2_0             = require('./lib/GML_3_2_0'                    ).GML_3_2_0            ;
+module.exports.GML_3_2_1             = require('./lib/GML_3_2_1'                    ).GML_3_2_1            ;
+module.exports.GMLCOV_1_0            = require('./lib/GMLCOV_1_0'                   ).GMLCOV_1_0           ;
+module.exports.SMIL_2_0              = require('./lib/SMIL_2_0'                     ).SMIL_2_0             ;
+module.exports.SMIL_2_0_Language     = require('./lib/SMIL_2_0_Language'            ).SMIL_2_0_Language    ;
+module.exports.IC_2_0                = require('./lib/IC_2_0'                       ).IC_2_0               ;
+module.exports.IC_2_1                = require('./lib/IC_2_1'                       ).IC_2_1               ;
+module.exports.ISO19139_GCO_20070417 = require('./lib/ISO19139_GCO_20070417'        ).ISO19139_GCO_20070417;
+module.exports.ISO19139_GMD_20070417 = require('./lib/ISO19139_GMD_20070417'        ).ISO19139_GMD_20070417;
+module.exports.ISO19139_GMX_20070417 = require('./lib/ISO19139_GMX_20070417'        ).ISO19139_GMX_20070417;
+module.exports.ISO19139_GSR_20070417 = require('./lib/ISO19139_GSR_20070417'        ).ISO19139_GSR_20070417;
+module.exports.ISO19139_GSS_20070417 = require('./lib/ISO19139_GSS_20070417'        ).ISO19139_GSS_20070417;
+module.exports.ISO19139_GTS_20070417 = require('./lib/ISO19139_GTS_20070417'        ).ISO19139_GTS_20070417;
+module.exports.ISO19139_GCO_20060504 = require('./lib/ISO19139_GCO_20060504'        ).ISO19139_GCO_20060504;
+module.exports.ISO19139_GMD_20060504 = require('./lib/ISO19139_GMD_20060504'        ).ISO19139_GMD_20060504;
+module.exports.ISO19139_GMX_20060504 = require('./lib/ISO19139_GMX_20060504'        ).ISO19139_GMX_20060504;
+module.exports.ISO19139_GSR_20060504 = require('./lib/ISO19139_GSR_20060504'        ).ISO19139_GSR_20060504;
+module.exports.ISO19139_GSS_20060504 = require('./lib/ISO19139_GSS_20060504'        ).ISO19139_GSS_20060504;
+module.exports.ISO19139_GTS_20060504 = require('./lib/ISO19139_GTS_20060504'        ).ISO19139_GTS_20060504;
+module.exports.ISO19139_SRV_20060504 = require('./lib/ISO19139_SRV_20060504'        ).ISO19139_SRV_20060504;
+module.exports.KML_2_2_0             = require('./lib/KML_2_2_0'                    ).KML_2_2_0            ;
+module.exports.Atom_1_0              = require('./lib/Atom_1_0'                     ).Atom_1_0             ;
+module.exports.xAL_2_0               = require('./lib/xAL_2_0'                      ).xAL_2_0              ;
+module.exports.OM_1_0_0              = require('./lib/OM_1_0_0'                     ).OM_1_0_0             ;
+module.exports.OM_2_0                = require('./lib/OM_2_0'                       ).OM_2_0               ;
+module.exports.OWC_0_3_1             = require('./lib/OWC_0_3_1'                    ).OWC_0_3_1            ;
+module.exports.OWS_1_0_0             = require('./lib/OWS_1_0_0'                    ).OWS_1_0_0            ;
+module.exports.OWS_1_1_0             = require('./lib/OWS_1_1_0'                    ).OWS_1_1_0            ;
+module.exports.OWS_2_0               = require('./lib/OWS_2_0'                      ).OWS_2_0              ;
+module.exports.Sampling_2_0          = require('./lib/Sampling_2_0'                 ).Sampling_2_0         ;
+module.exports.SamplingSpatial_2_0   = require('./lib/SamplingSpatial_2_0'          ).SamplingSpatial_2_0  ;
+module.exports.SE_1_1_0              = require('./lib/SE_1_1_0'                     ).SE_1_1_0             ;
+module.exports.SensorML_1_0_1        = require('./lib/SensorML_1_0_1'               ).SensorML_1_0_1       ;
+module.exports.SensorML_2_0          = require('./lib/SensorML_2_0'                 ).SensorML_2_0         ;
+module.exports.SLD_1_0_0             = require('./lib/SLD_1_0_0'                    ).SLD_1_0_0            ;
+module.exports.SLD_1_0_0_GeoServer   = require('./lib/SLD_1_0_0_GeoServer'          ).SLD_1_0_0_GeoServer  ;
+module.exports.SLD_1_1_0             = require('./lib/SLD_1_1_0'                    ).SLD_1_1_0            ;
+module.exports.SPS_2_0               = require('./lib/SPS_2_0'                      ).SPS_2_0              ;
+module.exports.SOS_1_0_0             = require('./lib/SOS_1_0_0'                    ).SOS_1_0_0            ;
+module.exports.SOS_1_0_0_Filter      = require('./lib/SOS_1_0_0_Filter'             ).SOS_1_0_0_Filter     ;
+module.exports.SOS_2_0               = require('./lib/SOS_2_0'                      ).SOS_2_0              ;
+module.exports.SWE_1_0_1             = require('./lib/SWE_1_0_1'                    ).SWE_1_0_1            ;
+module.exports.SWE_2_0               = require('./lib/SWE_2_0'                      ).SWE_2_0              ;
+module.exports.SWES_2_0              = require('./lib/SWES_2_0'                     ).SWES_2_0             ;
+module.exports.WSN_T_1               = require('./lib/WSN_T_1'                      ).WSN_T_1              ;
+module.exports.WAMI_1_0_0            = require('./lib/WAMI_1_0_0'                   ).WAMI_1_0_0           ;
+module.exports.WAMI_1_0_1            = require('./lib/WAMI_1_0_1'                   ).WAMI_1_0_1           ;
+module.exports.WAMI_Common_1_0_1     = require('./lib/WAMI_Common_1_0_1'            ).WAMI_Common_1_0_1    ;
+module.exports.WAMI_1_0_2            = require('./lib/WAMI_1_0_2'                   ).WAMI_1_0_2           ;
+module.exports.WAMI_Common_1_0_0     = require('./lib/WAMI_Common_1_0_0'            ).WAMI_Common_1_0_0    ;
+module.exports.WaterML_2_0           = require('./lib/WaterML_2_0'                  ).WaterML_2_0          ;
+module.exports.WCS_1_0_0             = require('./lib/WCS_1_0_0'                    ).WCS_1_0_0            ;
+module.exports.WCS_1_1               = require('./lib/WCS_1_1'                      ).WCS_1_1              ;
+module.exports.WCS_2_0               = require('./lib/WCS_2_0'                      ).WCS_2_0              ;
+module.exports.WFS_1_0_0             = require('./lib/WFS_1_0_0'                    ).WFS_1_0_0            ;
+module.exports.WFS_1_1_0             = require('./lib/WFS_1_1_0'                    ).WFS_1_1_0            ;
+module.exports.WFS_2_0               = require('./lib/WFS_2_0'                      ).WFS_2_0              ;
+module.exports.WMC_1_0_0             = require('./lib/WMC_1_0_0'                    ).WMC_1_0_0            ;
+module.exports.WMC_1_1_0             = require('./lib/WMC_1_1_0'                    ).WMC_1_1_0            ;
+module.exports.WMS_1_0_0             = require('./lib/WMS_1_0_0'                    ).WMS_1_0_0            ;
+module.exports.WMS_1_1_0             = require('./lib/WMS_1_1_0'                    ).WMS_1_1_0            ;
+module.exports.WMS_1_1_1             = require('./lib/WMS_1_1_1'                    ).WMS_1_1_1            ;
+module.exports.WMS_1_3_0             = require('./lib/WMS_1_3_0'                    ).WMS_1_3_0            ;
+module.exports.WMS_1_3_0_Exceptions  = require('./lib/WMS_1_3_0_Exceptions'         ).WMS_1_3_0_Exceptions ;
+module.exports.WMTS_1_0              = require('./lib/WMTS_1_0'                     ).WMTS_1_0             ;
+module.exports.WPS_1_0_0             = require('./lib/WPS_1_0_0'                    ).WPS_1_0_0            ;
+module.exports.WPS_2_0               = require('./lib/WPS_2_0'                      ).WPS_2_0              ;
