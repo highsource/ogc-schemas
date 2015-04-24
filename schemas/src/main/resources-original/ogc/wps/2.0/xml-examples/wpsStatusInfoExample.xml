@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    OGC LICENSE HEADER
-
-    The official OGC XML schemas can be accessed under http://schemas.opengis.net.
-    Please consider the schema copyright notices: http://www.opengeospatial.org/ogc/document
-    and the OGC Copyright Notice and Disclaimers: http://www.opengeospatial.org/ogc/legal
-    If there are any questions left there is also a copyright FAQ: http://www.opengeospatial.org/ogc/legalfaq
--->
-<wps:StatusInfo xmlns:ows="http://www.opengis.net/ows/2.0"
-	xmlns:wps="http://www.opengis.net/wps/2.0.0"
+<wps:StatusInfo
+	xmlns:wps="http://www.opengis.net/wps/2.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.opengis.net/wps/2.0.0 ../wpsCommon.xsd">
+	xsi:schemaLocation="http://www.opengis.net/wps/2.0 ../wps.xsd">
+	
 	<wps:JobID>FB6DD4B0-A2BB-11E3-A5E2-0800200C9A66</wps:JobID>
 	<wps:Status>Accepted</wps:Status>
 	<wps:NextPoll>2014-12-24T16:00:00Z</wps:NextPoll>
+	
 </wps:StatusInfo>

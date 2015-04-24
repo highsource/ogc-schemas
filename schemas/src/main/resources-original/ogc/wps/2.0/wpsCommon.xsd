@@ -1,40 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    OGC LICENSE HEADER
-
-    The official OGC XML schemas can be accessed under http://schemas.opengis.net.
-    Please consider the schema copyright notices: http://www.opengeospatial.org/ogc/document
-    and the OGC Copyright Notice and Disclaimers: http://www.opengeospatial.org/ogc/legal
-    If there are any questions left there is also a copyright FAQ: http://www.opengeospatial.org/ogc/legalfaq
--->
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
+<schema
+	xmlns="http://www.w3.org/2001/XMLSchema"
 	xmlns:ows="http://www.opengis.net/ows/2.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:wps="http://www.opengis.net/wps/2.0.0"
-	targetNamespace="http://www.opengis.net/wps/2.0.0"
+	xmlns:wps="http://www.opengis.net/wps/2.0"
+	targetNamespace="http://www.opengis.net/wps/2.0"
 	elementFormDefault="qualified"
 	xml:lang="en"
-	version="1.0.0">
+	version="2.0.0">
 	
 	<annotation>
-		<appinfo>$Id: wpsCommon.xsd 2014-05-20 $</appinfo>
 		<documentation>
-			<description>
-				This XML Schema Document encodes elements and types that
-				are shared by multiple WPS schema documents.
-			</description>
-			<copyright>
-				WPS is an OGC Standard.
-				Copyright (c) 2014 Open Geospatial Consortium.
-				To obtain additional rights of use, visit
-				http://www.opengeospatial.org/legal/ .
-			</copyright>
+			WPS is an OGC Standard.
+			Copyright (c) 2015 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
 		</documentation>
 	</annotation>
 	
+	<!-- all-components document include (OGC 06-135r11 s#14) -->
+	<include schemaLocation="wps.xsd"/>
 	
 	<!-- === IMPORTS === -->
-	<import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsCommon.xsd" />
+	<import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsAll.xsd"/>
 	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
 	
@@ -49,27 +36,35 @@
 	<complexType name="RequestBaseType" abstract="true">
 		<annotation>
 			<documentation>
-				WPS operation request base, for all WPS operations except GetCapabilities.
+				WPS operation request base, for all WPS operations, except GetCapabilities.
 				In this XML encoding, no "request" parameter is included, since the element
-				name specifies the specific operation. 'Extension' elements allow WPS extension
-				standards to define their individual extra request parameters.
+				name specifies the specific operation.
+				An 'Extension' element provides a placeholder for extra request parameters
+				that might be defined by WPS extension standards.
 			</documentation>
 		</annotation>
 		<sequence>
 			<element name="Extension" type="anyType" minOccurs="0" maxOccurs="unbounded">
 				<annotation>
-					<documentation>container for elements defined by extension specifications</documentation>
+					<documentation>
+						Any ancillary information to be sent from client to server.
+						Placeholder for further request parameters defined by WPS extension standards.
+					</documentation>
 				</annotation>
 			</element>
 		</sequence>
 		<attribute name="service" type="string" fixed="WPS" use="required" >
 			<annotation>
-				<documentation>Service type identifier (WPS)</documentation>
+				<documentation>
+					Service type identifier (WPS)
+				</documentation>
 			</annotation>
 		</attribute>
 		<attribute name="version" type="ows:VersionType" fixed="2.0.0" use="required">
 			<annotation>
-				<documentation>Version of the WPS interface specification implemented by the server (2.0.0)</documentation>
+				<documentation>
+					Version of the WPS interface specification implemented by the server (2.0.0)
+				</documentation>
 			</annotation>
 		</attribute>
 	</complexType>
@@ -81,29 +76,40 @@
 	<element name="Reference" type="wps:ReferenceType">
 		<annotation>
 			<documentation>
-				This element is used to make a direct reference to a data set or value.
+				This element is used for web accessible references to a data set or value.
 			</documentation>
 		</annotation>
 	</element>
 	<!-- =========================================================== -->
 	<complexType name="ReferenceType">
 		<annotation>
-			<documentation>Reference to an input (output) value that is a web accessible resource. </documentation>
+			<documentation>
+				Reference to an input (output) value that is a web accessible resource.
+			</documentation>
 		</annotation>
 		<choice minOccurs="0">
 			<element name="Body" type="anyType">
 				<annotation>
-					<documentation>The contents of this element to be used as the body of the HTTP request message to be sent to the service identified in ../Reference/@href.  For example, it could be an XML encoded WFS request using HTTP POST</documentation>
+					<documentation>
+						The contents of this element to be used as the body of the HTTP request
+						message to be sent to the service identified in ../Reference/@href. 
+						For example, it could be an XML encoded WFS request using HTTP/POST.
+					</documentation>
 				</annotation>
 			</element>
 			<element name="BodyReference">
 				<annotation>
-					<documentation>Reference to a remote document to be used as the body of the an HTTP POST request message to the service identified in ../Reference/@href.</documentation>
+					<documentation>
+						Reference to a remote document to be used as the body of the an HTTP/POST request message
+						to the service identified in the href element in the Reference structure.
+					</documentation>
 				</annotation>
 				<complexType>
 					<attribute ref="xlink:href" use="required">
 						<annotation>
-							<documentation>Reference to a remote document to be used as the body of the an HTTP POST request message. This attribute shall contain a URL from which this body can be electronically retrieved. </documentation>
+							<documentation>
+								HTTP URI that points to the remote resource where the request body may be retrieved.
+							</documentation>
 						</annotation>
 					</attribute>
 				</complexType>
@@ -111,7 +117,9 @@
 		</choice>
 		<attribute ref="xlink:href" use="required">
 			<annotation>
-				<documentation>Reference to a web-accessible resource that can be used as input, or is provided by the process as output. This attribute shall contain a URL from which this input (output) can be electronically retrieved. </documentation>
+				<documentation>
+					HTTP URI that points to the remote resource where the data may be retrieved.
+				</documentation>
 			</annotation>
 		</attribute>
 		<attributeGroup ref="wps:dataEncodingAttributes"/>
@@ -121,7 +129,8 @@
 		<complexType mixed="true">
 			<annotation>
 				<documentation>
-					This element is used to embed the data in a WPS request. The content can be XML data, plain character data, or specially encoded binary data (i.e. base64).
+					This element is used to embed the data in a WPS request or response.
+					The content can be XML data, plain character data, or specially encoded binary data (i.e. base64).
 				</documentation>
 			</annotation>
 			<complexContent mixed="true">
@@ -135,17 +144,23 @@
 	<attributeGroup name="dataEncodingAttributes">
 		<attribute name="mimeType" type="ows:MimeType" use="optional">
 			<annotation>
-				<documentation>The Format of this input or requested for this output (e.g., text/xml). This element shall be omitted when the Format is indicated in the http header of the output. When included, this format shall be one published for this output or input in the Process full description. </documentation>
+				<documentation>
+					Media type of the data.
+				</documentation>
 			</annotation>
 		</attribute>
 		<attribute name="encoding" type="anyURI" use="optional">
 			<annotation>
-				<documentation>The encoding of this input or requested for this output (e.g., UTF-8). This "encoding" shall be included whenever the encoding required is not the default encoding indicated in the Process full description. When included, this encoding shall be one published for this output or input in the Process full description. </documentation>
+				<documentation>
+					Encoding procedure or character set used (e.g. raw, base64, or UTF-8).
+				</documentation>
 			</annotation>
 		</attribute>
 		<attribute name="schema" type="anyURI" use="optional">
 			<annotation>
-				<documentation>Web-accessible XML Schema Document that defines the content model of this complex resource (e.g., encoded using GML 2.2 Application Schema).  This reference should be included for XML encoded complex resources. </documentation>
+				<documentation>
+					Identification of the data schema.
+				</documentation>
 			</annotation>
 		</attribute>
 	</attributeGroup>
@@ -179,10 +194,11 @@
 	<simpleType name="JobControlOptionsType">
 		<annotation>
 			<documentation>
-				This attribute type is used to specify process steering options. 
+				This attribute type is used to specify process control options. 
 				The WPS specification only defines "execute-sync" and "execute-async",
 				each with an associated execution protocol.
-				Extensions may specify additional steering options, i.e. for pausing and resuming processes.
+				Extensions may specify additional control options, such as "dimiss" which is
+				defined in the WPS dismiss extension.
 			</documentation>
 		</annotation>
 		<union>
@@ -190,10 +206,9 @@
 				<restriction base="string">
 					<enumeration value="sync-execute"/>
 					<enumeration value="async-execute"/>
-					<enumeration value="delete"/>
 				</restriction>
 			</simpleType>
-			<simpleType>
+ 			<simpleType>
 				<restriction base="string"/>
 			</simpleType>
 		</union>
@@ -215,15 +230,19 @@
 				<element ref="wps:JobID" minOccurs="0">
 					<annotation>
 						<documentation>
-							Include if required. From the WPS 1.0 Core document there are two cases:
-							a) asynchronous execution, where the job persists for some duration on the server
-							b) dismiss extension, where the client is allowed to actively free server-side resources
+							Include if required. A JobId is usually required for
+							a) asynchronous execution
+							b) the Dismiss operation extension, where the client is allowed to
+							   actively free server-side resources
 						</documentation>
 					</annotation>
 				</element>
 				<element ref="wps:ExpirationDate" minOccurs="0">
 					<annotation>
-						<documentation>Identifier of the Process that was executed. This Process identifier shall be as listed in the ProcessOfferings section of the WPS Capabilities document. </documentation>
+						<documentation>
+							Identifier of the Process that was executed.
+							This Process identifier shall be as listed in the ProcessOfferings
+							section of the WPS Capabilities document. </documentation>
 					</annotation>
 				</element>
 				<element name="Output" type="wps:DataOutputType" maxOccurs="unbounded"/>
@@ -276,42 +295,39 @@
 					<simpleType>
 						<annotation>
 							<documentation>
-								The type of status is basically a string. For convenience in documentation and code generation
-								it is realized as a union of
-								1) the pre-defined states defined in the WPS specification,
-								2) the simple type "string"
+								Basic status set to communicate the status of a server-side job to the client.
+								Extensions of this specification may introduce additional states for fine-grained
+								monitoring or domain-specific purposes.
 							</documentation>
 						</annotation>
 						<union>
 							<simpleType>
 								<restriction base="string">
-									<enumeration value="Accepted">
-										<annotation>
-											<documentation>
-												Indicates that the request for process execution was accepted.
-												Only used in response to an asynchronous execute request.
-											</documentation>
-										</annotation>
-									</enumeration>
-									<enumeration value="Running">
-										<annotation>
-											<documentation>
-												The process is running and has not yet finished.
-											</documentation>
-										</annotation>
-									</enumeration>
 									<enumeration value="Succeeded">
 										<annotation>
 											<documentation>
-												The process execution has finished and the results are available.
+												The job has finished with no errors.
 											</documentation>
 										</annotation>
 									</enumeration>
 									<enumeration value="Failed">
 										<annotation>
 											<documentation>
-												The process execution has finished but but failed. There will be no results
-												but only an exception report that can be inspected by the client.
+												The job has finished with errors.
+											</documentation>
+										</annotation>
+									</enumeration>
+									<enumeration value="Accepted">
+										<annotation>
+											<documentation>
+												The job is queued for execution. 
+											</documentation>
+										</annotation>
+									</enumeration>
+									<enumeration value="Running">
+										<annotation>
+											<documentation>
+												The job is running.
 											</documentation>
 										</annotation>
 									</enumeration>
