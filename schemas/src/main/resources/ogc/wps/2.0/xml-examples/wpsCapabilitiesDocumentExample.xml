@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    OGC LICENSE HEADER
-
-    The official OGC XML schemas can be accessed under http://schemas.opengis.net.
-    Please consider the schema copyright notices: http://www.opengeospatial.org/ogc/document
-    and the OGC Copyright Notice and Disclaimers: http://www.opengeospatial.org/ogc/legal
-    If there are any questions left there is also a copyright FAQ: http://www.opengeospatial.org/ogc/legalfaq
--->
-<wps:Capabilities service="WPS" version="2.0.0"
+<wps:Capabilities
 	xmlns:ows="http://www.opengis.net/ows/2.0"
-	xmlns:wps="http://www.opengis.net/wps/2.0.0"
+	xmlns:wps="http://www.opengis.net/wps/2.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:xml="http://www.w3.org/XML/1998/namespace"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.opengis.net/wps/2.0.0 ../wpsGetCapabilities.xsd ">
+	xsi:schemaLocation="http://www.opengis.net/wps/2.0 ../wps.xsd"
+	
+	service="WPS"
+	version="2.0.0">
+	
 	<ows:ServiceIdentification>
 		<ows:Title>MyWebProcessingService</ows:Title>
 		<ows:Abstract>A Demo Service offering typical GIS distance transform processes</ows:Abstract>
@@ -111,4 +105,5 @@
 			<ows:Identifier>http://my.site/distance-transform/cost-distance</ows:Identifier>
 		</wps:ProcessSummary>
 	</wps:Contents>
+	
 </wps:Capabilities>

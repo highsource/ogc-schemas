@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    OGC LICENSE HEADER
-
-    The official OGC XML schemas can be accessed under http://schemas.opengis.net.
-    Please consider the schema copyright notices: http://www.opengeospatial.org/ogc/document
-    and the OGC Copyright Notice and Disclaimers: http://www.opengeospatial.org/ogc/legal
-    If there are any questions left there is also a copyright FAQ: http://www.opengeospatial.org/ogc/legalfaq
--->
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
+<schema
+	xmlns="http://www.w3.org/2001/XMLSchema"
 	xmlns:ows="http://www.opengis.net/ows/2.0"
-	xmlns:wps="http://www.opengis.net/wps/2.0.0"
-	targetNamespace="http://www.opengis.net/wps/2.0.0"
+	xmlns:wps="http://www.opengis.net/wps/2.0"
+	targetNamespace="http://www.opengis.net/wps/2.0"
 	elementFormDefault="qualified"
 	xml:lang="en"
-	version="1.0.0">
+	version="2.0.0">
 	<annotation>
-		<appinfo>$Id: wpsDescribeProcess.xsd 2014-05-20 $</appinfo>
 		<documentation>
-			<description>
-				This XML Schema Document encodes the WPS DescribeProcess
-				operation.
-			</description>
-			<copyright>
-				WPS is an OGC Standard.
-				Copyright (c) 2014 Open Geospatial Consortium.
-				To obtain additional rights of use, visit
-				http://www.opengeospatial.org/legal/ .
-			</copyright>
+			WPS is an OGC Standard.
+			Copyright (c) 2015 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
 		</documentation>
 	</annotation>
 	
+	<!-- all-components document include (OGC 06-135r11 s#14) -->
+	<include schemaLocation="wps.xsd"/>
+	
 	<!-- === IMPORTS === -->
-	<import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsCommon.xsd" />
+	<import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsAll.xsd"/>
 	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 	
 	<!-- === INCLUDES === -->
@@ -60,7 +48,9 @@
 					</sequence>
 					<attribute ref="xml:lang" use="optional">
 						<annotation>
-							<documentation>RFC 4646 language code of the human-readable text (e.g. "en-CA") in the process description.</documentation>
+							<documentation>
+								RFC 4646 language code of the human-readable text (e.g. "en-CA") in the process description.
+							</documentation>
 						</annotation>
 					</attribute>
 				</extension>
@@ -97,8 +87,8 @@
 		<annotation>
 			<documentation>
 				A process offering is a process description. It has additional attributes that provide additional
-				information on how this process can be executed on a particular service instance (execution modes, data transmission modes,
-				informative process version.)
+				information on how this process can be executed on a particular service instance (execution modes,
+				data transmission modes, informative process version.)
 			</documentation>
 		</annotation>
 		<complexType>
@@ -134,7 +124,7 @@
 		<attribute name="outputTransmission">
 			<annotation>
 				<documentation>
-					Indicates if data outputs from this process	can be stored by the WPS server as web-accessible resources.
+					Indicates whether data outputs from this process can be stored by the WPS server as web-accessible resources.
 				</documentation>
 			</annotation>
 			<simpleType>

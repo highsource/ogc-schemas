@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    OGC LICENSE HEADER
-
-    The official OGC XML schemas can be accessed under http://schemas.opengis.net.
-    Please consider the schema copyright notices: http://www.opengeospatial.org/ogc/document
-    and the OGC Copyright Notice and Disclaimers: http://www.opengeospatial.org/ogc/legal
-    If there are any questions left there is also a copyright FAQ: http://www.opengeospatial.org/ogc/legalfaq
--->
-<!--This example describes a buffer command that accepts geometries 
-	in GML, and uses a buffer distance in meters to produce buffered polygon 
-	features, which is output in GML in UTF-8 encoding. -->
-<wps:Process xmlns:wps="http://www.opengis.net/wps/2.0.0"
+<wps:Process
+	xmlns:wps="http://www.opengis.net/wps/2.0"
 	xmlns:ows="http://www.opengis.net/ows/2.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.opengis.net/wps/2.0.0 ../../wps.xsd">
+	xsi:schemaLocation="http://www.opengis.net/wps/2.0 ../../wps.xsd">
 	
 	<ows:Title>Planar Buffer operation for GML features</ows:Title>
 	<ows:Abstract>Create a buffer around a GML feature. Accepts any valid GML feature and computes the joint buffer.</ows:Abstract>
@@ -43,8 +33,8 @@
 			<LiteralDataDomain default="true">
 				<ows:AllowedValues>
 					<ows:Range>
-						<ows:MinimumValue>1</ows:MinimumValue>
-						<ows:MaximumValue>unbounded</ows:MaximumValue>
+						<ows:MinimumValue>-INF</ows:MinimumValue>
+						<ows:MaximumValue>INF</ows:MaximumValue>
 					</ows:Range>
 				</ows:AllowedValues>
 				<ows:DataType ows:reference="http://www.w3.org/2001/XMLSchema#double">Double</ows:DataType>
@@ -60,4 +50,5 @@
 			<wps:Format mimeType="text/xml" encoding="UTF-8" schema="http://schemas.opengis.net/gml/3.2.1/feature.xsd" default="true"/>
 		</wps:ComplexData>
 	</wps:Output>
+	
 </wps:Process>

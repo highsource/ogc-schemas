@@ -21,6 +21,9 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2015-04-22  Matthias Mueller
+  * v2.0.0: Added WPS 2.0 Interface Standard schema (OGC 14-065)
+
 2012-08-03  Benjamin Pross
   * v1.0.0: Removed reference to itself in wpsAll.xsd
   * v1.0.0: Updated xsd:schema/@version to 1.0.0.3
@@ -59,7 +62,7 @@ The most current schema are available at http://schemas.opengis.net/ .
 Policies, Procedures, Terms, and Conditions of OGC(r) are available
   http://www.opengeospatial.org/ogc/legal/ .
 
-Copyright (c) 2012 Open Geospatial Consortium.
+Copyright (c) 2012, 2015 Open Geospatial Consortium.
 
 -----------------------------------------------------------------------
 

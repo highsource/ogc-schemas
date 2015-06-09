@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    OGC LICENSE HEADER
-
-    The official OGC XML schemas can be accessed under http://schemas.opengis.net.
-    Please consider the schema copyright notices: http://www.opengeospatial.org/ogc/document
-    and the OGC Copyright Notice and Disclaimers: http://www.opengeospatial.org/ogc/legal
-    If there are any questions left there is also a copyright FAQ: http://www.opengeospatial.org/ogc/legalfaq
--->
-<wps:ProcessOfferings xmlns:wps="http://www.opengis.net/wps/2.0.0"
-	xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+<wps:ProcessOfferings
+	xmlns:wps="http://www.opengis.net/wps/2.0"
+	xmlns:ows="http://www.opengis.net/ows/2.0"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.opengis.net/wps/2.0.0 ../wpsDescribeProcess.xsd">
+	xsi:schemaLocation="http://www.opengis.net/wps/2.0 ../wps.xsd">
+	
 	<wps:ProcessOffering jobControlOptions="sync-execute async-execute dismiss" outputTransmission="value reference">
 		<wps:Process> 			
 			<ows:Title>Planar Buffer operation for Simple Features</ows:Title>
@@ -41,8 +36,8 @@
 					<LiteralDataDomain default="true">
 						<ows:AllowedValues>
 							<ows:Range>
-								<ows:MinimumValue>1</ows:MinimumValue>
-								<ows:MaximumValue>unbounded</ows:MaximumValue>
+								<ows:MinimumValue>-INF</ows:MinimumValue>
+								<ows:MaximumValue>INF</ows:MaximumValue>
 							</ows:Range>
 						</ows:AllowedValues>
 						<ows:DataType ows:reference="http://www.w3.org/2001/XMLSchema#double">Double</ows:DataType>
@@ -61,4 +56,5 @@
 			</wps:Output>
 		</wps:Process>
 	</wps:ProcessOffering>
+	
 </wps:ProcessOfferings>
