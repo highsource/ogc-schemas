@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<sa:SamplingPoint gml:id="st2" xmlns:sa="http://www.opengis.net/sampling/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml"
+            xsi:schemaLocation="http://www.opengis.net/sampling/1.0 http://schemas.opengis.net/sampling/1.0.0/sampling.xsd">
+	<gml:description>Hydrology sampling station</gml:description>
+	<gml:name codeSpace="http://my.hydrology.custodian.org/catchments/Potamos">st2</gml:name>
+	<sa:sampledFeature xlink:href="http://my.hydrology.custodian.org/catchments/Potamos"/>
+	<sa:relatedObservation xlink:href="http://my.hydrology.custodian.org/chemistry/2007/rtg78n"/>
+	<sa:relatedObservation xlink:href="http://my.hydrology.custodian.org/chemistry/2007/rtg108q"/>
+	<sa:relatedSamplingFeature>
+		<sa:SamplingFeatureRelation>
+			<sa:role>member</sa:role>
+			<sa:target xlink:href="http://my.flakey.org/wfs?request=getFeature;featureid=coll32" xlink:role="urn:x-ogc:def:featureType:SWE:SamplingFeatureCollection"/>
+		</sa:SamplingFeatureRelation>
+	</sa:relatedSamplingFeature>
+	<sa:surveyDetails xlink:href="http://my.hydrology.custodian.org/procedures/survey/g682fgh"/>
+	<sa:position>
+		<gml:Point gml:id="st2p">
+			<gml:pos srsName="urn:ogc:def:crs:EPSG:6.8:4283">-30.711 134.205</gml:pos>
+		</gml:Point>
+	</sa:position>
+</sa:SamplingPoint>
