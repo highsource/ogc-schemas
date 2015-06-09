@@ -4,7 +4,7 @@
 	jaxb:extensionBindingPrefixes="jsonix">
 
 	<jaxb:bindings schemaLocation="http://schemas.opengis.net/sampling/1.0.0/sampling.xsd" node="/xs:schema">
-		<jsonix:packageMapping packageName="net.opengis.sampling.v_1_0" spaceName="Sampling_1_0"/>
+		<jsonix:packageMapping packageName="net.opengis.sampling.v_1_0_0" spaceName="Sampling_1_0_0"/>
 	</jaxb:bindings>
 
 </jaxb:bindings>

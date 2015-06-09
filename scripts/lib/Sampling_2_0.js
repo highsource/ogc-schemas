@@ -3,63 +3,8 @@ var Sampling_2_0_Module_Factory = function () {
     n: 'Sampling_2_0',
     dens: 'http:\/\/www.opengis.net\/sampling\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['OM_2_0', 'XLink_1_0', 'GML_3_2_1', 'ISO19139_GMD_20070417'],
+    deps: ['XLink_1_0', 'OM_2_0', 'GML_3_2_1', 'ISO19139_GMD_20070417'],
     tis: [{
-        ln: 'SamplingFeatureComplexPropertyType',
-        ps: [{
-            n: 'samplingFeatureComplex',
-            en: 'SamplingFeatureComplex',
-            ti: '.SamplingFeatureComplexType'
-          }]
-      }, {
-        ln: 'SFSamplingFeaturePropertyType',
-        tn: 'SF_SamplingFeaturePropertyType',
-        ps: [{
-            n: 'sfSamplingFeature',
-            en: 'SF_SamplingFeature',
-            ti: '.SFSamplingFeatureType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
         ln: 'SFProcessPropertyType',
         tn: 'SF_ProcessPropertyType',
         ps: [{
@@ -135,6 +80,22 @@ var Sampling_2_0_Module_Factory = function () {
             ti: 'OM_2_0.NamedValuePropertyType'
           }]
       }, {
+        ln: 'SamplingFeatureComplexType',
+        ps: [{
+            n: 'role',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'relatedSamplingFeature',
+            ti: '.SFSamplingFeaturePropertyType'
+          }]
+      }, {
+        ln: 'SamplingFeatureComplexPropertyType',
+        ps: [{
+            n: 'samplingFeatureComplex',
+            en: 'SamplingFeatureComplex',
+            ti: '.SamplingFeatureComplexType'
+          }]
+      }, {
         ln: 'SFSamplingFeatureCollectionType',
         tn: 'SF_SamplingFeatureCollectionType',
         bti: 'GML_3_2_1.AbstractFeatureType',
@@ -144,13 +105,52 @@ var Sampling_2_0_Module_Factory = function () {
             ti: '.SFSamplingFeaturePropertyType'
           }]
       }, {
-        ln: 'SamplingFeatureComplexType',
+        ln: 'SFSamplingFeaturePropertyType',
+        tn: 'SF_SamplingFeaturePropertyType',
         ps: [{
-            n: 'role',
-            ti: 'GML_3_2_1.ReferenceType'
+            n: 'sfSamplingFeature',
+            en: 'SF_SamplingFeature',
+            ti: '.SFSamplingFeatureType'
           }, {
-            n: 'relatedSamplingFeature',
-            ti: '.SFSamplingFeaturePropertyType'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'SFSamplingFeatureCollectionPropertyType',
@@ -202,6 +202,13 @@ var Sampling_2_0_Module_Factory = function () {
           }]
       }],
     eis: [{
+        en: 'SF_SamplingFeature',
+        ti: '.SFSamplingFeatureType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
         en: 'SF_SamplingFeatureCollection',
         ti: '.SFSamplingFeatureCollectionType',
         sh: {
@@ -211,13 +218,6 @@ var Sampling_2_0_Module_Factory = function () {
       }, {
         en: 'SamplingFeatureComplex',
         ti: '.SamplingFeatureComplexType'
-      }, {
-        en: 'SF_SamplingFeature',
-        ti: '.SFSamplingFeatureType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
       }]
   };
   return {

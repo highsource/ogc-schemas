@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<sa:SamplingCurve gml:id="pr1" xmlns:sa="http://www.opengis.net/sampling/1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:gml="http://www.opengis.net/gml"
+	xsi:schemaLocation="http://www.opengis.net/sampling/1.0 http://schemas.opengis.net/sampling/1.0.0/sampling.xsd">
+	<gml:description>Geology traverse</gml:description>
+	<gml:name codeSpace="http://my.geology.custodian.org/projects/2007">pr1</gml:name>
+	<gml:boundedBy>
+		<gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.8:4283">
+			<gml:lowerCorner>-30.711 134.196</gml:lowerCorner>
+			<gml:upperCorner>-30.702 134.205</gml:upperCorner>
+		</gml:Envelope>
+	</gml:boundedBy>
+	<sa:sampledFeature xlink:href="http://my.geology.custodian.org/unit/g345"/>
+	<sa:sampledFeature xlink:href="http://my.geology.custodian.org/unit/g347"/>
+	<sa:surveyDetails>
+		<sa:SurveyProcedure gml:id="sp3">
+			<gml:name>field survey class B</gml:name>
+			<sa:operator xlink:href="http://my.geology.custodian.org/staff/cox075"/>
+			<sa:elevationMethod xlink:href="http://my.geology.custodian.org/procedures/survey/position/GPS4"/>
+			<sa:elevationAccuracy uom="m">10.</sa:elevationAccuracy>
+			<sa:positionMethod xlink:href="http://my.geology.custodian.org/procedures/survey/position/GPS4"/>
+			<sa:positionAccuracy uom="m">3.</sa:positionAccuracy>
+		</sa:SurveyProcedure>
+	</sa:surveyDetails>
+	<sa:shape>
+		<gml:LineString gml:id="pr1_ls1"  srsName="urn:ogc:def:crs:EPSG:6.8:4347">
+			<gml:pos>-30.711 134.205 321.</gml:pos>
+			<gml:pos>-30.710 134.204 315.</gml:pos>
+			<gml:pos>-30.709 134.203 303.</gml:pos>
+			<gml:pos>-30.708 134.201 296.</gml:pos>
+			<gml:pos>-30.706 134.196 272.</gml:pos>
+			<gml:pos>-30.703 134.197 271.</gml:pos>
+			<gml:pos>-30.702 134.199 280.</gml:pos>
+		</gml:LineString>
+	</sa:shape>
+	<sa:length uom="m">750.</sa:length>
+</sa:SamplingCurve>

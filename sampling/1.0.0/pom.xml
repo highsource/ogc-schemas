@@ -2,9 +2,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>sampling-v_1_0</artifactId>
+	<artifactId>sampling-v_1_0_0</artifactId>
 	<packaging>jar</packaging>
-	<name>OGC Sampling 1.0</name>
+	<name>OGC Sampling 1.0.0</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schema-parent</artifactId>

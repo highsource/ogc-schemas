@@ -5,7 +5,7 @@
 
 	<jaxb:bindings schemaLocation="http://schemas.opengis.net/sampling/1.0.0/sampling.xsd" node="/xs:schema">
 		<jaxb:schemaBindings>
-			<jaxb:package name="net.opengis.sampling.v_1_0"/>
+			<jaxb:package name="net.opengis.sampling.v_1_0_0"/>
 		</jaxb:schemaBindings>
 	</jaxb:bindings>
 </jaxb:bindings>

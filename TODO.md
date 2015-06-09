@@ -23,6 +23,7 @@
 * ows/1.0.0
 * ows/1.1.0
 * ows/2.0
+* sampling/1.0.0
 * sampling/2.0
 * samplingSpatial/2.0
 * se/1.1.0
@@ -77,7 +78,6 @@
 * opensearchgeo/1.0
 * oseo/1.0
 * owc/1.0
-* sampling/1.0.0
 * samplingSpecimen/2.0
 * sensorML/1.0.0
 * sf/1.0

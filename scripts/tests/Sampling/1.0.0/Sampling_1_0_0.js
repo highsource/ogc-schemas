@@ -7,16 +7,16 @@ var IC_2_0 = require('../../../ogc-schemas').IC_2_0;
 var OM_1_0_0 = require('../../../ogc-schemas').OM_1_0_0;
 var SensorML_1_0_1 = require('../../../ogc-schemas').SensorML_1_0_1;
 var SWE_1_0_1 = require('../../../ogc-schemas').SWE_1_0_1;
-var Sampling_1_0 = require('../../../ogc-schemas').Sampling_1_0;
+var Sampling_1_0_0 = require('../../../ogc-schemas').Sampling_1_0_0;
 
 var roundtrips = require('../../roundtrip').roundtrips;
 
-var mappings = [XLink_1_0, SMIL_2_0, SMIL_2_0_Language, GML_3_1_1, IC_2_0, OM_1_0_0, SensorML_1_0_1, SWE_1_0_1, Sampling_1_0];
+var mappings = [ XLink_1_0, SMIL_2_0, SMIL_2_0_Language, GML_3_1_1, IC_2_0, OM_1_0_0, SensorML_1_0_1, SWE_1_0_1, Sampling_1_0_0 ];
 
 module.exports = {
-    "Context": function(test) {
-        var context = new Jsonix.Context(mappings);
-        test.done();
-        },
-    "Roundtrips" : roundtrips(mappings, __dirname)
+	"Context" : function(test) {
+		var context = new Jsonix.Context(mappings);
+		test.done();
+	},
+	"Roundtrips" : roundtrips(mappings, __dirname)
 };

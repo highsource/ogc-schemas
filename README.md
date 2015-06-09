@@ -41,6 +41,7 @@ Supports the following schemas:
 * `OWS_1_0_0`
 * `OWS_1_1_0`
 * `OWS_2_0`
+* `Sampling_1_0_0`
 * `Sampling_2_0`
 * `SamplingSpatial_2_0`
 * `SE_1_1_0`

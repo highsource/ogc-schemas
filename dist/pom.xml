@@ -43,6 +43,7 @@
 		<dependency><artifactId>ows-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>ows-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>sampling-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>sampling-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
 		<dependency><artifactId>samplingSpatial-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
