@@ -91,6 +91,7 @@
 								<artifactItem><artifactId>ows-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 								<artifactItem><artifactId>ows-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 
+								<artifactItem><artifactId>sampling-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 								<artifactItem><artifactId>sampling-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 								<artifactItem><artifactId>samplingSpatial-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 

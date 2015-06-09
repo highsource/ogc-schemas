@@ -36,6 +36,7 @@ module.exports.OWC_0_3_1             = require('./lib/OWC_0_3_1'                
 module.exports.OWS_1_0_0             = require('./lib/OWS_1_0_0'                    ).OWS_1_0_0            ;
 module.exports.OWS_1_1_0             = require('./lib/OWS_1_1_0'                    ).OWS_1_1_0            ;
 module.exports.OWS_2_0               = require('./lib/OWS_2_0'                      ).OWS_2_0              ;
+module.exports.Sampling_1_0          = require('./lib/Sampling_1_0'                 ).Sampling_1_0         ;
 module.exports.Sampling_2_0          = require('./lib/Sampling_2_0'                 ).Sampling_2_0         ;
 module.exports.SamplingSpatial_2_0   = require('./lib/SamplingSpatial_2_0'          ).SamplingSpatial_2_0  ;
 module.exports.SE_1_1_0              = require('./lib/SE_1_1_0'                     ).SE_1_1_0             ;
