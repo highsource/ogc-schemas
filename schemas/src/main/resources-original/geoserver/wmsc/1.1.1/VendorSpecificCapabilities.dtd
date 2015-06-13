@@ -1,0 +1,7 @@
+<!ELEMENT VendorSpecificCapabilities (TileSet*) >
+<!ELEMENT TileSet (SRS, BoundingBox?, Resolutions, Width, Height, Format, Layers*, Styles*) >
+<!ELEMENT Resolutions (#PCDATA) >
+<!ELEMENT Width (#PCDATA) >
+<!ELEMENT Height (#PCDATA) >
+<!ELEMENT Layers (#PCDATA) >
+<!ELEMENT Styles (#PCDATA) >
