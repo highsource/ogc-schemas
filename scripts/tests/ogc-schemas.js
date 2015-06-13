@@ -22,6 +22,8 @@ module.exports =
 		"SWES" : require('./SWES/SWES.js'),
 		"WaterML" : require('./WaterML/WaterML.js'),
 		"WMC" : require('./WMC/WMC.js'),
+		"WMS" : require('./WMS/WMS.js'),
+		"WMSC" : require('./WMSC/WMSC.js'),
 		"WCS" : require('./WCS/WCS.js'),
 		"WFS" : require('./WFS/WFS.js'),
 		"WMTS" : require('./WMTS/WMTS.js'),

@@ -72,6 +72,7 @@ module.exports.WMS_1_1_0             = require('./lib/WMS_1_1_0'                
 module.exports.WMS_1_1_1             = require('./lib/WMS_1_1_1'                    ).WMS_1_1_1            ;
 module.exports.WMS_1_3_0             = require('./lib/WMS_1_3_0'                    ).WMS_1_3_0            ;
 module.exports.WMS_1_3_0_Exceptions  = require('./lib/WMS_1_3_0_Exceptions'         ).WMS_1_3_0_Exceptions ;
+module.exports.WMSC_1_1_1            = require('./lib/WMSC_1_1_1'                   ).WMSC_1_1_1           ;
 module.exports.WMTS_1_0              = require('./lib/WMTS_1_0'                     ).WMTS_1_0             ;
 module.exports.WPS_1_0_0             = require('./lib/WPS_1_0_0'                    ).WPS_1_0_0            ;
 module.exports.WPS_2_0               = require('./lib/WPS_2_0'                      ).WPS_2_0              ;

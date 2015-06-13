@@ -50,6 +50,7 @@
                 "WCS",
                 "WFS",
                 "WMS",
+                "WMSC",
                 "WMTS",
                 "WPS"
 	],

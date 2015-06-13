@@ -78,6 +78,7 @@ Supports the following schemas:
 * `WMS_1_1_1`
 * `WMS_1_3_0`
 * `WMS_1_3_0_Exceptions`
+* `WMSC_1_1_1`
 * `WPS_1_0_0`
 * `WPS_2_0_0`
 

@@ -88,6 +88,7 @@
 		<module>wcs</module>
 		<module>wfs</module>
 		<module>wms</module>
+		<module>wmsc</module>
 		<module>wmts</module>
 		<module>wps</module>
 		<module>scripts</module>
