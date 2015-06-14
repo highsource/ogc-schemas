@@ -10,11 +10,11 @@
 <!--This example describes a buffer command that accepts geometries 
 	in GML, and uses a buffer distance in meters to produce buffered polygon 
 	features, which is output in GML in UTF-8 encoding. -->
-<wps:Process xmlns:wps="http://www.opengis.net/wps/2.0.0"
+<wps:Process xmlns:wps="http://www.opengis.net/wps/2.0"
 	xmlns:ows="http://www.opengis.net/ows/2.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.opengis.net/wps/2.0.0 ../../wps.xsd">
+	xsi:schemaLocation="http://www.opengis.net/wps/2.0 ../../wps.xsd">
 	
 	<ows:Title>Planar Buffer operation for GML features</ows:Title>
 	<ows:Abstract>Create a buffer around a GML feature. Accepts any valid GML feature and computes the joint buffer.</ows:Abstract>
