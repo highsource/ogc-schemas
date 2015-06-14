@@ -38,7 +38,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         bti: 'OWS_1_0_0.CapabilitiesBaseType',
         ps: [{
             n: 'filterCapabilities',
-            typed: false,
             mx: false,
             t: 'ae'
           }]
@@ -213,7 +212,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         ps: [{
             n: 'any',
             col: true,
-            typed: false,
             mx: false,
             t: 'ae'
           }, {
@@ -277,7 +275,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         ln: 'QueryConstraintType',
         ps: [{
             n: 'filter',
-            typed: false,
             mx: false,
             t: 'ae'
           }, {
@@ -542,7 +539,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
         ln: 'UpdateType',
         ps: [{
             n: 'any',
-            typed: false,
             mx: false,
             t: 'ae'
           }, {
@@ -614,7 +610,6 @@ var CSW_2_0_2_Full_Module_Factory = function () {
             ti: '.QueryConstraintType'
           }, {
             n: 'sortBy',
-            typed: false,
             mx: false,
             t: 'ae'
           }, {
