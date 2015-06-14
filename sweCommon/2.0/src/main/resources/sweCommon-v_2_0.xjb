@@ -1,7 +1,8 @@
 <jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
-	jaxb:extensionBindingPrefixes="xjc">
+	xmlns:wildcard="http://jaxb2-commons.dev.java.net/basic/wildcard"
+	jaxb:extensionBindingPrefixes="xjc wildcard">
 
 	<jaxb:bindings schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd" node="/xs:schema">
 		<jaxb:schemaBindings>
@@ -14,5 +15,13 @@
 			<jaxb:property name="GeoLocationAreaName"/>
 		</jaxb:bindings>
 	</jaxb:bindings-->
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/sweCommon/2.0/basic_types.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='EncodedValuesPropertyType']">
+			<wildcard:lax/>
+		</jaxb:bindings>
+	</jaxb:bindings>
 
 </jaxb:bindings>

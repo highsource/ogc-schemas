@@ -1,7 +1,8 @@
 <jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
-	jaxb:extensionBindingPrefixes="xjc">
+	xmlns:wildcard="http://jaxb2-commons.dev.java.net/basic/wildcard"
+	jaxb:extensionBindingPrefixes="xjc wildcard">
 
 	<jaxb:bindings 
 		schemaLocation="http://schemas.opengis.net/csw/2.0.2/csw.xsd" 
@@ -18,11 +19,13 @@
 		node="/xs:schema">
 
 		<jaxb:bindings node="xs:complexType[@name='InsertType']//xs:any">
-			<xjc:dom/>
+			<!--xjc:dom/>
+			<wildcard:lax/-->
 		</jaxb:bindings>
 
 		<jaxb:bindings node="xs:complexType[@name='UpdateType']//xs:any">
-			<xjc:dom/>
+			<!--xjc:dom/>
+			<wildcard:lax/-->
 		</jaxb:bindings>
 
 	</jaxb:bindings>
@@ -33,14 +36,17 @@
 
 		<jaxb:bindings node="xs:complexType[@name='CapabilitiesType']//xs:element[@ref='ogc:Filter_Capabilities']">
 			<xjc:dom/>
+			<wildcard:lax/>
 		</jaxb:bindings>
 
 		<jaxb:bindings node="xs:complexType[@name='QueryType']//xs:element[@ref='ogc:SortBy']">
 			<xjc:dom/>
+			<wildcard:lax/>
 		</jaxb:bindings>
 
 		<jaxb:bindings node="xs:complexType[@name='QueryConstraintType']//xs:element[@ref='ogc:Filter']">
 			<xjc:dom/>
+			<wildcard:lax/>
 		</jaxb:bindings>
 
 	</jaxb:bindings>

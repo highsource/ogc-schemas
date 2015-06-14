@@ -1,7 +1,8 @@
 <jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
-	jaxb:extensionBindingPrefixes="xjc">
+	xmlns:wildcard="http://jaxb2-commons.dev.java.net/basic/wildcard"
+	jaxb:extensionBindingPrefixes="xjc wildcard">
 
 	<jaxb:bindings 
 		schemaLocation="http://bp.schemas.opengis.net/12-032r2/wami/xsd/wami_1_0_0.xsd" 
@@ -9,6 +10,17 @@
 		<jaxb:schemaBindings>
 			<jaxb:package name="net.opengis.wami.v_1_0_0"/>
 		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://bp.schemas.opengis.net/12-032r2/wami/xsd/wami_1_0_0.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='HelpResponseType']">
+			<wildcard:lax/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='NameValuePairType']">
+			<wildcard:lax/>
+		</jaxb:bindings>
 	</jaxb:bindings>
 
 </jaxb:bindings>
