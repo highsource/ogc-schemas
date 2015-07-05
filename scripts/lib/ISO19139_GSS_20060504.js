@@ -5,18 +5,15 @@ var ISO19139_GSS_20060504_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_2_0'],
     tis: [{
-        ln: 'GMObjectPropertyType',
+        ln: 'GMPointPropertyType',
         tn: {
           ns: 'http:\/\/www.isotc211.org\/2005\/gss',
-          lp: 'GM_Object_PropertyType'
+          lp: 'GM_Point_PropertyType'
         },
         ps: [{
-            n: 'abstractGeometry',
-            mx: false,
-            dom: false,
-            en: 'AbstractGeometry',
-            ti: 'GML_3_2_0.AbstractGeometryType',
-            t: 'er'
+            n: 'point',
+            en: 'Point',
+            ti: 'GML_3_2_0.PointType'
           }, {
             n: 'nilReason',
             ti: {
@@ -59,15 +56,18 @@ var ISO19139_GSS_20060504_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GMPointPropertyType',
+        ln: 'GMObjectPropertyType',
         tn: {
           ns: 'http:\/\/www.isotc211.org\/2005\/gss',
-          lp: 'GM_Point_PropertyType'
+          lp: 'GM_Object_PropertyType'
         },
         ps: [{
-            n: 'point',
-            en: 'Point',
-            ti: 'GML_3_2_0.PointType'
+            n: 'abstractGeometry',
+            mx: false,
+            dom: false,
+            en: 'AbstractGeometry',
+            ti: 'GML_3_2_0.AbstractGeometryType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {

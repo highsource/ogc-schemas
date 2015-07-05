@@ -4,56 +4,6 @@ var WMC_1_1_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/context',
     deps: ['XLink_1_0', 'SLD_1_0_0'],
     tis: [{
-        ln: 'FormatType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'current',
-            ti: 'Boolean',
-            an: {
-              lp: 'current'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GeneralType',
-        ps: [{
-            n: 'window',
-            en: 'Window',
-            ti: '.WindowType'
-          }, {
-            n: 'boundingBox',
-            en: 'BoundingBox',
-            ti: '.BoundingBoxType'
-          }, {
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: 'keywordList',
-            en: 'KeywordList',
-            ti: '.KeywordListType'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'logoURL',
-            en: 'LogoURL',
-            ti: '.URLType'
-          }, {
-            n: 'descriptionURL',
-            en: 'DescriptionURL',
-            ti: '.URLType'
-          }, {
-            n: 'contactInformation',
-            en: 'ContactInformation',
-            ti: '.ContactInformationType'
-          }, {
-            n: 'extension',
-            en: 'Extension',
-            ti: '.ExtensionType'
-          }]
-      }, {
         ln: 'LayerType',
         ps: [{
             n: 'server',
@@ -126,11 +76,101 @@ var WMC_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ContextURLType',
+        ln: 'DimensionType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'units',
+            an: {
+              lp: 'units'
+            },
+            t: 'a'
+          }, {
+            n: 'unitSymbol',
+            an: {
+              lp: 'unitSymbol'
+            },
+            t: 'a'
+          }, {
+            n: 'userValue',
+            an: {
+              lp: 'userValue'
+            },
+            t: 'a'
+          }, {
+            n: '_default',
+            an: {
+              lp: 'default'
+            },
+            t: 'a'
+          }, {
+            n: 'multipleValues',
+            ti: 'Boolean',
+            an: {
+              lp: 'multipleValues'
+            },
+            t: 'a'
+          }, {
+            n: 'nearestValue',
+            ti: 'Boolean',
+            an: {
+              lp: 'nearestValue'
+            },
+            t: 'a'
+          }, {
+            n: 'current',
+            ti: 'Boolean',
+            an: {
+              lp: 'current'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'URLType',
         ps: [{
             n: 'onlineResource',
             en: 'OnlineResource',
             ti: '.OnlineResourceType'
+          }, {
+            n: 'width',
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }, {
+            n: 'format',
+            an: {
+              lp: 'format'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FormatType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'current',
+            ti: 'Boolean',
+            an: {
+              lp: 'current'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'BoundingBoxType',
@@ -201,6 +241,54 @@ var WMC_1_1_0_Module_Factory = function () {
             ti: 'SLD_1_0_0.FeatureTypeStyle'
           }]
       }, {
+        ln: 'StyleType',
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'legendURL',
+            en: 'LegendURL',
+            ti: '.URLType'
+          }, {
+            n: 'sld',
+            en: 'SLD',
+            ti: '.SLDType'
+          }, {
+            n: 'current',
+            ti: 'Boolean',
+            an: {
+              lp: 'current'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressType',
+        ps: [{
+            n: 'addressType',
+            en: 'AddressType'
+          }, {
+            n: 'address',
+            en: 'Address'
+          }, {
+            n: 'city',
+            en: 'City'
+          }, {
+            n: 'stateOrProvince',
+            en: 'StateOrProvince'
+          }, {
+            n: 'postCode',
+            en: 'PostCode'
+          }, {
+            n: 'country',
+            en: 'Country'
+          }]
+      }, {
         ln: 'OnlineResourceType',
         ps: [{
             n: 'type',
@@ -256,6 +344,102 @@ var WMC_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'WindowType',
+        ps: [{
+            n: 'width',
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DimensionListType',
+        ps: [{
+            n: 'dimension',
+            col: true,
+            en: 'Dimension',
+            ti: '.DimensionType'
+          }]
+      }, {
+        ln: 'ViewContextType',
+        ps: [{
+            n: 'general',
+            en: 'General',
+            ti: '.GeneralType'
+          }, {
+            n: 'layerList',
+            en: 'LayerList',
+            ti: '.LayerListType'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'id',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ServerType',
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'title',
+            an: {
+              lp: 'title'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'KeywordListType',
+        ps: [{
+            n: 'keyword',
+            col: true,
+            en: 'Keyword'
+          }]
+      }, {
+        ln: 'ContextURLType',
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }]
+      }, {
+        ln: 'ContactPersonPrimaryType',
+        ps: [{
+            n: 'contactPerson',
+            en: 'ContactPerson'
+          }, {
+            n: 'contactOrganization',
+            en: 'ContactOrganization'
+          }]
+      }, {
         ln: 'ContactInformationType',
         ps: [{
             n: 'contactPersonPrimary',
@@ -303,40 +487,12 @@ var WMC_1_1_0_Module_Factory = function () {
             ti: '.FormatType'
           }]
       }, {
-        ln: 'URLType',
+        ln: 'LayerListType',
         ps: [{
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'width',
-            ti: 'Integer',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            ti: 'Integer',
-            an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }, {
-            n: 'format',
-            an: {
-              lp: 'format'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ContactPersonPrimaryType',
-        ps: [{
-            n: 'contactPerson',
-            en: 'ContactPerson'
-          }, {
-            n: 'contactOrganization',
-            en: 'ContactOrganization'
+            n: 'layer',
+            col: true,
+            en: 'Layer',
+            ti: '.LayerType'
           }]
       }, {
         ln: 'ViewContextReferenceType',
@@ -361,144 +517,6 @@ var WMC_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'StyleType',
-        ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'legendURL',
-            en: 'LegendURL',
-            ti: '.URLType'
-          }, {
-            n: 'sld',
-            en: 'SLD',
-            ti: '.SLDType'
-          }, {
-            n: 'current',
-            ti: 'Boolean',
-            an: {
-              lp: 'current'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ServerType',
-        ps: [{
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'title',
-            an: {
-              lp: 'title'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AddressType',
-        ps: [{
-            n: 'addressType',
-            en: 'AddressType'
-          }, {
-            n: 'address',
-            en: 'Address'
-          }, {
-            n: 'city',
-            en: 'City'
-          }, {
-            n: 'stateOrProvince',
-            en: 'StateOrProvince'
-          }, {
-            n: 'postCode',
-            en: 'PostCode'
-          }, {
-            n: 'country',
-            en: 'Country'
-          }]
-      }, {
-        ln: 'DimensionType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'units',
-            an: {
-              lp: 'units'
-            },
-            t: 'a'
-          }, {
-            n: 'unitSymbol',
-            an: {
-              lp: 'unitSymbol'
-            },
-            t: 'a'
-          }, {
-            n: 'userValue',
-            an: {
-              lp: 'userValue'
-            },
-            t: 'a'
-          }, {
-            n: '_default',
-            an: {
-              lp: 'default'
-            },
-            t: 'a'
-          }, {
-            n: 'multipleValues',
-            ti: 'Boolean',
-            an: {
-              lp: 'multipleValues'
-            },
-            t: 'a'
-          }, {
-            n: 'nearestValue',
-            ti: 'Boolean',
-            an: {
-              lp: 'nearestValue'
-            },
-            t: 'a'
-          }, {
-            n: 'current',
-            ti: 'Boolean',
-            an: {
-              lp: 'current'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LayerListType',
-        ps: [{
-            n: 'layer',
-            col: true,
-            en: 'Layer',
-            ti: '.LayerType'
-          }]
-      }, {
         ln: 'ViewContextCollectionType',
         ps: [{
             n: 'viewContextReference',
@@ -513,59 +531,41 @@ var WMC_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ViewContextType',
+        ln: 'GeneralType',
         ps: [{
-            n: 'general',
-            en: 'General',
-            ti: '.GeneralType'
+            n: 'window',
+            en: 'Window',
+            ti: '.WindowType'
           }, {
-            n: 'layerList',
-            en: 'LayerList',
-            ti: '.LayerListType'
+            n: 'boundingBox',
+            en: 'BoundingBox',
+            ti: '.BoundingBoxType'
           }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
+            n: 'title',
+            en: 'Title'
           }, {
-            n: 'id',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DimensionListType',
-        ps: [{
-            n: 'dimension',
-            col: true,
-            en: 'Dimension',
-            ti: '.DimensionType'
-          }]
-      }, {
-        ln: 'WindowType',
-        ps: [{
-            n: 'width',
-            ti: 'Integer',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
+            n: 'keywordList',
+            en: 'KeywordList',
+            ti: '.KeywordListType'
           }, {
-            n: 'height',
-            ti: 'Integer',
-            an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'KeywordListType',
-        ps: [{
-            n: 'keyword',
-            col: true,
-            en: 'Keyword'
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'logoURL',
+            en: 'LogoURL',
+            ti: '.URLType'
+          }, {
+            n: 'descriptionURL',
+            en: 'DescriptionURL',
+            ti: '.URLType'
+          }, {
+            n: 'contactInformation',
+            en: 'ContactInformation',
+            ti: '.ContactInformationType'
+          }, {
+            n: 'extension',
+            en: 'Extension',
+            ti: '.ExtensionType'
           }]
       }, {
         t: 'enum',

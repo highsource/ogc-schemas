@@ -3,8 +3,57 @@ var GMLCOV_1_0_Module_Factory = function () {
     n: 'GMLCOV_1_0',
     dens: 'http:\/\/www.opengis.net\/gmlcov\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_2_1', 'SWE_2_0', 'XLink_1_0'],
+    deps: ['XLink_1_0', 'GML_3_2_1', 'SWE_2_0'],
     tis: [{
+        ln: 'Metadata',
+        tn: null,
+        bti: 'GML_3_2_1.AbstractMetadataPropertyType',
+        ps: [{
+            n: 'extension',
+            en: 'Extension',
+            ti: '.ExtensionType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
         ln: 'ParameterValueType',
         bti: 'GML_3_2_1.AbstractGeneralParameterValueType',
         ps: [{
@@ -82,18 +131,72 @@ var GMLCOV_1_0_Module_Factory = function () {
             t: 'er'
           }]
       }, {
+        ln: 'ReferenceableGridPropertyType',
+        ps: [{
+            n: 'abstractReferenceableGrid',
+            en: 'AbstractReferenceableGrid',
+            ti: '.AbstractReferenceableGridType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractDiscreteCoverageType',
+        bti: '.AbstractCoverageType'
+      }, {
+        ln: 'AbstractContinuousCoverageType',
+        bti: '.AbstractCoverageType'
+      }, {
         ln: 'SimpleMultiPointType',
         bti: 'GML_3_2_1.AbstractGeometricAggregateType',
         ps: [{
             n: 'positions',
             ti: 'GML_3_2_1.DirectPositionListType'
           }]
-      }, {
-        ln: 'AbstractContinuousCoverageType',
-        bti: '.AbstractCoverageType'
-      }, {
-        ln: 'AbstractDiscreteCoverageType',
-        bti: '.AbstractCoverageType'
       }, {
         ln: 'AbstractReferenceableGridType',
         bti: 'GML_3_2_1.GridType'
@@ -123,122 +226,35 @@ var GMLCOV_1_0_Module_Factory = function () {
             mx: false,
             t: 'ae'
           }]
-      }, {
-        ln: 'Metadata',
-        tn: null,
-        bti: 'GML_3_2_1.AbstractMetadataPropertyType',
-        ps: [{
-            n: 'extension',
-            en: 'Extension',
-            ti: '.ExtensionType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ReferenceableGridPropertyType',
-        ps: [{
-            n: 'abstractReferenceableGrid',
-            en: 'AbstractReferenceableGrid',
-            ti: '.AbstractReferenceableGridType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
       }],
     eis: [{
-        en: 'geometryValue',
-        ti: 'GML_3_2_1.GeometryPropertyType'
+        en: 'MultiCurveCoverage',
+        ti: '.AbstractDiscreteCoverageType',
+        sh: 'AbstractDiscreteCoverage'
       }, {
-        en: 'GridCoverage',
+        en: 'AbstractDiscreteCoverage',
         ti: '.AbstractDiscreteCoverageType',
         sh: 'AbstractCoverage'
       }, {
-        en: 'AbstractReferenceableGrid',
-        ti: '.AbstractReferenceableGridType',
+        en: 'metadata',
+        ti: '.Metadata'
+      }, {
+        en: 'referenceableGridProperty',
+        ti: '.ReferenceableGridPropertyType'
+      }, {
+        en: 'rangeType',
+        ti: 'SWE_2_0.DataRecordPropertyType'
+      }, {
+        en: 'Extension',
+        ti: '.ExtensionType'
+      }, {
+        en: 'vectorValue',
+        ti: 'GML_3_2_1.VectorType'
+      }, {
+        en: 'SimpleMultiPoint',
+        ti: '.SimpleMultiPointType',
         sh: {
-          lp: 'Grid',
+          lp: 'AbstractGeometricAggregate',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
@@ -249,51 +265,24 @@ var GMLCOV_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'MultiPointCoverage',
-        ti: '.AbstractDiscreteCoverageType',
-        sh: 'AbstractDiscreteCoverage'
-      }, {
-        en: 'vectorValue',
-        ti: 'GML_3_2_1.VectorType'
-      }, {
-        en: 'metadata',
-        ti: '.Metadata'
-      }, {
-        en: 'MultiSolidCoverage',
-        ti: '.AbstractDiscreteCoverageType',
-        sh: 'AbstractDiscreteCoverage'
-      }, {
-        en: 'AbstractDiscreteCoverage',
+        en: 'GridCoverage',
         ti: '.AbstractDiscreteCoverageType',
         sh: 'AbstractCoverage'
-      }, {
-        en: 'Extension',
-        ti: '.ExtensionType'
       }, {
         en: 'ReferenceableGridCoverage',
         ti: '.AbstractDiscreteCoverageType',
         sh: 'AbstractCoverage'
       }, {
-        en: 'MultiCurveCoverage',
+        en: 'geometryValue',
+        ti: 'GML_3_2_1.GeometryPropertyType'
+      }, {
+        en: 'MultiPointCoverage',
         ti: '.AbstractDiscreteCoverageType',
         sh: 'AbstractDiscreteCoverage'
       }, {
-        en: 'RectifiedGridCoverage',
+        en: 'MultiSolidCoverage',
         ti: '.AbstractDiscreteCoverageType',
-        sh: 'AbstractCoverage'
-      }, {
-        en: 'referenceableGridProperty',
-        ti: '.ReferenceableGridPropertyType'
-      }, {
-        en: 'AbstractCoverage',
-        ti: '.AbstractCoverageType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'rangeType',
-        ti: 'SWE_2_0.DataRecordPropertyType'
+        sh: 'AbstractDiscreteCoverage'
       }, {
         en: 'ParameterValue',
         ti: '.ParameterValueType',
@@ -302,14 +291,25 @@ var GMLCOV_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
+        en: 'RectifiedGridCoverage',
+        ti: '.AbstractDiscreteCoverageType',
+        sh: 'AbstractCoverage'
+      }, {
+        en: 'AbstractCoverage',
+        ti: '.AbstractCoverageType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
         en: 'MultiSurfaceCoverage',
         ti: '.AbstractDiscreteCoverageType',
         sh: 'AbstractDiscreteCoverage'
       }, {
-        en: 'SimpleMultiPoint',
-        ti: '.SimpleMultiPointType',
+        en: 'AbstractReferenceableGrid',
+        ti: '.AbstractReferenceableGridType',
         sh: {
-          lp: 'AbstractGeometricAggregate',
+          lp: 'Grid',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }]

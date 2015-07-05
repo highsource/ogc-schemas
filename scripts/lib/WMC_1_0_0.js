@@ -4,57 +4,31 @@ var WMC_1_0_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/context',
     deps: ['SLD_1_0_0', 'XLink_1_0'],
     tis: [{
-        ln: 'OnlineResourceType',
+        ln: 'KeywordListType',
         ps: [{
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            an: {
-              lp: 'type',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'href',
-            an: {
-              lp: 'href',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'role',
-            an: {
-              lp: 'role',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            an: {
-              lp: 'arcrole',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
+            n: 'keyword',
+            col: true,
+            en: 'Keyword'
+          }]
+      }, {
+        ln: 'ViewContextReferenceType',
+        ps: [{
             n: 'title',
+            en: 'Title'
+          }, {
+            n: 'contextURL',
+            en: 'ContextURL',
+            ti: '.ContextURLType'
+          }, {
+            n: 'version',
             an: {
-              lp: 'title',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+              lp: 'version'
             },
             t: 'a'
           }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
+            n: 'id',
             an: {
-              lp: 'show',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            an: {
-              lp: 'actuate',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+              lp: 'id'
             },
             t: 'a'
           }]
@@ -80,6 +54,93 @@ var WMC_1_0_0_Module_Factory = function () {
           }, {
             n: 'contactElectronicMailAddress',
             en: 'ContactElectronicMailAddress'
+          }]
+      }, {
+        ln: 'GeneralType',
+        ps: [{
+            n: 'window',
+            en: 'Window',
+            ti: '.WindowType'
+          }, {
+            n: 'boundingBox',
+            en: 'BoundingBox',
+            ti: '.BoundingBoxType'
+          }, {
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: 'keywordList',
+            en: 'KeywordList',
+            ti: '.KeywordListType'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'logoURL',
+            en: 'LogoURL',
+            ti: '.URLType'
+          }, {
+            n: 'descriptionURL',
+            en: 'DescriptionURL',
+            ti: '.URLType'
+          }, {
+            n: 'contactInformation',
+            en: 'ContactInformation',
+            ti: '.ContactInformationType'
+          }, {
+            n: 'extension',
+            en: 'Extension',
+            ti: '.ExtensionType'
+          }]
+      }, {
+        ln: 'SLDType',
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'styledLayerDescriptor',
+            en: {
+              lp: 'StyledLayerDescriptor',
+              ns: 'http:\/\/www.opengis.net\/sld'
+            },
+            ti: 'SLD_1_0_0.StyledLayerDescriptor'
+          }, {
+            n: 'featureTypeStyle',
+            en: {
+              lp: 'FeatureTypeStyle',
+              ns: 'http:\/\/www.opengis.net\/sld'
+            },
+            ti: 'SLD_1_0_0.FeatureTypeStyle'
+          }]
+      }, {
+        ln: 'ViewContextType',
+        ps: [{
+            n: 'general',
+            en: 'General',
+            ti: '.GeneralType'
+          }, {
+            n: 'layerList',
+            en: 'LayerList',
+            ti: '.LayerListType'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'id',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'BoundingBoxType',
@@ -119,67 +180,6 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'KeywordListType',
-        ps: [{
-            n: 'keyword',
-            col: true,
-            en: 'Keyword'
-          }]
-      }, {
-        ln: 'URLType',
-        ps: [{
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'width',
-            ti: 'Integer',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            ti: 'Integer',
-            an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }, {
-            n: 'format',
-            an: {
-              lp: 'format'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'FormatType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'current',
-            ti: 'Boolean',
-            an: {
-              lp: 'current'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ViewContextCollectionType',
-        ps: [{
-            n: 'viewContextReference',
-            col: true,
-            en: 'ViewContextReference',
-            ti: '.ViewContextReferenceType'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'LayerListType',
         ps: [{
             n: 'layer',
@@ -188,25 +188,12 @@ var WMC_1_0_0_Module_Factory = function () {
             ti: '.LayerType'
           }]
       }, {
-        ln: 'AddressType',
+        ln: 'FormatListType',
         ps: [{
-            n: 'addressType',
-            en: 'AddressType'
-          }, {
-            n: 'address',
-            en: 'Address'
-          }, {
-            n: 'city',
-            en: 'City'
-          }, {
-            n: 'stateOrProvince',
-            en: 'StateOrProvince'
-          }, {
-            n: 'postCode',
-            en: 'PostCode'
-          }, {
-            n: 'country',
-            en: 'Country'
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: '.FormatType'
           }]
       }, {
         ln: 'StyleType',
@@ -236,67 +223,93 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ServerType',
-        ps: [{
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'title',
-            an: {
-              lp: 'title'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ViewContextType',
-        ps: [{
-            n: 'general',
-            en: 'General',
-            ti: '.GeneralType'
-          }, {
-            n: 'layerList',
-            en: 'LayerList',
-            ti: '.LayerListType'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'id',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'FormatListType',
-        ps: [{
-            n: 'format',
-            col: true,
-            en: 'Format',
-            ti: '.FormatType'
-          }]
-      }, {
         ln: 'ContextURLType',
         ps: [{
             n: 'onlineResource',
             en: 'OnlineResource',
             ti: '.OnlineResourceType'
+          }]
+      }, {
+        ln: 'FormatType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'current',
+            ti: 'Boolean',
+            an: {
+              lp: 'current'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ViewContextCollectionType',
+        ps: [{
+            n: 'viewContextReference',
+            col: true,
+            en: 'ViewContextReference',
+            ti: '.ViewContextReferenceType'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ContactPersonPrimaryType',
+        ps: [{
+            n: 'contactPerson',
+            en: 'ContactPerson'
+          }, {
+            n: 'contactOrganization',
+            en: 'ContactOrganization'
+          }]
+      }, {
+        ln: 'ExtensionType',
+        ps: [{
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'WindowType',
+        ps: [{
+            n: 'width',
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressType',
+        ps: [{
+            n: 'addressType',
+            en: 'AddressType'
+          }, {
+            n: 'address',
+            en: 'Address'
+          }, {
+            n: 'city',
+            en: 'City'
+          }, {
+            n: 'stateOrProvince',
+            en: 'StateOrProvince'
+          }, {
+            n: 'postCode',
+            en: 'PostCode'
+          }, {
+            n: 'country',
+            en: 'Country'
           }]
       }, {
         ln: 'LayerType',
@@ -352,8 +365,12 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'WindowType',
+        ln: 'URLType',
         ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
             n: 'width',
             ti: 'Integer',
             an: {
@@ -367,6 +384,37 @@ var WMC_1_0_0_Module_Factory = function () {
               lp: 'height'
             },
             t: 'a'
+          }, {
+            n: 'format',
+            an: {
+              lp: 'format'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ServerType',
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'title',
+            an: {
+              lp: 'title'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'StyleListType',
@@ -377,105 +425,57 @@ var WMC_1_0_0_Module_Factory = function () {
             ti: '.StyleType'
           }]
       }, {
-        ln: 'SLDType',
+        ln: 'OnlineResourceType',
         ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'styledLayerDescriptor',
-            en: {
-              lp: 'StyledLayerDescriptor',
-              ns: 'http:\/\/www.opengis.net\/sld'
-            },
-            ti: 'SLD_1_0_0.StyledLayerDescriptor'
-          }, {
-            n: 'featureTypeStyle',
-            en: {
-              lp: 'FeatureTypeStyle',
-              ns: 'http:\/\/www.opengis.net\/sld'
-            },
-            ti: 'SLD_1_0_0.FeatureTypeStyle'
-          }]
-      }, {
-        ln: 'GeneralType',
-        ps: [{
-            n: 'window',
-            en: 'Window',
-            ti: '.WindowType'
-          }, {
-            n: 'boundingBox',
-            en: 'BoundingBox',
-            ti: '.BoundingBoxType'
-          }, {
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: 'keywordList',
-            en: 'KeywordList',
-            ti: '.KeywordListType'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'logoURL',
-            en: 'LogoURL',
-            ti: '.URLType'
-          }, {
-            n: 'descriptionURL',
-            en: 'DescriptionURL',
-            ti: '.URLType'
-          }, {
-            n: 'contactInformation',
-            en: 'ContactInformation',
-            ti: '.ContactInformationType'
-          }, {
-            n: 'extension',
-            en: 'Extension',
-            ti: '.ExtensionType'
-          }]
-      }, {
-        ln: 'ContactPersonPrimaryType',
-        ps: [{
-            n: 'contactPerson',
-            en: 'ContactPerson'
-          }, {
-            n: 'contactOrganization',
-            en: 'ContactOrganization'
-          }]
-      }, {
-        ln: 'ExtensionType',
-        ps: [{
-            n: 'any',
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'ViewContextReferenceType',
-        ps: [{
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: 'contextURL',
-            en: 'ContextURL',
-            ti: '.ContextURLType'
-          }, {
-            n: 'version',
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
             an: {
-              lp: 'version'
+              lp: 'type',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
             t: 'a'
           }, {
-            n: 'id',
+            n: 'href',
             an: {
-              lp: 'id'
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'role',
+            an: {
+              lp: 'role',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            an: {
+              lp: 'arcrole',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'title',
+            an: {
+              lp: 'title',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            an: {
+              lp: 'show',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            an: {
+              lp: 'actuate',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
             t: 'a'
           }]

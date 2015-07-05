@@ -63,7 +63,8 @@ var ISO19139_GTS_20060504_Module_Factory = function () {
         tn: 'TM_PeriodDuration_PropertyType',
         ps: [{
             n: 'tmPeriodDuration',
-            en: 'TM_PeriodDuration'
+            en: 'TM_PeriodDuration',
+            ti: 'Duration'
           }, {
             n: 'nilReason',
             ti: {
@@ -77,7 +78,8 @@ var ISO19139_GTS_20060504_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'TM_PeriodDuration'
+        en: 'TM_PeriodDuration',
+        ti: 'Duration'
       }]
   };
   return {

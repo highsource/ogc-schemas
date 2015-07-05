@@ -4,6 +4,93 @@ var WCS_1_0_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/wcs',
     deps: ['GML_3_1_1', 'XLink_1_0'],
     tis: [{
+        ln: 'GetCoverage',
+        tn: null,
+        ps: [{
+            n: 'sourceCoverage'
+          }, {
+            n: 'domainSubset',
+            ti: '.DomainSubsetType'
+          }, {
+            n: 'rangeSubset',
+            ti: '.RangeSubsetType'
+          }, {
+            n: 'interpolationMethod'
+          }, {
+            n: 'output',
+            ti: '.OutputType'
+          }, {
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'WCSCapabilitiesType',
+        tn: 'WCS_CapabilitiesType',
+        ps: [{
+            n: 'service',
+            en: 'Service',
+            ti: '.ServiceType'
+          }, {
+            n: 'capability',
+            en: 'Capability',
+            ti: '.WCSCapabilityType'
+          }, {
+            n: 'contentMetadata',
+            en: 'ContentMetadata',
+            ti: '.ContentMetadata'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ContactType',
+        ps: [{
+            n: 'phone',
+            ti: '.TelephoneType'
+          }, {
+            n: 'address',
+            ti: '.AddressType'
+          }, {
+            n: 'onlineResource',
+            ti: '.OnlineResourceType'
+          }]
+      }, {
+        ln: 'RangeSet',
+        tn: null,
+        ps: [{
+            n: 'rangeSet',
+            en: 'RangeSet',
+            ti: '.RangeSetType'
+          }]
+      }, {
+        ln: 'Keywords',
+        tn: null,
+        ps: [{
+            n: 'keyword',
+            col: true
+          }, {
+            n: 'type',
+            ti: 'GML_3_1_1.CodeType'
+          }]
+      }, {
         ln: 'LonLatEnvelopeType',
         bti: '.LonLatEnvelopeBaseType',
         ps: [{
@@ -16,47 +103,8 @@ var WCS_1_0_0_Module_Factory = function () {
             ti: 'GML_3_1_1.TimePositionType'
           }]
       }, {
-        ln: 'AxisDescription',
-        tn: null,
-        ps: [{
-            n: 'axisDescription',
-            en: 'AxisDescription',
-            ti: '.AxisDescriptionType'
-          }]
-      }, {
-        ln: 'RangeSet',
-        tn: null,
-        ps: [{
-            n: 'rangeSet',
-            en: 'RangeSet',
-            ti: '.RangeSetType'
-          }]
-      }, {
-        ln: 'ValueEnumBaseType',
-        tn: 'valueEnumBaseType',
-        ps: [{
-            n: 'intervalOrSingleValue',
-            col: true,
-            etis: [{
-                en: 'interval',
-                ti: '.IntervalType'
-              }, {
-                en: 'singleValue',
-                ti: '.TypedLiteralType'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'CoverageOfferingBriefType',
-        bti: '.AbstractDescriptionType',
-        ps: [{
-            n: 'lonLatEnvelope',
-            ti: '.LonLatEnvelopeType'
-          }, {
-            n: 'keywords',
-            col: true,
-            ti: '.Keywords'
-          }]
+        ln: 'AbstractDescriptionBaseType',
+        bti: 'GML_3_1_1.AbstractGMLType'
       }, {
         ln: 'ContentMetadata',
         tn: null,
@@ -138,56 +186,154 @@ var WCS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TelephoneType',
+        ln: 'SupportedInterpolationsType',
         ps: [{
-            n: 'voice',
+            n: 'interpolationMethod',
             col: true
           }, {
-            n: 'facsimile',
-            col: true
+            n: '_default',
+            an: {
+              lp: 'default'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'AbstractDescriptionBaseType',
-        bti: 'GML_3_1_1.AbstractGMLType'
-      }, {
-        ln: 'SpatialDomainType',
+        ln: 'CoverageOfferingType',
+        bti: '.CoverageOfferingBriefType',
         ps: [{
-            n: 'envelope',
-            col: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'Envelope',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.EnvelopeType',
-            t: 'er'
+            n: 'domainSet',
+            ti: '.DomainSetType'
           }, {
-            n: 'grid',
-            col: true,
-            en: {
-              lp: 'Grid',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.GridType'
+            n: 'rangeSet',
+            ti: '.RangeSet'
           }, {
-            n: 'polygon',
-            col: true,
-            en: {
-              lp: 'Polygon',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.PolygonType'
+            n: 'supportedCRSs',
+            ti: '.SupportedCRSsType'
+          }, {
+            n: 'supportedFormats',
+            ti: '.SupportedFormatsType'
+          }, {
+            n: 'supportedInterpolations',
+            ti: '.SupportedInterpolationsType'
           }]
       }, {
-        ln: 'Keywords',
+        ln: 'SupportedCRSsType',
+        ps: [{
+            n: 'requestResponseCRSs',
+            col: true,
+            ti: 'GML_3_1_1.CodeListType'
+          }, {
+            n: 'requestCRSs',
+            col: true,
+            ti: 'GML_3_1_1.CodeListType'
+          }, {
+            n: 'responseCRSs',
+            col: true,
+            ti: 'GML_3_1_1.CodeListType'
+          }, {
+            n: 'nativeCRSs',
+            col: true,
+            ti: 'GML_3_1_1.CodeListType'
+          }]
+      }, {
+        ln: 'WCSCapabilityType.Request.GetCoverage',
         tn: null,
         ps: [{
-            n: 'keyword',
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: '.DCPTypeType'
+          }]
+      }, {
+        ln: 'WCSCapabilityType.VendorSpecificCapabilities',
+        tn: null,
+        ps: [{
+            n: 'any',
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'MetadataLinkType',
+        bti: '.MetadataAssociationType',
+        ps: [{
+            n: 'metadataType',
+            an: {
+              lp: 'metadataType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SpatialSubsetType',
+        bti: '.SpatialDomainType'
+      }, {
+        ln: 'ServiceType',
+        bti: '.AbstractDescriptionType',
+        ps: [{
+            n: 'keywords',
+            col: true,
+            ti: '.Keywords'
+          }, {
+            n: 'responsibleParty',
+            ti: '.ResponsiblePartyType'
+          }, {
+            n: 'fees',
+            ti: 'GML_3_1_1.CodeListType'
+          }, {
+            n: 'accessConstraints',
+            col: true,
+            ti: 'GML_3_1_1.CodeListType'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressType',
+        ps: [{
+            n: 'deliveryPoint',
             col: true
           }, {
-            n: 'type',
-            ti: 'GML_3_1_1.CodeType'
+            n: 'city'
+          }, {
+            n: 'administrativeArea'
+          }, {
+            n: 'postalCode'
+          }, {
+            n: 'country'
+          }, {
+            n: 'electronicMailAddress',
+            col: true
+          }]
+      }, {
+        ln: 'SupportedFormatsType',
+        ps: [{
+            n: 'formats',
+            col: true,
+            ti: 'GML_3_1_1.CodeListType'
+          }, {
+            n: 'nativeFormat',
+            an: {
+              lp: 'nativeFormat'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AxisDescriptionType.Values',
+        tn: null,
+        bti: '.ValueEnumType',
+        ps: [{
+            n: '_default',
+            en: 'default',
+            ti: '.TypedLiteralType'
           }]
       }, {
         ln: 'DescribeCoverage',
@@ -210,217 +356,28 @@ var WCS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractDescriptionType',
-        bti: '.AbstractDescriptionBaseType',
+        ln: 'DomainSubsetType',
         ps: [{
-            n: 'wcsDescription',
-            en: 'description'
+            n: 'spatialSubset',
+            ti: '.SpatialSubsetType'
           }, {
-            n: 'wcsName',
-            en: 'name'
+            n: 'optionalTemporalSubset',
+            en: 'temporalSubset',
+            ti: '.TimeSequenceType'
           }, {
-            n: 'label'
+            n: 'temporalSubset',
+            ti: '.TimeSequenceType'
           }]
       }, {
-        ln: 'IntervalType',
-        tn: 'intervalType',
-        bti: '.ValueRangeType',
+        ln: 'CoverageOfferingBriefType',
+        bti: '.AbstractDescriptionType',
         ps: [{
-            n: 'res',
-            ti: '.TypedLiteralType'
-          }]
-      }, {
-        ln: 'AxisDescriptionType.Values',
-        tn: null,
-        bti: '.ValueEnumType',
-        ps: [{
-            n: '_default',
-            en: 'default',
-            ti: '.TypedLiteralType'
-          }]
-      }, {
-        ln: 'WCSCapabilityType.Request.DescribeCoverage',
-        tn: null,
-        ps: [{
-            n: 'dcpType',
+            n: 'lonLatEnvelope',
+            ti: '.LonLatEnvelopeType'
+          }, {
+            n: 'keywords',
             col: true,
-            en: 'DCPType',
-            ti: '.DCPTypeType'
-          }]
-      }, {
-        ln: 'ContactType',
-        ps: [{
-            n: 'phone',
-            ti: '.TelephoneType'
-          }, {
-            n: 'address',
-            ti: '.AddressType'
-          }, {
-            n: 'onlineResource',
-            ti: '.OnlineResourceType'
-          }]
-      }, {
-        ln: 'CoverageOfferingType',
-        bti: '.CoverageOfferingBriefType',
-        ps: [{
-            n: 'domainSet',
-            ti: '.DomainSetType'
-          }, {
-            n: 'rangeSet',
-            ti: '.RangeSet'
-          }, {
-            n: 'supportedCRSs',
-            ti: '.SupportedCRSsType'
-          }, {
-            n: 'supportedFormats',
-            ti: '.SupportedFormatsType'
-          }, {
-            n: 'supportedInterpolations',
-            ti: '.SupportedInterpolationsType'
-          }]
-      }, {
-        ln: 'WCSCapabilityType',
-        ps: [{
-            n: 'request',
-            en: 'Request',
-            ti: '.WCSCapabilityType.Request'
-          }, {
-            n: 'exception',
-            en: 'Exception',
-            ti: '.WCSCapabilityType.Exception'
-          }, {
-            n: 'vendorSpecificCapabilities',
-            en: 'VendorSpecificCapabilities',
-            ti: '.WCSCapabilityType.VendorSpecificCapabilities'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SupportedFormatsType',
-        ps: [{
-            n: 'formats',
-            col: true,
-            ti: 'GML_3_1_1.CodeListType'
-          }, {
-            n: 'nativeFormat',
-            an: {
-              lp: 'nativeFormat'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetCoverage',
-        tn: null,
-        ps: [{
-            n: 'sourceCoverage'
-          }, {
-            n: 'domainSubset',
-            ti: '.DomainSubsetType'
-          }, {
-            n: 'rangeSubset',
-            ti: '.RangeSubsetType'
-          }, {
-            n: 'interpolationMethod'
-          }, {
-            n: 'output',
-            ti: '.OutputType'
-          }, {
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'WCSCapabilityType.Request.GetCapabilities',
-        tn: null,
-        ps: [{
-            n: 'dcpType',
-            col: true,
-            en: 'DCPType',
-            ti: '.DCPTypeType'
-          }]
-      }, {
-        ln: 'DCPTypeType.HTTP',
-        tn: null,
-        ps: [{
-            n: 'getOrPost',
-            col: true,
-            etis: [{
-                en: 'Get',
-                ti: '.DCPTypeType.HTTP.Get'
-              }, {
-                en: 'Post',
-                ti: '.DCPTypeType.HTTP.Post'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'DCPTypeType.HTTP.Get',
-        tn: null,
-        ps: [{
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }]
-      }, {
-        ln: 'RangeSubsetType.AxisSubset',
-        tn: null,
-        bti: '.ValueEnumBaseType',
-        ps: [{
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DCPTypeType.HTTP.Post',
-        tn: null,
-        ps: [{
-            n: 'onlineResource',
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }]
-      }, {
-        ln: 'GetCapabilities',
-        tn: null,
-        ps: [{
-            n: 'section'
-          }, {
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
+            ti: '.Keywords'
           }]
       }, {
         ln: 'OnlineResourceType',
@@ -478,61 +435,142 @@ var WCS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'RangeSubsetType',
+        ln: 'DCPTypeType.HTTP',
+        tn: null,
         ps: [{
-            n: 'axisSubset',
+            n: 'getOrPost',
             col: true,
-            ti: '.RangeSubsetType.AxisSubset'
+            etis: [{
+                en: 'Get',
+                ti: '.DCPTypeType.HTTP.Get'
+              }, {
+                en: 'Post',
+                ti: '.DCPTypeType.HTTP.Post'
+              }],
+            t: 'es'
           }]
       }, {
-        ln: 'SupportedCRSsType',
+        ln: 'MetadataAssociationType',
+        bti: 'GML_3_1_1.MetaDataPropertyType'
+      }, {
+        ln: 'TypedLiteralType',
         ps: [{
-            n: 'requestResponseCRSs',
-            col: true,
-            ti: 'GML_3_1_1.CodeListType'
+            n: 'value',
+            t: 'v'
           }, {
-            n: 'requestCRSs',
-            col: true,
-            ti: 'GML_3_1_1.CodeListType'
-          }, {
-            n: 'responseCRSs',
-            col: true,
-            ti: 'GML_3_1_1.CodeListType'
-          }, {
-            n: 'nativeCRSs',
-            col: true,
-            ti: 'GML_3_1_1.CodeListType'
+            n: 'type',
+            an: {
+              lp: 'type',
+              ns: 'http:\/\/www.opengis.net\/wcs'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'ResponsiblePartyType',
+        ln: 'AbstractDescriptionType',
+        bti: '.AbstractDescriptionBaseType',
         ps: [{
-            n: 'individualName'
+            n: 'wcsDescription',
+            en: 'description'
           }, {
-            n: 'optionalOrganisationName',
-            en: 'organisationName'
+            n: 'wcsName',
+            en: 'name'
           }, {
-            n: 'organisationName'
-          }, {
-            n: 'positionName'
-          }, {
-            n: 'contactInfo',
-            ti: '.ContactType'
+            n: 'label'
           }]
       }, {
-        ln: 'WCSCapabilitiesType',
-        tn: 'WCS_CapabilitiesType',
+        ln: 'WCSCapabilityType.Request',
+        tn: null,
         ps: [{
-            n: 'service',
-            en: 'Service',
-            ti: '.ServiceType'
+            n: 'getCapabilities',
+            en: 'GetCapabilities',
+            ti: '.WCSCapabilityType.Request.GetCapabilities'
           }, {
-            n: 'capability',
-            en: 'Capability',
-            ti: '.WCSCapabilityType'
+            n: 'describeCoverage',
+            en: 'DescribeCoverage',
+            ti: '.WCSCapabilityType.Request.DescribeCoverage'
           }, {
-            n: 'contentMetadata',
-            en: 'ContentMetadata',
-            ti: '.ContentMetadata'
+            n: 'getCoverage',
+            en: 'GetCoverage',
+            ti: '.WCSCapabilityType.Request.GetCoverage'
+          }]
+      }, {
+        ln: 'ValueEnumType',
+        tn: 'valueEnumType',
+        bti: '.ValueEnumBaseType',
+        ps: [{
+            n: 'type',
+            an: {
+              lp: 'type',
+              ns: 'http:\/\/www.opengis.net\/wcs'
+            },
+            t: 'a'
+          }, {
+            n: 'semantic',
+            an: {
+              lp: 'semantic',
+              ns: 'http:\/\/www.opengis.net\/wcs'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ValueEnumBaseType',
+        tn: 'valueEnumBaseType',
+        ps: [{
+            n: 'intervalOrSingleValue',
+            col: true,
+            etis: [{
+                en: 'interval',
+                ti: '.IntervalType'
+              }, {
+                en: 'singleValue',
+                ti: '.TypedLiteralType'
+              }],
+            t: 'es'
+          }]
+      }, {
+        ln: 'RangeSetType',
+        bti: '.AbstractDescriptionType',
+        ps: [{
+            n: 'axisDescription',
+            col: true,
+            ti: '.AxisDescription'
+          }, {
+            n: 'nullValues',
+            ti: '.ValueEnumType'
+          }, {
+            n: 'semantic',
+            an: {
+              lp: 'semantic',
+              ns: 'http:\/\/www.opengis.net\/wcs'
+            },
+            t: 'a'
+          }, {
+            n: 'refSys',
+            an: {
+              lp: 'refSys'
+            },
+            t: 'a'
+          }, {
+            n: 'refSysLabel',
+            an: {
+              lp: 'refSysLabel'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'WCSCapabilityType',
+        ps: [{
+            n: 'request',
+            en: 'Request',
+            ti: '.WCSCapabilityType.Request'
+          }, {
+            n: 'exception',
+            en: 'Exception',
+            ti: '.WCSCapabilityType.Exception'
+          }, {
+            n: 'vendorSpecificCapabilities',
+            en: 'VendorSpecificCapabilities',
+            ti: '.WCSCapabilityType.VendorSpecificCapabilities'
           }, {
             n: 'version',
             an: {
@@ -545,6 +583,139 @@ var WCS_1_0_0_Module_Factory = function () {
               lp: 'updateSequence'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'AxisDescriptionType',
+        bti: '.AbstractDescriptionType',
+        ps: [{
+            n: 'values',
+            ti: '.AxisDescriptionType.Values'
+          }, {
+            n: 'semantic',
+            an: {
+              lp: 'semantic',
+              ns: 'http:\/\/www.opengis.net\/wcs'
+            },
+            t: 'a'
+          }, {
+            n: 'refSys',
+            an: {
+              lp: 'refSys'
+            },
+            t: 'a'
+          }, {
+            n: 'refSysLabel',
+            an: {
+              lp: 'refSysLabel'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'WCSCapabilityType.Request.GetCapabilities',
+        tn: null,
+        ps: [{
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: '.DCPTypeType'
+          }]
+      }, {
+        ln: 'DCPTypeType.HTTP.Get',
+        tn: null,
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }]
+      }, {
+        ln: 'GetCapabilities',
+        tn: null,
+        ps: [{
+            n: 'section'
+          }, {
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'IntervalType',
+        tn: 'intervalType',
+        bti: '.ValueRangeType',
+        ps: [{
+            n: 'res',
+            ti: '.TypedLiteralType'
+          }]
+      }, {
+        ln: 'DomainSetType',
+        ps: [{
+            n: 'spatialDomain',
+            ti: '.SpatialDomainType'
+          }, {
+            n: 'optionalTemporalDomain',
+            en: 'temporalDomain',
+            ti: '.TimeSequenceType'
+          }, {
+            n: 'temporalDomain',
+            ti: '.TimeSequenceType'
+          }]
+      }, {
+        ln: 'RangeSubsetType.AxisSubset',
+        tn: null,
+        bti: '.ValueEnumBaseType',
+        ps: [{
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimePeriodType',
+        ps: [{
+            n: 'beginPosition',
+            ti: 'GML_3_1_1.TimePositionType'
+          }, {
+            n: 'endPosition',
+            ti: 'GML_3_1_1.TimePositionType'
+          }, {
+            n: 'timeResolution'
+          }, {
+            n: 'frame',
+            an: {
+              lp: 'frame'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimeSequenceType',
+        ps: [{
+            n: 'timePositionOrTimePeriod',
+            col: true,
+            etis: [{
+                en: {
+                  lp: 'timePosition',
+                  ns: 'http:\/\/www.opengis.net\/gml'
+                },
+                ti: 'GML_3_1_1.TimePositionType'
+              }, {
+                en: 'timePeriod',
+                ti: '.TimePeriodType'
+              }],
+            t: 'es'
           }]
       }, {
         ln: 'ValueRangeType',
@@ -588,42 +759,13 @@ var WCS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SpatialSubsetType',
-        bti: '.SpatialDomainType'
-      }, {
-        ln: 'WCSCapabilityType.Request',
+        ln: 'WCSCapabilityType.Request.DescribeCoverage',
         tn: null,
         ps: [{
-            n: 'getCapabilities',
-            en: 'GetCapabilities',
-            ti: '.WCSCapabilityType.Request.GetCapabilities'
-          }, {
-            n: 'describeCoverage',
-            en: 'DescribeCoverage',
-            ti: '.WCSCapabilityType.Request.DescribeCoverage'
-          }, {
-            n: 'getCoverage',
-            en: 'GetCoverage',
-            ti: '.WCSCapabilityType.Request.GetCoverage'
-          }]
-      }, {
-        ln: 'ValueEnumType',
-        tn: 'valueEnumType',
-        bti: '.ValueEnumBaseType',
-        ps: [{
-            n: 'type',
-            an: {
-              lp: 'type',
-              ns: 'http:\/\/www.opengis.net\/wcs'
-            },
-            t: 'a'
-          }, {
-            n: 'semantic',
-            an: {
-              lp: 'semantic',
-              ns: 'http:\/\/www.opengis.net\/wcs'
-            },
-            t: 'a'
+            n: 'dcpType',
+            col: true,
+            en: 'DCPType',
+            ti: '.DCPTypeType'
           }]
       }, {
         ln: 'DCPTypeType',
@@ -633,149 +775,13 @@ var WCS_1_0_0_Module_Factory = function () {
             ti: '.DCPTypeType.HTTP'
           }]
       }, {
-        ln: 'DomainSubsetType',
+        ln: 'TelephoneType',
         ps: [{
-            n: 'spatialSubset',
-            ti: '.SpatialSubsetType'
-          }, {
-            n: 'optionalTemporalSubset',
-            en: 'temporalSubset',
-            ti: '.TimeSequenceType'
-          }, {
-            n: 'temporalSubset',
-            ti: '.TimeSequenceType'
-          }]
-      }, {
-        ln: 'SupportedInterpolationsType',
-        ps: [{
-            n: 'interpolationMethod',
+            n: 'voice',
             col: true
           }, {
-            n: '_default',
-            an: {
-              lp: 'default'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MetadataLinkType',
-        bti: '.MetadataAssociationType',
-        ps: [{
-            n: 'metadataType',
-            an: {
-              lp: 'metadataType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'WCSCapabilityType.Request.GetCoverage',
-        tn: null,
-        ps: [{
-            n: 'dcpType',
-            col: true,
-            en: 'DCPType',
-            ti: '.DCPTypeType'
-          }]
-      }, {
-        ln: 'AddressType',
-        ps: [{
-            n: 'deliveryPoint',
+            n: 'facsimile',
             col: true
-          }, {
-            n: 'city'
-          }, {
-            n: 'administrativeArea'
-          }, {
-            n: 'postalCode'
-          }, {
-            n: 'country'
-          }, {
-            n: 'electronicMailAddress',
-            col: true
-          }]
-      }, {
-        ln: 'LonLatEnvelopeBaseType',
-        bti: 'GML_3_1_1.EnvelopeType'
-      }, {
-        ln: 'WCSCapabilityType.VendorSpecificCapabilities',
-        tn: null,
-        ps: [{
-            n: 'any',
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'MetadataAssociationType',
-        bti: 'GML_3_1_1.MetaDataPropertyType'
-      }, {
-        ln: 'DomainSetType',
-        ps: [{
-            n: 'spatialDomain',
-            ti: '.SpatialDomainType'
-          }, {
-            n: 'optionalTemporalDomain',
-            en: 'temporalDomain',
-            ti: '.TimeSequenceType'
-          }, {
-            n: 'temporalDomain',
-            ti: '.TimeSequenceType'
-          }]
-      }, {
-        ln: 'TypedLiteralType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'type',
-              ns: 'http:\/\/www.opengis.net\/wcs'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeSequenceType',
-        ps: [{
-            n: 'timePositionOrTimePeriod',
-            col: true,
-            etis: [{
-                en: {
-                  lp: 'timePosition',
-                  ns: 'http:\/\/www.opengis.net\/gml'
-                },
-                ti: 'GML_3_1_1.TimePositionType'
-              }, {
-                en: 'timePeriod',
-                ti: '.TimePeriodType'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'AxisDescriptionType',
-        bti: '.AbstractDescriptionType',
-        ps: [{
-            n: 'values',
-            ti: '.AxisDescriptionType.Values'
-          }, {
-            n: 'semantic',
-            an: {
-              lp: 'semantic',
-              ns: 'http:\/\/www.opengis.net\/wcs'
-            },
-            t: 'a'
-          }, {
-            n: 'refSys',
-            an: {
-              lp: 'refSys'
-            },
-            t: 'a'
-          }, {
-            n: 'refSysLabel',
-            an: {
-              lp: 'refSysLabel'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'CoverageDescription',
@@ -799,21 +805,49 @@ var WCS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TimePeriodType',
+        ln: 'SpatialDomainType',
         ps: [{
-            n: 'beginPosition',
-            ti: 'GML_3_1_1.TimePositionType'
-          }, {
-            n: 'endPosition',
-            ti: 'GML_3_1_1.TimePositionType'
-          }, {
-            n: 'timeResolution'
-          }, {
-            n: 'frame',
-            an: {
-              lp: 'frame'
+            n: 'envelope',
+            col: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'Envelope',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            t: 'a'
+            ti: 'GML_3_1_1.EnvelopeType',
+            t: 'er'
+          }, {
+            n: 'grid',
+            col: true,
+            en: {
+              lp: 'Grid',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.GridType'
+          }, {
+            n: 'polygon',
+            col: true,
+            en: {
+              lp: 'Polygon',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.PolygonType'
+          }]
+      }, {
+        ln: 'RangeSubsetType',
+        ps: [{
+            n: 'axisSubset',
+            col: true,
+            ti: '.RangeSubsetType.AxisSubset'
+          }]
+      }, {
+        ln: 'AxisDescription',
+        tn: null,
+        ps: [{
+            n: 'axisDescription',
+            en: 'AxisDescription',
+            ti: '.AxisDescriptionType'
           }]
       }, {
         ln: 'WCSCapabilityType.Exception',
@@ -822,66 +856,6 @@ var WCS_1_0_0_Module_Factory = function () {
             n: 'format',
             col: true,
             en: 'Format'
-          }]
-      }, {
-        ln: 'ServiceType',
-        bti: '.AbstractDescriptionType',
-        ps: [{
-            n: 'keywords',
-            col: true,
-            ti: '.Keywords'
-          }, {
-            n: 'responsibleParty',
-            ti: '.ResponsiblePartyType'
-          }, {
-            n: 'fees',
-            ti: 'GML_3_1_1.CodeListType'
-          }, {
-            n: 'accessConstraints',
-            col: true,
-            ti: 'GML_3_1_1.CodeListType'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RangeSetType',
-        bti: '.AbstractDescriptionType',
-        ps: [{
-            n: 'axisDescription',
-            col: true,
-            ti: '.AxisDescription'
-          }, {
-            n: 'nullValues',
-            ti: '.ValueEnumType'
-          }, {
-            n: 'semantic',
-            an: {
-              lp: 'semantic',
-              ns: 'http:\/\/www.opengis.net\/wcs'
-            },
-            t: 'a'
-          }, {
-            n: 'refSys',
-            an: {
-              lp: 'refSys'
-            },
-            t: 'a'
-          }, {
-            n: 'refSysLabel',
-            an: {
-              lp: 'refSysLabel'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'OutputType',
@@ -893,17 +867,65 @@ var WCS_1_0_0_Module_Factory = function () {
             ti: 'GML_3_1_1.CodeType'
           }]
       }, {
-        t: 'enum',
-        ln: 'CapabilitiesSectionType',
-        vs: ['\/', '\/WCS_Capabilities\/Service', '\/WCS_Capabilities\/Capability', '\/WCS_Capabilities\/ContentMetadata']
+        ln: 'ResponsiblePartyType',
+        ps: [{
+            n: 'individualName'
+          }, {
+            n: 'optionalOrganisationName',
+            en: 'organisationName'
+          }, {
+            n: 'organisationName'
+          }, {
+            n: 'positionName'
+          }, {
+            n: 'contactInfo',
+            ti: '.ContactType'
+          }]
+      }, {
+        ln: 'LonLatEnvelopeBaseType',
+        bti: 'GML_3_1_1.EnvelopeType'
+      }, {
+        ln: 'DCPTypeType.HTTP.Post',
+        tn: null,
+        ps: [{
+            n: 'onlineResource',
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }]
       }, {
         t: 'enum',
         ln: 'InterpolationMethodType',
         vs: ['nearest neighbor', 'bilinear', 'bicubic', 'lost area', 'barycentric', 'none']
+      }, {
+        t: 'enum',
+        ln: 'CapabilitiesSectionType',
+        vs: ['\/', '\/WCS_Capabilities\/Service', '\/WCS_Capabilities\/Capability', '\/WCS_Capabilities\/ContentMetadata']
       }],
     eis: [{
-        en: 'singleValue',
-        ti: '.TypedLiteralType'
+        en: 'description'
+      }, {
+        en: 'temporalDomain',
+        ti: '.TimeSequenceType'
+      }, {
+        en: 'supportedCRSs',
+        ti: '.SupportedCRSsType'
+      }, {
+        en: 'supportedInterpolations',
+        ti: '.SupportedInterpolationsType'
+      }, {
+        en: 'CoverageDescription',
+        ti: '.CoverageDescription'
+      }, {
+        en: 'name'
+      }, {
+        en: 'ContentMetadata',
+        ti: '.ContentMetadata'
+      }, {
+        en: 'lonLatEnvelope',
+        ti: '.LonLatEnvelopeType'
+      }, {
+        en: 'formats',
+        ti: 'GML_3_1_1.CodeListType'
       }, {
         en: 'RangeSet',
         ti: '.RangeSetType',
@@ -912,90 +934,23 @@ var WCS_1_0_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
+        en: 'spatialDomain',
+        ti: '.SpatialDomainType'
+      }, {
         en: 'Capability',
         ti: '.WCSCapabilityType'
-      }, {
-        en: 'rangeSet',
-        ti: '.RangeSet'
-      }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilities'
-      }, {
-        en: 'supportedInterpolations',
-        ti: '.SupportedInterpolationsType'
-      }, {
-        en: 'axisDescription',
-        ti: '.AxisDescription'
-      }, {
-        en: 'AxisDescription',
-        ti: '.AxisDescriptionType',
-        sh: {
-          lp: '_GML',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: 'interpolationMethod'
-      }, {
-        en: 'TimeSequence',
-        ti: '.TimeSequenceType'
-      }, {
-        en: 'CoverageOfferingBrief',
-        ti: '.CoverageOfferingBriefType',
-        sh: {
-          lp: '_GML',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: 'temporalSubset',
-        ti: '.TimeSequenceType'
-      }, {
-        en: 'GetCoverage',
-        ti: '.GetCoverage'
-      }, {
-        en: 'formats',
-        ti: 'GML_3_1_1.CodeListType'
-      }, {
-        en: 'ContentMetadata',
-        ti: '.ContentMetadata'
-      }, {
-        en: 'supportedCRSs',
-        ti: '.SupportedCRSsType'
-      }, {
-        en: 'Service',
-        ti: '.ServiceType',
-        sh: {
-          lp: '_GML',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
       }, {
         en: 'domainSet',
         ti: '.DomainSetType'
       }, {
-        en: 'WCS_Capabilities',
-        ti: '.WCSCapabilitiesType'
+        en: 'timePeriod',
+        ti: '.TimePeriodType'
       }, {
-        en: 'spatialSubset',
-        ti: '.SpatialSubsetType'
-      }, {
-        en: 'description'
-      }, {
-        en: 'name'
+        en: 'TimeSequence',
+        ti: '.TimeSequenceType'
       }, {
         en: 'DescribeCoverage',
         ti: '.DescribeCoverage'
-      }, {
-        en: 'keywords',
-        ti: '.Keywords'
-      }, {
-        en: 'CoverageOffering',
-        ti: '.CoverageOfferingType',
-        sh: {
-          lp: '_GML',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: 'temporalDomain',
-        ti: '.TimeSequenceType'
       }, {
         en: 'metadataLink',
         ti: '.MetadataLinkType',
@@ -1004,14 +959,52 @@ var WCS_1_0_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: 'timePeriod',
-        ti: '.TimePeriodType'
+        en: 'temporalSubset',
+        ti: '.TimeSequenceType'
       }, {
-        en: 'lonLatEnvelope',
-        ti: '.LonLatEnvelopeType'
+        en: 'singleValue',
+        ti: '.TypedLiteralType'
       }, {
-        en: 'CoverageDescription',
-        ti: '.CoverageDescription'
+        en: 'CoverageOffering',
+        ti: '.CoverageOfferingType',
+        sh: {
+          lp: '_GML',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'WCS_Capabilities',
+        ti: '.WCSCapabilitiesType'
+      }, {
+        en: 'CoverageOfferingBrief',
+        ti: '.CoverageOfferingBriefType',
+        sh: {
+          lp: '_GML',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'spatialSubset',
+        ti: '.SpatialSubsetType'
+      }, {
+        en: 'GetCoverage',
+        ti: '.GetCoverage'
+      }, {
+        en: 'axisDescription',
+        ti: '.AxisDescription'
+      }, {
+        en: 'keywords',
+        ti: '.Keywords'
+      }, {
+        en: 'interpolationMethod'
+      }, {
+        en: 'rangeSet',
+        ti: '.RangeSet'
+      }, {
+        en: 'AxisDescription',
+        ti: '.AxisDescriptionType',
+        sh: {
+          lp: '_GML',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
       }, {
         en: 'supportedFormats',
         ti: '.SupportedFormatsType'
@@ -1019,8 +1012,15 @@ var WCS_1_0_0_Module_Factory = function () {
         en: 'interval',
         ti: '.IntervalType'
       }, {
-        en: 'spatialDomain',
-        ti: '.SpatialDomainType'
+        en: 'GetCapabilities',
+        ti: '.GetCapabilities'
+      }, {
+        en: 'Service',
+        ti: '.ServiceType',
+        sh: {
+          lp: '_GML',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
       }]
   };
   return {
