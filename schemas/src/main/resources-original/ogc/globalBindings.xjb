@@ -7,7 +7,7 @@
 		fixedAttributeAsConstantProperty="true"
 		typesafeEnumBase="xs:string"
 		typesafeEnumMemberName="generateName" 
-		generateIsSetMethod="false"
+		generateIsSetMethod="true"
 		generateMixedExtensions="true">
 
 		<xjc:noValidator />
