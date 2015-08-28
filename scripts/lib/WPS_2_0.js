@@ -4,195 +4,34 @@ var WPS_2_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/wps\/2.0',
     deps: ['OWS_2_0'],
     tis: [{
-        ln: 'Data',
-        tn: null,
+        ln: 'DataInputType',
         ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
+            n: 'data',
+            en: 'Data',
+            ti: '.Data'
           }, {
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }, {
-            n: 'mimeType',
-            an: {
-              lp: 'mimeType'
-            },
-            t: 'a'
-          }, {
-            n: 'encoding',
-            an: {
-              lp: 'encoding'
-            },
-            t: 'a'
-          }, {
-            n: 'schema',
-            an: {
-              lp: 'schema'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Result',
-        tn: null,
-        ps: [{
-            n: 'jobID',
-            en: 'JobID'
-          }, {
-            n: 'expirationDate',
-            en: 'ExpirationDate',
-            ti: 'Calendar'
-          }, {
-            n: 'output',
-            col: true,
-            en: 'Output',
-            ti: '.DataOutputType'
-          }]
-      }, {
-        ln: 'ExecuteRequestType',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'identifier',
-            en: {
-              lp: 'Identifier',
-              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
-            },
-            ti: 'OWS_2_0.CodeType'
+            n: 'reference',
+            en: 'Reference',
+            ti: '.ReferenceType'
           }, {
             n: 'input',
             col: true,
             en: 'Input',
             ti: '.DataInputType'
           }, {
-            n: 'output',
-            col: true,
-            en: 'Output',
-            ti: '.OutputDefinitionType'
-          }, {
-            n: 'mode',
+            n: 'id',
             an: {
-              lp: 'mode'
-            },
-            t: 'a'
-          }, {
-            n: 'response',
-            an: {
-              lp: 'response'
+              lp: 'id'
             },
             t: 'a'
           }]
       }, {
-        ln: 'InputDescriptionType',
-        bti: '.DescriptionType',
-        ps: [{
-            n: 'dataDescription',
-            mx: false,
-            dom: false,
-            en: 'DataDescription',
-            ti: '.DataDescriptionType',
-            t: 'er'
-          }, {
-            n: 'input',
-            col: true,
-            en: 'Input',
-            ti: '.InputDescriptionType'
-          }, {
-            n: 'minOccurs',
-            ti: 'Integer',
-            an: {
-              lp: 'minOccurs'
-            },
-            t: 'a'
-          }, {
-            n: 'maxOccurs',
-            an: {
-              lp: 'maxOccurs'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProcessOfferings',
-        tn: null,
-        ps: [{
-            n: 'processOffering',
-            col: true,
-            en: 'ProcessOffering',
-            ti: '.ProcessOffering'
-          }]
-      }, {
-        ln: 'DataDescriptionType',
-        ps: [{
-            n: 'format',
-            col: true,
-            en: 'Format',
-            ti: '.Format'
-          }]
-      }, {
-        ln: 'DescribeProcess',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'identifier',
-            col: true,
-            en: {
-              lp: 'Identifier',
-              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
-            },
-            ti: 'OWS_2_0.CodeType'
-          }, {
-            n: 'lang',
-            an: {
-              lp: 'lang',
-              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetResult',
+        ln: 'GetStatus',
         tn: null,
         bti: '.RequestBaseType',
         ps: [{
             n: 'jobID',
             en: 'JobID'
-          }]
-      }, {
-        ln: 'GetCapabilitiesType',
-        bti: 'OWS_2_0.GetCapabilitiesType',
-        ps: [{
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Dismiss',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'jobID',
-            en: 'JobID'
-          }]
-      }, {
-        ln: 'Contents',
-        tn: null,
-        ps: [{
-            n: 'processSummary',
-            col: true,
-            en: 'ProcessSummary',
-            ti: '.ProcessSummaryType'
-          }]
-      }, {
-        ln: 'LiteralDataType.LiteralDataDomain',
-        tn: null,
-        bti: '.LiteralDataDomainType',
-        ps: [{
-            n: '_default',
-            ti: 'Boolean',
-            an: {
-              lp: 'default'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'OutputDescriptionType',
@@ -211,12 +50,51 @@ var WPS_2_0_Module_Factory = function () {
             ti: '.OutputDescriptionType'
           }]
       }, {
-        ln: 'GetStatus',
+        ln: 'LiteralDataType.LiteralDataDomain',
         tn: null,
-        bti: '.RequestBaseType',
+        bti: '.LiteralDataDomainType',
         ps: [{
-            n: 'jobID',
-            en: 'JobID'
+            n: '_default',
+            ti: 'Boolean',
+            an: {
+              lp: 'default'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Contents',
+        tn: null,
+        ps: [{
+            n: 'processSummary',
+            col: true,
+            en: 'ProcessSummary',
+            ti: '.ProcessSummaryType'
+          }]
+      }, {
+        ln: 'LiteralValue',
+        tn: null,
+        bti: 'OWS_2_0.ValueType',
+        ps: [{
+            n: 'dataType',
+            an: {
+              lp: 'dataType'
+            },
+            t: 'a'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessOfferings',
+        tn: null,
+        ps: [{
+            n: 'processOffering',
+            col: true,
+            en: 'ProcessOffering',
+            ti: '.ProcessOffering'
           }]
       }, {
         ln: 'GenericOutputType',
@@ -226,6 +104,90 @@ var WPS_2_0_Module_Factory = function () {
             col: true,
             en: 'Output',
             ti: '.GenericOutputType'
+          }]
+      }, {
+        ln: 'BoundingBoxData',
+        tn: null,
+        bti: '.DataDescriptionType',
+        ps: [{
+            n: 'supportedCRS',
+            col: true,
+            en: 'SupportedCRS',
+            ti: '.SupportedCRS'
+          }]
+      }, {
+        ln: 'GenericProcessType',
+        bti: '.DescriptionType',
+        ps: [{
+            n: 'input',
+            col: true,
+            en: 'Input',
+            ti: '.GenericInputType'
+          }, {
+            n: 'output',
+            col: true,
+            en: 'Output',
+            ti: '.GenericOutputType'
+          }]
+      }, {
+        ln: 'Format',
+        tn: null,
+        ps: [{
+            n: 'mimeType',
+            an: {
+              lp: 'mimeType'
+            },
+            t: 'a'
+          }, {
+            n: 'encoding',
+            an: {
+              lp: 'encoding'
+            },
+            t: 'a'
+          }, {
+            n: 'schema',
+            an: {
+              lp: 'schema'
+            },
+            t: 'a'
+          }, {
+            n: 'maximumMegabytes',
+            ti: 'Integer',
+            an: {
+              lp: 'maximumMegabytes'
+            },
+            t: 'a'
+          }, {
+            n: '_default',
+            ti: 'Boolean',
+            an: {
+              lp: 'default'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescriptionType',
+        bti: 'OWS_2_0.BasicIdentificationType'
+      }, {
+        ln: 'DataOutputType',
+        ps: [{
+            n: 'data',
+            en: 'Data',
+            ti: '.Data'
+          }, {
+            n: 'reference',
+            en: 'Reference',
+            ti: '.ReferenceType'
+          }, {
+            n: 'output',
+            en: 'Output',
+            ti: '.DataOutputType'
+          }, {
+            n: 'id',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'RequestBaseType',
@@ -269,15 +231,106 @@ var WPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LiteralDataType',
+        ln: 'SupportedCRS',
+        tn: null,
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: '_default',
+            ti: 'Boolean',
+            an: {
+              lp: 'default'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ComplexDataType',
         bti: '.DataDescriptionType',
         ps: [{
-            n: 'literalDataDomain',
+            n: 'any',
             col: true,
-            en: {
-              lp: 'LiteralDataDomain'
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'Dismiss',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'jobID',
+            en: 'JobID'
+          }]
+      }, {
+        ln: 'ProcessOffering',
+        tn: null,
+        ps: [{
+            n: 'process',
+            en: 'Process',
+            ti: '.ProcessDescriptionType'
+          }, {
+            n: 'any',
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'jobControlOptions',
+            ti: {
+              t: 'l'
             },
-            ti: '.LiteralDataType.LiteralDataDomain'
+            an: {
+              lp: 'jobControlOptions'
+            },
+            t: 'a'
+          }, {
+            n: 'outputTransmission',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'outputTransmission'
+            },
+            t: 'a'
+          }, {
+            n: 'processVersion',
+            an: {
+              lp: 'processVersion'
+            },
+            t: 'a'
+          }, {
+            n: 'processModel',
+            an: {
+              lp: 'processModel'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'InputDescriptionType',
+        bti: '.DescriptionType',
+        ps: [{
+            n: 'dataDescription',
+            mx: false,
+            dom: false,
+            en: 'DataDescription',
+            ti: '.DataDescriptionType',
+            t: 'er'
+          }, {
+            n: 'input',
+            col: true,
+            en: 'Input',
+            ti: '.InputDescriptionType'
+          }, {
+            n: 'minOccurs',
+            ti: 'Integer',
+            an: {
+              lp: 'minOccurs'
+            },
+            t: 'a'
+          }, {
+            n: 'maxOccurs',
+            an: {
+              lp: 'maxOccurs'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'LiteralDataDomainType',
@@ -325,22 +378,25 @@ var WPS_2_0_Module_Factory = function () {
             ti: 'OWS_2_0.ValueType'
           }]
       }, {
-        ln: 'ReferenceType',
+        ln: 'GetCapabilitiesType',
+        bti: 'OWS_2_0.GetCapabilitiesType',
         ps: [{
-            n: 'body',
-            en: 'Body',
-            ti: 'AnyType'
-          }, {
-            n: 'bodyReference',
-            en: 'BodyReference',
-            ti: '.ReferenceType.BodyReference'
-          }, {
-            n: 'href',
+            n: 'service',
             an: {
-              lp: 'href',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+              lp: 'service'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'Data',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            col: true,
+            t: 'ae'
           }, {
             n: 'mimeType',
             an: {
@@ -359,6 +415,63 @@ var WPS_2_0_Module_Factory = function () {
               lp: 'schema'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'ExecuteRequestType',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'identifier',
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
+            },
+            ti: 'OWS_2_0.CodeType'
+          }, {
+            n: 'input',
+            col: true,
+            en: 'Input',
+            ti: '.DataInputType'
+          }, {
+            n: 'output',
+            col: true,
+            en: 'Output',
+            ti: '.OutputDefinitionType'
+          }, {
+            n: 'mode',
+            an: {
+              lp: 'mode'
+            },
+            t: 'a'
+          }, {
+            n: 'response',
+            an: {
+              lp: 'response'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataDescriptionType',
+        ps: [{
+            n: 'format',
+            col: true,
+            en: 'Format',
+            ti: '.Format'
+          }]
+      }, {
+        ln: 'Result',
+        tn: null,
+        ps: [{
+            n: 'jobID',
+            en: 'JobID'
+          }, {
+            n: 'expirationDate',
+            en: 'ExpirationDate',
+            ti: 'Calendar'
+          }, {
+            n: 'output',
+            col: true,
+            en: 'Output',
+            ti: '.DataOutputType'
           }]
       }, {
         ln: 'ReferenceType.BodyReference',
@@ -372,118 +485,18 @@ var WPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GenericInputType',
-        bti: '.DescriptionType',
-        ps: [{
-            n: 'input',
-            col: true,
-            en: 'Input',
-            ti: '.GenericInputType'
-          }, {
-            n: 'minOccurs',
-            ti: 'Integer',
-            an: {
-              lp: 'minOccurs'
-            },
-            t: 'a'
-          }, {
-            n: 'maxOccurs',
-            an: {
-              lp: 'maxOccurs'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LiteralValue',
-        tn: null,
-        bti: 'OWS_2_0.ValueType',
-        ps: [{
-            n: 'dataType',
-            an: {
-              lp: 'dataType'
-            },
-            t: 'a'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Format',
+        ln: 'WPSCapabilitiesType.Extension',
         tn: null,
         ps: [{
-            n: 'mimeType',
-            an: {
-              lp: 'mimeType'
-            },
-            t: 'a'
-          }, {
-            n: 'encoding',
-            an: {
-              lp: 'encoding'
-            },
-            t: 'a'
-          }, {
-            n: 'schema',
-            an: {
-              lp: 'schema'
-            },
-            t: 'a'
-          }, {
-            n: 'maximumMegabytes',
-            ti: 'Integer',
-            an: {
-              lp: 'maximumMegabytes'
-            },
-            t: 'a'
-          }, {
-            n: '_default',
-            ti: 'Boolean',
-            an: {
-              lp: 'default'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'StatusInfo',
-        tn: null,
-        ps: [{
-            n: 'jobID',
-            en: 'JobID'
-          }, {
-            n: 'status',
-            en: 'Status'
-          }, {
-            n: 'expirationDate',
-            en: 'ExpirationDate',
-            ti: 'Calendar'
-          }, {
-            n: 'estimatedCompletion',
-            en: 'EstimatedCompletion',
-            ti: 'Calendar'
-          }, {
-            n: 'nextPoll',
-            en: 'NextPoll',
-            ti: 'Calendar'
-          }, {
-            n: 'percentCompleted',
-            en: 'PercentCompleted',
-            ti: 'Int'
-          }]
-      }, {
-        ln: 'ProcessOffering',
-        tn: null,
-        ps: [{
-            n: 'process',
-            en: 'Process',
-            ti: '.ProcessDescriptionType'
-          }, {
             n: 'any',
+            col: true,
             mx: false,
             t: 'ae'
-          }, {
+          }]
+      }, {
+        ln: 'ProcessSummaryType',
+        bti: '.DescriptionType',
+        ps: [{
             n: 'jobControlOptions',
             ti: {
               t: 'l'
@@ -511,6 +524,85 @@ var WPS_2_0_Module_Factory = function () {
             n: 'processModel',
             an: {
               lp: 'processModel'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GenericInputType',
+        bti: '.DescriptionType',
+        ps: [{
+            n: 'input',
+            col: true,
+            en: 'Input',
+            ti: '.GenericInputType'
+          }, {
+            n: 'minOccurs',
+            ti: 'Integer',
+            an: {
+              lp: 'minOccurs'
+            },
+            t: 'a'
+          }, {
+            n: 'maxOccurs',
+            an: {
+              lp: 'maxOccurs'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetResult',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'jobID',
+            en: 'JobID'
+          }]
+      }, {
+        ln: 'WPSCapabilitiesType',
+        bti: 'OWS_2_0.CapabilitiesBaseType',
+        ps: [{
+            n: 'contents',
+            en: 'Contents',
+            ti: '.Contents'
+          }, {
+            n: 'extension',
+            en: 'Extension',
+            ti: '.WPSCapabilitiesType.Extension'
+          }, {
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LiteralDataType',
+        bti: '.DataDescriptionType',
+        ps: [{
+            n: 'literalDataDomain',
+            col: true,
+            en: {
+              lp: 'LiteralDataDomain'
+            },
+            ti: '.LiteralDataType.LiteralDataDomain'
+          }]
+      }, {
+        ln: 'DescribeProcess',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'identifier',
+            col: true,
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
+            },
+            ti: 'OWS_2_0.CodeType'
+          }, {
+            n: 'lang',
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
             },
             t: 'a'
           }]
@@ -552,158 +644,66 @@ var WPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'WPSCapabilitiesType',
-        bti: 'OWS_2_0.CapabilitiesBaseType',
+        ln: 'ReferenceType',
         ps: [{
-            n: 'contents',
-            en: 'Contents',
-            ti: '.Contents'
+            n: 'body',
+            en: 'Body',
+            ti: 'AnyType'
           }, {
-            n: 'extension',
-            en: 'Extension',
-            ti: '.WPSCapabilitiesType.Extension'
+            n: 'bodyReference',
+            en: 'BodyReference',
+            ti: '.ReferenceType.BodyReference'
           }, {
-            n: 'service',
+            n: 'href',
             an: {
-              lp: 'service'
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'mimeType',
+            an: {
+              lp: 'mimeType'
+            },
+            t: 'a'
+          }, {
+            n: 'encoding',
+            an: {
+              lp: 'encoding'
+            },
+            t: 'a'
+          }, {
+            n: 'schema',
+            an: {
+              lp: 'schema'
             },
             t: 'a'
           }]
       }, {
-        ln: 'WPSCapabilitiesType.Extension',
+        ln: 'StatusInfo',
         tn: null,
         ps: [{
-            n: 'any',
-            col: true,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'SupportedCRS',
-        tn: null,
-        ps: [{
-            n: 'value',
-            t: 'v'
+            n: 'jobID',
+            en: 'JobID'
           }, {
-            n: '_default',
-            ti: 'Boolean',
-            an: {
-              lp: 'default'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescriptionType',
-        bti: 'OWS_2_0.BasicIdentificationType'
-      }, {
-        ln: 'DataInputType',
-        ps: [{
-            n: 'data',
-            en: 'Data',
-            ti: '.Data'
+            n: 'status',
+            en: 'Status'
           }, {
-            n: 'reference',
-            en: 'Reference',
-            ti: '.ReferenceType'
+            n: 'expirationDate',
+            en: 'ExpirationDate',
+            ti: 'Calendar'
           }, {
-            n: 'input',
-            col: true,
-            en: 'Input',
-            ti: '.DataInputType'
+            n: 'estimatedCompletion',
+            en: 'EstimatedCompletion',
+            ti: 'Calendar'
           }, {
-            n: 'id',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataOutputType',
-        ps: [{
-            n: 'data',
-            en: 'Data',
-            ti: '.Data'
+            n: 'nextPoll',
+            en: 'NextPoll',
+            ti: 'Calendar'
           }, {
-            n: 'reference',
-            en: 'Reference',
-            ti: '.ReferenceType'
-          }, {
-            n: 'output',
-            en: 'Output',
-            ti: '.DataOutputType'
-          }, {
-            n: 'id',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ComplexDataType',
-        bti: '.DataDescriptionType',
-        ps: [{
-            n: 'any',
-            col: true,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'GenericProcessType',
-        bti: '.DescriptionType',
-        ps: [{
-            n: 'input',
-            col: true,
-            en: 'Input',
-            ti: '.GenericInputType'
-          }, {
-            n: 'output',
-            col: true,
-            en: 'Output',
-            ti: '.GenericOutputType'
-          }]
-      }, {
-        ln: 'BoundingBoxData',
-        tn: null,
-        bti: '.DataDescriptionType',
-        ps: [{
-            n: 'supportedCRS',
-            col: true,
-            en: 'SupportedCRS',
-            ti: '.SupportedCRS'
-          }]
-      }, {
-        ln: 'ProcessSummaryType',
-        bti: '.DescriptionType',
-        ps: [{
-            n: 'jobControlOptions',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'jobControlOptions'
-            },
-            t: 'a'
-          }, {
-            n: 'outputTransmission',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'outputTransmission'
-            },
-            t: 'a'
-          }, {
-            n: 'processVersion',
-            an: {
-              lp: 'processVersion'
-            },
-            t: 'a'
-          }, {
-            n: 'processModel',
-            an: {
-              lp: 'processModel'
-            },
-            t: 'a'
+            n: 'percentCompleted',
+            en: 'PercentCompleted',
+            ti: 'Int'
           }]
       }, {
         t: 'enum',
@@ -711,61 +711,44 @@ var WPS_2_0_Module_Factory = function () {
         vs: ['value', 'reference']
       }],
     eis: [{
-        en: 'GetCapabilities',
-        ti: '.GetCapabilitiesType'
+        en: 'BoundingBoxData',
+        ti: '.BoundingBoxData',
+        sh: 'DataDescription'
       }, {
         en: 'ProcessOffering',
         ti: '.ProcessOffering'
       }, {
-        en: 'GetResult',
-        ti: '.GetResult'
+        en: 'DescribeProcess',
+        ti: '.DescribeProcess'
       }, {
-        en: 'DataDescription',
-        ti: '.DataDescriptionType'
-      }, {
-        en: 'Execute',
-        ti: '.ExecuteRequestType'
-      }, {
-        en: 'Contents',
-        ti: '.Contents'
-      }, {
-        en: 'Result',
-        ti: '.Result'
-      }, {
-        en: 'Reference',
-        ti: '.ReferenceType'
+        en: 'ComplexData',
+        ti: '.ComplexDataType',
+        sh: 'DataDescription'
       }, {
         en: 'LiteralValue',
         ti: '.LiteralValue'
       }, {
-        en: 'ExpirationDate',
-        ti: 'Calendar'
-      }, {
-        en: 'Format',
-        ti: '.Format'
-      }, {
-        en: 'GetStatus',
-        ti: '.GetStatus'
-      }, {
-        en: 'JobID'
+        en: 'SupportedCRS',
+        ti: '.SupportedCRS'
       }, {
         en: 'LiteralData',
         ti: '.LiteralDataType',
         sh: 'DataDescription'
       }, {
-        en: 'Data',
-        ti: '.Data'
+        en: 'DataDescription',
+        ti: '.DataDescriptionType'
       }, {
-        en: 'BoundingBoxData',
-        ti: '.BoundingBoxData',
-        sh: 'DataDescription'
+        en: 'ExpirationDate',
+        ti: 'Calendar'
       }, {
-        en: 'SupportedCRS',
-        ti: '.SupportedCRS'
+        en: 'Execute',
+        ti: '.ExecuteRequestType'
       }, {
-        en: 'ComplexData',
-        ti: '.ComplexDataType',
-        sh: 'DataDescription'
+        en: 'GetResult',
+        ti: '.GetResult'
+      }, {
+        en: 'GenericProcess',
+        ti: '.GenericProcessType'
       }, {
         en: 'Dismiss',
         ti: '.Dismiss'
@@ -773,20 +756,37 @@ var WPS_2_0_Module_Factory = function () {
         en: 'Process',
         ti: '.ProcessDescriptionType'
       }, {
-        en: 'ProcessOfferings',
-        ti: '.ProcessOfferings'
+        en: 'Data',
+        ti: '.Data'
       }, {
-        en: 'DescribeProcess',
-        ti: '.DescribeProcess'
+        en: 'Capabilities',
+        ti: '.WPSCapabilitiesType'
+      }, {
+        en: 'Result',
+        ti: '.Result'
+      }, {
+        en: 'Format',
+        ti: '.Format'
+      }, {
+        en: 'GetStatus',
+        ti: '.GetStatus'
       }, {
         en: 'StatusInfo',
         ti: '.StatusInfo'
       }, {
-        en: 'GenericProcess',
-        ti: '.GenericProcessType'
+        en: 'ProcessOfferings',
+        ti: '.ProcessOfferings'
       }, {
-        en: 'Capabilities',
-        ti: '.WPSCapabilitiesType'
+        en: 'Reference',
+        ti: '.ReferenceType'
+      }, {
+        en: 'GetCapabilities',
+        ti: '.GetCapabilitiesType'
+      }, {
+        en: 'JobID'
+      }, {
+        en: 'Contents',
+        ti: '.Contents'
       }]
   };
   return {
