@@ -4,6 +4,13 @@
 	jaxb:extensionBindingPrefixes="xjc">
 
 	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.gml.profiles.gml4wcs.v_1_0_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	<jaxb:bindings 
 		schemaLocation="http://schemas.opengis.net/wcs/1.0.0/wcsAll.xsd" 
 		node="/xs:schema">
 		<jaxb:schemaBindings>

@@ -94,51 +94,19 @@ diff -urN ../resources-original/ogc/sweCommon/2.0/basic_types.xsd ogc/sweCommon/
  			<extension base="anyType">
  			  <attributeGroup ref="swe:AssociationAttributeGroup"/>
  			</extension>
-diff -urN ../resources-original/ogc/wcs/1.0.0/describeCoverage.xsd ogc/wcs/1.0.0/describeCoverage.xsd
---- ../resources-original/ogc/wcs/1.0.0/describeCoverage.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/wcs/1.0.0/describeCoverage.xsd	Wed Apr 15 22:31:09 2015
-@@ -41,7 +41,7 @@
- 	<xs:include schemaLocation="./wcsAll.xsd"/>
- 	<xs:include schemaLocation="./wcsCapabilities.xsd"/>
- 	<xs:include schemaLocation="./values.xsd"/>
--	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"/>
-+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
- 	<!-- ==============================================================
-        elements and types
- 	============================================================== -->
-diff -urN ../resources-original/ogc/wcs/1.0.0/getCoverage.xsd ogc/wcs/1.0.0/getCoverage.xsd
---- ../resources-original/ogc/wcs/1.0.0/getCoverage.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/wcs/1.0.0/getCoverage.xsd	Wed Apr 15 22:31:09 2015
-@@ -40,7 +40,7 @@
- 	========================================================== -->
- 	<xs:include schemaLocation="./wcsAll.xsd"/>
- 	<xs:include schemaLocation="./describeCoverage.xsd"/>
--	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"/>
-+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
- 	<!-- ==============================================================
-        elements and types
- 	============================================================== -->
-diff -urN ../resources-original/ogc/wcs/1.0.0/owsBase.xsd ogc/wcs/1.0.0/owsBase.xsd
---- ../resources-original/ogc/wcs/1.0.0/owsBase.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/wcs/1.0.0/owsBase.xsd	Wed Apr 15 22:31:09 2015
-@@ -38,7 +38,7 @@
- 	<!-- ==============================================================
-            includes and imports
- 	============================================================== -->
--	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"/>
-+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
- 	<!-- ============================================================
- 		 Elements and types		
- 	============================================================== -->
 diff -urN ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd ogc/wcs/1.0.0/wcsCapabilities.xsd
---- ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/wcs/1.0.0/wcsCapabilities.xsd	Wed Apr 15 22:31:09 2015
-@@ -45,7 +45,7 @@
-     <!-- ========= includes and imports ================================ -->
-     <xs:include schemaLocation="./wcsAll.xsd"/>
-     <xs:include schemaLocation="./owsBase.xsd"/>
--    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"/>
-+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
-     <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
-     <!-- ==============================================================       elements and types	============================================================== -->
-     <xs:element name="GetCapabilities">
+--- ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd     Sat Jul 21 21:59:39 2012
++++ ogc/wcs/1.0.0/wcsCapabilities.xsd   Tue Sep  1 14:47:41 2015
+@@ -443,11 +443,7 @@
+             <xs:documentation>Description of a WCS object. </xs:documentation>
+         </xs:annotation>
+         <xs:complexContent>
+-            <xs:restriction base="gml:AbstractGMLType">
+-                <xs:sequence>
+-                    <xs:element ref="metadataLink" minOccurs="0" maxOccurs="unbounded"/>
+-                </xs:sequence>
+-            </xs:restriction>
++            <xs:restriction base="gml:AbstractGMLType"/>
+         </xs:complexContent>
+     </xs:complexType>
+     <!-- =========================================================== -->
