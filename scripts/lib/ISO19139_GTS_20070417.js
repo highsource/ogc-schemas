@@ -3,7 +3,7 @@ var ISO19139_GTS_20070417_Module_Factory = function () {
     n: 'ISO19139_GTS_20070417',
     dens: 'http:\/\/www.isotc211.org\/2005\/gts',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_2_1', 'XLink_1_0'],
+    deps: ['XLink_1_0', 'GML_3_2_1'],
     tis: [{
         ln: 'TMPeriodDurationPropertyType',
         tn: 'TM_PeriodDuration_PropertyType',
