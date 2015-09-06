@@ -65,6 +65,7 @@ Supports the following schemas:
   * `WAMI_Common_1_0_0`
 * `WaterML_2_0`
 * `WCS_1_0_0`
+  * `GML4WCS_1_0_0`
 * `WCS_1_1`
 * `WCS_2_0`
 * `WFS_1_0_0`

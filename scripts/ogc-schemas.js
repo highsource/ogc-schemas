@@ -9,6 +9,7 @@ module.exports.GML_2_1_2             = require('./lib/GML_2_1_2'                
 module.exports.GML_3_1_1             = require('./lib/GML_3_1_1'                    ).GML_3_1_1            ;
 module.exports.GML_3_2_0             = require('./lib/GML_3_2_0'                    ).GML_3_2_0            ;
 module.exports.GML_3_2_1             = require('./lib/GML_3_2_1'                    ).GML_3_2_1            ;
+module.exports.GML4WCS_1_0_0         = require('./lib/GML4WCS_1_0_0'                ).GML4WCS_1_0_0        ;
 module.exports.GMLCOV_1_0            = require('./lib/GMLCOV_1_0'                   ).GMLCOV_1_0           ;
 module.exports.SMIL_2_0              = require('./lib/SMIL_2_0'                     ).SMIL_2_0             ;
 module.exports.SMIL_2_0_Language     = require('./lib/SMIL_2_0_Language'            ).SMIL_2_0_Language    ;
