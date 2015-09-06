@@ -444,9 +444,9 @@
         </xs:annotation>
         <xs:complexContent>
             <xs:restriction base="gml:AbstractGMLType">
-                <xs:sequence>
+                <!--xs:sequence>
                     <xs:element ref="metadataLink" minOccurs="0" maxOccurs="unbounded"/>
-                </xs:sequence>
+                </xs:sequence-->
             </xs:restriction>
         </xs:complexContent>
     </xs:complexType>
