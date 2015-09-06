@@ -74,7 +74,7 @@
 				<executions>
 					<execution>
 						<id>patch-sources</id>
-						<phase>process-sources</phase>
+						<phase>generate-sources</phase>
 						<goals>
 							<goal>apply</goal>
 						</goals>
@@ -85,7 +85,8 @@
 								<patch>ogc.patch</patch>
 								<patch>geoserver.patch</patch>
 							</patches>
-							<patchTrackingFile>${project.build.directory}/patch-log.txt</patchTrackingFile>
+							<optimizations>false</optimizations>
+							<!--patchTrackingFile>${project.build.directory}/patch-log.txt</patchTrackingFile-->
 							<naturalOrderProcessing>true</naturalOrderProcessing>
 							<ignoreWhitespace>true</ignoreWhitespace>
 						</configuration>
