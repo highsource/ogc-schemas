@@ -1,6 +1,6 @@
 diff -urN ../resources-original/geoserver/sld/StyledLayerDescriptor.xsd geoserver/sld/StyledLayerDescriptor.xsd
 --- ../resources-original/geoserver/sld/StyledLayerDescriptor.xsd	Wed Apr 15 22:05:57 2015
-+++ geoserver/sld/StyledLayerDescriptor.xsd	Wed Apr 15 22:39:51 2015
++++ geoserver/sld/StyledLayerDescriptor.xsd	Sun Sep  6 21:41:54 2015
 @@ -6,9 +6,9 @@
              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
              elementFormDefault="qualified">
