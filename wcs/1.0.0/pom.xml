@@ -16,11 +16,6 @@
 			<groupId>org.hisrc.w3c</groupId>
 			<artifactId>xlink-v_1_0</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>gml-v_3_1_1</artifactId>
-			<version>${project.version}</version>
-		</dependency>
 	</dependencies>
 	<build>
 		<defaultGoal>install</defaultGoal>
@@ -31,6 +26,9 @@
 				<configuration>
 					<schemas>
 						<schema>
+							<url>http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd</url>
+						</schema>
+						<schema>
 							<url>http://schemas.opengis.net/wcs/1.0.0/wcsAll.xsd</url>
 						</schema>
 					</schemas>
@@ -40,14 +38,6 @@
 								<groupId>${project.groupId}</groupId>
 								<artifactId>ogc-schemas</artifactId>
 								<resource>ogc/globalBindings.xjb</resource>
-								<version>${project.version}</version>
-							</dependencyResource>
-						</binding>
-						<binding>
-							<dependencyResource>
-								<groupId>${project.groupId}</groupId>
-								<artifactId>gml-v_3_1_1</artifactId>
-								<resource>gml-v_3_1_1.jsonix.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>
 						</binding>
@@ -64,20 +54,6 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>process-sources</phase>
-						<configuration>
-							<target>
-								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/GML"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="GML*.*"/>
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>

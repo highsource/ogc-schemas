@@ -8,5 +8,11 @@
 		node="/xs:schema">
 		<jsonix:packageMapping packageName="net.opengis.wcs.v_1_0_0" spaceName="WCS_1_0_0"/>
 	</jaxb:bindings>
+
+  <jaxb:bindings
+		schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"
+		node="/xs:schema">
+    <jsonix:packageMapping packageName="net.opengis.gml.profiles.gml4wcs.v_1_0_0" spaceName="GML4WCS_1_0_0"/>
+  </jaxb:bindings>
 	
 </jaxb:bindings>

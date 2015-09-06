@@ -101,12 +101,17 @@
 							<arg>-Xfluent-api</arg>
 							<arg>-Xjsonix</arg>
 							<arg>-Xjsonix-compact</arg>
+							<arg>-Xannotate</arg>
 							<!--arg>-Xvisitor</arg-->
 						</args>
 						<plugins>
 							<plugin>
 								<groupId>org.jvnet.jaxb2_commons</groupId>
 								<artifactId>jaxb2-basics</artifactId>
+							</plugin>
+							<plugin>
+								<groupId>org.jvnet.jaxb2_commons</groupId>
+								<artifactId>jaxb2-basics-annotate</artifactId>
 							</plugin>
 							<plugin>
 								<groupId>org.jvnet.jaxb2_commons</groupId>
