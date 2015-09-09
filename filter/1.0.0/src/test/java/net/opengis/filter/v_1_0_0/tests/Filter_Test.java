@@ -3,6 +3,7 @@ package net.opengis.filter.v_1_0_0.tests;
 import java.io.StringReader;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
@@ -49,7 +50,7 @@ public class Filter_Test {
 				+ "</ogc:Filter>";
 
 		Unmarshaller unmarshaller = this.context.createUnmarshaller();
-		FilterType filter = (FilterType) unmarshaller.unmarshal(new StringReader(xml));
+		JAXBElement<FilterType> filter = (JAXBElement<FilterType>) unmarshaller.unmarshal(new StringReader(xml));
 		Assert.assertNotNull(filter);
 	}
 

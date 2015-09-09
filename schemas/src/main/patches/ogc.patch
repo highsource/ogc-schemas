@@ -89,3 +89,33 @@ diff -urN ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd ogc/wcs/1.0.0/
              </xs:restriction>
          </xs:complexContent>
      </xs:complexType>
+--- ../resources-original/ogc/filter/1.0.0/expr.xsd	Sat Jul 21 21:59:38 2012
++++ ogc/filter/1.0.0/expr.xsd	Wed Sep  9 09:42:41 2015
+@@ -68,7 +68,11 @@
+   </xsd:complexType>
+   <xsd:complexType name="PropertyNameType">
+     <xsd:complexContent mixed="true">
+-      <xsd:extension base="ogc:ExpressionType"/>
++      <xsd:extension base="ogc:ExpressionType">
++        <xsd:sequence>
++          <xsd:any minOccurs="0"/>
++        </xsd:sequence>
++      </xsd:extension>
+     </xsd:complexContent>
+   </xsd:complexType>
+ </xsd:schema>
+--- ../resources-original/ogc/filter/1.1.0/expr.xsd	Sat Jul 21 21:59:38 2012
++++ ogc/filter/1.1.0/expr.xsd	Wed Sep  9 09:43:50 2015
+@@ -61,7 +61,11 @@
+    </xsd:complexType>
+    <xsd:complexType name="PropertyNameType">
+       <xsd:complexContent mixed="true">
+-         <xsd:extension base="ogc:ExpressionType"/>
++        <xsd:extension base="ogc:ExpressionType">
++          <xsd:sequence>
++            <xsd:any minOccurs="0"/>
++          </xsd:sequence>
++        </xsd:extension>
+       </xsd:complexContent>
+    </xsd:complexType>
+ </xsd:schema>
