@@ -1,12 +1,22 @@
 <jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
-	jaxb:extensionBindingPrefixes="xjc">
+	xmlns:annox="http://annox.dev.java.net" 
+	jaxb:extensionBindingPrefixes="xjc annox">
 
 	<jaxb:bindings schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd" node="/xs:schema">
 		<jaxb:schemaBindings>
 			<jaxb:package name="net.opengis.ows.v_1_1_0"/>
 		</jaxb:schemaBindings>
 	</jaxb:bindings>
-	
+
+	<!-- https://java.net/jira/browse/JAXB-986 -->
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsCommon.xsd" node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='BoundingBoxType']//xs:element[@name='LowerCorner']">
+			<annox:annotate target="field">@javax.xml.bind.annotation.XmlSchemaType(name="double")</annox:annotate>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='BoundingBoxType']//xs:element[@name='UpperCorner']">
+			<annox:annotate target="field">@javax.xml.bind.annotation.XmlSchemaType(name="double")</annox:annotate>
+		</jaxb:bindings>
+	</jaxb:bindings>
 </jaxb:bindings>
