@@ -68,7 +68,11 @@
   </xsd:complexType>
   <xsd:complexType name="PropertyNameType">
     <xsd:complexContent mixed="true">
-      <xsd:extension base="ogc:ExpressionType"/>
+      <xsd:extension base="ogc:ExpressionType">
+        <xsd:sequence>
+          <xsd:any minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
 </xsd:schema>

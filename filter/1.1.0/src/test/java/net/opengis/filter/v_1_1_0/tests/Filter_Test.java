@@ -41,16 +41,8 @@ public class Filter_Test {
 	@Test
 	public void testUnmarshallPropertyNameType() throws Exception {
 		
-		String xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
-				+ "<ogc:Filter xmlns:ogc=\"http://www.opengis.net/ogc\">"
-				+ "<ogc:PropertyIsEqualTo>"
-				+ "<ogc:PropertyName>someProperty</ogc:PropertyName>"
-				+ "<ogc:Literal>someValue</ogc:Literal>"
-				+ "</ogc:PropertyIsEqualTo>"
-				+ "</ogc:Filter>";
-
 		Unmarshaller unmarshaller = this.context.createUnmarshaller();
-		JAXBElement<FilterType> filter = (JAXBElement<FilterType>) unmarshaller.unmarshal(new StringReader(xml));
+		JAXBElement<FilterType> filter = (JAXBElement<FilterType>) unmarshaller.unmarshal(getClass().getResource("Filter01.xml"));
 		Assert.assertNotNull(filter);
 	}
 
