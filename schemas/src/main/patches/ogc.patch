@@ -1,6 +1,6 @@
 diff -urN ../resources-original/ogc/context/1.0.0/collection.xsd ogc/context/1.0.0/collection.xsd
---- ../resources-original/ogc/context/1.0.0/collection.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/context/1.0.0/collection.xsd	Thu Sep 10 23:50:32 2015
+--- ../resources-original/ogc/context/1.0.0/collection.xsd	Fri Sep 11 11:08:43 2015
++++ ogc/context/1.0.0/collection.xsd	Fri Sep 11 11:09:58 2015
 @@ -8,6 +8,7 @@
  -->
  <xs:schema targetNamespace="http://www.opengis.net/context" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:context="http://www.opengis.net/context" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0.0.2">
@@ -20,8 +20,8 @@ diff -urN ../resources-original/ogc/context/1.0.0/collection.xsd ogc/context/1.0
 +	-->
  </xs:schema>
 diff -urN ../resources-original/ogc/filter/1.0.0/expr.xsd ogc/filter/1.0.0/expr.xsd
---- ../resources-original/ogc/filter/1.0.0/expr.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/filter/1.0.0/expr.xsd	Thu Sep 10 23:50:32 2015
+--- ../resources-original/ogc/filter/1.0.0/expr.xsd	Fri Sep 11 11:08:48 2015
++++ ogc/filter/1.0.0/expr.xsd	Fri Sep 11 11:10:03 2015
 @@ -68,7 +68,11 @@
    </xsd:complexType>
    <xsd:complexType name="PropertyNameType">
@@ -36,8 +36,8 @@ diff -urN ../resources-original/ogc/filter/1.0.0/expr.xsd ogc/filter/1.0.0/expr.
    </xsd:complexType>
  </xsd:schema>
 diff -urN ../resources-original/ogc/filter/1.1.0/expr.xsd ogc/filter/1.1.0/expr.xsd
---- ../resources-original/ogc/filter/1.1.0/expr.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/filter/1.1.0/expr.xsd	Thu Sep 10 23:50:32 2015
+--- ../resources-original/ogc/filter/1.1.0/expr.xsd	Fri Sep 11 11:08:48 2015
++++ ogc/filter/1.1.0/expr.xsd	Fri Sep 11 11:10:04 2015
 @@ -61,7 +61,11 @@
     </xsd:complexType>
     <xsd:complexType name="PropertyNameType">
@@ -51,9 +51,21 @@ diff -urN ../resources-original/ogc/filter/1.1.0/expr.xsd ogc/filter/1.1.0/expr.
        </xsd:complexContent>
     </xsd:complexType>
  </xsd:schema>
+diff -urN ../resources-original/ogc/ows/1.1.0/owsContents.xsd ogc/ows/1.1.0/owsContents.xsd
+--- ../resources-original/ogc/ows/1.1.0/owsContents.xsd	Fri Sep 11 11:09:20 2015
++++ ogc/ows/1.1.0/owsContents.xsd	Fri Sep 11 11:11:50 2015
+@@ -84,4 +84,8 @@
+ 		</complexContent>
+ 	</complexType>
+ 	<!-- ===========================================================-->
++	
++	<!-- This is to force JAXB generate reference properties -->
++	<element name="DatasetDescriptionSummaryExtension" type="ows:DatasetDescriptionSummaryBaseType" substitutionGroup="ows:DatasetDescriptionSummary"/>
++	<element name="OtherSourceExtension" type="ows:MetadataType" substitutionGroup="ows:OtherSource"/>
+ </schema>
 diff -urN ../resources-original/ogc/ows/2.0/owsAdditionalParameters.xsd ogc/ows/2.0/owsAdditionalParameters.xsd
---- ../resources-original/ogc/ows/2.0/owsAdditionalParameters.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/ows/2.0/owsAdditionalParameters.xsd	Thu Sep 10 23:50:32 2015
+--- ../resources-original/ogc/ows/2.0/owsAdditionalParameters.xsd	Fri Sep 11 11:09:21 2015
++++ ogc/ows/2.0/owsAdditionalParameters.xsd	Fri Sep 11 11:10:36 2015
 @@ -53,13 +53,13 @@
    <!-- ========================================================== -->
    <complexType name="AdditionalParametersType">
@@ -71,8 +83,8 @@ diff -urN ../resources-original/ogc/ows/2.0/owsAdditionalParameters.xsd ogc/ows/
    </complexType>
    <!-- ========================================================== -->
 diff -urN ../resources-original/ogc/sweCommon/1.0.0/aggregateTypes.xsd ogc/sweCommon/1.0.0/aggregateTypes.xsd
---- ../resources-original/ogc/sweCommon/1.0.0/aggregateTypes.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/sweCommon/1.0.0/aggregateTypes.xsd	Thu Sep 10 23:50:32 2015
+--- ../resources-original/ogc/sweCommon/1.0.0/aggregateTypes.xsd	Fri Sep 11 11:09:32 2015
++++ ogc/sweCommon/1.0.0/aggregateTypes.xsd	Fri Sep 11 11:10:48 2015
 @@ -139,7 +139,7 @@
  		<xs:annotation>
  			<xs:documentation>Use to point or include data values inline</xs:documentation>
@@ -83,8 +95,8 @@ diff -urN ../resources-original/ogc/sweCommon/1.0.0/aggregateTypes.xsd ogc/sweCo
  				<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
  			</xs:extension>
 diff -urN ../resources-original/ogc/sweCommon/1.0.1/aggregateTypes.xsd ogc/sweCommon/1.0.1/aggregateTypes.xsd
---- ../resources-original/ogc/sweCommon/1.0.1/aggregateTypes.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/sweCommon/1.0.1/aggregateTypes.xsd	Thu Sep 10 23:50:32 2015
+--- ../resources-original/ogc/sweCommon/1.0.1/aggregateTypes.xsd	Fri Sep 11 11:09:33 2015
++++ ogc/sweCommon/1.0.1/aggregateTypes.xsd	Fri Sep 11 11:10:48 2015
 @@ -138,7 +138,7 @@
  		<xs:annotation>
  			<xs:documentation>Use to point or include data values inline</xs:documentation>
@@ -95,8 +107,8 @@ diff -urN ../resources-original/ogc/sweCommon/1.0.1/aggregateTypes.xsd ogc/sweCo
  				<xs:attribute name="recordCount" type="xs:positiveInteger"/>
  				<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
 diff -urN ../resources-original/ogc/sweCommon/2.0/basic_types.xsd ogc/sweCommon/2.0/basic_types.xsd
---- ../resources-original/ogc/sweCommon/2.0/basic_types.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/sweCommon/2.0/basic_types.xsd	Thu Sep 10 23:50:32 2015
+--- ../resources-original/ogc/sweCommon/2.0/basic_types.xsd	Fri Sep 11 11:09:33 2015
++++ ogc/sweCommon/2.0/basic_types.xsd	Fri Sep 11 11:10:49 2015
 @@ -78,7 +78,7 @@
  	</complexType>
  	<!-- ================================================= -->
@@ -107,8 +119,8 @@ diff -urN ../resources-original/ogc/sweCommon/2.0/basic_types.xsd ogc/sweCommon/
  			  <attributeGroup ref="swe:AssociationAttributeGroup"/>
  			</extension>
 diff -urN ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd ogc/wcs/1.0.0/wcsCapabilities.xsd
---- ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd	Sat Jul 21 21:59:38 2012
-+++ ogc/wcs/1.0.0/wcsCapabilities.xsd	Thu Sep 10 23:50:32 2015
+--- ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd	Fri Sep 11 11:09:39 2015
++++ ogc/wcs/1.0.0/wcsCapabilities.xsd	Fri Sep 11 11:10:54 2015
 @@ -444,9 +444,9 @@
          </xs:annotation>
          <xs:complexContent>
