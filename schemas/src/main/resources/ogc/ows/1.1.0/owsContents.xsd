@@ -84,4 +84,8 @@ elementFormDefault="qualified" version="1.1.0.3" xml:lang="en">
 		</complexContent>
 	</complexType>
 	<!-- ===========================================================-->
+	
+	<!-- This is to force JAXB generate reference properties -->
+	<element name="DatasetDescriptionSummaryExtension" type="ows:DatasetDescriptionSummaryBaseType" substitutionGroup="ows:DatasetDescriptionSummary"/>
+	<element name="OtherSourceExtension" type="ows:MetadataType" substitutionGroup="ows:OtherSource"/>
 </schema>
