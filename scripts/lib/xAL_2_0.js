@@ -3,29 +3,64 @@ var xAL_2_0_Module_Factory = function () {
     n: 'xAL_2_0',
     dens: 'urn:oasis:names:tc:ciq:xsdschema:xAL:2.0',
     tis: [{
-        ln: 'PostalCode.PostalCodeNumber',
-        tn: null,
+        ln: 'LargeMailUserType',
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
           }, {
-            n: 'content',
-            t: 'v'
+            n: 'addressLine',
+            mno: 0,
+            col: true,
+            en: 'AddressLine',
+            ti: '.AddressLine'
+          }, {
+            n: 'largeMailUserName',
+            mno: 0,
+            col: true,
+            en: 'LargeMailUserName',
+            ti: '.LargeMailUserType.LargeMailUserName'
+          }, {
+            n: 'largeMailUserIdentifier',
+            en: 'LargeMailUserIdentifier',
+            ti: '.LargeMailUserType.LargeMailUserIdentifier'
+          }, {
+            n: 'buildingName',
+            mno: 0,
+            col: true,
+            en: 'BuildingName',
+            ti: '.BuildingNameType'
+          }, {
+            n: 'department',
+            en: 'Department',
+            ti: '.Department'
+          }, {
+            n: 'postBox',
+            en: 'PostBox',
+            ti: '.PostBox'
+          }, {
+            n: 'thoroughfare',
+            en: 'Thoroughfare',
+            ti: '.Thoroughfare'
+          }, {
+            n: 'postalCode',
+            en: 'PostalCode',
+            ti: '.PostalCode'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
           }, {
             n: 'type',
             an: {
               lp: 'Type'
             },
             t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
           }]
       }, {
-        ln: 'PostalRouteType.PostalRouteName',
+        ln: 'Locality.LocalityName',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -104,479 +139,7 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'PostBox.PostBoxNumberExtension',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'numberExtensionSeparator',
-            an: {
-              lp: 'NumberExtensionSeparator'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PostBox.PostBoxNumber',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AddressDetails.Address',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ThoroughfareTrailingTypeType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Premise',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'addressLine',
-            mno: 0,
-            col: true,
-            en: 'AddressLine',
-            ti: '.AddressLine'
-          }, {
-            n: 'premiseName',
-            mno: 0,
-            col: true,
-            en: 'PremiseName',
-            ti: '.Premise.PremiseName'
-          }, {
-            n: 'premiseLocation',
-            rq: true,
-            en: 'PremiseLocation',
-            ti: '.Premise.PremiseLocation'
-          }, {
-            n: 'premiseNumber',
-            rq: true,
-            col: true,
-            en: 'PremiseNumber',
-            ti: '.PremiseNumber'
-          }, {
-            n: 'premiseNumberRange',
-            rq: true,
-            en: 'PremiseNumberRange',
-            ti: '.Premise.PremiseNumberRange'
-          }, {
-            n: 'premiseNumberPrefix',
-            mno: 0,
-            col: true,
-            en: 'PremiseNumberPrefix',
-            ti: '.PremiseNumberPrefix'
-          }, {
-            n: 'premiseNumberSuffix',
-            mno: 0,
-            col: true,
-            en: 'PremiseNumberSuffix',
-            ti: '.PremiseNumberSuffix'
-          }, {
-            n: 'buildingName',
-            mno: 0,
-            col: true,
-            en: 'BuildingName',
-            ti: '.BuildingNameType'
-          }, {
-            n: 'subPremise',
-            mno: 0,
-            col: true,
-            en: 'SubPremise',
-            ti: '.SubPremiseType'
-          }, {
-            n: 'firm',
-            en: 'Firm',
-            ti: '.FirmType'
-          }, {
-            n: 'mailStop',
-            en: 'MailStop',
-            ti: '.MailStopType'
-          }, {
-            n: 'postalCode',
-            en: 'PostalCode',
-            ti: '.PostalCode'
-          }, {
-            n: 'premise',
-            en: 'Premise',
-            ti: '.Premise'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'premiseDependency',
-            an: {
-              lp: 'PremiseDependency'
-            },
-            t: 'a'
-          }, {
-            n: 'premiseDependencyType',
-            an: {
-              lp: 'PremiseDependencyType'
-            },
-            t: 'a'
-          }, {
-            n: 'premiseThoroughfareConnector',
-            an: {
-              lp: 'PremiseThoroughfareConnector'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Premise.PremiseLocation',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PostalRouteType.PostalRouteNumber',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DependentLocalityType.DependentLocalityName',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'FirmType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'addressLine',
-            mno: 0,
-            col: true,
-            en: 'AddressLine',
-            ti: '.AddressLine'
-          }, {
-            n: 'firmName',
-            mno: 0,
-            col: true,
-            en: 'FirmName',
-            ti: '.FirmType.FirmName'
-          }, {
-            n: 'department',
-            mno: 0,
-            col: true,
-            en: 'Department',
-            ti: '.Department'
-          }, {
-            n: 'mailStop',
-            en: 'MailStop',
-            ti: '.MailStopType'
-          }, {
-            n: 'postalCode',
-            en: 'PostalCode',
-            ti: '.PostalCode'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Premise.PremiseName',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'typeOccurrence',
-            an: {
-              lp: 'TypeOccurrence'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PostalCode.PostalCodeNumberExtension',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'numberExtensionSeparator',
-            an: {
-              lp: 'NumberExtensionSeparator'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SubPremiseType.SubPremiseLocation',
-        tn: null,
-        ps: [{
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberFrom',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            col: true,
-            dom: false,
-            etis: [{
-                en: 'ThoroughfareNumberSuffix',
-                ti: '.ThoroughfareNumberSuffix'
-              }, {
-                en: 'ThoroughfareNumberPrefix',
-                ti: '.ThoroughfareNumberPrefix'
-              }, {
-                en: 'AddressLine',
-                ti: '.AddressLine'
-              }, {
-                en: 'ThoroughfareNumber',
-                ti: '.ThoroughfareNumber'
-              }],
-            t: 'ers'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AddressDetails.PostalServiceElements.SupplementaryPostalServiceData',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AddressDetails.PostalServiceElements.AddressLongitudeDirection',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'XAL',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'addressDetails',
-            rq: true,
-            col: true,
-            en: 'AddressDetails',
-            ti: '.AddressDetails'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'Version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AddressDetails.PostalServiceElements.AddressLatitude',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ThoroughfareNumberSuffix',
+        ln: 'PostBox.PostBoxNumberSuffix',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -591,15 +154,65 @@ var xAL_2_0_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'type',
+            n: 'code',
             an: {
-              lp: 'Type'
+              lp: 'Code'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'PostalCode.PostTown.PostTownSuffix',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
           }, {
             n: 'code',
             an: {
               lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PostalRouteType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'addressLine',
+            mno: 0,
+            col: true,
+            en: 'AddressLine',
+            ti: '.AddressLine'
+          }, {
+            n: 'postalRouteName',
+            rq: true,
+            col: true,
+            en: 'PostalRouteName',
+            ti: '.PostalRouteType.PostalRouteName'
+          }, {
+            n: 'postalRouteNumber',
+            rq: true,
+            en: 'PostalRouteNumber',
+            ti: '.PostalRouteType.PostalRouteNumber'
+          }, {
+            n: 'postBox',
+            en: 'PostBox',
+            ti: '.PostBox'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
             },
             t: 'a'
           }]
@@ -693,6 +306,34 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'PremiseNumberSuffix',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'numberSuffixSeparator',
+            an: {
+              lp: 'NumberSuffixSeparator'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'ThoroughfareNameType',
         ps: [{
             n: 'otherAttributes',
@@ -714,7 +355,7 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SubPremiseType.SubPremiseNumberPrefix',
+        ln: 'PostalRouteType.PostalRouteName',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -722,12 +363,6 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             n: 'content',
             t: 'v'
-          }, {
-            n: 'numberPrefixSeparator',
-            an: {
-              lp: 'NumberPrefixSeparator'
-            },
-            t: 'a'
           }, {
             n: 'type',
             an: {
@@ -742,7 +377,67 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SubPremiseType',
+        ln: 'PostalCode.PostalCodeNumber',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Premise.PremiseLocation',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressLine',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FirmType',
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
@@ -753,44 +448,17 @@ var xAL_2_0_Module_Factory = function () {
             en: 'AddressLine',
             ti: '.AddressLine'
           }, {
-            n: 'subPremiseName',
+            n: 'firmName',
             mno: 0,
             col: true,
-            en: 'SubPremiseName',
-            ti: '.SubPremiseType.SubPremiseName'
+            en: 'FirmName',
+            ti: '.FirmType.FirmName'
           }, {
-            n: 'subPremiseLocation',
-            rq: true,
-            en: 'SubPremiseLocation',
-            ti: '.SubPremiseType.SubPremiseLocation'
-          }, {
-            n: 'subPremiseNumber',
+            n: 'department',
             mno: 0,
             col: true,
-            en: 'SubPremiseNumber',
-            ti: '.SubPremiseType.SubPremiseNumber'
-          }, {
-            n: 'subPremiseNumberPrefix',
-            mno: 0,
-            col: true,
-            en: 'SubPremiseNumberPrefix',
-            ti: '.SubPremiseType.SubPremiseNumberPrefix'
-          }, {
-            n: 'subPremiseNumberSuffix',
-            mno: 0,
-            col: true,
-            en: 'SubPremiseNumberSuffix',
-            ti: '.SubPremiseType.SubPremiseNumberSuffix'
-          }, {
-            n: 'buildingName',
-            mno: 0,
-            col: true,
-            en: 'BuildingName',
-            ti: '.BuildingNameType'
-          }, {
-            n: 'firm',
-            en: 'Firm',
-            ti: '.FirmType'
+            en: 'Department',
+            ti: '.Department'
           }, {
             n: 'mailStop',
             en: 'MailStop',
@@ -800,10 +468,6 @@ var xAL_2_0_Module_Factory = function () {
             en: 'PostalCode',
             ti: '.PostalCode'
           }, {
-            n: 'subPremise',
-            en: 'SubPremise',
-            ti: '.SubPremiseType'
-          }, {
             n: 'any',
             mno: 0,
             col: true,
@@ -818,7 +482,7 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LargeMailUserType.LargeMailUserName',
+        ln: 'AddressDetails.PostalServiceElements.AddressLongitudeDirection',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -840,20 +504,57 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AddressDetails.PostalServiceElements.KeyLineCode',
+        ln: 'Premise.PremiseNumberRange.PremiseNumberRangeFrom',
+        tn: null,
+        ps: [{
+            n: 'addressLine',
+            mno: 0,
+            col: true,
+            en: 'AddressLine',
+            ti: '.AddressLine'
+          }, {
+            n: 'premiseNumberPrefix',
+            mno: 0,
+            col: true,
+            en: 'PremiseNumberPrefix',
+            ti: '.PremiseNumberPrefix'
+          }, {
+            n: 'premiseNumber',
+            rq: true,
+            col: true,
+            en: 'PremiseNumber',
+            ti: '.PremiseNumber'
+          }, {
+            n: 'premiseNumberSuffix',
+            mno: 0,
+            col: true,
+            en: 'PremiseNumberSuffix',
+            ti: '.PremiseNumberSuffix'
+          }]
+      }, {
+        ln: 'Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo',
         tn: null,
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
           }, {
             n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
+            col: true,
+            dom: false,
+            etis: [{
+                en: 'ThoroughfareNumber',
+                ti: '.ThoroughfareNumber'
+              }, {
+                en: 'ThoroughfareNumberSuffix',
+                ti: '.ThoroughfareNumberSuffix'
+              }, {
+                en: 'ThoroughfareNumberPrefix',
+                ti: '.ThoroughfareNumberPrefix'
+              }, {
+                en: 'AddressLine',
+                ti: '.AddressLine'
+              }],
+            t: 'ers'
           }, {
             n: 'code',
             an: {
@@ -862,7 +563,8 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LargeMailUserType',
+        ln: 'Thoroughfare.ThoroughfareNumberRange',
+        tn: null,
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
@@ -873,48 +575,55 @@ var xAL_2_0_Module_Factory = function () {
             en: 'AddressLine',
             ti: '.AddressLine'
           }, {
-            n: 'largeMailUserName',
-            mno: 0,
-            col: true,
-            en: 'LargeMailUserName',
-            ti: '.LargeMailUserType.LargeMailUserName'
+            n: 'thoroughfareNumberFrom',
+            rq: true,
+            en: 'ThoroughfareNumberFrom',
+            ti: '.Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberFrom'
           }, {
-            n: 'largeMailUserIdentifier',
-            en: 'LargeMailUserIdentifier',
-            ti: '.LargeMailUserType.LargeMailUserIdentifier'
+            n: 'thoroughfareNumberTo',
+            rq: true,
+            en: 'ThoroughfareNumberTo',
+            ti: '.Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo'
           }, {
-            n: 'buildingName',
-            mno: 0,
-            col: true,
-            en: 'BuildingName',
-            ti: '.BuildingNameType'
+            n: 'rangeType',
+            an: {
+              lp: 'RangeType'
+            },
+            t: 'a'
           }, {
-            n: 'department',
-            en: 'Department',
-            ti: '.Department'
+            n: 'indicator',
+            an: {
+              lp: 'Indicator'
+            },
+            t: 'a'
           }, {
-            n: 'postBox',
-            en: 'PostBox',
-            ti: '.PostBox'
+            n: 'separator',
+            an: {
+              lp: 'Separator'
+            },
+            t: 'a'
           }, {
-            n: 'thoroughfare',
-            en: 'Thoroughfare',
-            ti: '.Thoroughfare'
+            n: 'indicatorOccurrence',
+            an: {
+              lp: 'IndicatorOccurrence'
+            },
+            t: 'a'
           }, {
-            n: 'postalCode',
-            en: 'PostalCode',
-            ti: '.PostalCode'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
+            n: 'numberRangeOccurrence',
+            an: {
+              lp: 'NumberRangeOccurrence'
+            },
+            t: 'a'
           }, {
             n: 'type',
             an: {
               lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
             },
             t: 'a'
           }]
@@ -982,55 +691,7 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Thoroughfare.DependentThoroughfare',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'addressLine',
-            mno: 0,
-            col: true,
-            en: 'AddressLine',
-            ti: '.AddressLine'
-          }, {
-            n: 'thoroughfarePreDirection',
-            en: 'ThoroughfarePreDirection',
-            ti: '.ThoroughfarePreDirectionType'
-          }, {
-            n: 'thoroughfareLeadingType',
-            en: 'ThoroughfareLeadingType',
-            ti: '.ThoroughfareLeadingTypeType'
-          }, {
-            n: 'thoroughfareName',
-            mno: 0,
-            col: true,
-            en: 'ThoroughfareName',
-            ti: '.ThoroughfareNameType'
-          }, {
-            n: 'thoroughfareTrailingType',
-            en: 'ThoroughfareTrailingType',
-            ti: '.ThoroughfareTrailingTypeType'
-          }, {
-            n: 'thoroughfarePostDirection',
-            en: 'ThoroughfarePostDirection',
-            ti: '.ThoroughfarePostDirectionType'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PostalCode.PostTown.PostTownSuffix',
+        ln: 'SubPremiseType.SubPremiseNumberSuffix',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -1039,9 +700,78 @@ var xAL_2_0_Module_Factory = function () {
             n: 'content',
             t: 'v'
           }, {
+            n: 'numberSuffixSeparator',
+            an: {
+              lp: 'NumberSuffixSeparator'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
             n: 'code',
             an: {
               lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberFrom',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            col: true,
+            dom: false,
+            etis: [{
+                en: 'ThoroughfareNumber',
+                ti: '.ThoroughfareNumber'
+              }, {
+                en: 'ThoroughfareNumberSuffix',
+                ti: '.ThoroughfareNumberSuffix'
+              }, {
+                en: 'ThoroughfareNumberPrefix',
+                ti: '.ThoroughfareNumberPrefix'
+              }, {
+                en: 'AddressLine',
+                ti: '.AddressLine'
+              }],
+            t: 'ers'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'XAL',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'addressDetails',
+            rq: true,
+            col: true,
+            en: 'AddressDetails',
+            ti: '.AddressDetails'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'Version'
             },
             t: 'a'
           }]
@@ -1075,31 +805,140 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'PostalRouteType',
+        ln: 'Premise.PremiseNumberRange',
+        tn: null,
+        ps: [{
+            n: 'premiseNumberRangeFrom',
+            rq: true,
+            en: 'PremiseNumberRangeFrom',
+            ti: '.Premise.PremiseNumberRange.PremiseNumberRangeFrom'
+          }, {
+            n: 'premiseNumberRangeTo',
+            rq: true,
+            en: 'PremiseNumberRangeTo',
+            ti: '.Premise.PremiseNumberRange.PremiseNumberRangeTo'
+          }, {
+            n: 'rangeType',
+            an: {
+              lp: 'RangeType'
+            },
+            t: 'a'
+          }, {
+            n: 'indicator',
+            an: {
+              lp: 'Indicator'
+            },
+            t: 'a'
+          }, {
+            n: 'separator',
+            an: {
+              lp: 'Separator'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'indicatorOccurence',
+            an: {
+              lp: 'IndicatorOccurence'
+            },
+            t: 'a'
+          }, {
+            n: 'numberRangeOccurence',
+            an: {
+              lp: 'NumberRangeOccurence'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PremiseNumber',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'numberType',
+            an: {
+              lp: 'NumberType'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'indicator',
+            an: {
+              lp: 'Indicator'
+            },
+            t: 'a'
+          }, {
+            n: 'indicatorOccurrence',
+            an: {
+              lp: 'IndicatorOccurrence'
+            },
+            t: 'a'
+          }, {
+            n: 'numberTypeOccurrence',
+            an: {
+              lp: 'NumberTypeOccurrence'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PremiseNumberPrefix',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'numberPrefixSeparator',
+            an: {
+              lp: 'NumberPrefixSeparator'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressLinesType',
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
           }, {
             n: 'addressLine',
-            mno: 0,
+            rq: true,
             col: true,
             en: 'AddressLine',
             ti: '.AddressLine'
-          }, {
-            n: 'postalRouteName',
-            rq: true,
-            col: true,
-            en: 'PostalRouteName',
-            ti: '.PostalRouteType.PostalRouteName'
-          }, {
-            n: 'postalRouteNumber',
-            rq: true,
-            en: 'PostalRouteNumber',
-            ti: '.PostalRouteType.PostalRouteNumber'
-          }, {
-            n: 'postBox',
-            en: 'PostBox',
-            ti: '.PostBox'
           }, {
             n: 'any',
             mno: 0,
@@ -1107,84 +946,6 @@ var xAL_2_0_Module_Factory = function () {
             dom: false,
             mx: false,
             t: 'ae'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AddressDetails.PostalServiceElements.AddressIdentifier',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'identifierType',
-            an: {
-              lp: 'IdentifierType'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PostOffice.PostOfficeName',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MailStopType.MailStopNumber',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'nameNumberSeparator',
-            an: {
-              lp: 'NameNumberSeparator'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'LargeMailUserType.LargeMailUserIdentifier',
@@ -1215,7 +976,7 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ThoroughfareNumberPrefix',
+        ln: 'AddressDetails.PostalServiceElements.AddressLongitude',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -1224,15 +985,98 @@ var xAL_2_0_Module_Factory = function () {
             n: 'content',
             t: 'v'
           }, {
-            n: 'numberPrefixSeparator',
-            an: {
-              lp: 'NumberPrefixSeparator'
-            },
-            t: 'a'
-          }, {
             n: 'type',
             an: {
               lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressDetails',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'postalServiceElements',
+            en: 'PostalServiceElements',
+            ti: '.AddressDetails.PostalServiceElements'
+          }, {
+            n: 'address',
+            rq: true,
+            en: 'Address',
+            ti: '.AddressDetails.Address'
+          }, {
+            n: 'addressLines',
+            rq: true,
+            en: 'AddressLines',
+            ti: '.AddressLinesType'
+          }, {
+            n: 'country',
+            rq: true,
+            en: 'Country',
+            ti: '.AddressDetails.Country'
+          }, {
+            n: 'administrativeArea',
+            rq: true,
+            en: 'AdministrativeArea',
+            ti: '.AdministrativeArea'
+          }, {
+            n: 'locality',
+            rq: true,
+            en: 'Locality',
+            ti: '.Locality'
+          }, {
+            n: 'thoroughfare',
+            rq: true,
+            en: 'Thoroughfare',
+            ti: '.Thoroughfare'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'addressType',
+            an: {
+              lp: 'AddressType'
+            },
+            t: 'a'
+          }, {
+            n: 'currentStatus',
+            an: {
+              lp: 'CurrentStatus'
+            },
+            t: 'a'
+          }, {
+            n: 'validFromDate',
+            an: {
+              lp: 'ValidFromDate'
+            },
+            t: 'a'
+          }, {
+            n: 'validToDate',
+            an: {
+              lp: 'ValidToDate'
+            },
+            t: 'a'
+          }, {
+            n: 'usage',
+            an: {
+              lp: 'Usage'
+            },
+            t: 'a'
+          }, {
+            n: 'addressDetailsKey',
+            an: {
+              lp: 'AddressDetailsKey'
             },
             t: 'a'
           }, {
@@ -1363,30 +1207,7 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'PostBox.PostBoxNumberSuffix',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'numberSuffixSeparator',
-            an: {
-              lp: 'NumberSuffixSeparator'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MailStopType.MailStopName',
-        tn: null,
+        ln: 'ThoroughfareLeadingTypeType',
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
@@ -1407,143 +1228,7 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AddressLinesType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'addressLine',
-            rq: true,
-            col: true,
-            en: 'AddressLine',
-            ti: '.AddressLine'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'AddressDetails',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'postalServiceElements',
-            en: 'PostalServiceElements',
-            ti: '.AddressDetails.PostalServiceElements'
-          }, {
-            n: 'address',
-            rq: true,
-            en: 'Address',
-            ti: '.AddressDetails.Address'
-          }, {
-            n: 'addressLines',
-            rq: true,
-            en: 'AddressLines',
-            ti: '.AddressLinesType'
-          }, {
-            n: 'country',
-            rq: true,
-            en: 'Country',
-            ti: '.AddressDetails.Country'
-          }, {
-            n: 'administrativeArea',
-            rq: true,
-            en: 'AdministrativeArea',
-            ti: '.AdministrativeArea'
-          }, {
-            n: 'locality',
-            rq: true,
-            en: 'Locality',
-            ti: '.Locality'
-          }, {
-            n: 'thoroughfare',
-            rq: true,
-            en: 'Thoroughfare',
-            ti: '.Thoroughfare'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'addressType',
-            an: {
-              lp: 'AddressType'
-            },
-            t: 'a'
-          }, {
-            n: 'currentStatus',
-            an: {
-              lp: 'CurrentStatus'
-            },
-            t: 'a'
-          }, {
-            n: 'validFromDate',
-            an: {
-              lp: 'ValidFromDate'
-            },
-            t: 'a'
-          }, {
-            n: 'validToDate',
-            an: {
-              lp: 'ValidToDate'
-            },
-            t: 'a'
-          }, {
-            n: 'usage',
-            an: {
-              lp: 'Usage'
-            },
-            t: 'a'
-          }, {
-            n: 'addressDetailsKey',
-            an: {
-              lp: 'AddressDetailsKey'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PremiseNumberPrefix',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'numberPrefixSeparator',
-            an: {
-              lp: 'NumberPrefixSeparator'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'FirmType.FirmName',
+        ln: 'PostalCode.PostalCodeNumberExtension',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -1558,25 +1243,9 @@ var xAL_2_0_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'code',
+            n: 'numberExtensionSeparator',
             an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AddressDetails.PostalServiceElements.Barcode',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
+              lp: 'NumberExtensionSeparator'
             },
             t: 'a'
           }, {
@@ -1610,6 +1279,50 @@ var xAL_2_0_Module_Factory = function () {
           }]
       }, {
         ln: 'ThoroughfarePostDirectionType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CountryName',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PostalCode.PostTown.PostTownName',
+        tn: null,
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
@@ -1676,6 +1389,160 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'SubPremiseType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'addressLine',
+            mno: 0,
+            col: true,
+            en: 'AddressLine',
+            ti: '.AddressLine'
+          }, {
+            n: 'subPremiseName',
+            mno: 0,
+            col: true,
+            en: 'SubPremiseName',
+            ti: '.SubPremiseType.SubPremiseName'
+          }, {
+            n: 'subPremiseLocation',
+            rq: true,
+            en: 'SubPremiseLocation',
+            ti: '.SubPremiseType.SubPremiseLocation'
+          }, {
+            n: 'subPremiseNumber',
+            mno: 0,
+            col: true,
+            en: 'SubPremiseNumber',
+            ti: '.SubPremiseType.SubPremiseNumber'
+          }, {
+            n: 'subPremiseNumberPrefix',
+            mno: 0,
+            col: true,
+            en: 'SubPremiseNumberPrefix',
+            ti: '.SubPremiseType.SubPremiseNumberPrefix'
+          }, {
+            n: 'subPremiseNumberSuffix',
+            mno: 0,
+            col: true,
+            en: 'SubPremiseNumberSuffix',
+            ti: '.SubPremiseType.SubPremiseNumberSuffix'
+          }, {
+            n: 'buildingName',
+            mno: 0,
+            col: true,
+            en: 'BuildingName',
+            ti: '.BuildingNameType'
+          }, {
+            n: 'firm',
+            en: 'Firm',
+            ti: '.FirmType'
+          }, {
+            n: 'mailStop',
+            en: 'MailStop',
+            ti: '.MailStopType'
+          }, {
+            n: 'postalCode',
+            en: 'PostalCode',
+            ti: '.PostalCode'
+          }, {
+            n: 'subPremise',
+            en: 'SubPremise',
+            ti: '.SubPremiseType'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressDetails.PostalServiceElements.AddressIdentifier',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'identifierType',
+            an: {
+              lp: 'IdentifierType'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SubPremiseType.SubPremiseName',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'typeOccurrence',
+            an: {
+              lp: 'TypeOccurrence'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MailStopType.MailStopName',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'DependentLocalityType.DependentLocalityNumber',
         tn: null,
         ps: [{
@@ -1698,92 +1565,28 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AddressLine',
+        ln: 'Premise',
         tn: null,
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
           }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Premise.PremiseNumberRange',
-        tn: null,
-        ps: [{
-            n: 'premiseNumberRangeFrom',
-            rq: true,
-            en: 'PremiseNumberRangeFrom',
-            ti: '.Premise.PremiseNumberRange.PremiseNumberRangeFrom'
-          }, {
-            n: 'premiseNumberRangeTo',
-            rq: true,
-            en: 'PremiseNumberRangeTo',
-            ti: '.Premise.PremiseNumberRange.PremiseNumberRangeTo'
-          }, {
-            n: 'rangeType',
-            an: {
-              lp: 'RangeType'
-            },
-            t: 'a'
-          }, {
-            n: 'indicator',
-            an: {
-              lp: 'Indicator'
-            },
-            t: 'a'
-          }, {
-            n: 'separator',
-            an: {
-              lp: 'Separator'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'indicatorOccurence',
-            an: {
-              lp: 'IndicatorOccurence'
-            },
-            t: 'a'
-          }, {
-            n: 'numberRangeOccurence',
-            an: {
-              lp: 'NumberRangeOccurence'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Premise.PremiseNumberRange.PremiseNumberRangeTo',
-        tn: null,
-        ps: [{
             n: 'addressLine',
             mno: 0,
             col: true,
             en: 'AddressLine',
             ti: '.AddressLine'
           }, {
-            n: 'premiseNumberPrefix',
+            n: 'premiseName',
             mno: 0,
             col: true,
-            en: 'PremiseNumberPrefix',
-            ti: '.PremiseNumberPrefix'
+            en: 'PremiseName',
+            ti: '.Premise.PremiseName'
+          }, {
+            n: 'premiseLocation',
+            rq: true,
+            en: 'PremiseLocation',
+            ti: '.Premise.PremiseLocation'
           }, {
             n: 'premiseNumber',
             rq: true,
@@ -1791,89 +1594,84 @@ var xAL_2_0_Module_Factory = function () {
             en: 'PremiseNumber',
             ti: '.PremiseNumber'
           }, {
+            n: 'premiseNumberRange',
+            rq: true,
+            en: 'PremiseNumberRange',
+            ti: '.Premise.PremiseNumberRange'
+          }, {
+            n: 'premiseNumberPrefix',
+            mno: 0,
+            col: true,
+            en: 'PremiseNumberPrefix',
+            ti: '.PremiseNumberPrefix'
+          }, {
             n: 'premiseNumberSuffix',
             mno: 0,
             col: true,
             en: 'PremiseNumberSuffix',
             ti: '.PremiseNumberSuffix'
-          }]
-      }, {
-        ln: 'AddressDetails.PostalServiceElements.AddressLongitude',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
           }, {
-            n: 'content',
-            t: 'v'
+            n: 'buildingName',
+            mno: 0,
+            col: true,
+            en: 'BuildingName',
+            ti: '.BuildingNameType'
           }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
+            n: 'subPremise',
+            mno: 0,
+            col: true,
+            en: 'SubPremise',
+            ti: '.SubPremiseType'
           }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PostalCode.PostTown.PostTownName',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
+            n: 'firm',
+            en: 'Firm',
+            ti: '.FirmType'
           }, {
-            n: 'content',
-            t: 'v'
+            n: 'mailStop',
+            en: 'MailStop',
+            ti: '.MailStopType'
           }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
+            n: 'postalCode',
+            en: 'PostalCode',
+            ti: '.PostalCode'
           }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
+            n: 'premise',
+            en: 'Premise',
+            ti: '.Premise'
           }, {
-            n: 'content',
+            n: 'any',
+            mno: 0,
             col: true,
             dom: false,
-            etis: [{
-                en: 'ThoroughfareNumberSuffix',
-                ti: '.ThoroughfareNumberSuffix'
-              }, {
-                en: 'ThoroughfareNumberPrefix',
-                ti: '.ThoroughfareNumberPrefix'
-              }, {
-                en: 'AddressLine',
-                ti: '.AddressLine'
-              }, {
-                en: 'ThoroughfareNumber',
-                ti: '.ThoroughfareNumber'
-              }],
-            t: 'ers'
+            mx: false,
+            t: 'ae'
           }, {
-            n: 'code',
+            n: 'type',
             an: {
-              lp: 'Code'
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'premiseDependency',
+            an: {
+              lp: 'PremiseDependency'
+            },
+            t: 'a'
+          }, {
+            n: 'premiseDependencyType',
+            an: {
+              lp: 'PremiseDependencyType'
+            },
+            t: 'a'
+          }, {
+            n: 'premiseThoroughfareConnector',
+            an: {
+              lp: 'PremiseThoroughfareConnector'
             },
             t: 'a'
           }]
       }, {
-        ln: 'CountryName',
+        ln: 'LargeMailUserType.LargeMailUserName',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -1895,13 +1693,20 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ThoroughfareLeadingTypeType',
+        ln: 'ThoroughfareNumberSuffix',
+        tn: null,
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
           }, {
             n: 'content',
             t: 'v'
+          }, {
+            n: 'numberSuffixSeparator',
+            an: {
+              lp: 'NumberSuffixSeparator'
+            },
+            t: 'a'
           }, {
             n: 'type',
             an: {
@@ -1916,7 +1721,7 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Department.DepartmentName',
+        ln: 'PostBox.PostBoxNumberPrefix',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -1924,49 +1729,54 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             n: 'content',
             t: 'v'
+          }, {
+            n: 'numberPrefixSeparator',
+            an: {
+              lp: 'NumberPrefixSeparator'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MailStopType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'addressLine',
+            mno: 0,
+            col: true,
+            en: 'AddressLine',
+            ti: '.AddressLine'
+          }, {
+            n: 'mailStopName',
+            en: 'MailStopName',
+            ti: '.MailStopType.MailStopName'
+          }, {
+            n: 'mailStopNumber',
+            en: 'MailStopNumber',
+            ti: '.MailStopType.MailStopNumber'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
           }, {
             n: 'type',
             an: {
               lp: 'Type'
             },
             t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
           }]
       }, {
-        ln: 'PostOffice.PostOfficeNumber',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'indicator',
-            an: {
-              lp: 'Indicator'
-            },
-            t: 'a'
-          }, {
-            n: 'indicatorOccurrence',
-            an: {
-              lp: 'IndicatorOccurrence'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AdministrativeArea.AdministrativeAreaName',
+        ln: 'AddressDetails.Address',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -2068,9 +1878,15 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AddressDetails.PostalServiceElements.SortingCode',
+        ln: 'AddressDetails.PostalServiceElements.KeyLineCode',
         tn: null,
         ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
             n: 'type',
             an: {
               lp: 'Type'
@@ -2084,7 +1900,353 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Premise.PremiseNumberRange.PremiseNumberRangeFrom',
+        ln: 'Thoroughfare.DependentThoroughfare',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'addressLine',
+            mno: 0,
+            col: true,
+            en: 'AddressLine',
+            ti: '.AddressLine'
+          }, {
+            n: 'thoroughfarePreDirection',
+            en: 'ThoroughfarePreDirection',
+            ti: '.ThoroughfarePreDirectionType'
+          }, {
+            n: 'thoroughfareLeadingType',
+            en: 'ThoroughfareLeadingType',
+            ti: '.ThoroughfareLeadingTypeType'
+          }, {
+            n: 'thoroughfareName',
+            mno: 0,
+            col: true,
+            en: 'ThoroughfareName',
+            ti: '.ThoroughfareNameType'
+          }, {
+            n: 'thoroughfareTrailingType',
+            en: 'ThoroughfareTrailingType',
+            ti: '.ThoroughfareTrailingTypeType'
+          }, {
+            n: 'thoroughfarePostDirection',
+            en: 'ThoroughfarePostDirection',
+            ti: '.ThoroughfarePostDirectionType'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ThoroughfareTrailingTypeType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DependentLocalityType.DependentLocalityName',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressDetails.PostalServiceElements.AddressLatitudeDirection',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressDetails.PostalServiceElements.SupplementaryPostalServiceData',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'BuildingNameType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'typeOccurrence',
+            an: {
+              lp: 'TypeOccurrence'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ThoroughfareNumberPrefix',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'numberPrefixSeparator',
+            an: {
+              lp: 'NumberPrefixSeparator'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressDetails.Country.CountryNameCode',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'scheme',
+            an: {
+              lp: 'Scheme'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ThoroughfarePreDirectionType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PostOffice.PostOfficeName',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressDetails.Country',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'addressLine',
+            mno: 0,
+            col: true,
+            en: 'AddressLine',
+            ti: '.AddressLine'
+          }, {
+            n: 'countryNameCode',
+            mno: 0,
+            col: true,
+            en: 'CountryNameCode',
+            ti: '.AddressDetails.Country.CountryNameCode'
+          }, {
+            n: 'countryName',
+            mno: 0,
+            col: true,
+            en: 'CountryName',
+            ti: '.CountryName'
+          }, {
+            n: 'administrativeArea',
+            rq: true,
+            en: 'AdministrativeArea',
+            ti: '.AdministrativeArea'
+          }, {
+            n: 'locality',
+            rq: true,
+            en: 'Locality',
+            ti: '.Locality'
+          }, {
+            n: 'thoroughfare',
+            rq: true,
+            en: 'Thoroughfare',
+            ti: '.Thoroughfare'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressDetails.PostalServiceElements.Barcode',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Premise.PremiseNumberRange.PremiseNumberRangeTo',
         tn: null,
         ps: [{
             n: 'addressLine',
@@ -2112,7 +2274,7 @@ var xAL_2_0_Module_Factory = function () {
             ti: '.PremiseNumberSuffix'
           }]
       }, {
-        ln: 'PremiseNumber',
+        ln: 'MailStopType.MailStopNumber',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -2121,33 +2283,9 @@ var xAL_2_0_Module_Factory = function () {
             n: 'content',
             t: 'v'
           }, {
-            n: 'numberType',
+            n: 'nameNumberSeparator',
             an: {
-              lp: 'NumberType'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'indicator',
-            an: {
-              lp: 'Indicator'
-            },
-            t: 'a'
-          }, {
-            n: 'indicatorOccurrence',
-            an: {
-              lp: 'IndicatorOccurrence'
-            },
-            t: 'a'
-          }, {
-            n: 'numberTypeOccurrence',
-            an: {
-              lp: 'NumberTypeOccurrence'
+              lp: 'NameNumberSeparator'
             },
             t: 'a'
           }, {
@@ -2158,7 +2296,7 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SubPremiseType.SubPremiseNumberSuffix',
+        ln: 'Department.DepartmentName',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -2166,12 +2304,6 @@ var xAL_2_0_Module_Factory = function () {
           }, {
             n: 'content',
             t: 'v'
-          }, {
-            n: 'numberSuffixSeparator',
-            an: {
-              lp: 'NumberSuffixSeparator'
-            },
-            t: 'a'
           }, {
             n: 'type',
             an: {
@@ -2240,29 +2372,8 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'PostBox.PostBoxNumberPrefix',
+        ln: 'PostalCode',
         tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'numberPrefixSeparator',
-            an: {
-              lp: 'NumberPrefixSeparator'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MailStopType',
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
@@ -2273,13 +2384,21 @@ var xAL_2_0_Module_Factory = function () {
             en: 'AddressLine',
             ti: '.AddressLine'
           }, {
-            n: 'mailStopName',
-            en: 'MailStopName',
-            ti: '.MailStopType.MailStopName'
+            n: 'postalCodeNumber',
+            mno: 0,
+            col: true,
+            en: 'PostalCodeNumber',
+            ti: '.PostalCode.PostalCodeNumber'
           }, {
-            n: 'mailStopNumber',
-            en: 'MailStopNumber',
-            ti: '.MailStopType.MailStopNumber'
+            n: 'postalCodeNumberExtension',
+            mno: 0,
+            col: true,
+            en: 'PostalCodeNumberExtension',
+            ti: '.PostalCode.PostalCodeNumberExtension'
+          }, {
+            n: 'postTown',
+            en: 'PostTown',
+            ti: '.PostalCode.PostTown'
           }, {
             n: 'any',
             mno: 0,
@@ -2295,72 +2414,71 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Thoroughfare.ThoroughfareNumberRange',
+        ln: 'AddressDetails.PostalServiceElements',
         tn: null,
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
           }, {
-            n: 'addressLine',
+            n: 'addressIdentifier',
             mno: 0,
             col: true,
-            en: 'AddressLine',
-            ti: '.AddressLine'
+            en: 'AddressIdentifier',
+            ti: '.AddressDetails.PostalServiceElements.AddressIdentifier'
           }, {
-            n: 'thoroughfareNumberFrom',
-            rq: true,
-            en: 'ThoroughfareNumberFrom',
-            ti: '.Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberFrom'
+            n: 'endorsementLineCode',
+            en: 'EndorsementLineCode',
+            ti: '.AddressDetails.PostalServiceElements.EndorsementLineCode'
           }, {
-            n: 'thoroughfareNumberTo',
-            rq: true,
-            en: 'ThoroughfareNumberTo',
-            ti: '.Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo'
+            n: 'keyLineCode',
+            en: 'KeyLineCode',
+            ti: '.AddressDetails.PostalServiceElements.KeyLineCode'
           }, {
-            n: 'rangeType',
-            an: {
-              lp: 'RangeType'
-            },
-            t: 'a'
+            n: 'barcode',
+            en: 'Barcode',
+            ti: '.AddressDetails.PostalServiceElements.Barcode'
           }, {
-            n: 'indicator',
-            an: {
-              lp: 'Indicator'
-            },
-            t: 'a'
+            n: 'sortingCode',
+            en: 'SortingCode',
+            ti: '.AddressDetails.PostalServiceElements.SortingCode'
           }, {
-            n: 'separator',
-            an: {
-              lp: 'Separator'
-            },
-            t: 'a'
+            n: 'addressLatitude',
+            en: 'AddressLatitude',
+            ti: '.AddressDetails.PostalServiceElements.AddressLatitude'
           }, {
-            n: 'indicatorOccurrence',
-            an: {
-              lp: 'IndicatorOccurrence'
-            },
-            t: 'a'
+            n: 'addressLatitudeDirection',
+            en: 'AddressLatitudeDirection',
+            ti: '.AddressDetails.PostalServiceElements.AddressLatitudeDirection'
           }, {
-            n: 'numberRangeOccurrence',
-            an: {
-              lp: 'NumberRangeOccurrence'
-            },
-            t: 'a'
+            n: 'addressLongitude',
+            en: 'AddressLongitude',
+            ti: '.AddressDetails.PostalServiceElements.AddressLongitude'
+          }, {
+            n: 'addressLongitudeDirection',
+            en: 'AddressLongitudeDirection',
+            ti: '.AddressDetails.PostalServiceElements.AddressLongitudeDirection'
+          }, {
+            n: 'supplementaryPostalServiceData',
+            mno: 0,
+            col: true,
+            en: 'SupplementaryPostalServiceData',
+            ti: '.AddressDetails.PostalServiceElements.SupplementaryPostalServiceData'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
           }, {
             n: 'type',
             an: {
               lp: 'Type'
             },
             t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
           }]
       }, {
-        ln: 'AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName',
+        ln: 'FirmType.FirmName',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -2382,7 +2500,7 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AddressDetails.Country.CountryNameCode',
+        ln: 'AddressDetails.PostalServiceElements.AddressLatitude',
         tn: null,
         ps: [{
             n: 'otherAttributes',
@@ -2391,9 +2509,9 @@ var xAL_2_0_Module_Factory = function () {
             n: 'content',
             t: 'v'
           }, {
-            n: 'scheme',
+            n: 'type',
             an: {
-              lp: 'Scheme'
+              lp: 'Type'
             },
             t: 'a'
           }, {
@@ -2444,27 +2562,6 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ThoroughfarePreDirectionType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'SubPremiseType.SubPremiseNumber',
         tn: null,
         ps: [{
@@ -2497,222 +2594,6 @@ var xAL_2_0_Module_Factory = function () {
               lp: 'PremiseNumberSeparator'
             },
             t: 'a'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AddressDetails.PostalServiceElements.AddressLatitudeDirection',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'BuildingNameType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'typeOccurrence',
-            an: {
-              lp: 'TypeOccurrence'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AddressDetails.Country',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'addressLine',
-            mno: 0,
-            col: true,
-            en: 'AddressLine',
-            ti: '.AddressLine'
-          }, {
-            n: 'countryNameCode',
-            mno: 0,
-            col: true,
-            en: 'CountryNameCode',
-            ti: '.AddressDetails.Country.CountryNameCode'
-          }, {
-            n: 'countryName',
-            mno: 0,
-            col: true,
-            en: 'CountryName',
-            ti: '.CountryName'
-          }, {
-            n: 'administrativeArea',
-            rq: true,
-            en: 'AdministrativeArea',
-            ti: '.AdministrativeArea'
-          }, {
-            n: 'locality',
-            rq: true,
-            en: 'Locality',
-            ti: '.Locality'
-          }, {
-            n: 'thoroughfare',
-            rq: true,
-            en: 'Thoroughfare',
-            ti: '.Thoroughfare'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'PremiseNumberSuffix',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'numberSuffixSeparator',
-            an: {
-              lp: 'NumberSuffixSeparator'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PostalCode',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'addressLine',
-            mno: 0,
-            col: true,
-            en: 'AddressLine',
-            ti: '.AddressLine'
-          }, {
-            n: 'postalCodeNumber',
-            mno: 0,
-            col: true,
-            en: 'PostalCodeNumber',
-            ti: '.PostalCode.PostalCodeNumber'
-          }, {
-            n: 'postalCodeNumberExtension',
-            mno: 0,
-            col: true,
-            en: 'PostalCodeNumberExtension',
-            ti: '.PostalCode.PostalCodeNumberExtension'
-          }, {
-            n: 'postTown',
-            en: 'PostTown',
-            ti: '.PostalCode.PostTown'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SubPremiseType.SubPremiseName',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'Type'
-            },
-            t: 'a'
-          }, {
-            n: 'typeOccurrence',
-            an: {
-              lp: 'TypeOccurrence'
-            },
-            t: 'a'
-          }, {
-            n: 'code',
-            an: {
-              lp: 'Code'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Locality.LocalityName',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            t: 'v'
           }, {
             n: 'type',
             an: {
@@ -2786,124 +2667,243 @@ var xAL_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AddressDetails.PostalServiceElements',
+        ln: 'PostalRouteType.PostalRouteNumber',
         tn: null,
         ps: [{
             n: 'otherAttributes',
             t: 'aa'
           }, {
-            n: 'addressIdentifier',
-            mno: 0,
-            col: true,
-            en: 'AddressIdentifier',
-            ti: '.AddressDetails.PostalServiceElements.AddressIdentifier'
+            n: 'content',
+            t: 'v'
           }, {
-            n: 'endorsementLineCode',
-            en: 'EndorsementLineCode',
-            ti: '.AddressDetails.PostalServiceElements.EndorsementLineCode'
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SubPremiseType.SubPremiseLocation',
+        tn: null,
+        ps: [{
+            n: 'content',
+            t: 'v'
           }, {
-            n: 'keyLineCode',
-            en: 'KeyLineCode',
-            ti: '.AddressDetails.PostalServiceElements.KeyLineCode'
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PostBox.PostBoxNumberExtension',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
           }, {
-            n: 'barcode',
-            en: 'Barcode',
-            ti: '.AddressDetails.PostalServiceElements.Barcode'
+            n: 'content',
+            t: 'v'
           }, {
-            n: 'sortingCode',
-            en: 'SortingCode',
-            ti: '.AddressDetails.PostalServiceElements.SortingCode'
+            n: 'numberExtensionSeparator',
+            an: {
+              lp: 'NumberExtensionSeparator'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PostOffice.PostOfficeNumber',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
           }, {
-            n: 'addressLatitude',
-            en: 'AddressLatitude',
-            ti: '.AddressDetails.PostalServiceElements.AddressLatitude'
+            n: 'content',
+            t: 'v'
           }, {
-            n: 'addressLatitudeDirection',
-            en: 'AddressLatitudeDirection',
-            ti: '.AddressDetails.PostalServiceElements.AddressLatitudeDirection'
+            n: 'indicator',
+            an: {
+              lp: 'Indicator'
+            },
+            t: 'a'
           }, {
-            n: 'addressLongitude',
-            en: 'AddressLongitude',
-            ti: '.AddressDetails.PostalServiceElements.AddressLongitude'
+            n: 'indicatorOccurrence',
+            an: {
+              lp: 'IndicatorOccurrence'
+            },
+            t: 'a'
           }, {
-            n: 'addressLongitudeDirection',
-            en: 'AddressLongitudeDirection',
-            ti: '.AddressDetails.PostalServiceElements.AddressLongitudeDirection'
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Premise.PremiseName',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
           }, {
-            n: 'supplementaryPostalServiceData',
-            mno: 0,
-            col: true,
-            en: 'SupplementaryPostalServiceData',
-            ti: '.AddressDetails.PostalServiceElements.SupplementaryPostalServiceData'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
+            n: 'content',
+            t: 'v'
           }, {
             n: 'type',
             an: {
               lp: 'Type'
             },
             t: 'a'
+          }, {
+            n: 'typeOccurrence',
+            an: {
+              lp: 'TypeOccurrence'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AddressDetails.PostalServiceElements.SortingCode',
+        tn: null,
+        ps: [{
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SubPremiseType.SubPremiseNumberPrefix',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'numberPrefixSeparator',
+            an: {
+              lp: 'NumberPrefixSeparator'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AdministrativeArea.AdministrativeAreaName',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'Type'
+            },
+            t: 'a'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PostBox.PostBoxNumber',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'code',
+            an: {
+              lp: 'Code'
+            },
+            t: 'a'
           }]
       }],
     eis: [{
-        en: 'PremiseNumberSuffix',
-        ti: '.PremiseNumberSuffix'
-      }, {
-        en: 'xAL',
-        ti: '.XAL'
-      }, {
-        en: 'PremiseNumberPrefix',
-        ti: '.PremiseNumberPrefix'
-      }, {
-        en: 'AddressLine',
-        ti: '.AddressLine'
-      }, {
-        en: 'AddressDetails',
-        ti: '.AddressDetails'
-      }, {
-        en: 'ThoroughfareNumber',
-        ti: '.ThoroughfareNumber'
-      }, {
-        en: 'PostBox',
-        ti: '.PostBox'
-      }, {
-        en: 'Locality',
-        ti: '.Locality'
-      }, {
         en: 'ThoroughfareNumberPrefix',
         ti: '.ThoroughfareNumberPrefix'
-      }, {
-        en: 'Premise',
-        ti: '.Premise'
-      }, {
-        en: 'ThoroughfareNumberSuffix',
-        ti: '.ThoroughfareNumberSuffix'
-      }, {
-        en: 'PostalCode',
-        ti: '.PostalCode'
-      }, {
-        en: 'Thoroughfare',
-        ti: '.Thoroughfare'
-      }, {
-        en: 'PremiseNumber',
-        ti: '.PremiseNumber'
       }, {
         en: 'AdministrativeArea',
         ti: '.AdministrativeArea'
       }, {
-        en: 'Department',
-        ti: '.Department'
+        en: 'PremiseNumberSuffix',
+        ti: '.PremiseNumberSuffix'
+      }, {
+        en: 'PostOffice',
+        ti: '.PostOffice'
+      }, {
+        en: 'Thoroughfare',
+        ti: '.Thoroughfare'
+      }, {
+        en: 'ThoroughfareNumberSuffix',
+        ti: '.ThoroughfareNumberSuffix'
+      }, {
+        en: 'PostBox',
+        ti: '.PostBox'
+      }, {
+        en: 'ThoroughfareNumber',
+        ti: '.ThoroughfareNumber'
+      }, {
+        en: 'AddressDetails',
+        ti: '.AddressDetails'
+      }, {
+        en: 'PremiseNumber',
+        ti: '.PremiseNumber'
+      }, {
+        en: 'AddressLine',
+        ti: '.AddressLine'
       }, {
         en: 'CountryName',
         ti: '.CountryName'
       }, {
-        en: 'PostOffice',
-        ti: '.PostOffice'
+        en: 'PremiseNumberPrefix',
+        ti: '.PremiseNumberPrefix'
+      }, {
+        en: 'Department',
+        ti: '.Department'
+      }, {
+        en: 'Premise',
+        ti: '.Premise'
+      }, {
+        en: 'PostalCode',
+        ti: '.PostalCode'
+      }, {
+        en: 'xAL',
+        ti: '.XAL'
+      }, {
+        en: 'Locality',
+        ti: '.Locality'
       }]
   };
   return {

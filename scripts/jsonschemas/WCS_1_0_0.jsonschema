@@ -2,154 +2,6 @@
 {
     "id":"http://www.opengis.net/wcs#",
     "definitions":{
-        "ValueEnumType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ValueEnumBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"ValueEnumType",
-                    "properties":{
-                        "type":{
-                            "title":"type",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"type",
-                                "namespaceURI":"http://www.opengis.net/wcs"
-                            }
-                        },
-                        "semantic":{
-                            "title":"semantic",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"semantic",
-                                "namespaceURI":"http://www.opengis.net/wcs"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"valueEnumType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "type",
-                "semantic"
-            ]
-        },
-        "IntervalType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ValueRangeType"
-                },
-                {
-                    "type":"object",
-                    "title":"IntervalType",
-                    "properties":{
-                        "res":{
-                            "title":"res",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/TypedLiteralType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"res",
-                                "namespaceURI":"http://www.opengis.net/wcs"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"intervalType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "res"
-            ]
-        },
-        "AbstractDescriptionBaseType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/gml#/definitions/AbstractGMLType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractDescriptionBaseType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractDescriptionBaseType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        "LonLatEnvelopeBaseType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/gml#/definitions/EnvelopeType"
-                },
-                {
-                    "type":"object",
-                    "title":"LonLatEnvelopeBaseType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LonLatEnvelopeBaseType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        "AxisDescriptionType.Values":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ValueEnumType"
-                },
-                {
-                    "type":"object",
-                    "title":"AxisDescriptionType.Values",
-                    "properties":{
-                        "_default":{
-                            "title":"_default",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/TypedLiteralType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"default",
-                                "namespaceURI":"http://www.opengis.net/wcs"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "_default"
-            ]
-        },
         "WCSCapabilityType.Exception":{
             "type":"object",
             "title":"WCSCapabilityType.Exception",
@@ -178,65 +30,6 @@
             "typeType":"classInfo",
             "propertiesOrder":[
                 "format"
-            ]
-        },
-        "DescribeCoverage":{
-            "type":"object",
-            "title":"DescribeCoverage",
-            "required":[
-                "service",
-                "version"
-            ],
-            "properties":{
-                "coverage":{
-                    "title":"coverage",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Coverage",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "service":{
-                    "title":"service",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"service",
-                        "namespaceURI":""
-                    }
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "coverage",
-                "service",
-                "version"
             ]
         },
         "LonLatEnvelopeType":{
@@ -281,218 +74,36 @@
                 "timePosition"
             ]
         },
-        "OnlineResourceType":{
+        "ContactType":{
             "type":"object",
-            "title":"OnlineResourceType",
+            "title":"ContactType",
             "properties":{
-                "type":{
-                    "title":"type",
+                "phone":{
+                    "title":"phone",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"OnlineResourceType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "RangeSet":{
-            "type":"object",
-            "title":"RangeSet",
-            "required":[
-                "rangeSet"
-            ],
-            "properties":{
-                "rangeSet":{
-                    "title":"rangeSet",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/RangeSetType"
+                            "$ref":"#/definitions/TelephoneType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"RangeSet",
+                        "localPart":"phone",
                         "namespaceURI":"http://www.opengis.net/wcs"
                     }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "rangeSet"
-            ]
-        },
-        "GetCapabilities":{
-            "type":"object",
-            "title":"GetCapabilities",
-            "required":[
-                "service"
-            ],
-            "properties":{
-                "section":{
-                    "title":"section",
+                },
+                "address":{
+                    "title":"address",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/CapabilitiesSectionType"
+                            "$ref":"#/definitions/AddressType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"section",
+                        "localPart":"address",
                         "namespaceURI":"http://www.opengis.net/wcs"
                     }
                 },
-                "service":{
-                    "title":"service",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"service",
-                        "namespaceURI":""
-                    }
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
-                    }
-                },
-                "updateSequence":{
-                    "title":"updateSequence",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"updateSequence",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "section",
-                "service",
-                "version",
-                "updateSequence"
-            ]
-        },
-        "DCPTypeType.HTTP.Post":{
-            "type":"object",
-            "title":"DCPTypeType.HTTP.Post",
-            "required":[
-                "onlineResource"
-            ],
-            "properties":{
                 "onlineResource":{
                     "title":"onlineResource",
                     "allOf":[
@@ -502,181 +113,20 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"OnlineResource",
+                        "localPart":"onlineResource",
                         "namespaceURI":"http://www.opengis.net/wcs"
                     }
                 }
             },
             "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ContactType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
             "propertiesOrder":[
+                "phone",
+                "address",
                 "onlineResource"
-            ]
-        },
-        "AddressType":{
-            "type":"object",
-            "title":"AddressType",
-            "properties":{
-                "deliveryPoint":{
-                    "title":"deliveryPoint",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"deliveryPoint",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "city":{
-                    "title":"city",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"city",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "administrativeArea":{
-                    "title":"administrativeArea",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"administrativeArea",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "postalCode":{
-                    "title":"postalCode",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"postalCode",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "country":{
-                    "title":"country",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"country",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "electronicMailAddress":{
-                    "title":"electronicMailAddress",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"electronicMailAddress",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AddressType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "deliveryPoint",
-                "city",
-                "administrativeArea",
-                "postalCode",
-                "country",
-                "electronicMailAddress"
-            ]
-        },
-        "MetadataAssociationType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/gml#/definitions/MetaDataPropertyType"
-                },
-                {
-                    "type":"object",
-                    "title":"MetadataAssociationType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"MetadataAssociationType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        "Keywords":{
-            "type":"object",
-            "title":"Keywords",
-            "required":[
-                "keyword"
-            ],
-            "properties":{
-                "keyword":{
-                    "title":"keyword",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"keyword",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/gml#/definitions/CodeType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "keyword",
-                "type"
             ]
         },
         "ValueRangeType":{
@@ -779,42 +229,586 @@
                 "closure"
             ]
         },
-        "RangeSetType":{
+        "DCPTypeType":{
+            "type":"object",
+            "title":"DCPTypeType",
+            "required":[
+                "http"
+            ],
+            "properties":{
+                "http":{
+                    "title":"http",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DCPTypeType.HTTP"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"HTTP",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DCPTypeType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "http"
+            ]
+        },
+        "CoverageOfferingType":{
+            "required":[
+                "domainSet",
+                "rangeSet",
+                "supportedCRSs",
+                "supportedFormats"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/CoverageOfferingBriefType"
+                },
+                {
+                    "type":"object",
+                    "title":"CoverageOfferingType",
+                    "properties":{
+                        "domainSet":{
+                            "title":"domainSet",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DomainSetType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"domainSet",
+                                "namespaceURI":"http://www.opengis.net/wcs"
+                            }
+                        },
+                        "rangeSet":{
+                            "title":"rangeSet",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/RangeSet"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"rangeSet",
+                                "namespaceURI":"http://www.opengis.net/wcs"
+                            }
+                        },
+                        "supportedCRSs":{
+                            "title":"supportedCRSs",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SupportedCRSsType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"supportedCRSs",
+                                "namespaceURI":"http://www.opengis.net/wcs"
+                            }
+                        },
+                        "supportedFormats":{
+                            "title":"supportedFormats",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SupportedFormatsType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"supportedFormats",
+                                "namespaceURI":"http://www.opengis.net/wcs"
+                            }
+                        },
+                        "supportedInterpolations":{
+                            "title":"supportedInterpolations",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SupportedInterpolationsType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"supportedInterpolations",
+                                "namespaceURI":"http://www.opengis.net/wcs"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CoverageOfferingType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "domainSet",
+                "rangeSet",
+                "supportedCRSs",
+                "supportedFormats",
+                "supportedInterpolations"
+            ]
+        },
+        "WCSCapabilityType.Request.GetCapabilities":{
+            "type":"object",
+            "title":"WCSCapabilityType.Request.GetCapabilities",
+            "required":[
+                "dcpType"
+            ],
+            "properties":{
+                "dcpType":{
+                    "title":"dcpType",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DCPTypeType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DCPType",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "dcpType"
+            ]
+        },
+        "SupportedCRSsType":{
+            "type":"object",
+            "title":"SupportedCRSsType",
+            "required":[
+                "requestResponseCRSs",
+                "requestCRSs",
+                "responseCRSs"
+            ],
+            "properties":{
+                "requestResponseCRSs":{
+                    "title":"requestResponseCRSs",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.opengis.net/gml#/definitions/CodeListType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"requestResponseCRSs",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "requestCRSs":{
+                    "title":"requestCRSs",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.opengis.net/gml#/definitions/CodeListType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"requestCRSs",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "responseCRSs":{
+                    "title":"responseCRSs",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.opengis.net/gml#/definitions/CodeListType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"responseCRSs",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "nativeCRSs":{
+                    "title":"nativeCRSs",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.opengis.net/gml#/definitions/CodeListType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"nativeCRSs",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SupportedCRSsType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "requestResponseCRSs",
+                "requestCRSs",
+                "responseCRSs",
+                "nativeCRSs"
+            ]
+        },
+        "DomainSetType":{
+            "type":"object",
+            "title":"DomainSetType",
+            "required":[
+                "spatialDomain",
+                "temporalDomain"
+            ],
+            "properties":{
+                "spatialDomain":{
+                    "title":"spatialDomain",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SpatialDomainType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"spatialDomain",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "optionalTemporalDomain":{
+                    "title":"optionalTemporalDomain",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TimeSequenceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"temporalDomain",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "temporalDomain":{
+                    "title":"temporalDomain",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TimeSequenceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"temporalDomain",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DomainSetType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "spatialDomain",
+                "optionalTemporalDomain",
+                "temporalDomain"
+            ]
+        },
+        "TimePeriodType":{
+            "type":"object",
+            "title":"TimePeriodType",
+            "required":[
+                "beginPosition",
+                "endPosition"
+            ],
+            "properties":{
+                "beginPosition":{
+                    "title":"beginPosition",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/gml#/definitions/TimePositionType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"beginPosition",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "endPosition":{
+                    "title":"endPosition",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/gml#/definitions/TimePositionType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"endPosition",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "timeResolution":{
+                    "title":"timeResolution",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"timeResolution",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "frame":{
+                    "title":"frame",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"frame",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TimePeriodType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "beginPosition",
+                "endPosition",
+                "timeResolution",
+                "frame"
+            ]
+        },
+        "SupportedInterpolationsType":{
+            "type":"object",
+            "title":"SupportedInterpolationsType",
+            "required":[
+                "interpolationMethod"
+            ],
+            "properties":{
+                "interpolationMethod":{
+                    "title":"interpolationMethod",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InterpolationMethodType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"interpolationMethod",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "_default":{
+                    "title":"_default",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/InterpolationMethodType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"default",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SupportedInterpolationsType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "interpolationMethod",
+                "_default"
+            ]
+        },
+        "RangeSubsetType.AxisSubset":{
+            "required":[
+                "name"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ValueEnumBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"RangeSubsetType.AxisSubset",
+                    "properties":{
+                        "name":{
+                            "title":"name",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"name",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "name"
+            ]
+        },
+        "RangeSet":{
+            "type":"object",
+            "title":"RangeSet",
+            "required":[
+                "rangeSet"
+            ],
+            "properties":{
+                "rangeSet":{
+                    "title":"rangeSet",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/RangeSetType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RangeSet",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "rangeSet"
+            ]
+        },
+        "MetadataAssociationType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/gml#/definitions/MetaDataPropertyType"
+                },
+                {
+                    "type":"object",
+                    "title":"MetadataAssociationType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"MetadataAssociationType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        "CoverageOfferingBriefType":{
+            "required":[
+                "lonLatEnvelope"
+            ],
             "allOf":[
                 {
                     "$ref":"#/definitions/AbstractDescriptionType"
                 },
                 {
                     "type":"object",
-                    "title":"RangeSetType",
+                    "title":"CoverageOfferingBriefType",
                     "properties":{
-                        "axisDescription":{
-                            "title":"axisDescription",
+                        "lonLatEnvelope":{
+                            "title":"lonLatEnvelope",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LonLatEnvelopeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lonLatEnvelope",
+                                "namespaceURI":"http://www.opengis.net/wcs"
+                            }
+                        },
+                        "keywords":{
+                            "title":"keywords",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"#/definitions/AxisDescription"
+                                        "$ref":"#/definitions/Keywords"
                                     },
                                     "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"axisDescription",
+                                "localPart":"keywords",
                                 "namespaceURI":"http://www.opengis.net/wcs"
                             }
-                        },
-                        "nullValues":{
-                            "title":"nullValues",
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CoverageOfferingBriefType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "lonLatEnvelope",
+                "keywords"
+            ]
+        },
+        "AxisDescriptionType":{
+            "required":[
+                "values"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractDescriptionType"
+                },
+                {
+                    "type":"object",
+                    "title":"AxisDescriptionType",
+                    "properties":{
+                        "values":{
+                            "title":"values",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/ValueEnumType"
+                                    "$ref":"#/definitions/AxisDescriptionType.Values"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"nullValues",
+                                "localPart":"values",
                                 "namespaceURI":"http://www.opengis.net/wcs"
                             }
                         },
@@ -862,81 +856,291 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"RangeSetType",
+                "localPart":"AxisDescriptionType",
                 "namespaceURI":"http://www.opengis.net/wcs"
             },
             "propertiesOrder":[
-                "axisDescription",
-                "nullValues",
+                "values",
                 "semantic",
                 "refSys",
                 "refSysLabel"
             ]
         },
-        "AbstractDescriptionType":{
+        "SpatialDomainType":{
+            "type":"object",
+            "title":"SpatialDomainType",
             "required":[
-                "wcsName",
-                "label"
+                "envelope"
             ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractDescriptionBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractDescriptionType",
-                    "properties":{
-                        "wcsDescription":{
-                            "title":"wcsDescription",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+            "properties":{
+                "envelope":{
+                    "title":"envelope",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                    },
+                                    "value":{
+                                        "$ref":"http://www.opengis.net/gml#/definitions/EnvelopeType"
+                                    }
+                                },
+                                "elementName":{
+                                    "localPart":"Envelope",
+                                    "namespaceURI":"http://www.opengis.net/gml"
                                 }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"description",
-                                "namespaceURI":"http://www.opengis.net/wcs"
-                            }
-                        },
-                        "wcsName":{
-                            "title":"wcsName",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"name",
-                                "namespaceURI":"http://www.opengis.net/wcs"
-                            }
-                        },
-                        "label":{
-                            "title":"label",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"label",
-                                "namespaceURI":"http://www.opengis.net/wcs"
-                            }
+                            },
+                            "minItems":1
                         }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"Envelope",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "grid":{
+                    "title":"grid",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                    },
+                                    "value":{
+                                        "$ref":"http://www.opengis.net/gml#/definitions/GridType"
+                                    }
+                                },
+                                "elementName":{
+                                    "localPart":"Grid",
+                                    "namespaceURI":"http://www.opengis.net/gml"
+                                }
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"Grid",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "polygon":{
+                    "title":"polygon",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.opengis.net/gml#/definitions/PolygonType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Polygon",
+                        "namespaceURI":"http://www.opengis.net/gml"
                     }
                 }
-            ],
+            },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AbstractDescriptionType",
+                "localPart":"SpatialDomainType",
                 "namespaceURI":"http://www.opengis.net/wcs"
             },
             "propertiesOrder":[
-                "wcsDescription",
-                "wcsName",
-                "label"
+                "envelope",
+                "grid",
+                "polygon"
+            ]
+        },
+        "DCPTypeType.HTTP.Post":{
+            "type":"object",
+            "title":"DCPTypeType.HTTP.Post",
+            "required":[
+                "onlineResource"
+            ],
+            "properties":{
+                "onlineResource":{
+                    "title":"onlineResource",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/OnlineResourceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OnlineResource",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "onlineResource"
+            ]
+        },
+        "CoverageDescription":{
+            "type":"object",
+            "title":"CoverageDescription",
+            "required":[
+                "coverageOffering",
+                "version"
+            ],
+            "properties":{
+                "coverageOffering":{
+                    "title":"coverageOffering",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/CoverageOfferingType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"CoverageOffering",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                },
+                "updateSequence":{
+                    "title":"updateSequence",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"updateSequence",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "coverageOffering",
+                "version",
+                "updateSequence"
+            ]
+        },
+        "GetCapabilities":{
+            "type":"object",
+            "title":"GetCapabilities",
+            "required":[
+                "service"
+            ],
+            "properties":{
+                "section":{
+                    "title":"section",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/CapabilitiesSectionType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"section",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"service",
+                        "namespaceURI":""
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                },
+                "updateSequence":{
+                    "title":"updateSequence",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"updateSequence",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "section",
+                "service",
+                "version",
+                "updateSequence"
+            ]
+        },
+        "WCSCapabilityType.Request.DescribeCoverage":{
+            "type":"object",
+            "title":"WCSCapabilityType.Request.DescribeCoverage",
+            "required":[
+                "dcpType"
+            ],
+            "properties":{
+                "dcpType":{
+                    "title":"dcpType",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DCPTypeType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DCPType",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "dcpType"
             ]
         },
         "DomainSubsetType":{
@@ -998,148 +1202,9 @@
                 "temporalSubset"
             ]
         },
-        "ValueEnumBaseType":{
+        "WCSCapabilityType.Request.GetCoverage":{
             "type":"object",
-            "title":"ValueEnumBaseType",
-            "required":[
-                "intervalOrSingleValue"
-            ],
-            "properties":{
-                "intervalOrSingleValue":{
-                    "title":"intervalOrSingleValue",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/IntervalType"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"interval",
-                                            "namespaceURI":"http://www.opengis.net/wcs"
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/TypedLiteralType"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"singleValue",
-                                            "namespaceURI":"http://www.opengis.net/wcs"
-                                        }
-                                    }
-                                ]
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"elements"
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"valueEnumBaseType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "intervalOrSingleValue"
-            ]
-        },
-        "DCPTypeType.HTTP":{
-            "type":"object",
-            "title":"DCPTypeType.HTTP",
-            "required":[
-                "getOrPost"
-            ],
-            "properties":{
-                "getOrPost":{
-                    "title":"getOrPost",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/DCPTypeType.HTTP.Get"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"Get",
-                                            "namespaceURI":"http://www.opengis.net/wcs"
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/DCPTypeType.HTTP.Post"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"Post",
-                                            "namespaceURI":"http://www.opengis.net/wcs"
-                                        }
-                                    }
-                                ]
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"elements"
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "getOrPost"
-            ]
-        },
-        "MetadataLinkType":{
-            "required":[
-                "metadataType"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/MetadataAssociationType"
-                },
-                {
-                    "type":"object",
-                    "title":"MetadataLinkType",
-                    "properties":{
-                        "metadataType":{
-                            "title":"metadataType",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"metadataType",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"MetadataLinkType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "metadataType"
-            ]
-        },
-        "WCSCapabilityType.Request.GetCapabilities":{
-            "type":"object",
-            "title":"WCSCapabilityType.Request.GetCapabilities",
+            "title":"WCSCapabilityType.Request.GetCoverage",
             "required":[
                 "dcpType"
             ],
@@ -1165,6 +1230,54 @@
             "typeType":"classInfo",
             "propertiesOrder":[
                 "dcpType"
+            ]
+        },
+        "ValueEnumType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ValueEnumBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"ValueEnumType",
+                    "properties":{
+                        "type":{
+                            "title":"type",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"type",
+                                "namespaceURI":"http://www.opengis.net/wcs"
+                            }
+                        },
+                        "semantic":{
+                            "title":"semantic",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"semantic",
+                                "namespaceURI":"http://www.opengis.net/wcs"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"valueEnumType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "type",
+                "semantic"
             ]
         },
         "WCSCapabilityType.VendorSpecificCapabilities":{
@@ -1194,6 +1307,73 @@
             "typeType":"classInfo",
             "propertiesOrder":[
                 "any"
+            ]
+        },
+        "LonLatEnvelopeBaseType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/gml#/definitions/EnvelopeType"
+                },
+                {
+                    "type":"object",
+                    "title":"LonLatEnvelopeBaseType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LonLatEnvelopeBaseType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        "TelephoneType":{
+            "type":"object",
+            "title":"TelephoneType",
+            "properties":{
+                "voice":{
+                    "title":"voice",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"voice",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "facsimile":{
+                    "title":"facsimile",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"facsimile",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TelephoneType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "voice",
+                "facsimile"
             ]
         },
         "GetCoverage":{
@@ -1310,430 +1490,6 @@
                 "version"
             ]
         },
-        "RangeSubsetType":{
-            "type":"object",
-            "title":"RangeSubsetType",
-            "required":[
-                "axisSubset"
-            ],
-            "properties":{
-                "axisSubset":{
-                    "title":"axisSubset",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/RangeSubsetType.AxisSubset"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"axisSubset",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RangeSubsetType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "axisSubset"
-            ]
-        },
-        "TypedLiteralType":{
-            "type":"object",
-            "title":"TypedLiteralType",
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TypedLiteralType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "value",
-                "type"
-            ]
-        },
-        "CoverageOfferingBriefType":{
-            "required":[
-                "lonLatEnvelope"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractDescriptionType"
-                },
-                {
-                    "type":"object",
-                    "title":"CoverageOfferingBriefType",
-                    "properties":{
-                        "lonLatEnvelope":{
-                            "title":"lonLatEnvelope",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LonLatEnvelopeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lonLatEnvelope",
-                                "namespaceURI":"http://www.opengis.net/wcs"
-                            }
-                        },
-                        "keywords":{
-                            "title":"keywords",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/Keywords"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"keywords",
-                                "namespaceURI":"http://www.opengis.net/wcs"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CoverageOfferingBriefType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "lonLatEnvelope",
-                "keywords"
-            ]
-        },
-        "RangeSubsetType.AxisSubset":{
-            "required":[
-                "name"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ValueEnumBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"RangeSubsetType.AxisSubset",
-                    "properties":{
-                        "name":{
-                            "title":"name",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"name",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "name"
-            ]
-        },
-        "ResponsiblePartyType":{
-            "type":"object",
-            "title":"ResponsiblePartyType",
-            "required":[
-                "individualName",
-                "organisationName"
-            ],
-            "properties":{
-                "individualName":{
-                    "title":"individualName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"individualName",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "optionalOrganisationName":{
-                    "title":"optionalOrganisationName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"organisationName",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "organisationName":{
-                    "title":"organisationName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"organisationName",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "positionName":{
-                    "title":"positionName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"positionName",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "contactInfo":{
-                    "title":"contactInfo",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ContactType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"contactInfo",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ResponsiblePartyType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "individualName",
-                "optionalOrganisationName",
-                "organisationName",
-                "positionName",
-                "contactInfo"
-            ]
-        },
-        "DomainSetType":{
-            "type":"object",
-            "title":"DomainSetType",
-            "required":[
-                "spatialDomain",
-                "temporalDomain"
-            ],
-            "properties":{
-                "spatialDomain":{
-                    "title":"spatialDomain",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SpatialDomainType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"spatialDomain",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "optionalTemporalDomain":{
-                    "title":"optionalTemporalDomain",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TimeSequenceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"temporalDomain",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "temporalDomain":{
-                    "title":"temporalDomain",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TimeSequenceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"temporalDomain",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DomainSetType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "spatialDomain",
-                "optionalTemporalDomain",
-                "temporalDomain"
-            ]
-        },
-        "WCSCapabilityType.Request.DescribeCoverage":{
-            "type":"object",
-            "title":"WCSCapabilityType.Request.DescribeCoverage",
-            "required":[
-                "dcpType"
-            ],
-            "properties":{
-                "dcpType":{
-                    "title":"dcpType",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/DCPTypeType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DCPType",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "dcpType"
-            ]
-        },
-        "WCSCapabilitiesType":{
-            "type":"object",
-            "title":"WCSCapabilitiesType",
-            "required":[
-                "service",
-                "capability",
-                "contentMetadata",
-                "version"
-            ],
-            "properties":{
-                "service":{
-                    "title":"service",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ServiceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Service",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "capability":{
-                    "title":"capability",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/WCSCapabilityType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Capability",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "contentMetadata":{
-                    "title":"contentMetadata",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ContentMetadata"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ContentMetadata",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
-                    }
-                },
-                "updateSequence":{
-                    "title":"updateSequence",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"updateSequence",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"WCS_CapabilitiesType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "service",
-                "capability",
-                "contentMetadata",
-                "version",
-                "updateSequence"
-            ]
-        },
         "DCPTypeType.HTTP.Get":{
             "type":"object",
             "title":"DCPTypeType.HTTP.Get",
@@ -1758,54 +1514,6 @@
             "typeType":"classInfo",
             "propertiesOrder":[
                 "onlineResource"
-            ]
-        },
-        "SupportedFormatsType":{
-            "type":"object",
-            "title":"SupportedFormatsType",
-            "required":[
-                "formats"
-            ],
-            "properties":{
-                "formats":{
-                    "title":"formats",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.opengis.net/gml#/definitions/CodeListType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"formats",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "nativeFormat":{
-                    "title":"nativeFormat",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nativeFormat",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SupportedFormatsType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "formats",
-                "nativeFormat"
             ]
         },
         "ContentMetadata":{
@@ -1975,70 +1683,45 @@
                 "actuate"
             ]
         },
-        "ContactType":{
-            "type":"object",
-            "title":"ContactType",
-            "properties":{
-                "phone":{
-                    "title":"phone",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TelephoneType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"phone",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
+        "AxisDescriptionType.Values":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ValueEnumType"
                 },
-                "address":{
-                    "title":"address",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/AddressType"
+                {
+                    "type":"object",
+                    "title":"AxisDescriptionType.Values",
+                    "properties":{
+                        "_default":{
+                            "title":"_default",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/TypedLiteralType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"default",
+                                "namespaceURI":"http://www.opengis.net/wcs"
+                            }
                         }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"address",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OnlineResourceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"onlineResource",
-                        "namespaceURI":"http://www.opengis.net/wcs"
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ContactType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
             "propertiesOrder":[
-                "phone",
-                "address",
-                "onlineResource"
+                "_default"
             ]
         },
-        "TimeSequenceType":{
+        "ValueEnumBaseType":{
             "type":"object",
-            "title":"TimeSequenceType",
+            "title":"ValueEnumBaseType",
             "required":[
-                "timePositionOrTimePeriod"
+                "intervalOrSingleValue"
             ],
             "properties":{
-                "timePositionOrTimePeriod":{
-                    "title":"timePositionOrTimePeriod",
+                "intervalOrSingleValue":{
+                    "title":"intervalOrSingleValue",
                     "allOf":[
                         {
                             "type":"array",
@@ -2047,22 +1730,22 @@
                                     {
                                         "anyOf":[
                                             {
-                                                "$ref":"http://www.opengis.net/gml#/definitions/TimePositionType"
+                                                "$ref":"#/definitions/IntervalType"
                                             }
                                         ],
                                         "elementName":{
-                                            "localPart":"timePosition",
-                                            "namespaceURI":"http://www.opengis.net/gml"
+                                            "localPart":"interval",
+                                            "namespaceURI":"http://www.opengis.net/wcs"
                                         }
                                     },
                                     {
                                         "anyOf":[
                                             {
-                                                "$ref":"#/definitions/TimePeriodType"
+                                                "$ref":"#/definitions/TypedLiteralType"
                                             }
                                         ],
                                         "elementName":{
-                                            "localPart":"timePeriod",
+                                            "localPart":"singleValue",
                                             "namespaceURI":"http://www.opengis.net/wcs"
                                         }
                                     }
@@ -2076,60 +1759,12 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"TimeSequenceType",
+                "localPart":"valueEnumBaseType",
                 "namespaceURI":"http://www.opengis.net/wcs"
             },
             "propertiesOrder":[
-                "timePositionOrTimePeriod"
+                "intervalOrSingleValue"
             ]
-        },
-        "DCPTypeType":{
-            "type":"object",
-            "title":"DCPTypeType",
-            "required":[
-                "http"
-            ],
-            "properties":{
-                "http":{
-                    "title":"http",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DCPTypeType.HTTP"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"HTTP",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DCPTypeType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "http"
-            ]
-        },
-        "SpatialSubsetType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SpatialDomainType"
-                },
-                {
-                    "type":"object",
-                    "title":"SpatialSubsetType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SpatialSubsetType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
         },
         "WCSCapabilityType.Request":{
             "type":"object",
@@ -2187,42 +1822,50 @@
                 "getCoverage"
             ]
         },
-        "TimePeriodType":{
+        "RangeSubsetType":{
             "type":"object",
-            "title":"TimePeriodType",
+            "title":"RangeSubsetType",
             "required":[
-                "beginPosition",
-                "endPosition"
+                "axisSubset"
             ],
             "properties":{
-                "beginPosition":{
-                    "title":"beginPosition",
+                "axisSubset":{
+                    "title":"axisSubset",
                     "allOf":[
                         {
-                            "$ref":"http://www.opengis.net/gml#/definitions/TimePositionType"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/RangeSubsetType.AxisSubset"
+                            },
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"beginPosition",
+                        "localPart":"axisSubset",
                         "namespaceURI":"http://www.opengis.net/wcs"
                     }
-                },
-                "endPosition":{
-                    "title":"endPosition",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/gml#/definitions/TimePositionType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"endPosition",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "timeResolution":{
-                    "title":"timeResolution",
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RangeSubsetType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "axisSubset"
+            ]
+        },
+        "ResponsiblePartyType":{
+            "type":"object",
+            "title":"ResponsiblePartyType",
+            "required":[
+                "individualName",
+                "organisationName"
+            ],
+            "properties":{
+                "individualName":{
+                    "title":"individualName",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2230,12 +1873,148 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"timeResolution",
+                        "localPart":"individualName",
                         "namespaceURI":"http://www.opengis.net/wcs"
                     }
                 },
-                "frame":{
-                    "title":"frame",
+                "optionalOrganisationName":{
+                    "title":"optionalOrganisationName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"organisationName",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "organisationName":{
+                    "title":"organisationName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"organisationName",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "positionName":{
+                    "title":"positionName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"positionName",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "contactInfo":{
+                    "title":"contactInfo",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ContactType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"contactInfo",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ResponsiblePartyType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "individualName",
+                "optionalOrganisationName",
+                "organisationName",
+                "positionName",
+                "contactInfo"
+            ]
+        },
+        "TimeSequenceType":{
+            "type":"object",
+            "title":"TimeSequenceType",
+            "required":[
+                "timePositionOrTimePeriod"
+            ],
+            "properties":{
+                "timePositionOrTimePeriod":{
+                    "title":"timePositionOrTimePeriod",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"http://www.opengis.net/gml#/definitions/TimePositionType"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"timePosition",
+                                            "namespaceURI":"http://www.opengis.net/gml"
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/TimePeriodType"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"timePeriod",
+                                            "namespaceURI":"http://www.opengis.net/wcs"
+                                        }
+                                    }
+                                ]
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"elements"
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TimeSequenceType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "timePositionOrTimePeriod"
+            ]
+        },
+        "OnlineResourceType":{
+            "type":"object",
+            "title":"OnlineResourceType",
+            "properties":{
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2243,50 +2022,12 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"frame",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TimePeriodType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "beginPosition",
-                "endPosition",
-                "timeResolution",
-                "frame"
-            ]
-        },
-        "CoverageDescription":{
-            "type":"object",
-            "title":"CoverageDescription",
-            "required":[
-                "coverageOffering",
-                "version"
-            ],
-            "properties":{
-                "coverageOffering":{
-                    "title":"coverageOffering",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/CoverageOfferingType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"CoverageOffering",
-                        "namespaceURI":"http://www.opengis.net/wcs"
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 },
-                "version":{
-                    "title":"version",
+                "role":{
+                    "title":"role",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2294,12 +2035,12 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 },
-                "updateSequence":{
-                    "title":"updateSequence",
+                "arcrole":{
+                    "title":"arcrole",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2307,179 +2048,101 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"updateSequence",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "coverageOffering",
-                "version",
-                "updateSequence"
-            ]
-        },
-        "TelephoneType":{
-            "type":"object",
-            "title":"TelephoneType",
-            "properties":{
-                "voice":{
-                    "title":"voice",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"voice",
-                        "namespaceURI":"http://www.opengis.net/wcs"
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 },
-                "facsimile":{
-                    "title":"facsimile",
+                "title":{
+                    "title":"title",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":0
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"facsimile",
-                        "namespaceURI":"http://www.opengis.net/wcs"
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"TelephoneType",
+                "localPart":"OnlineResourceType",
                 "namespaceURI":"http://www.opengis.net/wcs"
             },
             "propertiesOrder":[
-                "voice",
-                "facsimile"
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
             ]
         },
-        "SupportedCRSsType":{
-            "type":"object",
-            "title":"SupportedCRSsType",
-            "required":[
-                "requestResponseCRSs",
-                "requestCRSs",
-                "responseCRSs"
-            ],
-            "properties":{
-                "requestResponseCRSs":{
-                    "title":"requestResponseCRSs",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.opengis.net/gml#/definitions/CodeListType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"requestResponseCRSs",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "requestCRSs":{
-                    "title":"requestCRSs",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.opengis.net/gml#/definitions/CodeListType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"requestCRSs",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "responseCRSs":{
-                    "title":"responseCRSs",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.opengis.net/gml#/definitions/CodeListType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"responseCRSs",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                },
-                "nativeCRSs":{
-                    "title":"nativeCRSs",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.opengis.net/gml#/definitions/CodeListType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"nativeCRSs",
-                        "namespaceURI":"http://www.opengis.net/wcs"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SupportedCRSsType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "requestResponseCRSs",
-                "requestCRSs",
-                "responseCRSs",
-                "nativeCRSs"
-            ]
-        },
-        "AxisDescriptionType":{
-            "required":[
-                "values"
-            ],
+        "RangeSetType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/AbstractDescriptionType"
                 },
                 {
                     "type":"object",
-                    "title":"AxisDescriptionType",
+                    "title":"RangeSetType",
                     "properties":{
-                        "values":{
-                            "title":"values",
+                        "axisDescription":{
+                            "title":"axisDescription",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/AxisDescriptionType.Values"
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/AxisDescription"
+                                    },
+                                    "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"values",
+                                "localPart":"axisDescription",
+                                "namespaceURI":"http://www.opengis.net/wcs"
+                            }
+                        },
+                        "nullValues":{
+                            "title":"nullValues",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ValueEnumType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"nullValues",
                                 "namespaceURI":"http://www.opengis.net/wcs"
                             }
                         },
@@ -2527,93 +2190,66 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AxisDescriptionType",
+                "localPart":"RangeSetType",
                 "namespaceURI":"http://www.opengis.net/wcs"
             },
             "propertiesOrder":[
-                "values",
+                "axisDescription",
+                "nullValues",
                 "semantic",
                 "refSys",
                 "refSysLabel"
             ]
         },
-        "CoverageOfferingType":{
+        "AbstractDescriptionType":{
             "required":[
-                "domainSet",
-                "rangeSet",
-                "supportedCRSs",
-                "supportedFormats"
+                "wcsName",
+                "label"
             ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/CoverageOfferingBriefType"
+                    "$ref":"#/definitions/AbstractDescriptionBaseType"
                 },
                 {
                     "type":"object",
-                    "title":"CoverageOfferingType",
+                    "title":"AbstractDescriptionType",
                     "properties":{
-                        "domainSet":{
-                            "title":"domainSet",
+                        "wcsDescription":{
+                            "title":"wcsDescription",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/DomainSetType"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"domainSet",
+                                "localPart":"description",
                                 "namespaceURI":"http://www.opengis.net/wcs"
                             }
                         },
-                        "rangeSet":{
-                            "title":"rangeSet",
+                        "wcsName":{
+                            "title":"wcsName",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/RangeSet"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"rangeSet",
+                                "localPart":"name",
                                 "namespaceURI":"http://www.opengis.net/wcs"
                             }
                         },
-                        "supportedCRSs":{
-                            "title":"supportedCRSs",
+                        "label":{
+                            "title":"label",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/SupportedCRSsType"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"supportedCRSs",
-                                "namespaceURI":"http://www.opengis.net/wcs"
-                            }
-                        },
-                        "supportedFormats":{
-                            "title":"supportedFormats",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SupportedFormatsType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"supportedFormats",
-                                "namespaceURI":"http://www.opengis.net/wcs"
-                            }
-                        },
-                        "supportedInterpolations":{
-                            "title":"supportedInterpolations",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SupportedInterpolationsType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"supportedInterpolations",
+                                "localPart":"label",
                                 "namespaceURI":"http://www.opengis.net/wcs"
                             }
                         }
@@ -2622,15 +2258,276 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"CoverageOfferingType",
+                "localPart":"AbstractDescriptionType",
                 "namespaceURI":"http://www.opengis.net/wcs"
             },
             "propertiesOrder":[
-                "domainSet",
-                "rangeSet",
-                "supportedCRSs",
-                "supportedFormats",
-                "supportedInterpolations"
+                "wcsDescription",
+                "wcsName",
+                "label"
+            ]
+        },
+        "AddressType":{
+            "type":"object",
+            "title":"AddressType",
+            "properties":{
+                "deliveryPoint":{
+                    "title":"deliveryPoint",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"deliveryPoint",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "city":{
+                    "title":"city",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"city",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "administrativeArea":{
+                    "title":"administrativeArea",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"administrativeArea",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "postalCode":{
+                    "title":"postalCode",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"postalCode",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "country":{
+                    "title":"country",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"country",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "electronicMailAddress":{
+                    "title":"electronicMailAddress",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"electronicMailAddress",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AddressType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "deliveryPoint",
+                "city",
+                "administrativeArea",
+                "postalCode",
+                "country",
+                "electronicMailAddress"
+            ]
+        },
+        "AbstractDescriptionBaseType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/gml#/definitions/AbstractGMLType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractDescriptionBaseType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractDescriptionBaseType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        "SpatialSubsetType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SpatialDomainType"
+                },
+                {
+                    "type":"object",
+                    "title":"SpatialSubsetType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SpatialSubsetType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        "DescribeCoverage":{
+            "type":"object",
+            "title":"DescribeCoverage",
+            "required":[
+                "service",
+                "version"
+            ],
+            "properties":{
+                "coverage":{
+                    "title":"coverage",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Coverage",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"service",
+                        "namespaceURI":""
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "coverage",
+                "service",
+                "version"
+            ]
+        },
+        "MetadataLinkType":{
+            "required":[
+                "metadataType"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/MetadataAssociationType"
+                },
+                {
+                    "type":"object",
+                    "title":"MetadataLinkType",
+                    "properties":{
+                        "metadataType":{
+                            "title":"metadataType",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"metadataType",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"MetadataLinkType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "metadataType"
+            ]
+        },
+        "AxisDescription":{
+            "type":"object",
+            "title":"AxisDescription",
+            "required":[
+                "axisDescription"
+            ],
+            "properties":{
+                "axisDescription":{
+                    "title":"axisDescription",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/AxisDescriptionType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"AxisDescription",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "axisDescription"
             ]
         },
         "OutputType":{
@@ -2677,172 +2574,186 @@
                 "format"
             ]
         },
-        "SupportedInterpolationsType":{
+        "DCPTypeType.HTTP":{
             "type":"object",
-            "title":"SupportedInterpolationsType",
+            "title":"DCPTypeType.HTTP",
             "required":[
-                "interpolationMethod"
+                "getOrPost"
             ],
             "properties":{
-                "interpolationMethod":{
-                    "title":"interpolationMethod",
+                "getOrPost":{
+                    "title":"getOrPost",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/InterpolationMethodType"
+                                "anyOf":[
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/DCPTypeType.HTTP.Get"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"Get",
+                                            "namespaceURI":"http://www.opengis.net/wcs"
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/DCPTypeType.HTTP.Post"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"Post",
+                                            "namespaceURI":"http://www.opengis.net/wcs"
+                                        }
+                                    }
+                                ]
                             },
                             "minItems":1
                         }
                     ],
+                    "propertyType":"elements"
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "getOrPost"
+            ]
+        },
+        "WCSCapabilitiesType":{
+            "type":"object",
+            "title":"WCSCapabilitiesType",
+            "required":[
+                "service",
+                "capability",
+                "contentMetadata",
+                "version"
+            ],
+            "properties":{
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ServiceType"
+                        }
+                    ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"interpolationMethod",
+                        "localPart":"Service",
                         "namespaceURI":"http://www.opengis.net/wcs"
                     }
                 },
-                "_default":{
-                    "title":"_default",
+                "capability":{
+                    "title":"capability",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/InterpolationMethodType"
+                            "$ref":"#/definitions/WCSCapabilityType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Capability",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "contentMetadata":{
+                    "title":"contentMetadata",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ContentMetadata"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ContentMetadata",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"default",
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                },
+                "updateSequence":{
+                    "title":"updateSequence",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"updateSequence",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SupportedInterpolationsType",
+                "localPart":"WCS_CapabilitiesType",
                 "namespaceURI":"http://www.opengis.net/wcs"
             },
             "propertiesOrder":[
-                "interpolationMethod",
-                "_default"
+                "service",
+                "capability",
+                "contentMetadata",
+                "version",
+                "updateSequence"
             ]
         },
-        "AxisDescription":{
+        "Keywords":{
             "type":"object",
-            "title":"AxisDescription",
+            "title":"Keywords",
             "required":[
-                "axisDescription"
+                "keyword"
             ],
             "properties":{
-                "axisDescription":{
-                    "title":"axisDescription",
+                "keyword":{
+                    "title":"keyword",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/AxisDescriptionType"
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            },
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"AxisDescription",
+                        "localPart":"keyword",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/gml#/definitions/CodeType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"type",
                         "namespaceURI":"http://www.opengis.net/wcs"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "axisDescription"
-            ]
-        },
-        "SpatialDomainType":{
-            "type":"object",
-            "title":"SpatialDomainType",
-            "required":[
-                "envelope"
-            ],
-            "properties":{
-                "envelope":{
-                    "title":"envelope",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "type":"object",
-                                "properties":{
-                                    "name":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                    },
-                                    "value":{
-                                        "$ref":"http://www.opengis.net/gml#/definitions/EnvelopeType"
-                                    }
-                                },
-                                "elementName":{
-                                    "localPart":"Envelope",
-                                    "namespaceURI":"http://www.opengis.net/gml"
-                                }
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"Envelope",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "grid":{
-                    "title":"grid",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "type":"object",
-                                "properties":{
-                                    "name":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                    },
-                                    "value":{
-                                        "$ref":"http://www.opengis.net/gml#/definitions/GridType"
-                                    }
-                                },
-                                "elementName":{
-                                    "localPart":"Grid",
-                                    "namespaceURI":"http://www.opengis.net/gml"
-                                }
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"Grid",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "polygon":{
-                    "title":"polygon",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.opengis.net/gml#/definitions/PolygonType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Polygon",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SpatialDomainType",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            },
-            "propertiesOrder":[
-                "envelope",
-                "grid",
-                "polygon"
+                "keyword",
+                "type"
             ]
         },
         "WCSCapabilityType":{
@@ -3048,47 +2959,124 @@
                 "updateSequence"
             ]
         },
-        "WCSCapabilityType.Request.GetCoverage":{
+        "SupportedFormatsType":{
             "type":"object",
-            "title":"WCSCapabilityType.Request.GetCoverage",
+            "title":"SupportedFormatsType",
             "required":[
-                "dcpType"
+                "formats"
             ],
             "properties":{
-                "dcpType":{
-                    "title":"dcpType",
+                "formats":{
+                    "title":"formats",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/DCPTypeType"
+                                "$ref":"http://www.opengis.net/gml#/definitions/CodeListType"
                             },
                             "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"DCPType",
+                        "localPart":"formats",
+                        "namespaceURI":"http://www.opengis.net/wcs"
+                    }
+                },
+                "nativeFormat":{
+                    "title":"nativeFormat",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nativeFormat",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SupportedFormatsType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
+            "propertiesOrder":[
+                "formats",
+                "nativeFormat"
+            ]
+        },
+        "TypedLiteralType":{
+            "type":"object",
+            "title":"TypedLiteralType",
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
                         "namespaceURI":"http://www.opengis.net/wcs"
                     }
                 }
             },
             "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TypedLiteralType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            },
             "propertiesOrder":[
-                "dcpType"
+                "value",
+                "type"
             ]
         },
-        "InterpolationMethodType":{
+        "IntervalType":{
             "allOf":[
                 {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/ValueRangeType"
+                },
+                {
+                    "type":"object",
+                    "title":"IntervalType",
+                    "properties":{
+                        "res":{
+                            "title":"res",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/TypedLiteralType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"res",
+                                "namespaceURI":"http://www.opengis.net/wcs"
+                            }
+                        }
+                    }
                 }
             ],
-            "typeType":"enumInfo",
+            "typeType":"classInfo",
             "typeName":{
-                "localPart":"InterpolationMethodType",
+                "localPart":"intervalType",
                 "namespaceURI":"http://www.opengis.net/wcs"
-            }
+            },
+            "propertiesOrder":[
+                "res"
+            ]
         },
         "CapabilitiesSectionType":{
             "allOf":[
@@ -3101,6 +3089,18 @@
                 "localPart":"CapabilitiesSectionType",
                 "namespaceURI":"http://www.opengis.net/wcs"
             }
+        },
+        "InterpolationMethodType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"InterpolationMethodType",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
         }
     },
     "anyOf":[
@@ -3111,221 +3111,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/SpatialSubsetType"
+                    "$ref":"#/definitions/GetCoverage"
                 }
             },
             "elementName":{
-                "localPart":"spatialSubset",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/WCSCapabilityType"
-                }
-            },
-            "elementName":{
-                "localPart":"Capability",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Keywords"
-                }
-            },
-            "elementName":{
-                "localPart":"keywords",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SupportedFormatsType"
-                }
-            },
-            "elementName":{
-                "localPart":"supportedFormats",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/WCSCapabilitiesType"
-                }
-            },
-            "elementName":{
-                "localPart":"WCS_Capabilities",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/LonLatEnvelopeType"
-                }
-            },
-            "elementName":{
-                "localPart":"lonLatEnvelope",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/RangeSet"
-                }
-            },
-            "elementName":{
-                "localPart":"rangeSet",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/TimeSequenceType"
-                }
-            },
-            "elementName":{
-                "localPart":"temporalDomain",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/CoverageDescription"
-                }
-            },
-            "elementName":{
-                "localPart":"CoverageDescription",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ServiceType"
-                }
-            },
-            "elementName":{
-                "localPart":"Service",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.opengis.net/gml#/definitions/CodeListType"
-                }
-            },
-            "elementName":{
-                "localPart":"formats",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/TypedLiteralType"
-                }
-            },
-            "elementName":{
-                "localPart":"singleValue",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/TimeSequenceType"
-                }
-            },
-            "elementName":{
-                "localPart":"temporalSubset",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AxisDescriptionType"
-                }
-            },
-            "elementName":{
-                "localPart":"AxisDescription",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SupportedCRSsType"
-                }
-            },
-            "elementName":{
-                "localPart":"supportedCRSs",
+                "localPart":"GetCoverage",
                 "namespaceURI":"http://www.opengis.net/wcs"
             }
         },
@@ -3351,11 +3141,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/SupportedInterpolationsType"
+                    "$ref":"#/definitions/CoverageOfferingBriefType"
                 }
             },
             "elementName":{
-                "localPart":"supportedInterpolations",
+                "localPart":"CoverageOfferingBrief",
                 "namespaceURI":"http://www.opengis.net/wcs"
             }
         },
@@ -3366,11 +3156,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/GetCapabilities"
+                    "$ref":"#/definitions/SupportedFormatsType"
                 }
             },
             "elementName":{
-                "localPart":"GetCapabilities",
+                "localPart":"supportedFormats",
                 "namespaceURI":"http://www.opengis.net/wcs"
             }
         },
@@ -3381,11 +3171,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/MetadataLinkType"
+                    "$ref":"#/definitions/LonLatEnvelopeType"
                 }
             },
             "elementName":{
-                "localPart":"metadataLink",
+                "localPart":"lonLatEnvelope",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ServiceType"
+                }
+            },
+            "elementName":{
+                "localPart":"Service",
                 "namespaceURI":"http://www.opengis.net/wcs"
             }
         },
@@ -3411,6 +3216,36 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/CoverageDescription"
+                }
+            },
+            "elementName":{
+                "localPart":"CoverageDescription",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/WCSCapabilitiesType"
+                }
+            },
+            "elementName":{
+                "localPart":"WCS_Capabilities",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/TimeSequenceType"
                 }
             },
@@ -3426,116 +3261,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/IntervalType"
+                    "$ref":"#/definitions/GetCapabilities"
                 }
             },
             "elementName":{
-                "localPart":"interval",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SpatialDomainType"
-                }
-            },
-            "elementName":{
-                "localPart":"spatialDomain",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AxisDescription"
-                }
-            },
-            "elementName":{
-                "localPart":"axisDescription",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetCoverage"
-                }
-            },
-            "elementName":{
-                "localPart":"GetCoverage",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"description",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"name",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ContentMetadata"
-                }
-            },
-            "elementName":{
-                "localPart":"ContentMetadata",
-                "namespaceURI":"http://www.opengis.net/wcs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/CoverageOfferingBriefType"
-                }
-            },
-            "elementName":{
-                "localPart":"CoverageOfferingBrief",
+                "localPart":"GetCapabilities",
                 "namespaceURI":"http://www.opengis.net/wcs"
             }
         },
@@ -3561,11 +3291,161 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/AxisDescription"
+                }
+            },
+            "elementName":{
+                "localPart":"axisDescription",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DescribeCoverage"
+                }
+            },
+            "elementName":{
+                "localPart":"DescribeCoverage",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/SpatialSubsetType"
+                }
+            },
+            "elementName":{
+                "localPart":"spatialSubset",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Keywords"
+                }
+            },
+            "elementName":{
+                "localPart":"keywords",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/TimePeriodType"
                 }
             },
             "elementName":{
                 "localPart":"timePeriod",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/SpatialDomainType"
+                }
+            },
+            "elementName":{
+                "localPart":"spatialDomain",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/SupportedCRSsType"
+                }
+            },
+            "elementName":{
+                "localPart":"supportedCRSs",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.opengis.net/gml#/definitions/CodeListType"
+                }
+            },
+            "elementName":{
+                "localPart":"formats",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"name",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/IntervalType"
+                }
+            },
+            "elementName":{
+                "localPart":"interval",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/RangeSet"
+                }
+            },
+            "elementName":{
+                "localPart":"rangeSet",
                 "namespaceURI":"http://www.opengis.net/wcs"
             }
         },
@@ -3591,11 +3471,131 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/DescribeCoverage"
+                    "$ref":"#/definitions/SupportedInterpolationsType"
                 }
             },
             "elementName":{
-                "localPart":"DescribeCoverage",
+                "localPart":"supportedInterpolations",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TimeSequenceType"
+                }
+            },
+            "elementName":{
+                "localPart":"temporalSubset",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/MetadataLinkType"
+                }
+            },
+            "elementName":{
+                "localPart":"metadataLink",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TypedLiteralType"
+                }
+            },
+            "elementName":{
+                "localPart":"singleValue",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/WCSCapabilityType"
+                }
+            },
+            "elementName":{
+                "localPart":"Capability",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AxisDescriptionType"
+                }
+            },
+            "elementName":{
+                "localPart":"AxisDescription",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TimeSequenceType"
+                }
+            },
+            "elementName":{
+                "localPart":"temporalDomain",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ContentMetadata"
+                }
+            },
+            "elementName":{
+                "localPart":"ContentMetadata",
+                "namespaceURI":"http://www.opengis.net/wcs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"description",
                 "namespaceURI":"http://www.opengis.net/wcs"
             }
         }

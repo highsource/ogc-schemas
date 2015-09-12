@@ -3,15 +3,21 @@ var SamplingSpatial_2_0_Module_Factory = function () {
     n: 'SamplingSpatial_2_0',
     dens: 'http:\/\/www.opengis.net\/samplingSpatial\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['ISO19139_GMD_20070417', 'XLink_1_0', 'GML_3_2_1', 'OM_2_0', 'Sampling_2_0'],
+    deps: ['XLink_1_0', 'OM_2_0', 'Sampling_2_0', 'ISO19139_GMD_20070417', 'GML_3_2_1'],
     tis: [{
-        ln: 'SFSpatialSamplingFeaturePropertyType',
-        tn: 'SF_SpatialSamplingFeaturePropertyType',
+        ln: 'ShapeType',
+        tn: 'shapeType',
         ps: [{
-            n: 'sfSpatialSamplingFeature',
+            n: 'abstractGeometry',
             rq: true,
-            en: 'SF_SpatialSamplingFeature',
-            ti: '.SFSpatialSamplingFeatureType'
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractGeometry',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.AbstractGeometryType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -74,19 +80,13 @@ var SamplingSpatial_2_0_Module_Factory = function () {
             ti: '.ShapeType'
           }]
       }, {
-        ln: 'ShapeType',
-        tn: 'shapeType',
+        ln: 'SFSpatialSamplingFeaturePropertyType',
+        tn: 'SF_SpatialSamplingFeaturePropertyType',
         ps: [{
-            n: 'abstractGeometry',
+            n: 'sfSpatialSamplingFeature',
             rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractGeometry',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.AbstractGeometryType',
-            t: 'er'
+            en: 'SF_SpatialSamplingFeature',
+            ti: '.SFSpatialSamplingFeatureType'
           }, {
             n: 'nilReason',
             ti: {
@@ -130,15 +130,15 @@ var SamplingSpatial_2_0_Module_Factory = function () {
           }]
       }],
     eis: [{
+        en: 'shape',
+        ti: '.ShapeType'
+      }, {
         en: 'SF_SpatialSamplingFeature',
         ti: '.SFSpatialSamplingFeatureType',
         sh: {
           lp: 'SF_SamplingFeature',
           ns: 'http:\/\/www.opengis.net\/sampling\/2.0'
         }
-      }, {
-        en: 'shape',
-        ti: '.ShapeType'
       }]
   };
   return {
