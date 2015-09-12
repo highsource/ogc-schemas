@@ -7,6 +7,7 @@ var WMS_1_3_0_Exceptions_Module_Factory = function () {
         tn: null,
         ps: [{
             n: 'serviceException',
+            mno: 0,
             col: true,
             en: 'ServiceException',
             ti: '.ServiceExceptionType'

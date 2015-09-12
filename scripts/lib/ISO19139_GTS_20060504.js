@@ -9,6 +9,7 @@ var ISO19139_GTS_20060504_Module_Factory = function () {
         tn: 'TM_PeriodDuration_PropertyType',
         ps: [{
             n: 'tmPeriodDuration',
+            rq: true,
             en: 'TM_PeriodDuration',
             ti: 'Duration'
           }, {
@@ -27,6 +28,7 @@ var ISO19139_GTS_20060504_Module_Factory = function () {
         tn: 'TM_Primitive_PropertyType',
         ps: [{
             n: 'abstractTimePrimitive',
+            rq: true,
             mx: false,
             dom: false,
             en: {

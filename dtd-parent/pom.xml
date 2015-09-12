@@ -112,6 +112,7 @@
 							<!--arg>-Xvisitor</arg-->
 							<arg>-Xjsonix</arg>
 							<arg>-Xjsonix-compact</arg>
+							<arg>-Xjsonix-generateJsonSchema</arg>
 						</args>
 						<plugins>
 							<plugin>
@@ -152,6 +153,22 @@
 								<goal>run</goal>
 							</goals>
 						</execution>
+						<execution>
+							<id>package-jsonschemas</id>
+							<phase>package</phase>
+							<configuration>
+								<target>
+									<zip basedir="${project.build.directory}/generated-sources/xjc" destfile="${project.build.directory}/${project.artifactId}-${project.version}-jsonschemas.zip">
+										<patternset>
+											<include name="**/*.jsonschema"/>
+										</patternset>
+									</zip>
+								</target>
+							</configuration>
+							<goals>
+								<goal>run</goal>
+							</goals>
+						</execution>
 					</executions>
 				</plugin>
 				<plugin>
@@ -170,6 +187,22 @@
 										<file>${project.build.directory}/${project.artifactId}-${project.version}-scripts.zip</file>
 										<type>zip</type>
 										<classifier>scripts</classifier>
+									</artifact>
+								</artifacts>
+							</configuration>
+						</execution>
+						<execution>
+							<id>attach-jsonschemas</id>
+							<phase>package</phase>
+							<goals>
+								<goal>attach-artifact</goal>
+							</goals>
+							<configuration>
+								<artifacts>
+									<artifact>
+										<file>${project.build.directory}/${project.artifactId}-${project.version}-jsonschemas.zip</file>
+										<type>zip</type>
+										<classifier>jsonschemas</classifier>
 									</artifact>
 								</artifacts>
 							</configuration>

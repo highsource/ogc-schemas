@@ -9,18 +9,21 @@ var WAMI_Common_1_0_1_Module_Factory = function () {
         },
         ps: [{
             n: 'service',
+            rq: true,
             an: {
               lp: 'service'
             },
             t: 'a'
           }, {
             n: 'request',
+            rq: true,
             an: {
               lp: 'request'
             },
             t: 'a'
           }, {
             n: 'version',
+            rq: true,
             an: {
               lp: 'version'
             },

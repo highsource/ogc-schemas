@@ -104,12 +104,12 @@
 	</profiles>
 	<properties> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
-		<jaxb2-basics.version>0.9.4</jaxb2-basics.version>
+		<jaxb2-basics.version>0.9.5</jaxb2-basics.version>
 		<jaxb.version>2.2.11</jaxb.version>
-		<maven-jaxb2-plugin.version>0.12.3</maven-jaxb2-plugin.version>
-		<w3c-schemas.version>1.3.0</w3c-schemas.version>
-		<jsonix-schema-compiler.version>2.3.6</jsonix-schema-compiler.version>
-		<jsonix.version>2.3.0</jsonix.version>
+		<maven-jaxb2-plugin.version>0.13.0</maven-jaxb2-plugin.version>
+		<w3c-schemas.version>1.3.1</w3c-schemas.version>
+		<jsonix-schema-compiler.version>2.3.7</jsonix-schema-compiler.version>
+		<jsonix.version>2.3.2</jsonix.version>
 	</properties> 
 	<dependencies>
 		<dependency>

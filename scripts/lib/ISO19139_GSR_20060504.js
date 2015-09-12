@@ -12,6 +12,7 @@ var ISO19139_GSR_20060504_Module_Factory = function () {
         },
         ps: [{
             n: 'abstractCRS',
+            rq: true,
             mx: false,
             dom: false,
             en: 'AbstractCRS',

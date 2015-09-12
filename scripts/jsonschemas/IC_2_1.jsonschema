@@ -1,0 +1,18 @@
+
+{
+    "id":"#",
+    "definitions":{
+        "ClassificationType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"ClassificationType",
+                "namespaceURI":"urn:us:gov:ic:ism:v2"
+            }
+        }
+    }
+}

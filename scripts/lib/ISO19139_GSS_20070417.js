@@ -12,6 +12,7 @@ var ISO19139_GSS_20070417_Module_Factory = function () {
         },
         ps: [{
             n: 'point',
+            rq: true,
             en: 'Point',
             ti: 'GML_3_2_1.PointType'
           }, {
@@ -63,6 +64,7 @@ var ISO19139_GSS_20070417_Module_Factory = function () {
         },
         ps: [{
             n: 'abstractGeometry',
+            rq: true,
             mx: false,
             dom: false,
             en: 'AbstractGeometry',
