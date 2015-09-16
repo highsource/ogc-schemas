@@ -1,0 +1,96 @@
+diff -urN ../resources-original/iso/iso/19115/-2/gmi/1.0/acquisitionInformation.xsd iso/iso/19115/-2/gmi/1.0/acquisitionInformation.xsd
+--- ../resources-original/iso/iso/19115/-2/gmi/1.0/acquisitionInformation.xsd	Mon Jun  8 09:24:45 2015
++++ iso/iso/19115/-2/gmi/1.0/acquisitionInformation.xsd	Wed Sep 16 16:07:49 2015
+@@ -7,9 +7,9 @@
+ 		<xs:documentation>This file was created by Ted Habermann during May 2015 to correct omissions (gmx, MI_EnvironmentalRecord) in existing gmi schema ====== </xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================== Imports ================================== -->
+-	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmd/gmd.xsd"/>
+-	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gco/gco.xsd"/>
+-	<xs:import namespace="http://www.isotc211.org/2005/gss" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gss/gss.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gss" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gss/gss.xsd"/>
+ 	<!-- ########################################################################### -->
+ 	<!-- ########################################################################### -->
+ 	<!-- ================================== Classes ================================= -->
+diff -urN ../resources-original/iso/iso/19115/-2/gmi/1.0/contentInformation.xsd iso/iso/19115/-2/gmi/1.0/contentInformation.xsd
+--- ../resources-original/iso/iso/19115/-2/gmi/1.0/contentInformation.xsd	Mon Jun  8 09:24:41 2015
++++ iso/iso/19115/-2/gmi/1.0/contentInformation.xsd	Wed Sep 16 16:08:03 2015
+@@ -7,8 +7,8 @@
+ 		<xs:documentation>This file was created by Ted Habermann during May 2015 to correct omissions (gmx, MI_EnvironmentalRecord) in existing gmi schema ====== </xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================== Imports ================================== -->
+-	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmd/gmd.xsd"/>
+-	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gco/gco.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd"/>
+ 	<!-- ########################################################################### -->
+ 	<!-- ########################################################################### -->
+ 	<!-- ================================== Classes ================================= -->
+diff -urN ../resources-original/iso/iso/19115/-2/gmi/1.0/dataQualityInformation.xsd iso/iso/19115/-2/gmi/1.0/dataQualityInformation.xsd
+--- ../resources-original/iso/iso/19115/-2/gmi/1.0/dataQualityInformation.xsd	Mon Jun  8 09:24:46 2015
++++ iso/iso/19115/-2/gmi/1.0/dataQualityInformation.xsd	Wed Sep 16 16:08:23 2015
+@@ -8,10 +8,10 @@
+ 		<xs:documentation>This file was generated from ISO TC/211 UML class diagrams == 04-04-2008 17:12:48 ====== Name: Lineage - Position: 2</xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================== Imports ================================== -->
+-	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmd/gmd.xsd"/>
+-	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gco/gco.xsd"/>
+-	<xs:import namespace="http://www.isotc211.org/2005/gss" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gss/gss.xsd"/>
+-	<xs:import namespace="http://www.isotc211.org/2005/gmx" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmx/gmx.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gss" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gss/gss.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gmx" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmx/gmx.xsd"/>
+ 	<xs:include schemaLocation="acquisitionInformation.xsd"/>
+ 	<!-- ########################################################################### -->
+ 	<!-- ########################################################################### -->
+diff -urN ../resources-original/iso/iso/19115/-2/gmi/1.0/gmi.xsd iso/iso/19115/-2/gmi/1.0/gmi.xsd
+--- ../resources-original/iso/iso/19115/-2/gmi/1.0/gmi.xsd	Mon Jun  8 09:24:46 2015
++++ iso/iso/19115/-2/gmi/1.0/gmi.xsd	Wed Sep 16 16:08:37 2015
+@@ -5,10 +5,10 @@
+ 		<xs:documentation>This file was created by Ted Habermann during May 2015 to correct omissions (gmx, MI_EnvironmentalRecord) in existing gmi schema ====== </xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================== Imports ================================== -->
+-	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmd/gmd.xsd"/>
+-	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gco/gco.xsd"/>
+-	<xs:import namespace="http://www.isotc211.org/2005/gss" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gss/gss.xsd"/>
+-	<xs:import namespace="http://www.isotc211.org/2005/gmx" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmx/gmx.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gss" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gss/gss.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gmx" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmx/gmx.xsd"/>
+ 	<xs:include schemaLocation="metadataEntitySet.xsd"/>
+ 	<xs:include schemaLocation="contentInformation.xsd"/>
+ 	<xs:include schemaLocation="dataQualityInformation.xsd"/>
+diff -urN ../resources-original/iso/iso/19115/-2/gmi/1.0/metadataEntitySet.xsd iso/iso/19115/-2/gmi/1.0/metadataEntitySet.xsd
+--- ../resources-original/iso/iso/19115/-2/gmi/1.0/metadataEntitySet.xsd	Mon Jun  8 09:24:44 2015
++++ iso/iso/19115/-2/gmi/1.0/metadataEntitySet.xsd	Wed Sep 16 16:08:40 2015
+@@ -6,8 +6,8 @@
+ 		<xs:documentation>This file was created by Ted Habermann during May 2015 to correct omissions (gmx, MI_EnvironmentalRecord) in existing gmi schema ====== </xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================== Imports ================================== -->
+-	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmd/gmd.xsd"/>
+-	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gco/gco.xsd"/>	
++	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd"/>	
+ 	<xs:include schemaLocation="acquisitionInformation.xsd"/>
+ 	<!-- ########################################################################### -->
+ 	<!-- ########################################################################### -->
+diff -urN ../resources-original/iso/iso/19115/-2/gmi/1.0/spatialRepresentationInformation.xsd iso/iso/19115/-2/gmi/1.0/spatialRepresentationInformation.xsd
+--- ../resources-original/iso/iso/19115/-2/gmi/1.0/spatialRepresentationInformation.xsd	Mon Jun  8 09:24:43 2015
++++ iso/iso/19115/-2/gmi/1.0/spatialRepresentationInformation.xsd	Wed Sep 16 16:12:43 2015
+@@ -5,9 +5,9 @@
+ 		<xs:documentation>This file was created by Ted Habermann during May 2015 to correct omissions (gmx, MI_EnvironmentalRecord) in existing gmi schema ====== </xs:documentation>
+ 	</xs:annotation>
+ 	<!-- ================================== Imports ================================== -->
+-	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmd/gmd.xsd"/>
+-	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gco/gco.xsd"/>	
+-	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://www.opengis.net/gml/3.2"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
++	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd"/>	
++	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/geometryBasic0d1d.xsd"/>
+ 	<xs:include schemaLocation="acquisitionInformation.xsd"/>
+ 	<!-- ########################################################################### -->
+ 	<!-- ########################################################################### -->
