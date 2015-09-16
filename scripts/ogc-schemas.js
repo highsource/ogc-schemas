@@ -28,6 +28,7 @@ module.exports.ISO19139_GSR_20060504 = require('./lib/ISO19139_GSR_20060504'    
 module.exports.ISO19139_GSS_20060504 = require('./lib/ISO19139_GSS_20060504'        ).ISO19139_GSS_20060504;
 module.exports.ISO19139_GTS_20060504 = require('./lib/ISO19139_GTS_20060504'        ).ISO19139_GTS_20060504;
 module.exports.ISO19139_SRV_20060504 = require('./lib/ISO19139_SRV_20060504'        ).ISO19139_SRV_20060504;
+module.exports.ISO19139_2_GMI_1_0    = require('./lib/ISO19139_2_GMI_1_0'           ).ISO19139_2_GMI_1_0   ;
 module.exports.KML_2_2_0             = require('./lib/KML_2_2_0'                    ).KML_2_2_0            ;
 module.exports.Atom_1_0              = require('./lib/Atom_1_0'                     ).Atom_1_0             ;
 module.exports.xAL_2_0               = require('./lib/xAL_2_0'                      ).xAL_2_0              ;
