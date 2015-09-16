@@ -36,6 +36,7 @@
 		"scripts/lib/ISO19139_GSS_20060504.js",
 		"scripts/lib/ISO19139_GTS_20060504.js",
 		"scripts/lib/ISO19139_SRV_20060504.js",
+		"scripts/lib/ISO19139_2_GMI_1_0.js",
 		"scripts/lib/KML_2_2_0.js",
 		"scripts/lib/Atom_1_0.js",
 		"scripts/lib/xAL_2_0.js",
