@@ -7,6 +7,7 @@ module.exports =
 		"GML" : require('./GML/GML.js'),
 		"GMLCOV" : require('./GMLCOV/GMLCOV.js'),
 		"ISO19139" : require('./ISO19139/ISO19139.js'),
+		"ISO19139_2" : require('./ISO19139_2/ISO19139_2.js'),
 		"KML" : require('./KML/KML.js'),
 		"OM" : require('./OM/OM.js'),
 		"OWC" : require('./OWC/OWC.js'),
