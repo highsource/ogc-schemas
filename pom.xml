@@ -70,6 +70,7 @@
 		<module>gmlcov</module>
 		<module>ic</module>
 		<module>iso19139</module>
+		<module>iso19139-2</module>
 		<module>kml</module>
 		<module>om</module>
 		<module>owc</module>
