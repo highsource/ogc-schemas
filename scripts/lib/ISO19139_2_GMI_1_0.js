@@ -1,7 +1,7 @@
 var ISO19139_2_GMI_1_0_Module_Factory = function () {
   var ISO19139_2_GMI_1_0 = {
     n: 'ISO19139_2_GMI_1_0',
-    dens: 'http:\/\/standards.iso.org\/iso\/19115\/-2\/gmi\/1.0',
+    dens: 'http:\/\/www.isotc211.org\/2005\/gmi',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'ISO19139_GMD_20070417', 'GML_3_2_1', 'ISO19139_GCO_20070417', 'ISO19139_GSS_20070417', 'ISO19139_GMX_20070417'],
     tis: [{
