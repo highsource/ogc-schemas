@@ -36,7 +36,7 @@
 				<configuration>
 					<schemas>
 						<schema>
-							<url>http://standards.iso.org/iso/19115/-2/gmi/1.0/gmi.xsd</url>
+							<url>http://www.isotc211.org/2005/gmi/gmi.xsd</url>
 						</schema>
 						<!--schema>
 							<url>http://schemas.opengis.net/iso/19139/20070417/gco/gcoBase.xsd</url>

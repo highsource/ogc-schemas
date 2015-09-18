@@ -1,0 +1,1125 @@
+<gmi:MI_Metadata xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gss="http://www.isotc211.org/2005/gss" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmi http://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd">
+  <gmd:fileIdentifier>
+    <gco:CharacterString>gov.noaa.ngdc.mgg.hazards:3022</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+    <gco:CharacterString>eng; USA</gco:CharacterString>
+  </gmd:language>
+  <gmd:characterSet>
+    <gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</gmd:MD_CharacterSetCode>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel>
+    <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
+  </gmd:hierarchyLevel>
+  <gmd:contact>
+    <gmd:CI_ResponsibleParty>
+      <gmd:organisationName>
+        <gco:CharacterString>National Oceanic and Atmospheric Administration (NOAA), National Environmental Satellite, Data and Information Service (NESDIS), Office of Satellite Data Processing and Distribution (OSDPD), Satellite Services Division (SSD), Fire Detection Program</gco:CharacterString>
+      </gmd:organisationName>
+      <gmd:positionName>
+        <gco:CharacterString>Fire Product Lead</gco:CharacterString>
+      </gmd:positionName>
+      <gmd:contactInfo>
+        <gmd:CI_Contact>
+          <gmd:phone>
+            <gmd:CI_Telephone>
+              <gmd:voice>
+                <gco:CharacterString>(301)763-8142</gco:CharacterString>
+              </gmd:voice>
+              <gmd:facsimile>
+                <gco:CharacterString>(301)899-9196</gco:CharacterString>
+              </gmd:facsimile>
+            </gmd:CI_Telephone>
+          </gmd:phone>
+          <gmd:address>
+            <gmd:CI_Address>
+              <gmd:deliveryPoint>
+                <gco:CharacterString>5200 Auth Road rm 510</gco:CharacterString>
+              </gmd:deliveryPoint>
+              <gmd:city>
+                <gco:CharacterString>Camp Spring</gco:CharacterString>
+              </gmd:city>
+              <gmd:administrativeArea>
+                <gco:CharacterString>MD</gco:CharacterString>
+              </gmd:administrativeArea>
+              <gmd:postalCode>
+                <gco:CharacterString>20746</gco:CharacterString>
+              </gmd:postalCode>
+              <gmd:country>
+                <gco:CharacterString>USA</gco:CharacterString>
+              </gmd:country>
+              <gmd:electronicMailAddress>
+                <gco:CharacterString>SSDFireTeam@noaa.gov</gco:CharacterString>
+              </gmd:electronicMailAddress>
+            </gmd:CI_Address>
+          </gmd:address>
+        </gmd:CI_Contact>
+      </gmd:contactInfo>
+      <gmd:role>
+        <gmd:CI_RoleCode codeList="http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+      </gmd:role>
+    </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+    <gco:Date>2011-09-28</gco:Date>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName>
+    <gco:CharacterString>ISO 19115-2 Geographic Information - Metadata - Part 2: Extensions for Imagery and Gridded Data</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion>
+    <gco:CharacterString>ISO 19115-2:2009(E)</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:identificationInfo>
+    <gmd:MD_DataIdentification>
+      <gmd:citation>
+        <gmd:CI_Citation>
+          <gmd:title>
+            <gco:CharacterString>GOES Fire Detects from the Wildfire Automated Biomass Burning Algorithm (WF-ABBA)</gco:CharacterString>
+          </gmd:title>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:Date>2003-07-01</gco:Date>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:citedResponsibleParty>
+            <gmd:CI_ResponsibleParty>
+              <gmd:organisationName>
+                <gco:CharacterString>NOAA &gt; NESDIS &gt; Office of Satellite Data Processing and Distribution &gt; Satellite Services Division</gco:CharacterString>
+              </gmd:organisationName>
+              <gmd:contactInfo>
+                <gmd:CI_Contact>
+                  <gmd:address>
+                    <gmd:CI_Address>
+                      <gmd:city>
+                        <gco:CharacterString>Camp Springs</gco:CharacterString>
+                      </gmd:city>
+                      <gmd:administrativeArea>
+                        <gco:CharacterString>MD</gco:CharacterString>
+                      </gmd:administrativeArea>
+                    </gmd:CI_Address>
+                  </gmd:address>
+                </gmd:CI_Contact>
+              </gmd:contactInfo>
+              <gmd:role>
+                <gmd:CI_RoleCode codeList="http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher">publisher</gmd:CI_RoleCode>
+              </gmd:role>
+            </gmd:CI_ResponsibleParty>
+          </gmd:citedResponsibleParty>
+          <gmd:citedResponsibleParty>
+            <gmd:CI_ResponsibleParty>
+              <gmd:organisationName>
+                <gco:CharacterString>NOAA &gt; NESDIS &gt; Office of Satellite Data Processing and Distribution &gt; Satellite Services Division</gco:CharacterString>
+              </gmd:organisationName>
+              <gmd:role>
+                <gmd:CI_RoleCode codeList="http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
+              </gmd:role>
+            </gmd:CI_ResponsibleParty>
+          </gmd:citedResponsibleParty>
+        </gmd:CI_Citation>
+      </gmd:citation>
+      <gmd:abstract>
+        <gco:CharacterString>The GOES ABBA is a contextual multi-spectral thresholding algorithm which utilizes dynamic local thresholds derived from the GOES satellite imagery and ancillary databases to locate fire pixels and provides estimates of the sub-pixel area and mean temperature of the fire(s). Developed by Dr. Elaine Prins, NESDIS/ORA at the Cooperative Institute for Meteorological Satellite Studies (CIMSS), the algorithm is now run operationally by NESDIS/OSDPD. OSDPD produces and archives fire detects over N. America.</gco:CharacterString>
+      </gmd:abstract>
+      <gmd:purpose>
+        <gco:CharacterString>To detect fires</gco:CharacterString>
+      </gmd:purpose>
+      <gmd:credit>
+        <gco:CharacterString>Elaine Prins, NESDIS/ORA at the Cooperative Institute for Meteorological Satellite Studies (CIMSS) at the University of Wisconsin</gco:CharacterString>
+      </gmd:credit>
+      <gmd:status>
+        <gmd:MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="underDevelopment">underDevelopment</gmd:MD_ProgressCode>
+      </gmd:status>
+      <gmd:pointOfContact>
+        <gmd:CI_ResponsibleParty>
+          <gmd:individualName>
+            <gco:CharacterString>Donna P. McNamara</gco:CharacterString>
+          </gmd:individualName>
+          <gmd:organisationName>
+            <gco:CharacterString>National Oceanic and Atmospheric Administration (NOAA), National Environmental Satellite, Data, and Information Service (NESDIS), Office of Satellite Data Processing and Distribution (OSDPD), Satellite Services Division (SSD), Fire Detection Program</gco:CharacterString>
+          </gmd:organisationName>
+          <gmd:positionName>
+            <gco:CharacterString>Fire Product Lead</gco:CharacterString>
+          </gmd:positionName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:phone>
+                <gmd:CI_Telephone>
+                  <gmd:voice>
+                    <gco:CharacterString>301-763-8142</gco:CharacterString>
+                  </gmd:voice>
+                  <gmd:facsimile>
+                    <gco:CharacterString>301-899-9196</gco:CharacterString>
+                  </gmd:facsimile>
+                </gmd:CI_Telephone>
+              </gmd:phone>
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:deliveryPoint>
+                    <gco:CharacterString>5200 Auth Road rm 510</gco:CharacterString>
+                  </gmd:deliveryPoint>
+                  <gmd:city>
+                    <gco:CharacterString>Camp Springs</gco:CharacterString>
+                  </gmd:city>
+                  <gmd:administrativeArea>
+                    <gco:CharacterString>MD</gco:CharacterString>
+                  </gmd:administrativeArea>
+                  <gmd:postalCode>
+                    <gco:CharacterString>20746</gco:CharacterString>
+                  </gmd:postalCode>
+                  <gmd:country>
+                    <gco:CharacterString>USA</gco:CharacterString>
+                  </gmd:country>
+                  <gmd:electronicMailAddress>
+                    <gco:CharacterString>SSDFireteam@noaa.gov</gco:CharacterString>
+                  </gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:resourceMaintenance>
+        <gmd:MD_MaintenanceInformation>
+          <gmd:maintenanceAndUpdateFrequency>
+            <gmd:MD_MaintenanceFrequencyCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="continual">continual</gmd:MD_MaintenanceFrequencyCode>
+          </gmd:maintenanceAndUpdateFrequency>
+        </gmd:MD_MaintenanceInformation>
+      </gmd:resourceMaintenance>
+      <gmd:resourceMaintenance>
+        <gmd:MD_MaintenanceInformation>
+          <gmd:maintenanceAndUpdateFrequency>
+            <gmd:MD_MaintenanceFrequencyCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">asNeeded</gmd:MD_MaintenanceFrequencyCode>
+          </gmd:maintenanceAndUpdateFrequency>
+          <gmd:updateScope>
+            <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="attribute" />
+          </gmd:updateScope>
+        </gmd:MD_MaintenanceInformation>
+      </gmd:resourceMaintenance>
+      <gmd:resourceMaintenance>
+        <gmd:MD_MaintenanceInformation>
+          <gmd:maintenanceAndUpdateFrequency>
+            <gmd:MD_MaintenanceFrequencyCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">asNeeded</gmd:MD_MaintenanceFrequencyCode>
+          </gmd:maintenanceAndUpdateFrequency>
+          <gmd:updateScope>
+            <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="attribute" />
+          </gmd:updateScope>
+        </gmd:MD_MaintenanceInformation>
+      </gmd:resourceMaintenance>
+      <gmd:resourceMaintenance>
+        <gmd:MD_MaintenanceInformation>
+          <gmd:maintenanceAndUpdateFrequency>
+            <gmd:MD_MaintenanceFrequencyCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="ONCE EVERY 1/4 HOUR">ONCE EVERY 1/4 HOUR</gmd:MD_MaintenanceFrequencyCode>
+          </gmd:maintenanceAndUpdateFrequency>
+          <gmd:updateScope>
+            <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="attribute" />
+          </gmd:updateScope>
+        </gmd:MD_MaintenanceInformation>
+      </gmd:resourceMaintenance>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword>
+            <gco:CharacterString>EARTH SCIENCE &gt; Human Dimensions &gt; Natural Hazards &gt; Fire</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString>EARTH SCIENCE &gt; Human Dimensions &gt; Environmental Impacts &gt; Gas Flaring</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString>EARTH SCIENCE &gt; Radiance Or Imagery &gt; Infrared Wavelengths &gt; Infrared Imagery</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString>EARTH SCIENCE &gt; Radiance Or Imagery &gt; Infrared Wavelengths &gt; Reflected Infrared</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString>EARTH SCIENCE &gt; Radiance Or Imagery &gt; Infrared Wavelengths &gt; Thermal Infrared</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title>
+                <gco:CharacterString>GCMD Keyword Thesaurus</gco:CharacterString>
+              </gmd:title>
+              <gmd:date gco:nilReason="unknown" />
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword>
+            <gco:CharacterString>Wildfire</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title>
+                <gco:CharacterString>Uncontrolled Keyword</gco:CharacterString>
+              </gmd:title>
+              <gmd:date gco:nilReason="unknown" />
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword>
+            <gco:CharacterString>North America</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place">place</gmd:MD_KeywordTypeCode>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title>
+                <gco:CharacterString>GCMD Keyword Thesaurus</gco:CharacterString>
+              </gmd:title>
+              <gmd:date gco:nilReason="unknown" />
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:resourceConstraints>
+        <gmd:MD_Constraints>
+          <gmd:useLimitation>
+            <gco:CharacterString>This server and data are not considered "operational." We do not guarantee availability or timely delivery of data and the server should not be used to support operational observation, forecasting, emergency, or disaster mitigation operations, either public or private.</gco:CharacterString>
+          </gmd:useLimitation>
+        </gmd:MD_Constraints>
+      </gmd:resourceConstraints>
+      <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints>
+          <gmd:useConstraints>
+            <gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
+          </gmd:useConstraints>
+          <gmd:otherConstraints>
+            <gco:CharacterString>Use Constraints: None</gco:CharacterString>
+          </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints>
+          <gmd:accessConstraints>
+            <gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
+          </gmd:accessConstraints>
+          <gmd:otherConstraints>
+            <gco:CharacterString>Access Constraints: None</gco:CharacterString>
+          </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <gmd:language>
+        <gco:CharacterString>eng; USA</gco:CharacterString>
+      </gmd:language>
+      <gmd:extent>
+        <gmd:EX_Extent id="boundingExtent">
+          <gmd:geographicElement>
+            <gmd:EX_GeographicBoundingBox id="boundingGeographicBoundingBox">
+              <gmd:westBoundLongitude>
+                <gco:Decimal>-165</gco:Decimal>
+              </gmd:westBoundLongitude>
+              <gmd:eastBoundLongitude>
+                <gco:Decimal>-35</gco:Decimal>
+              </gmd:eastBoundLongitude>
+              <gmd:southBoundLatitude>
+                <gco:Decimal>5</gco:Decimal>
+              </gmd:southBoundLatitude>
+              <gmd:northBoundLatitude>
+                <gco:Decimal>60</gco:Decimal>
+              </gmd:northBoundLatitude>
+            </gmd:EX_GeographicBoundingBox>
+          </gmd:geographicElement>
+          <gmd:temporalElement>
+            <gmd:EX_TemporalExtent id="boundingTemporalExtent">
+              <gmd:extent>
+                <gml:TimePeriod gml:id="d1e55">
+                  <gml:beginPosition>2003-06-05</gml:beginPosition>
+                  <gml:endPosition indeterminatePosition="now" />
+                </gml:TimePeriod>
+              </gmd:extent>
+            </gmd:EX_TemporalExtent>
+          </gmd:temporalElement>
+        </gmd:EX_Extent>
+      </gmd:extent>
+    </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:contentInfo>
+    <gmi:MI_CoverageDescription>
+      <gmd:attributeDescription>
+        <gco:RecordType>Point: Fire Pixel</gco:RecordType>
+      </gmd:attributeDescription>
+      <!--Entity Type Definition Source not translated: 
+          Pixel
+        -->
+      <gmd:contentType gco:nilReason="unknown" />
+      <gmd:dimension>
+        <gmd:MD_Band>
+          <gmd:sequenceIdentifier>
+            <gco:MemberName>
+              <gco:aName>
+                <gco:CharacterString>LON</gco:CharacterString>
+              </gco:aName>
+              <gco:attributeType gco:nilReason="unknown" />
+            </gco:MemberName>
+          </gmd:sequenceIdentifier>
+          <gmd:descriptor>
+            <gco:CharacterString>The Longitude of the wildfire detection</gco:CharacterString>
+          </gmd:descriptor>
+          <!--Attribute Definition Source not translated: 
+          Table
+        -->
+          <gmd:maxValue>
+            <gco:Real>-50</gco:Real>
+          </gmd:maxValue>
+          <gmd:minValue>
+            <gco:Real>-160</gco:Real>
+          </gmd:minValue>
+          <gmd:units>
+            <gml:UnitDefinition gml:id="d1e299">
+              <gml:identifier codeSpace="local">Degrees East</gml:identifier>
+              <gml:name>Degrees East</gml:name>
+            </gml:UnitDefinition>
+          </gmd:units>
+        </gmd:MD_Band>
+      </gmd:dimension>
+      <gmd:dimension>
+        <gmd:MD_Band>
+          <gmd:sequenceIdentifier>
+            <gco:MemberName>
+              <gco:aName>
+                <gco:CharacterString>LAT</gco:CharacterString>
+              </gco:aName>
+              <gco:attributeType gco:nilReason="unknown" />
+            </gco:MemberName>
+          </gmd:sequenceIdentifier>
+          <gmd:descriptor>
+            <gco:CharacterString>The latitude of the wildfire detection</gco:CharacterString>
+          </gmd:descriptor>
+          <!--Attribute Definition Source not translated: 
+          Table
+        -->
+          <gmd:maxValue>
+            <gco:Real>70</gco:Real>
+          </gmd:maxValue>
+          <gmd:minValue>
+            <gco:Real>0</gco:Real>
+          </gmd:minValue>
+          <gmd:units>
+            <gml:UnitDefinition gml:id="d1e345">
+              <gml:identifier codeSpace="local">Degrees North</gml:identifier>
+              <gml:name>Degrees North</gml:name>
+            </gml:UnitDefinition>
+          </gmd:units>
+        </gmd:MD_Band>
+      </gmd:dimension>
+      <gmd:dimension>
+        <gmd:MD_Band>
+          <gmd:sequenceIdentifier>
+            <gco:MemberName>
+              <gco:aName>
+                <gco:CharacterString>TEMP4</gco:CharacterString>
+              </gco:aName>
+              <gco:attributeType gco:nilReason="unknown" />
+            </gco:MemberName>
+          </gmd:sequenceIdentifier>
+          <gmd:descriptor>
+            <gco:CharacterString>4 micron (channel 2) temperature</gco:CharacterString>
+          </gmd:descriptor>
+          <!--Attribute Definition Source not translated: 
+          Table
+        -->
+          <gmd:maxValue>
+            <gco:Real>350</gco:Real>
+          </gmd:maxValue>
+          <gmd:minValue>
+            <gco:Real>280</gco:Real>
+          </gmd:minValue>
+          <gmd:units>
+            <gml:UnitDefinition gml:id="d1e422">
+              <gml:identifier codeSpace="local">Degrees Kelvin</gml:identifier>
+              <gml:name>Degrees Kelvin</gml:name>
+            </gml:UnitDefinition>
+          </gmd:units>
+        </gmd:MD_Band>
+      </gmd:dimension>
+      <gmd:dimension>
+        <gmd:MD_Band>
+          <gmd:sequenceIdentifier>
+            <gco:MemberName>
+              <gco:aName>
+                <gco:CharacterString>TEMP11</gco:CharacterString>
+              </gco:aName>
+              <gco:attributeType gco:nilReason="unknown" />
+            </gco:MemberName>
+          </gmd:sequenceIdentifier>
+          <gmd:descriptor>
+            <gco:CharacterString>11 micron (channel 4) temperature</gco:CharacterString>
+          </gmd:descriptor>
+          <!--Attribute Definition Source not translated: 
+          Table
+        -->
+          <gmd:maxValue>
+            <gco:Real>330</gco:Real>
+          </gmd:maxValue>
+          <gmd:minValue>
+            <gco:Real>150</gco:Real>
+          </gmd:minValue>
+          <gmd:units>
+            <gml:UnitDefinition gml:id="d1e466">
+              <gml:identifier codeSpace="local">Degrees Kelvin</gml:identifier>
+              <gml:name>Degrees Kelvin</gml:name>
+            </gml:UnitDefinition>
+          </gmd:units>
+        </gmd:MD_Band>
+      </gmd:dimension>
+      <gmd:dimension>
+        <gmd:MD_Band>
+          <gmd:sequenceIdentifier>
+            <gco:MemberName>
+              <gco:aName>
+                <gco:CharacterString>SATELLITE</gco:CharacterString>
+              </gco:aName>
+              <gco:attributeType gco:nilReason="unknown" />
+            </gco:MemberName>
+          </gmd:sequenceIdentifier>
+          <gmd:descriptor>
+            <gco:CharacterString>The number of the satellite</gco:CharacterString>
+          </gmd:descriptor>
+          <gmd:units>
+            <gml:UnitDefinition gml:id="d1e1798">
+              <gml:identifier codeSpace="local">Satellite Number</gml:identifier>
+              <gml:name>Satellite Number</gml:name>
+            </gml:UnitDefinition>
+          </gmd:units>
+        </gmd:MD_Band>
+      </gmd:dimension>
+      <gmi:rangeElementDescription>
+        <gmi:MI_RangeElementDescription>
+          <gmi:name>
+            <gco:CharacterString>FIREFLG</gco:CharacterString>
+          </gmi:name>
+          <gmi:definition>
+            <gco:CharacterString>Flag related to quality of the detection</gco:CharacterString>
+          </gmi:definition>
+          <!--Attribute Definition Source not translated: Table-->
+          <gmi:rangeElement>
+            <gco:Record>0: Processed fire pixel (A fire was identified and conditions were favorable to allow for sub-pixel instantaneous estimation of fire size and temperature.)</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>1: Saturated fire pixel</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>2: cloud-contaminated fire pixel</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>3: High possibility fire pixel</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>4: Medium possibility fire pixel</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>5: Indicates a low possibility fire pixel (at this time, all 5's have been removed to minimize false detects.)</gco:Record>
+          </gmi:rangeElement>
+        </gmi:MI_RangeElementDescription>
+      </gmi:rangeElementDescription>
+      <gmi:rangeElementDescription>
+        <gmi:MI_RangeElementDescription>
+          <gmi:name>
+            <gco:CharacterString>ECOSYS</gco:CharacterString>
+          </gmi:name>
+          <gmi:definition>
+            <gco:CharacterString>The longitude of the wildfire detection</gco:CharacterString>
+          </gmi:definition>
+          <!--Attribute Definition Source not translated: Global Land Cover Characteristics Data Base-->
+          <gmi:rangeElement>
+            <gco:Record>1: Urban</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>2: Low Sparse Grassland</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>3: Coniferous Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>4: Deciduous Conifer Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>5: Deciduous Broadleaf Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>6: Evergreen Broadleaf Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>7: Tall Grasses and Shrubs</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>8: Bare Desert</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>9: Upland Tundra</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>10: Irrigated Grassland</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>11: Semi Desert</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>12: Glacier Ice</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>13: Wooded Wet Swamp</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>14: Inland Water</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>15: Sea Water</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>16: Shrub Evergreen</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>17: Shrub Deciduous</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>18: Mixed Forest and Field</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>19: Evergreen Forest and Fields</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>20: Cool Rain Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>21: Conifer Boreal Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>22: Cool Conifer Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>23: Cool Mixed Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>24: Mixed Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>25: Cool Broadleaf Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>26: Deciduous Broadleaf Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>27: Conifer Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>28: Montane Tropical Forests</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>29: Seasonal Tropical Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>30: Cool Crops and Towns</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>31: Crops and Town</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>32: Dry Tropical Woods</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>33: Tropical Rainforest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>34: Tropical Degraded Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>35: Corn and Beans Cropland</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>36: Rica Paddy and Field</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>37: Hot Irrigated Cropland</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>38: Cool Irrigated Cropland</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>39: Cold Irrigated Cropland</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>40: Cool Grasses and Shrubs</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>41: Hot and Mild Grasses and Shrubs</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>42: Cold Grassland</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>43: Savanna (Woods)</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>44: Mire, Bog, Fen</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>45: Marsh Wetland</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>46: Mediterranean Scrub</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>47: Dry Woody Scrub</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>48: Dry Evergreen Woods</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>49: Volcanic Rock</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>50: Sand Desert</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>51: Semi Desert Shrubs</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>52: Semi Desert Sage</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>53: Barren Tundra</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>54: Cool Southern Hemisphere Mixed Forests</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>55: Cool Fields and Woods</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>56: Forest and Field</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>57: cool Forest and Field</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>58: Fields and Woody Savanna</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>59: Succulent and Thorn Scrub</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>60: Small Leaf Mixed Woods</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>61: Deciduous and Mixed Boreal Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>62: Narrow Conifers</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>63: Wooded Tundra</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>64: Heath Scrub</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>65: Coastal Wetland, NW</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>66: Coastal Wetland, NE</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>67: Coastal Wetland, SE</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>68: Coastal Wetland, SW</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>69: Polar and Alpine Desert</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>70: Glacier Rock</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>71: Salt Playas</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>72: Mangrove</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>73: Water and Island Fringe</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>74: Land, Water, and Shore (See Note 1)</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>75: Land and Water, Rivers (see Note 1)</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>76: Crop and Water Mixtures</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>77: Southern Hemisphere Conifers</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>78: Southern Hemisphere Mixed Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>79: Wet Sclerophylic Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>80: Coastline Fringe</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>81: Beaches and Dunes</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>82: Sparse Dunes and Ridges</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>83: Bare Coastal Dunes</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>84: Residual Dunes and Beaches</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>85: Compound Coastlines</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>86: Rocky Cliffs and Slopes</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>87: Sandy Grassland and Shrubs</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>88: Bamboo</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>89: Moist Eucalyptus</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>90: Rain Green Tropical Forest</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>91: Woody Savanna</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>92: Broadleaf Crops</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>93: Grass Crops</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>94: Crops, Grass, Shrubs</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>95: Evergreen Tree Crop</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>96: Deciduous Tree Crop</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>99: Interrupted Areas (Goodes Homolosine Projection)</gco:Record>
+          </gmi:rangeElement>
+          <gmi:rangeElement>
+            <gco:Record>100: Missing Data</gco:Record>
+          </gmi:rangeElement>
+        </gmi:MI_RangeElementDescription>
+      </gmi:rangeElementDescription>
+    </gmi:MI_CoverageDescription>
+  </gmd:contentInfo>
+  <gmd:distributionInfo>
+    <gmd:MD_Distribution>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gco:CharacterString>ArcIMS</gco:CharacterString>
+          </gmd:name>
+          <gmd:version gco:nilReason="unknown" />
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gco:CharacterString>Shapefile</gco:CharacterString>
+          </gmd:name>
+          <gmd:version gco:nilReason="unknown" />
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:distributor>
+        <gmd:MD_Distributor>
+          <gmd:distributorContact>
+            <gmd:CI_ResponsibleParty>
+              <gmd:individualName>
+                <gco:CharacterString>Donna P. McNamara</gco:CharacterString>
+              </gmd:individualName>
+              <gmd:organisationName>
+                <gco:CharacterString>National Oceanic and Atmospheric Administration (NOAA), National Environmental Satellite, Data, and Information Service (NESDIS), Office of Satellite Data Processing and Distribution (OSDPD), Satellite Services Division (SSD), Fire Detection Program</gco:CharacterString>
+              </gmd:organisationName>
+              <gmd:positionName>
+                <gco:CharacterString>Fire Product Lead</gco:CharacterString>
+              </gmd:positionName>
+              <gmd:contactInfo>
+                <gmd:CI_Contact>
+                  <gmd:phone>
+                    <gmd:CI_Telephone>
+                      <gmd:voice>
+                        <gco:CharacterString>301-763-8142</gco:CharacterString>
+                      </gmd:voice>
+                      <gmd:facsimile>
+                        <gco:CharacterString>301-899-9196</gco:CharacterString>
+                      </gmd:facsimile>
+                    </gmd:CI_Telephone>
+                  </gmd:phone>
+                  <gmd:address>
+                    <gmd:CI_Address>
+                      <gmd:deliveryPoint>
+                        <gco:CharacterString>5200 Auth Road rm 510</gco:CharacterString>
+                      </gmd:deliveryPoint>
+                      <gmd:city>
+                        <gco:CharacterString>Camp Springs</gco:CharacterString>
+                      </gmd:city>
+                      <gmd:administrativeArea>
+                        <gco:CharacterString>MD</gco:CharacterString>
+                      </gmd:administrativeArea>
+                      <gmd:postalCode>
+                        <gco:CharacterString>20746</gco:CharacterString>
+                      </gmd:postalCode>
+                      <gmd:country>
+                        <gco:CharacterString>USA</gco:CharacterString>
+                      </gmd:country>
+                      <gmd:electronicMailAddress>
+                        <gco:CharacterString>SSDFireteam@noaa.gov</gco:CharacterString>
+                      </gmd:electronicMailAddress>
+                    </gmd:CI_Address>
+                  </gmd:address>
+                </gmd:CI_Contact>
+              </gmd:contactInfo>
+              <gmd:role>
+                <gmd:CI_RoleCode codeList="http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="distributor">distributor</gmd:CI_RoleCode>
+              </gmd:role>
+            </gmd:CI_ResponsibleParty>
+          </gmd:distributorContact>
+          <gmd:distributionOrderProcess>
+            <gmd:MD_StandardOrderProcess>
+              <gmd:fees>
+                <gco:CharacterString />
+              </gmd:fees>
+            </gmd:MD_StandardOrderProcess>
+          </gmd:distributionOrderProcess>
+        </gmd:MD_Distributor>
+      </gmd:distributor>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>http://maps.ngdc.noaa.gov/viewers/firedetects/</gmd:URL>
+              </gmd:linkage>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>http://maps.ngdc.noaa.gov/viewers/firedetects/</gmd:URL>
+              </gmd:linkage>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+    </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo>
+    <gmd:DQ_DataQuality>
+      <gmd:scope>
+        <gmd:DQ_Scope>
+          <gmd:level>
+            <gmd:MD_ScopeCode codeList="http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
+          </gmd:level>
+        </gmd:DQ_Scope>
+      </gmd:scope>
+      <gmd:report>
+        <gmd:DQ_CompletenessCommission>
+          <gmd:evaluationMethodDescription>
+            <gco:CharacterString>Unknown</gco:CharacterString>
+          </gmd:evaluationMethodDescription>
+          <gmd:result gco:nilReason="unknown" />
+        </gmd:DQ_CompletenessCommission>
+      </gmd:report>
+      <gmd:report>
+        <gmd:DQ_ConceptualConsistency>
+          <gmd:measureDescription>
+            <gco:CharacterString>Unknown</gco:CharacterString>
+          </gmd:measureDescription>
+          <gmd:result gco:nilReason="unknown" />
+        </gmd:DQ_ConceptualConsistency>
+      </gmd:report>
+      <gmd:lineage>
+        <gmd:LI_Lineage>
+          <gmd:processStep>
+            <gmi:LE_ProcessStep>
+              <gmd:description>
+                <gco:CharacterString>The SSD product is a reformatted version of the North American product available on the CIMSS website. The reformatting of the WF-ABBA product consists of removing the lowest probability fires (category 5), as validation at CIMSS has shown that many of the low possibility fires are not fires. The fields fire size and temperature have been removed as they are very rough estimates of the average instantaneous sub-pixel fire(s) size and temperature, and are not meant to be used for wildfire diagnosis.</gco:CharacterString>
+              </gmd:description>
+              <gmd:dateTime>
+                <gco:DateTime>9999-01-01T00:00:00</gco:DateTime>
+              </gmd:dateTime>
+            </gmi:LE_ProcessStep>
+          </gmd:processStep>
+          <gmd:source>
+            <gmd:LI_Source id="ABBA">
+              <gmd:description>
+                <gco:CharacterString>Source Contribution: Unknown Source Type: Electronic Mail System</gco:CharacterString>
+              </gmd:description>
+              <gmd:sourceCitation>
+                <gmd:CI_Citation>
+                  <gmd:title>
+                    <gco:CharacterString>GOES Fire Detects from the Wildfire Automated Biomass Burning Algorithm (WF-ABBA)</gco:CharacterString>
+                  </gmd:title>
+                  <gmd:date>
+                    <gmd:CI_Date>
+                      <gmd:date>
+                        <gco:Date>2003-07-01</gco:Date>
+                      </gmd:date>
+                      <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+                      </gmd:dateType>
+                    </gmd:CI_Date>
+                  </gmd:date>
+                  <gmd:citedResponsibleParty>
+                    <gmd:CI_ResponsibleParty>
+                      <gmd:organisationName>
+                        <gco:CharacterString>NOAA &gt; NESDIS &gt; Office of Satellite Data Processing and Distribution &gt; Satellite Services Division</gco:CharacterString>
+                      </gmd:organisationName>
+                      <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                          <gmd:address>
+                            <gmd:CI_Address>
+                              <gmd:city>
+                                <gco:CharacterString>Camp Springs</gco:CharacterString>
+                              </gmd:city>
+                              <gmd:administrativeArea>
+                                <gco:CharacterString>MD</gco:CharacterString>
+                              </gmd:administrativeArea>
+                            </gmd:CI_Address>
+                          </gmd:address>
+                        </gmd:CI_Contact>
+                      </gmd:contactInfo>
+                      <gmd:role>
+                        <gmd:CI_RoleCode codeList="http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher">publisher</gmd:CI_RoleCode>
+                      </gmd:role>
+                    </gmd:CI_ResponsibleParty>
+                  </gmd:citedResponsibleParty>
+                  <gmd:citedResponsibleParty>
+                    <gmd:CI_ResponsibleParty>
+                      <gmd:organisationName>
+                        <gco:CharacterString>NOAA &gt; NESDIS &gt; Office of Satellite Data Processing and Distribution &gt; Satellite Services Division</gco:CharacterString>
+                      </gmd:organisationName>
+                      <gmd:role>
+                        <gmd:CI_RoleCode codeList="http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
+                      </gmd:role>
+                    </gmd:CI_ResponsibleParty>
+                  </gmd:citedResponsibleParty>
+                </gmd:CI_Citation>
+              </gmd:sourceCitation>
+              <gmd:sourceExtent>
+                <gmd:EX_Extent />
+              </gmd:sourceExtent>
+            </gmd:LI_Source>
+          </gmd:source>
+        </gmd:LI_Lineage>
+      </gmd:lineage>
+    </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+  <gmd:metadataConstraints>
+    <gmd:MD_LegalConstraints>
+      <gmd:accessConstraints>
+        <gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
+      </gmd:accessConstraints>
+      <gmd:otherConstraints>
+        <gco:CharacterString>Metadata Access Constraints: None</gco:CharacterString>
+      </gmd:otherConstraints>
+    </gmd:MD_LegalConstraints>
+  </gmd:metadataConstraints>
+  <gmd:metadataConstraints>
+    <gmd:MD_LegalConstraints>
+      <gmd:accessConstraints>
+        <gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
+      </gmd:accessConstraints>
+      <gmd:otherConstraints>
+        <gco:CharacterString>Metadata Use Constraints: None</gco:CharacterString>
+      </gmd:otherConstraints>
+    </gmd:MD_LegalConstraints>
+  </gmd:metadataConstraints>
+  <gmd:metadataMaintenance>
+    <gmd:MD_MaintenanceInformation>
+      <gmd:maintenanceAndUpdateFrequency>
+        <gmd:MD_MaintenanceFrequencyCode codeList="http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="annually">annually</gmd:MD_MaintenanceFrequencyCode>
+      </gmd:maintenanceAndUpdateFrequency>
+      <gmd:maintenanceNote>
+        <gco:CharacterString>This metadata was automatically generated from the Content Standards for Digital Geospatial Metadata standard (version FGDC-STD-001-1998) using the 2012-10-26 version of the FGDC RSE to ISO 19115-2 transform.</gco:CharacterString>
+      </gmd:maintenanceNote>
+      <gmd:maintenanceNote>
+        <gco:CharacterString>Translated from FGDC 2013-01-22T13:52:00.637-07:00</gco:CharacterString>
+      </gmd:maintenanceNote>
+      <gmd:contact>
+        <gmd:CI_ResponsibleParty>
+          <gmd:organisationName>
+            <gco:CharacterString>National Oceanic and Atmospheric Administration (NOAA), National Environmental Satellite, Data and Information Service (NESDIS), Office of Satellite Data Processing and Distribution (OSDPD), Satellite Services Division (SSD), Fire Detection Program</gco:CharacterString>
+          </gmd:organisationName>
+          <gmd:positionName>
+            <gco:CharacterString>Fire Product Lead</gco:CharacterString>
+          </gmd:positionName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:phone>
+                <gmd:CI_Telephone>
+                  <gmd:voice>
+                    <gco:CharacterString>(301)763-8142</gco:CharacterString>
+                  </gmd:voice>
+                  <gmd:facsimile>
+                    <gco:CharacterString>(301)899-9196</gco:CharacterString>
+                  </gmd:facsimile>
+                </gmd:CI_Telephone>
+              </gmd:phone>
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:deliveryPoint>
+                    <gco:CharacterString>5200 Auth Road rm 510</gco:CharacterString>
+                  </gmd:deliveryPoint>
+                  <gmd:city>
+                    <gco:CharacterString>Camp Spring</gco:CharacterString>
+                  </gmd:city>
+                  <gmd:administrativeArea>
+                    <gco:CharacterString>MD</gco:CharacterString>
+                  </gmd:administrativeArea>
+                  <gmd:postalCode>
+                    <gco:CharacterString>20746</gco:CharacterString>
+                  </gmd:postalCode>
+                  <gmd:country>
+                    <gco:CharacterString>USA</gco:CharacterString>
+                  </gmd:country>
+                  <gmd:electronicMailAddress>
+                    <gco:CharacterString>SSDFireTeam@noaa.gov</gco:CharacterString>
+                  </gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:contact>
+    </gmd:MD_MaintenanceInformation>
+  </gmd:metadataMaintenance>
+</gmi:MI_Metadata>

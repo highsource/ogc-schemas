@@ -3,7 +3,7 @@
 	xmlns:jsonix="http://jsonix.highsource.org/customizations"
 	jaxb:extensionBindingPrefixes="jsonix">
 
-	<jaxb:bindings schemaLocation="http://standards.iso.org/iso/19115/-2/gmi/1.0/gmi.xsd" 
+	<jaxb:bindings schemaLocation="http://www.isotc211.org/2005/gmi/gmi.xsd" 
 		node="/xs:schema">
 		<jsonix:packageMapping packageName="net.opengis.iso19139_2.gmi.v_1_0" spaceName="ISO19139_2_GMI_1_0"/>
 	</jaxb:bindings>

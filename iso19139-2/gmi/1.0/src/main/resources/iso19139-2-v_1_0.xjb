@@ -3,7 +3,7 @@
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
 	jaxb:extensionBindingPrefixes="xjc">
 
-	<jaxb:bindings schemaLocation="http://standards.iso.org/iso/19115/-2/gmi/1.0/gmi.xsd" 
+	<jaxb:bindings schemaLocation="http://www.isotc211.org/2005/gmi/gmi.xsd" 
 		node="/xs:schema">
 		<jaxb:schemaBindings>
 			<jaxb:package name="net.opengis.iso19139_2.gmi.v_1_0"/>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmi:MI_Metadata xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+<gmi:MI_Metadata xmlns:gmi="http://www.isotc211.org/2005/gmi"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:gmd="http://www.isotc211.org/2005/gmd"
                  xmlns:gts="http://www.isotc211.org/2005/gts"
                  xmlns:gco="http://www.isotc211.org/2005/gco"
                  xmlns:gml="http://www.opengis.net/gml/3.2"
                  xmlns:geonet="http://www.fao.org/geonetwork"
-                 xsi:schemaLocation="http://standards.iso.org/iso/19115/-2/gmi/1.0 http://standards.iso.org/iso/19115/-2/gmi/1.0/gmi.xsd">
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmi http://www.isotc211.org/2005/gmi/gmi.xsd">
   <gmd:fileIdentifier>
       <gco:CharacterString>2e43d969-af7d-4382-b668-2b3c2d1e053a</gco:CharacterString>
   </gmd:fileIdentifier>
