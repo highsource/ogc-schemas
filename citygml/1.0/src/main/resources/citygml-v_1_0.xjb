@@ -1,0 +1,152 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/1.0/cityGMLBase.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/profiles/base/1.0/CityGML.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.profiles.base.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/appearance/1.0/appearance.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.appearance.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/building/1.0/building.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.building.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/cityfurniture/1.0/cityFurniture.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.cityfurniture.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/cityobjectgroup/1.0/cityObjectGroup.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.cityobjectgroup.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/generics/1.0/generics.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.generics.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/landuse/1.0/landUse.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.landuse.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/relief/1.0/relief.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.relief.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/transportation/1.0/transportation.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.transportation.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/vegetation/1.0/vegetation.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.vegetation.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/waterbody/1.0/waterBody.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.waterbody.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/texturedsurface/1.0/texturedSurface.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.citygml.texturedsurface.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/cityobjectgroup/1.0/cityObjectGroup.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='CityObjectGroupMemberType']/xs:attribute[@name='role']">
+			<jaxb:property name="cityObjectGroupMemberRole"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/texturedsurface/1.0/texturedSurface.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:element[@name='_Appearance']">
+			<jaxb:factoryMethod name="AAppearance"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/building/1.0/building.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='AbstractBuildingType']/xs:complexContent/xs:extension/xs:sequence/xs:element[@name='boundedBy']">
+			<jaxb:property name="cityObjectBoundedBy"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/building/1.0/building.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='RoomType']/xs:complexContent/xs:extension/xs:sequence/xs:element[@name='boundedBy']">
+			<jaxb:property name="cityObjectBoundedBy"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/waterbody/1.0/waterBody.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='WaterBodyType']/xs:complexContent/xs:extension/xs:sequence/xs:element[@name='boundedBy']">
+			<jaxb:property name="cityObjectBoundedBy"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+	
+</jaxb:bindings>

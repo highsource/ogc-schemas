@@ -17,6 +17,11 @@
 			<artifactId>atom-v_1_0</artifactId>
 			<version>${w3c-schemas.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.jvnet.ogc</groupId>
+			<artifactId>xal-v_2_0</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<defaultGoal>install</defaultGoal>
@@ -39,6 +44,14 @@
 								<version>${project.version}</version>
 							</dependencyResource>
 						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>xal-v_2_0</artifactId>
+								<resource>xal-v_2_0.jsonix.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
 					</bindings>
 				</configuration>
 			</plugin>
@@ -50,7 +63,9 @@
 						<configuration>
 							<target>
 								<delete dir="${basedir}/target/generated-sources/xjc/org/hisrc/w3c/atom"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/org/hisrc/w3c/oasis"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="Atom*.*"/>
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="xAL*.*"/>
 							</target>
 						</configuration>
 						<goals>

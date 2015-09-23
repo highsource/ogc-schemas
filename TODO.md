@@ -1,6 +1,8 @@
 # Supported schemas
 
 * arml/2.0
+* citygml/1.0
+* citygml/2.0
 * context/1.0.0
 * context/1.1.0
 * csw/2.0.2
@@ -14,6 +16,7 @@
 * gmlcov/1.0
 * ic/2.0
 * ic/2.1
+* indoorgml/1.0
 * iso/19139/20060504
 * iso/19139/20070417
 * kml/2.2.0
@@ -57,30 +60,22 @@
 
 # Not yet supported schemas
 
-* citygml/1.0
-* citygml/2.0
 * eop/1.0.0
 * eosps/2.0
 * gml/1.0.0
-* gml/3.0.0
-* gml/3.0.1
-* gml/3.1.0
 * gml/3.3.0
 * gmlcov/geotiff/1.0
 * gmljp2/2.0
 * ImageCRSs/1.1.0
-* indoorgml/1.0
 * ols/1.1.0
 * ols/1.2
 * ols/1.3
 * omeo/1.0
 * omx/1.0.0
-* opensearchgeo/1.0
 * oseo/1.0
 * owc/1.0
 * samplingSpecimen/2.0
 * sensorML/1.0.0
-* sf/1.0
 * sps/1.0.0
 * sweCommon/1.0.0
 * tjs/1.0
@@ -93,3 +88,11 @@
 * wcs/scaling/1.0
 * wcs/wcseo/1.0
 * wcst/1.1
+
+# Won't fix
+
+* gml/3.0.0
+* gml/3.0.1
+* gml/3.1.0
+* opensearchgeo/1.0 - RNC, not XSDs
+* sf/1.0 - RDF, no schema

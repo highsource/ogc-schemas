@@ -15,6 +15,9 @@
 
 		<dependency><artifactId>csw-v_2_0_2</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>citygml-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>citygml-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
 		<dependency><artifactId>filter-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>filter-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>filter-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
@@ -25,6 +28,8 @@
 		<dependency><artifactId>gml-v_3_2_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
 		<dependency><artifactId>gmlcov-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>indoorgml-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
 		<dependency><artifactId>iso19139-v_20070417</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>iso19139-v_20060504</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
@@ -97,6 +102,8 @@
 
 		<dependency><artifactId>wps-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>wps-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
+		<dependency><artifactId>xal-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 	</dependencies>
 	<build>
 		<plugins>

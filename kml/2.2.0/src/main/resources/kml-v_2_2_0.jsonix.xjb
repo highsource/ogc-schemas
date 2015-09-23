@@ -11,8 +11,8 @@
 		node="/xs:schema">
 		<jsonix:packageMapping packageName="org.hisrc.w3c.atom.v_1_0" spaceName="Atom_1_0"/>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="http://docs.oasis-open.org/election/external/xAL.xsd" 
+	<!--jaxb:bindings schemaLocation="http://docs.oasis-open.org/election/external/xAL.xsd" 
 		node="/xs:schema">
 		<jsonix:packageMapping packageName="org.hisrc.w3c.oasis.xal.v_2_0" spaceName="xAL_2_0"/>
-	</jaxb:bindings>
+	</jaxb:bindings-->
 </jaxb:bindings>

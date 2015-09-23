@@ -7,6 +7,32 @@ This allows converting between XML (conforming to one of these schemas) and JSON
 Supports the following schemas:
 
 * `ARML_2_0`
+* `CityGML_1_0`
+  * `CityGML_Appearance_1_0`
+  * `CityGML_Building_1_0`
+  * `CityGML_CityFuntiture_1_0`
+  * `CityGML_CityObjectGroup_1_0`
+  * `CityGML_Generics_1_0`
+  * `CityGML_LandUse_1_0`
+  * `CityGML_Relief_1_0`
+  * `CityGML_TexturedSurface_1_0`
+  * `CityGML_Transportation_1_0`
+  * `CityGML_Vegetation_1_0`
+  * `CityGML_Waterbody_1_0 `
+* `CityGML_2_0`
+  * `CityGML_Appearance_2_0`
+  * `CityGML_Bridge_2_0`
+  * `CityGML_Building_2_0`
+  * `CityGML_CityFuntiture_2_0`
+  * `CityGML_CityObjectGroup_2_0`
+  * `CityGML_Generics_2_0`
+  * `CityGML_LandUse_2_0`
+  * `CityGML_Relief_2_0`
+  * `CityGML_TexturedSurface_2_0`
+  * `CityGML_Transportation_2_0`
+  * `CityGML_Tunnel_2_0`
+  * `CityGML_Vegetation_2_0`
+  * `CityGML_Waterbody_2_0 `
 * `CSW_2_0_2`
   * `DC_1_1`
   * `DCT`
@@ -22,6 +48,8 @@ Supports the following schemas:
 * `SMIL_2_0_Language`
 * `IC_2_0`
 * `IC_2_1`
+* `IndoorGML_Core_1_0`
+* `IndoorGML_Naviagation_1_0`
 * `ISO19139_GCO_20070417`
 * `ISO19139_GMD_20070417`
 * `ISO19139_GMX_20070417`
@@ -37,7 +65,6 @@ Supports the following schemas:
 * `ISO19139_SRV_20060504`
 * `KML_2_2_0`
   * `Atom_1_0`
-  * `xAL_2_0`
 * `OM_1_0_0`
 * `OM_2_0`
 * `OWC_0_3_1`
@@ -82,6 +109,7 @@ Supports the following schemas:
 * `WMSC_1_1_1`
 * `WPS_1_0_0`
 * `WPS_2_0_0`
+* `xAL_2_0`
 
 # Example
 

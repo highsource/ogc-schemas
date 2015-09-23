@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema elementFormDefault="qualified" targetNamespace="http://standards.iso.org/iso/19115/-2/gmi/1.0" 
-xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
-xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" version="0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" targetNamespace="http://www.isotc211.org/2005/gmi" elementFormDefault="qualified" version="0.1">
+	<!-- ================================= Annotation ================================ -->
 	<xs:annotation>
-		<xs:documentation>This file was created by Ted Habermann during May 2015 to correct omissions (gmx, MI_EnvironmentalRecord) in existing gmi schema ====== </xs:documentation>
+		<xs:documentation>This file was generated from ISO TC/211 UML class diagrams == 07-30-2010 11:34:30 ====== </xs:documentation>
 	</xs:annotation>
 	<!-- ================================== Imports ================================== -->
 	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gmd/gmd.xsd"/>
-	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gco/gco.xsd"/>	
-	<xs:include schemaLocation="acquisitionInformation.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/gco/gco.xsd"/>
+	<xs:include schemaLocation="../gmi/acquisitionInformation.xsd"/>
 	<!-- ########################################################################### -->
 	<!-- ########################################################################### -->
 	<!-- ================================== Classes ================================= -->

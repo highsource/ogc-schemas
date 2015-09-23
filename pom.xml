@@ -63,12 +63,14 @@
 		<module>schema-parent</module>
 		<module>dtd-parent</module>
 		<module>arml</module>
+		<module>citygml</module>
 		<module>context</module>
 		<module>csw</module>
 		<module>filter</module>
 		<module>gml</module>
 		<module>gmlcov</module>
 		<module>ic</module>
+		<module>indoorgml</module>
 		<module>iso19139</module>
 		<module>iso19139-2</module>
 		<module>kml</module>
@@ -92,6 +94,7 @@
 		<module>wmsc</module>
 		<module>wmts</module>
 		<module>wps</module>
+		<module>xal</module>
 		<module>scripts</module>
 		<module>dist</module>
 	</modules>

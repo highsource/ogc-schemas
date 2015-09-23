@@ -1,0 +1,14 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:jsonix="http://jsonix.highsource.org/customizations"
+	jaxb:extensionBindingPrefixes="jsonix">
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/indoorgml/1.0/indoorgmlcore.xsd" 
+		node="/xs:schema">
+
+		<jsonix:mapping package="net.opengis.indoorgml.navigation.v_1_0" name="IndoorGML_Navigation_1_0"/>
+		<jsonix:mapping package="net.opengis.indoorgml.core.v_1_0" name="IndoorGML_Core_1_0"/>
+
+	</jaxb:bindings>
+</jaxb:bindings>

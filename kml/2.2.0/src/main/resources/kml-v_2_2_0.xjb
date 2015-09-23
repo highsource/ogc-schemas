@@ -33,10 +33,10 @@
 			<jaxb:package name="org.hisrc.w3c.atom.v_1_0"/>
 		</jaxb:schemaBindings>
 	</jaxb:bindings-->
-	<jaxb:bindings schemaLocation="http://docs.oasis-open.org/election/external/xAL.xsd" 
+	<!--jaxb:bindings schemaLocation="http://docs.oasis-open.org/election/external/xAL.xsd" 
 		node="/xs:schema">
 		<jaxb:schemaBindings>
 			<jaxb:package name="org.hisrc.w3c.oasis.xal.v_2_0"/>
 		</jaxb:schemaBindings>
-	</jaxb:bindings>
+	</jaxb:bindings-->
 </jaxb:bindings>

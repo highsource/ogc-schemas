@@ -1,0 +1,25 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:jsonix="http://jsonix.highsource.org/customizations"
+	jaxb:extensionBindingPrefixes="jsonix">
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/citygml/profiles/base/1.0/CityGML.xsd" 
+		node="/xs:schema">
+
+		<jsonix:mapping package="net.opengis.citygml.v_1_0" name="CityGML_1_0"/>
+		<jsonix:mapping package="net.opengis.citygml.profiles.base.v_1_0" name="CityGML_Profiles_Base_1_0"/>
+		<jsonix:mapping package="net.opengis.citygml.appearance.v_1_0" name="CityGML_Appearance_1_0"/>
+		<jsonix:mapping package="net.opengis.citygml.building.v_1_0" name="CityGML_Building_1_0"/>
+		<jsonix:mapping package="net.opengis.citygml.cityfurniture.v_1_0" name="CityGML_CityFuntiture_1_0"/>
+		<jsonix:mapping package="net.opengis.citygml.cityobjectgroup.v_1_0" name="CityGML_CityObjectGroup_1_0"/>
+		<jsonix:mapping package="net.opengis.citygml.generics.v_1_0" name="CityGML_Generics_1_0"/>
+		<jsonix:mapping package="net.opengis.citygml.landuse.v_1_0" name="CityGML_LandUse_1_0"/>
+		<jsonix:mapping package="net.opengis.citygml.relief.v_1_0" name="CityGML_Relief_1_0"/>
+		<jsonix:mapping package="net.opengis.citygml.transportation.v_1_0" name="CityGML_Transportation_1_0"/>
+		<jsonix:mapping package="net.opengis.citygml.vegetation.v_1_0" name="CityGML_Vegetation_1_0"/>
+		<jsonix:mapping package="net.opengis.citygml.waterbody.v_1_0" name="CityGML_Waterbody_1_0"/>
+		<jsonix:mapping package="net.opengis.citygml.texturedsurface.v_1_0" name="CityGML_TexturedSurface_1_0"/>
+
+	</jaxb:bindings>
+</jaxb:bindings>
