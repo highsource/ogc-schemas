@@ -5,15 +5,6 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_1_1'],
     tis: [{
-        ln: 'TexturedSurfaceType',
-        bti: 'GML_3_1_1.OrientableSurfaceType',
-        ps: [{
-            n: 'appearance',
-            rq: true,
-            col: true,
-            ti: '.AppearancePropertyType'
-          }]
-      }, {
         ln: 'MaterialType',
         bti: '.AbstractAppearanceType',
         ps: [{
@@ -45,6 +36,18 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
             }
           }]
       }, {
+        ln: 'TexturedSurfaceType',
+        bti: 'GML_3_1_1.OrientableSurfaceType',
+        ps: [{
+            n: 'appearance',
+            rq: true,
+            col: true,
+            ti: '.AppearancePropertyType'
+          }]
+      }, {
+        ln: 'AbstractAppearanceType',
+        bti: 'GML_3_1_1.AbstractGMLType'
+      }, {
         ln: 'SimpleTextureType',
         bti: '.AbstractAppearanceType',
         ps: [{
@@ -63,9 +66,6 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
             n: 'repeat',
             ti: 'Boolean'
           }]
-      }, {
-        ln: 'AbstractAppearanceType',
-        bti: 'GML_3_1_1.AbstractGMLType'
       }, {
         ln: 'AppearancePropertyType',
         ps: [{
@@ -121,9 +121,8 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
         vs: ['specific', 'typical', 'unknown']
       }],
     eis: [{
-        en: 'SimpleTexture',
-        ti: '.SimpleTextureType',
-        sh: '_Appearance'
+        en: 'appearance',
+        ti: '.AppearancePropertyType'
       }, {
         en: 'TexturedSurface',
         ti: '.TexturedSurfaceType',
@@ -143,8 +142,9 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: 'appearance',
-        ti: '.AppearancePropertyType'
+        en: 'SimpleTexture',
+        ti: '.SimpleTextureType',
+        sh: '_Appearance'
       }]
   };
   return {

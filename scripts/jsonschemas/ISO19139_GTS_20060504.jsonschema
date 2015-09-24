@@ -2,6 +2,53 @@
 {
     "id":"http://www.isotc211.org/2005/gts#",
     "definitions":{
+        "TMPeriodDurationPropertyType":{
+            "type":"object",
+            "title":"TMPeriodDurationPropertyType",
+            "required":[
+                "tmPeriodDuration"
+            ],
+            "properties":{
+                "tmPeriodDuration":{
+                    "title":"tmPeriodDuration",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/duration"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TM_PeriodDuration",
+                        "namespaceURI":"http://www.isotc211.org/2005/gts"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":"http://www.isotc211.org/2005/gco"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TM_PeriodDuration_PropertyType",
+                "namespaceURI":"http://www.isotc211.org/2005/gts"
+            },
+            "propertiesOrder":[
+                "tmPeriodDuration",
+                "nilReason"
+            ]
+        },
         "TMPrimitivePropertyType":{
             "type":"object",
             "title":"TMPrimitivePropertyType",
@@ -171,53 +218,6 @@
                 "title",
                 "show",
                 "actuate"
-            ]
-        },
-        "TMPeriodDurationPropertyType":{
-            "type":"object",
-            "title":"TMPeriodDurationPropertyType",
-            "required":[
-                "tmPeriodDuration"
-            ],
-            "properties":{
-                "tmPeriodDuration":{
-                    "title":"tmPeriodDuration",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/duration"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TM_PeriodDuration",
-                        "namespaceURI":"http://www.isotc211.org/2005/gts"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":"http://www.isotc211.org/2005/gco"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TM_PeriodDuration_PropertyType",
-                "namespaceURI":"http://www.isotc211.org/2005/gts"
-            },
-            "propertiesOrder":[
-                "tmPeriodDuration",
-                "nilReason"
             ]
         }
     },
