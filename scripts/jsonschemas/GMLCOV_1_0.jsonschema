@@ -2,6 +2,93 @@
 {
     "id":"http://www.opengis.net/gmlcov/1.0#",
     "definitions":{
+        "AbstractDiscreteCoverageType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractCoverageType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractDiscreteCoverageType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractDiscreteCoverageType",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        "AbstractCoverageType":{
+            "required":[
+                "rangeType"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractCoverageType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractCoverageType",
+                    "properties":{
+                        "coverageFunction":{
+                            "title":"coverageFunction",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CoverageFunctionType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"coverageFunction",
+                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                            }
+                        },
+                        "rangeType":{
+                            "title":"rangeType",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DataRecordPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"rangeType",
+                                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+                            }
+                        },
+                        "metadata":{
+                            "title":"metadata",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/Metadata"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"metadata",
+                                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractCoverageType",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            },
+            "propertiesOrder":[
+                "coverageFunction",
+                "rangeType",
+                "metadata"
+            ]
+        },
         "ReferenceableGridPropertyType":{
             "type":"object",
             "title":"ReferenceableGridPropertyType",
@@ -20,19 +107,6 @@
                     "elementName":{
                         "localPart":"AbstractReferenceableGrid",
                         "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-                    }
-                },
-                "owns":{
-                    "title":"owns",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"owns",
-                        "namespaceURI":""
                     }
                 },
                 "nilReason":{
@@ -154,6 +228,19 @@
                         "localPart":"actuate",
                         "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
+                },
+                "owns":{
+                    "title":"owns",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"owns",
+                        "namespaceURI":""
+                    }
                 }
             },
             "typeType":"classInfo",
@@ -163,7 +250,6 @@
             },
             "propertiesOrder":[
                 "abstractReferenceableGrid",
-                "owns",
                 "nilReason",
                 "remoteSchema",
                 "type",
@@ -172,26 +258,9 @@
                 "arcrole",
                 "title",
                 "show",
-                "actuate"
+                "actuate",
+                "owns"
             ]
-        },
-        "AbstractReferenceableGridType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/GridType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractReferenceableGridType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractReferenceableGridType",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
         },
         "SimpleMultiPointType":{
             "required":[
@@ -228,152 +297,6 @@
             },
             "propertiesOrder":[
                 "positions"
-            ]
-        },
-        "AbstractDiscreteCoverageType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractCoverageType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractDiscreteCoverageType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractDiscreteCoverageType",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        "ExtensionType":{
-            "type":"object",
-            "title":"ExtensionType",
-            "properties":{
-                "any":{
-                    "title":"any",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                    },
-                                    {
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                            }
-                                        }
-                                    }
-                                ]
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"anyElement"
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ExtensionType",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            },
-            "propertiesOrder":[
-                "any"
-            ]
-        },
-        "AbstractContinuousCoverageType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractCoverageType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractContinuousCoverageType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractContinuousCoverageType",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        "AbstractCoverageType":{
-            "required":[
-                "rangeType"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractCoverageType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractCoverageType",
-                    "properties":{
-                        "coverageFunction":{
-                            "title":"coverageFunction",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CoverageFunctionType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"coverageFunction",
-                                "namespaceURI":"http://www.opengis.net/gml/3.2"
-                            }
-                        },
-                        "rangeType":{
-                            "title":"rangeType",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DataRecordPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"rangeType",
-                                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-                            }
-                        },
-                        "metadata":{
-                            "title":"metadata",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/Metadata"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"metadata",
-                                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractCoverageType",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            },
-            "propertiesOrder":[
-                "coverageFunction",
-                "rangeType",
-                "metadata"
             ]
         },
         "ParameterValueType":{
@@ -578,6 +501,47 @@
                 "operationParameter"
             ]
         },
+        "ExtensionType":{
+            "type":"object",
+            "title":"ExtensionType",
+            "properties":{
+                "any":{
+                    "title":"any",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                    },
+                                    {
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ExtensionType",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            },
+            "propertiesOrder":[
+                "any"
+            ]
+        },
         "Metadata":{
             "allOf":[
                 {
@@ -736,144 +700,45 @@
                 "show",
                 "actuate"
             ]
+        },
+        "AbstractReferenceableGridType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/GridType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractReferenceableGridType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractReferenceableGridType",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        "AbstractContinuousCoverageType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractCoverageType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractContinuousCoverageType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractContinuousCoverageType",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractReferenceableGridType"
-                }
-            },
-            "elementName":{
-                "localPart":"AbstractReferenceableGrid",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ExtensionType"
-                }
-            },
-            "elementName":{
-                "localPart":"Extension",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Metadata"
-                }
-            },
-            "elementName":{
-                "localPart":"metadata",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
-                }
-            },
-            "elementName":{
-                "localPart":"MultiSurfaceCoverage",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
-                }
-            },
-            "elementName":{
-                "localPart":"ReferenceableGridCoverage",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GeometryPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"geometryValue",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
-                }
-            },
-            "elementName":{
-                "localPart":"MultiPointCoverage",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/VectorType"
-                }
-            },
-            "elementName":{
-                "localPart":"vectorValue",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SimpleMultiPointType"
-                }
-            },
-            "elementName":{
-                "localPart":"SimpleMultiPoint",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -896,56 +761,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
+                    "$ref":"#/definitions/AbstractReferenceableGridType"
                 }
             },
             "elementName":{
-                "localPart":"AbstractDiscreteCoverage",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
-                }
-            },
-            "elementName":{
-                "localPart":"MultiSolidCoverage",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
-                }
-            },
-            "elementName":{
-                "localPart":"RectifiedGridCoverage",
-                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DataRecordPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"rangeType",
+                "localPart":"AbstractReferenceableGrid",
                 "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
             }
         },
@@ -986,11 +806,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
+                    "$ref":"#/definitions/ExtensionType"
                 }
             },
             "elementName":{
-                "localPart":"GridCoverage",
+                "localPart":"Extension",
                 "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
             }
         },
@@ -1016,11 +836,191 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/Metadata"
+                }
+            },
+            "elementName":{
+                "localPart":"metadata",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
+                }
+            },
+            "elementName":{
+                "localPart":"MultiSolidCoverage",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
+                }
+            },
+            "elementName":{
+                "localPart":"MultiSurfaceCoverage",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
+                }
+            },
+            "elementName":{
+                "localPart":"ReferenceableGridCoverage",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
+                }
+            },
+            "elementName":{
+                "localPart":"MultiPointCoverage",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/AbstractContinuousCoverageType"
                 }
             },
             "elementName":{
                 "localPart":"AbstractContinuousCoverage",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/SimpleMultiPointType"
+                }
+            },
+            "elementName":{
+                "localPart":"SimpleMultiPoint",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
+                }
+            },
+            "elementName":{
+                "localPart":"AbstractDiscreteCoverage",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DataRecordPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"rangeType",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/VectorType"
+                }
+            },
+            "elementName":{
+                "localPart":"vectorValue",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
+                }
+            },
+            "elementName":{
+                "localPart":"GridCoverage",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GeometryPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"geometryValue",
+                "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
+                }
+            },
+            "elementName":{
+                "localPart":"RectifiedGridCoverage",
                 "namespaceURI":"http://www.opengis.net/gmlcov/1.0"
             }
         }

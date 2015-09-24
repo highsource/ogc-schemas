@@ -4,6 +4,66 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/citygml\/vegetation\/2.0',
     deps: ['GML_3_1_1', 'CityGML_2_0'],
     tis: [{
+        ln: 'SolitaryVegetationObjectType',
+        bti: '.AbstractVegetationObjectType',
+        ps: [{
+            n: 'clazz',
+            en: 'class',
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'function',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'usage',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'species',
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'height',
+            ti: 'GML_3_1_1.LengthType'
+          }, {
+            n: 'trunkDiameter',
+            ti: 'GML_3_1_1.LengthType'
+          }, {
+            n: 'crownDiameter',
+            ti: 'GML_3_1_1.LengthType'
+          }, {
+            n: 'lod1Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'lod2Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'lod3Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'lod4Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'lod1ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'lod2ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'lod3ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'lod4ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfSolitaryVegetationObject',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfSolitaryVegetationObject',
+            ti: 'AnyType'
+          }]
+      }, {
         ln: 'AbstractVegetationObjectType',
         bti: 'CityGML_2_0.AbstractCityObjectType',
         ps: [{
@@ -64,66 +124,6 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
             en: '_GenericApplicationPropertyOfPlantCover',
             ti: 'AnyType'
           }]
-      }, {
-        ln: 'SolitaryVegetationObjectType',
-        bti: '.AbstractVegetationObjectType',
-        ps: [{
-            n: 'clazz',
-            en: 'class',
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'function',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'usage',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'species',
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'height',
-            ti: 'GML_3_1_1.LengthType'
-          }, {
-            n: 'trunkDiameter',
-            ti: 'GML_3_1_1.LengthType'
-          }, {
-            n: 'crownDiameter',
-            ti: 'GML_3_1_1.LengthType'
-          }, {
-            n: 'lod1Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod2Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod3Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod4Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod1ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'lod2ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'lod3ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'lod4ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfSolitaryVegetationObject',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfSolitaryVegetationObject',
-            ti: 'AnyType'
-          }]
       }],
     eis: [{
         en: '_GenericApplicationPropertyOfSolitaryVegetationObject',
@@ -133,10 +133,6 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
         ti: '.PlantCoverType',
         sh: '_VegetationObject'
       }, {
-        en: 'SolitaryVegetationObject',
-        ti: '.SolitaryVegetationObjectType',
-        sh: '_VegetationObject'
-      }, {
         en: '_VegetationObject',
         ti: '.AbstractVegetationObjectType',
         sh: {
@@ -144,10 +140,14 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
       }, {
-        en: '_GenericApplicationPropertyOfVegetationObject',
-        ti: 'AnyType'
+        en: 'SolitaryVegetationObject',
+        ti: '.SolitaryVegetationObjectType',
+        sh: '_VegetationObject'
       }, {
         en: '_GenericApplicationPropertyOfPlantCover',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfVegetationObject',
         ti: 'AnyType'
       }]
   };

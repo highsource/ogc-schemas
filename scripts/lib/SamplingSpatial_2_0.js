@@ -3,8 +3,28 @@ var SamplingSpatial_2_0_Module_Factory = function () {
     n: 'SamplingSpatial_2_0',
     dens: 'http:\/\/www.opengis.net\/samplingSpatial\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'OM_2_0', 'Sampling_2_0', 'ISO19139_GMD_20070417', 'GML_3_2_1'],
+    deps: ['OM_2_0', 'Sampling_2_0', 'XLink_1_0', 'GML_3_2_1', 'ISO19139_GMD_20070417'],
     tis: [{
+        ln: 'SFSpatialSamplingFeatureType',
+        tn: 'SF_SpatialSamplingFeatureType',
+        bti: 'Sampling_2_0.SFSamplingFeatureType',
+        ps: [{
+            n: 'hostedProcedure',
+            mno: 0,
+            col: true,
+            ti: 'OM_2_0.OMProcessPropertyType'
+          }, {
+            n: 'positionalAccuracy',
+            mno: 0,
+            mxo: 2,
+            col: true,
+            ti: 'ISO19139_GMD_20070417.DQPositionalAccuracyPropertyType'
+          }, {
+            n: 'shape',
+            rq: true,
+            ti: '.ShapeType'
+          }]
+      }, {
         ln: 'ShapeType',
         tn: 'shapeType',
         ps: [{
@@ -58,26 +78,6 @@ var SamplingSpatial_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }]
-      }, {
-        ln: 'SFSpatialSamplingFeatureType',
-        tn: 'SF_SpatialSamplingFeatureType',
-        bti: 'Sampling_2_0.SFSamplingFeatureType',
-        ps: [{
-            n: 'hostedProcedure',
-            mno: 0,
-            col: true,
-            ti: 'OM_2_0.OMProcessPropertyType'
-          }, {
-            n: 'positionalAccuracy',
-            mno: 0,
-            mxo: 2,
-            col: true,
-            ti: 'ISO19139_GMD_20070417.DQPositionalAccuracyPropertyType'
-          }, {
-            n: 'shape',
-            rq: true,
-            ti: '.ShapeType'
           }]
       }, {
         ln: 'SFSpatialSamplingFeaturePropertyType',

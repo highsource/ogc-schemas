@@ -170,89 +170,6 @@
                 "actuate"
             ]
         },
-        "SimpleTextureType":{
-            "required":[
-                "textureMap",
-                "textureCoordinates"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractAppearanceType"
-                },
-                {
-                    "type":"object",
-                    "title":"SimpleTextureType",
-                    "properties":{
-                        "textureMap":{
-                            "title":"textureMap",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"textureMap",
-                                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
-                            }
-                        },
-                        "textureCoordinates":{
-                            "title":"textureCoordinates",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                    }
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"textureCoordinates",
-                                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
-                            }
-                        },
-                        "textureType":{
-                            "title":"textureType",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/TextureTypeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"textureType",
-                                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
-                            }
-                        },
-                        "repeat":{
-                            "title":"repeat",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"repeat",
-                                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SimpleTextureType",
-                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
-            },
-            "propertiesOrder":[
-                "textureMap",
-                "textureCoordinates",
-                "textureType",
-                "repeat"
-            ]
-        },
         "TexturedSurfaceType":{
             "required":[
                 "appearance"
@@ -293,24 +210,6 @@
             "propertiesOrder":[
                 "appearance"
             ]
-        },
-        "AbstractAppearanceType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGMLType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractAppearanceType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractAppearanceType",
-                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
-            }
         },
         "MaterialType":{
             "allOf":[
@@ -425,6 +324,107 @@
                 "emissiveColor"
             ]
         },
+        "SimpleTextureType":{
+            "required":[
+                "textureMap",
+                "textureCoordinates"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractAppearanceType"
+                },
+                {
+                    "type":"object",
+                    "title":"SimpleTextureType",
+                    "properties":{
+                        "textureMap":{
+                            "title":"textureMap",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"textureMap",
+                                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
+                            }
+                        },
+                        "textureCoordinates":{
+                            "title":"textureCoordinates",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                    }
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"textureCoordinates",
+                                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
+                            }
+                        },
+                        "textureType":{
+                            "title":"textureType",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/TextureTypeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"textureType",
+                                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
+                            }
+                        },
+                        "repeat":{
+                            "title":"repeat",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"repeat",
+                                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SimpleTextureType",
+                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
+            },
+            "propertiesOrder":[
+                "textureMap",
+                "textureCoordinates",
+                "textureType",
+                "repeat"
+            ]
+        },
+        "AbstractAppearanceType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGMLType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractAppearanceType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractAppearanceType",
+                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
+            }
+        },
         "TextureTypeType":{
             "allOf":[
                 {
@@ -446,41 +446,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/MaterialType"
+                    "$ref":"#/definitions/SimpleTextureType"
                 }
             },
             "elementName":{
-                "localPart":"Material",
-                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/TexturedSurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"TexturedSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AppearancePropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"appearance",
+                "localPart":"SimpleTexture",
                 "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
             }
         },
@@ -506,11 +476,41 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/SimpleTextureType"
+                    "$ref":"#/definitions/AppearancePropertyType"
                 }
             },
             "elementName":{
-                "localPart":"SimpleTexture",
+                "localPart":"appearance",
+                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TexturedSurfaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"TexturedSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/MaterialType"
+                }
+            },
+            "elementName":{
+                "localPart":"Material",
                 "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
             }
         }

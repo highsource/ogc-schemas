@@ -54,25 +54,6 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SimpleTextureType',
-        bti: '.AbstractAppearanceType',
-        ps: [{
-            n: 'textureMap',
-            rq: true
-          }, {
-            n: 'textureCoordinates',
-            rq: true,
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'textureType'
-          }, {
-            n: 'repeat',
-            ti: 'Boolean'
-          }]
-      }, {
         ln: 'TexturedSurfaceType',
         bti: 'GML_3_1_1.OrientableSurfaceType',
         ps: [{
@@ -81,9 +62,6 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
             col: true,
             ti: '.AppearancePropertyType'
           }]
-      }, {
-        ln: 'AbstractAppearanceType',
-        bti: 'GML_3_1_1.AbstractGMLType'
       }, {
         ln: 'MaterialType',
         bti: '.AbstractAppearanceType',
@@ -116,24 +94,36 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
             }
           }]
       }, {
+        ln: 'SimpleTextureType',
+        bti: '.AbstractAppearanceType',
+        ps: [{
+            n: 'textureMap',
+            rq: true
+          }, {
+            n: 'textureCoordinates',
+            rq: true,
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'textureType'
+          }, {
+            n: 'repeat',
+            ti: 'Boolean'
+          }]
+      }, {
+        ln: 'AbstractAppearanceType',
+        bti: 'GML_3_1_1.AbstractGMLType'
+      }, {
         t: 'enum',
         ln: 'TextureTypeType',
         vs: ['specific', 'typical', 'unknown']
       }],
     eis: [{
-        en: 'Material',
-        ti: '.MaterialType',
+        en: 'SimpleTexture',
+        ti: '.SimpleTextureType',
         sh: '_Appearance'
-      }, {
-        en: 'TexturedSurface',
-        ti: '.TexturedSurfaceType',
-        sh: {
-          lp: 'OrientableSurface',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: 'appearance',
-        ti: '.AppearancePropertyType'
       }, {
         en: '_Appearance',
         ti: '.AbstractAppearanceType',
@@ -142,8 +132,18 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: 'SimpleTexture',
-        ti: '.SimpleTextureType',
+        en: 'appearance',
+        ti: '.AppearancePropertyType'
+      }, {
+        en: 'TexturedSurface',
+        ti: '.TexturedSurfaceType',
+        sh: {
+          lp: 'OrientableSurface',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'Material',
+        ti: '.MaterialType',
         sh: '_Appearance'
       }]
   };

@@ -12,14 +12,28 @@ var CityGML_Generics_2_0_Module_Factory = function () {
             ti: 'GML_3_1_1.MeasureType'
           }]
       }, {
-        ln: 'AbstractGenericAttributeType',
+        ln: 'DateAttributeType',
+        bti: '.AbstractGenericAttributeType',
         ps: [{
-            n: 'name',
+            n: 'value',
             rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
+            ti: 'Calendar'
+          }]
+      }, {
+        ln: 'IntAttributeType',
+        bti: '.AbstractGenericAttributeType',
+        ps: [{
+            n: 'value',
+            rq: true,
+            ti: 'Integer'
+          }]
+      }, {
+        ln: 'DoubleAttributeType',
+        bti: '.AbstractGenericAttributeType',
+        ps: [{
+            n: 'value',
+            rq: true,
+            ti: 'Double'
           }]
       }, {
         ln: 'StringAttributeType',
@@ -29,19 +43,14 @@ var CityGML_Generics_2_0_Module_Factory = function () {
             rq: true
           }]
       }, {
-        ln: 'DateAttributeType',
-        bti: '.AbstractGenericAttributeType',
+        ln: 'AbstractGenericAttributeType',
         ps: [{
-            n: 'value',
+            n: 'name',
             rq: true,
-            ti: 'Calendar'
-          }]
-      }, {
-        ln: 'UriAttributeType',
-        bti: '.AbstractGenericAttributeType',
-        ps: [{
-            n: 'value',
-            rq: true
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'GenericAttributeSetType',
@@ -63,12 +72,11 @@ var CityGML_Generics_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DoubleAttributeType',
+        ln: 'UriAttributeType',
         bti: '.AbstractGenericAttributeType',
         ps: [{
             n: 'value',
-            rq: true,
-            ti: 'Double'
+            rq: true
           }]
       }, {
         ln: 'GenericCityObjectType',
@@ -133,16 +141,15 @@ var CityGML_Generics_2_0_Module_Factory = function () {
             n: 'lod4ImplicitRepresentation',
             ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
           }]
-      }, {
-        ln: 'IntAttributeType',
-        bti: '.AbstractGenericAttributeType',
-        ps: [{
-            n: 'value',
-            rq: true,
-            ti: 'Integer'
-          }]
       }],
     eis: [{
+        en: 'GenericCityObject',
+        ti: '.GenericCityObjectType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
+      }, {
         en: '_genericAttribute',
         ti: '.AbstractGenericAttributeType',
         sh: {
@@ -150,40 +157,33 @@ var CityGML_Generics_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
       }, {
-        en: 'measureAttribute',
-        ti: '.MeasureAttributeType',
-        sh: '_genericAttribute'
-      }, {
-        en: 'uriAttribute',
-        ti: '.UriAttributeType',
-        sh: '_genericAttribute'
-      }, {
-        en: 'stringAttribute',
-        ti: '.StringAttributeType',
-        sh: '_genericAttribute'
-      }, {
         en: 'doubleAttribute',
         ti: '.DoubleAttributeType',
-        sh: '_genericAttribute'
-      }, {
-        en: 'genericAttributeSet',
-        ti: '.GenericAttributeSetType',
         sh: '_genericAttribute'
       }, {
         en: 'intAttribute',
         ti: '.IntAttributeType',
         sh: '_genericAttribute'
       }, {
+        en: 'genericAttributeSet',
+        ti: '.GenericAttributeSetType',
+        sh: '_genericAttribute'
+      }, {
+        en: 'uriAttribute',
+        ti: '.UriAttributeType',
+        sh: '_genericAttribute'
+      }, {
         en: 'dateAttribute',
         ti: '.DateAttributeType',
         sh: '_genericAttribute'
       }, {
-        en: 'GenericCityObject',
-        ti: '.GenericCityObjectType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
+        en: 'measureAttribute',
+        ti: '.MeasureAttributeType',
+        sh: '_genericAttribute'
+      }, {
+        en: 'stringAttribute',
+        ti: '.StringAttributeType',
+        sh: '_genericAttribute'
       }]
   };
   return {
