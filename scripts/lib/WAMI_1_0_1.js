@@ -2,20 +2,70 @@ var WAMI_1_0_1_Module_Factory = function () {
   var WAMI_1_0_1 = {
     n: 'WAMI_1_0_1',
     dens: 'http:\/\/www.pixia.com\/wami\/v101',
-    deps: ['WAMI_Common_1_0_1', 'OWS_2_0'],
+    deps: ['OWS_2_0', 'WAMI_Common_1_0_1'],
     tis: [{
-        ln: 'NameValuePairType',
+        ln: 'CapabilitiesResponseBaseType',
         ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
+            n: 'serviceIdentification',
+            en: {
+              lp: 'ServiceIdentification',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
+            },
+            ti: 'OWS_2_0.ServiceIdentification'
           }, {
-            n: 'content',
+            n: 'serviceProvider',
+            en: {
+              lp: 'ServiceProvider',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
+            },
+            ti: 'OWS_2_0.ServiceProvider'
+          }, {
+            n: 'operationsMetadata',
+            en: {
+              lp: 'OperationsMetadata',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
+            },
+            ti: 'OWS_2_0.OperationsMetadata'
+          }, {
+            n: 'language',
+            mno: 0,
             col: true,
-            t: 'ae'
+            en: 'Language'
           }, {
-            n: 'name',
+            n: 'updateSequence',
             an: {
-              lp: 'name'
+              lp: 'updateSequence'
+            },
+            t: 'a'
+          }, {
+            n: 'lang',
+            an: {
+              lp: 'lang'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PostContentTypeMetaData.KVP',
+        tn: null
+      }, {
+        ln: 'MultipartImageRootDocumentType.Reference',
+        tn: null,
+        ps: [{
+            n: 'imageReference',
+            an: {
+              lp: 'imageReference'
+            },
+            t: 'a'
+          }, {
+            n: 'metadataReference',
+            an: {
+              lp: 'metadataReference'
             },
             t: 'a'
           }]
@@ -92,6 +142,59 @@ var WAMI_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'FrameOrTimeRequestType',
+        ps: [{
+            n: 'frame',
+            ti: 'Integer',
+            an: {
+              lp: 'frame'
+            },
+            t: 'a'
+          }, {
+            n: 'time',
+            ti: 'Calendar',
+            an: {
+              lp: 'time'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'HelpResponseType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }, {
+            n: 'service',
+            rq: true,
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'request',
+            rq: true,
+            an: {
+              lp: 'request'
+            },
+            t: 'a'
+          }, {
+            n: 'lang',
+            an: {
+              lp: 'lang'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'FrameOrTimeRangeRequestType.FrameRange',
         tn: null,
         ps: [{
@@ -124,99 +227,241 @@ var WAMI_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'PathMapType',
+        ln: 'ISMapType',
+        tn: 'IS_MapType',
+        bti: '.MultipartImageRootDocumentType'
+      }, {
+        ln: 'ISGetPathMapInfoRequestType',
+        tn: 'IS_GetPathMapInfoRequestType',
+        bti: '.CommonAbstractGetMapRequestType',
         ps: [{
-            n: 'track',
+            n: 'path',
             rq: true,
-            col: true,
-            en: 'Track',
-            ti: '.PathMapTrackType'
+            en: 'Path',
+            ti: '.PathMapType'
           }]
       }, {
-        ln: 'CSGetCollectionCountRequestType',
-        tn: 'CS_GetCollectionCountRequestType',
-        bti: '.AbstractRequestType',
+        ln: 'PostContentTypeMetaData',
+        tn: null,
         ps: [{
+            n: 'kvp',
+            en: 'KVP',
+            ti: '.PostContentTypeMetaData.KVP'
+          }, {
+            n: 'xml',
+            en: 'XML',
+            ti: '.PostContentTypeMetaData.XML'
+          }]
+      }, {
+        ln: 'GetCapabilitiesRequestType',
+        bti: '.CommonAbstractRequestType',
+        ps: [{
+            n: 'acceptVersions',
+            rq: true,
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'acceptVersions'
+            },
+            t: 'a'
+          }, {
+            n: 'acceptFormats',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'acceptFormats'
+            },
+            t: 'a'
+          }, {
+            n: 'sections',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'sections'
+            },
+            t: 'a'
+          }, {
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractRequestType',
+        bti: '.CommonAbstractRequestType',
+        ps: [{
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'format',
+            an: {
+              lp: 'format'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CSCollectionCountType',
+        tn: 'CS_CollectionCountType',
+        bti: '.AbstractResponseType',
+        ps: [{
+            n: 'description',
+            en: 'Description'
+          }, {
+            n: 'root',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'root'
+            },
+            t: 'a'
+          }, {
+            n: 'depth',
+            ti: 'Integer',
+            an: {
+              lp: 'depth'
+            },
+            t: 'a'
+          }, {
             n: 'nid',
             an: {
               lp: 'NID'
             },
             t: 'a'
           }, {
-            n: 'depth',
+            n: 'childNodes',
+            rq: true,
+            ti: 'Integer',
             an: {
-              lp: 'depth'
+              lp: 'childNodes'
+            },
+            t: 'a'
+          }, {
+            n: 'totalNodes',
+            rq: true,
+            ti: 'Integer',
+            an: {
+              lp: 'totalNodes'
+            },
+            t: 'a'
+          }, {
+            n: 'collections',
+            ti: 'Integer',
+            an: {
+              lp: 'collections'
+            },
+            t: 'a'
+          }, {
+            n: 'edgeDepth',
+            ti: 'Integer',
+            an: {
+              lp: 'edgeDepth'
             },
             t: 'a'
           }]
       }, {
-        ln: 'ServiceElementType',
+        ln: 'FrameOrTimeRangeRequestType.TimeRange',
+        tn: null,
         ps: [{
-            n: 'request',
-            rq: true,
-            col: true,
-            en: 'Request',
-            ti: '.RequestMethodLinkType'
-          }]
-      }, {
-        ln: 'PostContentTypeMetaData.KVP',
-        tn: null
-      }, {
-        ln: 'NamedServiceElementType',
-        bti: '.ServiceElementType',
-        ps: [{
-            n: 'name',
-            rq: true,
+            n: 'recurringInterval',
+            ti: 'Integer',
             an: {
-              lp: 'name'
+              lp: 'recurringInterval'
+            },
+            t: 'a'
+          }, {
+            n: 'start',
+            ti: 'Calendar',
+            an: {
+              lp: 'start'
+            },
+            t: 'a'
+          }, {
+            n: 'end',
+            ti: 'Calendar',
+            an: {
+              lp: 'end'
+            },
+            t: 'a'
+          }, {
+            n: 'resolution',
+            ti: 'Duration',
+            an: {
+              lp: 'resolution'
             },
             t: 'a'
           }]
       }, {
-        ln: 'CollectionMetadataSectionsType',
+        ln: 'FrameOrTimeRangeRequestType',
         ps: [{
-            n: 'collection',
-            en: 'Collection',
-            ti: '.CollectionSectionType'
-          }, {
-            n: 'geoBox',
-            en: 'GeoBox',
-            ti: '.GeoBoxSectionType'
-          }, {
-            n: 'toa',
-            en: 'TOA',
-            ti: 'Calendar'
-          }, {
-            n: 'frameNum',
-            en: 'FrameNum',
-            ti: 'Integer'
-          }, {
-            n: 'file',
-            en: 'File',
-            ti: '.FileSectionType'
-          }, {
-            n: 'group',
+            n: 'frameRange',
             mno: 0,
             col: true,
-            en: 'Group',
-            ti: '.MetadataGroupType'
+            en: 'FrameRange',
+            ti: '.FrameOrTimeRangeRequestType.FrameRange'
           }, {
-            n: 'extendedMetadataSection',
+            n: 'timeRange',
             mno: 0,
             col: true,
-            en: 'ExtendedMetadataSection',
-            ti: '.ExtendedMetadataSection'
+            en: 'TimeRange',
+            ti: '.FrameOrTimeRangeRequestType.TimeRange'
+          }, {
+            n: 'timeList',
+            en: 'TimeList',
+            ti: {
+              t: 'l'
+            }
           }]
       }, {
-        ln: 'GetHelpRequestType',
+        ln: 'ISPathMapInfoType',
+        tn: 'IS_PathMapInfoType',
+        bti: '.ISAbstractMapInfoType'
+      }, {
+        ln: 'CommonAbstractGetMapRequestType',
         bti: '.AbstractRequestType',
         ps: [{
-            n: 'topic',
+            n: 'option',
+            mno: 0,
+            col: true,
+            en: 'Option',
+            ti: '.NameValuePairType'
+          }, {
+            n: 'crs',
+            rq: true,
+            an: {
+              lp: 'crs'
+            },
+            t: 'a'
+          }, {
+            n: 'metadata',
             ti: {
               t: 'l'
             },
             an: {
-              lp: 'topic'
+              lp: 'metadata'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'NameValuePairType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
             },
             t: 'a'
           }]
@@ -277,21 +522,69 @@ var WAMI_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ISMapInfoType',
-        tn: 'IS_MapInfoType',
-        bti: '.ISAbstractMapInfoType'
-      }, {
-        ln: 'ISPathMapType',
-        tn: 'IS_PathMapType',
-        bti: '.MultipartImageRootDocumentType'
-      }, {
-        ln: 'MultipartImageRootDocumentType',
+        ln: 'ISGetPathMapRequestType',
+        tn: 'IS_GetPathMapRequestType',
+        bti: '.BinaryAbstractGetMapRequestType',
         ps: [{
-            n: 'reference',
+            n: 'path',
+            rq: true,
+            en: 'Path',
+            ti: '.PathMapType'
+          }, {
+            n: 'disposition',
+            an: {
+              lp: 'disposition'
+            },
+            t: 'a'
+          }, {
+            n: 'styles',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'styles'
+            },
+            t: 'a'
+          }, {
+            n: 'bgcolor',
+            an: {
+              lp: 'bgcolor'
+            },
+            t: 'a'
+          }, {
+            n: 'transparent',
+            ti: 'Boolean',
+            an: {
+              lp: 'transparent'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MetadataGroupType',
+        ps: [{
+            n: 'attribute',
             mno: 0,
             col: true,
-            en: 'Reference',
-            ti: '.MultipartImageRootDocumentType.Reference'
+            en: 'Attribute',
+            ti: '.NameValuePairType'
+          }, {
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'NamedServiceElementType',
+        bti: '.ServiceElementType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'VSGetMapVideoRequestType',
@@ -349,294 +642,17 @@ var WAMI_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DimensionType',
+        ln: 'GeoBoxSectionType',
         ps: [{
-            n: 'width',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ISInfoType',
-        tn: 'IS_InfoType',
-        bti: '.AbstractResponseType',
-        ps: [{
-            n: 'metadata',
-            en: 'Metadata',
-            ti: '.CollectionMetadataSectionsType'
-          }]
-      }, {
-        ln: 'PostContentTypeMetaData',
-        tn: null,
-        ps: [{
-            n: 'kvp',
-            en: 'KVP',
-            ti: '.PostContentTypeMetaData.KVP'
-          }, {
-            n: 'xml',
-            en: 'XML',
-            ti: '.PostContentTypeMetaData.XML'
-          }]
-      }, {
-        ln: 'CSNodeType',
-        tn: 'CS_NodeType',
-        ps: [{
-            n: 'description',
-            en: 'Description'
-          }, {
-            n: 'service',
+            n: 'boundingBox',
             mno: 0,
             col: true,
-            en: 'Service',
-            ti: '.NamedServiceElementType'
-          }, {
-            n: 'metadata',
-            en: 'Metadata',
-            ti: '.CollectionMetadataSectionsType'
-          }, {
-            n: 'node',
-            mno: 0,
-            col: true,
-            en: 'Node',
-            ti: '.CSNodeType'
-          }, {
-            n: 'id',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'parentNID',
-            an: {
-              lp: 'parentNID'
-            },
-            t: 'a'
-          }, {
-            n: 'nid',
-            rq: true,
-            an: {
-              lp: 'NID'
-            },
-            t: 'a'
-          }, {
-            n: 'cid',
-            an: {
-              lp: 'CID'
-            },
-            t: 'a'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ISGetMapRequestType',
-        tn: 'IS_GetMapRequestType',
-        bti: '.BinaryAbstractGetMapRequestType',
-        ps: [{
-            n: 'bBox',
-            rq: true,
-            en: 'BBox',
+            en: 'BoundingBox',
             ti: '.BoundBoxType'
           }, {
-            n: 'time',
-            rq: true,
-            en: 'Time',
-            ti: '.FrameOrTimeRangeRequestType'
-          }, {
-            n: 'cid',
-            rq: true,
-            ti: {
-              t: 'l'
-            },
+            n: 'nativeCRS',
             an: {
-              lp: 'CID'
-            },
-            t: 'a'
-          }, {
-            n: 'disposition',
-            an: {
-              lp: 'disposition'
-            },
-            t: 'a'
-          }, {
-            n: 'styles',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'styles'
-            },
-            t: 'a'
-          }, {
-            n: 'bgcolor',
-            an: {
-              lp: 'bgcolor'
-            },
-            t: 'a'
-          }, {
-            n: 'transparent',
-            ti: 'Boolean',
-            an: {
-              lp: 'transparent'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'FrameOrTimeRangeRequestType',
-        ps: [{
-            n: 'frameRange',
-            mno: 0,
-            col: true,
-            en: 'FrameRange',
-            ti: '.FrameOrTimeRangeRequestType.FrameRange'
-          }, {
-            n: 'timeRange',
-            mno: 0,
-            col: true,
-            en: 'TimeRange',
-            ti: '.FrameOrTimeRangeRequestType.TimeRange'
-          }, {
-            n: 'timeList',
-            en: 'TimeList',
-            ti: {
-              t: 'l'
-            }
-          }]
-      }, {
-        ln: 'MetadataGroupType',
-        ps: [{
-            n: 'attribute',
-            mno: 0,
-            col: true,
-            en: 'Attribute',
-            ti: '.NameValuePairType'
-          }, {
-            n: 'name',
-            rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ISMapType',
-        tn: 'IS_MapType',
-        bti: '.MultipartImageRootDocumentType'
-      }, {
-        ln: 'GeoTransformType',
-        ps: [{
-            n: 'xOffset',
-            rq: true,
-            ti: 'Double',
-            an: {
-              lp: 'xOffset'
-            },
-            t: 'a'
-          }, {
-            n: 'yOffset',
-            rq: true,
-            ti: 'Double',
-            an: {
-              lp: 'yOffset'
-            },
-            t: 'a'
-          }, {
-            n: 'xScale',
-            rq: true,
-            ti: 'Double',
-            an: {
-              lp: 'xScale'
-            },
-            t: 'a'
-          }, {
-            n: 'yScale',
-            rq: true,
-            ti: 'Double',
-            an: {
-              lp: 'yScale'
-            },
-            t: 'a'
-          }, {
-            n: 'xSkew',
-            rq: true,
-            ti: 'Double',
-            an: {
-              lp: 'xSkew'
-            },
-            t: 'a'
-          }, {
-            n: 'ySkew',
-            rq: true,
-            ti: 'Double',
-            an: {
-              lp: 'ySkew'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'BinaryAbstractGetMapRequestType',
-        bti: '.CommonAbstractGetMapRequestType',
-        ps: [{
-            n: 'viewPort',
-            rq: true,
-            en: 'ViewPort',
-            ti: '.DimensionType'
-          }]
-      }, {
-        ln: 'GetCapabilitiesRequestType',
-        bti: '.CommonAbstractRequestType',
-        ps: [{
-            n: 'acceptVersions',
-            rq: true,
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'acceptVersions'
-            },
-            t: 'a'
-          }, {
-            n: 'acceptFormats',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'acceptFormats'
-            },
-            t: 'a'
-          }, {
-            n: 'sections',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'sections'
-            },
-            t: 'a'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
+              lp: 'nativeCRS'
             },
             t: 'a'
           }]
@@ -724,194 +740,61 @@ var WAMI_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'BoundingPolygonType',
+        ln: 'PathMapTrackAoiType',
         ps: [{
-            n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            },
-            t: 'v'
-          }, {
-            n: 'crs',
+            n: 'bBox',
             rq: true,
-            an: {
-              lp: 'crs'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PostContentTypeMetaData.XML',
-        tn: null,
-        ps: [{
-            n: 'schemaElement',
-            rq: true,
-            an: {
-              lp: 'schemaElement'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'FrameOrTimeRequestType',
-        ps: [{
-            n: 'frame',
-            ti: 'Integer',
-            an: {
-              lp: 'frame'
-            },
-            t: 'a'
-          }, {
-            n: 'time',
-            ti: 'Calendar',
-            an: {
-              lp: 'time'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CommonAbstractRequestType',
-        ps: [{
-            n: 'service',
-            rq: true,
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'request',
-            rq: true,
-            an: {
-              lp: 'request'
-            },
-            t: 'a'
-          }, {
-            n: 'exceptions',
-            an: {
-              lp: 'exceptions'
-            },
-            t: 'a'
-          }, {
-            n: 'acceptLanguages',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'acceptLanguages'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GeoBoxSectionType',
-        ps: [{
-            n: 'boundingBox',
-            mno: 0,
-            col: true,
-            en: 'BoundingBox',
+            en: 'BBox',
             ti: '.BoundBoxType'
           }, {
-            n: 'nativeCRS',
-            an: {
-              lp: 'nativeCRS'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ISAbstractMapInfoType',
-        tn: 'IS_AbstractMapInfoType',
-        bti: '.AbstractResponseType',
-        ps: [{
-            n: 'metadata',
+            n: 'time',
             rq: true,
-            col: true,
-            en: 'Metadata',
-            ti: '.CollectionMetadataSectionsType'
-          }]
-      }, {
-        ln: 'AbstractRequestType',
-        bti: '.CommonAbstractRequestType',
-        ps: [{
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
+            en: 'Time',
+            ti: '.FrameOrTimeRequestType'
           }, {
-            n: 'format',
-            an: {
-              lp: 'format'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ISPathMapInfoType',
-        tn: 'IS_PathMapInfoType',
-        bti: '.ISAbstractMapInfoType'
-      }, {
-        ln: 'CommonAbstractGetMapRequestType',
-        bti: '.AbstractRequestType',
-        ps: [{
+            n: 'timeSpan',
+            en: 'TimeSpan',
+            ti: '.FrameOrTimeSpanRequestType'
+          }, {
             n: 'option',
             mno: 0,
             col: true,
             en: 'Option',
             ti: '.NameValuePairType'
-          }, {
-            n: 'crs',
-            rq: true,
-            an: {
-              lp: 'crs'
-            },
-            t: 'a'
-          }, {
-            n: 'metadata',
+          }]
+      }, {
+        ln: 'GetHelpRequestType',
+        bti: '.AbstractRequestType',
+        ps: [{
+            n: 'topic',
             ti: {
               t: 'l'
             },
             an: {
-              lp: 'metadata'
+              lp: 'topic'
             },
             t: 'a'
           }]
       }, {
-        ln: 'ISGetPathMapInfoRequestType',
-        tn: 'IS_GetPathMapInfoRequestType',
-        bti: '.CommonAbstractGetMapRequestType',
+        ln: 'CSCollectionsType',
+        tn: 'CS_CollectionsType',
+        bti: '.AbstractResponseType',
         ps: [{
-            n: 'path',
+            n: 'description',
+            en: 'Description'
+          }, {
+            n: 'parent',
+            en: 'Parent',
+            ti: '.CSCollectionsType.Parent'
+          }, {
+            n: 'node',
             rq: true,
-            en: 'Path',
-            ti: '.PathMapType'
-          }]
-      }, {
-        ln: 'FrameOrTimeRangeRequestType.TimeRange',
-        tn: null,
-        ps: [{
-            n: 'recurringInterval',
-            ti: 'Integer',
-            an: {
-              lp: 'recurringInterval'
-            },
-            t: 'a'
+            en: 'Node',
+            ti: '.CSNodeType'
           }, {
-            n: 'start',
-            ti: 'Calendar',
+            n: 'updateSequence',
             an: {
-              lp: 'start'
-            },
-            t: 'a'
-          }, {
-            n: 'end',
-            ti: 'Calendar',
-            an: {
-              lp: 'end'
-            },
-            t: 'a'
-          }, {
-            n: 'resolution',
-            ti: 'Duration',
-            an: {
-              lp: 'resolution'
+              lp: 'updateSequence'
             },
             t: 'a'
           }]
@@ -932,14 +815,55 @@ var WAMI_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ISGetPathMapRequestType',
-        tn: 'IS_GetPathMapRequestType',
+        ln: 'BoundingPolygonType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            },
+            t: 'v'
+          }, {
+            n: 'crs',
+            rq: true,
+            an: {
+              lp: 'crs'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'BinaryAbstractGetMapRequestType',
+        bti: '.CommonAbstractGetMapRequestType',
+        ps: [{
+            n: 'viewPort',
+            rq: true,
+            en: 'ViewPort',
+            ti: '.DimensionType'
+          }]
+      }, {
+        ln: 'ISGetMapRequestType',
+        tn: 'IS_GetMapRequestType',
         bti: '.BinaryAbstractGetMapRequestType',
         ps: [{
-            n: 'path',
+            n: 'bBox',
             rq: true,
-            en: 'Path',
-            ti: '.PathMapType'
+            en: 'BBox',
+            ti: '.BoundBoxType'
+          }, {
+            n: 'time',
+            rq: true,
+            en: 'Time',
+            ti: '.FrameOrTimeRangeRequestType'
+          }, {
+            n: 'cid',
+            rq: true,
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'CID'
+            },
+            t: 'a'
           }, {
             n: 'disposition',
             an: {
@@ -970,32 +894,6 @@ var WAMI_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CSGetCollectionsRequestType',
-        tn: 'CS_GetCollectionsRequestType',
-        bti: '.AbstractRequestType',
-        ps: [{
-            n: 'nid',
-            an: {
-              lp: 'NID'
-            },
-            t: 'a'
-          }, {
-            n: 'depth',
-            an: {
-              lp: 'depth'
-            },
-            t: 'a'
-          }, {
-            n: 'metadata',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'metadata'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'ISGetMapInfoRequestType',
         tn: 'IS_GetMapInfoRequestType',
         bti: '.CommonAbstractGetMapRequestType',
@@ -1019,6 +917,238 @@ var WAMI_1_0_1_Module_Factory = function () {
               lp: 'CID'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'GeoTransformType',
+        ps: [{
+            n: 'xOffset',
+            rq: true,
+            ti: 'Double',
+            an: {
+              lp: 'xOffset'
+            },
+            t: 'a'
+          }, {
+            n: 'yOffset',
+            rq: true,
+            ti: 'Double',
+            an: {
+              lp: 'yOffset'
+            },
+            t: 'a'
+          }, {
+            n: 'xScale',
+            rq: true,
+            ti: 'Double',
+            an: {
+              lp: 'xScale'
+            },
+            t: 'a'
+          }, {
+            n: 'yScale',
+            rq: true,
+            ti: 'Double',
+            an: {
+              lp: 'yScale'
+            },
+            t: 'a'
+          }, {
+            n: 'xSkew',
+            rq: true,
+            ti: 'Double',
+            an: {
+              lp: 'xSkew'
+            },
+            t: 'a'
+          }, {
+            n: 'ySkew',
+            rq: true,
+            ti: 'Double',
+            an: {
+              lp: 'ySkew'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ISPathMapType',
+        tn: 'IS_PathMapType',
+        bti: '.MultipartImageRootDocumentType'
+      }, {
+        ln: 'AbstractResponseType',
+        ps: [{
+            n: 'lang',
+            an: {
+              lp: 'lang'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CSGetCollectionCountRequestType',
+        tn: 'CS_GetCollectionCountRequestType',
+        bti: '.AbstractRequestType',
+        ps: [{
+            n: 'nid',
+            an: {
+              lp: 'NID'
+            },
+            t: 'a'
+          }, {
+            n: 'depth',
+            an: {
+              lp: 'depth'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DimensionType',
+        ps: [{
+            n: 'width',
+            rq: true,
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            rq: true,
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PathMapType',
+        ps: [{
+            n: 'track',
+            rq: true,
+            col: true,
+            en: 'Track',
+            ti: '.PathMapTrackType'
+          }]
+      }, {
+        ln: 'ExtendedMetadataSection',
+        tn: null,
+        ps: [{
+            n: 'abstractMetaData',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractMetaData',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
+            },
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CSNodeType',
+        tn: 'CS_NodeType',
+        ps: [{
+            n: 'description',
+            en: 'Description'
+          }, {
+            n: 'service',
+            mno: 0,
+            col: true,
+            en: 'Service',
+            ti: '.NamedServiceElementType'
+          }, {
+            n: 'metadata',
+            en: 'Metadata',
+            ti: '.CollectionMetadataSectionsType'
+          }, {
+            n: 'node',
+            mno: 0,
+            col: true,
+            en: 'Node',
+            ti: '.CSNodeType'
+          }, {
+            n: 'id',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'parentNID',
+            an: {
+              lp: 'parentNID'
+            },
+            t: 'a'
+          }, {
+            n: 'nid',
+            rq: true,
+            an: {
+              lp: 'NID'
+            },
+            t: 'a'
+          }, {
+            n: 'cid',
+            an: {
+              lp: 'CID'
+            },
+            t: 'a'
+          }, {
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CollectionMetadataSectionsType',
+        ps: [{
+            n: 'collection',
+            en: 'Collection',
+            ti: '.CollectionSectionType'
+          }, {
+            n: 'geoBox',
+            en: 'GeoBox',
+            ti: '.GeoBoxSectionType'
+          }, {
+            n: 'toa',
+            en: 'TOA',
+            ti: 'Calendar'
+          }, {
+            n: 'frameNum',
+            en: 'FrameNum',
+            ti: 'Integer'
+          }, {
+            n: 'file',
+            en: 'File',
+            ti: '.FileSectionType'
+          }, {
+            n: 'group',
+            mno: 0,
+            col: true,
+            en: 'Group',
+            ti: '.MetadataGroupType'
+          }, {
+            n: 'extendedMetadataSection',
+            mno: 0,
+            col: true,
+            en: 'ExtendedMetadataSection',
+            ti: '.ExtendedMetadataSection'
           }]
       }, {
         ln: 'VSGetPathMapVideoRequestType',
@@ -1061,67 +1191,55 @@ var WAMI_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractResponseType',
+        ln: 'ISAbstractMapInfoType',
+        tn: 'IS_AbstractMapInfoType',
+        bti: '.AbstractResponseType',
         ps: [{
-            n: 'lang',
+            n: 'metadata',
+            rq: true,
+            col: true,
+            en: 'Metadata',
+            ti: '.CollectionMetadataSectionsType'
+          }]
+      }, {
+        ln: 'MultipartImageRootDocumentType',
+        ps: [{
+            n: 'reference',
+            mno: 0,
+            col: true,
+            en: 'Reference',
+            ti: '.MultipartImageRootDocumentType.Reference'
+          }]
+      }, {
+        ln: 'CSGetCollectionsRequestType',
+        tn: 'CS_GetCollectionsRequestType',
+        bti: '.AbstractRequestType',
+        ps: [{
+            n: 'nid',
             an: {
-              lp: 'lang'
+              lp: 'NID'
             },
             t: 'a'
           }, {
-            n: 'version',
+            n: 'depth',
             an: {
-              lp: 'version'
+              lp: 'depth'
+            },
+            t: 'a'
+          }, {
+            n: 'metadata',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'metadata'
             },
             t: 'a'
           }]
       }, {
-        ln: 'CapabilitiesResponseBaseType',
-        ps: [{
-            n: 'serviceIdentification',
-            en: {
-              lp: 'ServiceIdentification',
-              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
-            },
-            ti: 'OWS_2_0.ServiceIdentification'
-          }, {
-            n: 'serviceProvider',
-            en: {
-              lp: 'ServiceProvider',
-              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
-            },
-            ti: 'OWS_2_0.ServiceProvider'
-          }, {
-            n: 'operationsMetadata',
-            en: {
-              lp: 'OperationsMetadata',
-              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
-            },
-            ti: 'OWS_2_0.OperationsMetadata'
-          }, {
-            n: 'language',
-            mno: 0,
-            col: true,
-            en: 'Language'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }, {
-            n: 'lang',
-            an: {
-              lp: 'lang'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
+        ln: 'ISMapInfoType',
+        tn: 'IS_MapInfoType',
+        bti: '.ISAbstractMapInfoType'
       }, {
         ln: 'FrameOrTimeSpanRequestType',
         ps: [{
@@ -1140,49 +1258,19 @@ var WAMI_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MultipartImageRootDocumentType.Reference',
+        ln: 'PostContentTypeMetaData.XML',
         tn: null,
         ps: [{
-            n: 'imageReference',
+            n: 'schemaElement',
+            rq: true,
             an: {
-              lp: 'imageReference'
-            },
-            t: 'a'
-          }, {
-            n: 'metadataReference',
-            an: {
-              lp: 'metadataReference'
+              lp: 'schemaElement'
             },
             t: 'a'
           }]
       }, {
-        ln: 'RequestMethodLinkType',
-        bti: 'OWS_2_0.RequestMethodType',
+        ln: 'CommonAbstractRequestType',
         ps: [{
-            n: 'get',
-            ti: 'Boolean',
-            an: {
-              lp: 'get'
-            },
-            t: 'a'
-          }, {
-            n: 'post',
-            ti: 'Boolean',
-            an: {
-              lp: 'post'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'HelpResponseType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }, {
             n: 'service',
             rq: true,
             an: {
@@ -1197,121 +1285,29 @@ var WAMI_1_0_1_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'lang',
+            n: 'exceptions',
             an: {
-              lp: 'lang'
+              lp: 'exceptions'
             },
             t: 'a'
           }, {
-            n: 'version',
+            n: 'acceptLanguages',
+            ti: {
+              t: 'l'
+            },
             an: {
-              lp: 'version'
+              lp: 'acceptLanguages'
             },
             t: 'a'
           }]
       }, {
-        ln: 'CSCollectionsType',
-        tn: 'CS_CollectionsType',
-        bti: '.AbstractResponseType',
+        ln: 'ServiceElementType',
         ps: [{
-            n: 'description',
-            en: 'Description'
-          }, {
-            n: 'parent',
-            en: 'Parent',
-            ti: '.CSCollectionsType.Parent'
-          }, {
-            n: 'node',
+            n: 'request',
             rq: true,
-            en: 'Node',
-            ti: '.CSNodeType'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ExtendedMetadataSection',
-        tn: null,
-        ps: [{
-            n: 'abstractMetaData',
-            mno: 0,
             col: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractMetaData',
-              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
-            },
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CSCollectionCountType',
-        tn: 'CS_CollectionCountType',
-        bti: '.AbstractResponseType',
-        ps: [{
-            n: 'description',
-            en: 'Description'
-          }, {
-            n: 'root',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'root'
-            },
-            t: 'a'
-          }, {
-            n: 'depth',
-            ti: 'Integer',
-            an: {
-              lp: 'depth'
-            },
-            t: 'a'
-          }, {
-            n: 'nid',
-            an: {
-              lp: 'NID'
-            },
-            t: 'a'
-          }, {
-            n: 'childNodes',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'childNodes'
-            },
-            t: 'a'
-          }, {
-            n: 'totalNodes',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'totalNodes'
-            },
-            t: 'a'
-          }, {
-            n: 'collections',
-            ti: 'Integer',
-            an: {
-              lp: 'collections'
-            },
-            t: 'a'
-          }, {
-            n: 'edgeDepth',
-            ti: 'Integer',
-            an: {
-              lp: 'edgeDepth'
-            },
-            t: 'a'
+            en: 'Request',
+            ti: '.RequestMethodLinkType'
           }]
       }, {
         ln: 'PathMapTrackType',
@@ -1340,32 +1336,40 @@ var WAMI_1_0_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'PathMapTrackAoiType',
+        ln: 'RequestMethodLinkType',
+        bti: 'OWS_2_0.RequestMethodType',
         ps: [{
-            n: 'bBox',
-            rq: true,
-            en: 'BBox',
-            ti: '.BoundBoxType'
+            n: 'get',
+            ti: 'Boolean',
+            an: {
+              lp: 'get'
+            },
+            t: 'a'
           }, {
-            n: 'time',
-            rq: true,
-            en: 'Time',
-            ti: '.FrameOrTimeRequestType'
-          }, {
-            n: 'timeSpan',
-            en: 'TimeSpan',
-            ti: '.FrameOrTimeSpanRequestType'
-          }, {
-            n: 'option',
-            mno: 0,
-            col: true,
-            en: 'Option',
-            ti: '.NameValuePairType'
+            n: 'post',
+            ti: 'Boolean',
+            an: {
+              lp: 'post'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ISInfoType',
+        tn: 'IS_InfoType',
+        bti: '.AbstractResponseType',
+        ps: [{
+            n: 'metadata',
+            en: 'Metadata',
+            ti: '.CollectionMetadataSectionsType'
           }]
       }, {
         t: 'enum',
         ln: 'NodeDepthType',
         vs: ['All', '0', '1']
+      }, {
+        t: 'enum',
+        ln: 'ExceptionNameType',
+        vs: ['XML', 'IMAGE', 'NONE', 'OTHER']
       }, {
         t: 'enum',
         ln: 'DispositionType',
@@ -1374,50 +1378,64 @@ var WAMI_1_0_1_Module_Factory = function () {
         t: 'enum',
         ln: 'NodeCountDepthType',
         vs: ['All', '1']
-      }, {
-        t: 'enum',
-        ln: 'ExceptionNameType',
-        vs: ['XML', 'IMAGE', 'NONE', 'OTHER']
       }],
     eis: [{
-        en: 'Help',
-        ti: '.HelpResponseType'
-      }, {
-        en: 'CS_GetCollectionCountRequest',
-        ti: '.CSGetCollectionCountRequestType'
-      }, {
-        en: 'IS_PathMap',
-        ti: '.ISPathMapType'
-      }, {
-        en: 'IS_MapInfo',
-        ti: '.ISMapInfoType'
-      }, {
-        en: 'GetHelpRequest',
-        ti: '.GetHelpRequestType'
+        en: 'IS_GetPathMapInfoRequest',
+        ti: '.ISGetPathMapInfoRequestType'
       }, {
         en: 'ExtendedMetadataSection',
         ti: '.ExtendedMetadataSection'
       }, {
-        en: 'VS_GetMapVideoRequest',
-        ti: '.VSGetMapVideoRequestType'
+        en: 'IS_GetPathMapRequest',
+        ti: '.ISGetPathMapRequestType'
       }, {
-        en: 'CS_GetCollectionsRequest',
-        ti: '.CSGetCollectionsRequestType'
+        en: 'GetHelpRequest',
+        ti: '.GetHelpRequestType'
       }, {
         en: 'IS_Map',
         ti: '.ISMapType'
       }, {
-        en: 'CS_Collections',
-        ti: '.CSCollectionsType'
+        en: 'VS_GetMapVideoRequest',
+        ti: '.VSGetMapVideoRequestType'
       }, {
-        en: 'IS_GetMapInfoRequest',
-        ti: '.ISGetMapInfoRequestType'
+        en: 'IS_MapInfo',
+        ti: '.ISMapInfoType'
+      }, {
+        en: 'CS_GetCollectionsRequest',
+        ti: '.CSGetCollectionsRequestType'
       }, {
         en: 'Capabilities',
         ti: '.CapabilitiesResponseBaseType'
       }, {
-        en: 'IS_GetPathMapRequest',
-        ti: '.ISGetPathMapRequestType'
+        en: 'CS_CollectionCount',
+        ti: '.CSCollectionCountType'
+      }, {
+        en: 'CS_Collections',
+        ti: '.CSCollectionsType'
+      }, {
+        en: 'CS_GetCollectionCountRequest',
+        ti: '.CSGetCollectionCountRequestType'
+      }, {
+        en: 'IS_PathMapInfo',
+        ti: '.ISPathMapInfoType'
+      }, {
+        en: 'GetCapabilitiesRequest',
+        ti: '.GetCapabilitiesRequestType'
+      }, {
+        en: 'Help',
+        ti: '.HelpResponseType'
+      }, {
+        en: 'IS_GetMapRequest',
+        ti: '.ISGetMapRequestType'
+      }, {
+        en: 'VS_GetPathMapVideoRequest',
+        ti: '.VSGetPathMapVideoRequestType'
+      }, {
+        en: 'IS_PathMap',
+        ti: '.ISPathMapType'
+      }, {
+        en: 'IS_GetMapInfoRequest',
+        ti: '.ISGetMapInfoRequestType'
       }, {
         en: 'PostContentTypeMetaData',
         ti: '.PostContentTypeMetaData',
@@ -1425,24 +1443,6 @@ var WAMI_1_0_1_Module_Factory = function () {
           lp: 'AbstractMetaData',
           ns: 'http:\/\/www.opengis.net\/ows\/2.0'
         }
-      }, {
-        en: 'VS_GetPathMapVideoRequest',
-        ti: '.VSGetPathMapVideoRequestType'
-      }, {
-        en: 'IS_PathMapInfo',
-        ti: '.ISPathMapInfoType'
-      }, {
-        en: 'IS_GetPathMapInfoRequest',
-        ti: '.ISGetPathMapInfoRequestType'
-      }, {
-        en: 'IS_GetMapRequest',
-        ti: '.ISGetMapRequestType'
-      }, {
-        en: 'GetCapabilitiesRequest',
-        ti: '.GetCapabilitiesRequestType'
-      }, {
-        en: 'CS_CollectionCount',
-        ti: '.CSCollectionCountType'
       }]
   };
   return {

@@ -5,43 +5,40 @@ var CityGML_Appearance_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_1_1'],
     tis: [{
-        ln: 'AppearancePropertyType',
+        ln: 'GeoreferencedTextureType',
+        bti: '.AbstractTextureType',
         ps: [{
-            n: 'appearance',
-            rq: true,
-            en: 'Appearance',
-            ti: '.AppearanceType'
+            n: 'preferWorldFile',
+            ti: 'Boolean'
           }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
+            n: 'referencePoint',
+            ti: 'GML_3_1_1.PointPropertyType'
           }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
+            n: 'orientation',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
           }, {
-            n: 'href',
-            t: 'a'
+            n: 'target',
+            mno: 0,
+            col: true
           }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'genericApplicationPropertyOfGeoreferencedTexture',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfGeoreferencedTexture',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AbstractTextureParameterizationType',
+        bti: 'GML_3_1_1.AbstractGMLType',
+        ps: [{
+            n: 'genericApplicationPropertyOfTextureParameterization',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfTextureParameterization',
+            ti: 'AnyType'
           }]
       }, {
         ln: 'TexCoordListType',
@@ -59,48 +56,6 @@ var CityGML_Appearance_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'TexCoordGenType.WorldToTexture',
-        tn: null,
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            },
-            t: 'v'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'srsDimension',
-            ti: 'Integer',
-            an: {
-              lp: 'srsDimension'
-            },
-            t: 'a'
-          }, {
-            n: 'axisLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'axisLabels'
-            },
-            t: 'a'
-          }, {
-            n: 'uomLabels',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'uomLabels'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'ParameterizedTextureType',
         bti: '.AbstractTextureType',
         ps: [{
@@ -113,63 +68,6 @@ var CityGML_Appearance_2_0_Module_Factory = function () {
             mno: 0,
             col: true,
             en: '_GenericApplicationPropertyOfParameterizedTexture',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AbstractTextureType',
-        bti: '.AbstractSurfaceDataType',
-        ps: [{
-            n: 'imageURI',
-            rq: true
-          }, {
-            n: 'mimeType',
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'textureType'
-          }, {
-            n: 'wrapMode'
-          }, {
-            n: 'borderColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'genericApplicationPropertyOfTexture',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfTexture',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'TexCoordListType.TextureCoordinates',
-        tn: null,
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            },
-            t: 'v'
-          }, {
-            n: 'ring',
-            rq: true,
-            an: {
-              lp: 'ring'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractSurfaceDataType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'isFront',
-            ti: 'Boolean'
-          }, {
-            n: 'genericApplicationPropertyOfSurfaceData',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfSurfaceData',
             ti: 'AnyType'
           }]
       }, {
@@ -222,18 +120,46 @@ var CityGML_Appearance_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TexCoordGenType',
-        bti: '.AbstractTextureParameterizationType',
+        ln: 'TexCoordGenType.WorldToTexture',
+        tn: null,
         ps: [{
-            n: 'worldToTexture',
-            rq: true,
-            ti: '.TexCoordGenType.WorldToTexture'
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            },
+            t: 'v'
           }, {
-            n: 'genericApplicationPropertyOfTexCoordGen',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfTexCoordGen',
-            ti: 'AnyType'
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'srsDimension',
+            ti: 'Integer',
+            an: {
+              lp: 'srsDimension'
+            },
+            t: 'a'
+          }, {
+            n: 'axisLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'axisLabels'
+            },
+            t: 'a'
+          }, {
+            n: 'uomLabels',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'uomLabels'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'X3DMaterialType',
@@ -280,30 +206,131 @@ var CityGML_Appearance_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'GeoreferencedTextureType',
-        bti: '.AbstractTextureType',
+        ln: 'AppearanceType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
         ps: [{
-            n: 'preferWorldFile',
+            n: 'theme'
+          }, {
+            n: 'surfaceDataMember',
+            mno: 0,
+            col: true,
+            ti: '.SurfaceDataPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfAppearance',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfAppearance',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TexCoordListType.TextureCoordinates',
+        tn: null,
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            },
+            t: 'v'
+          }, {
+            n: 'ring',
+            rq: true,
+            an: {
+              lp: 'ring'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractSurfaceDataType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'isFront',
             ti: 'Boolean'
           }, {
-            n: 'referencePoint',
-            ti: 'GML_3_1_1.PointPropertyType'
+            n: 'genericApplicationPropertyOfSurfaceData',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfSurfaceData',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TexCoordGenType',
+        bti: '.AbstractTextureParameterizationType',
+        ps: [{
+            n: 'worldToTexture',
+            rq: true,
+            ti: '.TexCoordGenType.WorldToTexture'
           }, {
-            n: 'orientation',
+            n: 'genericApplicationPropertyOfTexCoordGen',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfTexCoordGen',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AbstractTextureType',
+        bti: '.AbstractSurfaceDataType',
+        ps: [{
+            n: 'imageURI',
+            rq: true
+          }, {
+            n: 'mimeType',
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'textureType'
+          }, {
+            n: 'wrapMode'
+          }, {
+            n: 'borderColor',
             ti: {
               t: 'l',
               bti: 'Double'
             }
           }, {
-            n: 'target',
-            mno: 0,
-            col: true
-          }, {
-            n: 'genericApplicationPropertyOfGeoreferencedTexture',
+            n: 'genericApplicationPropertyOfTexture',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfGeoreferencedTexture',
+            en: '_GenericApplicationPropertyOfTexture',
             ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AppearancePropertyType',
+        ps: [{
+            n: 'appearance',
+            rq: true,
+            en: 'Appearance',
+            ti: '.AppearanceType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'SurfaceDataPropertyType',
@@ -347,42 +374,73 @@ var CityGML_Appearance_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AppearanceType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'theme'
-          }, {
-            n: 'surfaceDataMember',
-            mno: 0,
-            col: true,
-            ti: '.SurfaceDataPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfAppearance',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfAppearance',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AbstractTextureParameterizationType',
-        bti: 'GML_3_1_1.AbstractGMLType',
-        ps: [{
-            n: 'genericApplicationPropertyOfTextureParameterization',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfTextureParameterization',
-            ti: 'AnyType'
-          }]
+        t: 'enum',
+        ln: 'WrapModeType',
+        vs: ['none', 'wrap', 'mirror', 'clamp', 'border']
       }, {
         t: 'enum',
         ln: 'TextureTypeType',
         vs: ['specific', 'typical', 'unknown']
-      }, {
-        t: 'enum',
-        ln: 'WrapModeType',
-        vs: ['none', 'wrap', 'mirror', 'clamp', 'border']
       }],
     eis: [{
+        en: 'ParameterizedTexture',
+        ti: '.ParameterizedTextureType',
+        sh: '_Texture'
+      }, {
+        en: '_GenericApplicationPropertyOfAppearance',
+        ti: 'AnyType'
+      }, {
+        en: 'appearanceMember',
+        ti: 'GML_3_1_1.FeaturePropertyType',
+        sh: {
+          lp: 'featureMember',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: '_Texture',
+        ti: '.AbstractTextureType',
+        sh: '_SurfaceData'
+      }, {
+        en: '_GenericApplicationPropertyOfTexCoordGen',
+        ti: 'AnyType'
+      }, {
+        en: 'TexCoordList',
+        ti: '.TexCoordListType',
+        sh: '_TextureParameterization'
+      }, {
+        en: '_GenericApplicationPropertyOfTexCoordList',
+        ti: 'AnyType'
+      }, {
+        en: '_TextureParameterization',
+        ti: '.AbstractTextureParameterizationType',
+        sh: {
+          lp: '_GML',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'TexCoordGen',
+        ti: '.TexCoordGenType',
+        sh: '_TextureParameterization'
+      }, {
+        en: '_GenericApplicationPropertyOfTextureParameterization',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfTexture',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfSurfaceData',
+        ti: 'AnyType'
+      }, {
+        en: 'appearance',
+        ti: '.AppearancePropertyType',
+        sh: {
+          lp: '_GenericApplicationPropertyOfCityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
+      }, {
+        en: '_GenericApplicationPropertyOfParameterizedTexture',
+        ti: 'AnyType'
+      }, {
         en: '_GenericApplicationPropertyOfGeoreferencedTexture',
         ti: 'AnyType'
       }, {
@@ -393,50 +451,13 @@ var CityGML_Appearance_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: '_GenericApplicationPropertyOfTexture',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfParameterizedTexture',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfX3DMaterial',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfSurfaceData',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfTextureParameterization',
-        ti: 'AnyType'
-      }, {
-        en: 'ParameterizedTexture',
-        ti: '.ParameterizedTextureType',
-        sh: '_Texture'
-      }, {
-        en: 'GeoreferencedTexture',
-        ti: '.GeoreferencedTextureType',
-        sh: '_Texture'
-      }, {
         en: 'X3DMaterial',
         ti: '.X3DMaterialType',
         sh: '_SurfaceData'
       }, {
-        en: 'TexCoordList',
-        ti: '.TexCoordListType',
-        sh: '_TextureParameterization'
-      }, {
-        en: '_GenericApplicationPropertyOfTexCoordGen',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfTexCoordList',
-        ti: 'AnyType'
-      }, {
-        en: 'TexCoordGen',
-        ti: '.TexCoordGenType',
-        sh: '_TextureParameterization'
-      }, {
-        en: '_Texture',
-        ti: '.AbstractTextureType',
-        sh: '_SurfaceData'
+        en: 'GeoreferencedTexture',
+        ti: '.GeoreferencedTextureType',
+        sh: '_Texture'
       }, {
         en: 'Appearance',
         ti: '.AppearanceType',
@@ -445,29 +466,8 @@ var CityGML_Appearance_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: '_GenericApplicationPropertyOfAppearance',
+        en: '_GenericApplicationPropertyOfX3DMaterial',
         ti: 'AnyType'
-      }, {
-        en: '_TextureParameterization',
-        ti: '.AbstractTextureParameterizationType',
-        sh: {
-          lp: '_GML',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: 'appearance',
-        ti: '.AppearancePropertyType',
-        sh: {
-          lp: '_GenericApplicationPropertyOfCityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
-      }, {
-        en: 'appearanceMember',
-        ti: 'GML_3_1_1.FeaturePropertyType',
-        sh: {
-          lp: 'featureMember',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
       }]
   };
   return {

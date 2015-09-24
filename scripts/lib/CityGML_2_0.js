@@ -5,43 +5,14 @@ var CityGML_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['GML_3_1_1', 'XLink_1_0', 'xAL_2_0'],
     tis: [{
-        ln: 'AddressPropertyType',
+        ln: 'AbstractSiteType',
+        bti: '.AbstractCityObjectType',
         ps: [{
-            n: 'address',
-            rq: true,
-            en: 'Address',
-            ti: '.AddressType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'genericApplicationPropertyOfSite',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfSite',
+            ti: 'AnyType'
           }]
       }, {
         ln: 'GeneralizationRelationType',
@@ -86,56 +57,6 @@ var CityGML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AddressType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'xalAddress',
-            rq: true,
-            ti: '.XalAddressPropertyType'
-          }, {
-            n: 'multiPoint',
-            ti: 'GML_3_1_1.MultiPointPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfAddress',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfAddress',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AbstractCityObjectType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'creationDate',
-            ti: 'Calendar'
-          }, {
-            n: 'terminationDate',
-            ti: 'Calendar'
-          }, {
-            n: 'externalReference',
-            mno: 0,
-            col: true,
-            ti: '.ExternalReferenceType'
-          }, {
-            n: 'generalizesTo',
-            mno: 0,
-            col: true,
-            ti: '.GeneralizationRelationType'
-          }, {
-            n: 'relativeToTerrain'
-          }, {
-            n: 'relativeToWater'
-          }, {
-            n: 'genericApplicationPropertyOfCityObject',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: '_GenericApplicationPropertyOfCityObject',
-            ti: 'AnyType',
-            t: 'er'
-          }]
-      }, {
         ln: 'XalAddressPropertyType',
         tn: 'xalAddressPropertyType',
         ps: [{
@@ -146,16 +67,6 @@ var CityGML_2_0_Module_Factory = function () {
               ns: 'urn:oasis:names:tc:ciq:xsdschema:xAL:2.0'
             },
             ti: 'xAL_2_0.AddressDetails'
-          }]
-      }, {
-        ln: 'AbstractSiteType',
-        bti: '.AbstractCityObjectType',
-        ps: [{
-            n: 'genericApplicationPropertyOfSite',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfSite',
-            ti: 'AnyType'
           }]
       }, {
         ln: 'ImplicitRepresentationPropertyType',
@@ -197,13 +108,46 @@ var CityGML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ExternalObjectReferenceType',
+        ln: 'AbstractCityObjectType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
         ps: [{
-            n: 'name',
-            rq: true
+            n: 'creationDate',
+            ti: 'Calendar'
           }, {
-            n: 'uri',
-            rq: true
+            n: 'terminationDate',
+            ti: 'Calendar'
+          }, {
+            n: 'externalReference',
+            mno: 0,
+            col: true,
+            ti: '.ExternalReferenceType'
+          }, {
+            n: 'generalizesTo',
+            mno: 0,
+            col: true,
+            ti: '.GeneralizationRelationType'
+          }, {
+            n: 'relativeToTerrain'
+          }, {
+            n: 'relativeToWater'
+          }, {
+            n: 'genericApplicationPropertyOfCityObject',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            en: '_GenericApplicationPropertyOfCityObject',
+            ti: 'AnyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'ExternalReferenceType',
+        ps: [{
+            n: 'informationSystem'
+          }, {
+            n: 'externalObject',
+            rq: true,
+            ti: '.ExternalObjectReferenceType'
           }]
       }, {
         ln: 'CityModelType',
@@ -214,6 +158,62 @@ var CityGML_2_0_Module_Factory = function () {
             col: true,
             en: '_GenericApplicationPropertyOfCityModel',
             ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AddressType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'xalAddress',
+            rq: true,
+            ti: '.XalAddressPropertyType'
+          }, {
+            n: 'multiPoint',
+            ti: 'GML_3_1_1.MultiPointPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfAddress',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfAddress',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AddressPropertyType',
+        ps: [{
+            n: 'address',
+            rq: true,
+            en: 'Address',
+            ti: '.AddressType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'ImplicitGeometryType',
@@ -238,55 +238,28 @@ var CityGML_2_0_Module_Factory = function () {
             ti: 'GML_3_1_1.PointPropertyType'
           }]
       }, {
-        ln: 'ExternalReferenceType',
+        ln: 'ExternalObjectReferenceType',
         ps: [{
-            n: 'informationSystem'
+            n: 'name',
+            rq: true
           }, {
-            n: 'externalObject',
-            rq: true,
-            ti: '.ExternalObjectReferenceType'
+            n: 'uri',
+            rq: true
           }]
-      }, {
-        t: 'enum',
-        ln: 'RelativeToWaterType',
-        vs: ['entirelyAboveWaterSurface', 'substantiallyAboveWaterSurface', 'substantiallyAboveAndBelowWaterSurface', 'substantiallyBelowWaterSurface', 'entirelyBelowWaterSurface', 'temporarilyAboveAndBelowWaterSurface']
       }, {
         t: 'enum',
         ln: 'RelativeToTerrainType',
         vs: ['entirelyAboveTerrain', 'substantiallyAboveTerrain', 'substantiallyAboveAndBelowTerrain', 'substantiallyBelowTerrain', 'entirelyBelowTerrain']
+      }, {
+        t: 'enum',
+        ln: 'RelativeToWaterType',
+        vs: ['entirelyAboveWaterSurface', 'substantiallyAboveWaterSurface', 'substantiallyAboveAndBelowWaterSurface', 'substantiallyBelowWaterSurface', 'entirelyBelowWaterSurface', 'temporarilyAboveAndBelowWaterSurface']
       }],
     eis: [{
-        en: '_GenericApplicationPropertyOfCityObject',
-        ti: 'AnyType'
-      }, {
-        en: 'Address',
-        ti: '.AddressType',
-        sh: {
-          lp: '_Feature',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
         en: 'cityObjectMember',
         ti: 'GML_3_1_1.FeaturePropertyType',
         sh: {
           lp: 'featureMember',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: '_GenericApplicationPropertyOfAddress',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfSite',
-        ti: 'AnyType'
-      }, {
-        en: '_Site',
-        ti: '.AbstractSiteType',
-        sh: '_CityObject'
-      }, {
-        en: '_CityObject',
-        ti: '.AbstractCityObjectType',
-        sh: {
-          lp: '_Feature',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
@@ -297,6 +270,19 @@ var CityGML_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
+        en: '_GenericApplicationPropertyOfCityObject',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfSite',
+        ti: 'AnyType'
+      }, {
+        en: 'Address',
+        ti: '.AddressType',
+        sh: {
+          lp: '_Feature',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
         en: 'ImplicitGeometry',
         ti: '.ImplicitGeometryType',
         sh: {
@@ -304,7 +290,21 @@ var CityGML_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
+        en: '_CityObject',
+        ti: '.AbstractCityObjectType',
+        sh: {
+          lp: '_Feature',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: '_Site',
+        ti: '.AbstractSiteType',
+        sh: '_CityObject'
+      }, {
         en: '_GenericApplicationPropertyOfCityModel',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfAddress',
         ti: 'AnyType'
       }]
   };

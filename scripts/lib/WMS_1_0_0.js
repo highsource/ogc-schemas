@@ -2,7 +2,78 @@ var WMS_1_0_0_Module_Factory = function () {
   var WMS_1_0_0 = {
     n: 'WMS_1_0_0',
     tis: [{
-        ln: 'INIMAGE',
+        ln: 'TIFF',
+        tn: null
+      }, {
+        ln: 'VendorSpecificCapabilities',
+        tn: null
+      }, {
+        ln: 'SVG',
+        tn: null
+      }, {
+        ln: 'Service',
+        tn: null,
+        ps: [{
+            n: 'name',
+            en: {
+              lp: 'Name'
+            }
+          }, {
+            n: 'title',
+            en: {
+              lp: 'Title'
+            }
+          }, {
+            n: '_abstract',
+            en: {
+              lp: 'Abstract'
+            }
+          }, {
+            n: 'keywords',
+            en: {
+              lp: 'Keywords'
+            }
+          }, {
+            n: 'onlineResource',
+            en: {
+              lp: 'OnlineResource'
+            }
+          }, {
+            n: 'fees',
+            en: {
+              lp: 'Fees'
+            }
+          }, {
+            n: 'accessConstraints',
+            en: {
+              lp: 'AccessConstraints'
+            }
+          }]
+      }, {
+        ln: 'Capabilities',
+        tn: null,
+        ps: [{
+            n: 'format',
+            en: {
+              lp: 'Format'
+            },
+            ti: '.Format'
+          }, {
+            n: 'dcpType',
+            col: true,
+            en: {
+              lp: 'DCPType'
+            },
+            ti: '.DCPType'
+          }]
+      }, {
+        ln: 'GIF',
+        tn: null
+      }, {
+        ln: 'PNG',
+        tn: null
+      }, {
+        ln: 'JPEG',
         tn: null
       }, {
         ln: 'BoundingBox',
@@ -39,6 +110,9 @@ var WMS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'MIME',
+        tn: null
+      }, {
         ln: 'Style',
         tn: null,
         ps: [{
@@ -63,42 +137,35 @@ var WMS_1_0_0_Module_Factory = function () {
             }
           }]
       }, {
-        ln: 'WMTMSCapabilities',
+        ln: 'Map',
         tn: null,
         ps: [{
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }, {
-            n: 'service',
+            n: 'format',
             en: {
-              lp: 'Service'
+              lp: 'Format'
             },
-            ti: '.Service'
+            ti: '.Format'
           }, {
-            n: 'capability',
+            n: 'dcpType',
+            col: true,
             en: {
-              lp: 'Capability'
+              lp: 'DCPType'
             },
-            ti: '.Capability'
+            ti: '.DCPType'
           }]
       }, {
-        ln: 'GML3',
+        ln: 'INIMAGE',
         tn: null
       }, {
-        ln: 'WBMP',
-        tn: null
-      }, {
-        ln: 'VendorSpecificCapabilities',
-        tn: null
+        ln: 'DCPType',
+        tn: null,
+        ps: [{
+            n: 'http',
+            en: {
+              lp: 'HTTP'
+            },
+            ti: '.HTTP'
+          }]
       }, {
         ln: 'ScaleHint',
         tn: null,
@@ -116,7 +183,20 @@ var WMS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'BLANK',
+        ln: 'Get',
+        tn: null,
+        ps: [{
+            n: 'onlineResource',
+            an: {
+              lp: 'onlineResource'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GML3',
+        tn: null
+      }, {
+        ln: 'GML2',
         tn: null
       }, {
         ln: 'Layer',
@@ -192,11 +272,33 @@ var WMS_1_0_0_Module_Factory = function () {
             ti: '.Layer'
           }]
       }, {
-        ln: 'GML2',
-        tn: null
-      }, {
-        ln: 'GeoTIFF',
-        tn: null
+        ln: 'WMTMSCapabilities',
+        tn: null,
+        ps: [{
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'updateSequence',
+            an: {
+              lp: 'updateSequence'
+            },
+            t: 'a'
+          }, {
+            n: 'service',
+            en: {
+              lp: 'Service'
+            },
+            ti: '.Service'
+          }, {
+            n: 'capability',
+            en: {
+              lp: 'Capability'
+            },
+            ti: '.Capability'
+          }]
       }, {
         ln: 'Post',
         tn: null,
@@ -207,6 +309,90 @@ var WMS_1_0_0_Module_Factory = function () {
             },
             t: 'a'
           }]
+      }, {
+        ln: 'WebCGM',
+        tn: null
+      }, {
+        ln: 'BLANK',
+        tn: null
+      }, {
+        ln: 'Capability',
+        tn: null,
+        ps: [{
+            n: 'request',
+            en: {
+              lp: 'Request'
+            },
+            ti: '.Request'
+          }, {
+            n: 'exception',
+            en: {
+              lp: 'Exception'
+            },
+            ti: '.Exception'
+          }, {
+            n: 'vendorSpecificCapabilities',
+            en: {
+              lp: 'VendorSpecificCapabilities'
+            },
+            ti: '.VendorSpecificCapabilities'
+          }, {
+            n: 'layer',
+            en: {
+              lp: 'Layer'
+            },
+            ti: '.Layer'
+          }]
+      }, {
+        ln: 'LatLonBoundingBox',
+        tn: null,
+        ps: [{
+            n: 'minx',
+            an: {
+              lp: 'minx'
+            },
+            t: 'a'
+          }, {
+            n: 'miny',
+            an: {
+              lp: 'miny'
+            },
+            t: 'a'
+          }, {
+            n: 'maxx',
+            an: {
+              lp: 'maxx'
+            },
+            t: 'a'
+          }, {
+            n: 'maxy',
+            an: {
+              lp: 'maxy'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'HTTP',
+        tn: null,
+        ps: [{
+            n: 'getOrPost',
+            col: true,
+            etis: [{
+                en: {
+                  lp: 'Get'
+                },
+                ti: '.Get'
+              }, {
+                en: {
+                  lp: 'Post'
+                },
+                ti: '.Post'
+              }],
+            t: 'es'
+          }]
+      }, {
+        ln: 'GeoTIFF',
+        tn: null
       }, {
         ln: 'Request',
         tn: null,
@@ -232,7 +418,7 @@ var WMS_1_0_0_Module_Factory = function () {
             t: 'es'
           }]
       }, {
-        ln: 'Map',
+        ln: 'Exception',
         tn: null,
         ps: [{
             n: 'format',
@@ -240,14 +426,16 @@ var WMS_1_0_0_Module_Factory = function () {
               lp: 'Format'
             },
             ti: '.Format'
-          }, {
-            n: 'dcpType',
-            col: true,
-            en: {
-              lp: 'DCPType'
-            },
-            ti: '.DCPType'
           }]
+      }, {
+        ln: 'WBMP',
+        tn: null
+      }, {
+        ln: 'WMSXML',
+        tn: null
+      }, {
+        ln: 'PPM',
+        tn: null
       }, {
         ln: 'FeatureInfo',
         tn: null,
@@ -266,18 +454,8 @@ var WMS_1_0_0_Module_Factory = function () {
             ti: '.DCPType'
           }]
       }, {
-        ln: 'SVG',
+        ln: 'GML1',
         tn: null
-      }, {
-        ln: 'Get',
-        tn: null,
-        ps: [{
-            n: 'onlineResource',
-            an: {
-              lp: 'onlineResource'
-            },
-            t: 'a'
-          }]
       }, {
         ln: 'Format',
         tn: null,
@@ -367,205 +545,12 @@ var WMS_1_0_0_Module_Factory = function () {
               }],
             t: 'es'
           }]
-      }, {
-        ln: 'TIFF',
-        tn: null
-      }, {
-        ln: 'WMSXML',
-        tn: null
-      }, {
-        ln: 'GIF',
-        tn: null
-      }, {
-        ln: 'GML1',
-        tn: null
-      }, {
-        ln: 'JPEG',
-        tn: null
-      }, {
-        ln: 'Exception',
-        tn: null,
-        ps: [{
-            n: 'format',
-            en: {
-              lp: 'Format'
-            },
-            ti: '.Format'
-          }]
-      }, {
-        ln: 'Capabilities',
-        tn: null,
-        ps: [{
-            n: 'format',
-            en: {
-              lp: 'Format'
-            },
-            ti: '.Format'
-          }, {
-            n: 'dcpType',
-            col: true,
-            en: {
-              lp: 'DCPType'
-            },
-            ti: '.DCPType'
-          }]
-      }, {
-        ln: 'MIME',
-        tn: null
-      }, {
-        ln: 'DCPType',
-        tn: null,
-        ps: [{
-            n: 'http',
-            en: {
-              lp: 'HTTP'
-            },
-            ti: '.HTTP'
-          }]
-      }, {
-        ln: 'PPM',
-        tn: null
-      }, {
-        ln: 'LatLonBoundingBox',
-        tn: null,
-        ps: [{
-            n: 'minx',
-            an: {
-              lp: 'minx'
-            },
-            t: 'a'
-          }, {
-            n: 'miny',
-            an: {
-              lp: 'miny'
-            },
-            t: 'a'
-          }, {
-            n: 'maxx',
-            an: {
-              lp: 'maxx'
-            },
-            t: 'a'
-          }, {
-            n: 'maxy',
-            an: {
-              lp: 'maxy'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'WebCGM',
-        tn: null
-      }, {
-        ln: 'Capability',
-        tn: null,
-        ps: [{
-            n: 'request',
-            en: {
-              lp: 'Request'
-            },
-            ti: '.Request'
-          }, {
-            n: 'exception',
-            en: {
-              lp: 'Exception'
-            },
-            ti: '.Exception'
-          }, {
-            n: 'vendorSpecificCapabilities',
-            en: {
-              lp: 'VendorSpecificCapabilities'
-            },
-            ti: '.VendorSpecificCapabilities'
-          }, {
-            n: 'layer',
-            en: {
-              lp: 'Layer'
-            },
-            ti: '.Layer'
-          }]
-      }, {
-        ln: 'Service',
-        tn: null,
-        ps: [{
-            n: 'name',
-            en: {
-              lp: 'Name'
-            }
-          }, {
-            n: 'title',
-            en: {
-              lp: 'Title'
-            }
-          }, {
-            n: '_abstract',
-            en: {
-              lp: 'Abstract'
-            }
-          }, {
-            n: 'keywords',
-            en: {
-              lp: 'Keywords'
-            }
-          }, {
-            n: 'onlineResource',
-            en: {
-              lp: 'OnlineResource'
-            }
-          }, {
-            n: 'fees',
-            en: {
-              lp: 'Fees'
-            }
-          }, {
-            n: 'accessConstraints',
-            en: {
-              lp: 'AccessConstraints'
-            }
-          }]
-      }, {
-        ln: 'HTTP',
-        tn: null,
-        ps: [{
-            n: 'getOrPost',
-            col: true,
-            etis: [{
-                en: {
-                  lp: 'Get'
-                },
-                ti: '.Get'
-              }, {
-                en: {
-                  lp: 'Post'
-                },
-                ti: '.Post'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'PNG',
-        tn: null
       }],
     eis: [{
         en: {
-          lp: 'Layer'
+          lp: 'INIMAGE'
         },
-        ti: '.Layer'
-      }, {
-        en: {
-          lp: 'Style'
-        },
-        ti: '.Style'
-      }, {
-        en: {
-          lp: 'Capabilities'
-        },
-        ti: '.Capabilities'
-      }, {
-        en: {
-          lp: 'Map'
-        },
-        ti: '.Map'
+        ti: '.INIMAGE'
       }, {
         en: {
           lp: 'Get'
@@ -573,14 +558,74 @@ var WMS_1_0_0_Module_Factory = function () {
         ti: '.Get'
       }, {
         en: {
-          lp: 'GML.3'
+          lp: 'Map'
         },
-        ti: '.GML3'
+        ti: '.Map'
       }, {
         en: {
-          lp: 'GIF'
+          lp: 'GML.2'
         },
-        ti: '.GIF'
+        ti: '.GML2'
+      }, {
+        en: {
+          lp: 'BoundingBox'
+        },
+        ti: '.BoundingBox'
+      }, {
+        en: {
+          lp: 'SVG'
+        },
+        ti: '.SVG'
+      }, {
+        en: {
+          lp: 'Post'
+        },
+        ti: '.Post'
+      }, {
+        en: {
+          lp: 'Capability'
+        },
+        ti: '.Capability'
+      }, {
+        en: {
+          lp: 'JPEG'
+        },
+        ti: '.JPEG'
+      }, {
+        en: {
+          lp: 'Service'
+        },
+        ti: '.Service'
+      }, {
+        en: {
+          lp: 'WMT_MS_Capabilities'
+        },
+        ti: '.WMTMSCapabilities'
+      }, {
+        en: {
+          lp: 'PPM'
+        },
+        ti: '.PPM'
+      }, {
+        en: {
+          lp: 'DCPType'
+        },
+        ti: '.DCPType'
+      }, {
+        en: {
+          lp: 'Style'
+        },
+        ti: '.Style'
+      }, {
+        en: {
+          lp: 'LatLonBoundingBox'
+        },
+        ti: '.LatLonBoundingBox'
+      }, {
+        en: {
+          lp: 'WebCGM'
+        },
+        ti: '.WebCGM'
       }, {
         en: {
           lp: 'GeoTIFF'
@@ -593,24 +638,19 @@ var WMS_1_0_0_Module_Factory = function () {
         ti: '.Request'
       }, {
         en: {
-          lp: 'Service'
+          lp: 'VendorSpecificCapabilities'
         },
-        ti: '.Service'
+        ti: '.VendorSpecificCapabilities'
       }, {
         en: {
-          lp: 'INIMAGE'
+          lp: 'GIF'
         },
-        ti: '.INIMAGE'
+        ti: '.GIF'
       }, {
         en: {
-          lp: 'TIFF'
+          lp: 'Layer'
         },
-        ti: '.TIFF'
-      }, {
-        en: {
-          lp: 'PPM'
-        },
-        ti: '.PPM'
+        ti: '.Layer'
       }, {
         en: {
           lp: 'WMS_XML'
@@ -618,59 +658,9 @@ var WMS_1_0_0_Module_Factory = function () {
         ti: '.WMSXML'
       }, {
         en: {
-          lp: 'LatLonBoundingBox'
+          lp: 'Capabilities'
         },
-        ti: '.LatLonBoundingBox'
-      }, {
-        en: {
-          lp: 'WMT_MS_Capabilities'
-        },
-        ti: '.WMTMSCapabilities'
-      }, {
-        en: {
-          lp: 'WebCGM'
-        },
-        ti: '.WebCGM'
-      }, {
-        en: {
-          lp: 'WBMP'
-        },
-        ti: '.WBMP'
-      }, {
-        en: {
-          lp: 'BLANK'
-        },
-        ti: '.BLANK'
-      }, {
-        en: {
-          lp: 'SVG'
-        },
-        ti: '.SVG'
-      }, {
-        en: {
-          lp: 'Capability'
-        },
-        ti: '.Capability'
-      }, {
-        en: {
-          lp: 'FeatureInfo'
-        },
-        ti: '.FeatureInfo'
-      }, {
-        en: {
-          lp: 'PNG'
-        },
-        ti: '.PNG'
-      }, {
-        en: {
-          lp: 'GML.2'
-        },
-        ti: '.GML2'
-      }, {
-        en: {
-          lp: 'GML.1'
-        },
-        ti: '.GML1'
+        ti: '.Capabilities'
       }, {
         en: {
           lp: 'Format'
@@ -678,19 +668,14 @@ var WMS_1_0_0_Module_Factory = function () {
         ti: '.Format'
       }, {
         en: {
-          lp: 'Exception'
+          lp: 'TIFF'
         },
-        ti: '.Exception'
+        ti: '.TIFF'
       }, {
         en: {
-          lp: 'VendorSpecificCapabilities'
+          lp: 'GML.3'
         },
-        ti: '.VendorSpecificCapabilities'
-      }, {
-        en: {
-          lp: 'DCPType'
-        },
-        ti: '.DCPType'
+        ti: '.GML3'
       }, {
         en: {
           lp: 'HTTP'
@@ -698,24 +683,39 @@ var WMS_1_0_0_Module_Factory = function () {
         ti: '.HTTP'
       }, {
         en: {
-          lp: 'JPEG'
-        },
-        ti: '.JPEG'
-      }, {
-        en: {
-          lp: 'BoundingBox'
-        },
-        ti: '.BoundingBox'
-      }, {
-        en: {
           lp: 'MIME'
         },
         ti: '.MIME'
       }, {
         en: {
-          lp: 'Post'
+          lp: 'WBMP'
         },
-        ti: '.Post'
+        ti: '.WBMP'
+      }, {
+        en: {
+          lp: 'PNG'
+        },
+        ti: '.PNG'
+      }, {
+        en: {
+          lp: 'BLANK'
+        },
+        ti: '.BLANK'
+      }, {
+        en: {
+          lp: 'GML.1'
+        },
+        ti: '.GML1'
+      }, {
+        en: {
+          lp: 'FeatureInfo'
+        },
+        ti: '.FeatureInfo'
+      }, {
+        en: {
+          lp: 'Exception'
+        },
+        ti: '.Exception'
       }, {
         en: {
           lp: 'ScaleHint'

@@ -3,41 +3,15 @@ var SamplingSpatial_2_0_Module_Factory = function () {
     n: 'SamplingSpatial_2_0',
     dens: 'http:\/\/www.opengis.net\/samplingSpatial\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['OM_2_0', 'Sampling_2_0', 'XLink_1_0', 'GML_3_2_1', 'ISO19139_GMD_20070417'],
+    deps: ['XLink_1_0', 'ISO19139_GMD_20070417', 'OM_2_0', 'GML_3_2_1', 'Sampling_2_0'],
     tis: [{
-        ln: 'SFSpatialSamplingFeatureType',
-        tn: 'SF_SpatialSamplingFeatureType',
-        bti: 'Sampling_2_0.SFSamplingFeatureType',
+        ln: 'SFSpatialSamplingFeaturePropertyType',
+        tn: 'SF_SpatialSamplingFeaturePropertyType',
         ps: [{
-            n: 'hostedProcedure',
-            mno: 0,
-            col: true,
-            ti: 'OM_2_0.OMProcessPropertyType'
-          }, {
-            n: 'positionalAccuracy',
-            mno: 0,
-            mxo: 2,
-            col: true,
-            ti: 'ISO19139_GMD_20070417.DQPositionalAccuracyPropertyType'
-          }, {
-            n: 'shape',
+            n: 'sfSpatialSamplingFeature',
             rq: true,
-            ti: '.ShapeType'
-          }]
-      }, {
-        ln: 'ShapeType',
-        tn: 'shapeType',
-        ps: [{
-            n: 'abstractGeometry',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractGeometry',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.AbstractGeometryType',
-            t: 'er'
+            en: 'SF_SpatialSamplingFeature',
+            ti: '.SFSpatialSamplingFeatureType'
           }, {
             n: 'nilReason',
             ti: {
@@ -80,13 +54,39 @@ var SamplingSpatial_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SFSpatialSamplingFeaturePropertyType',
-        tn: 'SF_SpatialSamplingFeaturePropertyType',
+        ln: 'SFSpatialSamplingFeatureType',
+        tn: 'SF_SpatialSamplingFeatureType',
+        bti: 'Sampling_2_0.SFSamplingFeatureType',
         ps: [{
-            n: 'sfSpatialSamplingFeature',
+            n: 'hostedProcedure',
+            mno: 0,
+            col: true,
+            ti: 'OM_2_0.OMProcessPropertyType'
+          }, {
+            n: 'positionalAccuracy',
+            mno: 0,
+            mxo: 2,
+            col: true,
+            ti: 'ISO19139_GMD_20070417.DQPositionalAccuracyPropertyType'
+          }, {
+            n: 'shape',
             rq: true,
-            en: 'SF_SpatialSamplingFeature',
-            ti: '.SFSpatialSamplingFeatureType'
+            ti: '.ShapeType'
+          }]
+      }, {
+        ln: 'ShapeType',
+        tn: 'shapeType',
+        ps: [{
+            n: 'abstractGeometry',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractGeometry',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.AbstractGeometryType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {

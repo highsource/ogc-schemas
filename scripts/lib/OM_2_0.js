@@ -5,12 +5,13 @@ var OM_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_2_1', 'ISO19139_GMD_20070417'],
     tis: [{
-        ln: 'NamedValuePropertyType',
+        ln: 'OMProcessPropertyType',
+        tn: 'OM_ProcessPropertyType',
         ps: [{
-            n: 'namedValue',
+            n: 'any',
             rq: true,
-            en: 'NamedValue',
-            ti: '.NamedValueType'
+            mx: false,
+            t: 'ae'
           }, {
             n: 'nilReason',
             ti: {
@@ -51,36 +52,6 @@ var OM_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }]
-      }, {
-        ln: 'NamedValueType',
-        ps: [{
-            n: 'name',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'value',
-            rq: true,
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'ObservationContextPropertyType',
-        ps: [{
-            n: 'observationContext',
-            rq: true,
-            en: 'ObservationContext',
-            ti: '.ObservationContextType'
-          }]
-      }, {
-        ln: 'ObservationContextType',
-        ps: [{
-            n: 'role',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'relatedObservation',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
           }]
       }, {
         ln: 'OMObservationPropertyType',
@@ -132,13 +103,31 @@ var OM_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'OMProcessPropertyType',
-        tn: 'OM_ProcessPropertyType',
+        ln: 'ObservationContextPropertyType',
         ps: [{
-            n: 'any',
+            n: 'observationContext',
             rq: true,
-            mx: false,
-            t: 'ae'
+            en: 'ObservationContext',
+            ti: '.ObservationContextType'
+          }]
+      }, {
+        ln: 'ObservationContextType',
+        ps: [{
+            n: 'role',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'relatedObservation',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }]
+      }, {
+        ln: 'NamedValuePropertyType',
+        ps: [{
+            n: 'namedValue',
+            rq: true,
+            en: 'NamedValue',
+            ti: '.NamedValueType'
           }, {
             n: 'nilReason',
             ti: {
@@ -235,6 +224,17 @@ var OM_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'NamedValueType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'value',
+            rq: true,
+            ti: 'AnyType'
+          }]
+      }, {
         ln: 'OMObservationType',
         tn: 'OM_ObservationType',
         bti: 'GML_3_2_1.AbstractFeatureType',
@@ -292,18 +292,18 @@ var OM_2_0_Module_Factory = function () {
         en: 'ObservationContext',
         ti: '.ObservationContextType'
       }, {
-        en: 'NamedValue',
-        ti: '.NamedValueType'
-      }, {
-        en: 'result',
-        ti: 'AnyType'
-      }, {
         en: 'OM_Observation',
         ti: '.OMObservationType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
+      }, {
+        en: 'NamedValue',
+        ti: '.NamedValueType'
+      }, {
+        en: 'result',
+        ti: 'AnyType'
       }]
   };
   return {

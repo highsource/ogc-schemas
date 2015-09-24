@@ -5,6 +5,9 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_1_1'],
     tis: [{
+        ln: 'AbstractAppearanceType',
+        bti: 'GML_3_1_1.AbstractGMLType'
+      }, {
         ln: 'AppearancePropertyType',
         ps: [{
             n: 'appearance',
@@ -63,6 +66,25 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
             ti: '.AppearancePropertyType'
           }]
       }, {
+        ln: 'SimpleTextureType',
+        bti: '.AbstractAppearanceType',
+        ps: [{
+            n: 'textureMap',
+            rq: true
+          }, {
+            n: 'textureCoordinates',
+            rq: true,
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'textureType'
+          }, {
+            n: 'repeat',
+            ti: 'Boolean'
+          }]
+      }, {
         ln: 'MaterialType',
         bti: '.AbstractAppearanceType',
         ps: [{
@@ -94,37 +116,11 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
             }
           }]
       }, {
-        ln: 'SimpleTextureType',
-        bti: '.AbstractAppearanceType',
-        ps: [{
-            n: 'textureMap',
-            rq: true
-          }, {
-            n: 'textureCoordinates',
-            rq: true,
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'textureType'
-          }, {
-            n: 'repeat',
-            ti: 'Boolean'
-          }]
-      }, {
-        ln: 'AbstractAppearanceType',
-        bti: 'GML_3_1_1.AbstractGMLType'
-      }, {
         t: 'enum',
         ln: 'TextureTypeType',
         vs: ['specific', 'typical', 'unknown']
       }],
     eis: [{
-        en: 'SimpleTexture',
-        ti: '.SimpleTextureType',
-        sh: '_Appearance'
-      }, {
         en: '_Appearance',
         ti: '.AbstractAppearanceType',
         sh: {
@@ -144,6 +140,10 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
       }, {
         en: 'Material',
         ti: '.MaterialType',
+        sh: '_Appearance'
+      }, {
+        en: 'SimpleTexture',
+        ti: '.SimpleTextureType',
         sh: '_Appearance'
       }]
   };
