@@ -11,6 +11,7 @@
 		<version>2.5.2-SNAPSHOT</version>
 	</parent>
 	<modules>
+		<module>1.0.0</module>
 		<module>1.0.1</module>
 		<module>2.0</module>
 	</modules>
