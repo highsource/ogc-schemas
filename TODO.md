@@ -20,6 +20,9 @@
 * iso/19139/20060504
 * iso/19139/20070417
 * kml/2.2.0
+* ols/1.1.0
+* ols/1.2
+* ols/1.3
 * om/1.0.0
 * om/2.0
 * owc/0.3.1
@@ -29,14 +32,18 @@
 * sampling/1.0.0
 * sampling/2.0
 * samplingSpatial/2.0
+* samplingSpecimen/2.0
 * se/1.1.0
+* sensorML/1.0.0
 * sensorML/1.0.1
 * sensorML/2.0
 * sld/1.0.0
 * sld/1.1.0
 * sos/1.0.0
 * sos/2.0
+* sps/1.0.0
 * sps/2.0
+* sweCommon/1.0.0
 * sweCommon/1.0.1
 * sweCommon/2.0
 * swes/2.0
@@ -67,17 +74,9 @@
 * gmlcov/geotiff/1.0
 * gmljp2/2.0
 * ImageCRSs/1.1.0
-* ols/1.1.0
-* ols/1.2
-* ols/1.3
 * omeo/1.0
 * omx/1.0.0
 * oseo/1.0
-* owc/1.0
-* samplingSpecimen/2.0
-* sensorML/1.0.0
-* sps/1.0.0
-* sweCommon/1.0.0
 * tjs/1.0
 * tml/1.0.0
 * wcps/1.0
@@ -96,3 +95,4 @@
 * gml/3.1.0
 * opensearchgeo/1.0 - RNC, not XSDs
 * sf/1.0 - RDF, no schema
+* owc/1.0 / RNC, not XSDs

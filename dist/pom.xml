@@ -40,6 +40,10 @@
 
 		<dependency><artifactId>kml-v_2_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>ols-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>ols-v_1_2</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>ols-nav-v_1_3</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
 		<dependency><artifactId>om-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>om-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
@@ -54,8 +58,11 @@
 
 		<dependency><artifactId>samplingSpatial-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>samplingSpecimen-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
 		<dependency><artifactId>se-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>sensorML-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>sensorML-v_1_0_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>sensorML-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
@@ -63,11 +70,13 @@
 		<dependency><artifactId>sld-v_1_0_0-geoserver</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>sld-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>sps-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>sps-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
 		<dependency><artifactId>sos-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>sos-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>sweCommon-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>sweCommon-v_1_0_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>sweCommon-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
