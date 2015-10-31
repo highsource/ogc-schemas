@@ -2,660 +2,8 @@ var KML_2_2_0_Module_Factory = function () {
   var KML_2_2_0 = {
     n: 'KML_2_2_0',
     dens: 'http:\/\/www.opengis.net\/kml\/2.2',
-    deps: ['Atom_1_0', 'xAL_2_0'],
+    deps: ['xAL_2_0', 'Atom_1_0'],
     tis: [{
-        ln: 'AbstractObjectType',
-        ps: [{
-            n: 'objectSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'ObjectSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }, {
-            n: 'targetId',
-            an: {
-              lp: 'targetId'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractLatLonBoxType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'north',
-            ti: 'Double'
-          }, {
-            n: 'south',
-            ti: 'Double'
-          }, {
-            n: 'east',
-            ti: 'Double'
-          }, {
-            n: 'west',
-            ti: 'Double'
-          }, {
-            n: 'abstractLatLonBoxSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractLatLonBoxSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'abstractLatLonBoxObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractLatLonBoxObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'PolyStyleType',
-        bti: '.AbstractColorStyleType',
-        ps: [{
-            n: 'fill',
-            ti: 'Boolean'
-          }, {
-            n: 'outline',
-            ti: 'Boolean'
-          }, {
-            n: 'polyStyleSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'PolyStyleSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'polyStyleObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'PolyStyleObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'LabelStyleType',
-        bti: '.AbstractColorStyleType',
-        ps: [{
-            n: 'scale',
-            ti: 'Double'
-          }, {
-            n: 'labelStyleSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LabelStyleSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'labelStyleObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LabelStyleObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'OrientationType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'heading',
-            ti: 'Double'
-          }, {
-            n: 'tilt',
-            ti: 'Double'
-          }, {
-            n: 'roll',
-            ti: 'Double'
-          }, {
-            n: 'orientationSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'OrientationSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'orientationObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'OrientationObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'LatLonAltBoxType',
-        bti: '.AbstractLatLonBoxType',
-        ps: [{
-            n: 'minAltitude',
-            ti: 'Double'
-          }, {
-            n: 'maxAltitude',
-            ti: 'Double'
-          }, {
-            n: 'altitudeModeGroup',
-            mx: false,
-            dom: false,
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'latLonAltBoxSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LatLonAltBoxSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'latLonAltBoxObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LatLonAltBoxObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'SnippetType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'maxLines',
-            ti: 'Int',
-            an: {
-              lp: 'maxLines'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LookAtType',
-        bti: '.AbstractViewType',
-        ps: [{
-            n: 'longitude',
-            ti: 'Double'
-          }, {
-            n: 'latitude',
-            ti: 'Double'
-          }, {
-            n: 'altitude',
-            ti: 'Double'
-          }, {
-            n: 'heading',
-            ti: 'Double'
-          }, {
-            n: 'tilt',
-            ti: 'Double'
-          }, {
-            n: 'range',
-            ti: 'Double'
-          }, {
-            n: 'altitudeModeGroup',
-            mx: false,
-            dom: false,
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'lookAtSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LookAtSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'lookAtObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LookAtObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'PairType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'key'
-          }, {
-            n: 'styleUrl'
-          }, {
-            n: 'abstractStyleSelectorGroup',
-            mx: false,
-            dom: false,
-            en: 'AbstractStyleSelectorGroup',
-            ti: '.AbstractStyleSelectorType',
-            t: 'er'
-          }, {
-            n: 'pairSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'PairSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'pairObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'PairObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'PointType',
-        bti: '.AbstractGeometryType',
-        ps: [{
-            n: 'extrude',
-            ti: 'Boolean'
-          }, {
-            n: 'altitudeModeGroup',
-            mx: false,
-            dom: false,
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'coordinates',
-            ti: {
-              t: 'l'
-            }
-          }, {
-            n: 'pointSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'PointSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'pointObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'PointObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'StyleMapType',
-        bti: '.AbstractStyleSelectorType',
-        ps: [{
-            n: 'pair',
-            mno: 0,
-            col: true,
-            en: 'Pair',
-            ti: '.PairType'
-          }, {
-            n: 'styleMapSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'StyleMapSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'styleMapObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'StyleMapObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'AbstractSubStyleType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'abstractSubStyleSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractSubStyleSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'abstractSubStyleObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractSubStyleObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'ItemIconType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'state',
-            ti: {
-              t: 'l'
-            }
-          }, {
-            n: 'href'
-          }, {
-            n: 'itemIconSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'ItemIconSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'itemIconObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'ItemIconObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'LinearRingType',
-        bti: '.AbstractGeometryType',
-        ps: [{
-            n: 'extrude',
-            ti: 'Boolean'
-          }, {
-            n: 'tessellate',
-            ti: 'Boolean'
-          }, {
-            n: 'altitudeModeGroup',
-            mx: false,
-            dom: false,
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'coordinates',
-            ti: {
-              t: 'l'
-            }
-          }, {
-            n: 'linearRingSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LinearRingSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'linearRingObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LinearRingObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'BalloonStyleType',
-        bti: '.AbstractSubStyleType',
-        ps: [{
-            n: 'color'
-          }, {
-            n: 'bgColor'
-          }, {
-            n: 'textColor'
-          }, {
-            n: 'text'
-          }, {
-            n: 'displayMode'
-          }, {
-            n: 'balloonStyleSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'BalloonStyleSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'balloonStyleObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'BalloonStyleObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'UpdateType',
-        ps: [{
-            n: 'targetHref',
-            rq: true
-          }, {
-            n: 'createOrDeleteOrChange',
-            rq: true,
-            col: true,
-            etis: [{
-                en: 'Create',
-                ti: '.CreateType'
-              }, {
-                en: 'Delete',
-                ti: '.DeleteType'
-              }, {
-                en: 'Change',
-                ti: '.ChangeType'
-              }, {
-                en: 'UpdateOpExtensionGroup',
-                ti: 'AnyType'
-              }],
-            t: 'es'
-          }, {
-            n: 'updateExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'UpdateExtensionGroup',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'LatLonBoxType',
-        bti: '.AbstractLatLonBoxType',
-        ps: [{
-            n: 'rotation',
-            ti: 'Double'
-          }, {
-            n: 'latLonBoxSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LatLonBoxSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'latLonBoxObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LatLonBoxObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'GroundOverlayType',
-        bti: '.AbstractOverlayType',
-        ps: [{
-            n: 'altitude',
-            ti: 'Double'
-          }, {
-            n: 'altitudeModeGroup',
-            mx: false,
-            dom: false,
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'latLonBox',
-            en: 'LatLonBox',
-            ti: '.LatLonBoxType'
-          }, {
-            n: 'groundOverlaySimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'GroundOverlaySimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'groundOverlayObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'GroundOverlayObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'CreateType',
-        ps: [{
-            n: 'abstractContainerGroup',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractContainerGroup',
-            ti: '.AbstractContainerType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'TimeStampType',
-        bti: '.AbstractTimePrimitiveType',
-        ps: [{
-            n: 'when'
-          }, {
-            n: 'timeStampSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'TimeStampSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'timeStampObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'TimeStampObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'StyleType',
-        bti: '.AbstractStyleSelectorType',
-        ps: [{
-            n: 'iconStyle',
-            en: 'IconStyle',
-            ti: '.IconStyleType'
-          }, {
-            n: 'labelStyle',
-            en: 'LabelStyle',
-            ti: '.LabelStyleType'
-          }, {
-            n: 'lineStyle',
-            en: 'LineStyle',
-            ti: '.LineStyleType'
-          }, {
-            n: 'polyStyle',
-            en: 'PolyStyle',
-            ti: '.PolyStyleType'
-          }, {
-            n: 'balloonStyle',
-            en: 'BalloonStyle',
-            ti: '.BalloonStyleType'
-          }, {
-            n: 'listStyle',
-            en: 'ListStyle',
-            ti: '.ListStyleType'
-          }, {
-            n: 'styleSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'StyleSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'styleObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'StyleObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'AbstractViewType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'abstractViewSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractViewSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'abstractViewObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractViewObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'LinkType',
-        bti: '.BasicLinkType',
-        ps: [{
-            n: 'refreshMode'
-          }, {
-            n: 'refreshInterval',
-            ti: 'Double'
-          }, {
-            n: 'viewRefreshMode'
-          }, {
-            n: 'viewRefreshTime',
-            ti: 'Double'
-          }, {
-            n: 'viewBoundScale',
-            ti: 'Double'
-          }, {
-            n: 'viewFormat'
-          }, {
-            n: 'httpQuery'
-          }, {
-            n: 'linkSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LinkSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'linkObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LinkObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'SchemaType',
-        ps: [{
-            n: 'simpleField',
-            mno: 0,
-            col: true,
-            en: 'SimpleField',
-            ti: '.SimpleFieldType'
-          }, {
-            n: 'schemaExtension',
-            mno: 0,
-            col: true,
-            en: 'SchemaExtension',
-            ti: 'AnyType'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LineStringType',
-        bti: '.AbstractGeometryType',
-        ps: [{
-            n: 'extrude',
-            ti: 'Boolean'
-          }, {
-            n: 'tessellate',
-            ti: 'Boolean'
-          }, {
-            n: 'altitudeModeGroup',
-            mx: false,
-            dom: false,
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'coordinates',
-            ti: {
-              t: 'l'
-            }
-          }, {
-            n: 'lineStringSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LineStringSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'lineStringObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LineStringObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'AbstractColorStyleType',
-        bti: '.AbstractSubStyleType',
-        ps: [{
-            n: 'color'
-          }, {
-            n: 'colorMode'
-          }, {
-            n: 'abstractColorStyleSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractColorStyleSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'abstractColorStyleObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractColorStyleObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
         ln: 'RegionType',
         bti: '.AbstractObjectType',
         ps: [{
@@ -680,29 +28,214 @@ var KML_2_2_0_Module_Factory = function () {
             ti: '.AbstractObjectType'
           }]
       }, {
-        ln: 'AbstractStyleSelectorType',
-        bti: '.AbstractObjectType',
+        ln: 'IconStyleType',
+        bti: '.AbstractColorStyleType',
         ps: [{
-            n: 'abstractStyleSelectorSimpleExtensionGroup',
+            n: 'scale',
+            ti: 'Double'
+          }, {
+            n: 'heading',
+            ti: 'Double'
+          }, {
+            n: 'icon',
+            en: 'Icon',
+            ti: '.BasicLinkType'
+          }, {
+            n: 'hotSpot',
+            ti: '.Vec2Type'
+          }, {
+            n: 'iconStyleSimpleExtensionGroup',
             mno: 0,
             col: true,
-            en: 'AbstractStyleSelectorSimpleExtensionGroup',
+            en: 'IconStyleSimpleExtensionGroup',
             ti: 'AnyType'
           }, {
-            n: 'abstractStyleSelectorObjectExtensionGroup',
+            n: 'iconStyleObjectExtensionGroup',
             mno: 0,
             col: true,
-            en: 'AbstractStyleSelectorObjectExtensionGroup',
+            en: 'IconStyleObjectExtensionGroup',
             ti: '.AbstractObjectType'
           }]
       }, {
-        ln: 'MetadataType',
+        ln: 'BoundaryType',
         ps: [{
-            n: 'any',
+            n: 'linearRing',
+            en: 'LinearRing',
+            ti: '.LinearRingType'
+          }, {
+            n: 'boundarySimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'BoundarySimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'boundaryObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'BoundaryObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'NetworkLinkControlType',
+        ps: [{
+            n: 'minRefreshPeriod',
+            ti: 'Double'
+          }, {
+            n: 'maxSessionLength',
+            ti: 'Double'
+          }, {
+            n: 'cookie'
+          }, {
+            n: 'message'
+          }, {
+            n: 'linkName'
+          }, {
+            n: 'linkDescription'
+          }, {
+            n: 'linkSnippet',
+            ti: '.SnippetType'
+          }, {
+            n: 'expires'
+          }, {
+            n: 'update',
+            en: 'Update',
+            ti: '.UpdateType'
+          }, {
+            n: 'abstractViewGroup',
+            mx: false,
+            dom: false,
+            en: 'AbstractViewGroup',
+            ti: '.AbstractViewType',
+            t: 'er'
+          }, {
+            n: 'networkLinkControlSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'NetworkLinkControlSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'networkLinkControlObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'NetworkLinkControlObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'CameraType',
+        bti: '.AbstractViewType',
+        ps: [{
+            n: 'longitude',
+            ti: 'Double'
+          }, {
+            n: 'latitude',
+            ti: 'Double'
+          }, {
+            n: 'altitude',
+            ti: 'Double'
+          }, {
+            n: 'heading',
+            ti: 'Double'
+          }, {
+            n: 'tilt',
+            ti: 'Double'
+          }, {
+            n: 'roll',
+            ti: 'Double'
+          }, {
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'cameraSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'CameraSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'cameraObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'CameraObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'NetworkLinkType',
+        bti: '.AbstractFeatureType',
+        ps: [{
+            n: 'refreshVisibility',
+            ti: 'Boolean'
+          }, {
+            n: 'flyToView',
+            ti: 'Boolean'
+          }, {
+            n: 'url',
+            en: 'Url',
+            ti: '.LinkType'
+          }, {
+            n: 'link',
+            en: 'Link',
+            ti: '.LinkType'
+          }, {
+            n: 'networkLinkSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'NetworkLinkSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'networkLinkObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'NetworkLinkObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'AbstractSubStyleType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'abstractSubStyleSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractSubStyleSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'abstractSubStyleObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractSubStyleObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'DocumentType',
+        bti: '.AbstractContainerType',
+        ps: [{
+            n: 'schema',
+            mno: 0,
+            col: true,
+            en: 'Schema',
+            ti: '.SchemaType'
+          }, {
+            n: 'abstractFeatureGroup',
             mno: 0,
             col: true,
             mx: false,
-            t: 'ae'
+            dom: false,
+            en: 'AbstractFeatureGroup',
+            ti: '.AbstractFeatureType',
+            t: 'er'
+          }, {
+            n: 'documentSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'DocumentSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'documentObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'DocumentObjectExtensionGroup',
+            ti: '.AbstractObjectType'
           }]
       }, {
         ln: 'AbstractFeatureType',
@@ -799,208 +332,106 @@ var KML_2_2_0_Module_Factory = function () {
             ti: '.AbstractObjectType'
           }]
       }, {
-        ln: 'PlacemarkType',
-        bti: '.AbstractFeatureType',
+        ln: 'AbstractObjectType',
         ps: [{
-            n: 'abstractGeometryGroup',
-            mx: false,
-            dom: false,
-            en: 'AbstractGeometryGroup',
-            ti: '.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'placemarkSimpleExtensionGroup',
+            n: 'objectSimpleExtensionGroup',
             mno: 0,
             col: true,
-            en: 'PlacemarkSimpleExtensionGroup',
+            en: 'ObjectSimpleExtensionGroup',
             ti: 'AnyType'
           }, {
-            n: 'placemarkObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'PlacemarkObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'ResourceMapType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'alias',
-            mno: 0,
-            col: true,
-            en: 'Alias',
-            ti: '.AliasType'
-          }, {
-            n: 'resourceMapSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'ResourceMapSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'resourceMapObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'ResourceMapObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'SchemaDataType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'simpleData',
-            mno: 0,
-            col: true,
-            en: 'SimpleData',
-            ti: '.SimpleDataType'
-          }, {
-            n: 'schemaDataExtension',
-            mno: 0,
-            col: true,
-            en: 'SchemaDataExtension',
-            ti: 'AnyType'
-          }, {
-            n: 'schemaUrl',
+            n: 'id',
+            ti: 'ID',
             an: {
-              lp: 'schemaUrl'
+              lp: 'id'
+            },
+            t: 'a'
+          }, {
+            n: 'targetId',
+            an: {
+              lp: 'targetId'
             },
             t: 'a'
           }]
       }, {
-        ln: 'ExtendedDataType',
+        ln: 'UpdateType',
         ps: [{
-            n: 'data',
-            mno: 0,
-            col: true,
-            en: 'Data',
-            ti: '.DataType'
+            n: 'targetHref',
+            rq: true
           }, {
-            n: 'schemaData',
-            mno: 0,
+            n: 'createOrDeleteOrChange',
+            rq: true,
             col: true,
-            en: 'SchemaData',
-            ti: '.SchemaDataType'
+            etis: [{
+                en: 'Create',
+                ti: '.CreateType'
+              }, {
+                en: 'Delete',
+                ti: '.DeleteType'
+              }, {
+                en: 'Change',
+                ti: '.ChangeType'
+              }, {
+                en: 'UpdateOpExtensionGroup',
+                ti: 'AnyType'
+              }],
+            t: 'es'
           }, {
-            n: 'any',
+            n: 'updateExtensionGroup',
             mno: 0,
             col: true,
-            mx: false,
-            t: 'ae'
+            en: 'UpdateExtensionGroup',
+            ti: 'AnyType'
           }]
       }, {
-        ln: 'DocumentType',
-        bti: '.AbstractContainerType',
+        ln: 'BalloonStyleType',
+        bti: '.AbstractSubStyleType',
         ps: [{
-            n: 'schema',
-            mno: 0,
-            col: true,
-            en: 'Schema',
-            ti: '.SchemaType'
+            n: 'color'
           }, {
-            n: 'abstractFeatureGroup',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractFeatureGroup',
-            ti: '.AbstractFeatureType',
-            t: 'er'
+            n: 'bgColor'
           }, {
-            n: 'documentSimpleExtensionGroup',
+            n: 'textColor'
+          }, {
+            n: 'text'
+          }, {
+            n: 'displayMode'
+          }, {
+            n: 'balloonStyleSimpleExtensionGroup',
             mno: 0,
             col: true,
-            en: 'DocumentSimpleExtensionGroup',
+            en: 'BalloonStyleSimpleExtensionGroup',
             ti: 'AnyType'
           }, {
-            n: 'documentObjectExtensionGroup',
+            n: 'balloonStyleObjectExtensionGroup',
             mno: 0,
             col: true,
-            en: 'DocumentObjectExtensionGroup',
+            en: 'BalloonStyleObjectExtensionGroup',
             ti: '.AbstractObjectType'
           }]
       }, {
-        ln: 'MultiGeometryType',
-        bti: '.AbstractGeometryType',
-        ps: [{
-            n: 'abstractGeometryGroup',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractGeometryGroup',
-            ti: '.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'multiGeometrySimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'MultiGeometrySimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'multiGeometryObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'MultiGeometryObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'AliasType',
+        ln: 'ScaleType',
         bti: '.AbstractObjectType',
         ps: [{
-            n: 'targetHref'
-          }, {
-            n: 'sourceHref'
-          }, {
-            n: 'aliasSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AliasSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'aliasObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AliasObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'AbstractTimePrimitiveType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'abstractTimePrimitiveSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractTimePrimitiveSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'abstractTimePrimitiveObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractTimePrimitiveObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'LocationType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'longitude',
+            n: 'x',
             ti: 'Double'
           }, {
-            n: 'latitude',
+            n: 'y',
             ti: 'Double'
           }, {
-            n: 'altitude',
+            n: 'z',
             ti: 'Double'
           }, {
-            n: 'locationSimpleExtensionGroup',
+            n: 'scaleSimpleExtensionGroup',
             mno: 0,
             col: true,
-            en: 'LocationSimpleExtensionGroup',
+            en: 'ScaleSimpleExtensionGroup',
             ti: 'AnyType'
           }, {
-            n: 'locationObjectExtensionGroup',
+            n: 'scaleObjectExtensionGroup',
             mno: 0,
             col: true,
-            en: 'LocationObjectExtensionGroup',
+            en: 'ScaleObjectExtensionGroup',
             ti: '.AbstractObjectType'
           }]
       }, {
@@ -1037,6 +468,574 @@ var KML_2_2_0_Module_Factory = function () {
             ti: '.AbstractObjectType'
           }]
       }, {
+        ln: 'GroundOverlayType',
+        bti: '.AbstractOverlayType',
+        ps: [{
+            n: 'altitude',
+            ti: 'Double'
+          }, {
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'latLonBox',
+            en: 'LatLonBox',
+            ti: '.LatLonBoxType'
+          }, {
+            n: 'groundOverlaySimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'GroundOverlaySimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'groundOverlayObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'GroundOverlayObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'Vec2Type',
+        tn: 'vec2Type',
+        ps: [{
+            n: 'x',
+            ti: 'Double',
+            an: {
+              lp: 'x'
+            },
+            t: 'a'
+          }, {
+            n: 'y',
+            ti: 'Double',
+            an: {
+              lp: 'y'
+            },
+            t: 'a'
+          }, {
+            n: 'xunits',
+            an: {
+              lp: 'xunits'
+            },
+            t: 'a'
+          }, {
+            n: 'yunits',
+            an: {
+              lp: 'yunits'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LookAtType',
+        bti: '.AbstractViewType',
+        ps: [{
+            n: 'longitude',
+            ti: 'Double'
+          }, {
+            n: 'latitude',
+            ti: 'Double'
+          }, {
+            n: 'altitude',
+            ti: 'Double'
+          }, {
+            n: 'heading',
+            ti: 'Double'
+          }, {
+            n: 'tilt',
+            ti: 'Double'
+          }, {
+            n: 'range',
+            ti: 'Double'
+          }, {
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'lookAtSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LookAtSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'lookAtObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LookAtObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'LodType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'minLodPixels',
+            ti: 'Double'
+          }, {
+            n: 'maxLodPixels',
+            ti: 'Double'
+          }, {
+            n: 'minFadeExtent',
+            ti: 'Double'
+          }, {
+            n: 'maxFadeExtent',
+            ti: 'Double'
+          }, {
+            n: 'lodSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LodSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'lodObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LodObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'AbstractGeometryType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'abstractGeometrySimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractGeometrySimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'abstractGeometryObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractGeometryObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'LocationType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'longitude',
+            ti: 'Double'
+          }, {
+            n: 'latitude',
+            ti: 'Double'
+          }, {
+            n: 'altitude',
+            ti: 'Double'
+          }, {
+            n: 'locationSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LocationSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'locationObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LocationObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'AbstractTimePrimitiveType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'abstractTimePrimitiveSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractTimePrimitiveSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'abstractTimePrimitiveObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractTimePrimitiveObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'ExtendedDataType',
+        ps: [{
+            n: 'data',
+            mno: 0,
+            col: true,
+            en: 'Data',
+            ti: '.DataType'
+          }, {
+            n: 'schemaData',
+            mno: 0,
+            col: true,
+            en: 'SchemaData',
+            ti: '.SchemaDataType'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'ScreenOverlayType',
+        bti: '.AbstractOverlayType',
+        ps: [{
+            n: 'overlayXY',
+            ti: '.Vec2Type'
+          }, {
+            n: 'screenXY',
+            ti: '.Vec2Type'
+          }, {
+            n: 'rotationXY',
+            ti: '.Vec2Type'
+          }, {
+            n: 'size',
+            ti: '.Vec2Type'
+          }, {
+            n: 'rotation',
+            ti: 'Double'
+          }, {
+            n: 'screenOverlaySimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'ScreenOverlaySimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'screenOverlayObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'ScreenOverlayObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'AbstractViewType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'abstractViewSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractViewSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'abstractViewObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractViewObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'TimeSpanType',
+        bti: '.AbstractTimePrimitiveType',
+        ps: [{
+            n: 'begin'
+          }, {
+            n: 'end'
+          }, {
+            n: 'timeSpanSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'TimeSpanSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'timeSpanObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'TimeSpanObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'SimpleFieldType',
+        ps: [{
+            n: 'displayName'
+          }, {
+            n: 'simpleFieldExtension',
+            mno: 0,
+            col: true,
+            en: 'SimpleFieldExtension',
+            ti: 'AnyType'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'type'
+            },
+            t: 'a'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ViewVolumeType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'leftFov',
+            ti: 'Double'
+          }, {
+            n: 'rightFov',
+            ti: 'Double'
+          }, {
+            n: 'bottomFov',
+            ti: 'Double'
+          }, {
+            n: 'topFov',
+            ti: 'Double'
+          }, {
+            n: 'near',
+            ti: 'Double'
+          }, {
+            n: 'viewVolumeSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'ViewVolumeSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'viewVolumeObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'ViewVolumeObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'MultiGeometryType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'abstractGeometryGroup',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractGeometryGroup',
+            ti: '.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'multiGeometrySimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'MultiGeometrySimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'multiGeometryObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'MultiGeometryObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'PointType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'extrude',
+            ti: 'Boolean'
+          }, {
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'coordinates',
+            ti: {
+              t: 'l'
+            }
+          }, {
+            n: 'pointSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'PointSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'pointObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'PointObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'SchemaType',
+        ps: [{
+            n: 'simpleField',
+            mno: 0,
+            col: true,
+            en: 'SimpleField',
+            ti: '.SimpleFieldType'
+          }, {
+            n: 'schemaExtension',
+            mno: 0,
+            col: true,
+            en: 'SchemaExtension',
+            ti: 'AnyType'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LabelStyleType',
+        bti: '.AbstractColorStyleType',
+        ps: [{
+            n: 'scale',
+            ti: 'Double'
+          }, {
+            n: 'labelStyleSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LabelStyleSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'labelStyleObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LabelStyleObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'MetadataType',
+        ps: [{
+            n: 'any',
+            mno: 0,
+            col: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'ResourceMapType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'alias',
+            mno: 0,
+            col: true,
+            en: 'Alias',
+            ti: '.AliasType'
+          }, {
+            n: 'resourceMapSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'ResourceMapSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'resourceMapObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'ResourceMapObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'AbstractLatLonBoxType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'north',
+            ti: 'Double'
+          }, {
+            n: 'south',
+            ti: 'Double'
+          }, {
+            n: 'east',
+            ti: 'Double'
+          }, {
+            n: 'west',
+            ti: 'Double'
+          }, {
+            n: 'abstractLatLonBoxSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractLatLonBoxSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'abstractLatLonBoxObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractLatLonBoxObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'ItemIconType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'state',
+            ti: {
+              t: 'l'
+            }
+          }, {
+            n: 'href'
+          }, {
+            n: 'itemIconSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'ItemIconSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'itemIconObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'ItemIconObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'LinkType',
+        bti: '.BasicLinkType',
+        ps: [{
+            n: 'refreshMode'
+          }, {
+            n: 'refreshInterval',
+            ti: 'Double'
+          }, {
+            n: 'viewRefreshMode'
+          }, {
+            n: 'viewRefreshTime',
+            ti: 'Double'
+          }, {
+            n: 'viewBoundScale',
+            ti: 'Double'
+          }, {
+            n: 'viewFormat'
+          }, {
+            n: 'httpQuery'
+          }, {
+            n: 'linkSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LinkSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'linkObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LinkObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'AbstractOverlayType',
+        bti: '.AbstractFeatureType',
+        ps: [{
+            n: 'color'
+          }, {
+            n: 'drawOrder',
+            ti: 'Int'
+          }, {
+            n: 'icon',
+            en: 'Icon',
+            ti: '.LinkType'
+          }, {
+            n: 'abstractOverlaySimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractOverlaySimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'abstractOverlayObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractOverlayObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
         ln: 'PolygonType',
         bti: '.AbstractGeometryType',
         ps: [{
@@ -1070,6 +1069,497 @@ var KML_2_2_0_Module_Factory = function () {
             mno: 0,
             col: true,
             en: 'PolygonObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'SnippetType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'maxLines',
+            ti: 'Int',
+            an: {
+              lp: 'maxLines'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LineStyleType',
+        bti: '.AbstractColorStyleType',
+        ps: [{
+            n: 'width',
+            ti: 'Double'
+          }, {
+            n: 'lineStyleSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LineStyleSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'lineStyleObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LineStyleObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'StyleType',
+        bti: '.AbstractStyleSelectorType',
+        ps: [{
+            n: 'iconStyle',
+            en: 'IconStyle',
+            ti: '.IconStyleType'
+          }, {
+            n: 'labelStyle',
+            en: 'LabelStyle',
+            ti: '.LabelStyleType'
+          }, {
+            n: 'lineStyle',
+            en: 'LineStyle',
+            ti: '.LineStyleType'
+          }, {
+            n: 'polyStyle',
+            en: 'PolyStyle',
+            ti: '.PolyStyleType'
+          }, {
+            n: 'balloonStyle',
+            en: 'BalloonStyle',
+            ti: '.BalloonStyleType'
+          }, {
+            n: 'listStyle',
+            en: 'ListStyle',
+            ti: '.ListStyleType'
+          }, {
+            n: 'styleSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'StyleSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'styleObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'StyleObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'StyleMapType',
+        bti: '.AbstractStyleSelectorType',
+        ps: [{
+            n: 'pair',
+            mno: 0,
+            col: true,
+            en: 'Pair',
+            ti: '.PairType'
+          }, {
+            n: 'styleMapSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'StyleMapSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'styleMapObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'StyleMapObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'DataType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'displayName'
+          }, {
+            n: 'value',
+            rq: true
+          }, {
+            n: 'dataExtension',
+            mno: 0,
+            col: true,
+            en: 'DataExtension',
+            ti: 'AnyType'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SimpleDataType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CreateType',
+        ps: [{
+            n: 'abstractContainerGroup',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractContainerGroup',
+            ti: '.AbstractContainerType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'PairType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'key'
+          }, {
+            n: 'styleUrl'
+          }, {
+            n: 'abstractStyleSelectorGroup',
+            mx: false,
+            dom: false,
+            en: 'AbstractStyleSelectorGroup',
+            ti: '.AbstractStyleSelectorType',
+            t: 'er'
+          }, {
+            n: 'pairSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'PairSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'pairObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'PairObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'BasicLinkType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'href'
+          }, {
+            n: 'basicLinkSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'BasicLinkSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'basicLinkObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'BasicLinkObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'KmlType',
+        ps: [{
+            n: 'networkLinkControl',
+            en: 'NetworkLinkControl',
+            ti: '.NetworkLinkControlType'
+          }, {
+            n: 'abstractFeatureGroup',
+            mx: false,
+            dom: false,
+            en: 'AbstractFeatureGroup',
+            ti: '.AbstractFeatureType',
+            t: 'er'
+          }, {
+            n: 'kmlSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'KmlSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'kmlObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'KmlObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }, {
+            n: 'hint',
+            an: {
+              lp: 'hint'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LineStringType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'extrude',
+            ti: 'Boolean'
+          }, {
+            n: 'tessellate',
+            ti: 'Boolean'
+          }, {
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'coordinates',
+            ti: {
+              t: 'l'
+            }
+          }, {
+            n: 'lineStringSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LineStringSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'lineStringObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LineStringObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'AliasType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'targetHref'
+          }, {
+            n: 'sourceHref'
+          }, {
+            n: 'aliasSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AliasSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'aliasObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AliasObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'AbstractStyleSelectorType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'abstractStyleSelectorSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractStyleSelectorSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'abstractStyleSelectorObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractStyleSelectorObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'LinearRingType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'extrude',
+            ti: 'Boolean'
+          }, {
+            n: 'tessellate',
+            ti: 'Boolean'
+          }, {
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'coordinates',
+            ti: {
+              t: 'l'
+            }
+          }, {
+            n: 'linearRingSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LinearRingSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'linearRingObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LinearRingObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'ImagePyramidType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'tileSize',
+            ti: 'Int'
+          }, {
+            n: 'maxWidth',
+            ti: 'Int'
+          }, {
+            n: 'maxHeight',
+            ti: 'Int'
+          }, {
+            n: 'gridOrigin'
+          }, {
+            n: 'imagePyramidSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'ImagePyramidSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'imagePyramidObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'ImagePyramidObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'ChangeType',
+        ps: [{
+            n: 'abstractObjectGroup',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractObjectGroup',
+            ti: '.AbstractObjectType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'LatLonBoxType',
+        bti: '.AbstractLatLonBoxType',
+        ps: [{
+            n: 'rotation',
+            ti: 'Double'
+          }, {
+            n: 'latLonBoxSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LatLonBoxSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'latLonBoxObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LatLonBoxObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'LatLonAltBoxType',
+        bti: '.AbstractLatLonBoxType',
+        ps: [{
+            n: 'minAltitude',
+            ti: 'Double'
+          }, {
+            n: 'maxAltitude',
+            ti: 'Double'
+          }, {
+            n: 'altitudeModeGroup',
+            mx: false,
+            dom: false,
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'latLonAltBoxSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LatLonAltBoxSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'latLonAltBoxObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'LatLonAltBoxObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'AbstractColorStyleType',
+        bti: '.AbstractSubStyleType',
+        ps: [{
+            n: 'color'
+          }, {
+            n: 'colorMode'
+          }, {
+            n: 'abstractColorStyleSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractColorStyleSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'abstractColorStyleObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'AbstractColorStyleObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'TimeStampType',
+        bti: '.AbstractTimePrimitiveType',
+        ps: [{
+            n: 'when'
+          }, {
+            n: 'timeStampSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'TimeStampSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'timeStampObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'TimeStampObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'PlacemarkType',
+        bti: '.AbstractFeatureType',
+        ps: [{
+            n: 'abstractGeometryGroup',
+            mx: false,
+            dom: false,
+            en: 'AbstractGeometryGroup',
+            ti: '.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'placemarkSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'PlacemarkSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'placemarkObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'PlacemarkObjectExtensionGroup',
+            ti: '.AbstractObjectType'
+          }]
+      }, {
+        ln: 'OrientationType',
+        bti: '.AbstractObjectType',
+        ps: [{
+            n: 'heading',
+            ti: 'Double'
+          }, {
+            n: 'tilt',
+            ti: 'Double'
+          }, {
+            n: 'roll',
+            ti: 'Double'
+          }, {
+            n: 'orientationSimpleExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'OrientationSimpleExtensionGroup',
+            ti: 'AnyType'
+          }, {
+            n: 'orientationObjectExtensionGroup',
+            mno: 0,
+            col: true,
+            en: 'OrientationObjectExtensionGroup',
             ti: '.AbstractObjectType'
           }]
       }, {
@@ -1115,267 +1605,25 @@ var KML_2_2_0_Module_Factory = function () {
             ti: '.AbstractObjectType'
           }]
       }, {
-        ln: 'KmlType',
-        ps: [{
-            n: 'networkLinkControl',
-            en: 'NetworkLinkControl',
-            ti: '.NetworkLinkControlType'
-          }, {
-            n: 'abstractFeatureGroup',
-            mx: false,
-            dom: false,
-            en: 'AbstractFeatureGroup',
-            ti: '.AbstractFeatureType',
-            t: 'er'
-          }, {
-            n: 'kmlSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'KmlSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'kmlObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'KmlObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }, {
-            n: 'hint',
-            an: {
-              lp: 'hint'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LodType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'minLodPixels',
-            ti: 'Double'
-          }, {
-            n: 'maxLodPixels',
-            ti: 'Double'
-          }, {
-            n: 'minFadeExtent',
-            ti: 'Double'
-          }, {
-            n: 'maxFadeExtent',
-            ti: 'Double'
-          }, {
-            n: 'lodSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LodSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'lodObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'LodObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'AbstractContainerType',
-        bti: '.AbstractFeatureType',
-        ps: [{
-            n: 'abstractContainerSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractContainerSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'abstractContainerObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractContainerObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'DataType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'displayName'
-          }, {
-            n: 'value',
-            rq: true
-          }, {
-            n: 'dataExtension',
-            mno: 0,
-            col: true,
-            en: 'DataExtension',
-            ti: 'AnyType'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ViewVolumeType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'leftFov',
-            ti: 'Double'
-          }, {
-            n: 'rightFov',
-            ti: 'Double'
-          }, {
-            n: 'bottomFov',
-            ti: 'Double'
-          }, {
-            n: 'topFov',
-            ti: 'Double'
-          }, {
-            n: 'near',
-            ti: 'Double'
-          }, {
-            n: 'viewVolumeSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'ViewVolumeSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'viewVolumeObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'ViewVolumeObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'CameraType',
-        bti: '.AbstractViewType',
-        ps: [{
-            n: 'longitude',
-            ti: 'Double'
-          }, {
-            n: 'latitude',
-            ti: 'Double'
-          }, {
-            n: 'altitude',
-            ti: 'Double'
-          }, {
-            n: 'heading',
-            ti: 'Double'
-          }, {
-            n: 'tilt',
-            ti: 'Double'
-          }, {
-            n: 'roll',
-            ti: 'Double'
-          }, {
-            n: 'altitudeModeGroup',
-            mx: false,
-            dom: false,
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'cameraSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'CameraSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'cameraObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'CameraObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'LineStyleType',
+        ln: 'PolyStyleType',
         bti: '.AbstractColorStyleType',
         ps: [{
-            n: 'width',
-            ti: 'Double'
+            n: 'fill',
+            ti: 'Boolean'
           }, {
-            n: 'lineStyleSimpleExtensionGroup',
+            n: 'outline',
+            ti: 'Boolean'
+          }, {
+            n: 'polyStyleSimpleExtensionGroup',
             mno: 0,
             col: true,
-            en: 'LineStyleSimpleExtensionGroup',
+            en: 'PolyStyleSimpleExtensionGroup',
             ti: 'AnyType'
           }, {
-            n: 'lineStyleObjectExtensionGroup',
+            n: 'polyStyleObjectExtensionGroup',
             mno: 0,
             col: true,
-            en: 'LineStyleObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'NetworkLinkControlType',
-        ps: [{
-            n: 'minRefreshPeriod',
-            ti: 'Double'
-          }, {
-            n: 'maxSessionLength',
-            ti: 'Double'
-          }, {
-            n: 'cookie'
-          }, {
-            n: 'message'
-          }, {
-            n: 'linkName'
-          }, {
-            n: 'linkDescription'
-          }, {
-            n: 'linkSnippet',
-            ti: '.SnippetType'
-          }, {
-            n: 'expires'
-          }, {
-            n: 'update',
-            en: 'Update',
-            ti: '.UpdateType'
-          }, {
-            n: 'abstractViewGroup',
-            mx: false,
-            dom: false,
-            en: 'AbstractViewGroup',
-            ti: '.AbstractViewType',
-            t: 'er'
-          }, {
-            n: 'networkLinkControlSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'NetworkLinkControlSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'networkLinkControlObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'NetworkLinkControlObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'SimpleDataType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'name',
-            rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'BoundaryType',
-        ps: [{
-            n: 'linearRing',
-            en: 'LinearRing',
-            ti: '.LinearRingType'
-          }, {
-            n: 'boundarySimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'BoundarySimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'boundaryObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'BoundaryObjectExtensionGroup',
+            en: 'PolyStyleObjectExtensionGroup',
             ti: '.AbstractObjectType'
           }]
       }, {
@@ -1401,144 +1649,6 @@ var KML_2_2_0_Module_Factory = function () {
             mno: 0,
             col: true,
             en: 'FolderObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'ScreenOverlayType',
-        bti: '.AbstractOverlayType',
-        ps: [{
-            n: 'overlayXY',
-            ti: '.Vec2Type'
-          }, {
-            n: 'screenXY',
-            ti: '.Vec2Type'
-          }, {
-            n: 'rotationXY',
-            ti: '.Vec2Type'
-          }, {
-            n: 'size',
-            ti: '.Vec2Type'
-          }, {
-            n: 'rotation',
-            ti: 'Double'
-          }, {
-            n: 'screenOverlaySimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'ScreenOverlaySimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'screenOverlayObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'ScreenOverlayObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'TimeSpanType',
-        bti: '.AbstractTimePrimitiveType',
-        ps: [{
-            n: 'begin'
-          }, {
-            n: 'end'
-          }, {
-            n: 'timeSpanSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'TimeSpanSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'timeSpanObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'TimeSpanObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'ChangeType',
-        ps: [{
-            n: 'abstractObjectGroup',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractObjectGroup',
-            ti: '.AbstractObjectType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'BasicLinkType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'href'
-          }, {
-            n: 'basicLinkSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'BasicLinkSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'basicLinkObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'BasicLinkObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'NetworkLinkType',
-        bti: '.AbstractFeatureType',
-        ps: [{
-            n: 'refreshVisibility',
-            ti: 'Boolean'
-          }, {
-            n: 'flyToView',
-            ti: 'Boolean'
-          }, {
-            n: 'url',
-            en: 'Url',
-            ti: '.LinkType'
-          }, {
-            n: 'link',
-            en: 'Link',
-            ti: '.LinkType'
-          }, {
-            n: 'networkLinkSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'NetworkLinkSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'networkLinkObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'NetworkLinkObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'ImagePyramidType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'tileSize',
-            ti: 'Int'
-          }, {
-            n: 'maxWidth',
-            ti: 'Int'
-          }, {
-            n: 'maxHeight',
-            ti: 'Int'
-          }, {
-            n: 'gridOrigin'
-          }, {
-            n: 'imagePyramidSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'ImagePyramidSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'imagePyramidObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'ImagePyramidObjectExtensionGroup',
             ti: '.AbstractObjectType'
           }]
       }, {
@@ -1583,181 +1693,47 @@ var KML_2_2_0_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'Vec2Type',
-        tn: 'vec2Type',
-        ps: [{
-            n: 'x',
-            ti: 'Double',
-            an: {
-              lp: 'x'
-            },
-            t: 'a'
-          }, {
-            n: 'y',
-            ti: 'Double',
-            an: {
-              lp: 'y'
-            },
-            t: 'a'
-          }, {
-            n: 'xunits',
-            an: {
-              lp: 'xunits'
-            },
-            t: 'a'
-          }, {
-            n: 'yunits',
-            an: {
-              lp: 'yunits'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ScaleType',
+        ln: 'SchemaDataType',
         bti: '.AbstractObjectType',
         ps: [{
-            n: 'x',
-            ti: 'Double'
-          }, {
-            n: 'y',
-            ti: 'Double'
-          }, {
-            n: 'z',
-            ti: 'Double'
-          }, {
-            n: 'scaleSimpleExtensionGroup',
+            n: 'simpleData',
             mno: 0,
             col: true,
-            en: 'ScaleSimpleExtensionGroup',
+            en: 'SimpleData',
+            ti: '.SimpleDataType'
+          }, {
+            n: 'schemaDataExtension',
+            mno: 0,
+            col: true,
+            en: 'SchemaDataExtension',
             ti: 'AnyType'
           }, {
-            n: 'scaleObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'ScaleObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'IconStyleType',
-        bti: '.AbstractColorStyleType',
-        ps: [{
-            n: 'scale',
-            ti: 'Double'
-          }, {
-            n: 'heading',
-            ti: 'Double'
-          }, {
-            n: 'icon',
-            en: 'Icon',
-            ti: '.BasicLinkType'
-          }, {
-            n: 'hotSpot',
-            ti: '.Vec2Type'
-          }, {
-            n: 'iconStyleSimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'IconStyleSimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'iconStyleObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'IconStyleObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        ln: 'SimpleFieldType',
-        ps: [{
-            n: 'displayName'
-          }, {
-            n: 'simpleFieldExtension',
-            mno: 0,
-            col: true,
-            en: 'SimpleFieldExtension',
-            ti: 'AnyType'
-          }, {
-            n: 'type',
+            n: 'schemaUrl',
             an: {
-              lp: 'type'
-            },
-            t: 'a'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
+              lp: 'schemaUrl'
             },
             t: 'a'
           }]
       }, {
-        ln: 'AbstractOverlayType',
+        ln: 'AbstractContainerType',
         bti: '.AbstractFeatureType',
         ps: [{
-            n: 'color'
-          }, {
-            n: 'drawOrder',
-            ti: 'Int'
-          }, {
-            n: 'icon',
-            en: 'Icon',
-            ti: '.LinkType'
-          }, {
-            n: 'abstractOverlaySimpleExtensionGroup',
+            n: 'abstractContainerSimpleExtensionGroup',
             mno: 0,
             col: true,
-            en: 'AbstractOverlaySimpleExtensionGroup',
+            en: 'AbstractContainerSimpleExtensionGroup',
             ti: 'AnyType'
           }, {
-            n: 'abstractOverlayObjectExtensionGroup',
+            n: 'abstractContainerObjectExtensionGroup',
             mno: 0,
             col: true,
-            en: 'AbstractOverlayObjectExtensionGroup',
+            en: 'AbstractContainerObjectExtensionGroup',
             ti: '.AbstractObjectType'
           }]
-      }, {
-        ln: 'AbstractGeometryType',
-        bti: '.AbstractObjectType',
-        ps: [{
-            n: 'abstractGeometrySimpleExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractGeometrySimpleExtensionGroup',
-            ti: 'AnyType'
-          }, {
-            n: 'abstractGeometryObjectExtensionGroup',
-            mno: 0,
-            col: true,
-            en: 'AbstractGeometryObjectExtensionGroup',
-            ti: '.AbstractObjectType'
-          }]
-      }, {
-        t: 'enum',
-        ln: 'DisplayModeEnumType',
-        vs: ['default', 'hide']
-      }, {
-        t: 'enum',
-        ln: 'AltitudeModeEnumType',
-        vs: ['clampToGround', 'relativeToGround', 'absolute']
-      }, {
-        t: 'enum',
-        ln: 'StyleStateEnumType',
-        vs: ['normal', 'highlight']
-      }, {
-        t: 'enum',
-        ln: 'GridOriginEnumType',
-        vs: ['lowerLeft', 'upperLeft']
-      }, {
-        t: 'enum',
-        ln: 'RefreshModeEnumType',
-        vs: ['onChange', 'onInterval', 'onExpire']
       }, {
         t: 'enum',
         ln: 'ItemIconStateEnumType',
         vs: ['open', 'closed', 'error', 'fetching0', 'fetching1', 'fetching2']
-      }, {
-        t: 'enum',
-        ln: 'ViewRefreshModeEnumType',
-        vs: ['never', 'onRequest', 'onStop', 'onRegion']
       }, {
         t: 'enum',
         ln: 'ListItemTypeEnumType',
@@ -1772,49 +1748,148 @@ var KML_2_2_0_Module_Factory = function () {
         vs: ['fraction', 'pixels', 'insetPixels']
       }, {
         t: 'enum',
+        ln: 'GridOriginEnumType',
+        vs: ['lowerLeft', 'upperLeft']
+      }, {
+        t: 'enum',
+        ln: 'RefreshModeEnumType',
+        vs: ['onChange', 'onInterval', 'onExpire']
+      }, {
+        t: 'enum',
+        ln: 'AltitudeModeEnumType',
+        vs: ['clampToGround', 'relativeToGround', 'absolute']
+      }, {
+        t: 'enum',
+        ln: 'DisplayModeEnumType',
+        vs: ['default', 'hide']
+      }, {
+        t: 'enum',
+        ln: 'StyleStateEnumType',
+        vs: ['normal', 'highlight']
+      }, {
+        t: 'enum',
+        ln: 'ViewRefreshModeEnumType',
+        vs: ['never', 'onRequest', 'onStop', 'onRegion']
+      }, {
+        t: 'enum',
         ln: 'ShapeEnumType',
         vs: ['rectangle', 'cylinder', 'sphere']
       }],
     eis: [{
-        en: 'displayName'
+        en: 'kml',
+        ti: '.KmlType'
       }, {
-        en: 'ScaleSimpleExtensionGroup',
+        en: 'SchemaDataExtension',
         ti: 'AnyType'
       }, {
-        en: 'bgColor'
+        en: 'AbstractFeatureGroup',
+        ti: '.AbstractFeatureType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'minFadeExtent',
+        ti: 'Double'
+      }, {
+        en: 'ImagePyramidSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'IconStyle',
+        ti: '.IconStyleType',
+        sh: 'AbstractColorStyleGroup'
+      }, {
+        en: 'AbstractContainerSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'OrientationObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'NetworkLinkControl',
+        ti: '.NetworkLinkControlType'
+      }, {
+        en: 'coordinates',
+        ti: {
+          t: 'l'
+        }
+      }, {
+        en: 'KmlObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'ListStyleObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'DocumentSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'drawOrder',
+        ti: 'Int'
+      }, {
+        en: 'AbstractLatLonBoxSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'AbstractGeometryObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'AbstractObjectGroup',
+        ti: '.AbstractObjectType'
       }, {
         en: 'ScaleObjectExtensionGroup',
         ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'refreshVisibility',
+        en: 'extrude',
         ti: 'Boolean'
       }, {
-        en: 'LookAt',
-        ti: '.LookAtType',
-        sh: 'AbstractViewGroup'
+        en: 'AbstractColorStyleGroup',
+        ti: '.AbstractColorStyleType',
+        sh: 'AbstractSubStyleGroup'
       }, {
-        en: 'Pair',
-        ti: '.PairType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'Style',
-        ti: '.StyleType',
-        sh: 'AbstractStyleSelectorGroup'
-      }, {
-        en: 'ResourceMapSimpleExtensionGroup',
+        en: 'PlacemarkSimpleExtensionGroup',
         ti: 'AnyType'
       }, {
-        en: 'state',
-        ti: {
-          t: 'l'
-        }
+        en: 'KmlSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        en: 'Icon',
+        en: 'Url',
         ti: '.LinkType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'PolyStyleObjectExtensionGroup',
+        en: 'StyleObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'flyToView',
+        ti: 'Boolean'
+      }, {
+        en: 'LinearRingObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'maxHeight',
+        ti: 'Int'
+      }, {
+        en: 'Link',
+        ti: '.LinkType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'GroundOverlayObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'LookAtObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'innerBoundaryIs',
+        ti: '.BoundaryType'
+      }, {
+        en: 'Point',
+        ti: '.PointType',
+        sh: 'AbstractGeometryGroup'
+      }, {
+        en: 'TimeStampObjectExtensionGroup',
         ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
@@ -1822,376 +1897,160 @@ var KML_2_2_0_Module_Factory = function () {
         ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'AbstractGeometrySimpleExtensionGroup',
+        en: 'LineStyleObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'PointSimpleExtensionGroup',
         ti: 'AnyType'
       }, {
-        en: 'StyleMapSimpleExtensionGroup',
-        ti: 'AnyType'
+        en: 'SimpleField',
+        ti: '.SimpleFieldType'
       }, {
-        en: 'drawOrder',
+        en: 'value'
+      }, {
+        en: 'tessellate',
+        ti: 'Boolean'
+      }, {
+        en: 'NetworkLinkControlObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'PhotoOverlayObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'Region',
+        ti: '.RegionType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'Document',
+        ti: '.DocumentType',
+        sh: 'AbstractContainerGroup'
+      }, {
+        en: 'maxSnippetLines',
         ti: 'Int'
       }, {
-        en: 'PolyStyleSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'refreshMode'
-      }, {
-        en: 'NetworkLinkControl',
-        ti: '.NetworkLinkControlType'
-      }, {
-        en: 'AbstractColorStyleObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'httpQuery'
-      }, {
-        en: 'LinearRingObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'sourceHref'
-      }, {
-        en: 'AbstractFeatureGroup',
-        ti: '.AbstractFeatureType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'LocationSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'altitude',
-        ti: 'Double'
-      }, {
-        en: 'TimeStampObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'maxHeight',
-        ti: 'Int'
-      }, {
-        en: 'snippet'
-      }, {
-        en: 'expires'
-      }, {
-        en: 'rotationXY',
-        ti: '.Vec2Type'
-      }, {
-        en: 'Schema',
-        ti: '.SchemaType'
-      }, {
-        en: 'NetworkLinkObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'LatLonBoxObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'text'
-      }, {
-        en: 'MultiGeometry',
-        ti: '.MultiGeometryType',
-        sh: 'AbstractGeometryGroup'
-      }, {
-        en: 'LatLonBox',
-        ti: '.LatLonBoxType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'west',
-        ti: 'Double'
-      }, {
-        en: 'PairObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'StyleObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'ScreenOverlay',
-        ti: '.ScreenOverlayType',
-        sh: 'AbstractOverlayGroup'
-      }, {
-        en: 'LinearRing',
-        ti: '.LinearRingType',
-        sh: 'AbstractGeometryGroup'
-      }, {
-        en: 'AbstractFeatureSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'east',
-        ti: 'Double'
-      }, {
-        en: 'maxFadeExtent',
-        ti: 'Double'
-      }, {
-        en: 'Snippet',
-        ti: '.SnippetType'
-      }, {
-        en: 'AbstractTimePrimitiveGroup',
-        ti: '.AbstractTimePrimitiveType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'AbstractOverlaySimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'z',
-        ti: 'Double'
-      }, {
-        en: 'PointObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'IconStyleSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'TimeStampSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'MultiGeometrySimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'ModelObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'BalloonStyleObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'linkDescription'
-      }, {
-        en: 'AbstractLatLonBoxObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'PlacemarkSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'UpdateExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'LatLonAltBoxObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'viewFormat'
+        en: 'targetHref'
       }, {
         en: 'Data',
         ti: '.DataType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'StyleSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'viewRefreshTime',
-        ti: 'Double'
-      }, {
-        en: 'PhotoOverlay',
-        ti: '.PhotoOverlayType',
-        sh: 'AbstractOverlayGroup'
-      }, {
-        en: 'end'
-      }, {
-        en: 'description'
-      }, {
-        en: 'MultiGeometryObjectExtensionGroup',
-        ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
         en: 'ResourceMap',
         ti: '.ResourceMapType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'LabelStyleObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'NetworkLink',
-        ti: '.NetworkLinkType',
-        sh: 'AbstractFeatureGroup'
-      }, {
-        en: 'PhotoOverlayObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'BoundaryObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'visibility',
-        ti: 'Boolean'
-      }, {
-        en: 'KmlSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'address'
-      }, {
-        en: 'when'
-      }, {
-        en: 'BalloonStyle',
-        ti: '.BalloonStyleType',
-        sh: 'AbstractSubStyleGroup'
-      }, {
-        en: 'LatLonAltBox',
-        ti: '.LatLonAltBoxType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'AbstractObjectGroup',
-        ti: '.AbstractObjectType'
-      }, {
-        en: 'ListStyleSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'SimpleData',
-        ti: '.SimpleDataType'
-      }, {
-        en: 'heading',
+        en: 'north',
         ti: 'Double'
       }, {
-        en: 'LineStringObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'AbstractStyleSelectorSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'tileSize',
-        ti: 'Int'
-      }, {
-        en: 'SimpleField',
-        ti: '.SimpleFieldType'
-      }, {
-        en: 'rotation',
+        en: 'x',
         ti: 'Double'
       }, {
-        en: 'kml',
-        ti: '.KmlType'
+        en: 'description'
       }, {
-        en: 'AbstractContainerGroup',
-        ti: '.AbstractContainerType',
-        sh: 'AbstractFeatureGroup'
+        en: 'viewRefreshMode'
       }, {
-        en: 'Location',
-        ti: '.LocationType',
-        sh: 'AbstractObjectGroup'
+        en: 'AbstractColorStyleSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'SchemaExtension',
+        ti: 'AnyType'
+      }, {
+        en: 'ExtendedData',
+        ti: '.ExtendedDataType'
+      }, {
+        en: 'Create',
+        ti: '.CreateType'
       }, {
         en: 'GroundOverlay',
         ti: '.GroundOverlayType',
         sh: 'AbstractOverlayGroup'
       }, {
+        en: 'linkName'
+      }, {
+        en: 'shape'
+      }, {
+        en: 'AbstractFeatureSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'AbstractStyleSelectorGroup',
+        ti: '.AbstractStyleSelectorType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'name'
+      }, {
+        en: 'bgColor'
+      }, {
         en: 'LinkObjectExtensionGroup',
         ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'AbstractColorStyleSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'shape'
-      }, {
-        en: 'GroundOverlaySimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'CameraSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'Region',
-        ti: '.RegionType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'Alias',
-        ti: '.AliasType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'LocationObjectExtensionGroup',
+        en: 'PolyStyleObjectExtensionGroup',
         ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'minFadeExtent',
-        ti: 'Double'
-      }, {
-        en: 'DocumentSimpleExtensionGroup',
+        en: 'UpdateExtensionGroup',
         ti: 'AnyType'
       }, {
-        en: 'bottomFov',
-        ti: 'Double'
+        en: 'Snippet',
+        ti: '.SnippetType'
       }, {
-        en: 'fill',
-        ti: 'Boolean'
-      }, {
-        en: 'AliasObjectExtensionGroup',
+        en: 'LodObjectExtensionGroup',
         ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'latitude',
-        ti: 'Double'
-      }, {
-        en: 'value'
-      }, {
-        en: 'BalloonStyleSimpleExtensionGroup',
+        en: 'NetworkLinkSimpleExtensionGroup',
         ti: 'AnyType'
       }, {
-        en: 'PlacemarkObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
+        en: 'linkDescription'
       }, {
-        en: 'size',
+        en: 'NetworkLinkControlSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'AbstractViewSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'rotationXY',
         ti: '.Vec2Type'
       }, {
-        en: 'LineStyleObjectExtensionGroup',
+        en: 'heading',
+        ti: 'Double'
+      }, {
+        en: 'BasicLinkObjectExtensionGroup',
         ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'LabelStyleSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'ImagePyramid',
-        ti: '.ImagePyramidType',
+        en: 'LineStringObjectExtensionGroup',
+        ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'ModelSimpleExtensionGroup',
+        en: 'linkSnippet',
+        ti: '.SnippetType'
+      }, {
+        en: 'Scale',
+        ti: '.ScaleType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'colorMode'
+      }, {
+        en: 'z',
+        ti: 'Double'
+      }, {
+        en: 'BalloonStyleSimpleExtensionGroup',
         ti: 'AnyType'
       }, {
         en: 'BoundarySimpleExtensionGroup',
         ti: 'AnyType'
       }, {
-        en: 'maxSnippetLines',
-        ti: 'Int'
-      }, {
-        en: 'ExtendedData',
-        ti: '.ExtendedDataType'
-      }, {
-        en: 'ObjectSimpleExtensionGroup',
+        en: 'TimeStampSimpleExtensionGroup',
         ti: 'AnyType'
       }, {
-        en: 'TimeSpanObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'maxLodPixels',
-        ti: 'Double'
-      }, {
-        en: 'altitudeModeGroup',
+        en: 'StyleSimpleExtensionGroup',
         ti: 'AnyType'
       }, {
-        en: 'south',
-        ti: 'Double'
-      }, {
-        en: 'Change',
-        ti: '.ChangeType'
-      }, {
-        en: 'styleUrl'
-      }, {
-        en: 'Document',
-        ti: '.DocumentType',
-        sh: 'AbstractContainerGroup'
-      }, {
-        en: 'Lod',
-        ti: '.LodType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'ListStyleObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
+        en: 'ViewVolumeSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
         en: 'ResourceMapObjectExtensionGroup',
         ti: '.AbstractObjectType',
@@ -2201,328 +2060,461 @@ var KML_2_2_0_Module_Factory = function () {
         ti: '.ModelType',
         sh: 'AbstractGeometryGroup'
       }, {
-        en: 'Create',
-        ti: '.CreateType'
-      }, {
-        en: 'scale',
-        ti: 'Double'
-      }, {
-        en: 'coordinates',
-        ti: {
-          t: 'l'
-        }
-      }, {
-        en: 'maxSessionLength',
-        ti: 'Double'
-      }, {
-        en: 'ScreenOverlayObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'textColor'
-      }, {
-        en: 'AliasSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'TimeStamp',
-        ti: '.TimeStampType',
-        sh: 'AbstractTimePrimitiveGroup'
-      }, {
-        en: 'DataExtension',
-        ti: 'AnyType'
-      }, {
-        en: 'AbstractGeometryGroup',
-        ti: '.AbstractGeometryType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'AbstractSubStyleObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'LookAtSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'AbstractFeatureObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'color'
-      }, {
-        en: 'LatLonBoxSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'LinkSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'linkName'
-      }, {
-        en: 'Link',
-        ti: '.LinkType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'AbstractStyleSelectorGroup',
-        ti: '.AbstractStyleSelectorType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'Delete',
-        ti: '.DeleteType'
-      }, {
-        en: 'StyleMap',
-        ti: '.StyleMapType',
-        sh: 'AbstractStyleSelectorGroup'
-      }, {
-        en: 'tessellate',
-        ti: 'Boolean'
-      }, {
-        en: 'PointSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'LookAtObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'DocumentObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'AbstractViewSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'AbstractSubStyleSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'BasicLinkSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'Orientation',
-        ti: '.OrientationType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'BasicLinkObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'Metadata',
-        ti: '.MetadataType'
-      }, {
-        en: 'TimeSpanSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'AbstractColorStyleGroup',
-        ti: '.AbstractColorStyleType',
-        sh: 'AbstractSubStyleGroup'
-      }, {
-        en: 'GroundOverlayObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'Camera',
-        ti: '.CameraType',
-        sh: 'AbstractViewGroup'
-      }, {
-        en: 'href'
-      }, {
-        en: 'IconStyleObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'AbstractSubStyleGroup',
-        ti: '.AbstractSubStyleType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'LabelStyle',
-        ti: '.LabelStyleType',
-        sh: 'AbstractColorStyleGroup'
-      }, {
-        en: 'LinearRingSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'AbstractViewGroup',
-        ti: '.AbstractViewType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'outerBoundaryIs',
-        ti: '.BoundaryType'
-      }, {
-        en: 'SchemaDataExtension',
-        ti: 'AnyType'
-      }, {
-        en: 'SchemaData',
-        ti: '.SchemaDataType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'AbstractOverlayGroup',
-        ti: '.AbstractOverlayType',
-        sh: 'AbstractFeatureGroup'
-      }, {
-        en: 'ImagePyramidObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'ListStyle',
-        ti: '.ListStyleType',
-        sh: 'AbstractSubStyleGroup'
-      }, {
-        en: 'Point',
-        ti: '.PointType',
-        sh: 'AbstractGeometryGroup'
-      }, {
-        en: 'AbstractTimePrimitiveObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'minAltitude',
-        ti: 'Double'
-      }, {
-        en: 'maxWidth',
-        ti: 'Int'
-      }, {
-        en: 'colorMode'
-      }, {
-        en: 'x',
-        ti: 'Double'
-      }, {
-        en: 'phoneNumber'
-      }, {
-        en: 'extrude',
-        ti: 'Boolean'
-      }, {
-        en: 'PolyStyle',
-        ti: '.PolyStyleType',
-        sh: 'AbstractColorStyleGroup'
-      }, {
-        en: 'message'
-      }, {
-        en: 'ItemIcon',
-        ti: '.ItemIconType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'Folder',
-        ti: '.FolderType',
-        sh: 'AbstractContainerGroup'
-      }, {
-        en: 'AbstractContainerSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'listItemType'
-      }, {
-        en: 'AbstractStyleSelectorObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'TimeSpan',
-        ti: '.TimeSpanType',
-        sh: 'AbstractTimePrimitiveGroup'
-      }, {
-        en: 'gridOrigin'
-      }, {
-        en: 'key'
-      }, {
-        en: 'rightFov',
-        ti: 'Double'
-      }, {
-        en: 'AbstractTimePrimitiveSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'OrientationSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'NetworkLinkSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'AbstractContainerObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'SchemaExtension',
-        ti: 'AnyType'
-      }, {
-        en: 'NetworkLinkControlSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'hotSpot',
-        ti: '.Vec2Type'
-      }, {
-        en: 'refreshInterval',
-        ti: 'Double'
-      }, {
-        en: 'RegionObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'NetworkLinkControlObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'cookie'
-      }, {
-        en: 'ImagePyramidSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'width',
-        ti: 'Double'
-      }, {
-        en: 'innerBoundaryIs',
-        ti: '.BoundaryType'
-      }, {
-        en: 'ItemIconObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'y',
-        ti: 'Double'
-      }, {
-        en: 'Scale',
-        ti: '.ScaleType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'Update',
-        ti: '.UpdateType'
-      }, {
-        en: 'LodSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'SimpleFieldExtension',
-        ti: 'AnyType'
-      }, {
-        en: 'overlayXY',
-        ti: '.Vec2Type'
-      }, {
-        en: 'near',
-        ti: 'Double'
-      }, {
-        en: 'leftFov',
+        en: 'topFov',
         ti: 'Double'
       }, {
         en: 'LineString',
         ti: '.LineStringType',
         sh: 'AbstractGeometryGroup'
       }, {
-        en: 'longitude',
+        en: 'bottomFov',
+        ti: 'Double'
+      }, {
+        en: 'LatLonBoxSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'GroundOverlaySimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'TimeSpan',
+        ti: '.TimeSpanType',
+        sh: 'AbstractTimePrimitiveGroup'
+      }, {
+        en: 'LinearRing',
+        ti: '.LinearRingType',
+        sh: 'AbstractGeometryGroup'
+      }, {
+        en: 'LineStyleSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'Camera',
+        ti: '.CameraType',
+        sh: 'AbstractViewGroup'
+      }, {
+        en: 'key'
+      }, {
+        en: 'ItemIconSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'MultiGeometrySimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'AbstractViewGroup',
+        ti: '.AbstractViewType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'Placemark',
+        ti: '.PlacemarkType',
+        sh: 'AbstractFeatureGroup'
+      }, {
+        en: 'altitudeModeGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'maxFadeExtent',
+        ti: 'Double'
+      }, {
+        en: 'MultiGeometry',
+        ti: '.MultiGeometryType',
+        sh: 'AbstractGeometryGroup'
+      }, {
+        en: 'Orientation',
+        ti: '.OrientationType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'viewFormat'
+      }, {
+        en: 'PointObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'refreshVisibility',
+        ti: 'Boolean'
+      }, {
+        en: 'ImagePyramid',
+        ti: '.ImagePyramidType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'begin'
+      }, {
+        en: 'PolygonSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'Schema',
+        ti: '.SchemaType'
+      }, {
+        en: 'textColor'
+      }, {
+        en: 'BasicLinkSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'altitude',
+        ti: 'Double'
+      }, {
+        en: 'ScreenOverlaySimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'size',
+        ti: '.Vec2Type'
+      }, {
+        en: 'screenXY',
+        ti: '.Vec2Type'
+      }, {
+        en: 'LabelStyleSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'Icon',
+        ti: '.LinkType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'snippet'
+      }, {
+        en: 'viewBoundScale',
+        ti: 'Double'
+      }, {
+        en: 'ListStyleSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'StyleMapObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'AbstractOverlayObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'maxAltitude',
+        ti: 'Double'
+      }, {
+        en: 'ListStyle',
+        ti: '.ListStyleType',
+        sh: 'AbstractSubStyleGroup'
+      }, {
+        en: 'ModelSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'AliasObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'AbstractOverlayGroup',
+        ti: '.AbstractOverlayType',
+        sh: 'AbstractFeatureGroup'
+      }, {
+        en: 'roll',
+        ti: 'Double'
+      }, {
+        en: 'AbstractLatLonBoxObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'cookie'
+      }, {
+        en: 'href'
+      }, {
+        en: 'Lod',
+        ti: '.LodType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'TimeSpanSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'httpQuery'
+      }, {
+        en: 'viewRefreshTime',
+        ti: 'Double'
+      }, {
+        en: 'IconStyleObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'Polygon',
+        ti: '.PolygonType',
+        sh: 'AbstractGeometryGroup'
+      }, {
+        en: 'RegionObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'AbstractStyleSelectorSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'listItemType'
+      }, {
+        en: 'LookAtSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'LineStyle',
+        ti: '.LineStyleType',
+        sh: 'AbstractColorStyleGroup'
+      }, {
+        en: 'AliasSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'width',
+        ti: 'Double'
+      }, {
+        en: 'StyleMap',
+        ti: '.StyleMapType',
+        sh: 'AbstractStyleSelectorGroup'
+      }, {
+        en: 'LinkSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'AbstractContainerGroup',
+        ti: '.AbstractContainerType',
+        sh: 'AbstractFeatureGroup'
+      }, {
+        en: 'RegionSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'SimpleFieldExtension',
+        ti: 'AnyType'
+      }, {
+        en: 'displayMode'
+      }, {
+        en: 'PhotoOverlaySimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'color'
+      }, {
+        en: 'ScreenOverlay',
+        ti: '.ScreenOverlayType',
+        sh: 'AbstractOverlayGroup'
+      }, {
+        en: 'Folder',
+        ti: '.FolderType',
+        sh: 'AbstractContainerGroup'
+      }, {
+        en: 'FolderSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'maxSessionLength',
+        ti: 'Double'
+      }, {
+        en: 'AbstractFeatureObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'Update',
+        ti: '.UpdateType'
+      }, {
+        en: 'LatLonBoxObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'gridOrigin'
+      }, {
+        en: 'refreshInterval',
+        ti: 'Double'
+      }, {
+        en: 'fill',
+        ti: 'Boolean'
+      }, {
+        en: 'LatLonAltBoxSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'Pair',
+        ti: '.PairType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'rotation',
+        ti: 'Double'
+      }, {
+        en: 'address'
+      }, {
+        en: 'ScreenOverlayObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'minAltitude',
+        ti: 'Double'
+      }, {
+        en: 'PairObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'AbstractTimePrimitiveObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'PolyStyle',
+        ti: '.PolyStyleType',
+        sh: 'AbstractColorStyleGroup'
+      }, {
+        en: 'expires'
+      }, {
+        en: 'phoneNumber'
+      }, {
+        en: 'AbstractTimePrimitiveGroup',
+        ti: '.AbstractTimePrimitiveType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'BalloonStyleObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'maxWidth',
+        ti: 'Int'
+      }, {
+        en: 'minLodPixels',
+        ti: 'Double'
+      }, {
+        en: 'DocumentObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'latitude',
         ti: 'Double'
       }, {
         en: 'PairSimpleExtensionGroup',
         ti: 'AnyType'
       }, {
-        en: 'IconStyle',
-        ti: '.IconStyleType',
-        sh: 'AbstractColorStyleGroup'
-      }, {
-        en: 'viewBoundScale',
+        en: 'scale',
         ti: 'Double'
+      }, {
+        en: 'longitude',
+        ti: 'Double'
+      }, {
+        en: 'ImagePyramidObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'hotSpot',
+        ti: '.Vec2Type'
+      }, {
+        en: 'LinearRingSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'FolderObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'ScaleSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'Location',
+        ti: '.LocationType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'end'
+      }, {
+        en: 'outerBoundaryIs',
+        ti: '.BoundaryType'
+      }, {
+        en: 'ObjectSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'UpdateOpExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'AbstractGeometryGroup',
+        ti: '.AbstractGeometryType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'LodSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'Delete',
+        ti: '.DeleteType'
+      }, {
+        en: 'LatLonAltBoxObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'refreshMode'
       }, {
         en: 'minRefreshPeriod',
         ti: 'Double'
       }, {
-        en: 'OrientationObjectExtensionGroup',
+        en: 'TimeStamp',
+        ti: '.TimeStampType',
+        sh: 'AbstractTimePrimitiveGroup'
+      }, {
+        en: 'Style',
+        ti: '.StyleType',
+        sh: 'AbstractStyleSelectorGroup'
+      }, {
+        en: 'AbstractSubStyleSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'AbstractStyleSelectorObjectExtensionGroup',
         ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'KmlObjectExtensionGroup',
+        en: 'PhotoOverlay',
+        ti: '.PhotoOverlayType',
+        sh: 'AbstractOverlayGroup'
+      }, {
+        en: 'NetworkLink',
+        ti: '.NetworkLinkType',
+        sh: 'AbstractFeatureGroup'
+      }, {
+        en: 'TimeSpanObjectExtensionGroup',
         ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'PolygonObjectExtensionGroup',
+        en: 'text'
+      }, {
+        en: 'LabelStyle',
+        ti: '.LabelStyleType',
+        sh: 'AbstractColorStyleGroup'
+      }, {
+        en: 'SimpleData',
+        ti: '.SimpleDataType'
+      }, {
+        en: 'sourceHref'
+      }, {
+        en: 'range',
+        ti: 'Double'
+      }, {
+        en: 'outline',
+        ti: 'Boolean'
+      }, {
+        en: 'LocationSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'NetworkLinkObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'near',
+        ti: 'Double'
+      }, {
+        en: 'ViewVolume',
+        ti: '.ViewVolumeType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'open',
+        ti: 'Boolean'
+      }, {
+        en: 'west',
+        ti: 'Double'
+      }, {
+        en: 'AbstractColorStyleObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'ModelObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'AbstractGeometrySimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'BoundaryObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'state',
+        ti: {
+          t: 'l'
+        }
+      }, {
+        en: 'LabelStyleObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'CameraObjectExtensionGroup',
         ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
@@ -2530,134 +2522,142 @@ var KML_2_2_0_Module_Factory = function () {
         ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'ItemIconSimpleExtensionGroup',
+        en: 'LatLonBox',
+        ti: '.LatLonBoxType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'CameraSimpleExtensionGroup',
         ti: 'AnyType'
       }, {
-        en: 'range',
-        ti: 'Double'
+        en: 'Change',
+        ti: '.ChangeType'
       }, {
-        en: 'PhotoOverlaySimpleExtensionGroup',
+        en: 'IconStyleSimpleExtensionGroup',
         ti: 'AnyType'
       }, {
-        en: 'name'
+        en: 'when'
       }, {
-        en: 'roll',
+        en: 'BalloonStyle',
+        ti: '.BalloonStyleType',
+        sh: 'AbstractSubStyleGroup'
+      }, {
+        en: 'leftFov',
         ti: 'Double'
       }, {
-        en: 'RegionSimpleExtensionGroup',
+        en: 'PlacemarkObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'AbstractContainerObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'PolyStyleSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'ItemIcon',
+        ti: '.ItemIconType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'DataExtension',
+        ti: 'AnyType'
+      }, {
+        en: 'tileSize',
+        ti: 'Int'
+      }, {
+        en: 'maxLodPixels',
+        ti: 'Double'
+      }, {
+        en: 'AbstractSubStyleObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'LocationObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'MultiGeometryObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'StyleMapSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'AbstractTimePrimitiveSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'y',
+        ti: 'Double'
+      }, {
+        en: 'Alias',
+        ti: '.AliasType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'styleUrl'
+      }, {
+        en: 'AbstractOverlaySimpleExtensionGroup',
         ti: 'AnyType'
       }, {
         en: 'altitudeMode',
         sh: 'altitudeModeGroup'
       }, {
-        en: 'open',
-        ti: 'Boolean'
-      }, {
-        en: 'CameraObjectExtensionGroup',
-        ti: '.AbstractObjectType',
+        en: 'AbstractSubStyleGroup',
+        ti: '.AbstractSubStyleType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'ViewVolumeSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'LatLonAltBoxSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'LineStyle',
-        ti: '.LineStyleType',
-        sh: 'AbstractColorStyleGroup'
-      }, {
-        en: 'LineStringSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'ScreenOverlaySimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'viewRefreshMode'
-      }, {
-        en: 'begin'
-      }, {
-        en: 'maxAltitude',
+        en: 'south',
         ti: 'Double'
-      }, {
-        en: 'StyleMapObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'UpdateOpExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'displayMode'
       }, {
         en: 'tilt',
         ti: 'Double'
       }, {
-        en: 'Placemark',
-        ti: '.PlacemarkType',
-        sh: 'AbstractFeatureGroup'
+        en: 'message'
       }, {
-        en: 'targetHref'
+        en: 'east',
+        ti: 'Double'
       }, {
-        en: 'AbstractGeometryObjectExtensionGroup',
+        en: 'LookAt',
+        ti: '.LookAtType',
+        sh: 'AbstractViewGroup'
+      }, {
+        en: 'SchemaData',
+        ti: '.SchemaDataType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'LatLonAltBox',
+        ti: '.LatLonAltBoxType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'visibility',
+        ti: 'Boolean'
+      }, {
+        en: 'LineStringSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'PolygonObjectExtensionGroup',
         ti: '.AbstractObjectType',
         sh: 'AbstractObjectGroup'
       }, {
-        en: 'topFov',
+        en: 'rightFov',
         ti: 'Double'
       }, {
-        en: 'Polygon',
-        ti: '.PolygonType',
-        sh: 'AbstractGeometryGroup'
+        en: 'OrientationSimpleExtensionGroup',
+        ti: 'AnyType'
       }, {
-        en: 'screenXY',
+        en: 'ItemIconObjectExtensionGroup',
+        ti: '.AbstractObjectType',
+        sh: 'AbstractObjectGroup'
+      }, {
+        en: 'displayName'
+      }, {
+        en: 'ResourceMapSimpleExtensionGroup',
+        ti: 'AnyType'
+      }, {
+        en: 'overlayXY',
         ti: '.Vec2Type'
       }, {
-        en: 'AbstractOverlayObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'linkSnippet',
-        ti: '.SnippetType'
-      }, {
-        en: 'LodObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'outline',
-        ti: 'Boolean'
-      }, {
-        en: 'FolderSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'ViewVolume',
-        ti: '.ViewVolumeType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'AbstractLatLonBoxSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'PolygonSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'FolderObjectExtensionGroup',
-        ti: '.AbstractObjectType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'minLodPixels',
-        ti: 'Double'
-      }, {
-        en: 'LineStyleSimpleExtensionGroup',
-        ti: 'AnyType'
-      }, {
-        en: 'Url',
-        ti: '.LinkType',
-        sh: 'AbstractObjectGroup'
-      }, {
-        en: 'flyToView',
-        ti: 'Boolean'
-      }, {
-        en: 'north',
-        ti: 'Double'
+        en: 'Metadata',
+        ti: '.MetadataType'
       }]
   };
   return {

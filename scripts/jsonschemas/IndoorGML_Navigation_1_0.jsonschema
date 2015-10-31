@@ -2,150 +2,50 @@
 {
     "id":"http://www.opengis.net/indoorgml/1.0/navigation#",
     "definitions":{
-        "ConnectionBoundaryType":{
+        "AnchorBoundaryType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/TransferBoundaryType"
                 },
                 {
                     "type":"object",
-                    "title":"ConnectionBoundaryType",
+                    "title":"AnchorBoundaryType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ConnectionBoundaryType",
+                "localPart":"AnchorBoundaryType",
                 "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
             }
         },
-        "NavigableBoundaryType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/indoorgml/1.0/core#/definitions/CellSpaceBoundaryType"
-                },
-                {
-                    "type":"object",
-                    "title":"NavigableBoundaryType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"NavigableBoundaryType",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            }
-        },
-        "NavigableSpaceType":{
+        "RouteNodesType":{
             "required":[
-                "clazz",
-                "function",
-                "usage"
+                "nodeMember"
             ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/indoorgml/1.0/core#/definitions/CellSpaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"NavigableSpaceType",
-                    "properties":{
-                        "clazz":{
-                            "title":"clazz",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"class",
-                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-                            }
-                        },
-                        "function":{
-                            "title":"function",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"function",
-                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-                            }
-                        },
-                        "usage":{
-                            "title":"usage",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"usage",
-                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"NavigableSpaceType",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            },
-            "propertiesOrder":[
-                "clazz",
-                "function",
-                "usage"
-            ]
-        },
-        "TransferSpaceType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/NavigableSpaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"TransferSpaceType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TransferSpaceType",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            }
-        },
-        "PathType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/AbstractFeatureType"
                 },
                 {
                     "type":"object",
-                    "title":"PathType",
+                    "title":"RouteNodesType",
                     "properties":{
-                        "routeMember":{
-                            "title":"routeMember",
+                        "nodeMember":{
+                            "title":"nodeMember",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"#/definitions/RouteSegmentMemberType"
+                                        "$ref":"#/definitions/RouteNodeMemberType"
                                     },
-                                    "minItems":0
+                                    "minItems":2
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"routeMember",
+                                "localPart":"nodeMember",
                                 "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
                             }
                         },
@@ -167,36 +67,96 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"PathType",
+                "localPart":"RouteNodesType",
                 "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
             },
             "propertiesOrder":[
-                "routeMember",
+                "nodeMember",
                 "aggregationType"
             ]
         },
-        "RouteSegmentMemberType":{
-            "required":[
-                "routeSegment"
-            ],
+        "AnchorSpaceType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractFeatureMemberType"
+                    "$ref":"#/definitions/TransferSpaceType"
                 },
                 {
                     "type":"object",
-                    "title":"RouteSegmentMemberType",
+                    "title":"AnchorSpaceType",
                     "properties":{
-                        "routeSegment":{
-                            "title":"routeSegment",
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AnchorSpaceType",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            }
+        },
+        "RouteType":{
+            "required":[
+                "startRouteNode",
+                "endRouteNode",
+                "routeNodes",
+                "path"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"RouteType",
+                    "properties":{
+                        "startRouteNode":{
+                            "title":"startRouteNode",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/RouteSegmentType"
+                                    "$ref":"#/definitions/RouteNodePropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"RouteSegment",
+                                "localPart":"startRouteNode",
+                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+                            }
+                        },
+                        "endRouteNode":{
+                            "title":"endRouteNode",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/RouteNodePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"endRouteNode",
+                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+                            }
+                        },
+                        "routeNodes":{
+                            "title":"routeNodes",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/RouteNodesType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"routeNodes",
+                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+                            }
+                        },
+                        "path":{
+                            "title":"path",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PathType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"path",
                                 "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
                             }
                         }
@@ -205,12 +165,176 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"RouteSegmentMemberType",
+                "localPart":"RouteType",
                 "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
             },
             "propertiesOrder":[
-                "routeSegment"
+                "startRouteNode",
+                "endRouteNode",
+                "routeNodes",
+                "path"
             ]
+        },
+        "NavigableBoundaryType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/indoorgml/1.0/core#/definitions/CellSpaceBoundaryType"
+                },
+                {
+                    "type":"object",
+                    "title":"NavigableBoundaryType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"NavigableBoundaryType",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            }
+        },
+        "RouteNodeType":{
+            "required":[
+                "referencedState",
+                "geometry"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"RouteNodeType",
+                    "properties":{
+                        "referencedState":{
+                            "title":"referencedState",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/indoorgml/1.0/core#/definitions/StatePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"referencedState",
+                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+                            }
+                        },
+                        "geometry":{
+                            "title":"geometry",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PointPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"geometry",
+                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RouteNodeType",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            },
+            "propertiesOrder":[
+                "referencedState",
+                "geometry"
+            ]
+        },
+        "ConnectionSpaceType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/TransferSpaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"ConnectionSpaceType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ConnectionSpaceType",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            }
+        },
+        "RouteNodeMemberType":{
+            "required":[
+                "routeNode"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureMemberType"
+                },
+                {
+                    "type":"object",
+                    "title":"RouteNodeMemberType",
+                    "properties":{
+                        "routeNode":{
+                            "title":"routeNode",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/RouteNodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"RouteNode",
+                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RouteNodeMemberType",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            },
+            "propertiesOrder":[
+                "routeNode"
+            ]
+        },
+        "TransitionSpaceType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/TransferSpaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"TransitionSpaceType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TransitionSpaceType",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            }
+        },
+        "TransferSpaceType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/NavigableSpaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"TransferSpaceType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TransferSpaceType",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            }
         },
         "RouteSegmentType":{
             "required":[
@@ -297,88 +421,6 @@
                 "connects",
                 "referencedTransition",
                 "geometry"
-            ]
-        },
-        "RouteType":{
-            "required":[
-                "startRouteNode",
-                "endRouteNode",
-                "routeNodes",
-                "path"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"RouteType",
-                    "properties":{
-                        "startRouteNode":{
-                            "title":"startRouteNode",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/RouteNodePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"startRouteNode",
-                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-                            }
-                        },
-                        "endRouteNode":{
-                            "title":"endRouteNode",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/RouteNodePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"endRouteNode",
-                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-                            }
-                        },
-                        "routeNodes":{
-                            "title":"routeNodes",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/RouteNodesType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"routeNodes",
-                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-                            }
-                        },
-                        "path":{
-                            "title":"path",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PathType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"path",
-                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RouteType",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            },
-            "propertiesOrder":[
-                "startRouteNode",
-                "endRouteNode",
-                "routeNodes",
-                "path"
             ]
         },
         "GeneralSpaceType":{
@@ -558,193 +600,29 @@
                 "actuate"
             ]
         },
-        "TransitionSpaceType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/TransferSpaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"TransitionSpaceType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TransitionSpaceType",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            }
-        },
-        "TransferBoundaryType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/NavigableBoundaryType"
-                },
-                {
-                    "type":"object",
-                    "title":"TransferBoundaryType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TransferBoundaryType",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            }
-        },
-        "AnchorSpaceType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/TransferSpaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"AnchorSpaceType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AnchorSpaceType",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            }
-        },
-        "ConnectionSpaceType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/TransferSpaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"ConnectionSpaceType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ConnectionSpaceType",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            }
-        },
-        "RouteNodeType":{
-            "required":[
-                "referencedState",
-                "geometry"
-            ],
+        "PathType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/AbstractFeatureType"
                 },
                 {
                     "type":"object",
-                    "title":"RouteNodeType",
+                    "title":"PathType",
                     "properties":{
-                        "referencedState":{
-                            "title":"referencedState",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/indoorgml/1.0/core#/definitions/StatePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"referencedState",
-                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-                            }
-                        },
-                        "geometry":{
-                            "title":"geometry",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PointPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"geometry",
-                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RouteNodeType",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            },
-            "propertiesOrder":[
-                "referencedState",
-                "geometry"
-            ]
-        },
-        "RouteNodeMemberType":{
-            "required":[
-                "routeNode"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureMemberType"
-                },
-                {
-                    "type":"object",
-                    "title":"RouteNodeMemberType",
-                    "properties":{
-                        "routeNode":{
-                            "title":"routeNode",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/RouteNodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"RouteNode",
-                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RouteNodeMemberType",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            },
-            "propertiesOrder":[
-                "routeNode"
-            ]
-        },
-        "RouteNodesType":{
-            "required":[
-                "nodeMember"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"RouteNodesType",
-                    "properties":{
-                        "nodeMember":{
-                            "title":"nodeMember",
+                        "routeMember":{
+                            "title":"routeMember",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"#/definitions/RouteNodeMemberType"
+                                        "$ref":"#/definitions/RouteSegmentMemberType"
                                     },
-                                    "minItems":2
+                                    "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"nodeMember",
+                                "localPart":"routeMember",
                                 "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
                             }
                         },
@@ -766,31 +644,153 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"RouteNodesType",
+                "localPart":"PathType",
                 "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
             },
             "propertiesOrder":[
-                "nodeMember",
+                "routeMember",
                 "aggregationType"
             ]
         },
-        "AnchorBoundaryType":{
+        "ConnectionBoundaryType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/TransferBoundaryType"
                 },
                 {
                     "type":"object",
-                    "title":"AnchorBoundaryType",
+                    "title":"ConnectionBoundaryType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AnchorBoundaryType",
+                "localPart":"ConnectionBoundaryType",
                 "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
             }
+        },
+        "NavigableSpaceType":{
+            "required":[
+                "clazz",
+                "function",
+                "usage"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/indoorgml/1.0/core#/definitions/CellSpaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"NavigableSpaceType",
+                    "properties":{
+                        "clazz":{
+                            "title":"clazz",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"class",
+                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+                            }
+                        },
+                        "function":{
+                            "title":"function",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"function",
+                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+                            }
+                        },
+                        "usage":{
+                            "title":"usage",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"usage",
+                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"NavigableSpaceType",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            },
+            "propertiesOrder":[
+                "clazz",
+                "function",
+                "usage"
+            ]
+        },
+        "TransferBoundaryType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/NavigableBoundaryType"
+                },
+                {
+                    "type":"object",
+                    "title":"TransferBoundaryType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TransferBoundaryType",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            }
+        },
+        "RouteSegmentMemberType":{
+            "required":[
+                "routeSegment"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureMemberType"
+                },
+                {
+                    "type":"object",
+                    "title":"RouteSegmentMemberType",
+                    "properties":{
+                        "routeSegment":{
+                            "title":"routeSegment",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/RouteSegmentType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"RouteSegment",
+                                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RouteSegmentMemberType",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            },
+            "propertiesOrder":[
+                "routeSegment"
+            ]
         }
     },
     "anyOf":[
@@ -801,11 +801,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/TransferSpaceType"
+                    "$ref":"#/definitions/NavigableBoundaryType"
                 }
             },
             "elementName":{
-                "localPart":"TransferSpace",
+                "localPart":"NavigableBoundary",
                 "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
             }
         },
@@ -816,56 +816,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/TransitionSpaceType"
+                    "$ref":"#/definitions/TransferBoundaryType"
                 }
             },
             "elementName":{
-                "localPart":"TransitionSpace",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AnchorSpaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"AnchorSpace",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ConnectionSpaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"ConnectionSpace",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/RouteType"
-                }
-            },
-            "elementName":{
-                "localPart":"Route",
+                "localPart":"TransferBoundary",
                 "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
             }
         },
@@ -891,11 +846,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/TransferBoundaryType"
+                    "$ref":"#/definitions/RouteType"
                 }
             },
             "elementName":{
-                "localPart":"TransferBoundary",
+                "localPart":"Route",
                 "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
             }
         },
@@ -936,36 +891,6 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/RouteNodeType"
-                }
-            },
-            "elementName":{
-                "localPart":"RouteNode",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/NavigableBoundaryType"
-                }
-            },
-            "elementName":{
-                "localPart":"NavigableBoundary",
-                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
                     "$ref":"#/definitions/ConnectionBoundaryType"
                 }
             },
@@ -981,11 +906,86 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/RouteNodeType"
+                }
+            },
+            "elementName":{
+                "localPart":"RouteNode",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AnchorSpaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"AnchorSpace",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ConnectionSpaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"ConnectionSpace",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TransitionSpaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"TransitionSpace",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/GeneralSpaceType"
                 }
             },
             "elementName":{
                 "localPart":"GeneralSpace",
+                "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TransferSpaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"TransferSpace",
                 "namespaceURI":"http://www.opengis.net/indoorgml/1.0/navigation"
             }
         }

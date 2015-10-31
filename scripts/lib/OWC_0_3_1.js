@@ -2,53 +2,8 @@ var OWC_0_3_1_Module_Factory = function () {
   var OWC_0_3_1 = {
     n: 'OWC_0_3_1',
     dens: 'http:\/\/www.opengis.net\/ows-context',
-    deps: ['SLD_1_0_0', 'OWS_1_0_0', 'Filter_1_0_0', 'GML_2_1_2'],
+    deps: ['SLD_1_0_0', 'OWS_1_0_0', 'GML_2_1_2', 'Filter_1_0_0'],
     tis: [{
-        ln: 'DimensionListType',
-        ps: [{
-            n: 'dimension',
-            rq: true,
-            col: true,
-            en: 'Dimension',
-            ti: '.DimensionType'
-          }]
-      }, {
-        ln: 'OWSContextType',
-        ps: [{
-            n: 'general',
-            rq: true,
-            en: 'General',
-            ti: '.GeneralType'
-          }, {
-            n: 'resourceList',
-            rq: true,
-            en: 'ResourceList',
-            ti: '.ResourceListType'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'id',
-            rq: true,
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'StyleListType',
-        ps: [{
-            n: 'style',
-            mno: 0,
-            col: true,
-            en: 'Style',
-            ti: '.StyleType'
-          }]
-      }, {
         ln: 'LayerType',
         bti: '.AbstractResourceType',
         ps: [{
@@ -108,80 +63,65 @@ var OWC_0_3_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GeneralType',
+        ln: 'FormatListType',
         ps: [{
-            n: 'window',
-            en: 'Window',
-            ti: '.WindowType'
-          }, {
-            n: 'boundingBox',
+            n: 'format',
             rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'BoundingBox',
-              ns: 'http:\/\/www.opengis.net\/ows'
-            },
-            ti: 'OWS_1_0_0.BoundingBoxType',
-            t: 'er'
-          }, {
-            n: 'minScaleDenominator',
-            en: {
-              lp: 'MinScaleDenominator',
-              ns: 'http:\/\/www.opengis.net\/sld'
-            },
-            ti: 'Double'
-          }, {
-            n: 'maxScaleDenominator',
-            en: {
-              lp: 'MaxScaleDenominator',
-              ns: 'http:\/\/www.opengis.net\/sld'
-            },
-            ti: 'Double'
-          }, {
-            n: 'title',
-            en: {
-              lp: 'Title',
-              ns: 'http:\/\/www.opengis.net\/ows'
-            }
-          }, {
-            n: '_abstract',
-            en: {
-              lp: 'Abstract',
-              ns: 'http:\/\/www.opengis.net\/ows'
-            }
-          }, {
-            n: 'keywords',
-            en: {
-              lp: 'Keywords',
-              ns: 'http:\/\/www.opengis.net\/ows'
-            },
-            ti: 'OWS_1_0_0.KeywordsType'
-          }, {
-            n: 'logoURL',
-            en: 'LogoURL',
-            ti: '.URLType'
-          }, {
-            n: 'descriptionURL',
-            en: 'DescriptionURL',
-            ti: '.URLType'
-          }, {
-            n: 'serviceProvider',
-            en: {
-              lp: 'ServiceProvider',
-              ns: 'http:\/\/www.opengis.net\/ows'
-            },
-            ti: 'OWS_1_0_0.ServiceProvider'
-          }, {
-            n: 'extension',
-            en: 'Extension',
-            ti: '.ExtensionType'
+            col: true,
+            en: 'Format',
+            ti: '.FormatType'
           }]
       }, {
-        ln: 'FormatType',
+        ln: 'DimensionType',
         ps: [{
             n: 'value',
             t: 'v'
+          }, {
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'units',
+            rq: true,
+            an: {
+              lp: 'units'
+            },
+            t: 'a'
+          }, {
+            n: 'unitSymbol',
+            an: {
+              lp: 'unitSymbol'
+            },
+            t: 'a'
+          }, {
+            n: 'userValue',
+            an: {
+              lp: 'userValue'
+            },
+            t: 'a'
+          }, {
+            n: '_default',
+            an: {
+              lp: 'default'
+            },
+            t: 'a'
+          }, {
+            n: 'multipleValues',
+            ti: 'Boolean',
+            an: {
+              lp: 'multipleValues'
+            },
+            t: 'a'
+          }, {
+            n: 'nearestValue',
+            ti: 'Boolean',
+            an: {
+              lp: 'nearestValue'
+            },
+            t: 'a'
           }, {
             n: 'current',
             ti: 'Boolean',
@@ -191,32 +131,103 @@ var OWC_0_3_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'URLType',
+        ln: 'OWSContextType',
         ps: [{
+            n: 'general',
+            rq: true,
+            en: 'General',
+            ti: '.GeneralType'
+          }, {
+            n: 'resourceList',
+            rq: true,
+            en: 'ResourceList',
+            ti: '.ResourceListType'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'id',
+            rq: true,
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ResourceListType',
+        ps: [{
+            n: 'layer',
+            mno: 0,
+            col: true,
+            en: 'Layer',
+            ti: '.LayerType'
+          }]
+      }, {
+        ln: 'StyleListType',
+        ps: [{
+            n: 'style',
+            mno: 0,
+            col: true,
+            en: 'Style',
+            ti: '.StyleType'
+          }]
+      }, {
+        ln: 'SLDType',
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: 'legendURL',
+            en: 'LegendURL',
+            ti: '.URLType'
+          }, {
             n: 'onlineResource',
             rq: true,
             en: 'OnlineResource',
             ti: '.OnlineResourceType'
           }, {
-            n: 'width',
-            ti: 'Integer',
-            an: {
-              lp: 'width'
+            n: 'styledLayerDescriptor',
+            rq: true,
+            en: {
+              lp: 'StyledLayerDescriptor',
+              ns: 'http:\/\/www.opengis.net\/sld'
             },
-            t: 'a'
+            ti: 'SLD_1_0_0.StyledLayerDescriptor'
           }, {
-            n: 'height',
-            ti: 'Integer',
-            an: {
-              lp: 'height'
+            n: 'featureTypeStyle',
+            rq: true,
+            en: {
+              lp: 'FeatureTypeStyle',
+              ns: 'http:\/\/www.opengis.net\/sld'
             },
-            t: 'a'
-          }, {
-            n: 'format',
-            an: {
-              lp: 'format'
-            },
-            t: 'a'
+            ti: 'SLD_1_0_0.FeatureTypeStyle'
+          }]
+      }, {
+        ln: 'DimensionListType',
+        ps: [{
+            n: 'dimension',
+            rq: true,
+            col: true,
+            en: 'Dimension',
+            ti: '.DimensionType'
+          }]
+      }, {
+        ln: 'InlineFeatureCollectionType',
+        bti: 'GML_2_1_2.AbstractFeatureCollectionType'
+      }, {
+        ln: 'ExtensionType',
+        ps: [{
+            n: 'any',
+            rq: true,
+            mx: false,
+            t: 'ae'
           }]
       }, {
         ln: 'AbstractResourceType',
@@ -297,47 +308,74 @@ var OWC_0_3_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'FormatListType',
+        ln: 'GeneralType',
         ps: [{
-            n: 'format',
+            n: 'window',
+            en: 'Window',
+            ti: '.WindowType'
+          }, {
+            n: 'boundingBox',
             rq: true,
-            col: true,
-            en: 'Format',
-            ti: '.FormatType'
-          }]
-      }, {
-        ln: 'SLDType',
-        ps: [{
-            n: 'name',
-            en: 'Name'
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'BoundingBox',
+              ns: 'http:\/\/www.opengis.net\/ows'
+            },
+            ti: 'OWS_1_0_0.BoundingBoxType',
+            t: 'er'
+          }, {
+            n: 'minScaleDenominator',
+            en: {
+              lp: 'MinScaleDenominator',
+              ns: 'http:\/\/www.opengis.net\/sld'
+            },
+            ti: 'Double'
+          }, {
+            n: 'maxScaleDenominator',
+            en: {
+              lp: 'MaxScaleDenominator',
+              ns: 'http:\/\/www.opengis.net\/sld'
+            },
+            ti: 'Double'
           }, {
             n: 'title',
-            en: 'Title'
+            en: {
+              lp: 'Title',
+              ns: 'http:\/\/www.opengis.net\/ows'
+            }
           }, {
-            n: 'legendURL',
-            en: 'LegendURL',
+            n: '_abstract',
+            en: {
+              lp: 'Abstract',
+              ns: 'http:\/\/www.opengis.net\/ows'
+            }
+          }, {
+            n: 'keywords',
+            en: {
+              lp: 'Keywords',
+              ns: 'http:\/\/www.opengis.net\/ows'
+            },
+            ti: 'OWS_1_0_0.KeywordsType'
+          }, {
+            n: 'logoURL',
+            en: 'LogoURL',
             ti: '.URLType'
           }, {
-            n: 'onlineResource',
-            rq: true,
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
+            n: 'descriptionURL',
+            en: 'DescriptionURL',
+            ti: '.URLType'
           }, {
-            n: 'styledLayerDescriptor',
-            rq: true,
+            n: 'serviceProvider',
             en: {
-              lp: 'StyledLayerDescriptor',
-              ns: 'http:\/\/www.opengis.net\/sld'
+              lp: 'ServiceProvider',
+              ns: 'http:\/\/www.opengis.net\/ows'
             },
-            ti: 'SLD_1_0_0.StyledLayerDescriptor'
+            ti: 'OWS_1_0_0.ServiceProvider'
           }, {
-            n: 'featureTypeStyle',
-            rq: true,
-            en: {
-              lp: 'FeatureTypeStyle',
-              ns: 'http:\/\/www.opengis.net\/sld'
-            },
-            ti: 'SLD_1_0_0.FeatureTypeStyle'
+            n: 'extension',
+            en: 'Extension',
+            ti: '.ExtensionType'
           }]
       }, {
         ln: 'ParameterListType',
@@ -349,122 +387,15 @@ var OWC_0_3_1_Module_Factory = function () {
             ti: '.ExtensionType'
           }]
       }, {
-        ln: 'DimensionType',
+        ln: 'FormatType',
         ps: [{
             n: 'value',
             t: 'v'
           }, {
-            n: 'name',
-            rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'units',
-            rq: true,
-            an: {
-              lp: 'units'
-            },
-            t: 'a'
-          }, {
-            n: 'unitSymbol',
-            an: {
-              lp: 'unitSymbol'
-            },
-            t: 'a'
-          }, {
-            n: 'userValue',
-            an: {
-              lp: 'userValue'
-            },
-            t: 'a'
-          }, {
-            n: '_default',
-            an: {
-              lp: 'default'
-            },
-            t: 'a'
-          }, {
-            n: 'multipleValues',
-            ti: 'Boolean',
-            an: {
-              lp: 'multipleValues'
-            },
-            t: 'a'
-          }, {
-            n: 'nearestValue',
-            ti: 'Boolean',
-            an: {
-              lp: 'nearestValue'
-            },
-            t: 'a'
-          }, {
             n: 'current',
             ti: 'Boolean',
             an: {
               lp: 'current'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'OnlineResourceType',
-        bti: 'OWS_1_0_0.OnlineResourceType',
-        ps: [{
-            n: 'method',
-            an: {
-              lp: 'method'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'InlineFeatureCollectionType',
-        bti: 'GML_2_1_2.AbstractFeatureCollectionType'
-      }, {
-        ln: 'StyleType',
-        ps: [{
-            n: 'name',
-            rq: true,
-            en: 'Name'
-          }, {
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'legendURL',
-            en: 'LegendURL',
-            ti: '.URLType'
-          }, {
-            n: 'sld',
-            en: 'SLD',
-            ti: '.SLDType'
-          }, {
-            n: 'current',
-            ti: 'Boolean',
-            an: {
-              lp: 'current'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'WindowType',
-        ps: [{
-            n: 'width',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'height'
             },
             t: 'a'
           }]
@@ -505,21 +436,90 @@ var OWC_0_3_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ResourceListType',
+        ln: 'URLType',
         ps: [{
-            n: 'layer',
-            mno: 0,
-            col: true,
-            en: 'Layer',
-            ti: '.LayerType'
+            n: 'onlineResource',
+            rq: true,
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'width',
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }, {
+            n: 'format',
+            an: {
+              lp: 'format'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'ExtensionType',
+        ln: 'WindowType',
         ps: [{
-            n: 'any',
+            n: 'width',
             rq: true,
-            mx: false,
-            t: 'ae'
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            rq: true,
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'StyleType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            en: 'Name'
+          }, {
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'legendURL',
+            en: 'LegendURL',
+            ti: '.URLType'
+          }, {
+            n: 'sld',
+            en: 'SLD',
+            ti: '.SLDType'
+          }, {
+            n: 'current',
+            ti: 'Boolean',
+            an: {
+              lp: 'current'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'OnlineResourceType',
+        bti: 'OWS_1_0_0.OnlineResourceType',
+        ps: [{
+            n: 'method',
+            an: {
+              lp: 'method'
+            },
+            t: 'a'
           }]
       }, {
         t: 'enum',
@@ -534,11 +534,11 @@ var OWC_0_3_1_Module_Factory = function () {
         en: 'ResourceList',
         ti: '.ResourceListType'
       }, {
-        en: 'OWSContext',
-        ti: '.OWSContextType'
-      }, {
         en: 'Layer',
         ti: '.LayerType'
+      }, {
+        en: 'OWSContext',
+        ti: '.OWSContextType'
       }]
   };
   return {

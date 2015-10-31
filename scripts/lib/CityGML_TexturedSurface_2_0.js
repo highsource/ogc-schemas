@@ -3,15 +3,40 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
     n: 'CityGML_TexturedSurface_2_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/texturedsurface\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_1_1', 'XLink_1_0'],
+    deps: ['XLink_1_0', 'GML_3_1_1'],
     tis: [{
-        ln: 'TexturedSurfaceType',
-        bti: 'GML_3_1_1.OrientableSurfaceType',
+        ln: 'AbstractAppearanceType',
+        bti: 'GML_3_1_1.AbstractGMLType'
+      }, {
+        ln: 'MaterialType',
+        bti: '.AbstractAppearanceType',
         ps: [{
-            n: 'appearance',
-            rq: true,
-            col: true,
-            ti: '.AppearancePropertyType'
+            n: 'shininess',
+            ti: 'Double'
+          }, {
+            n: 'transparency',
+            ti: 'Double'
+          }, {
+            n: 'ambientIntensity',
+            ti: 'Double'
+          }, {
+            n: 'specularColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'diffuseColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'emissiveColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
           }]
       }, {
         ln: 'AppearancePropertyType',
@@ -63,40 +88,6 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MaterialType',
-        bti: '.AbstractAppearanceType',
-        ps: [{
-            n: 'shininess',
-            ti: 'Double'
-          }, {
-            n: 'transparency',
-            ti: 'Double'
-          }, {
-            n: 'ambientIntensity',
-            ti: 'Double'
-          }, {
-            n: 'specularColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'diffuseColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'emissiveColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }]
-      }, {
-        ln: 'AbstractAppearanceType',
-        bti: 'GML_3_1_1.AbstractGMLType'
-      }, {
         ln: 'SimpleTextureType',
         bti: '.AbstractAppearanceType',
         ps: [{
@@ -116,6 +107,15 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
             ti: 'Boolean'
           }]
       }, {
+        ln: 'TexturedSurfaceType',
+        bti: 'GML_3_1_1.OrientableSurfaceType',
+        ps: [{
+            n: 'appearance',
+            rq: true,
+            col: true,
+            ti: '.AppearancePropertyType'
+          }]
+      }, {
         t: 'enum',
         ln: 'TextureTypeType',
         vs: ['specific', 'typical', 'unknown']
@@ -124,13 +124,6 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
         en: 'Material',
         ti: '.MaterialType',
         sh: '_Appearance'
-      }, {
-        en: 'TexturedSurface',
-        ti: '.TexturedSurfaceType',
-        sh: {
-          lp: 'OrientableSurface',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
       }, {
         en: '_Appearance',
         ti: '.AbstractAppearanceType',
@@ -145,6 +138,13 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
       }, {
         en: 'appearance',
         ti: '.AppearancePropertyType'
+      }, {
+        en: 'TexturedSurface',
+        ti: '.TexturedSurfaceType',
+        sh: {
+          lp: 'OrientableSurface',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
       }]
   };
   return {

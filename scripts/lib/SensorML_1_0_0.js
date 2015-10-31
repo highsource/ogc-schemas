@@ -3,37 +3,134 @@ var SensorML_1_0_0_Module_Factory = function () {
     n: 'SensorML_1_0_0',
     dens: 'http:\/\/www.opengis.net\/sensorML\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'SWE_1_0_0', 'GML_3_1_1', 'IC_2_0'],
+    deps: ['XLink_1_0', 'IC_2_0', 'SWE_1_0_0', 'GML_3_1_1'],
     tis: [{
-        ln: 'InterfaceDefinition',
+        ln: 'Documentation',
         tn: null,
         ps: [{
-            n: 'serviceLayer',
-            ti: '.LayerPropertyType'
+            n: 'document',
+            rq: true,
+            en: 'Document',
+            ti: '.Document'
           }, {
-            n: 'applicationLayer',
-            ti: '.LayerPropertyType'
+            n: 'documentList',
+            rq: true,
+            en: 'DocumentList',
+            ti: '.DocumentList'
           }, {
-            n: 'presentationLayer',
-            ti: '.PresentationLayerPropertyType'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
           }, {
-            n: 'sessionLayer',
-            ti: '.LayerPropertyType'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            n: 'transportLayer',
-            ti: '.LayerPropertyType'
+            n: 'href',
+            t: 'a'
           }, {
-            n: 'networkLayer',
-            ti: '.LayerPropertyType'
+            n: 'role',
+            t: 'a'
           }, {
-            n: 'dataLinkLayer',
-            ti: '.LayerPropertyType'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            n: 'physicalLayer',
-            ti: '.LayerPropertyType'
+            n: 'title',
+            t: 'a'
           }, {
-            n: 'mechanicalLayer',
-            ti: '.LayerPropertyType'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'Link.Destination',
+        tn: null,
+        ps: [{
+            n: 'ref',
+            rq: true,
+            an: {
+              lp: 'ref'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ComponentArrayType',
+        bti: '.AbstractDerivableComponentType',
+        ps: [{
+            n: 'inputs',
+            ti: '.Inputs'
+          }, {
+            n: 'outputs',
+            ti: '.Outputs'
+          }, {
+            n: 'parameters',
+            rq: true,
+            ti: '.ComponentArrayType.Parameters'
+          }, {
+            n: 'components',
+            ti: '.Components'
+          }, {
+            n: 'positions',
+            ti: '.Positions'
+          }, {
+            n: 'connections',
+            ti: '.Connections'
+          }]
+      }, {
+        ln: 'DataSourcesPropertyType',
+        tn: 'dataSourcesPropertyType',
+        ps: [{
+            n: 'dataSourceList',
+            rq: true,
+            en: 'DataSourceList',
+            ti: '.AbstractListType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'Identification.IdentifierList',
+        tn: null,
+        ps: [{
+            n: 'identifier',
+            rq: true,
+            col: true,
+            ti: '.Identification.IdentifierList.Identifier'
           }, {
             n: 'id',
             ti: 'ID',
@@ -43,32 +140,196 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Position',
+        ln: 'Classification.ClassifierList.Classifier',
         tn: null,
         ps: [{
-            n: 'process',
+            n: 'term',
+            rq: true,
+            en: 'Term',
+            ti: '.Term'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ArrayLink.DestinationArray',
+        tn: null,
+        ps: [{
+            n: 'ref',
+            an: {
+              lp: 'ref'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessMethodType.Algorithm.AlgorithmDefinition.MathML',
+        tn: null,
+        ps: [{
+            n: 'any',
             rq: true,
             mx: false,
-            dom: false,
-            en: '_Process',
-            ti: '.AbstractProcessType',
-            t: 'er'
+            t: 'ae'
           }, {
-            n: 'position',
-            rq: true,
-            en: {
-              lp: 'Position',
-              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
-            ti: 'SWE_1_0_0.PositionType'
+            t: 'a'
           }, {
-            n: 'vector',
-            rq: true,
-            en: {
-              lp: 'Vector',
-              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractListType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
             },
-            ti: 'SWE_1_0_0.VectorType'
+            t: 'a'
+          }]
+      }, {
+        ln: 'MethodPropertyType',
+        tn: 'methodPropertyType',
+        ps: [{
+            n: 'processMethod',
+            rq: true,
+            en: 'ProcessMethod',
+            ti: '.ProcessMethodType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ArrayLink.SourceIndex',
+        tn: null,
+        ps: [{
+            n: 'ref',
+            an: {
+              lp: 'ref'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessMethodType.Algorithm',
+        tn: null,
+        ps: [{
+            n: 'algorithmDefinition',
+            rq: true,
+            en: 'AlgorithmDefinition',
+            ti: '.ProcessMethodType.Algorithm.AlgorithmDefinition'
+          }]
+      }, {
+        ln: 'Components',
+        tn: null,
+        ps: [{
+            n: 'componentList',
+            rq: true,
+            en: 'ComponentList',
+            ti: '.Components.ComponentList'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'EventList.Member',
+        tn: null,
+        ps: [{
+            n: 'event',
+            rq: true,
+            en: 'Event',
+            ti: '.Event'
           }, {
             n: 'name',
             rq: true,
@@ -109,47 +370,26 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Event',
+        ln: 'Person',
         tn: null,
         ps: [{
-            n: 'date'
+            n: 'surname',
+            rq: true
           }, {
-            n: 'description',
-            en: {
-              lp: 'description',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.StringOrRefType'
+            n: 'name',
+            rq: true
           }, {
-            n: 'keywords',
-            mno: 0,
-            col: true,
-            ti: '.Keywords'
+            n: 'userID',
+            rq: true
           }, {
-            n: 'identification',
-            mno: 0,
-            col: true,
-            ti: '.Identification'
+            n: 'affiliation',
+            rq: true
           }, {
-            n: 'classification',
-            mno: 0,
-            col: true,
-            ti: '.Classification'
+            n: 'phoneNumber',
+            rq: true
           }, {
-            n: 'contact',
-            mno: 0,
-            col: true,
-            ti: '.Contact'
-          }, {
-            n: 'documentation',
-            mno: 0,
-            col: true,
-            ti: '.Documentation'
-          }, {
-            n: 'property',
-            mno: 0,
-            col: true,
-            ti: 'SWE_1_0_0.DataComponentPropertyType'
+            n: 'email',
+            rq: true
           }, {
             n: 'id',
             ti: 'ID',
@@ -160,62 +400,41 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ContactInfo',
+        ln: 'ArrayLink.SourceArray',
         tn: null,
         ps: [{
-            n: 'phone',
-            ti: '.ContactInfo.Phone'
-          }, {
-            n: 'address',
-            ti: '.ContactInfo.Address'
-          }, {
-            n: 'onlineResource',
-            mno: 0,
-            col: true,
-            ti: '.OnlineResource'
-          }, {
-            n: 'hoursOfService'
-          }, {
-            n: 'contactInstructions'
-          }]
-      }, {
-        ln: 'OnlineResource',
-        tn: null,
-        ps: [{
-            n: 'remoteSchema',
+            n: 'ref',
             an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
+              lp: 'ref'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'ComponentType',
+        bti: '.AbstractComponentType',
+        ps: [{
+            n: 'method',
+            ti: '.MethodPropertyType'
+          }]
+      }, {
+        ln: 'Term',
+        tn: null,
+        ps: [{
+            n: 'codeSpace',
+            ti: 'SWE_1_0_0.CodeSpacePropertyType'
           }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
+            n: 'value',
+            rq: true
           }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
+            n: 'definition',
+            an: {
+              lp: 'definition'
+            },
             t: 'a'
           }]
       }, {
-        ln: 'AbstractComponentType',
-        bti: '.AbstractDerivableComponentType',
+        ln: 'AbstractPureProcessType',
+        bti: '.AbstractRestrictedProcessType',
         ps: [{
             n: 'inputs',
             ti: '.Inputs'
@@ -225,26 +444,6 @@ var SensorML_1_0_0_Module_Factory = function () {
           }, {
             n: 'parameters',
             ti: '.Parameters'
-          }]
-      }, {
-        ln: 'ValidTime',
-        tn: null,
-        ps: [{
-            n: 'timeInstant',
-            rq: true,
-            en: {
-              lp: 'TimeInstant',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.TimeInstantType'
-          }, {
-            n: 'timePeriod',
-            rq: true,
-            en: {
-              lp: 'TimePeriod',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.TimePeriodType'
           }]
       }, {
         ln: 'ConnectionsPropertyType',
@@ -287,35 +486,74 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ComponentArrayType.Parameters',
-        tn: null,
-        bti: '.ParametersPropertyType'
-      }, {
-        ln: 'ProcessMethodType.Algorithm.AlgorithmDefinition',
-        tn: null,
+        ln: 'ParametersPropertyType',
+        tn: 'parametersPropertyType',
         ps: [{
-            n: 'description',
-            en: {
-              lp: 'description',
+            n: 'parameterList',
+            rq: true,
+            en: 'ParameterList',
+            ti: '.AbstractListType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
               ns: 'http:\/\/www.opengis.net\/gml'
             },
-            ti: 'GML_3_1_1.StringOrRefType'
+            t: 'a'
           }, {
-            n: 'mathML',
-            ti: '.ProcessMethodType.Algorithm.AlgorithmDefinition.MathML'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'SystemType',
-        bti: '.AbstractComponentType',
+        ln: 'ProcessChainType',
+        bti: '.AbstractPureProcessType',
         ps: [{
             n: 'components',
+            rq: true,
             ti: '.Components'
           }, {
-            n: 'positions',
-            ti: '.Positions'
-          }, {
             n: 'connections',
+            rq: true,
             ti: '.Connections'
+          }]
+      }, {
+        ln: 'RelaxNG',
+        tn: null,
+        bti: '.RuleLanguageType',
+        ps: [{
+            n: 'any',
+            rq: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'ProcessModelType',
+        bti: '.AbstractPureProcessType',
+        ps: [{
+            n: 'method',
+            rq: true,
+            ti: '.MethodPropertyType'
           }]
       }, {
         ln: 'Components.ComponentList.Component',
@@ -366,101 +604,6 @@ var SensorML_1_0_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }]
-      }, {
-        ln: 'Contact',
-        tn: null,
-        ps: [{
-            n: 'person',
-            rq: true,
-            en: 'Person',
-            ti: '.Person'
-          }, {
-            n: 'responsibleParty',
-            rq: true,
-            en: 'ResponsibleParty',
-            ti: '.ResponsibleParty'
-          }, {
-            n: 'contactList',
-            rq: true,
-            en: 'ContactList',
-            ti: '.ContactList'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataSourceType.ObservationReference',
-        tn: null,
-        ps: [{
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'RelaxNG',
-        tn: null,
-        bti: '.RuleLanguageType',
-        ps: [{
-            n: 'any',
-            rq: true,
-            mx: false,
-            t: 'ae'
           }]
       }, {
         ln: 'Security',
@@ -627,13 +770,387 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Positions',
+        ln: 'ContactList',
         tn: null,
         ps: [{
-            n: 'positionList',
+            n: 'description',
+            en: {
+              lp: 'description',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.StringOrRefType'
+          }, {
+            n: 'member',
             rq: true,
-            en: 'PositionList',
-            ti: '.Positions.PositionList'
+            col: true,
+            ti: '.ContactList.Member'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ComponentArrayType.Parameters',
+        tn: null,
+        bti: '.ParametersPropertyType'
+      }, {
+        ln: 'InterfaceDefinition',
+        tn: null,
+        ps: [{
+            n: 'serviceLayer',
+            ti: '.LayerPropertyType'
+          }, {
+            n: 'applicationLayer',
+            ti: '.LayerPropertyType'
+          }, {
+            n: 'presentationLayer',
+            ti: '.PresentationLayerPropertyType'
+          }, {
+            n: 'sessionLayer',
+            ti: '.LayerPropertyType'
+          }, {
+            n: 'transportLayer',
+            ti: '.LayerPropertyType'
+          }, {
+            n: 'networkLayer',
+            ti: '.LayerPropertyType'
+          }, {
+            n: 'dataLinkLayer',
+            ti: '.LayerPropertyType'
+          }, {
+            n: 'physicalLayer',
+            ti: '.LayerPropertyType'
+          }, {
+            n: 'mechanicalLayer',
+            ti: '.LayerPropertyType'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractDerivableComponentType',
+        bti: '.AbstractProcessType',
+        ps: [{
+            n: 'spatialReferenceFrame',
+            ti: '.SpatialReferenceFrame'
+          }, {
+            n: 'temporalReferenceFrame',
+            ti: '.TemporalReferenceFrame'
+          }, {
+            n: 'targetLocation',
+            rq: true,
+            en: 'location',
+            ti: '.Location'
+          }, {
+            n: 'targetPosition',
+            rq: true,
+            en: 'position',
+            ti: '.Position'
+          }, {
+            n: 'timePosition',
+            ti: '.TimePosition'
+          }, {
+            n: 'interfaces',
+            ti: '.Interfaces'
+          }]
+      }, {
+        ln: 'Parameters.ParameterList',
+        tn: null,
+        ps: [{
+            n: 'parameter',
+            rq: true,
+            col: true,
+            ti: 'SWE_1_0_0.DataComponentPropertyType'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessMethodType.Implementation.ImplementationCode.BinaryRef',
+        tn: null,
+        ps: [{
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'Document',
+        tn: null,
+        ps: [{
+            n: 'description',
+            rq: true,
+            en: {
+              lp: 'description',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.StringOrRefType'
+          }, {
+            n: 'date'
+          }, {
+            n: 'contact',
+            ti: '.Contact'
+          }, {
+            n: 'format'
+          }, {
+            n: 'onlineResource',
+            mno: 0,
+            col: true,
+            ti: '.OnlineResource'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Parameters',
+        tn: null,
+        ps: [{
+            n: 'parameterList',
+            rq: true,
+            en: 'ParameterList',
+            ti: '.Parameters.ParameterList'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'OnlineResource',
+        tn: null,
+        ps: [{
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessMethodType.Rules',
+        tn: null,
+        ps: [{
+            n: 'rulesDefinition',
+            rq: true,
+            en: 'RulesDefinition',
+            ti: '.ProcessMethodType.Rules.RulesDefinition'
+          }]
+      }, {
+        ln: 'ProcessMethodType.Rules.RulesDefinition',
+        tn: null,
+        ps: [{
+            n: 'description',
+            en: {
+              lp: 'description',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.StringOrRefType'
+          }, {
+            n: 'ruleLanguage',
+            mx: false,
+            dom: false,
+            ti: '.RuleLanguageType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'Inputs',
+        tn: null,
+        ps: [{
+            n: 'inputList',
+            rq: true,
+            en: 'InputList',
+            ti: '.Inputs.InputList'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DocumentList.Member',
+        tn: null,
+        ps: [{
+            n: 'document',
+            rq: true,
+            en: 'Document',
+            ti: '.Document'
+          }, {
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessMethodType.Implementation',
+        tn: null,
+        ps: [{
+            n: 'processChain',
+            rq: true,
+            en: 'ProcessChain',
+            ti: '.ProcessChainType'
+          }, {
+            n: 'implementationCode',
+            rq: true,
+            en: 'ImplementationCode',
+            ti: '.ProcessMethodType.Implementation.ImplementationCode'
           }, {
             n: 'remoteSchema',
             an: {
@@ -713,14 +1230,9 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'History',
+        ln: 'DataSourceType.ObservationReference',
         tn: null,
         ps: [{
-            n: 'eventList',
-            rq: true,
-            en: 'EventList',
-            ti: '.EventList'
-          }, {
             n: 'remoteSchema',
             an: {
               lp: 'remoteSchema',
@@ -753,250 +1265,13 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LegalConstraint',
+        ln: 'Interfaces',
         tn: null,
         ps: [{
-            n: 'rights',
+            n: 'interfaceList',
             rq: true,
-            en: 'Rights',
-            ti: '.Rights'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'Documentation',
-        tn: null,
-        ps: [{
-            n: 'document',
-            rq: true,
-            en: 'Document',
-            ti: '.Document'
-          }, {
-            n: 'documentList',
-            rq: true,
-            en: 'DocumentList',
-            ti: '.DocumentList'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'Link',
-        tn: null,
-        ps: [{
-            n: 'source',
-            rq: true,
-            ti: '.Link.Source'
-          }, {
-            n: 'destination',
-            rq: true,
-            ti: '.Link.Destination'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'type'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Classification.ClassifierList.Classifier',
-        tn: null,
-        ps: [{
-            n: 'term',
-            rq: true,
-            en: 'Term',
-            ti: '.Term'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProcessChainType',
-        bti: '.AbstractPureProcessType',
-        ps: [{
-            n: 'components',
-            rq: true,
-            ti: '.Components'
-          }, {
-            n: 'connections',
-            rq: true,
-            ti: '.Connections'
-          }]
-      }, {
-        ln: 'ContactInfo.Phone',
-        tn: null,
-        ps: [{
-            n: 'voice',
-            mno: 0,
-            col: true
-          }, {
-            n: 'facsimile',
-            mno: 0,
-            col: true
-          }]
-      }, {
-        ln: 'ParametersPropertyType',
-        tn: 'parametersPropertyType',
-        ps: [{
-            n: 'parameterList',
-            rq: true,
-            en: 'ParameterList',
-            ti: '.AbstractListType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ArrayLink.SourceArray',
-        tn: null,
-        ps: [{
-            n: 'ref',
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ContactList.Member',
-        tn: null,
-        ps: [{
-            n: 'person',
-            rq: true,
-            en: 'Person',
-            ti: '.Person'
-          }, {
-            n: 'responsibleParty',
-            rq: true,
-            en: 'ResponsibleParty',
-            ti: '.ResponsibleParty'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'Outputs',
-        tn: null,
-        ps: [{
-            n: 'outputList',
-            rq: true,
-            en: 'OutputList',
-            ti: '.Outputs.OutputList'
+            en: 'InterfaceList',
+            ti: '.Interfaces.InterfaceList'
           }, {
             n: 'remoteSchema',
             an: {
@@ -1046,6 +1321,684 @@ var SensorML_1_0_0_Module_Factory = function () {
             ti: '.DataSourceType.ObservationReference'
           }]
       }, {
+        ln: 'PresentationLayerPropertyType',
+        ps: [{
+            n: 'abstractDataRecord',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractDataRecord',
+              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            },
+            ti: 'SWE_1_0_0.AbstractDataRecordType',
+            t: 'er'
+          }, {
+            n: 'category',
+            rq: true,
+            en: {
+              lp: 'Category',
+              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            },
+            ti: 'SWE_1_0_0.Category'
+          }, {
+            n: 'dataBlockDefinition',
+            rq: true,
+            en: {
+              lp: 'DataBlockDefinition',
+              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            },
+            ti: 'SWE_1_0_0.DataBlockDefinitionType'
+          }, {
+            n: 'dataStreamDefinition',
+            rq: true,
+            en: {
+              lp: 'DataStreamDefinition',
+              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            },
+            ti: 'SWE_1_0_0.DataStreamDefinitionType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'Interfaces.InterfaceList',
+        tn: null,
+        ps: [{
+            n: '_interface',
+            rq: true,
+            col: true,
+            en: 'interface',
+            ti: '.Interface'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractComponentType',
+        bti: '.AbstractDerivableComponentType',
+        ps: [{
+            n: 'inputs',
+            ti: '.Inputs'
+          }, {
+            n: 'outputs',
+            ti: '.Outputs'
+          }, {
+            n: 'parameters',
+            ti: '.Parameters'
+          }]
+      }, {
+        ln: 'SensorML',
+        tn: null,
+        ps: [{
+            n: 'keywords',
+            mno: 0,
+            col: true,
+            ti: '.Keywords'
+          }, {
+            n: 'identification',
+            mno: 0,
+            col: true,
+            ti: '.Identification'
+          }, {
+            n: 'classification',
+            mno: 0,
+            col: true,
+            ti: '.Classification'
+          }, {
+            n: 'validTime',
+            ti: '.ValidTime'
+          }, {
+            n: 'securityConstraint',
+            ti: '.SecurityConstraint'
+          }, {
+            n: 'legalConstraint',
+            mno: 0,
+            col: true,
+            ti: '.LegalConstraint'
+          }, {
+            n: 'characteristics',
+            mno: 0,
+            col: true,
+            ti: '.Characteristics'
+          }, {
+            n: 'capabilities',
+            mno: 0,
+            col: true,
+            ti: '.Capabilities'
+          }, {
+            n: 'contact',
+            mno: 0,
+            col: true,
+            ti: '.Contact'
+          }, {
+            n: 'documentation',
+            mno: 0,
+            col: true,
+            ti: '.Documentation'
+          }, {
+            n: 'history',
+            mno: 0,
+            col: true,
+            ti: '.History'
+          }, {
+            n: 'member',
+            rq: true,
+            col: true,
+            ti: '.SensorML.Member'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractProcessType',
+        bti: '.AbstractSMLType',
+        ps: [{
+            n: 'keywords',
+            mno: 0,
+            col: true,
+            ti: '.Keywords'
+          }, {
+            n: 'identification',
+            mno: 0,
+            col: true,
+            ti: '.Identification'
+          }, {
+            n: 'classification',
+            mno: 0,
+            col: true,
+            ti: '.Classification'
+          }, {
+            n: 'validTime',
+            ti: '.ValidTime'
+          }, {
+            n: 'securityConstraint',
+            ti: '.SecurityConstraint'
+          }, {
+            n: 'legalConstraint',
+            mno: 0,
+            col: true,
+            ti: '.LegalConstraint'
+          }, {
+            n: 'characteristics',
+            mno: 0,
+            col: true,
+            ti: '.Characteristics'
+          }, {
+            n: 'capabilities',
+            mno: 0,
+            col: true,
+            ti: '.Capabilities'
+          }, {
+            n: 'contact',
+            mno: 0,
+            col: true,
+            ti: '.Contact'
+          }, {
+            n: 'documentation',
+            mno: 0,
+            col: true,
+            ti: '.Documentation'
+          }, {
+            n: 'history',
+            mno: 0,
+            col: true,
+            ti: '.History'
+          }]
+      }, {
+        ln: 'ContactList.Member',
+        tn: null,
+        ps: [{
+            n: 'person',
+            rq: true,
+            en: 'Person',
+            ti: '.Person'
+          }, {
+            n: 'responsibleParty',
+            rq: true,
+            en: 'ResponsibleParty',
+            ti: '.ResponsibleParty'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ResponsibleParty',
+        tn: null,
+        ps: [{
+            n: 'individualName'
+          }, {
+            n: 'organizationName'
+          }, {
+            n: 'positionName'
+          }, {
+            n: 'contactInfo',
+            ti: '.ContactInfo'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ComponentsPropertyType',
+        tn: 'componentsPropertyType',
+        ps: [{
+            n: 'processList',
+            rq: true,
+            en: 'ProcessList',
+            ti: '.AbstractListType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataSourceType.DataDefinition',
+        tn: null,
+        ps: [{
+            n: 'dataBlockDefinition',
+            rq: true,
+            en: {
+              lp: 'DataBlockDefinition',
+              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            },
+            ti: 'SWE_1_0_0.DataBlockDefinitionType'
+          }, {
+            n: 'dataStreamDefinition',
+            rq: true,
+            en: {
+              lp: 'DataStreamDefinition',
+              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            },
+            ti: 'SWE_1_0_0.DataStreamDefinitionType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'Contact',
+        tn: null,
+        ps: [{
+            n: 'person',
+            rq: true,
+            en: 'Person',
+            ti: '.Person'
+          }, {
+            n: 'responsibleParty',
+            rq: true,
+            en: 'ResponsibleParty',
+            ti: '.ResponsibleParty'
+          }, {
+            n: 'contactList',
+            rq: true,
+            en: 'ContactList',
+            ti: '.ContactList'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TimePosition',
+        tn: null,
+        ps: [{
+            n: 'time',
+            rq: true,
+            en: {
+              lp: 'Time',
+              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            },
+            ti: 'SWE_1_0_0.Time'
+          }, {
+            n: 'process',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: '_Process',
+            ti: '.AbstractProcessType',
+            t: 'er'
+          }, {
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SecurityConstraint',
+        tn: null,
+        ps: [{
+            n: 'security',
+            rq: true,
+            en: 'Security',
+            ti: '.Security'
+          }]
+      }, {
+        ln: 'History',
+        tn: null,
+        ps: [{
+            n: 'eventList',
+            rq: true,
+            en: 'EventList',
+            ti: '.EventList'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SpatialReferenceFrame',
+        tn: null,
+        ps: [{
+            n: 'engineeringCRS',
+            rq: true,
+            en: {
+              lp: 'EngineeringCRS',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.EngineeringCRSType'
+          }]
+      }, {
+        ln: 'Interface',
+        tn: null,
+        ps: [{
+            n: 'interfaceDefinition',
+            rq: true,
+            en: 'InterfaceDefinition',
+            ti: '.InterfaceDefinition'
+          }, {
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'Connection',
+        tn: null,
+        ps: [{
+            n: 'link',
+            rq: true,
+            en: 'Link',
+            ti: '.Link'
+          }, {
+            n: 'arrayLink',
+            rq: true,
+            en: 'ArrayLink',
+            ti: '.ArrayLink'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Components.ComponentList',
+        tn: null,
+        ps: [{
+            n: 'component',
+            rq: true,
+            col: true,
+            ti: '.Components.ComponentList.Component'
+          }]
+      }, {
+        ln: 'Identification.IdentifierList.Identifier',
+        tn: null,
+        ps: [{
+            n: 'term',
+            rq: true,
+            en: 'Term',
+            ti: '.Term'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Positions',
+        tn: null,
+        ps: [{
+            n: 'positionList',
+            rq: true,
+            en: 'PositionList',
+            ti: '.Positions.PositionList'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
         ln: 'Positions.PositionList',
         tn: null,
         ps: [{
@@ -1063,6 +2016,283 @@ var SensorML_1_0_0_Module_Factory = function () {
             an: {
               lp: 'id'
             },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Outputs',
+        tn: null,
+        ps: [{
+            n: 'outputList',
+            rq: true,
+            en: 'OutputList',
+            ti: '.Outputs.OutputList'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'LayerPropertyType',
+        ps: [{
+            n: 'abstractDataRecord',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractDataRecord',
+              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            },
+            ti: 'SWE_1_0_0.AbstractDataRecordType',
+            t: 'er'
+          }, {
+            n: 'category',
+            rq: true,
+            en: {
+              lp: 'Category',
+              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            },
+            ti: 'SWE_1_0_0.Category'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataSourceType.Values',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'DocumentList',
+        tn: null,
+        ps: [{
+            n: 'description',
+            en: {
+              lp: 'description',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.StringOrRefType'
+          }, {
+            n: 'member',
+            rq: true,
+            col: true,
+            ti: '.DocumentList.Member'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ArrayLink',
+        tn: null,
+        ps: [{
+            n: 'sourceArray',
+            rq: true,
+            ti: '.ArrayLink.SourceArray'
+          }, {
+            n: 'destinationIndex',
+            mno: 0,
+            col: true,
+            ti: '.ArrayLink.DestinationIndex'
+          }, {
+            n: 'destinationArray',
+            rq: true,
+            ti: '.ArrayLink.DestinationArray'
+          }, {
+            n: 'sourceIndex',
+            ti: '.ArrayLink.SourceIndex'
+          }, {
+            n: 'connection',
+            mno: 0,
+            col: true,
+            ti: '.Connection'
+          }]
+      }, {
+        ln: 'Outputs.OutputList',
+        tn: null,
+        ps: [{
+            n: 'output',
+            rq: true,
+            col: true,
+            ti: '.IoComponentPropertyType'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Keywords',
+        tn: null,
+        ps: [{
+            n: 'keywordList',
+            rq: true,
+            en: 'KeywordList',
+            ti: '.Keywords.KeywordList'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'Position',
+        tn: null,
+        ps: [{
+            n: 'process',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: '_Process',
+            ti: '.AbstractProcessType',
+            t: 'er'
+          }, {
+            n: 'position',
+            rq: true,
+            en: {
+              lp: 'Position',
+              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            },
+            ti: 'SWE_1_0_0.PositionType'
+          }, {
+            n: 'vector',
+            rq: true,
+            en: {
+              lp: 'Vector',
+              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
+            },
+            ti: 'SWE_1_0_0.VectorType'
+          }, {
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
@@ -1209,47 +2439,99 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Inputs',
+        ln: 'Link.Source',
         tn: null,
         ps: [{
-            n: 'inputList',
+            n: 'ref',
             rq: true,
-            en: 'InputList',
-            ti: '.Inputs.InputList'
-          }, {
-            n: 'remoteSchema',
             an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
+              lp: 'ref'
             },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
-        ln: 'ContactList',
+        ln: 'Event',
+        tn: null,
+        ps: [{
+            n: 'date'
+          }, {
+            n: 'description',
+            en: {
+              lp: 'description',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.StringOrRefType'
+          }, {
+            n: 'keywords',
+            mno: 0,
+            col: true,
+            ti: '.Keywords'
+          }, {
+            n: 'identification',
+            mno: 0,
+            col: true,
+            ti: '.Identification'
+          }, {
+            n: 'classification',
+            mno: 0,
+            col: true,
+            ti: '.Classification'
+          }, {
+            n: 'contact',
+            mno: 0,
+            col: true,
+            ti: '.Contact'
+          }, {
+            n: 'documentation',
+            mno: 0,
+            col: true,
+            ti: '.Documentation'
+          }, {
+            n: 'property',
+            mno: 0,
+            col: true,
+            ti: 'SWE_1_0_0.DataComponentPropertyType'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ArrayLink.DestinationIndex',
+        tn: null,
+        ps: [{
+            n: 'ref',
+            an: {
+              lp: 'ref'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ValidTime',
+        tn: null,
+        ps: [{
+            n: 'timeInstant',
+            rq: true,
+            en: {
+              lp: 'TimeInstant',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.TimeInstantType'
+          }, {
+            n: 'timePeriod',
+            rq: true,
+            en: {
+              lp: 'TimePeriod',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.TimePeriodType'
+          }]
+      }, {
+        ln: 'ProcessMethodType.Algorithm.AlgorithmDefinition',
         tn: null,
         ps: [{
             n: 'description',
@@ -1259,18 +2541,8 @@ var SensorML_1_0_0_Module_Factory = function () {
             },
             ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            n: 'member',
-            rq: true,
-            col: true,
-            ti: '.ContactList.Member'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
+            n: 'mathML',
+            ti: '.ProcessMethodType.Algorithm.AlgorithmDefinition.MathML'
           }]
       }, {
         ln: 'InputsPropertyType',
@@ -1313,38 +2585,126 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ProcessMethodType.Algorithm',
-        tn: null,
+        ln: 'ProcessMethodType',
+        bti: 'GML_3_1_1.AbstractGMLType',
         ps: [{
-            n: 'algorithmDefinition',
+            n: 'keywords',
+            mno: 0,
+            col: true,
+            ti: '.Keywords'
+          }, {
+            n: 'identification',
+            mno: 0,
+            col: true,
+            ti: '.Identification'
+          }, {
+            n: 'classification',
+            mno: 0,
+            col: true,
+            ti: '.Classification'
+          }, {
+            n: 'validTime',
+            ti: '.ValidTime'
+          }, {
+            n: 'securityConstraint',
+            ti: '.SecurityConstraint'
+          }, {
+            n: 'legalConstraint',
+            mno: 0,
+            col: true,
+            ti: '.LegalConstraint'
+          }, {
+            n: 'characteristics',
+            mno: 0,
+            col: true,
+            ti: '.Characteristics'
+          }, {
+            n: 'capabilities',
+            mno: 0,
+            col: true,
+            ti: '.Capabilities'
+          }, {
+            n: 'contact',
+            mno: 0,
+            col: true,
+            ti: '.Contact'
+          }, {
+            n: 'documentation',
+            mno: 0,
+            col: true,
+            ti: '.Documentation'
+          }, {
+            n: 'history',
+            mno: 0,
+            col: true,
+            ti: '.History'
+          }, {
+            n: 'rules',
             rq: true,
-            en: 'AlgorithmDefinition',
-            ti: '.ProcessMethodType.Algorithm.AlgorithmDefinition'
+            ti: '.ProcessMethodType.Rules'
+          }, {
+            n: 'algorithm',
+            ti: '.ProcessMethodType.Algorithm'
+          }, {
+            n: 'implementation',
+            mno: 0,
+            col: true,
+            ti: '.ProcessMethodType.Implementation'
           }]
       }, {
-        ln: 'ContactInfo.Address',
+        ln: 'Inputs.InputList',
         tn: null,
         ps: [{
-            n: 'deliveryPoint',
+            n: 'input',
+            rq: true,
+            col: true,
+            ti: '.IoComponentPropertyType'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ContactInfo.Phone',
+        tn: null,
+        ps: [{
+            n: 'voice',
             mno: 0,
             col: true
           }, {
-            n: 'city'
-          }, {
-            n: 'administrativeArea'
-          }, {
-            n: 'postalCode'
-          }, {
-            n: 'country'
-          }, {
-            n: 'electronicMailAddress'
+            n: 'facsimile',
+            mno: 0,
+            col: true
           }]
       }, {
-        ln: 'ComponentType',
-        bti: '.AbstractComponentType',
+        ln: 'Link',
+        tn: null,
         ps: [{
-            n: 'method',
-            ti: '.MethodPropertyType'
+            n: 'source',
+            rq: true,
+            ti: '.Link.Source'
+          }, {
+            n: 'destination',
+            rq: true,
+            ti: '.Link.Destination'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'type'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Connections.ConnectionList',
+        tn: null,
+        ps: [{
+            n: 'connection',
+            rq: true,
+            col: true,
+            ti: '.Connection'
           }]
       }, {
         ln: 'OutputsPropertyType',
@@ -1387,13 +2747,43 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DataSourcesPropertyType',
-        tn: 'dataSourcesPropertyType',
+        ln: 'EventList',
+        tn: null,
         ps: [{
-            n: 'dataSourceList',
+            n: 'member',
             rq: true,
-            en: 'DataSourceList',
-            ti: '.AbstractListType'
+            col: true,
+            ti: '.EventList.Member'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SensorML.Member',
+        tn: null,
+        ps: [{
+            n: 'process',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: '_Process',
+            ti: '.AbstractProcessType',
+            t: 'er'
+          }, {
+            n: 'documentList',
+            rq: true,
+            en: 'DocumentList',
+            ti: '.DocumentList'
+          }, {
+            n: 'contactList',
+            rq: true,
+            en: 'ContactList',
+            ti: '.ContactList'
           }, {
             n: 'remoteSchema',
             an: {
@@ -1424,6 +2814,45 @@ var SensorML_1_0_0_Module_Factory = function () {
           }, {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SystemType',
+        bti: '.AbstractComponentType',
+        ps: [{
+            n: 'components',
+            ti: '.Components'
+          }, {
+            n: 'positions',
+            ti: '.Positions'
+          }, {
+            n: 'connections',
+            ti: '.Connections'
+          }]
+      }, {
+        ln: 'Schematron',
+        tn: null,
+        bti: '.RuleLanguageType',
+        ps: [{
+            n: 'any',
+            rq: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'Classification.ClassifierList',
+        tn: null,
+        ps: [{
+            n: 'classifier',
+            rq: true,
+            col: true,
+            ti: '.Classification.ClassifierList.Classifier'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
             t: 'a'
           }]
       }, {
@@ -1514,133 +2943,53 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Term',
-        tn: null,
-        ps: [{
-            n: 'codeSpace',
-            ti: 'SWE_1_0_0.CodeSpacePropertyType'
-          }, {
-            n: 'value',
-            rq: true
-          }, {
-            n: 'definition',
-            an: {
-              lp: 'definition'
-            },
-            t: 'a'
-          }]
+        ln: 'AbstractRestrictedProcessType',
+        bti: '.AbstractProcessType'
       }, {
-        ln: 'Interface',
-        tn: null,
+        ln: 'AbstractSMLType',
+        bti: 'GML_3_1_1.AbstractFeatureType'
+      }, {
+        ln: 'AbstractDerivableProcessType',
+        bti: '.AbstractProcessType',
         ps: [{
-            n: 'interfaceDefinition',
+            n: 'inputs',
+            ti: '.InputsPropertyType'
+          }, {
+            n: 'outputs',
+            ti: '.OutputsPropertyType'
+          }, {
+            n: 'parameters',
+            ti: '.ParametersPropertyType'
+          }, {
+            n: 'method',
             rq: true,
-            en: 'InterfaceDefinition',
-            ti: '.InterfaceDefinition'
+            ti: '.MethodPropertyType'
           }, {
-            n: 'name',
+            n: 'components',
             rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
+            ti: '.ComponentsPropertyType'
           }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
+            n: 'dataSources',
+            ti: '.DataSourcesPropertyType'
           }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'Classification.ClassifierList',
-        tn: null,
-        ps: [{
-            n: 'classifier',
+            n: 'connections',
             rq: true,
-            col: true,
-            ti: '.Classification.ClassifierList.Classifier'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
+            ti: '.ConnectionsPropertyType'
           }]
       }, {
-        ln: 'ArrayLink.DestinationArray',
+        ln: 'Characteristics',
         tn: null,
         ps: [{
-            n: 'ref',
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Schematron',
-        tn: null,
-        bti: '.RuleLanguageType',
-        ps: [{
-            n: 'any',
+            n: 'abstractDataRecord',
             rq: true,
             mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'Keywords.KeywordList',
-        tn: null,
-        ps: [{
-            n: 'keyword',
-            rq: true,
-            col: true
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
+            dom: false,
+            en: {
+              lp: 'AbstractDataRecord',
+              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
             },
-            t: 'a'
-          }, {
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Keywords',
-        tn: null,
-        ps: [{
-            n: 'keywordList',
-            rq: true,
-            en: 'KeywordList',
-            ti: '.Keywords.KeywordList'
+            ti: 'SWE_1_0_0.AbstractDataRecordType',
+            t: 'er'
           }, {
             n: 'remoteSchema',
             an: {
@@ -1709,411 +3058,40 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractRestrictedProcessType',
-        bti: '.AbstractProcessType'
-      }, {
-        ln: 'ResponsibleParty',
+        ln: 'ContactInfo.Address',
         tn: null,
         ps: [{
-            n: 'individualName'
-          }, {
-            n: 'organizationName'
-          }, {
-            n: 'positionName'
-          }, {
-            n: 'contactInfo',
-            ti: '.ContactInfo'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Person',
-        tn: null,
-        ps: [{
-            n: 'surname',
-            rq: true
-          }, {
-            n: 'name',
-            rq: true
-          }, {
-            n: 'userID',
-            rq: true
-          }, {
-            n: 'affiliation',
-            rq: true
-          }, {
-            n: 'phoneNumber',
-            rq: true
-          }, {
-            n: 'email',
-            rq: true
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Connections.ConnectionList',
-        tn: null,
-        ps: [{
-            n: 'connection',
-            rq: true,
-            col: true,
-            ti: '.Connection'
-          }]
-      }, {
-        ln: 'Link.Source',
-        tn: null,
-        ps: [{
-            n: 'ref',
-            rq: true,
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractDerivableComponentType',
-        bti: '.AbstractProcessType',
-        ps: [{
-            n: 'spatialReferenceFrame',
-            ti: '.SpatialReferenceFrame'
-          }, {
-            n: 'temporalReferenceFrame',
-            ti: '.TemporalReferenceFrame'
-          }, {
-            n: 'targetLocation',
-            rq: true,
-            en: 'location',
-            ti: '.Location'
-          }, {
-            n: 'targetPosition',
-            rq: true,
-            en: 'position',
-            ti: '.Position'
-          }, {
-            n: 'timePosition',
-            ti: '.TimePosition'
-          }, {
-            n: 'interfaces',
-            ti: '.Interfaces'
-          }]
-      }, {
-        ln: 'ProcessMethodType.Implementation.ImplementationCode.BinaryRef',
-        tn: null,
-        ps: [{
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimePosition',
-        tn: null,
-        ps: [{
-            n: 'time',
-            rq: true,
-            en: {
-              lp: 'Time',
-              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
-            },
-            ti: 'SWE_1_0_0.Time'
-          }, {
-            n: 'process',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: '_Process',
-            ti: '.AbstractProcessType',
-            t: 'er'
-          }, {
-            n: 'name',
-            rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ComponentsPropertyType',
-        tn: 'componentsPropertyType',
-        ps: [{
-            n: 'processList',
-            rq: true,
-            en: 'ProcessList',
-            ti: '.AbstractListType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataSourceType.DataDefinition',
-        tn: null,
-        ps: [{
-            n: 'dataBlockDefinition',
-            rq: true,
-            en: {
-              lp: 'DataBlockDefinition',
-              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
-            },
-            ti: 'SWE_1_0_0.DataBlockDefinitionType'
-          }, {
-            n: 'dataStreamDefinition',
-            rq: true,
-            en: {
-              lp: 'DataStreamDefinition',
-              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
-            },
-            ti: 'SWE_1_0_0.DataStreamDefinitionType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProcessModelType',
-        bti: '.AbstractPureProcessType',
-        ps: [{
-            n: 'method',
-            rq: true,
-            ti: '.MethodPropertyType'
-          }]
-      }, {
-        ln: 'AbstractPureProcessType',
-        bti: '.AbstractRestrictedProcessType',
-        ps: [{
-            n: 'inputs',
-            ti: '.Inputs'
-          }, {
-            n: 'outputs',
-            ti: '.Outputs'
-          }, {
-            n: 'parameters',
-            ti: '.Parameters'
-          }]
-      }, {
-        ln: 'SpatialReferenceFrame',
-        tn: null,
-        ps: [{
-            n: 'engineeringCRS',
-            rq: true,
-            en: {
-              lp: 'EngineeringCRS',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.EngineeringCRSType'
-          }]
-      }, {
-        ln: 'ArrayLink.SourceIndex',
-        tn: null,
-        ps: [{
-            n: 'ref',
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SensorML',
-        tn: null,
-        ps: [{
-            n: 'keywords',
+            n: 'deliveryPoint',
             mno: 0,
-            col: true,
-            ti: '.Keywords'
+            col: true
           }, {
-            n: 'identification',
-            mno: 0,
-            col: true,
-            ti: '.Identification'
+            n: 'city'
           }, {
-            n: 'classification',
-            mno: 0,
-            col: true,
-            ti: '.Classification'
+            n: 'administrativeArea'
           }, {
-            n: 'validTime',
-            ti: '.ValidTime'
+            n: 'postalCode'
           }, {
-            n: 'securityConstraint',
-            ti: '.SecurityConstraint'
+            n: 'country'
           }, {
-            n: 'legalConstraint',
-            mno: 0,
-            col: true,
-            ti: '.LegalConstraint'
-          }, {
-            n: 'characteristics',
-            mno: 0,
-            col: true,
-            ti: '.Characteristics'
-          }, {
-            n: 'capabilities',
-            mno: 0,
-            col: true,
-            ti: '.Capabilities'
-          }, {
-            n: 'contact',
-            mno: 0,
-            col: true,
-            ti: '.Contact'
-          }, {
+            n: 'electronicMailAddress'
+          }]
+      }, {
+        ln: 'Connections',
+        tn: null,
+        ps: [{
+            n: 'connectionList',
+            rq: true,
+            en: 'ConnectionList',
+            ti: '.Connections.ConnectionList'
+          }]
+      }, {
+        ln: 'Rights',
+        tn: null,
+        ps: [{
             n: 'documentation',
-            mno: 0,
-            col: true,
+            rq: true,
             ti: '.Documentation'
           }, {
-            n: 'history',
-            mno: 0,
-            col: true,
-            ti: '.History'
-          }, {
-            n: 'member',
-            rq: true,
-            col: true,
-            ti: '.SensorML.Member'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractSMLType',
-        bti: 'GML_3_1_1.AbstractFeatureType'
-      }, {
-        ln: 'EventList',
-        tn: null,
-        ps: [{
-            n: 'member',
-            rq: true,
-            col: true,
-            ti: '.EventList.Member'
-          }, {
             n: 'id',
             ti: 'ID',
             an: {
@@ -2121,60 +3099,25 @@ var SensorML_1_0_0_Module_Factory = function () {
               ns: 'http:\/\/www.opengis.net\/gml'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'ProcessMethodType.Algorithm.AlgorithmDefinition.MathML',
-        tn: null,
-        ps: [{
-            n: 'any',
-            rq: true,
-            mx: false,
-            t: 'ae'
           }, {
-            n: 'remoteSchema',
+            n: 'privacyAct',
+            ti: 'Boolean',
             an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
+              lp: 'privacyAct'
             },
             t: 'a'
           }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'Identification.IdentifierList',
-        tn: null,
-        ps: [{
-            n: 'identifier',
-            rq: true,
-            col: true,
-            ti: '.Identification.IdentifierList.Identifier'
-          }, {
-            n: 'id',
-            ti: 'ID',
+            n: 'intellectualPropertyRights',
+            ti: 'Boolean',
             an: {
-              lp: 'id'
+              lp: 'intellectualPropertyRights'
+            },
+            t: 'a'
+          }, {
+            n: 'copyRights',
+            ti: 'Boolean',
+            an: {
+              lp: 'copyRights'
             },
             t: 'a'
           }]
@@ -2219,34 +3162,52 @@ var SensorML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Connection',
+        ln: 'Identification',
         tn: null,
         ps: [{
-            n: 'link',
+            n: 'identifierList',
             rq: true,
-            en: 'Link',
-            ti: '.Link'
+            en: 'IdentifierList',
+            ti: '.Identification.IdentifierList'
           }, {
-            n: 'arrayLink',
-            rq: true,
-            en: 'ArrayLink',
-            ti: '.ArrayLink'
-          }, {
-            n: 'name',
+            n: 'remoteSchema',
             an: {
-              lp: 'name'
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
             },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
-        ln: 'Interfaces.InterfaceList',
+        ln: 'Keywords.KeywordList',
         tn: null,
         ps: [{
-            n: '_interface',
+            n: 'keyword',
             rq: true,
-            col: true,
-            en: 'interface',
-            ti: '.Interface'
+            col: true
           }, {
             n: 'id',
             ti: 'ID',
@@ -2254,6 +3215,118 @@ var SensorML_1_0_0_Module_Factory = function () {
               lp: 'id'
             },
             t: 'a'
+          }, {
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LegalConstraint',
+        tn: null,
+        ps: [{
+            n: 'rights',
+            rq: true,
+            en: 'Rights',
+            ti: '.Rights'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessMethodType.Implementation.ImplementationCode.SourceRef',
+        tn: null,
+        ps: [{
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ContactInfo',
+        tn: null,
+        ps: [{
+            n: 'phone',
+            ti: '.ContactInfo.Phone'
+          }, {
+            n: 'address',
+            ti: '.ContactInfo.Address'
+          }, {
+            n: 'onlineResource',
+            mno: 0,
+            col: true,
+            ti: '.OnlineResource'
+          }, {
+            n: 'hoursOfService'
+          }, {
+            n: 'contactInstructions'
+          }]
+      }, {
+        ln: 'TemporalReferenceFrame',
+        tn: null,
+        ps: [{
+            n: 'temporalCRS',
+            rq: true,
+            en: {
+              lp: 'TemporalCRS',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.TemporalCRSType'
           }]
       }, {
         ln: 'Location',
@@ -2309,1247 +3382,174 @@ var SensorML_1_0_0_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
-      }, {
-        ln: 'Interfaces',
-        tn: null,
-        ps: [{
-            n: 'interfaceList',
-            rq: true,
-            en: 'InterfaceList',
-            ti: '.Interfaces.InterfaceList'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'PresentationLayerPropertyType',
-        ps: [{
-            n: 'abstractDataRecord',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractDataRecord',
-              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
-            },
-            ti: 'SWE_1_0_0.AbstractDataRecordType',
-            t: 'er'
-          }, {
-            n: 'category',
-            rq: true,
-            en: {
-              lp: 'Category',
-              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
-            },
-            ti: 'SWE_1_0_0.Category'
-          }, {
-            n: 'dataBlockDefinition',
-            rq: true,
-            en: {
-              lp: 'DataBlockDefinition',
-              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
-            },
-            ti: 'SWE_1_0_0.DataBlockDefinitionType'
-          }, {
-            n: 'dataStreamDefinition',
-            rq: true,
-            en: {
-              lp: 'DataStreamDefinition',
-              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
-            },
-            ti: 'SWE_1_0_0.DataStreamDefinitionType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'Inputs.InputList',
-        tn: null,
-        ps: [{
-            n: 'input',
-            rq: true,
-            col: true,
-            ti: '.IoComponentPropertyType'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Outputs.OutputList',
-        tn: null,
-        ps: [{
-            n: 'output',
-            rq: true,
-            col: true,
-            ti: '.IoComponentPropertyType'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Components',
-        tn: null,
-        ps: [{
-            n: 'componentList',
-            rq: true,
-            en: 'ComponentList',
-            ti: '.Components.ComponentList'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProcessMethodType.Implementation',
-        tn: null,
-        ps: [{
-            n: 'processChain',
-            rq: true,
-            en: 'ProcessChain',
-            ti: '.ProcessChainType'
-          }, {
-            n: 'implementationCode',
-            rq: true,
-            en: 'ImplementationCode',
-            ti: '.ProcessMethodType.Implementation.ImplementationCode'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'Parameters',
-        tn: null,
-        ps: [{
-            n: 'parameterList',
-            rq: true,
-            en: 'ParameterList',
-            ti: '.Parameters.ParameterList'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'Link.Destination',
-        tn: null,
-        ps: [{
-            n: 'ref',
-            rq: true,
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProcessMethodType.Rules',
-        tn: null,
-        ps: [{
-            n: 'rulesDefinition',
-            rq: true,
-            en: 'RulesDefinition',
-            ti: '.ProcessMethodType.Rules.RulesDefinition'
-          }]
-      }, {
-        ln: 'AbstractDerivableProcessType',
-        bti: '.AbstractProcessType',
-        ps: [{
-            n: 'inputs',
-            ti: '.InputsPropertyType'
-          }, {
-            n: 'outputs',
-            ti: '.OutputsPropertyType'
-          }, {
-            n: 'parameters',
-            ti: '.ParametersPropertyType'
-          }, {
-            n: 'method',
-            rq: true,
-            ti: '.MethodPropertyType'
-          }, {
-            n: 'components',
-            rq: true,
-            ti: '.ComponentsPropertyType'
-          }, {
-            n: 'dataSources',
-            ti: '.DataSourcesPropertyType'
-          }, {
-            n: 'connections',
-            rq: true,
-            ti: '.ConnectionsPropertyType'
-          }]
-      }, {
-        ln: 'ArrayLink.DestinationIndex',
-        tn: null,
-        ps: [{
-            n: 'ref',
-            an: {
-              lp: 'ref'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Connections',
-        tn: null,
-        ps: [{
-            n: 'connectionList',
-            rq: true,
-            en: 'ConnectionList',
-            ti: '.Connections.ConnectionList'
-          }]
-      }, {
-        ln: 'Characteristics',
-        tn: null,
-        ps: [{
-            n: 'abstractDataRecord',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractDataRecord',
-              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
-            },
-            ti: 'SWE_1_0_0.AbstractDataRecordType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'Document',
-        tn: null,
-        ps: [{
-            n: 'description',
-            rq: true,
-            en: {
-              lp: 'description',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.StringOrRefType'
-          }, {
-            n: 'date'
-          }, {
-            n: 'contact',
-            ti: '.Contact'
-          }, {
-            n: 'format'
-          }, {
-            n: 'onlineResource',
-            mno: 0,
-            col: true,
-            ti: '.OnlineResource'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProcessMethodType.Rules.RulesDefinition',
-        tn: null,
-        ps: [{
-            n: 'description',
-            en: {
-              lp: 'description',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.StringOrRefType'
-          }, {
-            n: 'ruleLanguage',
-            mx: false,
-            dom: false,
-            ti: '.RuleLanguageType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'SensorML.Member',
-        tn: null,
-        ps: [{
-            n: 'process',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: '_Process',
-            ti: '.AbstractProcessType',
-            t: 'er'
-          }, {
-            n: 'documentList',
-            rq: true,
-            en: 'DocumentList',
-            ti: '.DocumentList'
-          }, {
-            n: 'contactList',
-            rq: true,
-            en: 'ContactList',
-            ti: '.ContactList'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'EventList.Member',
-        tn: null,
-        ps: [{
-            n: 'event',
-            rq: true,
-            en: 'Event',
-            ti: '.Event'
-          }, {
-            n: 'name',
-            rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataSourceType.Values',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'LayerPropertyType',
-        ps: [{
-            n: 'abstractDataRecord',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractDataRecord',
-              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
-            },
-            ti: 'SWE_1_0_0.AbstractDataRecordType',
-            t: 'er'
-          }, {
-            n: 'category',
-            rq: true,
-            en: {
-              lp: 'Category',
-              ns: 'http:\/\/www.opengis.net\/swe\/1.0'
-            },
-            ti: 'SWE_1_0_0.Category'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SecurityConstraint',
-        tn: null,
-        ps: [{
-            n: 'security',
-            rq: true,
-            en: 'Security',
-            ti: '.Security'
-          }]
-      }, {
-        ln: 'Parameters.ParameterList',
-        tn: null,
-        ps: [{
-            n: 'parameter',
-            rq: true,
-            col: true,
-            ti: 'SWE_1_0_0.DataComponentPropertyType'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Identification.IdentifierList.Identifier',
-        tn: null,
-        ps: [{
-            n: 'term',
-            rq: true,
-            en: 'Term',
-            ti: '.Term'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Rights',
-        tn: null,
-        ps: [{
-            n: 'documentation',
-            rq: true,
-            ti: '.Documentation'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'privacyAct',
-            ti: 'Boolean',
-            an: {
-              lp: 'privacyAct'
-            },
-            t: 'a'
-          }, {
-            n: 'intellectualPropertyRights',
-            ti: 'Boolean',
-            an: {
-              lp: 'intellectualPropertyRights'
-            },
-            t: 'a'
-          }, {
-            n: 'copyRights',
-            ti: 'Boolean',
-            an: {
-              lp: 'copyRights'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MethodPropertyType',
-        tn: 'methodPropertyType',
-        ps: [{
-            n: 'processMethod',
-            rq: true,
-            en: 'ProcessMethod',
-            ti: '.ProcessMethodType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractListType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TemporalReferenceFrame',
-        tn: null,
-        ps: [{
-            n: 'temporalCRS',
-            rq: true,
-            en: {
-              lp: 'TemporalCRS',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.TemporalCRSType'
-          }]
-      }, {
-        ln: 'Components.ComponentList',
-        tn: null,
-        ps: [{
-            n: 'component',
-            rq: true,
-            col: true,
-            ti: '.Components.ComponentList.Component'
-          }]
-      }, {
-        ln: 'AbstractProcessType',
-        bti: '.AbstractSMLType',
-        ps: [{
-            n: 'keywords',
-            mno: 0,
-            col: true,
-            ti: '.Keywords'
-          }, {
-            n: 'identification',
-            mno: 0,
-            col: true,
-            ti: '.Identification'
-          }, {
-            n: 'classification',
-            mno: 0,
-            col: true,
-            ti: '.Classification'
-          }, {
-            n: 'validTime',
-            ti: '.ValidTime'
-          }, {
-            n: 'securityConstraint',
-            ti: '.SecurityConstraint'
-          }, {
-            n: 'legalConstraint',
-            mno: 0,
-            col: true,
-            ti: '.LegalConstraint'
-          }, {
-            n: 'characteristics',
-            mno: 0,
-            col: true,
-            ti: '.Characteristics'
-          }, {
-            n: 'capabilities',
-            mno: 0,
-            col: true,
-            ti: '.Capabilities'
-          }, {
-            n: 'contact',
-            mno: 0,
-            col: true,
-            ti: '.Contact'
-          }, {
-            n: 'documentation',
-            mno: 0,
-            col: true,
-            ti: '.Documentation'
-          }, {
-            n: 'history',
-            mno: 0,
-            col: true,
-            ti: '.History'
-          }]
-      }, {
-        ln: 'ProcessMethodType.Implementation.ImplementationCode.SourceRef',
-        tn: null,
-        ps: [{
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ArrayLink',
-        tn: null,
-        ps: [{
-            n: 'sourceArray',
-            rq: true,
-            ti: '.ArrayLink.SourceArray'
-          }, {
-            n: 'destinationIndex',
-            mno: 0,
-            col: true,
-            ti: '.ArrayLink.DestinationIndex'
-          }, {
-            n: 'destinationArray',
-            rq: true,
-            ti: '.ArrayLink.DestinationArray'
-          }, {
-            n: 'sourceIndex',
-            ti: '.ArrayLink.SourceIndex'
-          }, {
-            n: 'connection',
-            mno: 0,
-            col: true,
-            ti: '.Connection'
-          }]
-      }, {
-        ln: 'ProcessMethodType',
-        bti: 'GML_3_1_1.AbstractGMLType',
-        ps: [{
-            n: 'keywords',
-            mno: 0,
-            col: true,
-            ti: '.Keywords'
-          }, {
-            n: 'identification',
-            mno: 0,
-            col: true,
-            ti: '.Identification'
-          }, {
-            n: 'classification',
-            mno: 0,
-            col: true,
-            ti: '.Classification'
-          }, {
-            n: 'validTime',
-            ti: '.ValidTime'
-          }, {
-            n: 'securityConstraint',
-            ti: '.SecurityConstraint'
-          }, {
-            n: 'legalConstraint',
-            mno: 0,
-            col: true,
-            ti: '.LegalConstraint'
-          }, {
-            n: 'characteristics',
-            mno: 0,
-            col: true,
-            ti: '.Characteristics'
-          }, {
-            n: 'capabilities',
-            mno: 0,
-            col: true,
-            ti: '.Capabilities'
-          }, {
-            n: 'contact',
-            mno: 0,
-            col: true,
-            ti: '.Contact'
-          }, {
-            n: 'documentation',
-            mno: 0,
-            col: true,
-            ti: '.Documentation'
-          }, {
-            n: 'history',
-            mno: 0,
-            col: true,
-            ti: '.History'
-          }, {
-            n: 'rules',
-            rq: true,
-            ti: '.ProcessMethodType.Rules'
-          }, {
-            n: 'algorithm',
-            ti: '.ProcessMethodType.Algorithm'
-          }, {
-            n: 'implementation',
-            mno: 0,
-            col: true,
-            ti: '.ProcessMethodType.Implementation'
-          }]
-      }, {
-        ln: 'Identification',
-        tn: null,
-        ps: [{
-            n: 'identifierList',
-            rq: true,
-            en: 'IdentifierList',
-            ti: '.Identification.IdentifierList'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DocumentList',
-        tn: null,
-        ps: [{
-            n: 'description',
-            en: {
-              lp: 'description',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.StringOrRefType'
-          }, {
-            n: 'member',
-            rq: true,
-            col: true,
-            ti: '.DocumentList.Member'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ComponentArrayType',
-        bti: '.AbstractDerivableComponentType',
-        ps: [{
-            n: 'inputs',
-            ti: '.Inputs'
-          }, {
-            n: 'outputs',
-            ti: '.Outputs'
-          }, {
-            n: 'parameters',
-            rq: true,
-            ti: '.ComponentArrayType.Parameters'
-          }, {
-            n: 'components',
-            ti: '.Components'
-          }, {
-            n: 'positions',
-            ti: '.Positions'
-          }, {
-            n: 'connections',
-            ti: '.Connections'
-          }]
-      }, {
-        ln: 'DocumentList.Member',
-        tn: null,
-        ps: [{
-            n: 'document',
-            rq: true,
-            en: 'Document',
-            ti: '.Document'
-          }, {
-            n: 'name',
-            rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
       }],
     eis: [{
+        en: 'securityConstraint',
+        ti: '.SecurityConstraint'
+      }, {
+        en: 'components',
+        ti: '.Components'
+      }, {
+        en: 'timePosition',
+        ti: '.TimePosition'
+      }, {
+        en: 'documentation',
+        ti: '.Documentation'
+      }, {
+        en: 'Term',
+        ti: '.Term'
+      }, {
+        en: 'ComponentArray',
+        ti: '.ComponentArrayType',
+        sh: '_Process'
+      }, {
+        en: 'Link',
+        ti: '.Link'
+      }, {
+        en: 'interfaces',
+        ti: '.Interfaces'
+      }, {
+        en: 'connection',
+        ti: '.Connection'
+      }, {
+        en: '_Process',
+        ti: '.AbstractProcessType'
+      }, {
+        en: 'Event',
+        ti: '.Event'
+      }, {
+        en: 'inputs',
+        ti: '.Inputs'
+      }, {
+        en: 'ArrayLink',
+        ti: '.ArrayLink'
+      }, {
+        en: 'contact',
+        ti: '.Contact'
+      }, {
+        en: 'positions',
+        ti: '.Positions'
+      }, {
+        en: 'ProcessMethod',
+        ti: '.ProcessMethodType'
+      }, {
+        en: 'capabilities',
+        ti: '.Capabilities'
+      }, {
+        en: 'parameters',
+        ti: '.Parameters'
+      }, {
+        en: 'Component',
+        ti: '.ComponentType',
+        sh: '_Process'
+      }, {
+        en: 'SensorML',
+        ti: '.SensorML'
+      }, {
+        en: 'temporalReferenceFrame',
+        ti: '.TemporalReferenceFrame'
+      }, {
+        en: 'method',
+        ti: '.MethodPropertyType'
+      }, {
+        en: 'ResponsibleParty',
+        ti: '.ResponsibleParty'
+      }, {
+        en: 'keywords',
+        ti: '.Keywords'
+      }, {
+        en: 'spatialReferenceFrame',
+        ti: '.SpatialReferenceFrame'
+      }, {
+        en: 'identification',
+        ti: '.Identification'
+      }, {
+        en: 'Security',
+        ti: '.Security'
+      }, {
+        en: 'DataSource',
+        ti: '.DataSourceType',
+        sh: '_Process'
+      }, {
+        en: 'Document',
+        ti: '.Document'
+      }, {
+        en: 'history',
+        ti: '.History'
+      }, {
+        en: 'Person',
+        ti: '.Person'
+      }, {
+        en: 'position',
+        ti: '.Position'
+      }, {
+        en: 'legalConstraint',
+        ti: '.LegalConstraint'
+      }, {
         en: 'location',
         ti: '.Location'
       }, {
         en: 'InterfaceDefinition',
         ti: '.InterfaceDefinition'
       }, {
-        en: 'timePosition',
-        ti: '.TimePosition'
-      }, {
-        en: 'positions',
-        ti: '.Positions'
-      }, {
-        en: '_Process',
-        ti: '.AbstractProcessType'
-      }, {
-        en: 'capabilities',
-        ti: '.Capabilities'
-      }, {
-        en: 'ArrayLink',
-        ti: '.ArrayLink'
-      }, {
-        en: 'Document',
-        ti: '.Document'
+        en: 'Rights',
+        ti: '.Rights'
       }, {
         en: 'ProcessChain',
         ti: '.ProcessChainType',
         sh: '_Process'
       }, {
-        en: 'ContactList',
-        ti: '.ContactList'
-      }, {
         en: 'System',
         ti: '.SystemType',
         sh: '_Process'
       }, {
-        en: 'Event',
-        ti: '.Event'
-      }, {
-        en: 'validTime',
-        ti: '.ValidTime'
-      }, {
-        en: 'securityConstraint',
-        ti: '.SecurityConstraint'
+        en: 'EventList',
+        ti: '.EventList'
       }, {
         en: 'onlineResource',
         ti: '.OnlineResource'
       }, {
-        en: 'ResponsibleParty',
-        ti: '.ResponsibleParty'
-      }, {
-        en: 'Security',
-        ti: '.Security'
-      }, {
-        en: 'Term',
-        ti: '.Term'
-      }, {
-        en: 'temporalReferenceFrame',
-        ti: '.TemporalReferenceFrame'
-      }, {
-        en: 'parameters',
-        ti: '.Parameters'
+        en: 'ContactList',
+        ti: '.ContactList'
       }, {
         en: 'outputs',
         ti: '.Outputs'
-      }, {
-        en: 'documentation',
-        ti: '.Documentation'
-      }, {
-        en: 'connections',
-        ti: '.Connections'
-      }, {
-        en: 'identification',
-        ti: '.Identification'
-      }, {
-        en: 'characteristics',
-        ti: '.Characteristics'
-      }, {
-        en: 'legalConstraint',
-        ti: '.LegalConstraint'
-      }, {
-        en: 'Rights',
-        ti: '.Rights'
-      }, {
-        en: 'schematron',
-        ti: '.Schematron',
-        sh: 'ruleLanguage'
-      }, {
-        en: 'inputs',
-        ti: '.Inputs'
-      }, {
-        en: 'history',
-        ti: '.History'
-      }, {
-        en: 'connection',
-        ti: '.Connection'
-      }, {
-        en: 'Link',
-        ti: '.Link'
-      }, {
-        en: 'contactInfo',
-        ti: '.ContactInfo'
-      }, {
-        en: 'interfaces',
-        ti: '.Interfaces'
-      }, {
-        en: 'components',
-        ti: '.Components'
-      }, {
-        en: 'position',
-        ti: '.Position'
-      }, {
-        en: 'contact',
-        ti: '.Contact'
-      }, {
-        en: 'spatialReferenceFrame',
-        ti: '.SpatialReferenceFrame'
-      }, {
-        en: 'interface',
-        ti: '.Interface'
-      }, {
-        en: 'ruleLanguage',
-        ti: '.RuleLanguageType'
-      }, {
-        en: 'ProcessMethod',
-        ti: '.ProcessMethodType'
-      }, {
-        en: 'SensorML',
-        ti: '.SensorML'
-      }, {
-        en: 'EventList',
-        ti: '.EventList'
-      }, {
-        en: 'Person',
-        ti: '.Person'
-      }, {
-        en: 'DataSource',
-        ti: '.DataSourceType',
-        sh: '_Process'
-      }, {
-        en: 'keywords',
-        ti: '.Keywords'
-      }, {
-        en: 'method',
-        ti: '.MethodPropertyType'
-      }, {
-        en: 'ComponentArray',
-        ti: '.ComponentArrayType',
-        sh: '_Process'
-      }, {
-        en: 'DocumentList',
-        ti: '.DocumentList'
       }, {
         en: 'relaxNG',
         ti: '.RelaxNG',
         sh: 'ruleLanguage'
       }, {
-        en: 'Component',
-        ti: '.ComponentType',
-        sh: '_Process'
+        en: 'interface',
+        ti: '.Interface'
       }, {
-        en: 'classification',
-        ti: '.Classification'
+        en: 'connections',
+        ti: '.Connections'
+      }, {
+        en: 'characteristics',
+        ti: '.Characteristics'
+      }, {
+        en: 'contactInfo',
+        ti: '.ContactInfo'
+      }, {
+        en: 'validTime',
+        ti: '.ValidTime'
       }, {
         en: 'ProcessModel',
         ti: '.ProcessModelType',
         sh: '_Process'
+      }, {
+        en: 'schematron',
+        ti: '.Schematron',
+        sh: 'ruleLanguage'
+      }, {
+        en: 'ruleLanguage',
+        ti: '.RuleLanguageType'
+      }, {
+        en: 'classification',
+        ti: '.Classification'
+      }, {
+        en: 'DocumentList',
+        ti: '.DocumentList'
       }]
   };
   return {
