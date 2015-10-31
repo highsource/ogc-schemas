@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spec:SF_Specimen
+    xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0"
+    xmlns:sa="http://www.opengis.net/sampling/2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    gml:id="abc123">
+        <!-- 
+        This example of a SF_Specimen was generated to test if SF_Specimen could handle the requirements of SESAR
+        SJDC 2011-02-24
+        -->
+    <gml:description>Plenty of words including more detail about material type e.g. lithology</gml:description>
+    <gml:identifier codeSpace="http://igsn.org">IGSN.SIOabc123</gml:identifier>
+    <gml:name>local identifier dfg987</gml:name>
+    <gml:name>uuid:XXXXXXXXXXXXXXXXX</gml:name>
+    <sa:sampledFeature
+        xlink:href="http://example.org/midAtlanticRidge"/>
+    <sa:relatedSamplingFeature>
+        <sa:SamplingFeatureComplex>
+            <sa:role
+                xlink:href="http://example.org/parent"/>
+            <sa:relatedSamplingFeature
+                xlink:href="http://handle.net/10273/IGSN.SIOxyz456"/>
+        </sa:SamplingFeatureComplex>
+    </sa:relatedSamplingFeature>
+    <spec:materialClass
+        xlink:href="http://example.org/rock"/>
+    <spec:samplingTime>
+        <gml:TimeInstant
+            gml:id="tim123">
+            <gml:timePosition>2009-06-30T08:00:00.00-02:00</gml:timePosition>
+        </gml:TimeInstant>
+    </spec:samplingTime>
+    <spec:samplingMethod
+        xlink:href="http://example.org/ghostbuster"/>
+    <spec:samplingLocation>
+        <gml:Point
+            gml:id="loc123"
+            srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+            <gml:pos>45.12 -81.78</gml:pos>
+        </gml:Point>
+    </spec:samplingLocation>
+    <!--
+    <spec:processingDetails>
+        <spec:PreparationStep>
+            <spec:time>
+                <gml:TimeInstant
+                    gml:id="tim456">
+                    <gml:timePosition>2010-01-03T13:00:00+04:00</gml:timePosition>
+                </gml:TimeInstant>
+            </spec:time>
+            <spec:processOperator
+                xlink:href="http://example.org/JohnDoe"/>
+            <spec:processingDetails xlink:href="http://example.org/seived"/>
+        </spec:PreparationStep>
+    </spec:processingDetails>
+    -->
+    <spec:size
+        uom="kg">0.46</spec:size>
+    <spec:currentLocation
+        xlink:href="http://example.org/Warehouse3/shelf9/box67"/>
+    <spec:specimenType
+        xlink:href="http://example.org/splitCore"/>
+</spec:SF_Specimen>
