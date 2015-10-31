@@ -3,8 +3,40 @@ var CityGML_CityObjectGroup_1_0_Module_Factory = function () {
     n: 'CityGML_CityObjectGroup_1_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/cityobjectgroup\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'CityGML_1_0', 'GML_3_1_1'],
+    deps: ['XLink_1_0', 'GML_3_1_1', 'CityGML_1_0'],
     tis: [{
+        ln: 'CityObjectGroupType',
+        bti: 'CityGML_1_0.AbstractCityObjectType',
+        ps: [{
+            n: 'clazz',
+            en: 'class'
+          }, {
+            n: 'function',
+            mno: 0,
+            col: true
+          }, {
+            n: 'usage',
+            mno: 0,
+            col: true
+          }, {
+            n: 'groupMember',
+            mno: 0,
+            col: true,
+            ti: '.CityObjectGroupMemberType'
+          }, {
+            n: 'parent',
+            ti: '.CityObjectGroupParentType'
+          }, {
+            n: 'geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfCityObjectGroup',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfCityObjectGroup',
+            ti: 'AnyType'
+          }]
+      }, {
         ln: 'CityObjectGroupMemberType',
         ps: [{
             n: 'cityObject',
@@ -100,49 +132,17 @@ var CityGML_CityObjectGroup_1_0_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
-      }, {
-        ln: 'CityObjectGroupType',
-        bti: 'CityGML_1_0.AbstractCityObjectType',
-        ps: [{
-            n: 'clazz',
-            en: 'class'
-          }, {
-            n: 'function',
-            mno: 0,
-            col: true
-          }, {
-            n: 'usage',
-            mno: 0,
-            col: true
-          }, {
-            n: 'groupMember',
-            mno: 0,
-            col: true,
-            ti: '.CityObjectGroupMemberType'
-          }, {
-            n: 'parent',
-            ti: '.CityObjectGroupParentType'
-          }, {
-            n: 'geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfCityObjectGroup',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfCityObjectGroup',
-            ti: 'AnyType'
-          }]
       }],
     eis: [{
-        en: '_GenericApplicationPropertyOfCityObjectGroup',
-        ti: 'AnyType'
-      }, {
         en: 'CityObjectGroup',
         ti: '.CityObjectGroupType',
         sh: {
           lp: '_CityObject',
           ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
         }
+      }, {
+        en: '_GenericApplicationPropertyOfCityObjectGroup',
+        ti: 'AnyType'
       }]
   };
   return {

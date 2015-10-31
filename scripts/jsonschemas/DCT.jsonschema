@@ -13,142 +13,7 @@
                 }
             },
             "elementName":{
-                "localPart":"requires",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"valid",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"extent",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"alternative",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"hasVersion",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"rightsHolder",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"isReferencedBy",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"issued",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"audience",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"available",
+                "localPart":"isRequiredBy",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -178,7 +43,7 @@
                 }
             },
             "elementName":{
-                "localPart":"provenance",
+                "localPart":"medium",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -193,37 +58,7 @@
                 }
             },
             "elementName":{
-                "localPart":"isPartOf",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"modified",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"conformsTo",
+                "localPart":"hasPart",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -253,36 +88,6 @@
                 }
             },
             "elementName":{
-                "localPart":"isVersionOf",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"created",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
                 "localPart":"dateSubmitted",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
@@ -298,7 +103,67 @@
                 }
             },
             "elementName":{
-                "localPart":"temporal",
+                "localPart":"educationLevel",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"abstract",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"accessRights",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"alternative",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"license",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -314,6 +179,171 @@
             },
             "elementName":{
                 "localPart":"dateCopyrighted",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"available",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"modified",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"extent",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"valid",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"isFormatOf",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"isReferencedBy",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"provenance",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"conformsTo",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"hasVersion",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"bibliographicCitation",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"audience",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -358,22 +388,7 @@
                 }
             },
             "elementName":{
-                "localPart":"hasPart",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"medium",
+                "localPart":"isPartOf",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -403,7 +418,7 @@
                 }
             },
             "elementName":{
-                "localPart":"hasFormat",
+                "localPart":"created",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -418,7 +433,7 @@
                 }
             },
             "elementName":{
-                "localPart":"license",
+                "localPart":"issued",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -433,82 +448,7 @@
                 }
             },
             "elementName":{
-                "localPart":"isRequiredBy",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"dateAccepted",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"isFormatOf",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"abstract",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"educationLevel",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"accessRights",
+                "localPart":"isVersionOf",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -538,7 +478,67 @@
                 }
             },
             "elementName":{
-                "localPart":"bibliographicCitation",
+                "localPart":"rightsHolder",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"dateAccepted",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"requires",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"temporal",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"hasFormat",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         }

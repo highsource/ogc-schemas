@@ -2,47 +2,6 @@
 {
     "id":"http://www.opengis.net/ogc#",
     "definitions":{
-        "ServiceExceptionReport":{
-            "type":"object",
-            "title":"ServiceExceptionReport",
-            "properties":{
-                "serviceException":{
-                    "title":"serviceException",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ServiceExceptionType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ServiceException",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "serviceException",
-                "version"
-            ]
-        },
         "ServiceExceptionType":{
             "type":"object",
             "title":"ServiceExceptionType",
@@ -92,6 +51,47 @@
                 "value",
                 "code",
                 "locator"
+            ]
+        },
+        "ServiceExceptionReport":{
+            "type":"object",
+            "title":"ServiceExceptionReport",
+            "properties":{
+                "serviceException":{
+                    "title":"serviceException",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ServiceExceptionType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ServiceException",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "serviceException",
+                "version"
             ]
         }
     },

@@ -519,11 +519,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/AbstractVegetationObjectType"
+                }
+            },
+            "elementName":{
+                "localPart":"_VegetationObject",
+                "namespaceURI":"http://www.opengis.net/citygml/vegetation/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfVegetationObject",
+                "localPart":"_GenericApplicationPropertyOfSolitaryVegetationObject",
                 "namespaceURI":"http://www.opengis.net/citygml/vegetation/2.0"
             }
         },
@@ -564,21 +579,6 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/AbstractVegetationObjectType"
-                }
-            },
-            "elementName":{
-                "localPart":"_VegetationObject",
-                "namespaceURI":"http://www.opengis.net/citygml/vegetation/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
@@ -598,7 +598,7 @@
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfSolitaryVegetationObject",
+                "localPart":"_GenericApplicationPropertyOfVegetationObject",
                 "namespaceURI":"http://www.opengis.net/citygml/vegetation/2.0"
             }
         }

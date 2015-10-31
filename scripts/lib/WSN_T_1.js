@@ -3,6 +3,35 @@ var WSN_T_1_Module_Factory = function () {
     n: 'WSN_T_1',
     dens: 'http:\/\/docs.oasis-open.org\/wsn\/t-1',
     tis: [{
+        ln: 'TopicSetType',
+        bti: '.ExtensibleDocumented',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'Documentation',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'ExtensibleDocumented',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'documentation',
+            ti: '.Documentation'
+          }]
+      }, {
         ln: 'TopicNamespaceType',
         bti: '.ExtensibleDocumented',
         ps: [{
@@ -116,35 +145,6 @@ var WSN_T_1_Module_Factory = function () {
               lp: 'parent'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'ExtensibleDocumented',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'documentation',
-            ti: '.Documentation'
-          }]
-      }, {
-        ln: 'TopicSetType',
-        bti: '.ExtensibleDocumented',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'Documentation',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
           }]
       }],
     eis: [{

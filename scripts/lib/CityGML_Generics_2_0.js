@@ -4,11 +4,12 @@ var CityGML_Generics_2_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/citygml\/generics\/2.0',
     deps: ['GML_3_1_1', 'CityGML_2_0'],
     tis: [{
-        ln: 'UriAttributeType',
+        ln: 'DoubleAttributeType',
         bti: '.AbstractGenericAttributeType',
         ps: [{
             n: 'value',
-            rq: true
+            rq: true,
+            ti: 'Double'
           }]
       }, {
         ln: 'IntAttributeType',
@@ -17,6 +18,14 @@ var CityGML_Generics_2_0_Module_Factory = function () {
             n: 'value',
             rq: true,
             ti: 'Integer'
+          }]
+      }, {
+        ln: 'MeasureAttributeType',
+        bti: '.AbstractGenericAttributeType',
+        ps: [{
+            n: 'value',
+            rq: true,
+            ti: 'GML_3_1_1.MeasureType'
           }]
       }, {
         ln: 'GenericCityObjectType',
@@ -82,12 +91,21 @@ var CityGML_Generics_2_0_Module_Factory = function () {
             ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
           }]
       }, {
-        ln: 'DoubleAttributeType',
+        ln: 'StringAttributeType',
         bti: '.AbstractGenericAttributeType',
         ps: [{
             n: 'value',
+            rq: true
+          }]
+      }, {
+        ln: 'AbstractGenericAttributeType',
+        ps: [{
+            n: 'name',
             rq: true,
-            ti: 'Double'
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'GenericAttributeSetType',
@@ -109,29 +127,11 @@ var CityGML_Generics_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MeasureAttributeType',
-        bti: '.AbstractGenericAttributeType',
-        ps: [{
-            n: 'value',
-            rq: true,
-            ti: 'GML_3_1_1.MeasureType'
-          }]
-      }, {
-        ln: 'StringAttributeType',
+        ln: 'UriAttributeType',
         bti: '.AbstractGenericAttributeType',
         ps: [{
             n: 'value',
             rq: true
-          }]
-      }, {
-        ln: 'AbstractGenericAttributeType',
-        ps: [{
-            n: 'name',
-            rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'DateAttributeType',
@@ -143,12 +143,26 @@ var CityGML_Generics_2_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'intAttribute',
-        ti: '.IntAttributeType',
+        en: '_genericAttribute',
+        ti: '.AbstractGenericAttributeType',
+        sh: {
+          lp: '_GenericApplicationPropertyOfCityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
+      }, {
+        en: 'GenericCityObject',
+        ti: '.GenericCityObjectType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
+      }, {
+        en: 'measureAttribute',
+        ti: '.MeasureAttributeType',
         sh: '_genericAttribute'
       }, {
-        en: 'stringAttribute',
-        ti: '.StringAttributeType',
+        en: 'intAttribute',
+        ti: '.IntAttributeType',
         sh: '_genericAttribute'
       }, {
         en: 'genericAttributeSet',
@@ -159,31 +173,17 @@ var CityGML_Generics_2_0_Module_Factory = function () {
         ti: '.UriAttributeType',
         sh: '_genericAttribute'
       }, {
-        en: 'measureAttribute',
-        ti: '.MeasureAttributeType',
+        en: 'doubleAttribute',
+        ti: '.DoubleAttributeType',
         sh: '_genericAttribute'
       }, {
         en: 'dateAttribute',
         ti: '.DateAttributeType',
         sh: '_genericAttribute'
       }, {
-        en: '_genericAttribute',
-        ti: '.AbstractGenericAttributeType',
-        sh: {
-          lp: '_GenericApplicationPropertyOfCityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
-      }, {
-        en: 'doubleAttribute',
-        ti: '.DoubleAttributeType',
+        en: 'stringAttribute',
+        ti: '.StringAttributeType',
         sh: '_genericAttribute'
-      }, {
-        en: 'GenericCityObject',
-        ti: '.GenericCityObjectType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
       }]
   };
   return {

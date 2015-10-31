@@ -415,11 +415,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ShapeType"
+                    "$ref":"#/definitions/SFSpatialSamplingFeatureType"
                 }
             },
             "elementName":{
-                "localPart":"shape",
+                "localPart":"SF_SpatialSamplingFeature",
                 "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
             }
         },
@@ -430,11 +430,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/SFSpatialSamplingFeatureType"
+                    "$ref":"#/definitions/ShapeType"
                 }
             },
             "elementName":{
-                "localPart":"SF_SpatialSamplingFeature",
+                "localPart":"shape",
                 "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
             }
         }

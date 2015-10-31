@@ -2,6 +2,166 @@
 {
     "id":"http://www.opengis.net/arml/2.0#",
     "definitions":{
+        "DistanceConditionType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ConditionType"
+                },
+                {
+                    "type":"object",
+                    "title":"DistanceConditionType",
+                    "properties":{
+                        "max":{
+                            "title":"max",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"max",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "min":{
+                            "title":"min",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"min",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DistanceConditionType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            },
+            "propertiesOrder":[
+                "max",
+                "min"
+            ]
+        },
+        "TextType":{
+            "required":[
+                "src"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/VisualAsset2DType"
+                },
+                {
+                    "type":"object",
+                    "title":"TextType",
+                    "properties":{
+                        "src":{
+                            "title":"src",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"src",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "style":{
+                            "title":"style",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"style",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "clazz":{
+                            "title":"clazz",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"class",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TextType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            },
+            "propertiesOrder":[
+                "src",
+                "style",
+                "clazz"
+            ]
+        },
+        "ArmlType.Style":{
+            "type":"object",
+            "title":"ArmlType.Style",
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":""
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "value",
+                "type",
+                "href"
+            ]
+        },
         "LabelType.Href":{
             "type":"object",
             "title":"LabelType.Href",
@@ -24,6 +184,43 @@
                 }
             },
             "typeType":"classInfo",
+            "propertiesOrder":[
+                "href"
+            ]
+        },
+        "ImageType":{
+            "required":[
+                "href"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/VisualAsset2DType"
+                },
+                {
+                    "type":"object",
+                    "title":"ImageType",
+                    "properties":{
+                        "href":{
+                            "title":"href",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ImageType.Href"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"href",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ImageType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            },
             "propertiesOrder":[
                 "href"
             ]
@@ -75,9 +272,74 @@
                 "href"
             ]
         },
-        "TrackerType.Src":{
+        "ScreenAnchorType":{
+            "required":[
+                "assets"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AnchorType"
+                },
+                {
+                    "type":"object",
+                    "title":"ScreenAnchorType",
+                    "properties":{
+                        "style":{
+                            "title":"style",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"style",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "clazz":{
+                            "title":"clazz",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"class",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "assets":{
+                            "title":"assets",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ScreenAnchorType.Assets"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"assets",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ScreenAnchorType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            },
+            "propertiesOrder":[
+                "style",
+                "clazz",
+                "assets"
+            ]
+        },
+        "ImageType.Href":{
             "type":"object",
-            "title":"TrackerType.Src",
+            "title":"ImageType.Href",
             "required":[
                 "href"
             ],
@@ -101,52 +363,30 @@
                 "href"
             ]
         },
-        "DistanceConditionType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ConditionType"
-                },
-                {
-                    "type":"object",
-                    "title":"DistanceConditionType",
-                    "properties":{
-                        "max":{
-                            "title":"max",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"max",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "min":{
-                            "title":"min",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"min",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
+        "ARAnchorType.Assets.AssetRef":{
+            "type":"object",
+            "title":"ARAnchorType.Assets.AssetRef",
+            "required":[
+                "href"
+            ],
+            "properties":{
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DistanceConditionType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
             },
+            "typeType":"classInfo",
             "propertiesOrder":[
-                "max",
-                "min"
+                "href"
             ]
         },
         "ArmlType.ARElements":{
@@ -188,604 +428,9 @@
                 "arElement"
             ]
         },
-        "TrackableType.Config":{
+        "ModelType.Href":{
             "type":"object",
-            "title":"TrackableType.Config",
-            "required":[
-                "tracker",
-                "src"
-            ],
-            "properties":{
-                "tracker":{
-                    "title":"tracker",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TrackableType.Config.Tracker"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"tracker",
-                        "namespaceURI":"http://www.opengis.net/arml/2.0"
-                    }
-                },
-                "src":{
-                    "title":"src",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"src",
-                        "namespaceURI":"http://www.opengis.net/arml/2.0"
-                    }
-                },
-                "order":{
-                    "title":"order",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"order",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "tracker",
-                "src",
-                "order"
-            ]
-        },
-        "VisualAssetType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ARElementType"
-                },
-                {
-                    "type":"object",
-                    "title":"VisualAssetType",
-                    "properties":{
-                        "enabled":{
-                            "title":"enabled",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"enabled",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "zOrder":{
-                            "title":"zOrder",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"zOrder",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "conditions":{
-                            "title":"conditions",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/VisualAssetType.Conditions"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"conditions",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "orientation":{
-                            "title":"orientation",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/OrientationType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Orientation",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "scalingMode":{
-                            "title":"scalingMode",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ScalingModeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ScalingMode",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"VisualAssetType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            },
-            "propertiesOrder":[
-                "enabled",
-                "zOrder",
-                "conditions",
-                "orientation",
-                "scalingMode"
-            ]
-        },
-        "SelectedConditionType":{
-            "required":[
-                "selected"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ConditionType"
-                },
-                {
-                    "type":"object",
-                    "title":"SelectedConditionType",
-                    "properties":{
-                        "listener":{
-                            "title":"listener",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"listener",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "selected":{
-                            "title":"selected",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"selected",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SelectedConditionType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            },
-            "propertiesOrder":[
-                "listener",
-                "selected"
-            ]
-        },
-        "ARAnchorType.Assets.AssetRef":{
-            "type":"object",
-            "title":"ARAnchorType.Assets.AssetRef",
-            "required":[
-                "href"
-            ],
-            "properties":{
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "href"
-            ]
-        },
-        "ArmlType.Style":{
-            "type":"object",
-            "title":"ArmlType.Style",
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":""
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "value",
-                "type",
-                "href"
-            ]
-        },
-        "OrientationType":{
-            "type":"object",
-            "title":"OrientationType",
-            "properties":{
-                "roll":{
-                    "title":"roll",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"roll",
-                        "namespaceURI":"http://www.opengis.net/arml/2.0"
-                    }
-                },
-                "tilt":{
-                    "title":"tilt",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"tilt",
-                        "namespaceURI":"http://www.opengis.net/arml/2.0"
-                    }
-                },
-                "heading":{
-                    "title":"heading",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"heading",
-                        "namespaceURI":"http://www.opengis.net/arml/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"OrientationType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            },
-            "propertiesOrder":[
-                "roll",
-                "tilt",
-                "heading"
-            ]
-        },
-        "ConditionType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ARElementType"
-                },
-                {
-                    "type":"object",
-                    "title":"ConditionType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ConditionType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            }
-        },
-        "ARElementType":{
-            "type":"object",
-            "title":"ARElementType",
-            "properties":{
-                "id":{
-                    "title":"id",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"id",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ARElementType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            },
-            "propertiesOrder":[
-                "id"
-            ]
-        },
-        "TrackableType.Config.Tracker":{
-            "type":"object",
-            "title":"TrackableType.Config.Tracker",
-            "required":[
-                "href"
-            ],
-            "properties":{
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "href"
-            ]
-        },
-        "TrackableType":{
-            "required":[
-                "config"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ARAnchorType"
-                },
-                {
-                    "type":"object",
-                    "title":"TrackableType",
-                    "properties":{
-                        "config":{
-                            "title":"config",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/TrackableType.Config"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"config",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "size":{
-                            "title":"size",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"size",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TrackableType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            },
-            "propertiesOrder":[
-                "config",
-                "size"
-            ]
-        },
-        "FeatureType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ARElementType"
-                },
-                {
-                    "type":"object",
-                    "title":"FeatureType",
-                    "properties":{
-                        "name":{
-                            "title":"name",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"name",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "description":{
-                            "title":"description",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"description",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "enabled":{
-                            "title":"enabled",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"enabled",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "metadata":{
-                            "title":"metadata",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/FeatureType.Metadata"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"metadata",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "anchors":{
-                            "title":"anchors",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/FeatureType.Anchors"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"anchors",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"FeatureType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            },
-            "propertiesOrder":[
-                "name",
-                "description",
-                "enabled",
-                "metadata",
-                "anchors"
-            ]
-        },
-        "ScaleType":{
-            "type":"object",
-            "title":"ScaleType",
-            "properties":{
-                "x":{
-                    "title":"x",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"x",
-                        "namespaceURI":"http://www.opengis.net/arml/2.0"
-                    }
-                },
-                "y":{
-                    "title":"y",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"y",
-                        "namespaceURI":"http://www.opengis.net/arml/2.0"
-                    }
-                },
-                "z":{
-                    "title":"z",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"z",
-                        "namespaceURI":"http://www.opengis.net/arml/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ScaleType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            },
-            "propertiesOrder":[
-                "x",
-                "y",
-                "z"
-            ]
-        },
-        "TrackerType.Uri":{
-            "type":"object",
-            "title":"TrackerType.Uri",
+            "title":"ModelType.Href",
             "required":[
                 "href"
             ],
@@ -912,23 +557,47 @@
                 "assets"
             ]
         },
-        "ModelType":{
-            "required":[
-                "href"
-            ],
+        "ARElementType":{
+            "type":"object",
+            "title":"ARElementType",
+            "properties":{
+                "id":{
+                    "title":"id",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"id",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ARElementType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            },
+            "propertiesOrder":[
+                "id"
+            ]
+        },
+        "LabelType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/VisualAssetType"
+                    "$ref":"#/definitions/VisualAsset2DType"
                 },
                 {
                     "type":"object",
-                    "title":"ModelType",
+                    "title":"LabelType",
                     "properties":{
                         "href":{
                             "title":"href",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/ModelType.Href"
+                                    "$ref":"#/definitions/LabelType.Href"
                                 }
                             ],
                             "propertyType":"element",
@@ -937,8 +606,21 @@
                                 "namespaceURI":"http://www.opengis.net/arml/2.0"
                             }
                         },
-                        "type":{
-                            "title":"type",
+                        "src":{
+                            "title":"src",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"src",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "hyperlinkBehavior":{
+                            "title":"hyperlinkBehavior",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -946,20 +628,20 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"type",
+                                "localPart":"hyperlinkBehavior",
                                 "namespaceURI":"http://www.opengis.net/arml/2.0"
                             }
                         },
-                        "scale":{
-                            "title":"scale",
+                        "viewportWidth":{
+                            "title":"viewportWidth",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/ScaleType"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"Scale",
+                                "localPart":"viewportWidth",
                                 "namespaceURI":"http://www.opengis.net/arml/2.0"
                             }
                         }
@@ -968,13 +650,394 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ModelType",
+                "localPart":"LabelType",
                 "namespaceURI":"http://www.opengis.net/arml/2.0"
             },
             "propertiesOrder":[
                 "href",
-                "type",
-                "scale"
+                "src",
+                "hyperlinkBehavior",
+                "viewportWidth"
+            ]
+        },
+        "TrackerType.Uri":{
+            "type":"object",
+            "title":"TrackerType.Uri",
+            "required":[
+                "href"
+            ],
+            "properties":{
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "href"
+            ]
+        },
+        "TrackableType.Config.Tracker":{
+            "type":"object",
+            "title":"TrackableType.Config.Tracker",
+            "required":[
+                "href"
+            ],
+            "properties":{
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "href"
+            ]
+        },
+        "AnchorType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ARElementType"
+                },
+                {
+                    "type":"object",
+                    "title":"AnchorType",
+                    "properties":{
+                        "enabled":{
+                            "title":"enabled",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"enabled",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AnchorType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            },
+            "propertiesOrder":[
+                "enabled"
+            ]
+        },
+        "SelectedConditionType":{
+            "required":[
+                "selected"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ConditionType"
+                },
+                {
+                    "type":"object",
+                    "title":"SelectedConditionType",
+                    "properties":{
+                        "listener":{
+                            "title":"listener",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"listener",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "selected":{
+                            "title":"selected",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"selected",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SelectedConditionType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            },
+            "propertiesOrder":[
+                "listener",
+                "selected"
+            ]
+        },
+        "GeometryType":{
+            "required":[
+                "point",
+                "lineString",
+                "polygon"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ARAnchorType"
+                },
+                {
+                    "type":"object",
+                    "title":"GeometryType",
+                    "properties":{
+                        "point":{
+                            "title":"point",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PointType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Point",
+                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                            }
+                        },
+                        "lineString":{
+                            "title":"lineString",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LineStringType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"LineString",
+                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                            }
+                        },
+                        "polygon":{
+                            "title":"polygon",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PolygonType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Polygon",
+                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GeometryType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            },
+            "propertiesOrder":[
+                "point",
+                "lineString",
+                "polygon"
+            ]
+        },
+        "ScaleType":{
+            "type":"object",
+            "title":"ScaleType",
+            "properties":{
+                "x":{
+                    "title":"x",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"x",
+                        "namespaceURI":"http://www.opengis.net/arml/2.0"
+                    }
+                },
+                "y":{
+                    "title":"y",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"y",
+                        "namespaceURI":"http://www.opengis.net/arml/2.0"
+                    }
+                },
+                "z":{
+                    "title":"z",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"z",
+                        "namespaceURI":"http://www.opengis.net/arml/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ScaleType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            },
+            "propertiesOrder":[
+                "x",
+                "y",
+                "z"
+            ]
+        },
+        "OrientationType":{
+            "type":"object",
+            "title":"OrientationType",
+            "properties":{
+                "roll":{
+                    "title":"roll",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"roll",
+                        "namespaceURI":"http://www.opengis.net/arml/2.0"
+                    }
+                },
+                "tilt":{
+                    "title":"tilt",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"tilt",
+                        "namespaceURI":"http://www.opengis.net/arml/2.0"
+                    }
+                },
+                "heading":{
+                    "title":"heading",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"heading",
+                        "namespaceURI":"http://www.opengis.net/arml/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"OrientationType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            },
+            "propertiesOrder":[
+                "roll",
+                "tilt",
+                "heading"
+            ]
+        },
+        "ConditionType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ARElementType"
+                },
+                {
+                    "type":"object",
+                    "title":"ConditionType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ConditionType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            }
+        },
+        "FillType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/VisualAsset2DType"
+                },
+                {
+                    "type":"object",
+                    "title":"FillType",
+                    "properties":{
+                        "style":{
+                            "title":"style",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"style",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "clazz":{
+                            "title":"clazz",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"class",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FillType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            },
+            "propertiesOrder":[
+                "style",
+                "clazz"
             ]
         },
         "TrackerType":{
@@ -1028,205 +1091,9 @@
                 "src"
             ]
         },
-        "TextType":{
-            "required":[
-                "src"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/VisualAsset2DType"
-                },
-                {
-                    "type":"object",
-                    "title":"TextType",
-                    "properties":{
-                        "src":{
-                            "title":"src",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"src",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "style":{
-                            "title":"style",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"style",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "clazz":{
-                            "title":"clazz",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"class",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TextType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            },
-            "propertiesOrder":[
-                "src",
-                "style",
-                "clazz"
-            ]
-        },
-        "ImageType":{
-            "required":[
-                "href"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/VisualAsset2DType"
-                },
-                {
-                    "type":"object",
-                    "title":"ImageType",
-                    "properties":{
-                        "href":{
-                            "title":"href",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ImageType.Href"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"href",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ImageType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            },
-            "propertiesOrder":[
-                "href"
-            ]
-        },
-        "ARAnchorType.Assets":{
+        "ScreenAnchorType.Assets.AssetRef":{
             "type":"object",
-            "title":"ARAnchorType.Assets",
-            "properties":{
-                "visualAsset":{
-                    "title":"visualAsset",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "type":"object",
-                                "properties":{
-                                    "name":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                    },
-                                    "value":{
-                                        "$ref":"#/definitions/VisualAssetType"
-                                    }
-                                },
-                                "elementName":{
-                                    "localPart":"VisualAsset",
-                                    "namespaceURI":"http://www.opengis.net/arml/2.0"
-                                }
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"VisualAsset",
-                        "namespaceURI":"http://www.opengis.net/arml/2.0"
-                    }
-                },
-                "assetRef":{
-                    "title":"assetRef",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ARAnchorType.Assets.AssetRef"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"assetRef",
-                        "namespaceURI":"http://www.opengis.net/arml/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "visualAsset",
-                "assetRef"
-            ]
-        },
-        "FeatureType.Metadata":{
-            "type":"object",
-            "title":"FeatureType.Metadata",
-            "properties":{
-                "any":{
-                    "title":"any",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                    },
-                                    {
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                            }
-                                        }
-                                    }
-                                ]
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"anyElement"
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "any"
-            ]
-        },
-        "RelativeToType.Ref":{
-            "type":"object",
-            "title":"RelativeToType.Ref",
+            "title":"ScreenAnchorType.Assets.AssetRef",
             "required":[
                 "href"
             ],
@@ -1307,64 +1174,45 @@
                 "anchorRef"
             ]
         },
-        "VisualAsset2DType":{
+        "TrackableType":{
+            "required":[
+                "config"
+            ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/VisualAssetType"
+                    "$ref":"#/definitions/ARAnchorType"
                 },
                 {
                     "type":"object",
-                    "title":"VisualAsset2DType",
+                    "title":"TrackableType",
                     "properties":{
-                        "width":{
-                            "title":"width",
+                        "config":{
+                            "title":"config",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/TrackableType.Config"
+                                    },
+                                    "minItems":1
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"width",
+                                "localPart":"config",
                                 "namespaceURI":"http://www.opengis.net/arml/2.0"
                             }
                         },
-                        "height":{
-                            "title":"height",
+                        "size":{
+                            "title":"size",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"height",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "orientationMode":{
-                            "title":"orientationMode",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"orientationMode",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "backside":{
-                            "title":"backside",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"backside",
+                                "localPart":"size",
                                 "namespaceURI":"http://www.opengis.net/arml/2.0"
                             }
                         }
@@ -1373,19 +1221,149 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"VisualAsset2DType",
+                "localPart":"TrackableType",
                 "namespaceURI":"http://www.opengis.net/arml/2.0"
             },
             "propertiesOrder":[
-                "width",
-                "height",
-                "orientationMode",
-                "backside"
+                "config",
+                "size"
             ]
         },
-        "ImageType.Href":{
+        "VisualAssetType.Conditions":{
             "type":"object",
-            "title":"ImageType.Href",
+            "title":"VisualAssetType.Conditions",
+            "required":[
+                "condition"
+            ],
+            "properties":{
+                "condition":{
+                    "title":"condition",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                    },
+                                    "value":{
+                                        "$ref":"#/definitions/ConditionType"
+                                    }
+                                },
+                                "elementName":{
+                                    "localPart":"Condition",
+                                    "namespaceURI":"http://www.opengis.net/arml/2.0"
+                                }
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"Condition",
+                        "namespaceURI":"http://www.opengis.net/arml/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "condition"
+            ]
+        },
+        "VisualAssetType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ARElementType"
+                },
+                {
+                    "type":"object",
+                    "title":"VisualAssetType",
+                    "properties":{
+                        "enabled":{
+                            "title":"enabled",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"enabled",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "zOrder":{
+                            "title":"zOrder",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"zOrder",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "conditions":{
+                            "title":"conditions",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/VisualAssetType.Conditions"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"conditions",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "orientation":{
+                            "title":"orientation",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/OrientationType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Orientation",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "scalingMode":{
+                            "title":"scalingMode",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ScalingModeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ScalingMode",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"VisualAssetType",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            },
+            "propertiesOrder":[
+                "enabled",
+                "zOrder",
+                "conditions",
+                "orientation",
+                "scalingMode"
+            ]
+        },
+        "FeatureType.Anchors.AnchorRef":{
+            "type":"object",
+            "title":"FeatureType.Anchors.AnchorRef",
             "required":[
                 "href"
             ],
@@ -1488,46 +1466,33 @@
                 "type"
             ]
         },
-        "ScreenAnchorType.Assets.AssetRef":{
-            "type":"object",
-            "title":"ScreenAnchorType.Assets.AssetRef",
+        "ModelType":{
             "required":[
                 "href"
-            ],
-            "properties":{
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "href"
-            ]
-        },
-        "ScreenAnchorType":{
-            "required":[
-                "assets"
             ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/AnchorType"
+                    "$ref":"#/definitions/VisualAssetType"
                 },
                 {
                     "type":"object",
-                    "title":"ScreenAnchorType",
+                    "title":"ModelType",
                     "properties":{
-                        "style":{
-                            "title":"style",
+                        "href":{
+                            "title":"href",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ModelType.Href"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"href",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "type":{
+                            "title":"type",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1535,33 +1500,20 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"style",
+                                "localPart":"type",
                                 "namespaceURI":"http://www.opengis.net/arml/2.0"
                             }
                         },
-                        "clazz":{
-                            "title":"clazz",
+                        "scale":{
+                            "title":"scale",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "$ref":"#/definitions/ScaleType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"class",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "assets":{
-                            "title":"assets",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ScreenAnchorType.Assets"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"assets",
+                                "localPart":"Scale",
                                 "namespaceURI":"http://www.opengis.net/arml/2.0"
                             }
                         }
@@ -1570,50 +1522,50 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ScreenAnchorType",
+                "localPart":"ModelType",
                 "namespaceURI":"http://www.opengis.net/arml/2.0"
             },
             "propertiesOrder":[
-                "style",
-                "clazz",
-                "assets"
+                "href",
+                "type",
+                "scale"
             ]
         },
-        "FeatureType.Anchors.AnchorRef":{
-            "type":"object",
-            "title":"FeatureType.Anchors.AnchorRef",
-            "required":[
-                "href"
-            ],
-            "properties":{
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "href"
-            ]
-        },
-        "AnchorType":{
+        "FeatureType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/ARElementType"
                 },
                 {
                     "type":"object",
-                    "title":"AnchorType",
+                    "title":"FeatureType",
                     "properties":{
+                        "name":{
+                            "title":"name",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"name",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "description":{
+                            "title":"description",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"description",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
                         "enabled":{
                             "title":"enabled",
                             "allOf":[
@@ -1626,22 +1578,89 @@
                                 "localPart":"enabled",
                                 "namespaceURI":"http://www.opengis.net/arml/2.0"
                             }
+                        },
+                        "metadata":{
+                            "title":"metadata",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/FeatureType.Metadata"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"metadata",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "anchors":{
+                            "title":"anchors",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/FeatureType.Anchors"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"anchors",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
                         }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AnchorType",
+                "localPart":"FeatureType",
                 "namespaceURI":"http://www.opengis.net/arml/2.0"
             },
             "propertiesOrder":[
-                "enabled"
+                "name",
+                "description",
+                "enabled",
+                "metadata",
+                "anchors"
             ]
         },
-        "ModelType.Href":{
+        "FeatureType.Metadata":{
             "type":"object",
-            "title":"ModelType.Href",
+            "title":"FeatureType.Metadata",
+            "properties":{
+                "any":{
+                    "title":"any",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                    },
+                                    {
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "any"
+            ]
+        },
+        "TrackerType.Src":{
+            "type":"object",
+            "title":"TrackerType.Src",
             "required":[
                 "href"
             ],
@@ -1665,43 +1684,17 @@
                 "href"
             ]
         },
-        "LabelType":{
+        "VisualAsset2DType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/VisualAsset2DType"
+                    "$ref":"#/definitions/VisualAssetType"
                 },
                 {
                     "type":"object",
-                    "title":"LabelType",
+                    "title":"VisualAsset2DType",
                     "properties":{
-                        "href":{
-                            "title":"href",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LabelType.Href"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"href",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "src":{
-                            "title":"src",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"src",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "hyperlinkBehavior":{
-                            "title":"hyperlinkBehavior",
+                        "width":{
+                            "title":"width",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1709,20 +1702,46 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"hyperlinkBehavior",
+                                "localPart":"width",
                                 "namespaceURI":"http://www.opengis.net/arml/2.0"
                             }
                         },
-                        "viewportWidth":{
-                            "title":"viewportWidth",
+                        "height":{
+                            "title":"height",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"viewportWidth",
+                                "localPart":"height",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "orientationMode":{
+                            "title":"orientationMode",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"orientationMode",
+                                "namespaceURI":"http://www.opengis.net/arml/2.0"
+                            }
+                        },
+                        "backside":{
+                            "title":"backside",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"backside",
                                 "namespaceURI":"http://www.opengis.net/arml/2.0"
                             }
                         }
@@ -1731,62 +1750,59 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LabelType",
+                "localPart":"VisualAsset2DType",
                 "namespaceURI":"http://www.opengis.net/arml/2.0"
             },
             "propertiesOrder":[
-                "href",
-                "src",
-                "hyperlinkBehavior",
-                "viewportWidth"
+                "width",
+                "height",
+                "orientationMode",
+                "backside"
             ]
         },
-        "FillType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/VisualAsset2DType"
-                },
-                {
-                    "type":"object",
-                    "title":"FillType",
-                    "properties":{
-                        "style":{
-                            "title":"style",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"style",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
-                        },
-                        "clazz":{
-                            "title":"clazz",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"class",
-                                "namespaceURI":"http://www.opengis.net/arml/2.0"
-                            }
+        "ScreenAnchorType.Assets":{
+            "type":"object",
+            "title":"ScreenAnchorType.Assets",
+            "properties":{
+                "label":{
+                    "title":"label",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/LabelType"
+                            },
+                            "minItems":0
                         }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Label",
+                        "namespaceURI":"http://www.opengis.net/arml/2.0"
+                    }
+                },
+                "assetRef":{
+                    "title":"assetRef",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ScreenAnchorType.Assets.AssetRef"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"assetRef",
+                        "namespaceURI":"http://www.opengis.net/arml/2.0"
                     }
                 }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"FillType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
             },
+            "typeType":"classInfo",
             "propertiesOrder":[
-                "style",
-                "clazz"
+                "label",
+                "assetRef"
             ]
         },
         "RelativeToType":{
@@ -1871,82 +1887,12 @@
                 "polygon"
             ]
         },
-        "GeometryType":{
-            "required":[
-                "point",
-                "lineString",
-                "polygon"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ARAnchorType"
-                },
-                {
-                    "type":"object",
-                    "title":"GeometryType",
-                    "properties":{
-                        "point":{
-                            "title":"point",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PointType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Point",
-                                "namespaceURI":"http://www.opengis.net/gml/3.2"
-                            }
-                        },
-                        "lineString":{
-                            "title":"lineString",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LineStringType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"LineString",
-                                "namespaceURI":"http://www.opengis.net/gml/3.2"
-                            }
-                        },
-                        "polygon":{
-                            "title":"polygon",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PolygonType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Polygon",
-                                "namespaceURI":"http://www.opengis.net/gml/3.2"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GeometryType",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            },
-            "propertiesOrder":[
-                "point",
-                "lineString",
-                "polygon"
-            ]
-        },
-        "VisualAssetType.Conditions":{
+        "ARAnchorType.Assets":{
             "type":"object",
-            "title":"VisualAssetType.Conditions",
-            "required":[
-                "condition"
-            ],
+            "title":"ARAnchorType.Assets",
             "properties":{
-                "condition":{
-                    "title":"condition",
+                "visualAsset":{
+                    "title":"visualAsset",
                     "allOf":[
                         {
                             "type":"array",
@@ -1957,47 +1903,20 @@
                                         "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                                     },
                                     "value":{
-                                        "$ref":"#/definitions/ConditionType"
+                                        "$ref":"#/definitions/VisualAssetType"
                                     }
                                 },
                                 "elementName":{
-                                    "localPart":"Condition",
+                                    "localPart":"VisualAsset",
                                     "namespaceURI":"http://www.opengis.net/arml/2.0"
                                 }
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"Condition",
-                        "namespaceURI":"http://www.opengis.net/arml/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "condition"
-            ]
-        },
-        "ScreenAnchorType.Assets":{
-            "type":"object",
-            "title":"ScreenAnchorType.Assets",
-            "properties":{
-                "label":{
-                    "title":"label",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/LabelType"
                             },
                             "minItems":0
                         }
                     ],
-                    "propertyType":"element",
+                    "propertyType":"elementRef",
                     "elementName":{
-                        "localPart":"Label",
+                        "localPart":"VisualAsset",
                         "namespaceURI":"http://www.opengis.net/arml/2.0"
                     }
                 },
@@ -2007,7 +1926,7 @@
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/ScreenAnchorType.Assets.AssetRef"
+                                "$ref":"#/definitions/ARAnchorType.Assets.AssetRef"
                             },
                             "minItems":0
                         }
@@ -2021,8 +1940,89 @@
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "label",
+                "visualAsset",
                 "assetRef"
+            ]
+        },
+        "RelativeToType.Ref":{
+            "type":"object",
+            "title":"RelativeToType.Ref",
+            "required":[
+                "href"
+            ],
+            "properties":{
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "href"
+            ]
+        },
+        "TrackableType.Config":{
+            "type":"object",
+            "title":"TrackableType.Config",
+            "required":[
+                "tracker",
+                "src"
+            ],
+            "properties":{
+                "tracker":{
+                    "title":"tracker",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TrackableType.Config.Tracker"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"tracker",
+                        "namespaceURI":"http://www.opengis.net/arml/2.0"
+                    }
+                },
+                "src":{
+                    "title":"src",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"src",
+                        "namespaceURI":"http://www.opengis.net/arml/2.0"
+                    }
+                },
+                "order":{
+                    "title":"order",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"order",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "tracker",
+                "src",
+                "order"
             ]
         }
     },
@@ -2034,26 +2034,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ConditionType"
+                    "$ref":"#/definitions/ARElementType"
                 }
             },
             "elementName":{
-                "localPart":"Condition",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/FillType"
-                }
-            },
-            "elementName":{
-                "localPart":"Fill",
+                "localPart":"ARElement",
                 "namespaceURI":"http://www.opengis.net/arml/2.0"
             }
         },
@@ -2079,11 +2064,41 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/VisualAssetType"
+                    "$ref":"#/definitions/FillType"
                 }
             },
             "elementName":{
-                "localPart":"VisualAsset",
+                "localPart":"Fill",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ScreenAnchorType"
+                }
+            },
+            "elementName":{
+                "localPart":"ScreenAnchor",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ConditionType"
+                }
+            },
+            "elementName":{
+                "localPart":"Condition",
                 "namespaceURI":"http://www.opengis.net/arml/2.0"
             }
         },
@@ -2099,6 +2114,126 @@
             },
             "elementName":{
                 "localPart":"arml",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GeometryType"
+                }
+            },
+            "elementName":{
+                "localPart":"Geometry",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ModelType"
+                }
+            },
+            "elementName":{
+                "localPart":"Model",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/VisualAssetType"
+                }
+            },
+            "elementName":{
+                "localPart":"VisualAsset",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ImageType"
+                }
+            },
+            "elementName":{
+                "localPart":"Image",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AnchorType"
+                }
+            },
+            "elementName":{
+                "localPart":"Anchor",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TrackerType"
+                }
+            },
+            "elementName":{
+                "localPart":"Tracker",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TextType"
+                }
+            },
+            "elementName":{
+                "localPart":"Text",
+                "namespaceURI":"http://www.opengis.net/arml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TrackableType"
+                }
+            },
+            "elementName":{
+                "localPart":"Trackable",
                 "namespaceURI":"http://www.opengis.net/arml/2.0"
             }
         },
@@ -2139,71 +2274,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/TrackerType"
+                    "$ref":"#/definitions/LabelType"
                 }
             },
             "elementName":{
-                "localPart":"Tracker",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ImageType"
-                }
-            },
-            "elementName":{
-                "localPart":"Image",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/TextType"
-                }
-            },
-            "elementName":{
-                "localPart":"Text",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ModelType"
-                }
-            },
-            "elementName":{
-                "localPart":"Model",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ARElementType"
-                }
-            },
-            "elementName":{
-                "localPart":"ARElement",
+                "localPart":"Label",
                 "namespaceURI":"http://www.opengis.net/arml/2.0"
             }
         },
@@ -2219,36 +2294,6 @@
             },
             "elementName":{
                 "localPart":"SelectedCondition",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AnchorType"
-                }
-            },
-            "elementName":{
-                "localPart":"Anchor",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GeometryType"
-                }
-            },
-            "elementName":{
-                "localPart":"Geometry",
                 "namespaceURI":"http://www.opengis.net/arml/2.0"
             }
         },
@@ -2279,51 +2324,6 @@
             },
             "elementName":{
                 "localPart":"RelativeTo",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/LabelType"
-                }
-            },
-            "elementName":{
-                "localPart":"Label",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ScreenAnchorType"
-                }
-            },
-            "elementName":{
-                "localPart":"ScreenAnchor",
-                "namespaceURI":"http://www.opengis.net/arml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/TrackableType"
-                }
-            },
-            "elementName":{
-                "localPart":"Trackable",
                 "namespaceURI":"http://www.opengis.net/arml/2.0"
             }
         }

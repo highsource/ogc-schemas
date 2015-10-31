@@ -108,6 +108,14 @@ var CityGML_Vegetation_1_0_Module_Factory = function () {
           }]
       }],
     eis: [{
+        en: 'PlantCover',
+        ti: '.PlantCoverType',
+        sh: '_VegetationObject'
+      }, {
+        en: 'SolitaryVegetationObject',
+        ti: '.SolitaryVegetationObjectType',
+        sh: '_VegetationObject'
+      }, {
         en: '_VegetationObject',
         ti: '.AbstractVegetationObjectType',
         sh: {
@@ -118,18 +126,10 @@ var CityGML_Vegetation_1_0_Module_Factory = function () {
         en: '_GenericApplicationPropertyOfPlantCover',
         ti: 'AnyType'
       }, {
-        en: 'SolitaryVegetationObject',
-        ti: '.SolitaryVegetationObjectType',
-        sh: '_VegetationObject'
-      }, {
-        en: '_GenericApplicationPropertyOfVegetationObject',
+        en: '_GenericApplicationPropertyOfSolitaryVegetationObject',
         ti: 'AnyType'
       }, {
-        en: 'PlantCover',
-        ti: '.PlantCoverType',
-        sh: '_VegetationObject'
-      }, {
-        en: '_GenericApplicationPropertyOfSolitaryVegetationObject',
+        en: '_GenericApplicationPropertyOfVegetationObject',
         ti: 'AnyType'
       }]
   };

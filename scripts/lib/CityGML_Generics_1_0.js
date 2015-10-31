@@ -2,8 +2,33 @@ var CityGML_Generics_1_0_Module_Factory = function () {
   var CityGML_Generics_1_0 = {
     n: 'CityGML_Generics_1_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/generics\/1.0',
-    deps: ['CityGML_1_0', 'GML_3_1_1'],
+    deps: ['GML_3_1_1', 'CityGML_1_0'],
     tis: [{
+        ln: 'DoubleAttributeType',
+        bti: '.AbstractGenericAttributeType',
+        ps: [{
+            n: 'value',
+            rq: true,
+            ti: 'Double'
+          }]
+      }, {
+        ln: 'StringAttributeType',
+        bti: '.AbstractGenericAttributeType',
+        ps: [{
+            n: 'value',
+            rq: true
+          }]
+      }, {
+        ln: 'AbstractGenericAttributeType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'UriAttributeType',
         bti: '.AbstractGenericAttributeType',
         ps: [{
@@ -11,12 +36,20 @@ var CityGML_Generics_1_0_Module_Factory = function () {
             rq: true
           }]
       }, {
-        ln: 'DoubleAttributeType',
+        ln: 'DateAttributeType',
         bti: '.AbstractGenericAttributeType',
         ps: [{
             n: 'value',
             rq: true,
-            ti: 'Double'
+            ti: 'Calendar'
+          }]
+      }, {
+        ln: 'IntAttributeType',
+        bti: '.AbstractGenericAttributeType',
+        ps: [{
+            n: 'value',
+            rq: true,
+            ti: 'Integer'
           }]
       }, {
         ln: 'GenericCityObjectType',
@@ -78,43 +111,29 @@ var CityGML_Generics_1_0_Module_Factory = function () {
             n: 'lod4ImplicitRepresentation',
             ti: 'CityGML_1_0.ImplicitRepresentationPropertyType'
           }]
-      }, {
-        ln: 'StringAttributeType',
-        bti: '.AbstractGenericAttributeType',
-        ps: [{
-            n: 'value',
-            rq: true
-          }]
-      }, {
-        ln: 'DateAttributeType',
-        bti: '.AbstractGenericAttributeType',
-        ps: [{
-            n: 'value',
-            rq: true,
-            ti: 'Calendar'
-          }]
-      }, {
-        ln: 'IntAttributeType',
-        bti: '.AbstractGenericAttributeType',
-        ps: [{
-            n: 'value',
-            rq: true,
-            ti: 'Integer'
-          }]
-      }, {
-        ln: 'AbstractGenericAttributeType',
-        ps: [{
-            n: 'name',
-            rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
       }],
     eis: [{
-        en: 'uriAttribute',
-        ti: '.UriAttributeType',
+        en: 'GenericCityObject',
+        ti: '.GenericCityObjectType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
+        }
+      }, {
+        en: 'stringAttribute',
+        ti: '.StringAttributeType',
+        sh: '_genericAttribute'
+      }, {
+        en: 'doubleAttribute',
+        ti: '.DoubleAttributeType',
+        sh: '_genericAttribute'
+      }, {
+        en: 'dateAttribute',
+        ti: '.DateAttributeType',
+        sh: '_genericAttribute'
+      }, {
+        en: 'intAttribute',
+        ti: '.IntAttributeType',
         sh: '_genericAttribute'
       }, {
         en: '_genericAttribute',
@@ -124,27 +143,8 @@ var CityGML_Generics_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
         }
       }, {
-        en: 'intAttribute',
-        ti: '.IntAttributeType',
-        sh: '_genericAttribute'
-      }, {
-        en: 'GenericCityObject',
-        ti: '.GenericCityObjectType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
-        }
-      }, {
-        en: 'dateAttribute',
-        ti: '.DateAttributeType',
-        sh: '_genericAttribute'
-      }, {
-        en: 'stringAttribute',
-        ti: '.StringAttributeType',
-        sh: '_genericAttribute'
-      }, {
-        en: 'doubleAttribute',
-        ti: '.DoubleAttributeType',
+        en: 'uriAttribute',
+        ti: '.UriAttributeType',
         sh: '_genericAttribute'
       }]
   };
