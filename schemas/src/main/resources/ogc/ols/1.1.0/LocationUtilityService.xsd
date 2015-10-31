@@ -6,7 +6,8 @@
  To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 -->
 	<include schemaLocation="olsAll.xsd"/>
-	<import namespace="http://www.opengis.net/gml" schemaLocation="gml4xls.xsd"/>
+	<!--import namespace="http://www.opengis.net/gml" schemaLocation="gml4xls.xsd"/-->
+	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
 	<include schemaLocation="XLS.xsd"/>
 	<!-- ====================================================== -->
 	<element name="GeocodeRequest" type="xls:GeocodeRequestType" substitutionGroup="xls:_RequestParameters">

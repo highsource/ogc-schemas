@@ -8,7 +8,8 @@
 		</documentation>
 	</annotation>
 	<include schemaLocation="nav-All.xsd"/>
-	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/ols/1.2/gml4xls.xsd"/>
+	<!--import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/ols/1.2/gml4xls.xsd"/-->
+	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
 	<import namespace="http://www.opengis.net/xls" schemaLocation="http://schemas.opengis.net/ols/1.2/XLS.xsd"/>
 	<import namespace="http://www.opengis.net/xls" schemaLocation="http://schemas.opengis.net/ols/1.2/RouteService.xsd"/>
 	<include schemaLocation="nav-Positioning.xsd"/>

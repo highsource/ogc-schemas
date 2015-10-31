@@ -6,7 +6,8 @@
  To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 -->
 	<include schemaLocation="olsAll.xsd"/>
-	<import namespace="http://www.opengis.net/gml" schemaLocation="gml4xls.xsd"/>
+	<!--import namespace="http://www.opengis.net/gml" schemaLocation="gml4xls.xsd"/-->
+	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
 	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
 	<include schemaLocation="UOM.xsd"/>
 	<!-- =============================== type ===================================== -->
