@@ -1,0 +1,45 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/ols/1.1.0/XLS.xsd" 
+		node="/xs:schema">
+
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.ols.v_1_1_0"/>
+		</jaxb:schemaBindings>
+
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/ols/1.1.0/ADT.xsd" 
+		node="/xs:schema">
+
+		<jaxb:bindings node="xs:element[@name='_Position']">
+			<jaxb:factoryMethod name="APosition"/>
+		</jaxb:bindings>
+
+		<jaxb:bindings node="xs:element[@name='_POI']">
+			<jaxb:factoryMethod name="APOI"/>
+		</jaxb:bindings>
+
+		<jaxb:bindings node="xs:element[@name='_RouteSummary']">
+			<jaxb:factoryMethod name="ARouteSummary"/>
+		</jaxb:bindings>
+
+		<jaxb:bindings node="xs:element[@name='_NextSegment']">
+			<jaxb:factoryMethod name="ANextSegment"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/ols/1.1.0/DirectoryService.xsd" 
+		node="/xs:schema">
+
+		<jaxb:bindings node="xs:element[@name='_POIProperty']">
+			<jaxb:factoryMethod name="APOIProperty"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+</jaxb:bindings>
