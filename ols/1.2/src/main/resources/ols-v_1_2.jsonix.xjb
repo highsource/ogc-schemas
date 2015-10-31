@@ -1,0 +1,11 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:jsonix="http://jsonix.highsource.org/customizations"
+	jaxb:extensionBindingPrefixes="jsonix">
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/ols/1.2/XLS.xsd" 
+		node="/xs:schema">
+		<jsonix:mapping package="net.opengis.ols.v_1_2" name="OLS_1_2"/>
+	</jaxb:bindings>
+</jaxb:bindings>
