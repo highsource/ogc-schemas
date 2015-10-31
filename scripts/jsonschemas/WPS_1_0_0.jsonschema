@@ -2,75 +2,448 @@
 {
     "id":"http://www.opengis.net/wps/1.0.0#",
     "definitions":{
-        "SupportedCRSsType.Default":{
+        "ComplexDataType":{
             "type":"object",
-            "title":"SupportedCRSsType.Default",
-            "required":[
-                "crs"
-            ],
+            "title":"ComplexDataType",
             "properties":{
-                "crs":{
-                    "title":"crs",
+                "otherAttributes":{
+                    "title":"otherAttributes",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "additionalProperties":{
+                                "type":"string"
+                            }
+                        }
+                    ],
+                    "propertyType":"anyAttribute"
+                },
+                "content":{
+                    "title":"content",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                    },
+                                    {
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                },
+                "mimeType":{
+                    "title":"mimeType",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"CRS",
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"mimeType",
+                        "namespaceURI":""
+                    }
+                },
+                "encoding":{
+                    "title":"encoding",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"encoding",
+                        "namespaceURI":""
+                    }
+                },
+                "schema":{
+                    "title":"schema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"schema",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ComplexDataType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "content",
+                "mimeType",
+                "encoding",
+                "schema"
+            ]
+        },
+        "InputReferenceType.Header":{
+            "type":"object",
+            "title":"InputReferenceType.Header",
+            "required":[
+                "key",
+                "value"
+            ],
+            "properties":{
+                "key":{
+                    "title":"key",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"key",
+                        "namespaceURI":""
+                    }
+                },
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"value",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "crs"
+                "key",
+                "value"
             ]
         },
-        "ResponseFormType":{
-            "type":"object",
-            "title":"ResponseFormType",
+        "WPSCapabilitiesType":{
             "required":[
-                "responseDocument",
-                "rawDataOutput"
+                "processOfferings",
+                "languages",
+                "service",
+                "lang"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CapabilitiesBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"WPSCapabilitiesType",
+                    "properties":{
+                        "processOfferings":{
+                            "title":"processOfferings",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ProcessOfferings"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ProcessOfferings",
+                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                            }
+                        },
+                        "languages":{
+                            "title":"languages",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/Languages"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Languages",
+                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                            }
+                        },
+                        "wsdl":{
+                            "title":"wsdl",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/WSDL"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"WSDL",
+                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                            }
+                        },
+                        "service":{
+                            "title":"service",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"service",
+                                "namespaceURI":""
+                            }
+                        },
+                        "lang":{
+                            "title":"lang",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"lang",
+                                "namespaceURI":"http://www.w3.org/XML/1998/namespace"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"WPSCapabilitiesType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "processOfferings",
+                "languages",
+                "wsdl",
+                "service",
+                "lang"
+            ]
+        },
+        "DocumentOutputDefinitionType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/OutputDefinitionType"
+                },
+                {
+                    "type":"object",
+                    "title":"DocumentOutputDefinitionType",
+                    "properties":{
+                        "title":{
+                            "title":"title",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/LanguageStringType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Title",
+                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                            }
+                        },
+                        "_abstract":{
+                            "title":"_abstract",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/LanguageStringType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Abstract",
+                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                            }
+                        },
+                        "asReference":{
+                            "title":"asReference",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"asReference",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DocumentOutputDefinitionType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "title",
+                "_abstract",
+                "asReference"
+            ]
+        },
+        "OutputReferenceType":{
+            "type":"object",
+            "title":"OutputReferenceType",
+            "required":[
+                "href"
             ],
             "properties":{
-                "responseDocument":{
-                    "title":"responseDocument",
+                "href":{
+                    "title":"href",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/ResponseDocumentType"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ResponseDocument",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":""
                     }
                 },
-                "rawDataOutput":{
-                    "title":"rawDataOutput",
+                "mimeType":{
+                    "title":"mimeType",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/OutputDefinitionType"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"RawDataOutput",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"mimeType",
+                        "namespaceURI":""
+                    }
+                },
+                "encoding":{
+                    "title":"encoding",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"encoding",
+                        "namespaceURI":""
+                    }
+                },
+                "schema":{
+                    "title":"schema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"schema",
+                        "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ResponseFormType",
+                "localPart":"OutputReferenceType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "responseDocument",
-                "rawDataOutput"
+                "href",
+                "mimeType",
+                "encoding",
+                "schema"
+            ]
+        },
+        "ProcessDescriptionType.ProcessOutputs":{
+            "type":"object",
+            "title":"ProcessDescriptionType.ProcessOutputs",
+            "required":[
+                "output"
+            ],
+            "properties":{
+                "output":{
+                    "title":"output",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/OutputDescriptionType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Output",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "output"
+            ]
+        },
+        "SupportedComplexDataType":{
+            "type":"object",
+            "title":"SupportedComplexDataType",
+            "required":[
+                "_default",
+                "supported"
+            ],
+            "properties":{
+                "_default":{
+                    "title":"_default",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ComplexDataCombinationType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Default",
+                        "namespaceURI":""
+                    }
+                },
+                "supported":{
+                    "title":"supported",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ComplexDataCombinationsType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Supported",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SupportedComplexDataType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "_default",
+                "supported"
             ]
         },
         "CRSsType":{
@@ -107,189 +480,79 @@
                 "crs"
             ]
         },
-        "ProcessDescriptionType.DataInputs":{
+        "SupportedUOMsType":{
             "type":"object",
-            "title":"ProcessDescriptionType.DataInputs",
+            "title":"SupportedUOMsType",
             "required":[
-                "input"
+                "_default",
+                "supported"
             ],
             "properties":{
-                "input":{
-                    "title":"input",
+                "_default":{
+                    "title":"_default",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InputDescriptionType"
-                            },
-                            "minItems":1
+                            "$ref":"#/definitions/SupportedUOMsType.Default"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Input",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "input"
-            ]
-        },
-        "WSDL":{
-            "type":"object",
-            "title":"WSDL",
-            "required":[
-                "href"
-            ],
-            "properties":{
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "href"
-            ]
-        },
-        "ExecuteResponse.ProcessOutputs":{
-            "type":"object",
-            "title":"ExecuteResponse.ProcessOutputs",
-            "required":[
-                "output"
-            ],
-            "properties":{
-                "output":{
-                    "title":"output",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/OutputDataType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Output",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "output"
-            ]
-        },
-        "ComplexDataDescriptionType":{
-            "type":"object",
-            "title":"ComplexDataDescriptionType",
-            "required":[
-                "mimeType"
-            ],
-            "properties":{
-                "mimeType":{
-                    "title":"mimeType",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MimeType",
+                        "localPart":"Default",
                         "namespaceURI":""
                     }
                 },
-                "encoding":{
-                    "title":"encoding",
+                "supported":{
+                    "title":"supported",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/UOMsType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Encoding",
-                        "namespaceURI":""
-                    }
-                },
-                "schema":{
-                    "title":"schema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Schema",
+                        "localPart":"Supported",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ComplexDataDescriptionType",
+                "localPart":"SupportedUOMsType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "mimeType",
-                "encoding",
-                "schema"
+                "_default",
+                "supported"
             ]
         },
-        "LiteralOutputType":{
+        "ComplexDataCombinationType":{
             "type":"object",
-            "title":"LiteralOutputType",
+            "title":"ComplexDataCombinationType",
+            "required":[
+                "format"
+            ],
             "properties":{
-                "dataType":{
-                    "title":"dataType",
+                "format":{
+                    "title":"format",
                     "allOf":[
                         {
-                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/DomainMetadataType"
+                            "$ref":"#/definitions/ComplexDataDescriptionType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"DataType",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                    }
-                },
-                "uoMs":{
-                    "title":"uoMs",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SupportedUOMsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"UOMs",
+                        "localPart":"Format",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LiteralOutputType",
+                "localPart":"ComplexDataCombinationType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "dataType",
-                "uoMs"
+                "format"
             ]
         },
         "ExecuteResponse":{
@@ -411,74 +674,6 @@
                 "statusLocation"
             ]
         },
-        "OutputDefinitionsType":{
-            "type":"object",
-            "title":"OutputDefinitionsType",
-            "required":[
-                "output"
-            ],
-            "properties":{
-                "output":{
-                    "title":"output",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/DocumentOutputDefinitionType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Output",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"OutputDefinitionsType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "output"
-            ]
-        },
-        "LanguagesType":{
-            "type":"object",
-            "title":"LanguagesType",
-            "required":[
-                "language"
-            ],
-            "properties":{
-                "language":{
-                    "title":"language",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Language",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LanguagesType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "language"
-            ]
-        },
         "SupportedComplexDataInputType":{
             "allOf":[
                 {
@@ -513,69 +708,67 @@
                 "maximumMegabytes"
             ]
         },
-        "LiteralInputType":{
+        "ProcessDescriptionType":{
             "required":[
-                "allowedValues",
-                "anyValue",
-                "valuesReference"
+                "processOutputs"
             ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/LiteralOutputType"
+                    "$ref":"#/definitions/ProcessBriefType"
                 },
                 {
                     "type":"object",
-                    "title":"LiteralInputType",
+                    "title":"ProcessDescriptionType",
                     "properties":{
-                        "allowedValues":{
-                            "title":"allowedValues",
+                        "dataInputs":{
+                            "title":"dataInputs",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/AllowedValues"
+                                    "$ref":"#/definitions/ProcessDescriptionType.DataInputs"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"AllowedValues",
-                                "namespaceURI":"http://www.opengis.net/ows/1.1"
-                            }
-                        },
-                        "anyValue":{
-                            "title":"anyValue",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/AnyValue"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"AnyValue",
-                                "namespaceURI":"http://www.opengis.net/ows/1.1"
-                            }
-                        },
-                        "valuesReference":{
-                            "title":"valuesReference",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ValuesReferenceType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ValuesReference",
+                                "localPart":"DataInputs",
                                 "namespaceURI":""
                             }
                         },
-                        "defaultValue":{
-                            "title":"defaultValue",
+                        "processOutputs":{
+                            "title":"processOutputs",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "$ref":"#/definitions/ProcessDescriptionType.ProcessOutputs"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"DefaultValue",
+                                "localPart":"ProcessOutputs",
+                                "namespaceURI":""
+                            }
+                        },
+                        "storeSupported":{
+                            "title":"storeSupported",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"storeSupported",
+                                "namespaceURI":""
+                            }
+                        },
+                        "statusSupported":{
+                            "title":"statusSupported",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"statusSupported",
                                 "namespaceURI":""
                             }
                         }
@@ -584,226 +777,14 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LiteralInputType",
+                "localPart":"ProcessDescriptionType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "allowedValues",
-                "anyValue",
-                "valuesReference",
-                "defaultValue"
-            ]
-        },
-        "InputType":{
-            "type":"object",
-            "title":"InputType",
-            "required":[
-                "identifier",
-                "reference",
-                "data"
-            ],
-            "properties":{
-                "identifier":{
-                    "title":"identifier",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Identifier",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/LanguageStringType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Title",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                    }
-                },
-                "_abstract":{
-                    "title":"_abstract",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/LanguageStringType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Abstract",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                    }
-                },
-                "reference":{
-                    "title":"reference",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/InputReferenceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Reference",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                    }
-                },
-                "data":{
-                    "title":"data",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DataType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Data",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InputType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "identifier",
-                "title",
-                "_abstract",
-                "reference",
-                "data"
-            ]
-        },
-        "DataInputsType":{
-            "type":"object",
-            "title":"DataInputsType",
-            "required":[
-                "input"
-            ],
-            "properties":{
-                "input":{
-                    "title":"input",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InputType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Input",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DataInputsType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "input"
-            ]
-        },
-        "ProcessDescriptionType.ProcessOutputs":{
-            "type":"object",
-            "title":"ProcessDescriptionType.ProcessOutputs",
-            "required":[
-                "output"
-            ],
-            "properties":{
-                "output":{
-                    "title":"output",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/OutputDescriptionType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Output",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "output"
-            ]
-        },
-        "DataType":{
-            "type":"object",
-            "title":"DataType",
-            "required":[
-                "complexData",
-                "literalData",
-                "boundingBoxData"
-            ],
-            "properties":{
-                "complexData":{
-                    "title":"complexData",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ComplexDataType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ComplexData",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                    }
-                },
-                "literalData":{
-                    "title":"literalData",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LiteralDataType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LiteralData",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                    }
-                },
-                "boundingBoxData":{
-                    "title":"boundingBoxData",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/BoundingBoxType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"BoundingBoxData",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DataType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "complexData",
-                "literalData",
-                "boundingBoxData"
+                "dataInputs",
+                "processOutputs",
+                "storeSupported",
+                "statusSupported"
             ]
         },
         "OutputDefinitionType":{
@@ -892,252 +873,30 @@
                 "schema"
             ]
         },
-        "Languages":{
+        "SupportedCRSsType.Default":{
             "type":"object",
-            "title":"Languages",
+            "title":"SupportedCRSsType.Default",
             "required":[
-                "_default",
-                "supported"
+                "crs"
             ],
             "properties":{
-                "_default":{
-                    "title":"_default",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Languages.Default"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Default",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                    }
-                },
-                "supported":{
-                    "title":"supported",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LanguagesType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Supported",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "_default",
-                "supported"
-            ]
-        },
-        "GetCapabilities":{
-            "type":"object",
-            "title":"GetCapabilities",
-            "required":[
-                "service"
-            ],
-            "properties":{
-                "acceptVersions":{
-                    "title":"acceptVersions",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/AcceptVersionsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"AcceptVersions",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                    }
-                },
-                "service":{
-                    "title":"service",
+                "crs":{
+                    "title":"crs",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"service",
-                        "namespaceURI":""
-                    }
-                },
-                "language":{
-                    "title":"language",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"language",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "acceptVersions",
-                "service",
-                "language"
-            ]
-        },
-        "UOMsType":{
-            "type":"object",
-            "title":"UOMsType",
-            "required":[
-                "uom"
-            ],
-            "properties":{
-                "uom":{
-                    "title":"uom",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.opengis.net/ows/1.1#/definitions/DomainMetadataType"
-                            },
-                            "minItems":1
-                        }
-                    ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"UOM",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"UOMsType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "uom"
-            ]
-        },
-        "SupportedComplexDataType":{
-            "type":"object",
-            "title":"SupportedComplexDataType",
-            "required":[
-                "_default",
-                "supported"
-            ],
-            "properties":{
-                "_default":{
-                    "title":"_default",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ComplexDataCombinationType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Default",
-                        "namespaceURI":""
-                    }
-                },
-                "supported":{
-                    "title":"supported",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ComplexDataCombinationsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Supported",
+                        "localPart":"CRS",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SupportedComplexDataType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
             "propertiesOrder":[
-                "_default",
-                "supported"
-            ]
-        },
-        "ProcessDescriptions":{
-            "required":[
-                "processDescription"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ResponseBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"ProcessDescriptions",
-                    "properties":{
-                        "processDescription":{
-                            "title":"processDescription",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/ProcessDescriptionType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ProcessDescription",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "processDescription"
-            ]
-        },
-        "DescribeProcess":{
-            "required":[
-                "identifier"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/RequestBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"DescribeProcess",
-                    "properties":{
-                        "identifier":{
-                            "title":"identifier",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Identifier",
-                                "namespaceURI":"http://www.opengis.net/ows/1.1"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "identifier"
+                "crs"
             ]
         },
         "ResponseDocumentType":{
@@ -1216,143 +975,6 @@
                 "status"
             ]
         },
-        "ValuesReferenceType":{
-            "type":"object",
-            "title":"ValuesReferenceType",
-            "properties":{
-                "reference":{
-                    "title":"reference",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"reference",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                    }
-                },
-                "valuesForm":{
-                    "title":"valuesForm",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"valuesForm",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ValuesReferenceType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "reference",
-                "valuesForm"
-            ]
-        },
-        "WPSCapabilitiesType":{
-            "required":[
-                "processOfferings",
-                "languages",
-                "service",
-                "lang"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CapabilitiesBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"WPSCapabilitiesType",
-                    "properties":{
-                        "processOfferings":{
-                            "title":"processOfferings",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ProcessOfferings"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ProcessOfferings",
-                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                            }
-                        },
-                        "languages":{
-                            "title":"languages",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/Languages"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Languages",
-                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                            }
-                        },
-                        "wsdl":{
-                            "title":"wsdl",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/WSDL"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"WSDL",
-                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                            }
-                        },
-                        "service":{
-                            "title":"service",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"service",
-                                "namespaceURI":""
-                            }
-                        },
-                        "lang":{
-                            "title":"lang",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"lang",
-                                "namespaceURI":"http://www.w3.org/XML/1998/namespace"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"WPSCapabilitiesType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "processOfferings",
-                "languages",
-                "wsdl",
-                "service",
-                "lang"
-            ]
-        },
         "SupportedUOMsType.Default":{
             "type":"object",
             "title":"SupportedUOMsType.Default",
@@ -1379,118 +1001,43 @@
                 "uom"
             ]
         },
-        "ProcessFailedType":{
+        "DataInputsType":{
             "type":"object",
-            "title":"ProcessFailedType",
+            "title":"DataInputsType",
             "required":[
-                "exceptionReport"
+                "input"
             ],
             "properties":{
-                "exceptionReport":{
-                    "title":"exceptionReport",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/ExceptionReport"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ExceptionReport",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ProcessFailedType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "exceptionReport"
-            ]
-        },
-        "DescriptionType":{
-            "type":"object",
-            "title":"DescriptionType",
-            "required":[
-                "identifier",
-                "title"
-            ],
-            "properties":{
-                "identifier":{
-                    "title":"identifier",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Identifier",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/LanguageStringType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Title",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                    }
-                },
-                "_abstract":{
-                    "title":"_abstract",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/LanguageStringType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Abstract",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                    }
-                },
-                "metadata":{
-                    "title":"metadata",
+                "input":{
+                    "title":"input",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"http://www.opengis.net/ows/1.1#/definitions/MetadataType"
+                                "$ref":"#/definitions/InputType"
                             },
-                            "minItems":0
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Metadata",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                        "localPart":"Input",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DescriptionType",
+                "localPart":"DataInputsType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "identifier",
-                "title",
-                "_abstract",
-                "metadata"
+                "input"
             ]
         },
-        "OutputDescriptionType":{
+        "ProcessBriefType":{
             "required":[
-                "complexOutput",
-                "literalOutput",
-                "boundingBoxOutput"
+                "processVersion"
             ],
             "allOf":[
                 {
@@ -1498,45 +1045,49 @@
                 },
                 {
                     "type":"object",
-                    "title":"OutputDescriptionType",
+                    "title":"ProcessBriefType",
                     "properties":{
-                        "complexOutput":{
-                            "title":"complexOutput",
+                        "profile":{
+                            "title":"profile",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/SupportedComplexDataType"
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"ComplexOutput",
-                                "namespaceURI":""
+                                "localPart":"Profile",
+                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
                             }
                         },
-                        "literalOutput":{
-                            "title":"literalOutput",
+                        "wsdl":{
+                            "title":"wsdl",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/LiteralOutputType"
+                                    "$ref":"#/definitions/WSDL"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"LiteralOutput",
-                                "namespaceURI":""
+                                "localPart":"WSDL",
+                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
                             }
                         },
-                        "boundingBoxOutput":{
-                            "title":"boundingBoxOutput",
+                        "processVersion":{
+                            "title":"processVersion",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/SupportedCRSsType"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"BoundingBoxOutput",
-                                "namespaceURI":""
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"processVersion",
+                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
                             }
                         }
                     }
@@ -1544,160 +1095,228 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"OutputDescriptionType",
+                "localPart":"ProcessBriefType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "complexOutput",
-                "literalOutput",
-                "boundingBoxOutput"
+                "profile",
+                "wsdl",
+                "processVersion"
             ]
         },
-        "InputDescriptionType":{
-            "required":[
-                "complexData",
-                "literalData",
-                "boundingBoxData",
-                "minOccurs",
-                "maxOccurs"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/DescriptionType"
-                },
-                {
-                    "type":"object",
-                    "title":"InputDescriptionType",
-                    "properties":{
-                        "complexData":{
-                            "title":"complexData",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SupportedComplexDataInputType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ComplexData",
-                                "namespaceURI":""
-                            }
-                        },
-                        "literalData":{
-                            "title":"literalData",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LiteralInputType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"LiteralData",
-                                "namespaceURI":""
-                            }
-                        },
-                        "boundingBoxData":{
-                            "title":"boundingBoxData",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SupportedCRSsType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"BoundingBoxData",
-                                "namespaceURI":""
-                            }
-                        },
-                        "minOccurs":{
-                            "title":"minOccurs",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"minOccurs",
-                                "namespaceURI":""
-                            }
-                        },
-                        "maxOccurs":{
-                            "title":"maxOccurs",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"maxOccurs",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InputDescriptionType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "complexData",
-                "literalData",
-                "boundingBoxData",
-                "minOccurs",
-                "maxOccurs"
-            ]
-        },
-        "SupportedUOMsType":{
+        "ProcessOfferings":{
             "type":"object",
-            "title":"SupportedUOMsType",
+            "title":"ProcessOfferings",
             "required":[
-                "_default",
-                "supported"
+                "process"
             ],
             "properties":{
-                "_default":{
-                    "title":"_default",
+                "process":{
+                    "title":"process",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/SupportedUOMsType.Default"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ProcessBriefType"
+                            },
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Default",
-                        "namespaceURI":""
+                        "localPart":"Process",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "process"
+            ]
+        },
+        "LiteralInputType":{
+            "required":[
+                "allowedValues",
+                "anyValue",
+                "valuesReference"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/LiteralOutputType"
+                },
+                {
+                    "type":"object",
+                    "title":"LiteralInputType",
+                    "properties":{
+                        "allowedValues":{
+                            "title":"allowedValues",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/AllowedValues"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"AllowedValues",
+                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                            }
+                        },
+                        "anyValue":{
+                            "title":"anyValue",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/AnyValue"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"AnyValue",
+                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                            }
+                        },
+                        "valuesReference":{
+                            "title":"valuesReference",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ValuesReferenceType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ValuesReference",
+                                "namespaceURI":""
+                            }
+                        },
+                        "defaultValue":{
+                            "title":"defaultValue",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"DefaultValue",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LiteralInputType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "allowedValues",
+                "anyValue",
+                "valuesReference",
+                "defaultValue"
+            ]
+        },
+        "ResponseFormType":{
+            "type":"object",
+            "title":"ResponseFormType",
+            "required":[
+                "responseDocument",
+                "rawDataOutput"
+            ],
+            "properties":{
+                "responseDocument":{
+                    "title":"responseDocument",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ResponseDocumentType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ResponseDocument",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
                     }
                 },
-                "supported":{
-                    "title":"supported",
+                "rawDataOutput":{
+                    "title":"rawDataOutput",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/UOMsType"
+                            "$ref":"#/definitions/OutputDefinitionType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Supported",
-                        "namespaceURI":""
+                        "localPart":"RawDataOutput",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SupportedUOMsType",
+                "localPart":"ResponseFormType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "_default",
-                "supported"
+                "responseDocument",
+                "rawDataOutput"
             ]
         },
-        "InputReferenceType.BodyReference":{
+        "GetCapabilities":{
             "type":"object",
-            "title":"InputReferenceType.BodyReference",
+            "title":"GetCapabilities",
+            "required":[
+                "service"
+            ],
+            "properties":{
+                "acceptVersions":{
+                    "title":"acceptVersions",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/AcceptVersionsType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"AcceptVersions",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                    }
+                },
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"service",
+                        "namespaceURI":""
+                    }
+                },
+                "language":{
+                    "title":"language",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"language",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "acceptVersions",
+                "service",
+                "language"
+            ]
+        },
+        "WSDL":{
+            "type":"object",
+            "title":"WSDL",
             "required":[
                 "href"
             ],
@@ -1782,6 +1401,47 @@
                 "responseForm"
             ]
         },
+        "Languages":{
+            "type":"object",
+            "title":"Languages",
+            "required":[
+                "_default",
+                "supported"
+            ],
+            "properties":{
+                "_default":{
+                    "title":"_default",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Languages.Default"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Default",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                    }
+                },
+                "supported":{
+                    "title":"supported",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/LanguagesType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Supported",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "_default",
+                "supported"
+            ]
+        },
         "ProcessStartedType":{
             "type":"object",
             "title":"ProcessStartedType",
@@ -1819,165 +1479,11 @@
                 "percentCompleted"
             ]
         },
-        "ProcessOfferings":{
-            "type":"object",
-            "title":"ProcessOfferings",
+        "OutputDescriptionType":{
             "required":[
-                "process"
-            ],
-            "properties":{
-                "process":{
-                    "title":"process",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ProcessBriefType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Process",
-                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "process"
-            ]
-        },
-        "LiteralDataType":{
-            "type":"object",
-            "title":"LiteralDataType",
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "dataType":{
-                    "title":"dataType",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"dataType",
-                        "namespaceURI":""
-                    }
-                },
-                "uom":{
-                    "title":"uom",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uom",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LiteralDataType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "value",
-                "dataType",
-                "uom"
-            ]
-        },
-        "ComplexDataCombinationType":{
-            "type":"object",
-            "title":"ComplexDataCombinationType",
-            "required":[
-                "format"
-            ],
-            "properties":{
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ComplexDataDescriptionType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Format",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ComplexDataCombinationType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "format"
-            ]
-        },
-        "SupportedCRSsType":{
-            "type":"object",
-            "title":"SupportedCRSsType",
-            "required":[
-                "_default",
-                "supported"
-            ],
-            "properties":{
-                "_default":{
-                    "title":"_default",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SupportedCRSsType.Default"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Default",
-                        "namespaceURI":""
-                    }
-                },
-                "supported":{
-                    "title":"supported",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/CRSsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Supported",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SupportedCRSsType",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            },
-            "propertiesOrder":[
-                "_default",
-                "supported"
-            ]
-        },
-        "ProcessBriefType":{
-            "required":[
-                "processVersion"
+                "complexOutput",
+                "literalOutput",
+                "boundingBoxOutput"
             ],
             "allOf":[
                 {
@@ -1985,49 +1491,45 @@
                 },
                 {
                     "type":"object",
-                    "title":"ProcessBriefType",
+                    "title":"OutputDescriptionType",
                     "properties":{
-                        "profile":{
-                            "title":"profile",
+                        "complexOutput":{
+                            "title":"complexOutput",
                             "allOf":[
                                 {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    "minItems":0
+                                    "$ref":"#/definitions/SupportedComplexDataType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"Profile",
-                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                                "localPart":"ComplexOutput",
+                                "namespaceURI":""
                             }
                         },
-                        "wsdl":{
-                            "title":"wsdl",
+                        "literalOutput":{
+                            "title":"literalOutput",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/WSDL"
+                                    "$ref":"#/definitions/LiteralOutputType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"WSDL",
-                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                                "localPart":"LiteralOutput",
+                                "namespaceURI":""
                             }
                         },
-                        "processVersion":{
-                            "title":"processVersion",
+                        "boundingBoxOutput":{
+                            "title":"boundingBoxOutput",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "$ref":"#/definitions/SupportedCRSsType"
                                 }
                             ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"processVersion",
-                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"BoundingBoxOutput",
+                                "namespaceURI":""
                             }
                         }
                     }
@@ -2035,24 +1537,51 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ProcessBriefType",
+                "localPart":"OutputDescriptionType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "profile",
-                "wsdl",
-                "processVersion"
+                "complexOutput",
+                "literalOutput",
+                "boundingBoxOutput"
             ]
         },
-        "OutputReferenceType":{
+        "Languages.Default":{
             "type":"object",
-            "title":"OutputReferenceType",
+            "title":"Languages.Default",
             "required":[
-                "href"
+                "language"
             ],
             "properties":{
-                "href":{
-                    "title":"href",
+                "language":{
+                    "title":"language",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Language",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "language"
+            ]
+        },
+        "RequestBaseType":{
+            "type":"object",
+            "title":"RequestBaseType",
+            "required":[
+                "service",
+                "version"
+            ],
+            "properties":{
+                "service":{
+                    "title":"service",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2060,12 +1589,12 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"href",
+                        "localPart":"service",
                         "namespaceURI":""
                     }
                 },
-                "mimeType":{
-                    "title":"mimeType",
+                "version":{
+                    "title":"version",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2073,12 +1602,12 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"mimeType",
+                        "localPart":"version",
                         "namespaceURI":""
                     }
                 },
-                "encoding":{
-                    "title":"encoding",
+                "language":{
+                    "title":"language",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2086,75 +1615,20 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"encoding",
-                        "namespaceURI":""
-                    }
-                },
-                "schema":{
-                    "title":"schema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"schema",
+                        "localPart":"language",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"OutputReferenceType",
+                "localPart":"RequestBaseType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "href",
-                "mimeType",
-                "encoding",
-                "schema"
-            ]
-        },
-        "InputReferenceType.Header":{
-            "type":"object",
-            "title":"InputReferenceType.Header",
-            "required":[
-                "key",
-                "value"
-            ],
-            "properties":{
-                "key":{
-                    "title":"key",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"key",
-                        "namespaceURI":""
-                    }
-                },
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"value",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "key",
-                "value"
+                "service",
+                "version",
+                "language"
             ]
         },
         "StatusType":{
@@ -2262,51 +1736,252 @@
                 "creationTime"
             ]
         },
-        "DocumentOutputDefinitionType":{
+        "SupportedCRSsType":{
+            "type":"object",
+            "title":"SupportedCRSsType",
+            "required":[
+                "_default",
+                "supported"
+            ],
+            "properties":{
+                "_default":{
+                    "title":"_default",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SupportedCRSsType.Default"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Default",
+                        "namespaceURI":""
+                    }
+                },
+                "supported":{
+                    "title":"supported",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/CRSsType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Supported",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SupportedCRSsType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "_default",
+                "supported"
+            ]
+        },
+        "OutputDataType":{
+            "required":[
+                "reference",
+                "data"
+            ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/OutputDefinitionType"
+                    "$ref":"#/definitions/DescriptionType"
                 },
                 {
                     "type":"object",
-                    "title":"DocumentOutputDefinitionType",
+                    "title":"OutputDataType",
                     "properties":{
-                        "title":{
-                            "title":"title",
+                        "reference":{
+                            "title":"reference",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/LanguageStringType"
+                                    "$ref":"#/definitions/OutputReferenceType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"Title",
-                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                                "localPart":"Reference",
+                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
                             }
                         },
-                        "_abstract":{
-                            "title":"_abstract",
+                        "data":{
+                            "title":"data",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/LanguageStringType"
+                                    "$ref":"#/definitions/DataType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"Abstract",
-                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                                "localPart":"Data",
+                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
                             }
-                        },
-                        "asReference":{
-                            "title":"asReference",
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"OutputDataType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "reference",
+                "data"
+            ]
+        },
+        "DescribeProcess":{
+            "required":[
+                "identifier"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/RequestBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"DescribeProcess",
+                    "properties":{
+                        "identifier":{
+                            "title":"identifier",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Identifier",
+                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "identifier"
+            ]
+        },
+        "UOMsType":{
+            "type":"object",
+            "title":"UOMsType",
+            "required":[
+                "uom"
+            ],
+            "properties":{
+                "uom":{
+                    "title":"uom",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.opengis.net/ows/1.1#/definitions/DomainMetadataType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"UOM",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"UOMsType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "uom"
+            ]
+        },
+        "InputDescriptionType":{
+            "required":[
+                "complexData",
+                "literalData",
+                "boundingBoxData",
+                "minOccurs",
+                "maxOccurs"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/DescriptionType"
+                },
+                {
+                    "type":"object",
+                    "title":"InputDescriptionType",
+                    "properties":{
+                        "complexData":{
+                            "title":"complexData",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SupportedComplexDataInputType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ComplexData",
+                                "namespaceURI":""
+                            }
+                        },
+                        "literalData":{
+                            "title":"literalData",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LiteralInputType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"LiteralData",
+                                "namespaceURI":""
+                            }
+                        },
+                        "boundingBoxData":{
+                            "title":"boundingBoxData",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SupportedCRSsType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"BoundingBoxData",
+                                "namespaceURI":""
+                            }
+                        },
+                        "minOccurs":{
+                            "title":"minOccurs",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
                                 }
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"asReference",
+                                "localPart":"minOccurs",
+                                "namespaceURI":""
+                            }
+                        },
+                        "maxOccurs":{
+                            "title":"maxOccurs",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"maxOccurs",
                                 "namespaceURI":""
                             }
                         }
@@ -2315,99 +1990,86 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DocumentOutputDefinitionType",
+                "localPart":"InputDescriptionType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "title",
-                "_abstract",
-                "asReference"
+                "complexData",
+                "literalData",
+                "boundingBoxData",
+                "minOccurs",
+                "maxOccurs"
             ]
         },
-        "Languages.Default":{
+        "ProcessDescriptionType.DataInputs":{
             "type":"object",
-            "title":"Languages.Default",
+            "title":"ProcessDescriptionType.DataInputs",
             "required":[
-                "language"
+                "input"
             ],
             "properties":{
-                "language":{
-                    "title":"language",
+                "input":{
+                    "title":"input",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InputDescriptionType"
+                            },
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Language",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                        "localPart":"Input",
+                        "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "language"
+                "input"
             ]
         },
-        "ResponseBaseType":{
+        "LiteralOutputType":{
             "type":"object",
-            "title":"ResponseBaseType",
-            "required":[
-                "service",
-                "version",
-                "lang"
-            ],
+            "title":"LiteralOutputType",
             "properties":{
-                "service":{
-                    "title":"service",
+                "dataType":{
+                    "title":"dataType",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/DomainMetadataType"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"service",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DataType",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
                     }
                 },
-                "version":{
-                    "title":"version",
+                "uoMs":{
+                    "title":"uoMs",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/SupportedUOMsType"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"UOMs",
                         "namespaceURI":""
-                    }
-                },
-                "lang":{
-                    "title":"lang",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"lang",
-                        "namespaceURI":"http://www.w3.org/XML/1998/namespace"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ResponseBaseType",
+                "localPart":"LiteralOutputType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "service",
-                "version",
-                "lang"
+                "dataType",
+                "uoMs"
             ]
         },
         "InputReferenceType":{
@@ -2544,181 +2206,229 @@
                 "schema"
             ]
         },
-        "ComplexDataType":{
-            "type":"object",
-            "title":"ComplexDataType",
-            "properties":{
-                "otherAttributes":{
-                    "title":"otherAttributes",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "additionalProperties":{
-                                "type":"string"
+        "ProcessDescriptions":{
+            "required":[
+                "processDescription"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ResponseBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"ProcessDescriptions",
+                    "properties":{
+                        "processDescription":{
+                            "title":"processDescription",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/ProcessDescriptionType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ProcessDescription",
+                                "namespaceURI":""
                             }
                         }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "processDescription"
+            ]
+        },
+        "LiteralDataType":{
+            "type":"object",
+            "title":"LiteralDataType",
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
                     ],
-                    "propertyType":"anyAttribute"
+                    "propertyType":"value"
                 },
-                "content":{
-                    "title":"content",
+                "dataType":{
+                    "title":"dataType",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"dataType",
+                        "namespaceURI":""
+                    }
+                },
+                "uom":{
+                    "title":"uom",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uom",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LiteralDataType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "value",
+                "dataType",
+                "uom"
+            ]
+        },
+        "DescriptionType":{
+            "type":"object",
+            "title":"DescriptionType",
+            "required":[
+                "identifier",
+                "title"
+            ],
+            "properties":{
+                "identifier":{
+                    "title":"identifier",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Identifier",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/LanguageStringType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Title",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                    }
+                },
+                "_abstract":{
+                    "title":"_abstract",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/LanguageStringType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Abstract",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                    }
+                },
+                "metadata":{
+                    "title":"metadata",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "anyOf":[
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                    },
-                                    {
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
+                                "$ref":"http://www.opengis.net/ows/1.1#/definitions/MetadataType"
+                            },
+                            "minItems":0
                         }
                     ],
-                    "propertyType":"anyElement"
-                },
-                "mimeType":{
-                    "title":"mimeType",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"mimeType",
-                        "namespaceURI":""
-                    }
-                },
-                "encoding":{
-                    "title":"encoding",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"encoding",
-                        "namespaceURI":""
-                    }
-                },
-                "schema":{
-                    "title":"schema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"schema",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Metadata",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ComplexDataType",
+                "localPart":"DescriptionType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "otherAttributes",
-                "content",
-                "mimeType",
-                "encoding",
-                "schema"
+                "identifier",
+                "title",
+                "_abstract",
+                "metadata"
             ]
         },
-        "ProcessDescriptionType":{
+        "ResponseBaseType":{
+            "type":"object",
+            "title":"ResponseBaseType",
             "required":[
-                "processOutputs"
+                "service",
+                "version",
+                "lang"
             ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ProcessBriefType"
-                },
-                {
-                    "type":"object",
-                    "title":"ProcessDescriptionType",
-                    "properties":{
-                        "dataInputs":{
-                            "title":"dataInputs",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ProcessDescriptionType.DataInputs"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"DataInputs",
-                                "namespaceURI":""
-                            }
-                        },
-                        "processOutputs":{
-                            "title":"processOutputs",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ProcessDescriptionType.ProcessOutputs"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ProcessOutputs",
-                                "namespaceURI":""
-                            }
-                        },
-                        "storeSupported":{
-                            "title":"storeSupported",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"storeSupported",
-                                "namespaceURI":""
-                            }
-                        },
-                        "statusSupported":{
-                            "title":"statusSupported",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"statusSupported",
-                                "namespaceURI":""
-                            }
+            "properties":{
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"service",
+                        "namespaceURI":""
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                },
+                "lang":{
+                    "title":"lang",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"lang",
+                        "namespaceURI":"http://www.w3.org/XML/1998/namespace"
                     }
                 }
-            ],
+            },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ProcessDescriptionType",
+                "localPart":"ResponseBaseType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "dataInputs",
-                "processOutputs",
-                "storeSupported",
-                "statusSupported"
+                "service",
+                "version",
+                "lang"
             ]
         },
         "ComplexDataCombinationsType":{
@@ -2755,115 +2465,405 @@
                 "format"
             ]
         },
-        "OutputDataType":{
+        "ExecuteResponse.ProcessOutputs":{
+            "type":"object",
+            "title":"ExecuteResponse.ProcessOutputs",
             "required":[
-                "reference",
-                "data"
+                "output"
             ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/DescriptionType"
-                },
-                {
-                    "type":"object",
-                    "title":"OutputDataType",
-                    "properties":{
-                        "reference":{
-                            "title":"reference",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/OutputReferenceType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Reference",
-                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                            }
-                        },
-                        "data":{
-                            "title":"data",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DataType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Data",
-                                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-                            }
+            "properties":{
+                "output":{
+                    "title":"output",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/OutputDataType"
+                            },
+                            "minItems":1
                         }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Output",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
                     }
                 }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "output"
+            ]
+        },
+        "DataType":{
+            "type":"object",
+            "title":"DataType",
+            "required":[
+                "complexData",
+                "literalData",
+                "boundingBoxData"
             ],
+            "properties":{
+                "complexData":{
+                    "title":"complexData",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ComplexDataType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ComplexData",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                    }
+                },
+                "literalData":{
+                    "title":"literalData",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/LiteralDataType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LiteralData",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                    }
+                },
+                "boundingBoxData":{
+                    "title":"boundingBoxData",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/BoundingBoxType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"BoundingBoxData",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                    }
+                }
+            },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"OutputDataType",
+                "localPart":"DataType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
+                "complexData",
+                "literalData",
+                "boundingBoxData"
+            ]
+        },
+        "ComplexDataDescriptionType":{
+            "type":"object",
+            "title":"ComplexDataDescriptionType",
+            "required":[
+                "mimeType"
+            ],
+            "properties":{
+                "mimeType":{
+                    "title":"mimeType",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MimeType",
+                        "namespaceURI":""
+                    }
+                },
+                "encoding":{
+                    "title":"encoding",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Encoding",
+                        "namespaceURI":""
+                    }
+                },
+                "schema":{
+                    "title":"schema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Schema",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ComplexDataDescriptionType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "mimeType",
+                "encoding",
+                "schema"
+            ]
+        },
+        "ValuesReferenceType":{
+            "type":"object",
+            "title":"ValuesReferenceType",
+            "properties":{
+                "reference":{
+                    "title":"reference",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"reference",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                    }
+                },
+                "valuesForm":{
+                    "title":"valuesForm",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"valuesForm",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ValuesReferenceType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "reference",
+                "valuesForm"
+            ]
+        },
+        "InputType":{
+            "type":"object",
+            "title":"InputType",
+            "required":[
+                "identifier",
+                "reference",
+                "data"
+            ],
+            "properties":{
+                "identifier":{
+                    "title":"identifier",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Identifier",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/LanguageStringType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Title",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                    }
+                },
+                "_abstract":{
+                    "title":"_abstract",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/LanguageStringType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Abstract",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                    }
+                },
+                "reference":{
+                    "title":"reference",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/InputReferenceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Reference",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                    }
+                },
+                "data":{
+                    "title":"data",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DataType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Data",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InputType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "identifier",
+                "title",
+                "_abstract",
                 "reference",
                 "data"
             ]
         },
-        "RequestBaseType":{
+        "ProcessFailedType":{
             "type":"object",
-            "title":"RequestBaseType",
+            "title":"ProcessFailedType",
             "required":[
-                "service",
-                "version"
+                "exceptionReport"
             ],
             "properties":{
-                "service":{
-                    "title":"service",
+                "exceptionReport":{
+                    "title":"exceptionReport",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/ExceptionReport"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"service",
-                        "namespaceURI":""
-                    }
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
-                    }
-                },
-                "language":{
-                    "title":"language",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"language",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ExceptionReport",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"RequestBaseType",
+                "localPart":"ProcessFailedType",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             },
             "propertiesOrder":[
-                "service",
-                "version",
+                "exceptionReport"
+            ]
+        },
+        "OutputDefinitionsType":{
+            "type":"object",
+            "title":"OutputDefinitionsType",
+            "required":[
+                "output"
+            ],
+            "properties":{
+                "output":{
+                    "title":"output",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DocumentOutputDefinitionType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Output",
+                        "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"OutputDefinitionsType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "output"
+            ]
+        },
+        "LanguagesType":{
+            "type":"object",
+            "title":"LanguagesType",
+            "required":[
                 "language"
+            ],
+            "properties":{
+                "language":{
+                    "title":"language",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Language",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LanguagesType",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            },
+            "propertiesOrder":[
+                "language"
+            ]
+        },
+        "InputReferenceType.BodyReference":{
+            "type":"object",
+            "title":"InputReferenceType.BodyReference",
+            "required":[
+                "href"
+            ],
+            "properties":{
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "href"
             ]
         }
     },
@@ -2875,86 +2875,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/DescribeProcess"
+                    "$ref":"#/definitions/WPSCapabilitiesType"
                 }
             },
             "elementName":{
-                "localPart":"DescribeProcess",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Languages"
-                }
-            },
-            "elementName":{
-                "localPart":"Languages",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetCapabilities"
-                }
-            },
-            "elementName":{
-                "localPart":"GetCapabilities",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Execute"
-                }
-            },
-            "elementName":{
-                "localPart":"Execute",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ExecuteResponse"
-                }
-            },
-            "elementName":{
-                "localPart":"ExecuteResponse",
-                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ProcessOfferings"
-                }
-            },
-            "elementName":{
-                "localPart":"ProcessOfferings",
+                "localPart":"Capabilities",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             }
         },
@@ -2980,11 +2905,56 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/WPSCapabilitiesType"
+                    "$ref":"#/definitions/Languages"
                 }
             },
             "elementName":{
-                "localPart":"Capabilities",
+                "localPart":"Languages",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Execute"
+                }
+            },
+            "elementName":{
+                "localPart":"Execute",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DescribeProcess"
+                }
+            },
+            "elementName":{
+                "localPart":"DescribeProcess",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ProcessOfferings"
+                }
+            },
+            "elementName":{
+                "localPart":"ProcessOfferings",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             }
         },
@@ -3000,6 +2970,36 @@
             },
             "elementName":{
                 "localPart":"ProcessDescriptions",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetCapabilities"
+                }
+            },
+            "elementName":{
+                "localPart":"GetCapabilities",
+                "namespaceURI":"http://www.opengis.net/wps/1.0.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ExecuteResponse"
+                }
+            },
+            "elementName":{
+                "localPart":"ExecuteResponse",
                 "namespaceURI":"http://www.opengis.net/wps/1.0.0"
             }
         }

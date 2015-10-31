@@ -2,334 +2,6 @@
 {
     "id":"http://www.opengis.net/ogc#",
     "definitions":{
-        "SortPropertyType":{
-            "type":"object",
-            "title":"SortPropertyType",
-            "required":[
-                "propertyName"
-            ],
-            "properties":{
-                "propertyName":{
-                    "title":"propertyName",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/PropertyNameType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"PropertyName",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
-                },
-                "sortOrder":{
-                    "title":"sortOrder",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SortOrderType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SortOrder",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SortPropertyType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            },
-            "propertiesOrder":[
-                "propertyName",
-                "sortOrder"
-            ]
-        },
-        "ExpressionType":{
-            "type":"object",
-            "title":"ExpressionType",
-            "properties":{
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ExpressionType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        "SpatialOpsType":{
-            "type":"object",
-            "title":"SpatialOpsType",
-            "properties":{
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SpatialOpsType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        "BinaryComparisonOpType":{
-            "required":[
-                "expression"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ComparisonOpsType"
-                },
-                {
-                    "type":"object",
-                    "title":"BinaryComparisonOpType",
-                    "properties":{
-                        "expression":{
-                            "title":"expression",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"#/definitions/ExpressionType"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"expression",
-                                            "namespaceURI":"http://www.opengis.net/ogc"
-                                        }
-                                    },
-                                    "maxItems":2,
-                                    "minItems":2
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"expression",
-                                "namespaceURI":"http://www.opengis.net/ogc"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"BinaryComparisonOpType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            },
-            "propertiesOrder":[
-                "expression"
-            ]
-        },
-        "LiteralType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ExpressionType"
-                },
-                {
-                    "type":"object",
-                    "title":"LiteralType",
-                    "properties":{
-                        "content":{
-                            "title":"content",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "anyOf":[
-                                            {
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                            },
-                                            {
-                                                "type":"object",
-                                                "properties":{
-                                                    "name":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                    },
-                                                    "value":{
-                                                    }
-                                                }
-                                            }
-                                        ]
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyElement"
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LiteralType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            },
-            "propertiesOrder":[
-                "content"
-            ]
-        },
-        "BBOXType":{
-            "required":[
-                "propertyName",
-                "box"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SpatialOpsType"
-                },
-                {
-                    "type":"object",
-                    "title":"BBOXType",
-                    "properties":{
-                        "propertyName":{
-                            "title":"propertyName",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PropertyNameType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"PropertyName",
-                                "namespaceURI":"http://www.opengis.net/ogc"
-                            }
-                        },
-                        "box":{
-                            "title":"box",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/gml#/definitions/BoxType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Box",
-                                "namespaceURI":"http://www.opengis.net/gml"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"BBOXType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            },
-            "propertiesOrder":[
-                "propertyName",
-                "box"
-            ]
-        },
-        "DistanceBufferType":{
-            "required":[
-                "propertyName",
-                "geometry",
-                "distance"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SpatialOpsType"
-                },
-                {
-                    "type":"object",
-                    "title":"DistanceBufferType",
-                    "properties":{
-                        "propertyName":{
-                            "title":"propertyName",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PropertyNameType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"PropertyName",
-                                "namespaceURI":"http://www.opengis.net/ogc"
-                            }
-                        },
-                        "geometry":{
-                            "title":"geometry",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                            "$ref":"http://www.opengis.net/gml#/definitions/AbstractGeometryType"
-                                        }
-                                    },
-                                    "elementName":{
-                                        "localPart":"_Geometry",
-                                        "namespaceURI":"http://www.opengis.net/gml"
-                                    }
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"_Geometry",
-                                "namespaceURI":"http://www.opengis.net/gml"
-                            }
-                        },
-                        "distance":{
-                            "title":"distance",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DistanceType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Distance",
-                                "namespaceURI":"http://www.opengis.net/ogc"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DistanceBufferType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            },
-            "propertiesOrder":[
-                "propertyName",
-                "geometry",
-                "distance"
-            ]
-        },
-        "FeatureIdType":{
-            "type":"object",
-            "title":"FeatureIdType",
-            "required":[
-                "fid"
-            ],
-            "properties":{
-                "fid":{
-                    "title":"fid",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"fid",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"FeatureIdType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            },
-            "propertiesOrder":[
-                "fid"
-            ]
-        },
         "FilterType":{
             "type":"object",
             "title":"FilterType",
@@ -445,6 +117,53 @@
                 "featureId"
             ]
         },
+        "LiteralType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ExpressionType"
+                },
+                {
+                    "type":"object",
+                    "title":"LiteralType",
+                    "properties":{
+                        "content":{
+                            "title":"content",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "anyOf":[
+                                            {
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                            },
+                                            {
+                                                "type":"object",
+                                                "properties":{
+                                                    "name":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                    },
+                                                    "value":{
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyElement"
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LiteralType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            },
+            "propertiesOrder":[
+                "content"
+            ]
+        },
         "PropertyNameType":{
             "allOf":[
                 {
@@ -492,142 +211,17 @@
                 "content"
             ]
         },
-        "BinaryLogicOpType":{
-            "required":[
-                "ops"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/LogicOpsType"
-                },
-                {
-                    "type":"object",
-                    "title":"BinaryLogicOpType",
-                    "properties":{
-                        "ops":{
-                            "title":"ops",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "anyOf":[
-                                            {
-                                                "type":"object",
-                                                "properties":{
-                                                    "name":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                    },
-                                                    "value":{
-                                                        "$ref":"#/definitions/LogicOpsType"
-                                                    }
-                                                },
-                                                "elementName":{
-                                                    "localPart":"logicOps",
-                                                    "namespaceURI":"http://www.opengis.net/ogc"
-                                                }
-                                            },
-                                            {
-                                                "type":"object",
-                                                "properties":{
-                                                    "name":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                    },
-                                                    "value":{
-                                                        "$ref":"#/definitions/SpatialOpsType"
-                                                    }
-                                                },
-                                                "elementName":{
-                                                    "localPart":"spatialOps",
-                                                    "namespaceURI":"http://www.opengis.net/ogc"
-                                                }
-                                            },
-                                            {
-                                                "type":"object",
-                                                "properties":{
-                                                    "name":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                    },
-                                                    "value":{
-                                                        "$ref":"#/definitions/ComparisonOpsType"
-                                                    }
-                                                },
-                                                "elementName":{
-                                                    "localPart":"comparisonOps",
-                                                    "namespaceURI":"http://www.opengis.net/ogc"
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    "minItems":2
-                                }
-                            ],
-                            "propertyType":"elementRefs"
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"BinaryLogicOpType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            },
-            "propertiesOrder":[
-                "ops"
-            ]
-        },
-        "LowerBoundaryType":{
-            "type":"object",
-            "title":"LowerBoundaryType",
+        "BinaryComparisonOpType":{
             "required":[
                 "expression"
             ],
-            "properties":{
-                "expression":{
-                    "title":"expression",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/ExpressionType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"expression",
-                                "namespaceURI":"http://www.opengis.net/ogc"
-                            }
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"expression",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LowerBoundaryType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            },
-            "propertiesOrder":[
-                "expression"
-            ]
-        },
-        "FunctionType":{
-            "required":[
-                "name"
-            ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/ExpressionType"
+                    "$ref":"#/definitions/ComparisonOpsType"
                 },
                 {
                     "type":"object",
-                    "title":"FunctionType",
+                    "title":"BinaryComparisonOpType",
                     "properties":{
                         "expression":{
                             "title":"expression",
@@ -649,7 +243,8 @@
                                             "namespaceURI":"http://www.opengis.net/ogc"
                                         }
                                     },
-                                    "minItems":0
+                                    "maxItems":2,
+                                    "minItems":2
                                 }
                             ],
                             "propertyType":"elementRef",
@@ -657,18 +252,59 @@
                                 "localPart":"expression",
                                 "namespaceURI":"http://www.opengis.net/ogc"
                             }
-                        },
-                        "name":{
-                            "title":"name",
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"BinaryComparisonOpType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            },
+            "propertiesOrder":[
+                "expression"
+            ]
+        },
+        "BinaryOperatorType":{
+            "required":[
+                "expression"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ExpressionType"
+                },
+                {
+                    "type":"object",
+                    "title":"BinaryOperatorType",
+                    "properties":{
+                        "expression":{
+                            "title":"expression",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"#/definitions/ExpressionType"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"expression",
+                                            "namespaceURI":"http://www.opengis.net/ogc"
+                                        }
+                                    },
+                                    "maxItems":2,
+                                    "minItems":2
                                 }
                             ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"name",
-                                "namespaceURI":""
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"expression",
+                                "namespaceURI":"http://www.opengis.net/ogc"
                             }
                         }
                     }
@@ -676,18 +312,16 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"FunctionType",
+                "localPart":"BinaryOperatorType",
                 "namespaceURI":"http://www.opengis.net/ogc"
             },
             "propertiesOrder":[
-                "expression",
-                "name"
+                "expression"
             ]
         },
-        "BinarySpatialOpType":{
+        "BBOXType":{
             "required":[
                 "propertyName",
-                "geometry",
                 "box"
             ],
             "allOf":[
@@ -696,7 +330,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"BinarySpatialOpType",
+                    "title":"BBOXType",
                     "properties":{
                         "propertyName":{
                             "title":"propertyName",
@@ -709,31 +343,6 @@
                             "elementName":{
                                 "localPart":"PropertyName",
                                 "namespaceURI":"http://www.opengis.net/ogc"
-                            }
-                        },
-                        "geometry":{
-                            "title":"geometry",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                            "$ref":"http://www.opengis.net/gml#/definitions/AbstractGeometryType"
-                                        }
-                                    },
-                                    "elementName":{
-                                        "localPart":"_Geometry",
-                                        "namespaceURI":"http://www.opengis.net/gml"
-                                    }
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"_Geometry",
-                                "namespaceURI":"http://www.opengis.net/gml"
                             }
                         },
                         "box":{
@@ -754,12 +363,11 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"BinarySpatialOpType",
+                "localPart":"BBOXType",
                 "namespaceURI":"http://www.opengis.net/ogc"
             },
             "propertiesOrder":[
                 "propertyName",
-                "geometry",
                 "box"
             ]
         },
@@ -842,167 +450,35 @@
                 "upperBoundary"
             ]
         },
-        "PropertyIsLikeType":{
-            "required":[
-                "propertyName",
-                "literal",
-                "wildCard",
-                "singleChar",
-                "escape"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ComparisonOpsType"
-                },
-                {
-                    "type":"object",
-                    "title":"PropertyIsLikeType",
-                    "properties":{
-                        "propertyName":{
-                            "title":"propertyName",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PropertyNameType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"PropertyName",
-                                "namespaceURI":"http://www.opengis.net/ogc"
-                            }
-                        },
-                        "literal":{
-                            "title":"literal",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LiteralType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Literal",
-                                "namespaceURI":"http://www.opengis.net/ogc"
-                            }
-                        },
-                        "wildCard":{
-                            "title":"wildCard",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"wildCard",
-                                "namespaceURI":""
-                            }
-                        },
-                        "singleChar":{
-                            "title":"singleChar",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"singleChar",
-                                "namespaceURI":""
-                            }
-                        },
-                        "escape":{
-                            "title":"escape",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"escape",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"PropertyIsLikeType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            },
-            "propertiesOrder":[
-                "propertyName",
-                "literal",
-                "wildCard",
-                "singleChar",
-                "escape"
-            ]
-        },
-        "BinaryOperatorType":{
-            "required":[
-                "expression"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ExpressionType"
-                },
-                {
-                    "type":"object",
-                    "title":"BinaryOperatorType",
-                    "properties":{
-                        "expression":{
-                            "title":"expression",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"#/definitions/ExpressionType"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"expression",
-                                            "namespaceURI":"http://www.opengis.net/ogc"
-                                        }
-                                    },
-                                    "maxItems":2,
-                                    "minItems":2
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"expression",
-                                "namespaceURI":"http://www.opengis.net/ogc"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"BinaryOperatorType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            },
-            "propertiesOrder":[
-                "expression"
-            ]
-        },
-        "ComparisonOpsType":{
+        "FeatureIdType":{
             "type":"object",
-            "title":"ComparisonOpsType",
+            "title":"FeatureIdType",
+            "required":[
+                "fid"
+            ],
             "properties":{
+                "fid":{
+                    "title":"fid",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"fid",
+                        "namespaceURI":""
+                    }
+                }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ComparisonOpsType",
+                "localPart":"FeatureIdType",
                 "namespaceURI":"http://www.opengis.net/ogc"
-            }
+            },
+            "propertiesOrder":[
+                "fid"
+            ]
         },
         "DistanceType":{
             "type":"object",
@@ -1044,6 +520,84 @@
                 "units"
             ]
         },
+        "FunctionType":{
+            "required":[
+                "name"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ExpressionType"
+                },
+                {
+                    "type":"object",
+                    "title":"FunctionType",
+                    "properties":{
+                        "expression":{
+                            "title":"expression",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"#/definitions/ExpressionType"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"expression",
+                                            "namespaceURI":"http://www.opengis.net/ogc"
+                                        }
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"expression",
+                                "namespaceURI":"http://www.opengis.net/ogc"
+                            }
+                        },
+                        "name":{
+                            "title":"name",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"name",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FunctionType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            },
+            "propertiesOrder":[
+                "expression",
+                "name"
+            ]
+        },
+        "ComparisonOpsType":{
+            "type":"object",
+            "title":"ComparisonOpsType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ComparisonOpsType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
         "UpperBoundaryType":{
             "type":"object",
             "title":"UpperBoundaryType",
@@ -1084,6 +638,430 @@
             },
             "propertiesOrder":[
                 "expression"
+            ]
+        },
+        "BinarySpatialOpType":{
+            "required":[
+                "propertyName",
+                "geometry",
+                "box"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SpatialOpsType"
+                },
+                {
+                    "type":"object",
+                    "title":"BinarySpatialOpType",
+                    "properties":{
+                        "propertyName":{
+                            "title":"propertyName",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PropertyNameType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"PropertyName",
+                                "namespaceURI":"http://www.opengis.net/ogc"
+                            }
+                        },
+                        "geometry":{
+                            "title":"geometry",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                            "$ref":"http://www.opengis.net/gml#/definitions/AbstractGeometryType"
+                                        }
+                                    },
+                                    "elementName":{
+                                        "localPart":"_Geometry",
+                                        "namespaceURI":"http://www.opengis.net/gml"
+                                    }
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"_Geometry",
+                                "namespaceURI":"http://www.opengis.net/gml"
+                            }
+                        },
+                        "box":{
+                            "title":"box",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/gml#/definitions/BoxType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Box",
+                                "namespaceURI":"http://www.opengis.net/gml"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"BinarySpatialOpType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            },
+            "propertiesOrder":[
+                "propertyName",
+                "geometry",
+                "box"
+            ]
+        },
+        "BinaryLogicOpType":{
+            "required":[
+                "ops"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/LogicOpsType"
+                },
+                {
+                    "type":"object",
+                    "title":"BinaryLogicOpType",
+                    "properties":{
+                        "ops":{
+                            "title":"ops",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "anyOf":[
+                                            {
+                                                "type":"object",
+                                                "properties":{
+                                                    "name":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                    },
+                                                    "value":{
+                                                        "$ref":"#/definitions/LogicOpsType"
+                                                    }
+                                                },
+                                                "elementName":{
+                                                    "localPart":"logicOps",
+                                                    "namespaceURI":"http://www.opengis.net/ogc"
+                                                }
+                                            },
+                                            {
+                                                "type":"object",
+                                                "properties":{
+                                                    "name":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                    },
+                                                    "value":{
+                                                        "$ref":"#/definitions/ComparisonOpsType"
+                                                    }
+                                                },
+                                                "elementName":{
+                                                    "localPart":"comparisonOps",
+                                                    "namespaceURI":"http://www.opengis.net/ogc"
+                                                }
+                                            },
+                                            {
+                                                "type":"object",
+                                                "properties":{
+                                                    "name":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                    },
+                                                    "value":{
+                                                        "$ref":"#/definitions/SpatialOpsType"
+                                                    }
+                                                },
+                                                "elementName":{
+                                                    "localPart":"spatialOps",
+                                                    "namespaceURI":"http://www.opengis.net/ogc"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "minItems":2
+                                }
+                            ],
+                            "propertyType":"elementRefs"
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"BinaryLogicOpType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            },
+            "propertiesOrder":[
+                "ops"
+            ]
+        },
+        "LowerBoundaryType":{
+            "type":"object",
+            "title":"LowerBoundaryType",
+            "required":[
+                "expression"
+            ],
+            "properties":{
+                "expression":{
+                    "title":"expression",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/ExpressionType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"expression",
+                                "namespaceURI":"http://www.opengis.net/ogc"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"expression",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LowerBoundaryType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            },
+            "propertiesOrder":[
+                "expression"
+            ]
+        },
+        "SpatialOpsType":{
+            "type":"object",
+            "title":"SpatialOpsType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SpatialOpsType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        "SortPropertyType":{
+            "type":"object",
+            "title":"SortPropertyType",
+            "required":[
+                "propertyName"
+            ],
+            "properties":{
+                "propertyName":{
+                    "title":"propertyName",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/PropertyNameType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"PropertyName",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                },
+                "sortOrder":{
+                    "title":"sortOrder",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SortOrderType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SortOrder",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SortPropertyType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            },
+            "propertiesOrder":[
+                "propertyName",
+                "sortOrder"
+            ]
+        },
+        "PropertyIsNullType":{
+            "required":[
+                "propertyName",
+                "literal"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ComparisonOpsType"
+                },
+                {
+                    "type":"object",
+                    "title":"PropertyIsNullType",
+                    "properties":{
+                        "propertyName":{
+                            "title":"propertyName",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PropertyNameType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"PropertyName",
+                                "namespaceURI":"http://www.opengis.net/ogc"
+                            }
+                        },
+                        "literal":{
+                            "title":"literal",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LiteralType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Literal",
+                                "namespaceURI":"http://www.opengis.net/ogc"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"PropertyIsNullType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            },
+            "propertiesOrder":[
+                "propertyName",
+                "literal"
+            ]
+        },
+        "DistanceBufferType":{
+            "required":[
+                "propertyName",
+                "geometry",
+                "distance"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SpatialOpsType"
+                },
+                {
+                    "type":"object",
+                    "title":"DistanceBufferType",
+                    "properties":{
+                        "propertyName":{
+                            "title":"propertyName",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PropertyNameType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"PropertyName",
+                                "namespaceURI":"http://www.opengis.net/ogc"
+                            }
+                        },
+                        "geometry":{
+                            "title":"geometry",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                            "$ref":"http://www.opengis.net/gml#/definitions/AbstractGeometryType"
+                                        }
+                                    },
+                                    "elementName":{
+                                        "localPart":"_Geometry",
+                                        "namespaceURI":"http://www.opengis.net/gml"
+                                    }
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"_Geometry",
+                                "namespaceURI":"http://www.opengis.net/gml"
+                            }
+                        },
+                        "distance":{
+                            "title":"distance",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DistanceType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Distance",
+                                "namespaceURI":"http://www.opengis.net/ogc"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DistanceBufferType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            },
+            "propertiesOrder":[
+                "propertyName",
+                "geometry",
+                "distance"
+            ]
+        },
+        "SortByType":{
+            "type":"object",
+            "title":"SortByType",
+            "required":[
+                "sortProperty"
+            ],
+            "properties":{
+                "sortProperty":{
+                    "title":"sortProperty",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/SortPropertyType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SortProperty",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SortByType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            },
+            "propertiesOrder":[
+                "sortProperty"
             ]
         },
         "UnaryLogicOpType":{
@@ -1200,44 +1178,13 @@
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
-        "SortByType":{
-            "type":"object",
-            "title":"SortByType",
-            "required":[
-                "sortProperty"
-            ],
-            "properties":{
-                "sortProperty":{
-                    "title":"sortProperty",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/SortPropertyType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SortProperty",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SortByType",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            },
-            "propertiesOrder":[
-                "sortProperty"
-            ]
-        },
-        "PropertyIsNullType":{
+        "PropertyIsLikeType":{
             "required":[
                 "propertyName",
-                "literal"
+                "literal",
+                "wildCard",
+                "singleChar",
+                "escape"
             ],
             "allOf":[
                 {
@@ -1245,7 +1192,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"PropertyIsNullType",
+                    "title":"PropertyIsLikeType",
                     "properties":{
                         "propertyName":{
                             "title":"propertyName",
@@ -1272,19 +1219,72 @@
                                 "localPart":"Literal",
                                 "namespaceURI":"http://www.opengis.net/ogc"
                             }
+                        },
+                        "wildCard":{
+                            "title":"wildCard",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"wildCard",
+                                "namespaceURI":""
+                            }
+                        },
+                        "singleChar":{
+                            "title":"singleChar",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"singleChar",
+                                "namespaceURI":""
+                            }
+                        },
+                        "escape":{
+                            "title":"escape",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"escape",
+                                "namespaceURI":""
+                            }
                         }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"PropertyIsNullType",
+                "localPart":"PropertyIsLikeType",
                 "namespaceURI":"http://www.opengis.net/ogc"
             },
             "propertiesOrder":[
                 "propertyName",
-                "literal"
+                "literal",
+                "wildCard",
+                "singleChar",
+                "escape"
             ]
+        },
+        "ExpressionType":{
+            "type":"object",
+            "title":"ExpressionType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ExpressionType",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
         },
         "SortOrderType":{
             "allOf":[
@@ -1307,161 +1307,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/SortByType"
+                    "$ref":"#/definitions/ExpressionType"
                 }
             },
             "elementName":{
-                "localPart":"SortBy",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinarySpatialOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"Contains",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BBOXType"
-                }
-            },
-            "elementName":{
-                "localPart":"BBOX",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SpatialOpsType"
-                }
-            },
-            "elementName":{
-                "localPart":"spatialOps",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinarySpatialOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"Disjoint",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryComparisonOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyIsGreaterThan",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinarySpatialOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"Within",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryOperatorType"
-                }
-            },
-            "elementName":{
-                "localPart":"Mul",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinarySpatialOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"Overlaps",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/PropertyIsBetweenType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyIsBetween",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/PropertyIsNullType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyIsNull",
+                "localPart":"expression",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
@@ -1487,11 +1337,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ComparisonOpsType"
+                    "$ref":"#/definitions/BinaryComparisonOpType"
                 }
             },
             "elementName":{
-                "localPart":"comparisonOps",
+                "localPart":"PropertyIsEqualTo",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
@@ -1517,11 +1367,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/UnaryLogicOpType"
+                    "$ref":"#/definitions/BinarySpatialOpType"
                 }
             },
             "elementName":{
-                "localPart":"Not",
+                "localPart":"Touches",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
@@ -1532,11 +1382,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/FilterType"
+                    "$ref":"#/definitions/SortByType"
                 }
             },
             "elementName":{
-                "localPart":"Filter",
+                "localPart":"SortBy",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
@@ -1547,11 +1397,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ExpressionType"
+                    "$ref":"#/definitions/BinaryOperatorType"
                 }
             },
             "elementName":{
-                "localPart":"expression",
+                "localPart":"Sub",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
@@ -1562,11 +1412,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/BinaryLogicOpType"
+                    "$ref":"#/definitions/LogicOpsType"
                 }
             },
             "elementName":{
-                "localPart":"And",
+                "localPart":"logicOps",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryComparisonOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"PropertyIsLessThan",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
@@ -1581,7 +1446,82 @@
                 }
             },
             "elementName":{
-                "localPart":"Touches",
+                "localPart":"Overlaps",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinarySpatialOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"Within",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/PropertyNameType"
+                }
+            },
+            "elementName":{
+                "localPart":"PropertyName",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryOperatorType"
+                }
+            },
+            "elementName":{
+                "localPart":"Add",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinarySpatialOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"Equals",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryOperatorType"
+                }
+            },
+            "elementName":{
+                "localPart":"Mul",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
@@ -1611,7 +1551,7 @@
                 }
             },
             "elementName":{
-                "localPart":"Equals",
+                "localPart":"Disjoint",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
@@ -1626,7 +1566,37 @@
                 }
             },
             "elementName":{
-                "localPart":"PropertyIsLessThanOrEqualTo",
+                "localPart":"PropertyIsGreaterThanOrEqualTo",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryLogicOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"And",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/PropertyIsBetweenType"
+                }
+            },
+            "elementName":{
+                "localPart":"PropertyIsBetween",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
@@ -1652,11 +1622,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/BinaryOperatorType"
+                    "$ref":"#/definitions/ComparisonOpsType"
                 }
             },
             "elementName":{
-                "localPart":"Add",
+                "localPart":"comparisonOps",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/UnaryLogicOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"Not",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
@@ -1671,7 +1656,82 @@
                 }
             },
             "elementName":{
-                "localPart":"PropertyIsLessThan",
+                "localPart":"PropertyIsGreaterThan",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DistanceBufferType"
+                }
+            },
+            "elementName":{
+                "localPart":"Beyond",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/SpatialOpsType"
+                }
+            },
+            "elementName":{
+                "localPart":"spatialOps",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/LiteralType"
+                }
+            },
+            "elementName":{
+                "localPart":"Literal",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/FilterType"
+                }
+            },
+            "elementName":{
+                "localPart":"Filter",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/PropertyIsNullType"
+                }
+            },
+            "elementName":{
+                "localPart":"PropertyIsNull",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
@@ -1686,7 +1746,67 @@
                 }
             },
             "elementName":{
-                "localPart":"PropertyIsGreaterThanOrEqualTo",
+                "localPart":"PropertyIsLessThanOrEqualTo",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinarySpatialOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"Contains",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryLogicOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"Or",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BBOXType"
+                }
+            },
+            "elementName":{
+                "localPart":"BBOX",
+                "namespaceURI":"http://www.opengis.net/ogc"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryComparisonOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"PropertyIsNotEqualTo",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         },
@@ -1727,131 +1847,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/DistanceBufferType"
-                }
-            },
-            "elementName":{
-                "localPart":"Beyond",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryOperatorType"
-                }
-            },
-            "elementName":{
-                "localPart":"Sub",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryComparisonOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyIsNotEqualTo",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/LiteralType"
-                }
-            },
-            "elementName":{
-                "localPart":"Literal",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
                     "$ref":"#/definitions/FeatureIdType"
                 }
             },
             "elementName":{
                 "localPart":"FeatureId",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryComparisonOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyIsEqualTo",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryLogicOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"Or",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/LogicOpsType"
-                }
-            },
-            "elementName":{
-                "localPart":"logicOps",
-                "namespaceURI":"http://www.opengis.net/ogc"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/PropertyNameType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyName",
                 "namespaceURI":"http://www.opengis.net/ogc"
             }
         }

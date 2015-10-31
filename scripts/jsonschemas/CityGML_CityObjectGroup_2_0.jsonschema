@@ -467,11 +467,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                    "$ref":"#/definitions/CityObjectGroupType"
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfCityObjectGroup",
+                "localPart":"CityObjectGroup",
                 "namespaceURI":"http://www.opengis.net/citygml/cityobjectgroup/2.0"
             }
         },
@@ -482,11 +482,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/CityObjectGroupType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"CityObjectGroup",
+                "localPart":"_GenericApplicationPropertyOfCityObjectGroup",
                 "namespaceURI":"http://www.opengis.net/citygml/cityobjectgroup/2.0"
             }
         }

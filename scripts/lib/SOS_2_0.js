@@ -3,8 +3,95 @@ var SOS_2_0_Module_Factory = function () {
     n: 'SOS_2_0',
     dens: 'http:\/\/www.opengis.net\/sos\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_2_1', 'XLink_1_0', 'SWES_2_0', 'SWE_2_0', 'OWS_1_1_0', 'Filter_2_0', 'OM_2_0'],
+    deps: ['XLink_1_0', 'OWS_1_1_0', 'GML_3_2_1', 'OM_2_0', 'SWES_2_0', 'SWE_2_0', 'Filter_2_0'],
     tis: [{
+        ln: 'GetObservationType.TemporalFilter',
+        tn: null,
+        ps: [{
+            n: 'temporalOps',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'temporalOps',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.TemporalOpsType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'CapabilitiesType',
+        bti: 'OWS_1_1_0.CapabilitiesBaseType',
+        ps: [{
+            n: 'extension',
+            mno: 0,
+            col: true,
+            ti: 'AnyType'
+          }, {
+            n: 'filterCapabilities',
+            ti: '.CapabilitiesType.FilterCapabilities'
+          }, {
+            n: 'contents',
+            ti: '.CapabilitiesType.Contents'
+          }]
+      }, {
+        ln: 'InsertionCapabilitiesType',
+        ps: [{
+            n: 'procedureDescriptionFormat',
+            rq: true,
+            col: true
+          }, {
+            n: 'featureOfInterestType',
+            rq: true,
+            col: true
+          }, {
+            n: 'observationType',
+            rq: true,
+            col: true
+          }, {
+            n: 'supportedEncoding',
+            mno: 0,
+            col: true
+          }]
+      }, {
+        ln: 'SosInsertionMetadataType',
+        bti: 'SWES_2_0.InsertionMetadataType',
+        ps: [{
+            n: 'observationType',
+            rq: true,
+            col: true
+          }, {
+            n: 'featureOfInterestType',
+            rq: true,
+            col: true
+          }]
+      }, {
+        ln: 'GetResultResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType',
+        ps: [{
+            n: 'resultValues',
+            rq: true,
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'CapabilitiesType.Contents',
+        tn: null,
+        ps: [{
+            n: 'contents',
+            rq: true,
+            en: 'Contents',
+            ti: '.ContentsType'
+          }]
+      }, {
+        ln: 'GetObservationByIdResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType',
+        ps: [{
+            n: 'observation',
+            mno: 0,
+            col: true,
+            ti: '.GetObservationByIdResponseType.Observation'
+          }]
+      }, {
         ln: 'ObservationOfferingType',
         bti: 'SWES_2_0.AbstractOfferingType',
         ps: [{
@@ -30,57 +117,12 @@ var SOS_2_0_Module_Factory = function () {
             col: true
           }]
       }, {
-        ln: 'GetCapabilitiesType',
-        bti: 'OWS_1_1_0.GetCapabilitiesType',
+        ln: 'InsertObservationResponsePropertyType',
         ps: [{
-            n: 'extension',
-            mno: 0,
-            col: true,
-            ti: 'AnyType'
-          }, {
-            n: 'service',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetObservationType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
-        ps: [{
-            n: 'procedure',
-            mno: 0,
-            col: true
-          }, {
-            n: 'offering',
-            mno: 0,
-            col: true
-          }, {
-            n: 'observedProperty',
-            mno: 0,
-            col: true
-          }, {
-            n: 'temporalFilter',
-            mno: 0,
-            col: true,
-            ti: '.GetObservationType.TemporalFilter'
-          }, {
-            n: 'featureOfInterest',
-            mno: 0,
-            col: true
-          }, {
-            n: 'spatialFilter',
-            ti: '.GetObservationType.SpatialFilter'
-          }, {
-            n: 'responseFormat'
-          }]
-      }, {
-        ln: 'GetCapabilitiesPropertyType',
-        ps: [{
-            n: 'getCapabilities',
+            n: 'insertObservationResponse',
             rq: true,
-            en: 'GetCapabilities',
-            ti: '.GetCapabilitiesType'
+            en: 'InsertObservationResponse',
+            ti: '.InsertObservationResponseType'
           }, {
             n: 'nilReason',
             ti: {
@@ -121,221 +163,6 @@ var SOS_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }]
-      }, {
-        ln: 'GetObservationResponseType.ObservationData',
-        tn: null,
-        ps: [{
-            n: 'omObservation',
-            rq: true,
-            en: {
-              lp: 'OM_Observation',
-              ns: 'http:\/\/www.opengis.net\/om\/2.0'
-            },
-            ti: 'OM_2_0.OMObservationType'
-          }]
-      }, {
-        ln: 'ResultTemplatePropertyType',
-        ps: [{
-            n: 'resultTemplate',
-            rq: true,
-            en: 'ResultTemplate',
-            ti: '.ResultTemplateType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetResultType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
-        ps: [{
-            n: 'offering',
-            rq: true
-          }, {
-            n: 'observedProperty',
-            rq: true
-          }, {
-            n: 'temporalFilter',
-            mno: 0,
-            col: true,
-            ti: '.GetResultType.TemporalFilter'
-          }, {
-            n: 'featureOfInterest',
-            mno: 0,
-            col: true
-          }, {
-            n: 'spatialFilter',
-            ti: '.GetResultType.SpatialFilter'
-          }]
-      }, {
-        ln: 'SosInsertionMetadataType',
-        bti: 'SWES_2_0.InsertionMetadataType',
-        ps: [{
-            n: 'observationType',
-            rq: true,
-            col: true
-          }, {
-            n: 'featureOfInterestType',
-            rq: true,
-            col: true
-          }]
-      }, {
-        ln: 'CapabilitiesType',
-        bti: 'OWS_1_1_0.CapabilitiesBaseType',
-        ps: [{
-            n: 'extension',
-            mno: 0,
-            col: true,
-            ti: 'AnyType'
-          }, {
-            n: 'filterCapabilities',
-            ti: '.CapabilitiesType.FilterCapabilities'
-          }, {
-            n: 'contents',
-            ti: '.CapabilitiesType.Contents'
-          }]
-      }, {
-        ln: 'GetObservationResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType',
-        ps: [{
-            n: 'observationData',
-            mno: 0,
-            col: true,
-            ti: '.GetObservationResponseType.ObservationData'
-          }]
-      }, {
-        ln: 'ContentsType',
-        bti: 'SWES_2_0.AbstractContentsType',
-        ps: [{
-            n: 'responseFormat',
-            mno: 0,
-            col: true
-          }, {
-            n: 'observationType',
-            mno: 0,
-            col: true
-          }, {
-            n: 'featureOfInterestType',
-            mno: 0,
-            col: true
-          }]
-      }, {
-        ln: 'GetResultPropertyType',
-        ps: [{
-            n: 'getResult',
-            rq: true,
-            en: 'GetResult',
-            ti: '.GetResultType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetFeatureOfInterestType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
-        ps: [{
-            n: 'procedure',
-            mno: 0,
-            col: true
-          }, {
-            n: 'observedProperty',
-            mno: 0,
-            col: true
-          }, {
-            n: 'featureOfInterest',
-            mno: 0,
-            col: true
-          }, {
-            n: 'spatialFilter',
-            mno: 0,
-            col: true,
-            ti: '.GetFeatureOfInterestType.SpatialFilter'
-          }]
-      }, {
-        ln: 'InsertObservationType.Observation',
-        tn: null,
-        ps: [{
-            n: 'omObservation',
-            rq: true,
-            en: {
-              lp: 'OM_Observation',
-              ns: 'http:\/\/www.opengis.net\/om\/2.0'
-            },
-            ti: 'OM_2_0.OMObservationType'
           }]
       }, {
         ln: 'GetFeatureOfInterestPropertyType',
@@ -386,23 +213,132 @@ var SOS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ResultTemplateType',
-        bti: 'SWES_2_0.AbstractSWESType',
+        ln: 'ResultTemplateType.ResultStructure',
+        tn: null,
         ps: [{
-            n: 'offering',
-            rq: true
-          }, {
-            n: 'observationTemplate',
+            n: 'abstractDataComponent',
             rq: true,
-            ti: '.ResultTemplateType.ObservationTemplate'
-          }, {
-            n: 'resultStructure',
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractDataComponent',
+              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            },
+            ti: 'SWE_2_0.AbstractDataComponentType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'InsertResultTemplateType.ProposedTemplate',
+        tn: null,
+        ps: [{
+            n: 'resultTemplate',
             rq: true,
-            ti: '.ResultTemplateType.ResultStructure'
-          }, {
-            n: 'resultEncoding',
+            en: 'ResultTemplate',
+            ti: '.ResultTemplateType'
+          }]
+      }, {
+        ln: 'GetObservationByIdType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
+        ps: [{
+            n: 'observation',
             rq: true,
-            ti: '.ResultTemplateType.ResultEncoding'
+            col: true
+          }]
+      }, {
+        ln: 'GetObservationPropertyType',
+        ps: [{
+            n: 'getObservation',
+            rq: true,
+            en: 'GetObservation',
+            ti: '.GetObservationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ResultTemplatePropertyType',
+        ps: [{
+            n: 'resultTemplate',
+            rq: true,
+            en: 'ResultTemplate',
+            ti: '.ResultTemplateType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'GetResultTemplateResponseType.ResultEncoding',
@@ -420,12 +356,12 @@ var SOS_2_0_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'InsertObservationPropertyType',
+        ln: 'GetResultResponsePropertyType',
         ps: [{
-            n: 'insertObservation',
+            n: 'getResultResponse',
             rq: true,
-            en: 'InsertObservation',
-            ti: '.InsertObservationType'
+            en: 'GetResultResponse',
+            ti: '.GetResultResponseType'
           }, {
             n: 'nilReason',
             ti: {
@@ -468,23 +404,7 @@ var SOS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'InsertObservationType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
-        ps: [{
-            n: 'offering',
-            rq: true,
-            col: true
-          }, {
-            n: 'observation',
-            rq: true,
-            col: true,
-            ti: '.InsertObservationType.Observation'
-          }]
-      }, {
-        ln: 'InsertObservationResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType'
-      }, {
-        ln: 'ResultTemplateType.ObservationTemplate',
+        ln: 'InsertObservationType.Observation',
         tn: null,
         ps: [{
             n: 'omObservation',
@@ -494,217 +414,6 @@ var SOS_2_0_Module_Factory = function () {
               ns: 'http:\/\/www.opengis.net\/om\/2.0'
             },
             ti: 'OM_2_0.OMObservationType'
-          }]
-      }, {
-        ln: 'GetObservationByIdResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType',
-        ps: [{
-            n: 'observation',
-            mno: 0,
-            col: true,
-            ti: '.GetObservationByIdResponseType.Observation'
-          }]
-      }, {
-        ln: 'GetFeatureOfInterestResponsePropertyType',
-        ps: [{
-            n: 'getFeatureOfInterestResponse',
-            rq: true,
-            en: 'GetFeatureOfInterestResponse',
-            ti: '.GetFeatureOfInterestResponseType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'InsertResultPropertyType',
-        ps: [{
-            n: 'insertResult',
-            rq: true,
-            en: 'InsertResult',
-            ti: '.InsertResultType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ObservationOfferingType.PhenomenonTime',
-        tn: null,
-        ps: [{
-            n: 'timePeriod',
-            rq: true,
-            en: {
-              lp: 'TimePeriod',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePeriodType'
-          }]
-      }, {
-        ln: 'ContentsPropertyType',
-        ps: [{
-            n: 'contents',
-            rq: true,
-            en: 'Contents',
-            ti: '.ContentsType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'InsertionCapabilitiesType',
-        ps: [{
-            n: 'procedureDescriptionFormat',
-            rq: true,
-            col: true
-          }, {
-            n: 'featureOfInterestType',
-            rq: true,
-            col: true
-          }, {
-            n: 'observationType',
-            rq: true,
-            col: true
-          }, {
-            n: 'supportedEncoding',
-            mno: 0,
-            col: true
-          }]
-      }, {
-        ln: 'ObservationOfferingType.ResultTime',
-        tn: null,
-        ps: [{
-            n: 'timePeriod',
-            rq: true,
-            en: {
-              lp: 'TimePeriod',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePeriodType'
-          }]
-      }, {
-        ln: 'GetResultType.SpatialFilter',
-        tn: null,
-        ps: [{
-            n: 'spatialOps',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'spatialOps',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            ti: 'Filter_2_0.SpatialOpsType',
-            t: 'er'
           }]
       }, {
         ln: 'GetObservationByIdResponsePropertyType',
@@ -755,32 +464,42 @@ var SOS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'InsertResultTemplateType.ProposedTemplate',
+        ln: 'GetFeatureOfInterestType.SpatialFilter',
         tn: null,
         ps: [{
-            n: 'resultTemplate',
+            n: 'spatialOps',
             rq: true,
-            en: 'ResultTemplate',
-            ti: '.ResultTemplateType'
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'spatialOps',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.SpatialOpsType',
+            t: 'er'
           }]
       }, {
-        ln: 'InsertResultType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
+        ln: 'ResultTemplateType.ResultEncoding',
+        tn: null,
         ps: [{
-            n: 'template',
-            rq: true
-          }, {
-            n: 'resultValues',
+            n: 'abstractEncoding',
             rq: true,
-            ti: 'AnyType'
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractEncoding',
+              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            },
+            ti: 'SWE_2_0.AbstractEncodingType',
+            t: 'er'
           }]
       }, {
-        ln: 'GetResultTemplatePropertyType',
+        ln: 'GetResultTemplateResponsePropertyType',
         ps: [{
-            n: 'getResultTemplate',
+            n: 'getResultTemplateResponse',
             rq: true,
-            en: 'GetResultTemplate',
-            ti: '.GetResultTemplateType'
+            en: 'GetResultTemplateResponse',
+            ti: '.GetResultTemplateResponseType'
           }, {
             n: 'nilReason',
             ti: {
@@ -823,6 +542,24 @@ var SOS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'GetCapabilitiesType',
+        bti: 'OWS_1_1_0.GetCapabilitiesType',
+        ps: [{
+            n: 'extension',
+            mno: 0,
+            col: true,
+            ti: 'AnyType'
+          }, {
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'InsertObservationResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType'
+      }, {
         ln: 'InsertResultTemplateResponseType',
         bti: 'SWES_2_0.ExtensibleResponseType',
         ps: [{
@@ -830,27 +567,116 @@ var SOS_2_0_Module_Factory = function () {
             rq: true
           }]
       }, {
-        ln: 'GetObservationType.TemporalFilter',
-        tn: null,
+        ln: 'GetFeatureOfInterestResponsePropertyType',
         ps: [{
-            n: 'temporalOps',
+            n: 'getFeatureOfInterestResponse',
             rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'temporalOps',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            en: 'GetFeatureOfInterestResponse',
+            ti: '.GetFeatureOfInterestResponseType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
             },
-            ti: 'Filter_2_0.TemporalOpsType',
-            t: 'er'
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'GetObservationByIdPropertyType',
+        ln: 'InsertResultTemplateType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
         ps: [{
-            n: 'getObservationById',
+            n: 'proposedTemplate',
             rq: true,
-            en: 'GetObservationById',
-            ti: '.GetObservationByIdType'
+            ti: '.InsertResultTemplateType.ProposedTemplate'
+          }]
+      }, {
+        ln: 'InsertionCapabilitiesPropertyType',
+        ps: [{
+            n: 'insertionCapabilities',
+            rq: true,
+            en: 'InsertionCapabilities',
+            ti: '.InsertionCapabilitiesType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ObservationOfferingPropertyType',
+        ps: [{
+            n: 'observationOffering',
+            rq: true,
+            en: 'ObservationOffering',
+            ti: '.ObservationOfferingType'
           }, {
             n: 'nilReason',
             ti: {
@@ -903,386 +729,12 @@ var SOS_2_0_Module_Factory = function () {
             rq: true
           }]
       }, {
-        ln: 'GetObservationByIdType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
+        ln: 'ContentsPropertyType',
         ps: [{
-            n: 'observation',
+            n: 'contents',
             rq: true,
-            col: true
-          }]
-      }, {
-        ln: 'InsertionCapabilitiesPropertyType',
-        ps: [{
-            n: 'insertionCapabilities',
-            rq: true,
-            en: 'InsertionCapabilities',
-            ti: '.InsertionCapabilitiesType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetResultResponsePropertyType',
-        ps: [{
-            n: 'getResultResponse',
-            rq: true,
-            en: 'GetResultResponse',
-            ti: '.GetResultResponseType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetFeatureOfInterestResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType',
-        ps: [{
-            n: 'featureMember',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_2_1.FeaturePropertyType'
-          }]
-      }, {
-        ln: 'ObservationOfferingPropertyType',
-        ps: [{
-            n: 'observationOffering',
-            rq: true,
-            en: 'ObservationOffering',
-            ti: '.ObservationOfferingType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SosInsertionMetadataPropertyType',
-        ps: [{
-            n: 'sosInsertionMetadata',
-            rq: true,
-            en: 'SosInsertionMetadata',
-            ti: '.SosInsertionMetadataType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetObservationByIdResponseType.Observation',
-        tn: null,
-        ps: [{
-            n: 'omObservation',
-            rq: true,
-            en: {
-              lp: 'OM_Observation',
-              ns: 'http:\/\/www.opengis.net\/om\/2.0'
-            },
-            ti: 'OM_2_0.OMObservationType'
-          }]
-      }, {
-        ln: 'GetResultTemplateResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType',
-        ps: [{
-            n: 'resultStructure',
-            rq: true,
-            ti: '.GetResultTemplateResponseType.ResultStructure'
-          }, {
-            n: 'resultEncoding',
-            rq: true,
-            ti: '.GetResultTemplateResponseType.ResultEncoding'
-          }]
-      }, {
-        ln: 'GetObservationPropertyType',
-        ps: [{
-            n: 'getObservation',
-            rq: true,
-            en: 'GetObservation',
-            ti: '.GetObservationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ObservationOfferingType.ObservedArea',
-        tn: null,
-        ps: [{
-            n: 'envelope',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'Envelope',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.EnvelopeType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'InsertResultTemplatePropertyType',
-        ps: [{
-            n: 'insertResultTemplate',
-            rq: true,
-            en: 'InsertResultTemplate',
-            ti: '.InsertResultTemplateType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ResultTemplateType.ResultEncoding',
-        tn: null,
-        ps: [{
-            n: 'abstractEncoding',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractEncoding',
-              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-            },
-            ti: 'SWE_2_0.AbstractEncodingType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'GetResultType.TemporalFilter',
-        tn: null,
-        ps: [{
-            n: 'temporalOps',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'temporalOps',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
-            },
-            ti: 'Filter_2_0.TemporalOpsType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'InsertObservationResponsePropertyType',
-        ps: [{
-            n: 'insertObservationResponse',
-            rq: true,
-            en: 'InsertObservationResponse',
-            ti: '.InsertObservationResponseType'
+            en: 'Contents',
+            ti: '.ContentsType'
           }, {
             n: 'nilReason',
             ti: {
@@ -1373,6 +825,356 @@ var SOS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'ContentsType',
+        bti: 'SWES_2_0.AbstractContentsType',
+        ps: [{
+            n: 'responseFormat',
+            mno: 0,
+            col: true
+          }, {
+            n: 'observationType',
+            mno: 0,
+            col: true
+          }, {
+            n: 'featureOfInterestType',
+            mno: 0,
+            col: true
+          }]
+      }, {
+        ln: 'GetObservationResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType',
+        ps: [{
+            n: 'observationData',
+            mno: 0,
+            col: true,
+            ti: '.GetObservationResponseType.ObservationData'
+          }]
+      }, {
+        ln: 'GetResultTemplatePropertyType',
+        ps: [{
+            n: 'getResultTemplate',
+            rq: true,
+            en: 'GetResultTemplate',
+            ti: '.GetResultTemplateType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ResultTemplateType',
+        bti: 'SWES_2_0.AbstractSWESType',
+        ps: [{
+            n: 'offering',
+            rq: true
+          }, {
+            n: 'observationTemplate',
+            rq: true,
+            ti: '.ResultTemplateType.ObservationTemplate'
+          }, {
+            n: 'resultStructure',
+            rq: true,
+            ti: '.ResultTemplateType.ResultStructure'
+          }, {
+            n: 'resultEncoding',
+            rq: true,
+            ti: '.ResultTemplateType.ResultEncoding'
+          }]
+      }, {
+        ln: 'ResultTemplateType.ObservationTemplate',
+        tn: null,
+        ps: [{
+            n: 'omObservation',
+            rq: true,
+            en: {
+              lp: 'OM_Observation',
+              ns: 'http:\/\/www.opengis.net\/om\/2.0'
+            },
+            ti: 'OM_2_0.OMObservationType'
+          }]
+      }, {
+        ln: 'GetFeatureOfInterestType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
+        ps: [{
+            n: 'procedure',
+            mno: 0,
+            col: true
+          }, {
+            n: 'observedProperty',
+            mno: 0,
+            col: true
+          }, {
+            n: 'featureOfInterest',
+            mno: 0,
+            col: true
+          }, {
+            n: 'spatialFilter',
+            mno: 0,
+            col: true,
+            ti: '.GetFeatureOfInterestType.SpatialFilter'
+          }]
+      }, {
+        ln: 'GetObservationByIdPropertyType',
+        ps: [{
+            n: 'getObservationById',
+            rq: true,
+            en: 'GetObservationById',
+            ti: '.GetObservationByIdType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetObservationByIdResponseType.Observation',
+        tn: null,
+        ps: [{
+            n: 'omObservation',
+            rq: true,
+            en: {
+              lp: 'OM_Observation',
+              ns: 'http:\/\/www.opengis.net\/om\/2.0'
+            },
+            ti: 'OM_2_0.OMObservationType'
+          }]
+      }, {
+        ln: 'GetResultTemplateResponseType.ResultStructure',
+        tn: null,
+        ps: [{
+            n: 'abstractDataComponent',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractDataComponent',
+              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            },
+            ti: 'SWE_2_0.AbstractDataComponentType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'GetCapabilitiesPropertyType',
+        ps: [{
+            n: 'getCapabilities',
+            rq: true,
+            en: 'GetCapabilities',
+            ti: '.GetCapabilitiesType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetResultType.TemporalFilter',
+        tn: null,
+        ps: [{
+            n: 'temporalOps',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'temporalOps',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.TemporalOpsType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'GetResultTemplateResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType',
+        ps: [{
+            n: 'resultStructure',
+            rq: true,
+            ti: '.GetResultTemplateResponseType.ResultStructure'
+          }, {
+            n: 'resultEncoding',
+            rq: true,
+            ti: '.GetResultTemplateResponseType.ResultEncoding'
+          }]
+      }, {
+        ln: 'GetResultType.SpatialFilter',
+        tn: null,
+        ps: [{
+            n: 'spatialOps',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'spatialOps',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.SpatialOpsType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'ObservationOfferingType.ResultTime',
+        tn: null,
+        ps: [{
+            n: 'timePeriod',
+            rq: true,
+            en: {
+              lp: 'TimePeriod',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePeriodType'
+          }]
+      }, {
+        ln: 'InsertObservationPropertyType',
+        ps: [{
+            n: 'insertObservation',
+            rq: true,
+            en: 'InsertObservation',
+            ti: '.InsertObservationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
         ln: 'CapabilitiesPropertyType',
         ps: [{
             n: 'capabilities',
@@ -1421,32 +1223,53 @@ var SOS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GetFeatureOfInterestType.SpatialFilter',
-        tn: null,
+        ln: 'SosInsertionMetadataPropertyType',
         ps: [{
-            n: 'spatialOps',
+            n: 'sosInsertionMetadata',
             rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'spatialOps',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            en: 'SosInsertionMetadata',
+            ti: '.SosInsertionMetadataType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
             },
-            ti: 'Filter_2_0.SpatialOpsType',
-            t: 'er'
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
-      }, {
-        ln: 'CapabilitiesType.Contents',
-        tn: null,
-        ps: [{
-            n: 'contents',
-            rq: true,
-            en: 'Contents',
-            ti: '.ContentsType'
-          }]
-      }, {
-        ln: 'InsertResultResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType'
       }, {
         ln: 'GetObservationResponsePropertyType',
         ps: [{
@@ -1496,35 +1319,112 @@ var SOS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'InsertResultTemplateType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
+        ln: 'InsertResultPropertyType',
         ps: [{
-            n: 'proposedTemplate',
+            n: 'insertResult',
             rq: true,
-            ti: '.InsertResultTemplateType.ProposedTemplate'
+            en: 'InsertResult',
+            ti: '.InsertResultType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'GetObservationType.SpatialFilter',
+        ln: 'GetResultPropertyType',
+        ps: [{
+            n: 'getResult',
+            rq: true,
+            en: 'GetResult',
+            ti: '.GetResultType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetObservationResponseType.ObservationData',
         tn: null,
         ps: [{
-            n: 'spatialOps',
+            n: 'omObservation',
             rq: true,
-            mx: false,
-            dom: false,
             en: {
-              lp: 'spatialOps',
-              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+              lp: 'OM_Observation',
+              ns: 'http:\/\/www.opengis.net\/om\/2.0'
             },
-            ti: 'Filter_2_0.SpatialOpsType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'GetResultResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType',
-        ps: [{
-            n: 'resultValues',
-            rq: true,
-            ti: 'AnyType'
+            ti: 'OM_2_0.OMObservationType'
           }]
       }, {
         ln: 'CapabilitiesType.FilterCapabilities',
@@ -1539,33 +1439,110 @@ var SOS_2_0_Module_Factory = function () {
             ti: 'Filter_2_0.FilterCapabilities'
           }]
       }, {
-        ln: 'ResultTemplateType.ResultStructure',
-        tn: null,
+        ln: 'InsertResultTemplatePropertyType',
         ps: [{
-            n: 'abstractDataComponent',
+            n: 'insertResultTemplate',
             rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractDataComponent',
-              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            en: 'InsertResultTemplate',
+            ti: '.InsertResultTemplateType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
             },
-            ti: 'SWE_2_0.AbstractDataComponentType',
-            t: 'er'
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'GetResultTemplateResponseType.ResultStructure',
+        ln: 'GetResultType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
+        ps: [{
+            n: 'offering',
+            rq: true
+          }, {
+            n: 'observedProperty',
+            rq: true
+          }, {
+            n: 'temporalFilter',
+            mno: 0,
+            col: true,
+            ti: '.GetResultType.TemporalFilter'
+          }, {
+            n: 'featureOfInterest',
+            mno: 0,
+            col: true
+          }, {
+            n: 'spatialFilter',
+            ti: '.GetResultType.SpatialFilter'
+          }]
+      }, {
+        ln: 'GetFeatureOfInterestResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType',
+        ps: [{
+            n: 'featureMember',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_2_1.FeaturePropertyType'
+          }]
+      }, {
+        ln: 'InsertObservationType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
+        ps: [{
+            n: 'offering',
+            rq: true,
+            col: true
+          }, {
+            n: 'observation',
+            rq: true,
+            col: true,
+            ti: '.InsertObservationType.Observation'
+          }]
+      }, {
+        ln: 'ObservationOfferingType.ObservedArea',
         tn: null,
         ps: [{
-            n: 'abstractDataComponent',
+            n: 'envelope',
             rq: true,
             mx: false,
             dom: false,
             en: {
-              lp: 'AbstractDataComponent',
-              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+              lp: 'Envelope',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
             },
-            ti: 'SWE_2_0.AbstractDataComponentType',
+            ti: 'GML_3_2_1.EnvelopeType',
             t: 'er'
           }]
       }, {
@@ -1617,73 +1594,89 @@ var SOS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GetResultTemplateResponsePropertyType',
+        ln: 'ObservationOfferingType.PhenomenonTime',
+        tn: null,
         ps: [{
-            n: 'getResultTemplateResponse',
+            n: 'timePeriod',
             rq: true,
-            en: 'GetResultTemplateResponse',
-            ti: '.GetResultTemplateResponseType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
+            en: {
+              lp: 'TimePeriod',
               ns: 'http:\/\/www.opengis.net\/gml\/3.2'
             },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            ti: 'GML_3_2_1.TimePeriodType'
           }]
+      }, {
+        ln: 'GetObservationType.SpatialFilter',
+        tn: null,
+        ps: [{
+            n: 'spatialOps',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'spatialOps',
+              ns: 'http:\/\/www.opengis.net\/fes\/2.0'
+            },
+            ti: 'Filter_2_0.SpatialOpsType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'GetObservationType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
+        ps: [{
+            n: 'procedure',
+            mno: 0,
+            col: true
+          }, {
+            n: 'offering',
+            mno: 0,
+            col: true
+          }, {
+            n: 'observedProperty',
+            mno: 0,
+            col: true
+          }, {
+            n: 'temporalFilter',
+            mno: 0,
+            col: true,
+            ti: '.GetObservationType.TemporalFilter'
+          }, {
+            n: 'featureOfInterest',
+            mno: 0,
+            col: true
+          }, {
+            n: 'spatialFilter',
+            ti: '.GetObservationType.SpatialFilter'
+          }, {
+            n: 'responseFormat'
+          }]
+      }, {
+        ln: 'InsertResultType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
+        ps: [{
+            n: 'template',
+            rq: true
+          }, {
+            n: 'resultValues',
+            rq: true,
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'InsertResultResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType'
       }],
     eis: [{
-        en: 'ResultTemplate',
-        ti: '.ResultTemplateType',
-        sh: {
-          lp: 'AbstractSWES',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
-      }, {
-        en: 'InsertObservation',
-        ti: '.InsertObservationType',
-        sh: {
-          lp: 'ExtensibleRequest',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
-      }, {
         en: 'Contents',
         ti: '.ContentsType',
         sh: {
           lp: 'AbstractContents',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
+      }, {
+        en: 'GetObservation',
+        ti: '.GetObservationType',
+        sh: {
+          lp: 'ExtensibleRequest',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
@@ -1694,17 +1687,38 @@ var SOS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'InsertResultResponse',
-        ti: '.InsertResultResponseType',
+        en: 'GetCapabilities',
+        ti: '.GetCapabilitiesType',
         sh: {
-          lp: 'ExtensibleResponse',
+          lp: 'GetCapabilities',
+          ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+        }
+      }, {
+        en: 'GetResult',
+        ti: '.GetResultType',
+        sh: {
+          lp: 'ExtensibleRequest',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'InsertResultTemplateResponse',
-        ti: '.InsertResultTemplateResponseType',
+        en: 'GetFeatureOfInterest',
+        ti: '.GetFeatureOfInterestType',
         sh: {
-          lp: 'ExtensibleResponse',
+          lp: 'ExtensibleRequest',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
+      }, {
+        en: 'InsertResult',
+        ti: '.InsertResultType',
+        sh: {
+          lp: 'ExtensibleRequest',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
+      }, {
+        en: 'GetResultTemplate',
+        ti: '.GetResultTemplateType',
+        sh: {
+          lp: 'ExtensibleRequest',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
@@ -1722,34 +1736,13 @@ var SOS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'InsertResult',
-        ti: '.InsertResultType',
-        sh: {
-          lp: 'ExtensibleRequest',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
+        en: 'InsertionCapabilities',
+        ti: '.InsertionCapabilitiesType'
       }, {
-        en: 'Capabilities',
-        ti: '.CapabilitiesType'
-      }, {
-        en: 'GetObservation',
-        ti: '.GetObservationType',
+        en: 'GetResultTemplateResponse',
+        ti: '.GetResultTemplateResponseType',
         sh: {
-          lp: 'ExtensibleRequest',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
-      }, {
-        en: 'InsertResultTemplate',
-        ti: '.InsertResultTemplateType',
-        sh: {
-          lp: 'ExtensibleRequest',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
-      }, {
-        en: 'GetResultTemplate',
-        ti: '.GetResultTemplateType',
-        sh: {
-          lp: 'ExtensibleRequest',
+          lp: 'ExtensibleResponse',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
@@ -1760,6 +1753,13 @@ var SOS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
+        en: 'InsertResultResponse',
+        ti: '.InsertResultResponseType',
+        sh: {
+          lp: 'ExtensibleResponse',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
+      }, {
         en: 'ObservationOffering',
         ti: '.ObservationOfferingType',
         sh: {
@@ -1767,34 +1767,17 @@ var SOS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'GetObservationResponse',
-        ti: '.GetObservationResponseType',
-        sh: {
-          lp: 'ExtensibleResponse',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
-      }, {
-        en: 'InsertionCapabilities',
-        ti: '.InsertionCapabilitiesType'
-      }, {
-        en: 'GetResult',
-        ti: '.GetResultType',
+        en: 'InsertObservation',
+        ti: '.InsertObservationType',
         sh: {
           lp: 'ExtensibleRequest',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'GetFeatureOfInterest',
-        ti: '.GetFeatureOfInterestType',
+        en: 'ResultTemplate',
+        ti: '.ResultTemplateType',
         sh: {
-          lp: 'ExtensibleRequest',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
-      }, {
-        en: 'GetFeatureOfInterestResponse',
-        ti: '.GetFeatureOfInterestResponseType',
-        sh: {
-          lp: 'ExtensibleResponse',
+          lp: 'AbstractSWES',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
@@ -1805,15 +1788,32 @@ var SOS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilitiesType',
+        en: 'GetObservationResponse',
+        ti: '.GetObservationResponseType',
         sh: {
-          lp: 'GetCapabilities',
-          ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+          lp: 'ExtensibleResponse',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'GetResultTemplateResponse',
-        ti: '.GetResultTemplateResponseType',
+        en: 'Capabilities',
+        ti: '.CapabilitiesType'
+      }, {
+        en: 'GetFeatureOfInterestResponse',
+        ti: '.GetFeatureOfInterestResponseType',
+        sh: {
+          lp: 'ExtensibleResponse',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
+      }, {
+        en: 'InsertResultTemplate',
+        ti: '.InsertResultTemplateType',
+        sh: {
+          lp: 'ExtensibleRequest',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
+      }, {
+        en: 'InsertResultTemplateResponse',
+        ti: '.InsertResultTemplateResponseType',
         sh: {
           lp: 'ExtensibleResponse',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'

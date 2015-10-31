@@ -2,6 +2,67 @@
 {
     "id":"http://www.opengis.net/fes/2.0#",
     "definitions":{
+        "ExtensionOperatorType":{
+            "type":"object",
+            "title":"ExtensionOperatorType",
+            "required":[
+                "name"
+            ],
+            "properties":{
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"name",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ExtensionOperatorType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "name"
+            ]
+        },
+        "AdditionalOperatorsType":{
+            "type":"object",
+            "title":"AdditionalOperatorsType",
+            "properties":{
+                "operator":{
+                    "title":"operator",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ExtensionOperatorType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Operator",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AdditionalOperatorsType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "operator"
+            ]
+        },
         "SortByType":{
             "type":"object",
             "title":"SortByType",
@@ -36,55 +97,60 @@
                 "sortProperty"
             ]
         },
-        "AbstractSelectionClauseType":{
+        "LogicalOperators":{
             "type":"object",
-            "title":"AbstractSelectionClauseType",
+            "title":"LogicalOperators",
             "properties":{
             },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractSelectionClauseType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
+            "typeType":"classInfo"
         },
-        "SpatialOperatorsType":{
+        "TemporalOperatorType":{
             "type":"object",
-            "title":"SpatialOperatorsType",
+            "title":"TemporalOperatorType",
             "required":[
-                "spatialOperator"
+                "name"
             ],
             "properties":{
-                "spatialOperator":{
-                    "title":"spatialOperator",
+                "temporalOperands":{
+                    "title":"temporalOperands",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/SpatialOperatorType"
-                            },
-                            "minItems":1
+                            "$ref":"#/definitions/TemporalOperandsType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"SpatialOperator",
+                        "localPart":"TemporalOperands",
                         "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                },
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"name",
+                        "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SpatialOperatorsType",
+                "localPart":"TemporalOperatorType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             },
             "propertiesOrder":[
-                "spatialOperator"
+                "temporalOperands",
+                "name"
             ]
         },
-        "DistanceBufferType":{
+        "BinarySpatialOpType":{
             "required":[
-                "expressionOrAny",
-                "distance"
+                "expressionOrAny"
             ],
             "allOf":[
                 {
@@ -92,7 +158,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"DistanceBufferType",
+                    "title":"BinarySpatialOpType",
                     "properties":{
                         "expressionOrAny":{
                             "title":"expressionOrAny",
@@ -123,58 +189,261 @@
                                 "localPart":"expression",
                                 "namespaceURI":"http://www.opengis.net/fes/2.0"
                             }
-                        },
-                        "distance":{
-                            "title":"distance",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Distance",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
                         }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DistanceBufferType",
+                "localPart":"BinarySpatialOpType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             },
             "propertiesOrder":[
-                "expressionOrAny",
-                "distance"
+                "expressionOrAny"
             ]
         },
-        "ResourceIdentifierType":{
+        "ScalarCapabilitiesType":{
             "type":"object",
-            "title":"ResourceIdentifierType",
-            "required":[
-                "name"
-            ],
+            "title":"ScalarCapabilitiesType",
             "properties":{
-                "metadata":{
-                    "title":"metadata",
+                "logicalOperators":{
+                    "title":"logicalOperators",
                     "allOf":[
                         {
-                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/MetadataType"
+                            "$ref":"#/definitions/LogicalOperators"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Metadata",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                        "localPart":"LogicalOperators",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
                     }
                 },
+                "comparisonOperators":{
+                    "title":"comparisonOperators",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ComparisonOperatorsType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ComparisonOperators",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"Scalar_CapabilitiesType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "logicalOperators",
+                "comparisonOperators"
+            ]
+        },
+        "TemporalCapabilitiesType":{
+            "type":"object",
+            "title":"TemporalCapabilitiesType",
+            "required":[
+                "temporalOperands",
+                "temporalOperators"
+            ],
+            "properties":{
+                "temporalOperands":{
+                    "title":"temporalOperands",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TemporalOperandsType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TemporalOperands",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                },
+                "temporalOperators":{
+                    "title":"temporalOperators",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TemporalOperatorsType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TemporalOperators",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"Temporal_CapabilitiesType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "temporalOperands",
+                "temporalOperators"
+            ]
+        },
+        "ArgumentsType":{
+            "type":"object",
+            "title":"ArgumentsType",
+            "required":[
+                "argument"
+            ],
+            "properties":{
+                "argument":{
+                    "title":"argument",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ArgumentType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Argument",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ArgumentsType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "argument"
+            ]
+        },
+        "FilterCapabilities":{
+            "type":"object",
+            "title":"FilterCapabilities",
+            "required":[
+                "conformance"
+            ],
+            "properties":{
+                "conformance":{
+                    "title":"conformance",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ConformanceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Conformance",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                },
+                "idCapabilities":{
+                    "title":"idCapabilities",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/IdCapabilitiesType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Id_Capabilities",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                },
+                "scalarCapabilities":{
+                    "title":"scalarCapabilities",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ScalarCapabilitiesType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Scalar_Capabilities",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                },
+                "spatialCapabilities":{
+                    "title":"spatialCapabilities",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SpatialCapabilitiesType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Spatial_Capabilities",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                },
+                "temporalCapabilities":{
+                    "title":"temporalCapabilities",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TemporalCapabilitiesType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Temporal_Capabilities",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                },
+                "functions":{
+                    "title":"functions",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/AvailableFunctionsType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Functions",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                },
+                "extendedCapabilities":{
+                    "title":"extendedCapabilities",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ExtendedCapabilitiesType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Extended_Capabilities",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "conformance",
+                "idCapabilities",
+                "scalarCapabilities",
+                "spatialCapabilities",
+                "temporalCapabilities",
+                "functions",
+                "extendedCapabilities"
+            ]
+        },
+        "ComparisonOperatorType":{
+            "type":"object",
+            "title":"ComparisonOperatorType",
+            "required":[
+                "name"
+            ],
+            "properties":{
                 "name":{
                     "title":"name",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"attribute",
@@ -186,264 +455,12 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ResourceIdentifierType",
+                "localPart":"ComparisonOperatorType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             },
             "propertiesOrder":[
-                "metadata",
                 "name"
             ]
-        },
-        "BinaryComparisonOpType":{
-            "required":[
-                "expression"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ComparisonOpsType"
-                },
-                {
-                    "type":"object",
-                    "title":"BinaryComparisonOpType",
-                    "properties":{
-                        "expression":{
-                            "title":"expression",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"expression",
-                                            "namespaceURI":"http://www.opengis.net/fes/2.0"
-                                        }
-                                    },
-                                    "maxItems":2,
-                                    "minItems":2
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"expression",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        },
-                        "matchCase":{
-                            "title":"matchCase",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"matchCase",
-                                "namespaceURI":""
-                            }
-                        },
-                        "matchAction":{
-                            "title":"matchAction",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MatchActionType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"matchAction",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"BinaryComparisonOpType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "expression",
-                "matchCase",
-                "matchAction"
-            ]
-        },
-        "ConformanceType":{
-            "type":"object",
-            "title":"ConformanceType",
-            "required":[
-                "constraint"
-            ],
-            "properties":{
-                "constraint":{
-                    "title":"constraint",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.opengis.net/ows/1.1#/definitions/DomainType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Constraint",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ConformanceType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "constraint"
-            ]
-        },
-        "GeometryOperandsType":{
-            "type":"object",
-            "title":"GeometryOperandsType",
-            "required":[
-                "geometryOperand"
-            ],
-            "properties":{
-                "geometryOperand":{
-                    "title":"geometryOperand",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/GeometryOperandsType.GeometryOperand"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"GeometryOperand",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GeometryOperandsType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "geometryOperand"
-            ]
-        },
-        "PropertyIsBetweenType":{
-            "required":[
-                "expression",
-                "lowerBoundary",
-                "upperBoundary"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ComparisonOpsType"
-                },
-                {
-                    "type":"object",
-                    "title":"PropertyIsBetweenType",
-                    "properties":{
-                        "expression":{
-                            "title":"expression",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                        }
-                                    },
-                                    "elementName":{
-                                        "localPart":"expression",
-                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                                    }
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"expression",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        },
-                        "lowerBoundary":{
-                            "title":"lowerBoundary",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LowerBoundaryType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"LowerBoundary",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        },
-                        "upperBoundary":{
-                            "title":"upperBoundary",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/UpperBoundaryType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"UpperBoundary",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"PropertyIsBetweenType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "expression",
-                "lowerBoundary",
-                "upperBoundary"
-            ]
-        },
-        "LogicOpsType":{
-            "type":"object",
-            "title":"LogicOpsType",
-            "properties":{
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LogicOpsType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        "AbstractIdType":{
-            "type":"object",
-            "title":"AbstractIdType",
-            "properties":{
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractIdType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
         },
         "AvailableFunctionType":{
             "type":"object",
@@ -518,115 +535,35 @@
                 "name"
             ]
         },
-        "IdCapabilitiesType":{
-            "type":"object",
-            "title":"IdCapabilitiesType",
+        "PropertyIsNullType":{
             "required":[
-                "resourceIdentifier"
-            ],
-            "properties":{
-                "resourceIdentifier":{
-                    "title":"resourceIdentifier",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ResourceIdentifierType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ResourceIdentifier",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"Id_CapabilitiesType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "resourceIdentifier"
-            ]
-        },
-        "SpatialOperatorType":{
-            "type":"object",
-            "title":"SpatialOperatorType",
-            "properties":{
-                "geometryOperands":{
-                    "title":"geometryOperands",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/GeometryOperandsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"GeometryOperands",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                },
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"name",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SpatialOperatorType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "geometryOperands",
-                "name"
-            ]
-        },
-        "BinaryTemporalOpType":{
-            "required":[
-                "expressionOrAny"
+                "expression"
             ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/TemporalOpsType"
+                    "$ref":"#/definitions/ComparisonOpsType"
                 },
                 {
                     "type":"object",
-                    "title":"BinaryTemporalOpType",
+                    "title":"PropertyIsNullType",
                     "properties":{
-                        "expressionOrAny":{
-                            "title":"expressionOrAny",
+                        "expression":{
+                            "title":"expression",
                             "allOf":[
                                 {
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                            }
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                                         },
-                                        "elementName":{
-                                            "localPart":"expression",
-                                            "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                        "value":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                                         }
                                     },
-                                    "maxItems":2,
-                                    "minItems":1
+                                    "elementName":{
+                                        "localPart":"expression",
+                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                    }
                                 }
                             ],
                             "propertyType":"elementRef",
@@ -640,27 +577,16 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"BinaryTemporalOpType",
+                "localPart":"PropertyIsNullType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             },
             "propertiesOrder":[
-                "expressionOrAny"
+                "expression"
             ]
         },
-        "SpatialOpsType":{
+        "UpperBoundaryType":{
             "type":"object",
-            "title":"SpatialOpsType",
-            "properties":{
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SpatialOpsType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        "LowerBoundaryType":{
-            "type":"object",
-            "title":"LowerBoundaryType",
+            "title":"UpperBoundaryType",
             "required":[
                 "expression"
             ],
@@ -693,27 +619,27 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LowerBoundaryType",
+                "localPart":"UpperBoundaryType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             },
             "propertiesOrder":[
                 "expression"
             ]
         },
-        "ComparisonOpsType":{
+        "ExtensionOpsType":{
             "type":"object",
-            "title":"ComparisonOpsType",
+            "title":"ExtensionOpsType",
             "properties":{
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ComparisonOpsType",
+                "localPart":"ExtensionOpsType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
-        "GeometryOperandsType.GeometryOperand":{
+        "TemporalOperandsType.TemporalOperand":{
             "type":"object",
-            "title":"GeometryOperandsType.GeometryOperand",
+            "title":"TemporalOperandsType.TemporalOperand",
             "required":[
                 "name"
             ],
@@ -737,152 +663,150 @@
                 "name"
             ]
         },
-        "FilterType":{
+        "ResourceIdentifierType":{
+            "type":"object",
+            "title":"ResourceIdentifierType",
             "required":[
-                "comparisonOps",
-                "spatialOps",
-                "temporalOps",
-                "logicOps",
-                "extensionOps",
-                "function",
-                "id"
+                "name"
+            ],
+            "properties":{
+                "metadata":{
+                    "title":"metadata",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/MetadataType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Metadata",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                    }
+                },
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"name",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ResourceIdentifierType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "metadata",
+                "name"
+            ]
+        },
+        "MeasureType":{
+            "type":"object",
+            "title":"MeasureType",
+            "required":[
+                "uom"
+            ],
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "uom":{
+                    "title":"uom",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uom",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"MeasureType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "value",
+                "uom"
+            ]
+        },
+        "TemporalOperandsType":{
+            "type":"object",
+            "title":"TemporalOperandsType",
+            "required":[
+                "temporalOperand"
+            ],
+            "properties":{
+                "temporalOperand":{
+                    "title":"temporalOperand",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/TemporalOperandsType.TemporalOperand"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TemporalOperand",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TemporalOperandsType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "temporalOperand"
+            ]
+        },
+        "AbstractSelectionClauseType":{
+            "type":"object",
+            "title":"AbstractSelectionClauseType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractSelectionClauseType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        "DistanceBufferType":{
+            "required":[
+                "expressionOrAny",
+                "distance"
             ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractSelectionClauseType"
+                    "$ref":"#/definitions/SpatialOpsType"
                 },
                 {
                     "type":"object",
-                    "title":"FilterType",
+                    "title":"DistanceBufferType",
                     "properties":{
-                        "comparisonOps":{
-                            "title":"comparisonOps",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                            "$ref":"#/definitions/ComparisonOpsType"
-                                        }
-                                    },
-                                    "elementName":{
-                                        "localPart":"comparisonOps",
-                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                                    }
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"comparisonOps",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        },
-                        "spatialOps":{
-                            "title":"spatialOps",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                            "$ref":"#/definitions/SpatialOpsType"
-                                        }
-                                    },
-                                    "elementName":{
-                                        "localPart":"spatialOps",
-                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                                    }
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"spatialOps",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        },
-                        "temporalOps":{
-                            "title":"temporalOps",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                            "$ref":"#/definitions/TemporalOpsType"
-                                        }
-                                    },
-                                    "elementName":{
-                                        "localPart":"temporalOps",
-                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                                    }
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"temporalOps",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        },
-                        "logicOps":{
-                            "title":"logicOps",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                            "$ref":"#/definitions/LogicOpsType"
-                                        }
-                                    },
-                                    "elementName":{
-                                        "localPart":"logicOps",
-                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                                    }
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"logicOps",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        },
-                        "extensionOps":{
-                            "title":"extensionOps",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ExtensionOpsType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"extensionOps",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        },
-                        "function":{
-                            "title":"function",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/FunctionType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Function",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        },
-                        "id":{
-                            "title":"id",
+                        "expressionOrAny":{
+                            "title":"expressionOrAny",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -893,70 +817,16 @@
                                                 "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                                             },
                                             "value":{
-                                                "$ref":"#/definitions/AbstractIdType"
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                                             }
                                         },
                                         "elementName":{
-                                            "localPart":"_Id",
+                                            "localPart":"expression",
                                             "namespaceURI":"http://www.opengis.net/fes/2.0"
                                         }
                                     },
+                                    "maxItems":2,
                                     "minItems":1
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"_Id",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"FilterType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "comparisonOps",
-                "spatialOps",
-                "temporalOps",
-                "logicOps",
-                "extensionOps",
-                "function",
-                "id"
-            ]
-        },
-        "PropertyIsNilType":{
-            "required":[
-                "expression"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ComparisonOpsType"
-                },
-                {
-                    "type":"object",
-                    "title":"PropertyIsNilType",
-                    "properties":{
-                        "expression":{
-                            "title":"expression",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                        }
-                                    },
-                                    "elementName":{
-                                        "localPart":"expression",
-                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                                    }
                                 }
                             ],
                             "propertyType":"elementRef",
@@ -965,17 +835,17 @@
                                 "namespaceURI":"http://www.opengis.net/fes/2.0"
                             }
                         },
-                        "nilReason":{
-                            "title":"nilReason",
+                        "distance":{
+                            "title":"distance",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "$ref":"#/definitions/MeasureType"
                                 }
                             ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"nilReason",
-                                "namespaceURI":""
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Distance",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
                             }
                         }
                     }
@@ -983,12 +853,12 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"PropertyIsNilType",
+                "localPart":"DistanceBufferType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             },
             "propertiesOrder":[
-                "expression",
-                "nilReason"
+                "expressionOrAny",
+                "distance"
             ]
         },
         "AbstractAdhocQueryExpressionType":{
@@ -1118,34 +988,49 @@
                 "aliases"
             ]
         },
-        "ComparisonOperatorType":{
+        "SpatialCapabilitiesType":{
             "type":"object",
-            "title":"ComparisonOperatorType",
+            "title":"SpatialCapabilitiesType",
             "required":[
-                "name"
+                "geometryOperands",
+                "spatialOperators"
             ],
             "properties":{
-                "name":{
-                    "title":"name",
+                "geometryOperands":{
+                    "title":"geometryOperands",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/GeometryOperandsType"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"name",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GeometryOperands",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                },
+                "spatialOperators":{
+                    "title":"spatialOperators",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SpatialOperatorsType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SpatialOperators",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ComparisonOperatorType",
+                "localPart":"Spatial_CapabilitiesType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             },
             "propertiesOrder":[
-                "name"
+                "geometryOperands",
+                "spatialOperators"
             ]
         },
         "AbstractQueryExpressionType":{
@@ -1173,139 +1058,6 @@
             },
             "propertiesOrder":[
                 "handle"
-            ]
-        },
-        "AbstractProjectionClauseType":{
-            "type":"object",
-            "title":"AbstractProjectionClauseType",
-            "properties":{
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractProjectionClauseType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        "ComparisonOperatorsType":{
-            "type":"object",
-            "title":"ComparisonOperatorsType",
-            "required":[
-                "comparisonOperator"
-            ],
-            "properties":{
-                "comparisonOperator":{
-                    "title":"comparisonOperator",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ComparisonOperatorType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ComparisonOperator",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ComparisonOperatorsType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "comparisonOperator"
-            ]
-        },
-        "LiteralType":{
-            "type":"object",
-            "title":"LiteralType",
-            "properties":{
-                "content":{
-                    "title":"content",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    {
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "propertyType":"anyElement"
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LiteralType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "content",
-                "type"
-            ]
-        },
-        "ArgumentsType":{
-            "type":"object",
-            "title":"ArgumentsType",
-            "required":[
-                "argument"
-            ],
-            "properties":{
-                "argument":{
-                    "title":"argument",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ArgumentType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Argument",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ArgumentsType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "argument"
             ]
         },
         "PropertyIsLikeType":{
@@ -1407,32 +1159,38 @@
                 "escapeChar"
             ]
         },
-        "ExtendedCapabilitiesType":{
+        "LogicOpsType":{
             "type":"object",
-            "title":"ExtendedCapabilitiesType",
+            "title":"LogicOpsType",
             "properties":{
-                "additionalOperators":{
-                    "title":"additionalOperators",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/AdditionalOperatorsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"AdditionalOperators",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"Extended_CapabilitiesType",
+                "localPart":"LogicOpsType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        "AbstractSortingClauseType":{
+            "type":"object",
+            "title":"AbstractSortingClauseType",
+            "properties":{
             },
-            "propertiesOrder":[
-                "additionalOperators"
-            ]
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractSortingClauseType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        "TemporalOpsType":{
+            "type":"object",
+            "title":"TemporalOpsType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TemporalOpsType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
         },
         "BBOXType":{
             "required":[
@@ -1488,47 +1246,86 @@
                 "expressionOrAny"
             ]
         },
-        "FunctionType":{
+        "ConformanceType":{
             "type":"object",
-            "title":"FunctionType",
+            "title":"ConformanceType",
             "required":[
-                "name"
+                "constraint"
             ],
             "properties":{
-                "expression":{
-                    "title":"expression",
+                "constraint":{
+                    "title":"constraint",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "type":"object",
-                                "properties":{
-                                    "name":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                    },
-                                    "value":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    }
-                                },
-                                "elementName":{
-                                    "localPart":"expression",
-                                    "namespaceURI":"http://www.opengis.net/fes/2.0"
-                                }
+                                "$ref":"http://www.opengis.net/ows/1.1#/definitions/DomainType"
                             },
-                            "minItems":0
+                            "minItems":1
                         }
                     ],
-                    "propertyType":"elementRef",
+                    "propertyType":"element",
                     "elementName":{
-                        "localPart":"expression",
+                        "localPart":"Constraint",
                         "namespaceURI":"http://www.opengis.net/fes/2.0"
                     }
-                },
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ConformanceType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "constraint"
+            ]
+        },
+        "IdCapabilitiesType":{
+            "type":"object",
+            "title":"IdCapabilitiesType",
+            "required":[
+                "resourceIdentifier"
+            ],
+            "properties":{
+                "resourceIdentifier":{
+                    "title":"resourceIdentifier",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ResourceIdentifierType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ResourceIdentifier",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"Id_CapabilitiesType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "resourceIdentifier"
+            ]
+        },
+        "GeometryOperandsType.GeometryOperand":{
+            "type":"object",
+            "title":"GeometryOperandsType.GeometryOperand",
+            "required":[
+                "name"
+            ],
+            "properties":{
                 "name":{
                     "title":"name",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                         }
                     ],
                     "propertyType":"attribute",
@@ -1539,12 +1336,7 @@
                 }
             },
             "typeType":"classInfo",
-            "typeName":{
-                "localPart":"FunctionType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
             "propertiesOrder":[
-                "expression",
                 "name"
             ]
         },
@@ -1605,563 +1397,6 @@
                 "metadata",
                 "type",
                 "name"
-            ]
-        },
-        "TemporalOperatorType":{
-            "type":"object",
-            "title":"TemporalOperatorType",
-            "required":[
-                "name"
-            ],
-            "properties":{
-                "temporalOperands":{
-                    "title":"temporalOperands",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TemporalOperandsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TemporalOperands",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                },
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"name",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TemporalOperatorType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "temporalOperands",
-                "name"
-            ]
-        },
-        "ScalarCapabilitiesType":{
-            "type":"object",
-            "title":"ScalarCapabilitiesType",
-            "properties":{
-                "logicalOperators":{
-                    "title":"logicalOperators",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LogicalOperators"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LogicalOperators",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                },
-                "comparisonOperators":{
-                    "title":"comparisonOperators",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ComparisonOperatorsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ComparisonOperators",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"Scalar_CapabilitiesType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "logicalOperators",
-                "comparisonOperators"
-            ]
-        },
-        "TemporalOperatorsType":{
-            "type":"object",
-            "title":"TemporalOperatorsType",
-            "required":[
-                "temporalOperator"
-            ],
-            "properties":{
-                "temporalOperator":{
-                    "title":"temporalOperator",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/TemporalOperatorType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TemporalOperator",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TemporalOperatorsType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "temporalOperator"
-            ]
-        },
-        "FilterCapabilities":{
-            "type":"object",
-            "title":"FilterCapabilities",
-            "required":[
-                "conformance"
-            ],
-            "properties":{
-                "conformance":{
-                    "title":"conformance",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ConformanceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Conformance",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                },
-                "idCapabilities":{
-                    "title":"idCapabilities",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/IdCapabilitiesType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Id_Capabilities",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                },
-                "scalarCapabilities":{
-                    "title":"scalarCapabilities",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ScalarCapabilitiesType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Scalar_Capabilities",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                },
-                "spatialCapabilities":{
-                    "title":"spatialCapabilities",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SpatialCapabilitiesType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Spatial_Capabilities",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                },
-                "temporalCapabilities":{
-                    "title":"temporalCapabilities",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TemporalCapabilitiesType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Temporal_Capabilities",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                },
-                "functions":{
-                    "title":"functions",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/AvailableFunctionsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Functions",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                },
-                "extendedCapabilities":{
-                    "title":"extendedCapabilities",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ExtendedCapabilitiesType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Extended_Capabilities",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "conformance",
-                "idCapabilities",
-                "scalarCapabilities",
-                "spatialCapabilities",
-                "temporalCapabilities",
-                "functions",
-                "extendedCapabilities"
-            ]
-        },
-        "SortPropertyType":{
-            "type":"object",
-            "title":"SortPropertyType",
-            "required":[
-                "valueReference"
-            ],
-            "properties":{
-                "valueReference":{
-                    "title":"valueReference",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ValueReference",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                },
-                "sortOrder":{
-                    "title":"sortOrder",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SortOrderType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SortOrder",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SortPropertyType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "valueReference",
-                "sortOrder"
-            ]
-        },
-        "SpatialCapabilitiesType":{
-            "type":"object",
-            "title":"SpatialCapabilitiesType",
-            "required":[
-                "geometryOperands",
-                "spatialOperators"
-            ],
-            "properties":{
-                "geometryOperands":{
-                    "title":"geometryOperands",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/GeometryOperandsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"GeometryOperands",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                },
-                "spatialOperators":{
-                    "title":"spatialOperators",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SpatialOperatorsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SpatialOperators",
-                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"Spatial_CapabilitiesType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "geometryOperands",
-                "spatialOperators"
-            ]
-        },
-        "MeasureType":{
-            "type":"object",
-            "title":"MeasureType",
-            "required":[
-                "uom"
-            ],
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "uom":{
-                    "title":"uom",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uom",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"MeasureType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "value",
-                "uom"
-            ]
-        },
-        "ExtensionOperatorType":{
-            "type":"object",
-            "title":"ExtensionOperatorType",
-            "required":[
-                "name"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"name",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ExtensionOperatorType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "name"
-            ]
-        },
-        "BinarySpatialOpType":{
-            "required":[
-                "expressionOrAny"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SpatialOpsType"
-                },
-                {
-                    "type":"object",
-                    "title":"BinarySpatialOpType",
-                    "properties":{
-                        "expressionOrAny":{
-                            "title":"expressionOrAny",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"expression",
-                                            "namespaceURI":"http://www.opengis.net/fes/2.0"
-                                        }
-                                    },
-                                    "maxItems":2,
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"expression",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"BinarySpatialOpType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "expressionOrAny"
-            ]
-        },
-        "TemporalOpsType":{
-            "type":"object",
-            "title":"TemporalOpsType",
-            "properties":{
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TemporalOpsType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        "TemporalOperandsType.TemporalOperand":{
-            "type":"object",
-            "title":"TemporalOperandsType.TemporalOperand",
-            "required":[
-                "name"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"name",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "name"
-            ]
-        },
-        "AbstractSortingClauseType":{
-            "type":"object",
-            "title":"AbstractSortingClauseType",
-            "properties":{
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractSortingClauseType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        "ExtensionOpsType":{
-            "type":"object",
-            "title":"ExtensionOpsType",
-            "properties":{
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ExtensionOpsType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        "LogicalOperators":{
-            "type":"object",
-            "title":"LogicalOperators",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
-        "PropertyIsNullType":{
-            "required":[
-                "expression"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ComparisonOpsType"
-                },
-                {
-                    "type":"object",
-                    "title":"PropertyIsNullType",
-                    "properties":{
-                        "expression":{
-                            "title":"expression",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                        }
-                                    },
-                                    "elementName":{
-                                        "localPart":"expression",
-                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
-                                    }
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"expression",
-                                "namespaceURI":"http://www.opengis.net/fes/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"PropertyIsNullType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            },
-            "propertiesOrder":[
-                "expression"
             ]
         },
         "ResourceIdType":{
@@ -2257,9 +1492,281 @@
                 "endDate"
             ]
         },
-        "UpperBoundaryType":{
+        "AbstractIdType":{
             "type":"object",
-            "title":"UpperBoundaryType",
+            "title":"AbstractIdType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractIdType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        "TemporalOperatorsType":{
+            "type":"object",
+            "title":"TemporalOperatorsType",
+            "required":[
+                "temporalOperator"
+            ],
+            "properties":{
+                "temporalOperator":{
+                    "title":"temporalOperator",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/TemporalOperatorType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TemporalOperator",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TemporalOperatorsType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "temporalOperator"
+            ]
+        },
+        "BinaryComparisonOpType":{
+            "required":[
+                "expression"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ComparisonOpsType"
+                },
+                {
+                    "type":"object",
+                    "title":"BinaryComparisonOpType",
+                    "properties":{
+                        "expression":{
+                            "title":"expression",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"expression",
+                                            "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                        }
+                                    },
+                                    "maxItems":2,
+                                    "minItems":2
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"expression",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        },
+                        "matchCase":{
+                            "title":"matchCase",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"matchCase",
+                                "namespaceURI":""
+                            }
+                        },
+                        "matchAction":{
+                            "title":"matchAction",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MatchActionType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"matchAction",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"BinaryComparisonOpType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "expression",
+                "matchCase",
+                "matchAction"
+            ]
+        },
+        "PropertyIsNilType":{
+            "required":[
+                "expression"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ComparisonOpsType"
+                },
+                {
+                    "type":"object",
+                    "title":"PropertyIsNilType",
+                    "properties":{
+                        "expression":{
+                            "title":"expression",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                        }
+                                    },
+                                    "elementName":{
+                                        "localPart":"expression",
+                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                    }
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"expression",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        },
+                        "nilReason":{
+                            "title":"nilReason",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"nilReason",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"PropertyIsNilType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "expression",
+                "nilReason"
+            ]
+        },
+        "SpatialOpsType":{
+            "type":"object",
+            "title":"SpatialOpsType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SpatialOpsType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        "FunctionType":{
+            "type":"object",
+            "title":"FunctionType",
+            "required":[
+                "name"
+            ],
+            "properties":{
+                "expression":{
+                    "title":"expression",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                    },
+                                    "value":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    }
+                                },
+                                "elementName":{
+                                    "localPart":"expression",
+                                    "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                }
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"expression",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                },
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"name",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FunctionType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "expression",
+                "name"
+            ]
+        },
+        "ComparisonOpsType":{
+            "type":"object",
+            "title":"ComparisonOpsType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ComparisonOpsType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        "LowerBoundaryType":{
+            "type":"object",
+            "title":"LowerBoundaryType",
             "required":[
                 "expression"
             ],
@@ -2292,11 +1799,45 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"UpperBoundaryType",
+                "localPart":"LowerBoundaryType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             },
             "propertiesOrder":[
                 "expression"
+            ]
+        },
+        "SpatialOperatorsType":{
+            "type":"object",
+            "title":"SpatialOperatorsType",
+            "required":[
+                "spatialOperator"
+            ],
+            "properties":{
+                "spatialOperator":{
+                    "title":"spatialOperator",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/SpatialOperatorType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SpatialOperator",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SpatialOperatorsType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "spatialOperator"
             ]
         },
         "BinaryLogicOpType":{
@@ -2340,11 +1881,11 @@
                                                         "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                                                     },
                                                     "value":{
-                                                        "$ref":"#/definitions/AbstractIdType"
+                                                        "$ref":"#/definitions/TemporalOpsType"
                                                     }
                                                 },
                                                 "elementName":{
-                                                    "localPart":"_Id",
+                                                    "localPart":"temporalOps",
                                                     "namespaceURI":"http://www.opengis.net/fes/2.0"
                                                 }
                                             },
@@ -2355,11 +1896,26 @@
                                                         "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                                                     },
                                                     "value":{
-                                                        "$ref":"#/definitions/SpatialOpsType"
+                                                        "$ref":"#/definitions/ComparisonOpsType"
                                                     }
                                                 },
                                                 "elementName":{
-                                                    "localPart":"spatialOps",
+                                                    "localPart":"comparisonOps",
+                                                    "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                                }
+                                            },
+                                            {
+                                                "type":"object",
+                                                "properties":{
+                                                    "name":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                    },
+                                                    "value":{
+                                                        "$ref":"#/definitions/AbstractIdType"
+                                                    }
+                                                },
+                                                "elementName":{
+                                                    "localPart":"_Id",
                                                     "namespaceURI":"http://www.opengis.net/fes/2.0"
                                                 }
                                             },
@@ -2385,26 +1941,11 @@
                                                         "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                                                     },
                                                     "value":{
-                                                        "$ref":"#/definitions/TemporalOpsType"
+                                                        "$ref":"#/definitions/SpatialOpsType"
                                                     }
                                                 },
                                                 "elementName":{
-                                                    "localPart":"temporalOps",
-                                                    "namespaceURI":"http://www.opengis.net/fes/2.0"
-                                                }
-                                            },
-                                            {
-                                                "type":"object",
-                                                "properties":{
-                                                    "name":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                    },
-                                                    "value":{
-                                                        "$ref":"#/definitions/ComparisonOpsType"
-                                                    }
-                                                },
-                                                "elementName":{
-                                                    "localPart":"comparisonOps",
+                                                    "localPart":"spatialOps",
                                                     "namespaceURI":"http://www.opengis.net/fes/2.0"
                                                 }
                                             },
@@ -2442,83 +1983,290 @@
                 "ops"
             ]
         },
-        "AvailableFunctionsType":{
+        "SpatialOperatorType":{
             "type":"object",
-            "title":"AvailableFunctionsType",
-            "required":[
-                "function"
-            ],
+            "title":"SpatialOperatorType",
             "properties":{
-                "function":{
-                    "title":"function",
+                "geometryOperands":{
+                    "title":"geometryOperands",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/GeometryOperandsType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GeometryOperands",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                },
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"name",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SpatialOperatorType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "geometryOperands",
+                "name"
+            ]
+        },
+        "LiteralType":{
+            "type":"object",
+            "title":"LiteralType",
+            "properties":{
+                "content":{
+                    "title":"content",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/AvailableFunctionType"
+                                "anyOf":[
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    {
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LiteralType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "content",
+                "type"
+            ]
+        },
+        "ComparisonOperatorsType":{
+            "type":"object",
+            "title":"ComparisonOperatorsType",
+            "required":[
+                "comparisonOperator"
+            ],
+            "properties":{
+                "comparisonOperator":{
+                    "title":"comparisonOperator",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ComparisonOperatorType"
                             },
                             "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Function",
+                        "localPart":"ComparisonOperator",
                         "namespaceURI":"http://www.opengis.net/fes/2.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AvailableFunctionsType",
+                "localPart":"ComparisonOperatorsType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             },
             "propertiesOrder":[
-                "function"
+                "comparisonOperator"
             ]
         },
-        "TemporalCapabilitiesType":{
+        "GeometryOperandsType":{
             "type":"object",
-            "title":"TemporalCapabilitiesType",
+            "title":"GeometryOperandsType",
             "required":[
-                "temporalOperands",
-                "temporalOperators"
+                "geometryOperand"
             ],
             "properties":{
-                "temporalOperands":{
-                    "title":"temporalOperands",
+                "geometryOperand":{
+                    "title":"geometryOperand",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/TemporalOperandsType"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/GeometryOperandsType.GeometryOperand"
+                            },
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"TemporalOperands",
+                        "localPart":"GeometryOperand",
+                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GeometryOperandsType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "geometryOperand"
+            ]
+        },
+        "PropertyIsBetweenType":{
+            "required":[
+                "expression",
+                "lowerBoundary",
+                "upperBoundary"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ComparisonOpsType"
+                },
+                {
+                    "type":"object",
+                    "title":"PropertyIsBetweenType",
+                    "properties":{
+                        "expression":{
+                            "title":"expression",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                        }
+                                    },
+                                    "elementName":{
+                                        "localPart":"expression",
+                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                    }
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"expression",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        },
+                        "lowerBoundary":{
+                            "title":"lowerBoundary",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LowerBoundaryType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"LowerBoundary",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        },
+                        "upperBoundary":{
+                            "title":"upperBoundary",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/UpperBoundaryType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"UpperBoundary",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"PropertyIsBetweenType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "expression",
+                "lowerBoundary",
+                "upperBoundary"
+            ]
+        },
+        "SortPropertyType":{
+            "type":"object",
+            "title":"SortPropertyType",
+            "required":[
+                "valueReference"
+            ],
+            "properties":{
+                "valueReference":{
+                    "title":"valueReference",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ValueReference",
                         "namespaceURI":"http://www.opengis.net/fes/2.0"
                     }
                 },
-                "temporalOperators":{
-                    "title":"temporalOperators",
+                "sortOrder":{
+                    "title":"sortOrder",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/TemporalOperatorsType"
+                            "$ref":"#/definitions/SortOrderType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"TemporalOperators",
+                        "localPart":"SortOrder",
                         "namespaceURI":"http://www.opengis.net/fes/2.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"Temporal_CapabilitiesType",
+                "localPart":"SortPropertyType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             },
             "propertiesOrder":[
-                "temporalOperands",
-                "temporalOperators"
+                "valueReference",
+                "sortOrder"
             ]
         },
         "UnaryLogicOpType":{
@@ -2712,82 +2460,322 @@
                 "id"
             ]
         },
-        "AdditionalOperatorsType":{
+        "BinaryTemporalOpType":{
+            "required":[
+                "expressionOrAny"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/TemporalOpsType"
+                },
+                {
+                    "type":"object",
+                    "title":"BinaryTemporalOpType",
+                    "properties":{
+                        "expressionOrAny":{
+                            "title":"expressionOrAny",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"expression",
+                                            "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                        }
+                                    },
+                                    "maxItems":2,
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"expression",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"BinaryTemporalOpType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "expressionOrAny"
+            ]
+        },
+        "FilterType":{
+            "required":[
+                "comparisonOps",
+                "spatialOps",
+                "temporalOps",
+                "logicOps",
+                "extensionOps",
+                "function",
+                "id"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractSelectionClauseType"
+                },
+                {
+                    "type":"object",
+                    "title":"FilterType",
+                    "properties":{
+                        "comparisonOps":{
+                            "title":"comparisonOps",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                            "$ref":"#/definitions/ComparisonOpsType"
+                                        }
+                                    },
+                                    "elementName":{
+                                        "localPart":"comparisonOps",
+                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                    }
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"comparisonOps",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        },
+                        "spatialOps":{
+                            "title":"spatialOps",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                            "$ref":"#/definitions/SpatialOpsType"
+                                        }
+                                    },
+                                    "elementName":{
+                                        "localPart":"spatialOps",
+                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                    }
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"spatialOps",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        },
+                        "temporalOps":{
+                            "title":"temporalOps",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                            "$ref":"#/definitions/TemporalOpsType"
+                                        }
+                                    },
+                                    "elementName":{
+                                        "localPart":"temporalOps",
+                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                    }
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"temporalOps",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        },
+                        "logicOps":{
+                            "title":"logicOps",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                            "$ref":"#/definitions/LogicOpsType"
+                                        }
+                                    },
+                                    "elementName":{
+                                        "localPart":"logicOps",
+                                        "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                    }
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"logicOps",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        },
+                        "extensionOps":{
+                            "title":"extensionOps",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ExtensionOpsType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"extensionOps",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        },
+                        "function":{
+                            "title":"function",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/FunctionType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Function",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        },
+                        "id":{
+                            "title":"id",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"#/definitions/AbstractIdType"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"_Id",
+                                            "namespaceURI":"http://www.opengis.net/fes/2.0"
+                                        }
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"_Id",
+                                "namespaceURI":"http://www.opengis.net/fes/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FilterType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            },
+            "propertiesOrder":[
+                "comparisonOps",
+                "spatialOps",
+                "temporalOps",
+                "logicOps",
+                "extensionOps",
+                "function",
+                "id"
+            ]
+        },
+        "ExtendedCapabilitiesType":{
             "type":"object",
-            "title":"AdditionalOperatorsType",
+            "title":"ExtendedCapabilitiesType",
             "properties":{
-                "operator":{
-                    "title":"operator",
+                "additionalOperators":{
+                    "title":"additionalOperators",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ExtensionOperatorType"
-                            },
-                            "minItems":0
+                            "$ref":"#/definitions/AdditionalOperatorsType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Operator",
+                        "localPart":"AdditionalOperators",
                         "namespaceURI":"http://www.opengis.net/fes/2.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AdditionalOperatorsType",
+                "localPart":"Extended_CapabilitiesType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             },
             "propertiesOrder":[
-                "operator"
+                "additionalOperators"
             ]
         },
-        "TemporalOperandsType":{
+        "AbstractProjectionClauseType":{
             "type":"object",
-            "title":"TemporalOperandsType",
+            "title":"AbstractProjectionClauseType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractProjectionClauseType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        "AvailableFunctionsType":{
+            "type":"object",
+            "title":"AvailableFunctionsType",
             "required":[
-                "temporalOperand"
+                "function"
             ],
             "properties":{
-                "temporalOperand":{
-                    "title":"temporalOperand",
+                "function":{
+                    "title":"function",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/TemporalOperandsType.TemporalOperand"
+                                "$ref":"#/definitions/AvailableFunctionType"
                             },
                             "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"TemporalOperand",
+                        "localPart":"Function",
                         "namespaceURI":"http://www.opengis.net/fes/2.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"TemporalOperandsType",
+                "localPart":"AvailableFunctionsType",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             },
             "propertiesOrder":[
-                "temporalOperand"
+                "function"
             ]
-        },
-        "MatchActionType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"MatchActionType",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
         },
         "SortOrderType":{
             "allOf":[
@@ -2812,6 +2800,18 @@
                 "localPart":"VersionActionTokens",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
+        },
+        "MatchActionType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"MatchActionType",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
         }
     },
     "anyOf":[
@@ -2822,11 +2822,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/AbstractIdType"
+                    "$ref":"#/definitions/BinaryComparisonOpType"
                 }
             },
             "elementName":{
-                "localPart":"_Id",
+                "localPart":"PropertyIsLessThan",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -2837,11 +2837,41 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                    "$ref":"#/definitions/LogicOpsType"
                 }
             },
             "elementName":{
-                "localPart":"AbstractSortingClause",
+                "localPart":"logicOps",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/PropertyIsLikeType"
+                }
+            },
+            "elementName":{
+                "localPart":"PropertyIsLike",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/FilterCapabilities"
+                }
+            },
+            "elementName":{
+                "localPart":"Filter_Capabilities",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -2856,7 +2886,7 @@
                 }
             },
             "elementName":{
-                "localPart":"Touches",
+                "localPart":"Contains",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -2867,101 +2897,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/BBOXType"
+                    "$ref":"#/definitions/BinarySpatialOpType"
                 }
             },
             "elementName":{
-                "localPart":"BBOX",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryTemporalOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"MetBy",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"AbstractSelectionClause",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/PropertyIsNullType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyIsNull",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/LogicalOperators"
-                }
-            },
-            "elementName":{
-                "localPart":"LogicalOperators",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"AbstractProjectionClause",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/TemporalOpsType"
-                }
-            },
-            "elementName":{
-                "localPart":"temporalOps",
+                "localPart":"Crosses",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -2987,6 +2927,36 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/BBOXType"
+                }
+            },
+            "elementName":{
+                "localPart":"BBOX",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/UnaryLogicOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"Not",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/SpatialOpsType"
                 }
             },
@@ -3002,26 +2972,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/PropertyIsBetweenType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyIsBetween",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
                     "$ref":"#/definitions/BinarySpatialOpType"
                 }
             },
             "elementName":{
-                "localPart":"Disjoint",
+                "localPart":"Touches",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -3032,26 +2987,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/AbstractAdhocQueryExpressionType"
+                    "$ref":"#/definitions/BinaryTemporalOpType"
                 }
             },
             "elementName":{
-                "localPart":"AbstractAdhocQueryExpression",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ComparisonOpsType"
-                }
-            },
-            "elementName":{
-                "localPart":"comparisonOps",
+                "localPart":"TEquals",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -3081,321 +3021,6 @@
                 }
             },
             "elementName":{
-                "localPart":"EndedBy",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryTemporalOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"Before",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryComparisonOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyIsGreaterThanOrEqualTo",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinarySpatialOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"Overlaps",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/FilterCapabilities"
-                }
-            },
-            "elementName":{
-                "localPart":"Filter_Capabilities",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryTemporalOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"AnyInteracts",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DistanceBufferType"
-                }
-            },
-            "elementName":{
-                "localPart":"DWithin",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryLogicOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"Or",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DistanceBufferType"
-                }
-            },
-            "elementName":{
-                "localPart":"Beyond",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/PropertyIsNilType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyIsNil",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinarySpatialOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"Crosses",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/PropertyIsLikeType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyIsLike",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinarySpatialOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"Intersects",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryTemporalOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"During",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryLogicOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"And",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractQueryExpressionType"
-                }
-            },
-            "elementName":{
-                "localPart":"AbstractQueryExpression",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryComparisonOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyIsEqualTo",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"ValueReference",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinarySpatialOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"Within",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryComparisonOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"PropertyIsLessThan",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryTemporalOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"TContains",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryTemporalOpType"
-                }
-            },
-            "elementName":{
                 "localPart":"BegunBy",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
@@ -3407,11 +3032,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/UnaryLogicOpType"
+                    "$ref":"#/definitions/PropertyIsNullType"
                 }
             },
             "elementName":{
-                "localPart":"Not",
+                "localPart":"PropertyIsNull",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -3422,101 +3047,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/FunctionType"
+                    "$ref":"#/definitions/BinaryComparisonOpType"
                 }
             },
             "elementName":{
-                "localPart":"Function",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinarySpatialOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"Contains",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ResourceIdType"
-                }
-            },
-            "elementName":{
-                "localPart":"ResourceId",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/LiteralType"
-                }
-            },
-            "elementName":{
-                "localPart":"Literal",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ExtensionOpsType"
-                }
-            },
-            "elementName":{
-                "localPart":"extensionOps",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryTemporalOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"OverlappedBy",
-                "namespaceURI":"http://www.opengis.net/fes/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryTemporalOpType"
-                }
-            },
-            "elementName":{
-                "localPart":"TEquals",
+                "localPart":"PropertyIsGreaterThan",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -3542,11 +3077,266 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/LogicOpsType"
+                    "$ref":"#/definitions/SortByType"
                 }
             },
             "elementName":{
-                "localPart":"logicOps",
+                "localPart":"SortBy",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"AbstractProjectionClause",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ComparisonOpsType"
+                }
+            },
+            "elementName":{
+                "localPart":"comparisonOps",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryLogicOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"And",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/LogicalOperators"
+                }
+            },
+            "elementName":{
+                "localPart":"LogicalOperators",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryComparisonOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"PropertyIsEqualTo",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ExtensionOpsType"
+                }
+            },
+            "elementName":{
+                "localPart":"extensionOps",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinarySpatialOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"Disjoint",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryComparisonOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"PropertyIsNotEqualTo",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryTemporalOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"AnyInteracts",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryLogicOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"Or",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"AbstractSortingClause",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryComparisonOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"PropertyIsLessThanOrEqualTo",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryComparisonOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"PropertyIsGreaterThanOrEqualTo",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryTemporalOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"MetBy",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/PropertyIsBetweenType"
+                }
+            },
+            "elementName":{
+                "localPart":"PropertyIsBetween",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractAdhocQueryExpressionType"
+                }
+            },
+            "elementName":{
+                "localPart":"AbstractAdhocQueryExpression",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DistanceBufferType"
+                }
+            },
+            "elementName":{
+                "localPart":"DWithin",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -3576,7 +3366,7 @@
                 }
             },
             "elementName":{
-                "localPart":"Meets",
+                "localPart":"Before",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -3587,11 +3377,41 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/SortByType"
+                    "$ref":"#/definitions/FunctionType"
                 }
             },
             "elementName":{
-                "localPart":"SortBy",
+                "localPart":"Function",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DistanceBufferType"
+                }
+            },
+            "elementName":{
+                "localPart":"Beyond",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinarySpatialOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"Overlaps",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -3606,7 +3426,7 @@
                 }
             },
             "elementName":{
-                "localPart":"Ends",
+                "localPart":"OverlappedBy",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -3617,11 +3437,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/BinaryComparisonOpType"
+                    "$ref":"#/definitions/BinarySpatialOpType"
                 }
             },
             "elementName":{
-                "localPart":"PropertyIsGreaterThan",
+                "localPart":"Within",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -3632,11 +3452,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/BinaryComparisonOpType"
+                    "$ref":"#/definitions/PropertyIsNilType"
                 }
             },
             "elementName":{
-                "localPart":"PropertyIsLessThanOrEqualTo",
+                "localPart":"PropertyIsNil",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         },
@@ -3662,6 +3482,171 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/AbstractIdType"
+                }
+            },
+            "elementName":{
+                "localPart":"_Id",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryTemporalOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"EndedBy",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryTemporalOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"Ends",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryTemporalOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"Meets",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"AbstractSelectionClause",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractQueryExpressionType"
+                }
+            },
+            "elementName":{
+                "localPart":"AbstractQueryExpression",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryTemporalOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"During",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ResourceIdType"
+                }
+            },
+            "elementName":{
+                "localPart":"ResourceId",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"ValueReference",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BinarySpatialOpType"
+                }
+            },
+            "elementName":{
+                "localPart":"Intersects",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/LiteralType"
+                }
+            },
+            "elementName":{
+                "localPart":"Literal",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/BinaryTemporalOpType"
                 }
             },
@@ -3677,11 +3662,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/BinaryComparisonOpType"
+                    "$ref":"#/definitions/BinaryTemporalOpType"
                 }
             },
             "elementName":{
-                "localPart":"PropertyIsNotEqualTo",
+                "localPart":"TContains",
+                "namespaceURI":"http://www.opengis.net/fes/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TemporalOpsType"
+                }
+            },
+            "elementName":{
+                "localPart":"temporalOps",
                 "namespaceURI":"http://www.opengis.net/fes/2.0"
             }
         }

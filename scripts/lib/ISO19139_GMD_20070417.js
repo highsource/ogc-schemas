@@ -3,112 +3,18 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
     n: 'ISO19139_GMD_20070417',
     dens: 'http:\/\/www.isotc211.org\/2005\/gmd',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'ISO19139_GSR_20070417', 'ISO19139_GSS_20070417', 'ISO19139_GTS_20070417', 'ISO19139_GCO_20070417'],
+    deps: ['XLink_1_0', 'ISO19139_GTS_20070417', 'ISO19139_GCO_20070417', 'ISO19139_GSS_20070417', 'ISO19139_GSR_20070417'],
     tis: [{
-        ln: 'DSSensorPropertyType',
-        tn: 'DS_Sensor_PropertyType',
-        ps: [{
-            n: 'dsSensor',
-            rq: true,
-            en: 'DS_Sensor',
-            ti: '.DSSensorType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
+        ln: 'AbstractMDSpatialRepresentationType',
+        tn: 'AbstractMD_SpatialRepresentation_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType'
       }, {
-        ln: 'CITelephonePropertyType',
-        tn: 'CI_Telephone_PropertyType',
+        ln: 'DSInitiativeTypeCodePropertyType',
+        tn: 'DS_InitiativeTypeCode_PropertyType',
         ps: [{
-            n: 'ciTelephone',
+            n: 'dsInitiativeTypeCode',
             rq: true,
-            en: 'CI_Telephone',
-            ti: '.CITelephoneType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDRestrictionCodePropertyType',
-        tn: 'MD_RestrictionCode_PropertyType',
-        ps: [{
-            n: 'mdRestrictionCode',
-            rq: true,
-            en: 'MD_RestrictionCode',
+            en: 'DS_InitiativeTypeCode',
             ti: 'ISO19139_GCO_20070417.CodeListValueType'
           }, {
             n: 'nilReason',
@@ -122,131 +28,12 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MDMetadataExtensionInformationPropertyType',
-        tn: 'MD_MetadataExtensionInformation_PropertyType',
+        ln: 'MDTopologyLevelCodePropertyType',
+        tn: 'MD_TopologyLevelCode_PropertyType',
         ps: [{
-            n: 'mdMetadataExtensionInformation',
+            n: 'mdTopologyLevelCode',
             rq: true,
-            en: 'MD_MetadataExtensionInformation',
-            ti: '.MDMetadataExtensionInformationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQElementPropertyType',
-        tn: 'DQ_Element_PropertyType',
-        ps: [{
-            n: 'abstractDQElement',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractDQ_Element',
-            ti: '.AbstractDQElementType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDAggregateInformationType',
-        tn: 'MD_AggregateInformation_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'aggregateDataSetName',
-            ti: '.CICitationPropertyType'
-          }, {
-            n: 'aggregateDataSetIdentifier',
-            ti: '.MDIdentifierPropertyType'
-          }, {
-            n: 'associationType',
-            rq: true,
-            ti: '.DSAssociationTypeCodePropertyType'
-          }, {
-            n: 'initiativeType',
-            ti: '.DSInitiativeTypeCodePropertyType'
-          }]
-      }, {
-        ln: 'CountryPropertyType',
-        tn: 'Country_PropertyType',
-        ps: [{
-            n: 'country',
-            rq: true,
-            en: 'Country',
+            en: 'MD_TopologyLevelCode',
             ti: 'ISO19139_GCO_20070417.CodeListValueType'
           }, {
             n: 'nilReason',
@@ -260,57 +47,13 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MDFeatureCatalogueDescriptionType',
-        tn: 'MD_FeatureCatalogueDescription_Type',
-        bti: '.AbstractMDContentInformationType',
+        ln: 'MDImageDescriptionPropertyType',
+        tn: 'MD_ImageDescription_PropertyType',
         ps: [{
-            n: 'complianceCode',
-            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
-          }, {
-            n: 'language',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'includedWithDataset',
+            n: 'mdImageDescription',
             rq: true,
-            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
-          }, {
-            n: 'featureTypes',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.GenericNamePropertyType'
-          }, {
-            n: 'featureCatalogueCitation',
-            rq: true,
-            col: true,
-            ti: '.CICitationPropertyType'
-          }]
-      }, {
-        ln: 'DQConformanceResultType',
-        tn: 'DQ_ConformanceResult_Type',
-        bti: '.AbstractDQResultType',
-        ps: [{
-            n: 'specification',
-            rq: true,
-            ti: '.CICitationPropertyType'
-          }, {
-            n: 'explanation',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'pass',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
-          }]
-      }, {
-        ln: 'MDGeometricObjectsPropertyType',
-        tn: 'MD_GeometricObjects_PropertyType',
-        ps: [{
-            n: 'mdGeometricObjects',
-            rq: true,
-            en: 'MD_GeometricObjects',
-            ti: '.MDGeometricObjectsType'
+            en: 'MD_ImageDescription',
+            ti: '.MDImageDescriptionType'
           }, {
             n: 'nilReason',
             ti: {
@@ -351,237 +94,6 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }]
-      }, {
-        ln: 'MDContentInformationPropertyType',
-        tn: 'MD_ContentInformation_PropertyType',
-        ps: [{
-            n: 'abstractMDContentInformation',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractMD_ContentInformation',
-            ti: '.AbstractMDContentInformationType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDDistributionType',
-        tn: 'MD_Distribution_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'distributionFormat',
-            mno: 0,
-            col: true,
-            ti: '.MDFormatPropertyType'
-          }, {
-            n: 'distributor',
-            mno: 0,
-            col: true,
-            ti: '.MDDistributorPropertyType'
-          }, {
-            n: 'transferOptions',
-            mno: 0,
-            col: true,
-            ti: '.MDDigitalTransferOptionsPropertyType'
-          }]
-      }, {
-        ln: 'DQQuantitativeAttributeAccuracyPropertyType',
-        tn: 'DQ_QuantitativeAttributeAccuracy_PropertyType',
-        ps: [{
-            n: 'dqQuantitativeAttributeAccuracy',
-            rq: true,
-            en: 'DQ_QuantitativeAttributeAccuracy',
-            ti: '.DQQuantitativeAttributeAccuracyType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDDistributorPropertyType',
-        tn: 'MD_Distributor_PropertyType',
-        ps: [{
-            n: 'mdDistributor',
-            rq: true,
-            en: 'MD_Distributor',
-            ti: '.MDDistributorType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQPositionalAccuracyPropertyType',
-        tn: 'DQ_PositionalAccuracy_PropertyType',
-        ps: [{
-            n: 'abstractDQPositionalAccuracy',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractDQ_PositionalAccuracy',
-            ti: '.AbstractDQPositionalAccuracyType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'EXTemporalExtentType',
-        tn: 'EX_TemporalExtent_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'extent',
-            rq: true,
-            ti: 'ISO19139_GTS_20070417.TMPrimitivePropertyType'
           }]
       }, {
         ln: 'MDScopeDescriptionPropertyType',
@@ -603,34 +115,48 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DQScopeType',
-        tn: 'DQ_Scope_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ln: 'MDServiceIdentificationType',
+        tn: 'MD_ServiceIdentification_Type',
+        bti: '.AbstractMDIdentificationType'
+      }, {
+        ln: 'MDResolutionType',
+        tn: 'MD_Resolution_Type',
         ps: [{
-            n: 'level',
+            n: 'equivalentScale',
             rq: true,
-            ti: '.MDScopeCodePropertyType'
+            ti: '.MDRepresentativeFractionPropertyType'
           }, {
-            n: 'extent',
-            ti: '.EXExtentPropertyType'
-          }, {
-            n: 'levelDescription',
-            mno: 0,
-            col: true,
-            ti: '.MDScopeDescriptionPropertyType'
+            n: 'distance',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.DistancePropertyType'
           }]
       }, {
-        ln: 'DQQuantitativeAttributeAccuracyType',
-        tn: 'DQ_QuantitativeAttributeAccuracy_Type',
-        bti: '.AbstractDQThematicAccuracyType'
-      }, {
-        ln: 'DQQuantitativeResultPropertyType',
-        tn: 'DQ_QuantitativeResult_PropertyType',
+        ln: 'MDDistributionUnitsPropertyType',
+        tn: 'MD_DistributionUnits_PropertyType',
         ps: [{
-            n: 'dqQuantitativeResult',
+            n: 'mdDistributionUnits',
             rq: true,
-            en: 'DQ_QuantitativeResult',
-            ti: '.DQQuantitativeResultType'
+            en: 'MD_DistributionUnits',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CISeriesPropertyType',
+        tn: 'CI_Series_PropertyType',
+        ps: [{
+            n: 'ciSeries',
+            rq: true,
+            en: 'CI_Series',
+            ti: '.CISeriesType'
           }, {
             n: 'nilReason',
             ti: {
@@ -673,914 +199,91 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'PTLocaleContainerType',
-        tn: 'PT_LocaleContainer_Type',
+        ln: 'MDDistributorType',
+        tn: 'MD_Distributor_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
         ps: [{
-            n: 'description',
+            n: 'distributorContact',
             rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'locale',
-            rq: true,
-            ti: '.PTLocalePropertyType'
-          }, {
-            n: 'date',
-            rq: true,
-            col: true,
-            ti: '.CIDatePropertyType'
-          }, {
-            n: 'responsibleParty',
-            rq: true,
-            col: true,
             ti: '.CIResponsiblePartyPropertyType'
           }, {
-            n: 'localisedString',
-            rq: true,
-            col: true,
-            ti: '.LocalisedCharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'DQEvaluationMethodTypeCodePropertyType',
-        tn: 'DQ_EvaluationMethodTypeCode_PropertyType',
-        ps: [{
-            n: 'dqEvaluationMethodTypeCode',
-            rq: true,
-            en: 'DQ_EvaluationMethodTypeCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDFormatType',
-        tn: 'MD_Format_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'name',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'version',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'amendmentNumber',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'specification',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'fileDecompressionTechnique',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'formatDistributor',
+            n: 'distributionOrderProcess',
             mno: 0,
             col: true,
-            ti: '.MDDistributorPropertyType'
-          }]
-      }, {
-        ln: 'MDFeatureCatalogueDescriptionPropertyType',
-        tn: 'MD_FeatureCatalogueDescription_PropertyType',
-        ps: [{
-            n: 'mdFeatureCatalogueDescription',
-            rq: true,
-            en: 'MD_FeatureCatalogueDescription',
-            ti: '.MDFeatureCatalogueDescriptionType'
+            ti: '.MDStandardOrderProcessPropertyType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'PTLocaleContainerPropertyType',
-        tn: 'PT_LocaleContainer_PropertyType',
-        ps: [{
-            n: 'ptLocaleContainer',
-            rq: true,
-            en: 'PT_LocaleContainer',
-            ti: '.PTLocaleContainerType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CIContactType',
-        tn: 'CI_Contact_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'phone',
-            ti: '.CITelephonePropertyType'
-          }, {
-            n: 'address',
-            ti: '.CIAddressPropertyType'
-          }, {
-            n: 'onlineResource',
-            ti: '.CIOnlineResourcePropertyType'
-          }, {
-            n: 'hoursOfService',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'contactInstructions',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'MDDataIdentificationPropertyType',
-        tn: 'MD_DataIdentification_PropertyType',
-        ps: [{
-            n: 'mdDataIdentification',
-            rq: true,
-            en: 'MD_DataIdentification',
-            ti: '.MDDataIdentificationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CITelephoneType',
-        tn: 'CI_Telephone_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'voice',
+            n: 'distributorFormat',
             mno: 0,
             col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+            ti: '.MDFormatPropertyType'
           }, {
-            n: 'facsimile',
+            n: 'distributorTransferOptions',
             mno: 0,
             col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'MDSecurityConstraintsType',
-        tn: 'MD_SecurityConstraints_Type',
-        bti: '.MDConstraintsType',
-        ps: [{
-            n: 'classification',
-            rq: true,
-            ti: '.MDClassificationCodePropertyType'
-          }, {
-            n: 'userNote',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'classificationSystem',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'handlingDescription',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'MDServiceIdentificationPropertyType',
-        tn: 'MD_ServiceIdentification_PropertyType',
-        ps: [{
-            n: 'mdServiceIdentification',
-            rq: true,
-            en: 'MD_ServiceIdentification',
-            ti: '.MDServiceIdentificationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDBrowseGraphicPropertyType',
-        tn: 'MD_BrowseGraphic_PropertyType',
-        ps: [{
-            n: 'mdBrowseGraphic',
-            rq: true,
-            en: 'MD_BrowseGraphic',
-            ti: '.MDBrowseGraphicType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDGridSpatialRepresentationType',
-        tn: 'MD_GridSpatialRepresentation_Type',
-        bti: '.AbstractMDSpatialRepresentationType',
-        ps: [{
-            n: 'numberOfDimensions',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
-          }, {
-            n: 'axisDimensionProperties',
-            mno: 0,
-            col: true,
-            ti: '.MDDimensionPropertyType'
-          }, {
-            n: 'cellGeometry',
-            rq: true,
-            ti: '.MDCellGeometryCodePropertyType'
-          }, {
-            n: 'transformationParameterAvailability',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
-          }]
-      }, {
-        ln: 'DSStereoMatePropertyType',
-        tn: 'DS_StereoMate_PropertyType',
-        ps: [{
-            n: 'dsStereoMate',
-            rq: true,
-            en: 'DS_StereoMate',
-            ti: '.DSStereoMateType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'EXGeographicBoundingBoxPropertyType',
-        tn: 'EX_GeographicBoundingBox_PropertyType',
-        ps: [{
-            n: 'exGeographicBoundingBox',
-            rq: true,
-            en: 'EX_GeographicBoundingBox',
-            ti: '.EXGeographicBoundingBoxType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CIOnLineFunctionCodePropertyType',
-        tn: 'CI_OnLineFunctionCode_PropertyType',
-        ps: [{
-            n: 'ciOnLineFunctionCode',
-            rq: true,
-            en: 'CI_OnLineFunctionCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DSStereoMateType',
-        tn: 'DS_StereoMate_Type',
-        bti: '.DSOtherAggregateType'
-      }, {
-        ln: 'LocalisedCharacterStringType',
-        tn: 'LocalisedCharacterString_Type',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }, {
-            n: 'locale',
-            an: {
-              lp: 'locale'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EXGeographicExtentPropertyType',
-        tn: 'EX_GeographicExtent_PropertyType',
-        ps: [{
-            n: 'abstractEXGeographicExtent',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractEX_GeographicExtent',
-            ti: '.AbstractEXGeographicExtentType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractDQCompletenessType',
-        tn: 'AbstractDQ_Completeness_Type',
-        bti: '.AbstractDQElementType'
-      }, {
-        ln: 'DQTopologicalConsistencyPropertyType',
-        tn: 'DQ_TopologicalConsistency_PropertyType',
-        ps: [{
-            n: 'dqTopologicalConsistency',
-            rq: true,
-            en: 'DQ_TopologicalConsistency',
-            ti: '.DQTopologicalConsistencyType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQLogicalConsistencyPropertyType',
-        tn: 'DQ_LogicalConsistency_PropertyType',
-        ps: [{
-            n: 'abstractDQLogicalConsistency',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractDQ_LogicalConsistency',
-            ti: '.AbstractDQLogicalConsistencyType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DSProductionSeriesPropertyType',
-        tn: 'DS_ProductionSeries_PropertyType',
-        ps: [{
-            n: 'dsProductionSeries',
-            rq: true,
-            en: 'DS_ProductionSeries',
-            ti: '.DSProductionSeriesType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDDatatypeCodePropertyType',
-        tn: 'MD_DatatypeCode_PropertyType',
-        ps: [{
-            n: 'mdDatatypeCode',
-            rq: true,
-            en: 'MD_DatatypeCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractRSReferenceSystemType',
-        tn: 'AbstractRS_ReferenceSystem_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'name',
-            rq: true,
-            ti: '.RSIdentifierPropertyType'
-          }, {
-            n: 'domainOfValidity',
-            mno: 0,
-            col: true,
-            ti: '.EXExtentPropertyType'
-          }]
-      }, {
-        ln: 'DQConceptualConsistencyType',
-        tn: 'DQ_ConceptualConsistency_Type',
-        bti: '.AbstractDQLogicalConsistencyType'
-      }, {
-        ln: 'MDRangeDimensionPropertyType',
-        tn: 'MD_RangeDimension_PropertyType',
-        ps: [{
-            n: 'mdRangeDimension',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'MD_RangeDimension',
-            ti: '.MDRangeDimensionType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDGeoreferenceableType',
-        tn: 'MD_Georeferenceable_Type',
-        bti: '.MDGridSpatialRepresentationType',
-        ps: [{
-            n: 'controlPointAvailability',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
-          }, {
-            n: 'orientationParameterAvailability',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
-          }, {
-            n: 'orientationParameterDescription',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'georeferencedParameters',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.RecordPropertyType'
-          }, {
-            n: 'parameterCitation',
-            mno: 0,
-            col: true,
-            ti: '.CICitationPropertyType'
-          }]
-      }, {
-        ln: 'MDCharacterSetCodePropertyType',
-        tn: 'MD_CharacterSetCode_PropertyType',
-        ps: [{
-            n: 'mdCharacterSetCode',
-            rq: true,
-            en: 'MD_CharacterSetCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CIOnlineResourceType',
-        tn: 'CI_OnlineResource_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'linkage',
-            rq: true,
-            ti: '.URLPropertyType'
-          }, {
-            n: 'protocol',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'applicationProfile',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'name',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'description',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'function',
-            ti: '.CIOnLineFunctionCodePropertyType'
+            ti: '.MDDigitalTransferOptionsPropertyType'
           }]
       }, {
         ln: 'DSAssociationType',
         tn: 'DS_Association_Type',
         bti: 'ISO19139_GCO_20070417.AbstractObjectType'
       }, {
-        ln: 'DQDomainConsistencyPropertyType',
-        tn: 'DQ_DomainConsistency_PropertyType',
+        ln: 'EXExtentType',
+        tn: 'EX_Extent_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
         ps: [{
-            n: 'dqDomainConsistency',
+            n: 'description',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'geographicElement',
+            mno: 0,
+            col: true,
+            ti: '.EXGeographicExtentPropertyType'
+          }, {
+            n: 'temporalElement',
+            mno: 0,
+            col: true,
+            ti: '.EXTemporalExtentPropertyType'
+          }, {
+            n: 'verticalElement',
+            mno: 0,
+            col: true,
+            ti: '.EXVerticalExtentPropertyType'
+          }]
+      }, {
+        ln: 'CIAddressType',
+        tn: 'CI_Address_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'deliveryPoint',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'city',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'administrativeArea',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'postalCode',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'country',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'electronicMailAddress',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'DQScopePropertyType',
+        tn: 'DQ_Scope_PropertyType',
+        ps: [{
+            n: 'dqScope',
             rq: true,
-            en: 'DQ_DomainConsistency',
-            ti: '.DQDomainConsistencyType'
+            en: 'DQ_Scope',
+            ti: '.DQScopeType'
           }, {
             n: 'nilReason',
             ti: {
@@ -1623,42 +326,13 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MDBandType',
-        tn: 'MD_Band_Type',
-        bti: '.MDRangeDimensionType',
+        ln: 'DQAbsoluteExternalPositionalAccuracyPropertyType',
+        tn: 'DQ_AbsoluteExternalPositionalAccuracy_PropertyType',
         ps: [{
-            n: 'maxValue',
-            ti: 'ISO19139_GCO_20070417.RealPropertyType'
-          }, {
-            n: 'minValue',
-            ti: 'ISO19139_GCO_20070417.RealPropertyType'
-          }, {
-            n: 'units',
-            ti: 'ISO19139_GCO_20070417.UomLengthPropertyType'
-          }, {
-            n: 'peakResponse',
-            ti: 'ISO19139_GCO_20070417.RealPropertyType'
-          }, {
-            n: 'bitsPerValue',
-            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
-          }, {
-            n: 'toneGradation',
-            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
-          }, {
-            n: 'scaleFactor',
-            ti: 'ISO19139_GCO_20070417.RealPropertyType'
-          }, {
-            n: 'offset',
-            ti: 'ISO19139_GCO_20070417.RealPropertyType'
-          }]
-      }, {
-        ln: 'DQFormatConsistencyPropertyType',
-        tn: 'DQ_FormatConsistency_PropertyType',
-        ps: [{
-            n: 'dqFormatConsistency',
+            n: 'dqAbsoluteExternalPositionalAccuracy',
             rq: true,
-            en: 'DQ_FormatConsistency',
-            ti: '.DQFormatConsistencyType'
+            en: 'DQ_AbsoluteExternalPositionalAccuracy',
+            ti: '.DQAbsoluteExternalPositionalAccuracyType'
           }, {
             n: 'nilReason',
             ti: {
@@ -1701,36 +375,13 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MDKeywordTypeCodePropertyType',
-        tn: 'MD_KeywordTypeCode_PropertyType',
+        ln: 'EXGeographicDescriptionPropertyType',
+        tn: 'EX_GeographicDescription_PropertyType',
         ps: [{
-            n: 'mdKeywordTypeCode',
+            n: 'exGeographicDescription',
             rq: true,
-            en: 'MD_KeywordTypeCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQRelativeInternalPositionalAccuracyType',
-        tn: 'DQ_RelativeInternalPositionalAccuracy_Type',
-        bti: '.AbstractDQPositionalAccuracyType'
-      }, {
-        ln: 'MDDistributionPropertyType',
-        tn: 'MD_Distribution_PropertyType',
-        ps: [{
-            n: 'mdDistribution',
-            rq: true,
-            en: 'MD_Distribution',
-            ti: '.MDDistributionType'
+            en: 'EX_GeographicDescription',
+            ti: '.EXGeographicDescriptionType'
           }, {
             n: 'nilReason',
             ti: {
@@ -1773,17 +424,152 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DSPlatformType',
-        tn: 'DS_Platform_Type',
-        bti: '.DSSeriesType'
-      }, {
-        ln: 'MDMediumPropertyType',
-        tn: 'MD_Medium_PropertyType',
+        ln: 'MDKeywordsType',
+        tn: 'MD_Keywords_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
         ps: [{
-            n: 'mdMedium',
+            n: 'keyword',
             rq: true,
-            en: 'MD_Medium',
-            ti: '.MDMediumType'
+            col: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'type',
+            ti: '.MDKeywordTypeCodePropertyType'
+          }, {
+            n: 'thesaurusName',
+            ti: '.CICitationPropertyType'
+          }]
+      }, {
+        ln: 'EXSpatialTemporalExtentPropertyType',
+        tn: 'EX_SpatialTemporalExtent_PropertyType',
+        ps: [{
+            n: 'exSpatialTemporalExtent',
+            rq: true,
+            en: 'EX_SpatialTemporalExtent',
+            ti: '.EXSpatialTemporalExtentType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractDSAggregateType',
+        tn: 'AbstractDS_Aggregate_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'composedOf',
+            rq: true,
+            col: true,
+            ti: '.DSDataSetPropertyType'
+          }, {
+            n: 'seriesMetadata',
+            rq: true,
+            col: true,
+            ti: '.MDMetadataPropertyType'
+          }, {
+            n: 'subset',
+            mno: 0,
+            col: true,
+            ti: '.DSAggregatePropertyType'
+          }, {
+            n: 'superset',
+            mno: 0,
+            col: true,
+            ti: '.DSAggregatePropertyType'
+          }]
+      }, {
+        ln: 'MDDigitalTransferOptionsPropertyType',
+        tn: 'MD_DigitalTransferOptions_PropertyType',
+        ps: [{
+            n: 'mdDigitalTransferOptions',
+            rq: true,
+            en: 'MD_DigitalTransferOptions',
+            ti: '.MDDigitalTransferOptionsType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CIResponsiblePartyPropertyType',
+        tn: 'CI_ResponsibleParty_PropertyType',
+        ps: [{
+            n: 'ciResponsibleParty',
+            rq: true,
+            en: 'CI_ResponsibleParty',
+            ti: '.CIResponsiblePartyType'
           }, {
             n: 'nilReason',
             ti: {
@@ -1878,318 +664,15 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MDServiceIdentificationType',
-        tn: 'MD_ServiceIdentification_Type',
-        bti: '.AbstractMDIdentificationType'
-      }, {
-        ln: 'CIDateType',
-        tn: 'CI_Date_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ln: 'MDCoverageDescriptionPropertyType',
+        tn: 'MD_CoverageDescription_PropertyType',
         ps: [{
-            n: 'date',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.DatePropertyType'
-          }, {
-            n: 'dateType',
-            rq: true,
-            ti: '.CIDateTypeCodePropertyType'
-          }]
-      }, {
-        ln: 'MDCoverageContentTypeCodePropertyType',
-        tn: 'MD_CoverageContentTypeCode_PropertyType',
-        ps: [{
-            n: 'mdCoverageContentTypeCode',
-            rq: true,
-            en: 'MD_CoverageContentTypeCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDCellGeometryCodePropertyType',
-        tn: 'MD_CellGeometryCode_PropertyType',
-        ps: [{
-            n: 'mdCellGeometryCode',
-            rq: true,
-            en: 'MD_CellGeometryCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EXSpatialTemporalExtentPropertyType',
-        tn: 'EX_SpatialTemporalExtent_PropertyType',
-        ps: [{
-            n: 'exSpatialTemporalExtent',
-            rq: true,
-            en: 'EX_SpatialTemporalExtent',
-            ti: '.EXSpatialTemporalExtentType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQThematicClassificationCorrectnessPropertyType',
-        tn: 'DQ_ThematicClassificationCorrectness_PropertyType',
-        ps: [{
-            n: 'dqThematicClassificationCorrectness',
-            rq: true,
-            en: 'DQ_ThematicClassificationCorrectness',
-            ti: '.DQThematicClassificationCorrectnessType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDImageDescriptionPropertyType',
-        tn: 'MD_ImageDescription_PropertyType',
-        ps: [{
-            n: 'mdImageDescription',
-            rq: true,
-            en: 'MD_ImageDescription',
-            ti: '.MDImageDescriptionType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'LISourceType',
-        tn: 'LI_Source_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'description',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'scaleDenominator',
-            ti: '.MDRepresentativeFractionPropertyType'
-          }, {
-            n: 'sourceReferenceSystem',
-            ti: '.MDReferenceSystemPropertyType'
-          }, {
-            n: 'sourceCitation',
-            ti: '.CICitationPropertyType'
-          }, {
-            n: 'sourceExtent',
-            mno: 0,
-            col: true,
-            ti: '.EXExtentPropertyType'
-          }, {
-            n: 'sourceStep',
-            mno: 0,
-            col: true,
-            ti: '.LIProcessStepPropertyType'
-          }]
-      }, {
-        ln: 'MDDimensionType',
-        tn: 'MD_Dimension_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'dimensionName',
-            rq: true,
-            ti: '.MDDimensionNameTypeCodePropertyType'
-          }, {
-            n: 'dimensionSize',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
-          }, {
-            n: 'resolution',
-            ti: 'ISO19139_GCO_20070417.MeasurePropertyType'
-          }]
-      }, {
-        ln: 'DSAssociationPropertyType',
-        tn: 'DS_Association_PropertyType',
-        ps: [{
-            n: 'dsAssociation',
-            rq: true,
-            en: 'DS_Association',
-            ti: '.DSAssociationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDRepresentativeFractionType',
-        tn: 'MD_RepresentativeFraction_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'denominator',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
-          }]
-      }, {
-        ln: 'MDIdentifierPropertyType',
-        tn: 'MD_Identifier_PropertyType',
-        ps: [{
-            n: 'mdIdentifier',
+            n: 'mdCoverageDescription',
             rq: true,
             mx: false,
             dom: false,
-            en: 'MD_Identifier',
-            ti: '.MDIdentifierType',
+            en: 'MD_CoverageDescription',
+            ti: '.MDCoverageDescriptionType',
             t: 'er'
           }, {
             n: 'nilReason',
@@ -2233,102 +716,80 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MDVectorSpatialRepresentationType',
-        tn: 'MD_VectorSpatialRepresentation_Type',
-        bti: '.AbstractMDSpatialRepresentationType',
-        ps: [{
-            n: 'topologyLevel',
-            ti: '.MDTopologyLevelCodePropertyType'
-          }, {
-            n: 'geometricObjects',
-            mno: 0,
-            col: true,
-            ti: '.MDGeometricObjectsPropertyType'
-          }]
-      }, {
-        ln: 'CICitationType',
-        tn: 'CI_Citation_Type',
+        ln: 'CITelephoneType',
+        tn: 'CI_Telephone_Type',
         bti: 'ISO19139_GCO_20070417.AbstractObjectType',
         ps: [{
-            n: 'title',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'alternateTitle',
+            n: 'voice',
             mno: 0,
             col: true,
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }, {
-            n: 'date',
-            rq: true,
-            col: true,
-            ti: '.CIDatePropertyType'
-          }, {
-            n: 'edition',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'editionDate',
-            ti: 'ISO19139_GCO_20070417.DatePropertyType'
-          }, {
-            n: 'identifier',
+            n: 'facsimile',
             mno: 0,
             col: true,
-            ti: '.MDIdentifierPropertyType'
-          }, {
-            n: 'citedResponsibleParty',
-            mno: 0,
-            col: true,
-            ti: '.CIResponsiblePartyPropertyType'
-          }, {
-            n: 'presentationForm',
-            mno: 0,
-            col: true,
-            ti: '.CIPresentationFormCodePropertyType'
-          }, {
-            n: 'series',
-            ti: '.CISeriesPropertyType'
-          }, {
-            n: 'otherCitationDetails',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'collectiveTitle',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'isbn',
-            en: 'ISBN',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'issn',
-            en: 'ISSN',
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }]
       }, {
-        ln: 'MDImagingConditionCodePropertyType',
-        tn: 'MD_ImagingConditionCode_PropertyType',
+        ln: 'PTFreeTextPropertyType',
+        tn: 'PT_FreeText_PropertyType',
+        bti: 'ISO19139_GCO_20070417.CharacterStringPropertyType',
         ps: [{
-            n: 'mdImagingConditionCode',
+            n: 'ptFreeText',
             rq: true,
-            en: 'MD_ImagingConditionCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
+            en: 'PT_FreeText',
+            ti: '.PTFreeTextType'
           }]
       }, {
-        ln: 'DSInitiativePropertyType',
-        tn: 'DS_Initiative_PropertyType',
+        ln: 'MDBrowseGraphicType',
+        tn: 'MD_BrowseGraphic_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
         ps: [{
-            n: 'dsInitiative',
+            n: 'fileName',
             rq: true,
-            en: 'DS_Initiative',
-            ti: '.DSInitiativeType'
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'fileDescription',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'fileType',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'MDStandardOrderProcessType',
+        tn: 'MD_StandardOrderProcess_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'fees',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'plannedAvailableDateTime',
+            ti: 'ISO19139_GCO_20070417.DateTimePropertyType'
+          }, {
+            n: 'orderingInstructions',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'turnaround',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'LocalisedCharacterStringPropertyType',
+        tn: 'LocalisedCharacterString_PropertyType',
+        bti: 'ISO19139_GCO_20070417.ObjectReferencePropertyType',
+        ps: [{
+            n: 'localisedCharacterString',
+            rq: true,
+            en: 'LocalisedCharacterString',
+            ti: '.LocalisedCharacterStringType'
+          }]
+      }, {
+        ln: 'MDLegalConstraintsPropertyType',
+        tn: 'MD_LegalConstraints_PropertyType',
+        ps: [{
+            n: 'mdLegalConstraints',
+            rq: true,
+            en: 'MD_LegalConstraints',
+            ti: '.MDLegalConstraintsType'
           }, {
             n: 'nilReason',
             ti: {
@@ -2369,6 +830,574 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'MDCoverageContentTypeCodePropertyType',
+        tn: 'MD_CoverageContentTypeCode_PropertyType',
+        ps: [{
+            n: 'mdCoverageContentTypeCode',
+            rq: true,
+            en: 'MD_CoverageContentTypeCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'RSReferenceSystemPropertyType',
+        tn: 'RS_ReferenceSystem_PropertyType',
+        ps: [{
+            n: 'abstractRSReferenceSystem',
+            rq: true,
+            en: 'AbstractRS_ReferenceSystem',
+            ti: '.AbstractRSReferenceSystemType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDDimensionType',
+        tn: 'MD_Dimension_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'dimensionName',
+            rq: true,
+            ti: '.MDDimensionNameTypeCodePropertyType'
+          }, {
+            n: 'dimensionSize',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
+          }, {
+            n: 'resolution',
+            ti: 'ISO19139_GCO_20070417.MeasurePropertyType'
+          }]
+      }, {
+        ln: 'MDExtendedElementInformationPropertyType',
+        tn: 'MD_ExtendedElementInformation_PropertyType',
+        ps: [{
+            n: 'mdExtendedElementInformation',
+            rq: true,
+            en: 'MD_ExtendedElementInformation',
+            ti: '.MDExtendedElementInformationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'PTLocaleType',
+        tn: 'PT_Locale_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'languageCode',
+            rq: true,
+            ti: '.LanguageCodePropertyType'
+          }, {
+            n: 'country',
+            ti: '.CountryPropertyType'
+          }, {
+            n: 'characterEncoding',
+            rq: true,
+            ti: '.MDCharacterSetCodePropertyType'
+          }]
+      }, {
+        ln: 'DQNonQuantitativeAttributeAccuracyType',
+        tn: 'DQ_NonQuantitativeAttributeAccuracy_Type',
+        bti: '.AbstractDQThematicAccuracyType'
+      }, {
+        ln: 'DQTemporalConsistencyType',
+        tn: 'DQ_TemporalConsistency_Type',
+        bti: '.AbstractDQTemporalAccuracyType'
+      }, {
+        ln: 'DQQuantitativeResultType',
+        tn: 'DQ_QuantitativeResult_Type',
+        bti: '.AbstractDQResultType',
+        ps: [{
+            n: 'valueType',
+            ti: 'ISO19139_GCO_20070417.RecordTypePropertyType'
+          }, {
+            n: 'valueUnit',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.UnitOfMeasurePropertyType'
+          }, {
+            n: 'errorStatistic',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'value',
+            rq: true,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.RecordPropertyType'
+          }]
+      }, {
+        ln: 'DSAggregatePropertyType',
+        tn: 'DS_Aggregate_PropertyType',
+        ps: [{
+            n: 'abstractDSAggregate',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractDS_Aggregate',
+            ti: '.AbstractDSAggregateType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDGeometricObjectsType',
+        tn: 'MD_GeometricObjects_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'geometricObjectType',
+            rq: true,
+            ti: '.MDGeometricObjectTypeCodePropertyType'
+          }, {
+            n: 'geometricObjectCount',
+            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
+          }]
+      }, {
+        ln: 'DQCompletenessOmissionType',
+        tn: 'DQ_CompletenessOmission_Type',
+        bti: '.AbstractDQCompletenessType'
+      }, {
+        ln: 'DQConformanceResultType',
+        tn: 'DQ_ConformanceResult_Type',
+        bti: '.AbstractDQResultType',
+        ps: [{
+            n: 'specification',
+            rq: true,
+            ti: '.CICitationPropertyType'
+          }, {
+            n: 'explanation',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'pass',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+          }]
+      }, {
+        ln: 'AbstractEXGeographicExtentType',
+        tn: 'AbstractEX_GeographicExtent_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'extentTypeCode',
+            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+          }]
+      }, {
+        ln: 'MDDistributorPropertyType',
+        tn: 'MD_Distributor_PropertyType',
+        ps: [{
+            n: 'mdDistributor',
+            rq: true,
+            en: 'MD_Distributor',
+            ti: '.MDDistributorType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DSStereoMatePropertyType',
+        tn: 'DS_StereoMate_PropertyType',
+        ps: [{
+            n: 'dsStereoMate',
+            rq: true,
+            en: 'DS_StereoMate',
+            ti: '.DSStereoMateType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDMaintenanceInformationType',
+        tn: 'MD_MaintenanceInformation_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'maintenanceAndUpdateFrequency',
+            rq: true,
+            ti: '.MDMaintenanceFrequencyCodePropertyType'
+          }, {
+            n: 'dateOfNextUpdate',
+            ti: 'ISO19139_GCO_20070417.DatePropertyType'
+          }, {
+            n: 'userDefinedMaintenanceFrequency',
+            ti: 'ISO19139_GTS_20070417.TMPeriodDurationPropertyType'
+          }, {
+            n: 'updateScope',
+            mno: 0,
+            col: true,
+            ti: '.MDScopeCodePropertyType'
+          }, {
+            n: 'updateScopeDescription',
+            mno: 0,
+            col: true,
+            ti: '.MDScopeDescriptionPropertyType'
+          }, {
+            n: 'maintenanceNote',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'contact',
+            mno: 0,
+            col: true,
+            ti: '.CIResponsiblePartyPropertyType'
+          }]
+      }, {
+        ln: 'AbstractDQElementType',
+        tn: 'AbstractDQ_Element_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'nameOfMeasure',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'measureIdentification',
+            ti: '.MDIdentifierPropertyType'
+          }, {
+            n: 'measureDescription',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'evaluationMethodType',
+            ti: '.DQEvaluationMethodTypeCodePropertyType'
+          }, {
+            n: 'evaluationMethodDescription',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'evaluationProcedure',
+            ti: '.CICitationPropertyType'
+          }, {
+            n: 'dateTime',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.DateTimePropertyType'
+          }, {
+            n: 'result',
+            rq: true,
+            mxo: 2,
+            col: true,
+            ti: '.DQResultPropertyType'
+          }]
+      }, {
+        ln: 'DQThematicClassificationCorrectnessType',
+        tn: 'DQ_ThematicClassificationCorrectness_Type',
+        bti: '.AbstractDQThematicAccuracyType'
+      }, {
+        ln: 'MDDistributionPropertyType',
+        tn: 'MD_Distribution_PropertyType',
+        ps: [{
+            n: 'mdDistribution',
+            rq: true,
+            en: 'MD_Distribution',
+            ti: '.MDDistributionType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'EXBoundingPolygonPropertyType',
+        tn: 'EX_BoundingPolygon_PropertyType',
+        ps: [{
+            n: 'exBoundingPolygon',
+            rq: true,
+            en: 'EX_BoundingPolygon',
+            ti: '.EXBoundingPolygonType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDFormatType',
+        tn: 'MD_Format_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'version',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'amendmentNumber',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'specification',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'fileDecompressionTechnique',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'formatDistributor',
+            mno: 0,
+            col: true,
+            ti: '.MDDistributorPropertyType'
           }]
       }, {
         ln: 'AbstractMDContentInformationType',
@@ -2427,15 +1456,15 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DSSeriesPropertyType',
-        tn: 'DS_Series_PropertyType',
+        ln: 'DSOtherAggregatePropertyType',
+        tn: 'DS_OtherAggregate_PropertyType',
         ps: [{
-            n: 'dsSeries',
+            n: 'dsOtherAggregate',
             rq: true,
             mx: false,
             dom: false,
-            en: 'DS_Series',
-            ti: '.DSSeriesType',
+            en: 'DS_OtherAggregate',
+            ti: '.DSOtherAggregateType',
             t: 'er'
           }, {
             n: 'nilReason',
@@ -2479,13 +1508,16 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MDDimensionPropertyType',
-        tn: 'MD_Dimension_PropertyType',
+        ln: 'DQElementPropertyType',
+        tn: 'DQ_Element_PropertyType',
         ps: [{
-            n: 'mdDimension',
+            n: 'abstractDQElement',
             rq: true,
-            en: 'MD_Dimension',
-            ti: '.MDDimensionType'
+            mx: false,
+            dom: false,
+            en: 'AbstractDQ_Element',
+            ti: '.AbstractDQElementType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -2528,132 +1560,12 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LILineagePropertyType',
-        tn: 'LI_Lineage_PropertyType',
+        ln: 'MDProgressCodePropertyType',
+        tn: 'MD_ProgressCode_PropertyType',
         ps: [{
-            n: 'liLineage',
+            n: 'mdProgressCode',
             rq: true,
-            en: 'LI_Lineage',
-            ti: '.LILineageType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractDQTemporalAccuracyType',
-        tn: 'AbstractDQ_TemporalAccuracy_Type',
-        bti: '.AbstractDQElementType'
-      }, {
-        ln: 'MDObligationCodePropertyType',
-        tn: 'MD_ObligationCode_PropertyType',
-        ps: [{
-            n: 'mdObligationCode',
-            rq: true,
-            en: 'MD_ObligationCode'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDReferenceSystemPropertyType',
-        tn: 'MD_ReferenceSystem_PropertyType',
-        ps: [{
-            n: 'mdReferenceSystem',
-            rq: true,
-            en: 'MD_ReferenceSystem',
-            ti: '.MDReferenceSystemType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDClassificationCodePropertyType',
-        tn: 'MD_ClassificationCode_PropertyType',
-        ps: [{
-            n: 'mdClassificationCode',
-            rq: true,
-            en: 'MD_ClassificationCode',
+            en: 'MD_ProgressCode',
             ti: 'ISO19139_GCO_20070417.CodeListValueType'
           }, {
             n: 'nilReason',
@@ -2667,430 +1579,62 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LanguageCodePropertyType',
-        tn: 'LanguageCode_PropertyType',
+        ln: 'MDDigitalTransferOptionsType',
+        tn: 'MD_DigitalTransferOptions_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
         ps: [{
-            n: 'languageCode',
-            rq: true,
-            en: 'LanguageCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+            n: 'unitsOfDistribution',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
+            n: 'transferSize',
+            ti: 'ISO19139_GCO_20070417.RealPropertyType'
+          }, {
+            n: 'onLine',
+            mno: 0,
+            col: true,
+            ti: '.CIOnlineResourcePropertyType'
+          }, {
+            n: 'offLine',
+            ti: '.MDMediumPropertyType'
           }]
       }, {
-        ln: 'MDGeorectifiedType',
-        tn: 'MD_Georectified_Type',
-        bti: '.MDGridSpatialRepresentationType',
+        ln: 'MDGridSpatialRepresentationType',
+        tn: 'MD_GridSpatialRepresentation_Type',
+        bti: '.AbstractMDSpatialRepresentationType',
         ps: [{
-            n: 'checkPointAvailability',
+            n: 'numberOfDimensions',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
+          }, {
+            n: 'axisDimensionProperties',
+            mno: 0,
+            col: true,
+            ti: '.MDDimensionPropertyType'
+          }, {
+            n: 'cellGeometry',
+            rq: true,
+            ti: '.MDCellGeometryCodePropertyType'
+          }, {
+            n: 'transformationParameterAvailability',
             rq: true,
             ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
-          }, {
-            n: 'checkPointDescription',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'cornerPoints',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GSS_20070417.GMPointPropertyType'
-          }, {
-            n: 'centerPoint',
-            ti: 'ISO19139_GSS_20070417.GMPointPropertyType'
-          }, {
-            n: 'pointInPixel',
-            rq: true,
-            ti: '.MDPixelOrientationCodePropertyType'
-          }, {
-            n: 'transformationDimensionDescription',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'transformationDimensionMapping',
-            mno: 0,
-            mxo: 2,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'CIContactPropertyType',
-        tn: 'CI_Contact_PropertyType',
-        ps: [{
-            n: 'ciContact',
-            rq: true,
-            en: 'CI_Contact',
-            ti: '.CIContactType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDKeywordsPropertyType',
-        tn: 'MD_Keywords_PropertyType',
-        ps: [{
-            n: 'mdKeywords',
-            rq: true,
-            en: 'MD_Keywords',
-            ti: '.MDKeywordsType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
           }]
       }, {
         ln: 'DQFormatConsistencyType',
         tn: 'DQ_FormatConsistency_Type',
         bti: '.AbstractDQLogicalConsistencyType'
       }, {
-        ln: 'LIProcessStepType',
-        tn: 'LI_ProcessStep_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'description',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'rationale',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'dateTime',
-            ti: 'ISO19139_GCO_20070417.DateTimePropertyType'
-          }, {
-            n: 'processor',
-            mno: 0,
-            col: true,
-            ti: '.CIResponsiblePartyPropertyType'
-          }, {
-            n: 'source',
-            mno: 0,
-            col: true,
-            ti: '.LISourcePropertyType'
-          }]
+        ln: 'DSStereoMateType',
+        tn: 'DS_StereoMate_Type',
+        bti: '.DSOtherAggregateType'
       }, {
-        ln: 'MDExtendedElementInformationPropertyType',
-        tn: 'MD_ExtendedElementInformation_PropertyType',
+        ln: 'DSInitiativePropertyType',
+        tn: 'DS_Initiative_PropertyType',
         ps: [{
-            n: 'mdExtendedElementInformation',
+            n: 'dsInitiative',
             rq: true,
-            en: 'MD_ExtendedElementInformation',
-            ti: '.MDExtendedElementInformationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CIPresentationFormCodePropertyType',
-        tn: 'CI_PresentationFormCode_PropertyType',
-        ps: [{
-            n: 'ciPresentationFormCode',
-            rq: true,
-            en: 'CI_PresentationFormCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDStandardOrderProcessPropertyType',
-        tn: 'MD_StandardOrderProcess_PropertyType',
-        ps: [{
-            n: 'mdStandardOrderProcess',
-            rq: true,
-            en: 'MD_StandardOrderProcess',
-            ti: '.MDStandardOrderProcessType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CICitationPropertyType',
-        tn: 'CI_Citation_PropertyType',
-        ps: [{
-            n: 'ciCitation',
-            rq: true,
-            en: 'CI_Citation',
-            ti: '.CICitationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQScopePropertyType',
-        tn: 'DQ_Scope_PropertyType',
-        ps: [{
-            n: 'dqScope',
-            rq: true,
-            en: 'DQ_Scope',
-            ti: '.DQScopeType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'EXExtentType',
-        tn: 'EX_Extent_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'description',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'geographicElement',
-            mno: 0,
-            col: true,
-            ti: '.EXGeographicExtentPropertyType'
-          }, {
-            n: 'temporalElement',
-            mno: 0,
-            col: true,
-            ti: '.EXTemporalExtentPropertyType'
-          }, {
-            n: 'verticalElement',
-            mno: 0,
-            col: true,
-            ti: '.EXVerticalExtentPropertyType'
-          }]
-      }, {
-        ln: 'LIProcessStepPropertyType',
-        tn: 'LI_ProcessStep_PropertyType',
-        ps: [{
-            n: 'liProcessStep',
-            rq: true,
-            en: 'LI_ProcessStep',
-            ti: '.LIProcessStepType'
+            en: 'DS_Initiative',
+            ti: '.DSInitiativeType'
           }, {
             n: 'nilReason',
             ti: {
@@ -3182,19 +1726,381 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DQDomainConsistencyType',
-        tn: 'DQ_DomainConsistency_Type',
-        bti: '.AbstractDQLogicalConsistencyType'
-      }, {
-        ln: 'RSIdentifierType',
-        tn: 'RS_Identifier_Type',
-        bti: '.MDIdentifierType',
+        ln: 'MDFeatureCatalogueDescriptionPropertyType',
+        tn: 'MD_FeatureCatalogueDescription_PropertyType',
         ps: [{
-            n: 'codeSpace',
+            n: 'mdFeatureCatalogueDescription',
+            rq: true,
+            en: 'MD_FeatureCatalogueDescription',
+            ti: '.MDFeatureCatalogueDescriptionType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CIOnLineFunctionCodePropertyType',
+        tn: 'CI_OnLineFunctionCode_PropertyType',
+        ps: [{
+            n: 'ciOnLineFunctionCode',
+            rq: true,
+            en: 'CI_OnLineFunctionCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CIOnlineResourceType',
+        tn: 'CI_OnlineResource_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'linkage',
+            rq: true,
+            ti: '.URLPropertyType'
+          }, {
+            n: 'protocol',
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }, {
-            n: 'version',
+            n: 'applicationProfile',
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'name',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'description',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'function',
+            ti: '.CIOnLineFunctionCodePropertyType'
+          }]
+      }, {
+        ln: 'DQFormatConsistencyPropertyType',
+        tn: 'DQ_FormatConsistency_PropertyType',
+        ps: [{
+            n: 'dqFormatConsistency',
+            rq: true,
+            en: 'DQ_FormatConsistency',
+            ti: '.DQFormatConsistencyType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'RSIdentifierPropertyType',
+        tn: 'RS_Identifier_PropertyType',
+        ps: [{
+            n: 'rsIdentifier',
+            rq: true,
+            en: 'RS_Identifier',
+            ti: '.RSIdentifierType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CIResponsiblePartyType',
+        tn: 'CI_ResponsibleParty_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'individualName',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'organisationName',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'positionName',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'contactInfo',
+            ti: '.CIContactPropertyType'
+          }, {
+            n: 'role',
+            rq: true,
+            ti: '.CIRoleCodePropertyType'
+          }]
+      }, {
+        ln: 'DQQuantitativeAttributeAccuracyPropertyType',
+        tn: 'DQ_QuantitativeAttributeAccuracy_PropertyType',
+        ps: [{
+            n: 'dqQuantitativeAttributeAccuracy',
+            rq: true,
+            en: 'DQ_QuantitativeAttributeAccuracy',
+            ti: '.DQQuantitativeAttributeAccuracyType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CountryPropertyType',
+        tn: 'Country_PropertyType',
+        ps: [{
+            n: 'country',
+            rq: true,
+            en: 'Country',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDUsageType',
+        tn: 'MD_Usage_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'specificUsage',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'usageDateTime',
+            ti: 'ISO19139_GCO_20070417.DateTimePropertyType'
+          }, {
+            n: 'userDeterminedLimitations',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'userContactInfo',
+            rq: true,
+            col: true,
+            ti: '.CIResponsiblePartyPropertyType'
+          }]
+      }, {
+        ln: 'MDApplicationSchemaInformationPropertyType',
+        tn: 'MD_ApplicationSchemaInformation_PropertyType',
+        ps: [{
+            n: 'mdApplicationSchemaInformation',
+            rq: true,
+            en: 'MD_ApplicationSchemaInformation',
+            ti: '.MDApplicationSchemaInformationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDConstraintsType',
+        tn: 'MD_Constraints_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'useLimitation',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'MDMediumFormatCodePropertyType',
+        tn: 'MD_MediumFormatCode_PropertyType',
+        ps: [{
+            n: 'mdMediumFormatCode',
+            rq: true,
+            en: 'MD_MediumFormatCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'MDMetadataType',
@@ -3323,13 +2229,13 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             ti: 'ISO19139_GCO_20070417.ObjectReferencePropertyType'
           }]
       }, {
-        ln: 'EXGeographicDescriptionPropertyType',
-        tn: 'EX_GeographicDescription_PropertyType',
+        ln: 'DQGriddedDataPositionalAccuracyPropertyType',
+        tn: 'DQ_GriddedDataPositionalAccuracy_PropertyType',
         ps: [{
-            n: 'exGeographicDescription',
+            n: 'dqGriddedDataPositionalAccuracy',
             rq: true,
-            en: 'EX_GeographicDescription',
-            ti: '.EXGeographicDescriptionType'
+            en: 'DQ_GriddedDataPositionalAccuracy',
+            ti: '.DQGriddedDataPositionalAccuracyType'
           }, {
             n: 'nilReason',
             ti: {
@@ -3372,431 +2278,48 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractEXGeographicExtentType',
-        tn: 'AbstractEX_GeographicExtent_Type',
+        ln: 'EXVerticalExtentType',
+        tn: 'EX_VerticalExtent_Type',
         bti: 'ISO19139_GCO_20070417.AbstractObjectType',
         ps: [{
-            n: 'extentTypeCode',
-            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+            n: 'minimumValue',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.RealPropertyType'
+          }, {
+            n: 'maximumValue',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.RealPropertyType'
+          }, {
+            n: 'verticalCRS',
+            rq: true,
+            ti: 'ISO19139_GSR_20070417.SCCRSPropertyType'
           }]
       }, {
-        ln: 'MDGeometricObjectTypeCodePropertyType',
-        tn: 'MD_GeometricObjectTypeCode_PropertyType',
+        ln: 'PTLocaleContainerType',
+        tn: 'PT_LocaleContainer_Type',
         ps: [{
-            n: 'mdGeometricObjectTypeCode',
+            n: 'description',
             rq: true,
-            en: 'MD_GeometricObjectTypeCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EXExtentPropertyType',
-        tn: 'EX_Extent_PropertyType',
-        ps: [{
-            n: 'exExtent',
+            n: 'locale',
             rq: true,
-            en: 'EX_Extent',
-            ti: '.EXExtentType'
+            ti: '.PTLocalePropertyType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQCompletenessCommissionType',
-        tn: 'DQ_CompletenessCommission_Type',
-        bti: '.AbstractDQCompletenessType'
-      }, {
-        ln: 'MDMaintenanceFrequencyCodePropertyType',
-        tn: 'MD_MaintenanceFrequencyCode_PropertyType',
-        ps: [{
-            n: 'mdMaintenanceFrequencyCode',
-            rq: true,
-            en: 'MD_MaintenanceFrequencyCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQAccuracyOfATimeMeasurementType',
-        tn: 'DQ_AccuracyOfATimeMeasurement_Type',
-        bti: '.AbstractDQTemporalAccuracyType'
-      }, {
-        ln: 'MDSpatialRepresentationTypeCodePropertyType',
-        tn: 'MD_SpatialRepresentationTypeCode_PropertyType',
-        ps: [{
-            n: 'mdSpatialRepresentationTypeCode',
-            rq: true,
-            en: 'MD_SpatialRepresentationTypeCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDProgressCodePropertyType',
-        tn: 'MD_ProgressCode_PropertyType',
-        ps: [{
-            n: 'mdProgressCode',
-            rq: true,
-            en: 'MD_ProgressCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDKeywordsType',
-        tn: 'MD_Keywords_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'keyword',
+            n: 'date',
             rq: true,
             col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+            ti: '.CIDatePropertyType'
           }, {
-            n: 'type',
-            ti: '.MDKeywordTypeCodePropertyType'
-          }, {
-            n: 'thesaurusName',
-            ti: '.CICitationPropertyType'
-          }]
-      }, {
-        ln: 'MDMaintenanceInformationType',
-        tn: 'MD_MaintenanceInformation_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'maintenanceAndUpdateFrequency',
-            rq: true,
-            ti: '.MDMaintenanceFrequencyCodePropertyType'
-          }, {
-            n: 'dateOfNextUpdate',
-            ti: 'ISO19139_GCO_20070417.DatePropertyType'
-          }, {
-            n: 'userDefinedMaintenanceFrequency',
-            ti: 'ISO19139_GTS_20070417.TMPeriodDurationPropertyType'
-          }, {
-            n: 'updateScope',
-            mno: 0,
-            col: true,
-            ti: '.MDScopeCodePropertyType'
-          }, {
-            n: 'updateScopeDescription',
-            mno: 0,
-            col: true,
-            ti: '.MDScopeDescriptionPropertyType'
-          }, {
-            n: 'maintenanceNote',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'contact',
-            mno: 0,
-            col: true,
-            ti: '.CIResponsiblePartyPropertyType'
-          }]
-      }, {
-        ln: 'DQQuantitativeResultType',
-        tn: 'DQ_QuantitativeResult_Type',
-        bti: '.AbstractDQResultType',
-        ps: [{
-            n: 'valueType',
-            ti: 'ISO19139_GCO_20070417.RecordTypePropertyType'
-          }, {
-            n: 'valueUnit',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.UnitOfMeasurePropertyType'
-          }, {
-            n: 'errorStatistic',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'value',
-            rq: true,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.RecordPropertyType'
-          }]
-      }, {
-        ln: 'MDDistributorType',
-        tn: 'MD_Distributor_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'distributorContact',
-            rq: true,
-            ti: '.CIResponsiblePartyPropertyType'
-          }, {
-            n: 'distributionOrderProcess',
-            mno: 0,
-            col: true,
-            ti: '.MDStandardOrderProcessPropertyType'
-          }, {
-            n: 'distributorFormat',
-            mno: 0,
-            col: true,
-            ti: '.MDFormatPropertyType'
-          }, {
-            n: 'distributorTransferOptions',
-            mno: 0,
-            col: true,
-            ti: '.MDDigitalTransferOptionsPropertyType'
-          }]
-      }, {
-        ln: 'MDDigitalTransferOptionsPropertyType',
-        tn: 'MD_DigitalTransferOptions_PropertyType',
-        ps: [{
-            n: 'mdDigitalTransferOptions',
-            rq: true,
-            en: 'MD_DigitalTransferOptions',
-            ti: '.MDDigitalTransferOptionsType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDExtendedElementInformationType',
-        tn: 'MD_ExtendedElementInformation_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'name',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'shortName',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'domainCode',
-            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
-          }, {
-            n: 'definition',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'obligation',
-            ti: '.MDObligationCodePropertyType'
-          }, {
-            n: 'condition',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'dataType',
-            rq: true,
-            ti: '.MDDatatypeCodePropertyType'
-          }, {
-            n: 'maximumOccurrence',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'domainValue',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'parentEntity',
-            rq: true,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'rule',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'rationale',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'source',
+            n: 'responsibleParty',
             rq: true,
             col: true,
             ti: '.CIResponsiblePartyPropertyType'
-          }]
-      }, {
-        ln: 'EXGeographicDescriptionType',
-        tn: 'EX_GeographicDescription_Type',
-        bti: '.AbstractEXGeographicExtentType',
-        ps: [{
-            n: 'geographicIdentifier',
+          }, {
+            n: 'localisedString',
             rq: true,
-            ti: '.MDIdentifierPropertyType'
-          }]
-      }, {
-        ln: 'MDIdentifierType',
-        tn: 'MD_Identifier_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'authority',
-            ti: '.CICitationPropertyType'
-          }, {
-            n: 'code',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'DQCompletenessOmissionPropertyType',
-        tn: 'DQ_CompletenessOmission_PropertyType',
-        ps: [{
-            n: 'dqCompletenessOmission',
-            rq: true,
-            en: 'DQ_CompletenessOmission',
-            ti: '.DQCompletenessOmissionType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDTopicCategoryCodePropertyType',
-        tn: 'MD_TopicCategoryCode_PropertyType',
-        ps: [{
-            n: 'mdTopicCategoryCode',
-            rq: true,
-            en: 'MD_TopicCategoryCode'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
+            col: true,
+            ti: '.LocalisedCharacterStringPropertyType'
           }]
       }, {
         ln: 'CIDateTypeCodePropertyType',
@@ -3815,298 +2338,6 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
               lp: 'nilReason',
               ns: 'http:\/\/www.isotc211.org\/2005\/gco'
             },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EXSpatialTemporalExtentType',
-        tn: 'EX_SpatialTemporalExtent_Type',
-        bti: '.EXTemporalExtentType',
-        ps: [{
-            n: 'spatialExtent',
-            rq: true,
-            col: true,
-            ti: '.EXGeographicExtentPropertyType'
-          }]
-      }, {
-        ln: 'MDResolutionPropertyType',
-        tn: 'MD_Resolution_PropertyType',
-        ps: [{
-            n: 'mdResolution',
-            rq: true,
-            en: 'MD_Resolution',
-            ti: '.MDResolutionType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DSSensorType',
-        tn: 'DS_Sensor_Type',
-        bti: '.DSSeriesType'
-      }, {
-        ln: 'MDApplicationSchemaInformationPropertyType',
-        tn: 'MD_ApplicationSchemaInformation_PropertyType',
-        ps: [{
-            n: 'mdApplicationSchemaInformation',
-            rq: true,
-            en: 'MD_ApplicationSchemaInformation',
-            ti: '.MDApplicationSchemaInformationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CISeriesPropertyType',
-        tn: 'CI_Series_PropertyType',
-        ps: [{
-            n: 'ciSeries',
-            rq: true,
-            en: 'CI_Series',
-            ti: '.CISeriesType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDSecurityConstraintsPropertyType',
-        tn: 'MD_SecurityConstraints_PropertyType',
-        ps: [{
-            n: 'mdSecurityConstraints',
-            rq: true,
-            en: 'MD_SecurityConstraints',
-            ti: '.MDSecurityConstraintsType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDPortrayalCatalogueReferenceType',
-        tn: 'MD_PortrayalCatalogueReference_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'portrayalCatalogueCitation',
-            rq: true,
-            col: true,
-            ti: '.CICitationPropertyType'
-          }]
-      }, {
-        ln: 'DQTopologicalConsistencyType',
-        tn: 'DQ_TopologicalConsistency_Type',
-        bti: '.AbstractDQLogicalConsistencyType'
-      }, {
-        ln: 'MDPortrayalCatalogueReferencePropertyType',
-        tn: 'MD_PortrayalCatalogueReference_PropertyType',
-        ps: [{
-            n: 'mdPortrayalCatalogueReference',
-            rq: true,
-            en: 'MD_PortrayalCatalogueReference',
-            ti: '.MDPortrayalCatalogueReferenceType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDLegalConstraintsPropertyType',
-        tn: 'MD_LegalConstraints_PropertyType',
-        ps: [{
-            n: 'mdLegalConstraints',
-            rq: true,
-            en: 'MD_LegalConstraints',
-            ti: '.MDLegalConstraintsType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
@@ -4159,13 +2390,13 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DQAbsoluteExternalPositionalAccuracyPropertyType',
-        tn: 'DQ_AbsoluteExternalPositionalAccuracy_PropertyType',
+        ln: 'DQQuantitativeResultPropertyType',
+        tn: 'DQ_QuantitativeResult_PropertyType',
         ps: [{
-            n: 'dqAbsoluteExternalPositionalAccuracy',
+            n: 'dqQuantitativeResult',
             rq: true,
-            en: 'DQ_AbsoluteExternalPositionalAccuracy',
-            ti: '.DQAbsoluteExternalPositionalAccuracyType'
+            en: 'DQ_QuantitativeResult',
+            ti: '.DQQuantitativeResultType'
           }, {
             n: 'nilReason',
             ti: {
@@ -4208,16 +2439,13 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MDScopeCodePropertyType',
-        tn: 'MD_ScopeCode_PropertyType',
+        ln: 'MDDatatypeCodePropertyType',
+        tn: 'MD_DatatypeCode_PropertyType',
         ps: [{
-            n: 'mdScopeCode',
+            n: 'mdDatatypeCode',
             rq: true,
-            mx: false,
-            dom: false,
-            en: 'MD_ScopeCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType',
-            t: 'er'
+            en: 'MD_DatatypeCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
           }, {
             n: 'nilReason',
             ti: {
@@ -4230,368 +2458,299 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LILineageType',
-        tn: 'LI_Lineage_Type',
+        ln: 'MDServiceIdentificationPropertyType',
+        tn: 'MD_ServiceIdentification_PropertyType',
+        ps: [{
+            n: 'mdServiceIdentification',
+            rq: true,
+            en: 'MD_ServiceIdentification',
+            ti: '.MDServiceIdentificationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'LIProcessStepPropertyType',
+        tn: 'LI_ProcessStep_PropertyType',
+        ps: [{
+            n: 'liProcessStep',
+            rq: true,
+            en: 'LI_ProcessStep',
+            ti: '.LIProcessStepType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDKeywordTypeCodePropertyType',
+        tn: 'MD_KeywordTypeCode_PropertyType',
+        ps: [{
+            n: 'mdKeywordTypeCode',
+            rq: true,
+            en: 'MD_KeywordTypeCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQRelativeInternalPositionalAccuracyType',
+        tn: 'DQ_RelativeInternalPositionalAccuracy_Type',
+        bti: '.AbstractDQPositionalAccuracyType'
+      }, {
+        ln: 'MDObligationCodePropertyType',
+        tn: 'MD_ObligationCode_PropertyType',
+        ps: [{
+            n: 'mdObligationCode',
+            rq: true,
+            en: 'MD_ObligationCode'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDVectorSpatialRepresentationType',
+        tn: 'MD_VectorSpatialRepresentation_Type',
+        bti: '.AbstractMDSpatialRepresentationType',
+        ps: [{
+            n: 'topologyLevel',
+            ti: '.MDTopologyLevelCodePropertyType'
+          }, {
+            n: 'geometricObjects',
+            mno: 0,
+            col: true,
+            ti: '.MDGeometricObjectsPropertyType'
+          }]
+      }, {
+        ln: 'MDCharacterSetCodePropertyType',
+        tn: 'MD_CharacterSetCode_PropertyType',
+        ps: [{
+            n: 'mdCharacterSetCode',
+            rq: true,
+            en: 'MD_CharacterSetCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDIdentifierType',
+        tn: 'MD_Identifier_Type',
         bti: 'ISO19139_GCO_20070417.AbstractObjectType',
         ps: [{
-            n: 'statement',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'processStep',
-            mno: 0,
-            col: true,
-            ti: '.LIProcessStepPropertyType'
-          }, {
-            n: 'source',
-            mno: 0,
-            col: true,
-            ti: '.LISourcePropertyType'
-          }]
-      }, {
-        ln: 'CIAddressType',
-        tn: 'CI_Address_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'deliveryPoint',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'city',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'administrativeArea',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'postalCode',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'country',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'electronicMailAddress',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'MDMetadataPropertyType',
-        tn: 'MD_Metadata_PropertyType',
-        ps: [{
-            n: 'mdMetadata',
-            rq: true,
-            en: 'MD_Metadata',
-            ti: '.MDMetadataType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDGeorectifiedPropertyType',
-        tn: 'MD_Georectified_PropertyType',
-        ps: [{
-            n: 'mdGeorectified',
-            rq: true,
-            en: 'MD_Georectified',
-            ti: '.MDGeorectifiedType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQConceptualConsistencyPropertyType',
-        tn: 'DQ_ConceptualConsistency_PropertyType',
-        ps: [{
-            n: 'dqConceptualConsistency',
-            rq: true,
-            en: 'DQ_ConceptualConsistency',
-            ti: '.DQConceptualConsistencyType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DSProductionSeriesType',
-        tn: 'DS_ProductionSeries_Type',
-        bti: '.DSSeriesType'
-      }, {
-        ln: 'MDCoverageDescriptionPropertyType',
-        tn: 'MD_CoverageDescription_PropertyType',
-        ps: [{
-            n: 'mdCoverageDescription',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'MD_CoverageDescription',
-            ti: '.MDCoverageDescriptionType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CIAddressPropertyType',
-        tn: 'CI_Address_PropertyType',
-        ps: [{
-            n: 'ciAddress',
-            rq: true,
-            en: 'CI_Address',
-            ti: '.CIAddressType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractMDIdentificationType',
-        tn: 'AbstractMD_Identification_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'citation',
-            rq: true,
+            n: 'authority',
             ti: '.CICitationPropertyType'
           }, {
-            n: '_abstract',
+            n: 'code',
             rq: true,
-            en: 'abstract',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'MDDataIdentificationType',
+        tn: 'MD_DataIdentification_Type',
+        bti: '.AbstractMDIdentificationType',
+        ps: [{
+            n: 'spatialRepresentationType',
+            mno: 0,
+            col: true,
+            ti: '.MDSpatialRepresentationTypeCodePropertyType'
+          }, {
+            n: 'spatialResolution',
+            mno: 0,
+            col: true,
+            ti: '.MDResolutionPropertyType'
+          }, {
+            n: 'language',
+            rq: true,
+            col: true,
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }, {
-            n: 'purpose',
+            n: 'characterSet',
+            mno: 0,
+            col: true,
+            ti: '.MDCharacterSetCodePropertyType'
+          }, {
+            n: 'topicCategory',
+            mno: 0,
+            col: true,
+            ti: '.MDTopicCategoryCodePropertyType'
+          }, {
+            n: 'environmentDescription',
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }, {
-            n: 'credit',
+            n: 'extent',
             mno: 0,
             col: true,
+            ti: '.EXExtentPropertyType'
+          }, {
+            n: 'supplementalInformation',
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'URLPropertyType',
+        tn: 'URL_PropertyType',
+        ps: [{
+            n: 'url',
+            rq: true,
+            en: 'URL'
           }, {
-            n: 'status',
-            mno: 0,
-            col: true,
-            ti: '.MDProgressCodePropertyType'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQDomainConsistencyType',
+        tn: 'DQ_DomainConsistency_Type',
+        bti: '.AbstractDQLogicalConsistencyType'
+      }, {
+        ln: 'MDBrowseGraphicPropertyType',
+        tn: 'MD_BrowseGraphic_PropertyType',
+        ps: [{
+            n: 'mdBrowseGraphic',
+            rq: true,
+            en: 'MD_BrowseGraphic',
+            ti: '.MDBrowseGraphicType'
           }, {
-            n: 'pointOfContact',
-            mno: 0,
-            col: true,
-            ti: '.CIResponsiblePartyPropertyType'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
           }, {
-            n: 'resourceMaintenance',
-            mno: 0,
-            col: true,
-            ti: '.MDMaintenanceInformationPropertyType'
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
           }, {
-            n: 'graphicOverview',
-            mno: 0,
-            col: true,
-            ti: '.MDBrowseGraphicPropertyType'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            n: 'resourceFormat',
-            mno: 0,
-            col: true,
-            ti: '.MDFormatPropertyType'
+            n: 'href',
+            t: 'a'
           }, {
-            n: 'descriptiveKeywords',
-            mno: 0,
-            col: true,
-            ti: '.MDKeywordsPropertyType'
+            n: 'role',
+            t: 'a'
           }, {
-            n: 'resourceSpecificUsage',
-            mno: 0,
-            col: true,
-            ti: '.MDUsagePropertyType'
+            n: 'arcrole',
+            t: 'a'
           }, {
-            n: 'resourceConstraints',
-            mno: 0,
-            col: true,
-            ti: '.MDConstraintsPropertyType'
+            n: 'title',
+            t: 'a'
           }, {
-            n: 'aggregationInfo',
-            mno: 0,
-            col: true,
-            ti: '.MDAggregateInformationPropertyType'
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'MDBandPropertyType',
@@ -4643,556 +2802,9 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CIDatePropertyType',
-        tn: 'CI_Date_PropertyType',
-        ps: [{
-            n: 'ciDate',
-            rq: true,
-            en: 'CI_Date',
-            ti: '.CIDateType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDResolutionType',
-        tn: 'MD_Resolution_Type',
-        ps: [{
-            n: 'equivalentScale',
-            rq: true,
-            ti: '.MDRepresentativeFractionPropertyType'
-          }, {
-            n: 'distance',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.DistancePropertyType'
-          }]
-      }, {
-        ln: 'MDLegalConstraintsType',
-        tn: 'MD_LegalConstraints_Type',
-        bti: '.MDConstraintsType',
-        ps: [{
-            n: 'accessConstraints',
-            mno: 0,
-            col: true,
-            ti: '.MDRestrictionCodePropertyType'
-          }, {
-            n: 'useConstraints',
-            mno: 0,
-            col: true,
-            ti: '.MDRestrictionCodePropertyType'
-          }, {
-            n: 'otherConstraints',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'MDPixelOrientationCodePropertyType',
-        tn: 'MD_PixelOrientationCode_PropertyType',
-        ps: [{
-            n: 'mdPixelOrientationCode',
-            rq: true,
-            en: 'MD_PixelOrientationCode'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDRepresentativeFractionPropertyType',
-        tn: 'MD_RepresentativeFraction_PropertyType',
-        ps: [{
-            n: 'mdRepresentativeFraction',
-            rq: true,
-            en: 'MD_RepresentativeFraction',
-            ti: '.MDRepresentativeFractionType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'EXBoundingPolygonType',
-        tn: 'EX_BoundingPolygon_Type',
-        bti: '.AbstractEXGeographicExtentType',
-        ps: [{
-            n: 'polygon',
-            rq: true,
-            col: true,
-            ti: 'ISO19139_GSS_20070417.GMObjectPropertyType'
-          }]
-      }, {
-        ln: 'MDConstraintsPropertyType',
-        tn: 'MD_Constraints_PropertyType',
-        ps: [{
-            n: 'mdConstraints',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'MD_Constraints',
-            ti: '.MDConstraintsType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDSpatialRepresentationPropertyType',
-        tn: 'MD_SpatialRepresentation_PropertyType',
-        ps: [{
-            n: 'abstractMDSpatialRepresentation',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractMD_SpatialRepresentation',
-            ti: '.AbstractMDSpatialRepresentationType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DSAssociationTypeCodePropertyType',
-        tn: 'DS_AssociationTypeCode_PropertyType',
-        ps: [{
-            n: 'dsAssociationTypeCode',
-            rq: true,
-            en: 'DS_AssociationTypeCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDScopeDescriptionType',
-        tn: 'MD_ScopeDescription_Type',
-        ps: [{
-            n: 'attributes',
-            rq: true,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.ObjectReferencePropertyType'
-          }, {
-            n: 'features',
-            rq: true,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.ObjectReferencePropertyType'
-          }, {
-            n: 'featureInstances',
-            rq: true,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.ObjectReferencePropertyType'
-          }, {
-            n: 'attributeInstances',
-            rq: true,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.ObjectReferencePropertyType'
-          }, {
-            n: 'dataset',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'other',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'MDRangeDimensionType',
-        tn: 'MD_RangeDimension_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'sequenceIdentifier',
-            ti: 'ISO19139_GCO_20070417.MemberNamePropertyType'
-          }, {
-            n: 'descriptor',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'MDMaintenanceInformationPropertyType',
-        tn: 'MD_MaintenanceInformation_PropertyType',
-        ps: [{
-            n: 'mdMaintenanceInformation',
-            rq: true,
-            en: 'MD_MaintenanceInformation',
-            ti: '.MDMaintenanceInformationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQThematicAccuracyPropertyType',
-        tn: 'DQ_ThematicAccuracy_PropertyType',
-        ps: [{
-            n: 'abstractDQThematicAccuracy',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractDQ_ThematicAccuracy',
-            ti: '.AbstractDQThematicAccuracyType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDStandardOrderProcessType',
-        tn: 'MD_StandardOrderProcess_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'fees',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'plannedAvailableDateTime',
-            ti: 'ISO19139_GCO_20070417.DateTimePropertyType'
-          }, {
-            n: 'orderingInstructions',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'turnaround',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'CIRoleCodePropertyType',
-        tn: 'CI_RoleCode_PropertyType',
-        ps: [{
-            n: 'ciRoleCode',
-            rq: true,
-            en: 'CI_RoleCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDUsageType',
-        tn: 'MD_Usage_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'specificUsage',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'usageDateTime',
-            ti: 'ISO19139_GCO_20070417.DateTimePropertyType'
-          }, {
-            n: 'userDeterminedLimitations',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'userContactInfo',
-            rq: true,
-            col: true,
-            ti: '.CIResponsiblePartyPropertyType'
-          }]
-      }, {
-        ln: 'MDVectorSpatialRepresentationPropertyType',
-        tn: 'MD_VectorSpatialRepresentation_PropertyType',
-        ps: [{
-            n: 'mdVectorSpatialRepresentation',
-            rq: true,
-            en: 'MD_VectorSpatialRepresentation',
-            ti: '.MDVectorSpatialRepresentationType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'EXGeographicBoundingBoxType',
-        tn: 'EX_GeographicBoundingBox_Type',
-        bti: '.AbstractEXGeographicExtentType',
-        ps: [{
-            n: 'westBoundLongitude',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.DecimalPropertyType'
-          }, {
-            n: 'eastBoundLongitude',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.DecimalPropertyType'
-          }, {
-            n: 'southBoundLatitude',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.DecimalPropertyType'
-          }, {
-            n: 'northBoundLatitude',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.DecimalPropertyType'
-          }]
+        ln: 'AbstractDQLogicalConsistencyType',
+        tn: 'AbstractDQ_LogicalConsistency_Type',
+        bti: '.AbstractDQElementType'
       }, {
         ln: 'DQNonQuantitativeAttributeAccuracyPropertyType',
         tn: 'DQ_NonQuantitativeAttributeAccuracy_PropertyType',
@@ -5243,537 +2855,13 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DSSeriesType',
-        tn: 'DS_Series_Type',
-        bti: '.AbstractDSAggregateType'
-      }, {
-        ln: 'DSDataSetType',
-        tn: 'DS_DataSet_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ln: 'MDGeorectifiedPropertyType',
+        tn: 'MD_Georectified_PropertyType',
         ps: [{
-            n: 'has',
+            n: 'mdGeorectified',
             rq: true,
-            col: true,
-            ti: '.MDMetadataPropertyType'
-          }, {
-            n: 'partOf',
-            mno: 0,
-            col: true,
-            ti: '.DSAggregatePropertyType'
-          }]
-      }, {
-        ln: 'MDFormatPropertyType',
-        tn: 'MD_Format_PropertyType',
-        ps: [{
-            n: 'mdFormat',
-            rq: true,
-            en: 'MD_Format',
-            ti: '.MDFormatType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQTemporalValidityType',
-        tn: 'DQ_TemporalValidity_Type',
-        bti: '.AbstractDQTemporalAccuracyType'
-      }, {
-        ln: 'MDMediumFormatCodePropertyType',
-        tn: 'MD_MediumFormatCode_PropertyType',
-        ps: [{
-            n: 'mdMediumFormatCode',
-            rq: true,
-            en: 'MD_MediumFormatCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EXVerticalExtentType',
-        tn: 'EX_VerticalExtent_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'minimumValue',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.RealPropertyType'
-          }, {
-            n: 'maximumValue',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.RealPropertyType'
-          }, {
-            n: 'verticalCRS',
-            rq: true,
-            ti: 'ISO19139_GSR_20070417.SCCRSPropertyType'
-          }]
-      }, {
-        ln: 'DSAggregatePropertyType',
-        tn: 'DS_Aggregate_PropertyType',
-        ps: [{
-            n: 'abstractDSAggregate',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractDS_Aggregate',
-            ti: '.AbstractDSAggregateType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQTemporalAccuracyPropertyType',
-        tn: 'DQ_TemporalAccuracy_PropertyType',
-        ps: [{
-            n: 'abstractDQTemporalAccuracy',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractDQ_TemporalAccuracy',
-            ti: '.AbstractDQTemporalAccuracyType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CIResponsiblePartyType',
-        tn: 'CI_ResponsibleParty_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'individualName',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'organisationName',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'positionName',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'contactInfo',
-            ti: '.CIContactPropertyType'
-          }, {
-            n: 'role',
-            rq: true,
-            ti: '.CIRoleCodePropertyType'
-          }]
-      }, {
-        ln: 'DQRelativeInternalPositionalAccuracyPropertyType',
-        tn: 'DQ_RelativeInternalPositionalAccuracy_PropertyType',
-        ps: [{
-            n: 'dqRelativeInternalPositionalAccuracy',
-            rq: true,
-            en: 'DQ_RelativeInternalPositionalAccuracy',
-            ti: '.DQRelativeInternalPositionalAccuracyType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CIOnlineResourcePropertyType',
-        tn: 'CI_OnlineResource_PropertyType',
-        ps: [{
-            n: 'ciOnlineResource',
-            rq: true,
-            en: 'CI_OnlineResource',
-            ti: '.CIOnlineResourceType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQResultPropertyType',
-        tn: 'DQ_Result_PropertyType',
-        ps: [{
-            n: 'abstractDQResult',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractDQ_Result',
-            ti: '.AbstractDQResultType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DSOtherAggregatePropertyType',
-        tn: 'DS_OtherAggregate_PropertyType',
-        ps: [{
-            n: 'dsOtherAggregate',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'DS_OtherAggregate',
-            ti: '.DSOtherAggregateType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'URLPropertyType',
-        tn: 'URL_PropertyType',
-        ps: [{
-            n: 'url',
-            rq: true,
-            en: 'URL'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractDSAggregateType',
-        tn: 'AbstractDS_Aggregate_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'composedOf',
-            rq: true,
-            col: true,
-            ti: '.DSDataSetPropertyType'
-          }, {
-            n: 'seriesMetadata',
-            rq: true,
-            col: true,
-            ti: '.MDMetadataPropertyType'
-          }, {
-            n: 'subset',
-            mno: 0,
-            col: true,
-            ti: '.DSAggregatePropertyType'
-          }, {
-            n: 'superset',
-            mno: 0,
-            col: true,
-            ti: '.DSAggregatePropertyType'
-          }]
-      }, {
-        ln: 'DQDataQualityType',
-        tn: 'DQ_DataQuality_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'scope',
-            rq: true,
-            ti: '.DQScopePropertyType'
-          }, {
-            n: 'report',
-            mno: 0,
-            col: true,
-            ti: '.DQElementPropertyType'
-          }, {
-            n: 'lineage',
-            ti: '.LILineagePropertyType'
-          }]
-      }, {
-        ln: 'PTFreeTextPropertyType',
-        tn: 'PT_FreeText_PropertyType',
-        bti: 'ISO19139_GCO_20070417.CharacterStringPropertyType',
-        ps: [{
-            n: 'ptFreeText',
-            rq: true,
-            en: 'PT_FreeText',
-            ti: '.PTFreeTextType'
-          }]
-      }, {
-        ln: 'MDDigitalTransferOptionsType',
-        tn: 'MD_DigitalTransferOptions_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'unitsOfDistribution',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'transferSize',
-            ti: 'ISO19139_GCO_20070417.RealPropertyType'
-          }, {
-            n: 'onLine',
-            mno: 0,
-            col: true,
-            ti: '.CIOnlineResourcePropertyType'
-          }, {
-            n: 'offLine',
-            ti: '.MDMediumPropertyType'
-          }]
-      }, {
-        ln: 'RSReferenceSystemPropertyType',
-        tn: 'RS_ReferenceSystem_PropertyType',
-        ps: [{
-            n: 'abstractRSReferenceSystem',
-            rq: true,
-            en: 'AbstractRS_ReferenceSystem',
-            ti: '.AbstractRSReferenceSystemType'
+            en: 'MD_Georectified',
+            ti: '.MDGeorectifiedType'
           }, {
             n: 'nilReason',
             ti: {
@@ -5868,13 +2956,13 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MDGeoreferenceablePropertyType',
-        tn: 'MD_Georeferenceable_PropertyType',
+        ln: 'EXVerticalExtentPropertyType',
+        tn: 'EX_VerticalExtent_PropertyType',
         ps: [{
-            n: 'mdGeoreferenceable',
+            n: 'exVerticalExtent',
             rq: true,
-            en: 'MD_Georeferenceable',
-            ti: '.MDGeoreferenceableType'
+            en: 'EX_VerticalExtent',
+            ti: '.EXVerticalExtentType'
           }, {
             n: 'nilReason',
             ti: {
@@ -5914,6 +3002,1701 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
           }, {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'EXTemporalExtentPropertyType',
+        tn: 'EX_TemporalExtent_PropertyType',
+        ps: [{
+            n: 'exTemporalExtent',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'EX_TemporalExtent',
+            ti: '.EXTemporalExtentType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CIRoleCodePropertyType',
+        tn: 'CI_RoleCode_PropertyType',
+        ps: [{
+            n: 'ciRoleCode',
+            rq: true,
+            en: 'CI_RoleCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDResolutionPropertyType',
+        tn: 'MD_Resolution_PropertyType',
+        ps: [{
+            n: 'mdResolution',
+            rq: true,
+            en: 'MD_Resolution',
+            ti: '.MDResolutionType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQThematicAccuracyPropertyType',
+        tn: 'DQ_ThematicAccuracy_PropertyType',
+        ps: [{
+            n: 'abstractDQThematicAccuracy',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractDQ_ThematicAccuracy',
+            ti: '.AbstractDQThematicAccuracyType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDMediumNameCodePropertyType',
+        tn: 'MD_MediumNameCode_PropertyType',
+        ps: [{
+            n: 'mdMediumNameCode',
+            rq: true,
+            en: 'MD_MediumNameCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LISourcePropertyType',
+        tn: 'LI_Source_PropertyType',
+        ps: [{
+            n: 'liSource',
+            rq: true,
+            en: 'LI_Source',
+            ti: '.LISourceType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQTopologicalConsistencyPropertyType',
+        tn: 'DQ_TopologicalConsistency_PropertyType',
+        ps: [{
+            n: 'dqTopologicalConsistency',
+            rq: true,
+            en: 'DQ_TopologicalConsistency',
+            ti: '.DQTopologicalConsistencyType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CIContactPropertyType',
+        tn: 'CI_Contact_PropertyType',
+        ps: [{
+            n: 'ciContact',
+            rq: true,
+            en: 'CI_Contact',
+            ti: '.CIContactType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CIContactType',
+        tn: 'CI_Contact_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'phone',
+            ti: '.CITelephonePropertyType'
+          }, {
+            n: 'address',
+            ti: '.CIAddressPropertyType'
+          }, {
+            n: 'onlineResource',
+            ti: '.CIOnlineResourcePropertyType'
+          }, {
+            n: 'hoursOfService',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'contactInstructions',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'MDAggregateInformationType',
+        tn: 'MD_AggregateInformation_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'aggregateDataSetName',
+            ti: '.CICitationPropertyType'
+          }, {
+            n: 'aggregateDataSetIdentifier',
+            ti: '.MDIdentifierPropertyType'
+          }, {
+            n: 'associationType',
+            rq: true,
+            ti: '.DSAssociationTypeCodePropertyType'
+          }, {
+            n: 'initiativeType',
+            ti: '.DSInitiativeTypeCodePropertyType'
+          }]
+      }, {
+        ln: 'DSSensorType',
+        tn: 'DS_Sensor_Type',
+        bti: '.DSSeriesType'
+      }, {
+        ln: 'DSInitiativeType',
+        tn: 'DS_Initiative_Type',
+        bti: '.AbstractDSAggregateType'
+      }, {
+        ln: 'EXExtentPropertyType',
+        tn: 'EX_Extent_PropertyType',
+        ps: [{
+            n: 'exExtent',
+            rq: true,
+            en: 'EX_Extent',
+            ti: '.EXExtentType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQConceptualConsistencyPropertyType',
+        tn: 'DQ_ConceptualConsistency_PropertyType',
+        ps: [{
+            n: 'dqConceptualConsistency',
+            rq: true,
+            en: 'DQ_ConceptualConsistency',
+            ti: '.DQConceptualConsistencyType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQConceptualConsistencyType',
+        tn: 'DQ_ConceptualConsistency_Type',
+        bti: '.AbstractDQLogicalConsistencyType'
+      }, {
+        ln: 'DQThematicClassificationCorrectnessPropertyType',
+        tn: 'DQ_ThematicClassificationCorrectness_PropertyType',
+        ps: [{
+            n: 'dqThematicClassificationCorrectness',
+            rq: true,
+            en: 'DQ_ThematicClassificationCorrectness',
+            ti: '.DQThematicClassificationCorrectnessType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CITelephonePropertyType',
+        tn: 'CI_Telephone_PropertyType',
+        ps: [{
+            n: 'ciTelephone',
+            rq: true,
+            en: 'CI_Telephone',
+            ti: '.CITelephoneType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDApplicationSchemaInformationType',
+        tn: 'MD_ApplicationSchemaInformation_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            ti: '.CICitationPropertyType'
+          }, {
+            n: 'schemaLanguage',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'constraintLanguage',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'schemaAscii',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'graphicsFile',
+            ti: 'ISO19139_GCO_20070417.BinaryPropertyType'
+          }, {
+            n: 'softwareDevelopmentFile',
+            ti: 'ISO19139_GCO_20070417.BinaryPropertyType'
+          }, {
+            n: 'softwareDevelopmentFileFormat',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'EXGeographicBoundingBoxType',
+        tn: 'EX_GeographicBoundingBox_Type',
+        bti: '.AbstractEXGeographicExtentType',
+        ps: [{
+            n: 'westBoundLongitude',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.DecimalPropertyType'
+          }, {
+            n: 'eastBoundLongitude',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.DecimalPropertyType'
+          }, {
+            n: 'southBoundLatitude',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.DecimalPropertyType'
+          }, {
+            n: 'northBoundLatitude',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.DecimalPropertyType'
+          }]
+      }, {
+        ln: 'RSIdentifierType',
+        tn: 'RS_Identifier_Type',
+        bti: '.MDIdentifierType',
+        ps: [{
+            n: 'codeSpace',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'version',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'AbstractDQTemporalAccuracyType',
+        tn: 'AbstractDQ_TemporalAccuracy_Type',
+        bti: '.AbstractDQElementType'
+      }, {
+        ln: 'DQGriddedDataPositionalAccuracyType',
+        tn: 'DQ_GriddedDataPositionalAccuracy_Type',
+        bti: '.AbstractDQPositionalAccuracyType'
+      }, {
+        ln: 'CIPresentationFormCodePropertyType',
+        tn: 'CI_PresentationFormCode_PropertyType',
+        ps: [{
+            n: 'ciPresentationFormCode',
+            rq: true,
+            en: 'CI_PresentationFormCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQDataQualityType',
+        tn: 'DQ_DataQuality_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'scope',
+            rq: true,
+            ti: '.DQScopePropertyType'
+          }, {
+            n: 'report',
+            mno: 0,
+            col: true,
+            ti: '.DQElementPropertyType'
+          }, {
+            n: 'lineage',
+            ti: '.LILineagePropertyType'
+          }]
+      }, {
+        ln: 'MDImagingConditionCodePropertyType',
+        tn: 'MD_ImagingConditionCode_PropertyType',
+        ps: [{
+            n: 'mdImagingConditionCode',
+            rq: true,
+            en: 'MD_ImagingConditionCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EXGeographicDescriptionType',
+        tn: 'EX_GeographicDescription_Type',
+        bti: '.AbstractEXGeographicExtentType',
+        ps: [{
+            n: 'geographicIdentifier',
+            rq: true,
+            ti: '.MDIdentifierPropertyType'
+          }]
+      }, {
+        ln: 'MDDistributionType',
+        tn: 'MD_Distribution_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'distributionFormat',
+            mno: 0,
+            col: true,
+            ti: '.MDFormatPropertyType'
+          }, {
+            n: 'distributor',
+            mno: 0,
+            col: true,
+            ti: '.MDDistributorPropertyType'
+          }, {
+            n: 'transferOptions',
+            mno: 0,
+            col: true,
+            ti: '.MDDigitalTransferOptionsPropertyType'
+          }]
+      }, {
+        ln: 'MDKeywordsPropertyType',
+        tn: 'MD_Keywords_PropertyType',
+        ps: [{
+            n: 'mdKeywords',
+            rq: true,
+            en: 'MD_Keywords',
+            ti: '.MDKeywordsType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CICitationType',
+        tn: 'CI_Citation_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'title',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'alternateTitle',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'date',
+            rq: true,
+            col: true,
+            ti: '.CIDatePropertyType'
+          }, {
+            n: 'edition',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'editionDate',
+            ti: 'ISO19139_GCO_20070417.DatePropertyType'
+          }, {
+            n: 'identifier',
+            mno: 0,
+            col: true,
+            ti: '.MDIdentifierPropertyType'
+          }, {
+            n: 'citedResponsibleParty',
+            mno: 0,
+            col: true,
+            ti: '.CIResponsiblePartyPropertyType'
+          }, {
+            n: 'presentationForm',
+            mno: 0,
+            col: true,
+            ti: '.CIPresentationFormCodePropertyType'
+          }, {
+            n: 'series',
+            ti: '.CISeriesPropertyType'
+          }, {
+            n: 'otherCitationDetails',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'collectiveTitle',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'isbn',
+            en: 'ISBN',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'issn',
+            en: 'ISSN',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'DSPlatformType',
+        tn: 'DS_Platform_Type',
+        bti: '.DSSeriesType'
+      }, {
+        ln: 'MDPortrayalCatalogueReferenceType',
+        tn: 'MD_PortrayalCatalogueReference_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'portrayalCatalogueCitation',
+            rq: true,
+            col: true,
+            ti: '.CICitationPropertyType'
+          }]
+      }, {
+        ln: 'DQAbsoluteExternalPositionalAccuracyType',
+        tn: 'DQ_AbsoluteExternalPositionalAccuracy_Type',
+        bti: '.AbstractDQPositionalAccuracyType'
+      }, {
+        ln: 'LILineageType',
+        tn: 'LI_Lineage_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'statement',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'processStep',
+            mno: 0,
+            col: true,
+            ti: '.LIProcessStepPropertyType'
+          }, {
+            n: 'source',
+            mno: 0,
+            col: true,
+            ti: '.LISourcePropertyType'
+          }]
+      }, {
+        ln: 'MDReferenceSystemPropertyType',
+        tn: 'MD_ReferenceSystem_PropertyType',
+        ps: [{
+            n: 'mdReferenceSystem',
+            rq: true,
+            en: 'MD_ReferenceSystem',
+            ti: '.MDReferenceSystemType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'LILineagePropertyType',
+        tn: 'LI_Lineage_PropertyType',
+        ps: [{
+            n: 'liLineage',
+            rq: true,
+            en: 'LI_Lineage',
+            ti: '.LILineageType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CIDateType',
+        tn: 'CI_Date_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'date',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.DatePropertyType'
+          }, {
+            n: 'dateType',
+            rq: true,
+            ti: '.CIDateTypeCodePropertyType'
+          }]
+      }, {
+        ln: 'DQQuantitativeAttributeAccuracyType',
+        tn: 'DQ_QuantitativeAttributeAccuracy_Type',
+        bti: '.AbstractDQThematicAccuracyType'
+      }, {
+        ln: 'MDMediumType',
+        tn: 'MD_Medium_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'name',
+            ti: '.MDMediumNameCodePropertyType'
+          }, {
+            n: 'density',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.RealPropertyType'
+          }, {
+            n: 'densityUnits',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'volumes',
+            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
+          }, {
+            n: 'mediumFormat',
+            mno: 0,
+            col: true,
+            ti: '.MDMediumFormatCodePropertyType'
+          }, {
+            n: 'mediumNote',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'MDPortrayalCatalogueReferencePropertyType',
+        tn: 'MD_PortrayalCatalogueReference_PropertyType',
+        ps: [{
+            n: 'mdPortrayalCatalogueReference',
+            rq: true,
+            en: 'MD_PortrayalCatalogueReference',
+            ti: '.MDPortrayalCatalogueReferenceType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQLogicalConsistencyPropertyType',
+        tn: 'DQ_LogicalConsistency_PropertyType',
+        ps: [{
+            n: 'abstractDQLogicalConsistency',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractDQ_LogicalConsistency',
+            ti: '.AbstractDQLogicalConsistencyType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'EXBoundingPolygonType',
+        tn: 'EX_BoundingPolygon_Type',
+        bti: '.AbstractEXGeographicExtentType',
+        ps: [{
+            n: 'polygon',
+            rq: true,
+            col: true,
+            ti: 'ISO19139_GSS_20070417.GMObjectPropertyType'
+          }]
+      }, {
+        ln: 'PTLocaleContainerPropertyType',
+        tn: 'PT_LocaleContainer_PropertyType',
+        ps: [{
+            n: 'ptLocaleContainer',
+            rq: true,
+            en: 'PT_LocaleContainer',
+            ti: '.PTLocaleContainerType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'LocalisedCharacterStringType',
+        tn: 'LocalisedCharacterString_Type',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }, {
+            n: 'locale',
+            an: {
+              lp: 'locale'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDLegalConstraintsType',
+        tn: 'MD_LegalConstraints_Type',
+        bti: '.MDConstraintsType',
+        ps: [{
+            n: 'accessConstraints',
+            mno: 0,
+            col: true,
+            ti: '.MDRestrictionCodePropertyType'
+          }, {
+            n: 'useConstraints',
+            mno: 0,
+            col: true,
+            ti: '.MDRestrictionCodePropertyType'
+          }, {
+            n: 'otherConstraints',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'MDStandardOrderProcessPropertyType',
+        tn: 'MD_StandardOrderProcess_PropertyType',
+        ps: [{
+            n: 'mdStandardOrderProcess',
+            rq: true,
+            en: 'MD_StandardOrderProcess',
+            ti: '.MDStandardOrderProcessType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDFormatPropertyType',
+        tn: 'MD_Format_PropertyType',
+        ps: [{
+            n: 'mdFormat',
+            rq: true,
+            en: 'MD_Format',
+            ti: '.MDFormatType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDRepresentativeFractionPropertyType',
+        tn: 'MD_RepresentativeFraction_PropertyType',
+        ps: [{
+            n: 'mdRepresentativeFraction',
+            rq: true,
+            en: 'MD_RepresentativeFraction',
+            ti: '.MDRepresentativeFractionType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDVectorSpatialRepresentationPropertyType',
+        tn: 'MD_VectorSpatialRepresentation_PropertyType',
+        ps: [{
+            n: 'mdVectorSpatialRepresentation',
+            rq: true,
+            en: 'MD_VectorSpatialRepresentation',
+            ti: '.MDVectorSpatialRepresentationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CIDatePropertyType',
+        tn: 'CI_Date_PropertyType',
+        ps: [{
+            n: 'ciDate',
+            rq: true,
+            en: 'CI_Date',
+            ti: '.CIDateType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDSpatialRepresentationPropertyType',
+        tn: 'MD_SpatialRepresentation_PropertyType',
+        ps: [{
+            n: 'abstractMDSpatialRepresentation',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractMD_SpatialRepresentation',
+            ti: '.AbstractMDSpatialRepresentationType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'PTLocalePropertyType',
+        tn: 'PT_Locale_PropertyType',
+        ps: [{
+            n: 'ptLocale',
+            rq: true,
+            en: 'PT_Locale',
+            ti: '.PTLocaleType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'EXTemporalExtentType',
+        tn: 'EX_TemporalExtent_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'extent',
+            rq: true,
+            ti: 'ISO19139_GTS_20070417.TMPrimitivePropertyType'
+          }]
+      }, {
+        ln: 'AbstractMDIdentificationType',
+        tn: 'AbstractMD_Identification_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'citation',
+            rq: true,
+            ti: '.CICitationPropertyType'
+          }, {
+            n: '_abstract',
+            rq: true,
+            en: 'abstract',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'purpose',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'credit',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'status',
+            mno: 0,
+            col: true,
+            ti: '.MDProgressCodePropertyType'
+          }, {
+            n: 'pointOfContact',
+            mno: 0,
+            col: true,
+            ti: '.CIResponsiblePartyPropertyType'
+          }, {
+            n: 'resourceMaintenance',
+            mno: 0,
+            col: true,
+            ti: '.MDMaintenanceInformationPropertyType'
+          }, {
+            n: 'graphicOverview',
+            mno: 0,
+            col: true,
+            ti: '.MDBrowseGraphicPropertyType'
+          }, {
+            n: 'resourceFormat',
+            mno: 0,
+            col: true,
+            ti: '.MDFormatPropertyType'
+          }, {
+            n: 'descriptiveKeywords',
+            mno: 0,
+            col: true,
+            ti: '.MDKeywordsPropertyType'
+          }, {
+            n: 'resourceSpecificUsage',
+            mno: 0,
+            col: true,
+            ti: '.MDUsagePropertyType'
+          }, {
+            n: 'resourceConstraints',
+            mno: 0,
+            col: true,
+            ti: '.MDConstraintsPropertyType'
+          }, {
+            n: 'aggregationInfo',
+            mno: 0,
+            col: true,
+            ti: '.MDAggregateInformationPropertyType'
+          }]
+      }, {
+        ln: 'EXSpatialTemporalExtentType',
+        tn: 'EX_SpatialTemporalExtent_Type',
+        bti: '.EXTemporalExtentType',
+        ps: [{
+            n: 'spatialExtent',
+            rq: true,
+            col: true,
+            ti: '.EXGeographicExtentPropertyType'
+          }]
+      }, {
+        ln: 'CIAddressPropertyType',
+        tn: 'CI_Address_PropertyType',
+        ps: [{
+            n: 'ciAddress',
+            rq: true,
+            en: 'CI_Address',
+            ti: '.CIAddressType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQAccuracyOfATimeMeasurementType',
+        tn: 'DQ_AccuracyOfATimeMeasurement_Type',
+        bti: '.AbstractDQTemporalAccuracyType'
+      }, {
+        ln: 'MDClassificationCodePropertyType',
+        tn: 'MD_ClassificationCode_PropertyType',
+        ps: [{
+            n: 'mdClassificationCode',
+            rq: true,
+            en: 'MD_ClassificationCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
             t: 'a'
           }]
       }, {
@@ -5966,13 +4749,1952 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'RSIdentifierPropertyType',
-        tn: 'RS_Identifier_PropertyType',
+        ln: 'MDMaintenanceFrequencyCodePropertyType',
+        tn: 'MD_MaintenanceFrequencyCode_PropertyType',
         ps: [{
-            n: 'rsIdentifier',
+            n: 'mdMaintenanceFrequencyCode',
             rq: true,
-            en: 'RS_Identifier',
-            ti: '.RSIdentifierType'
+            en: 'MD_MaintenanceFrequencyCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDFeatureCatalogueDescriptionType',
+        tn: 'MD_FeatureCatalogueDescription_Type',
+        bti: '.AbstractMDContentInformationType',
+        ps: [{
+            n: 'complianceCode',
+            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+          }, {
+            n: 'language',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'includedWithDataset',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+          }, {
+            n: 'featureTypes',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.GenericNamePropertyType'
+          }, {
+            n: 'featureCatalogueCitation',
+            rq: true,
+            col: true,
+            ti: '.CICitationPropertyType'
+          }]
+      }, {
+        ln: 'MDGeometricObjectsPropertyType',
+        tn: 'MD_GeometricObjects_PropertyType',
+        ps: [{
+            n: 'mdGeometricObjects',
+            rq: true,
+            en: 'MD_GeometricObjects',
+            ti: '.MDGeometricObjectsType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQDomainConsistencyPropertyType',
+        tn: 'DQ_DomainConsistency_PropertyType',
+        ps: [{
+            n: 'dqDomainConsistency',
+            rq: true,
+            en: 'DQ_DomainConsistency',
+            ti: '.DQDomainConsistencyType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQResultPropertyType',
+        tn: 'DQ_Result_PropertyType',
+        ps: [{
+            n: 'abstractDQResult',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractDQ_Result',
+            ti: '.AbstractDQResultType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'EXGeographicBoundingBoxPropertyType',
+        tn: 'EX_GeographicBoundingBox_PropertyType',
+        ps: [{
+            n: 'exGeographicBoundingBox',
+            rq: true,
+            en: 'EX_GeographicBoundingBox',
+            ti: '.EXGeographicBoundingBoxType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CICitationPropertyType',
+        tn: 'CI_Citation_PropertyType',
+        ps: [{
+            n: 'ciCitation',
+            rq: true,
+            en: 'CI_Citation',
+            ti: '.CICitationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDMetadataExtensionInformationPropertyType',
+        tn: 'MD_MetadataExtensionInformation_PropertyType',
+        ps: [{
+            n: 'mdMetadataExtensionInformation',
+            rq: true,
+            en: 'MD_MetadataExtensionInformation',
+            ti: '.MDMetadataExtensionInformationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'PTFreeTextType',
+        tn: 'PT_FreeText_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'textGroup',
+            rq: true,
+            col: true,
+            ti: '.LocalisedCharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'LIProcessStepType',
+        tn: 'LI_ProcessStep_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'description',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'rationale',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'dateTime',
+            ti: 'ISO19139_GCO_20070417.DateTimePropertyType'
+          }, {
+            n: 'processor',
+            mno: 0,
+            col: true,
+            ti: '.CIResponsiblePartyPropertyType'
+          }, {
+            n: 'source',
+            mno: 0,
+            col: true,
+            ti: '.LISourcePropertyType'
+          }]
+      }, {
+        ln: 'MDCellGeometryCodePropertyType',
+        tn: 'MD_CellGeometryCode_PropertyType',
+        ps: [{
+            n: 'mdCellGeometryCode',
+            rq: true,
+            en: 'MD_CellGeometryCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQTemporalConsistencyPropertyType',
+        tn: 'DQ_TemporalConsistency_PropertyType',
+        ps: [{
+            n: 'dqTemporalConsistency',
+            rq: true,
+            en: 'DQ_TemporalConsistency',
+            ti: '.DQTemporalConsistencyType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DSSeriesPropertyType',
+        tn: 'DS_Series_PropertyType',
+        ps: [{
+            n: 'dsSeries',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'DS_Series',
+            ti: '.DSSeriesType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQEvaluationMethodTypeCodePropertyType',
+        tn: 'DQ_EvaluationMethodTypeCode_PropertyType',
+        ps: [{
+            n: 'dqEvaluationMethodTypeCode',
+            rq: true,
+            en: 'DQ_EvaluationMethodTypeCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DSAssociationTypeCodePropertyType',
+        tn: 'DS_AssociationTypeCode_PropertyType',
+        ps: [{
+            n: 'dsAssociationTypeCode',
+            rq: true,
+            en: 'DS_AssociationTypeCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDContentInformationPropertyType',
+        tn: 'MD_ContentInformation_PropertyType',
+        ps: [{
+            n: 'abstractMDContentInformation',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractMD_ContentInformation',
+            ti: '.AbstractMDContentInformationType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQPositionalAccuracyPropertyType',
+        tn: 'DQ_PositionalAccuracy_PropertyType',
+        ps: [{
+            n: 'abstractDQPositionalAccuracy',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractDQ_PositionalAccuracy',
+            ti: '.AbstractDQPositionalAccuracyType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DSOtherAggregateType',
+        tn: 'DS_OtherAggregate_Type',
+        bti: '.AbstractDSAggregateType'
+      }, {
+        ln: 'MDReferenceSystemType',
+        tn: 'MD_ReferenceSystem_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'referenceSystemIdentifier',
+            ti: '.RSIdentifierPropertyType'
+          }]
+      }, {
+        ln: 'MDGeoreferenceablePropertyType',
+        tn: 'MD_Georeferenceable_PropertyType',
+        ps: [{
+            n: 'mdGeoreferenceable',
+            rq: true,
+            en: 'MD_Georeferenceable',
+            ti: '.MDGeoreferenceableType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractDQResultType',
+        tn: 'AbstractDQ_Result_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType'
+      }, {
+        ln: 'DQCompletenessCommissionType',
+        tn: 'DQ_CompletenessCommission_Type',
+        bti: '.AbstractDQCompletenessType'
+      }, {
+        ln: 'MDRestrictionCodePropertyType',
+        tn: 'MD_RestrictionCode_PropertyType',
+        ps: [{
+            n: 'mdRestrictionCode',
+            rq: true,
+            en: 'MD_RestrictionCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDConstraintsPropertyType',
+        tn: 'MD_Constraints_PropertyType',
+        ps: [{
+            n: 'mdConstraints',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'MD_Constraints',
+            ti: '.MDConstraintsType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDIdentifierPropertyType',
+        tn: 'MD_Identifier_PropertyType',
+        ps: [{
+            n: 'mdIdentifier',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'MD_Identifier',
+            ti: '.MDIdentifierType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDScopeCodePropertyType',
+        tn: 'MD_ScopeCode_PropertyType',
+        ps: [{
+            n: 'mdScopeCode',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'MD_ScopeCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDImageDescriptionType',
+        tn: 'MD_ImageDescription_Type',
+        bti: '.MDCoverageDescriptionType',
+        ps: [{
+            n: 'illuminationElevationAngle',
+            ti: 'ISO19139_GCO_20070417.RealPropertyType'
+          }, {
+            n: 'illuminationAzimuthAngle',
+            ti: 'ISO19139_GCO_20070417.RealPropertyType'
+          }, {
+            n: 'imagingCondition',
+            ti: '.MDImagingConditionCodePropertyType'
+          }, {
+            n: 'imageQualityCode',
+            ti: '.MDIdentifierPropertyType'
+          }, {
+            n: 'cloudCoverPercentage',
+            ti: 'ISO19139_GCO_20070417.RealPropertyType'
+          }, {
+            n: 'processingLevelCode',
+            ti: '.MDIdentifierPropertyType'
+          }, {
+            n: 'compressionGenerationQuantity',
+            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
+          }, {
+            n: 'triangulationIndicator',
+            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+          }, {
+            n: 'radiometricCalibrationDataAvailability',
+            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+          }, {
+            n: 'cameraCalibrationInformationAvailability',
+            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+          }, {
+            n: 'filmDistortionInformationAvailability',
+            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+          }, {
+            n: 'lensDistortionInformationAvailability',
+            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+          }]
+      }, {
+        ln: 'LISourceType',
+        tn: 'LI_Source_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'description',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'scaleDenominator',
+            ti: '.MDRepresentativeFractionPropertyType'
+          }, {
+            n: 'sourceReferenceSystem',
+            ti: '.MDReferenceSystemPropertyType'
+          }, {
+            n: 'sourceCitation',
+            ti: '.CICitationPropertyType'
+          }, {
+            n: 'sourceExtent',
+            mno: 0,
+            col: true,
+            ti: '.EXExtentPropertyType'
+          }, {
+            n: 'sourceStep',
+            mno: 0,
+            col: true,
+            ti: '.LIProcessStepPropertyType'
+          }]
+      }, {
+        ln: 'MDScopeDescriptionType',
+        tn: 'MD_ScopeDescription_Type',
+        ps: [{
+            n: 'attributes',
+            rq: true,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.ObjectReferencePropertyType'
+          }, {
+            n: 'features',
+            rq: true,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.ObjectReferencePropertyType'
+          }, {
+            n: 'featureInstances',
+            rq: true,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.ObjectReferencePropertyType'
+          }, {
+            n: 'attributeInstances',
+            rq: true,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.ObjectReferencePropertyType'
+          }, {
+            n: 'dataset',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'other',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'MDSecurityConstraintsType',
+        tn: 'MD_SecurityConstraints_Type',
+        bti: '.MDConstraintsType',
+        ps: [{
+            n: 'classification',
+            rq: true,
+            ti: '.MDClassificationCodePropertyType'
+          }, {
+            n: 'userNote',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'classificationSystem',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'handlingDescription',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'DQConformanceResultPropertyType',
+        tn: 'DQ_ConformanceResult_PropertyType',
+        ps: [{
+            n: 'dqConformanceResult',
+            rq: true,
+            en: 'DQ_ConformanceResult',
+            ti: '.DQConformanceResultType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractDQPositionalAccuracyType',
+        tn: 'AbstractDQ_PositionalAccuracy_Type',
+        bti: '.AbstractDQElementType'
+      }, {
+        ln: 'MDMetadataPropertyType',
+        tn: 'MD_Metadata_PropertyType',
+        ps: [{
+            n: 'mdMetadata',
+            rq: true,
+            en: 'MD_Metadata',
+            ti: '.MDMetadataType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DSSeriesType',
+        tn: 'DS_Series_Type',
+        bti: '.AbstractDSAggregateType'
+      }, {
+        ln: 'MDMetadataExtensionInformationType',
+        tn: 'MD_MetadataExtensionInformation_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'extensionOnLineResource',
+            ti: '.CIOnlineResourcePropertyType'
+          }, {
+            n: 'extendedElementInformation',
+            mno: 0,
+            col: true,
+            ti: '.MDExtendedElementInformationPropertyType'
+          }]
+      }, {
+        ln: 'MDUsagePropertyType',
+        tn: 'MD_Usage_PropertyType',
+        ps: [{
+            n: 'mdUsage',
+            rq: true,
+            en: 'MD_Usage',
+            ti: '.MDUsageType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDMaintenanceInformationPropertyType',
+        tn: 'MD_MaintenanceInformation_PropertyType',
+        ps: [{
+            n: 'mdMaintenanceInformation',
+            rq: true,
+            en: 'MD_MaintenanceInformation',
+            ti: '.MDMaintenanceInformationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDCoverageDescriptionType',
+        tn: 'MD_CoverageDescription_Type',
+        bti: '.AbstractMDContentInformationType',
+        ps: [{
+            n: 'attributeDescription',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.RecordTypePropertyType'
+          }, {
+            n: 'contentType',
+            rq: true,
+            ti: '.MDCoverageContentTypeCodePropertyType'
+          }, {
+            n: 'dimension',
+            mno: 0,
+            col: true,
+            ti: '.MDRangeDimensionPropertyType'
+          }]
+      }, {
+        ln: 'DSDataSetType',
+        tn: 'DS_DataSet_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'has',
+            rq: true,
+            col: true,
+            ti: '.MDMetadataPropertyType'
+          }, {
+            n: 'partOf',
+            mno: 0,
+            col: true,
+            ti: '.DSAggregatePropertyType'
+          }]
+      }, {
+        ln: 'MDRangeDimensionType',
+        tn: 'MD_RangeDimension_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'sequenceIdentifier',
+            ti: 'ISO19139_GCO_20070417.MemberNamePropertyType'
+          }, {
+            n: 'descriptor',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'MDDimensionPropertyType',
+        tn: 'MD_Dimension_PropertyType',
+        ps: [{
+            n: 'mdDimension',
+            rq: true,
+            en: 'MD_Dimension',
+            ti: '.MDDimensionType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DSSensorPropertyType',
+        tn: 'DS_Sensor_PropertyType',
+        ps: [{
+            n: 'dsSensor',
+            rq: true,
+            en: 'DS_Sensor',
+            ti: '.DSSensorType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CIOnlineResourcePropertyType',
+        tn: 'CI_OnlineResource_PropertyType',
+        ps: [{
+            n: 'ciOnlineResource',
+            rq: true,
+            en: 'CI_OnlineResource',
+            ti: '.CIOnlineResourceType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQTemporalAccuracyPropertyType',
+        tn: 'DQ_TemporalAccuracy_PropertyType',
+        ps: [{
+            n: 'abstractDQTemporalAccuracy',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractDQ_TemporalAccuracy',
+            ti: '.AbstractDQTemporalAccuracyType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQTemporalValidityType',
+        tn: 'DQ_TemporalValidity_Type',
+        bti: '.AbstractDQTemporalAccuracyType'
+      }, {
+        ln: 'MDRepresentativeFractionType',
+        tn: 'MD_RepresentativeFraction_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'denominator',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
+          }]
+      }, {
+        ln: 'AbstractDQCompletenessType',
+        tn: 'AbstractDQ_Completeness_Type',
+        bti: '.AbstractDQElementType'
+      }, {
+        ln: 'MDDataIdentificationPropertyType',
+        tn: 'MD_DataIdentification_PropertyType',
+        ps: [{
+            n: 'mdDataIdentification',
+            rq: true,
+            en: 'MD_DataIdentification',
+            ti: '.MDDataIdentificationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDGeoreferenceableType',
+        tn: 'MD_Georeferenceable_Type',
+        bti: '.MDGridSpatialRepresentationType',
+        ps: [{
+            n: 'controlPointAvailability',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+          }, {
+            n: 'orientationParameterAvailability',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+          }, {
+            n: 'orientationParameterDescription',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'georeferencedParameters',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.RecordPropertyType'
+          }, {
+            n: 'parameterCitation',
+            mno: 0,
+            col: true,
+            ti: '.CICitationPropertyType'
+          }]
+      }, {
+        ln: 'DQCompletenessOmissionPropertyType',
+        tn: 'DQ_CompletenessOmission_PropertyType',
+        ps: [{
+            n: 'dqCompletenessOmission',
+            rq: true,
+            en: 'DQ_CompletenessOmission',
+            ti: '.DQCompletenessOmissionType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQDataQualityPropertyType',
+        tn: 'DQ_DataQuality_PropertyType',
+        ps: [{
+            n: 'dqDataQuality',
+            rq: true,
+            en: 'DQ_DataQuality',
+            ti: '.DQDataQualityType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDIdentificationPropertyType',
+        tn: 'MD_Identification_PropertyType',
+        ps: [{
+            n: 'abstractMDIdentification',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractMD_Identification',
+            ti: '.AbstractMDIdentificationType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'EXGeographicExtentPropertyType',
+        tn: 'EX_GeographicExtent_PropertyType',
+        ps: [{
+            n: 'abstractEXGeographicExtent',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AbstractEX_GeographicExtent',
+            ti: '.AbstractEXGeographicExtentType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DSProductionSeriesType',
+        tn: 'DS_ProductionSeries_Type',
+        bti: '.DSSeriesType'
+      }, {
+        ln: 'DQTopologicalConsistencyType',
+        tn: 'DQ_TopologicalConsistency_Type',
+        bti: '.AbstractDQLogicalConsistencyType'
+      }, {
+        ln: 'DSAssociationPropertyType',
+        tn: 'DS_Association_PropertyType',
+        ps: [{
+            n: 'dsAssociation',
+            rq: true,
+            en: 'DS_Association',
+            ti: '.DSAssociationType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDGeometricObjectTypeCodePropertyType',
+        tn: 'MD_GeometricObjectTypeCode_PropertyType',
+        ps: [{
+            n: 'mdGeometricObjectTypeCode',
+            rq: true,
+            en: 'MD_GeometricObjectTypeCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LanguageCodePropertyType',
+        tn: 'LanguageCode_PropertyType',
+        ps: [{
+            n: 'languageCode',
+            rq: true,
+            en: 'LanguageCode',
+            ti: 'ISO19139_GCO_20070417.CodeListValueType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDTopicCategoryCodePropertyType',
+        tn: 'MD_TopicCategoryCode_PropertyType',
+        ps: [{
+            n: 'mdTopicCategoryCode',
+            rq: true,
+            en: 'MD_TopicCategoryCode'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DQAccuracyOfATimeMeasurementPropertyType',
+        tn: 'DQ_AccuracyOfATimeMeasurement_PropertyType',
+        ps: [{
+            n: 'dqAccuracyOfATimeMeasurement',
+            rq: true,
+            en: 'DQ_AccuracyOfATimeMeasurement',
+            ti: '.DQAccuracyOfATimeMeasurementType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDRangeDimensionPropertyType',
+        tn: 'MD_RangeDimension_PropertyType',
+        ps: [{
+            n: 'mdRangeDimension',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'MD_RangeDimension',
+            ti: '.MDRangeDimensionType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DSProductionSeriesPropertyType',
+        tn: 'DS_ProductionSeries_PropertyType',
+        ps: [{
+            n: 'dsProductionSeries',
+            rq: true,
+            en: 'DS_ProductionSeries',
+            ti: '.DSProductionSeriesType'
           }, {
             n: 'nilReason',
             ti: {
@@ -6064,21 +6786,13 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DSInitiativeType',
-        tn: 'DS_Initiative_Type',
-        bti: '.AbstractDSAggregateType'
-      }, {
-        ln: 'DQAbsoluteExternalPositionalAccuracyType',
-        tn: 'DQ_AbsoluteExternalPositionalAccuracy_Type',
-        bti: '.AbstractDQPositionalAccuracyType'
-      }, {
-        ln: 'CIResponsiblePartyPropertyType',
-        tn: 'CI_ResponsibleParty_PropertyType',
+        ln: 'MDMediumPropertyType',
+        tn: 'MD_Medium_PropertyType',
         ps: [{
-            n: 'ciResponsibleParty',
+            n: 'mdMedium',
             rq: true,
-            en: 'CI_ResponsibleParty',
-            ti: '.CIResponsiblePartyType'
+            en: 'MD_Medium',
+            ti: '.MDMediumType'
           }, {
             n: 'nilReason',
             ti: {
@@ -6121,42 +6835,62 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MDApplicationSchemaInformationType',
-        tn: 'MD_ApplicationSchemaInformation_Type',
+        ln: 'DQScopeType',
+        tn: 'DQ_Scope_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'level',
+            rq: true,
+            ti: '.MDScopeCodePropertyType'
+          }, {
+            n: 'extent',
+            ti: '.EXExtentPropertyType'
+          }, {
+            n: 'levelDescription',
+            mno: 0,
+            col: true,
+            ti: '.MDScopeDescriptionPropertyType'
+          }]
+      }, {
+        ln: 'MDPixelOrientationCodePropertyType',
+        tn: 'MD_PixelOrientationCode_PropertyType',
+        ps: [{
+            n: 'mdPixelOrientationCode',
+            rq: true,
+            en: 'MD_PixelOrientationCode'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractRSReferenceSystemType',
+        tn: 'AbstractRS_ReferenceSystem_Type',
         bti: 'ISO19139_GCO_20070417.AbstractObjectType',
         ps: [{
             n: 'name',
             rq: true,
-            ti: '.CICitationPropertyType'
+            ti: '.RSIdentifierPropertyType'
           }, {
-            n: 'schemaLanguage',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'constraintLanguage',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'schemaAscii',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'graphicsFile',
-            ti: 'ISO19139_GCO_20070417.BinaryPropertyType'
-          }, {
-            n: 'softwareDevelopmentFile',
-            ti: 'ISO19139_GCO_20070417.BinaryPropertyType'
-          }, {
-            n: 'softwareDevelopmentFileFormat',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+            n: 'domainOfValidity',
+            mno: 0,
+            col: true,
+            ti: '.EXExtentPropertyType'
           }]
       }, {
-        ln: 'DQDataQualityPropertyType',
-        tn: 'DQ_DataQuality_PropertyType',
+        ln: 'MDSecurityConstraintsPropertyType',
+        tn: 'MD_SecurityConstraints_PropertyType',
         ps: [{
-            n: 'dqDataQuality',
+            n: 'mdSecurityConstraints',
             rq: true,
-            en: 'DQ_DataQuality',
-            ti: '.DQDataQualityType'
+            en: 'MD_SecurityConstraints',
+            ti: '.MDSecurityConstraintsType'
           }, {
             n: 'nilReason',
             ti: {
@@ -6199,12 +6933,94 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MDDistributionUnitsPropertyType',
-        tn: 'MD_DistributionUnits_PropertyType',
+        ln: 'MDGeorectifiedType',
+        tn: 'MD_Georectified_Type',
+        bti: '.MDGridSpatialRepresentationType',
         ps: [{
-            n: 'mdDistributionUnits',
+            n: 'checkPointAvailability',
             rq: true,
-            en: 'MD_DistributionUnits',
+            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
+          }, {
+            n: 'checkPointDescription',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'cornerPoints',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GSS_20070417.GMPointPropertyType'
+          }, {
+            n: 'centerPoint',
+            ti: 'ISO19139_GSS_20070417.GMPointPropertyType'
+          }, {
+            n: 'pointInPixel',
+            rq: true,
+            ti: '.MDPixelOrientationCodePropertyType'
+          }, {
+            n: 'transformationDimensionDescription',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'transformationDimensionMapping',
+            mno: 0,
+            mxo: 2,
+            col: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'DQRelativeInternalPositionalAccuracyPropertyType',
+        tn: 'DQ_RelativeInternalPositionalAccuracy_PropertyType',
+        ps: [{
+            n: 'dqRelativeInternalPositionalAccuracy',
+            rq: true,
+            en: 'DQ_RelativeInternalPositionalAccuracy',
+            ti: '.DQRelativeInternalPositionalAccuracyType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
+            t: 'a'
+          }, {
+            n: 'uuidref',
+            an: {
+              lp: 'uuidref'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MDSpatialRepresentationTypeCodePropertyType',
+        tn: 'MD_SpatialRepresentationTypeCode_PropertyType',
+        ps: [{
+            n: 'mdSpatialRepresentationTypeCode',
+            rq: true,
+            en: 'MD_SpatialRepresentationTypeCode',
             ti: 'ISO19139_GCO_20070417.CodeListValueType'
           }, {
             n: 'nilReason',
@@ -6218,132 +7034,38 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MDIdentificationPropertyType',
-        tn: 'MD_Identification_PropertyType',
+        ln: 'MDBandType',
+        tn: 'MD_Band_Type',
+        bti: '.MDRangeDimensionType',
         ps: [{
-            n: 'abstractMDIdentification',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractMD_Identification',
-            ti: '.AbstractMDIdentificationType',
-            t: 'er'
+            n: 'maxValue',
+            ti: 'ISO19139_GCO_20070417.RealPropertyType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
+            n: 'minValue',
+            ti: 'ISO19139_GCO_20070417.RealPropertyType'
           }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
+            n: 'units',
+            ti: 'ISO19139_GCO_20070417.UomLengthPropertyType'
           }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
+            n: 'peakResponse',
+            ti: 'ISO19139_GCO_20070417.RealPropertyType'
           }, {
-            n: 'href',
-            t: 'a'
+            n: 'bitsPerValue',
+            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
           }, {
-            n: 'role',
-            t: 'a'
+            n: 'toneGradation',
+            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
           }, {
-            n: 'arcrole',
-            t: 'a'
+            n: 'scaleFactor',
+            ti: 'ISO19139_GCO_20070417.RealPropertyType'
           }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'offset',
+            ti: 'ISO19139_GCO_20070417.RealPropertyType'
           }]
       }, {
-        ln: 'MDReferenceSystemType',
-        tn: 'MD_ReferenceSystem_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'referenceSystemIdentifier',
-            ti: '.RSIdentifierPropertyType'
-          }]
-      }, {
-        ln: 'DQTemporalConsistencyPropertyType',
-        tn: 'DQ_TemporalConsistency_PropertyType',
-        ps: [{
-            n: 'dqTemporalConsistency',
-            rq: true,
-            en: 'DQ_TemporalConsistency',
-            ti: '.DQTemporalConsistencyType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CISeriesType',
-        tn: 'CI_Series_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'name',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'issueIdentification',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'page',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'AbstractMDSpatialRepresentationType',
-        tn: 'AbstractMD_SpatialRepresentation_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType'
+        ln: 'AbstractDQThematicAccuracyType',
+        tn: 'AbstractDQ_ThematicAccuracy_Type',
+        bti: '.AbstractDQElementType'
       }, {
         ln: 'MDDimensionNameTypeCodePropertyType',
         tn: 'MD_DimensionNameTypeCode_PropertyType',
@@ -6364,827 +7086,87 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DQAccuracyOfATimeMeasurementPropertyType',
-        tn: 'DQ_AccuracyOfATimeMeasurement_PropertyType',
-        ps: [{
-            n: 'dqAccuracyOfATimeMeasurement',
-            rq: true,
-            en: 'DQ_AccuracyOfATimeMeasurement',
-            ti: '.DQAccuracyOfATimeMeasurementType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractDQLogicalConsistencyType',
-        tn: 'AbstractDQ_LogicalConsistency_Type',
-        bti: '.AbstractDQElementType'
-      }, {
-        ln: 'LISourcePropertyType',
-        tn: 'LI_Source_PropertyType',
-        ps: [{
-            n: 'liSource',
-            rq: true,
-            en: 'LI_Source',
-            ti: '.LISourceType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractDQThematicAccuracyType',
-        tn: 'AbstractDQ_ThematicAccuracy_Type',
-        bti: '.AbstractDQElementType'
-      }, {
-        ln: 'DQThematicClassificationCorrectnessType',
-        tn: 'DQ_ThematicClassificationCorrectness_Type',
-        bti: '.AbstractDQThematicAccuracyType'
-      }, {
-        ln: 'AbstractDQResultType',
-        tn: 'AbstractDQ_Result_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType'
-      }, {
-        ln: 'DQTemporalConsistencyType',
-        tn: 'DQ_TemporalConsistency_Type',
-        bti: '.AbstractDQTemporalAccuracyType'
-      }, {
-        ln: 'DQGriddedDataPositionalAccuracyPropertyType',
-        tn: 'DQ_GriddedDataPositionalAccuracy_PropertyType',
-        ps: [{
-            n: 'dqGriddedDataPositionalAccuracy',
-            rq: true,
-            en: 'DQ_GriddedDataPositionalAccuracy',
-            ti: '.DQGriddedDataPositionalAccuracyType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'LocalisedCharacterStringPropertyType',
-        tn: 'LocalisedCharacterString_PropertyType',
-        bti: 'ISO19139_GCO_20070417.ObjectReferencePropertyType',
-        ps: [{
-            n: 'localisedCharacterString',
-            rq: true,
-            en: 'LocalisedCharacterString',
-            ti: '.LocalisedCharacterStringType'
-          }]
-      }, {
-        ln: 'DSOtherAggregateType',
-        tn: 'DS_OtherAggregate_Type',
-        bti: '.AbstractDSAggregateType'
-      }, {
-        ln: 'MDMediumType',
-        tn: 'MD_Medium_Type',
+        ln: 'CISeriesType',
+        tn: 'CI_Series_Type',
         bti: 'ISO19139_GCO_20070417.AbstractObjectType',
         ps: [{
             n: 'name',
-            ti: '.MDMediumNameCodePropertyType'
-          }, {
-            n: 'density',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.RealPropertyType'
-          }, {
-            n: 'densityUnits',
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }, {
-            n: 'volumes',
+            n: 'issueIdentification',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'page',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }]
+      }, {
+        ln: 'MDExtendedElementInformationType',
+        tn: 'MD_ExtendedElementInformation_Type',
+        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'shortName',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
+          }, {
+            n: 'domainCode',
             ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
           }, {
-            n: 'mediumFormat',
-            mno: 0,
-            col: true,
-            ti: '.MDMediumFormatCodePropertyType'
-          }, {
-            n: 'mediumNote',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'MDTopologyLevelCodePropertyType',
-        tn: 'MD_TopologyLevelCode_PropertyType',
-        ps: [{
-            n: 'mdTopologyLevelCode',
-            rq: true,
-            en: 'MD_TopologyLevelCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDImageDescriptionType',
-        tn: 'MD_ImageDescription_Type',
-        bti: '.MDCoverageDescriptionType',
-        ps: [{
-            n: 'illuminationElevationAngle',
-            ti: 'ISO19139_GCO_20070417.RealPropertyType'
-          }, {
-            n: 'illuminationAzimuthAngle',
-            ti: 'ISO19139_GCO_20070417.RealPropertyType'
-          }, {
-            n: 'imagingCondition',
-            ti: '.MDImagingConditionCodePropertyType'
-          }, {
-            n: 'imageQualityCode',
-            ti: '.MDIdentifierPropertyType'
-          }, {
-            n: 'cloudCoverPercentage',
-            ti: 'ISO19139_GCO_20070417.RealPropertyType'
-          }, {
-            n: 'processingLevelCode',
-            ti: '.MDIdentifierPropertyType'
-          }, {
-            n: 'compressionGenerationQuantity',
-            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
-          }, {
-            n: 'triangulationIndicator',
-            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
-          }, {
-            n: 'radiometricCalibrationDataAvailability',
-            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
-          }, {
-            n: 'cameraCalibrationInformationAvailability',
-            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
-          }, {
-            n: 'filmDistortionInformationAvailability',
-            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
-          }, {
-            n: 'lensDistortionInformationAvailability',
-            ti: 'ISO19139_GCO_20070417.BooleanPropertyType'
-          }]
-      }, {
-        ln: 'AbstractDQElementType',
-        tn: 'AbstractDQ_Element_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'nameOfMeasure',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'measureIdentification',
-            ti: '.MDIdentifierPropertyType'
-          }, {
-            n: 'measureDescription',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'evaluationMethodType',
-            ti: '.DQEvaluationMethodTypeCodePropertyType'
-          }, {
-            n: 'evaluationMethodDescription',
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }, {
-            n: 'evaluationProcedure',
-            ti: '.CICitationPropertyType'
-          }, {
-            n: 'dateTime',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.DateTimePropertyType'
-          }, {
-            n: 'result',
-            rq: true,
-            mxo: 2,
-            col: true,
-            ti: '.DQResultPropertyType'
-          }]
-      }, {
-        ln: 'MDMediumNameCodePropertyType',
-        tn: 'MD_MediumNameCode_PropertyType',
-        ps: [{
-            n: 'mdMediumNameCode',
-            rq: true,
-            en: 'MD_MediumNameCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDMetadataExtensionInformationType',
-        tn: 'MD_MetadataExtensionInformation_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'extensionOnLineResource',
-            ti: '.CIOnlineResourcePropertyType'
-          }, {
-            n: 'extendedElementInformation',
-            mno: 0,
-            col: true,
-            ti: '.MDExtendedElementInformationPropertyType'
-          }]
-      }, {
-        ln: 'PTLocaleType',
-        tn: 'PT_Locale_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'languageCode',
-            rq: true,
-            ti: '.LanguageCodePropertyType'
-          }, {
-            n: 'country',
-            ti: '.CountryPropertyType'
-          }, {
-            n: 'characterEncoding',
-            rq: true,
-            ti: '.MDCharacterSetCodePropertyType'
-          }]
-      }, {
-        ln: 'PTFreeTextType',
-        tn: 'PT_FreeText_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'textGroup',
-            rq: true,
-            col: true,
-            ti: '.LocalisedCharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'PTLocalePropertyType',
-        tn: 'PT_Locale_PropertyType',
-        ps: [{
-            n: 'ptLocale',
-            rq: true,
-            en: 'PT_Locale',
-            ti: '.PTLocaleType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'EXBoundingPolygonPropertyType',
-        tn: 'EX_BoundingPolygon_PropertyType',
-        ps: [{
-            n: 'exBoundingPolygon',
-            rq: true,
-            en: 'EX_BoundingPolygon',
-            ti: '.EXBoundingPolygonType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDConstraintsType',
-        tn: 'MD_Constraints_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'useLimitation',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'MDBrowseGraphicType',
-        tn: 'MD_BrowseGraphic_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'fileName',
+            n: 'definition',
             rq: true,
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }, {
-            n: 'fileDescription',
+            n: 'obligation',
+            ti: '.MDObligationCodePropertyType'
+          }, {
+            n: 'condition',
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }, {
-            n: 'fileType',
+            n: 'dataType',
+            rq: true,
+            ti: '.MDDatatypeCodePropertyType'
+          }, {
+            n: 'maximumOccurrence',
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'DQGriddedDataPositionalAccuracyType',
-        tn: 'DQ_GriddedDataPositionalAccuracy_Type',
-        bti: '.AbstractDQPositionalAccuracyType'
-      }, {
-        ln: 'DQCompletenessOmissionType',
-        tn: 'DQ_CompletenessOmission_Type',
-        bti: '.AbstractDQCompletenessType'
-      }, {
-        ln: 'EXTemporalExtentPropertyType',
-        tn: 'EX_TemporalExtent_PropertyType',
-        ps: [{
-            n: 'exTemporalExtent',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'EX_TemporalExtent',
-            ti: '.EXTemporalExtentType',
-            t: 'er'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
+            n: 'domainValue',
+            ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DSInitiativeTypeCodePropertyType',
-        tn: 'DS_InitiativeTypeCode_PropertyType',
-        ps: [{
-            n: 'dsInitiativeTypeCode',
-            rq: true,
-            en: 'DS_InitiativeTypeCode',
-            ti: 'ISO19139_GCO_20070417.CodeListValueType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQConformanceResultPropertyType',
-        tn: 'DQ_ConformanceResult_PropertyType',
-        ps: [{
-            n: 'dqConformanceResult',
-            rq: true,
-            en: 'DQ_ConformanceResult',
-            ti: '.DQConformanceResultType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDDataIdentificationType',
-        tn: 'MD_DataIdentification_Type',
-        bti: '.AbstractMDIdentificationType',
-        ps: [{
-            n: 'spatialRepresentationType',
-            mno: 0,
-            col: true,
-            ti: '.MDSpatialRepresentationTypeCodePropertyType'
-          }, {
-            n: 'spatialResolution',
-            mno: 0,
-            col: true,
-            ti: '.MDResolutionPropertyType'
-          }, {
-            n: 'language',
+            n: 'parentEntity',
             rq: true,
             col: true,
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }, {
-            n: 'characterSet',
-            mno: 0,
-            col: true,
-            ti: '.MDCharacterSetCodePropertyType'
-          }, {
-            n: 'topicCategory',
-            mno: 0,
-            col: true,
-            ti: '.MDTopicCategoryCodePropertyType'
-          }, {
-            n: 'environmentDescription',
+            n: 'rule',
+            rq: true,
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
           }, {
-            n: 'extent',
+            n: 'rationale',
             mno: 0,
             col: true,
-            ti: '.EXExtentPropertyType'
-          }, {
-            n: 'supplementalInformation',
             ti: 'ISO19139_GCO_20070417.CharacterStringPropertyType'
-          }]
-      }, {
-        ln: 'MDGeometricObjectsType',
-        tn: 'MD_GeometricObjects_Type',
-        bti: 'ISO19139_GCO_20070417.AbstractObjectType',
-        ps: [{
-            n: 'geometricObjectType',
+          }, {
+            n: 'source',
             rq: true,
-            ti: '.MDGeometricObjectTypeCodePropertyType'
-          }, {
-            n: 'geometricObjectCount',
-            ti: 'ISO19139_GCO_20070417.IntegerPropertyType'
-          }]
-      }, {
-        ln: 'AbstractDQPositionalAccuracyType',
-        tn: 'AbstractDQ_PositionalAccuracy_Type',
-        bti: '.AbstractDQElementType'
-      }, {
-        ln: 'MDUsagePropertyType',
-        tn: 'MD_Usage_PropertyType',
-        ps: [{
-            n: 'mdUsage',
-            rq: true,
-            en: 'MD_Usage',
-            ti: '.MDUsageType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MDCoverageDescriptionType',
-        tn: 'MD_CoverageDescription_Type',
-        bti: '.AbstractMDContentInformationType',
-        ps: [{
-            n: 'attributeDescription',
-            rq: true,
-            ti: 'ISO19139_GCO_20070417.RecordTypePropertyType'
-          }, {
-            n: 'contentType',
-            rq: true,
-            ti: '.MDCoverageContentTypeCodePropertyType'
-          }, {
-            n: 'dimension',
-            mno: 0,
             col: true,
-            ti: '.MDRangeDimensionPropertyType'
+            ti: '.CIResponsiblePartyPropertyType'
           }]
-      }, {
-        ln: 'EXVerticalExtentPropertyType',
-        tn: 'EX_VerticalExtent_PropertyType',
-        ps: [{
-            n: 'exVerticalExtent',
-            rq: true,
-            en: 'EX_VerticalExtent',
-            ti: '.EXVerticalExtentType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }, {
-            n: 'uuidref',
-            an: {
-              lp: 'uuidref'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DQNonQuantitativeAttributeAccuracyType',
-        tn: 'DQ_NonQuantitativeAttributeAccuracy_Type',
-        bti: '.AbstractDQThematicAccuracyType'
-      }, {
-        t: 'enum',
-        ln: 'MDTopicCategoryCodeType',
-        vs: ['farming', 'biota', 'boundaries', 'climatologyMeteorologyAtmosphere', 'economy', 'elevation', 'environment', 'geoscientificInformation', 'health', 'imageryBaseMapsEarthCover', 'intelligenceMilitary', 'inlandWaters', 'location', 'oceans', 'planningCadastre', 'society', 'structure', 'transportation', 'utilitiesCommunication']
       }, {
         t: 'enum',
         ln: 'MDPixelOrientationCodeType',
         vs: ['center', 'lowerLeft', 'lowerRight', 'upperRight', 'upperLeft']
       }, {
         t: 'enum',
+        ln: 'MDTopicCategoryCodeType',
+        vs: ['farming', 'biota', 'boundaries', 'climatologyMeteorologyAtmosphere', 'economy', 'elevation', 'environment', 'geoscientificInformation', 'health', 'imageryBaseMapsEarthCover', 'intelligenceMilitary', 'inlandWaters', 'location', 'oceans', 'planningCadastre', 'society', 'structure', 'transportation', 'utilitiesCommunication']
+      }, {
+        t: 'enum',
         ln: 'MDObligationCodeType',
         vs: ['mandatory', 'optional', 'conditional']
       }],
     eis: [{
-        en: 'MD_ReferenceSystem',
-        ti: '.MDReferenceSystemType'
-      }, {
-        en: 'AbstractDQ_ThematicAccuracy',
-        ti: '.AbstractDQThematicAccuracyType',
-        sh: 'AbstractDQ_Element'
-      }, {
-        en: 'DQ_TemporalValidity',
-        ti: '.DQTemporalValidityType',
-        sh: 'AbstractDQ_TemporalAccuracy'
-      }, {
-        en: 'DQ_CompletenessCommission',
-        ti: '.DQCompletenessCommissionType',
-        sh: 'AbstractDQ_Completeness'
-      }, {
-        en: 'LI_Source',
-        ti: '.LISourceType'
-      }, {
         en: 'LocalisedCharacterString',
         ti: '.LocalisedCharacterStringType',
         sh: {
@@ -7192,47 +7174,151 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
           ns: 'http:\/\/www.isotc211.org\/2005\/gco'
         }
       }, {
-        en: 'EX_TemporalExtent',
-        ti: '.EXTemporalExtentType'
+        en: 'MD_CharacterSetCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
       }, {
-        en: 'MD_StandardOrderProcess',
-        ti: '.MDStandardOrderProcessType'
+        en: 'LI_Lineage',
+        ti: '.LILineageType'
       }, {
-        en: 'MD_Distributor',
-        ti: '.MDDistributorType'
+        en: 'MD_ApplicationSchemaInformation',
+        ti: '.MDApplicationSchemaInformationType'
       }, {
-        en: 'DQ_AccuracyOfATimeMeasurement',
-        ti: '.DQAccuracyOfATimeMeasurementType',
-        sh: 'AbstractDQ_TemporalAccuracy'
+        en: 'AbstractDQ_LogicalConsistency',
+        ti: '.AbstractDQLogicalConsistencyType',
+        sh: 'AbstractDQ_Element'
       }, {
-        en: 'MD_ServiceIdentification',
-        ti: '.MDServiceIdentificationType',
-        sh: 'AbstractMD_Identification'
+        en: 'DQ_Scope',
+        ti: '.DQScopeType'
       }, {
-        en: 'AbstractDQ_Element',
-        ti: '.AbstractDQElementType'
+        en: 'MD_ProgressCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
       }, {
-        en: 'MD_RangeDimension',
-        ti: '.MDRangeDimensionType'
-      }, {
-        en: 'MD_BrowseGraphic',
-        ti: '.MDBrowseGraphicType'
-      }, {
-        en: 'AbstractMD_Identification',
-        ti: '.AbstractMDIdentificationType'
-      }, {
-        en: 'MD_Keywords',
-        ti: '.MDKeywordsType'
+        en: 'EX_GeographicBoundingBox',
+        ti: '.EXGeographicBoundingBoxType',
+        sh: 'AbstractEX_GeographicExtent'
       }, {
         en: 'AbstractDQ_Completeness',
         ti: '.AbstractDQCompletenessType',
         sh: 'AbstractDQ_Element'
       }, {
-        en: 'MD_Band',
-        ti: '.MDBandType',
-        sh: 'MD_RangeDimension'
+        en: 'DQ_AccuracyOfATimeMeasurement',
+        ti: '.DQAccuracyOfATimeMeasurementType',
+        sh: 'AbstractDQ_TemporalAccuracy'
       }, {
-        en: 'MD_ScopeCode',
+        en: 'CI_DateTypeCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'DS_OtherAggregate',
+        ti: '.DSOtherAggregateType',
+        sh: 'AbstractDS_Aggregate'
+      }, {
+        en: 'MD_DimensionNameTypeCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'CI_Citation',
+        ti: '.CICitationType'
+      }, {
+        en: 'DS_Association',
+        ti: '.DSAssociationType'
+      }, {
+        en: 'CI_Series',
+        ti: '.CISeriesType'
+      }, {
+        en: 'DS_DataSet',
+        ti: '.DSDataSetType'
+      }, {
+        en: 'MD_GeometricObjectTypeCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'DQ_EvaluationMethodTypeCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'MD_CoverageContentTypeCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'AbstractMD_ContentInformation',
+        ti: '.AbstractMDContentInformationType'
+      }, {
+        en: 'PT_FreeText',
+        ti: '.PTFreeTextType'
+      }, {
+        en: 'DS_Sensor',
+        ti: '.DSSensorType',
+        sh: 'DS_Series'
+      }, {
+        en: 'MD_RepresentativeFraction',
+        ti: '.MDRepresentativeFractionType'
+      }, {
+        en: 'MD_CoverageDescription',
+        ti: '.MDCoverageDescriptionType',
+        sh: 'AbstractMD_ContentInformation'
+      }, {
+        en: 'EX_GeographicDescription',
+        ti: '.EXGeographicDescriptionType',
+        sh: 'AbstractEX_GeographicExtent'
+      }, {
+        en: 'MD_Keywords',
+        ti: '.MDKeywordsType'
+      }, {
+        en: 'DS_Series',
+        ti: '.DSSeriesType',
+        sh: 'AbstractDS_Aggregate'
+      }, {
+        en: 'CI_Telephone',
+        ti: '.CITelephoneType'
+      }, {
+        en: 'MD_SecurityConstraints',
+        ti: '.MDSecurityConstraintsType',
+        sh: 'MD_Constraints'
+      }, {
+        en: 'MD_Medium',
+        ti: '.MDMediumType'
+      }, {
+        en: 'MD_Distribution',
+        ti: '.MDDistributionType'
+      }, {
+        en: 'EX_VerticalExtent',
+        ti: '.EXVerticalExtentType'
+      }, {
+        en: 'CI_PresentationFormCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'MD_Distributor',
+        ti: '.MDDistributorType'
+      }, {
+        en: 'MD_ImagingConditionCode',
         ti: 'ISO19139_GCO_20070417.CodeListValueType',
         sh: {
           lp: 'CharacterString',
@@ -7245,48 +7331,282 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
           ns: 'http:\/\/www.isotc211.org\/2005\/gco'
         }
       }, {
-        en: 'DQ_RelativeInternalPositionalAccuracy',
-        ti: '.DQRelativeInternalPositionalAccuracyType',
-        sh: 'AbstractDQ_PositionalAccuracy'
-      }, {
-        en: 'DS_AssociationTypeCode',
+        en: 'MD_TopologyLevelCode',
         ti: 'ISO19139_GCO_20070417.CodeListValueType',
         sh: {
           lp: 'CharacterString',
           ns: 'http:\/\/www.isotc211.org\/2005\/gco'
         }
+      }, {
+        en: 'CI_RoleCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'DQ_ConceptualConsistency',
+        ti: '.DQConceptualConsistencyType',
+        sh: 'AbstractDQ_LogicalConsistency'
+      }, {
+        en: 'EX_TemporalExtent',
+        ti: '.EXTemporalExtentType'
+      }, {
+        en: 'MD_Identifier',
+        ti: '.MDIdentifierType'
+      }, {
+        en: 'LI_Source',
+        ti: '.LISourceType'
+      }, {
+        en: 'MD_MaintenanceFrequencyCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'MD_ObligationCode',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'DQ_AbsoluteExternalPositionalAccuracy',
+        ti: '.DQAbsoluteExternalPositionalAccuracyType',
+        sh: 'AbstractDQ_PositionalAccuracy'
+      }, {
+        en: 'MD_ExtendedElementInformation',
+        ti: '.MDExtendedElementInformationType'
+      }, {
+        en: 'MD_LegalConstraints',
+        ti: '.MDLegalConstraintsType',
+        sh: 'MD_Constraints'
+      }, {
+        en: 'DQ_TopologicalConsistency',
+        ti: '.DQTopologicalConsistencyType',
+        sh: 'AbstractDQ_LogicalConsistency'
+      }, {
+        en: 'MD_DatatypeCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'MD_RangeDimension',
+        ti: '.MDRangeDimensionType'
+      }, {
+        en: 'DS_InitiativeTypeCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'DQ_ThematicClassificationCorrectness',
+        ti: '.DQThematicClassificationCorrectnessType',
+        sh: 'AbstractDQ_ThematicAccuracy'
+      }, {
+        en: 'CI_Address',
+        ti: '.CIAddressType'
+      }, {
+        en: 'MD_MediumNameCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'URL'
+      }, {
+        en: 'AbstractDQ_PositionalAccuracy',
+        ti: '.AbstractDQPositionalAccuracyType',
+        sh: 'AbstractDQ_Element'
+      }, {
+        en: 'AbstractMD_SpatialRepresentation',
+        ti: '.AbstractMDSpatialRepresentationType'
+      }, {
+        en: 'DQ_CompletenessOmission',
+        ti: '.DQCompletenessOmissionType',
+        sh: 'AbstractDQ_Completeness'
+      }, {
+        en: 'DQ_GriddedDataPositionalAccuracy',
+        ti: '.DQGriddedDataPositionalAccuracyType',
+        sh: 'AbstractDQ_PositionalAccuracy'
+      }, {
+        en: 'AbstractMD_Identification',
+        ti: '.AbstractMDIdentificationType'
+      }, {
+        en: 'MD_ImageDescription',
+        ti: '.MDImageDescriptionType',
+        sh: 'MD_CoverageDescription'
+      }, {
+        en: 'MD_MetadataExtensionInformation',
+        ti: '.MDMetadataExtensionInformationType'
+      }, {
+        en: 'CI_ResponsibleParty',
+        ti: '.CIResponsiblePartyType'
+      }, {
+        en: 'MD_DigitalTransferOptions',
+        ti: '.MDDigitalTransferOptionsType'
+      }, {
+        en: 'DQ_TemporalConsistency',
+        ti: '.DQTemporalConsistencyType',
+        sh: 'AbstractDQ_TemporalAccuracy'
+      }, {
+        en: 'MD_Resolution',
+        ti: '.MDResolutionType'
+      }, {
+        en: 'MD_Metadata',
+        ti: '.MDMetadataType'
+      }, {
+        en: 'MD_MaintenanceInformation',
+        ti: '.MDMaintenanceInformationType'
+      }, {
+        en: 'DQ_DomainConsistency',
+        ti: '.DQDomainConsistencyType',
+        sh: 'AbstractDQ_LogicalConsistency'
+      }, {
+        en: 'MD_GeometricObjects',
+        ti: '.MDGeometricObjectsType'
+      }, {
+        en: 'MD_Format',
+        ti: '.MDFormatType'
+      }, {
+        en: 'MD_Constraints',
+        ti: '.MDConstraintsType'
+      }, {
+        en: 'MD_RestrictionCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'AbstractDS_Aggregate',
+        ti: '.AbstractDSAggregateType'
+      }, {
+        en: 'MD_PortrayalCatalogueReference',
+        ti: '.MDPortrayalCatalogueReferenceType'
+      }, {
+        en: 'RS_Identifier',
+        ti: '.RSIdentifierType',
+        sh: 'MD_Identifier'
+      }, {
+        en: 'DS_Platform',
+        ti: '.DSPlatformType',
+        sh: 'DS_Series'
+      }, {
+        en: 'CI_Date',
+        ti: '.CIDateType'
+      }, {
+        en: 'MD_BrowseGraphic',
+        ti: '.MDBrowseGraphicType'
+      }, {
+        en: 'AbstractDQ_Result',
+        ti: '.AbstractDQResultType'
+      }, {
+        en: 'DQ_NonQuantitativeAttributeAccuracy',
+        ti: '.DQNonQuantitativeAttributeAccuracyType',
+        sh: 'AbstractDQ_ThematicAccuracy'
+      }, {
+        en: 'MD_ServiceIdentification',
+        ti: '.MDServiceIdentificationType',
+        sh: 'AbstractMD_Identification'
+      }, {
+        en: 'DQ_ConformanceResult',
+        ti: '.DQConformanceResultType',
+        sh: 'AbstractDQ_Result'
+      }, {
+        en: 'MD_DistributionUnits',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'MD_KeywordTypeCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'AbstractDQ_Element',
+        ti: '.AbstractDQElementType'
+      }, {
+        en: 'EX_SpatialTemporalExtent',
+        ti: '.EXSpatialTemporalExtentType',
+        sh: 'EX_TemporalExtent'
+      }, {
+        en: 'Country',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'DS_ProductionSeries',
+        ti: '.DSProductionSeriesType',
+        sh: 'DS_Series'
+      }, {
+        en: 'AbstractDQ_ThematicAccuracy',
+        ti: '.AbstractDQThematicAccuracyType',
+        sh: 'AbstractDQ_Element'
+      }, {
+        en: 'MD_ScopeCode',
+        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        sh: {
+          lp: 'CharacterString',
+          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+        }
+      }, {
+        en: 'EX_Extent',
+        ti: '.EXExtentType'
       }, {
         en: 'DS_StereoMate',
         ti: '.DSStereoMateType',
         sh: 'DS_OtherAggregate'
       }, {
-        en: 'AbstractRS_ReferenceSystem',
-        ti: '.AbstractRSReferenceSystemType'
+        en: 'DQ_QuantitativeAttributeAccuracy',
+        ti: '.DQQuantitativeAttributeAccuracyType',
+        sh: 'AbstractDQ_ThematicAccuracy'
       }, {
-        en: 'MD_CoverageContentTypeCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
+        en: 'CI_OnlineResource',
+        ti: '.CIOnlineResourceType'
       }, {
-        en: 'CI_OnLineFunctionCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
+        en: 'MD_AggregateInformation',
+        ti: '.MDAggregateInformationType'
       }, {
-        en: 'PT_FreeText',
-        ti: '.PTFreeTextType'
+        en: 'AbstractEX_GeographicExtent',
+        ti: '.AbstractEXGeographicExtentType'
       }, {
         en: 'LI_ProcessStep',
         ti: '.LIProcessStepType'
       }, {
-        en: 'MD_PortrayalCatalogueReference',
-        ti: '.MDPortrayalCatalogueReferenceType'
+        en: 'MD_Georeferenceable',
+        ti: '.MDGeoreferenceableType',
+        sh: 'MD_GridSpatialRepresentation'
       }, {
-        en: 'MD_MediumNameCode',
+        en: 'MD_ScopeDescription',
+        ti: '.MDScopeDescriptionType'
+      }, {
+        en: 'EX_BoundingPolygon',
+        ti: '.EXBoundingPolygonType',
+        sh: 'AbstractEX_GeographicExtent'
+      }, {
+        en: 'AbstractDQ_TemporalAccuracy',
+        ti: '.AbstractDQTemporalAccuracyType',
+        sh: 'AbstractDQ_Element'
+      }, {
+        en: 'DQ_DataQuality',
+        ti: '.DQDataQualityType'
+      }, {
+        en: 'MD_FeatureCatalogueDescription',
+        ti: '.MDFeatureCatalogueDescriptionType',
+        sh: 'AbstractMD_ContentInformation'
+      }, {
+        en: 'MD_CellGeometryCode',
         ti: 'ISO19139_GCO_20070417.CodeListValueType',
         sh: {
           lp: 'CharacterString',
@@ -7300,120 +7620,51 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
           ns: 'http:\/\/www.isotc211.org\/2005\/gco'
         }
       }, {
-        en: 'PT_LocaleContainer',
-        ti: '.PTLocaleContainerType'
+        en: 'DQ_FormatConsistency',
+        ti: '.DQFormatConsistencyType',
+        sh: 'AbstractDQ_LogicalConsistency'
       }, {
-        en: 'URL'
+        en: 'MD_StandardOrderProcess',
+        ti: '.MDStandardOrderProcessType'
       }, {
-        en: 'CI_Address',
-        ti: '.CIAddressType'
+        en: 'DQ_CompletenessCommission',
+        ti: '.DQCompletenessCommissionType',
+        sh: 'AbstractDQ_Completeness'
       }, {
-        en: 'MD_Resolution',
-        ti: '.MDResolutionType'
-      }, {
-        en: 'MD_RepresentativeFraction',
-        ti: '.MDRepresentativeFractionType'
-      }, {
-        en: 'MD_CharacterSetCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'MD_ExtendedElementInformation',
-        ti: '.MDExtendedElementInformationType'
-      }, {
-        en: 'AbstractMD_ContentInformation',
-        ti: '.AbstractMDContentInformationType'
-      }, {
-        en: 'MD_ScopeDescription',
-        ti: '.MDScopeDescriptionType'
-      }, {
-        en: 'AbstractMD_SpatialRepresentation',
-        ti: '.AbstractMDSpatialRepresentationType'
-      }, {
-        en: 'CI_RoleCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'MD_Identifier',
-        ti: '.MDIdentifierType'
-      }, {
-        en: 'CI_OnlineResource',
-        ti: '.CIOnlineResourceType'
-      }, {
-        en: 'MD_DimensionNameTypeCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'MD_FeatureCatalogueDescription',
-        ti: '.MDFeatureCatalogueDescriptionType',
-        sh: 'AbstractMD_ContentInformation'
-      }, {
-        en: 'MD_DigitalTransferOptions',
-        ti: '.MDDigitalTransferOptionsType'
-      }, {
-        en: 'DQ_TemporalConsistency',
-        ti: '.DQTemporalConsistencyType',
+        en: 'DQ_TemporalValidity',
+        ti: '.DQTemporalValidityType',
         sh: 'AbstractDQ_TemporalAccuracy'
       }, {
-        en: 'EX_Extent',
-        ti: '.EXExtentType'
-      }, {
-        en: 'MD_VectorSpatialRepresentation',
-        ti: '.MDVectorSpatialRepresentationType',
-        sh: 'AbstractMD_SpatialRepresentation'
+        en: 'MD_Band',
+        ti: '.MDBandType',
+        sh: 'MD_RangeDimension'
       }, {
         en: 'DS_Initiative',
         ti: '.DSInitiativeType',
         sh: 'AbstractDS_Aggregate'
       }, {
-        en: 'DS_InitiativeTypeCode',
+        en: 'DQ_RelativeInternalPositionalAccuracy',
+        ti: '.DQRelativeInternalPositionalAccuracyType',
+        sh: 'AbstractDQ_PositionalAccuracy'
+      }, {
+        en: 'MD_VectorSpatialRepresentation',
+        ti: '.MDVectorSpatialRepresentationType',
+        sh: 'AbstractMD_SpatialRepresentation'
+      }, {
+        en: 'AbstractRS_ReferenceSystem',
+        ti: '.AbstractRSReferenceSystemType'
+      }, {
+        en: 'MD_MediumFormatCode',
         ti: 'ISO19139_GCO_20070417.CodeListValueType',
         sh: {
           lp: 'CharacterString',
           ns: 'http:\/\/www.isotc211.org\/2005\/gco'
         }
       }, {
-        en: 'MD_ImageDescription',
-        ti: '.MDImageDescriptionType',
-        sh: 'MD_CoverageDescription'
+        en: 'PT_Locale',
+        ti: '.PTLocaleType'
       }, {
-        en: 'DQ_CompletenessOmission',
-        ti: '.DQCompletenessOmissionType',
-        sh: 'AbstractDQ_Completeness'
-      }, {
-        en: 'CI_Series',
-        ti: '.CISeriesType'
-      }, {
-        en: 'MD_Georeferenceable',
-        ti: '.MDGeoreferenceableType',
-        sh: 'MD_GridSpatialRepresentation'
-      }, {
-        en: 'EX_VerticalExtent',
-        ti: '.EXVerticalExtentType'
-      }, {
-        en: 'DQ_ConformanceResult',
-        ti: '.DQConformanceResultType',
-        sh: 'AbstractDQ_Result'
-      }, {
-        en: 'EX_SpatialTemporalExtent',
-        ti: '.EXSpatialTemporalExtentType',
-        sh: 'EX_TemporalExtent'
-      }, {
-        en: 'DS_ProductionSeries',
-        ti: '.DSProductionSeriesType',
-        sh: 'DS_Series'
-      }, {
-        en: 'MD_GeometricObjectTypeCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
+        en: 'MD_PixelOrientationCode',
         sh: {
           lp: 'CharacterString',
           ns: 'http:\/\/www.isotc211.org\/2005\/gco'
@@ -7423,165 +7674,12 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
         ti: '.MDGeorectifiedType',
         sh: 'MD_GridSpatialRepresentation'
       }, {
-        en: 'MD_Dimension',
-        ti: '.MDDimensionType'
-      }, {
-        en: 'DS_Platform',
-        ti: '.DSPlatformType',
-        sh: 'DS_Series'
-      }, {
-        en: 'DQ_NonQuantitativeAttributeAccuracy',
-        ti: '.DQNonQuantitativeAttributeAccuracyType',
-        sh: 'AbstractDQ_ThematicAccuracy'
-      }, {
-        en: 'MD_TopologyLevelCode',
+        en: 'CI_OnLineFunctionCode',
         ti: 'ISO19139_GCO_20070417.CodeListValueType',
         sh: {
           lp: 'CharacterString',
           ns: 'http:\/\/www.isotc211.org\/2005\/gco'
         }
-      }, {
-        en: 'DQ_ThematicClassificationCorrectness',
-        ti: '.DQThematicClassificationCorrectnessType',
-        sh: 'AbstractDQ_ThematicAccuracy'
-      }, {
-        en: 'DQ_TopologicalConsistency',
-        ti: '.DQTopologicalConsistencyType',
-        sh: 'AbstractDQ_LogicalConsistency'
-      }, {
-        en: 'MD_Distribution',
-        ti: '.MDDistributionType'
-      }, {
-        en: 'DS_Sensor',
-        ti: '.DSSensorType',
-        sh: 'DS_Series'
-      }, {
-        en: 'MD_PixelOrientationCode',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'AbstractDQ_LogicalConsistency',
-        ti: '.AbstractDQLogicalConsistencyType',
-        sh: 'AbstractDQ_Element'
-      }, {
-        en: 'MD_Medium',
-        ti: '.MDMediumType'
-      }, {
-        en: 'MD_CellGeometryCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'MD_GridSpatialRepresentation',
-        ti: '.MDGridSpatialRepresentationType',
-        sh: 'AbstractMD_SpatialRepresentation'
-      }, {
-        en: 'CI_Contact',
-        ti: '.CIContactType'
-      }, {
-        en: 'MD_AggregateInformation',
-        ti: '.MDAggregateInformationType'
-      }, {
-        en: 'DS_Association',
-        ti: '.DSAssociationType'
-      }, {
-        en: 'DQ_DomainConsistency',
-        ti: '.DQDomainConsistencyType',
-        sh: 'AbstractDQ_LogicalConsistency'
-      }, {
-        en: 'CI_Citation',
-        ti: '.CICitationType'
-      }, {
-        en: 'MD_MaintenanceInformation',
-        ti: '.MDMaintenanceInformationType'
-      }, {
-        en: 'EX_GeographicBoundingBox',
-        ti: '.EXGeographicBoundingBoxType',
-        sh: 'AbstractEX_GeographicExtent'
-      }, {
-        en: 'DQ_AbsoluteExternalPositionalAccuracy',
-        ti: '.DQAbsoluteExternalPositionalAccuracyType',
-        sh: 'AbstractDQ_PositionalAccuracy'
-      }, {
-        en: 'MD_ApplicationSchemaInformation',
-        ti: '.MDApplicationSchemaInformationType'
-      }, {
-        en: 'CI_PresentationFormCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'DQ_ConceptualConsistency',
-        ti: '.DQConceptualConsistencyType',
-        sh: 'AbstractDQ_LogicalConsistency'
-      }, {
-        en: 'MD_DistributionUnits',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'MD_SecurityConstraints',
-        ti: '.MDSecurityConstraintsType',
-        sh: 'MD_Constraints'
-      }, {
-        en: 'EX_BoundingPolygon',
-        ti: '.EXBoundingPolygonType',
-        sh: 'AbstractEX_GeographicExtent'
-      }, {
-        en: 'DS_Series',
-        ti: '.DSSeriesType',
-        sh: 'AbstractDS_Aggregate'
-      }, {
-        en: 'EX_GeographicDescription',
-        ti: '.EXGeographicDescriptionType',
-        sh: 'AbstractEX_GeographicExtent'
-      }, {
-        en: 'DQ_QuantitativeAttributeAccuracy',
-        ti: '.DQQuantitativeAttributeAccuracyType',
-        sh: 'AbstractDQ_ThematicAccuracy'
-      }, {
-        en: 'MD_RestrictionCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'AbstractDQ_PositionalAccuracy',
-        ti: '.AbstractDQPositionalAccuracyType',
-        sh: 'AbstractDQ_Element'
-      }, {
-        en: 'MD_ImagingConditionCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'DQ_Scope',
-        ti: '.DQScopeType'
-      }, {
-        en: 'MD_DataIdentification',
-        ti: '.MDDataIdentificationType',
-        sh: 'AbstractMD_Identification'
-      }, {
-        en: 'AbstractDS_Aggregate',
-        ti: '.AbstractDSAggregateType'
-      }, {
-        en: 'DS_OtherAggregate',
-        ti: '.DSOtherAggregateType',
-        sh: 'AbstractDS_Aggregate'
-      }, {
-        en: 'MD_MetadataExtensionInformation',
-        ti: '.MDMetadataExtensionInformationType'
       }, {
         en: 'MD_ClassificationCode',
         ti: 'ISO19139_GCO_20070417.CodeListValueType',
@@ -7590,41 +7688,25 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
           ns: 'http:\/\/www.isotc211.org\/2005\/gco'
         }
       }, {
-        en: 'DS_DataSet',
-        ti: '.DSDataSetType'
+        en: 'PT_LocaleContainer',
+        ti: '.PTLocaleContainerType'
       }, {
-        en: 'CI_Date',
-        ti: '.CIDateType'
+        en: 'MD_Usage',
+        ti: '.MDUsageType'
       }, {
-        en: 'PT_Locale',
-        ti: '.PTLocaleType'
-      }, {
-        en: 'MD_Constraints',
-        ti: '.MDConstraintsType'
-      }, {
-        en: 'AbstractDQ_TemporalAccuracy',
-        ti: '.AbstractDQTemporalAccuracyType',
-        sh: 'AbstractDQ_Element'
-      }, {
-        en: 'MD_KeywordTypeCode',
+        en: 'DS_AssociationTypeCode',
         ti: 'ISO19139_GCO_20070417.CodeListValueType',
         sh: {
           lp: 'CharacterString',
           ns: 'http:\/\/www.isotc211.org\/2005\/gco'
         }
       }, {
-        en: 'DQ_DataQuality',
-        ti: '.DQDataQualityType'
+        en: 'MD_Dimension',
+        ti: '.MDDimensionType'
       }, {
-        en: 'MD_DatatypeCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'AbstractEX_GeographicExtent',
-        ti: '.AbstractEXGeographicExtentType'
+        en: 'DQ_QuantitativeResult',
+        ti: '.DQQuantitativeResultType',
+        sh: 'AbstractDQ_Result'
       }, {
         en: 'MD_SpatialRepresentationTypeCode',
         ti: 'ISO19139_GCO_20070417.CodeListValueType',
@@ -7633,101 +7715,19 @@ var ISO19139_GMD_20070417_Module_Factory = function () {
           ns: 'http:\/\/www.isotc211.org\/2005\/gco'
         }
       }, {
-        en: 'MD_Usage',
-        ti: '.MDUsageType'
+        en: 'MD_DataIdentification',
+        ti: '.MDDataIdentificationType',
+        sh: 'AbstractMD_Identification'
       }, {
-        en: 'AbstractDQ_Result',
-        ti: '.AbstractDQResultType'
+        en: 'CI_Contact',
+        ti: '.CIContactType'
       }, {
-        en: 'MD_CoverageDescription',
-        ti: '.MDCoverageDescriptionType',
-        sh: 'AbstractMD_ContentInformation'
+        en: 'MD_ReferenceSystem',
+        ti: '.MDReferenceSystemType'
       }, {
-        en: 'DQ_GriddedDataPositionalAccuracy',
-        ti: '.DQGriddedDataPositionalAccuracyType',
-        sh: 'AbstractDQ_PositionalAccuracy'
-      }, {
-        en: 'MD_Format',
-        ti: '.MDFormatType'
-      }, {
-        en: 'Country',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'LI_Lineage',
-        ti: '.LILineageType'
-      }, {
-        en: 'MD_MaintenanceFrequencyCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'MD_ProgressCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'MD_GeometricObjects',
-        ti: '.MDGeometricObjectsType'
-      }, {
-        en: 'MD_LegalConstraints',
-        ti: '.MDLegalConstraintsType',
-        sh: 'MD_Constraints'
-      }, {
-        en: 'CI_Telephone',
-        ti: '.CITelephoneType'
-      }, {
-        en: 'CI_DateTypeCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'CI_ResponsibleParty',
-        ti: '.CIResponsiblePartyType'
-      }, {
-        en: 'DQ_EvaluationMethodTypeCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'MD_ObligationCode',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'MD_Metadata',
-        ti: '.MDMetadataType'
-      }, {
-        en: 'DQ_FormatConsistency',
-        ti: '.DQFormatConsistencyType',
-        sh: 'AbstractDQ_LogicalConsistency'
-      }, {
-        en: 'MD_MediumFormatCode',
-        ti: 'ISO19139_GCO_20070417.CodeListValueType',
-        sh: {
-          lp: 'CharacterString',
-          ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-        }
-      }, {
-        en: 'DQ_QuantitativeResult',
-        ti: '.DQQuantitativeResultType',
-        sh: 'AbstractDQ_Result'
-      }, {
-        en: 'RS_Identifier',
-        ti: '.RSIdentifierType',
-        sh: 'MD_Identifier'
+        en: 'MD_GridSpatialRepresentation',
+        ti: '.MDGridSpatialRepresentationType',
+        sh: 'AbstractMD_SpatialRepresentation'
       }]
   };
   return {

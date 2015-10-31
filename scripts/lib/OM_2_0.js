@@ -3,15 +3,14 @@ var OM_2_0_Module_Factory = function () {
     n: 'OM_2_0',
     dens: 'http:\/\/www.opengis.net\/om\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_2_1', 'XLink_1_0', 'ISO19139_GMD_20070417'],
+    deps: ['XLink_1_0', 'GML_3_2_1', 'ISO19139_GMD_20070417'],
     tis: [{
-        ln: 'OMProcessPropertyType',
-        tn: 'OM_ProcessPropertyType',
+        ln: 'NamedValuePropertyType',
         ps: [{
-            n: 'any',
+            n: 'namedValue',
             rq: true,
-            mx: false,
-            t: 'ae'
+            en: 'NamedValue',
+            ti: '.NamedValueType'
           }, {
             n: 'nilReason',
             ti: {
@@ -122,52 +121,15 @@ var OM_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'NamedValuePropertyType',
+        ln: 'NamedValueType',
         ps: [{
-            n: 'namedValue',
+            n: 'name',
             rq: true,
-            en: 'NamedValue',
-            ti: '.NamedValueType'
+            ti: 'GML_3_2_1.ReferenceType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'value',
+            rq: true,
+            ti: 'AnyType'
           }]
       }, {
         ln: 'OMObservationType',
@@ -223,6 +185,55 @@ var OM_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
+        ln: 'OMProcessPropertyType',
+        tn: 'OM_ProcessPropertyType',
+        ps: [{
+            n: 'any',
+            rq: true,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
         ln: 'TimeObjectPropertyType',
         ps: [{
             n: 'abstractTimeObject',
@@ -276,17 +287,6 @@ var OM_2_0_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
-      }, {
-        ln: 'NamedValueType',
-        ps: [{
-            n: 'name',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'value',
-            rq: true,
-            ti: 'AnyType'
-          }]
       }],
     eis: [{
         en: 'OM_Observation',
@@ -299,11 +299,11 @@ var OM_2_0_Module_Factory = function () {
         en: 'ObservationContext',
         ti: '.ObservationContextType'
       }, {
-        en: 'NamedValue',
-        ti: '.NamedValueType'
-      }, {
         en: 'result',
         ti: 'AnyType'
+      }, {
+        en: 'NamedValue',
+        ti: '.NamedValueType'
       }]
   };
   return {
