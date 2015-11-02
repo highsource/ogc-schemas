@@ -1,6 +1,6 @@
 diff -urN ../resources-original/isotc211/2005/gmi/acquisitionInformation.xsd isotc211/2005/gmi/acquisitionInformation.xsd
 --- ../resources-original/isotc211/2005/gmi/acquisitionInformation.xsd	Wed Sep 23 08:51:07 2015
-+++ isotc211/2005/gmi/acquisitionInformation.xsd	Tue Oct  6 07:05:31 2015
++++ isotc211/2005/gmi/acquisitionInformation.xsd	Sat Oct 31 14:49:38 2015
 @@ -6,9 +6,9 @@
  		<xs:documentation>2012-12-08: Documentation of MI_Objective_Type. Typo reported by XMG: "temportal" replaced by "temporal".</xs:documentation>
  	</xs:annotation>
@@ -16,7 +16,7 @@ diff -urN ../resources-original/isotc211/2005/gmi/acquisitionInformation.xsd iso
  	<!-- ================================== Classes ================================= -->
 diff -urN ../resources-original/isotc211/2005/gmi/contentInformation.xsd isotc211/2005/gmi/contentInformation.xsd
 --- ../resources-original/isotc211/2005/gmi/contentInformation.xsd	Wed Sep 23 08:51:30 2015
-+++ isotc211/2005/gmi/contentInformation.xsd	Tue Oct  6 07:05:31 2015
++++ isotc211/2005/gmi/contentInformation.xsd	Sat Oct 31 14:49:38 2015
 @@ -5,8 +5,8 @@
  		<xs:documentation>This file was generated from ISO TC/211 UML class diagrams == 07-30-2010 11:34:35 ====== Name: Content - Position: 5</xs:documentation>
  	</xs:annotation>
@@ -30,7 +30,7 @@ diff -urN ../resources-original/isotc211/2005/gmi/contentInformation.xsd isotc21
  	<!-- ================================== Classes ================================= -->
 diff -urN ../resources-original/isotc211/2005/gmi/dataQualityInformation.xsd isotc211/2005/gmi/dataQualityInformation.xsd
 --- ../resources-original/isotc211/2005/gmi/dataQualityInformation.xsd	Wed Sep 23 08:51:44 2015
-+++ isotc211/2005/gmi/dataQualityInformation.xsd	Tue Oct  6 07:05:31 2015
++++ isotc211/2005/gmi/dataQualityInformation.xsd	Sat Oct 31 14:49:38 2015
 @@ -6,8 +6,8 @@
  		<xs:documentation>2012-12-08: Documentation of LE_ProcessStepReport_Type. Typo reported by XMG: "occured" replaced by "occurred".</xs:documentation>
  	</xs:annotation>
@@ -44,7 +44,7 @@ diff -urN ../resources-original/isotc211/2005/gmi/dataQualityInformation.xsd iso
  	<!-- ================================== Classes ================================= -->
 diff -urN ../resources-original/isotc211/2005/gmi/metadataEntitySet.xsd isotc211/2005/gmi/metadataEntitySet.xsd
 --- ../resources-original/isotc211/2005/gmi/metadataEntitySet.xsd	Wed Sep 23 08:52:11 2015
-+++ isotc211/2005/gmi/metadataEntitySet.xsd	Tue Oct  6 07:05:31 2015
++++ isotc211/2005/gmi/metadataEntitySet.xsd	Sat Oct 31 14:49:38 2015
 @@ -5,8 +5,8 @@
  		<xs:documentation>This file was generated from ISO TC/211 UML class diagrams == 07-30-2010 11:34:30 ====== </xs:documentation>
  	</xs:annotation>
@@ -58,7 +58,7 @@ diff -urN ../resources-original/isotc211/2005/gmi/metadataEntitySet.xsd isotc211
  	<!-- ########################################################################### -->
 diff -urN ../resources-original/isotc211/2005/gmi/spatialRepresentationInformation.xsd isotc211/2005/gmi/spatialRepresentationInformation.xsd
 --- ../resources-original/isotc211/2005/gmi/spatialRepresentationInformation.xsd	Wed Sep 23 08:52:18 2015
-+++ isotc211/2005/gmi/spatialRepresentationInformation.xsd	Tue Oct  6 07:05:31 2015
++++ isotc211/2005/gmi/spatialRepresentationInformation.xsd	Sat Oct 31 14:49:38 2015
 @@ -6,9 +6,9 @@
  	</xs:annotation>
  	<!-- ================================== Imports ================================== -->

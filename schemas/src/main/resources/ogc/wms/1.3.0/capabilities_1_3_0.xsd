@@ -615,4 +615,7 @@
 			<maxInclusive value="90"/>
 		</restriction>
 	</simpleType>
+
+	<element name="OtherExtendedCapabilities" substitutionGroup="wms:_ExtendedCapabilities"/>
+	<element name="OtherExtendedOperation" type="wms:OperationType" substitutionGroup="wms:_ExtendedOperation"/>
 </schema>
