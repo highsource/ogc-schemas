@@ -50,7 +50,6 @@
 						<configuration>
 							<target>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="GML*.*"/>
 								<delete dir="${basedir}/target/generated-sources/xjc/org/isotc211/_2005"/>
 								<delete dir="${basedir}/target/generated-sources/xjc" includes="org*.*"/>
 							</target>
