@@ -23,7 +23,7 @@
 						<phase>generate-sources</phase>
 						<configuration>
 							<target>
-								<!--get src="http://schemas.opengis.net/${schemas.zip}" dest="src/main/etc/${schemas.zip}" usetimestamp="true"/-->
+								<get src="http://schemas.opengis.net/${schemas.zip}" dest="src/main/etc/${schemas.zip}" usetimestamp="true"/>
 							</target>
 						</configuration>
 						<goals>

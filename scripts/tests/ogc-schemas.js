@@ -30,6 +30,10 @@ module.exports =
 		"WMS" : require('./WMS/WMS.js'),
 		"WMSC" : require('./WMSC/WMSC.js'),
 		"WCS" : require('./WCS/WCS.js'),
+		"WCS_Interpolation" : require('./WCS_Interpolation/WCS_Interpolation'),
+		"WCS_Processing" : require('./WCS_Processing/WCS_Processing'),
+		"WCS_Range_Subsetting" : require('./WCS_Range_Subsetting/WCS_Range_Subsetting'),
+		"WCS_Scaling" : require('./WCS_Scaling/WCS_Scaling'),
 		"WFS" : require('./WFS/WFS.js'),
 		"WMTS" : require('./WMTS/WMTS.js'),
 		"WPS" : require('./WPS/WPS.js')

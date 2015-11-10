@@ -12,14 +12,14 @@ var roundtripWithContext = function (test, context, resource) {
 		console.log('Unmarshalling [' + resource + '].');
 		unmarshallerOne.unmarshalFile(resource,
 			function(one) {
-				//console.log('Unmarshalled one:');
-				//console.log(one);
-				//console.log(JSON.stringify(one, null, 2));
-                console.log('Unmarshalled one.');
+				// console.log('Unmarshalled one:');
+				// console.log(one);
+				// console.log(JSON.stringify(one, null, 2));
+		                console.log('Unmarshalled one.');
 				var documentOne = marshallerOne.marshalDocument(one);
 				var two = unmarshallerTwo.unmarshalDocument(documentOne);
-				//console.log('Unmarshalled two:');
-				//console.log(two);
+				// console.log('Unmarshalled two:');
+				// console.log(two);
 				// console.log(JSON.stringify(two, null, 2));
 				var stringTwo = marshallerTwo.marshalString(two);
 				//console.log('Marshalled two:');
