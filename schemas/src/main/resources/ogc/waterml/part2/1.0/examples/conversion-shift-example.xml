@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rgs:ConversionGroup xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:swe="http://www.opengis.net/swe/2.0"
+  xmlns:wml2="http://www.opengis.net/waterml/2.0"
+  xmlns:om="http://www.opengis.net/om/2.0"
+  xmlns:gmd="http://www.isotc211.org/2005/gmd"
+  xmlns:gco="http://www.isotc211.org/2005/gco"
+  xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+  xmlns:sam="http://www.opengis.net/sampling/2.0"
+  xmlns:gsr="http://www.isotc211.org/2005/gsr"
+  xmlns:gts="http://www.isotc211.org/2005/gts"
+  xmlns:gss="http://www.isotc211.org/2005/gss"
+  xmlns:rgs="http://www.opengis.net/waterml/part2/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/waterml/part2/1.0 
+  ../waterml2-part2.xsd" 
+  gml:id="shift-conversion-example-1">
+  
+  <gml:description>A handcrafted example of conversions for WaterML2.0 part 2 - Ratings, gaugings and sections (RGS). This
+                  example shows a combined conversion with stage shifts and rating tables. </gml:description>  
+  
+  <rgs:monitoringPoint xlink:href="http://waterdata.usgs.gov/nwis/nwismap/?site_no=02136000&amp;agency_cd=USGS" 
+    xlink:title="BLACK RIVER AT KINGSTREE, SC"/>
+  
+  <rgs:fullConversion>false</rgs:fullConversion>
+  <rgs:domainFeatureType xlink:href="http://sirf.csiro.au/ftc/hy_features/river-section" xlink:title="HY_Features river segment"/>
+  
+  <rgs:period>
+    <rgs:ConversionPeriod>
+      <!-- A single stage-discharge rating table applicable for 2007</gml:description -->
+      <rgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1">
+          <gml:timePosition>2007-01-01</gml:timePosition>
+        </gml:TimeInstant>
+      </rgs:periodStart>
+      <rgs:periodEnd>
+        <gml:TimeInstant gml:id="ti-2">
+          <gml:timePosition>2008-01-01</gml:timePosition>
+        </gml:TimeInstant>
+      </rgs:periodEnd>
+      <rgs:applicableConversion>
+        <rgs:ConversionTable gml:id="table-1">
+          <!-- parameters changed to be vocabulary references -->
+          <rgs:monitoringPoint xlink:href="http://waterdata.usgs.gov/nwis/nwismap/?site_no=02136000&amp;agency_cd=USGS" 
+            xlink:title="BLACK RIVER AT KINGSTREE, SC"/> 
+          <rgs:inputProperty  xlink:href="http://aquaticinformatics.com/observables/100.00" xlink:title="river height"/>
+          <rgs:outputProperty xlink:href="http://aquaticinformatics.com/observables/140.00" xlink:title="river discharge"/>
+          <rgs:metadata>
+            <rgs:ConversionMetadata gml:id="con-md">
+              <rgs:developmentMethod></rgs:developmentMethod>
+              <rgs:releaseStatus  />
+            </rgs:ConversionMetadata>
+          </rgs:metadata>
+         
+          <rgs:point>
+            <rgs:TableTuple>
+              <rgs:inputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>-1.00000</swe:value>
+                </swe:Quantity>
+              </rgs:inputValue>
+              <rgs:outputValue>
+                <swe:Quantity>
+                  <swe:uom code="m3/s"/>
+                  <swe:value>0.00000</swe:value>
+                </swe:Quantity>
+              </rgs:outputValue>
+            </rgs:TableTuple>
+          </rgs:point>
+          <rgs:point>
+            <rgs:TableTuple>
+              <rgs:inputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>0.30000</swe:value>
+                </swe:Quantity>
+              </rgs:inputValue>
+              <rgs:outputValue>
+                <swe:Quantity>
+                  <swe:uom code="m3/s"/>
+                  <swe:value>22.50000</swe:value>
+                </swe:Quantity>
+              </rgs:outputValue>
+            </rgs:TableTuple>
+          </rgs:point>
+          <!-- more points --> 
+        </rgs:ConversionTable>
+      </rgs:applicableConversion>
+    </rgs:ConversionPeriod>
+  </rgs:period>
+  
+  <rgs:period>
+    <rgs:ConversionPeriod>
+      <!-- A stage shift conversion (from normal to shifted stage) for Feb 2007 -->
+      <rgs:periodStart>
+        <gml:TimeInstant gml:id="ti-3">
+          <gml:timePosition>2007-02-01</gml:timePosition>
+        </gml:TimeInstant>
+      </rgs:periodStart>
+      <rgs:periodEnd>
+        <gml:TimeInstant gml:id="ti-4">
+          <gml:timePosition>2007-03-01</gml:timePosition>
+        </gml:TimeInstant>
+      </rgs:periodEnd>
+      <rgs:applicableConversion>
+        <rgs:ConversionTable gml:id="shift-table-1">
+          <!-- we need codes for appropriate height/stage types? Can't see on
+            http://nwis.waterdata.usgs.gov/usa/nwis/pmcodes?radio_pm_search=param_group&pm_group=Physical&pm_search=&casrn_search=&srsname_search=&format=html_table&show=parameter_group_nm&show=parameter_nm&show=casrn&show=srsname&show=parameter_units -->
+          <rgs:monitoringPoint xlink:href="http://waterdata.usgs.gov/nwis/nwismap/?site_no=02136000&amp;agency_cd=USGS" 
+            xlink:title="BLACK RIVER AT KINGSTREE, SC"/> 
+          <rgs:inputProperty  xlink:href="http://aquaticinformatics.com/observables/101.00" xlink:title="raw river height"/>
+          <rgs:outputProperty xlink:href="http://aquaticinformatics.com/observables/102.00" xlink:title="shifted river height"/>
+         
+          <rgs:point>
+            <rgs:TableTuple>
+              <rgs:inputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>1.00000</swe:value>
+                </swe:Quantity>
+              </rgs:inputValue>
+              <rgs:outputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>1.10000</swe:value>
+                </swe:Quantity>
+              </rgs:outputValue>
+            </rgs:TableTuple>
+          </rgs:point>
+          <rgs:point>
+            <rgs:TableTuple>
+              <rgs:inputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>1.30000</swe:value>
+                </swe:Quantity>
+              </rgs:inputValue>
+              <rgs:outputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>1.340000</swe:value>
+                </swe:Quantity>
+              </rgs:outputValue>
+            </rgs:TableTuple>
+          </rgs:point>
+          <!-- more points --> 
+        </rgs:ConversionTable>
+      </rgs:applicableConversion>
+    </rgs:ConversionPeriod>
+  </rgs:period>
+  
+  <rgs:period>
+    <rgs:ConversionPeriod>
+      <!-- A stage shift conversion (from normal to shifted stage) for May 2007 -->
+      <rgs:periodStart>
+        <gml:TimeInstant gml:id="ti-5">
+          <gml:timePosition>2007-05-01</gml:timePosition>
+        </gml:TimeInstant>
+      </rgs:periodStart>
+      <rgs:periodEnd>
+        <gml:TimeInstant gml:id="ti-6">
+          <gml:timePosition>2007-06-01</gml:timePosition>
+        </gml:TimeInstant>
+      </rgs:periodEnd>
+      <rgs:applicableConversion>
+        <rgs:ConversionTable gml:id="shift-table-2">
+          <rgs:monitoringPoint xlink:href="http://waterdata.usgs.gov/nwis/nwismap/?site_no=02136000&amp;agency_cd=USGS" 
+            xlink:title="BLACK RIVER AT KINGSTREE, SC"/>
+        
+          <rgs:inputProperty  xlink:href="http://aquaticinformatics.com/observables/101.00" xlink:title="raw river height"/>
+          <rgs:outputProperty xlink:href="http://aquaticinformatics.com/observables/102.00" xlink:title="shifted river height"/>
+   
+          <rgs:point>
+            <rgs:TableTuple>
+              <rgs:inputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>1.10000</swe:value>
+                </swe:Quantity>
+              </rgs:inputValue>
+              <rgs:outputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>1.20000</swe:value>
+                </swe:Quantity>
+              </rgs:outputValue>
+            </rgs:TableTuple>
+          </rgs:point>
+          <rgs:point>
+            <rgs:TableTuple>
+              <rgs:inputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>1.40000</swe:value>
+                </swe:Quantity>
+              </rgs:inputValue>
+              <rgs:outputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>1.390000</swe:value>
+                </swe:Quantity>
+              </rgs:outputValue>
+            </rgs:TableTuple>
+          </rgs:point>
+          <!-- more points --> 
+        </rgs:ConversionTable>
+      </rgs:applicableConversion>
+    </rgs:ConversionPeriod>
+  </rgs:period>
+  
+  <rgs:period>
+    <rgs:ConversionPeriod >
+      <!-- A single stage-discharge rating table applicable for 2008 -->
+      <rgs:periodStart>
+        <gml:TimeInstant gml:id="ti-8">
+          <gml:timePosition>2008-01-01</gml:timePosition>
+        </gml:TimeInstant>
+      </rgs:periodStart>
+      <rgs:periodEnd>
+        <gml:TimeInstant gml:id="ti-9">
+          <gml:timePosition>2009-01-01</gml:timePosition>
+        </gml:TimeInstant>
+      </rgs:periodEnd>
+      <rgs:applicableConversion>
+        <rgs:ConversionTable gml:id="table-2">
+          <!-- parameters changed to be vocabulary references -->
+          <rgs:monitoringPoint xlink:href="http://waterdata.usgs.gov/nwis/nwismap/?site_no=02136000&amp;agency_cd=USGS" 
+            xlink:title="BLACK RIVER AT KINGSTREE, SC"/> 
+          <rgs:inputProperty  xlink:href="http://aquaticinformatics.com/observables/102.00" xlink:title="shifted river height"/>
+          <rgs:outputProperty xlink:href="http://aquaticinformatics.com/observables/140.00" xlink:title="river discharge"/>
+          <rgs:point>
+            <rgs:TableTuple>
+              <rgs:inputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>-1.00000</swe:value>
+                </swe:Quantity>
+              </rgs:inputValue>
+              <rgs:outputValue>
+                <swe:Quantity>
+                  <swe:uom code="m3/s"/>
+                  <swe:value>0.00000</swe:value>
+                </swe:Quantity>
+              </rgs:outputValue>
+            </rgs:TableTuple>
+          </rgs:point>
+          <rgs:point>
+            <rgs:TableTuple>
+              <rgs:inputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>0.30000</swe:value>
+                </swe:Quantity>
+              </rgs:inputValue>
+              <rgs:outputValue>
+                <swe:Quantity>
+                  <swe:uom code="m3/s"/>
+                  <swe:value>22.50000</swe:value>
+                </swe:Quantity>
+              </rgs:outputValue>
+            </rgs:TableTuple>
+          </rgs:point>
+          <!-- more points --> 
+        </rgs:ConversionTable>
+      </rgs:applicableConversion>
+    </rgs:ConversionPeriod>
+  </rgs:period>
+  
+</rgs:ConversionGroup>

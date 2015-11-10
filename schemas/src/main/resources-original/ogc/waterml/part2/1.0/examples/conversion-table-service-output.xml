@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wmlrgs:ConversionTable xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:swe="http://www.opengis.net/swe/2.0"
+  xmlns:wml2="http://www.opengis.net/waterml/2.0"
+  xsi:schemaLocation="http://www.opengis.net/waterml/part2/1.0 
+  ../waterml2-part2.xsd" 
+  gml:id="conversion-419009-100.00-141-100">
+  <gml:description>WaterML2.0 part 2 rating table for Peel River At Tamworth, converting parameter WaterCourseLevel_m to WaterCourseDischarge_m3s. Encoded using RESTful API.</gml:description>
+  <gml:identifier codeSpace="http://waterml2.csiro.au">http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-100/</gml:identifier>
+  <wmlrgs:monitoringPoint xlink:href="http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"
+    xlink:title="Peel River At Tamworth"/>
+  <wmlrgs:inputProperty  xlink:href="http://neiivocab.bom.gov.au/std/water/xml/wio0.2/property/wdtf-parameters/WaterCourseLevel_m" xlink:title="WaterCourseLevel_m"/>
+  <wmlrgs:outputProperty xlink:href="http://neiivocab.bom.gov.au/std/water/xml/wio0.2/property/wdtf-parameters/WaterCourseDischarge_m3s" xlink:title="WaterCourseDischarge_m3s"/>
+  
+  <wmlrgs:defaultQuality>
+    <swe:Category>
+      <swe:description>RATINGS - Current rating - may be subject to change.</swe:description>
+      <swe:codeSpace xlink:href="http//www.kisters.com.au/hydstra/quality/code"/>
+      <swe:value>140</swe:value>
+    </swe:Category>
+  </wmlrgs:defaultQuality>
+
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-1.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>0.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.57000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>0.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.56000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>0.40000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.54000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>0.80000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.52000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>2.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.50000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>3.40000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.48000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>5.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.46000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>6.80000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.44000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>9.10000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.42000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>12.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.40000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>15.50000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.36000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>25.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.32000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>39.50000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.25000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>79.50000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.20000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>123.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.15000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>186.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.10000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>268.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>-0.05000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>362.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>0.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>455.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>0.05000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>550.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>0.10000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>650.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>0.15000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>750.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>0.20000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>855.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>0.25000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>960.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>0.30000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>1080.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>0.40000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>1330.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>0.50000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>1610.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>0.60000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>1930.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>0.70000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>2280.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>0.90000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>3050.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>1.10000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>3900.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>1.30000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>4800.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>1.50000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>5800.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>1.70000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>6800.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>2.10000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>9100.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>2.50000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>11100.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>2.90000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>14400.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>3.30000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>18000.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>3.70000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>22000.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>4.10000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>28500.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>4.50000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>39000.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>5.20000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>65000.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>5.70000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>90000.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>6.20000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>121000.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+  <wmlrgs:point>
+    <wmlrgs:TableTuple>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+
+          <swe:uom code="m"/>
+          <swe:value>6.70000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>160000.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:TableTuple>
+  </wmlrgs:point>
+  
+</wmlrgs:ConversionTable>

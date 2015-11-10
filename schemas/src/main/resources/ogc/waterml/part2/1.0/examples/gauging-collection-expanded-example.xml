@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wmlrgs:Collection xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:swe="http://www.opengis.net/swe/2.0"
+  xmlns:om="http://www.opengis.net/om/2.0"
+  xmlns:wml2="http://www.opengis.net/waterml/2.0"
+  xsi:schemaLocation="http://www.opengis.net/waterml/part2/1.0 ../waterml2-part2.xsd" 
+  gml:id="collection-response">
+  
+  <gml:description>This example shows an expanded gauging collection example. Each 
+  observation is fully encoded rather than only linked (for linked version, see gauging-collection-byRef.xml). 
+  The number of observations in this document has been truncated for brevity. </gml:description>
+  
+  <wml2:metadata>
+    <wml2:DocumentMetadata gml:id="document-metadata">
+      <gml:description>Service metadata describing the nature of the collection document.</gml:description>
+      <gml:descriptionReference xlink:href="http://example.com/gauging/?monitoring-point=419001&amp;format=xml&amp;expanded" 
+        xlink:title="URL request that retrieved this XML document"/>
+      <wml2:generationDate>2014-02-02T19:39:20.721549-06:00</wml2:generationDate>
+      <wml2:version xlink:href="http://www.opengis.net/waterml/part2/1.0" xlink:title="WaterML2.0 part 2"/>
+      <wml2:generationSystem>Prototype RESTful service for WaterML2.0 part 2</wml2:generationSystem>
+    </wml2:DocumentMetadata>
+  </wml2:metadata>
+  
+  <wml2:localDictionary>
+    <gml:Dictionary gml:id="local_code_defs">
+      <gml:identifier codeSpace=""></gml:identifier>
+      <gml:dictionaryEntry>
+        <gml:Definition gml:id="def_stage">
+          <gml:descriptionReference xlink:href="http://www.bom.gov.au/water/awid/id-1886.shtml"/>
+          <gml:identifier codeSpace="http://www.bom.gov.au/">1886</gml:identifier>
+          <gml:name codeSpace="http://nwis.waterdata.usgs.gov/">00072</gml:name>
+          <gml:name>water level</gml:name>
+        </gml:Definition>
+      </gml:dictionaryEntry>
+      <gml:dictionaryEntry>
+        <gml:Definition gml:id="def_discharge">
+          <gml:descriptionReference xlink:href="http://www.bom.gov.au/water/awid/id-669.shtml"/>
+          <gml:identifier codeSpace="http://www.bom.gov.au/">669</gml:identifier>
+          <gml:name codeSpace="http://nwis.waterdata.usgs.gov/">30208</gml:name>
+          <gml:name>water flow</gml:name>
+        </gml:Definition>
+      </gml:dictionaryEntry>
+    </gml:Dictionary>
+  </wml2:localDictionary>
+  
+  <!-- Property pair using remote vocabularies --> 
+  <wmlrgs:propertyPairMember>
+    <wmlrgs:PropertyPair gml:id="stage-discharge-remote">
+      <wmlrgs:inputProperty xlink:href="http://waterml2.csiro.au/properties/river-level" xlink:title="river level"/>
+      <wmlrgs:outputProperty xlink:href="http://environment.data.gov.au/def/property/discharge" xlink:title="discharge"/>
+    </wmlrgs:PropertyPair>
+  </wmlrgs:propertyPairMember>
+  
+  <!-- Property pair using local vocabularies (see localDictionary definitions above) --> 
+  <wmlrgs:propertyPairMember>
+    <wmlrgs:PropertyPair gml:id="stage-discharge-local">
+      <wmlrgs:inputProperty xlink:href="#def_stage" xlink:title="river level"/>
+      <wmlrgs:outputProperty xlink:href="#def_discharge" xlink:title="discharge"/>
+    </wmlrgs:PropertyPair>
+  </wmlrgs:propertyPairMember>
+  
+  <wmlrgs:gaugingMember>
+    <om:OM_Observation gml:id="go-18911">
+      <gml:identifier codeSpace="http://example.com">http://example.com/gauging/18911/</gml:identifier>
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="phen-time-18911">
+          <gml:timePosition>2011-03-31</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <om:resultTime xlink:href="#phen-time-18911"/>
+      <om:procedure>
+        <wmlrgs:GaugingProcess gml:id="proc-18911">
+          <wml2:processType xlink:href="http://www.opengis.net/def/waterml/2.0/processType/ManualMethod"/>
+          <wmlrgs:outputPropertyMethod xlink:href="http://waterml2.csiro.au/rgs/gauging-method/WA"/>
+        </wmlrgs:GaugingProcess>
+      </om:procedure>
+      <om:observedProperty xlink:href="#stage-discharge-local" xlink:title="level to discharge"/>
+      <om:featureOfInterest xlink:href="http://example.com/monitoring-point/419001/" xlink:title="Namoi River At Gunnedah"/>
+      <om:result>
+        <wmlrgs:Gauging>
+          <wmlrgs:inputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>0.28300</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValue>
+          <wmlrgs:outputValue>
+            <swe:Quantity>
+              <swe:uom code="m3/s"/>
+              <swe:value>149.21000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:outputValue>
+        </wmlrgs:Gauging>
+      </om:result>
+    </om:OM_Observation>
+  </wmlrgs:gaugingMember>
+  
+  <wmlrgs:gaugingMember>
+    <om:OM_Observation gml:id="go-18849">
+      <gml:identifier codeSpace="http://example.com">http://example.com/gauging/18849/</gml:identifier>
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="phen-time-18849">
+          <gml:timePosition>2011-02-02</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <om:resultTime xlink:href="#phen-time-18849"/>
+      <om:procedure>
+      <wmlrgs:GaugingProcess gml:id="proc-18849">
+        <wml2:processType xlink:href="http://www.opengis.net/def/waterml/2.0/processType/ManualMethod"/>
+        <wmlrgs:outputPropertyMethod xlink:href="http://waterml2.csiro.au/rgs/gauging-method/WA"/>
+      </wmlrgs:GaugingProcess>
+      </om:procedure>
+      <om:observedProperty xlink:href="#stage-discharge-local" xlink:title="stage to discharge"/>
+      <om:featureOfInterest xlink:href="http://example.com/monitoring-point/419001/" xlink:title="Namoi River At Gunnedah"/>
+      <om:result>
+        <wmlrgs:Gauging>
+          <wmlrgs:inputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>1.08800</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValue>
+          <wmlrgs:outputValue>
+            <swe:Quantity>
+              <swe:uom code="m3/s"/>
+              <swe:value>1918.52000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:outputValue>
+        </wmlrgs:Gauging>
+      </om:result>
+    </om:OM_Observation>
+  </wmlrgs:gaugingMember>
+  
+  <wmlrgs:gaugingMember>
+    <om:OM_Observation gml:id="go-18829">
+      <gml:identifier codeSpace="http://example.com">http://example.com/gauging/18829/</gml:identifier>
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="phen-time-18829">
+          <gml:timePosition>2010-12-12</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <om:resultTime xlink:href="#phen-time-18829"/>
+      <om:procedure>
+        <wmlrgs:GaugingProcess gml:id="proc-18829">
+          <wml2:processType xlink:href="http://www.opengis.net/def/waterml/2.0/processType/ManualMethod"/>
+          <wmlrgs:outputPropertyMethod xlink:href="http://waterml2.csiro.au/rgs/gauging-method/WA"/>
+        </wmlrgs:GaugingProcess>
+      </om:procedure>
+      <om:observedProperty xlink:href="#stage-discharge-local" xlink:title="stage to discharge"/>
+      <om:featureOfInterest xlink:href="http://example.com/monitoring-point/419001/" xlink:title="Namoi River At Gunnedah"/>
+      <om:result>
+        <wmlrgs:Gauging>
+          <wmlrgs:inputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>7.76200</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValue>
+          <wmlrgs:outputValue>
+            <swe:Quantity>
+              <swe:uom code="m3/s"/>
+              <swe:value>51700.00000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:outputValue>
+        </wmlrgs:Gauging>
+      </om:result>
+    </om:OM_Observation>
+  </wmlrgs:gaugingMember>
+  
+  <wmlrgs:gaugingMember>
+    <om:OM_Observation gml:id="go-18806">
+      <gml:identifier codeSpace="http://example.com">http://example.com/gauging/18806/</gml:identifier>
+      <om:phenomenonTime>
+        <gml:TimeInstant gml:id="phen-time-18806">
+          <gml:timePosition>2010-11-25</gml:timePosition>
+        </gml:TimeInstant>
+      </om:phenomenonTime>
+      <om:resultTime xlink:href="#phen-time-18806"/>
+      <om:procedure>
+        <wmlrgs:GaugingProcess gml:id="proc-18806">
+          <wml2:processType xlink:href="http://www.opengis.net/def/waterml/2.0/processType/ManualMethod"/>
+          <wmlrgs:outputPropertyMethod xlink:href="http://waterml2.csiro.au/rgs/gauging-method/WA"/>
+        </wmlrgs:GaugingProcess>
+      </om:procedure>
+      <om:observedProperty xlink:href="#stage-discharge-local" xlink:title="stage to discharge"/>
+      <om:featureOfInterest xlink:href="http://example.com/monitoring-point/419001/" xlink:title="Namoi River At Gunnedah"/>
+      <om:result>
+        <wmlrgs:Gauging>
+          <wmlrgs:inputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>0.91000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValue>
+          <wmlrgs:outputValue>
+            <swe:Quantity>
+              <swe:uom code="m3/s"/>
+              <swe:value>1484.74000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:outputValue>
+        </wmlrgs:Gauging>
+      </om:result>
+    </om:OM_Observation>
+  </wmlrgs:gaugingMember>
+  
+  <!-- more observations follow in full result --> 
+</wmlrgs:Collection>

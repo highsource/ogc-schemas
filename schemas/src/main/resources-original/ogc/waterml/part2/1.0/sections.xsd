@@ -1,0 +1,56 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:om="http://www.opengis.net/om/2.0" elementFormDefault="qualified" targetNamespace="http://www.opengis.net/waterml/part2/1.0" version="1.0.0">
+	<xs:annotation>
+		<xs:documentation>
+			WaterML 2.0 Part 2 is an OGC Standard.
+			Copyright (c) 2015 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .     
+		</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://www.opengis.net/om/2.0" schemaLocation="http://schemas.opengis.net/om/2.0/observation.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<xs:element name="SectionObservationMetadata" type="wmlrgs:SectionObservationMetadataType" substitutionGroup="gml:AbstractObject">
+		<xs:annotation>
+			<xs:documentation>Metadata relating to the section observation. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="SectionObservationMetadataType">
+		<xs:sequence>
+			<xs:element name="startPoint" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The start point from which the section observation was made. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="endPoint" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The end point of the section observation. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="terminationType" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A vocabulary entry to indicate how the section observation was terminated. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="verticalCRS" type="gml:VerticalCRSPropertyType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Defines the vertical coordinate reference system being used by the section observation. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="surveyCRS" type="gml:EngineeringCRSPropertyType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Defines the coordinate reference system used when taking the section survey.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="compoundCRS" type="gml:CompoundCRSPropertyType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Defines the compound CRS used by the point measurements. For example, if this is a 2-D station-elevation section, the compound will consist of a vertical CRS and a survey CRS that is defined in relation to a starting point. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SectionObservationMetadataPropertyType">
+		<xs:sequence>
+			<xs:element ref="wmlrgs:SectionObservationMetadata"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	</xs:schema>

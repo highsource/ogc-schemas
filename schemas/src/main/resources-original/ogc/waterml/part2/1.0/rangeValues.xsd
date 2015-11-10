@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.opengis.net/waterml/part2/1.0" xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wml2="http://www.opengis.net/waterml/2.0" version="1.0.0">
+	<xs:annotation>
+		<xs:documentation>
+			WaterML 2.0 Part 2 is an OGC Standard.
+			Copyright (c) 2015 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .     
+		</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://www.opengis.net/waterml/2.0" schemaLocation="http://schemas.opengis.net/waterml/2.0/waterml2.xsd"/>
+	<xs:import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<xs:annotation>
+		<xs:documentation>Range values are used for capturing metadata that changes with an input property. E.g. a description of the controlling feature. </xs:documentation>
+	</xs:annotation>
+	<xs:element name="RangeEntry" type="wmlrgs:RangeEntryType" substitutionGroup="gml:AbstractObject">
+		<xs:annotation>
+			<xs:documentation>A single entry within the range values definition. A categorisation that defines the range of inputProperty values that are associated with a range value.  The inputProperty start value is defined explicitly. The inputProperty end value is defined by the lower of the next rangeEntry startValue or the rangeTable endRangeValue.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="RangeEntryType">
+		<xs:sequence>
+			<xs:element name="startValue" type="swe:QuantityPropertyType">
+				<xs:annotation>
+					<xs:documentation>The value from which the range entry begins. Each entry holds until the next startValue, or to the endValue if it is the last entry in the definition. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="value" type="swe:AnyScalarPropertyType">
+				<xs:annotation>
+					<xs:documentation>The range value entry (i.e. the value for the property being described. e.g. flood level, controlling feature etc.). </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RangeEntryPropertyType">
+		<xs:sequence>
+			<xs:element ref="wmlrgs:RangeEntry"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="RangeGroup" type="wmlrgs:RangeGroupType" substitutionGroup="gml:AbstractFeature">
+		<xs:annotation>
+			<xs:documentation>A group of range tables that have a period of application. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="RangeGroupType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="monitoringPoint" type="wml2:MonitoringPointPropertyType">
+						<xs:annotation>
+							<xs:documentation>The monitoringPoint associated with the rangeGroup. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="inputProperty" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>The property that the range group relates to. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="rangeDefinition" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>The varying metadata property that the range group relates to. E.g. 'a vocabulary defining flood levels'</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="member" type="wmlrgs:RangeTablePropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>The range table entry for this definition. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RangeGroupPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="wmlrgs:RangeGroup"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="RangeTable" type="wmlrgs:RangeTableType" substitutionGroup="gml:AbstractFeature">
+		<xs:annotation>
+			<xs:documentation>A RangeDefinition specifies metadata that is associated with a range of a quantity (e.g. from 2.3 to 3.5). For Conversions, this will most often relate to the input property (e.g. metadata for stage between 2.3 and 3.5 meters.). Ranges are specified by the start value and hold until the next range entry. The upper end of applicability is specified by the endValue attribute.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="RangeTableType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="periodStart" type="gml:TimeInstantPropertyType">
+						<xs:annotation>
+							<xs:documentation>The start time from which this range table applies. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="periodEnd" type="gml:TimeInstantPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The end time until which the range value applies. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endValue" type="swe:QuantityPropertyType">
+						<xs:annotation>
+							<xs:documentation>The value at which the range entries end. Only the final end value is specified -- each range point holds from its start value until the next value or, if it is the last entry, to the endValue.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="member" type="wmlrgs:RangeEntryPropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>An entry within the range table. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RangeTablePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="wmlrgs:RangeTable"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+</xs:schema>

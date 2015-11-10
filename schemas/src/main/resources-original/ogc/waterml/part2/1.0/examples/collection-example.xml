@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wmlrgs:Collection xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:gco="http://www.isotc211.org/2005/gco"
+ xmlns:gmd="http://www.isotc211.org/2005/gmd"
+ xmlns:gss="http://www.isotc211.org/2005/gss"
+ xmlns:gml="http://www.opengis.net/gml/3.2"
+ xmlns:om="http://www.opengis.net/om/2.0"
+ xmlns:swe="http://www.opengis.net/swe/2.0"
+ xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0"
+ xmlns:wml2="http://www.opengis.net/waterml/2.0"
+ xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+ xmlns:gsr="http://www.isotc211.org/2005/gsr"
+ xmlns:sam="http://www.opengis.net/sampling/2.0"
+ xmlns:gts="http://www.isotc211.org/2005/gts"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/waterml/part2/1.0 
+ ../waterml2-part2.xsd"
+ gml:id="collection-example-1">
+  
+  <gml:description>This example shows the use of a specific collection type within the WaterML2.0 RGS namespace. It allows
+  members of conversion groups, conversions and gauings to be bundled and cross-referenced. See collection.xsd for 
+  specifics on the implementation.</gml:description>
+  
+  <wml2:metadata>
+    <wml2:DocumentMetadata gml:id="md">
+      <gml:description>Service metadata describing the nature of the collection document.</gml:description>
+      <gml:descriptionReference xlink:href="" xlink:title="Base page describing service"/>
+      <wml2:generationDate>2014-01-21T11:03:34+11:00</wml2:generationDate>
+      <wml2:version xlink:href="http://www.opengis.net/waterml/part2/1.0" xlink:title="WaterML2.0 part 2"/>
+      <wml2:generationSystem>Prototype RESTful service for WaterML2.0 part 2</wml2:generationSystem>
+    </wml2:DocumentMetadata>
+  </wml2:metadata>
+ 
+  <wmlrgs:conversionMember>
+    <wmlrgs:ConversionTable gml:id="table-1">
+      <!-- parameters changed to be vocabulary references --> 
+      <wmlrgs:monitoringPoint xlink:href="http://waterdata.usgs.gov/nwis/nwismap/?site_no=02136000&amp;agency_cd=USGS" 
+        xlink:title="BLACK RIVER AT KINGSTREE, SC"/>
+      <wmlrgs:inputProperty  xlink:href="http://aquaticinformatics.com/observables/100.00" xlink:title="river height"/>
+      <wmlrgs:outputProperty xlink:href="http://aquaticinformatics.com/observables/140.00" xlink:title="river discharge"/>
+      
+      <wmlrgs:point>
+        <wmlrgs:TableTuple>
+          <wmlrgs:inputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>-1.00000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValue>
+          <wmlrgs:outputValue>
+            <swe:Quantity>
+              <swe:quality>
+                <swe:Category>
+                  <swe:description>Quality code from Hydstra</swe:description>
+                  <swe:codeSpace xlink:href="http//www.kisters.com.au/hydstra/quality/code"/>
+                  <swe:value>7</swe:value>
+                </swe:Category>
+              </swe:quality>
+              <swe:uom code="m3/s"/>
+              <swe:value>0.00000</swe:value>              
+            </swe:Quantity>
+          </wmlrgs:outputValue>
+        </wmlrgs:TableTuple>
+      </wmlrgs:point>
+      <wmlrgs:point>
+        <wmlrgs:TableTuple>
+          <wmlrgs:inputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>0.30000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValue>
+          <wmlrgs:outputValue>
+            <swe:Quantity>
+              <swe:uom code="m3/s"/>
+              <swe:value>22.50000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:outputValue>
+        </wmlrgs:TableTuple>
+      </wmlrgs:point>
+      <!-- more points --> 
+    </wmlrgs:ConversionTable>
+  </wmlrgs:conversionMember>
+  
+  <wmlrgs:conversionMember>
+    <wmlrgs:ConversionTable gml:id="shift-table-1">
+      <!-- we need codes for appropriate height/stage types? Can't see on
+            http://nwis.waterdata.usgs.gov/usa/nwis/pmcodes?radio_pm_search=param_group&pm_group=Physical&pm_search=&casrn_search=&srsname_search=&format=html_table&show=parameter_group_nm&show=parameter_nm&show=casrn&show=srsname&show=parameter_units --> 
+      <wmlrgs:monitoringPoint xlink:href="http://waterdata.usgs.gov/nwis/nwismap/?site_no=02136000&amp;agency_cd=USGS" 
+        xlink:title="BLACK RIVER AT KINGSTREE, SC"/>
+      <wmlrgs:inputProperty  xlink:href="http://aquaticinformatics.com/observables/101.00" xlink:title="raw river height"/>
+      <wmlrgs:outputProperty xlink:href="http://aquaticinformatics.com/observables/102.00" xlink:title="shifted river height"/>
+      
+      <wmlrgs:point>
+        <wmlrgs:TableTuple>
+          <wmlrgs:inputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>1.00000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValue>
+          <wmlrgs:outputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>1.10000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:outputValue>
+        </wmlrgs:TableTuple>
+      </wmlrgs:point>
+      <wmlrgs:point>
+        <wmlrgs:TableTuple>
+          <wmlrgs:inputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>1.30000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValue>
+          <wmlrgs:outputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>1.340000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:outputValue>
+        </wmlrgs:TableTuple>
+      </wmlrgs:point>
+      <!-- more points --> 
+    </wmlrgs:ConversionTable>
+  </wmlrgs:conversionMember>
+  
+  <wmlrgs:conversionMember>
+    <wmlrgs:ConversionTable gml:id="shift-table-2">
+      <wmlrgs:monitoringPoint xlink:href="http://waterdata.usgs.gov/nwis/nwismap/?site_no=02136000&amp;agency_cd=USGS" 
+        xlink:title="BLACK RIVER AT KINGSTREE, SC"/>
+      <wmlrgs:inputProperty  xlink:href="http://aquaticinformatics.com/observables/101.00" xlink:title="raw river height"/>
+      <wmlrgs:outputProperty xlink:href="http://aquaticinformatics.com/observables/102.00" xlink:title="shifted river height"/>
+     
+      
+      <wmlrgs:point>
+        <wmlrgs:TableTuple>
+          <wmlrgs:inputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>1.10000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValue>
+          <wmlrgs:outputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>1.20000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:outputValue>
+        </wmlrgs:TableTuple>
+      </wmlrgs:point>
+      <wmlrgs:point>
+        <wmlrgs:TableTuple>
+          <wmlrgs:inputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>1.40000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValue>
+          <wmlrgs:outputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>1.390000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:outputValue>
+        </wmlrgs:TableTuple>
+      </wmlrgs:point>
+      <!-- more points --> 
+    </wmlrgs:ConversionTable>
+  </wmlrgs:conversionMember>
+  
+  <wmlrgs:conversionMember>
+    <wmlrgs:ConversionTable gml:id="table-2">
+      <!-- parameters changed to be vocabulary references -->
+      <wmlrgs:monitoringPoint xlink:href="http://waterdata.usgs.gov/nwis/nwismap/?site_no=02136000&amp;agency_cd=USGS" 
+        xlink:title="BLACK RIVER AT KINGSTREE, SC"/>
+      <wmlrgs:inputProperty  xlink:href="http://aquaticinformatics.com/observables/102.00" xlink:title="shifted river height"/>
+      <wmlrgs:outputProperty xlink:href="http://aquaticinformatics.com/observables/140.00" xlink:title="river discharge"/>
+      
+      <wmlrgs:point>
+        <wmlrgs:TableTuple>
+          <wmlrgs:inputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>-1.00000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValue>
+          <wmlrgs:outputValue>
+            <swe:Quantity>
+              <swe:uom code="m3/s"/>
+              <swe:value>0.00000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:outputValue>
+        </wmlrgs:TableTuple>
+      </wmlrgs:point>
+      <wmlrgs:point>
+        <wmlrgs:TableTuple>
+          <wmlrgs:inputValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>0.30000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValue>
+          <wmlrgs:outputValue>
+            <swe:Quantity>
+              <swe:uom code="m3/s"/>
+              <swe:value>22.50000</swe:value>
+            </swe:Quantity>
+          </wmlrgs:outputValue>
+        </wmlrgs:TableTuple>
+      </wmlrgs:point>
+      <!-- more points --> 
+    </wmlrgs:ConversionTable>
+  </wmlrgs:conversionMember>
+  
+  
+ <wmlrgs:groupMember>
+   <wmlrgs:ConversionGroup gml:id="cg-1">
+     <wmlrgs:monitoringPoint xlink:href="http://waterdata.usgs.gov/nwis/nwismap/?site_no=02136000&amp;agency_cd=USGS" 
+       xlink:title="BLACK RIVER AT KINGSTREE, SC"/>
+     <wmlrgs:fullConversion>false</wmlrgs:fullConversion>
+     <wmlrgs:domainFeatureType xlink:href="http://sirf.csiro.au/ftc/hy_features/river-section" xlink:title="HY_Features river segment"/>
+     <wmlrgs:period>
+       <wmlrgs:ConversionPeriod>
+         <!-- A single stage-discharge rating table applicable for 2007 -->
+         <wmlrgs:periodStart>
+           <gml:TimeInstant gml:id="ti-1">
+             <gml:timePosition>2007-01-01</gml:timePosition>
+           </gml:TimeInstant>
+         </wmlrgs:periodStart>
+         <wmlrgs:periodEnd>
+           <gml:TimeInstant gml:id="ti-2">
+             <gml:timePosition>2008-01-01</gml:timePosition>
+           </gml:TimeInstant>
+         </wmlrgs:periodEnd>
+         <wmlrgs:applicableConversion xlink:href="#table-1"/>
+       </wmlrgs:ConversionPeriod>
+     </wmlrgs:period>
+     <wmlrgs:period>
+       <wmlrgs:ConversionPeriod>
+         <!-- A stage shift conversion (from normal to shifted stage) for Feb 2007 -->
+         <wmlrgs:periodStart>
+           <gml:TimeInstant gml:id="ti-3">
+             <gml:timePosition>2007-02-01</gml:timePosition>
+           </gml:TimeInstant>
+         </wmlrgs:periodStart>
+         <wmlrgs:periodEnd>
+           <gml:TimeInstant gml:id="ti-4">
+             <gml:timePosition>2007-03-01</gml:timePosition>
+           </gml:TimeInstant>
+         </wmlrgs:periodEnd>
+         <wmlrgs:applicableConversion xlink:href="#shift-table-1"/>
+       </wmlrgs:ConversionPeriod>
+     </wmlrgs:period>
+     <wmlrgs:period>
+       <wmlrgs:ConversionPeriod >
+         <!-- A stage shift conversion (from normal to shifted stage) for May 2007 -->
+         <wmlrgs:periodStart>
+           <gml:TimeInstant gml:id="ti-5">
+             <gml:timePosition>2007-05-01</gml:timePosition>
+           </gml:TimeInstant>
+         </wmlrgs:periodStart>
+         <wmlrgs:periodEnd>
+           <gml:TimeInstant gml:id="ti-6">
+             <gml:timePosition>2007-06-01</gml:timePosition>
+           </gml:TimeInstant>
+         </wmlrgs:periodEnd>
+         <wmlrgs:applicableConversion xlink:href="#shift-table-2"/>
+       </wmlrgs:ConversionPeriod>
+     </wmlrgs:period>
+     <wmlrgs:period>
+       <wmlrgs:ConversionPeriod>
+         <!-- A single stage-discharge rating table applicable for 2008 -->
+         <wmlrgs:periodStart>
+           <gml:TimeInstant gml:id="ti-8">
+             <gml:timePosition>2008-01-01</gml:timePosition>
+           </gml:TimeInstant>
+         </wmlrgs:periodStart>
+         <wmlrgs:periodEnd>
+           <gml:TimeInstant gml:id="ti-9">
+             <gml:timePosition>2009-01-01</gml:timePosition>
+           </gml:TimeInstant>
+         </wmlrgs:periodEnd>
+         <wmlrgs:applicableConversion xlink:href="#table-2"/>
+       </wmlrgs:ConversionPeriod>
+     </wmlrgs:period>
+   </wmlrgs:ConversionGroup>
+ </wmlrgs:groupMember>
+  
+  
+</wmlrgs:Collection>

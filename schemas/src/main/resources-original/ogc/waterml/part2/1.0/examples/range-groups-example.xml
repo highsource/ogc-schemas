@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rgs:RangeGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/waterml/part2/1.0 ../waterml2-part2.xsd"
+ xmlns:rgs="http://www.opengis.net/waterml/part2/1.0" xmlns:wml2="http://www.opengis.net/waterml/2.0"
+ xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd"
+ xmlns:gmlexr="http://www.opengis.net/gml/3.3/exr" xmlns:gsr="http://www.isotc211.org/2005/gsr"
+ xmlns:gss="http://www.isotc211.org/2005/gss" xmlns:gts="http://www.isotc211.org/2005/gts"
+ xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sam="http://www.opengis.net/sampling/2.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:om="http://www.opengis.net/om/2.0"
+ xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+ gml:id="ID001">
+  
+  <gml:description>Percentage of time height is exceeded as a range value</gml:description>
+  <rgs:monitoringPoint  xlink:href="http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/" 
+    xlink:title="Peel River At Tamworth"/>
+  <rgs:inputProperty xlink:href="WaterCourseLevel_m" xlink:title="WaterCourseLevel_m"/>
+  
+  <!-- vocabulary entries for range values should describe the meaning of value range being encoded. --> 
+  <rgs:rangeDefinition xlink:href="http://example.com/water/range-types/percent-time-height-exceeded"/>
+  
+  <rgs:member>
+    <rgs:RangeTable gml:id="rt-1">
+      <rgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1">
+          <gml:timePosition>2011-04-14</gml:timePosition>
+        </gml:TimeInstant>
+      </rgs:periodStart>
+      <rgs:endValue>
+        <swe:Quantity>
+          <swe:uom code="m"/>
+          <swe:value>11.50000</swe:value>
+        </swe:Quantity>
+      </rgs:endValue>
+      
+      <rgs:member>
+        <rgs:RangeEntry>
+          <rgs:startValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>-1.00000</swe:value>
+            </swe:Quantity>
+          </rgs:startValue>
+          <rgs:value>
+            <swe:Category>
+              <swe:value>Below classification</swe:value>
+            </swe:Category>
+          </rgs:value>
+        </rgs:RangeEntry>
+      </rgs:member>
+      <rgs:member>
+        <rgs:RangeEntry>
+          <rgs:startValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>-0.500000</swe:value>
+            </swe:Quantity>
+          </rgs:startValue>
+          <rgs:value>
+            <swe:Category>
+              <swe:value>Very low (&lt; 20)</swe:value>
+            </swe:Category>
+          </rgs:value>
+        </rgs:RangeEntry> 
+      </rgs:member>
+      <rgs:member>
+        <rgs:RangeEntry>
+          <rgs:startValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>0.10000</swe:value>
+            </swe:Quantity>
+          </rgs:startValue>
+          <rgs:value>
+            <swe:Category>
+              <swe:value>Low (20-50)</swe:value>
+            </swe:Category>
+          </rgs:value>
+        </rgs:RangeEntry>
+      </rgs:member>
+      <rgs:member>
+        <rgs:RangeEntry>
+          <rgs:startValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>0.40000</swe:value>
+            </swe:Quantity>
+          </rgs:startValue>
+          <rgs:value>
+            <swe:Category>
+              <swe:value>high (50-80)</swe:value>
+            </swe:Category>
+          </rgs:value>
+        </rgs:RangeEntry>
+      </rgs:member>
+      <rgs:member>
+        <rgs:RangeEntry>
+          <rgs:startValue>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>0.90000</swe:value>
+            </swe:Quantity>
+          </rgs:startValue>
+          <rgs:value>
+            <swe:Category>
+              <swe:value>very high (>80)</swe:value>
+            </swe:Category>
+          </rgs:value>
+        </rgs:RangeEntry>
+      </rgs:member>
+    </rgs:RangeTable>
+  </rgs:member>
+</rgs:RangeGroup>

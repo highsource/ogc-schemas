@@ -1,0 +1,221 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:om="http://www.opengis.net/om/2.0" xmlns:wml2="http://www.opengis.net/waterml/2.0" elementFormDefault="qualified" targetNamespace="http://www.opengis.net/waterml/part2/1.0" version="1.0.0">
+	<xs:annotation>
+		<xs:documentation>
+			WaterML 2.0 Part 2 is an OGC Standard.
+			Copyright (c) 2015 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .     
+		</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://www.opengis.net/waterml/2.0" schemaLocation="http://schemas.opengis.net/waterml/2.0/waterml2.xsd"/>
+	<xs:import namespace="http://www.opengis.net/om/2.0" schemaLocation="http://schemas.opengis.net/om/2.0/observation.xsd"/>
+	<xs:import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<xs:annotation>
+		<xs:documentation>This schema package describes 'gauging' observations -- observations made for the development of a conversion. </xs:documentation>
+	</xs:annotation>
+	<xs:element name="Gauging" type="wmlrgs:GaugingType" substitutionGroup="gml:AbstractObject">
+		<xs:annotation>
+			<xs:documentation>The result of an individual gauging, comprising of two measurements of related properties. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="GaugingType">
+		<xs:sequence>
+			<xs:element name="inputValue" type="swe:QuantityPropertyType">
+				<xs:annotation>
+					<xs:documentation>The measurement of the input property. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="outputValue" type="swe:QuantityPropertyType">
+				<xs:annotation>
+					<xs:documentation>The measurement of the output property. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GaugingPropertyType">
+		<xs:sequence>
+			<xs:element ref="wmlrgs:Gauging"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="GaugingObservationMetadata" type="wmlrgs:GaugingObservationMetadataType" substitutionGroup="gml:AbstractGML">
+		<xs:annotation>
+			<xs:documentation>Captures metadata relating to the gauging observation.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="GaugingObservationMetadataType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractGMLType">
+				<xs:sequence>
+					<xs:element name="status" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>Captures the status of the gauging in terms of its use in conversion relationships. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="approvalDate" type="gml:TimeInstantPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Date that the gauging observation was approved. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GaugingObservationMetadataPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="wmlrgs:GaugingObservationMetadata"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="GaugingProcess" type="wmlrgs:GaugingProcessType" substitutionGroup="wml2:ObservationProcess">
+		<xs:annotation>
+			<xs:documentation>A description of the observation process used for the gauging. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="GaugingProcessType">
+		<xs:complexContent>
+			<xs:extension base="wml2:ObservationProcessType">
+				<xs:sequence>
+					<xs:element name="inputPropertyMethod" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Describes the method that was used for observing the input property. For example: flow weighted mean gauge height.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="outputPropertyMethod" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Describes the method that was used for observing the output property. For example: area-velocity, ADCP, mechanical meter etc.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GaugingProcessPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="wmlrgs:GaugingProcess"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="ObservationConditions" type="wmlrgs:ObservationConditionsType" substitutionGroup="gml:AbstractGML">
+		<xs:annotation>
+			<xs:documentation>Captures conditions affecting the measurement being taken, these properties apply to stream gauging observations.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ObservationConditionsType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractGMLType">
+				<xs:sequence>
+					<xs:element name="streamState" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The state of the stream while the gauging was taking place (e.g. was the stream rising.). See also stageStart/EndOfObservation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="controlConditions" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Conditions adversely affecting the controls ability to function normally: e.g. weed growth, ice etc.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="distanceFromMonitoringPoint" type="swe:QuantityPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The distance to the monitoring point from the measurement location. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="directionFromMonitoringPoint" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>A relative direction from the monitoring point to the location the measurement was made. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="inputValueStartOfObservation" type="swe:QuantityPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The observed input property (e.g. stage) at the start of the observation period.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="inputValueEndOfObservation" type="swe:QuantityPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The observed input property (e.g. stage) at the end of the observation period.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ObservationConditionsPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="wmlrgs:ObservationConditions"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="PropertyPair" type="wmlrgs:PropertyPairType" substitutionGroup="gml:AbstractGML">
+		<xs:annotation>
+			<xs:documentation>The pair of properties that are being measured by the gauging observation. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="PropertyPairType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractGMLType">
+				<xs:sequence>
+					<xs:element name="inputProperty" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>The property that is being directly measured by the observation. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="outputProperty" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>The property that is being estimated. E.g. discharge. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PropertyPairPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="wmlrgs:PropertyPair"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="StreamGaugingMetadata" type="wmlrgs:StreamGaugingMetadataType" substitutionGroup="gml:AbstractFeature">
+		<xs:annotation>
+			<xs:documentation>A type capturing metadata typical for stream gauging. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="StreamGaugingMetadataType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="crossSectionWidth" type="swe:QuantityPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The width of the cross-section that is being measured. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="crossSectionArea" type="swe:QuantityPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The area of the cross-section that is being measured. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="wettedPerimeter" type="swe:QuantityPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The perimeter of the cross-section that is in contact with water flow. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="gaugedSectionLine" type="gml:MultiPointPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The line (start coordinates, end coordinates) that describes the segment of the river that was measured. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StreamGaugingMetadataPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="wmlrgs:StreamGaugingMetadata"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+</xs:schema>

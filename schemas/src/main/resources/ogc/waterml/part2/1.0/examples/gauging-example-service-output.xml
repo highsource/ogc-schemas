@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<om:OM_Observation xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:gco="http://www.isotc211.org/2005/gco"
+  xmlns:gmd="http://www.isotc211.org/2005/gmd"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:wml2="http://www.opengis.net/waterml/2.0"
+  xmlns:swe="http://www.opengis.net/swe/2.0"
+  xmlns:om="http://www.opengis.net/om/2.0"
+  xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/waterml/part2/1.0 ../waterml2-part2.xsd" 
+  gml:id="gauging-100">
+  
+  <gml:identifier codeSpace="http://waterml2.csiro.au">http://waterml2.csiro.au/rgs-api/v1/gauging/100/</gml:identifier>
+  
+  <om:phenomenonTime>
+    <gml:TimeInstant gml:id="phen-time-1">
+      <gml:timePosition>1933-10-05T00:00:00</gml:timePosition>
+    </gml:TimeInstant>
+  </om:phenomenonTime>
+  <om:resultTime>
+    <gml:TimeInstant gml:id="instant-1">
+      <gml:timePosition>1933-10-05T00:00:00</gml:timePosition>
+    </gml:TimeInstant>
+  </om:resultTime>
+  <om:procedure>
+    <wmlrgs:GaugingProcess gml:id="proc-1">
+      <wml2:processType xlink:href="http://www.opengis.net/def/waterml/2.0/processType/ManualMethod"/>
+      <wml2:operator>
+        <gmd:CI_ResponsibleParty>
+          <gmd:individualName>
+            <gco:CharacterString>HGH\ST....</gco:CharacterString>
+          </gmd:individualName>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" 
+              codeListValue="CI_RoleCode_principalInvestigator"/>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </wml2:operator>
+      <wmlrgs:outputPropertyMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown"/>
+    </wmlrgs:GaugingProcess>
+  </om:procedure>
+  
+  <om:parameter>
+    <om:NamedValue>
+      <om:name xlink:href="http://opengis.net/def/waterml/part2/1.0/gauging-deviation" 
+        xlink:title="deviation from active rating at time of observation"/>
+      <om:value xsi:type="gml:MeasureType" uom="dev">-0.25000</om:value>
+    </om:NamedValue>
+  </om:parameter>
+  
+  <om:parameter>
+    <om:NamedValue>
+      <om:name xlink:href="http://opengis.net/def/waterml/part2/1.0/gauging-conditions"/>
+      <om:value>
+        <wmlrgs:ObservationConditions gml:id="conditions">
+          <wmlrgs:inputValueStartOfObservation>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>6.01200</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValueStartOfObservation>
+          <wmlrgs:inputValueEndOfObservation>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>5.78700</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValueEndOfObservation>
+        </wmlrgs:ObservationConditions>
+      </om:value>
+    </om:NamedValue>
+  </om:parameter>
+  
+  <om:observedProperty xlink:href="http://example.com/observedPropertyPairs/100-to-141" 
+    xlink:title="100 and 141"/>
+  <om:featureOfInterest xlink:href="http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419001/" xlink:title="Namoi River At Gunnedah"/>
+  
+  <om:result>
+    <wmlrgs:Gauging>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+          <swe:uom code="m"/>
+          <swe:value>5.78700</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>          
+          <swe:quality>
+            <swe:Category>
+              <swe:codeSpace xlink:href="http://www.kisters.com.au/hydstra/quality/"/>
+              <swe:value>7</swe:value>
+            </swe:Category>
+          </swe:quality>          
+          <swe:uom code="m3/s"/>
+          <swe:value>26630.00000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:Gauging>
+  </om:result>
+</om:OM_Observation>
+
+
+

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<om:OM_Observation xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:gco="http://www.isotc211.org/2005/gco"
+  xmlns:gmd="http://www.isotc211.org/2005/gmd"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:wml2="http://www.opengis.net/waterml/2.0"
+  xmlns:swe="http://www.opengis.net/swe/2.0"
+  xmlns:om="http://www.opengis.net/om/2.0"
+  xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/waterml/part2/1.0 ../waterml2-part2.xsd" 
+  gml:id="gauging-observation">
+  <gml:identifier codeSpace="http://waterml2.csiro.au">http://waterml2.csiro.au/rgs-api/v1/gauging/18953/</gml:identifier>
+  
+  <om:phenomenonTime>
+    <gml:TimeInstant gml:id="phen-time-1">
+      <gml:timePosition>2011-04-14T00:00:00</gml:timePosition>
+    </gml:TimeInstant>
+  </om:phenomenonTime>
+  <om:resultTime>
+    <gml:TimeInstant gml:id="instant-1">
+      <gml:timePosition>2014-07-17T00:21:57.907242-05:00</gml:timePosition>
+    </gml:TimeInstant>
+  </om:resultTime>
+  <om:procedure>
+    <wmlrgs:GaugingProcess gml:id="proc-1">
+      <wml2:processType xlink:href="http://www.opengis.net/def/waterml/2.0/processType/ManualMethod"/>
+      <wml2:operator>
+        <gmd:CI_ResponsibleParty>
+          <gmd:individualName>
+            <gco:CharacterString>JSM</gco:CharacterString>
+          </gmd:individualName>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" 
+              codeListValue="CI_RoleCode_principalInvestigator"/>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </wml2:operator>
+        <wmlrgs:outputPropertyMethod xlink:href="http://opengis.net/def/unkown"/>
+    </wmlrgs:GaugingProcess>
+  </om:procedure>
+  
+  <om:parameter>
+    <om:NamedValue>
+      <om:name xlink:href="http://opengis.net/def/waterml/part2/1.0/gauging-deviation" 
+        xlink:title="deviation from active rating at time of observation"/>
+      <om:value xsi:type="gml:MeasureType" uom="dev">2.2</om:value>
+    </om:NamedValue>
+  </om:parameter>
+  <om:parameter>
+    <om:NamedValue>
+      <om:name xlink:href="http://opengis.net/def/waterml/part2/1.0/gauging-conditions"/>
+      <om:value>
+        <wmlrgs:ObservationConditions gml:id="conditions">
+          <wmlrgs:streamState xlink:href="http://opengis.net/def/waterml/part2/1.0/RiverStateCode/Rising" xlink:title="river rising"/>
+          <wmlrgs:controlConditions xlink:href="http://help.waterdata.usgs.gov/codes-and-parameters/rating-control-condition-code-control_type_cd/HVDB" 
+            xlink:title="The stream control was heavily covered with debris."/>
+          
+          <wmlrgs:directionFromMonitoringPoint xlink:href="http://demo.sirf.net/def/schema/hy_features/abstracthydrofeature/upstream"
+            xlink:title="Upstream"/>
+          
+          <wmlrgs:inputValueStartOfObservation>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>3.03</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValueStartOfObservation>
+          <wmlrgs:inputValueEndOfObservation>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>3.15</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValueEndOfObservation>
+        </wmlrgs:ObservationConditions>
+      </om:value>
+    </om:NamedValue>
+  </om:parameter>
+  
+  <om:parameter>
+    <om:NamedValue>
+      <om:name xlink:href="http://opengis.net/def/waterml/part2/1.0/stream-gauging-metadata"/>
+      <om:value>
+        <wmlrgs:StreamGaugingMetadata gml:id="sgm">
+          <wmlrgs:crossSectionWidth>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>5.1</swe:value>
+            </swe:Quantity>
+          </wmlrgs:crossSectionWidth>
+        </wmlrgs:StreamGaugingMetadata>
+      </om:value>
+    </om:NamedValue>
+  </om:parameter>
+        
+  <om:observedProperty xlink:href="http://example.com/vocabs/stage-discharge" xlink:title="stage and flow"/>
+  <om:featureOfInterest xlink:href="http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/" 
+                        xlink:title="Peel River At Tamworth"/>
+  <om:result>
+    <wmlrgs:Gauging>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+          <swe:uom code="m"/>
+          <swe:value>-0.31600</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:quality>
+            <swe:Category>
+              <swe:codeSpace xlink:href="http://www.kisters.com.au/hydstra/quality/"/>
+              <swe:value>12</swe:value>
+            </swe:Category>
+          </swe:quality>
+          <swe:uom code="m3/s"/>
+          <swe:value>110.02000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:Gauging>
+  </om:result>
+</om:OM_Observation>
+
+
+

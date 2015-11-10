@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<om:OM_Observation xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:gco="http://www.isotc211.org/2005/gco"
+ xmlns:gmd="http://www.isotc211.org/2005/gmd"
+ xmlns:gml="http://www.opengis.net/gml/3.2"
+ xmlns:wml2="http://www.opengis.net/waterml/2.0"
+ xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+ xmlns:swe="http://www.opengis.net/swe/2.0"
+ xmlns:om="http://www.opengis.net/om/2.0"
+ xmlns:gts="http://www.isotc211.org/2005/gts"
+ xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0"
+ xmlns:gsr="http://www.isotc211.org/2005/gsr"
+ xmlns:gss="http://www.isotc211.org/2005/gss"
+ xmlns:sam="http://www.opengis.net/sampling/2.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/waterml/part2/1.0 ../waterml2-part2.xsd" 
+ gml:id="g32343">
+  
+  <gml:identifier codeSpace="http://waterml2.csiro.au/rgs-api/v1/">http://waterml2.csiro.au/rgs-api/v1/gauging/18980/</gml:identifier>
+
+  <om:phenomenonTime>
+    <gml:TimeInstant gml:id="phen-time-1">
+      <gml:timePosition>2011-05-11</gml:timePosition>
+    </gml:TimeInstant>
+  </om:phenomenonTime>
+  <om:resultTime xlink:href="">
+    <gml:TimeInstant gml:id="ti-1">
+      <gml:timePosition>2013-11-12</gml:timePosition>
+    </gml:TimeInstant>
+  </om:resultTime>
+  <om:procedure>
+   <wmlrgs:GaugingProcess gml:id="proc-1">
+     <wml2:processType xlink:href="http://www.opengis.net/def/waterml/2.0/processType/ManualMethod"/>
+     <wml2:operator>
+       <gmd:CI_ResponsibleParty>
+         <gmd:role>
+           <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" 
+             codeListValue="CI_RoleCode_principalInvestigator"/>
+         </gmd:role>
+       </gmd:CI_ResponsibleParty>
+     </wml2:operator>
+     
+    <wmlrgs:inputPropertyMethod xlink:href="http://waterml2.csiro.au/rgs/gauging-method/wetted-area"></wmlrgs:inputPropertyMethod>
+       </wmlrgs:GaugingProcess>
+  </om:procedure>
+  
+  <!-- Shows use of om:parameter as location for observational metadata --> 
+  <!-- Could also use individual om:parameter elements for each required property (e.g. one for riverState, one for end stage --> 
+  <!-- There appears to be no 'best practice' on this yet -->
+  <om:parameter>
+    <om:NamedValue>
+      <om:name xlink:href="http://opengis.net/def/waterml/part2/1.0/gauging-conditions"/>
+      <om:value>
+        <wmlrgs:ObservationConditions gml:id="obs-con">
+          <wmlrgs:streamState xlink:href="http://opengis.net/def/waterml-part2/river-conditions/rising" 
+            xlink:title="Rising river level"/>
+          <wmlrgs:inputValueEndOfObservation>
+            <swe:Quantity>
+              <swe:uom code="m"/>
+              <swe:value>2.2</swe:value>
+            </swe:Quantity>
+          </wmlrgs:inputValueEndOfObservation>
+        </wmlrgs:ObservationConditions>
+      </om:value>
+    </om:NamedValue>
+  </om:parameter>
+  
+  <om:parameter>
+    <om:NamedValue>
+      <om:name xlink:href="http://opengis.net/def/waterml/part2/1.0/gauging-metadata"/>
+      <om:value>
+        <wmlrgs:GaugingObservationMetadata gml:id="ga-meta">
+          <wmlrgs:status xlink:href="http://opengis.net/def/waterml-part2/status/approved" xlink:title="approved"/>
+          <wmlrgs:approvalDate>
+            <gml:TimeInstant gml:id="ti">
+              <gml:timePosition>2015-02-13T12:20:00</gml:timePosition>
+            </gml:TimeInstant>
+          </wmlrgs:approvalDate>
+        </wmlrgs:GaugingObservationMetadata>
+      </om:value>
+    </om:NamedValue>
+  </om:parameter>
+  
+  <om:observedProperty xlink:href="http://waterml2.csiro.au/parameters/stage-discharge-parameter" xlink:title="stage-discharge"/>
+  <om:featureOfInterest xlink:href="http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/" xlink:title="Peel River At Tamworth"/>
+  
+  <om:resultQuality>
+    <gmd:DQ_ThematicClassificationCorrectness>
+      <gmd:result>
+        <gmd:DQ_QuantitativeResult>
+          <gmd:valueUnit xlink:href="http://organisation.com/quality/unit"></gmd:valueUnit>
+          <gmd:value>
+            <gco:Record>7</gco:Record>
+          </gmd:value>
+      </gmd:DQ_QuantitativeResult></gmd:result>
+    </gmd:DQ_ThematicClassificationCorrectness>
+  </om:resultQuality>
+  
+  <om:result>
+    <wmlrgs:Gauging>
+      <wmlrgs:inputValue>
+        <swe:Quantity>
+          <swe:uom code="m"/>
+          <swe:value>0.05900</swe:value>
+        </swe:Quantity>
+      </wmlrgs:inputValue>
+      <wmlrgs:outputValue>
+        <swe:Quantity>
+          <swe:uom code="m3/s"/>
+          <swe:value>182.48000</swe:value>
+        </swe:Quantity>
+      </wmlrgs:outputValue>
+    </wmlrgs:Gauging>
+  </om:result>
+  
+</om:OM_Observation>
+
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.opengis.net/waterml/part2/1.0" xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0" version="1.0.0" xmlns:gml="http://www.opengis.net/gml/3.2">
+	<xs:annotation>
+		<xs:documentation>
+			WaterML 2.0 Part 2 is an OGC Standard.
+			Copyright (c) 2015 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .     
+		</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="sections.xsd"/>
+	<xs:include schemaLocation="rangeValues.xsd"/>
+	<xs:include schemaLocation="gaugings.xsd"/>
+	<xs:include schemaLocation="conversions.xsd"/>
+	<xs:include schemaLocation="collection.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<xs:annotation>
+		<xs:documentation>WaterML2.0 part 2 -ratings, gaugings and cross-sections is an information model for the exchange of hydrological rating tables that describe approximations for x-y relationships based on some underlying physical relationship. The most common case being river level to flow. The information covers the observational data used to construct these tables (the gaugings). </xs:documentation>
+	</xs:annotation>
+</xs:schema>

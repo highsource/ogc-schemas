@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.opengis.net/waterml/part2/1.0" xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:om="http://www.opengis.net/om/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wml2="http://www.opengis.net/waterml/2.0" version="1.0.0">
+	<xs:annotation>
+		<xs:documentation>
+			WaterML 2.0 Part 2 is an OGC Standard.
+			Copyright (c) 2015 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .     
+		</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="rangeValues.xsd"/>
+	<xs:import namespace="http://www.opengis.net/waterml/2.0" schemaLocation="http://schemas.opengis.net/waterml/2.0/waterml2.xsd"/>
+	<xs:import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+	<xs:import namespace="http://www.opengis.net/om/2.0" schemaLocation="http://schemas.opengis.net/om/2.0/observation.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<xs:annotation>
+		<xs:documentation>Classes for capturing conversions between properties, e.g. a conversion table describing a stage-discharge relationship. </xs:documentation>
+	</xs:annotation>
+	<xs:element name="Conversion" type="wmlrgs:ConversionType" substitutionGroup="gml:AbstractFeature">
+		<xs:annotation>
+			<xs:documentation>A Conversion defines the relationship between two properties: the input property and the one being converted to (output property). A conversion applies to a specific monitoring point. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ConversionType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="monitoringPoint" type="wml2:MonitoringPointPropertyType"/>
+					<xs:element name="inputProperty" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>The input property to the conversion. E.g. river level/stage.</xs:documentation>
+							<xs:appinfo>
+								<gml:targetElement>gml:ReferenceType</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="outputProperty" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>The output of the conversion process. E.g. discharge.</xs:documentation>
+							<xs:appinfo>
+								<gml:targetElement>gml:ReferenceType</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="metadata" type="wmlrgs:ConversionMetadataPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Association of a conversion with the Metadata of the conversion. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="inputPropertyDatumOffset" type="swe:QuantityPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Indicates that an offset from the specified datum (specified by the ConversionGroup) should be added to the input property. Positive upwards with respect to gravity.</xs:documentation>
+							<xs:appinfo>
+								<gml:targetElement>swe:QuantityPropertyType</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="extension" type="om:NamedValuePropertyType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A point of extension to allow vendor/organization specific content. </xs:documentation>
+							<xs:appinfo>
+								<gml:targetElement>om:NamedValuePropertyType</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ConversionPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="wmlrgs:Conversion"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="ConversionEquation" type="wmlrgs:ConversionEquationType" substitutionGroup="wmlrgs:Conversion">
+		<xs:annotation>
+			<xs:documentation>A conversion may be defined by an equation. This type provides a simple free-form text description of the equation. Future work may specify particular equation types or forms. Where multiple equations are used to define conversion, the range values section of this standard should be considered for use.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ConversionEquationType">
+		<xs:complexContent>
+			<xs:extension base="wmlrgs:ConversionType">
+				<xs:sequence>
+					<xs:element name="equationDefinition" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>A string representation of the equation. No strict format is defined as many forms may exist. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ConversionEquationPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="wmlrgs:ConversionEquation"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="ConversionGroup" type="wmlrgs:ConversionGroupType" substitutionGroup="gml:AbstractFeature">
+		<xs:annotation>
+			<xs:documentation>A conversion group defines the association between conversion periods and specific conversions. This reflects the changing nature of a conversion through time. The group may represent all conversions available at a site (see fullConversion attribute) or a subset for exchange. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ConversionGroupType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="monitoringPoint" type="wml2:MonitoringPointPropertyType">
+						<xs:annotation>
+							<xs:documentation>Association of the conversion with a 'WaterML 2.0: Part 1- Timeseries' monitoring point.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="fullConversion" type="xs:boolean" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Defines whether this group of conversions contains all the available conversions for a monitoring point, inputProperty and outputProperty combination. This would be false, for example, if the group contains only the latest conversions. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="extension" type="om:NamedValuePropertyType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A point of extension, allowing named-value pairs, where the value is of type Any. E.g. you can name an extension point that can contain any application-specific metadata. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="inputPropertyDatum" type="gml:VerticalDatumPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The vertical datum that is associated with the input property.  </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="domainFeatureType" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>This describes the type of feature that the conversion is applicable to. This is likely to be a reference or code that describes a feature type. E.g. 'reservoir', 'river'. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="period" type="wmlrgs:ConversionPeriodPropertyType" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Captures the conversion period members of the group. Each period defines a period of application that makes up the group. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="rangeGroup" type="wmlrgs:RangeGroupPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>The available range tables for this conversion group (combination of parameterFrom/To and monitoring point). </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ConversionGroupPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="wmlrgs:ConversionGroup"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="ConversionMetadata" type="wmlrgs:ConversionMetadataType" substitutionGroup="gml:AbstractGML">
+		<xs:annotation>
+			<xs:documentation>Describes metadata relating to the conversion. Generally this related to conversion development processes (review, development method etc.). </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ConversionMetadataType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractGMLType">
+				<xs:sequence>
+					<xs:element name="includedGaugings" type="om:OM_ObservationPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>References to gaugings that were used in development of this conversion. Association properties (e.g. arcrole if an XML target) may be used to specify the reason for inclusion</xs:documentation>
+							<xs:appinfo>
+								<gml:targetElement>om:OM_ObservationPropertyType</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="excludedGaugings" type="om:OM_ObservationPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>References to gaugings that were excluded from this conversion in its development. Association properties (e.g. arcrole if an XML target) may be used to specify the reason for exclusion. </xs:documentation>
+							<xs:appinfo>
+								<gml:targetElement>om:OM_ObservationPropertyType</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="developmentMethod" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A code that gives an indication of the method used to develop the conversion relationship. See DevelopmentMethodCode. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="releaseStatus" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>A code indicating the status of the conversion in relation to its development lifecycle.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reviewDate" type="gml:TimeInstantPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Date of the last review of the conversion where the conversion was assessed for accuracy in relation to input data or observations such as gaugings.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="versionIdentifier" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>If a conversion has been through development of multiple versions, this version identifier allows reference to a specific version. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="approvalDate" type="gml:TimeInstantPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>If the conversion has been approved for production use, this represents the date the conversion was approved for use. This is not related to the conversion period start date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="extension" type="om:NamedValuePropertyType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Extension point that allows extra metadata to be added to the Conversion. This can be used to exchange system specific metadata that is not defined in the standard model. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="lastModified" type="gml:TimeInstantPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>This defines that date when the conversion was last modified during the conversion maintenance process. If the conversion has been approved this represents the date the conversion was approved for use, this is not related to the conversion period start date.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ConversionMetadataPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="wmlrgs:ConversionMetadata"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="ConversionPeriod" type="wmlrgs:ConversionPeriodType" substitutionGroup="gml:AbstractObject">
+		<xs:annotation>
+			<xs:documentation>A conversion period defines the time period in which a particular conversion relationship should be used. Conversion periods may re-use conversions for different periods (e.g. the physical relationship is changed for a period of time due to some installation and reverts to the previous conversion once this is removed). </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ConversionPeriodType">
+		<xs:sequence>
+			<xs:element name="periodStart" type="gml:TimeInstantPropertyType">
+				<xs:annotation>
+					<xs:documentation>The start of the conversion period. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="periodEnd" type="gml:TimeInstantPropertyType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The end of the conversion period. This is used to define a gap between conversion periods or a period of validity for the current conversion table. Normal usage would involve a succession of conversion periods defined by only periodStart dates.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="phasedPeriod" type="xs:duration" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The phasedPeriod property specifies the period over which the conversion should be phased from the preceding table to the current table. Refer to requirement /phasing for further description.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="applicableConversion" type="wmlrgs:ConversionPropertyType">
+				<xs:annotation>
+					<xs:documentation>The applicable conversion for this period. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConversionPeriodPropertyType">
+		<xs:sequence>
+			<xs:element ref="wmlrgs:ConversionPeriod"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="ConversionTable" type="wmlrgs:ConversionTableType" substitutionGroup="wmlrgs:Conversion">
+		<xs:annotation>
+			<xs:documentation>A conversion table is the primary means for exchange of conversion relationships. It encodes the relationship between the input and output of the conversion using a table of tuples. This table shall be of sufficient resolution to allow linear interpolation between points. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ConversionTableType">
+		<xs:complexContent>
+			<xs:extension base="wmlrgs:ConversionType">
+				<xs:sequence>
+					<xs:element name="defaultQuality" type="swe:QualityPropertyType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Defines the default quality code for the output values of the table. Individual quality assertions override the default value. This property uses swe:Quality, which allows quality assertions using text, quantities, ranges, or a vocabulary entry. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="point" type="wmlrgs:TableTuplePropertyType" minOccurs="2" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>The points that make up the conversion table. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ConversionTablePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="wmlrgs:ConversionTable"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+	<xs:element name="TableTuple" type="wmlrgs:TableTupleType" substitutionGroup="gml:AbstractObject">
+		<xs:annotation>
+			<xs:documentation>A tuple represents a pair of measured values: the input property and the output property. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="TableTupleType">
+		<xs:sequence>
+			<xs:element name="inputValue" type="swe:QuantityPropertyType">
+				<xs:annotation>
+					<xs:documentation>Individual value of the property being converted from. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="outputValue" type="swe:QuantityPropertyType">
+				<xs:annotation>
+					<xs:documentation>Individual value of the property being converted to. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TableTuplePropertyType">
+		<xs:sequence>
+			<xs:element ref="wmlrgs:TableTuple"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wmlrgs:ConversionGroup xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:swe="http://www.opengis.net/swe/2.0"
+  xmlns:wml2="http://www.opengis.net/waterml/2.0"
+  xsi:schemaLocation="http://www.opengis.net/waterml/part2/1.0 
+  ../waterml2-part2.xsd" 
+  gml:id="cg-1">
+  
+  <wmlrgs:monitoringPoint xlink:href="http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/" 
+    xlink:title=""/>
+  
+  <wmlrgs:period>
+    <wmlrgs:ConversionPeriod>
+      <wmlrgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1-371">
+          <gml:timePosition>1998-07-27T00:00:00</gml:timePosition>
+        </gml:TimeInstant>
+      </wmlrgs:periodStart>
+      
+      <wmlrgs:applicableConversion xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-100/"
+        xlink:title="100.00 to 141"/>
+    </wmlrgs:ConversionPeriod>
+  </wmlrgs:period>
+  
+  <wmlrgs:period>
+    <wmlrgs:ConversionPeriod>
+      <wmlrgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1-372">
+          <gml:timePosition>1999-10-15T00:00:00</gml:timePosition>
+        </gml:TimeInstant>
+      </wmlrgs:periodStart>
+      
+      <wmlrgs:applicableConversion xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-101/"
+        xlink:title="100.00 to 141"/>
+    </wmlrgs:ConversionPeriod>
+  </wmlrgs:period>
+  
+  <wmlrgs:period>
+    <wmlrgs:ConversionPeriod>
+      <wmlrgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1-373">
+          <gml:timePosition>2000-11-19T00:00:00</gml:timePosition>
+        </gml:TimeInstant>
+      </wmlrgs:periodStart>
+      
+      <wmlrgs:applicableConversion xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-102/"
+        xlink:title="100.00 to 141"/>
+    </wmlrgs:ConversionPeriod>
+  </wmlrgs:period>
+  
+  <wmlrgs:period>
+    <wmlrgs:ConversionPeriod>
+      <wmlrgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1-374">
+          <gml:timePosition>2001-08-29T00:00:00</gml:timePosition>
+        </gml:TimeInstant>
+      </wmlrgs:periodStart>
+      
+      <wmlrgs:applicableConversion xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-103/"
+        xlink:title="100.00 to 141"/>
+    </wmlrgs:ConversionPeriod>
+  </wmlrgs:period>
+  
+  <wmlrgs:period>
+    <wmlrgs:ConversionPeriod>
+      <wmlrgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1-1728">
+          <gml:timePosition>2002-06-28T00:00:00</gml:timePosition>
+        </gml:TimeInstant>
+      </wmlrgs:periodStart>
+      
+      <wmlrgs:applicableConversion xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-104-1/"
+        xlink:title="100.00 to 141"/>
+    </wmlrgs:ConversionPeriod>
+  </wmlrgs:period>
+  
+  <wmlrgs:period>
+    <wmlrgs:ConversionPeriod>
+      <wmlrgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1-1769">
+          <gml:timePosition>2003-10-04T00:00:00</gml:timePosition>
+        </gml:TimeInstant>
+      </wmlrgs:periodStart>
+      
+      <wmlrgs:applicableConversion xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-105/"
+        xlink:title="100.00 to 141"/>
+    </wmlrgs:ConversionPeriod>
+  </wmlrgs:period>
+  
+  <wmlrgs:period>
+    <wmlrgs:ConversionPeriod>
+      <wmlrgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1-1781">
+          <gml:timePosition>2004-01-18T00:00:00</gml:timePosition>
+        </gml:TimeInstant>
+      </wmlrgs:periodStart>
+      
+      <wmlrgs:applicableConversion xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-106-1/"
+        xlink:title="100.00 to 141"/>
+    </wmlrgs:ConversionPeriod>
+  </wmlrgs:period>
+  
+  <wmlrgs:period>
+    <wmlrgs:ConversionPeriod>
+      <wmlrgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1-1873">
+          <gml:timePosition>2004-11-24T00:00:00</gml:timePosition>
+        </gml:TimeInstant>
+      </wmlrgs:periodStart>
+      
+      <wmlrgs:applicableConversion xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-107/"
+        xlink:title="100.00 to 141"/>
+    </wmlrgs:ConversionPeriod>
+  </wmlrgs:period>
+  
+  <wmlrgs:period>
+    <wmlrgs:ConversionPeriod>
+      <wmlrgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1-1918">
+          <gml:timePosition>2005-01-17T00:00:00</gml:timePosition>
+        </gml:TimeInstant>
+      </wmlrgs:periodStart>
+      
+      <wmlrgs:applicableConversion xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-108/"
+        xlink:title="100.00 to 141"/>
+    </wmlrgs:ConversionPeriod>
+  </wmlrgs:period>
+  
+  <wmlrgs:period>
+    <wmlrgs:ConversionPeriod>
+      <wmlrgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1-1919">
+          <gml:timePosition>2005-04-18T00:00:00</gml:timePosition>
+        </gml:TimeInstant>
+      </wmlrgs:periodStart>
+      
+      <wmlrgs:applicableConversion xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-109-1/"
+        xlink:title="100.00 to 141"/>
+    </wmlrgs:ConversionPeriod>
+  </wmlrgs:period>
+  
+  <wmlrgs:period>
+    <wmlrgs:ConversionPeriod>
+      <wmlrgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1-1962">
+          <gml:timePosition>2005-11-28T00:00:00</gml:timePosition>
+        </gml:TimeInstant>
+      </wmlrgs:periodStart>
+      
+      <wmlrgs:applicableConversion xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-110-1/"
+        xlink:title="100.00 to 141"/>
+    </wmlrgs:ConversionPeriod>
+  </wmlrgs:period>
+  
+  <wmlrgs:period>
+    <wmlrgs:ConversionPeriod>
+      <wmlrgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1-2547">
+          <gml:timePosition>2007-02-04T00:00:00</gml:timePosition>
+        </gml:TimeInstant>
+      </wmlrgs:periodStart>
+      
+      <wmlrgs:applicableConversion xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion/419009-100.00-141-111/"
+        xlink:title="100.00 to 141"/>
+    </wmlrgs:ConversionPeriod>
+  </wmlrgs:period>
+  
+</wmlrgs:ConversionGroup>
+

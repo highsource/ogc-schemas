@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<om:OM_Observation xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:gco="http://www.isotc211.org/2005/gco"
+  xmlns:gmd="http://www.isotc211.org/2005/gmd"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:swe="http://www.opengis.net/swe/2.0"
+  xmlns:wml2="http://www.opengis.net/waterml/2.0"
+  xmlns:wmlrgs="http://www.opengis.net/waterml/part2/1.0"
+  xmlns:gts="http://www.isotc211.org/2005/gts"
+  xmlns:om="http://www.opengis.net/om/2.0"
+  xmlns:gsr="http://www.isotc211.org/2005/gsr"
+  xmlns:gss="http://www.isotc211.org/2005/gss"
+  xmlns:sam="http://www.opengis.net/sampling/2.0"
+  xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/waterml/part2/1.0 
+  ../waterml2-part2.xsd" 
+  gml:id="cross-section-ex1">
+
+  <gml:description>A handcrafted example of a cross-section using a compound reference system. Based on data from NSW office of water. 
+    http://realtimedata.water.nsw.gov.au/water.stm?ppbm=SURFACE_WATER. Site 421025, cross section ID 070004.
+  </gml:description>
+  
+  <gml:identifier codeSpace="http://realtimedata.water.nsw.gov.au/">421025/070004</gml:identifier>
+  
+  <om:phenomenonTime>
+    <!-- time of observation --> 
+    <gml:TimeInstant gml:id="obs-time">
+      <gml:timePosition>2007-05-04T00:00:00</gml:timePosition>
+    </gml:TimeInstant>
+  </om:phenomenonTime>
+  
+  <!-- time result available --> 
+  <om:resultTime>
+    <gml:TimeInstant gml:id="enc-time">
+      <gml:timePosition>2013-12-13T11:40:00</gml:timePosition>
+    </gml:TimeInstant>
+  </om:resultTime>
+  
+  <om:procedure xsi:nil="true" nilReason="unknown"/>
+  
+  <om:parameter>
+    <om:NamedValue>
+      <om:name xlink:href="http://www.opengis.net/def/waterml/part2/1.0/section-metadata"/>
+      <om:value>
+        <wmlrgs:SectionObservationMetadata>
+          <!-- This examples shows an explicit description of the local coordinate reference 
+            system that was used for the survey. It consists of a start point (2D georeferenced), 
+            a vertical CS relative to the gauge datum, and a planar relative CS from the start point
+          --> 
+          <wmlrgs:startPoint>
+            <gml:Point gml:id="start-point">
+              <gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">-33.1323 149.523</gml:pos>
+            </gml:Point>
+          </wmlrgs:startPoint>
+          <wmlrgs:verticalCRS>
+            <gml:VerticalCRS gml:id="myVerticalCRS">
+              <gml:identifier codeSpace=""></gml:identifier>
+              <gml:scope>Monitoring site</gml:scope>
+              <gml:verticalCS xlink:href="http://www.opengis.net/def/cs/EPSG/0/6499"/>
+              <gml:verticalDatum xlink:href="#gauge-datum"/>
+            </gml:VerticalCRS>
+          </wmlrgs:verticalCRS>
+          <wmlrgs:surveyCRS>
+            <gml:EngineeringCRS gml:id="survey_CRS">
+              <gml:identifier codeSpace=""></gml:identifier>
+              <gml:scope>Monitoring site</gml:scope>
+              <gml:userDefinedCS xlink:href="http://waterml2.csiro.au/def/crs/perpendicularToFlow"/>
+              <gml:engineeringDatum xlink:href="#start-point"/>
+            </gml:EngineeringCRS>
+          </wmlrgs:surveyCRS>
+          <wmlrgs:compoundCRS>
+            <gml:CompoundCRS gml:id="compound_crs">
+              <gml:identifier codeSpace=""></gml:identifier>
+              <gml:scope>Monitoring site</gml:scope>
+              <gml:componentReferenceSystem xlink:href="#survey_CRS"/>
+              <gml:componentReferenceSystem xlink:href="#myVerticalCRS"/>
+            </gml:CompoundCRS>
+          </wmlrgs:compoundCRS>
+        </wmlrgs:SectionObservationMetadata>
+      </om:value>
+    </om:NamedValue>
+  </om:parameter>
+  
+  <om:observedProperty xlink:href="http://waterml2.csiro.au/vocabs/controlCrossSection"
+    xlink:title="Cross section"/>
+  
+  <om:featureOfInterest>
+    <wml2:MonitoringPoint gml:id="mp-421025">
+      <sam:sampledFeature xsi:nil="true" nilReason="unknown"/>
+      <sams:shape>
+        <gml:Point gml:id="loc-1">
+          <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">-33.1372 149.43</gml:pos>
+        </gml:Point>
+      </sams:shape>
+      <wml2:relatedParty>
+        <gmd:CI_ResponsibleParty>
+          <gmd:organisationName>
+            <gco:CharacterString>NSW Office of Water</gco:CharacterString>
+          </gmd:organisationName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:onlineResource>
+                <gmd:CI_OnlineResource>
+                  <gmd:linkage>
+                    <gmd:URL>http://www.water.nsw.gov.au/</gmd:URL>
+                  </gmd:linkage>
+                </gmd:CI_OnlineResource>
+              </gmd:onlineResource>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#CI_RoleCode" 
+              codeListValue="CI_RoleCode_owner">Owner</gmd:CI_RoleCode>
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </wml2:relatedParty>
+      
+      <!-- gauge zero point. cross-section vertical is relative to here --> 
+      <wml2:verticalDatum>
+        <gml:VerticalDatum gml:id="gauge-datum">
+          <gml:identifier codeSpace="">gauge_zero</gml:identifier>
+          <gml:scope>not known</gml:scope>
+          <gml:anchorDefinition codeSpace="urn:ogc:def:crs:EPSG::5712">21.906</gml:anchorDefinition>
+        </gml:VerticalDatum>
+      </wml2:verticalDatum>
+    </wml2:MonitoringPoint>
+  </om:featureOfInterest>
+  
+  <om:result>
+    <!-- All the points here are encoded using the compound CRS (chainage, vertical) --> 
+    <gml:MultiPoint gml:id="ls-1" srsName="#compound_crs">
+      <gml:pointMembers>
+        <gml:Point gml:id="pt-1">
+          <gml:pos>0.000 35.576</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-2">
+          <gml:pos>1.822 32.067</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-3">
+          <gml:pos>11.143 25.842</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-4">
+          <gml:pos>13.902 25.774</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-5">
+          <gml:pos>18.819 23.845</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-6">
+          <gml:pos>21.214 24.085</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-7">
+          <gml:pos>26.983 23.424</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-8">
+          <gml:pos>29.254 22.963</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-9">
+          <gml:pos>32.360 22.922</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-10">
+          <gml:pos>35.336 23.167</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-11">
+          <gml:pos>38.249 23.186</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-12">
+          <gml:pos>40.435 22.981</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-13">
+          <gml:pos>43.585 22.829</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-14">
+          <gml:pos>47.551 23.023</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-15">
+          <gml:pos>54.888 23.168</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-16">
+          <gml:pos>55.435 23.950</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-17">
+          <gml:pos>58.644 24.640</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-18">
+          <gml:pos>62.132 24.404</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-19">
+          <gml:pos>69.741 25.800</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-20">
+          <gml:pos>76.165 26.008</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-21">
+          <gml:pos>77.423 25.492</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-22">
+          <gml:pos>79.660 25.474</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-23">
+          <gml:pos>80.864 26.143</gml:pos>
+        </gml:Point>
+        <gml:Point gml:id="pt-24">
+          <gml:pos>83.001 26.095</gml:pos>
+        </gml:Point>
+      </gml:pointMembers>
+    </gml:MultiPoint>
+  </om:result>
+</om:OM_Observation>

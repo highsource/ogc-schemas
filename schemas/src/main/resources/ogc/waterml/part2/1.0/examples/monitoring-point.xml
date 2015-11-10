@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wml2:MonitoringPoint gml:id="mp-419009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:wml2="http://www.opengis.net/waterml/2.0" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco"
+  xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+  xsi:schemaLocation="http://www.opengis.net/waterml/2.0 http://schemas.opengis.net/waterml/2.0/waterml2.xsd">
+  <gml:description>An example Monitoring Point, using WaterML2.0 part 1 schema and extended to link part 2 ratings.</gml:description>
+  <gml:name codeSpace="http://www.waterml2.csiro.au/">Peel River At Tamworth</gml:name>
+  
+  <sam:sampledFeature xlink:href="http://www.ga.gov.au/gis/services/topography/Gazetteer_of_Australia/MapServer/WFSServer?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typeName=topography_Gazetteer_of_Australia:GazetteerOfAustralia&amp;filter=%3Cogc:Filter%20xmlns:ogc=%22http://www.opengis.net/ogc%22%20xmlns:gml=%22http://www.opengis.net/gml%22%20xmlns:xsi=%22http://www.w3.org/2001/XMLSchema-instance%22%20xsi:schemaLocation=%22http://www.opengis.net/ogc/filter/1.0.0/filter.xsd%20http://www.opengis.net/gml/2.1/geometry.xsd%22%3E%3Cogc:PropertyIsEqualTo%3E%3Cogc:PropertyName%3Etopography_Gazetteer_of_Australia:OBJECTID%3C/ogc:PropertyName%3E%3Cogc:Literal%3E109776%3C/ogc:Literal%3E%3C/ogc:PropertyIsEqualTo%3E%3C/ogc:Filter%3E"
+    xlink:title="Peel River - WFS view"/>
+  
+  <sam:parameter>
+    <om:NamedValue>
+      <om:name xlink:href="http://waterml2.csiro.au/soft-type/monitoring-point/cease-to-flow" xlink:title="Cease to flow"/>
+      <om:value xsi:type="gml:MeasureType" uom="m">-0.25</om:value>
+    </om:NamedValue>                                                                                                                                                             
+  </sam:parameter>
+  
+  <!-- Provides the connection from a monitoring point to a conversion group --> 
+  <sam:parameter>
+    <om:NamedValue>
+      <om:name xlink:href="http://opengis.net/def/waterml/part2/1.0/monitoring-point-ex/conversion-group" 
+        xlink:title="Conversion group link"/>
+      <om:value xsi:type="gml:ReferenceType" xlink:href="http://waterml2.csiro.au/rgs-api/v1/conversion-group/8/" 
+        xlink:title="Conversions available for this monitoring point"/>
+    </om:NamedValue>
+  </sam:parameter>  
+  
+  <sams:shape>
+    <gml:Point gml:id="loc-419009">
+      <gml:pos srsName="urn:ogc:def:crs:EPSG::4326">-31.0908 150.9264</gml:pos>
+    </gml:Point>
+  </sams:shape>
+  
+  <wml2:relatedParty>
+    <gmd:CI_ResponsibleParty>
+      <gmd:organisationName>
+        <gco:CharacterString>NSW Office of Water</gco:CharacterString>
+      </gmd:organisationName>
+      <gmd:role>
+        <gmd:CI_RoleCode codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#CI_RoleCode" 
+          codeListValue="CI_RoleCode_owner">Owner</gmd:CI_RoleCode>
+      </gmd:role>
+    </gmd:CI_ResponsibleParty>
+  </wml2:relatedParty>
+  
+  <wml2:verticalDatum>
+    <gml:VerticalDatum gml:id="survey_datum">
+      <gml:identifier codeSpace="http://waterml2.csiro.au">419009_survey_datum</gml:identifier>
+      <gml:remarks>Survey datum, last updated 12/2003. 371.06m above AHD</gml:remarks>
+      <gml:scope>not known</gml:scope>
+      <gml:anchorDefinition  codeSpace="urn:ogc:def:crs:EPSG::5712">371.06</gml:anchorDefinition>
+    </gml:VerticalDatum>
+  </wml2:verticalDatum>
+  
+  <wml2:verticalDatum>
+    <gml:VerticalDatum gml:id="gauge_zero">
+      <gml:identifier codeSpace="http://waterml2.csiro.au">419009_gauge_zero</gml:identifier>
+      <gml:remarks>Gauge zero, 1.2m above local datum</gml:remarks>
+      <gml:scope>not known</gml:scope>
+      <gml:anchorDefinition  codeSpace="survey_datum">1.2</gml:anchorDefinition>
+    </gml:VerticalDatum>
+  </wml2:verticalDatum>
+    
+</wml2:MonitoringPoint>

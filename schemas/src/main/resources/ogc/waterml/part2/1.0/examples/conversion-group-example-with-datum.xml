@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rgs:ConversionGroup xmlns:gml="http://www.opengis.net/gml/3.2"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:swe="http://www.opengis.net/swe/2.0"
+ xmlns:wml2="http://www.opengis.net/waterml/2.0"
+ xmlns:om="http://www.opengis.net/om/2.0"
+ xmlns:gmd="http://www.isotc211.org/2005/gmd"
+ xmlns:gco="http://www.isotc211.org/2005/gco"
+ xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+ xmlns:sam="http://www.opengis.net/sampling/2.0"
+ xmlns:gsr="http://www.isotc211.org/2005/gsr"
+ xmlns:gts="http://www.isotc211.org/2005/gts"
+ xmlns:gss="http://www.isotc211.org/2005/gss"
+ xmlns:rgs="http://www.opengis.net/waterml/part2/1.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/waterml/part2/1.0 
+ ../waterml2-part2.xsd" 
+ gml:id="conversion-example-1">
+ 
+  <gml:description>A handcrafted example of conversions for WaterML2.0 part 2 - Ratings, gaugings and sections (RGS). Shows use of datum
+  and range values. </gml:description>
+
+  <rgs:monitoringPoint xlink:href="http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/" 
+    xlink:title="Peel River At Tamworth"/>
+  
+  <rgs:fullConversion>false</rgs:fullConversion>
+  <rgs:inputPropertyDatum>
+    <gml:VerticalDatum gml:id="staff-gauge-zero">
+      <gml:identifier codeSpace="http://my.org">419009-SGZ</gml:identifier>
+      <gml:scope></gml:scope>
+      <gml:anchorDefinition>5.345m below local bench mark</gml:anchorDefinition>
+    </gml:VerticalDatum>
+  </rgs:inputPropertyDatum>
+  
+  <rgs:domainFeatureType xlink:href="http://sirf.csiro.au/ftc/hy_features/river-section" xlink:title="HY_Features river segment"/>
+  
+  <rgs:period>
+    <rgs:ConversionPeriod>
+      <!-- A single stage-discharge rating table that is valid after Feb 2007 to now</gml:description -->
+      <rgs:periodStart>
+        <gml:TimeInstant gml:id="ti-1">
+          <gml:timePosition>2007-02-04</gml:timePosition>
+        </gml:TimeInstant>
+      </rgs:periodStart>
+      <rgs:periodEnd>
+        <gml:TimeInstant gml:id="ti-2">
+          <gml:timePosition indeterminatePosition="now"/>
+        </gml:TimeInstant>
+      </rgs:periodEnd>
+      <rgs:applicableConversion>
+        <rgs:ConversionTable gml:id="table-1">
+          <!-- parameters changed to be vocabulary references --> 
+          <rgs:monitoringPoint xlink:href="http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/"
+            xlink:title="Peel River At Tamworth"/>
+          <rgs:inputProperty  xlink:href="http://kisters.com.au/hydstra/parameters/100.00" xlink:title="river height"/>
+          <rgs:outputProperty xlink:href="http://kisters.com.au/hydstra/parameters/140.00" xlink:title="river discharge"/>
+          
+          <rgs:defaultQuality>
+            <swe:Category definition="http://www.opengis.net/def/waterml/2.0/quality/good">
+              <swe:value>good</swe:value>
+            </swe:Category>
+          </rgs:defaultQuality>
+         <rgs:point>
+          <rgs:TableTuple>
+              <rgs:inputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>-1.00000</swe:value>
+                </swe:Quantity>
+              </rgs:inputValue>
+              <rgs:outputValue>
+                <swe:Quantity>
+                  <swe:quality>
+                    <swe:Category>
+                      <swe:codeSpace xlink:href="http://www.opengis.net/def/waterml/2.0/quality/"/>
+                      <swe:value>poor</swe:value>
+                    </swe:Category>
+                  </swe:quality>
+                  <swe:uom code="m3/s"/>
+                  <swe:value>0.00000</swe:value>
+                </swe:Quantity>
+              </rgs:outputValue>
+            </rgs:TableTuple>
+         </rgs:point>
+          <rgs:point>
+            <rgs:TableTuple>
+              <rgs:inputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>0.30000</swe:value>
+                </swe:Quantity>
+              </rgs:inputValue>
+              <rgs:outputValue>
+                <swe:Quantity>
+                  <swe:uom code="m3/s"/>
+                  <swe:value>22.50000</swe:value>
+                </swe:Quantity>
+              </rgs:outputValue>
+            </rgs:TableTuple>
+          </rgs:point>
+          <rgs:point>
+            <rgs:TableTuple>
+              <rgs:inputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>0.42000</swe:value>
+                </swe:Quantity>
+              </rgs:inputValue>
+              <rgs:outputValue>
+                <swe:Quantity>
+                  <swe:uom code="m3/s"/>
+                  <swe:value>81.00000</swe:value>
+                </swe:Quantity>
+              </rgs:outputValue>
+            </rgs:TableTuple>
+          </rgs:point>
+          <rgs:point>
+            <rgs:TableTuple>
+              <rgs:inputValue>
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>0.65000</swe:value>
+                </swe:Quantity>
+              </rgs:inputValue>
+              <rgs:outputValue>
+                <swe:Quantity>
+                  <swe:uom code="m3/s"/>
+                  <swe:value>278.00000</swe:value>
+                </swe:Quantity>
+              </rgs:outputValue>
+            </rgs:TableTuple>
+          </rgs:point>
+        </rgs:ConversionTable>
+      </rgs:applicableConversion>
+    </rgs:ConversionPeriod>
+  </rgs:period>
+  
+  <!-- range values --> 
+  <rgs:rangeGroup>
+    <rgs:RangeGroup gml:id="range-group">
+      <gml:description>A range group that describes flood levels against stage levels, valid from 2010.</gml:description>
+      <rgs:monitoringPoint xlink:href="http://waterml2.csiro.au/rgs-api/v1/monitoring-point/419009/" 
+        xlink:title="Peel River At Tamworth"/>
+      <rgs:inputProperty xlink:href="http://kisters.com.au/hydstra/parameters/100.00" xlink:title="river height"/>
+      <rgs:rangeDefinition xlink:href="http://example.com/range-values/flood-levels" xlink:title="flood level categories"/>
+      <rgs:member>
+        <rgs:RangeTable gml:id="rp-1">
+
+              <rgs:periodStart>
+                <gml:TimeInstant gml:id="rp-ti-1">
+                  <gml:timePosition>2010-01-01</gml:timePosition>
+                </gml:TimeInstant>
+              </rgs:periodStart>
+          
+              <rgs:endValue> 
+                <swe:Quantity>
+                  <swe:uom code="m"/>
+                  <swe:value>10.0</swe:value>
+                </swe:Quantity>
+              </rgs:endValue>
+             
+              <!-- from -0.12 to next value is no warning --> 
+              <rgs:member>
+                <rgs:RangeEntry>
+                  <rgs:startValue>
+                    <swe:Quantity>
+                      <swe:uom code="m"/>
+                      <swe:value>-0.12</swe:value>
+                    </swe:Quantity>
+                  </rgs:startValue>
+                  <rgs:value>
+                    <swe:Text definition="http://www.bom.gov.au/water/floods/floodWarningServices.shtml">
+                      <swe:value>No warning</swe:value>
+                    </swe:Text>
+                  </rgs:value>
+                </rgs:RangeEntry>
+              </rgs:member>
+              
+              <!-- from 3.12 to next value is minor flood warning --> 
+          <rgs:member>
+                <rgs:RangeEntry>
+                  <rgs:startValue>
+                    <swe:Quantity>
+                      <swe:uom code="m"/>
+                      <swe:value>3.12</swe:value>
+                    </swe:Quantity>
+                  </rgs:startValue>
+                  <rgs:value>
+                    <swe:Text definition="http://www.bom.gov.au/water/floods/floodWarningServices.shtml">
+                    </swe:Text>
+                  </rgs:value>
+                </rgs:RangeEntry>
+              </rgs:member>
+              
+              <!-- from 7.6 to next value is moderate flood warning --> 
+          <rgs:member>
+                <rgs:RangeEntry>
+                  <rgs:startValue>
+                    <swe:Quantity>
+                      <swe:uom code="m"/>
+                      <swe:value>7.6</swe:value>
+                    </swe:Quantity>
+                  </rgs:startValue>
+                  <rgs:value>
+                    <swe:Text definition="http://www.bom.gov.au/water/floods/floodWarningServices.shtml">
+                      <swe:value>Moderate flood warning</swe:value>
+                    </swe:Text>
+                  </rgs:value>
+                </rgs:RangeEntry>
+              </rgs:member>
+              
+              <!-- from 8.5 to END value is moderate flood warning --> 
+          <rgs:member>
+                <rgs:RangeEntry>
+                  <rgs:startValue>
+                    <swe:Quantity>
+                      <swe:uom code="m"/>
+                      <swe:value>8.5</swe:value>
+                    </swe:Quantity>
+                  </rgs:startValue>
+                  <rgs:value>
+                    <swe:Text definition="http://www.bom.gov.au/water/floods/floodWarningServices.shtml">
+                      <swe:value>Major flood warning</swe:value>
+                    </swe:Text>
+                  </rgs:value>
+                </rgs:RangeEntry>
+              </rgs:member>
+        </rgs:RangeTable>
+      </rgs:member>
+    </rgs:RangeGroup>
+  </rgs:rangeGroup>
+
+</rgs:ConversionGroup>
