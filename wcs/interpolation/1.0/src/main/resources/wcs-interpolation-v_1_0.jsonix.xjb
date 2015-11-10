@@ -7,7 +7,7 @@
 		schemaLocation="http://schemas.opengis.net/wcs/interpolation/1.0/wcsInt.xsd" 
 		node="/xs:schema">
 
-		<jsonix:packageMapping packageName="net.opengis.wcs.interpolation.v_1_0" spaceName="WCS_Interpolation_2_0"/>
+		<jsonix:mapping package="net.opengis.wcs.interpolation.v_1_0" name="WCS_Interpolation_1_0"/>
 
 	</jaxb:bindings>
 </jaxb:bindings>

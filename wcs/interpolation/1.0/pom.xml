@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>wcs-interpolation-v_1_0</artifactId>
 	<packaging>jar</packaging>
-	<name>OGC WCS interpolation 1.0</name>
+	<name>OGC WCS Interpolation 1.0</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schema-parent</artifactId>
