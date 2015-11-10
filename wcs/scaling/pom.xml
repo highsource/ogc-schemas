@@ -2,22 +2,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>wcs</artifactId>
+	<artifactId>scaling</artifactId>
 	<packaging>pom</packaging>
-	<name>OGC WCS</name>
+	<name>OGC WCS scaling</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schemas-project</artifactId>
 		<version>2.5.2-SNAPSHOT</version>
 	</parent>
 	<modules>
-		<module>1.0.0</module>
-		<module>1.1</module>
-		<module>2.0</module>
-		<module>interpolation</module>
-		<module>processing</module>
-		<module>range-subsetting</module>
-		<module>scaling</module>
+		<module>1.0</module>
 	</modules>
 	<build>
 		<defaultGoal>install</defaultGoal>
