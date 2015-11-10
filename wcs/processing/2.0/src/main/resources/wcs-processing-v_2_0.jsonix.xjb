@@ -7,7 +7,7 @@
 		schemaLocation="http://schemas.opengis.net/wcs/processing/2.0/wcsProcessCoverages.xsd" 
 		node="/xs:schema">
 
-		<jsonix:packageMapping packageName="net.opengis.wcs.processing.v_2_0" spaceName="WCS_processing_2_0"/>
+		<jsonix:mapping package="net.opengis.wcs.processing.v_2_0" name="WCS_Processing_2_0"/>
 
 	</jaxb:bindings>
 </jaxb:bindings>
