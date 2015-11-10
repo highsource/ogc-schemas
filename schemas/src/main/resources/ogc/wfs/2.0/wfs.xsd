@@ -472,7 +472,7 @@
       <xsd:sequence>
          <xsd:element ref="wfs:Title" minOccurs="0" maxOccurs="unbounded"/>
          <xsd:element name="ReturnFeatureType" type="xsd:QName"
-            maxOccurs="unbounded"/>
+            minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="id" type="xsd:anyURI" use="required"/>
    </xsd:complexType>

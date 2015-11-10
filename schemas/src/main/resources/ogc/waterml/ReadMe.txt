@@ -30,6 +30,9 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2015-10-22  Peter Taylor
+  * v1.0.0: Post WaterML 2.0 Part 2 1.0.0 as waterml/part2/1.0 from OGC 15-018r1.
+
 2014-02-26  Peter Taylor
   * v2.0.2: Post WaterML 2.0.2 as waterml/2.0 from OGC 10-126r4
     + The schema version is 2.0.2 but the OGC document 10-126r4 is 2.0.1 .
@@ -51,7 +54,9 @@ The most current schema are available at http://schemas.opengis.net/ .
 Policies, Procedures, Terms, and Conditions of OGC(r) are available
   http://www.opengeospatial.org/ogc/legal/ .
 
-Copyright (c) 2014 Open Geospatial Consortium.
+OGC and OpenGIS are registered trademarks of the Open Geospatial Consortium.
+
+Copyright (c) 2015 Open Geospatial Consortium.
 
 -----------------------------------------------------------------------
 

@@ -18,17 +18,20 @@
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
 <dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2015-04-22T19:45:36:+00:00
+<dc:date>2015-10-22T17:13:53:+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2015-04-22T19:45:36:+00:00
+<syn:updateBase>2015-10-22T17:13:53:+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
+  <rdf:li rdf:resource="http://schemas.opengis.net/waterml/ReadMe.txt#20151022t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/kml/2.3/ReadMe.txt#20151022t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/wfs/ReadMe.txt#20151013t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wps/ReadMe.txt#20150422t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/gmlcov/ReadMe.txt#20150415t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/arml/ReadMe.txt#20150225t15" />
@@ -98,6 +101,36 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
+<item rdf:about="http://schemas.opengis.net/waterml/ReadMe.txt#20151022t15">
+<title>OGC WaterML 2.0 Part 2 1.0 - Schema Added</title>
+<link>http://schemas.opengis.net/waterml/ReadMe.txt#20151022t15</link>
+<description>The OGC WaterML 2.0 Part 2 1.0 schema described in OGC document 15-018r1 has been added.  
+See http://www.opengeospatial.org/standards/waterml for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2015-10-22T15:46:05:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WaterML 2.0 Part 2 1.0 Standard Schema Added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/kml/2.3/ReadMe.txt#20151022t15">
+<title>OGC KML 2.3 - Schema Added</title>
+<link>http://schemas.opengis.net/kml/2.3/ReadMe.txt#20151022t15</link>
+<description>The OGC KML 2.3 schema described in OGC document 12-007r2 has been added.  
+See http://www.opengeospatial.org/standards/kml for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2015-10-22T15:46:04:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC KML 2.3 Standard Schema Added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/wfs/ReadMe.txt#20151013t15">
+<title>OGC WFS 2.0 - Schema updated</title>
+<link>http://schemas.opengis.net/wfs/ReadMe.txt#20151013t15</link>
+<description>The OGC WFS 2.0 schema described in OGC document 09-025r2 has been updated.  Changed the cardinality constraint of ReturnFeatureType to be optional.
+  No version change per the 09-025r2 corrigendum. See http://www.opengeospatial.org/standards/wfs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2015-10-13T15:46:03:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WFS 2.0 Standard Schema Updated</dc:subject>
+</item>
 <item rdf:about="http://schemas.opengis.net/wps/ReadMe.txt#20150422t15">
 <title>OGC Web Processing Service 2.0 Schema Posted</title>
 <link>http://schemas.opengis.net/wps/ReadMe.txt#20150422t15</link>

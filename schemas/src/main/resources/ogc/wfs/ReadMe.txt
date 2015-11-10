@@ -17,6 +17,10 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2015-10-13  Panagiotis (Peter) A. Vretanos
+  * v2.0: Update ReturnFeatureType to be optional.   No version change 
+    per 09-025r2 corrigendum. 
+
 2014-10-02  Panagiotis (Peter) A. Vretanos
   * v2.0: Update examples.  No version change.
 
