@@ -7,7 +7,7 @@
 		schemaLocation="http://schemas.opengis.net/wcs/scaling/1.0/wcsScal.xsd" 
 		node="/xs:schema">
 
-		<jsonix:packageMapping packageName="net.opengis.wcs.scaling.v_1_0" spaceName="WCS_scaling_2_0"/>
+		<jsonix:mapping package="net.opengis.wcs.scaling.v_1_0" name="WCS_Scaling_1_0"/>
 
 	</jaxb:bindings>
 </jaxb:bindings>

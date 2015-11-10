@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>wcs-scaling-v_1_0</artifactId>
 	<packaging>jar</packaging>
-	<name>OGC WCS scaling 1.0</name>
+	<name>OGC WCS Scaling 1.0</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schema-parent</artifactId>
@@ -39,6 +39,22 @@
 								<version>${project.version}</version>
 							</dependencyResource>
 						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>wcs-v_2_0</artifactId>
+								<resource>wcs-v_2_0.jsonix.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>gml-v_3_2_1</artifactId>
+								<resource>iso19139-v_20070417.ignore.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
 					</bindings>
 				</configuration>
 			</plugin>
@@ -49,9 +65,10 @@
 						<phase>process-sources</phase>
 						<configuration>
 							<target>
-								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
+								<!-- TODO -->
+								<!--delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
 								<delete dir="${basedir}/target/generated-sources/xjc/org/isotc211/_2005"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="org*.*"/>
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="org*.*"/-->
 							</target>
 						</configuration>
 						<goals>
@@ -59,6 +76,9 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
