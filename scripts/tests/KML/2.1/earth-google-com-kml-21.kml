@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+2.1 is an extant namespace that appears in many files.
+-->
+<kml xmlns="http://earth.google.com/kml/2.1">
+  <Placemark>
+    <name>Google KML 2.1</name>
+    <Point>
+      <coordinates>-122,37</coordinates>
+    </Point>
+  </Placemark>
+</kml>
