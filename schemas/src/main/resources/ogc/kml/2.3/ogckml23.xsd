@@ -23,9 +23,9 @@
   <import namespace="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"
     schemaLocation="http://docs.oasis-open.org/election/external/xAL.xsd"/>
 
-  <defaultOpenContent mode="interleave">
+  <!--defaultOpenContent mode="interleave">
     <any namespace="##other" processContents="lax"/>
-  </defaultOpenContent>
+  </defaultOpenContent-->
 
   <!-- KML field types (simple content) -->
 
@@ -767,167 +767,167 @@ Specifies the south latitude value in decimal degrees in the interval: -180 ≤ 
     <attribute name="version" type="kml:kmlVersionType" default="2.2"/>
     <anyAttribute namespace="##other" processContents="lax"/>
     <!-- TODO(sean): Make sure these are all the parent elements we care about. -->
-    <assert test="if (.//kml:Track)
+    <!-- assert test="if (.//kml:Track)
       then starts-with(@version,'2.3')
       else true()">
       <annotation>
         <documentation>kml:Track is not allowed in versions of KML prior to 2.3.0.</documentation>
       </annotation>
-    </assert>
-    <assert test="if (.//kml:MultiTrack)
+    </assert-->
+    <!-- assert test="if (.//kml:MultiTrack)
       then starts-with(@version,'2.3')
       else true()">
       <annotation>
         <documentation>kml:MultiTrack is not allowed in versions of KML prior to 2.3.0.</documentation>
       </annotation>
-    </assert>
-    <assert test="if (.//kml:Tour)
+    </assert-->
+    <!-- assert test="if (.//kml:Tour)
       then starts-with(@version,'2.3')
       else true()">
       <annotation>
         <documentation>kml:Tour is not allowed in versions of KML prior to 2.3.0.</documentation>
       </annotation>
-    </assert>
-    <assert test="if (.//kml:LatLonQuad)
+    </assert-->
+    <!-- assert test="if (.//kml:LatLonQuad)
       then starts-with(@version,'2.3')
       else true()">
       <annotation>
         <documentation>kml:LatLonQuad is not allowed in versions of KML prior to 2.3.0.</documentation>
       </annotation>
-    </assert>
-    <assert test="if (.//kml:seaFloorAltitudeMode)
+    </assert-->
+    <!-- assert test="if (.//kml:seaFloorAltitudeMode)
       then starts-with(@version,'2.3')
       else true()">
       <annotation>
         <documentation>kml:seaFloorAltitudeMode is not allowed in versions of KML prior to 2.3.0.</documentation>
       </annotation>
-    </assert>
-    <assert test="if (.//kml:altitudeOffset)
+    </assert-->
+    <!-- assert test="if (.//kml:altitudeOffset)
       then starts-with(@version,'2.3')
       else true()">
       <annotation>
         <documentation>kml:altitudeOffset is not allowed in versions of KML prior to 2.3.0.</documentation>
       </annotation>
-    </assert>
-    <assert test="if (.//kml:balloonVisibility)
+    </assert-->
+    <!-- assert test="if (.//kml:balloonVisibility)
       then starts-with(@version,'2.3')
       else true()">
       <annotation>
         <documentation>kml:balloonVisibility is not allowed in versions of KML prior to 2.3.0.</documentation>
       </annotation>
-    </assert>
-    <assert test="if (.//kml:Camera/kml:TimeStamp)
+    </assert-->
+    <!-- assert test="if (.//kml:Camera/kml:TimeStamp)
       then starts-with(@version,'2.3')
       else true()">
       <annotation>
         <documentation>kml:TimeStamp is not a valid child of kml:Camera in versions of KML prior to 2.3.0.</documentation>
       </annotation>
-    </assert>
-    <assert test="if (.//kml:Camera/kml:TimeSpan)
+    </assert-->
+    <!-- assert test="if (.//kml:Camera/kml:TimeSpan)
       then starts-with(@version,'2.3')
       else true()">
       <annotation>
         <documentation>kml:TimeSpan is not a valid child of kml:Camera in versions of KML prior to 2.3.0.</documentation>
       </annotation>
-    </assert>
-    <assert test="if (.//kml:LookAt/kml:TimeStamp)
+    </assert-->
+    <!-- assert test="if (.//kml:LookAt/kml:TimeStamp)
       then starts-with(@version,'2.3')
       else true()">
       <annotation>
         <documentation>kml:TimeStamp is not a valid child of kml:LookAt in versions of KML prior to 2.3.0.</documentation>
       </annotation>
-    </assert>
-    <assert test="if (.//kml:LookAt/kml:TimeSpan)
+    </assert-->
+    <!-- assert test="if (.//kml:LookAt/kml:TimeSpan)
       then starts-with(@version,'2.3')
       else true()">
       <annotation>
         <documentation>kml:LookAt is not a valid child of kml:LookAt in versions of KML prior to 2.3.0.</documentation>
       </annotation>
-    </assert>
-   <assert test="if (.//kml:SimpleArrayField)
+    </assert-->
+   <!-- assert test="if (.//kml:SimpleArrayField)
     then starts-with(@version,'2.3')
     else true()">
     <annotation>
      <documentation>kml:SimpleArrayField is not allowed in versions of KML prior to 2.3.0.</documentation>
     </annotation>
-   </assert>   
-   <assert test="if (.//kml:SimpleField/@uom)
+   </assert-->   
+   <!-- assert test="if (.//kml:SimpleField/@uom)
     then starts-with(@version,'2.3')
     else true()">
     <annotation>
      <documentation>Attribute 'uom' is not a valid child of kml:SimpleField in versions of KML prior to 2.3.0.</documentation>
     </annotation>
-   </assert>   
-   <assert test="if (.//kml:Data/@uom)
+   </assert-->   
+   <!-- assert test="if (.//kml:Data/@uom)
     then starts-with(@version,'2.3')
     else true()">
     <annotation>
      <documentation>Attribute 'uom' is not a valid child of kml:Data in versions of KML prior to 2.3.0.</documentation>
     </annotation>
-   </assert>   
-   <assert test="if (.//kml:Camera/kml:horizFov)
+   </assert-->   
+   <!-- assert test="if (.//kml:Camera/kml:horizFov)
     then starts-with(@version,'2.3')
     else true()">
     <annotation>
      <documentation>kml:horizFov is not a valid child of kml:Camera in versions of KML prior to 2.3.0.</documentation>
     </annotation>
-   </assert>   
-   <assert test="if (.//kml:LookAt/kml:horizFov)
+   </assert-->   
+   <!-- assert test="if (.//kml:LookAt/kml:horizFov)
     then starts-with(@version,'2.3')
     else true()">
     <annotation>
      <documentation>kml:horizFov is not a valid child of kml:LookAt in versions of KML prior to 2.3.0.</documentation>
     </annotation>
-   </assert>   
-   <assert test="if (.//kml:Create/kml:MultiGeometry)
+   </assert-->   
+   <!-- assert test="if (.//kml:Create/kml:MultiGeometry)
     then starts-with(@version,'2.3')
     else true()">
     <annotation>
      <documentation>kml:MultiGeometry is not a valid child of kml:Create in versions of KML prior to 2.3.0.</documentation>
     </annotation>
-   </assert>   
-   <assert test="if (.//kml:Delete/kml:MultiGeometry)
+   </assert-->   
+   <!-- assert test="if (.//kml:Delete/kml:MultiGeometry)
     then starts-with(@version,'2.3')
     else true()">
     <annotation>
      <documentation>kml:MultiGeometry is not a valid child of kml:Delete in versions of KML prior to 2.3.0.</documentation>
     </annotation>
-   </assert>   
-   <assert test="if (.//kml:Delete/kml:Point)
+   </assert-->   
+   <!-- assert test="if (.//kml:Delete/kml:Point)
     then starts-with(@version,'2.3')
     else true()">
     <annotation>
      <documentation>kml:Point is not a valid child of kml:Delete in versions of KML prior to 2.3.0.</documentation>
     </annotation>
-   </assert>   
-   <assert test="if (.//kml:Delete/kml:LineString)
+   </assert-->   
+   <!-- assert test="if (.//kml:Delete/kml:LineString)
     then starts-with(@version,'2.3')
     else true()">
     <annotation>
      <documentation>kml:LineString is not a valid child of kml:Delete in versions of KML prior to 2.3.0.</documentation>
     </annotation>
-   </assert>   
-   <assert test="if (.//kml:Delete/kml:LinearRing)
+   </assert-->   
+   <!-- assert test="if (.//kml:Delete/kml:LinearRing)
     then starts-with(@version,'2.3')
     else true()">
     <annotation>
      <documentation>kml:LinearRing is not a valid child of kml:Delete in versions of KML prior to 2.3.0.</documentation>
     </annotation>
-   </assert>   
-   <assert test="if (.//kml:Delete/kml:Polygon)
+   </assert-->   
+   <!-- assert test="if (.//kml:Delete/kml:Polygon)
     then starts-with(@version,'2.3')
     else true()">
     <annotation>
      <documentation>kml:Polygon is not a valid child of kml:Delete in versions of KML prior to 2.3.0.</documentation>
     </annotation>
-   </assert>   
-   <assert test="if (.//kml:Delete/kml:Model)
+   </assert-->   
+   <!-- assert test="if (.//kml:Delete/kml:Model)
     then starts-with(@version,'2.3')
     else true()">
     <annotation>
      <documentation>kml:Model is not a valid child of kml:Delete in versions of KML prior to 2.3.0.</documentation>
     </annotation>
-   </assert>   
+   </assert-->   
   </complexType>
   <element name="KmlSimpleExtensionGroup" abstract="true" type="anySimpleType"/>
   <element name="KmlObjectExtensionGroup" abstract="true"
@@ -1105,16 +1105,16 @@ Specifies the south latitude value in decimal degrees in the interval: -180 ≤ 
           <element ref="kml:RegionObjectExtensionGroup" minOccurs="0"
             maxOccurs="unbounded"/>
         </all>
-        <assert test="not(./kml:LatLonBox) ">
+        <!-- assert test="not(./kml:LatLonBox) ">
           <annotation>
             <documentation>kml:LatLonBox is prohibited in kml:Region. Use kml:LatLonAltBox instead.</documentation>
           </annotation>
-        </assert>
-        <assert test="not(./kml:LatLonQuad) ">
+        </assert-->
+        <!-- assert test="not(./kml:LatLonQuad) ">
           <annotation>
             <documentation>kml:LatLonQuad is prohibited in kml:Region. Use kml:LatLonAltBox instead.</documentation>
           </annotation>
-        </assert>
+        </assert-->
       </extension>
     </complexContent>
   </complexType>
@@ -1378,16 +1378,16 @@ Specifies the south latitude value in decimal degrees in the interval: -180 ≤ 
           <element ref="kml:TrackObjectExtensionGroup" minOccurs="0"
             maxOccurs="unbounded"/>
         </all>
-        <assert test="count(./kml:when) = count(./kml:coord)">
+        <!-- assert test="count(./kml:when) = count(./kml:coord)">
           <annotation>
             <documentation>kml:Track must have an equal number of kml:when and kml:coord elements.</documentation>
           </annotation>
-        </assert>
-        <assert test="if(./kml:angles) then count(./kml:angles) = count(./kml:when) else true()">
+        </assert-->
+        <!-- assert test="if(./kml:angles) then count(./kml:angles) = count(./kml:when) else true()">
           <annotation>
             <documentation>If kml:angles appears in kml:Track there must be an equal number of kml:angles and kml:when elements.</documentation>
           </annotation>
-        </assert>
+        </assert-->
       </extension>
     </complexContent>
   </complexType>
@@ -1540,11 +1540,11 @@ Specifies the south latitude value in decimal degrees in the interval: -180 ≤ 
           <element ref="kml:GroundOverlayObjectExtensionGroup" minOccurs="0"
             maxOccurs="unbounded"/>
         </all>
-        <assert test="not(./kml:LatLonAltBox)">
+        <!-- assert test="not(./kml:LatLonAltBox)">
           <annotation>
             <documentation>kml:LatLonAltBox is prohibited in kml:GroundOverlay. Use kml:LatLonBox or kml:LatLonQuad instead.</documentation>
           </annotation>
-        </assert>
+        </assert-->
       </extension>
     </complexContent>
   </complexType>
