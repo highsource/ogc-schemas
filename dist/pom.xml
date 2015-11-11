@@ -38,7 +38,9 @@
 		<dependency><artifactId>ic-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>ic-v_2_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>kml-v_2_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>kml-v_2_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>kml-v_2_3</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
 		<dependency><artifactId>ols-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>ols-v_1_2</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>

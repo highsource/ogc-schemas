@@ -7,3 +7,4 @@ REWRITE_SYSTEM "http://bp.schemas.opengis.net" "maven:org.jvnet.ogc:ogc-schemas:
 REWRITE_SYSTEM "http://docs.oasis-open.org" "maven:org.jvnet.ogc:ogc-schemas:jar::!/oasis"
 REWRITE_SYSTEM "http://schemas.opengis.net/kml/2.2.0/atom-author-link.xsd" "maven:org.hisrc.w3c:w3c-schemas:jar::!/w3c/2005/atom-author-link.xsd"
 REWRITE_SYSTEM "http://www.isotc211.org" "maven:org.jvnet.ogc:ogc-schemas:jar::!/isotc211"
+REWRITE_SYSTEM "https://developers.google.com" "maven:org.jvnet.ogc:ogc-schemas:jar::!/developers.google.com"
