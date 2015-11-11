@@ -1,0 +1,42 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/kml/2.3/ogckml23.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.kml.v_2_3"/>
+		</jaxb:schemaBindings>
+		<jaxb:bindings node="xs:element[@name='scale']">
+			<jaxb:factoryMethod name="AbstractScaleElement"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:element[@name='snippet']">
+			<jaxb:factoryMethod name="AbstractSnippetElement"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:element[@name='Snippet']">
+			<jaxb:factoryMethod name="ComplexSnippet"/>
+		</jaxb:bindings>
+		<!--jaxb:bindings node="xs:complexType[@name='AbstractFeatureType']//xs:element[@ref='kml:Snippet']">
+			<jaxb:property name="ComplexSnippet"/>
+		</jaxb:bindings-->
+		<jaxb:bindings node="xs:complexType[@name='AbstractFeatureType']//xs:element[@ref='atom:link']">
+			<jaxb:property name="AtomLink"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='AbstractFeatureType']//xs:element[@ref='atom:author']">
+			<jaxb:property name="AtomAuthor"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+	<!-- jaxb:bindings schemaLocation="http://schemas.opengis.net/kml/2.2.0/atom-author-link.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.hisrc.w3c.atom.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings-->
+	<!--jaxb:bindings schemaLocation="http://docs.oasis-open.org/election/external/xAL.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.hisrc.w3c.oasis.xal.v_2_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings-->
+</jaxb:bindings>
