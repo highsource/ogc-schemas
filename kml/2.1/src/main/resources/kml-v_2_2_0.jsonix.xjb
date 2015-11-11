@@ -1,0 +1,18 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:jsonix="http://jsonix.highsource.org/customizations"
+	jaxb:extensionBindingPrefixes="jsonix">
+
+	<jaxb:bindings schemaLocation="https://developers.google.com/kml/schema/kml21.xsd" 
+		node="/xs:schema">
+		<jsonix:packageMapping packageName="net.opengis.kml.v_2_1" spaceName="KML_2_1"/>
+	</jaxb:bindings>
+	<!--jaxb:bindings schemaLocation="http://schemas.opengis.net/kml/2.2.0/atom-author-link.xsd" 
+		node="/xs:schema">
+		<jsonix:packageMapping packageName="org.hisrc.w3c.atom.v_1_0" spaceName="Atom_1_0"/>
+	</jaxb:bindings-->
+	<!--jaxb:bindings schemaLocation="http://docs.oasis-open.org/election/external/xAL.xsd" 
+		node="/xs:schema">
+		<jsonix:packageMapping packageName="org.hisrc.w3c.oasis.xal.v_2_0" spaceName="xAL_2_0"/>
+	</jaxb:bindings-->
+</jaxb:bindings>
