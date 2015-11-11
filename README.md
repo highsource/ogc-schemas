@@ -60,8 +60,9 @@ Supports the following schemas:
 * `ISO19139_GSR_20070417`
 * `ISO19139_GSS_20070417`
 * `ISO19139_GTS_20070417`
+* `KML_2_1`
 * `KML_2_2_0`
-  * `Atom_1_0`
+* `KML_2_3`
 * `OLS_1_1_0`
 * `OLS_1_2`
 * `OLS_NAV_1_3`
