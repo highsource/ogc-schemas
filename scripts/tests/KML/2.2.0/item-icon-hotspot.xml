@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+1) 3d view has its own "paddle" icon
+2) icon is at an absolute network URL
+3) paddle icon anchors to the ground at the end of its tail
+4) list view has its own square icon
+-->
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Style id="go-paddle">
+      <IconStyle>
+        <!-- Custom icon at a network URL (green, "go" paddle) -->
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/go.png</href>
+        </Icon>
+        <!-- This point is known to be the tail of go.png -->
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction" />
+      </IconStyle>
+      <ListStyle>
+        <!-- Custom icon at a network URL (green, "go" square) -->
+        <ItemIcon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/go-lv.png</href>
+        </ItemIcon>
+      </ListStyle>
+    </Style>
+    <Placemark>
+      <name>3d paddle, list square</name>
+      <Snippet>Over here in the list view we have a square</Snippet>
+      <description>Out here on Earth we have a paddle</description>
+      <styleUrl>#go-paddle</styleUrl>
+      <Point>
+        <coordinates>-120,34</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

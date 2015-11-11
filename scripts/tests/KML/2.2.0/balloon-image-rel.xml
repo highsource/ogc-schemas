@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Balloon with image</name>
+    <Placemark>
+      <name>Image in balloon</name>
+      <description>
+        <![CDATA[
+        Here is an image:
+        <img src="images/googleearth.gif"/>
+        ]]>
+      </description>
+      <Point>
+        <coordinates>-121.22,37.44</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Style id="coo">
+      <ListStyle>
+        <listItemType>checkOffOnly</listItemType>
+      </ListStyle>
+    </Style>
+    
+    <Folder>
+      <name>Off only</name>
+      <styleUrl>#coo</styleUrl>
+      
+      <Placemark>
+        <name>A</name>
+        <Point>
+          <coordinates>-121.9921875,37.44140625</coordinates>
+        </Point>
+      </Placemark>
+      
+      <Placemark>
+        <name>B</name>
+        <Point>
+          <coordinates>-121.9921875,37.265625</coordinates>
+        </Point>
+      </Placemark>
+      
+      <Placemark>
+        <name>C</name>
+        <Point>
+          <coordinates>-121.16796875,37.44140625</coordinates>
+        </Point>
+      </Placemark>
+      
+      <Placemark>
+        <name>D</name>
+        <Point>
+          <coordinates>-121.16796875,37.265625</coordinates>
+        </Point>
+      </Placemark>
+      
+    </Folder>
+  </Document>
+</kml>

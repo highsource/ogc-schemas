@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- radio between NetworkLink hierarchies with hidden children -->
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Radio child hierarchies</name>
+    <!-- These are shared and do not directly affect the Document -->
+    <Style id="hide-children">
+      <ListStyle>
+        <listItemType>checkHideChildren</listItemType>
+      </ListStyle>
+    </Style>
+    <Style id="radio-folder">
+      <ListStyle>
+        <listItemType>radioFolder</listItemType>
+      </ListStyle>
+    </Style>
+    <!-- styleUrl required to style Document itself -->
+    <styleUrl>#radio-folder</styleUrl>
+    <!-- This Document radios between these 3 Features -->
+    <!-- Note use of visibility to control default radio state -->
+    <NetworkLink>
+      <name>More stuff</name>
+      <visibility>0</visibility>
+      <styleUrl>#hide-children</styleUrl>
+      <Link>
+        <href>more-stuff.kml</href>
+      </Link>
+    </NetworkLink>
+    <NetworkLink>
+      <name>Other stuff</name>
+      <visibility>0</visibility>
+      <styleUrl>#hide-children</styleUrl>
+      <Link>
+        <href>other-stuff.kml</href>
+      </Link>
+    </NetworkLink>
+    <Placemark>
+      <name>No stuff</name>
+      <visibility>1</visibility>
+    </Placemark>
+  </Document>
+</kml>
