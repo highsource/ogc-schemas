@@ -71,6 +71,15 @@ Supports the following schemas:
 * `OLS_NAV_1_3`
 * `OM_1_0_0`
 * `OM_2_0`
+* `OMEO_ALT_2_0`
+* `OMEO_ATM_2_0`
+* `OMEO_EOP_2_0`
+* `OMEO_LMB_2_0`
+* `OMEO_OPT_2_0`
+* `OMEO_SAR_2_0`
+* `OMEO_SEN1_2_0`
+* `OMEO_ALT_2_0`
+* `OMEO_SSP_2_0`
 * `OWC_0_3_1`
 * `OWS_1_0_0`
 * `OWS_1_1_0`
