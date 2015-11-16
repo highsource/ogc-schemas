@@ -1,0 +1,30 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/wcs/wcseo/1.0/wcsEOAll.xsd" 
+		node="/xs:schema">
+
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.wcs.wcseo.v_1_0"/>
+		</jaxb:schemaBindings>
+
+	</jaxb:bindings>
+
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/wcs/wcseo/1.0/wcsEOCommon.xsd" 
+		node="/xs:schema">
+
+		<jaxb:bindings node="xs:element[@name='rectifiedStitchedMosaic']">
+			<jaxb:class name="RectifiedStitchedMosaicCommonElement"/>
+		</jaxb:bindings>
+
+		<jaxb:bindings node="xs:element[@name='referenceableStitchedMosaic']">
+			<jaxb:class name="ReferenceableStitchedMosaicCommonElement"/>
+		</jaxb:bindings>
+
+	</jaxb:bindings>
+	
+</jaxb:bindings>

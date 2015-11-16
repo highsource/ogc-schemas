@@ -1,0 +1,67 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.jvnet.ogc:wcs-scaling-v_1_0:jar:2.5.2-SNAPSHOT
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-antrun-plugin @ line 85, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] Using the builder org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder with a thread count of 1
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building OGC WCS Scaling 1.0 2.5.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ wcs-scaling-v_1_0 ---
+[INFO] Deleting C:\Projects\workspaces\ogc-ng\ogc-schemas\wcs\wcseo\1.0\target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ wcs-scaling-v_1_0 ---
+[INFO] 
+[INFO] --- maven-jaxb2-plugin:0.13.1:generate (xjc) @ wcs-scaling-v_1_0 ---
+[INFO] Up-to-date check for source resources [[jar:file:/C:/Repository/org/jvnet/ogc/ogc-schemas/2.5.2-SNAPSHOT/ogc-schemas-2.5.2-SNAPSHOT.jar!/ogc/catalog.cat, jar:file:/C:/Repository/org/jvnet/ogc/ogc-schemas/2.5.2-SNAPSHOT/ogc-schemas-2.5.2-SNAPSHOT.jar!/geoserver/catalog.cat, jar:file:/C:/Repository/org/hisrc/w3c/w3c-schemas/1.3.1/w3c-schemas-1.3.1.jar!/w3c/catalog.cat, jar:file:/C:/Repository/org/jvnet/ogc/ogc-schemas/2.5.2-SNAPSHOT/ogc-schemas-2.5.2-SNAPSHOT.jar!/ogc/wcs/wcseo/1.0/wcsEOAll.xsd, file:/C:/Projects/workspaces/ogc-ng/ogc-schemas/wcs/wcseo/1.0/src/main/resources/wcs-wcseo-v_1_0.jsonix.xjb, file:/C:/Projects/workspaces/ogc-ng/ogc-schemas/wcs/wcseo/1.0/src/main/resources/wcs-wcseo-v_1_0.xjb, jar:file:/C:/Repository/org/jvnet/ogc/ogc-schemas/2.5.2-SNAPSHOT/ogc-schemas-2.5.2-SNAPSHOT.jar!/ogc/globalBindings.xjb, jar:file:/C:/Repository/org/jvnet/ogc/wcs-v_2_0/2.5.2-SNAPSHOT/wcs-v_2_0-2.5.2-SNAPSHOT.jar!/wcs-v_2_0.jsonix.xjb, file:/C:/Projects/workspaces/ogc-ng/ogc-schemas/wcs/wcseo/1.0/pom.xml]] and target resources [[]].
+[INFO] Sources are not up-to-date, XJC will be executed.
+[WARNING] The [packageMapping] customization is deprecated, please use the [mapping] customization in the future.
+[INFO] Episode file [C:\Projects\workspaces\ogc-ng\ogc-schemas\wcs\wcseo\1.0\target\generated-sources\xjc\META-INF\sun-jaxb.episode] was augmented with if-exists="true" attributes.
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (default) @ wcs-scaling-v_1_0 ---
+[INFO] Executing tasks
+
+main:
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:list (list-dependencies) @ wcs-scaling-v_1_0 ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:add-resource (add-resource) @ wcs-scaling-v_1_0 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ wcs-scaling-v_1_0 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ wcs-scaling-v_1_0 ---
+[INFO] Compiling 385 source files to C:\Projects\workspaces\ogc-ng\ogc-schemas\wcs\wcseo\1.0\target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] C:\Projects\workspaces\ogc-ng\ogc-schemas\wcs\wcseo\1.0\target\generated-sources\xjc\net\opengis\eop\_2\EarthObservationType.java:[86,48] error: getMetaDataProperty() in EarthObservationType cannot override getMetaDataProperty() in AbstractGMLType
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 28.258 s
+[INFO] Finished at: 2015-11-15T20:04:07+01:00
+[INFO] Final Memory: 30M/799M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.5.1:compile (default-compile) on project wcs-scaling-v_1_0: Compilation failure
+[ERROR] C:\Projects\workspaces\ogc-ng\ogc-schemas\wcs\wcseo\1.0\target\generated-sources\xjc\net\opengis\eop\_2\EarthObservationType.java:[86,48] error: getMetaDataProperty() in EarthObservationType cannot override getMetaDataProperty() in AbstractGMLType
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
