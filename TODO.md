@@ -61,6 +61,7 @@
 * wcs/processing/2.0
 * wcs/range-subsetting/1.0
 * wcs/scaling/1.0
+* wcs/wcseo/1.0
 * wfs/1.0.0
 * wfs/1.1.0
 * wfs/2.0
@@ -85,7 +86,6 @@
 * tjs/1.0
 * tml/1.0.0
 * wcps/1.0
-* wcs/1.1.0
 * wcs/wcseo/1.0
 * wcst/1.1
 
@@ -98,3 +98,4 @@
 * opensearchgeo/1.0 - RNC, not XSDs
 * sf/1.0 - RDF, no schema
 * owc/1.0 / RNC, not XSDs
+* wcs/1.1.0 - deprecated

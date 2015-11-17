@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wcseo:EOCoverageSetDescription numberMatched="4" numberReturned="4" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:wcseo="http://www.opengis.net/wcs/wcseo/1.0" xmlns:eop="http://www.opengis.net/eop/2.0" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wcs/wcseo/1.0 http://schemas.opengis.net/wcs/wcseo/1.0/wcsEOAll.xsd">
+  <wcs:CoverageDescriptions>
+    <wcs:CoverageDescription gml:id="someEOCoverage1">
+      <gml:boundedBy>
+        <gml:Envelope axisLabels="y x" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/3035" uomLabels="m m">
+          <gml:lowerCorner>1023659.818 4426066.922</gml:lowerCorner>
+          <gml:upperCorner>2743981.154 6052990.778</gml:upperCorner>
+        </gml:Envelope>
+      </gml:boundedBy>
+      <wcs:CoverageId>someEOCoverage1</wcs:CoverageId>
+      <gmlcov:metadata>
+        <gmlcov:Extension>
+          <wcseo:EOMetadata>
+            <eop:EarthObservation gml:id="eop_someEOCoverage1">
+              <om:phenomenonTime>
+                <gml:TimePeriod gml:id="tp_someEOCoverage1">
+                  <gml:beginPosition>2008-03-13T10:00:06.000</gml:beginPosition>
+                  <gml:endPosition>2008-03-13T10:20:26.000</gml:endPosition>
+                </gml:TimePeriod>
+              </om:phenomenonTime>
+              <om:resultTime>
+                <!-- repeat of archiving date? -->
+                <gml:TimeInstant gml:id="archivingdate_someEOCoverage1">
+                  <gml:timePosition>2008-03-13T11:02:47.999</gml:timePosition>
+                </gml:TimeInstant>
+              </om:resultTime>
+              <om:procedure />
+              <om:observedProperty />
+              <om:featureOfInterest>
+                <eop:Footprint gml:id="footprint_someEOCoverage1">
+                  <eop:multiExtentOf>
+                    <gml:MultiSurface gml:id="multisurface_someEOCoverage1" srsName="EPSG:4326">
+                      <gml:surfaceMember>
+                        <gml:Polygon gml:id="polygon_someEOCoverage1">
+                          <gml:exterior>
+                            <gml:LinearRing>
+                              <gml:posList>46.216558117161831 14.322575965570632 46.152076035932481 14.889221273108005 46.044474823463794 15.714163344615594 45.874384258110481 16.939196215846479 45.707637144588894 18.041167934827204 45.437660686504373 19.696621277900043 45.188708312816836 21.061979138012749 44.985502338431836 22.146529676798433 44.817601054763827 22.972838987446604 44.548719301064217 24.216794365275184 44.3530257779924 25.078471192994467 44.22240050905593 25.619454330500787 43.869452681903326 27.09669054643166 43.648677594634755 27.968590771844294 42.914276071713552 27.608908709842403 41.406744994495533 26.904154140811876 39.890886830729123 26.231198447937022 38.857425138443418 25.792810051163016 37.327455393788711 25.159378338866166 35.916979840274777 24.607823210234383 34.659955537947333 24.126821684115889 33.485864484245845 23.695476694402991 32.269745756399814 23.26447084501703 32.597366402196513 21.93771962779514 32.937415353394336 20.490341506430831 33.329502252603099 18.720985177579344 33.615994276288191 17.307239088316752 33.851259307900314 16.11996944899975 34.086158876902616 14.837090472242945 34.286728058386622 13.6927083205932 34.450209004129491 12.702328609369403 34.61257554817076 11.648344319329102 35.404301926952847 11.818952124495301 36.49644381567186 12.060892168743793 37.456615498759454 12.273681516152488 38.338767896663171 12.465752226451535 39.179619054397598 12.658488985584443 40.085426060828823 12.861885998466006 41.224754298927756 13.125704236676295 41.773101066725957 13.249297855403793 42.58703007421078 13.442093948019213 43.450338489759865 13.64731130090046 43.879741506184544 13.749195683701547 44.515959757778518 13.904244341338821 45.247153632802366 14.076176234357471 45.812576564427765 14.215619939492056 46.216558117161831 14.322575965570632</gml:posList>
+                            </gml:LinearRing>
+                          </gml:exterior>
+                        </gml:Polygon>
+                      </gml:surfaceMember>
+                    </gml:MultiSurface>
+                  </eop:multiExtentOf>
+                </eop:Footprint>
+              </om:featureOfInterest>
+              <!-- TODO om:result /-->
+              <eop:metaDataProperty>
+                <eop:EarthObservationMetaData>
+                  <eop:identifier>someEOCoverage1</eop:identifier>
+                  <eop:acquisitionType>NOMINAL</eop:acquisitionType>
+                  <eop:status>ARCHIVED</eop:status>
+                </eop:EarthObservationMetaData>
+              </eop:metaDataProperty>
+            </eop:EarthObservation>
+          </wcseo:EOMetadata>
+        </gmlcov:Extension>
+      </gmlcov:metadata>
+      <gml:domainSet>
+        <gml:RectifiedGrid dimension="2" gml:id="someEOCoverage1_grid">
+          <gml:limits>
+            <gml:GridEnvelope>
+              <gml:low>0 0</gml:low>
+              <gml:high>539 570</gml:high>
+            </gml:GridEnvelope>
+          </gml:limits>
+          <gml:axisLabels>y x</gml:axisLabels>
+          <gml:origin>
+            <gml:Point gml:id="grid_origin_someEOCoverage1" srsName="http://www.opengis.net/def/crs/EPSG/0/3035">
+              <gml:pos>2743981.154000 4426066.922000</gml:pos>
+            </gml:Point>
+          </gml:origin>
+          <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/3035">0 3012.821956</gml:offsetVector>
+          <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/3035">-3012.821954 0</gml:offsetVector>
+        </gml:RectifiedGrid>
+      </gml:domainSet>
+      <gmlcov:rangeType>
+        <swe:DataRecord>
+          <swe:field name="gray">
+            <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/Radiance">
+              <swe:description>Gray Channel</swe:description>
+              <swe:nilValues>
+                <swe:NilValues>
+                  <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/unknown">0</swe:nilValue>
+                </swe:NilValues>
+              </swe:nilValues>
+              <swe:uom code="W.m-2.sr-1.nm-1" />
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:interval>0 255</swe:interval>
+                  <swe:significantFigures>3</swe:significantFigures>
+                </swe:AllowedValues>
+              </swe:constraint>
+            </swe:Quantity>
+          </swe:field>
+        </swe:DataRecord>
+      </gmlcov:rangeType>
+      <wcs:ServiceParameters>
+        <wcs:CoverageSubtype>RectifiedDataset</wcs:CoverageSubtype>
+        <wcs:CoverageSubtypeParent>
+          <wcs:CoverageSubtype>RectifiedGridCoverage</wcs:CoverageSubtype>
+        </wcs:CoverageSubtypeParent>
+        <wcs:nativeFormat>image/tiff</wcs:nativeFormat>
+      </wcs:ServiceParameters>
+    </wcs:CoverageDescription>
+    <!-- Example using xlink to reference EOMetadata -->
+    <wcs:CoverageDescription gml:id="someEOCoverage2">
+      <gml:boundedBy>
+        <gml:Envelope axisLabels="y x" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/3035" uomLabels="m m">
+          <gml:lowerCorner>1023659.818 4426066.922</gml:lowerCorner>
+          <gml:upperCorner>2743981.154 6052990.778</gml:upperCorner>
+        </gml:Envelope>
+      </gml:boundedBy>
+      <wcs:CoverageId>someEOCoverage2</wcs:CoverageId>
+      <gmlcov:metadata>
+        <gmlcov:Extension>
+          <wcseo:EOMetadata>
+            <ows:Reference xlink:href="http://www.someCatalogue.org/eop-metadata-from-someEOCoverage2" />
+          </wcseo:EOMetadata>
+        </gmlcov:Extension>
+      </gmlcov:metadata>
+      <gml:domainSet>
+        <gml:RectifiedGrid dimension="2" gml:id="someEOCoverage2_grid">
+          <gml:limits>
+            <gml:GridEnvelope>
+              <gml:low>0 0</gml:low>
+              <gml:high>539 570</gml:high>
+            </gml:GridEnvelope>
+          </gml:limits>
+          <gml:axisLabels>y x</gml:axisLabels>
+          <gml:origin>
+            <gml:Point gml:id="grid_origin_someEOCoverage2" srsName="http://www.opengis.net/def/crs/EPSG/0/3035">
+              <gml:pos>2743981.154000 4426066.922000</gml:pos>
+            </gml:Point>
+          </gml:origin>
+          <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/3035">0 3012.821956</gml:offsetVector>
+          <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/3035">-3012.821954 0</gml:offsetVector>
+        </gml:RectifiedGrid>
+      </gml:domainSet>
+      <gmlcov:rangeType>
+        <swe:DataRecord>
+          <swe:field name="gray">
+            <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/Radiance">
+              <swe:description>Gray Channel</swe:description>
+              <swe:nilValues>
+                <swe:NilValues>
+                  <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/unknown">0</swe:nilValue>
+                </swe:NilValues>
+              </swe:nilValues>
+              <swe:uom code="W.m-2.sr-1.nm-1" />
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:interval>0 255</swe:interval>
+                  <swe:significantFigures>3</swe:significantFigures>
+                </swe:AllowedValues>
+              </swe:constraint>
+            </swe:Quantity>
+          </swe:field>
+        </swe:DataRecord>
+      </gmlcov:rangeType>
+      <wcs:ServiceParameters>
+        <wcs:CoverageSubtype>RectifiedDataset</wcs:CoverageSubtype>
+        <wcs:CoverageSubtypeParent>
+          <wcs:CoverageSubtype>RectifiedGridCoverage</wcs:CoverageSubtype>
+        </wcs:CoverageSubtypeParent>
+        <wcs:nativeFormat>image/tiff</wcs:nativeFormat>
+      </wcs:ServiceParameters>
+    </wcs:CoverageDescription>
+  </wcs:CoverageDescriptions>
+  <wcseo:DatasetSeriesDescriptions>
+    <!-- DatasetSeriesDescription with Footprint -->
+    <wcseo:DatasetSeriesDescription gml:id="someDatasetSeries1">
+      <gml:boundedBy>
+        <gml:Envelope axisLabels="lat long" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" uomLabels="deg deg">
+          <gml:lowerCorner>32.08007800 -4.04296900</gml:lowerCorner>
+          <gml:upperCorner>45.17578100 33.13476600</gml:upperCorner>
+        </gml:Envelope>
+      </gml:boundedBy>
+      <wcseo:DatasetSeriesId>someDatasetSeries1</wcseo:DatasetSeriesId>
+      <gml:TimePeriod gml:id="someDatasetSeries1_timeperiod">
+        <gml:beginPosition>2008-03-13T00:00:00.000</gml:beginPosition>
+        <gml:endPosition>2008-03-13T23:59:59.999</gml:endPosition>
+      </gml:TimePeriod>
+      <eop:Footprint gml:id="footprint_someDatasetSeries1">
+        <eop:multiExtentOf>
+          <gml:MultiSurface gml:id="multisurface_someDatasetSeries1" srsName="EPSG:4326">
+            <gml:surfaceMembers>
+              <gml:Polygon gml:id="polygon_someDatasetSeries1">
+                <gml:exterior>
+                  <gml:LinearRing>
+                    <gml:posList>43.516667 2.1025 43.381667 2.861667 42.862778 2.65 42.996389 1.896944 43.516667 2.1025</gml:posList>
+                  </gml:LinearRing>
+                </gml:exterior>
+              </gml:Polygon>
+            </gml:surfaceMembers>
+          </gml:MultiSurface>
+        </eop:multiExtentOf>
+      </eop:Footprint>
+      <wcseo:ServiceParameters>
+        <wcseo:rectifiedDataset>
+          <wcs:CoverageId>someEOCoverage1</wcs:CoverageId>
+        </wcseo:rectifiedDataset>
+        <wcseo:referenceableDataset>
+          <ows:Reference xlink:href="#someEOCoverage2" />
+        </wcseo:referenceableDataset>
+        <wcseo:rectifiedStitchedMosaic>
+          <wcs:CoverageId>someStitchedMosaic1</wcs:CoverageId>
+        </wcseo:rectifiedStitchedMosaic>
+        <wcseo:referenceableStitchedMosaic>
+          <wcs:CoverageId>someStitchedMosaic2</wcs:CoverageId>
+        </wcseo:referenceableStitchedMosaic>
+        <wcseo:datasetSeries>
+          <ows:Reference xlink:href="#someDatasetSeries2" />
+        </wcseo:datasetSeries>
+      </wcseo:ServiceParameters>
+    </wcseo:DatasetSeriesDescription>
+    <!-- DatasetSeriesDescription without Footprint and ServiceParameters -->
+    <wcseo:DatasetSeriesDescription gml:id="someDatasetSeries2">
+      <gml:boundedBy>
+        <gml:Envelope axisLabels="lat long" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" uomLabels="deg deg">
+          <gml:lowerCorner>32.08007800 -4.04296900</gml:lowerCorner>
+          <gml:upperCorner>45.17578100 33.13476600</gml:upperCorner>
+        </gml:Envelope>
+      </gml:boundedBy>
+      <wcseo:DatasetSeriesId>someDatasetSeries2</wcseo:DatasetSeriesId>
+      <gml:TimePeriod gml:id="someDatasetSeries2_timeperiod">
+        <gml:beginPosition>2008-03-13T00:00:00.000</gml:beginPosition>
+        <gml:endPosition>2008-03-13T23:59:59.999</gml:endPosition>
+      </gml:TimePeriod>
+    </wcseo:DatasetSeriesDescription>
+  </wcseo:DatasetSeriesDescriptions>
+</wcseo:EOCoverageSetDescription>

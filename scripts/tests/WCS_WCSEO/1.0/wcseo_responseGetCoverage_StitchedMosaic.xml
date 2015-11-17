@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wcseo:RectifiedStitchedMosaic xmlns:eop="http://www.opengis.net/eop/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:ogc="http://www.opengis.net/ogc" xmlns:om="http://www.opengis.net/om/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:wcseo="http://www.opengis.net/wcs/wcseo/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wcs/wcseo/1.0 http://schemas.opengis.net/wcs/wcseo/1.0/wcsEOAll.xsd" gml:id="someStitchedMosaic1">
+  <gml:boundedBy>
+    <gml:Envelope axisLabels="lat long" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" uomLabels="deg deg">
+      <gml:lowerCorner>38 20</gml:lowerCorner>
+      <gml:upperCorner>40 22</gml:upperCorner>
+    </gml:Envelope>
+  </gml:boundedBy>
+  <gml:domainSet>
+    <gml:RectifiedGrid dimension="2" gml:id="grid_someStitchedMosaic1">
+      <gml:limits>
+        <gml:GridEnvelope>
+          <gml:low>0 0</gml:low>
+          <gml:high>49 65</gml:high>
+        </gml:GridEnvelope>
+      </gml:limits>
+      <gml:axisLabels>lat long</gml:axisLabels>
+      <gml:origin>
+        <gml:Point gml:id="grid_origin_someStitchedMosaic1" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+          <gml:pos>40.000000 20.000000</gml:pos>
+        </gml:Point>
+      </gml:origin>
+      <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/4326">0 0.040000</gml:offsetVector>
+      <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/4326">-0.030303 0</gml:offsetVector>
+    </gml:RectifiedGrid>
+  </gml:domainSet>
+  <gml:rangeSet>
+    <gml:File>
+      <gml:rangeParameters xlink:arcrole="fileReference" xlink:href="cid:grey.tif" xlink:role="http://www.opengis.net/spec/GMLCOV_geotiff-coverages/1.0/conf/geotiff-coverage" />
+      <gml:fileReference>cid:grey.tif</gml:fileReference>
+      <gml:fileStructure />
+      <gml:mimeType>image/tiff</gml:mimeType>
+    </gml:File>
+  </gml:rangeSet>
+  <gmlcov:rangeType>
+    <swe:DataRecord>
+      <swe:field name="gray">
+        <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/Radiance">
+          <swe:description>Gray Channel</swe:description>
+          <swe:nilValues />
+          <swe:uom code="W.m-2.sr-1.nm-1" />
+          <swe:constraint>
+            <swe:AllowedValues>
+              <swe:interval>0 255</swe:interval>
+              <swe:significantFigures>3</swe:significantFigures>
+            </swe:AllowedValues>
+          </swe:constraint>
+        </swe:Quantity>
+      </swe:field>
+    </swe:DataRecord>
+  </gmlcov:rangeType>
+  <gmlcov:metadata>
+    <gmlcov:Extension>
+      <wcseo:EOMetadata>
+        <eop:EarthObservation gml:id="eop_someStitchedMosaic1">
+          <om:phenomenonTime>
+            <gml:TimePeriod gml:id="tp_someStitchedMosaic1">
+              <gml:beginPosition>2008-01-01T00:00:00Z</gml:beginPosition>
+              <gml:endPosition>2009-12-31T23:59:59Z</gml:endPosition>
+            </gml:TimePeriod>
+          </om:phenomenonTime>
+          <om:resultTime>
+            <gml:TimeInstant gml:id="archivingdate_someStitchedMosaic1">
+              <gml:timePosition>2011-01-28T14:48:44Z</gml:timePosition>
+            </gml:TimeInstant>
+          </om:resultTime>
+          <om:procedure />
+          <om:observedProperty />
+          <om:featureOfInterest>
+            <eop:Footprint gml:id="footprint_someStitchedMosaic1">
+              <eop:multiExtentOf>
+                <gml:MultiSurface gml:id="multisurface_someStitchedMosaic1">
+                  <gml:surfaceMember>
+                    <gml:Polygon gml:id="polygon_someStitchedMosaic1">
+                      <gml:exterior>
+                        <gml:LinearRing>
+                          <gml:posList>38.00000000 20.00000000 40.00000000 20.00000000 40.00000000 22.00000000 38.00000000 22.00000000 38.00000000 20.00000000</gml:posList>
+                        </gml:LinearRing>
+                      </gml:exterior>
+                    </gml:Polygon>
+                  </gml:surfaceMember>
+                </gml:MultiSurface>
+              </eop:multiExtentOf>
+            </eop:Footprint>
+          </om:featureOfInterest>
+          <!-- TODO om:result /-->
+          <eop:metaDataProperty>
+            <eop:EarthObservationMetaData>
+              <eop:identifier>someStitchedMosaic1</eop:identifier>
+              <eop:acquisitionType>NOMINAL</eop:acquisitionType>
+              <eop:status>ARCHIVED</eop:status>
+            </eop:EarthObservationMetaData>
+          </eop:metaDataProperty>
+        </eop:EarthObservation>
+        <wcseo:lineage>
+          <wcseo:referenceGetCoverage>
+            <ows:Reference xlink:href="http://www.someWCS.org?SERVICE=WCS&amp;VERSION=2.0.1&amp;REQUEST=GetCoverage&amp;COVERAGEID=someStitchedMosaic1&amp;FORMAT=image/tiff&amp;MEDIATYPE=multipart/related" />
+          </wcseo:referenceGetCoverage>
+          <gml:timePosition>2011-02-04T15:45:52Z</gml:timePosition>
+        </wcseo:lineage>
+      </wcseo:EOMetadata>
+    </gmlcov:Extension>
+  </gmlcov:metadata>
+  <wcseo:datasets>
+    <!-- Dataset without contributingFootprint -->
+    <wcseo:dataset>
+      <wcs:CoverageId>c1</wcs:CoverageId>
+    </wcseo:dataset>
+    <!-- Dataset with contributingFootprint -->
+    <wcseo:dataset>
+      <wcs:CoverageId>c2</wcs:CoverageId>
+      <wcseo:contributingFootprint>
+        <eop:Footprint gml:id="c2_fp">
+          <eop:multiExtentOf>
+            <gml:MultiSurface gml:id="c2_ms" srsName="EPSG:4326">
+              <gml:surfaceMembers>
+                <gml:Polygon gml:id="c2_fppoly">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>38.00000000 20.00000000 39.00000000 20.00000000 39.00000000 21.00000000 38.00000000 21.00000000 38.00000000 20.00000000</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMembers>
+            </gml:MultiSurface>
+          </eop:multiExtentOf>
+        </eop:Footprint>
+      </wcseo:contributingFootprint>
+    </wcseo:dataset>
+  </wcseo:datasets>
+</wcseo:RectifiedStitchedMosaic>

@@ -55,6 +55,7 @@
 		"WCS Processing",
 		"WCS Range Subsetting",
 		"WCS Scaling",
+		"WCS WCSEO", "WCSEO", "WCS Earth Observation",
                 "WFS",
                 "WMS",
                 "WMSC",

@@ -2,9 +2,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>wcs-scaling-v_1_0</artifactId>
+	<artifactId>wcs-wcseo-v_1_0</artifactId>
 	<packaging>jar</packaging>
-	<name>OGC WCS Scaling 1.0</name>
+	<name>OGC WCS Earth Observation 1.0</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schema-parent</artifactId>
@@ -19,7 +19,27 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
+			<artifactId>gml-v_3_2_1</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>om-v_2_0</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>omeo-v_1_0</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!--dependency>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>sweCommon-v_1_0_0</artifactId>
+			<version>${project.version}</version>
+		</dependency-->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>gmlcov-v_1_0</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
@@ -47,19 +67,51 @@
 						<binding>
 							<dependencyResource>
 								<groupId>${project.groupId}</groupId>
+								<artifactId>gml-v_3_2_1</artifactId>
+								<resource>gml-v_3_2_1.jsonix.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>ows-v_2_0</artifactId>
+								<resource>ows-v_2_0.jsonix.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>gmlcov-v_1_0</artifactId>
+								<resource>gmlcov-v_1_0.jsonix.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
 								<artifactId>wcs-v_2_0</artifactId>
 								<resource>wcs-v_2_0.jsonix.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>
 						</binding>
-						<!--binding>
+						<binding>
 							<dependencyResource>
 								<groupId>${project.groupId}</groupId>
-								<artifactId>gml-v_3_2_1</artifactId>
-								<resource>iso19139-v_20070417.ignore.xjb</resource>
+								<artifactId>om-v_2_0</artifactId>
+								<resource>om-v_2_0.jsonix.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>
-						</binding-->
+						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>omeo-v_1_0</artifactId>
+								<resource>omeo-eop-v_2_0.jsonix.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
 					</bindings>
 				</configuration>
 			</plugin>
@@ -70,10 +122,14 @@
 						<phase>process-sources</phase>
 						<configuration>
 							<target>
-								<!-- TODO -->
-								<!--delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
-								<delete dir="${basedir}/target/generated-sources/xjc/org/isotc211/_2005"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="org*.*"/-->
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gmlcov"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/om"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/omeo"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/ows"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/wcs/v_2_0"/>
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="OM_*.*"/>
+								<delete dir="${basedir}/target/generated-sources/xjc" includes="OMEO_EOP_*.*"/>
 							</target>
 						</configuration>
 						<goals>

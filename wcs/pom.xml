@@ -18,6 +18,7 @@
 		<module>processing</module>
 		<module>range-subsetting</module>
 		<module>scaling</module>
+		<module>wcseo</module>
 	</modules>
 	<build>
 		<defaultGoal>install</defaultGoal>

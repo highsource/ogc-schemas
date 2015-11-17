@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wcseo:RectifiedDataset xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:wcseo="http://www.opengis.net/wcs/wcseo/1.0" xmlns:eop="http://www.opengis.net/eop/2.0" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wcs/wcseo/1.0 http://schemas.opengis.net/wcs/wcseo/1.0/wcsEOAll.xsd" gml:id="someEOCoverage1">
+  <gml:boundedBy>
+    <gml:Envelope axisLabels="lat long" srsDimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" uomLabels="deg deg">
+      <gml:lowerCorner>38 20</gml:lowerCorner>
+      <gml:upperCorner>40 22</gml:upperCorner>
+    </gml:Envelope>
+  </gml:boundedBy>
+  <gml:domainSet>
+    <gml:RectifiedGrid dimension="2" gml:id="grid_someEOCoverage1">
+      <gml:limits>
+        <gml:GridEnvelope>
+          <gml:low>0 0</gml:low>
+          <gml:high>49 65</gml:high>
+        </gml:GridEnvelope>
+      </gml:limits>
+      <gml:axisLabels>lat long</gml:axisLabels>
+      <gml:origin>
+        <gml:Point gml:id="grid_origin_someEOCoverage1" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+          <gml:pos>40.000000 20.000000</gml:pos>
+        </gml:Point>
+      </gml:origin>
+      <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/4326">0 0.040000</gml:offsetVector>
+      <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/4326">-0.030303 0</gml:offsetVector>
+    </gml:RectifiedGrid>
+  </gml:domainSet>
+  <gml:rangeSet>
+    <gml:File>
+      <gml:rangeParameters xlink:arcrole="fileReference" xlink:href="cid:coverage/someEOCoverage1.tif" xlink:role="http://www.opengis.net/spec/GMLCOV_geotiff-coverages/1.0/conf/geotiff-coverage" />
+      <gml:fileReference>cid:coverage/someEOCoverage1.tif</gml:fileReference>
+      <gml:fileStructure />
+      <gml:mimeType>image/tiff</gml:mimeType>
+    </gml:File>
+  </gml:rangeSet>
+  <gmlcov:rangeType>
+    <swe:DataRecord>
+      <swe:field name="gray">
+        <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/Radiance">
+          <swe:description>Gray Channel</swe:description>
+          <swe:nilValues />
+          <swe:uom code="W.m-2.sr-1.nm-1" />
+          <swe:constraint>
+            <swe:AllowedValues>
+              <swe:interval>0 255</swe:interval>
+              <swe:significantFigures>3</swe:significantFigures>
+            </swe:AllowedValues>
+          </swe:constraint>
+        </swe:Quantity>
+      </swe:field>
+    </swe:DataRecord>
+  </gmlcov:rangeType>
+  <gmlcov:metadata>
+    <gmlcov:Extension>
+      <wcseo:EOMetadata>
+        <eop:EarthObservation gml:id="eop_someEOCoverage1">
+          <om:phenomenonTime>
+            <gml:TimePeriod gml:id="tp_someEOCoverage1">
+              <gml:beginPosition>2008-03-13T10:00:06.000</gml:beginPosition>
+              <gml:endPosition>2008-03-13T10:20:26.000</gml:endPosition>
+            </gml:TimePeriod>
+          </om:phenomenonTime>
+          <om:resultTime>
+            <gml:TimeInstant gml:id="archivingdate_someEOCoverage1_">
+              <gml:timePosition>2008-03-13T11:02:47.999</gml:timePosition>
+            </gml:TimeInstant>
+          </om:resultTime>
+          <om:procedure>
+            <eop:EarthObservationEquipment gml:id="eoe_someEOCoverage1">
+              <eop:platform>
+                <eop:Platform>
+                  <eop:shortName>ENVISAT</eop:shortName>
+                </eop:Platform>
+              </eop:platform>
+              <eop:instrument>
+                <eop:Instrument>
+                  <eop:shortName>MERIS</eop:shortName>
+                </eop:Instrument>
+              </eop:instrument>
+              <eop:sensor>
+                <eop:Sensor>
+                  <eop:sensorType>OPTICAL</eop:sensorType>
+                </eop:Sensor>
+              </eop:sensor>
+            </eop:EarthObservationEquipment>
+          </om:procedure>
+          <om:observedProperty />
+          <om:featureOfInterest>
+            <eop:Footprint gml:id="footprint_someEOCoverage1">
+              <eop:multiExtentOf>
+                <gml:MultiSurface gml:id="multisurface_someEOCoverage1" srsName="EPSG:4326">
+                  <gml:surfaceMember>
+                    <gml:Polygon gml:id="polygonsomeEOCoverage1">
+                      <gml:exterior>
+                        <gml:LinearRing>
+                          <gml:posList>38.00000000 20.00000000 40.00000000 20.00000000 40.00000000 22.00000000 38.00000000 22.00000000 38.00000000 20.00000000</gml:posList>
+                        </gml:LinearRing>
+                      </gml:exterior>
+                    </gml:Polygon>
+                  </gml:surfaceMember>
+                </gml:MultiSurface>
+              </eop:multiExtentOf>
+            </eop:Footprint>
+          </om:featureOfInterest>
+          <!-- TODO om:result /-->
+          <eop:metaDataProperty>
+            <eop:EarthObservationMetaData>
+              <eop:identifier>someEOCoverage1</eop:identifier>
+              <eop:acquisitionType>NOMINAL</eop:acquisitionType>
+              <eop:productType>MER_FRS_1P</eop:productType>
+              <eop:status>ARCHIVED</eop:status>
+              <eop:downlinkedTo>
+                <eop:DownlinkInformation>
+                  <eop:acquisitionStation>PDHS-E</eop:acquisitionStation>
+                </eop:DownlinkInformation>
+              </eop:downlinkedTo>
+              <eop:processing>
+                <eop:ProcessingInformation />
+              </eop:processing>
+            </eop:EarthObservationMetaData>
+          </eop:metaDataProperty>
+        </eop:EarthObservation>
+        <wcseo:lineage>
+          <!-- GetCoverage request via KVP -->
+          <wcseo:referenceGetCoverage>
+            <ows:Reference xlink:href="http://www.someWCS.org?SERVICE=WCS&amp;VERSION=2.0.1&amp;REQUEST=GetCoverage&amp;COVERAGEID=someEOCoverage1&amp;FORMAT=image/tiff&amp;MEDIATYPE=multipart/related" />
+          </wcseo:referenceGetCoverage>
+          <gml:timePosition>2011-02-04T15:45:52Z</gml:timePosition>
+        </wcseo:lineage>
+        <wcseo:lineage>
+          <!-- GetCoverage request via POST -->
+          <wcseo:referenceGetCoverage>
+            <ows:ServiceReference xlink:href="http://www.someWCS.org">
+              <ows:RequestMessage>
+                <wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsAll.xsd" service="WCS" version="2.0.1">
+                  <wcs:CoverageId>someEOCoverage1</wcs:CoverageId>
+                  <wcs:format>image/tiff</wcs:format>
+                  <wcs:mediaType>multipart/related</wcs:mediaType>
+                </wcs:GetCoverage>
+              </ows:RequestMessage>
+            </ows:ServiceReference>
+          </wcseo:referenceGetCoverage>
+          <gml:timePosition>2011-02-04T15:45:52Z</gml:timePosition>
+        </wcseo:lineage>
+      </wcseo:EOMetadata>
+    </gmlcov:Extension>
+  </gmlcov:metadata>
+</wcseo:RectifiedDataset>

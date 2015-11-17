@@ -119,6 +119,7 @@ Supports the following schemas:
 * `WCS_Processing_2_0`
 * `WCS_Range_Subsetting_1_0`
 * `WCS_Scaling_1_0`
+* `WCS_WCSEO_1_0`
 * `WFS_1_0_0`
 * `WFS_1_1_0`
 * `WFS_2_0`

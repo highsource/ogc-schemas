@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsAll.xsd" service="WCS" version="2.0.1">
+  <wcs:CoverageId>someEOCoverage1</wcs:CoverageId>
+  <wcs:DimensionTrim>
+    <wcs:Dimension>lat</wcs:Dimension>
+    <wcs:TrimLow>43</wcs:TrimLow>
+    <wcs:TrimHigh>43.1</wcs:TrimHigh>
+  </wcs:DimensionTrim>
+  <wcs:DimensionTrim>
+    <wcs:Dimension>long</wcs:Dimension>
+    <wcs:TrimLow>2</wcs:TrimLow>
+    <wcs:TrimHigh>2.1</wcs:TrimHigh>
+  </wcs:DimensionTrim>
+  <wcs:format>image/tiff</wcs:format>
+  <wcs:mediaType>multipart/related</wcs:mediaType>
+</wcs:GetCoverage>
