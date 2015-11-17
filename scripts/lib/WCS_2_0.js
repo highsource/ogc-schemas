@@ -2,66 +2,39 @@ var WCS_2_0_Module_Factory = function () {
   var WCS_2_0 = {
     n: 'WCS_2_0',
     dens: 'http:\/\/www.opengis.net\/wcs\/2.0',
-    deps: ['GML_3_2_1', 'OWS_2_0', 'GMLCOV_1_0', 'SWE_2_0'],
+    deps: ['GML_3_2_1', 'SWE_2_0', 'OWS_2_0', 'GMLCOV_1_0'],
     tis: [{
-        ln: 'RequestBaseType',
+        ln: 'OfferedCoverageType',
         ps: [{
-            n: 'extension',
-            en: 'Extension',
-            ti: '.ExtensionType'
-          }, {
-            n: 'service',
+            n: 'abstractCoverage',
             rq: true,
-            an: {
-              lp: 'service'
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractCoverage',
+              ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
             },
-            t: 'a'
+            ti: 'GMLCOV_1_0.AbstractCoverageType',
+            t: 'er'
           }, {
-            n: 'version',
+            n: 'serviceParameters',
             rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
+            en: 'ServiceParameters',
+            ti: '.ServiceParametersType'
           }]
       }, {
-        ln: 'DescribeCoverageType',
-        bti: '.RequestBaseType',
+        ln: 'CoverageOfferingsType',
         ps: [{
-            n: 'coverageId',
+            n: 'serviceMetadata',
             rq: true,
-            col: true,
-            en: 'CoverageId'
-          }]
-      }, {
-        ln: 'CoverageDescriptionsType',
-        ps: [{
-            n: 'coverageDescription',
+            en: 'ServiceMetadata',
+            ti: '.ServiceMetadataType'
+          }, {
+            n: 'offeredCoverage',
             mno: 0,
             col: true,
-            en: 'CoverageDescription',
-            ti: '.CoverageDescriptionType'
-          }]
-      }, {
-        ln: 'ContentsType',
-        bti: 'OWS_2_0.ContentsBaseType',
-        ps: [{
-            n: 'coverageSummary',
-            mno: 0,
-            col: true,
-            en: 'CoverageSummary',
-            ti: '.CoverageSummaryType'
-          }, {
-            n: 'extension',
-            en: 'Extension',
-            ti: '.ExtensionType'
-          }]
-      }, {
-        ln: 'DimensionSubsetType',
-        ps: [{
-            n: 'dimension',
-            rq: true,
-            en: 'Dimension'
+            en: 'OfferedCoverage',
+            ti: '.OfferedCoverageType'
           }]
       }, {
         ln: 'GetCoverageType',
@@ -85,23 +58,23 @@ var WCS_2_0_Module_Factory = function () {
             n: 'mediaType'
           }]
       }, {
-        ln: 'OfferedCoverageType',
+        ln: 'DescribeCoverageType',
+        bti: '.RequestBaseType',
         ps: [{
-            n: 'abstractCoverage',
+            n: 'coverageId',
             rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractCoverage',
-              ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
-            },
-            ti: 'GMLCOV_1_0.AbstractCoverageType',
-            t: 'er'
+            col: true,
+            en: 'CoverageId'
+          }]
+      }, {
+        ln: 'DimensionTrimType',
+        bti: '.DimensionSubsetType',
+        ps: [{
+            n: 'trimLow',
+            en: 'TrimLow'
           }, {
-            n: 'serviceParameters',
-            rq: true,
-            en: 'ServiceParameters',
-            ti: '.ServiceParametersType'
+            n: 'trimHigh',
+            en: 'TrimHigh'
           }]
       }, {
         ln: 'CoverageDescriptionType',
@@ -152,18 +125,64 @@ var WCS_2_0_Module_Factory = function () {
             ti: '.ServiceParametersType'
           }]
       }, {
-        ln: 'CoverageOfferingsType',
+        ln: 'ServiceMetadataType',
+        ps: [{
+            n: 'formatSupported',
+            rq: true,
+            col: true
+          }, {
+            n: 'extension',
+            en: 'Extension',
+            ti: '.ExtensionType'
+          }]
+      }, {
+        ln: 'DimensionSubsetType',
+        ps: [{
+            n: 'dimension',
+            rq: true,
+            en: 'Dimension'
+          }]
+      }, {
+        ln: 'ExtensionType',
+        ps: [{
+            n: 'any',
+            mno: 0,
+            col: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'CapabilitiesType',
+        bti: 'OWS_2_0.CapabilitiesBaseType',
         ps: [{
             n: 'serviceMetadata',
-            rq: true,
             en: 'ServiceMetadata',
             ti: '.ServiceMetadataType'
           }, {
-            n: 'offeredCoverage',
-            mno: 0,
-            col: true,
-            en: 'OfferedCoverage',
-            ti: '.OfferedCoverageType'
+            n: 'contents',
+            en: 'Contents',
+            ti: '.ContentsType'
+          }]
+      }, {
+        ln: 'RequestBaseType',
+        ps: [{
+            n: 'extension',
+            en: 'Extension',
+            ti: '.ExtensionType'
+          }, {
+            n: 'service',
+            rq: true,
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'CoverageSubtypeParentType',
@@ -178,20 +197,42 @@ var WCS_2_0_Module_Factory = function () {
             ti: '.CoverageSubtypeParentType'
           }]
       }, {
-        ln: 'ExtensionType',
+        ln: 'GetCapabilitiesType',
+        bti: 'OWS_2_0.GetCapabilitiesType',
         ps: [{
-            n: 'any',
-            mno: 0,
-            col: true,
-            mx: false,
-            t: 'ae'
+            n: 'service',
+            rq: true,
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'ServiceMetadataType',
+        ln: 'CoverageDescriptionsType',
         ps: [{
-            n: 'formatSupported',
+            n: 'coverageDescription',
+            mno: 0,
+            col: true,
+            en: 'CoverageDescription',
+            ti: '.CoverageDescriptionType'
+          }]
+      }, {
+        ln: 'DimensionSliceType',
+        bti: '.DimensionSubsetType',
+        ps: [{
+            n: 'slicePoint',
             rq: true,
-            col: true
+            en: 'SlicePoint'
+          }]
+      }, {
+        ln: 'ContentsType',
+        bti: 'OWS_2_0.ContentsBaseType',
+        ps: [{
+            n: 'coverageSummary',
+            mno: 0,
+            col: true,
+            en: 'CoverageSummary',
+            ti: '.CoverageSummaryType'
           }, {
             n: 'extension',
             en: 'Extension',
@@ -266,69 +307,50 @@ var WCS_2_0_Module_Factory = function () {
             en: 'Extension',
             ti: '.ExtensionType'
           }]
-      }, {
-        ln: 'DimensionTrimType',
-        bti: '.DimensionSubsetType',
-        ps: [{
-            n: 'trimLow',
-            en: 'TrimLow'
-          }, {
-            n: 'trimHigh',
-            en: 'TrimHigh'
-          }]
-      }, {
-        ln: 'CapabilitiesType',
-        bti: 'OWS_2_0.CapabilitiesBaseType',
-        ps: [{
-            n: 'serviceMetadata',
-            en: 'ServiceMetadata',
-            ti: '.ServiceMetadataType'
-          }, {
-            n: 'contents',
-            en: 'Contents',
-            ti: '.ContentsType'
-          }]
-      }, {
-        ln: 'DimensionSliceType',
-        bti: '.DimensionSubsetType',
-        ps: [{
-            n: 'slicePoint',
-            rq: true,
-            en: 'SlicePoint'
-          }]
-      }, {
-        ln: 'GetCapabilitiesType',
-        bti: 'OWS_2_0.GetCapabilitiesType',
-        ps: [{
-            n: 'service',
-            rq: true,
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }]
       }],
     eis: [{
+        en: 'Capabilities',
+        ti: '.CapabilitiesType'
+      }, {
+        en: 'DimensionSlice',
+        ti: '.DimensionSliceType',
+        sh: 'DimensionSubset'
+      }, {
         en: 'DimensionSubset',
         ti: '.DimensionSubsetType'
+      }, {
+        en: 'DescribeCoverage',
+        ti: '.DescribeCoverageType'
+      }, {
+        en: 'ServiceMetadata',
+        ti: '.ServiceMetadataType'
+      }, {
+        en: 'CoverageSubtype',
+        ti: 'QName'
+      }, {
+        en: 'Contents',
+        ti: '.ContentsType'
+      }, {
+        en: 'CoverageOfferings',
+        ti: '.CoverageOfferingsType'
+      }, {
+        en: 'GetCapabilities',
+        ti: '.GetCapabilitiesType'
       }, {
         en: 'DimensionTrim',
         ti: '.DimensionTrimType',
         sh: 'DimensionSubset'
       }, {
-        en: 'CoverageOfferings',
-        ti: '.CoverageOfferingsType'
-      }, {
-        en: 'CoverageSubtype',
-        ti: 'QName'
-      }, {
-        en: 'CoverageId'
-      }, {
-        en: 'ServiceParameters',
-        ti: '.ServiceParametersType'
-      }, {
         en: 'Extension',
         ti: '.ExtensionType'
+      }, {
+        en: 'GetCoverage',
+        ti: '.GetCoverageType'
+      }, {
+        en: 'CoverageSubtypeParent',
+        ti: '.CoverageSubtypeParentType'
+      }, {
+        en: 'CoverageId'
       }, {
         en: 'CoverageDescription',
         ti: '.CoverageDescriptionType',
@@ -337,39 +359,17 @@ var WCS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'ServiceMetadata',
-        ti: '.ServiceMetadataType'
+        en: 'CoverageDescriptions',
+        ti: '.CoverageDescriptionsType'
       }, {
-        en: 'DimensionSlice',
-        ti: '.DimensionSliceType',
-        sh: 'DimensionSubset'
-      }, {
-        en: 'Capabilities',
-        ti: '.CapabilitiesType'
-      }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilitiesType'
-      }, {
-        en: 'Contents',
-        ti: '.ContentsType'
-      }, {
-        en: 'CoverageSummary',
-        ti: '.CoverageSummaryType'
-      }, {
-        en: 'DescribeCoverage',
-        ti: '.DescribeCoverageType'
+        en: 'ServiceParameters',
+        ti: '.ServiceParametersType'
       }, {
         en: 'OfferedCoverage',
         ti: '.OfferedCoverageType'
       }, {
-        en: 'CoverageSubtypeParent',
-        ti: '.CoverageSubtypeParentType'
-      }, {
-        en: 'GetCoverage',
-        ti: '.GetCoverageType'
-      }, {
-        en: 'CoverageDescriptions',
-        ti: '.CoverageDescriptionsType'
+        en: 'CoverageSummary',
+        ti: '.CoverageSummaryType'
       }]
   };
   return {

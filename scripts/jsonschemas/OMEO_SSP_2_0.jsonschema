@@ -2,29 +2,156 @@
 {
     "id":"http://www.opengis.net/ssp/2.0#",
     "definitions":{
-        "FootprintType":{
-            "required":[
-                "locationName"
-            ],
+        "EarthObservationEquipmentType":{
             "allOf":[
                 {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/FootprintType"
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationEquipmentType"
                 },
                 {
                     "type":"object",
-                    "title":"FootprintType",
+                    "title":"EarthObservationEquipmentType",
                     "properties":{
-                        "locationName":{
-                            "title":"locationName",
+                        "rest":{
+                            "title":"rest",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/CodeType"
+                                    "type":"array",
+                                    "items":{
+                                        "anyOf":[
+                                            {
+                                                "type":"object",
+                                                "properties":{
+                                                    "name":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                    },
+                                                    "value":{
+                                                        "$ref":"http://www.opengis.net/eop/2.0#/definitions/PlatformPropertyType"
+                                                    }
+                                                },
+                                                "elementName":{
+                                                    "localPart":"platform",
+                                                    "namespaceURI":"http://www.opengis.net/ssp/2.0"
+                                                }
+                                            },
+                                            {
+                                                "type":"object",
+                                                "properties":{
+                                                    "name":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                    },
+                                                    "value":{
+                                                        "$ref":"http://www.opengis.net/eop/2.0#/definitions/InstrumentPropertyType"
+                                                    }
+                                                },
+                                                "elementName":{
+                                                    "localPart":"instrument",
+                                                    "namespaceURI":"http://www.opengis.net/ssp/2.0"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"elementRefs"
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationEquipmentType",
+                "namespaceURI":"http://www.opengis.net/ssp/2.0"
+            },
+            "propertiesOrder":[
+                "rest"
+            ]
+        },
+        "EarthObservationResultType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationResultType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationResultType",
+                    "properties":{
+                        "cloudCoverPercentage":{
+                            "title":"cloudCoverPercentage",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"locationName",
-                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                                "localPart":"cloudCoverPercentage",
+                                "namespaceURI":"http://www.opengis.net/ssp/2.0"
+                            }
+                        },
+                        "cloudCoverPercentageAssessmentConfidence":{
+                            "title":"cloudCoverPercentageAssessmentConfidence",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"cloudCoverPercentageAssessmentConfidence",
+                                "namespaceURI":"http://www.opengis.net/ssp/2.0"
+                            }
+                        },
+                        "cloudCoverPercentageQuotationMode":{
+                            "title":"cloudCoverPercentageQuotationMode",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"cloudCoverPercentageQuotationMode",
+                                "namespaceURI":"http://www.opengis.net/ssp/2.0"
+                            }
+                        },
+                        "snowCoverPercentage":{
+                            "title":"snowCoverPercentage",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"snowCoverPercentage",
+                                "namespaceURI":"http://www.opengis.net/ssp/2.0"
+                            }
+                        },
+                        "snowCoverPercentageAssessmentConfidence":{
+                            "title":"snowCoverPercentageAssessmentConfidence",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"snowCoverPercentageAssessmentConfidence",
+                                "namespaceURI":"http://www.opengis.net/ssp/2.0"
+                            }
+                        },
+                        "snowCoverPercentageQuotationMode":{
+                            "title":"snowCoverPercentageQuotationMode",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"snowCoverPercentageQuotationMode",
+                                "namespaceURI":"http://www.opengis.net/ssp/2.0"
                             }
                         }
                     }
@@ -32,55 +159,16 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"FootprintType",
+                "localPart":"EarthObservationResultType",
                 "namespaceURI":"http://www.opengis.net/ssp/2.0"
             },
             "propertiesOrder":[
-                "locationName"
-            ]
-        },
-        "EarthObservationMetadataPropertyType":{
-            "type":"object",
-            "title":"EarthObservationMetadataPropertyType",
-            "required":[
-                "earthObservationMetadata"
-            ],
-            "properties":{
-                "earthObservationMetadata":{
-                    "title":"earthObservationMetadata",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/EarthObservationMetadataType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"EarthObservationMetadata",
-                        "namespaceURI":"http://www.opengis.net/ssp/2.0"
-                    }
-                },
-                "owns":{
-                    "title":"owns",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"owns",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationMetadataPropertyType",
-                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-            },
-            "propertiesOrder":[
-                "earthObservationMetadata",
-                "owns"
+                "cloudCoverPercentage",
+                "cloudCoverPercentageAssessmentConfidence",
+                "cloudCoverPercentageQuotationMode",
+                "snowCoverPercentage",
+                "snowCoverPercentageAssessmentConfidence",
+                "snowCoverPercentageQuotationMode"
             ]
         },
         "EarthObservationResultPropertyType":{
@@ -256,301 +344,6 @@
                 "actuate"
             ]
         },
-        "EarthObservationResultType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationResultType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationResultType",
-                    "properties":{
-                        "cloudCoverPercentage":{
-                            "title":"cloudCoverPercentage",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"cloudCoverPercentage",
-                                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-                            }
-                        },
-                        "cloudCoverPercentageAssessmentConfidence":{
-                            "title":"cloudCoverPercentageAssessmentConfidence",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"cloudCoverPercentageAssessmentConfidence",
-                                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-                            }
-                        },
-                        "cloudCoverPercentageQuotationMode":{
-                            "title":"cloudCoverPercentageQuotationMode",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"cloudCoverPercentageQuotationMode",
-                                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-                            }
-                        },
-                        "snowCoverPercentage":{
-                            "title":"snowCoverPercentage",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"snowCoverPercentage",
-                                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-                            }
-                        },
-                        "snowCoverPercentageAssessmentConfidence":{
-                            "title":"snowCoverPercentageAssessmentConfidence",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"snowCoverPercentageAssessmentConfidence",
-                                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-                            }
-                        },
-                        "snowCoverPercentageQuotationMode":{
-                            "title":"snowCoverPercentageQuotationMode",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"snowCoverPercentageQuotationMode",
-                                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationResultType",
-                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-            },
-            "propertiesOrder":[
-                "cloudCoverPercentage",
-                "cloudCoverPercentageAssessmentConfidence",
-                "cloudCoverPercentageQuotationMode",
-                "snowCoverPercentage",
-                "snowCoverPercentageAssessmentConfidence",
-                "snowCoverPercentageQuotationMode"
-            ]
-        },
-        "EarthObservationType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationType",
-                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-            }
-        },
-        "EarthObservationEquipmentPropertyType":{
-            "type":"object",
-            "title":"EarthObservationEquipmentPropertyType",
-            "required":[
-                "earthObservationEquipment"
-            ],
-            "properties":{
-                "earthObservationEquipment":{
-                    "title":"earthObservationEquipment",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/EarthObservationEquipmentType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"EarthObservationEquipment",
-                        "namespaceURI":"http://www.opengis.net/ssp/2.0"
-                    }
-                },
-                "owns":{
-                    "title":"owns",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"owns",
-                        "namespaceURI":""
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":""
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationEquipmentPropertyType",
-                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-            },
-            "propertiesOrder":[
-                "earthObservationEquipment",
-                "owns",
-                "nilReason",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
         "EarthObservationMetadataType":{
             "allOf":[
                 {
@@ -603,37 +396,24 @@
                 "nominalDate"
             ]
         },
-        "EarthObservationPropertyType":{
+        "EarthObservationEquipmentPropertyType":{
             "type":"object",
-            "title":"EarthObservationPropertyType",
+            "title":"EarthObservationEquipmentPropertyType",
             "required":[
-                "earthObservation"
+                "earthObservationEquipment"
             ],
             "properties":{
-                "earthObservation":{
-                    "title":"earthObservation",
+                "earthObservationEquipment":{
+                    "title":"earthObservationEquipment",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/EarthObservationType"
+                            "$ref":"#/definitions/EarthObservationEquipmentType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"EarthObservation",
+                        "localPart":"EarthObservationEquipment",
                         "namespaceURI":"http://www.opengis.net/ssp/2.0"
-                    }
-                },
-                "owns":{
-                    "title":"owns",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"owns",
-                        "namespaceURI":""
                     }
                 },
                 "nilReason":{
@@ -755,6 +535,254 @@
                         "localPart":"actuate",
                         "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
+                },
+                "owns":{
+                    "title":"owns",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"owns",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationEquipmentPropertyType",
+                "namespaceURI":"http://www.opengis.net/ssp/2.0"
+            },
+            "propertiesOrder":[
+                "earthObservationEquipment",
+                "nilReason",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate",
+                "owns"
+            ]
+        },
+        "EarthObservationType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationType",
+                "namespaceURI":"http://www.opengis.net/ssp/2.0"
+            }
+        },
+        "EarthObservationMetadataPropertyType":{
+            "type":"object",
+            "title":"EarthObservationMetadataPropertyType",
+            "required":[
+                "earthObservationMetadata"
+            ],
+            "properties":{
+                "earthObservationMetadata":{
+                    "title":"earthObservationMetadata",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/EarthObservationMetadataType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"EarthObservationMetadata",
+                        "namespaceURI":"http://www.opengis.net/ssp/2.0"
+                    }
+                },
+                "owns":{
+                    "title":"owns",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"owns",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationMetadataPropertyType",
+                "namespaceURI":"http://www.opengis.net/ssp/2.0"
+            },
+            "propertiesOrder":[
+                "earthObservationMetadata",
+                "owns"
+            ]
+        },
+        "EarthObservationPropertyType":{
+            "type":"object",
+            "title":"EarthObservationPropertyType",
+            "required":[
+                "earthObservation"
+            ],
+            "properties":{
+                "earthObservation":{
+                    "title":"earthObservation",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/EarthObservationType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"EarthObservation",
+                        "namespaceURI":"http://www.opengis.net/ssp/2.0"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":""
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "owns":{
+                    "title":"owns",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"owns",
+                        "namespaceURI":""
+                    }
                 }
             },
             "typeType":"classInfo",
@@ -764,7 +792,6 @@
             },
             "propertiesOrder":[
                 "earthObservation",
-                "owns",
                 "nilReason",
                 "remoteSchema",
                 "type",
@@ -773,7 +800,45 @@
                 "arcrole",
                 "title",
                 "show",
-                "actuate"
+                "actuate",
+                "owns"
+            ]
+        },
+        "FootprintType":{
+            "required":[
+                "locationName"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/FootprintType"
+                },
+                {
+                    "type":"object",
+                    "title":"FootprintType",
+                    "properties":{
+                        "locationName":{
+                            "title":"locationName",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"locationName",
+                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FootprintType",
+                "namespaceURI":"http://www.opengis.net/ssp/2.0"
+            },
+            "propertiesOrder":[
+                "locationName"
             ]
         },
         "FootprintPropertyType":{
@@ -949,71 +1014,6 @@
                 "actuate"
             ]
         },
-        "EarthObservationEquipmentType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationEquipmentType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationEquipmentType",
-                    "properties":{
-                        "rest":{
-                            "title":"rest",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "anyOf":[
-                                            {
-                                                "type":"object",
-                                                "properties":{
-                                                    "name":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                    },
-                                                    "value":{
-                                                        "$ref":"http://www.opengis.net/eop/2.0#/definitions/InstrumentPropertyType"
-                                                    }
-                                                },
-                                                "elementName":{
-                                                    "localPart":"instrument",
-                                                    "namespaceURI":"http://www.opengis.net/ssp/2.0"
-                                                }
-                                            },
-                                            {
-                                                "type":"object",
-                                                "properties":{
-                                                    "name":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                    },
-                                                    "value":{
-                                                        "$ref":"http://www.opengis.net/eop/2.0#/definitions/PlatformPropertyType"
-                                                    }
-                                                },
-                                                "elementName":{
-                                                    "localPart":"platform",
-                                                    "namespaceURI":"http://www.opengis.net/ssp/2.0"
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"elementRefs"
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationEquipmentType",
-                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-            },
-            "propertiesOrder":[
-                "rest"
-            ]
-        },
         "PercentageCoverQuotationModeValueEnumerationType":{
             "allOf":[
                 {
@@ -1035,15 +1035,27 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/InstrumentPropertyType"
+                    "$ref":"#/definitions/FootprintType"
                 }
             },
             "elementName":{
-                "localPart":"instrument",
+                "localPart":"Footprint",
                 "namespaceURI":"http://www.opengis.net/ssp/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/EarthObservationResultType"
+                }
             },
-            "scope":{
-                "$ref":"#/definitions/EarthObservationEquipmentType"
+            "elementName":{
+                "localPart":"EarthObservationResult",
+                "namespaceURI":"http://www.opengis.net/ssp/2.0"
             }
         },
         {
@@ -1058,6 +1070,24 @@
             },
             "elementName":{
                 "localPart":"platform",
+                "namespaceURI":"http://www.opengis.net/ssp/2.0"
+            },
+            "scope":{
+                "$ref":"#/definitions/EarthObservationEquipmentType"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/InstrumentPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"instrument",
                 "namespaceURI":"http://www.opengis.net/ssp/2.0"
             },
             "scope":{
@@ -1106,36 +1136,6 @@
             },
             "elementName":{
                 "localPart":"EarthObservation",
-                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/FootprintType"
-                }
-            },
-            "elementName":{
-                "localPart":"Footprint",
-                "namespaceURI":"http://www.opengis.net/ssp/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/EarthObservationResultType"
-                }
-            },
-            "elementName":{
-                "localPart":"EarthObservationResult",
                 "namespaceURI":"http://www.opengis.net/ssp/2.0"
             }
         }

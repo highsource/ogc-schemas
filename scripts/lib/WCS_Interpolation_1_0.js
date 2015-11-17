@@ -3,13 +3,6 @@ var WCS_Interpolation_1_0_Module_Factory = function () {
     n: 'WCS_Interpolation_1_0',
     dens: 'http:\/\/www.opengis.net\/WCS_service-extension_interpolation\/1.0',
     tis: [{
-        ln: 'InterpolationMetadataType',
-        ps: [{
-            n: 'interpolationSupported',
-            mno: 0,
-            col: true
-          }]
-      }, {
         ln: 'InterpolationType',
         ps: [{
             n: 'globalInterpolation',
@@ -20,6 +13,13 @@ var WCS_Interpolation_1_0_Module_Factory = function () {
             col: true,
             en: 'InterpolationPerAxis',
             ti: '.InterpolationPerAxisType'
+          }]
+      }, {
+        ln: 'InterpolationMetadataType',
+        ps: [{
+            n: 'interpolationSupported',
+            mno: 0,
+            col: true
           }]
       }, {
         ln: 'InterpolationPerAxisType',
