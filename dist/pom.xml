@@ -106,6 +106,8 @@
 
 		<dependency><artifactId>wcs-wcseo-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>wcst-v_1_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
 		<dependency><artifactId>wfs-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>wfs-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>wfs-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>

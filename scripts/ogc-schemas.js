@@ -113,6 +113,7 @@ module.exports.WCS_Processing_2_0    = require('./lib/WCS_Processing_2_0'       
 module.exports.WCS_Range_Subsetting_1_0 = require('./lib/WCS_Range_Subsetting_1_0'  ).WCS_Range_Subsetting_1_0;
 module.exports.WCS_Scaling_1_0       = require('./lib/WCS_Scaling_1_0'              ).WCS_Scaling_1_0      ;
 module.exports.WCS_WCSEO_1_0         = require('./lib/WCS_WCSEO_1_0'                ).WCS_WCSEO_1_0        ;
+module.exports.WCST_1_1              = require('./lib/WCST_1_1'                     ).WCST_1_1             ;
 module.exports.WFS_1_0_0             = require('./lib/WFS_1_0_0'                    ).WFS_1_0_0            ;
 module.exports.WFS_1_1_0             = require('./lib/WFS_1_1_0'                    ).WFS_1_1_0            ;
 module.exports.WFS_2_0               = require('./lib/WFS_2_0'                      ).WFS_2_0              ;

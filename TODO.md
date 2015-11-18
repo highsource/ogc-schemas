@@ -72,6 +72,7 @@
 * wmts/1.0
 * wps/1.0.0
 * wps/2.0
+* wcst/1.1
 
 # Not yet supported schemas
 
@@ -86,8 +87,6 @@
 * tjs/1.0
 * tml/1.0.0
 * wcps/1.0
-* wcs/wcseo/1.0
-* wcst/1.1
 
 # Won't fix
 

@@ -43,6 +43,7 @@ module.exports =
 		"WCS_Range_Subsetting" : require('./WCS_Range_Subsetting/WCS_Range_Subsetting'),
 		"WCS_Scaling" : require('./WCS_Scaling/WCS_Scaling'),
 		"WCS_WCSEO" : require('./WCS_WCSEO/WCS_WCSEO'),
+		"WCST" : require('./WCST/WCST.js'),
 		"WFS" : require('./WFS/WFS.js'),
 		"WMTS" : require('./WMTS/WMTS.js'),
 		"WPS" : require('./WPS/WPS.js')

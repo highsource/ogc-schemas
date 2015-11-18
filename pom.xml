@@ -91,6 +91,7 @@
 		<module>wami</module>
 		<module>waterml</module>
 		<module>wcs</module>
+		<module>wcst</module>
 		<module>wfs</module>
 		<module>wms</module>
 		<module>wmsc</module>

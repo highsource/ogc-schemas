@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ows:Operation xmlns:ows="http://www.opengis.net/ows/1.1" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.opengis.net/ows/1.1
+http://schemas.opengis.net/ows/1.1.0/owsOperationsMetadata.xsd" name="Transaction">
+	<ows:DCP>
+		<ows:HTTP>
+			<ows:Post xlink:href="TBD"/>
+		</ows:HTTP>
+	</ows:DCP>
+	<ows:Parameter name="store">
+		<ows:AllowedValues>
+			<ows:Value>True</ows:Value>
+			<ows:Value>False</ows:Value>
+		</ows:AllowedValues>
+	</ows:Parameter>
+	<ows:Constraint name="InputFormat">
+		<ows:AllowedValues>
+			<ows:Value>netCDF</ows:Value>
+		</ows:AllowedValues>
+	</ows:Constraint>
+	<ows:Constraint name="InputCRS">
+		<ows:AllowedValues>
+			<ows:Value>TBD</ows:Value>
+			<ows:Value>TBD</ows:Value>
+		</ows:AllowedValues>
+	</ows:Constraint>
+	<ows:Constraint name="Action">
+		<ows:AllowedValues>
+			<ows:Value>Add</ows:Value>
+			<ows:Value>Delete</ows:Value>
+		</ows:AllowedValues>
+	</ows:Constraint>
+</ows:Operation>
