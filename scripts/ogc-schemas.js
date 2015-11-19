@@ -105,6 +105,7 @@ module.exports.WAMI_Common_1_0_1     = require('./lib/WAMI_Common_1_0_1'        
 module.exports.WAMI_1_0_2            = require('./lib/WAMI_1_0_2'                   ).WAMI_1_0_2           ;
 module.exports.WAMI_Common_1_0_0     = require('./lib/WAMI_Common_1_0_0'            ).WAMI_Common_1_0_0    ;
 module.exports.WaterML_2_0           = require('./lib/WaterML_2_0'                  ).WaterML_2_0          ;
+module.exports.WCPS_1_0              = require('./lib/WCPS_1_0'                     ).WCPS_1_0             ;
 module.exports.WCS_1_0_0             = require('./lib/WCS_1_0_0'                    ).WCS_1_0_0            ;
 module.exports.WCS_1_1               = require('./lib/WCS_1_1'                      ).WCS_1_1              ;
 module.exports.WCS_2_0               = require('./lib/WCS_2_0'                      ).WCS_2_0              ;

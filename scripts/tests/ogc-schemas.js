@@ -37,6 +37,7 @@ module.exports =
 		"WMC" : require('./WMC/WMC.js'),
 		"WMS" : require('./WMS/WMS.js'),
 		"WMSC" : require('./WMSC/WMSC.js'),
+		"WCPS" : require('./WCPS/WCPS.js'),
 		"WCS" : require('./WCS/WCS.js'),
 		"WCS_Interpolation" : require('./WCS_Interpolation/WCS_Interpolation'),
 		"WCS_Processing" : require('./WCS_Processing/WCS_Processing'),

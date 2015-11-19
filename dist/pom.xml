@@ -92,6 +92,8 @@
 
 		<dependency><artifactId>waterml-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>wcps-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
 		<dependency><artifactId>wcs-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>wcs-v_1_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>wcs-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>

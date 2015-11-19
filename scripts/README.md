@@ -111,6 +111,7 @@ Supports the following schemas:
 * `WAMI_1_0_2`
   * `WAMI_Common_1_0_0`
 * `WaterML_2_0`
+* `WCPS_1_0`
 * `WCS_1_0_0`
   * `GML4WCS_1_0_0`
 * `WCS_1_1`
