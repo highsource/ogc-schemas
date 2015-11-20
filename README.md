@@ -102,6 +102,7 @@ Supports the following schemas:
 * `SWE_2_0`
 * `SWES_2_0`
   * `WSN_T_1`
+* `TML_1_0_0`
 * `WAMI_1_0_0`
 * `WAMI_1_0_1`
   * `WAMI_Common_1_0_1`

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2006 U (http://www.altova.com) by Steve Havens (IRIS Corporation) -->
 <xs:schema xmlns:tml="http://www.opengis.net/tml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ism="urn:us:gov:ic:ism:v2" targetNamespace="http://www.opengis.net/tml" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:import namespace="urn:us:gov:ic:ism:v2" schemaLocation="IC-ISM-v2.xsd"/>
+	<xs:import namespace="urn:us:gov:ic:ism:v2" schemaLocation="http://schemas.opengis.net/ic/2.0/IC-ISM-v2.xsd"/>
 	<xs:element name="tml">
 		<xs:annotation>
 			<xs:documentation>Root Element.  Also contains attributes to indicate the overall security classification of this TML stream or file.  If needed individual data clusters can be labeled with a security class.</xs:documentation>

@@ -1,0 +1,25 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/tml/1.0.0/tml.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.tml.v_1_0_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/tml/1.0.0/tml.xsd" node="/xs:schema">
+		<jaxb:bindings node="xs:attributeGroup[@name='uid_uidRef']">
+			<jaxb:bindings node="xs:attribute[@name='name']">
+				<jaxb:property name="refName"/>
+			</jaxb:bindings>
+			<jaxb:bindings node="xs:attribute[@name='uid']">
+				<jaxb:property name="refUid"/>
+			</jaxb:bindings>
+			<jaxb:bindings node="xs:attribute[@name='uidRef']">
+				<jaxb:property name="refUidRef"/>
+			</jaxb:bindings>
+		</jaxb:bindings>
+	</jaxb:bindings>
+</jaxb:bindings>

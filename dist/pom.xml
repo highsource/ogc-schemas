@@ -86,6 +86,8 @@
 
 		<dependency><artifactId>swes-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>tml-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
 		<dependency><artifactId>wami-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>wami-v_1_0_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>wami-v_1_0_2</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
