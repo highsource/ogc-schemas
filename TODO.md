@@ -50,6 +50,7 @@
 * sweCommon/1.0.1
 * sweCommon/2.0
 * swes/2.0
+* tjs/1.0
 * tml/1.0.0
 * wami/1.0.0
 * wami/1.0.1
@@ -86,7 +87,6 @@
 * ImageCRSs/1.1.0
 * omx/1.0.0
 * oseo/1.0
-* tjs/1.0
 
 # Won't fix
 

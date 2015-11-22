@@ -33,6 +33,7 @@ module.exports =
 		"SOS" : require('./SOS/SOS.js'),
 		"SWE" : require('./SWE/SWE.js'),
 		"SWES" : require('./SWES/SWES.js'),
+		"TJS" : require('./TJS/TJS.js'),
 		"TML" : require('./TML/TML.js'),
 		"WaterML" : require('./WaterML/WaterML.js'),
 		"WMC" : require('./WMC/WMC.js'),

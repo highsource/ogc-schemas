@@ -99,6 +99,7 @@ module.exports.SWE_1_0_1             = require('./lib/SWE_1_0_1'                
 module.exports.SWE_2_0               = require('./lib/SWE_2_0'                      ).SWE_2_0              ;
 module.exports.SWES_2_0              = require('./lib/SWES_2_0'                     ).SWES_2_0             ;
 module.exports.WSN_T_1               = require('./lib/WSN_T_1'                      ).WSN_T_1              ;
+module.exports.TJS_1_0               = require('./lib/TJS_1_0'                      ).TJS_1_0              ;
 module.exports.TML_1_0_0             = require('./lib/TML_1_0_0'                    ).TML_1_0_0            ;
 module.exports.WAMI_1_0_0            = require('./lib/WAMI_1_0_0'                   ).WAMI_1_0_0           ;
 module.exports.WAMI_1_0_1            = require('./lib/WAMI_1_0_1'                   ).WAMI_1_0_1           ;
