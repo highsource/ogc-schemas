@@ -51,6 +51,8 @@
 
 		<dependency><artifactId>omeo-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>oseo-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
 		<dependency><artifactId>owc-v_0_3_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
 		<dependency><artifactId>ows-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>

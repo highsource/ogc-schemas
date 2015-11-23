@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetQuotationResponse service="OS" xmlns="http://www.opengis.net/oseo/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" version="1.0.0">
+	<status>success</status>
+	<quotation>
+		<quotationId>urn:ESA:EECF:quotationId_0001</quotationId>
+		<orderItemGroupPrice>
+			<provider>
+				<serviceName>ESA_ORDER_SERVICE</serviceName>
+				<organization>ESA</organization>
+			</provider>
+			<price>
+				<value>50</value>
+				<currency>QUOTA</currency>
+			</price>
+			<orderItemPrice>
+				<itemId>item_001</itemId>
+				<productId>
+					<identifier>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS/EN1-05121921114570-3322.XI</identifier>
+				</productId>
+			</orderItemPrice>
+		</orderItemGroupPrice>
+	</quotation>
+</GetQuotationResponse>

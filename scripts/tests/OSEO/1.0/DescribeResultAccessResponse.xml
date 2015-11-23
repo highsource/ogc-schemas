@@ -1,0 +1,27 @@
+<DescribeResultAccessResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/oseo/1.0" xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd">
+	<status>success</status>
+	<URLs>
+		<itemId>item_0001</itemId>
+		<itemAddress>
+			<ResourceAddress>
+				<URL>ftp://user:online@eoaserver:2121/0c88028bf3aa6a6a143ed846f2be1ea4</URL>
+			</ResourceAddress>
+		</itemAddress>
+	</URLs>
+	<URLs>
+		<itemId>item_0002</itemId>
+		<itemAddress>
+			<ResourceAddress>
+				<URL>ftp://user:online@eoaserver:2121/0c88028bf3aa6a6a143ed846f2be1ea5</URL>
+			</ResourceAddress>
+		</itemAddress>
+	</URLs>
+	<URLs>
+		<itemId>item_0003</itemId>
+		<itemAddress>
+			<ResourceAddress>
+				<URL>ftp://user:online@eoaserver:2121/0c88028bf3aa6a6a143ed846f2be1ea6</URL>
+			</ResourceAddress>
+		</itemAddress>
+	</URLs>
+</DescribeResultAccessResponse>

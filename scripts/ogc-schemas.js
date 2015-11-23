@@ -74,6 +74,7 @@ module.exports.OMEO_OPT_2_0          = require('./lib/OMEO_OPT_2_0'             
 module.exports.OMEO_SAR_2_0          = require('./lib/OMEO_SAR_2_0'                 ).OMEO_SAR_2_0         ;
 module.exports.OMEO_SEN1_2_0         = require('./lib/OMEO_SEN1_2_0'                ).OMEO_SEN1_2_0        ;
 module.exports.OMEO_SSP_2_0          = require('./lib/OMEO_SSP_2_0'                 ).OMEO_SSP_2_0         ;
+module.exports.OSEO_1_0              = require('./lib/OSEO_1_0'                     ).OSEO_1_0             ;
 module.exports.OWC_0_3_1             = require('./lib/OWC_0_3_1'                    ).OWC_0_3_1            ;
 module.exports.OWS_1_0_0             = require('./lib/OWS_1_0_0'                    ).OWS_1_0_0            ;
 module.exports.OWS_1_1_0             = require('./lib/OWS_1_1_0'                    ).OWS_1_1_0            ;

@@ -21,6 +21,7 @@ module.exports =
 		"OMEO_SAR" : require('./OMEO_SAR/OMEO_SAR.js'),
 		"OMEO_SEN1" : require('./OMEO_SEN1/OMEO_SEN1.js'),
 		"OMEO_SSP" : require('./OMEO_SSP/OMEO_SSP.js'),
+		"OSEO" : require('./OSEO/OSEO.js'),
 		"OWC" : require('./OWC/OWC.js'),
 		"OWS" : require('./OWS/OWS.js'),
 		"Sampling" : require('./Sampling/Sampling.js'),

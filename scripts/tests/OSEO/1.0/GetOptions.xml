@@ -1,0 +1,3 @@
+<GetOptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/oseo/1.0" xsi:schemaLocation="http://www.opengis.net/oseo/1.0 http://schemas.opengis.net/oseo/1.0/oseo.xsd" service="OS" version="1.0.0">
+	<collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS</collectionId>
+</GetOptions>

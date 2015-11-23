@@ -36,6 +36,8 @@
 		"KML",
 		"OLS",
 		"OM",
+		"OMEO", "Observations & Measurements Earth Observation",
+		"OSEO", "Ordering Services for Earth Observation",
 		"OWS",
                 "Sampling",
                 "SamplingSpatial", "Sampling Spatial",
