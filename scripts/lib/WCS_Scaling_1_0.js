@@ -3,15 +3,6 @@ var WCS_Scaling_1_0_Module_Factory = function () {
     n: 'WCS_Scaling_1_0',
     dens: 'http:\/\/www.opengis.net\/WCS_service-extension_scaling\/1.0',
     tis: [{
-        ln: 'ScaleToSizeType',
-        ps: [{
-            n: 'targetAxisSize',
-            rq: true,
-            col: true,
-            en: 'TargetAxisSize',
-            ti: '.TargetAxisSizeType'
-          }]
-      }, {
         ln: 'ScaleAxisType',
         ps: [{
             n: 'axis',
@@ -22,21 +13,13 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             ti: 'Decimal'
           }]
       }, {
-        ln: 'ScaleByFactorType',
+        ln: 'ScaleToExtentType',
         ps: [{
-            n: 'scaleFactor',
+            n: 'targetAxisExtent',
             rq: true,
-            ti: 'Decimal'
-          }]
-      }, {
-        ln: 'TargetAxisSizeType',
-        ps: [{
-            n: 'axis',
-            rq: true
-          }, {
-            n: 'targetSize',
-            rq: true,
-            ti: 'Decimal'
+            col: true,
+            en: 'TargetAxisExtent',
+            ti: '.TargetAxisExtentType'
           }]
       }, {
         ln: 'TargetAxisExtentType',
@@ -76,6 +59,32 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             ti: '.ScaleToExtentType'
           }]
       }, {
+        ln: 'ScaleByFactorType',
+        ps: [{
+            n: 'scaleFactor',
+            rq: true,
+            ti: 'Decimal'
+          }]
+      }, {
+        ln: 'ScaleToSizeType',
+        ps: [{
+            n: 'targetAxisSize',
+            rq: true,
+            col: true,
+            en: 'TargetAxisSize',
+            ti: '.TargetAxisSizeType'
+          }]
+      }, {
+        ln: 'TargetAxisSizeType',
+        ps: [{
+            n: 'axis',
+            rq: true
+          }, {
+            n: 'targetSize',
+            rq: true,
+            ti: 'Decimal'
+          }]
+      }, {
         ln: 'ScaleAxesByFactorType',
         ps: [{
             n: 'scaleAxis',
@@ -83,15 +92,6 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             col: true,
             en: 'ScaleAxis',
             ti: '.ScaleAxisType'
-          }]
-      }, {
-        ln: 'ScaleToExtentType',
-        ps: [{
-            n: 'targetAxisExtent',
-            rq: true,
-            col: true,
-            en: 'TargetAxisExtent',
-            ti: '.TargetAxisExtentType'
           }]
       }],
     eis: [{

@@ -249,11 +249,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/CityFurnitureType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"CityFurniture",
+                "localPart":"_GenericApplicationPropertyOfCityFurniture",
                 "namespaceURI":"http://www.opengis.net/citygml/cityfurniture/1.0"
             }
         },
@@ -264,11 +264,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                    "$ref":"#/definitions/CityFurnitureType"
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfCityFurniture",
+                "localPart":"CityFurniture",
                 "namespaceURI":"http://www.opengis.net/citygml/cityfurniture/1.0"
             }
         }

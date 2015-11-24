@@ -2,132 +2,57 @@
 {
     "id":"http://www.pixia.com/wami#",
     "definitions":{
-        "MultipartImageRootDocumentType.Reference":{
+        "ServiceElementType":{
             "type":"object",
-            "title":"MultipartImageRootDocumentType.Reference",
+            "title":"ServiceElementType",
+            "required":[
+                "request"
+            ],
             "properties":{
-                "imageReference":{
-                    "title":"imageReference",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"imageReference",
-                        "namespaceURI":""
-                    }
-                },
-                "metadataReference":{
-                    "title":"metadataReference",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"metadataReference",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "imageReference",
-                "metadataReference"
-            ]
-        },
-        "GeoBoxSectionType":{
-            "type":"object",
-            "title":"GeoBoxSectionType",
-            "properties":{
-                "boundingBox":{
-                    "title":"boundingBox",
+                "request":{
+                    "title":"request",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/BoundBoxType"
+                                "$ref":"#/definitions/RequestMethodLinkType"
                             },
-                            "minItems":0
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"BoundingBox",
+                        "localPart":"Request",
                         "namespaceURI":"http://www.pixia.com/wami"
                     }
-                },
-                "nativeCRS":{
-                    "title":"nativeCRS",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nativeCRS",
-                        "namespaceURI":""
-                    }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"GeoBoxSectionType",
+                "localPart":"ServiceElementType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
-                "boundingBox",
-                "nativeCRS"
+                "request"
             ]
         },
-        "DimensionType":{
-            "type":"object",
-            "title":"DimensionType",
-            "required":[
-                "width",
-                "height"
-            ],
-            "properties":{
-                "width":{
-                    "title":"width",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"width",
-                        "namespaceURI":""
-                    }
+        "ISPathMapInfoType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ISAbstractMapInfoType"
                 },
-                "height":{
-                    "title":"height",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"height",
-                        "namespaceURI":""
+                {
+                    "type":"object",
+                    "title":"ISPathMapInfoType",
+                    "properties":{
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DimensionType",
+                "localPart":"IS_PathMapInfoType",
                 "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "width",
-                "height"
-            ]
+            }
         },
         "ExtendedMetadataSection":{
             "type":"object",
@@ -182,17 +107,20 @@
                 "name"
             ]
         },
-        "CSGetCollectionCountRequestType":{
+        "AbstractRequestType":{
+            "required":[
+                "version"
+            ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractRequestType"
+                    "$ref":"#/definitions/CommonAbstractRequestType"
                 },
                 {
                     "type":"object",
-                    "title":"CSGetCollectionCountRequestType",
+                    "title":"AbstractRequestType",
                     "properties":{
-                        "nid":{
-                            "title":"nid",
+                        "version":{
+                            "title":"version",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -200,20 +128,20 @@
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"NID",
+                                "localPart":"version",
                                 "namespaceURI":""
                             }
                         },
-                        "depth":{
-                            "title":"depth",
+                        "format":{
+                            "title":"format",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/NodeCountDepthType"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"depth",
+                                "localPart":"format",
                                 "namespaceURI":""
                             }
                         }
@@ -222,33 +150,40 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"CS_GetCollectionCountRequestType",
+                "localPart":"AbstractRequestType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
-                "nid",
-                "depth"
+                "version",
+                "format"
             ]
         },
-        "AbstractResponseType":{
+        "MetadataGroupType":{
             "type":"object",
-            "title":"AbstractResponseType",
+            "title":"MetadataGroupType",
+            "required":[
+                "name"
+            ],
             "properties":{
-                "lang":{
-                    "title":"lang",
+                "attribute":{
+                    "title":"attribute",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/NameValuePairType"
+                            },
+                            "minItems":0
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"lang",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Attribute",
+                        "namespaceURI":"http://www.pixia.com/wami"
                     }
                 },
-                "version":{
-                    "title":"version",
+                "name":{
+                    "title":"name",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -256,40 +191,598 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"version",
+                        "localPart":"name",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AbstractResponseType",
+                "localPart":"MetadataGroupType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
-                "lang",
-                "version"
+                "attribute",
+                "name"
             ]
         },
-        "ISInfoType":{
+        "CSNodeType":{
+            "type":"object",
+            "title":"CSNodeType",
+            "required":[
+                "nid"
+            ],
+            "properties":{
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Description",
+                        "namespaceURI":"http://www.pixia.com/wami"
+                    }
+                },
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/NamedServiceElementType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Service",
+                        "namespaceURI":"http://www.pixia.com/wami"
+                    }
+                },
+                "metadata":{
+                    "title":"metadata",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/CollectionMetadataSectionsType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Metadata",
+                        "namespaceURI":"http://www.pixia.com/wami"
+                    }
+                },
+                "node":{
+                    "title":"node",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/CSNodeType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Node",
+                        "namespaceURI":"http://www.pixia.com/wami"
+                    }
+                },
+                "id":{
+                    "title":"id",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"id",
+                        "namespaceURI":""
+                    }
+                },
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"name",
+                        "namespaceURI":""
+                    }
+                },
+                "parentNID":{
+                    "title":"parentNID",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"parentNID",
+                        "namespaceURI":""
+                    }
+                },
+                "nid":{
+                    "title":"nid",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"NID",
+                        "namespaceURI":""
+                    }
+                },
+                "cid":{
+                    "title":"cid",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"CID",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CS_NodeType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "description",
+                "service",
+                "metadata",
+                "node",
+                "id",
+                "name",
+                "parentNID",
+                "nid",
+                "cid"
+            ]
+        },
+        "CommonAbstractRequestType":{
+            "type":"object",
+            "title":"CommonAbstractRequestType",
+            "required":[
+                "service",
+                "request"
+            ],
+            "properties":{
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ServiceNameType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"service",
+                        "namespaceURI":""
+                    }
+                },
+                "request":{
+                    "title":"request",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"request",
+                        "namespaceURI":""
+                    }
+                },
+                "exceptions":{
+                    "title":"exceptions",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ExceptionNameType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"exceptions",
+                        "namespaceURI":""
+                    }
+                },
+                "acceptLanguages":{
+                    "title":"acceptLanguages",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"acceptLanguages",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CommonAbstractRequestType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "service",
+                "request",
+                "exceptions",
+                "acceptLanguages"
+            ]
+        },
+        "ISGetPathMapRequestType":{
+            "required":[
+                "path"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/BinaryAbstractGetMapRequestType"
+                },
+                {
+                    "type":"object",
+                    "title":"ISGetPathMapRequestType",
+                    "properties":{
+                        "path":{
+                            "title":"path",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PathMapType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Path",
+                                "namespaceURI":"http://www.pixia.com/wami"
+                            }
+                        },
+                        "disposition":{
+                            "title":"disposition",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DispositionType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"disposition",
+                                "namespaceURI":""
+                            }
+                        },
+                        "styles":{
+                            "title":"styles",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"styles",
+                                "namespaceURI":""
+                            }
+                        },
+                        "bgcolor":{
+                            "title":"bgcolor",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"bgcolor",
+                                "namespaceURI":""
+                            }
+                        },
+                        "transparent":{
+                            "title":"transparent",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"transparent",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"IS_GetPathMapRequestType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "path",
+                "disposition",
+                "styles",
+                "bgcolor",
+                "transparent"
+            ]
+        },
+        "NamedServiceElementType":{
+            "required":[
+                "name"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ServiceElementType"
+                },
+                {
+                    "type":"object",
+                    "title":"NamedServiceElementType",
+                    "properties":{
+                        "name":{
+                            "title":"name",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ServiceNameType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"name",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"NamedServiceElementType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "name"
+            ]
+        },
+        "ISGetMapRequestType":{
+            "required":[
+                "bBox",
+                "time",
+                "cid"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/BinaryAbstractGetMapRequestType"
+                },
+                {
+                    "type":"object",
+                    "title":"ISGetMapRequestType",
+                    "properties":{
+                        "bBox":{
+                            "title":"bBox",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/BoundBoxType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"BBox",
+                                "namespaceURI":"http://www.pixia.com/wami"
+                            }
+                        },
+                        "time":{
+                            "title":"time",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/FrameOrTimeRangeRequestType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Time",
+                                "namespaceURI":"http://www.pixia.com/wami"
+                            }
+                        },
+                        "cid":{
+                            "title":"cid",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"CID",
+                                "namespaceURI":""
+                            }
+                        },
+                        "disposition":{
+                            "title":"disposition",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DispositionType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"disposition",
+                                "namespaceURI":""
+                            }
+                        },
+                        "styles":{
+                            "title":"styles",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"styles",
+                                "namespaceURI":""
+                            }
+                        },
+                        "bgcolor":{
+                            "title":"bgcolor",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"bgcolor",
+                                "namespaceURI":""
+                            }
+                        },
+                        "transparent":{
+                            "title":"transparent",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"transparent",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"IS_GetMapRequestType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "bBox",
+                "time",
+                "cid",
+                "disposition",
+                "styles",
+                "bgcolor",
+                "transparent"
+            ]
+        },
+        "FrameOrTimeRequestType":{
+            "type":"object",
+            "title":"FrameOrTimeRequestType",
+            "properties":{
+                "frame":{
+                    "title":"frame",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"frame",
+                        "namespaceURI":""
+                    }
+                },
+                "time":{
+                    "title":"time",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"time",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FrameOrTimeRequestType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "frame",
+                "time"
+            ]
+        },
+        "CSCollectionsType":{
+            "required":[
+                "node"
+            ],
             "allOf":[
                 {
                     "$ref":"#/definitions/AbstractResponseType"
                 },
                 {
                     "type":"object",
-                    "title":"ISInfoType",
+                    "title":"CSCollectionsType",
                     "properties":{
-                        "metadata":{
-                            "title":"metadata",
+                        "description":{
+                            "title":"description",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/CollectionMetadataSectionsType"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"Metadata",
+                                "localPart":"Description",
+                                "namespaceURI":"http://www.pixia.com/wami"
+                            }
+                        },
+                        "parent":{
+                            "title":"parent",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CSCollectionsType.Parent"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Parent",
+                                "namespaceURI":"http://www.pixia.com/wami"
+                            }
+                        },
+                        "node":{
+                            "title":"node",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CSNodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Node",
                                 "namespaceURI":"http://www.pixia.com/wami"
                             }
                         }
@@ -298,11 +791,118 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"IS_InfoType",
+                "localPart":"CS_CollectionsType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
-                "metadata"
+                "description",
+                "parent",
+                "node"
+            ]
+        },
+        "GeoTransformType":{
+            "type":"object",
+            "title":"GeoTransformType",
+            "required":[
+                "xOffset",
+                "yOffset",
+                "xScale",
+                "yScale",
+                "xSkew",
+                "ySkew"
+            ],
+            "properties":{
+                "xOffset":{
+                    "title":"xOffset",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"xOffset",
+                        "namespaceURI":""
+                    }
+                },
+                "yOffset":{
+                    "title":"yOffset",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"yOffset",
+                        "namespaceURI":""
+                    }
+                },
+                "xScale":{
+                    "title":"xScale",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"xScale",
+                        "namespaceURI":""
+                    }
+                },
+                "yScale":{
+                    "title":"yScale",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"yScale",
+                        "namespaceURI":""
+                    }
+                },
+                "xSkew":{
+                    "title":"xSkew",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"xSkew",
+                        "namespaceURI":""
+                    }
+                },
+                "ySkew":{
+                    "title":"ySkew",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"ySkew",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GeoTransformType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "xOffset",
+                "yOffset",
+                "xScale",
+                "yScale",
+                "xSkew",
+                "ySkew"
             ]
         },
         "CommonAbstractGetMapRequestType":{
@@ -377,45 +977,78 @@
                 "metadata"
             ]
         },
-        "FrameOrTimeRequestType":{
-            "type":"object",
-            "title":"FrameOrTimeRequestType",
-            "properties":{
-                "frame":{
-                    "title":"frame",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"frame",
-                        "namespaceURI":""
-                    }
+        "BinaryAbstractGetMapRequestType":{
+            "required":[
+                "viewPort"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/CommonAbstractGetMapRequestType"
                 },
-                "time":{
-                    "title":"time",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
+                {
+                    "type":"object",
+                    "title":"BinaryAbstractGetMapRequestType",
+                    "properties":{
+                        "viewPort":{
+                            "title":"viewPort",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DimensionType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ViewPort",
+                                "namespaceURI":"http://www.pixia.com/wami"
+                            }
                         }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"time",
-                        "namespaceURI":""
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"FrameOrTimeRequestType",
+                "localPart":"BinaryAbstractGetMapRequestType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
-                "frame",
-                "time"
+                "viewPort"
+            ]
+        },
+        "ISGetPathMapInfoRequestType":{
+            "required":[
+                "path"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/CommonAbstractGetMapRequestType"
+                },
+                {
+                    "type":"object",
+                    "title":"ISGetPathMapInfoRequestType",
+                    "properties":{
+                        "path":{
+                            "title":"path",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PathMapType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Path",
+                                "namespaceURI":"http://www.pixia.com/wami"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"IS_GetPathMapInfoRequestType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "path"
             ]
         },
         "PathMapTrackAoiType":{
@@ -495,29 +1128,122 @@
                 "option"
             ]
         },
-        "ISGetPathMapInfoRequestType":{
+        "GeoBoxSectionType":{
+            "type":"object",
+            "title":"GeoBoxSectionType",
+            "properties":{
+                "boundingBox":{
+                    "title":"boundingBox",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/BoundBoxType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"BoundingBox",
+                        "namespaceURI":"http://www.pixia.com/wami"
+                    }
+                },
+                "nativeCRS":{
+                    "title":"nativeCRS",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nativeCRS",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GeoBoxSectionType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "boundingBox",
+                "nativeCRS"
+            ]
+        },
+        "GetCapabilitiesRequestType":{
             "required":[
-                "path"
+                "acceptVersions"
             ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/CommonAbstractGetMapRequestType"
+                    "$ref":"#/definitions/CommonAbstractRequestType"
                 },
                 {
                     "type":"object",
-                    "title":"ISGetPathMapInfoRequestType",
+                    "title":"GetCapabilitiesRequestType",
                     "properties":{
-                        "path":{
-                            "title":"path",
+                        "acceptVersions":{
+                            "title":"acceptVersions",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/PathMapType"
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    }
                                 }
                             ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Path",
-                                "namespaceURI":"http://www.pixia.com/wami"
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"acceptVersions",
+                                "namespaceURI":""
+                            }
+                        },
+                        "acceptFormats":{
+                            "title":"acceptFormats",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"acceptFormats",
+                                "namespaceURI":""
+                            }
+                        },
+                        "sections":{
+                            "title":"sections",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"sections",
+                                "namespaceURI":""
+                            }
+                        },
+                        "updateSequence":{
+                            "title":"updateSequence",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"updateSequence",
+                                "namespaceURI":""
                             }
                         }
                     }
@@ -525,11 +1251,139 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"IS_GetPathMapInfoRequestType",
+                "localPart":"GetCapabilitiesRequestType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
-                "path"
+                "acceptVersions",
+                "acceptFormats",
+                "sections",
+                "updateSequence"
+            ]
+        },
+        "CollectionSectionType":{
+            "type":"object",
+            "title":"CollectionSectionType",
+            "properties":{
+                "startFrame":{
+                    "title":"startFrame",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"startFrame",
+                        "namespaceURI":""
+                    }
+                },
+                "endFrame":{
+                    "title":"endFrame",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"endFrame",
+                        "namespaceURI":""
+                    }
+                },
+                "frameCount":{
+                    "title":"frameCount",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"frameCount",
+                        "namespaceURI":""
+                    }
+                },
+                "startTime":{
+                    "title":"startTime",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"startTime",
+                        "namespaceURI":""
+                    }
+                },
+                "endTime":{
+                    "title":"endTime",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"endTime",
+                        "namespaceURI":""
+                    }
+                },
+                "timeSpan":{
+                    "title":"timeSpan",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"timeSpan",
+                        "namespaceURI":""
+                    }
+                },
+                "frameInterval":{
+                    "title":"frameInterval",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"frameInterval",
+                        "namespaceURI":""
+                    }
+                },
+                "frameJitter":{
+                    "title":"frameJitter",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"frameJitter",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CollectionSectionType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "startFrame",
+                "endFrame",
+                "frameCount",
+                "startTime",
+                "endTime",
+                "timeSpan",
+                "frameInterval",
+                "frameJitter"
             ]
         },
         "CollectionMetadataSectionsType":{
@@ -651,6 +1505,169 @@
                 "extendedMetadataSection"
             ]
         },
+        "BoundingPolygonType":{
+            "type":"object",
+            "title":"BoundingPolygonType",
+            "required":[
+                "crs"
+            ],
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                            }
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "crs":{
+                    "title":"crs",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"crs",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"BoundingPolygonType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "value",
+                "crs"
+            ]
+        },
+        "FrameOrTimeRangeRequestType":{
+            "type":"object",
+            "title":"FrameOrTimeRangeRequestType",
+            "properties":{
+                "frameRange":{
+                    "title":"frameRange",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/FrameOrTimeRangeRequestType.FrameRange"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"FrameRange",
+                        "namespaceURI":"http://www.pixia.com/wami"
+                    }
+                },
+                "timeRange":{
+                    "title":"timeRange",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/FrameOrTimeRangeRequestType.TimeRange"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TimeRange",
+                        "namespaceURI":"http://www.pixia.com/wami"
+                    }
+                },
+                "frame":{
+                    "title":"frame",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"frame",
+                        "namespaceURI":""
+                    }
+                },
+                "time":{
+                    "title":"time",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"time",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FrameOrTimeRangeRequestType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "frameRange",
+                "timeRange",
+                "frame",
+                "time"
+            ]
+        },
+        "FrameOrTimeRangeRequestType.TimeRange":{
+            "type":"object",
+            "title":"FrameOrTimeRangeRequestType.TimeRange",
+            "properties":{
+                "start":{
+                    "title":"start",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"start",
+                        "namespaceURI":""
+                    }
+                },
+                "end":{
+                    "title":"end",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"end",
+                        "namespaceURI":""
+                    }
+                },
+                "step":{
+                    "title":"step",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"step",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "start",
+                "end",
+                "step"
+            ]
+        },
         "BoundBoxType":{
             "type":"object",
             "title":"BoundBoxType",
@@ -769,27 +1786,231 @@
                 "resy"
             ]
         },
-        "ISPathMapInfoType":{
+        "PathMapType":{
+            "type":"object",
+            "title":"PathMapType",
+            "required":[
+                "track"
+            ],
+            "properties":{
+                "track":{
+                    "title":"track",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/PathMapTrackType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Track",
+                        "namespaceURI":"http://www.pixia.com/wami"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"PathMapType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "track"
+            ]
+        },
+        "PostContentTypeMetaData.XML":{
+            "type":"object",
+            "title":"PostContentTypeMetaData.XML",
+            "required":[
+                "schemaElement"
+            ],
+            "properties":{
+                "schemaElement":{
+                    "title":"schemaElement",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"schemaElement",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "schemaElement"
+            ]
+        },
+        "FrameOrTimeRangeRequestType.FrameRange":{
+            "type":"object",
+            "title":"FrameOrTimeRangeRequestType.FrameRange",
+            "properties":{
+                "start":{
+                    "title":"start",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"start",
+                        "namespaceURI":""
+                    }
+                },
+                "end":{
+                    "title":"end",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"end",
+                        "namespaceURI":""
+                    }
+                },
+                "step":{
+                    "title":"step",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"step",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "start",
+                "end",
+                "step"
+            ]
+        },
+        "FrameOrTimeSpanRequestType":{
+            "type":"object",
+            "title":"FrameOrTimeSpanRequestType",
+            "properties":{
+                "frames":{
+                    "title":"frames",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"frames",
+                        "namespaceURI":""
+                    }
+                },
+                "duration":{
+                    "title":"duration",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"duration",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FrameOrTimeSpanRequestType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "frames",
+                "duration"
+            ]
+        },
+        "ISGetMapInfoRequestType":{
+            "required":[
+                "bBox",
+                "time",
+                "cid"
+            ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/ISAbstractMapInfoType"
+                    "$ref":"#/definitions/CommonAbstractGetMapRequestType"
                 },
                 {
                     "type":"object",
-                    "title":"ISPathMapInfoType",
+                    "title":"ISGetMapInfoRequestType",
                     "properties":{
+                        "bBox":{
+                            "title":"bBox",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/BoundBoxType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"BBox",
+                                "namespaceURI":"http://www.pixia.com/wami"
+                            }
+                        },
+                        "time":{
+                            "title":"time",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/FrameOrTimeRangeRequestType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Time",
+                                "namespaceURI":"http://www.pixia.com/wami"
+                            }
+                        },
+                        "cid":{
+                            "title":"cid",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"CID",
+                                "namespaceURI":""
+                            }
+                        }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"IS_PathMapInfoType",
+                "localPart":"IS_GetMapInfoRequestType",
                 "namespaceURI":"http://www.pixia.com/wami"
-            }
+            },
+            "propertiesOrder":[
+                "bBox",
+                "time",
+                "cid"
+            ]
         },
-        "CSCollectionsType":{
+        "ISAbstractMapInfoType":{
             "required":[
-                "node"
+                "metadata"
             ],
             "allOf":[
                 {
@@ -797,44 +2018,22 @@
                 },
                 {
                     "type":"object",
-                    "title":"CSCollectionsType",
+                    "title":"ISAbstractMapInfoType",
                     "properties":{
-                        "description":{
-                            "title":"description",
+                        "metadata":{
+                            "title":"metadata",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/CollectionMetadataSectionsType"
+                                    },
+                                    "minItems":1
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"Description",
-                                "namespaceURI":"http://www.pixia.com/wami"
-                            }
-                        },
-                        "parent":{
-                            "title":"parent",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CSCollectionsType.Parent"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Parent",
-                                "namespaceURI":"http://www.pixia.com/wami"
-                            }
-                        },
-                        "node":{
-                            "title":"node",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CSNodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Node",
+                                "localPart":"Metadata",
                                 "namespaceURI":"http://www.pixia.com/wami"
                             }
                         }
@@ -843,13 +2042,287 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"CS_CollectionsType",
+                "localPart":"IS_AbstractMapInfoType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
-                "description",
-                "parent",
-                "node"
+                "metadata"
+            ]
+        },
+        "PostContentTypeMetaData":{
+            "type":"object",
+            "title":"PostContentTypeMetaData",
+            "properties":{
+                "kvp":{
+                    "title":"kvp",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/PostContentTypeMetaData.KVP"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"KVP",
+                        "namespaceURI":"http://www.pixia.com/wami"
+                    }
+                },
+                "xml":{
+                    "title":"xml",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/PostContentTypeMetaData.XML"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"XML",
+                        "namespaceURI":"http://www.pixia.com/wami"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "kvp",
+                "xml"
+            ]
+        },
+        "MultipartImageRootDocumentType":{
+            "type":"object",
+            "title":"MultipartImageRootDocumentType",
+            "properties":{
+                "reference":{
+                    "title":"reference",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/MultipartImageRootDocumentType.Reference"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Reference",
+                        "namespaceURI":"http://www.pixia.com/wami"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"MultipartImageRootDocumentType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "reference"
+            ]
+        },
+        "AbstractResponseType":{
+            "type":"object",
+            "title":"AbstractResponseType",
+            "properties":{
+                "lang":{
+                    "title":"lang",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"lang",
+                        "namespaceURI":""
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractResponseType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "lang",
+                "version"
+            ]
+        },
+        "ISInfoType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractResponseType"
+                },
+                {
+                    "type":"object",
+                    "title":"ISInfoType",
+                    "properties":{
+                        "metadata":{
+                            "title":"metadata",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CollectionMetadataSectionsType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Metadata",
+                                "namespaceURI":"http://www.pixia.com/wami"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"IS_InfoType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "metadata"
+            ]
+        },
+        "MultipartImageRootDocumentType.Reference":{
+            "type":"object",
+            "title":"MultipartImageRootDocumentType.Reference",
+            "properties":{
+                "imageReference":{
+                    "title":"imageReference",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"imageReference",
+                        "namespaceURI":""
+                    }
+                },
+                "metadataReference":{
+                    "title":"metadataReference",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"metadataReference",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "imageReference",
+                "metadataReference"
+            ]
+        },
+        "CSGetCollectionCountRequestType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractRequestType"
+                },
+                {
+                    "type":"object",
+                    "title":"CSGetCollectionCountRequestType",
+                    "properties":{
+                        "nid":{
+                            "title":"nid",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"NID",
+                                "namespaceURI":""
+                            }
+                        },
+                        "depth":{
+                            "title":"depth",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/NodeCountDepthType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"depth",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CS_GetCollectionCountRequestType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "nid",
+                "depth"
+            ]
+        },
+        "RequestMethodLinkType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows/2.0#/definitions/RequestMethodType"
+                },
+                {
+                    "type":"object",
+                    "title":"RequestMethodLinkType",
+                    "properties":{
+                        "get":{
+                            "title":"get",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"get",
+                                "namespaceURI":""
+                            }
+                        },
+                        "post":{
+                            "title":"post",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"post",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RequestMethodLinkType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "get",
+                "post"
             ]
         },
         "CSGetCollectionsRequestType":{
@@ -917,779 +2390,37 @@
                 "metadata"
             ]
         },
-        "GetCapabilitiesRequestType":{
+        "CSCollectionCountType":{
             "required":[
-                "acceptVersions"
+                "root",
+                "nid",
+                "childNodes",
+                "totalNodes",
+                "collections"
             ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/CommonAbstractRequestType"
+                    "$ref":"#/definitions/AbstractResponseType"
                 },
                 {
                     "type":"object",
-                    "title":"GetCapabilitiesRequestType",
+                    "title":"CSCollectionCountType",
                     "properties":{
-                        "acceptVersions":{
-                            "title":"acceptVersions",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"acceptVersions",
-                                "namespaceURI":""
-                            }
-                        },
-                        "acceptFormats":{
-                            "title":"acceptFormats",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"acceptFormats",
-                                "namespaceURI":""
-                            }
-                        },
-                        "sections":{
-                            "title":"sections",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"sections",
-                                "namespaceURI":""
-                            }
-                        },
-                        "updateSequence":{
-                            "title":"updateSequence",
+                        "description":{
+                            "title":"description",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"updateSequence",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetCapabilitiesRequestType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "acceptVersions",
-                "acceptFormats",
-                "sections",
-                "updateSequence"
-            ]
-        },
-        "CommonAbstractRequestType":{
-            "type":"object",
-            "title":"CommonAbstractRequestType",
-            "required":[
-                "service",
-                "request"
-            ],
-            "properties":{
-                "service":{
-                    "title":"service",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ServiceNameType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"service",
-                        "namespaceURI":""
-                    }
-                },
-                "request":{
-                    "title":"request",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"request",
-                        "namespaceURI":""
-                    }
-                },
-                "exceptions":{
-                    "title":"exceptions",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ExceptionNameType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"exceptions",
-                        "namespaceURI":""
-                    }
-                },
-                "acceptLanguages":{
-                    "title":"acceptLanguages",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"acceptLanguages",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CommonAbstractRequestType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "service",
-                "request",
-                "exceptions",
-                "acceptLanguages"
-            ]
-        },
-        "HelpResponseType":{
-            "type":"object",
-            "title":"HelpResponseType",
-            "required":[
-                "service",
-                "request"
-            ],
-            "properties":{
-                "otherAttributes":{
-                    "title":"otherAttributes",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "additionalProperties":{
-                                "type":"string"
-                            }
-                        }
-                    ],
-                    "propertyType":"anyAttribute"
-                },
-                "content":{
-                    "title":"content",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                    },
-                                    {
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "propertyType":"anyElement"
-                },
-                "service":{
-                    "title":"service",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ServiceNameType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"service",
-                        "namespaceURI":""
-                    }
-                },
-                "request":{
-                    "title":"request",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"request",
-                        "namespaceURI":""
-                    }
-                },
-                "lang":{
-                    "title":"lang",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"lang",
-                        "namespaceURI":""
-                    }
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"HelpResponseType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "content",
-                "service",
-                "request",
-                "lang",
-                "version"
-            ]
-        },
-        "ISMapType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/MultipartImageRootDocumentType"
-                },
-                {
-                    "type":"object",
-                    "title":"ISMapType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"IS_MapType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        "PostContentTypeMetaData":{
-            "type":"object",
-            "title":"PostContentTypeMetaData",
-            "properties":{
-                "kvp":{
-                    "title":"kvp",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/PostContentTypeMetaData.KVP"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"KVP",
-                        "namespaceURI":"http://www.pixia.com/wami"
-                    }
-                },
-                "xml":{
-                    "title":"xml",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/PostContentTypeMetaData.XML"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"XML",
-                        "namespaceURI":"http://www.pixia.com/wami"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "kvp",
-                "xml"
-            ]
-        },
-        "PostContentTypeMetaData.XML":{
-            "type":"object",
-            "title":"PostContentTypeMetaData.XML",
-            "required":[
-                "schemaElement"
-            ],
-            "properties":{
-                "schemaElement":{
-                    "title":"schemaElement",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"schemaElement",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "schemaElement"
-            ]
-        },
-        "GeoTransformType":{
-            "type":"object",
-            "title":"GeoTransformType",
-            "required":[
-                "xOffset",
-                "yOffset",
-                "xScale",
-                "yScale",
-                "xSkew",
-                "ySkew"
-            ],
-            "properties":{
-                "xOffset":{
-                    "title":"xOffset",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"xOffset",
-                        "namespaceURI":""
-                    }
-                },
-                "yOffset":{
-                    "title":"yOffset",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"yOffset",
-                        "namespaceURI":""
-                    }
-                },
-                "xScale":{
-                    "title":"xScale",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"xScale",
-                        "namespaceURI":""
-                    }
-                },
-                "yScale":{
-                    "title":"yScale",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"yScale",
-                        "namespaceURI":""
-                    }
-                },
-                "xSkew":{
-                    "title":"xSkew",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"xSkew",
-                        "namespaceURI":""
-                    }
-                },
-                "ySkew":{
-                    "title":"ySkew",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"ySkew",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GeoTransformType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "xOffset",
-                "yOffset",
-                "xScale",
-                "yScale",
-                "xSkew",
-                "ySkew"
-            ]
-        },
-        "MultipartImageRootDocumentType":{
-            "type":"object",
-            "title":"MultipartImageRootDocumentType",
-            "properties":{
-                "reference":{
-                    "title":"reference",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/MultipartImageRootDocumentType.Reference"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Reference",
-                        "namespaceURI":"http://www.pixia.com/wami"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"MultipartImageRootDocumentType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "reference"
-            ]
-        },
-        "PathMapType":{
-            "type":"object",
-            "title":"PathMapType",
-            "required":[
-                "track"
-            ],
-            "properties":{
-                "track":{
-                    "title":"track",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/PathMapTrackType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Track",
-                        "namespaceURI":"http://www.pixia.com/wami"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"PathMapType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "track"
-            ]
-        },
-        "CapabilitiesResponseBaseType":{
-            "type":"object",
-            "title":"CapabilitiesResponseBaseType",
-            "properties":{
-                "serviceIdentification":{
-                    "title":"serviceIdentification",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ows/2.0#/definitions/ServiceIdentification"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ServiceIdentification",
-                        "namespaceURI":"http://www.opengis.net/ows/2.0"
-                    }
-                },
-                "serviceProvider":{
-                    "title":"serviceProvider",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ows/2.0#/definitions/ServiceProvider"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ServiceProvider",
-                        "namespaceURI":"http://www.opengis.net/ows/2.0"
-                    }
-                },
-                "operationsMetadata":{
-                    "title":"operationsMetadata",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ows/2.0#/definitions/OperationsMetadata"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OperationsMetadata",
-                        "namespaceURI":"http://www.opengis.net/ows/2.0"
-                    }
-                },
-                "language":{
-                    "title":"language",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Language",
-                        "namespaceURI":"http://www.pixia.com/wami"
-                    }
-                },
-                "updateSequence":{
-                    "title":"updateSequence",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"updateSequence",
-                        "namespaceURI":""
-                    }
-                },
-                "lang":{
-                    "title":"lang",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"lang",
-                        "namespaceURI":""
-                    }
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CapabilitiesResponseBaseType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "serviceIdentification",
-                "serviceProvider",
-                "operationsMetadata",
-                "language",
-                "updateSequence",
-                "lang",
-                "version"
-            ]
-        },
-        "NameValuePairType":{
-            "type":"object",
-            "title":"NameValuePairType",
-            "properties":{
-                "otherAttributes":{
-                    "title":"otherAttributes",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "additionalProperties":{
-                                "type":"string"
-                            }
-                        }
-                    ],
-                    "propertyType":"anyAttribute"
-                },
-                "content":{
-                    "title":"content",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                    },
-                                    {
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "propertyType":"anyElement"
-                },
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"name",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"NameValuePairType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "content",
-                "name"
-            ]
-        },
-        "VSGetPathMapVideoRequestType":{
-            "required":[
-                "path",
-                "dup"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/BinaryAbstractGetMapRequestType"
-                },
-                {
-                    "type":"object",
-                    "title":"VSGetPathMapVideoRequestType",
-                    "properties":{
-                        "path":{
-                            "title":"path",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PathMapType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"Path",
+                                "localPart":"Description",
                                 "namespaceURI":"http://www.pixia.com/wami"
                             }
                         },
-                        "styles":{
-                            "title":"styles",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"styles",
-                                "namespaceURI":""
-                            }
-                        },
-                        "bgcolor":{
-                            "title":"bgcolor",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"bgcolor",
-                                "namespaceURI":""
-                            }
-                        },
-                        "transparent":{
-                            "title":"transparent",
+                        "root":{
+                            "title":"root",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
@@ -1697,12 +2428,12 @@
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"transparent",
+                                "localPart":"root",
                                 "namespaceURI":""
                             }
                         },
-                        "dup":{
-                            "title":"dup",
+                        "depth":{
+                            "title":"depth",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
@@ -1710,7 +2441,72 @@
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"dup",
+                                "localPart":"depth",
+                                "namespaceURI":""
+                            }
+                        },
+                        "nid":{
+                            "title":"nid",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"NID",
+                                "namespaceURI":""
+                            }
+                        },
+                        "childNodes":{
+                            "title":"childNodes",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"childNodes",
+                                "namespaceURI":""
+                            }
+                        },
+                        "totalNodes":{
+                            "title":"totalNodes",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"totalNodes",
+                                "namespaceURI":""
+                            }
+                        },
+                        "collections":{
+                            "title":"collections",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"collections",
+                                "namespaceURI":""
+                            }
+                        },
+                        "edgeDepth":{
+                            "title":"edgeDepth",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"edgeDepth",
                                 "namespaceURI":""
                             }
                         }
@@ -1719,16 +2515,26 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"VS_GetPathMapVideoRequestType",
+                "localPart":"CS_CollectionCountType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
-                "path",
-                "styles",
-                "bgcolor",
-                "transparent",
-                "dup"
+                "description",
+                "root",
+                "depth",
+                "nid",
+                "childNodes",
+                "totalNodes",
+                "collections",
+                "edgeDepth"
             ]
+        },
+        "PostContentTypeMetaData.KVP":{
+            "type":"object",
+            "title":"PostContentTypeMetaData.KVP",
+            "properties":{
+            },
+            "typeType":"classInfo"
         },
         "CSCollectionsType.Parent":{
             "type":"object",
@@ -1901,60 +2707,144 @@
                 "dup"
             ]
         },
-        "AbstractRequestType":{
+        "HelpResponseType":{
+            "type":"object",
+            "title":"HelpResponseType",
             "required":[
-                "version"
+                "service",
+                "request"
             ],
+            "properties":{
+                "otherAttributes":{
+                    "title":"otherAttributes",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "additionalProperties":{
+                                "type":"string"
+                            }
+                        }
+                    ],
+                    "propertyType":"anyAttribute"
+                },
+                "content":{
+                    "title":"content",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                    },
+                                    {
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                },
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ServiceNameType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"service",
+                        "namespaceURI":""
+                    }
+                },
+                "request":{
+                    "title":"request",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"request",
+                        "namespaceURI":""
+                    }
+                },
+                "lang":{
+                    "title":"lang",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"lang",
+                        "namespaceURI":""
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"HelpResponseType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "content",
+                "service",
+                "request",
+                "lang",
+                "version"
+            ]
+        },
+        "ISMapInfoType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/CommonAbstractRequestType"
+                    "$ref":"#/definitions/ISAbstractMapInfoType"
                 },
                 {
                     "type":"object",
-                    "title":"AbstractRequestType",
+                    "title":"ISMapInfoType",
                     "properties":{
-                        "version":{
-                            "title":"version",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"version",
-                                "namespaceURI":""
-                            }
-                        },
-                        "format":{
-                            "title":"format",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"format",
-                                "namespaceURI":""
-                            }
-                        }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AbstractRequestType",
+                "localPart":"IS_MapInfoType",
                 "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "version",
-                "format"
-            ]
+            }
         },
-        "ISGetPathMapRequestType":{
+        "VSGetPathMapVideoRequestType":{
             "required":[
-                "path"
+                "path",
+                "dup"
             ],
             "allOf":[
                 {
@@ -1962,7 +2852,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"ISGetPathMapRequestType",
+                    "title":"VSGetPathMapVideoRequestType",
                     "properties":{
                         "path":{
                             "title":"path",
@@ -1975,19 +2865,6 @@
                             "elementName":{
                                 "localPart":"Path",
                                 "namespaceURI":"http://www.pixia.com/wami"
-                            }
-                        },
-                        "disposition":{
-                            "title":"disposition",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DispositionType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"disposition",
-                                "namespaceURI":""
                             }
                         },
                         "styles":{
@@ -2031,46 +2908,98 @@
                                 "localPart":"transparent",
                                 "namespaceURI":""
                             }
+                        },
+                        "dup":{
+                            "title":"dup",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"dup",
+                                "namespaceURI":""
+                            }
                         }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"IS_GetPathMapRequestType",
+                "localPart":"VS_GetPathMapVideoRequestType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
                 "path",
-                "disposition",
                 "styles",
                 "bgcolor",
-                "transparent"
+                "transparent",
+                "dup"
             ]
         },
-        "MetadataGroupType":{
-            "type":"object",
-            "title":"MetadataGroupType",
-            "required":[
-                "name"
+        "ISPathMapType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/MultipartImageRootDocumentType"
+                },
+                {
+                    "type":"object",
+                    "title":"ISPathMapType",
+                    "properties":{
+                    }
+                }
             ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"IS_PathMapType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        "NameValuePairType":{
+            "type":"object",
+            "title":"NameValuePairType",
             "properties":{
-                "attribute":{
-                    "title":"attribute",
+                "otherAttributes":{
+                    "title":"otherAttributes",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "additionalProperties":{
+                                "type":"string"
+                            }
+                        }
+                    ],
+                    "propertyType":"anyAttribute"
+                },
+                "content":{
+                    "title":"content",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/NameValuePairType"
-                            },
-                            "minItems":0
+                                "anyOf":[
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                    },
+                                    {
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Attribute",
-                        "namespaceURI":"http://www.pixia.com/wami"
-                    }
+                    "propertyType":"anyElement"
                 },
                 "name":{
                     "title":"name",
@@ -2088,130 +3017,14 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"MetadataGroupType",
+                "localPart":"NameValuePairType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
-                "attribute",
+                "otherAttributes",
+                "content",
                 "name"
             ]
-        },
-        "ISAbstractMapInfoType":{
-            "required":[
-                "metadata"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractResponseType"
-                },
-                {
-                    "type":"object",
-                    "title":"ISAbstractMapInfoType",
-                    "properties":{
-                        "metadata":{
-                            "title":"metadata",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/CollectionMetadataSectionsType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Metadata",
-                                "namespaceURI":"http://www.pixia.com/wami"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"IS_AbstractMapInfoType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "metadata"
-            ]
-        },
-        "PostContentTypeMetaData.KVP":{
-            "type":"object",
-            "title":"PostContentTypeMetaData.KVP",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
-        "FrameOrTimeRangeRequestType.FrameRange":{
-            "type":"object",
-            "title":"FrameOrTimeRangeRequestType.FrameRange",
-            "properties":{
-                "start":{
-                    "title":"start",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"start",
-                        "namespaceURI":""
-                    }
-                },
-                "end":{
-                    "title":"end",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"end",
-                        "namespaceURI":""
-                    }
-                },
-                "step":{
-                    "title":"step",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"step",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "start",
-                "end",
-                "step"
-            ]
-        },
-        "ISMapInfoType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ISAbstractMapInfoType"
-                },
-                {
-                    "type":"object",
-                    "title":"ISMapInfoType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"IS_MapInfoType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
         },
         "PathMapTrackType":{
             "type":"object",
@@ -2279,38 +3092,28 @@
                 "method"
             ]
         },
-        "RequestMethodLinkType":{
+        "GetHelpRequestType":{
             "allOf":[
                 {
-                    "$ref":"http://www.opengis.net/ows/2.0#/definitions/RequestMethodType"
+                    "$ref":"#/definitions/AbstractRequestType"
                 },
                 {
                     "type":"object",
-                    "title":"RequestMethodLinkType",
+                    "title":"GetHelpRequestType",
                     "properties":{
-                        "get":{
-                            "title":"get",
+                        "topic":{
+                            "title":"topic",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    }
                                 }
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"get",
-                                "namespaceURI":""
-                            }
-                        },
-                        "post":{
-                            "title":"post",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"post",
+                                "localPart":"topic",
                                 "namespaceURI":""
                             }
                         }
@@ -2319,360 +3122,75 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"RequestMethodLinkType",
+                "localPart":"GetHelpRequestType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
-                "get",
-                "post"
+                "topic"
             ]
         },
-        "CollectionSectionType":{
+        "CapabilitiesResponseBaseType":{
             "type":"object",
-            "title":"CollectionSectionType",
+            "title":"CapabilitiesResponseBaseType",
             "properties":{
-                "startFrame":{
-                    "title":"startFrame",
+                "serviceIdentification":{
+                    "title":"serviceIdentification",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"startFrame",
-                        "namespaceURI":""
-                    }
-                },
-                "endFrame":{
-                    "title":"endFrame",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"endFrame",
-                        "namespaceURI":""
-                    }
-                },
-                "frameCount":{
-                    "title":"frameCount",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"frameCount",
-                        "namespaceURI":""
-                    }
-                },
-                "startTime":{
-                    "title":"startTime",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"startTime",
-                        "namespaceURI":""
-                    }
-                },
-                "endTime":{
-                    "title":"endTime",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"endTime",
-                        "namespaceURI":""
-                    }
-                },
-                "timeSpan":{
-                    "title":"timeSpan",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"timeSpan",
-                        "namespaceURI":""
-                    }
-                },
-                "frameInterval":{
-                    "title":"frameInterval",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"frameInterval",
-                        "namespaceURI":""
-                    }
-                },
-                "frameJitter":{
-                    "title":"frameJitter",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"frameJitter",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CollectionSectionType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "startFrame",
-                "endFrame",
-                "frameCount",
-                "startTime",
-                "endTime",
-                "timeSpan",
-                "frameInterval",
-                "frameJitter"
-            ]
-        },
-        "CSCollectionCountType":{
-            "required":[
-                "root",
-                "nid",
-                "childNodes",
-                "totalNodes",
-                "collections"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractResponseType"
-                },
-                {
-                    "type":"object",
-                    "title":"CSCollectionCountType",
-                    "properties":{
-                        "description":{
-                            "title":"description",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Description",
-                                "namespaceURI":"http://www.pixia.com/wami"
-                            }
-                        },
-                        "root":{
-                            "title":"root",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"root",
-                                "namespaceURI":""
-                            }
-                        },
-                        "depth":{
-                            "title":"depth",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"depth",
-                                "namespaceURI":""
-                            }
-                        },
-                        "nid":{
-                            "title":"nid",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"NID",
-                                "namespaceURI":""
-                            }
-                        },
-                        "childNodes":{
-                            "title":"childNodes",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"childNodes",
-                                "namespaceURI":""
-                            }
-                        },
-                        "totalNodes":{
-                            "title":"totalNodes",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"totalNodes",
-                                "namespaceURI":""
-                            }
-                        },
-                        "collections":{
-                            "title":"collections",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"collections",
-                                "namespaceURI":""
-                            }
-                        },
-                        "edgeDepth":{
-                            "title":"edgeDepth",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"edgeDepth",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CS_CollectionCountType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "description",
-                "root",
-                "depth",
-                "nid",
-                "childNodes",
-                "totalNodes",
-                "collections",
-                "edgeDepth"
-            ]
-        },
-        "CSNodeType":{
-            "type":"object",
-            "title":"CSNodeType",
-            "required":[
-                "nid"
-            ],
-            "properties":{
-                "description":{
-                    "title":"description",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.opengis.net/ows/2.0#/definitions/ServiceIdentification"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Description",
-                        "namespaceURI":"http://www.pixia.com/wami"
+                        "localPart":"ServiceIdentification",
+                        "namespaceURI":"http://www.opengis.net/ows/2.0"
                     }
                 },
-                "service":{
-                    "title":"service",
+                "serviceProvider":{
+                    "title":"serviceProvider",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ows/2.0#/definitions/ServiceProvider"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ServiceProvider",
+                        "namespaceURI":"http://www.opengis.net/ows/2.0"
+                    }
+                },
+                "operationsMetadata":{
+                    "title":"operationsMetadata",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ows/2.0#/definitions/OperationsMetadata"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OperationsMetadata",
+                        "namespaceURI":"http://www.opengis.net/ows/2.0"
+                    }
+                },
+                "language":{
+                    "title":"language",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/NamedServiceElementType"
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                             },
                             "minItems":0
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Service",
+                        "localPart":"Language",
                         "namespaceURI":"http://www.pixia.com/wami"
                     }
                 },
-                "metadata":{
-                    "title":"metadata",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/CollectionMetadataSectionsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Metadata",
-                        "namespaceURI":"http://www.pixia.com/wami"
-                    }
-                },
-                "node":{
-                    "title":"node",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/CSNodeType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Node",
-                        "namespaceURI":"http://www.pixia.com/wami"
-                    }
-                },
-                "id":{
-                    "title":"id",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"id",
-                        "namespaceURI":""
-                    }
-                },
-                "name":{
-                    "title":"name",
+                "updateSequence":{
+                    "title":"updateSequence",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2680,12 +3198,12 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"name",
+                        "localPart":"updateSequence",
                         "namespaceURI":""
                     }
                 },
-                "parentNID":{
-                    "title":"parentNID",
+                "lang":{
+                    "title":"lang",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2693,12 +3211,12 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"parentNID",
+                        "localPart":"lang",
                         "namespaceURI":""
                     }
                 },
-                "nid":{
-                    "title":"nid",
+                "version":{
+                    "title":"version",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2706,124 +3224,54 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"NID",
-                        "namespaceURI":""
-                    }
-                },
-                "cid":{
-                    "title":"cid",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"CID",
+                        "localPart":"version",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"CS_NodeType",
+                "localPart":"CapabilitiesResponseBaseType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
-                "description",
-                "service",
-                "metadata",
-                "node",
-                "id",
-                "name",
-                "parentNID",
-                "nid",
-                "cid"
+                "serviceIdentification",
+                "serviceProvider",
+                "operationsMetadata",
+                "language",
+                "updateSequence",
+                "lang",
+                "version"
             ]
         },
-        "FrameOrTimeRangeRequestType.TimeRange":{
-            "type":"object",
-            "title":"FrameOrTimeRangeRequestType.TimeRange",
-            "properties":{
-                "start":{
-                    "title":"start",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"start",
-                        "namespaceURI":""
-                    }
+        "ISMapType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/MultipartImageRootDocumentType"
                 },
-                "end":{
-                    "title":"end",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"end",
-                        "namespaceURI":""
-                    }
-                },
-                "step":{
-                    "title":"step",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"step",
-                        "namespaceURI":""
+                {
+                    "type":"object",
+                    "title":"ISMapType",
+                    "properties":{
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
-            "propertiesOrder":[
-                "start",
-                "end",
-                "step"
-            ]
+            "typeName":{
+                "localPart":"IS_MapType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
         },
-        "FrameOrTimeRangeRequestType":{
+        "DimensionType":{
             "type":"object",
-            "title":"FrameOrTimeRangeRequestType",
+            "title":"DimensionType",
+            "required":[
+                "width",
+                "height"
+            ],
             "properties":{
-                "frameRange":{
-                    "title":"frameRange",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/FrameOrTimeRangeRequestType.FrameRange"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"FrameRange",
-                        "namespaceURI":"http://www.pixia.com/wami"
-                    }
-                },
-                "timeRange":{
-                    "title":"timeRange",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/FrameOrTimeRangeRequestType.TimeRange"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TimeRange",
-                        "namespaceURI":"http://www.pixia.com/wami"
-                    }
-                },
-                "frame":{
-                    "title":"frame",
+                "width":{
+                    "title":"width",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
@@ -2831,34 +3279,32 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"frame",
+                        "localPart":"width",
                         "namespaceURI":""
                     }
                 },
-                "time":{
-                    "title":"time",
+                "height":{
+                    "title":"height",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
                         }
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"time",
+                        "localPart":"height",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"FrameOrTimeRangeRequestType",
+                "localPart":"DimensionType",
                 "namespaceURI":"http://www.pixia.com/wami"
             },
             "propertiesOrder":[
-                "frameRange",
-                "timeRange",
-                "frame",
-                "time"
+                "width",
+                "height"
             ]
         },
         "FileSectionType":{
@@ -3060,488 +3506,6 @@
                 "bandDataType"
             ]
         },
-        "GetHelpRequestType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractRequestType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetHelpRequestType",
-                    "properties":{
-                        "topic":{
-                            "title":"topic",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"topic",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetHelpRequestType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "topic"
-            ]
-        },
-        "ServiceElementType":{
-            "type":"object",
-            "title":"ServiceElementType",
-            "required":[
-                "request"
-            ],
-            "properties":{
-                "request":{
-                    "title":"request",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/RequestMethodLinkType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Request",
-                        "namespaceURI":"http://www.pixia.com/wami"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ServiceElementType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "request"
-            ]
-        },
-        "ISPathMapType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/MultipartImageRootDocumentType"
-                },
-                {
-                    "type":"object",
-                    "title":"ISPathMapType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"IS_PathMapType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        "NamedServiceElementType":{
-            "required":[
-                "name"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ServiceElementType"
-                },
-                {
-                    "type":"object",
-                    "title":"NamedServiceElementType",
-                    "properties":{
-                        "name":{
-                            "title":"name",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ServiceNameType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"name",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"NamedServiceElementType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "name"
-            ]
-        },
-        "ISGetMapInfoRequestType":{
-            "required":[
-                "bBox",
-                "time",
-                "cid"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/CommonAbstractGetMapRequestType"
-                },
-                {
-                    "type":"object",
-                    "title":"ISGetMapInfoRequestType",
-                    "properties":{
-                        "bBox":{
-                            "title":"bBox",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/BoundBoxType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"BBox",
-                                "namespaceURI":"http://www.pixia.com/wami"
-                            }
-                        },
-                        "time":{
-                            "title":"time",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/FrameOrTimeRangeRequestType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Time",
-                                "namespaceURI":"http://www.pixia.com/wami"
-                            }
-                        },
-                        "cid":{
-                            "title":"cid",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"CID",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"IS_GetMapInfoRequestType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "bBox",
-                "time",
-                "cid"
-            ]
-        },
-        "FrameOrTimeSpanRequestType":{
-            "type":"object",
-            "title":"FrameOrTimeSpanRequestType",
-            "properties":{
-                "frames":{
-                    "title":"frames",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"frames",
-                        "namespaceURI":""
-                    }
-                },
-                "duration":{
-                    "title":"duration",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"duration",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"FrameOrTimeSpanRequestType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "frames",
-                "duration"
-            ]
-        },
-        "ISGetMapRequestType":{
-            "required":[
-                "bBox",
-                "time",
-                "cid"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/BinaryAbstractGetMapRequestType"
-                },
-                {
-                    "type":"object",
-                    "title":"ISGetMapRequestType",
-                    "properties":{
-                        "bBox":{
-                            "title":"bBox",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/BoundBoxType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"BBox",
-                                "namespaceURI":"http://www.pixia.com/wami"
-                            }
-                        },
-                        "time":{
-                            "title":"time",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/FrameOrTimeRangeRequestType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Time",
-                                "namespaceURI":"http://www.pixia.com/wami"
-                            }
-                        },
-                        "cid":{
-                            "title":"cid",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"CID",
-                                "namespaceURI":""
-                            }
-                        },
-                        "disposition":{
-                            "title":"disposition",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DispositionType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"disposition",
-                                "namespaceURI":""
-                            }
-                        },
-                        "styles":{
-                            "title":"styles",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"styles",
-                                "namespaceURI":""
-                            }
-                        },
-                        "bgcolor":{
-                            "title":"bgcolor",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"bgcolor",
-                                "namespaceURI":""
-                            }
-                        },
-                        "transparent":{
-                            "title":"transparent",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"transparent",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"IS_GetMapRequestType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "bBox",
-                "time",
-                "cid",
-                "disposition",
-                "styles",
-                "bgcolor",
-                "transparent"
-            ]
-        },
-        "BoundingPolygonType":{
-            "type":"object",
-            "title":"BoundingPolygonType",
-            "required":[
-                "crs"
-            ],
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                            }
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "crs":{
-                    "title":"crs",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"crs",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"BoundingPolygonType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "value",
-                "crs"
-            ]
-        },
-        "BinaryAbstractGetMapRequestType":{
-            "required":[
-                "viewPort"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/CommonAbstractGetMapRequestType"
-                },
-                {
-                    "type":"object",
-                    "title":"BinaryAbstractGetMapRequestType",
-                    "properties":{
-                        "viewPort":{
-                            "title":"viewPort",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DimensionType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ViewPort",
-                                "namespaceURI":"http://www.pixia.com/wami"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"BinaryAbstractGetMapRequestType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            },
-            "propertiesOrder":[
-                "viewPort"
-            ]
-        },
-        "NodeCountDepthType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"NodeCountDepthType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        "ServiceNameType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"ServiceNameType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        "ExceptionNameType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"ExceptionNameType",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
         "DispositionType":{
             "allOf":[
                 {
@@ -3565,6 +3529,42 @@
                 "localPart":"NodeDepthType",
                 "namespaceURI":"http://www.pixia.com/wami"
             }
+        },
+        "ServiceNameType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"ServiceNameType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        "NodeCountDepthType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"NodeCountDepthType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        "ExceptionNameType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"ExceptionNameType",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
         }
     },
     "anyOf":[
@@ -3575,86 +3575,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ISPathMapInfoType"
+                    "$ref":"#/definitions/VSGetPathMapVideoRequestType"
                 }
             },
             "elementName":{
-                "localPart":"IS_PathMapInfo",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ISGetPathMapRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"IS_GetPathMapRequest",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/CSGetCollectionsRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"CS_GetCollectionsRequest",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/CapabilitiesResponseBaseType"
-                }
-            },
-            "elementName":{
-                "localPart":"Capabilities",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ISGetMapRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"IS_GetMapRequest",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ISGetPathMapInfoRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"IS_GetPathMapInfoRequest",
+                "localPart":"VS_GetPathMapVideoRequest",
                 "namespaceURI":"http://www.pixia.com/wami"
             }
         },
@@ -3680,26 +3605,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ISMapType"
+                    "$ref":"#/definitions/CSGetCollectionsRequestType"
                 }
             },
             "elementName":{
-                "localPart":"IS_Map",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/PostContentTypeMetaData"
-                }
-            },
-            "elementName":{
-                "localPart":"PostContentTypeMetaData",
+                "localPart":"CS_GetCollectionsRequest",
                 "namespaceURI":"http://www.pixia.com/wami"
             }
         },
@@ -3725,81 +3635,6 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ISMapInfoType"
-                }
-            },
-            "elementName":{
-                "localPart":"IS_MapInfo",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/CSGetCollectionCountRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"CS_GetCollectionCountRequest",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/VSGetPathMapVideoRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"VS_GetPathMapVideoRequest",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetCapabilitiesRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetCapabilitiesRequest",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/VSGetMapVideoRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"VS_GetMapVideoRequest",
-                "namespaceURI":"http://www.pixia.com/wami"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
                     "$ref":"#/definitions/ISPathMapType"
                 }
             },
@@ -3815,11 +3650,56 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/GetHelpRequestType"
+                    "$ref":"#/definitions/CSCollectionsType"
                 }
             },
             "elementName":{
-                "localPart":"GetHelpRequest",
+                "localPart":"CS_Collections",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/PostContentTypeMetaData"
+                }
+            },
+            "elementName":{
+                "localPart":"PostContentTypeMetaData",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ISPathMapInfoType"
+                }
+            },
+            "elementName":{
+                "localPart":"IS_PathMapInfo",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ISMapType"
+                }
+            },
+            "elementName":{
+                "localPart":"IS_Map",
                 "namespaceURI":"http://www.pixia.com/wami"
             }
         },
@@ -3845,6 +3725,126 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/VSGetMapVideoRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"VS_GetMapVideoRequest",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetHelpRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetHelpRequest",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetCapabilitiesRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetCapabilitiesRequest",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ISGetPathMapRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"IS_GetPathMapRequest",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ISGetMapRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"IS_GetMapRequest",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/CSGetCollectionCountRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"CS_GetCollectionCountRequest",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ISGetPathMapInfoRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"IS_GetPathMapInfoRequest",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/CapabilitiesResponseBaseType"
+                }
+            },
+            "elementName":{
+                "localPart":"Capabilities",
+                "namespaceURI":"http://www.pixia.com/wami"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/HelpResponseType"
                 }
             },
@@ -3860,11 +3860,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/CSCollectionsType"
+                    "$ref":"#/definitions/ISMapInfoType"
                 }
             },
             "elementName":{
-                "localPart":"CS_Collections",
+                "localPart":"IS_MapInfo",
                 "namespaceURI":"http://www.pixia.com/wami"
             }
         }
