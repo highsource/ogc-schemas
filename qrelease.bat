@@ -6,7 +6,7 @@ echo Performing a full clean build.
 rem pause
 call mvn clean install -DperformRelease -Pall
 echo Full clean build completed.
-rem pause
+pause
 
 echo Setting new version to %1.
 rem pause

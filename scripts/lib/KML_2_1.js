@@ -3,20 +3,40 @@ var KML_2_1_Module_Factory = function () {
     n: 'KML_2_1',
     dens: 'http:\/\/earth.google.com\/kml\/2.1',
     tis: [{
-        ln: 'OverlayType',
-        bti: '.FeatureType',
+        ln: 'LatLonBoxType',
+        bti: '.ObjectType',
         ps: [{
-            n: 'color'
+            n: 'north',
+            ti: 'Double'
           }, {
-            n: 'drawOrder',
-            ti: 'Int'
+            n: 'south',
+            ti: 'Double'
           }, {
-            n: 'icon',
-            en: 'Icon',
-            ti: '.LinkType'
+            n: 'east',
+            ti: 'Double'
+          }, {
+            n: 'west',
+            ti: 'Double'
+          }, {
+            n: 'rotation',
+            ti: 'Double'
           }]
       }, {
-        ln: 'DeleteType',
+        ln: 'SnippetType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'maxLines',
+            ti: 'Int',
+            an: {
+              lp: 'maxLines'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DocumentType',
+        bti: '.ContainerType',
         ps: [{
             n: 'feature',
             mno: 0,
@@ -28,53 +48,61 @@ var KML_2_1_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'LatLonAltBoxType',
-        bti: '.LatLonBoxType',
+        ln: 'PointType',
+        bti: '.GeometryType',
         ps: [{
-            n: 'minAltitude',
-            ti: 'Double'
+            n: 'extrude',
+            ti: 'Boolean'
           }, {
-            n: 'maxAltitude',
-            ti: 'Double'
+            n: 'tessellate',
+            ti: 'Boolean'
           }, {
             n: 'altitudeMode'
-          }]
-      }, {
-        ln: 'NetworkLinkControlType',
-        ps: [{
-            n: 'minRefreshPeriod',
-            ti: 'Float'
           }, {
-            n: 'cookie'
-          }, {
-            n: 'message'
-          }, {
-            n: 'linkName'
-          }, {
-            n: 'linkDescription'
-          }, {
-            n: 'linkSnippet',
-            ti: '.SnippetType'
-          }, {
-            n: 'expires'
-          }, {
-            n: 'update',
-            en: 'Update',
-            ti: '.UpdateType'
-          }, {
-            n: 'lookAt',
-            en: 'LookAt',
-            ti: '.LookAtType'
-          }]
-      }, {
-        ln: 'StyleMapType',
-        bti: '.StyleSelectorType',
-        ps: [{
-            n: 'pair',
+            n: 'coordinates',
             rq: true,
-            col: true,
-            en: 'Pair',
-            ti: '.StyleMapPairType'
+            ti: {
+              t: 'l'
+            }
+          }]
+      }, {
+        ln: 'MetadataType',
+        ps: [{
+            n: 'any',
+            rq: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'PlacemarkType',
+        bti: '.FeatureType',
+        ps: [{
+            n: 'geometry',
+            mx: false,
+            dom: false,
+            en: 'Geometry',
+            ti: '.GeometryType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'IconType',
+        bti: '.LinkType',
+        ps: [{
+            n: 'x',
+            rq: true,
+            ti: 'Int'
+          }, {
+            n: 'y',
+            rq: true,
+            ti: 'Int'
+          }, {
+            n: 'w',
+            rq: true,
+            ti: 'Int'
+          }, {
+            n: 'h',
+            rq: true,
+            ti: 'Int'
           }]
       }, {
         ln: 'FeatureType',
@@ -129,104 +157,100 @@ var KML_2_1_Module_Factory = function () {
             ti: '.MetadataType'
           }]
       }, {
-        ln: 'ListStyleType',
-        bti: '.ObjectType',
+        ln: 'OverlayType',
+        bti: '.FeatureType',
         ps: [{
-            n: 'listItemType'
+            n: 'color'
           }, {
-            n: 'bgColor'
-          }, {
-            n: 'itemIcon',
-            mno: 0,
-            col: true,
-            en: 'ItemIcon',
-            ti: '.ItemIconType'
-          }]
-      }, {
-        ln: 'IconType',
-        bti: '.LinkType',
-        ps: [{
-            n: 'x',
-            rq: true,
+            n: 'drawOrder',
             ti: 'Int'
           }, {
-            n: 'y',
-            rq: true,
-            ti: 'Int'
-          }, {
-            n: 'w',
-            rq: true,
-            ti: 'Int'
-          }, {
-            n: 'h',
-            rq: true,
-            ti: 'Int'
-          }]
-      }, {
-        ln: 'MetadataType',
-        ps: [{
-            n: 'any',
-            rq: true,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'PointType',
-        bti: '.GeometryType',
-        ps: [{
-            n: 'extrude',
-            ti: 'Boolean'
-          }, {
-            n: 'tessellate',
-            ti: 'Boolean'
-          }, {
-            n: 'altitudeMode'
-          }, {
-            n: 'coordinates',
-            rq: true,
-            ti: {
-              t: 'l'
-            }
-          }]
-      }, {
-        ln: 'ModelType',
-        bti: '.GeometryType',
-        ps: [{
-            n: 'altitudeMode'
-          }, {
-            n: 'location',
-            en: 'Location',
-            ti: '.LocationType'
-          }, {
-            n: 'orientation',
-            en: 'Orientation',
-            ti: '.OrientationType'
-          }, {
-            n: 'scale',
-            en: 'Scale',
-            ti: '.ScaleType'
-          }, {
-            n: 'link',
-            en: 'Link',
+            n: 'icon',
+            en: 'Icon',
             ti: '.LinkType'
           }]
       }, {
-        ln: 'LineStringType',
-        bti: '.GeometryType',
+        ln: 'NetworkLinkControlType',
         ps: [{
-            n: 'extrude',
-            ti: 'Boolean'
+            n: 'minRefreshPeriod',
+            ti: 'Float'
           }, {
-            n: 'tessellate',
-            ti: 'Boolean'
+            n: 'cookie'
+          }, {
+            n: 'message'
+          }, {
+            n: 'linkName'
+          }, {
+            n: 'linkDescription'
+          }, {
+            n: 'linkSnippet',
+            ti: '.SnippetType'
+          }, {
+            n: 'expires'
+          }, {
+            n: 'update',
+            en: 'Update',
+            ti: '.UpdateType'
+          }, {
+            n: 'lookAt',
+            en: 'LookAt',
+            ti: '.LookAtType'
+          }]
+      }, {
+        ln: 'GroundOverlayType',
+        bti: '.OverlayType',
+        ps: [{
+            n: 'altitude',
+            ti: 'Double'
           }, {
             n: 'altitudeMode'
           }, {
-            n: 'coordinates',
-            rq: true,
+            n: 'latLonBox',
+            en: 'LatLonBox',
+            ti: '.LatLonBoxType'
+          }]
+      }, {
+        ln: 'ChangeType',
+        ps: [{
+            n: 'objectOrFeatureOrGeometry',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'TimePrimitive',
+                ti: '.TimePrimitiveType'
+              }, {
+                en: 'Object',
+                ti: '.ObjectType'
+              }, {
+                en: 'StyleSelector',
+                ti: '.StyleSelectorType'
+              }, {
+                en: 'Feature',
+                ti: '.FeatureType'
+              }, {
+                en: 'Geometry',
+                ti: '.GeometryType'
+              }],
+            t: 'ers'
+          }]
+      }, {
+        ln: 'ItemIconType',
+        bti: '.ObjectType',
+        ps: [{
+            n: 'state',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
             ti: {
               t: 'l'
-            }
+            },
+            t: 'er'
+          }, {
+            n: 'href',
+            rq: true
           }]
       }, {
         ln: 'StyleType',
@@ -257,17 +281,6 @@ var KML_2_1_Module_Factory = function () {
             ti: '.ListStyleType'
           }]
       }, {
-        ln: 'PlacemarkType',
-        bti: '.FeatureType',
-        ps: [{
-            n: 'geometry',
-            mx: false,
-            dom: false,
-            en: 'Geometry',
-            ti: '.GeometryType',
-            t: 'er'
-          }]
-      }, {
         ln: 'IconStyleIconType',
         bti: '.ObjectType',
         ps: [{
@@ -275,73 +288,63 @@ var KML_2_1_Module_Factory = function () {
             rq: true
           }]
       }, {
-        ln: 'BalloonStyleType',
+        ln: 'LinearRingType',
+        bti: '.GeometryType',
+        ps: [{
+            n: 'extrude',
+            ti: 'Boolean'
+          }, {
+            n: 'tessellate',
+            ti: 'Boolean'
+          }, {
+            n: 'altitudeMode'
+          }, {
+            n: 'coordinates',
+            rq: true,
+            ti: {
+              t: 'l'
+            }
+          }]
+      }, {
+        ln: 'LocationType',
         bti: '.ObjectType',
         ps: [{
-            n: 'color'
+            n: 'longitude',
+            ti: 'Double'
           }, {
-            n: 'bgColor'
+            n: 'latitude',
+            ti: 'Double'
           }, {
-            n: 'textColor'
-          }, {
-            n: 'text'
+            n: 'altitude',
+            ti: 'Double'
           }]
       }, {
-        ln: 'TimePrimitiveType',
-        bti: '.ObjectType'
-      }, {
-        ln: 'LinkType',
+        ln: 'LodType',
         bti: '.ObjectType',
         ps: [{
-            n: 'href'
-          }, {
-            n: 'refreshMode'
-          }, {
-            n: 'refreshInterval',
+            n: 'minLodPixels',
             ti: 'Float'
           }, {
-            n: 'viewRefreshMode'
-          }, {
-            n: 'viewRefreshTime',
+            n: 'maxLodPixels',
             ti: 'Float'
           }, {
-            n: 'viewBoundScale',
+            n: 'minFadeExtent',
             ti: 'Float'
           }, {
-            n: 'viewFormat'
-          }, {
-            n: 'httpQuery'
+            n: 'maxFadeExtent',
+            ti: 'Float'
           }]
       }, {
-        ln: 'KmlType',
+        ln: 'LatLonAltBoxType',
+        bti: '.LatLonBoxType',
         ps: [{
-            n: 'networkLinkControl',
-            en: 'NetworkLinkControl',
-            ti: '.NetworkLinkControlType'
+            n: 'minAltitude',
+            ti: 'Double'
           }, {
-            n: 'feature',
-            mx: false,
-            dom: false,
-            en: 'Feature',
-            ti: '.FeatureType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'IconStyleType',
-        bti: '.ColorStyleType',
-        ps: [{
-            n: 'scale',
-            ti: 'Float'
+            n: 'maxAltitude',
+            ti: 'Double'
           }, {
-            n: 'heading',
-            ti: 'Float'
-          }, {
-            n: 'icon',
-            en: 'Icon',
-            ti: '.IconStyleIconType'
-          }, {
-            n: 'hotSpot',
-            ti: '.Vec2Type'
+            n: 'altitudeMode'
           }]
       }, {
         ln: 'Vec2Type',
@@ -374,101 +377,6 @@ var KML_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'PolyStyleType',
-        bti: '.ColorStyleType',
-        ps: [{
-            n: 'fill',
-            ti: 'Boolean'
-          }, {
-            n: 'outline',
-            ti: 'Boolean'
-          }]
-      }, {
-        ln: 'PolygonType',
-        bti: '.GeometryType',
-        ps: [{
-            n: 'extrude',
-            ti: 'Boolean'
-          }, {
-            n: 'tessellate',
-            ti: 'Boolean'
-          }, {
-            n: 'altitudeMode'
-          }, {
-            n: 'outerBoundaryIs',
-            ti: '.BoundaryType'
-          }, {
-            n: 'innerBoundaryIs',
-            mno: 0,
-            col: true,
-            ti: '.BoundaryType'
-          }]
-      }, {
-        ln: 'FolderType',
-        bti: '.ContainerType',
-        ps: [{
-            n: 'feature',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'Feature',
-            ti: '.FeatureType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'ChangeType',
-        ps: [{
-            n: 'objectOrFeatureOrGeometry',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'Geometry',
-                ti: '.GeometryType'
-              }, {
-                en: 'Object',
-                ti: '.ObjectType'
-              }, {
-                en: 'StyleSelector',
-                ti: '.StyleSelectorType'
-              }, {
-                en: 'TimePrimitive',
-                ti: '.TimePrimitiveType'
-              }, {
-                en: 'Feature',
-                ti: '.FeatureType'
-              }],
-            t: 'ers'
-          }]
-      }, {
-        ln: 'RegionType',
-        bti: '.ObjectType',
-        ps: [{
-            n: 'latLonAltBox',
-            rq: true,
-            en: 'LatLonAltBox',
-            ti: '.LatLonAltBoxType'
-          }, {
-            n: 'lod',
-            en: 'Lod',
-            ti: '.LodType'
-          }]
-      }, {
-        ln: 'OrientationType',
-        bti: '.ObjectType',
-        ps: [{
-            n: 'heading',
-            ti: 'Double'
-          }, {
-            n: 'tilt',
-            ti: 'Double'
-          }, {
-            n: 'roll',
-            ti: 'Double'
-          }]
-      }, {
         ln: 'ObjectType',
         ps: [{
             n: 'id',
@@ -485,119 +393,19 @@ var KML_2_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'ColorStyleType',
+        bti: '.ObjectType',
+        ps: [{
+            n: 'color'
+          }, {
+            n: 'colorMode'
+          }]
+      }, {
         ln: 'TimeStampType',
         bti: '.TimePrimitiveType',
         ps: [{
             n: 'when',
             rq: true
-          }]
-      }, {
-        ln: 'ScreenOverlayType',
-        bti: '.OverlayType',
-        ps: [{
-            n: 'overlayXY',
-            ti: '.Vec2Type'
-          }, {
-            n: 'screenXY',
-            ti: '.Vec2Type'
-          }, {
-            n: 'rotationXY',
-            ti: '.Vec2Type'
-          }, {
-            n: 'size',
-            ti: '.Vec2Type'
-          }, {
-            n: 'rotation',
-            ti: 'Float'
-          }]
-      }, {
-        ln: 'NetworkLinkType',
-        bti: '.FeatureType',
-        ps: [{
-            n: 'refreshVisibility',
-            ti: 'Boolean'
-          }, {
-            n: 'flyToView',
-            ti: 'Boolean'
-          }, {
-            n: 'link',
-            rq: true,
-            en: 'Link',
-            ti: '.LinkType'
-          }, {
-            n: 'url',
-            rq: true,
-            en: 'Url',
-            ti: '.LinkType'
-          }]
-      }, {
-        ln: 'MultiGeometryType',
-        bti: '.GeometryType',
-        ps: [{
-            n: 'geometry',
-            rq: true,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'Geometry',
-            ti: '.GeometryType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'LookAtType',
-        bti: '.ObjectType',
-        ps: [{
-            n: 'longitude',
-            ti: 'Double'
-          }, {
-            n: 'latitude',
-            ti: 'Double'
-          }, {
-            n: 'altitude',
-            ti: 'Double'
-          }, {
-            n: 'range',
-            ti: 'Double'
-          }, {
-            n: 'tilt',
-            ti: 'Double'
-          }, {
-            n: 'heading',
-            ti: 'Double'
-          }, {
-            n: 'altitudeMode'
-          }]
-      }, {
-        ln: 'LatLonBoxType',
-        bti: '.ObjectType',
-        ps: [{
-            n: 'north',
-            ti: 'Double'
-          }, {
-            n: 'south',
-            ti: 'Double'
-          }, {
-            n: 'east',
-            ti: 'Double'
-          }, {
-            n: 'west',
-            ti: 'Double'
-          }, {
-            n: 'rotation',
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'LocationType',
-        bti: '.ObjectType',
-        ps: [{
-            n: 'longitude',
-            ti: 'Double'
-          }, {
-            n: 'latitude',
-            ti: 'Double'
-          }, {
-            n: 'altitude',
-            ti: 'Double'
           }]
       }, {
         ln: 'CreateType',
@@ -608,52 +416,27 @@ var KML_2_1_Module_Factory = function () {
             ti: '.FolderType'
           }]
       }, {
-        ln: 'LinearRingType',
-        bti: '.GeometryType',
-        ps: [{
-            n: 'extrude',
-            ti: 'Boolean'
-          }, {
-            n: 'tessellate',
-            ti: 'Boolean'
-          }, {
-            n: 'altitudeMode'
-          }, {
-            n: 'coordinates',
-            rq: true,
-            ti: {
-              t: 'l'
-            }
-          }]
-      }, {
-        ln: 'GroundOverlayType',
-        bti: '.OverlayType',
-        ps: [{
-            n: 'altitude',
-            ti: 'Double'
-          }, {
-            n: 'altitudeMode'
-          }, {
-            n: 'latLonBox',
-            en: 'LatLonBox',
-            ti: '.LatLonBoxType'
-          }]
-      }, {
-        ln: 'ItemIconType',
+        ln: 'LinkType',
         bti: '.ObjectType',
         ps: [{
-            n: 'state',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            ti: {
-              t: 'l'
-            },
-            t: 'er'
+            n: 'href'
           }, {
-            n: 'href',
-            rq: true
+            n: 'refreshMode'
+          }, {
+            n: 'refreshInterval',
+            ti: 'Float'
+          }, {
+            n: 'viewRefreshMode'
+          }, {
+            n: 'viewRefreshTime',
+            ti: 'Float'
+          }, {
+            n: 'viewBoundScale',
+            ti: 'Float'
+          }, {
+            n: 'viewFormat'
+          }, {
+            n: 'httpQuery'
           }]
       }, {
         ln: 'UpdateType',
@@ -680,36 +463,75 @@ var KML_2_1_Module_Factory = function () {
             t: 'es'
           }]
       }, {
-        ln: 'LodType',
+        ln: 'PolyStyleType',
+        bti: '.ColorStyleType',
+        ps: [{
+            n: 'fill',
+            ti: 'Boolean'
+          }, {
+            n: 'outline',
+            ti: 'Boolean'
+          }]
+      }, {
+        ln: 'OrientationType',
         bti: '.ObjectType',
         ps: [{
-            n: 'minLodPixels',
-            ti: 'Float'
+            n: 'heading',
+            ti: 'Double'
           }, {
-            n: 'maxLodPixels',
-            ti: 'Float'
+            n: 'tilt',
+            ti: 'Double'
           }, {
-            n: 'minFadeExtent',
-            ti: 'Float'
-          }, {
-            n: 'maxFadeExtent',
-            ti: 'Float'
+            n: 'roll',
+            ti: 'Double'
           }]
       }, {
-        ln: 'StyleMapPairType',
+        ln: 'LookAtType',
+        bti: '.ObjectType',
         ps: [{
-            n: 'key',
-            rq: true
+            n: 'longitude',
+            ti: 'Double'
           }, {
-            n: 'styleUrl',
-            rq: true
+            n: 'latitude',
+            ti: 'Double'
+          }, {
+            n: 'altitude',
+            ti: 'Double'
+          }, {
+            n: 'range',
+            ti: 'Double'
+          }, {
+            n: 'tilt',
+            ti: 'Double'
+          }, {
+            n: 'heading',
+            ti: 'Double'
+          }, {
+            n: 'altitudeMode'
           }]
       }, {
-        ln: 'GeometryType',
-        bti: '.ObjectType'
+        ln: 'BoundaryType',
+        tn: 'boundaryType',
+        ps: [{
+            n: 'linearRing',
+            rq: true,
+            en: 'LinearRing',
+            ti: '.LinearRingType'
+          }]
       }, {
-        ln: 'ContainerType',
-        bti: '.FeatureType'
+        ln: 'ListStyleType',
+        bti: '.ObjectType',
+        ps: [{
+            n: 'listItemType'
+          }, {
+            n: 'bgColor'
+          }, {
+            n: 'itemIcon',
+            mno: 0,
+            col: true,
+            en: 'ItemIcon',
+            ti: '.ItemIconType'
+          }]
       }, {
         ln: 'ReplaceType',
         ps: [{
@@ -721,6 +543,9 @@ var KML_2_1_Module_Factory = function () {
             t: 'er'
           }]
       }, {
+        ln: 'TimePrimitiveType',
+        bti: '.ObjectType'
+      }, {
         ln: 'LabelStyleType',
         bti: '.ColorStyleType',
         ps: [{
@@ -728,17 +553,74 @@ var KML_2_1_Module_Factory = function () {
             ti: 'Float'
           }]
       }, {
-        ln: 'SnippetType',
+        ln: 'TimeSpanType',
+        bti: '.TimePrimitiveType',
         ps: [{
-            n: 'value',
-            t: 'v'
+            n: 'begin'
           }, {
-            n: 'maxLines',
-            ti: 'Int',
-            an: {
-              lp: 'maxLines'
-            },
-            t: 'a'
+            n: 'end'
+          }]
+      }, {
+        ln: 'ModelType',
+        bti: '.GeometryType',
+        ps: [{
+            n: 'altitudeMode'
+          }, {
+            n: 'location',
+            en: 'Location',
+            ti: '.LocationType'
+          }, {
+            n: 'orientation',
+            en: 'Orientation',
+            ti: '.OrientationType'
+          }, {
+            n: 'scale',
+            en: 'Scale',
+            ti: '.ScaleType'
+          }, {
+            n: 'link',
+            en: 'Link',
+            ti: '.LinkType'
+          }]
+      }, {
+        ln: 'PolygonType',
+        bti: '.GeometryType',
+        ps: [{
+            n: 'extrude',
+            ti: 'Boolean'
+          }, {
+            n: 'tessellate',
+            ti: 'Boolean'
+          }, {
+            n: 'altitudeMode'
+          }, {
+            n: 'outerBoundaryIs',
+            ti: '.BoundaryType'
+          }, {
+            n: 'innerBoundaryIs',
+            mno: 0,
+            col: true,
+            ti: '.BoundaryType'
+          }]
+      }, {
+        ln: 'NetworkLinkType',
+        bti: '.FeatureType',
+        ps: [{
+            n: 'refreshVisibility',
+            ti: 'Boolean'
+          }, {
+            n: 'flyToView',
+            ti: 'Boolean'
+          }, {
+            n: 'link',
+            rq: true,
+            en: 'Link',
+            ti: '.LinkType'
+          }, {
+            n: 'url',
+            rq: true,
+            en: 'Url',
+            ti: '.LinkType'
           }]
       }, {
         ln: 'ScaleType',
@@ -754,31 +636,54 @@ var KML_2_1_Module_Factory = function () {
             ti: 'Double'
           }]
       }, {
-        ln: 'TimeSpanType',
-        bti: '.TimePrimitiveType',
-        ps: [{
-            n: 'begin'
-          }, {
-            n: 'end'
-          }]
+        ln: 'GeometryType',
+        bti: '.ObjectType'
       }, {
-        ln: 'BoundaryType',
-        tn: 'boundaryType',
+        ln: 'StyleMapType',
+        bti: '.StyleSelectorType',
         ps: [{
-            n: 'linearRing',
+            n: 'pair',
             rq: true,
-            en: 'LinearRing',
-            ti: '.LinearRingType'
+            col: true,
+            en: 'Pair',
+            ti: '.StyleMapPairType'
           }]
       }, {
-        ln: 'LineStyleType',
-        bti: '.ColorStyleType',
+        ln: 'ScreenOverlayType',
+        bti: '.OverlayType',
         ps: [{
-            n: 'width',
+            n: 'overlayXY',
+            ti: '.Vec2Type'
+          }, {
+            n: 'screenXY',
+            ti: '.Vec2Type'
+          }, {
+            n: 'rotationXY',
+            ti: '.Vec2Type'
+          }, {
+            n: 'size',
+            ti: '.Vec2Type'
+          }, {
+            n: 'rotation',
             ti: 'Float'
           }]
       }, {
-        ln: 'DocumentType',
+        ln: 'DeleteType',
+        ps: [{
+            n: 'feature',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'Feature',
+            ti: '.FeatureType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'StyleSelectorType',
+        bti: '.ObjectType'
+      }, {
+        ln: 'FolderType',
         bti: '.ContainerType',
         ps: [{
             n: 'feature',
@@ -791,24 +696,115 @@ var KML_2_1_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'ColorStyleType',
+        ln: 'LineStyleType',
+        bti: '.ColorStyleType',
+        ps: [{
+            n: 'width',
+            ti: 'Float'
+          }]
+      }, {
+        ln: 'IconStyleType',
+        bti: '.ColorStyleType',
+        ps: [{
+            n: 'scale',
+            ti: 'Float'
+          }, {
+            n: 'heading',
+            ti: 'Float'
+          }, {
+            n: 'icon',
+            en: 'Icon',
+            ti: '.IconStyleIconType'
+          }, {
+            n: 'hotSpot',
+            ti: '.Vec2Type'
+          }]
+      }, {
+        ln: 'MultiGeometryType',
+        bti: '.GeometryType',
+        ps: [{
+            n: 'geometry',
+            rq: true,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'Geometry',
+            ti: '.GeometryType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'ContainerType',
+        bti: '.FeatureType'
+      }, {
+        ln: 'BalloonStyleType',
         bti: '.ObjectType',
         ps: [{
             n: 'color'
           }, {
-            n: 'colorMode'
+            n: 'bgColor'
+          }, {
+            n: 'textColor'
+          }, {
+            n: 'text'
           }]
       }, {
-        ln: 'StyleSelectorType',
-        bti: '.ObjectType'
+        ln: 'StyleMapPairType',
+        ps: [{
+            n: 'key',
+            rq: true
+          }, {
+            n: 'styleUrl',
+            rq: true
+          }]
+      }, {
+        ln: 'LineStringType',
+        bti: '.GeometryType',
+        ps: [{
+            n: 'extrude',
+            ti: 'Boolean'
+          }, {
+            n: 'tessellate',
+            ti: 'Boolean'
+          }, {
+            n: 'altitudeMode'
+          }, {
+            n: 'coordinates',
+            rq: true,
+            ti: {
+              t: 'l'
+            }
+          }]
+      }, {
+        ln: 'KmlType',
+        ps: [{
+            n: 'networkLinkControl',
+            en: 'NetworkLinkControl',
+            ti: '.NetworkLinkControlType'
+          }, {
+            n: 'feature',
+            mx: false,
+            dom: false,
+            en: 'Feature',
+            ti: '.FeatureType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'RegionType',
+        bti: '.ObjectType',
+        ps: [{
+            n: 'latLonAltBox',
+            rq: true,
+            en: 'LatLonAltBox',
+            ti: '.LatLonAltBoxType'
+          }, {
+            n: 'lod',
+            en: 'Lod',
+            ti: '.LodType'
+          }]
       }, {
         t: 'enum',
-        ln: 'ViewRefreshModeEnum',
-        vs: ['never', 'onRequest', 'onStop', 'onRegion']
-      }, {
-        t: 'enum',
-        ln: 'ItemIconStateEnum',
-        vs: ['open', 'closed', 'error', 'fetching0', 'fetching1', 'fetching2']
+        ln: 'ColorModeEnum',
+        vs: ['normal', 'random']
       }, {
         t: 'enum',
         ln: 'StyleStateEnum',
@@ -819,8 +815,8 @@ var KML_2_1_Module_Factory = function () {
         vs: ['radioFolder', 'check', 'checkHideChildren', 'checkOffOnly']
       }, {
         t: 'enum',
-        ln: 'AltitudeModeEnum',
-        vs: ['clampToGround', 'relativeToGround', 'absolute']
+        ln: 'ItemIconStateEnum',
+        vs: ['open', 'closed', 'error', 'fetching0', 'fetching1', 'fetching2']
       }, {
         t: 'enum',
         ln: 'RefreshModeEnum',
@@ -831,16 +827,56 @@ var KML_2_1_Module_Factory = function () {
         vs: ['fraction', 'pixels', 'insetPixels']
       }, {
         t: 'enum',
-        ln: 'ColorModeEnum',
-        vs: ['normal', 'random']
+        ln: 'AltitudeModeEnum',
+        vs: ['clampToGround', 'relativeToGround', 'absolute']
+      }, {
+        t: 'enum',
+        ln: 'ViewRefreshModeEnum',
+        vs: ['never', 'onRequest', 'onStop', 'onRegion']
       }],
     eis: [{
-        en: 'Style',
-        ti: '.StyleType',
-        sh: 'StyleSelector'
+        en: 'Placemark',
+        ti: '.PlacemarkType',
+        sh: 'Feature'
       }, {
-        en: 'BalloonStyle',
-        ti: '.BalloonStyleType',
+        en: 'IconStyle',
+        ti: '.IconStyleType',
+        sh: 'Object'
+      }, {
+        en: 'Orientation',
+        ti: '.OrientationType',
+        sh: 'Object'
+      }, {
+        en: 'ScreenOverlay',
+        ti: '.ScreenOverlayType',
+        sh: 'Feature'
+      }, {
+        en: 'TimeSpan',
+        ti: '.TimeSpanType',
+        sh: 'TimePrimitive'
+      }, {
+        en: 'Location',
+        ti: '.LocationType',
+        sh: 'Object'
+      }, {
+        en: 'LineStyle',
+        ti: '.LineStyleType',
+        sh: 'Object'
+      }, {
+        en: 'Icon',
+        ti: '.LinkType',
+        sh: 'Object'
+      }, {
+        en: 'ListStyle',
+        ti: '.ListStyleType',
+        sh: 'Object'
+      }, {
+        en: 'Document',
+        ti: '.DocumentType',
+        sh: 'Feature'
+      }, {
+        en: 'Region',
+        ti: '.RegionType',
         sh: 'Object'
       }, {
         en: 'coordinates',
@@ -852,27 +888,30 @@ var KML_2_1_Module_Factory = function () {
         ti: '.PointType',
         sh: 'Geometry'
       }, {
-        en: 'Placemark',
-        ti: '.PlacemarkType',
+        en: 'NetworkLink',
+        ti: '.NetworkLinkType',
         sh: 'Feature'
       }, {
-        en: 'Scale',
-        ti: '.ScaleType',
+        en: 'LookAt',
+        ti: '.LookAtType',
         sh: 'Object'
+      }, {
+        en: 'Link',
+        ti: '.LinkType',
+        sh: 'Object'
+      }, {
+        en: 'styleUrl'
       }, {
         en: 'TimePrimitive',
         ti: '.TimePrimitiveType'
       }, {
-        en: 'Folder',
-        ti: '.FolderType',
-        sh: 'Feature'
+        en: 'Model',
+        ti: '.ModelType',
+        sh: 'Geometry'
       }, {
-        en: 'Geometry',
-        ti: '.GeometryType'
-      }, {
-        en: 'TimeStamp',
-        ti: '.TimeStampType',
-        sh: 'TimePrimitive'
+        en: 'LineString',
+        ti: '.LineStringType',
+        sh: 'Geometry'
       }, {
         en: 'MultiGeometry',
         ti: '.MultiGeometryType',
@@ -882,50 +921,59 @@ var KML_2_1_Module_Factory = function () {
         ti: '.LinearRingType',
         sh: 'Geometry'
       }, {
-        en: 'LineString',
-        ti: '.LineStringType',
-        sh: 'Geometry'
+        en: 'kml',
+        ti: '.KmlType'
       }, {
-        en: 'StyleMap',
-        ti: '.StyleMapType',
-        sh: 'StyleSelector'
-      }, {
-        en: 'LineStyle',
-        ti: '.LineStyleType',
-        sh: 'Object'
-      }, {
-        en: 'Icon',
-        ti: '.LinkType',
-        sh: 'Object'
-      }, {
-        en: 'LabelStyle',
-        ti: '.LabelStyleType',
-        sh: 'Object'
-      }, {
-        en: 'NetworkLink',
-        ti: '.NetworkLinkType',
-        sh: 'Feature'
-      }, {
-        en: 'StyleSelector',
-        ti: '.StyleSelectorType'
-      }, {
-        en: 'Orientation',
-        ti: '.OrientationType',
-        sh: 'Object'
-      }, {
-        en: 'Link',
-        ti: '.LinkType',
-        sh: 'Object'
-      }, {
-        en: 'LatLonAltBox',
-        ti: '.LatLonAltBoxType'
+        en: 'Object',
+        ti: '.ObjectType'
       }, {
         en: 'LatLonBox',
         ti: '.LatLonBoxType',
         sh: 'Object'
       }, {
-        en: 'PolyStyle',
-        ti: '.PolyStyleType',
+        en: 'BalloonStyle',
+        ti: '.BalloonStyleType',
+        sh: 'Object'
+      }, {
+        en: 'StyleMap',
+        ti: '.StyleMapType',
+        sh: 'StyleSelector'
+      }, {
+        en: 'Style',
+        ti: '.StyleType',
+        sh: 'StyleSelector'
+      }, {
+        en: 'Feature',
+        ti: '.FeatureType'
+      }, {
+        en: 'Geometry',
+        ti: '.GeometryType'
+      }, {
+        en: 'GroundOverlay',
+        ti: '.GroundOverlayType',
+        sh: 'Feature'
+      }, {
+        en: 'TimeStamp',
+        ti: '.TimeStampType',
+        sh: 'TimePrimitive'
+      }, {
+        en: 'LatLonAltBox',
+        ti: '.LatLonAltBoxType'
+      }, {
+        en: 'Scale',
+        ti: '.ScaleType',
+        sh: 'Object'
+      }, {
+        en: 'Folder',
+        ti: '.FolderType',
+        sh: 'Feature'
+      }, {
+        en: 'Polygon',
+        ti: '.PolygonType',
+        sh: 'Geometry'
+      }, {
+        en: 'LabelStyle',
+        ti: '.LabelStyleType',
         sh: 'Object'
       }, {
         en: 'Lod',
@@ -938,60 +986,12 @@ var KML_2_1_Module_Factory = function () {
         },
         sc: '.ItemIconType'
       }, {
-        en: 'Polygon',
-        ti: '.PolygonType',
-        sh: 'Geometry'
-      }, {
-        en: 'GroundOverlay',
-        ti: '.GroundOverlayType',
-        sh: 'Feature'
-      }, {
-        en: 'Document',
-        ti: '.DocumentType',
-        sh: 'Feature'
-      }, {
-        en: 'LookAt',
-        ti: '.LookAtType',
+        en: 'PolyStyle',
+        ti: '.PolyStyleType',
         sh: 'Object'
       }, {
-        en: 'Model',
-        ti: '.ModelType',
-        sh: 'Geometry'
-      }, {
-        en: 'ScreenOverlay',
-        ti: '.ScreenOverlayType',
-        sh: 'Feature'
-      }, {
-        en: 'Region',
-        ti: '.RegionType',
-        sh: 'Object'
-      }, {
-        en: 'styleUrl'
-      }, {
-        en: 'IconStyle',
-        ti: '.IconStyleType',
-        sh: 'Object'
-      }, {
-        en: 'Object',
-        ti: '.ObjectType'
-      }, {
-        en: 'Location',
-        ti: '.LocationType',
-        sh: 'Object'
-      }, {
-        en: 'TimeSpan',
-        ti: '.TimeSpanType',
-        sh: 'TimePrimitive'
-      }, {
-        en: 'kml',
-        ti: '.KmlType'
-      }, {
-        en: 'ListStyle',
-        ti: '.ListStyleType',
-        sh: 'Object'
-      }, {
-        en: 'Feature',
-        ti: '.FeatureType'
+        en: 'StyleSelector',
+        ti: '.StyleSelectorType'
       }]
   };
   return {

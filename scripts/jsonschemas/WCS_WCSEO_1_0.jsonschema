@@ -2,262 +2,6 @@
 {
     "id":"http://www.opengis.net/wcs/wcseo/1.0#",
     "definitions":{
-        "DatasetSeriesDescriptionsType":{
-            "type":"object",
-            "title":"DatasetSeriesDescriptionsType",
-            "properties":{
-                "datasetSeriesDescription":{
-                    "title":"datasetSeriesDescription",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/DatasetSeriesDescriptionType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DatasetSeriesDescription",
-                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DatasetSeriesDescriptionsType",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            },
-            "propertiesOrder":[
-                "datasetSeriesDescription"
-            ]
-        },
-        "ReferenceGetCoverageType":{
-            "type":"object",
-            "title":"ReferenceGetCoverageType",
-            "required":[
-                "reference"
-            ],
-            "properties":{
-                "reference":{
-                    "title":"reference",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/ReferenceType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"Reference",
-                                "namespaceURI":"http://www.opengis.net/ows/2.0"
-                            }
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"Reference",
-                        "namespaceURI":"http://www.opengis.net/ows/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"referenceGetCoverageType",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            },
-            "propertiesOrder":[
-                "reference"
-            ]
-        },
-        "DatasetSeriesDescriptionType":{
-            "required":[
-                "datasetSeriesId",
-                "timePeriod"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"DatasetSeriesDescriptionType",
-                    "properties":{
-                        "datasetSeriesId":{
-                            "title":"datasetSeriesId",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"DatasetSeriesId",
-                                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                            }
-                        },
-                        "timePeriod":{
-                            "title":"timePeriod",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/TimePeriodType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"TimePeriod",
-                                "namespaceURI":"http://www.opengis.net/gml/3.2"
-                            }
-                        },
-                        "footprint":{
-                            "title":"footprint",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/FootprintType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Footprint",
-                                "namespaceURI":"http://www.opengis.net/eop/2.0"
-                            }
-                        },
-                        "serviceParameters":{
-                            "title":"serviceParameters",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ServiceParametersType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ServiceParameters",
-                                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DatasetSeriesDescriptionType",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            },
-            "propertiesOrder":[
-                "datasetSeriesId",
-                "timePeriod",
-                "footprint",
-                "serviceParameters"
-            ]
-        },
-        "Sections":{
-            "type":"object",
-            "title":"Sections",
-            "required":[
-                "section"
-            ],
-            "properties":{
-                "section":{
-                    "title":"section",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Section",
-                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "section"
-            ]
-        },
-        "EOCoverageSetDescriptionType":{
-            "type":"object",
-            "title":"EOCoverageSetDescriptionType",
-            "required":[
-                "numberMatched",
-                "numberReturned"
-            ],
-            "properties":{
-                "coverageDescriptions":{
-                    "title":"coverageDescriptions",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/CoverageDescriptionsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"CoverageDescriptions",
-                        "namespaceURI":"http://www.opengis.net/wcs/2.0"
-                    }
-                },
-                "datasetSeriesDescriptions":{
-                    "title":"datasetSeriesDescriptions",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DatasetSeriesDescriptionsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DatasetSeriesDescriptions",
-                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                    }
-                },
-                "numberMatched":{
-                    "title":"numberMatched",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"numberMatched",
-                        "namespaceURI":""
-                    }
-                },
-                "numberReturned":{
-                    "title":"numberReturned",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"numberReturned",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EOCoverageSetDescriptionType",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            },
-            "propertiesOrder":[
-                "coverageDescriptions",
-                "datasetSeriesDescriptions",
-                "numberMatched",
-                "numberReturned"
-            ]
-        },
         "DescribeEOCoverageSetType":{
             "required":[
                 "eoId"
@@ -360,137 +104,9 @@
                 "count"
             ]
         },
-        "EOMetadataType":{
+        "ReferenceableStitchedMosaicCommonElement":{
             "type":"object",
-            "title":"EOMetadataType",
-            "required":[
-                "earthObservation",
-                "reference"
-            ],
-            "properties":{
-                "earthObservation":{
-                    "title":"earthObservation",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"EarthObservation",
-                        "namespaceURI":"http://www.opengis.net/eop/2.0"
-                    }
-                },
-                "reference":{
-                    "title":"reference",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/ReferenceType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"Reference",
-                                "namespaceURI":"http://www.opengis.net/ows/2.0"
-                            }
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"Reference",
-                        "namespaceURI":"http://www.opengis.net/ows/2.0"
-                    }
-                },
-                "lineage":{
-                    "title":"lineage",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/LineageType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"lineage",
-                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EOMetadataType",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            },
-            "propertiesOrder":[
-                "earthObservation",
-                "reference",
-                "lineage"
-            ]
-        },
-        "DatasetSeries":{
-            "type":"object",
-            "title":"DatasetSeries",
-            "required":[
-                "datasetSeriesId",
-                "reference"
-            ],
-            "properties":{
-                "datasetSeriesId":{
-                    "title":"datasetSeriesId",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DatasetSeriesId",
-                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                    }
-                },
-                "reference":{
-                    "title":"reference",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/ReferenceType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"Reference",
-                                "namespaceURI":"http://www.opengis.net/ows/2.0"
-                            }
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"Reference",
-                        "namespaceURI":"http://www.opengis.net/ows/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "datasetSeriesId",
-                "reference"
-            ]
-        },
-        "RectifiedStitchedMosaicCommonElement":{
-            "type":"object",
-            "title":"RectifiedStitchedMosaicCommonElement",
+            "title":"ReferenceableStitchedMosaicCommonElement",
             "required":[
                 "coverageId",
                 "reference"
@@ -541,37 +157,77 @@
                 "reference"
             ]
         },
-        "RectifiedStitchedMosaic":{
+        "EOCoverageSetDescriptionType":{
+            "type":"object",
+            "title":"EOCoverageSetDescriptionType",
             "required":[
-                "datasets"
+                "numberMatched",
+                "numberReturned"
             ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractEOCoverageType"
-                },
-                {
-                    "type":"object",
-                    "title":"RectifiedStitchedMosaic",
-                    "properties":{
-                        "datasets":{
-                            "title":"datasets",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DatasetsType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"datasets",
-                                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                            }
+            "properties":{
+                "coverageDescriptions":{
+                    "title":"coverageDescriptions",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/CoverageDescriptionsType"
                         }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"CoverageDescriptions",
+                        "namespaceURI":"http://www.opengis.net/wcs/2.0"
+                    }
+                },
+                "datasetSeriesDescriptions":{
+                    "title":"datasetSeriesDescriptions",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DatasetSeriesDescriptionsType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DatasetSeriesDescriptions",
+                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+                    }
+                },
+                "numberMatched":{
+                    "title":"numberMatched",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"numberMatched",
+                        "namespaceURI":""
+                    }
+                },
+                "numberReturned":{
+                    "title":"numberReturned",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"numberReturned",
+                        "namespaceURI":""
                     }
                 }
-            ],
+            },
             "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EOCoverageSetDescriptionType",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            },
             "propertiesOrder":[
-                "datasets"
+                "coverageDescriptions",
+                "datasetSeriesDescriptions",
+                "numberMatched",
+                "numberReturned"
             ]
         },
         "DatasetSeriesSummaryType":{
@@ -669,6 +325,162 @@
                 "datasetSeriesId",
                 "timePeriod",
                 "metadata"
+            ]
+        },
+        "ReferenceableDataset":{
+            "type":"object",
+            "title":"ReferenceableDataset",
+            "required":[
+                "coverageId",
+                "reference"
+            ],
+            "properties":{
+                "coverageId":{
+                    "title":"coverageId",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"CoverageId",
+                        "namespaceURI":"http://www.opengis.net/wcs/2.0"
+                    }
+                },
+                "reference":{
+                    "title":"reference",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/ReferenceType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"Reference",
+                                "namespaceURI":"http://www.opengis.net/ows/2.0"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"Reference",
+                        "namespaceURI":"http://www.opengis.net/ows/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "coverageId",
+                "reference"
+            ]
+        },
+        "ServiceParametersType":{
+            "type":"object",
+            "title":"ServiceParametersType",
+            "properties":{
+                "rectifiedDataset":{
+                    "title":"rectifiedDataset",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/RectifiedDataset"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"rectifiedDataset",
+                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+                    }
+                },
+                "referenceableDataset":{
+                    "title":"referenceableDataset",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ReferenceableDataset"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"referenceableDataset",
+                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+                    }
+                },
+                "rectifiedStitchedMosaic":{
+                    "title":"rectifiedStitchedMosaic",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/RectifiedStitchedMosaicCommonElement"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"rectifiedStitchedMosaic",
+                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+                    }
+                },
+                "referenceableStitchedMosaic":{
+                    "title":"referenceableStitchedMosaic",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ReferenceableStitchedMosaicCommonElement"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"referenceableStitchedMosaic",
+                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+                    }
+                },
+                "datasetSeries":{
+                    "title":"datasetSeries",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DatasetSeries"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"datasetSeries",
+                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ServiceParametersType",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            },
+            "propertiesOrder":[
+                "rectifiedDataset",
+                "referenceableDataset",
+                "rectifiedStitchedMosaic",
+                "referenceableStitchedMosaic",
+                "datasetSeries"
             ]
         },
         "DatasetSeriesType":{
@@ -820,180 +632,6 @@
                 "datasetSeries"
             ]
         },
-        "ServiceParametersType":{
-            "type":"object",
-            "title":"ServiceParametersType",
-            "properties":{
-                "rectifiedDataset":{
-                    "title":"rectifiedDataset",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/RectifiedDataset"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"rectifiedDataset",
-                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                    }
-                },
-                "referenceableDataset":{
-                    "title":"referenceableDataset",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ReferenceableDataset"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"referenceableDataset",
-                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                    }
-                },
-                "rectifiedStitchedMosaic":{
-                    "title":"rectifiedStitchedMosaic",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/RectifiedStitchedMosaicCommonElement"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"rectifiedStitchedMosaic",
-                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                    }
-                },
-                "referenceableStitchedMosaic":{
-                    "title":"referenceableStitchedMosaic",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ReferenceableStitchedMosaicCommonElement"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"referenceableStitchedMosaic",
-                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                    }
-                },
-                "datasetSeries":{
-                    "title":"datasetSeries",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/DatasetSeries"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"datasetSeries",
-                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ServiceParametersType",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            },
-            "propertiesOrder":[
-                "rectifiedDataset",
-                "referenceableDataset",
-                "rectifiedStitchedMosaic",
-                "referenceableStitchedMosaic",
-                "datasetSeries"
-            ]
-        },
-        "AbstractEOCoverageType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractEOCoverageType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractEOCoverageType",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        "RectifiedDataset":{
-            "type":"object",
-            "title":"RectifiedDataset",
-            "required":[
-                "coverageId",
-                "reference"
-            ],
-            "properties":{
-                "coverageId":{
-                    "title":"coverageId",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"CoverageId",
-                        "namespaceURI":"http://www.opengis.net/wcs/2.0"
-                    }
-                },
-                "reference":{
-                    "title":"reference",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/ReferenceType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"Reference",
-                                "namespaceURI":"http://www.opengis.net/ows/2.0"
-                            }
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"Reference",
-                        "namespaceURI":"http://www.opengis.net/ows/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "coverageId",
-                "reference"
-            ]
-        },
         "ReferenceableStitchedMosaic":{
             "required":[
                 "datasets"
@@ -1027,16 +665,16 @@
                 "datasets"
             ]
         },
-        "ReferenceableDataset":{
+        "DatasetSeries":{
             "type":"object",
-            "title":"ReferenceableDataset",
+            "title":"DatasetSeries",
             "required":[
-                "coverageId",
+                "datasetSeriesId",
                 "reference"
             ],
             "properties":{
-                "coverageId":{
-                    "title":"coverageId",
+                "datasetSeriesId":{
+                    "title":"datasetSeriesId",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1044,8 +682,8 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"CoverageId",
-                        "namespaceURI":"http://www.opengis.net/wcs/2.0"
+                        "localPart":"DatasetSeriesId",
+                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
                     }
                 },
                 "reference":{
@@ -1076,7 +714,7 @@
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "coverageId",
+                "datasetSeriesId",
                 "reference"
             ]
         },
@@ -1136,40 +774,84 @@
                 "timePosition"
             ]
         },
-        "DatasetsType":{
+        "EOMetadataType":{
             "type":"object",
-            "title":"DatasetsType",
+            "title":"EOMetadataType",
+            "required":[
+                "earthObservation",
+                "reference"
+            ],
             "properties":{
-                "dataset":{
-                    "title":"dataset",
+                "earthObservation":{
+                    "title":"earthObservation",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"EarthObservation",
+                        "namespaceURI":"http://www.opengis.net/eop/2.0"
+                    }
+                },
+                "reference":{
+                    "title":"reference",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/ReferenceType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"Reference",
+                                "namespaceURI":"http://www.opengis.net/ows/2.0"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"Reference",
+                        "namespaceURI":"http://www.opengis.net/ows/2.0"
+                    }
+                },
+                "lineage":{
+                    "title":"lineage",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/DatasetType"
+                                "$ref":"#/definitions/LineageType"
                             },
                             "minItems":0
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"dataset",
+                        "localPart":"lineage",
                         "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"datasetsType",
+                "localPart":"EOMetadataType",
                 "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
             },
             "propertiesOrder":[
-                "dataset"
+                "earthObservation",
+                "reference",
+                "lineage"
             ]
         },
-        "ReferenceableStitchedMosaicCommonElement":{
+        "RectifiedStitchedMosaicCommonElement":{
             "type":"object",
-            "title":"ReferenceableStitchedMosaicCommonElement",
+            "title":"RectifiedStitchedMosaicCommonElement",
             "required":[
                 "coverageId",
                 "reference"
@@ -1220,6 +902,256 @@
                 "reference"
             ]
         },
+        "AbstractEOCoverageType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractEOCoverageType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractEOCoverageType",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        "DatasetSeriesDescriptionType":{
+            "required":[
+                "datasetSeriesId",
+                "timePeriod"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"DatasetSeriesDescriptionType",
+                    "properties":{
+                        "datasetSeriesId":{
+                            "title":"datasetSeriesId",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"DatasetSeriesId",
+                                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+                            }
+                        },
+                        "timePeriod":{
+                            "title":"timePeriod",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/TimePeriodType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"TimePeriod",
+                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                            }
+                        },
+                        "footprint":{
+                            "title":"footprint",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/FootprintType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Footprint",
+                                "namespaceURI":"http://www.opengis.net/eop/2.0"
+                            }
+                        },
+                        "serviceParameters":{
+                            "title":"serviceParameters",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ServiceParametersType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ServiceParameters",
+                                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DatasetSeriesDescriptionType",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            },
+            "propertiesOrder":[
+                "datasetSeriesId",
+                "timePeriod",
+                "footprint",
+                "serviceParameters"
+            ]
+        },
+        "ReferenceGetCoverageType":{
+            "type":"object",
+            "title":"ReferenceGetCoverageType",
+            "required":[
+                "reference"
+            ],
+            "properties":{
+                "reference":{
+                    "title":"reference",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/ReferenceType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"Reference",
+                                "namespaceURI":"http://www.opengis.net/ows/2.0"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"Reference",
+                        "namespaceURI":"http://www.opengis.net/ows/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"referenceGetCoverageType",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            },
+            "propertiesOrder":[
+                "reference"
+            ]
+        },
+        "ContributingFootprint":{
+            "type":"object",
+            "title":"ContributingFootprint",
+            "required":[
+                "footprint"
+            ],
+            "properties":{
+                "footprint":{
+                    "title":"footprint",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/eop/2.0#/definitions/FootprintType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Footprint",
+                        "namespaceURI":"http://www.opengis.net/eop/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "footprint"
+            ]
+        },
+        "RectifiedDataset":{
+            "type":"object",
+            "title":"RectifiedDataset",
+            "required":[
+                "coverageId",
+                "reference"
+            ],
+            "properties":{
+                "coverageId":{
+                    "title":"coverageId",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"CoverageId",
+                        "namespaceURI":"http://www.opengis.net/wcs/2.0"
+                    }
+                },
+                "reference":{
+                    "title":"reference",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/ReferenceType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"Reference",
+                                "namespaceURI":"http://www.opengis.net/ows/2.0"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"Reference",
+                        "namespaceURI":"http://www.opengis.net/ows/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "coverageId",
+                "reference"
+            ]
+        },
+        "DatasetSeriesDescriptionsType":{
+            "type":"object",
+            "title":"DatasetSeriesDescriptionsType",
+            "properties":{
+                "datasetSeriesDescription":{
+                    "title":"datasetSeriesDescription",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DatasetSeriesDescriptionType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DatasetSeriesDescription",
+                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DatasetSeriesDescriptionsType",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            },
+            "propertiesOrder":[
+                "datasetSeriesDescription"
+            ]
+        },
         "DatasetType":{
             "type":"object",
             "title":"DatasetType",
@@ -1264,30 +1196,98 @@
                 "contributingFootprint"
             ]
         },
-        "ContributingFootprint":{
+        "DatasetsType":{
             "type":"object",
-            "title":"ContributingFootprint",
-            "required":[
-                "footprint"
-            ],
+            "title":"DatasetsType",
             "properties":{
-                "footprint":{
-                    "title":"footprint",
+                "dataset":{
+                    "title":"dataset",
                     "allOf":[
                         {
-                            "$ref":"http://www.opengis.net/eop/2.0#/definitions/FootprintType"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DatasetType"
+                            },
+                            "minItems":0
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Footprint",
-                        "namespaceURI":"http://www.opengis.net/eop/2.0"
+                        "localPart":"dataset",
+                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"datasetsType",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            },
+            "propertiesOrder":[
+                "dataset"
+            ]
+        },
+        "RectifiedStitchedMosaic":{
+            "required":[
+                "datasets"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractEOCoverageType"
+                },
+                {
+                    "type":"object",
+                    "title":"RectifiedStitchedMosaic",
+                    "properties":{
+                        "datasets":{
+                            "title":"datasets",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DatasetsType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"datasets",
+                                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "datasets"
+            ]
+        },
+        "Sections":{
+            "type":"object",
+            "title":"Sections",
+            "required":[
+                "section"
+            ],
+            "properties":{
+                "section":{
+                    "title":"section",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Section",
+                        "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "footprint"
+                "section"
             ]
         }
     },
@@ -1299,11 +1299,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ServiceParametersType"
+                    "$ref":"#/definitions/Sections"
                 }
             },
             "elementName":{
-                "localPart":"ServiceParameters",
+                "localPart":"Sections",
                 "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
             }
         },
@@ -1314,11 +1314,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/DescribeEOCoverageSetType"
+                    "$ref":"#/definitions/DatasetSeriesType"
                 }
             },
             "elementName":{
-                "localPart":"DescribeEOCoverageSet",
+                "localPart":"DatasetSeries",
                 "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
             }
         },
@@ -1359,176 +1359,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/RectifiedStitchedMosaic"
+                    "$ref":"#/definitions/LineageType"
                 }
             },
             "elementName":{
-                "localPart":"RectifiedStitchedMosaic",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ReferenceableDataset"
-                }
-            },
-            "elementName":{
-                "localPart":"referenceableDataset",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/RectifiedStitchedMosaicCommonElement"
-                }
-            },
-            "elementName":{
-                "localPart":"rectifiedStitchedMosaic",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DatasetSeriesType"
-                }
-            },
-            "elementName":{
-                "localPart":"DatasetSeries",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/EOMetadataType"
-                }
-            },
-            "elementName":{
-                "localPart":"EOMetadata",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"processing",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ContributingFootprint"
-                }
-            },
-            "elementName":{
-                "localPart":"contributingFootprint",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Sections"
-                }
-            },
-            "elementName":{
-                "localPart":"Sections",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractEOCoverageType"
-                }
-            },
-            "elementName":{
-                "localPart":"ReferenceableEOCoverage",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractEOCoverageType"
-                }
-            },
-            "elementName":{
-                "localPart":"RectifiedEOCoverage",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DatasetSeriesDescriptionType"
-                }
-            },
-            "elementName":{
-                "localPart":"DatasetSeriesDescription",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/EOCoverageSetDescriptionType"
-                }
-            },
-            "elementName":{
-                "localPart":"EOCoverageSetDescription",
+                "localPart":"lineage",
                 "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
             }
         },
@@ -1554,41 +1389,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/ContributingFootprint"
                 }
             },
             "elementName":{
-                "localPart":"containment",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DatasetType"
-                }
-            },
-            "elementName":{
-                "localPart":"dataset",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/LineageType"
-                }
-            },
-            "elementName":{
-                "localPart":"lineage",
+                "localPart":"contributingFootprint",
                 "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
             }
         },
@@ -1614,11 +1419,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/ReferenceableStitchedMosaic"
                 }
             },
             "elementName":{
-                "localPart":"Section",
+                "localPart":"ReferenceableStitchedMosaic",
                 "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
             }
         },
@@ -1629,11 +1434,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/DatasetSeriesDescriptionsType"
+                    "$ref":"#/definitions/AbstractEOCoverageType"
                 }
             },
             "elementName":{
-                "localPart":"DatasetSeriesDescriptions",
+                "localPart":"ReferenceableDataset",
                 "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
             }
         },
@@ -1644,26 +1449,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ReferenceGetCoverageType"
+                    "$ref":"#/definitions/DescribeEOCoverageSetType"
                 }
             },
             "elementName":{
-                "localPart":"referenceGetCoverage",
-                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"DatasetSeriesId",
+                "localPart":"DescribeEOCoverageSet",
                 "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
             }
         },
@@ -1689,11 +1479,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ReferenceableStitchedMosaic"
+                    "$ref":"#/definitions/DatasetType"
                 }
             },
             "elementName":{
-                "localPart":"ReferenceableStitchedMosaic",
+                "localPart":"dataset",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractEOCoverageType"
+                }
+            },
+            "elementName":{
+                "localPart":"RectifiedDataset",
                 "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
             }
         },
@@ -1723,7 +1528,22 @@
                 }
             },
             "elementName":{
-                "localPart":"RectifiedDataset",
+                "localPart":"RectifiedEOCoverage",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"Section",
                 "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
             }
         },
@@ -1738,7 +1558,187 @@
                 }
             },
             "elementName":{
-                "localPart":"ReferenceableDataset",
+                "localPart":"ReferenceableEOCoverage",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/EOCoverageSetDescriptionType"
+                }
+            },
+            "elementName":{
+                "localPart":"EOCoverageSetDescription",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ServiceParametersType"
+                }
+            },
+            "elementName":{
+                "localPart":"ServiceParameters",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DatasetSeriesDescriptionType"
+                }
+            },
+            "elementName":{
+                "localPart":"DatasetSeriesDescription",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/RectifiedStitchedMosaicCommonElement"
+                }
+            },
+            "elementName":{
+                "localPart":"rectifiedStitchedMosaic",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/EOMetadataType"
+                }
+            },
+            "elementName":{
+                "localPart":"EOMetadata",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DatasetSeriesDescriptionsType"
+                }
+            },
+            "elementName":{
+                "localPart":"DatasetSeriesDescriptions",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"DatasetSeriesId",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ReferenceableDataset"
+                }
+            },
+            "elementName":{
+                "localPart":"referenceableDataset",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ReferenceGetCoverageType"
+                }
+            },
+            "elementName":{
+                "localPart":"referenceGetCoverage",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"containment",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/RectifiedStitchedMosaic"
+                }
+            },
+            "elementName":{
+                "localPart":"RectifiedStitchedMosaic",
+                "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"processing",
                 "namespaceURI":"http://www.opengis.net/wcs/wcseo/1.0"
             }
         }

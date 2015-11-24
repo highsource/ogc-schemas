@@ -159,6 +159,47 @@
                 "result"
             ]
         },
+        "ObservationCollectionType":{
+            "required":[
+                "member"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"ObservationCollectionType",
+                    "properties":{
+                        "member":{
+                            "title":"member",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/ObservationPropertyType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"member",
+                                "namespaceURI":"http://www.opengis.net/om/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ObservationCollectionType",
+                "namespaceURI":"http://www.opengis.net/om/1.0"
+            },
+            "propertiesOrder":[
+                "member"
+            ]
+        },
         "AnyOrReferenceType":{
             "type":"object",
             "title":"AnyOrReferenceType",
@@ -613,47 +654,6 @@
                 "title",
                 "show",
                 "actuate"
-            ]
-        },
-        "ObservationCollectionType":{
-            "required":[
-                "member"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"ObservationCollectionType",
-                    "properties":{
-                        "member":{
-                            "title":"member",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/ObservationPropertyType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"member",
-                                "namespaceURI":"http://www.opengis.net/om/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ObservationCollectionType",
-                "namespaceURI":"http://www.opengis.net/om/1.0"
-            },
-            "propertiesOrder":[
-                "member"
             ]
         }
     },

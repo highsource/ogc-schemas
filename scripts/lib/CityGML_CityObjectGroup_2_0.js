@@ -5,7 +5,7 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_1_1', 'CityGML_2_0'],
     tis: [{
-        ln: 'CityObjectGroupMemberType',
+        ln: 'CityObjectGroupParentType',
         ps: [{
             n: 'cityObject',
             rq: true,
@@ -17,12 +17,6 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
             },
             ti: 'CityGML_2_0.AbstractCityObjectType',
             t: 'er'
-          }, {
-            n: 'cityObjectGroupMemberRole',
-            an: {
-              lp: 'role'
-            },
-            t: 'a'
           }, {
             n: 'remoteSchema',
             an: {
@@ -56,7 +50,7 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CityObjectGroupParentType',
+        ln: 'CityObjectGroupMemberType',
         ps: [{
             n: 'cityObject',
             rq: true,
@@ -68,6 +62,12 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
             },
             ti: 'CityGML_2_0.AbstractCityObjectType',
             t: 'er'
+          }, {
+            n: 'cityObjectGroupMemberRole',
+            an: {
+              lp: 'role'
+            },
+            t: 'a'
           }, {
             n: 'remoteSchema',
             an: {

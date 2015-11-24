@@ -5,54 +5,52 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_1_1', 'CityGML_2_0'],
     tis: [{
-        ln: 'BoundarySurfacePropertyType',
+        ln: 'GroundSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
         ps: [{
-            n: 'boundarySurface',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: '_BoundarySurface',
-            ti: '.AbstractBoundarySurfaceType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'genericApplicationPropertyOfGroundSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfGroundSurface',
+            ti: 'AnyType'
           }]
       }, {
-        ln: 'IntBridgeInstallationPropertyType',
+        ln: 'BridgeFurnitureType',
+        bti: 'CityGML_2_0.AbstractCityObjectType',
         ps: [{
-            n: 'intBridgeInstallation',
+            n: 'clazz',
+            en: 'class',
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'function',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'usage',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'lod4Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'lod4ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfBridgeFurniture',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfBridgeFurniture',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'InteriorBridgeRoomPropertyType',
+        ps: [{
+            n: 'bridgeRoom',
             rq: true,
-            en: 'IntBridgeInstallation',
-            ti: '.IntBridgeInstallationType'
+            en: 'BridgeRoom',
+            ti: '.BridgeRoomType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -94,6 +92,140 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
             col: true,
             en: '_GenericApplicationPropertyOfRoofSurface',
             ti: 'AnyType'
+          }]
+      }, {
+        ln: 'WindowType',
+        bti: '.AbstractOpeningType',
+        ps: [{
+            n: 'genericApplicationPropertyOfWindow',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfWindow',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'IntBridgeInstallationPropertyType',
+        ps: [{
+            n: 'intBridgeInstallation',
+            rq: true,
+            en: 'IntBridgeInstallation',
+            ti: '.IntBridgeInstallationType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'BridgeRoomType',
+        bti: 'CityGML_2_0.AbstractCityObjectType',
+        ps: [{
+            n: 'clazz',
+            en: 'class',
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'function',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'usage',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'lod4Solid',
+            ti: 'GML_3_1_1.SolidPropertyType'
+          }, {
+            n: 'lod4MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'cityObjectBoundedBy',
+            mno: 0,
+            col: true,
+            en: 'boundedBy',
+            ti: '.BoundarySurfacePropertyType'
+          }, {
+            n: 'interiorFurniture',
+            mno: 0,
+            col: true,
+            ti: '.InteriorFurniturePropertyType'
+          }, {
+            n: 'bridgeRoomInstallation',
+            mno: 0,
+            col: true,
+            ti: '.IntBridgeInstallationPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfBridgeRoom',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfBridgeRoom',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'BridgePartPropertyType',
+        ps: [{
+            n: 'bridgePart',
+            rq: true,
+            en: 'BridgePart',
+            ti: '.BridgePartType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'AbstractBridgeType',
@@ -210,12 +342,12 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'BridgePartPropertyType',
+        ln: 'BridgeInstallationPropertyType',
         ps: [{
-            n: 'bridgePart',
+            n: 'bridgeInstallation',
             rq: true,
-            en: 'BridgePart',
-            ti: '.BridgePartType'
+            en: 'BridgeInstallation',
+            ti: '.BridgeInstallationType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -249,133 +381,64 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'BridgeInstallationType',
-        bti: 'CityGML_2_0.AbstractCityObjectType',
+        ln: 'BridgePartType',
+        bti: '.AbstractBridgeType',
         ps: [{
-            n: 'clazz',
-            en: 'class',
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'function',
+            n: 'genericApplicationPropertyOfBridgePart',
             mno: 0,
             col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'usage',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'lod2Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod3Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod4Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod2ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'lod3ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'lod4ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'cityObjectBoundedBy',
-            mno: 0,
-            col: true,
-            en: 'boundedBy',
-            ti: '.BoundarySurfacePropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfBridgeInstallation',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfBridgeInstallation',
+            en: '_GenericApplicationPropertyOfBridgePart',
             ti: 'AnyType'
           }]
       }, {
-        ln: 'OuterCeilingSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
+        ln: 'BridgeConstructionElementPropertyType',
         ps: [{
-            n: 'genericApplicationPropertyOfOuterCeilingSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfOuterCeilingSurface',
-            ti: 'AnyType'
+            n: 'bridgeConstructionElement',
+            rq: true,
+            en: 'BridgeConstructionElement',
+            ti: '.BridgeConstructionElementType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'AbstractBoundarySurfaceType',
-        bti: 'CityGML_2_0.AbstractCityObjectType',
+        ln: 'OpeningPropertyType',
         ps: [{
-            n: 'lod2MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod3MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod4MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
             n: 'opening',
-            mno: 0,
-            col: true,
-            ti: '.OpeningPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfBoundarySurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfBoundarySurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'InteriorBridgeRoomPropertyType',
-        ps: [{
-            n: 'bridgeRoom',
             rq: true,
-            en: 'BridgeRoom',
-            ti: '.BridgeRoomType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'InteriorFurniturePropertyType',
-        ps: [{
-            n: 'bridgeFurniture',
-            rq: true,
-            en: 'BridgeFurniture',
-            ti: '.BridgeFurnitureType'
+            mx: false,
+            dom: false,
+            en: '_Opening',
+            ti: '.AbstractOpeningType',
+            t: 'er'
           }, {
             n: 'remoteSchema',
             an: {
@@ -419,12 +482,70 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'BridgeInstallationPropertyType',
+        ln: 'BridgeType',
+        bti: '.AbstractBridgeType',
         ps: [{
-            n: 'bridgeInstallation',
+            n: 'genericApplicationPropertyOfBridge',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfBridge',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'InteriorWallSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfInteriorWallSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfInteriorWallSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'OuterFloorSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfOuterFloorSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfOuterFloorSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'FloorSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfFloorSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfFloorSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'DoorType',
+        bti: '.AbstractOpeningType',
+        ps: [{
+            n: 'address',
+            mno: 0,
+            col: true,
+            ti: 'CityGML_2_0.AddressPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfDoor',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfDoor',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'BoundarySurfacePropertyType',
+        ps: [{
+            n: 'boundarySurface',
             rq: true,
-            en: 'BridgeInstallation',
-            ti: '.BridgeInstallationType'
+            mx: false,
+            dom: false,
+            en: '_BoundarySurface',
+            ti: '.AbstractBoundarySurfaceType',
+            t: 'er'
           }, {
             n: 'remoteSchema',
             an: {
@@ -458,17 +579,7 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GroundSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfGroundSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfGroundSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'BridgeRoomType',
+        ln: 'IntBridgeInstallationType',
         bti: 'CityGML_2_0.AbstractCityObjectType',
         ps: [{
             n: 'clazz',
@@ -485,11 +596,11 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
             col: true,
             ti: 'GML_3_1_1.CodeType'
           }, {
-            n: 'lod4Solid',
-            ti: 'GML_3_1_1.SolidPropertyType'
+            n: 'lod4Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
           }, {
-            n: 'lod4MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+            n: 'lod4ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
           }, {
             n: 'cityObjectBoundedBy',
             mno: 0,
@@ -497,20 +608,54 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
             en: 'boundedBy',
             ti: '.BoundarySurfacePropertyType'
           }, {
-            n: 'interiorFurniture',
+            n: 'genericApplicationPropertyOfIntBridgeInstallation',
             mno: 0,
             col: true,
-            ti: '.InteriorFurniturePropertyType'
+            en: '_GenericApplicationPropertyOfIntBridgeInstallation',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'ClosureSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfClosureSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfClosureSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AbstractBoundarySurfaceType',
+        bti: 'CityGML_2_0.AbstractCityObjectType',
+        ps: [{
+            n: 'lod2MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
           }, {
-            n: 'bridgeRoomInstallation',
-            mno: 0,
-            col: true,
-            ti: '.IntBridgeInstallationPropertyType'
+            n: 'lod3MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
           }, {
-            n: 'genericApplicationPropertyOfBridgeRoom',
+            n: 'lod4MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'opening',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfBridgeRoom',
+            ti: '.OpeningPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfBoundarySurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfBoundarySurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'OuterCeilingSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfOuterCeilingSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfOuterCeilingSurface',
             ti: 'AnyType'
           }]
       }, {
@@ -580,109 +725,7 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'OpeningPropertyType',
-        ps: [{
-            n: 'opening',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: '_Opening',
-            ti: '.AbstractOpeningType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'InteriorWallSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfInteriorWallSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfInteriorWallSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'ClosureSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfClosureSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfClosureSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'WindowType',
-        bti: '.AbstractOpeningType',
-        ps: [{
-            n: 'genericApplicationPropertyOfWindow',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfWindow',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'CeilingSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfCeilingSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfCeilingSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'FloorSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfFloorSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfFloorSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'OuterFloorSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfOuterFloorSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfOuterFloorSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'BridgeFurnitureType',
+        ln: 'BridgeInstallationType',
         bti: 'CityGML_2_0.AbstractCityObjectType',
         ps: [{
             n: 'clazz',
@@ -699,16 +742,34 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
             col: true,
             ti: 'GML_3_1_1.CodeType'
           }, {
+            n: 'lod2Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'lod3Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
             n: 'lod4Geometry',
             ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'lod2ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'lod3ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
           }, {
             n: 'lod4ImplicitRepresentation',
             ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
           }, {
-            n: 'genericApplicationPropertyOfBridgeFurniture',
+            n: 'cityObjectBoundedBy',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfBridgeFurniture',
+            en: 'boundedBy',
+            ti: '.BoundarySurfacePropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfBridgeInstallation',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfBridgeInstallation',
             ti: 'AnyType'
           }]
       }, {
@@ -734,83 +795,12 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'DoorType',
-        bti: '.AbstractOpeningType',
+        ln: 'InteriorFurniturePropertyType',
         ps: [{
-            n: 'address',
-            mno: 0,
-            col: true,
-            ti: 'CityGML_2_0.AddressPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfDoor',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfDoor',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'IntBridgeInstallationType',
-        bti: 'CityGML_2_0.AbstractCityObjectType',
-        ps: [{
-            n: 'clazz',
-            en: 'class',
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'function',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'usage',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'lod4Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod4ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'cityObjectBoundedBy',
-            mno: 0,
-            col: true,
-            en: 'boundedBy',
-            ti: '.BoundarySurfacePropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfIntBridgeInstallation',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfIntBridgeInstallation',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'BridgeType',
-        bti: '.AbstractBridgeType',
-        ps: [{
-            n: 'genericApplicationPropertyOfBridge',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfBridge',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'BridgePartType',
-        bti: '.AbstractBridgeType',
-        ps: [{
-            n: 'genericApplicationPropertyOfBridgePart',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfBridgePart',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'BridgeConstructionElementPropertyType',
-        ps: [{
-            n: 'bridgeConstructionElement',
+            n: 'bridgeFurniture',
             rq: true,
-            en: 'BridgeConstructionElement',
-            ti: '.BridgeConstructionElementType'
+            en: 'BridgeFurniture',
+            ti: '.BridgeFurnitureType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -843,76 +833,23 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
+      }, {
+        ln: 'CeilingSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfCeilingSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfCeilingSurface',
+            ti: 'AnyType'
+          }]
       }],
     eis: [{
-        en: 'BridgeRoom',
-        ti: '.BridgeRoomType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
-      }, {
-        en: '_GenericApplicationPropertyOfBridgeRoom',
+        en: '_GenericApplicationPropertyOfIntBridgeInstallation',
         ti: 'AnyType'
       }, {
-        en: '_AbstractBridge',
-        ti: '.AbstractBridgeType',
-        sh: {
-          lp: '_Site',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
-      }, {
-        en: 'InteriorWallSurface',
-        ti: '.InteriorWallSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: 'RoofSurface',
-        ti: '.RoofSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: 'Bridge',
-        ti: '.BridgeType',
-        sh: '_AbstractBridge'
-      }, {
-        en: '_Opening',
-        ti: '.AbstractOpeningType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
-      }, {
-        en: '_GenericApplicationPropertyOfWindow',
-        ti: 'AnyType'
-      }, {
-        en: 'OuterCeilingSurface',
-        ti: '.OuterCeilingSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: '_GenericApplicationPropertyOfGroundSurface',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfBridgeFurniture',
-        ti: 'AnyType'
-      }, {
-        en: 'OuterFloorSurface',
-        ti: '.OuterFloorSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: '_GenericApplicationPropertyOfBridge',
-        ti: 'AnyType'
-      }, {
-        en: 'BridgeConstructionElement',
-        ti: '.BridgeConstructionElementType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
-      }, {
-        en: '_GenericApplicationPropertyOfInteriorWallSurface',
-        ti: 'AnyType'
-      }, {
-        en: 'GroundSurface',
-        ti: '.GroundSurfaceType',
+        en: 'CeilingSurface',
+        ti: '.CeilingSurfaceType',
         sh: '_BoundarySurface'
       }, {
         en: 'IntBridgeInstallation',
@@ -922,55 +859,23 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
       }, {
-        en: '_GenericApplicationPropertyOfRoofSurface',
-        ti: 'AnyType'
-      }, {
-        en: 'CeilingSurface',
-        ti: '.CeilingSurfaceType',
+        en: 'RoofSurface',
+        ti: '.RoofSurfaceType',
         sh: '_BoundarySurface'
       }, {
-        en: 'FloorSurface',
-        ti: '.FloorSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: 'WallSurface',
-        ti: '.WallSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: '_GenericApplicationPropertyOfBridgePart',
+        en: '_GenericApplicationPropertyOfBoundarySurface',
         ti: 'AnyType'
       }, {
-        en: '_GenericApplicationPropertyOfOpening',
-        ti: 'AnyType'
-      }, {
-        en: 'ClosureSurface',
-        ti: '.ClosureSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: '_GenericApplicationPropertyOfOuterCeilingSurface',
-        ti: 'AnyType'
-      }, {
-        en: 'BridgeInstallation',
-        ti: '.BridgeInstallationType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
-      }, {
-        en: '_GenericApplicationPropertyOfDoor',
+        en: '_GenericApplicationPropertyOfCeilingSurface',
         ti: 'AnyType'
       }, {
         en: '_GenericApplicationPropertyOfOuterFloorSurface',
         ti: 'AnyType'
       }, {
-        en: '_GenericApplicationPropertyOfBoundarySurface',
+        en: '_GenericApplicationPropertyOfWindow',
         ti: 'AnyType'
       }, {
-        en: 'Door',
-        ti: '.DoorType',
-        sh: '_Opening'
-      }, {
-        en: '_GenericApplicationPropertyOfBridgeConstructionElement',
+        en: '_GenericApplicationPropertyOfAbstractBridge',
         ti: 'AnyType'
       }, {
         en: '_BoundarySurface',
@@ -980,9 +885,47 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
       }, {
-        en: 'BridgePart',
-        ti: '.BridgePartType',
-        sh: '_AbstractBridge'
+        en: '_GenericApplicationPropertyOfBridgePart',
+        ti: 'AnyType'
+      }, {
+        en: 'ClosureSurface',
+        ti: '.ClosureSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: '_GenericApplicationPropertyOfBridgeConstructionElement',
+        ti: 'AnyType'
+      }, {
+        en: 'OuterCeilingSurface',
+        ti: '.OuterCeilingSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: 'GroundSurface',
+        ti: '.GroundSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: '_GenericApplicationPropertyOfClosureSurface',
+        ti: 'AnyType'
+      }, {
+        en: 'OuterFloorSurface',
+        ti: '.OuterFloorSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: 'Door',
+        ti: '.DoorType',
+        sh: '_Opening'
+      }, {
+        en: '_AbstractBridge',
+        ti: '.AbstractBridgeType',
+        sh: {
+          lp: '_Site',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
+      }, {
+        en: '_GenericApplicationPropertyOfBridgeFurniture',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfFloorSurface',
+        ti: 'AnyType'
       }, {
         en: 'BridgeFurniture',
         ti: '.BridgeFurnitureType',
@@ -991,30 +934,87 @@ var CityGML_Bridge_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
       }, {
-        en: '_GenericApplicationPropertyOfIntBridgeInstallation',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfAbstractBridge',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfClosureSurface',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfFloorSurface',
+        en: '_GenericApplicationPropertyOfBridge',
         ti: 'AnyType'
       }, {
         en: 'Window',
         ti: '.WindowType',
         sh: '_Opening'
       }, {
+        en: 'Bridge',
+        ti: '.BridgeType',
+        sh: '_AbstractBridge'
+      }, {
+        en: 'BridgeRoom',
+        ti: '.BridgeRoomType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
+      }, {
+        en: 'BridgeInstallation',
+        ti: '.BridgeInstallationType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
+      }, {
+        en: 'InteriorWallSurface',
+        ti: '.InteriorWallSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: '_GenericApplicationPropertyOfOpening',
+        ti: 'AnyType'
+      }, {
+        en: 'BridgePart',
+        ti: '.BridgePartType',
+        sh: '_AbstractBridge'
+      }, {
+        en: '_GenericApplicationPropertyOfBridgeRoom',
+        ti: 'AnyType'
+      }, {
         en: '_GenericApplicationPropertyOfWallSurface',
         ti: 'AnyType'
       }, {
-        en: '_GenericApplicationPropertyOfCeilingSurface',
+        en: '_GenericApplicationPropertyOfGroundSurface',
+        ti: 'AnyType'
+      }, {
+        en: 'WallSurface',
+        ti: '.WallSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: '_GenericApplicationPropertyOfOuterCeilingSurface',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfDoor',
         ti: 'AnyType'
       }, {
         en: '_GenericApplicationPropertyOfBridgeInstallation',
         ti: 'AnyType'
+      }, {
+        en: 'FloorSurface',
+        ti: '.FloorSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: '_GenericApplicationPropertyOfRoofSurface',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfInteriorWallSurface',
+        ti: 'AnyType'
+      }, {
+        en: '_Opening',
+        ti: '.AbstractOpeningType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
+      }, {
+        en: 'BridgeConstructionElement',
+        ti: '.BridgeConstructionElementType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
       }]
   };
   return {

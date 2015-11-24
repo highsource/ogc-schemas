@@ -3,7 +3,7 @@ var OM_1_0_0_Module_Factory = function () {
     n: 'OM_1_0_0',
     dens: 'http:\/\/www.opengis.net\/om\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_1_1', 'XLink_1_0', 'SensorML_1_0_1', 'SWE_1_0_1'],
+    deps: ['XLink_1_0', 'SWE_1_0_1', 'GML_3_1_1', 'SensorML_1_0_1'],
     tis: [{
         ln: 'ObservationType',
         bti: 'GML_3_1_1.AbstractFeatureType',
@@ -41,6 +41,15 @@ var OM_1_0_0_Module_Factory = function () {
             n: 'result',
             rq: true,
             ti: 'AnyType'
+          }]
+      }, {
+        ln: 'ObservationCollectionType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'member',
+            rq: true,
+            col: true,
+            ti: '.ObservationPropertyType'
           }]
       }, {
         ln: 'AnyOrReferenceType',
@@ -170,15 +179,6 @@ var OM_1_0_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }]
-      }, {
-        ln: 'ObservationCollectionType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'member',
-            rq: true,
-            col: true,
-            ti: '.ObservationPropertyType'
           }]
       }],
     eis: [{
