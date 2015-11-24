@@ -76,6 +76,7 @@
 		<module>kml</module>
 		<module>ols</module>
 		<module>om</module>
+		<module>omeo</module>
 		<module>owc</module>
 		<module>ows</module>
 		<module>sampling</module>
