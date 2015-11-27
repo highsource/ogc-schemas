@@ -2,13 +2,61 @@
 {
     "id":"http://www.opengis.net/WCS_service-extension_scaling/1.0#",
     "definitions":{
-        "ScaleByFactorType":{
+        "ScaleToExtentType":{
             "type":"object",
-            "title":"ScaleByFactorType",
+            "title":"ScaleToExtentType",
             "required":[
+                "targetAxisExtent"
+            ],
+            "properties":{
+                "targetAxisExtent":{
+                    "title":"targetAxisExtent",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/TargetAxisExtentType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TargetAxisExtent",
+                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ScaleToExtentType",
+                "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
+            },
+            "propertiesOrder":[
+                "targetAxisExtent"
+            ]
+        },
+        "ScaleAxisType":{
+            "type":"object",
+            "title":"ScaleAxisType",
+            "required":[
+                "axis",
                 "scaleFactor"
             ],
             "properties":{
+                "axis":{
+                    "title":"axis",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"axis",
+                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
+                    }
+                },
                 "scaleFactor":{
                     "title":"scaleFactor",
                     "allOf":[
@@ -25,11 +73,46 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ScaleByFactorType",
+                "localPart":"ScaleAxisType",
                 "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
             },
             "propertiesOrder":[
+                "axis",
                 "scaleFactor"
+            ]
+        },
+        "ScaleToSizeType":{
+            "type":"object",
+            "title":"ScaleToSizeType",
+            "required":[
+                "targetAxisSize"
+            ],
+            "properties":{
+                "targetAxisSize":{
+                    "title":"targetAxisSize",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/TargetAxisSizeType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TargetAxisSize",
+                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ScaleToSizeType",
+                "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
+            },
+            "propertiesOrder":[
+                "targetAxisSize"
             ]
         },
         "TargetAxisSizeType":{
@@ -75,6 +158,70 @@
             "propertiesOrder":[
                 "axis",
                 "targetSize"
+            ]
+        },
+        "ScaleByFactorType":{
+            "type":"object",
+            "title":"ScaleByFactorType",
+            "required":[
+                "scaleFactor"
+            ],
+            "properties":{
+                "scaleFactor":{
+                    "title":"scaleFactor",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"scaleFactor",
+                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ScaleByFactorType",
+                "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
+            },
+            "propertiesOrder":[
+                "scaleFactor"
+            ]
+        },
+        "ScaleAxesByFactorType":{
+            "type":"object",
+            "title":"ScaleAxesByFactorType",
+            "required":[
+                "scaleAxis"
+            ],
+            "properties":{
+                "scaleAxis":{
+                    "title":"scaleAxis",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ScaleAxisType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ScaleAxis",
+                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ScaleAxesByFactorType",
+                "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
+            },
+            "propertiesOrder":[
+                "scaleAxis"
             ]
         },
         "TargetAxisExtentType":{
@@ -210,153 +357,6 @@
                 "scaleAxesByFactor",
                 "scaleToSize",
                 "scaleToExtent"
-            ]
-        },
-        "ScaleToExtentType":{
-            "type":"object",
-            "title":"ScaleToExtentType",
-            "required":[
-                "targetAxisExtent"
-            ],
-            "properties":{
-                "targetAxisExtent":{
-                    "title":"targetAxisExtent",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/TargetAxisExtentType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TargetAxisExtent",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ScaleToExtentType",
-                "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
-            },
-            "propertiesOrder":[
-                "targetAxisExtent"
-            ]
-        },
-        "ScaleToSizeType":{
-            "type":"object",
-            "title":"ScaleToSizeType",
-            "required":[
-                "targetAxisSize"
-            ],
-            "properties":{
-                "targetAxisSize":{
-                    "title":"targetAxisSize",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/TargetAxisSizeType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TargetAxisSize",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ScaleToSizeType",
-                "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
-            },
-            "propertiesOrder":[
-                "targetAxisSize"
-            ]
-        },
-        "ScaleAxisType":{
-            "type":"object",
-            "title":"ScaleAxisType",
-            "required":[
-                "axis",
-                "scaleFactor"
-            ],
-            "properties":{
-                "axis":{
-                    "title":"axis",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"axis",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
-                    }
-                },
-                "scaleFactor":{
-                    "title":"scaleFactor",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"scaleFactor",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ScaleAxisType",
-                "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
-            },
-            "propertiesOrder":[
-                "axis",
-                "scaleFactor"
-            ]
-        },
-        "ScaleAxesByFactorType":{
-            "type":"object",
-            "title":"ScaleAxesByFactorType",
-            "required":[
-                "scaleAxis"
-            ],
-            "properties":{
-                "scaleAxis":{
-                    "title":"scaleAxis",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ScaleAxisType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ScaleAxis",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ScaleAxesByFactorType",
-                "namespaceURI":"http://www.opengis.net/WCS_service-extension_scaling/1.0"
-            },
-            "propertiesOrder":[
-                "scaleAxis"
             ]
         }
     },

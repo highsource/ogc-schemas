@@ -3,7 +3,7 @@ var CityGML_CityObjectGroup_1_0_Module_Factory = function () {
     n: 'CityGML_CityObjectGroup_1_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/cityobjectgroup\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'CityGML_1_0', 'GML_3_1_1'],
+    deps: ['GML_3_1_1', 'XLink_1_0', 'CityGML_1_0'],
     tis: [{
         ln: 'CityObjectGroupType',
         bti: 'CityGML_1_0.AbstractCityObjectType',
@@ -37,7 +37,7 @@ var CityGML_CityObjectGroup_1_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'CityObjectGroupMemberType',
+        ln: 'CityObjectGroupParentType',
         ps: [{
             n: 'cityObject',
             rq: true,
@@ -49,12 +49,6 @@ var CityGML_CityObjectGroup_1_0_Module_Factory = function () {
             },
             ti: 'CityGML_1_0.AbstractCityObjectType',
             t: 'er'
-          }, {
-            n: 'cityObjectGroupMemberRole',
-            an: {
-              lp: 'role'
-            },
-            t: 'a'
           }, {
             n: 'remoteSchema',
             an: {
@@ -88,7 +82,7 @@ var CityGML_CityObjectGroup_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CityObjectGroupParentType',
+        ln: 'CityObjectGroupMemberType',
         ps: [{
             n: 'cityObject',
             rq: true,
@@ -100,6 +94,12 @@ var CityGML_CityObjectGroup_1_0_Module_Factory = function () {
             },
             ti: 'CityGML_1_0.AbstractCityObjectType',
             t: 'er'
+          }, {
+            n: 'cityObjectGroupMemberRole',
+            an: {
+              lp: 'role'
+            },
+            t: 'a'
           }, {
             n: 'remoteSchema',
             an: {

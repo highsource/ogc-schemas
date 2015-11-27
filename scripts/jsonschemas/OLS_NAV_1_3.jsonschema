@@ -2,235 +2,12 @@
 {
     "id":"http://www.opengis.net/ols/nav#",
     "definitions":{
-        "GetNearbyMapObjRequestType":{
-            "required":[
-                "currentPosition",
-                "delta",
-                "priority"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractRequestParametersType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetNearbyMapObjRequestType",
-                    "properties":{
-                        "currentPosition":{
-                            "title":"currentPosition",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PositionType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"CurrentPosition",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "delta":{
-                            "title":"delta",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Delta",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "getFirstBucket":{
-                            "title":"getFirstBucket",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"GetFirstBucket",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "priority":{
-                            "title":"priority",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"priority",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetNearbyMapObjRequestType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "currentPosition",
-                "delta",
-                "getFirstBucket",
-                "priority"
-            ]
-        },
-        "RouteLinkAndCost":{
+        "DayOfWeekOfYearType":{
             "type":"object",
-            "title":"RouteLinkAndCost",
-            "required":[
-                "link",
-                "estLinkTravelTime",
-                "nodeTravelTime"
-            ],
-            "properties":{
-                "link":{
-                    "title":"link",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/AbstractIDType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Link",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "estLinkTravelTime":{
-                    "title":"estLinkTravelTime",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"EstLinkTravelTime",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "nodeTravelTime":{
-                    "title":"nodeTravelTime",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"NodeTravelTime",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RouteLinkAndCost",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "link",
-                "estLinkTravelTime",
-                "nodeTravelTime"
-            ]
-        },
-        "AbstractIDType":{
-            "type":"object",
-            "title":"AbstractIDType",
-            "required":[
-                "id"
-            ],
-            "properties":{
-                "id":{
-                    "title":"id",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ID",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractIDType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "id"
-            ]
-        },
-        "CloseCursorRequest":{
-            "required":[
-                "cursorID",
-                "priority"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractRequestParametersType"
-                },
-                {
-                    "type":"object",
-                    "title":"CloseCursorRequest",
-                    "properties":{
-                        "cursorID":{
-                            "title":"cursorID",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CursorIDType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"CursorID",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "priority":{
-                            "title":"priority",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"priority",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CloseCursorRequest",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "cursorID",
-                "priority"
-            ]
-        },
-        "DayOfWeekOfMonthType":{
-            "type":"object",
-            "title":"DayOfWeekOfMonthType",
+            "title":"DayOfWeekOfYearType",
             "required":[
                 "dayOfWeek",
-                "weekOfMonth"
+                "weekOfYear"
             ],
             "properties":{
                 "dayOfWeek":{
@@ -246,8 +23,8 @@
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
-                "weekOfMonth":{
-                    "title":"weekOfMonth",
+                "weekOfYear":{
+                    "title":"weekOfYear",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
@@ -255,127 +32,19 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"WeekOfMonth",
+                        "localPart":"WeekOfYear",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DayOfWeekOfMonthType",
+                "localPart":"DayOfWeekOfYearType",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             },
             "propertiesOrder":[
                 "dayOfWeek",
-                "weekOfMonth"
-            ]
-        },
-        "CursorFetchResponse":{
-            "required":[
-                "numFetchedRecords",
-                "cursorType",
-                "retrievedRecords"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractResponseParametersType"
-                },
-                {
-                    "type":"object",
-                    "title":"CursorFetchResponse",
-                    "properties":{
-                        "numFetchedRecords":{
-                            "title":"numFetchedRecords",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/long"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"NumFetchedRecords",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "cursorType":{
-                            "title":"cursorType",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CursorTypeEnum"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"CursorType",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "retrievedRecords":{
-                            "title":"retrievedRecords",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"RetrievedRecords",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CursorFetchResponse",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "numFetchedRecords",
-                "cursorType",
-                "retrievedRecords"
-            ]
-        },
-        "GetCursorInfoResponse":{
-            "required":[
-                "cursorInfo"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractResponseParametersType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetCursorInfoResponse",
-                    "properties":{
-                        "cursorInfo":{
-                            "title":"cursorInfo",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CursorInfoType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"CursorInfo",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetCursorInfoResponse",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "cursorInfo"
+                "weekOfYear"
             ]
         },
         "VehicleTypeN":{
@@ -436,51 +105,131 @@
                 "exclusionary"
             ]
         },
-        "RoutePlanType":{
-            "type":"object",
-            "title":"RoutePlanType",
+        "GetCursorPositionRequest":{
             "required":[
-                "wayPointList",
-                "extendedRouteControl",
-                "relaxConstraint"
+                "cursorID",
+                "priority"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractRequestParametersType"
+                },
+                {
+                    "type":"object",
+                    "title":"GetCursorPositionRequest",
+                    "properties":{
+                        "cursorID":{
+                            "title":"cursorID",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CursorIDType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"CursorID",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "priority":{
+                            "title":"priority",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"priority",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetCursorPositionRequest",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "cursorID",
+                "priority"
+            ]
+        },
+        "RouteControlType":{
+            "type":"object",
+            "title":"RouteControlType",
+            "required":[
+                "costCriteria"
             ],
             "properties":{
-                "wayPointList":{
-                    "title":"wayPointList",
+                "costCriteria":{
+                    "title":"costCriteria",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/RoutePointSequenceType"
+                            "$ref":"#/definitions/RouteCostModelType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"WayPointList",
+                        "localPart":"CostCriteria",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
-                "avoidList":{
-                    "title":"avoidList",
+                "vehicle":{
+                    "title":"vehicle",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/AvoidListType"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/VehicleTypeN"
+                            },
+                            "minItems":0
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"AvoidList",
+                        "localPart":"Vehicle",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
-                "extendedRouteControl":{
-                    "title":"extendedRouteControl",
+                "vehicleCompositionLogic":{
+                    "title":"vehicleCompositionLogic",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/RouteControlType"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"ExtendedRouteControl",
+                        "localPart":"VehicleCompositionLogic",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "routeStartDateTime":{
+                    "title":"routeStartDateTime",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DateTimeType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RouteStartDateTime",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "routeEndDateTime":{
+                    "title":"routeEndDateTime",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DateTimeType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RouteEndDateTime",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
@@ -496,215 +245,381 @@
                         "localPart":"useRealTimeTraffic",
                         "namespaceURI":""
                     }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RouteControlType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "costCriteria",
+                "vehicle",
+                "vehicleCompositionLogic",
+                "routeStartDateTime",
+                "routeEndDateTime",
+                "useRealTimeTraffic"
+            ]
+        },
+        "GetPositionRequestType":{
+            "required":[
+                "useHistory",
+                "currentPosition",
+                "priority"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractRequestParametersType"
                 },
-                "relaxConstraint":{
-                    "title":"relaxConstraint",
+                {
+                    "type":"object",
+                    "title":"GetPositionRequestType",
+                    "properties":{
+                        "useHistory":{
+                            "title":"useHistory",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"UseHistory",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "currentPosition":{
+                            "title":"currentPosition",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PositionType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"CurrentPosition",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "priority":{
+                            "title":"priority",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"priority",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetPositionRequestType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "useHistory",
+                "currentPosition",
+                "priority"
+            ]
+        },
+        "CursorType":{
+            "type":"object",
+            "title":"CursorType",
+            "required":[
+                "cursorID",
+                "cursorType"
+            ],
+            "properties":{
+                "cursorID":{
+                    "title":"cursorID",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                            "$ref":"#/definitions/CursorIDType"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"RelaxConstraint",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"CursorID",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "cursorType":{
+                    "title":"cursorType",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/CursorTypeEnum"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"CursorType",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"RoutePlanType",
+                "localPart":"CursorType",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             },
             "propertiesOrder":[
-                "wayPointList",
-                "avoidList",
-                "extendedRouteControl",
-                "useRealTimeTraffic",
-                "relaxConstraint"
+                "cursorID",
+                "cursorType"
             ]
         },
-        "AbsoluteDateType":{
-            "type":"object",
-            "title":"AbsoluteDateType",
+        "ProcessCursorResponse":{
             "required":[
-                "monthOfYear",
-                "dayOfMonth",
-                "year"
+                "numRecordsProcessed"
             ],
-            "properties":{
-                "monthOfYear":{
-                    "title":"monthOfYear",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MonthOfYear",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractResponseParametersType"
                 },
-                "dayOfMonth":{
-                    "title":"dayOfMonth",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                {
+                    "type":"object",
+                    "title":"ProcessCursorResponse",
+                    "properties":{
+                        "numRecordsProcessed":{
+                            "title":"numRecordsProcessed",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/long"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"NumRecordsProcessed",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
                         }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DayOfMonth",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "year":{
-                    "title":"year",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Year",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AbsoluteDateType",
+                "localPart":"ProcessCursorResponse",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             },
             "propertiesOrder":[
-                "monthOfYear",
-                "dayOfMonth",
-                "year"
+                "numRecordsProcessed"
             ]
         },
-        "RoutePointType":{
-            "type":"object",
-            "title":"RoutePointType",
+        "GetCursorPositionResponse":{
             "required":[
-                "linkLoci"
+                "cursorPosition"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractResponseParametersType"
+                },
+                {
+                    "type":"object",
+                    "title":"GetCursorPositionResponse",
+                    "properties":{
+                        "cursorPosition":{
+                            "title":"cursorPosition",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/long"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"CursorPosition",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetCursorPositionResponse",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "cursorPosition"
+            ]
+        },
+        "RoutePointSequenceType.ViaPoint":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/RoutePointType"
+                },
+                {
+                    "type":"object",
+                    "title":"RoutePointSequenceType.ViaPoint",
+                    "properties":{
+                        "ordered":{
+                            "title":"ordered",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"ordered",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "ordered"
+            ]
+        },
+        "RoutePointSequenceType":{
+            "type":"object",
+            "title":"RoutePointSequenceType",
+            "required":[
+                "startPoint",
+                "endPoint"
             ],
             "properties":{
-                "linkLoci":{
-                    "title":"linkLoci",
+                "startPoint":{
+                    "title":"startPoint",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/RoutePointType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"StartPoint",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "viaPoint":{
+                    "title":"viaPoint",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/LocusType"
+                                "$ref":"#/definitions/RoutePointSequenceType.ViaPoint"
                             },
-                            "minItems":1
+                            "minItems":0
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"LinkLoci",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RoutePointType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "linkLoci"
-            ]
-        },
-        "DayOfMonthOfYearType":{
-            "type":"object",
-            "title":"DayOfMonthOfYearType",
-            "required":[
-                "dayOfMonth",
-                "monthOfYear"
-            ],
-            "properties":{
-                "dayOfMonth":{
-                    "title":"dayOfMonth",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DayOfMonth",
+                        "localPart":"ViaPoint",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
-                "monthOfYear":{
-                    "title":"monthOfYear",
+                "endPoint":{
+                    "title":"endPoint",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                            "$ref":"#/definitions/RoutePointType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"MonthOfYear",
+                        "localPart":"EndPoint",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DayOfMonthOfYearType",
+                "localPart":"RoutePointSequenceType",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             },
             "propertiesOrder":[
-                "dayOfMonth",
-                "monthOfYear"
+                "startPoint",
+                "viaPoint",
+                "endPoint"
             ]
         },
-        "MapObjType":{
-            "type":"object",
-            "title":"MapObjType",
+        "SetCursorPositionRequest":{
             "required":[
-                "cursor"
+                "cursorID",
+                "cursorStartPosition",
+                "numOfPositions",
+                "priority"
             ],
-            "properties":{
-                "cursor":{
-                    "title":"cursor",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/CursorType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Cursor",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractRequestParametersType"
                 },
-                "firstBucket":{
-                    "title":"firstBucket",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/CursorFetchResponse"
+                {
+                    "type":"object",
+                    "title":"SetCursorPositionRequest",
+                    "properties":{
+                        "cursorID":{
+                            "title":"cursorID",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CursorIDType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"CursorID",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "cursorStartPosition":{
+                            "title":"cursorStartPosition",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CursorOriginEnum"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"CursorStartPosition",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "numOfPositions":{
+                            "title":"numOfPositions",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/long"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"NumOfPositions",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "priority":{
+                            "title":"priority",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"priority",
+                                "namespaceURI":""
+                            }
                         }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"FirstBucket",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"MapObjType",
+                "localPart":"SetCursorPositionRequest",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             },
             "propertiesOrder":[
-                "cursor",
-                "firstBucket"
+                "cursorID",
+                "cursorStartPosition",
+                "numOfPositions",
+                "priority"
             ]
         },
         "ProcessCursorRequest":{
@@ -789,114 +704,9 @@
                 "priority"
             ]
         },
-        "CursorType":{
-            "type":"object",
-            "title":"CursorType",
+        "DetermineRouteResponseType":{
             "required":[
-                "cursorID",
-                "cursorType"
-            ],
-            "properties":{
-                "cursorID":{
-                    "title":"cursorID",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/CursorIDType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"CursorID",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "cursorType":{
-                    "title":"cursorType",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/CursorTypeEnum"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"CursorType",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CursorType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "cursorID",
-                "cursorType"
-            ]
-        },
-        "DayOfWeekOfMonthOfYearType":{
-            "type":"object",
-            "title":"DayOfWeekOfMonthOfYearType",
-            "required":[
-                "dayOfWeek",
-                "weekOfMonth",
-                "monthOfYear"
-            ],
-            "properties":{
-                "dayOfWeek":{
-                    "title":"dayOfWeek",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DayOfWeekEnum"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DayOfWeek",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "weekOfMonth":{
-                    "title":"weekOfMonth",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"WeekOfMonth",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "monthOfYear":{
-                    "title":"monthOfYear",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MonthOfYear",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DayOfWeekOfMonthOfYearType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "dayOfWeek",
-                "weekOfMonth",
-                "monthOfYear"
-            ]
-        },
-        "GetNearbyMapObjResponseType":{
-            "required":[
-                "mapObj"
+                "routeLinkAndCost"
             ],
             "allOf":[
                 {
@@ -904,18 +714,83 @@
                 },
                 {
                     "type":"object",
-                    "title":"GetNearbyMapObjResponseType",
+                    "title":"DetermineRouteResponseType",
                     "properties":{
-                        "mapObj":{
-                            "title":"mapObj",
+                        "routeLinkAndCost":{
+                            "title":"routeLinkAndCost",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/MapObjType"
+                                    "$ref":"#/definitions/CursorType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"MapObj",
+                                "localPart":"RouteLinkAndCost",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "firstBucket":{
+                            "title":"firstBucket",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CursorFetchResponse"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"FirstBucket",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "routeHandle":{
+                            "title":"routeHandle",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/RouteHandleType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"RouteHandle",
+                                "namespaceURI":"http://www.opengis.net/xls"
+                            }
+                        },
+                        "routeSummary":{
+                            "title":"routeSummary",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/RouteSummaryType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"RouteSummary",
+                                "namespaceURI":"http://www.opengis.net/xls"
+                            }
+                        },
+                        "constraintRelaxed":{
+                            "title":"constraintRelaxed",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ConstraintRelaxed",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "whichConstrainWasRelaxed":{
+                            "title":"whichConstrainWasRelaxed",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"WhichConstrainWasRelaxed",
                                 "namespaceURI":"http://www.opengis.net/ols/nav"
                             }
                         }
@@ -924,164 +799,122 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"GetNearbyMapObjResponseType",
+                "localPart":"DetermineRouteResponseType",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             },
             "propertiesOrder":[
-                "mapObj"
+                "routeLinkAndCost",
+                "firstBucket",
+                "routeHandle",
+                "routeSummary",
+                "constraintRelaxed",
+                "whichConstrainWasRelaxed"
             ]
         },
-        "ExtendedDateType":{
+        "DateType":{
             "type":"object",
-            "title":"ExtendedDateType",
+            "title":"DateType",
             "properties":{
-                "dayOfWeek":{
-                    "title":"dayOfWeek",
+                "absoluteDateType":{
+                    "title":"absoluteDateType",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/DayOfWeekEnum"
+                            "$ref":"#/definitions/AbsoluteDateType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"DayOfWeek",
+                        "localPart":"AbsoluteDateType",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
-                "dayOfYear":{
-                    "title":"dayOfYear",
+                "extendedDate":{
+                    "title":"extendedDate",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                            "$ref":"#/definitions/ExtendedDateType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"DayOfYear",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "dayOfMonth":{
-                    "title":"dayOfMonth",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DayOfMonth",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "dayOfWeekOfMonthType":{
-                    "title":"dayOfWeekOfMonthType",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DayOfWeekOfMonthType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DayOfWeekOfMonthType",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "dayOfWeekOfYearType":{
-                    "title":"dayOfWeekOfYearType",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DayOfWeekOfYearType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DayOfWeekOfYearType",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "weekOfMonth":{
-                    "title":"weekOfMonth",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"WeekOfMonth",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "weekOfYear":{
-                    "title":"weekOfYear",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"WeekOfYear",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "monthOfYear":{
-                    "title":"monthOfYear",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MonthOfYear",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "dayOfMonthOfYearType":{
-                    "title":"dayOfMonthOfYearType",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DayOfMonthOfYearType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DayOfMonthOfYearType",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "dayOfWeekOfMonthOfYearType":{
-                    "title":"dayOfWeekOfMonthOfYearType",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DayOfMonthOfYearType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DayOfWeekOfMonthOfYearType",
+                        "localPart":"ExtendedDate",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ExtendedDateType",
+                "localPart":"DateType",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             },
             "propertiesOrder":[
-                "dayOfWeek",
-                "dayOfYear",
-                "dayOfMonth",
-                "dayOfWeekOfMonthType",
-                "dayOfWeekOfYearType",
-                "weekOfMonth",
-                "weekOfYear",
-                "monthOfYear",
-                "dayOfMonthOfYearType",
-                "dayOfWeekOfMonthOfYearType"
+                "absoluteDateType",
+                "extendedDate"
+            ]
+        },
+        "LocusType":{
+            "required":[
+                "link"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractWayPointType"
+                },
+                {
+                    "type":"object",
+                    "title":"LocusType",
+                    "properties":{
+                        "link":{
+                            "title":"link",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/AbstractIDType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Link",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "positionAlongLink":{
+                            "title":"positionAlongLink",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"PositionAlongLink",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "side":{
+                            "title":"side",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Side",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LocusType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "link",
+                "positionAlongLink",
+                "side"
             ]
         },
         "CursorInfoType":{
@@ -1157,520 +990,6 @@
                 "cursorBufferEnd",
                 "resultsSetComplete",
                 "currentCursorPosition"
-            ]
-        },
-        "GetPositionRequestType":{
-            "required":[
-                "useHistory",
-                "currentPosition",
-                "priority"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractRequestParametersType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetPositionRequestType",
-                    "properties":{
-                        "useHistory":{
-                            "title":"useHistory",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"UseHistory",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "currentPosition":{
-                            "title":"currentPosition",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PositionType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"CurrentPosition",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "priority":{
-                            "title":"priority",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"priority",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetPositionRequestType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "useHistory",
-                "currentPosition",
-                "priority"
-            ]
-        },
-        "DateType":{
-            "type":"object",
-            "title":"DateType",
-            "properties":{
-                "absoluteDateType":{
-                    "title":"absoluteDateType",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/AbsoluteDateType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"AbsoluteDateType",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "extendedDate":{
-                    "title":"extendedDate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ExtendedDateType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ExtendedDate",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DateType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "absoluteDateType",
-                "extendedDate"
-            ]
-        },
-        "SetCursorPositionResponse":{
-            "required":[
-                "gapNum"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractResponseParametersType"
-                },
-                {
-                    "type":"object",
-                    "title":"SetCursorPositionResponse",
-                    "properties":{
-                        "gapNum":{
-                            "title":"gapNum",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/long"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"GapNum",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SetCursorPositionResponse",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "gapNum"
-            ]
-        },
-        "DetermineRouteRequestType":{
-            "required":[
-                "routeHandle",
-                "extendedRoutePlan",
-                "priority"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractRequestParametersType"
-                },
-                {
-                    "type":"object",
-                    "title":"DetermineRouteRequestType",
-                    "properties":{
-                        "routeHandle":{
-                            "title":"routeHandle",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/RouteHandleType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"RouteHandle",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "extendedRoutePlan":{
-                            "title":"extendedRoutePlan",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/RoutePlanType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ExtendedRoutePlan",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "boundingBox":{
-                            "title":"boundingBox",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/EnvelopeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"BoundingBox",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "routeGuidanceRequest":{
-                            "title":"routeGuidanceRequest",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/RouteInstructionsRequestType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"RouteGuidanceRequest",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "firstBucketSize":{
-                            "title":"firstBucketSize",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"FirstBucketSize",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "priority":{
-                            "title":"priority",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"priority",
-                                "namespaceURI":""
-                            }
-                        },
-                        "provideRouteHandle":{
-                            "title":"provideRouteHandle",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"provideRouteHandle",
-                                "namespaceURI":""
-                            }
-                        },
-                        "distanceUnit":{
-                            "title":"distanceUnit",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DistanceUnitType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"distanceUnit",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DetermineRouteRequestType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "routeHandle",
-                "extendedRoutePlan",
-                "boundingBox",
-                "routeGuidanceRequest",
-                "firstBucketSize",
-                "priority",
-                "provideRouteHandle",
-                "distanceUnit"
-            ]
-        },
-        "RouteCostModelType":{
-            "type":"object",
-            "title":"RouteCostModelType",
-            "required":[
-                "minimizerGoal"
-            ],
-            "properties":{
-                "minimizerGoal":{
-                    "title":"minimizerGoal",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/RouteMinimizeOptionEnum"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MinimizerGoal",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "highwayAffinity":{
-                    "title":"highwayAffinity",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/RouteHighwayUsageEnum"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"HighwayAffinity",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "tollroadAffinity":{
-                    "title":"tollroadAffinity",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/RouteTollUsageEnum"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TollroadAffinity",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "scenicRoute":{
-                    "title":"scenicRoute",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"ScenicRoute",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RouteCostModelType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "minimizerGoal",
-                "highwayAffinity",
-                "tollroadAffinity",
-                "scenicRoute"
-            ]
-        },
-        "TimeZoneType":{
-            "type":"object",
-            "title":"TimeZoneType",
-            "required":[
-                "code",
-                "minutesFromGMT",
-                "description"
-            ],
-            "properties":{
-                "code":{
-                    "title":"code",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/long"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Code",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "minutesFromGMT":{
-                    "title":"minutesFromGMT",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/short"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MinutesFromGMT",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "description":{
-                    "title":"description",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Description",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TimeZoneType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "code",
-                "minutesFromGMT",
-                "description"
-            ]
-        },
-        "GetCursorPositionRequest":{
-            "required":[
-                "cursorID",
-                "priority"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractRequestParametersType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetCursorPositionRequest",
-                    "properties":{
-                        "cursorID":{
-                            "title":"cursorID",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CursorIDType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"CursorID",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "priority":{
-                            "title":"priority",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"priority",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetCursorPositionRequest",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "cursorID",
-                "priority"
-            ]
-        },
-        "CursorIDType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractIDType"
-                },
-                {
-                    "type":"object",
-                    "title":"CursorIDType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CursorIDType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            }
-        },
-        "RoutePointSequenceType.ViaPoint":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/RoutePointType"
-                },
-                {
-                    "type":"object",
-                    "title":"RoutePointSequenceType.ViaPoint",
-                    "properties":{
-                        "ordered":{
-                            "title":"ordered",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"ordered",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "ordered"
             ]
         },
         "DateTimeType":{
@@ -1882,79 +1201,207 @@
                 "duskToDawn"
             ]
         },
-        "RouteControlType":{
+        "DayOfMonthOfYearType":{
             "type":"object",
-            "title":"RouteControlType",
+            "title":"DayOfMonthOfYearType",
             "required":[
-                "costCriteria"
+                "dayOfMonth",
+                "monthOfYear"
             ],
             "properties":{
-                "costCriteria":{
-                    "title":"costCriteria",
+                "dayOfMonth":{
+                    "title":"dayOfMonth",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/RouteCostModelType"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"CostCriteria",
+                        "localPart":"DayOfMonth",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
-                "vehicle":{
-                    "title":"vehicle",
+                "monthOfYear":{
+                    "title":"monthOfYear",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/VehicleTypeN"
-                            },
-                            "minItems":0
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Vehicle",
+                        "localPart":"MonthOfYear",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DayOfMonthOfYearType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "dayOfMonth",
+                "monthOfYear"
+            ]
+        },
+        "SetCursorPositionResponse":{
+            "required":[
+                "gapNum"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractResponseParametersType"
+                },
+                {
+                    "type":"object",
+                    "title":"SetCursorPositionResponse",
+                    "properties":{
+                        "gapNum":{
+                            "title":"gapNum",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/long"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"GapNum",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SetCursorPositionResponse",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "gapNum"
+            ]
+        },
+        "AbstractIDType":{
+            "type":"object",
+            "title":"AbstractIDType",
+            "required":[
+                "id"
+            ],
+            "properties":{
+                "id":{
+                    "title":"id",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ID",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractIDType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "id"
+            ]
+        },
+        "MapObjType":{
+            "type":"object",
+            "title":"MapObjType",
+            "required":[
+                "cursor"
+            ],
+            "properties":{
+                "cursor":{
+                    "title":"cursor",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/CursorType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Cursor",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
-                "vehicleCompositionLogic":{
-                    "title":"vehicleCompositionLogic",
+                "firstBucket":{
+                    "title":"firstBucket",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/CursorFetchResponse"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"VehicleCompositionLogic",
+                        "localPart":"FirstBucket",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"MapObjType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "cursor",
+                "firstBucket"
+            ]
+        },
+        "RoutePlanType":{
+            "type":"object",
+            "title":"RoutePlanType",
+            "required":[
+                "wayPointList",
+                "extendedRouteControl",
+                "relaxConstraint"
+            ],
+            "properties":{
+                "wayPointList":{
+                    "title":"wayPointList",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/RoutePointSequenceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"WayPointList",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
-                "routeStartDateTime":{
-                    "title":"routeStartDateTime",
+                "avoidList":{
+                    "title":"avoidList",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/DateTimeType"
+                            "$ref":"#/definitions/AvoidListType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"RouteStartDateTime",
+                        "localPart":"AvoidList",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
-                "routeEndDateTime":{
-                    "title":"routeEndDateTime",
+                "extendedRouteControl":{
+                    "title":"extendedRouteControl",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/DateTimeType"
+                            "$ref":"#/definitions/RouteControlType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"RouteEndDateTime",
+                        "localPart":"ExtendedRouteControl",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
@@ -1970,20 +1417,305 @@
                         "localPart":"useRealTimeTraffic",
                         "namespaceURI":""
                     }
+                },
+                "relaxConstraint":{
+                    "title":"relaxConstraint",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"RelaxConstraint",
+                        "namespaceURI":""
+                    }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"RouteControlType",
+                "localPart":"RoutePlanType",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             },
             "propertiesOrder":[
-                "costCriteria",
-                "vehicle",
-                "vehicleCompositionLogic",
-                "routeStartDateTime",
-                "routeEndDateTime",
-                "useRealTimeTraffic"
+                "wayPointList",
+                "avoidList",
+                "extendedRouteControl",
+                "useRealTimeTraffic",
+                "relaxConstraint"
+            ]
+        },
+        "DayOfWeekOfMonthType":{
+            "type":"object",
+            "title":"DayOfWeekOfMonthType",
+            "required":[
+                "dayOfWeek",
+                "weekOfMonth"
+            ],
+            "properties":{
+                "dayOfWeek":{
+                    "title":"dayOfWeek",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DayOfWeekEnum"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DayOfWeek",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "weekOfMonth":{
+                    "title":"weekOfMonth",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"WeekOfMonth",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DayOfWeekOfMonthType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "dayOfWeek",
+                "weekOfMonth"
+            ]
+        },
+        "GetCursorInfoResponse":{
+            "required":[
+                "cursorInfo"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractResponseParametersType"
+                },
+                {
+                    "type":"object",
+                    "title":"GetCursorInfoResponse",
+                    "properties":{
+                        "cursorInfo":{
+                            "title":"cursorInfo",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CursorInfoType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"CursorInfo",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetCursorInfoResponse",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "cursorInfo"
+            ]
+        },
+        "DayOfWeekOfMonthOfYearType":{
+            "type":"object",
+            "title":"DayOfWeekOfMonthOfYearType",
+            "required":[
+                "dayOfWeek",
+                "weekOfMonth",
+                "monthOfYear"
+            ],
+            "properties":{
+                "dayOfWeek":{
+                    "title":"dayOfWeek",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DayOfWeekEnum"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DayOfWeek",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "weekOfMonth":{
+                    "title":"weekOfMonth",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"WeekOfMonth",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "monthOfYear":{
+                    "title":"monthOfYear",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MonthOfYear",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DayOfWeekOfMonthOfYearType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "dayOfWeek",
+                "weekOfMonth",
+                "monthOfYear"
+            ]
+        },
+        "CursorFetchResponse":{
+            "required":[
+                "numFetchedRecords",
+                "cursorType",
+                "retrievedRecords"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractResponseParametersType"
+                },
+                {
+                    "type":"object",
+                    "title":"CursorFetchResponse",
+                    "properties":{
+                        "numFetchedRecords":{
+                            "title":"numFetchedRecords",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/long"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"NumFetchedRecords",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "cursorType":{
+                            "title":"cursorType",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CursorTypeEnum"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"CursorType",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "retrievedRecords":{
+                            "title":"retrievedRecords",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"RetrievedRecords",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CursorFetchResponse",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "numFetchedRecords",
+                "cursorType",
+                "retrievedRecords"
+            ]
+        },
+        "RouteLinkAndCost":{
+            "type":"object",
+            "title":"RouteLinkAndCost",
+            "required":[
+                "link",
+                "estLinkTravelTime",
+                "nodeTravelTime"
+            ],
+            "properties":{
+                "link":{
+                    "title":"link",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/AbstractIDType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Link",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "estLinkTravelTime":{
+                    "title":"estLinkTravelTime",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"EstLinkTravelTime",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "nodeTravelTime":{
+                    "title":"nodeTravelTime",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"NodeTravelTime",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RouteLinkAndCost",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "link",
+                "estLinkTravelTime",
+                "nodeTravelTime"
             ]
         },
         "CursorFetchRequest":{
@@ -2068,9 +1800,9 @@
                 "priority"
             ]
         },
-        "GetCursorPositionResponse":{
+        "GetPositionResponseType":{
             "required":[
-                "cursorPosition"
+                "locus"
             ],
             "allOf":[
                 {
@@ -2078,18 +1810,18 @@
                 },
                 {
                     "type":"object",
-                    "title":"GetCursorPositionResponse",
+                    "title":"GetPositionResponseType",
                     "properties":{
-                        "cursorPosition":{
-                            "title":"cursorPosition",
+                        "locus":{
+                            "title":"locus",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/long"
+                                    "$ref":"#/definitions/LocusType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"CursorPosition",
+                                "localPart":"Locus",
                                 "namespaceURI":"http://www.opengis.net/ols/nav"
                             }
                         }
@@ -2098,51 +1830,27 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"GetCursorPositionResponse",
+                "localPart":"GetPositionResponseType",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             },
             "propertiesOrder":[
-                "cursorPosition"
+                "locus"
             ]
         },
-        "DetermineRouteResponseType":{
+        "DetermineRouteRequestType":{
             "required":[
-                "routeLinkAndCost"
+                "routeHandle",
+                "extendedRoutePlan",
+                "priority"
             ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractResponseParametersType"
+                    "$ref":"#/definitions/AbstractRequestParametersType"
                 },
                 {
                     "type":"object",
-                    "title":"DetermineRouteResponseType",
+                    "title":"DetermineRouteRequestType",
                     "properties":{
-                        "routeLinkAndCost":{
-                            "title":"routeLinkAndCost",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CursorType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"RouteLinkAndCost",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "firstBucket":{
-                            "title":"firstBucket",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CursorFetchResponse"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"FirstBucket",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
                         "routeHandle":{
                             "title":"routeHandle",
                             "allOf":[
@@ -2153,45 +1861,380 @@
                             "propertyType":"element",
                             "elementName":{
                                 "localPart":"RouteHandle",
-                                "namespaceURI":"http://www.opengis.net/xls"
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
                             }
                         },
-                        "routeSummary":{
-                            "title":"routeSummary",
+                        "extendedRoutePlan":{
+                            "title":"extendedRoutePlan",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/RouteSummaryType"
+                                    "$ref":"#/definitions/RoutePlanType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"RouteSummary",
-                                "namespaceURI":"http://www.opengis.net/xls"
+                                "localPart":"ExtendedRoutePlan",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
                             }
                         },
-                        "constraintRelaxed":{
-                            "title":"constraintRelaxed",
+                        "boundingBox":{
+                            "title":"boundingBox",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/EnvelopeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"BoundingBox",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "routeGuidanceRequest":{
+                            "title":"routeGuidanceRequest",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/RouteInstructionsRequestType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"RouteGuidanceRequest",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "firstBucketSize":{
+                            "title":"firstBucketSize",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"FirstBucketSize",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "priority":{
+                            "title":"priority",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"priority",
+                                "namespaceURI":""
+                            }
+                        },
+                        "provideRouteHandle":{
+                            "title":"provideRouteHandle",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
                                 }
                             ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ConstraintRelaxed",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"provideRouteHandle",
+                                "namespaceURI":""
                             }
                         },
-                        "whichConstrainWasRelaxed":{
-                            "title":"whichConstrainWasRelaxed",
+                        "distanceUnit":{
+                            "title":"distanceUnit",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    "$ref":"#/definitions/DistanceUnitType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"distanceUnit",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DetermineRouteRequestType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "routeHandle",
+                "extendedRoutePlan",
+                "boundingBox",
+                "routeGuidanceRequest",
+                "firstBucketSize",
+                "priority",
+                "provideRouteHandle",
+                "distanceUnit"
+            ]
+        },
+        "GetNearbyMapObjRequestType":{
+            "required":[
+                "currentPosition",
+                "delta",
+                "priority"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractRequestParametersType"
+                },
+                {
+                    "type":"object",
+                    "title":"GetNearbyMapObjRequestType",
+                    "properties":{
+                        "currentPosition":{
+                            "title":"currentPosition",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PositionType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"WhichConstrainWasRelaxed",
+                                "localPart":"CurrentPosition",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "delta":{
+                            "title":"delta",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Delta",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "getFirstBucket":{
+                            "title":"getFirstBucket",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"GetFirstBucket",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "priority":{
+                            "title":"priority",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"priority",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetNearbyMapObjRequestType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "currentPosition",
+                "delta",
+                "getFirstBucket",
+                "priority"
+            ]
+        },
+        "CloseCursorRequest":{
+            "required":[
+                "cursorID",
+                "priority"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractRequestParametersType"
+                },
+                {
+                    "type":"object",
+                    "title":"CloseCursorRequest",
+                    "properties":{
+                        "cursorID":{
+                            "title":"cursorID",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CursorIDType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"CursorID",
+                                "namespaceURI":"http://www.opengis.net/ols/nav"
+                            }
+                        },
+                        "priority":{
+                            "title":"priority",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"priority",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CloseCursorRequest",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "cursorID",
+                "priority"
+            ]
+        },
+        "RouteCostModelType":{
+            "type":"object",
+            "title":"RouteCostModelType",
+            "required":[
+                "minimizerGoal"
+            ],
+            "properties":{
+                "minimizerGoal":{
+                    "title":"minimizerGoal",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/RouteMinimizeOptionEnum"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MinimizerGoal",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "highwayAffinity":{
+                    "title":"highwayAffinity",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/RouteHighwayUsageEnum"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"HighwayAffinity",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "tollroadAffinity":{
+                    "title":"tollroadAffinity",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/RouteTollUsageEnum"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TollroadAffinity",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "scenicRoute":{
+                    "title":"scenicRoute",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"ScenicRoute",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RouteCostModelType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "minimizerGoal",
+                "highwayAffinity",
+                "tollroadAffinity",
+                "scenicRoute"
+            ]
+        },
+        "RoutePointType":{
+            "type":"object",
+            "title":"RoutePointType",
+            "required":[
+                "linkLoci"
+            ],
+            "properties":{
+                "linkLoci":{
+                    "title":"linkLoci",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/LocusType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LinkLoci",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RoutePointType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "linkLoci"
+            ]
+        },
+        "GetNearbyMapObjResponseType":{
+            "required":[
+                "mapObj"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractResponseParametersType"
+                },
+                {
+                    "type":"object",
+                    "title":"GetNearbyMapObjResponseType",
+                    "properties":{
+                        "mapObj":{
+                            "title":"mapObj",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MapObjType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"MapObj",
                                 "namespaceURI":"http://www.opengis.net/ols/nav"
                             }
                         }
@@ -2200,41 +2243,24 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DetermineRouteResponseType",
+                "localPart":"GetNearbyMapObjResponseType",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             },
             "propertiesOrder":[
-                "routeLinkAndCost",
-                "firstBucket",
-                "routeHandle",
-                "routeSummary",
-                "constraintRelaxed",
-                "whichConstrainWasRelaxed"
+                "mapObj"
             ]
         },
-        "DayOfWeekOfYearType":{
+        "AbsoluteDateType":{
             "type":"object",
-            "title":"DayOfWeekOfYearType",
+            "title":"AbsoluteDateType",
             "required":[
-                "dayOfWeek",
-                "weekOfYear"
+                "monthOfYear",
+                "dayOfMonth",
+                "year"
             ],
             "properties":{
-                "dayOfWeek":{
-                    "title":"dayOfWeek",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DayOfWeekEnum"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DayOfWeek",
-                        "namespaceURI":"http://www.opengis.net/ols/nav"
-                    }
-                },
-                "weekOfYear":{
-                    "title":"weekOfYear",
+                "monthOfYear":{
+                    "title":"monthOfYear",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
@@ -2242,20 +2268,65 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"WeekOfYear",
+                        "localPart":"MonthOfYear",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "dayOfMonth":{
+                    "title":"dayOfMonth",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DayOfMonth",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "year":{
+                    "title":"year",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Year",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DayOfWeekOfYearType",
+                "localPart":"AbsoluteDateType",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             },
             "propertiesOrder":[
-                "dayOfWeek",
-                "weekOfYear"
+                "monthOfYear",
+                "dayOfMonth",
+                "year"
             ]
+        },
+        "CursorIDType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractIDType"
+                },
+                {
+                    "type":"object",
+                    "title":"CursorIDType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CursorIDType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            }
         },
         "GetCursorInfoRequest":{
             "required":[
@@ -2309,301 +2380,218 @@
                 "priority"
             ]
         },
-        "GetPositionResponseType":{
-            "required":[
-                "locus"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractResponseParametersType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetPositionResponseType",
-                    "properties":{
-                        "locus":{
-                            "title":"locus",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LocusType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Locus",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetPositionResponseType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "locus"
-            ]
-        },
-        "ProcessCursorResponse":{
-            "required":[
-                "numRecordsProcessed"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractResponseParametersType"
-                },
-                {
-                    "type":"object",
-                    "title":"ProcessCursorResponse",
-                    "properties":{
-                        "numRecordsProcessed":{
-                            "title":"numRecordsProcessed",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/long"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"NumRecordsProcessed",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ProcessCursorResponse",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "numRecordsProcessed"
-            ]
-        },
-        "SetCursorPositionRequest":{
-            "required":[
-                "cursorID",
-                "cursorStartPosition",
-                "numOfPositions",
-                "priority"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractRequestParametersType"
-                },
-                {
-                    "type":"object",
-                    "title":"SetCursorPositionRequest",
-                    "properties":{
-                        "cursorID":{
-                            "title":"cursorID",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CursorIDType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"CursorID",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "cursorStartPosition":{
-                            "title":"cursorStartPosition",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CursorOriginEnum"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"CursorStartPosition",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "numOfPositions":{
-                            "title":"numOfPositions",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/long"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"NumOfPositions",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "priority":{
-                            "title":"priority",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"priority",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SetCursorPositionRequest",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "cursorID",
-                "cursorStartPosition",
-                "numOfPositions",
-                "priority"
-            ]
-        },
-        "RoutePointSequenceType":{
+        "ExtendedDateType":{
             "type":"object",
-            "title":"RoutePointSequenceType",
+            "title":"ExtendedDateType",
+            "properties":{
+                "dayOfWeek":{
+                    "title":"dayOfWeek",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DayOfWeekEnum"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DayOfWeek",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "dayOfYear":{
+                    "title":"dayOfYear",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DayOfYear",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "dayOfMonth":{
+                    "title":"dayOfMonth",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DayOfMonth",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "dayOfWeekOfMonthType":{
+                    "title":"dayOfWeekOfMonthType",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DayOfWeekOfMonthType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DayOfWeekOfMonthType",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "dayOfWeekOfYearType":{
+                    "title":"dayOfWeekOfYearType",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DayOfWeekOfYearType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DayOfWeekOfYearType",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "weekOfMonth":{
+                    "title":"weekOfMonth",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"WeekOfMonth",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "weekOfYear":{
+                    "title":"weekOfYear",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"WeekOfYear",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "monthOfYear":{
+                    "title":"monthOfYear",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/int"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MonthOfYear",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "dayOfMonthOfYearType":{
+                    "title":"dayOfMonthOfYearType",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DayOfMonthOfYearType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DayOfMonthOfYearType",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                },
+                "dayOfWeekOfMonthOfYearType":{
+                    "title":"dayOfWeekOfMonthOfYearType",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DayOfMonthOfYearType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DayOfWeekOfMonthOfYearType",
+                        "namespaceURI":"http://www.opengis.net/ols/nav"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ExtendedDateType",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            },
+            "propertiesOrder":[
+                "dayOfWeek",
+                "dayOfYear",
+                "dayOfMonth",
+                "dayOfWeekOfMonthType",
+                "dayOfWeekOfYearType",
+                "weekOfMonth",
+                "weekOfYear",
+                "monthOfYear",
+                "dayOfMonthOfYearType",
+                "dayOfWeekOfMonthOfYearType"
+            ]
+        },
+        "TimeZoneType":{
+            "type":"object",
+            "title":"TimeZoneType",
             "required":[
-                "startPoint",
-                "endPoint"
+                "code",
+                "minutesFromGMT",
+                "description"
             ],
             "properties":{
-                "startPoint":{
-                    "title":"startPoint",
+                "code":{
+                    "title":"code",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/RoutePointType"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/long"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"StartPoint",
+                        "localPart":"Code",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
-                "viaPoint":{
-                    "title":"viaPoint",
+                "minutesFromGMT":{
+                    "title":"minutesFromGMT",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/RoutePointSequenceType.ViaPoint"
-                            },
-                            "minItems":0
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/short"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"ViaPoint",
+                        "localPart":"MinutesFromGMT",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 },
-                "endPoint":{
-                    "title":"endPoint",
+                "description":{
+                    "title":"description",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/RoutePointType"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"EndPoint",
+                        "localPart":"Description",
                         "namespaceURI":"http://www.opengis.net/ols/nav"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"RoutePointSequenceType",
+                "localPart":"TimeZoneType",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             },
             "propertiesOrder":[
-                "startPoint",
-                "viaPoint",
-                "endPoint"
+                "code",
+                "minutesFromGMT",
+                "description"
             ]
-        },
-        "LocusType":{
-            "required":[
-                "link"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractWayPointType"
-                },
-                {
-                    "type":"object",
-                    "title":"LocusType",
-                    "properties":{
-                        "link":{
-                            "title":"link",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/AbstractIDType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Link",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "positionAlongLink":{
-                            "title":"positionAlongLink",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"PositionAlongLink",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        },
-                        "side":{
-                            "title":"side",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Side",
-                                "namespaceURI":"http://www.opengis.net/ols/nav"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LocusType",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            },
-            "propertiesOrder":[
-                "link",
-                "positionAlongLink",
-                "side"
-            ]
-        },
-        "DayOfWeekEnum":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"DayOfWeekEnum",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            }
         },
         "FetchDirectionType":{
             "allOf":[
@@ -2629,7 +2617,7 @@
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             }
         },
-        "RouteMinimizeOptionEnum":{
+        "RouteHighwayUsageEnum":{
             "allOf":[
                 {
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2637,7 +2625,7 @@
             ],
             "typeType":"enumInfo",
             "typeName":{
-                "localPart":"RouteMinimizeOptionEnum",
+                "localPart":"RouteHighwayUsageEnum",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             }
         },
@@ -2653,7 +2641,7 @@
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             }
         },
-        "CursorOriginEnum":{
+        "DayOfWeekEnum":{
             "allOf":[
                 {
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2661,7 +2649,7 @@
             ],
             "typeType":"enumInfo",
             "typeName":{
-                "localPart":"CursorOriginEnum",
+                "localPart":"DayOfWeekEnum",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             }
         },
@@ -2677,7 +2665,7 @@
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             }
         },
-        "RouteHighwayUsageEnum":{
+        "CursorOriginEnum":{
             "allOf":[
                 {
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2685,7 +2673,19 @@
             ],
             "typeType":"enumInfo",
             "typeName":{
-                "localPart":"RouteHighwayUsageEnum",
+                "localPart":"CursorOriginEnum",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            }
+        },
+        "RouteMinimizeOptionEnum":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"RouteMinimizeOptionEnum",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             }
         },
@@ -2703,51 +2703,6 @@
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DetermineRouteResponseType"
-                }
-            },
-            "elementName":{
-                "localPart":"DetermineRouteResponse",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetPositionRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetPositionRequest",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DetermineRouteRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"DetermineRouteRequest",
-                "namespaceURI":"http://www.opengis.net/ols/nav"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -2775,6 +2730,51 @@
             },
             "elementName":{
                 "localPart":"GetPositionResponse",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetPositionRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetPositionRequest",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DetermineRouteResponseType"
+                }
+            },
+            "elementName":{
+                "localPart":"DetermineRouteResponse",
+                "namespaceURI":"http://www.opengis.net/ols/nav"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DetermineRouteRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"DetermineRouteRequest",
                 "namespaceURI":"http://www.opengis.net/ols/nav"
             }
         },

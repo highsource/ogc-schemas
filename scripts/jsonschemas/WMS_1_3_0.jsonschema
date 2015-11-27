@@ -2,11 +2,12 @@
 {
     "id":"http://www.opengis.net/wms#",
     "definitions":{
-        "Exception":{
+        "OperationType":{
             "type":"object",
-            "title":"Exception",
+            "title":"OperationType",
             "required":[
-                "format"
+                "format",
+                "dcpType"
             ],
             "properties":{
                 "format":{
@@ -25,104 +26,130 @@
                         "localPart":"Format",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
+                },
+                "dcpType":{
+                    "title":"dcpType",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DCPType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DCPType",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
                 }
             },
             "typeType":"classInfo",
+            "typeName":{
+                "localPart":"OperationType",
+                "namespaceURI":"http://www.opengis.net/wms"
+            },
             "propertiesOrder":[
-                "format"
+                "format",
+                "dcpType"
             ]
         },
-        "ContactInformation":{
+        "EXGeographicBoundingBox":{
             "type":"object",
-            "title":"ContactInformation",
+            "title":"EXGeographicBoundingBox",
+            "required":[
+                "westBoundLongitude",
+                "eastBoundLongitude",
+                "southBoundLatitude",
+                "northBoundLatitude"
+            ],
             "properties":{
-                "contactPersonPrimary":{
-                    "title":"contactPersonPrimary",
+                "westBoundLongitude":{
+                    "title":"westBoundLongitude",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/ContactPersonPrimary"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"ContactPersonPrimary",
+                        "localPart":"westBoundLongitude",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 },
-                "contactPosition":{
-                    "title":"contactPosition",
+                "eastBoundLongitude":{
+                    "title":"eastBoundLongitude",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"ContactPosition",
+                        "localPart":"eastBoundLongitude",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 },
-                "contactAddress":{
-                    "title":"contactAddress",
+                "southBoundLatitude":{
+                    "title":"southBoundLatitude",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/ContactAddress"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"ContactAddress",
+                        "localPart":"southBoundLatitude",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 },
-                "contactVoiceTelephone":{
-                    "title":"contactVoiceTelephone",
+                "northBoundLatitude":{
+                    "title":"northBoundLatitude",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"ContactVoiceTelephone",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "contactFacsimileTelephone":{
-                    "title":"contactFacsimileTelephone",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ContactFacsimileTelephone",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "contactElectronicMailAddress":{
-                    "title":"contactElectronicMailAddress",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ContactElectronicMailAddress",
+                        "localPart":"northBoundLatitude",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "contactPersonPrimary",
-                "contactPosition",
-                "contactAddress",
-                "contactVoiceTelephone",
-                "contactFacsimileTelephone",
-                "contactElectronicMailAddress"
+                "westBoundLongitude",
+                "eastBoundLongitude",
+                "southBoundLatitude",
+                "northBoundLatitude"
+            ]
+        },
+        "Post":{
+            "type":"object",
+            "title":"Post",
+            "required":[
+                "onlineResource"
+            ],
+            "properties":{
+                "onlineResource":{
+                    "title":"onlineResource",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/OnlineResource"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OnlineResource",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "onlineResource"
             ]
         },
         "Attribution":{
@@ -174,6 +201,134 @@
                 "title",
                 "onlineResource",
                 "logoURL"
+            ]
+        },
+        "Keyword":{
+            "type":"object",
+            "title":"Keyword",
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "vocabulary":{
+                    "title":"vocabulary",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"vocabulary",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "value",
+                "vocabulary"
+            ]
+        },
+        "LegendURL":{
+            "type":"object",
+            "title":"LegendURL",
+            "required":[
+                "format",
+                "onlineResource"
+            ],
+            "properties":{
+                "format":{
+                    "title":"format",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Format",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "onlineResource":{
+                    "title":"onlineResource",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/OnlineResource"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OnlineResource",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "width":{
+                    "title":"width",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"width",
+                        "namespaceURI":""
+                    }
+                },
+                "height":{
+                    "title":"height",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"height",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "format",
+                "onlineResource",
+                "width",
+                "height"
+            ]
+        },
+        "Get":{
+            "type":"object",
+            "title":"Get",
+            "required":[
+                "onlineResource"
+            ],
+            "properties":{
+                "onlineResource":{
+                    "title":"onlineResource",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/OnlineResource"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OnlineResource",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "onlineResource"
             ]
         },
         "OnlineResource":{
@@ -283,12 +438,114 @@
                 "actuate"
             ]
         },
-        "LegendURL":{
+        "Style":{
             "type":"object",
-            "title":"LegendURL",
+            "title":"Style",
+            "required":[
+                "name",
+                "title"
+            ],
+            "properties":{
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Name",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Title",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "_abstract":{
+                    "title":"_abstract",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Abstract",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "legendURL":{
+                    "title":"legendURL",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/LegendURL"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LegendURL",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "styleSheetURL":{
+                    "title":"styleSheetURL",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/StyleSheetURL"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"StyleSheetURL",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "styleURL":{
+                    "title":"styleURL",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/StyleURL"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"StyleURL",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "name",
+                "title",
+                "_abstract",
+                "legendURL",
+                "styleSheetURL",
+                "styleURL"
+            ]
+        },
+        "MetadataURL":{
+            "type":"object",
+            "title":"MetadataURL",
             "required":[
                 "format",
-                "onlineResource"
+                "onlineResource",
+                "type"
             ],
             "properties":{
                 "format":{
@@ -317,29 +574,16 @@
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 },
-                "width":{
-                    "title":"width",
+                "type":{
+                    "title":"type",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"width",
-                        "namespaceURI":""
-                    }
-                },
-                "height":{
-                    "title":"height",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"height",
+                        "localPart":"type",
                         "namespaceURI":""
                     }
                 }
@@ -348,48 +592,136 @@
             "propertiesOrder":[
                 "format",
                 "onlineResource",
-                "width",
-                "height"
+                "type"
             ]
         },
-        "HTTP":{
+        "ContactInformation":{
             "type":"object",
-            "title":"HTTP",
-            "required":[
-                "get"
-            ],
+            "title":"ContactInformation",
             "properties":{
-                "get":{
-                    "title":"get",
+                "contactPersonPrimary":{
+                    "title":"contactPersonPrimary",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/Get"
+                            "$ref":"#/definitions/ContactPersonPrimary"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Get",
+                        "localPart":"ContactPersonPrimary",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 },
-                "post":{
-                    "title":"post",
+                "contactPosition":{
+                    "title":"contactPosition",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/Post"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Post",
+                        "localPart":"ContactPosition",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "contactAddress":{
+                    "title":"contactAddress",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ContactAddress"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ContactAddress",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "contactVoiceTelephone":{
+                    "title":"contactVoiceTelephone",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ContactVoiceTelephone",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "contactFacsimileTelephone":{
+                    "title":"contactFacsimileTelephone",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ContactFacsimileTelephone",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "contactElectronicMailAddress":{
+                    "title":"contactElectronicMailAddress",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ContactElectronicMailAddress",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "get",
-                "post"
+                "contactPersonPrimary",
+                "contactPosition",
+                "contactAddress",
+                "contactVoiceTelephone",
+                "contactFacsimileTelephone",
+                "contactElectronicMailAddress"
+            ]
+        },
+        "Identifier":{
+            "type":"object",
+            "title":"Identifier",
+            "required":[
+                "authority"
+            ],
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "authority":{
+                    "title":"authority",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"authority",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "value",
+                "authority"
             ]
         },
         "Layer":{
@@ -780,320 +1112,6 @@
                 "fixedHeight"
             ]
         },
-        "FeatureListURL":{
-            "type":"object",
-            "title":"FeatureListURL",
-            "required":[
-                "format",
-                "onlineResource"
-            ],
-            "properties":{
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Format",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OnlineResource"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OnlineResource",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "format",
-                "onlineResource"
-            ]
-        },
-        "EXGeographicBoundingBox":{
-            "type":"object",
-            "title":"EXGeographicBoundingBox",
-            "required":[
-                "westBoundLongitude",
-                "eastBoundLongitude",
-                "southBoundLatitude",
-                "northBoundLatitude"
-            ],
-            "properties":{
-                "westBoundLongitude":{
-                    "title":"westBoundLongitude",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"westBoundLongitude",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "eastBoundLongitude":{
-                    "title":"eastBoundLongitude",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"eastBoundLongitude",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "southBoundLatitude":{
-                    "title":"southBoundLatitude",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"southBoundLatitude",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "northBoundLatitude":{
-                    "title":"northBoundLatitude",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"northBoundLatitude",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "westBoundLongitude",
-                "eastBoundLongitude",
-                "southBoundLatitude",
-                "northBoundLatitude"
-            ]
-        },
-        "StyleURL":{
-            "type":"object",
-            "title":"StyleURL",
-            "required":[
-                "format",
-                "onlineResource"
-            ],
-            "properties":{
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Format",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OnlineResource"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OnlineResource",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "format",
-                "onlineResource"
-            ]
-        },
-        "Post":{
-            "type":"object",
-            "title":"Post",
-            "required":[
-                "onlineResource"
-            ],
-            "properties":{
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OnlineResource"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OnlineResource",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "onlineResource"
-            ]
-        },
-        "ContactPersonPrimary":{
-            "type":"object",
-            "title":"ContactPersonPrimary",
-            "required":[
-                "contactPerson",
-                "contactOrganization"
-            ],
-            "properties":{
-                "contactPerson":{
-                    "title":"contactPerson",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ContactPerson",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "contactOrganization":{
-                    "title":"contactOrganization",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ContactOrganization",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "contactPerson",
-                "contactOrganization"
-            ]
-        },
-        "OperationType":{
-            "type":"object",
-            "title":"OperationType",
-            "required":[
-                "format",
-                "dcpType"
-            ],
-            "properties":{
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Format",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "dcpType":{
-                    "title":"dcpType",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/DCPType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DCPType",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"OperationType",
-                "namespaceURI":"http://www.opengis.net/wms"
-            },
-            "propertiesOrder":[
-                "format",
-                "dcpType"
-            ]
-        },
-        "StyleSheetURL":{
-            "type":"object",
-            "title":"StyleSheetURL",
-            "required":[
-                "format",
-                "onlineResource"
-            ],
-            "properties":{
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Format",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OnlineResource"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OnlineResource",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "format",
-                "onlineResource"
-            ]
-        },
         "LogoURL":{
             "type":"object",
             "title":"LogoURL",
@@ -1163,14 +1181,168 @@
                 "height"
             ]
         },
-        "AuthorityURL":{
+        "HTTP":{
             "type":"object",
-            "title":"AuthorityURL",
+            "title":"HTTP",
             "required":[
-                "onlineResource",
-                "name"
+                "get"
             ],
             "properties":{
+                "get":{
+                    "title":"get",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Get"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Get",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "post":{
+                    "title":"post",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Post"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Post",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "get",
+                "post"
+            ]
+        },
+        "ContactAddress":{
+            "type":"object",
+            "title":"ContactAddress",
+            "required":[
+                "addressType",
+                "address",
+                "city",
+                "stateOrProvince",
+                "postCode",
+                "country"
+            ],
+            "properties":{
+                "addressType":{
+                    "title":"addressType",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"AddressType",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "address":{
+                    "title":"address",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Address",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "city":{
+                    "title":"city",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"City",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "stateOrProvince":{
+                    "title":"stateOrProvince",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"StateOrProvince",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "postCode":{
+                    "title":"postCode",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"PostCode",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "country":{
+                    "title":"country",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Country",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "addressType",
+                "address",
+                "city",
+                "stateOrProvince",
+                "postCode",
+                "country"
+            ]
+        },
+        "DataURL":{
+            "type":"object",
+            "title":"DataURL",
+            "required":[
+                "format",
+                "onlineResource"
+            ],
+            "properties":{
+                "format":{
+                    "title":"format",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Format",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
                 "onlineResource":{
                     "title":"onlineResource",
                     "allOf":[
@@ -1183,84 +1355,12 @@
                         "localPart":"OnlineResource",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
-                },
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"name",
-                        "namespaceURI":""
-                    }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "onlineResource",
-                "name"
-            ]
-        },
-        "Keyword":{
-            "type":"object",
-            "title":"Keyword",
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "vocabulary":{
-                    "title":"vocabulary",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"vocabulary",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "value",
-                "vocabulary"
-            ]
-        },
-        "DCPType":{
-            "type":"object",
-            "title":"DCPType",
-            "required":[
-                "http"
-            ],
-            "properties":{
-                "http":{
-                    "title":"http",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/HTTP"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"HTTP",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "http"
+                "format",
+                "onlineResource"
             ]
         },
         "WMSCapabilities":{
@@ -1332,24 +1432,19 @@
                 "updateSequence"
             ]
         },
-        "Identifier":{
+        "BoundingBox":{
             "type":"object",
-            "title":"Identifier",
+            "title":"BoundingBox",
             "required":[
-                "authority"
+                "crs",
+                "minx",
+                "miny",
+                "maxx",
+                "maxy"
             ],
             "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "authority":{
-                    "title":"authority",
+                "crs":{
+                    "title":"crs",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1357,100 +1452,180 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"authority",
+                        "localPart":"CRS",
+                        "namespaceURI":""
+                    }
+                },
+                "minx":{
+                    "title":"minx",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"minx",
+                        "namespaceURI":""
+                    }
+                },
+                "miny":{
+                    "title":"miny",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"miny",
+                        "namespaceURI":""
+                    }
+                },
+                "maxx":{
+                    "title":"maxx",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"maxx",
+                        "namespaceURI":""
+                    }
+                },
+                "maxy":{
+                    "title":"maxy",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"maxy",
+                        "namespaceURI":""
+                    }
+                },
+                "resx":{
+                    "title":"resx",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"resx",
+                        "namespaceURI":""
+                    }
+                },
+                "resy":{
+                    "title":"resy",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"resy",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "value",
-                "authority"
+                "crs",
+                "minx",
+                "miny",
+                "maxx",
+                "maxy",
+                "resx",
+                "resy"
             ]
         },
-        "Capability":{
+        "StyleSheetURL":{
             "type":"object",
-            "title":"Capability",
+            "title":"StyleSheetURL",
             "required":[
-                "request",
-                "exception"
+                "format",
+                "onlineResource"
             ],
             "properties":{
-                "request":{
-                    "title":"request",
+                "format":{
+                    "title":"format",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/Request"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Request",
+                        "localPart":"Format",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 },
-                "exception":{
-                    "title":"exception",
+                "onlineResource":{
+                    "title":"onlineResource",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/Exception"
+                            "$ref":"#/definitions/OnlineResource"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Exception",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "extendedCapabilities":{
-                    "title":"extendedCapabilities",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "type":"object",
-                                "properties":{
-                                    "name":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                    },
-                                    "value":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    }
-                                },
-                                "elementName":{
-                                    "localPart":"_ExtendedCapabilities",
-                                    "namespaceURI":"http://www.opengis.net/wms"
-                                }
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"_ExtendedCapabilities",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "layer":{
-                    "title":"layer",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Layer"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Layer",
+                        "localPart":"OnlineResource",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "request",
-                "exception",
-                "extendedCapabilities",
-                "layer"
+                "format",
+                "onlineResource"
+            ]
+        },
+        "AuthorityURL":{
+            "type":"object",
+            "title":"AuthorityURL",
+            "required":[
+                "onlineResource",
+                "name"
+            ],
+            "properties":{
+                "onlineResource":{
+                    "title":"onlineResource",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/OnlineResource"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OnlineResource",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"name",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "onlineResource",
+                "name"
             ]
         },
         "Dimension":{
@@ -1574,190 +1749,112 @@
                 "current"
             ]
         },
-        "Style":{
+        "DCPType":{
             "type":"object",
-            "title":"Style",
+            "title":"DCPType",
             "required":[
-                "name",
-                "title"
+                "http"
             ],
             "properties":{
-                "name":{
-                    "title":"name",
+                "http":{
+                    "title":"http",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/HTTP"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Title",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "_abstract":{
-                    "title":"_abstract",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Abstract",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "legendURL":{
-                    "title":"legendURL",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/LegendURL"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LegendURL",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "styleSheetURL":{
-                    "title":"styleSheetURL",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/StyleSheetURL"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"StyleSheetURL",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "styleURL":{
-                    "title":"styleURL",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/StyleURL"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"StyleURL",
+                        "localPart":"HTTP",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "name",
-                "title",
-                "_abstract",
-                "legendURL",
-                "styleSheetURL",
-                "styleURL"
+                "http"
             ]
         },
-        "Request":{
+        "FeatureListURL":{
             "type":"object",
-            "title":"Request",
+            "title":"FeatureListURL",
             "required":[
-                "getCapabilities",
-                "getMap"
+                "format",
+                "onlineResource"
             ],
             "properties":{
-                "getCapabilities":{
-                    "title":"getCapabilities",
+                "format":{
+                    "title":"format",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/OperationType"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"GetCapabilities",
+                        "localPart":"Format",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 },
-                "getMap":{
-                    "title":"getMap",
+                "onlineResource":{
+                    "title":"onlineResource",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/OperationType"
+                            "$ref":"#/definitions/OnlineResource"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"GetMap",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "getFeatureInfo":{
-                    "title":"getFeatureInfo",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OperationType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"GetFeatureInfo",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "extendedOperation":{
-                    "title":"extendedOperation",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "type":"object",
-                                "properties":{
-                                    "name":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                    },
-                                    "value":{
-                                        "$ref":"#/definitions/OperationType"
-                                    }
-                                },
-                                "elementName":{
-                                    "localPart":"_ExtendedOperation",
-                                    "namespaceURI":"http://www.opengis.net/wms"
-                                }
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"_ExtendedOperation",
+                        "localPart":"OnlineResource",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "getCapabilities",
-                "getMap",
-                "getFeatureInfo",
-                "extendedOperation"
+                "format",
+                "onlineResource"
+            ]
+        },
+        "ContactPersonPrimary":{
+            "type":"object",
+            "title":"ContactPersonPrimary",
+            "required":[
+                "contactPerson",
+                "contactOrganization"
+            ],
+            "properties":{
+                "contactPerson":{
+                    "title":"contactPerson",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ContactPerson",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "contactOrganization":{
+                    "title":"contactOrganization",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ContactOrganization",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "contactPerson",
+                "contactOrganization"
             ]
         },
         "Service":{
@@ -1928,13 +2025,12 @@
                 "maxHeight"
             ]
         },
-        "MetadataURL":{
+        "StyleURL":{
             "type":"object",
-            "title":"MetadataURL",
+            "title":"StyleURL",
             "required":[
                 "format",
-                "onlineResource",
-                "type"
+                "onlineResource"
             ],
             "properties":{
                 "format":{
@@ -1962,152 +2058,11 @@
                         "localPart":"OnlineResource",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":""
-                    }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
                 "format",
-                "onlineResource",
-                "type"
-            ]
-        },
-        "ContactAddress":{
-            "type":"object",
-            "title":"ContactAddress",
-            "required":[
-                "addressType",
-                "address",
-                "city",
-                "stateOrProvince",
-                "postCode",
-                "country"
-            ],
-            "properties":{
-                "addressType":{
-                    "title":"addressType",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"AddressType",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "address":{
-                    "title":"address",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Address",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "city":{
-                    "title":"city",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"City",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "stateOrProvince":{
-                    "title":"stateOrProvince",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"StateOrProvince",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "postCode":{
-                    "title":"postCode",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"PostCode",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "country":{
-                    "title":"country",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Country",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "addressType",
-                "address",
-                "city",
-                "stateOrProvince",
-                "postCode",
-                "country"
-            ]
-        },
-        "Get":{
-            "type":"object",
-            "title":"Get",
-            "required":[
-                "onlineResource"
-            ],
-            "properties":{
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OnlineResource"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OnlineResource",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
                 "onlineResource"
             ]
         },
@@ -2138,133 +2093,22 @@
                 "keyword"
             ]
         },
-        "BoundingBox":{
+        "Exception":{
             "type":"object",
-            "title":"BoundingBox",
+            "title":"Exception",
             "required":[
-                "crs",
-                "minx",
-                "miny",
-                "maxx",
-                "maxy"
-            ],
-            "properties":{
-                "crs":{
-                    "title":"crs",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"CRS",
-                        "namespaceURI":""
-                    }
-                },
-                "minx":{
-                    "title":"minx",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"minx",
-                        "namespaceURI":""
-                    }
-                },
-                "miny":{
-                    "title":"miny",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"miny",
-                        "namespaceURI":""
-                    }
-                },
-                "maxx":{
-                    "title":"maxx",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"maxx",
-                        "namespaceURI":""
-                    }
-                },
-                "maxy":{
-                    "title":"maxy",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"maxy",
-                        "namespaceURI":""
-                    }
-                },
-                "resx":{
-                    "title":"resx",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"resx",
-                        "namespaceURI":""
-                    }
-                },
-                "resy":{
-                    "title":"resy",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"resy",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "crs",
-                "minx",
-                "miny",
-                "maxx",
-                "maxy",
-                "resx",
-                "resy"
-            ]
-        },
-        "DataURL":{
-            "type":"object",
-            "title":"DataURL",
-            "required":[
-                "format",
-                "onlineResource"
+                "format"
             ],
             "properties":{
                 "format":{
                     "title":"format",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            },
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
@@ -2272,25 +2116,181 @@
                         "localPart":"Format",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
-                },
-                "onlineResource":{
-                    "title":"onlineResource",
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "format"
+            ]
+        },
+        "Request":{
+            "type":"object",
+            "title":"Request",
+            "required":[
+                "getCapabilities",
+                "getMap"
+            ],
+            "properties":{
+                "getCapabilities":{
+                    "title":"getCapabilities",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/OnlineResource"
+                            "$ref":"#/definitions/OperationType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"OnlineResource",
+                        "localPart":"GetCapabilities",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "getMap":{
+                    "title":"getMap",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/OperationType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GetMap",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "getFeatureInfo":{
+                    "title":"getFeatureInfo",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/OperationType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GetFeatureInfo",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "extendedOperation":{
+                    "title":"extendedOperation",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                    },
+                                    "value":{
+                                        "$ref":"#/definitions/OperationType"
+                                    }
+                                },
+                                "elementName":{
+                                    "localPart":"_ExtendedOperation",
+                                    "namespaceURI":"http://www.opengis.net/wms"
+                                }
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"_ExtendedOperation",
                         "namespaceURI":"http://www.opengis.net/wms"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "format",
-                "onlineResource"
+                "getCapabilities",
+                "getMap",
+                "getFeatureInfo",
+                "extendedOperation"
+            ]
+        },
+        "Capability":{
+            "type":"object",
+            "title":"Capability",
+            "required":[
+                "request",
+                "exception"
+            ],
+            "properties":{
+                "request":{
+                    "title":"request",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Request"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Request",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "exception":{
+                    "title":"exception",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Exception"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Exception",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "extendedCapabilities":{
+                    "title":"extendedCapabilities",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                    },
+                                    "value":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    }
+                                },
+                                "elementName":{
+                                    "localPart":"_ExtendedCapabilities",
+                                    "namespaceURI":"http://www.opengis.net/wms"
+                                }
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"_ExtendedCapabilities",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                },
+                "layer":{
+                    "title":"layer",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Layer"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Layer",
+                        "namespaceURI":"http://www.opengis.net/wms"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "request",
+                "exception",
+                "extendedCapabilities",
+                "layer"
             ]
         }
     },
@@ -2302,86 +2302,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/Post"
                 }
             },
             "elementName":{
-                "localPart":"Abstract",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"PostCode",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_ExtendedCapabilities",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DCPType"
-                }
-            },
-            "elementName":{
-                "localPart":"DCPType",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                }
-            },
-            "elementName":{
-                "localPart":"MaxWidth",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Exception"
-                }
-            },
-            "elementName":{
-                "localPart":"Exception",
+                "localPart":"Post",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2407,11 +2332,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/BoundingBox"
+                    "$ref":"#/definitions/OperationType"
                 }
             },
             "elementName":{
-                "localPart":"BoundingBox",
+                "localPart":"GetCapabilities",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2422,11 +2347,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/Keyword"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"Keyword",
+                "localPart":"_ExtendedCapabilities",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2437,11 +2362,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/OperationType"
                 }
             },
             "elementName":{
-                "localPart":"StateOrProvince",
+                "localPart":"GetFeatureInfo",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2452,11 +2377,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/AuthorityURL"
                 }
             },
             "elementName":{
-                "localPart":"Fees",
+                "localPart":"AuthorityURL",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2467,11 +2392,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/Layer"
+                    "$ref":"#/definitions/ContactPersonPrimary"
                 }
             },
             "elementName":{
-                "localPart":"Layer",
+                "localPart":"ContactPersonPrimary",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2482,11 +2407,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/Attribution"
+                    "$ref":"#/definitions/EXGeographicBoundingBox"
                 }
             },
             "elementName":{
-                "localPart":"Attribution",
+                "localPart":"EX_GeographicBoundingBox",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/StyleURL"
+                }
+            },
+            "elementName":{
+                "localPart":"StyleURL",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2516,7 +2456,7 @@
                 }
             },
             "elementName":{
-                "localPart":"ContactOrganization",
+                "localPart":"Format",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2527,11 +2467,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                    "$ref":"#/definitions/Exception"
                 }
             },
             "elementName":{
-                "localPart":"LayerLimit",
+                "localPart":"Exception",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2542,86 +2482,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/Layer"
                 }
             },
             "elementName":{
-                "localPart":"CRS",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/FeatureListURL"
-                }
-            },
-            "elementName":{
-                "localPart":"FeatureListURL",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Dimension"
-                }
-            },
-            "elementName":{
-                "localPart":"Dimension",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"City",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/OperationType"
-                }
-            },
-            "elementName":{
-                "localPart":"OtherExtendedOperation",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Service"
-                }
-            },
-            "elementName":{
-                "localPart":"Service",
+                "localPart":"Layer",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2651,82 +2516,7 @@
                 }
             },
             "elementName":{
-                "localPart":"ContactPerson",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"Title",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Get"
-                }
-            },
-            "elementName":{
-                "localPart":"Get",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"OtherExtendedCapabilities",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ContactInformation"
-                }
-            },
-            "elementName":{
-                "localPart":"ContactInformation",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/HTTP"
-                }
-            },
-            "elementName":{
-                "localPart":"HTTP",
+                "localPart":"Fees",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2756,7 +2546,7 @@
                 }
             },
             "elementName":{
-                "localPart":"Address",
+                "localPart":"Name",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2767,11 +2557,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/Style"
+                    "$ref":"#/definitions/FeatureListURL"
                 }
             },
             "elementName":{
-                "localPart":"Style",
+                "localPart":"FeatureListURL",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2782,71 +2572,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/KeywordList"
+                    "$ref":"#/definitions/BoundingBox"
                 }
             },
             "elementName":{
-                "localPart":"KeywordList",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/WMSCapabilities"
-                }
-            },
-            "elementName":{
-                "localPart":"WMS_Capabilities",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ContactAddress"
-                }
-            },
-            "elementName":{
-                "localPart":"ContactAddress",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/LogoURL"
-                }
-            },
-            "elementName":{
-                "localPart":"LogoURL",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/OperationType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetCapabilities",
+                "localPart":"BoundingBox",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2861,7 +2591,7 @@
                 }
             },
             "elementName":{
-                "localPart":"ContactVoiceTelephone",
+                "localPart":"CRS",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2887,11 +2617,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/AuthorityURL"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
                 }
             },
             "elementName":{
-                "localPart":"AuthorityURL",
+                "localPart":"MinScaleDenominator",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2902,56 +2632,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/OperationType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"GetFeatureInfo",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"AccessConstraints",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"ContactFacsimileTelephone",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"Format",
+                "localPart":"OtherExtendedCapabilities",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -2977,6 +2662,81 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"Address",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Attribution"
+                }
+            },
+            "elementName":{
+                "localPart":"Attribution",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/WMSCapabilities"
+                }
+            },
+            "elementName":{
+                "localPart":"WMS_Capabilities",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/OperationType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetMap",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                }
+            },
+            "elementName":{
+                "localPart":"MaxWidth",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/Identifier"
                 }
             },
@@ -2992,11 +2752,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/EXGeographicBoundingBox"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                 }
             },
             "elementName":{
-                "localPart":"EX_GeographicBoundingBox",
+                "localPart":"ContactVoiceTelephone",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/OperationType"
+                }
+            },
+            "elementName":{
+                "localPart":"OtherExtendedOperation",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -3011,7 +2786,7 @@
                 }
             },
             "elementName":{
-                "localPart":"Name",
+                "localPart":"Country",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -3022,11 +2797,41 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/OnlineResource"
                 }
             },
             "elementName":{
-                "localPart":"ContactPosition",
+                "localPart":"OnlineResource",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Dimension"
+                }
+            },
+            "elementName":{
+                "localPart":"Dimension",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DCPType"
+                }
+            },
+            "elementName":{
+                "localPart":"DCPType",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -3056,7 +2861,7 @@
                 }
             },
             "elementName":{
-                "localPart":"Country",
+                "localPart":"ContactPosition",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -3067,11 +2872,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                 }
             },
             "elementName":{
-                "localPart":"MinScaleDenominator",
+                "localPart":"AccessConstraints",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -3082,11 +2887,161 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                 }
             },
             "elementName":{
-                "localPart":"MaxHeight",
+                "localPart":"Abstract",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"City",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"StateOrProvince",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Service"
+                }
+            },
+            "elementName":{
+                "localPart":"Service",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ContactAddress"
+                }
+            },
+            "elementName":{
+                "localPart":"ContactAddress",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Keyword"
+                }
+            },
+            "elementName":{
+                "localPart":"Keyword",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"ContactPerson",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/LogoURL"
+                }
+            },
+            "elementName":{
+                "localPart":"LogoURL",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"ContactOrganization",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ContactInformation"
+                }
+            },
+            "elementName":{
+                "localPart":"ContactInformation",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"ContactFacsimileTelephone",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -3112,11 +3067,116 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/DataURL"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
                 }
             },
             "elementName":{
-                "localPart":"DataURL",
+                "localPart":"LayerLimit",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/KeywordList"
+                }
+            },
+            "elementName":{
+                "localPart":"KeywordList",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Style"
+                }
+            },
+            "elementName":{
+                "localPart":"Style",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"PostCode",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Get"
+                }
+            },
+            "elementName":{
+                "localPart":"Get",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                }
+            },
+            "elementName":{
+                "localPart":"MaxHeight",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/HTTP"
+                }
+            },
+            "elementName":{
+                "localPart":"HTTP",
+                "namespaceURI":"http://www.opengis.net/wms"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"Title",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         },
@@ -3142,71 +3202,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/OperationType"
+                    "$ref":"#/definitions/DataURL"
                 }
             },
             "elementName":{
-                "localPart":"GetMap",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/StyleURL"
-                }
-            },
-            "elementName":{
-                "localPart":"StyleURL",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ContactPersonPrimary"
-                }
-            },
-            "elementName":{
-                "localPart":"ContactPersonPrimary",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/OnlineResource"
-                }
-            },
-            "elementName":{
-                "localPart":"OnlineResource",
-                "namespaceURI":"http://www.opengis.net/wms"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Post"
-                }
-            },
-            "elementName":{
-                "localPart":"Post",
+                "localPart":"DataURL",
                 "namespaceURI":"http://www.opengis.net/wms"
             }
         }

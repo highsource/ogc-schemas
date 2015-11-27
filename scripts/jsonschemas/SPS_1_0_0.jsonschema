@@ -2,7 +2,66 @@
 {
     "id":"http://www.opengis.net/sps/1.0#",
     "definitions":{
-        "UpdateRequestType":{
+        "DescribeTaskingRequestResponseType.TaskingDescriptor":{
+            "type":"object",
+            "title":"DescribeTaskingRequestResponseType.TaskingDescriptor",
+            "required":[
+                "sensorID",
+                "inputDescriptor"
+            ],
+            "properties":{
+                "sensorID":{
+                    "title":"sensorID",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SensorIDType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"sensorID",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/StringOrRefType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"description",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "inputDescriptor":{
+                    "title":"inputDescriptor",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InputDescriptor"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"InputDescriptor",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "sensorID",
+                "description",
+                "inputDescriptor"
+            ]
+        },
+        "CancelRequestType":{
             "required":[
                 "taskID"
             ],
@@ -12,7 +71,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"UpdateRequestType",
+                    "title":"CancelRequestType",
                     "properties":{
                         "taskID":{
                             "title":"taskID",
@@ -26,285 +85,43 @@
                                 "localPart":"taskID",
                                 "namespaceURI":"http://www.opengis.net/sps/1.0"
                             }
-                        },
-                        "notificationTarget":{
-                            "title":"notificationTarget",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/NotificationTargetType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"notificationTarget",
-                                "namespaceURI":"http://www.opengis.net/sps/1.0"
-                            }
-                        },
-                        "parameters":{
-                            "title":"parameters",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ParametersType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"parameters",
-                                "namespaceURI":"http://www.opengis.net/sps/1.0"
-                            }
                         }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"UpdateRequestType",
+                "localPart":"CancelRequestType",
                 "namespaceURI":"http://www.opengis.net/sps/1.0"
             },
             "propertiesOrder":[
-                "taskID",
-                "notificationTarget",
-                "parameters"
+                "taskID"
             ]
         },
-        "DescribeResultAccessRequestResponse.Service":{
+        "UpdateRequestResponse.MissingParameters":{
             "type":"object",
-            "title":"DescribeResultAccessRequestResponse.Service",
+            "title":"UpdateRequestResponse.MissingParameters",
             "required":[
-                "serviceType",
-                "serviceURL"
+                "inputDescriptor"
             ],
             "properties":{
-                "serviceType":{
-                    "title":"serviceType",
+                "inputDescriptor":{
+                    "title":"inputDescriptor",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/InputDescriptor"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"ServiceType",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "serviceURL":{
-                    "title":"serviceURL",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ServiceURL",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "request":{
-                    "title":"request",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DescribeResultAccessRequestResponse.Service.Request"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"request",
+                        "localPart":"InputDescriptor",
                         "namespaceURI":"http://www.opengis.net/sps/1.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "serviceType",
-                "serviceURL",
-                "request"
-            ]
-        },
-        "DescribeResultAccessRequestResponse.DataNotAvailable":{
-            "type":"object",
-            "title":"DescribeResultAccessRequestResponse.DataNotAvailable",
-            "required":[
-                "reason"
-            ],
-            "properties":{
-                "reason":{
-                    "title":"reason",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"reason",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "description":{
-                    "title":"description",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/StringOrRefType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"description",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "reason",
-                "description"
-            ]
-        },
-        "InputDescriptorType":{
-            "type":"object",
-            "title":"InputDescriptorType",
-            "required":[
-                "definition",
-                "parameterID",
-                "use"
-            ],
-            "properties":{
-                "description":{
-                    "title":"description",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/StringOrRefType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"description",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "definition":{
-                    "title":"definition",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/InputDescriptorType.Definition"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"definition",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "restriction":{
-                    "title":"restriction",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/InputDescriptorType.Restriction"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"restriction",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "cardinality":{
-                    "title":"cardinality",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"cardinality",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "parameterID":{
-                    "title":"parameterID",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"parameterID",
-                        "namespaceURI":""
-                    }
-                },
-                "use":{
-                    "title":"use",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"use",
-                        "namespaceURI":""
-                    }
-                },
-                "updateable":{
-                    "title":"updateable",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"updateable",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InputDescriptorType",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            },
-            "propertiesOrder":[
-                "description",
-                "definition",
-                "restriction",
-                "cardinality",
-                "parameterID",
-                "use",
-                "updateable"
-            ]
-        },
-        "DescribeResultAccessRequestResponse.Service.Request":{
-            "type":"object",
-            "title":"DescribeResultAccessRequestResponse.Service.Request",
-            "required":[
-                "any"
-            ],
-            "properties":{
-                "any":{
-                    "title":"any",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                }
-                            }
-                        }
-                    ],
-                    "propertyType":"anyElement"
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "any"
+                "inputDescriptor"
             ]
         },
         "TaskMessageDefinitionType":{
@@ -411,51 +228,6 @@
                 "structureSchema"
             ]
         },
-        "NotificationTargetType":{
-            "type":"object",
-            "title":"NotificationTargetType",
-            "required":[
-                "notificationID",
-                "notificationURL"
-            ],
-            "properties":{
-                "notificationID":{
-                    "title":"notificationID",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"notificationID",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "notificationURL":{
-                    "title":"notificationURL",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"notificationURL",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"notificationTargetType",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            },
-            "propertiesOrder":[
-                "notificationID",
-                "notificationURL"
-            ]
-        },
         "SPSContentsType":{
             "type":"object",
             "title":"SPSContentsType",
@@ -501,134 +273,6 @@
                 "phenomenonOfferingList"
             ]
         },
-        "SPSMessage.FeasibilityResponse.Alternative":{
-            "type":"object",
-            "title":"SPSMessage.FeasibilityResponse.Alternative",
-            "required":[
-                "inputParameter"
-            ],
-            "properties":{
-                "inputParameter":{
-                    "title":"inputParameter",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InputParameterType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"InputParameter",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "inputParameter"
-            ]
-        },
-        "SPSMessage.SubmitResponse":{
-            "type":"object",
-            "title":"SPSMessage.SubmitResponse",
-            "required":[
-                "status"
-            ],
-            "properties":{
-                "status":{
-                    "title":"status",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"status",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "description":{
-                    "title":"description",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/StringOrRefType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"description",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "estimatedToC":{
-                    "title":"estimatedToC",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/EstimatedToC"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"estimatedToC",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "alternative":{
-                    "title":"alternative",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SPSMessage.SubmitResponse.Alternative"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"alternative",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "status",
-                "description",
-                "estimatedToC",
-                "alternative"
-            ]
-        },
-        "SPSMessage.UpdateRequest":{
-            "type":"object",
-            "title":"SPSMessage.UpdateRequest",
-            "required":[
-                "inputDescriptor"
-            ],
-            "properties":{
-                "inputDescriptor":{
-                    "title":"inputDescriptor",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InputDescriptor"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"InputDescriptor",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "inputDescriptor"
-            ]
-        },
         "SPSMessage.UpdateResponse":{
             "type":"object",
             "title":"SPSMessage.UpdateResponse",
@@ -659,17 +303,16 @@
                 "inputParameter"
             ]
         },
-        "SubmitRequestResponse":{
+        "DescribeResultAccessRequestResponse.Service":{
             "type":"object",
-            "title":"SubmitRequestResponse",
+            "title":"DescribeResultAccessRequestResponse.Service",
             "required":[
-                "taskID",
-                "status",
-                "latestResponseTime"
+                "serviceType",
+                "serviceURL"
             ],
             "properties":{
-                "taskID":{
-                    "title":"taskID",
+                "serviceType":{
+                    "title":"serviceType",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -677,12 +320,12 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"taskID",
+                        "localPart":"ServiceType",
                         "namespaceURI":"http://www.opengis.net/sps/1.0"
                     }
                 },
-                "status":{
-                    "title":"status",
+                "serviceURL":{
+                    "title":"serviceURL",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -690,120 +333,323 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"status",
+                        "localPart":"ServiceURL",
                         "namespaceURI":"http://www.opengis.net/sps/1.0"
                     }
                 },
-                "description":{
-                    "title":"description",
+                "request":{
+                    "title":"request",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/StringOrRefType"
+                            "$ref":"#/definitions/DescribeResultAccessRequestResponse.Service.Request"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"description",
+                        "localPart":"request",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "serviceType",
+                "serviceURL",
+                "request"
+            ]
+        },
+        "EstimatedToC":{
+            "type":"object",
+            "title":"EstimatedToC",
+            "required":[
+                "timeInstant"
+            ],
+            "properties":{
+                "timeInstant":{
+                    "title":"timeInstant",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TimeInstantType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TimeInstant",
                         "namespaceURI":"http://www.opengis.net/gml"
                     }
-                },
-                "latestResponseTime":{
-                    "title":"latestResponseTime",
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "timeInstant"
+            ]
+        },
+        "UpdateRequestResponse.EstimatedToC":{
+            "type":"object",
+            "title":"UpdateRequestResponse.EstimatedToC",
+            "required":[
+                "timeInstant"
+            ],
+            "properties":{
+                "timeInstant":{
+                    "title":"timeInstant",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/LatestResponseTime"
+                            "$ref":"#/definitions/TimeInstantType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"LatestResponseTime",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                        "localPart":"TimeInstant",
+                        "namespaceURI":"http://www.opengis.net/gml"
                     }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "timeInstant"
+            ]
+        },
+        "UpdateRequestType":{
+            "required":[
+                "taskID"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/RequestBaseType"
                 },
-                "estimatedToC":{
-                    "title":"estimatedToC",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/EstimatedToC"
+                {
+                    "type":"object",
+                    "title":"UpdateRequestType",
+                    "properties":{
+                        "taskID":{
+                            "title":"taskID",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"taskID",
+                                "namespaceURI":"http://www.opengis.net/sps/1.0"
+                            }
+                        },
+                        "notificationTarget":{
+                            "title":"notificationTarget",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/NotificationTargetType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"notificationTarget",
+                                "namespaceURI":"http://www.opengis.net/sps/1.0"
+                            }
+                        },
+                        "parameters":{
+                            "title":"parameters",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ParametersType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"parameters",
+                                "namespaceURI":"http://www.opengis.net/sps/1.0"
+                            }
                         }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"estimatedToC",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
                     }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"UpdateRequestType",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            },
+            "propertiesOrder":[
+                "taskID",
+                "notificationTarget",
+                "parameters"
+            ]
+        },
+        "DescribeResultAccessRequestType":{
+            "required":[
+                "taskID",
+                "sensorID"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/RequestBaseType"
                 },
-                "alternative":{
-                    "title":"alternative",
+                {
+                    "type":"object",
+                    "title":"DescribeResultAccessRequestType",
+                    "properties":{
+                        "taskID":{
+                            "title":"taskID",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"taskID",
+                                "namespaceURI":"http://www.opengis.net/sps/1.0"
+                            }
+                        },
+                        "sensorID":{
+                            "title":"sensorID",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SensorIDType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"sensorID",
+                                "namespaceURI":"http://www.opengis.net/sps/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DescribeResultAccessRequestType",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            },
+            "propertiesOrder":[
+                "taskID",
+                "sensorID"
+            ]
+        },
+        "InputDescriptor":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/InputDescriptorType"
+                },
+                {
+                    "type":"object",
+                    "title":"InputDescriptor",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo"
+        },
+        "GetFeasibilityRequestType":{
+            "required":[
+                "notificationTarget",
+                "sensorID",
+                "parameters"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/RequestBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"GetFeasibilityRequestType",
+                    "properties":{
+                        "notificationTarget":{
+                            "title":"notificationTarget",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/NotificationTargetType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"notificationTarget",
+                                "namespaceURI":"http://www.opengis.net/sps/1.0"
+                            }
+                        },
+                        "sensorID":{
+                            "title":"sensorID",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SensorIDType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"sensorID",
+                                "namespaceURI":"http://www.opengis.net/sps/1.0"
+                            }
+                        },
+                        "parameters":{
+                            "title":"parameters",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ParametersType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"parameters",
+                                "namespaceURI":"http://www.opengis.net/sps/1.0"
+                            }
+                        },
+                        "timeFrame":{
+                            "title":"timeFrame",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/TimeFrame"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"timeFrame",
+                                "namespaceURI":"http://www.opengis.net/sps/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetFeasibilityRequestType",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            },
+            "propertiesOrder":[
+                "notificationTarget",
+                "sensorID",
+                "parameters",
+                "timeFrame"
+            ]
+        },
+        "SPSContentsType.PhenomenonOfferingList":{
+            "type":"object",
+            "title":"SPSContentsType.PhenomenonOfferingList",
+            "required":[
+                "phenomenonOffering"
+            ],
+            "properties":{
+                "phenomenonOffering":{
+                    "title":"phenomenonOffering",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/SubmitRequestResponse.Alternative"
+                                "$ref":"#/definitions/SPSContentsType.PhenomenonOfferingList.PhenomenonOffering"
                             },
-                            "minItems":0
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"alternative",
+                        "localPart":"PhenomenonOffering",
                         "namespaceURI":"http://www.opengis.net/sps/1.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "taskID",
-                "status",
-                "description",
-                "latestResponseTime",
-                "estimatedToC",
-                "alternative"
-            ]
-        },
-        "RequestBaseType":{
-            "type":"object",
-            "title":"RequestBaseType",
-            "required":[
-                "service",
-                "version"
-            ],
-            "properties":{
-                "service":{
-                    "title":"service",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"service",
-                        "namespaceURI":""
-                    }
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RequestBaseType",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            },
-            "propertiesOrder":[
-                "service",
-                "version"
+                "phenomenonOffering"
             ]
         },
         "SubmitRequestType":{
@@ -887,37 +733,157 @@
                 "timeFrame"
             ]
         },
-        "GetCapabilities":{
+        "CancelRequestResponse":{
+            "type":"object",
+            "title":"CancelRequestResponse",
             "required":[
-                "service"
+                "taskID",
+                "status"
             ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows#/definitions/GetCapabilitiesType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetCapabilities",
-                    "properties":{
-                        "service":{
-                            "title":"service",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"service",
-                                "namespaceURI":""
-                            }
+            "properties":{
+                "taskID":{
+                    "title":"taskID",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"taskID",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "status":{
+                    "title":"status",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"status",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/StringOrRefType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"description",
+                        "namespaceURI":"http://www.opengis.net/gml"
                     }
                 }
-            ],
+            },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "service"
+                "taskID",
+                "status",
+                "description"
+            ]
+        },
+        "GetStatusRequestResponse":{
+            "type":"object",
+            "title":"GetStatusRequestResponse",
+            "required":[
+                "taskID",
+                "status"
+            ],
+            "properties":{
+                "taskID":{
+                    "title":"taskID",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"taskID",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "status":{
+                    "title":"status",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"status",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/StringOrRefType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"description",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "estimatedToC":{
+                    "title":"estimatedToC",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/EstimatedToC"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"estimatedToC",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "taskID",
+                "status",
+                "description",
+                "estimatedToC"
+            ]
+        },
+        "DescribeResultAccessRequestResponse.Service.Request":{
+            "type":"object",
+            "title":"DescribeResultAccessRequestResponse.Service.Request",
+            "required":[
+                "any"
+            ],
+            "properties":{
+                "any":{
+                    "title":"any",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                }
+                            }
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "any"
             ]
         },
         "DescribeTaskingRequestResponseType":{
@@ -952,6 +918,36 @@
             },
             "propertiesOrder":[
                 "taskingDescriptor"
+            ]
+        },
+        "SubmitRequestResponse.Alternative":{
+            "type":"object",
+            "title":"SubmitRequestResponse.Alternative",
+            "required":[
+                "inputParameter"
+            ],
+            "properties":{
+                "inputParameter":{
+                    "title":"inputParameter",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InputParameterType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"InputParameter",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "inputParameter"
             ]
         },
         "SensorOfferingType":{
@@ -1029,660 +1025,6 @@
                 "sensorID"
             ]
         },
-        "SPSContentsType.PhenomenonOfferingList.PhenomenonOffering":{
-            "type":"object",
-            "title":"SPSContentsType.PhenomenonOfferingList.PhenomenonOffering",
-            "required":[
-                "phenomenon",
-                "sensorID"
-            ],
-            "properties":{
-                "phenomenon":{
-                    "title":"phenomenon",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Phenomenon",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "sensorID":{
-                    "title":"sensorID",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SensorID",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "phenomenon",
-                "sensorID"
-            ]
-        },
-        "GetStatusRequestType":{
-            "required":[
-                "taskID"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/RequestBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetStatusRequestType",
-                    "properties":{
-                        "notificationTarget":{
-                            "title":"notificationTarget",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/NotificationTargetType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"notificationTarget",
-                                "namespaceURI":"http://www.opengis.net/sps/1.0"
-                            }
-                        },
-                        "taskID":{
-                            "title":"taskID",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"taskID",
-                                "namespaceURI":"http://www.opengis.net/sps/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetStatusRequestType",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            },
-            "propertiesOrder":[
-                "notificationTarget",
-                "taskID"
-            ]
-        },
-        "GetFeasibilityRequestResponse.Alternative":{
-            "type":"object",
-            "title":"GetFeasibilityRequestResponse.Alternative",
-            "required":[
-                "inputParameter"
-            ],
-            "properties":{
-                "inputParameter":{
-                    "title":"inputParameter",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InputParameterType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"InputParameter",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "inputParameter"
-            ]
-        },
-        "GetFeasibilityRequestResponse":{
-            "type":"object",
-            "title":"GetFeasibilityRequestResponse",
-            "required":[
-                "feasibilityID",
-                "feasibility",
-                "latestResponseTime"
-            ],
-            "properties":{
-                "feasibilityID":{
-                    "title":"feasibilityID",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"feasibilityID",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "feasibility":{
-                    "title":"feasibility",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"feasibility",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "description":{
-                    "title":"description",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/StringOrRefType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"description",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "latestResponseTime":{
-                    "title":"latestResponseTime",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LatestResponseTime"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LatestResponseTime",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "alternative":{
-                    "title":"alternative",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/GetFeasibilityRequestResponse.Alternative"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"alternative",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "feasibilityID",
-                "feasibility",
-                "description",
-                "latestResponseTime",
-                "alternative"
-            ]
-        },
-        "SPSContentsType.SensorOfferingList":{
-            "type":"object",
-            "title":"SPSContentsType.SensorOfferingList",
-            "required":[
-                "sensorOffering"
-            ],
-            "properties":{
-                "sensorOffering":{
-                    "title":"sensorOffering",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/SensorOfferingType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SensorOffering",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "sensorOffering"
-            ]
-        },
-        "UpdateRequestResponse.EstimatedToC":{
-            "type":"object",
-            "title":"UpdateRequestResponse.EstimatedToC",
-            "required":[
-                "timeInstant"
-            ],
-            "properties":{
-                "timeInstant":{
-                    "title":"timeInstant",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TimeInstantType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TimeInstant",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "timeInstant"
-            ]
-        },
-        "AreaOfServiceType":{
-            "type":"object",
-            "title":"AreaOfServiceType",
-            "required":[
-                "boundingBox",
-                "pos",
-                "polygon",
-                "solid"
-            ],
-            "properties":{
-                "boundingBox":{
-                    "title":"boundingBox",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"http://www.opengis.net/ows#/definitions/BoundingBoxType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"BoundingBox",
-                                "namespaceURI":"http://www.opengis.net/ows"
-                            }
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"BoundingBox",
-                        "namespaceURI":"http://www.opengis.net/ows"
-                    }
-                },
-                "pos":{
-                    "title":"pos",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DirectPositionType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"pos",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "polygon":{
-                    "title":"polygon",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/PolygonType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Polygon",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "solid":{
-                    "title":"solid",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SolidType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Solid",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AreaOfServiceType",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            },
-            "propertiesOrder":[
-                "boundingBox",
-                "pos",
-                "polygon",
-                "solid"
-            ]
-        },
-        "SPSContentsType.PhenomenonOfferingList":{
-            "type":"object",
-            "title":"SPSContentsType.PhenomenonOfferingList",
-            "required":[
-                "phenomenonOffering"
-            ],
-            "properties":{
-                "phenomenonOffering":{
-                    "title":"phenomenonOffering",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/SPSContentsType.PhenomenonOfferingList.PhenomenonOffering"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"PhenomenonOffering",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "phenomenonOffering"
-            ]
-        },
-        "SubmitRequestResponse.Alternative":{
-            "type":"object",
-            "title":"SubmitRequestResponse.Alternative",
-            "required":[
-                "inputParameter"
-            ],
-            "properties":{
-                "inputParameter":{
-                    "title":"inputParameter",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InputParameterType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"InputParameter",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "inputParameter"
-            ]
-        },
-        "InputDescriptorType.Restriction":{
-            "type":"object",
-            "title":"InputDescriptorType.Restriction",
-            "required":[
-                "inputParameter"
-            ],
-            "properties":{
-                "inputParameter":{
-                    "title":"inputParameter",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/InputParameterType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"InputParameter",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "inputParameter"
-            ]
-        },
-        "ParametersType":{
-            "type":"object",
-            "title":"ParametersType",
-            "required":[
-                "inputParameter"
-            ],
-            "properties":{
-                "inputParameter":{
-                    "title":"inputParameter",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InputParameterType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"InputParameter",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"parametersType",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            },
-            "propertiesOrder":[
-                "inputParameter"
-            ]
-        },
-        "UpdateRequestResponse.MissingParameters":{
-            "type":"object",
-            "title":"UpdateRequestResponse.MissingParameters",
-            "required":[
-                "inputDescriptor"
-            ],
-            "properties":{
-                "inputDescriptor":{
-                    "title":"inputDescriptor",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/InputDescriptor"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"InputDescriptor",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "inputDescriptor"
-            ]
-        },
-        "DescribeTaskingRequestType":{
-            "required":[
-                "sensorID"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/RequestBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"DescribeTaskingRequestType",
-                    "properties":{
-                        "sensorID":{
-                            "title":"sensorID",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/SensorIDType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"sensorID",
-                                "namespaceURI":"http://www.opengis.net/sps/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DescribeTaskingRequestType",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            },
-            "propertiesOrder":[
-                "sensorID"
-            ]
-        },
-        "TimeFrame":{
-            "type":"object",
-            "title":"TimeFrame",
-            "required":[
-                "timeInstant"
-            ],
-            "properties":{
-                "timeInstant":{
-                    "title":"timeInstant",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TimeInstantType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TimeInstant",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "timeInstant"
-            ]
-        },
-        "Capabilities":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows#/definitions/CapabilitiesBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"Capabilities",
-                    "properties":{
-                        "contents":{
-                            "title":"contents",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SPSContentsType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Contents",
-                                "namespaceURI":"http://www.opengis.net/sps/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "contents"
-            ]
-        },
-        "SPSMessage.FeasibilityResponse":{
-            "type":"object",
-            "title":"SPSMessage.FeasibilityResponse",
-            "required":[
-                "feasibility"
-            ],
-            "properties":{
-                "feasibility":{
-                    "title":"feasibility",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"feasibility",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "description":{
-                    "title":"description",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/StringOrRefType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"description",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "alternative":{
-                    "title":"alternative",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SPSMessage.FeasibilityResponse.Alternative"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"alternative",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "feasibility",
-                "description",
-                "alternative"
-            ]
-        },
         "LatestResponseTime":{
             "type":"object",
             "title":"LatestResponseTime",
@@ -1709,53 +1051,79 @@
                 "timeInstant"
             ]
         },
-        "InputParameterType":{
+        "RequestBaseType":{
             "type":"object",
-            "title":"InputParameterType",
+            "title":"RequestBaseType",
             "required":[
-                "value",
-                "parameterID"
+                "service",
+                "version"
             ],
             "properties":{
-                "value":{
-                    "title":"value",
+                "service":{
+                    "title":"service",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InputParameterType.Value"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"value",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "parameterID":{
-                    "title":"parameterID",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"parameterID",
+                        "localPart":"service",
+                        "namespaceURI":""
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"InputParameterType",
+                "localPart":"RequestBaseType",
                 "namespaceURI":"http://www.opengis.net/sps/1.0"
             },
             "propertiesOrder":[
-                "value",
-                "parameterID"
+                "service",
+                "version"
+            ]
+        },
+        "SPSMessage.SubmitResponse.Alternative":{
+            "type":"object",
+            "title":"SPSMessage.SubmitResponse.Alternative",
+            "required":[
+                "inputParameter"
+            ],
+            "properties":{
+                "inputParameter":{
+                    "title":"inputParameter",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InputParameterType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"InputParameter",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "inputParameter"
             ]
         },
         "InputDescriptorType.Definition.CommonData":{
@@ -1958,11 +1326,77 @@
                 "abstractDataArray"
             ]
         },
-        "GetFeasibilityRequestType":{
+        "SPSMessage.SubmitResponse":{
+            "type":"object",
+            "title":"SPSMessage.SubmitResponse",
             "required":[
-                "notificationTarget",
-                "sensorID",
-                "parameters"
+                "status"
+            ],
+            "properties":{
+                "status":{
+                    "title":"status",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"status",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/StringOrRefType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"description",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "estimatedToC":{
+                    "title":"estimatedToC",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/EstimatedToC"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"estimatedToC",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "alternative":{
+                    "title":"alternative",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SPSMessage.SubmitResponse.Alternative"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"alternative",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "status",
+                "description",
+                "estimatedToC",
+                "alternative"
+            ]
+        },
+        "GetStatusRequestType":{
+            "required":[
+                "taskID"
             ],
             "allOf":[
                 {
@@ -1970,7 +1404,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"GetFeasibilityRequestType",
+                    "title":"GetStatusRequestType",
                     "properties":{
                         "notificationTarget":{
                             "title":"notificationTarget",
@@ -1985,73 +1419,6 @@
                                 "namespaceURI":"http://www.opengis.net/sps/1.0"
                             }
                         },
-                        "sensorID":{
-                            "title":"sensorID",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SensorIDType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"sensorID",
-                                "namespaceURI":"http://www.opengis.net/sps/1.0"
-                            }
-                        },
-                        "parameters":{
-                            "title":"parameters",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ParametersType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"parameters",
-                                "namespaceURI":"http://www.opengis.net/sps/1.0"
-                            }
-                        },
-                        "timeFrame":{
-                            "title":"timeFrame",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/TimeFrame"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"timeFrame",
-                                "namespaceURI":"http://www.opengis.net/sps/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetFeasibilityRequestType",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            },
-            "propertiesOrder":[
-                "notificationTarget",
-                "sensorID",
-                "parameters",
-                "timeFrame"
-            ]
-        },
-        "DescribeResultAccessRequestType":{
-            "required":[
-                "taskID",
-                "sensorID"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/RequestBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"DescribeResultAccessRequestType",
-                    "properties":{
                         "taskID":{
                             "title":"taskID",
                             "allOf":[
@@ -2064,65 +1431,162 @@
                                 "localPart":"taskID",
                                 "namespaceURI":"http://www.opengis.net/sps/1.0"
                             }
-                        },
-                        "sensorID":{
-                            "title":"sensorID",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SensorIDType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"sensorID",
-                                "namespaceURI":"http://www.opengis.net/sps/1.0"
-                            }
                         }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DescribeResultAccessRequestType",
+                "localPart":"GetStatusRequestType",
                 "namespaceURI":"http://www.opengis.net/sps/1.0"
             },
             "propertiesOrder":[
-                "taskID",
-                "sensorID"
+                "notificationTarget",
+                "taskID"
             ]
         },
-        "InputParameterType.Value":{
+        "AreaOfServiceType":{
             "type":"object",
-            "title":"InputParameterType.Value",
+            "title":"AreaOfServiceType",
             "required":[
-                "any"
+                "boundingBox",
+                "pos",
+                "polygon",
+                "solid"
             ],
             "properties":{
-                "any":{
-                    "title":"any",
+                "boundingBox":{
+                    "title":"boundingBox",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"http://www.opengis.net/ows#/definitions/BoundingBoxType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"BoundingBox",
+                                "namespaceURI":"http://www.opengis.net/ows"
+                            }
                         }
                     ],
-                    "propertyType":"anyElement"
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"BoundingBox",
+                        "namespaceURI":"http://www.opengis.net/ows"
+                    }
+                },
+                "pos":{
+                    "title":"pos",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DirectPositionType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"pos",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "polygon":{
+                    "title":"polygon",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/PolygonType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Polygon",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "solid":{
+                    "title":"solid",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SolidType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Solid",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AreaOfServiceType",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            },
+            "propertiesOrder":[
+                "boundingBox",
+                "pos",
+                "polygon",
+                "solid"
+            ]
+        },
+        "SPSMessage.FeasibilityResponse.Alternative":{
+            "type":"object",
+            "title":"SPSMessage.FeasibilityResponse.Alternative",
+            "required":[
+                "inputParameter"
+            ],
+            "properties":{
+                "inputParameter":{
+                    "title":"inputParameter",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InputParameterType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"InputParameter",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "any"
+                "inputParameter"
             ]
         },
-        "GetStatusRequestResponse":{
+        "InputDescriptorType.Definition":{
             "type":"object",
-            "title":"GetStatusRequestResponse",
+            "title":"InputDescriptorType.Definition",
             "required":[
-                "taskID",
-                "status"
+                "commonData",
+                "taskMessageDefinition",
+                "geometryDefinition",
+                "temporalDefinition"
             ],
             "properties":{
-                "taskID":{
-                    "title":"taskID",
+                "commonData":{
+                    "title":"commonData",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/InputDescriptorType.Definition.CommonData"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"commonData",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "taskMessageDefinition":{
+                    "title":"taskMessageDefinition",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2130,10 +1594,127 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"taskID",
+                        "localPart":"TaskMessageDefinition",
                         "namespaceURI":"http://www.opengis.net/sps/1.0"
                     }
                 },
+                "geometryDefinition":{
+                    "title":"geometryDefinition",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GeometryDefinition",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "temporalDefinition":{
+                    "title":"temporalDefinition",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TemporalDefinition",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "commonData",
+                "taskMessageDefinition",
+                "geometryDefinition",
+                "temporalDefinition"
+            ]
+        },
+        "DescribeResultAccessRequestResponse":{
+            "type":"object",
+            "title":"DescribeResultAccessRequestResponse",
+            "required":[
+                "service",
+                "dataNotAvailable"
+            ],
+            "properties":{
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DescribeResultAccessRequestResponse.Service"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"service",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "dataNotAvailable":{
+                    "title":"dataNotAvailable",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DescribeResultAccessRequestResponse.DataNotAvailable"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DataNotAvailable",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "service",
+                "dataNotAvailable"
+            ]
+        },
+        "Capabilities":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows#/definitions/CapabilitiesBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"Capabilities",
+                    "properties":{
+                        "contents":{
+                            "title":"contents",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SPSContentsType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Contents",
+                                "namespaceURI":"http://www.opengis.net/sps/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "contents"
+            ]
+        },
+        "SPSMessage.StatusInformation":{
+            "type":"object",
+            "title":"SPSMessage.StatusInformation",
+            "required":[
+                "status"
+            ],
+            "properties":{
                 "status":{
                     "title":"status",
                     "allOf":[
@@ -2176,10 +1757,58 @@
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "taskID",
                 "status",
                 "description",
                 "estimatedToC"
+            ]
+        },
+        "InputParameterType":{
+            "type":"object",
+            "title":"InputParameterType",
+            "required":[
+                "value",
+                "parameterID"
+            ],
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InputParameterType.Value"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"value",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "parameterID":{
+                    "title":"parameterID",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"parameterID",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InputParameterType",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            },
+            "propertiesOrder":[
+                "value",
+                "parameterID"
             ]
         },
         "SPSMessage":{
@@ -2283,71 +1912,39 @@
                 "spsCorrID"
             ]
         },
-        "DescribeTaskingRequestResponseType.TaskingDescriptor":{
+        "TimeFrame":{
             "type":"object",
-            "title":"DescribeTaskingRequestResponseType.TaskingDescriptor",
+            "title":"TimeFrame",
             "required":[
-                "sensorID",
-                "inputDescriptor"
+                "timeInstant"
             ],
             "properties":{
-                "sensorID":{
-                    "title":"sensorID",
+                "timeInstant":{
+                    "title":"timeInstant",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/SensorIDType"
+                            "$ref":"#/definitions/TimeInstantType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"sensorID",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "description":{
-                    "title":"description",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/StringOrRefType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"description",
+                        "localPart":"TimeInstant",
                         "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "inputDescriptor":{
-                    "title":"inputDescriptor",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InputDescriptor"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"InputDescriptor",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "sensorID",
-                "description",
-                "inputDescriptor"
+                "timeInstant"
             ]
         },
-        "CancelRequestResponse":{
+        "SubmitRequestResponse":{
             "type":"object",
-            "title":"CancelRequestResponse",
+            "title":"SubmitRequestResponse",
             "required":[
                 "taskID",
-                "status"
+                "status",
+                "latestResponseTime"
             ],
             "properties":{
                 "taskID":{
@@ -2388,24 +1985,104 @@
                         "localPart":"description",
                         "namespaceURI":"http://www.opengis.net/gml"
                     }
+                },
+                "latestResponseTime":{
+                    "title":"latestResponseTime",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/LatestResponseTime"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LatestResponseTime",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "estimatedToC":{
+                    "title":"estimatedToC",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/EstimatedToC"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"estimatedToC",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "alternative":{
+                    "title":"alternative",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/SubmitRequestResponse.Alternative"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"alternative",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
                 "taskID",
                 "status",
-                "description"
+                "description",
+                "latestResponseTime",
+                "estimatedToC",
+                "alternative"
             ]
         },
-        "SPSMessage.StatusInformation":{
+        "ParametersType":{
             "type":"object",
-            "title":"SPSMessage.StatusInformation",
+            "title":"ParametersType",
             "required":[
-                "status"
+                "inputParameter"
             ],
             "properties":{
-                "status":{
-                    "title":"status",
+                "inputParameter":{
+                    "title":"inputParameter",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InputParameterType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"InputParameter",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"parametersType",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            },
+            "propertiesOrder":[
+                "inputParameter"
+            ]
+        },
+        "SPSMessage.FeasibilityResponse":{
+            "type":"object",
+            "title":"SPSMessage.FeasibilityResponse",
+            "required":[
+                "feasibility"
+            ],
+            "properties":{
+                "feasibility":{
+                    "title":"feasibility",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -2413,7 +2090,7 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"status",
+                        "localPart":"feasibility",
                         "namespaceURI":"http://www.opengis.net/sps/1.0"
                     }
                 },
@@ -2430,237 +2107,206 @@
                         "namespaceURI":"http://www.opengis.net/gml"
                     }
                 },
-                "estimatedToC":{
-                    "title":"estimatedToC",
+                "alternative":{
+                    "title":"alternative",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/EstimatedToC"
+                            "$ref":"#/definitions/SPSMessage.FeasibilityResponse.Alternative"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"estimatedToC",
+                        "localPart":"alternative",
                         "namespaceURI":"http://www.opengis.net/sps/1.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "status",
+                "feasibility",
                 "description",
-                "estimatedToC"
+                "alternative"
             ]
         },
-        "InputDescriptor":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/InputDescriptorType"
-                },
-                {
-                    "type":"object",
-                    "title":"InputDescriptor",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo"
-        },
-        "SubmitRequestType.SensorParam":{
+        "SPSContentsType.SensorOfferingList":{
             "type":"object",
-            "title":"SubmitRequestType.SensorParam",
+            "title":"SPSContentsType.SensorOfferingList",
             "required":[
-                "sensorID",
-                "parameters"
+                "sensorOffering"
             ],
             "properties":{
-                "sensorID":{
-                    "title":"sensorID",
+                "sensorOffering":{
+                    "title":"sensorOffering",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/SensorIDType"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/SensorOfferingType"
+                            },
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"sensorID",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "parameters":{
-                    "title":"parameters",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ParametersType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"parameters",
+                        "localPart":"SensorOffering",
                         "namespaceURI":"http://www.opengis.net/sps/1.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "sensorID",
-                "parameters"
+                "sensorOffering"
             ]
         },
-        "CancelRequestType":{
+        "GetFeasibilityRequestResponse.Alternative":{
+            "type":"object",
+            "title":"GetFeasibilityRequestResponse.Alternative",
             "required":[
-                "taskID"
+                "inputParameter"
+            ],
+            "properties":{
+                "inputParameter":{
+                    "title":"inputParameter",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InputParameterType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"InputParameter",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "inputParameter"
+            ]
+        },
+        "GetCapabilities":{
+            "required":[
+                "service"
             ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/RequestBaseType"
+                    "$ref":"http://www.opengis.net/ows#/definitions/GetCapabilitiesType"
                 },
                 {
                     "type":"object",
-                    "title":"CancelRequestType",
+                    "title":"GetCapabilities",
                     "properties":{
-                        "taskID":{
-                            "title":"taskID",
+                        "service":{
+                            "title":"service",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"taskID",
-                                "namespaceURI":"http://www.opengis.net/sps/1.0"
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"service",
+                                "namespaceURI":""
                             }
                         }
                     }
                 }
             ],
             "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CancelRequestType",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            },
             "propertiesOrder":[
-                "taskID"
+                "service"
             ]
         },
-        "EstimatedToC":{
+        "GetFeasibilityRequestResponse":{
             "type":"object",
-            "title":"EstimatedToC",
+            "title":"GetFeasibilityRequestResponse",
             "required":[
-                "timeInstant"
+                "feasibilityID",
+                "feasibility",
+                "latestResponseTime"
             ],
             "properties":{
-                "timeInstant":{
-                    "title":"timeInstant",
+                "feasibilityID":{
+                    "title":"feasibilityID",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/TimeInstantType"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"TimeInstant",
+                        "localPart":"feasibilityID",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "feasibility":{
+                    "title":"feasibility",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"feasibility",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/StringOrRefType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"description",
                         "namespaceURI":"http://www.opengis.net/gml"
                     }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "timeInstant"
-            ]
-        },
-        "InputDescriptorType.Definition":{
-            "type":"object",
-            "title":"InputDescriptorType.Definition",
-            "required":[
-                "commonData",
-                "taskMessageDefinition",
-                "geometryDefinition",
-                "temporalDefinition"
-            ],
-            "properties":{
-                "commonData":{
-                    "title":"commonData",
+                },
+                "latestResponseTime":{
+                    "title":"latestResponseTime",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/InputDescriptorType.Definition.CommonData"
+                            "$ref":"#/definitions/LatestResponseTime"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"commonData",
+                        "localPart":"LatestResponseTime",
                         "namespaceURI":"http://www.opengis.net/sps/1.0"
                     }
                 },
-                "taskMessageDefinition":{
-                    "title":"taskMessageDefinition",
+                "alternative":{
+                    "title":"alternative",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/GetFeasibilityRequestResponse.Alternative"
+                            },
+                            "minItems":0
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"TaskMessageDefinition",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "geometryDefinition":{
-                    "title":"geometryDefinition",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"GeometryDefinition",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "temporalDefinition":{
-                    "title":"temporalDefinition",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TemporalDefinition",
+                        "localPart":"alternative",
                         "namespaceURI":"http://www.opengis.net/sps/1.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "commonData",
-                "taskMessageDefinition",
-                "geometryDefinition",
-                "temporalDefinition"
-            ]
-        },
-        "SensorIDType":{
-            "type":"object",
-            "title":"SensorIDType",
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"value"
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"sensorIDType",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            },
-            "propertiesOrder":[
-                "value"
+                "feasibilityID",
+                "feasibility",
+                "description",
+                "latestResponseTime",
+                "alternative"
             ]
         },
         "UpdateRequestResponse":{
@@ -2750,54 +2396,9 @@
                 "missingParameters"
             ]
         },
-        "DescribeResultAccessRequestResponse":{
+        "InputDescriptorType.Restriction":{
             "type":"object",
-            "title":"DescribeResultAccessRequestResponse",
-            "required":[
-                "service",
-                "dataNotAvailable"
-            ],
-            "properties":{
-                "service":{
-                    "title":"service",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/DescribeResultAccessRequestResponse.Service"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"service",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                },
-                "dataNotAvailable":{
-                    "title":"dataNotAvailable",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DescribeResultAccessRequestResponse.DataNotAvailable"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DataNotAvailable",
-                        "namespaceURI":"http://www.opengis.net/sps/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "service",
-                "dataNotAvailable"
-            ]
-        },
-        "SPSMessage.SubmitResponse.Alternative":{
-            "type":"object",
-            "title":"SPSMessage.SubmitResponse.Alternative",
+            "title":"InputDescriptorType.Restriction",
             "required":[
                 "inputParameter"
             ],
@@ -2806,11 +2407,7 @@
                     "title":"inputParameter",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InputParameterType"
-                            },
-                            "minItems":1
+                            "$ref":"#/definitions/InputParameterType"
                         }
                     ],
                     "propertyType":"element",
@@ -2824,144 +2421,412 @@
             "propertiesOrder":[
                 "inputParameter"
             ]
+        },
+        "SensorIDType":{
+            "type":"object",
+            "title":"SensorIDType",
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"value"
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"sensorIDType",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            },
+            "propertiesOrder":[
+                "value"
+            ]
+        },
+        "InputDescriptorType":{
+            "type":"object",
+            "title":"InputDescriptorType",
+            "required":[
+                "definition",
+                "parameterID",
+                "use"
+            ],
+            "properties":{
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/StringOrRefType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"description",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "definition":{
+                    "title":"definition",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/InputDescriptorType.Definition"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"definition",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "restriction":{
+                    "title":"restriction",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/InputDescriptorType.Restriction"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"restriction",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "cardinality":{
+                    "title":"cardinality",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"cardinality",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "parameterID":{
+                    "title":"parameterID",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"parameterID",
+                        "namespaceURI":""
+                    }
+                },
+                "use":{
+                    "title":"use",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"use",
+                        "namespaceURI":""
+                    }
+                },
+                "updateable":{
+                    "title":"updateable",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"updateable",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InputDescriptorType",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            },
+            "propertiesOrder":[
+                "description",
+                "definition",
+                "restriction",
+                "cardinality",
+                "parameterID",
+                "use",
+                "updateable"
+            ]
+        },
+        "DescribeResultAccessRequestResponse.DataNotAvailable":{
+            "type":"object",
+            "title":"DescribeResultAccessRequestResponse.DataNotAvailable",
+            "required":[
+                "reason"
+            ],
+            "properties":{
+                "reason":{
+                    "title":"reason",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"reason",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/StringOrRefType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"description",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "reason",
+                "description"
+            ]
+        },
+        "SPSContentsType.PhenomenonOfferingList.PhenomenonOffering":{
+            "type":"object",
+            "title":"SPSContentsType.PhenomenonOfferingList.PhenomenonOffering",
+            "required":[
+                "phenomenon",
+                "sensorID"
+            ],
+            "properties":{
+                "phenomenon":{
+                    "title":"phenomenon",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Phenomenon",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "sensorID":{
+                    "title":"sensorID",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SensorID",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "phenomenon",
+                "sensorID"
+            ]
+        },
+        "DescribeTaskingRequestType":{
+            "required":[
+                "sensorID"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/RequestBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"DescribeTaskingRequestType",
+                    "properties":{
+                        "sensorID":{
+                            "title":"sensorID",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/SensorIDType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"sensorID",
+                                "namespaceURI":"http://www.opengis.net/sps/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DescribeTaskingRequestType",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            },
+            "propertiesOrder":[
+                "sensorID"
+            ]
+        },
+        "NotificationTargetType":{
+            "type":"object",
+            "title":"NotificationTargetType",
+            "required":[
+                "notificationID",
+                "notificationURL"
+            ],
+            "properties":{
+                "notificationID":{
+                    "title":"notificationID",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"notificationID",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "notificationURL":{
+                    "title":"notificationURL",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"notificationURL",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"notificationTargetType",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            },
+            "propertiesOrder":[
+                "notificationID",
+                "notificationURL"
+            ]
+        },
+        "SPSMessage.UpdateRequest":{
+            "type":"object",
+            "title":"SPSMessage.UpdateRequest",
+            "required":[
+                "inputDescriptor"
+            ],
+            "properties":{
+                "inputDescriptor":{
+                    "title":"inputDescriptor",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InputDescriptor"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"InputDescriptor",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "inputDescriptor"
+            ]
+        },
+        "SubmitRequestType.SensorParam":{
+            "type":"object",
+            "title":"SubmitRequestType.SensorParam",
+            "required":[
+                "sensorID",
+                "parameters"
+            ],
+            "properties":{
+                "sensorID":{
+                    "title":"sensorID",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SensorIDType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"sensorID",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                },
+                "parameters":{
+                    "title":"parameters",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ParametersType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"parameters",
+                        "namespaceURI":"http://www.opengis.net/sps/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "sensorID",
+                "parameters"
+            ]
+        },
+        "InputParameterType.Value":{
+            "type":"object",
+            "title":"InputParameterType.Value",
+            "required":[
+                "any"
+            ],
+            "properties":{
+                "any":{
+                    "title":"any",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "any"
+            ]
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DictionaryType"
-                }
-            },
-            "elementName":{
-                "localPart":"TaskMessageDictionary",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SubmitRequestResponse"
-                }
-            },
-            "elementName":{
-                "localPart":"SubmitRequestResponse",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"taskID",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SensorIDType"
-                }
-            },
-            "elementName":{
-                "localPart":"sensorID",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SPSMessage"
-                }
-            },
-            "elementName":{
-                "localPart":"SPSMessage",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DescribeResultAccessRequestResponse"
-                }
-            },
-            "elementName":{
-                "localPart":"DescribeResultAccessRequestResponse",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"feasibilityID",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SPSContentsType"
-                }
-            },
-            "elementName":{
-                "localPart":"Contents",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/InputParameterType"
-                }
-            },
-            "elementName":{
-                "localPart":"InputParameter",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -2974,51 +2839,6 @@
             },
             "elementName":{
                 "localPart":"Cancel",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DescribeTaskingRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"DescribeTasking",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DescribeTaskingRequestResponseType"
-                }
-            },
-            "elementName":{
-                "localPart":"DescribeTaskingRequestResponse",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Capabilities"
-                }
-            },
-            "elementName":{
-                "localPart":"Capabilities",
                 "namespaceURI":"http://www.opengis.net/sps/1.0"
             }
         },
@@ -3044,86 +2864,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/LatestResponseTime"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                 }
             },
             "elementName":{
-                "localPart":"LatestResponseTime",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SubmitRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"Submit",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/UpdateRequestResponse"
-                }
-            },
-            "elementName":{
-                "localPart":"UpdateRequestResponse",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/NotificationTargetType"
-                }
-            },
-            "elementName":{
-                "localPart":"notificationTarget",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/TimeFrame"
-                }
-            },
-            "elementName":{
-                "localPart":"timeFrame",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/EstimatedToC"
-                }
-            },
-            "elementName":{
-                "localPart":"estimatedToC",
+                "localPart":"taskID",
                 "namespaceURI":"http://www.opengis.net/sps/1.0"
             }
         },
@@ -3149,11 +2894,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/UpdateRequestType"
+                    "$ref":"#/definitions/DescribeResultAccessRequestResponse"
                 }
             },
             "elementName":{
-                "localPart":"Update",
+                "localPart":"DescribeResultAccessRequestResponse",
                 "namespaceURI":"http://www.opengis.net/sps/1.0"
             }
         },
@@ -3164,86 +2909,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/GetFeasibilityRequestType"
+                    "$ref":"#/definitions/LatestResponseTime"
                 }
             },
             "elementName":{
-                "localPart":"GetFeasibility",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetCapabilities"
-                }
-            },
-            "elementName":{
-                "localPart":"GetCapabilities",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetStatusRequestResponse"
-                }
-            },
-            "elementName":{
-                "localPart":"GetStatusRequestResponse",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ParametersType"
-                }
-            },
-            "elementName":{
-                "localPart":"parameters",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/CancelRequestResponse"
-                }
-            },
-            "elementName":{
-                "localPart":"CancelRequestResponse",
-                "namespaceURI":"http://www.opengis.net/sps/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetStatusRequestType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetStatus",
+                "localPart":"LatestResponseTime",
                 "namespaceURI":"http://www.opengis.net/sps/1.0"
             }
         },
@@ -3269,11 +2939,341 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/SubmitRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"Submit",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/InputParameterType"
+                }
+            },
+            "elementName":{
+                "localPart":"InputParameter",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DescribeTaskingRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"DescribeTasking",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetCapabilities"
+                }
+            },
+            "elementName":{
+                "localPart":"GetCapabilities",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetFeasibilityRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetFeasibility",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/SensorIDType"
+                }
+            },
+            "elementName":{
+                "localPart":"sensorID",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetStatusRequestResponse"
+                }
+            },
+            "elementName":{
+                "localPart":"GetStatusRequestResponse",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/SubmitRequestResponse"
+                }
+            },
+            "elementName":{
+                "localPart":"SubmitRequestResponse",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DictionaryType"
+                }
+            },
+            "elementName":{
+                "localPart":"TaskMessageDictionary",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/NotificationTargetType"
+                }
+            },
+            "elementName":{
+                "localPart":"notificationTarget",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/UpdateRequestResponse"
+                }
+            },
+            "elementName":{
+                "localPart":"UpdateRequestResponse",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/UpdateRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"Update",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/CancelRequestResponse"
+                }
+            },
+            "elementName":{
+                "localPart":"CancelRequestResponse",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ParametersType"
+                }
+            },
+            "elementName":{
+                "localPart":"parameters",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/DescribeResultAccessRequestType"
                 }
             },
             "elementName":{
                 "localPart":"DescribeResultAccess",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetStatusRequestType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetStatus",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/SPSContentsType"
+                }
+            },
+            "elementName":{
+                "localPart":"Contents",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/SPSMessage"
+                }
+            },
+            "elementName":{
+                "localPart":"SPSMessage",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TimeFrame"
+                }
+            },
+            "elementName":{
+                "localPart":"timeFrame",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"feasibilityID",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/EstimatedToC"
+                }
+            },
+            "elementName":{
+                "localPart":"estimatedToC",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Capabilities"
+                }
+            },
+            "elementName":{
+                "localPart":"Capabilities",
+                "namespaceURI":"http://www.opengis.net/sps/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DescribeTaskingRequestResponseType"
+                }
+            },
+            "elementName":{
+                "localPart":"DescribeTaskingRequestResponse",
                 "namespaceURI":"http://www.opengis.net/sps/1.0"
             }
         }

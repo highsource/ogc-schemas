@@ -3,26 +3,8 @@ var OMEO_SAR_2_0_Module_Factory = function () {
     n: 'OMEO_SAR_2_0',
     dens: 'http:\/\/www.opengis.net\/sar\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1', 'OMEO_EOP_2_0'],
+    deps: ['OMEO_EOP_2_0', 'GML_3_2_1', 'XLink_1_0'],
     tis: [{
-        ln: 'AcquisitionPropertyType',
-        ps: [{
-            n: 'acquisition',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'Acquisition',
-            ti: '.AcquisitionType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'EarthObservationPropertyType',
         ps: [{
             n: 'earthObservation',
@@ -81,6 +63,24 @@ var OMEO_SAR_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'AcquisitionPropertyType',
+        ps: [{
+            n: 'acquisition',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'Acquisition',
+            ti: '.AcquisitionType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'EarthObservationType',
         bti: 'OMEO_EOP_2_0.EarthObservationType'
       }, {
@@ -107,16 +107,16 @@ var OMEO_SAR_2_0_Module_Factory = function () {
           }]
       }, {
         t: 'enum',
+        ln: 'AntennaLookDirectionValueEnumerationType',
+        vs: ['LEFT', 'RIGHT']
+      }, {
+        t: 'enum',
         ln: 'PolarisationModeValueEnumerationType',
         vs: ['UNDEFINED', 'T', 'S', 'D', 'Q']
       }, {
         t: 'enum',
         ln: 'PolarisationChannelsValueEnumerationType',
         vs: ['HH', 'HV', 'UNDEFINED', 'HV, VH', 'VV, VH', 'VV, HV', 'VH, HV', 'VH, VV', 'HH, HV', 'HH, VH', 'HH, VV', 'VH', 'VV']
-      }, {
-        t: 'enum',
-        ln: 'AntennaLookDirectionValueEnumerationType',
-        vs: ['LEFT', 'RIGHT']
       }],
     eis: [{
         en: 'EarthObservation',
