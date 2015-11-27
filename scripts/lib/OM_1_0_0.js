@@ -3,45 +3,15 @@ var OM_1_0_0_Module_Factory = function () {
     n: 'OM_1_0_0',
     dens: 'http:\/\/www.opengis.net\/om\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_1_1', 'SWE_1_0_1', 'XLink_1_0', 'SensorML_1_0_1'],
+    deps: ['GML_3_1_1', 'XLink_1_0', 'SensorML_1_0_1', 'SWE_1_0_1'],
     tis: [{
-        ln: 'ObservationPropertyType',
+        ln: 'ObservationCollectionType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
         ps: [{
-            n: 'observation',
+            n: 'member',
             rq: true,
-            en: 'Observation',
-            ti: '.ObservationType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            col: true,
+            ti: '.ObservationPropertyType'
           }]
       }, {
         ln: 'ObservationType',
@@ -132,13 +102,43 @@ var OM_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ObservationCollectionType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
+        ln: 'ObservationPropertyType',
         ps: [{
-            n: 'member',
+            n: 'observation',
             rq: true,
-            col: true,
-            ti: '.ObservationPropertyType'
+            en: 'Observation',
+            ti: '.ObservationType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'AnyOrReferenceType',

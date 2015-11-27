@@ -2,37 +2,6 @@
 {
     "id":"http://www.opengis.net/WCS_service-extension_interpolation/1.0#",
     "definitions":{
-        "InterpolationMetadataType":{
-            "type":"object",
-            "title":"InterpolationMetadataType",
-            "properties":{
-                "interpolationSupported":{
-                    "title":"interpolationSupported",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"interpolationSupported",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InterpolationMetadataType",
-                "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
-            },
-            "propertiesOrder":[
-                "interpolationSupported"
-            ]
-        },
         "InterpolationPerAxisType":{
             "type":"object",
             "title":"InterpolationPerAxisType",
@@ -125,24 +94,40 @@
                 "globalInterpolation",
                 "interpolationPerAxis"
             ]
+        },
+        "InterpolationMetadataType":{
+            "type":"object",
+            "title":"InterpolationMetadataType",
+            "properties":{
+                "interpolationSupported":{
+                    "title":"interpolationSupported",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"interpolationSupported",
+                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InterpolationMetadataType",
+                "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+            },
+            "propertiesOrder":[
+                "interpolationSupported"
+            ]
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/InterpolationMetadataType"
-                }
-            },
-            "elementName":{
-                "localPart":"InterpolationMetadata",
-                "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -155,6 +140,21 @@
             },
             "elementName":{
                 "localPart":"Interpolation",
+                "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/InterpolationMetadataType"
+                }
+            },
+            "elementName":{
+                "localPart":"InterpolationMetadata",
                 "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
             }
         }

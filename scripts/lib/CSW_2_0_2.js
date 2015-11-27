@@ -4,90 +4,6 @@ var CSW_2_0_2_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/cat\/csw\/2.0.2',
     deps: ['OWS_1_0_0', 'DC_1_1'],
     tis: [{
-        ln: 'EchoedRequestType',
-        ps: [{
-            n: 'any',
-            rq: true,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'CapabilitiesType',
-        bti: 'OWS_1_0_0.CapabilitiesBaseType',
-        ps: [{
-            n: 'filterCapabilities',
-            rq: true,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'HarvestResponseType',
-        ps: [{
-            n: 'acknowledgement',
-            rq: true,
-            en: 'Acknowledgement',
-            ti: '.AcknowledgementType'
-          }, {
-            n: 'transactionResponse',
-            rq: true,
-            en: 'TransactionResponse',
-            ti: '.TransactionResponseType'
-          }]
-      }, {
-        ln: 'GetDomainType',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'propertyName',
-            rq: true,
-            en: 'PropertyName'
-          }, {
-            n: 'parameterName',
-            rq: true,
-            en: 'ParameterName'
-          }]
-      }, {
-        ln: 'ListOfValuesType',
-        ps: [{
-            n: 'value',
-            rq: true,
-            col: true,
-            en: 'Value',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'InsertType',
-        ps: [{
-            n: 'any',
-            rq: true,
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'typeName',
-            an: {
-              lp: 'typeName'
-            },
-            t: 'a'
-          }, {
-            n: 'handle',
-            ti: 'ID',
-            an: {
-              lp: 'handle'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RequestStatusType',
-        ps: [{
-            n: 'timestamp',
-            ti: 'Calendar',
-            an: {
-              lp: 'timestamp'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'DCMIRecordType',
         bti: '.AbstractRecordType',
         ps: [{
@@ -104,20 +20,138 @@ var CSW_2_0_2_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'TransactionResponseType',
+        ln: 'ConceptualSchemeType',
         ps: [{
-            n: 'transactionSummary',
+            n: 'name',
             rq: true,
-            en: 'TransactionSummary',
-            ti: '.TransactionSummaryType'
+            en: 'Name'
           }, {
-            n: 'insertResult',
+            n: 'document',
+            rq: true,
+            en: 'Document'
+          }, {
+            n: 'authority',
+            rq: true,
+            en: 'Authority'
+          }]
+      }, {
+        ln: 'SearchResultsType',
+        ps: [{
+            n: 'abstractRecord',
             mno: 0,
             col: true,
-            en: 'InsertResult',
-            ti: '.InsertResultType'
+            mx: false,
+            dom: false,
+            en: 'AbstractRecord',
+            ti: '.AbstractRecordType',
+            t: 'er'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'resultSetId',
+            an: {
+              lp: 'resultSetId'
+            },
+            t: 'a'
+          }, {
+            n: 'elementSet',
+            an: {
+              lp: 'elementSet'
+            },
+            t: 'a'
+          }, {
+            n: 'recordSchema',
+            an: {
+              lp: 'recordSchema'
+            },
+            t: 'a'
+          }, {
+            n: 'numberOfRecordsMatched',
+            rq: true,
+            ti: 'Integer',
+            an: {
+              lp: 'numberOfRecordsMatched'
+            },
+            t: 'a'
+          }, {
+            n: 'numberOfRecordsReturned',
+            rq: true,
+            ti: 'Integer',
+            an: {
+              lp: 'numberOfRecordsReturned'
+            },
+            t: 'a'
+          }, {
+            n: 'nextRecord',
+            ti: 'Integer',
+            an: {
+              lp: 'nextRecord'
+            },
+            t: 'a'
+          }, {
+            n: 'expires',
+            ti: 'Calendar',
+            an: {
+              lp: 'expires'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TransactionSummaryType',
+        ps: [{
+            n: 'totalInserted',
+            ti: 'Integer'
+          }, {
+            n: 'totalUpdated',
+            ti: 'Integer'
+          }, {
+            n: 'totalDeleted',
+            ti: 'Integer'
+          }, {
+            n: 'requestId',
+            an: {
+              lp: 'requestId'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DistributedSearchType',
+        ps: [{
+            n: 'hopCount',
+            ti: 'Integer',
+            an: {
+              lp: 'hopCount'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractQueryType'
+      }, {
+        ln: 'CapabilitiesType',
+        bti: 'OWS_1_0_0.CapabilitiesBaseType',
+        ps: [{
+            n: 'filterCapabilities',
+            rq: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'RequestBaseType',
+        ps: [{
+            n: 'service',
+            rq: true,
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
           }, {
             n: 'version',
+            rq: true,
             an: {
               lp: 'version'
             },
@@ -171,71 +205,111 @@ var CSW_2_0_2_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'ConceptualSchemeType',
+        ln: 'QueryType',
+        bti: '.AbstractQueryType',
         ps: [{
-            n: 'name',
+            n: 'elementSetName',
             rq: true,
-            en: 'Name'
+            en: 'ElementSetName',
+            ti: '.ElementSetNameType'
           }, {
-            n: 'document',
+            n: 'elementName',
             rq: true,
-            en: 'Document'
+            col: true,
+            en: 'ElementName',
+            ti: 'QName'
           }, {
-            n: 'authority',
+            n: 'constraint',
+            en: 'Constraint',
+            ti: '.QueryConstraintType'
+          }, {
+            n: 'sortBy',
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'typeNames',
             rq: true,
-            en: 'Authority'
-          }]
-      }, {
-        ln: 'RequestBaseType',
-        ps: [{
-            n: 'service',
-            rq: true,
-            an: {
-              lp: 'service'
+            ti: {
+              t: 'l',
+              bti: 'QName'
             },
-            t: 'a'
-          }, {
-            n: 'version',
-            rq: true,
             an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetCapabilitiesType',
-        bti: 'OWS_1_0_0.GetCapabilitiesType',
-        ps: [{
-            n: 'service',
-            an: {
-              lp: 'service'
+              lp: 'typeNames'
             },
             t: 'a'
           }]
       }, {
-        ln: 'DistributedSearchType',
+        ln: 'ElementSetNameType',
         ps: [{
-            n: 'hopCount',
-            ti: 'Integer',
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'typeNames',
+            ti: {
+              t: 'l',
+              bti: 'QName'
+            },
             an: {
-              lp: 'hopCount'
+              lp: 'typeNames'
             },
             t: 'a'
           }]
       }, {
-        ln: 'AbstractQueryType'
-      }, {
-        ln: 'RangeOfValuesType',
+        ln: 'GetRecordByIdType',
+        bti: '.RequestBaseType',
         ps: [{
-            n: 'minValue',
+            n: 'id',
             rq: true,
-            en: 'MinValue',
-            ti: 'AnyType'
+            col: true,
+            en: 'Id'
           }, {
-            n: 'maxValue',
+            n: 'elementSetName',
+            en: 'ElementSetName',
+            ti: '.ElementSetNameType'
+          }, {
+            n: 'outputFormat',
+            an: {
+              lp: 'outputFormat'
+            },
+            t: 'a'
+          }, {
+            n: 'outputSchema',
+            an: {
+              lp: 'outputSchema'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'HarvestResponseType',
+        ps: [{
+            n: 'acknowledgement',
             rq: true,
-            en: 'MaxValue',
-            ti: 'AnyType'
+            en: 'Acknowledgement',
+            ti: '.AcknowledgementType'
+          }, {
+            n: 'transactionResponse',
+            rq: true,
+            en: 'TransactionResponse',
+            ti: '.TransactionResponseType'
+          }]
+      }, {
+        ln: 'AcknowledgementType',
+        ps: [{
+            n: 'echoedRequest',
+            rq: true,
+            en: 'EchoedRequest',
+            ti: '.EchoedRequestType'
+          }, {
+            n: 'requestId',
+            en: 'RequestId'
+          }, {
+            n: 'timeStamp',
+            rq: true,
+            ti: 'Calendar',
+            an: {
+              lp: 'timeStamp'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'InsertResultType',
@@ -253,29 +327,42 @@ var CSW_2_0_2_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GetRecordsResponseType',
+        ln: 'HarvestType',
+        bti: '.RequestBaseType',
         ps: [{
-            n: 'requestId',
-            en: 'RequestId'
-          }, {
-            n: 'searchStatus',
+            n: 'source',
             rq: true,
-            en: 'SearchStatus',
-            ti: '.RequestStatusType'
+            en: 'Source'
           }, {
-            n: 'searchResults',
+            n: 'resourceType',
             rq: true,
-            en: 'SearchResults',
-            ti: '.SearchResultsType'
+            en: 'ResourceType'
           }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
+            n: 'resourceFormat',
+            en: 'ResourceFormat'
+          }, {
+            n: 'harvestInterval',
+            en: 'HarvestInterval',
+            ti: 'Duration'
+          }, {
+            n: 'responseHandler',
+            mno: 0,
+            col: true,
+            en: 'ResponseHandler'
           }]
       }, {
-        ln: 'EmptyType'
+        ln: 'RangeOfValuesType',
+        ps: [{
+            n: 'minValue',
+            rq: true,
+            en: 'MinValue',
+            ti: 'AnyType'
+          }, {
+            n: 'maxValue',
+            rq: true,
+            en: 'MaxValue',
+            ti: 'AnyType'
+          }]
       }, {
         ln: 'SummaryRecordType',
         bti: '.AbstractRecordType',
@@ -406,13 +493,66 @@ var CSW_2_0_2_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'DescribeRecordResponseType',
+        ln: 'DomainValuesType',
         ps: [{
-            n: 'schemaComponent',
+            n: 'propertyName',
+            rq: true,
+            en: 'PropertyName'
+          }, {
+            n: 'parameterName',
+            rq: true,
+            en: 'ParameterName'
+          }, {
+            n: 'listOfValues',
+            rq: true,
+            en: 'ListOfValues',
+            ti: '.ListOfValuesType'
+          }, {
+            n: 'conceptualScheme',
+            rq: true,
+            en: 'ConceptualScheme',
+            ti: '.ConceptualSchemeType'
+          }, {
+            n: 'rangeOfValues',
+            rq: true,
+            en: 'RangeOfValues',
+            ti: '.RangeOfValuesType'
+          }, {
+            n: 'type',
+            rq: true,
+            ti: 'QName',
+            an: {
+              lp: 'type'
+            },
+            t: 'a'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EmptyType'
+      }, {
+        ln: 'TransactionResponseType',
+        ps: [{
+            n: 'transactionSummary',
+            rq: true,
+            en: 'TransactionSummary',
+            ti: '.TransactionSummaryType'
+          }, {
+            n: 'insertResult',
             mno: 0,
             col: true,
-            en: 'SchemaComponent',
-            ti: '.SchemaComponentType'
+            en: 'InsertResult',
+            ti: '.InsertResultType'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'QueryConstraintType',
@@ -430,24 +570,6 @@ var CSW_2_0_2_Module_Factory = function () {
             rq: true,
             an: {
               lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TransactionSummaryType',
-        ps: [{
-            n: 'totalInserted',
-            ti: 'Integer'
-          }, {
-            n: 'totalUpdated',
-            ti: 'Integer'
-          }, {
-            n: 'totalDeleted',
-            ti: 'Integer'
-          }, {
-            n: 'requestId',
-            an: {
-              lp: 'requestId'
             },
             t: 'a'
           }]
@@ -479,6 +601,64 @@ var CSW_2_0_2_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'RequestStatusType',
+        ps: [{
+            n: 'timestamp',
+            ti: 'Calendar',
+            an: {
+              lp: 'timestamp'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeRecordResponseType',
+        ps: [{
+            n: 'schemaComponent',
+            mno: 0,
+            col: true,
+            en: 'SchemaComponent',
+            ti: '.SchemaComponentType'
+          }]
+      }, {
+        ln: 'GetDomainType',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'propertyName',
+            rq: true,
+            en: 'PropertyName'
+          }, {
+            n: 'parameterName',
+            rq: true,
+            en: 'ParameterName'
+          }]
+      }, {
+        ln: 'UpdateType',
+        ps: [{
+            n: 'any',
+            rq: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'recordProperty',
+            rq: true,
+            col: true,
+            en: 'RecordProperty',
+            ti: '.RecordPropertyType'
+          }, {
+            n: 'constraint',
+            rq: true,
+            en: 'Constraint',
+            ti: '.QueryConstraintType'
+          }, {
+            n: 'handle',
+            ti: 'ID',
+            an: {
+              lp: 'handle'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'DeleteType',
         ps: [{
             n: 'constraint',
@@ -496,6 +676,49 @@ var CSW_2_0_2_Module_Factory = function () {
             ti: 'ID',
             an: {
               lp: 'handle'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'RecordPropertyType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            en: 'Name'
+          }, {
+            n: 'value',
+            en: 'Value',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TransactionType',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'insertOrUpdateOrDelete',
+            rq: true,
+            col: true,
+            etis: [{
+                en: 'Insert',
+                ti: '.InsertType'
+              }, {
+                en: 'Update',
+                ti: '.UpdateType'
+              }, {
+                en: 'Delete',
+                ti: '.DeleteType'
+              }],
+            t: 'es'
+          }, {
+            n: 'verboseResponse',
+            ti: 'Boolean',
+            an: {
+              lp: 'verboseResponse'
+            },
+            t: 'a'
+          }, {
+            n: 'requestId',
+            an: {
+              lp: 'requestId'
             },
             t: 'a'
           }]
@@ -519,28 +742,14 @@ var CSW_2_0_2_Module_Factory = function () {
             t: 'ae'
           }]
       }, {
-        ln: 'HarvestType',
-        bti: '.RequestBaseType',
+        ln: 'GetCapabilitiesType',
+        bti: 'OWS_1_0_0.GetCapabilitiesType',
         ps: [{
-            n: 'source',
-            rq: true,
-            en: 'Source'
-          }, {
-            n: 'resourceType',
-            rq: true,
-            en: 'ResourceType'
-          }, {
-            n: 'resourceFormat',
-            en: 'ResourceFormat'
-          }, {
-            n: 'harvestInterval',
-            en: 'HarvestInterval',
-            ti: 'Duration'
-          }, {
-            n: 'responseHandler',
-            mno: 0,
-            col: true,
-            en: 'ResponseHandler'
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'GetRecordsType',
@@ -608,80 +817,20 @@ var CSW_2_0_2_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ElementSetNameType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'typeNames',
-            ti: {
-              t: 'l',
-              bti: 'QName'
-            },
-            an: {
-              lp: 'typeNames'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DomainValuesType',
-        ps: [{
-            n: 'propertyName',
-            rq: true,
-            en: 'PropertyName'
-          }, {
-            n: 'parameterName',
-            rq: true,
-            en: 'ParameterName'
-          }, {
-            n: 'listOfValues',
-            rq: true,
-            en: 'ListOfValues',
-            ti: '.ListOfValuesType'
-          }, {
-            n: 'conceptualScheme',
-            rq: true,
-            en: 'ConceptualScheme',
-            ti: '.ConceptualSchemeType'
-          }, {
-            n: 'rangeOfValues',
-            rq: true,
-            en: 'RangeOfValues',
-            ti: '.RangeOfValuesType'
-          }, {
-            n: 'type',
-            rq: true,
-            ti: 'QName',
-            an: {
-              lp: 'type'
-            },
-            t: 'a'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'UpdateType',
+        ln: 'InsertType',
         ps: [{
             n: 'any',
             rq: true,
+            col: true,
             dom: false,
             mx: false,
             t: 'ae'
           }, {
-            n: 'recordProperty',
-            rq: true,
-            col: true,
-            en: 'RecordProperty',
-            ti: '.RecordPropertyType'
-          }, {
-            n: 'constraint',
-            rq: true,
-            en: 'Constraint',
-            ti: '.QueryConstraintType'
+            n: 'typeName',
+            an: {
+              lp: 'typeName'
+            },
+            t: 'a'
           }, {
             n: 'handle',
             ti: 'ID',
@@ -698,6 +847,23 @@ var CSW_2_0_2_Module_Factory = function () {
             col: true,
             en: 'DomainValues',
             ti: '.DomainValuesType'
+          }]
+      }, {
+        ln: 'ListOfValuesType',
+        ps: [{
+            n: 'value',
+            rq: true,
+            col: true,
+            en: 'Value',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'EchoedRequestType',
+        ps: [{
+            n: 'any',
+            rq: true,
+            mx: false,
+            t: 'ae'
           }]
       }, {
         ln: 'DescribeRecordType',
@@ -722,195 +888,29 @@ var CSW_2_0_2_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractRecordType'
-      }, {
-        ln: 'TransactionType',
-        bti: '.RequestBaseType',
+        ln: 'GetRecordsResponseType',
         ps: [{
-            n: 'insertOrUpdateOrDelete',
-            rq: true,
-            col: true,
-            etis: [{
-                en: 'Insert',
-                ti: '.InsertType'
-              }, {
-                en: 'Update',
-                ti: '.UpdateType'
-              }, {
-                en: 'Delete',
-                ti: '.DeleteType'
-              }],
-            t: 'es'
-          }, {
-            n: 'verboseResponse',
-            ti: 'Boolean',
-            an: {
-              lp: 'verboseResponse'
-            },
-            t: 'a'
-          }, {
-            n: 'requestId',
-            an: {
-              lp: 'requestId'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'QueryType',
-        bti: '.AbstractQueryType',
-        ps: [{
-            n: 'elementSetName',
-            rq: true,
-            en: 'ElementSetName',
-            ti: '.ElementSetNameType'
-          }, {
-            n: 'elementName',
-            rq: true,
-            col: true,
-            en: 'ElementName',
-            ti: 'QName'
-          }, {
-            n: 'constraint',
-            en: 'Constraint',
-            ti: '.QueryConstraintType'
-          }, {
-            n: 'sortBy',
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'typeNames',
-            rq: true,
-            ti: {
-              t: 'l',
-              bti: 'QName'
-            },
-            an: {
-              lp: 'typeNames'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetRecordByIdType',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'id',
-            rq: true,
-            col: true,
-            en: 'Id'
-          }, {
-            n: 'elementSetName',
-            en: 'ElementSetName',
-            ti: '.ElementSetNameType'
-          }, {
-            n: 'outputFormat',
-            an: {
-              lp: 'outputFormat'
-            },
-            t: 'a'
-          }, {
-            n: 'outputSchema',
-            an: {
-              lp: 'outputSchema'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RecordPropertyType',
-        ps: [{
-            n: 'name',
-            rq: true,
-            en: 'Name'
-          }, {
-            n: 'value',
-            en: 'Value',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AcknowledgementType',
-        ps: [{
-            n: 'echoedRequest',
-            rq: true,
-            en: 'EchoedRequest',
-            ti: '.EchoedRequestType'
-          }, {
             n: 'requestId',
             en: 'RequestId'
           }, {
-            n: 'timeStamp',
+            n: 'searchStatus',
             rq: true,
-            ti: 'Calendar',
+            en: 'SearchStatus',
+            ti: '.RequestStatusType'
+          }, {
+            n: 'searchResults',
+            rq: true,
+            en: 'SearchResults',
+            ti: '.SearchResultsType'
+          }, {
+            n: 'version',
             an: {
-              lp: 'timeStamp'
+              lp: 'version'
             },
             t: 'a'
           }]
       }, {
-        ln: 'SearchResultsType',
-        ps: [{
-            n: 'abstractRecord',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractRecord',
-            ti: '.AbstractRecordType',
-            t: 'er'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'resultSetId',
-            an: {
-              lp: 'resultSetId'
-            },
-            t: 'a'
-          }, {
-            n: 'elementSet',
-            an: {
-              lp: 'elementSet'
-            },
-            t: 'a'
-          }, {
-            n: 'recordSchema',
-            an: {
-              lp: 'recordSchema'
-            },
-            t: 'a'
-          }, {
-            n: 'numberOfRecordsMatched',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'numberOfRecordsMatched'
-            },
-            t: 'a'
-          }, {
-            n: 'numberOfRecordsReturned',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'numberOfRecordsReturned'
-            },
-            t: 'a'
-          }, {
-            n: 'nextRecord',
-            ti: 'Integer',
-            an: {
-              lp: 'nextRecord'
-            },
-            t: 'a'
-          }, {
-            n: 'expires',
-            ti: 'Calendar',
-            an: {
-              lp: 'expires'
-            },
-            t: 'a'
-          }]
+        ln: 'AbstractRecordType'
       }, {
         t: 'enum',
         ln: 'ResultType',
@@ -921,62 +921,27 @@ var CSW_2_0_2_Module_Factory = function () {
         vs: ['brief', 'summary', 'full']
       }],
     eis: [{
-        en: 'GetRecords',
-        ti: '.GetRecordsType'
-      }, {
-        en: 'DescribeRecord',
-        ti: '.DescribeRecordType'
-      }, {
-        en: 'GetRecordsResponse',
-        ti: '.GetRecordsResponseType'
-      }, {
-        en: 'Record',
-        ti: '.RecordType',
-        sh: 'AbstractRecord'
-      }, {
-        en: 'GetDomainResponse',
-        ti: '.GetDomainResponseType'
-      }, {
-        en: 'AbstractQuery',
-        ti: '.AbstractQueryType'
-      }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilitiesType'
-      }, {
-        en: 'Capabilities',
-        ti: '.CapabilitiesType'
-      }, {
-        en: 'GetDomain',
-        ti: '.GetDomainType'
-      }, {
         en: 'Transaction',
         ti: '.TransactionType'
       }, {
-        en: 'Acknowledgement',
-        ti: '.AcknowledgementType'
-      }, {
-        en: 'ElementSetName',
-        ti: '.ElementSetNameType'
-      }, {
-        en: 'GetRecordById',
-        ti: '.GetRecordByIdType'
-      }, {
         en: 'TransactionResponse',
         ti: '.TransactionResponseType'
+      }, {
+        en: 'GetRecords',
+        ti: '.GetRecordsType'
+      }, {
+        en: 'Harvest',
+        ti: '.HarvestType'
       }, {
         en: 'DCMIRecord',
         ti: '.DCMIRecordType',
         sh: 'AbstractRecord'
       }, {
-        en: 'DescribeRecordResponse',
-        ti: '.DescribeRecordResponseType'
+        en: 'GetRecordByIdResponse',
+        ti: '.GetRecordByIdResponseType'
       }, {
-        en: 'SummaryRecord',
-        ti: '.SummaryRecordType',
-        sh: 'AbstractRecord'
-      }, {
-        en: 'Harvest',
-        ti: '.HarvestType'
+        en: 'AbstractQuery',
+        ti: '.AbstractQueryType'
       }, {
         en: 'HarvestResponse',
         ti: '.HarvestResponseType'
@@ -985,21 +950,56 @@ var CSW_2_0_2_Module_Factory = function () {
         ti: '.BriefRecordType',
         sh: 'AbstractRecord'
       }, {
+        en: 'GetDomainResponse',
+        ti: '.GetDomainResponseType'
+      }, {
+        en: 'RecordProperty',
+        ti: '.RecordPropertyType'
+      }, {
+        en: 'DescribeRecordResponse',
+        ti: '.DescribeRecordResponseType'
+      }, {
+        en: 'GetRecordById',
+        ti: '.GetRecordByIdType'
+      }, {
         en: 'AbstractRecord',
         ti: '.AbstractRecordType'
+      }, {
+        en: 'GetDomain',
+        ti: '.GetDomainType'
+      }, {
+        en: 'SummaryRecord',
+        ti: '.SummaryRecordType',
+        sh: 'AbstractRecord'
+      }, {
+        en: 'GetCapabilities',
+        ti: '.GetCapabilitiesType'
+      }, {
+        en: 'GetRecordsResponse',
+        ti: '.GetRecordsResponseType'
+      }, {
+        en: 'Constraint',
+        ti: '.QueryConstraintType'
       }, {
         en: 'Query',
         ti: '.QueryType',
         sh: 'AbstractQuery'
       }, {
-        en: 'RecordProperty',
-        ti: '.RecordPropertyType'
+        en: 'Acknowledgement',
+        ti: '.AcknowledgementType'
       }, {
-        en: 'Constraint',
-        ti: '.QueryConstraintType'
+        en: 'DescribeRecord',
+        ti: '.DescribeRecordType'
       }, {
-        en: 'GetRecordByIdResponse',
-        ti: '.GetRecordByIdResponseType'
+        en: 'ElementSetName',
+        ti: '.ElementSetNameType'
+      }, {
+        en: 'Record',
+        ti: '.RecordType',
+        sh: 'AbstractRecord'
+      }, {
+        en: 'Capabilities',
+        ti: '.CapabilitiesType'
       }]
   };
   return {

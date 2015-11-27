@@ -2,155 +2,30 @@
 {
     "id":"http://www.opengis.net/citygml/appearance/2.0#",
     "definitions":{
-        "TexCoordGenType.WorldToTexture":{
-            "type":"object",
-            "title":"TexCoordGenType.WorldToTexture",
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                            }
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "srsName":{
-                    "title":"srsName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"srsName",
-                        "namespaceURI":""
-                    }
-                },
-                "srsDimension":{
-                    "title":"srsDimension",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"srsDimension",
-                        "namespaceURI":""
-                    }
-                },
-                "axisLabels":{
-                    "title":"axisLabels",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"axisLabels",
-                        "namespaceURI":""
-                    }
-                },
-                "uomLabels":{
-                    "title":"uomLabels",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uomLabels",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "value",
-                "srsName",
-                "srsDimension",
-                "axisLabels",
-                "uomLabels"
-            ]
-        },
-        "AbstractTextureParameterizationType":{
+        "AbstractSurfaceDataType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractGMLType"
+                    "$ref":"#/definitions/AbstractFeatureType"
                 },
                 {
                     "type":"object",
-                    "title":"AbstractTextureParameterizationType",
+                    "title":"AbstractSurfaceDataType",
                     "properties":{
-                        "genericApplicationPropertyOfTextureParameterization":{
-                            "title":"genericApplicationPropertyOfTextureParameterization",
+                        "isFront":{
+                            "title":"isFront",
                             "allOf":[
                                 {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfTextureParameterization",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractTextureParameterizationType",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            },
-            "propertiesOrder":[
-                "genericApplicationPropertyOfTextureParameterization"
-            ]
-        },
-        "TexCoordGenType":{
-            "required":[
-                "worldToTexture"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractTextureParameterizationType"
-                },
-                {
-                    "type":"object",
-                    "title":"TexCoordGenType",
-                    "properties":{
-                        "worldToTexture":{
-                            "title":"worldToTexture",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/TexCoordGenType.WorldToTexture"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"worldToTexture",
+                                "localPart":"isFront",
                                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
                             }
                         },
-                        "genericApplicationPropertyOfTexCoordGen":{
-                            "title":"genericApplicationPropertyOfTexCoordGen",
+                        "genericApplicationPropertyOfSurfaceData":{
+                            "title":"genericApplicationPropertyOfSurfaceData",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -162,7 +37,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfTexCoordGen",
+                                "localPart":"_GenericApplicationPropertyOfSurfaceData",
                                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
                             }
                         }
@@ -171,40 +46,87 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"TexCoordGenType",
+                "localPart":"AbstractSurfaceDataType",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             },
             "propertiesOrder":[
-                "worldToTexture",
-                "genericApplicationPropertyOfTexCoordGen"
+                "isFront",
+                "genericApplicationPropertyOfSurfaceData"
             ]
         },
-        "SurfaceDataPropertyType":{
-            "type":"object",
-            "title":"SurfaceDataPropertyType",
-            "properties":{
-                "surfaceData":{
-                    "title":"surfaceData",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/AbstractSurfaceDataType"
+        "ParameterizedTextureType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractTextureType"
+                },
+                {
+                    "type":"object",
+                    "title":"ParameterizedTextureType",
+                    "properties":{
+                        "target":{
+                            "title":"target",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/TextureAssociationType"
+                                    },
+                                    "minItems":0
                                 }
-                            },
+                            ],
+                            "propertyType":"element",
                             "elementName":{
-                                "localPart":"_SurfaceData",
+                                "localPart":"target",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfParameterizedTexture":{
+                            "title":"genericApplicationPropertyOfParameterizedTexture",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfParameterizedTexture",
                                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
                             }
                         }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ParameterizedTextureType",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            },
+            "propertiesOrder":[
+                "target",
+                "genericApplicationPropertyOfParameterizedTexture"
+            ]
+        },
+        "AppearancePropertyType":{
+            "type":"object",
+            "title":"AppearancePropertyType",
+            "required":[
+                "appearance"
+            ],
+            "properties":{
+                "appearance":{
+                    "title":"appearance",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/AppearanceType"
+                        }
                     ],
-                    "propertyType":"elementRef",
+                    "propertyType":"element",
                     "elementName":{
-                        "localPart":"_SurfaceData",
+                        "localPart":"Appearance",
                         "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
                     }
                 },
@@ -315,11 +237,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SurfaceDataPropertyType",
+                "localPart":"AppearancePropertyType",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             },
             "propertiesOrder":[
-                "surfaceData",
+                "appearance",
                 "remoteSchema",
                 "type",
                 "href",
@@ -330,47 +252,17 @@
                 "actuate"
             ]
         },
-        "AppearanceType":{
+        "AbstractTextureParameterizationType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractFeatureType"
+                    "$ref":"#/definitions/AbstractGMLType"
                 },
                 {
                     "type":"object",
-                    "title":"AppearanceType",
+                    "title":"AbstractTextureParameterizationType",
                     "properties":{
-                        "theme":{
-                            "title":"theme",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"theme",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "surfaceDataMember":{
-                            "title":"surfaceDataMember",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/SurfaceDataPropertyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"surfaceDataMember",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfAppearance":{
-                            "title":"genericApplicationPropertyOfAppearance",
+                        "genericApplicationPropertyOfTextureParameterization":{
+                            "title":"genericApplicationPropertyOfTextureParameterization",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -382,7 +274,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfAppearance",
+                                "localPart":"_GenericApplicationPropertyOfTextureParameterization",
                                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
                             }
                         }
@@ -391,136 +283,40 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AppearanceType",
+                "localPart":"AbstractTextureParameterizationType",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             },
             "propertiesOrder":[
-                "theme",
-                "surfaceDataMember",
-                "genericApplicationPropertyOfAppearance"
+                "genericApplicationPropertyOfTextureParameterization"
             ]
         },
-        "TexCoordListType.TextureCoordinates":{
-            "type":"object",
-            "title":"TexCoordListType.TextureCoordinates",
+        "TexCoordGenType":{
             "required":[
-                "ring"
-            ],
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                            }
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "ring":{
-                    "title":"ring",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"ring",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "value",
-                "ring"
-            ]
-        },
-        "AbstractTextureType":{
-            "required":[
-                "imageURI"
+                "worldToTexture"
             ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractSurfaceDataType"
+                    "$ref":"#/definitions/AbstractTextureParameterizationType"
                 },
                 {
                     "type":"object",
-                    "title":"AbstractTextureType",
+                    "title":"TexCoordGenType",
                     "properties":{
-                        "imageURI":{
-                            "title":"imageURI",
+                        "worldToTexture":{
+                            "title":"worldToTexture",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "$ref":"#/definitions/TexCoordGenType.WorldToTexture"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"imageURI",
+                                "localPart":"worldToTexture",
                                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
                             }
                         },
-                        "mimeType":{
-                            "title":"mimeType",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"mimeType",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "textureType":{
-                            "title":"textureType",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/TextureTypeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"textureType",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "wrapMode":{
-                            "title":"wrapMode",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/WrapModeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"wrapMode",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "borderColor":{
-                            "title":"borderColor",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                    }
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"borderColor",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfTexture":{
-                            "title":"genericApplicationPropertyOfTexture",
+                        "genericApplicationPropertyOfTexCoordGen":{
+                            "title":"genericApplicationPropertyOfTexCoordGen",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -532,7 +328,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfTexture",
+                                "localPart":"_GenericApplicationPropertyOfTexCoordGen",
                                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
                             }
                         }
@@ -541,280 +337,12 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AbstractTextureType",
+                "localPart":"TexCoordGenType",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             },
             "propertiesOrder":[
-                "imageURI",
-                "mimeType",
-                "textureType",
-                "wrapMode",
-                "borderColor",
-                "genericApplicationPropertyOfTexture"
-            ]
-        },
-        "X3DMaterialType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractSurfaceDataType"
-                },
-                {
-                    "type":"object",
-                    "title":"X3DMaterialType",
-                    "properties":{
-                        "ambientIntensity":{
-                            "title":"ambientIntensity",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ambientIntensity",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "diffuseColor":{
-                            "title":"diffuseColor",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                    }
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"diffuseColor",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "emissiveColor":{
-                            "title":"emissiveColor",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                    }
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"emissiveColor",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "specularColor":{
-                            "title":"specularColor",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                    }
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"specularColor",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "shininess":{
-                            "title":"shininess",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"shininess",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "transparency":{
-                            "title":"transparency",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"transparency",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "isSmooth":{
-                            "title":"isSmooth",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"isSmooth",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "target":{
-                            "title":"target",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"target",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfX3DMaterial":{
-                            "title":"genericApplicationPropertyOfX3DMaterial",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfX3DMaterial",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"X3DMaterialType",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            },
-            "propertiesOrder":[
-                "ambientIntensity",
-                "diffuseColor",
-                "emissiveColor",
-                "specularColor",
-                "shininess",
-                "transparency",
-                "isSmooth",
-                "target",
-                "genericApplicationPropertyOfX3DMaterial"
-            ]
-        },
-        "GeoreferencedTextureType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractTextureType"
-                },
-                {
-                    "type":"object",
-                    "title":"GeoreferencedTextureType",
-                    "properties":{
-                        "preferWorldFile":{
-                            "title":"preferWorldFile",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"preferWorldFile",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "referencePoint":{
-                            "title":"referencePoint",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PointPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"referencePoint",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "orientation":{
-                            "title":"orientation",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                    }
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"orientation",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "target":{
-                            "title":"target",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"target",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfGeoreferencedTexture":{
-                            "title":"genericApplicationPropertyOfGeoreferencedTexture",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfGeoreferencedTexture",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GeoreferencedTextureType",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            },
-            "propertiesOrder":[
-                "preferWorldFile",
-                "referencePoint",
-                "orientation",
-                "target",
-                "genericApplicationPropertyOfGeoreferencedTexture"
+                "worldToTexture",
+                "genericApplicationPropertyOfTexCoordGen"
             ]
         },
         "TextureAssociationType":{
@@ -986,6 +514,340 @@
                 "actuate"
             ]
         },
+        "GeoreferencedTextureType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractTextureType"
+                },
+                {
+                    "type":"object",
+                    "title":"GeoreferencedTextureType",
+                    "properties":{
+                        "preferWorldFile":{
+                            "title":"preferWorldFile",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"preferWorldFile",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "referencePoint":{
+                            "title":"referencePoint",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PointPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"referencePoint",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "orientation":{
+                            "title":"orientation",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                    }
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"orientation",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "target":{
+                            "title":"target",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"target",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfGeoreferencedTexture":{
+                            "title":"genericApplicationPropertyOfGeoreferencedTexture",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfGeoreferencedTexture",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GeoreferencedTextureType",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            },
+            "propertiesOrder":[
+                "preferWorldFile",
+                "referencePoint",
+                "orientation",
+                "target",
+                "genericApplicationPropertyOfGeoreferencedTexture"
+            ]
+        },
+        "X3DMaterialType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractSurfaceDataType"
+                },
+                {
+                    "type":"object",
+                    "title":"X3DMaterialType",
+                    "properties":{
+                        "ambientIntensity":{
+                            "title":"ambientIntensity",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ambientIntensity",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "diffuseColor":{
+                            "title":"diffuseColor",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                    }
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"diffuseColor",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "emissiveColor":{
+                            "title":"emissiveColor",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                    }
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"emissiveColor",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "specularColor":{
+                            "title":"specularColor",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                    }
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"specularColor",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "shininess":{
+                            "title":"shininess",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"shininess",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "transparency":{
+                            "title":"transparency",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"transparency",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "isSmooth":{
+                            "title":"isSmooth",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"isSmooth",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "target":{
+                            "title":"target",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"target",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfX3DMaterial":{
+                            "title":"genericApplicationPropertyOfX3DMaterial",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfX3DMaterial",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"X3DMaterialType",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            },
+            "propertiesOrder":[
+                "ambientIntensity",
+                "diffuseColor",
+                "emissiveColor",
+                "specularColor",
+                "shininess",
+                "transparency",
+                "isSmooth",
+                "target",
+                "genericApplicationPropertyOfX3DMaterial"
+            ]
+        },
+        "AppearanceType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"AppearanceType",
+                    "properties":{
+                        "theme":{
+                            "title":"theme",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"theme",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "surfaceDataMember":{
+                            "title":"surfaceDataMember",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/SurfaceDataPropertyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"surfaceDataMember",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfAppearance":{
+                            "title":"genericApplicationPropertyOfAppearance",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfAppearance",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AppearanceType",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            },
+            "propertiesOrder":[
+                "theme",
+                "surfaceDataMember",
+                "genericApplicationPropertyOfAppearance"
+            ]
+        },
         "TexCoordListType":{
             "required":[
                 "textureCoordinates"
@@ -1045,23 +907,269 @@
                 "genericApplicationPropertyOfTexCoordList"
             ]
         },
-        "AppearancePropertyType":{
+        "TexCoordListType.TextureCoordinates":{
             "type":"object",
-            "title":"AppearancePropertyType",
+            "title":"TexCoordListType.TextureCoordinates",
             "required":[
-                "appearance"
+                "ring"
             ],
             "properties":{
-                "appearance":{
-                    "title":"appearance",
+                "value":{
+                    "title":"value",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/AppearanceType"
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                            }
                         }
                     ],
-                    "propertyType":"element",
+                    "propertyType":"value"
+                },
+                "ring":{
+                    "title":"ring",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"ring",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "value",
+                "ring"
+            ]
+        },
+        "TexCoordGenType.WorldToTexture":{
+            "type":"object",
+            "title":"TexCoordGenType.WorldToTexture",
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                            }
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "srsName":{
+                    "title":"srsName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"srsName",
+                        "namespaceURI":""
+                    }
+                },
+                "srsDimension":{
+                    "title":"srsDimension",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"srsDimension",
+                        "namespaceURI":""
+                    }
+                },
+                "axisLabels":{
+                    "title":"axisLabels",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"axisLabels",
+                        "namespaceURI":""
+                    }
+                },
+                "uomLabels":{
+                    "title":"uomLabels",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uomLabels",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "value",
+                "srsName",
+                "srsDimension",
+                "axisLabels",
+                "uomLabels"
+            ]
+        },
+        "AbstractTextureType":{
+            "required":[
+                "imageURI"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractSurfaceDataType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractTextureType",
+                    "properties":{
+                        "imageURI":{
+                            "title":"imageURI",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"imageURI",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "mimeType":{
+                            "title":"mimeType",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"mimeType",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "textureType":{
+                            "title":"textureType",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/TextureTypeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"textureType",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "wrapMode":{
+                            "title":"wrapMode",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/WrapModeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"wrapMode",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "borderColor":{
+                            "title":"borderColor",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                    }
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"borderColor",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfTexture":{
+                            "title":"genericApplicationPropertyOfTexture",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfTexture",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractTextureType",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            },
+            "propertiesOrder":[
+                "imageURI",
+                "mimeType",
+                "textureType",
+                "wrapMode",
+                "borderColor",
+                "genericApplicationPropertyOfTexture"
+            ]
+        },
+        "SurfaceDataPropertyType":{
+            "type":"object",
+            "title":"SurfaceDataPropertyType",
+            "properties":{
+                "surfaceData":{
+                    "title":"surfaceData",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/AbstractSurfaceDataType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"_SurfaceData",
+                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
                     "elementName":{
-                        "localPart":"Appearance",
+                        "localPart":"_SurfaceData",
                         "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
                     }
                 },
@@ -1172,11 +1280,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AppearancePropertyType",
+                "localPart":"SurfaceDataPropertyType",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             },
             "propertiesOrder":[
-                "appearance",
+                "surfaceData",
                 "remoteSchema",
                 "type",
                 "href",
@@ -1186,126 +1294,6 @@
                 "show",
                 "actuate"
             ]
-        },
-        "AbstractSurfaceDataType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractSurfaceDataType",
-                    "properties":{
-                        "isFront":{
-                            "title":"isFront",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"isFront",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfSurfaceData":{
-                            "title":"genericApplicationPropertyOfSurfaceData",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfSurfaceData",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractSurfaceDataType",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            },
-            "propertiesOrder":[
-                "isFront",
-                "genericApplicationPropertyOfSurfaceData"
-            ]
-        },
-        "ParameterizedTextureType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractTextureType"
-                },
-                {
-                    "type":"object",
-                    "title":"ParameterizedTextureType",
-                    "properties":{
-                        "target":{
-                            "title":"target",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/TextureAssociationType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"target",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfParameterizedTexture":{
-                            "title":"genericApplicationPropertyOfParameterizedTexture",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfParameterizedTexture",
-                                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ParameterizedTextureType",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            },
-            "propertiesOrder":[
-                "target",
-                "genericApplicationPropertyOfParameterizedTexture"
-            ]
-        },
-        "WrapModeType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"WrapModeType",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            }
         },
         "TextureTypeType":{
             "allOf":[
@@ -1318,9 +1306,81 @@
                 "localPart":"TextureTypeType",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             }
+        },
+        "WrapModeType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"WrapModeType",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            }
         }
     },
     "anyOf":[
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TexCoordGenType"
+                }
+            },
+            "elementName":{
+                "localPart":"TexCoordGen",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AppearancePropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"appearance",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ParameterizedTextureType"
+                }
+            },
+            "elementName":{
+                "localPart":"ParameterizedTexture",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/X3DMaterialType"
+                }
+            },
+            "elementName":{
+                "localPart":"X3DMaterial",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            }
+        },
         {
             "type":"object",
             "properties":{
@@ -1347,7 +1407,7 @@
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfGeoreferencedTexture",
+                "localPart":"_GenericApplicationPropertyOfTexCoordList",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             }
         },
@@ -1363,6 +1423,36 @@
             },
             "elementName":{
                 "localPart":"appearanceMember",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AppearanceType"
+                }
+            },
+            "elementName":{
+                "localPart":"Appearance",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractSurfaceDataType"
+                }
+            },
+            "elementName":{
+                "localPart":"_SurfaceData",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             }
         },
@@ -1392,22 +1482,7 @@
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfTextureParameterization",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AppearancePropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"appearance",
+                "localPart":"_GenericApplicationPropertyOfAppearance",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             }
         },
@@ -1422,7 +1497,7 @@
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfTexCoordList",
+                "localPart":"_GenericApplicationPropertyOfGeoreferencedTexture",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             }
         },
@@ -1433,11 +1508,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/TexCoordGenType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"TexCoordGen",
+                "localPart":"_GenericApplicationPropertyOfTexture",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             }
         },
@@ -1467,112 +1542,7 @@
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfAppearance",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ParameterizedTextureType"
-                }
-            },
-            "elementName":{
-                "localPart":"ParameterizedTexture",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfSurfaceData",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractSurfaceDataType"
-                }
-            },
-            "elementName":{
-                "localPart":"_SurfaceData",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractTextureType"
-                }
-            },
-            "elementName":{
-                "localPart":"_Texture",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfTexture",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/X3DMaterialType"
-                }
-            },
-            "elementName":{
-                "localPart":"X3DMaterial",
-                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AppearanceType"
-                }
-            },
-            "elementName":{
-                "localPart":"Appearance",
+                "localPart":"_GenericApplicationPropertyOfParameterizedTexture",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             }
         },
@@ -1613,11 +1583,41 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/AbstractTextureType"
+                }
+            },
+            "elementName":{
+                "localPart":"_Texture",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfParameterizedTexture",
+                "localPart":"_GenericApplicationPropertyOfSurfaceData",
+                "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfTextureParameterization",
                 "namespaceURI":"http://www.opengis.net/citygml/appearance/2.0"
             }
         }

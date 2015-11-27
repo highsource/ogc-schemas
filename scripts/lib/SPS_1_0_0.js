@@ -2,62 +2,8 @@ var SPS_1_0_0_Module_Factory = function () {
   var SPS_1_0_0 = {
     n: 'SPS_1_0_0',
     dens: 'http:\/\/www.opengis.net\/sps\/1.0',
-    deps: ['SWE_1_0_0', 'GML_3_1_1', 'OWS_1_0_0'],
+    deps: ['SWE_1_0_0', 'OWS_1_0_0', 'GML_3_1_1'],
     tis: [{
-        ln: 'DescribeResultAccessRequestType',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'taskID',
-            rq: true
-          }, {
-            n: 'sensorID',
-            rq: true,
-            ti: '.SensorIDType'
-          }]
-      }, {
-        ln: 'SPSMessage.SubmitResponse',
-        tn: null,
-        ps: [{
-            n: 'status',
-            rq: true
-          }, {
-            n: 'description',
-            en: {
-              lp: 'description',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.StringOrRefType'
-          }, {
-            n: 'estimatedToC',
-            ti: '.EstimatedToC'
-          }, {
-            n: 'alternative',
-            ti: '.SPSMessage.SubmitResponse.Alternative'
-          }]
-      }, {
-        ln: 'SPSContentsType.PhenomenonOfferingList.PhenomenonOffering',
-        tn: null,
-        ps: [{
-            n: 'phenomenon',
-            rq: true,
-            en: 'Phenomenon'
-          }, {
-            n: 'sensorID',
-            rq: true,
-            col: true,
-            en: 'SensorID'
-          }]
-      }, {
-        ln: 'SPSContentsType.PhenomenonOfferingList',
-        tn: null,
-        ps: [{
-            n: 'phenomenonOffering',
-            rq: true,
-            col: true,
-            en: 'PhenomenonOffering',
-            ti: '.SPSContentsType.PhenomenonOfferingList.PhenomenonOffering'
-          }]
-      }, {
         ln: 'UpdateRequestType',
         bti: '.RequestBaseType',
         ps: [{
@@ -71,119 +17,25 @@ var SPS_1_0_0_Module_Factory = function () {
             ti: '.ParametersType'
           }]
       }, {
-        ln: 'SPSMessage.UpdateRequest',
+        ln: 'DescribeResultAccessRequestResponse.Service',
         tn: null,
         ps: [{
-            n: 'inputDescriptor',
+            n: 'serviceType',
             rq: true,
-            col: true,
-            en: 'InputDescriptor',
-            ti: '.InputDescriptor'
+            en: 'ServiceType'
+          }, {
+            n: 'serviceURL',
+            rq: true,
+            en: 'ServiceURL'
+          }, {
+            n: 'request',
+            ti: '.DescribeResultAccessRequestResponse.Service.Request'
           }]
       }, {
-        ln: 'GetCapabilities',
-        tn: null,
-        bti: 'OWS_1_0_0.GetCapabilitiesType',
-        ps: [{
-            n: 'service',
-            rq: true,
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SPSMessage',
+        ln: 'DescribeResultAccessRequestResponse.DataNotAvailable',
         tn: null,
         ps: [{
-            n: 'feasibilityResponse',
-            rq: true,
-            en: 'FeasibilityResponse',
-            ti: '.SPSMessage.FeasibilityResponse'
-          }, {
-            n: 'submitResponse',
-            rq: true,
-            en: 'SubmitResponse',
-            ti: '.SPSMessage.SubmitResponse'
-          }, {
-            n: 'statusInformation',
-            rq: true,
-            en: 'StatusInformation',
-            ti: '.SPSMessage.StatusInformation'
-          }, {
-            n: 'updateRequest',
-            rq: true,
-            en: 'UpdateRequest',
-            ti: '.SPSMessage.UpdateRequest'
-          }, {
-            n: 'updateResponse',
-            rq: true,
-            en: 'UpdateResponse',
-            ti: '.SPSMessage.UpdateResponse'
-          }, {
-            n: 'spsCorrID',
-            rq: true,
-            an: {
-              lp: 'SPSCorrID'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'InputDescriptor',
-        tn: null,
-        bti: '.InputDescriptorType'
-      }, {
-        ln: 'SPSMessage.SubmitResponse.Alternative',
-        tn: null,
-        ps: [{
-            n: 'inputParameter',
-            rq: true,
-            col: true,
-            en: 'InputParameter',
-            ti: '.InputParameterType'
-          }]
-      }, {
-        ln: 'LatestResponseTime',
-        tn: null,
-        ps: [{
-            n: 'timeInstant',
-            rq: true,
-            en: {
-              lp: 'TimeInstant',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.TimeInstantType'
-          }]
-      }, {
-        ln: 'SubmitRequestType.SensorParam',
-        tn: null,
-        ps: [{
-            n: 'sensorID',
-            rq: true,
-            ti: '.SensorIDType'
-          }, {
-            n: 'parameters',
-            rq: true,
-            ti: '.ParametersType'
-          }]
-      }, {
-        ln: 'ParametersType',
-        tn: 'parametersType',
-        ps: [{
-            n: 'inputParameter',
-            rq: true,
-            col: true,
-            en: 'InputParameter',
-            ti: '.InputParameterType'
-          }]
-      }, {
-        ln: 'UpdateRequestResponse',
-        tn: null,
-        ps: [{
-            n: 'taskID',
-            rq: true
-          }, {
-            n: 'status',
+            n: 'reason',
             rq: true
           }, {
             n: 'description',
@@ -192,14 +44,6 @@ var SPS_1_0_0_Module_Factory = function () {
               ns: 'http:\/\/www.opengis.net\/gml'
             },
             ti: 'GML_3_1_1.StringOrRefType'
-          }, {
-            n: 'estimatedToC',
-            ti: '.UpdateRequestResponse.EstimatedToC'
-          }, {
-            n: 'missingParameters',
-            mno: 0,
-            col: true,
-            ti: '.UpdateRequestResponse.MissingParameters'
           }]
       }, {
         ln: 'InputDescriptorType',
@@ -243,54 +87,224 @@ var SPS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GetFeasibilityRequestType',
+        ln: 'DescribeResultAccessRequestResponse.Service.Request',
+        tn: null,
+        ps: [{
+            n: 'any',
+            rq: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'TaskMessageDefinitionType',
+        bti: 'GML_3_1_1.DefinitionType',
+        ps: [{
+            n: 'externalDefinition'
+          }, {
+            n: 'type'
+          }, {
+            n: 'length',
+            ti: 'AnyType'
+          }, {
+            n: 'min',
+            ti: 'AnyType'
+          }, {
+            n: 'max',
+            ti: 'AnyType'
+          }, {
+            n: 'structureSchema'
+          }]
+      }, {
+        ln: 'NotificationTargetType',
+        tn: 'notificationTargetType',
+        ps: [{
+            n: 'notificationID',
+            rq: true
+          }, {
+            n: 'notificationURL',
+            rq: true
+          }]
+      }, {
+        ln: 'SPSContentsType',
+        ps: [{
+            n: 'sensorOfferingList',
+            rq: true,
+            en: 'SensorOfferingList',
+            ti: '.SPSContentsType.SensorOfferingList'
+          }, {
+            n: 'phenomenonOfferingList',
+            rq: true,
+            en: 'PhenomenonOfferingList',
+            ti: '.SPSContentsType.PhenomenonOfferingList'
+          }]
+      }, {
+        ln: 'SPSMessage.FeasibilityResponse.Alternative',
+        tn: null,
+        ps: [{
+            n: 'inputParameter',
+            rq: true,
+            col: true,
+            en: 'InputParameter',
+            ti: '.InputParameterType'
+          }]
+      }, {
+        ln: 'SPSMessage.SubmitResponse',
+        tn: null,
+        ps: [{
+            n: 'status',
+            rq: true
+          }, {
+            n: 'description',
+            en: {
+              lp: 'description',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.StringOrRefType'
+          }, {
+            n: 'estimatedToC',
+            ti: '.EstimatedToC'
+          }, {
+            n: 'alternative',
+            ti: '.SPSMessage.SubmitResponse.Alternative'
+          }]
+      }, {
+        ln: 'SPSMessage.UpdateRequest',
+        tn: null,
+        ps: [{
+            n: 'inputDescriptor',
+            rq: true,
+            col: true,
+            en: 'InputDescriptor',
+            ti: '.InputDescriptor'
+          }]
+      }, {
+        ln: 'SPSMessage.UpdateResponse',
+        tn: null,
+        ps: [{
+            n: 'inputParameter',
+            rq: true,
+            col: true,
+            en: 'InputParameter',
+            ti: '.InputParameterType'
+          }]
+      }, {
+        ln: 'SubmitRequestResponse',
+        tn: null,
+        ps: [{
+            n: 'taskID',
+            rq: true
+          }, {
+            n: 'status',
+            rq: true
+          }, {
+            n: 'description',
+            en: {
+              lp: 'description',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.StringOrRefType'
+          }, {
+            n: 'latestResponseTime',
+            rq: true,
+            en: 'LatestResponseTime',
+            ti: '.LatestResponseTime'
+          }, {
+            n: 'estimatedToC',
+            ti: '.EstimatedToC'
+          }, {
+            n: 'alternative',
+            mno: 0,
+            col: true,
+            ti: '.SubmitRequestResponse.Alternative'
+          }]
+      }, {
+        ln: 'RequestBaseType',
+        ps: [{
+            n: 'service',
+            rq: true,
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SubmitRequestType',
         bti: '.RequestBaseType',
         ps: [{
             n: 'notificationTarget',
             rq: true,
             ti: '.NotificationTargetType'
           }, {
-            n: 'sensorID',
+            n: 'sensorParam',
             rq: true,
-            ti: '.SensorIDType'
+            ti: '.SubmitRequestType.SensorParam'
           }, {
-            n: 'parameters',
-            rq: true,
-            ti: '.ParametersType'
+            n: 'feasibilityID',
+            rq: true
           }, {
             n: 'timeFrame',
             ti: '.TimeFrame'
           }]
       }, {
-        ln: 'InputDescriptorType.Restriction',
+        ln: 'GetCapabilities',
         tn: null,
+        bti: 'OWS_1_0_0.GetCapabilitiesType',
         ps: [{
-            n: 'inputParameter',
+            n: 'service',
             rq: true,
-            en: 'InputParameter',
-            ti: '.InputParameterType'
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'InputDescriptorType.Definition',
+        ln: 'DescribeTaskingRequestResponseType',
+        ps: [{
+            n: 'taskingDescriptor',
+            rq: true,
+            col: true,
+            ti: '.DescribeTaskingRequestResponseType.TaskingDescriptor'
+          }]
+      }, {
+        ln: 'SensorOfferingType',
+        ps: [{
+            n: 'areaOfService',
+            rq: true,
+            en: 'AreaOfService',
+            ti: '.AreaOfServiceType'
+          }, {
+            n: 'phenomenon',
+            rq: true,
+            en: 'Phenomenon'
+          }, {
+            n: 'sensorDefinition',
+            rq: true,
+            en: 'SensorDefinition'
+          }, {
+            n: 'sensorID',
+            rq: true,
+            en: 'SensorID'
+          }]
+      }, {
+        ln: 'SPSContentsType.PhenomenonOfferingList.PhenomenonOffering',
         tn: null,
         ps: [{
-            n: 'commonData',
+            n: 'phenomenon',
             rq: true,
-            ti: '.InputDescriptorType.Definition.CommonData'
+            en: 'Phenomenon'
           }, {
-            n: 'taskMessageDefinition',
+            n: 'sensorID',
             rq: true,
-            en: 'TaskMessageDefinition'
-          }, {
-            n: 'geometryDefinition',
-            rq: true,
-            en: 'GeometryDefinition',
-            ti: 'QName'
-          }, {
-            n: 'temporalDefinition',
-            rq: true,
-            en: 'TemporalDefinition',
-            ti: 'QName'
+            col: true,
+            en: 'SensorID'
           }]
       }, {
         ln: 'GetStatusRequestType',
@@ -303,16 +317,54 @@ var SPS_1_0_0_Module_Factory = function () {
             rq: true
           }]
       }, {
-        ln: 'UpdateRequestResponse.MissingParameters',
+        ln: 'GetFeasibilityRequestResponse.Alternative',
         tn: null,
         ps: [{
-            n: 'inputDescriptor',
+            n: 'inputParameter',
             rq: true,
-            en: 'InputDescriptor',
-            ti: '.InputDescriptor'
+            col: true,
+            en: 'InputParameter',
+            ti: '.InputParameterType'
           }]
       }, {
-        ln: 'TimeFrame',
+        ln: 'GetFeasibilityRequestResponse',
+        tn: null,
+        ps: [{
+            n: 'feasibilityID',
+            rq: true
+          }, {
+            n: 'feasibility',
+            rq: true
+          }, {
+            n: 'description',
+            en: {
+              lp: 'description',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.StringOrRefType'
+          }, {
+            n: 'latestResponseTime',
+            rq: true,
+            en: 'LatestResponseTime',
+            ti: '.LatestResponseTime'
+          }, {
+            n: 'alternative',
+            mno: 0,
+            col: true,
+            ti: '.GetFeasibilityRequestResponse.Alternative'
+          }]
+      }, {
+        ln: 'SPSContentsType.SensorOfferingList',
+        tn: null,
+        ps: [{
+            n: 'sensorOffering',
+            rq: true,
+            col: true,
+            en: 'SensorOffering',
+            ti: '.SensorOfferingType'
+          }]
+      }, {
+        ln: 'UpdateRequestResponse.EstimatedToC',
         tn: null,
         ps: [{
             n: 'timeInstant',
@@ -322,20 +374,6 @@ var SPS_1_0_0_Module_Factory = function () {
               ns: 'http:\/\/www.opengis.net\/gml'
             },
             ti: 'GML_3_1_1.TimeInstantType'
-          }]
-      }, {
-        ln: 'DescribeResultAccessRequestResponse',
-        tn: null,
-        ps: [{
-            n: 'service',
-            rq: true,
-            col: true,
-            ti: '.DescribeResultAccessRequestResponse.Service'
-          }, {
-            n: 'dataNotAvailable',
-            rq: true,
-            en: 'DataNotAvailable',
-            ti: '.DescribeResultAccessRequestResponse.DataNotAvailable'
           }]
       }, {
         ln: 'AreaOfServiceType',
@@ -376,7 +414,64 @@ var SPS_1_0_0_Module_Factory = function () {
             ti: 'GML_3_1_1.SolidType'
           }]
       }, {
-        ln: 'EstimatedToC',
+        ln: 'SPSContentsType.PhenomenonOfferingList',
+        tn: null,
+        ps: [{
+            n: 'phenomenonOffering',
+            rq: true,
+            col: true,
+            en: 'PhenomenonOffering',
+            ti: '.SPSContentsType.PhenomenonOfferingList.PhenomenonOffering'
+          }]
+      }, {
+        ln: 'SubmitRequestResponse.Alternative',
+        tn: null,
+        ps: [{
+            n: 'inputParameter',
+            rq: true,
+            col: true,
+            en: 'InputParameter',
+            ti: '.InputParameterType'
+          }]
+      }, {
+        ln: 'InputDescriptorType.Restriction',
+        tn: null,
+        ps: [{
+            n: 'inputParameter',
+            rq: true,
+            en: 'InputParameter',
+            ti: '.InputParameterType'
+          }]
+      }, {
+        ln: 'ParametersType',
+        tn: 'parametersType',
+        ps: [{
+            n: 'inputParameter',
+            rq: true,
+            col: true,
+            en: 'InputParameter',
+            ti: '.InputParameterType'
+          }]
+      }, {
+        ln: 'UpdateRequestResponse.MissingParameters',
+        tn: null,
+        ps: [{
+            n: 'inputDescriptor',
+            rq: true,
+            en: 'InputDescriptor',
+            ti: '.InputDescriptor'
+          }]
+      }, {
+        ln: 'DescribeTaskingRequestType',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'sensorID',
+            rq: true,
+            col: true,
+            ti: '.SensorIDType'
+          }]
+      }, {
+        ln: 'TimeFrame',
         tn: null,
         ps: [{
             n: 'timeInstant',
@@ -388,30 +483,19 @@ var SPS_1_0_0_Module_Factory = function () {
             ti: 'GML_3_1_1.TimeInstantType'
           }]
       }, {
-        ln: 'RequestBaseType',
+        ln: 'Capabilities',
+        tn: null,
+        bti: 'OWS_1_0_0.CapabilitiesBaseType',
         ps: [{
-            n: 'service',
-            rq: true,
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
+            n: 'contents',
+            en: 'Contents',
+            ti: '.SPSContentsType'
           }]
       }, {
-        ln: 'GetStatusRequestResponse',
+        ln: 'SPSMessage.FeasibilityResponse',
         tn: null,
         ps: [{
-            n: 'taskID',
-            rq: true
-          }, {
-            n: 'status',
+            n: 'feasibility',
             rq: true
           }, {
             n: 'description',
@@ -421,61 +505,36 @@ var SPS_1_0_0_Module_Factory = function () {
             },
             ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            n: 'estimatedToC',
-            ti: '.EstimatedToC'
+            n: 'alternative',
+            ti: '.SPSMessage.FeasibilityResponse.Alternative'
           }]
       }, {
-        ln: 'CancelRequestType',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'taskID',
-            rq: true
-          }]
-      }, {
-        ln: 'InputParameterType.Value',
+        ln: 'LatestResponseTime',
         tn: null,
         ps: [{
-            n: 'any',
+            n: 'timeInstant',
             rq: true,
-            typed: false,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'SPSMessage.StatusInformation',
-        tn: null,
-        ps: [{
-            n: 'status',
-            rq: true
-          }, {
-            n: 'description',
             en: {
-              lp: 'description',
+              lp: 'TimeInstant',
               ns: 'http:\/\/www.opengis.net\/gml'
             },
-            ti: 'GML_3_1_1.StringOrRefType'
-          }, {
-            n: 'estimatedToC',
-            ti: '.EstimatedToC'
+            ti: 'GML_3_1_1.TimeInstantType'
           }]
       }, {
-        ln: 'TaskMessageDefinitionType',
-        bti: 'GML_3_1_1.DefinitionType',
+        ln: 'InputParameterType',
         ps: [{
-            n: 'externalDefinition'
+            n: 'value',
+            rq: true,
+            col: true,
+            ti: '.InputParameterType.Value'
           }, {
-            n: 'type'
-          }, {
-            n: 'length',
-            ti: 'AnyType'
-          }, {
-            n: 'min',
-            ti: 'AnyType'
-          }, {
-            n: 'max',
-            ti: 'AnyType'
-          }, {
-            n: 'structureSchema'
+            n: 'parameterID',
+            rq: true,
+            ti: 'ID',
+            an: {
+              lp: 'parameterID'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'InputDescriptorType.Definition.CommonData',
@@ -576,61 +635,47 @@ var SPS_1_0_0_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'Capabilities',
-        tn: null,
-        bti: 'OWS_1_0_0.CapabilitiesBaseType',
+        ln: 'GetFeasibilityRequestType',
+        bti: '.RequestBaseType',
         ps: [{
-            n: 'contents',
-            en: 'Contents',
-            ti: '.SPSContentsType'
-          }]
-      }, {
-        ln: 'SPSContentsType.SensorOfferingList',
-        tn: null,
-        ps: [{
-            n: 'sensorOffering',
+            n: 'notificationTarget',
             rq: true,
-            col: true,
-            en: 'SensorOffering',
-            ti: '.SensorOfferingType'
-          }]
-      }, {
-        ln: 'SensorOfferingType',
-        ps: [{
-            n: 'areaOfService',
-            rq: true,
-            en: 'AreaOfService',
-            ti: '.AreaOfServiceType'
-          }, {
-            n: 'phenomenon',
-            rq: true,
-            en: 'Phenomenon'
-          }, {
-            n: 'sensorDefinition',
-            rq: true,
-            en: 'SensorDefinition'
+            ti: '.NotificationTargetType'
           }, {
             n: 'sensorID',
             rq: true,
-            en: 'SensorID'
+            ti: '.SensorIDType'
+          }, {
+            n: 'parameters',
+            rq: true,
+            ti: '.ParametersType'
+          }, {
+            n: 'timeFrame',
+            ti: '.TimeFrame'
           }]
       }, {
-        ln: 'DescribeResultAccessRequestResponse.Service',
+        ln: 'DescribeResultAccessRequestType',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'taskID',
+            rq: true
+          }, {
+            n: 'sensorID',
+            rq: true,
+            ti: '.SensorIDType'
+          }]
+      }, {
+        ln: 'InputParameterType.Value',
         tn: null,
         ps: [{
-            n: 'serviceType',
+            n: 'any',
             rq: true,
-            en: 'ServiceType'
-          }, {
-            n: 'serviceURL',
-            rq: true,
-            en: 'ServiceURL'
-          }, {
-            n: 'request',
-            ti: '.DescribeResultAccessRequestResponse.Service.Request'
+            typed: false,
+            mx: false,
+            t: 'ae'
           }]
       }, {
-        ln: 'CancelRequestResponse',
+        ln: 'GetStatusRequestResponse',
         tn: null,
         ps: [{
             n: 'taskID',
@@ -645,87 +690,45 @@ var SPS_1_0_0_Module_Factory = function () {
               ns: 'http:\/\/www.opengis.net\/gml'
             },
             ti: 'GML_3_1_1.StringOrRefType'
+          }, {
+            n: 'estimatedToC',
+            ti: '.EstimatedToC'
           }]
       }, {
-        ln: 'SPSMessage.UpdateResponse',
+        ln: 'SPSMessage',
         tn: null,
         ps: [{
-            n: 'inputParameter',
+            n: 'feasibilityResponse',
             rq: true,
-            col: true,
-            en: 'InputParameter',
-            ti: '.InputParameterType'
-          }]
-      }, {
-        ln: 'InputParameterType',
-        ps: [{
-            n: 'value',
-            rq: true,
-            col: true,
-            ti: '.InputParameterType.Value'
+            en: 'FeasibilityResponse',
+            ti: '.SPSMessage.FeasibilityResponse'
           }, {
-            n: 'parameterID',
+            n: 'submitResponse',
             rq: true,
-            ti: 'ID',
+            en: 'SubmitResponse',
+            ti: '.SPSMessage.SubmitResponse'
+          }, {
+            n: 'statusInformation',
+            rq: true,
+            en: 'StatusInformation',
+            ti: '.SPSMessage.StatusInformation'
+          }, {
+            n: 'updateRequest',
+            rq: true,
+            en: 'UpdateRequest',
+            ti: '.SPSMessage.UpdateRequest'
+          }, {
+            n: 'updateResponse',
+            rq: true,
+            en: 'UpdateResponse',
+            ti: '.SPSMessage.UpdateResponse'
+          }, {
+            n: 'spsCorrID',
+            rq: true,
             an: {
-              lp: 'parameterID'
+              lp: 'SPSCorrID'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'SubmitRequestResponse.Alternative',
-        tn: null,
-        ps: [{
-            n: 'inputParameter',
-            rq: true,
-            col: true,
-            en: 'InputParameter',
-            ti: '.InputParameterType'
-          }]
-      }, {
-        ln: 'UpdateRequestResponse.EstimatedToC',
-        tn: null,
-        ps: [{
-            n: 'timeInstant',
-            rq: true,
-            en: {
-              lp: 'TimeInstant',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.TimeInstantType'
-          }]
-      }, {
-        ln: 'SPSMessage.FeasibilityResponse',
-        tn: null,
-        ps: [{
-            n: 'feasibility',
-            rq: true
-          }, {
-            n: 'description',
-            en: {
-              lp: 'description',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.StringOrRefType'
-          }, {
-            n: 'alternative',
-            ti: '.SPSMessage.FeasibilityResponse.Alternative'
-          }]
-      }, {
-        ln: 'DescribeTaskingRequestType',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'sensorID',
-            rq: true,
-            col: true,
-            ti: '.SensorIDType'
-          }]
-      }, {
-        ln: 'SensorIDType',
-        tn: 'sensorIDType',
-        ps: [{
-            n: 'value',
-            t: 'v'
           }]
       }, {
         ln: 'DescribeTaskingRequestResponseType.TaskingDescriptor',
@@ -749,46 +752,13 @@ var SPS_1_0_0_Module_Factory = function () {
             ti: '.InputDescriptor'
           }]
       }, {
-        ln: 'SubmitRequestType',
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'notificationTarget',
-            rq: true,
-            ti: '.NotificationTargetType'
-          }, {
-            n: 'sensorParam',
-            rq: true,
-            ti: '.SubmitRequestType.SensorParam'
-          }, {
-            n: 'feasibilityID',
-            rq: true
-          }, {
-            n: 'timeFrame',
-            ti: '.TimeFrame'
-          }]
-      }, {
-        ln: 'NotificationTargetType',
-        tn: 'notificationTargetType',
-        ps: [{
-            n: 'notificationID',
-            rq: true
-          }, {
-            n: 'notificationURL',
-            rq: true
-          }]
-      }, {
-        ln: 'DescribeTaskingRequestResponseType',
-        ps: [{
-            n: 'taskingDescriptor',
-            rq: true,
-            col: true,
-            ti: '.DescribeTaskingRequestResponseType.TaskingDescriptor'
-          }]
-      }, {
-        ln: 'DescribeResultAccessRequestResponse.DataNotAvailable',
+        ln: 'CancelRequestResponse',
         tn: null,
         ps: [{
-            n: 'reason',
+            n: 'taskID',
+            rq: true
+          }, {
+            n: 'status',
             rq: true
           }, {
             n: 'description',
@@ -799,17 +769,88 @@ var SPS_1_0_0_Module_Factory = function () {
             ti: 'GML_3_1_1.StringOrRefType'
           }]
       }, {
-        ln: 'DescribeResultAccessRequestResponse.Service.Request',
+        ln: 'SPSMessage.StatusInformation',
         tn: null,
         ps: [{
-            n: 'any',
-            rq: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
+            n: 'status',
+            rq: true
+          }, {
+            n: 'description',
+            en: {
+              lp: 'description',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.StringOrRefType'
+          }, {
+            n: 'estimatedToC',
+            ti: '.EstimatedToC'
           }]
       }, {
-        ln: 'SubmitRequestResponse',
+        ln: 'InputDescriptor',
+        tn: null,
+        bti: '.InputDescriptorType'
+      }, {
+        ln: 'SubmitRequestType.SensorParam',
+        tn: null,
+        ps: [{
+            n: 'sensorID',
+            rq: true,
+            ti: '.SensorIDType'
+          }, {
+            n: 'parameters',
+            rq: true,
+            ti: '.ParametersType'
+          }]
+      }, {
+        ln: 'CancelRequestType',
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'taskID',
+            rq: true
+          }]
+      }, {
+        ln: 'EstimatedToC',
+        tn: null,
+        ps: [{
+            n: 'timeInstant',
+            rq: true,
+            en: {
+              lp: 'TimeInstant',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.TimeInstantType'
+          }]
+      }, {
+        ln: 'InputDescriptorType.Definition',
+        tn: null,
+        ps: [{
+            n: 'commonData',
+            rq: true,
+            ti: '.InputDescriptorType.Definition.CommonData'
+          }, {
+            n: 'taskMessageDefinition',
+            rq: true,
+            en: 'TaskMessageDefinition'
+          }, {
+            n: 'geometryDefinition',
+            rq: true,
+            en: 'GeometryDefinition',
+            ti: 'QName'
+          }, {
+            n: 'temporalDefinition',
+            rq: true,
+            en: 'TemporalDefinition',
+            ti: 'QName'
+          }]
+      }, {
+        ln: 'SensorIDType',
+        tn: 'sensorIDType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }]
+      }, {
+        ln: 'UpdateRequestResponse',
         tn: null,
         ps: [{
             n: 'taskID',
@@ -825,71 +866,30 @@ var SPS_1_0_0_Module_Factory = function () {
             },
             ti: 'GML_3_1_1.StringOrRefType'
           }, {
-            n: 'latestResponseTime',
-            rq: true,
-            en: 'LatestResponseTime',
-            ti: '.LatestResponseTime'
-          }, {
             n: 'estimatedToC',
-            ti: '.EstimatedToC'
+            ti: '.UpdateRequestResponse.EstimatedToC'
           }, {
-            n: 'alternative',
+            n: 'missingParameters',
             mno: 0,
             col: true,
-            ti: '.SubmitRequestResponse.Alternative'
+            ti: '.UpdateRequestResponse.MissingParameters'
           }]
       }, {
-        ln: 'GetFeasibilityRequestResponse.Alternative',
+        ln: 'DescribeResultAccessRequestResponse',
         tn: null,
         ps: [{
-            n: 'inputParameter',
+            n: 'service',
             rq: true,
             col: true,
-            en: 'InputParameter',
-            ti: '.InputParameterType'
+            ti: '.DescribeResultAccessRequestResponse.Service'
+          }, {
+            n: 'dataNotAvailable',
+            rq: true,
+            en: 'DataNotAvailable',
+            ti: '.DescribeResultAccessRequestResponse.DataNotAvailable'
           }]
       }, {
-        ln: 'GetFeasibilityRequestResponse',
-        tn: null,
-        ps: [{
-            n: 'feasibilityID',
-            rq: true
-          }, {
-            n: 'feasibility',
-            rq: true
-          }, {
-            n: 'description',
-            en: {
-              lp: 'description',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.StringOrRefType'
-          }, {
-            n: 'latestResponseTime',
-            rq: true,
-            en: 'LatestResponseTime',
-            ti: '.LatestResponseTime'
-          }, {
-            n: 'alternative',
-            mno: 0,
-            col: true,
-            ti: '.GetFeasibilityRequestResponse.Alternative'
-          }]
-      }, {
-        ln: 'SPSContentsType',
-        ps: [{
-            n: 'sensorOfferingList',
-            rq: true,
-            en: 'SensorOfferingList',
-            ti: '.SPSContentsType.SensorOfferingList'
-          }, {
-            n: 'phenomenonOfferingList',
-            rq: true,
-            en: 'PhenomenonOfferingList',
-            ti: '.SPSContentsType.PhenomenonOfferingList'
-          }]
-      }, {
-        ln: 'SPSMessage.FeasibilityResponse.Alternative',
+        ln: 'SPSMessage.SubmitResponse.Alternative',
         tn: null,
         ps: [{
             n: 'inputParameter',
@@ -900,43 +900,63 @@ var SPS_1_0_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'Submit',
-        ti: '.SubmitRequestType'
+        en: 'TaskMessageDictionary',
+        ti: 'GML_3_1_1.DictionaryType'
+      }, {
+        en: 'SubmitRequestResponse',
+        ti: '.SubmitRequestResponse'
+      }, {
+        en: 'taskID'
       }, {
         en: 'sensorID',
         ti: '.SensorIDType'
       }, {
-        en: 'UpdateRequestResponse',
-        ti: '.UpdateRequestResponse'
+        en: 'SPSMessage',
+        ti: '.SPSMessage'
       }, {
-        en: 'GetFeasibilityRequestResponse',
-        ti: '.GetFeasibilityRequestResponse'
-      }, {
-        en: 'DescribeResultAccess',
-        ti: '.DescribeResultAccessRequestType'
-      }, {
-        en: 'Capabilities',
-        ti: '.Capabilities'
-      }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilities'
-      }, {
-        en: 'DescribeTaskingRequestResponse',
-        ti: '.DescribeTaskingRequestResponseType'
+        en: 'DescribeResultAccessRequestResponse',
+        ti: '.DescribeResultAccessRequestResponse'
       }, {
         en: 'feasibilityID'
-      }, {
-        en: 'parameters',
-        ti: '.ParametersType'
       }, {
         en: 'Contents',
         ti: '.SPSContentsType'
       }, {
-        en: 'TaskMessageDictionary',
-        ti: 'GML_3_1_1.DictionaryType'
+        en: 'InputParameter',
+        ti: '.InputParameterType'
       }, {
-        en: 'DescribeResultAccessRequestResponse',
-        ti: '.DescribeResultAccessRequestResponse'
+        en: 'Cancel',
+        ti: '.CancelRequestType'
+      }, {
+        en: 'DescribeTasking',
+        ti: '.DescribeTaskingRequestType'
+      }, {
+        en: 'DescribeTaskingRequestResponse',
+        ti: '.DescribeTaskingRequestResponseType'
+      }, {
+        en: 'Capabilities',
+        ti: '.Capabilities'
+      }, {
+        en: 'InputDescriptor',
+        ti: '.InputDescriptor'
+      }, {
+        en: 'LatestResponseTime',
+        ti: '.LatestResponseTime'
+      }, {
+        en: 'Submit',
+        ti: '.SubmitRequestType'
+      }, {
+        en: 'UpdateRequestResponse',
+        ti: '.UpdateRequestResponse'
+      }, {
+        en: 'notificationTarget',
+        ti: '.NotificationTargetType'
+      }, {
+        en: 'timeFrame',
+        ti: '.TimeFrame'
+      }, {
+        en: 'estimatedToC',
+        ti: '.EstimatedToC'
       }, {
         en: 'TaskMessageDefinition',
         ti: '.TaskMessageDefinitionType',
@@ -945,52 +965,32 @@ var SPS_1_0_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: 'LatestResponseTime',
-        ti: '.LatestResponseTime'
-      }, {
-        en: 'taskID'
-      }, {
         en: 'Update',
         ti: '.UpdateRequestType'
-      }, {
-        en: 'GetStatus',
-        ti: '.GetStatusRequestType'
-      }, {
-        en: 'Cancel',
-        ti: '.CancelRequestType'
-      }, {
-        en: 'CancelRequestResponse',
-        ti: '.CancelRequestResponse'
-      }, {
-        en: 'DescribeTasking',
-        ti: '.DescribeTaskingRequestType'
-      }, {
-        en: 'SubmitRequestResponse',
-        ti: '.SubmitRequestResponse'
-      }, {
-        en: 'SPSMessage',
-        ti: '.SPSMessage'
-      }, {
-        en: 'notificationTarget',
-        ti: '.NotificationTargetType'
       }, {
         en: 'GetFeasibility',
         ti: '.GetFeasibilityRequestType'
       }, {
-        en: 'InputParameter',
-        ti: '.InputParameterType'
-      }, {
-        en: 'InputDescriptor',
-        ti: '.InputDescriptor'
-      }, {
-        en: 'timeFrame',
-        ti: '.TimeFrame'
-      }, {
-        en: 'estimatedToC',
-        ti: '.EstimatedToC'
+        en: 'GetCapabilities',
+        ti: '.GetCapabilities'
       }, {
         en: 'GetStatusRequestResponse',
         ti: '.GetStatusRequestResponse'
+      }, {
+        en: 'parameters',
+        ti: '.ParametersType'
+      }, {
+        en: 'CancelRequestResponse',
+        ti: '.CancelRequestResponse'
+      }, {
+        en: 'GetStatus',
+        ti: '.GetStatusRequestType'
+      }, {
+        en: 'GetFeasibilityRequestResponse',
+        ti: '.GetFeasibilityRequestResponse'
+      }, {
+        en: 'DescribeResultAccess',
+        ti: '.DescribeResultAccessRequestType'
       }]
   };
   return {

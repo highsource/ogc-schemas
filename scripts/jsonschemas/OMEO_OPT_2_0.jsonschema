@@ -175,110 +175,6 @@
                 "owns"
             ]
         },
-        "EarthObservationResultType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationResultType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationResultType",
-                    "properties":{
-                        "cloudCoverPercentage":{
-                            "title":"cloudCoverPercentage",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"cloudCoverPercentage",
-                                "namespaceURI":"http://www.opengis.net/opt/2.0"
-                            }
-                        },
-                        "cloudCoverPercentageAssessmentConfidence":{
-                            "title":"cloudCoverPercentageAssessmentConfidence",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"cloudCoverPercentageAssessmentConfidence",
-                                "namespaceURI":"http://www.opengis.net/opt/2.0"
-                            }
-                        },
-                        "cloudCoverPercentageQuotationMode":{
-                            "title":"cloudCoverPercentageQuotationMode",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationResultPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"cloudCoverPercentageQuotationMode",
-                                "namespaceURI":"http://www.opengis.net/opt/2.0"
-                            }
-                        },
-                        "snowCoverPercentage":{
-                            "title":"snowCoverPercentage",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"snowCoverPercentage",
-                                "namespaceURI":"http://www.opengis.net/opt/2.0"
-                            }
-                        },
-                        "snowCoverPercentageAssessmentConfidence":{
-                            "title":"snowCoverPercentageAssessmentConfidence",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"snowCoverPercentageAssessmentConfidence",
-                                "namespaceURI":"http://www.opengis.net/opt/2.0"
-                            }
-                        },
-                        "snowCoverPercentageQuotationMode":{
-                            "title":"snowCoverPercentageQuotationMode",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationResultPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"snowCoverPercentageQuotationMode",
-                                "namespaceURI":"http://www.opengis.net/opt/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationResultType",
-                "namespaceURI":"http://www.opengis.net/opt/2.0"
-            },
-            "propertiesOrder":[
-                "cloudCoverPercentage",
-                "cloudCoverPercentageAssessmentConfidence",
-                "cloudCoverPercentageQuotationMode",
-                "snowCoverPercentage",
-                "snowCoverPercentageAssessmentConfidence",
-                "snowCoverPercentageQuotationMode"
-            ]
-        },
         "EarthObservationType":{
             "allOf":[
                 {
@@ -315,19 +211,6 @@
                     "elementName":{
                         "localPart":"EarthObservation",
                         "namespaceURI":"http://www.opengis.net/opt/2.0"
-                    }
-                },
-                "owns":{
-                    "title":"owns",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"owns",
-                        "namespaceURI":""
                     }
                 },
                 "nilReason":{
@@ -449,6 +332,19 @@
                         "localPart":"actuate",
                         "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
+                },
+                "owns":{
+                    "title":"owns",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"owns",
+                        "namespaceURI":""
+                    }
                 }
             },
             "typeType":"classInfo",
@@ -458,7 +354,6 @@
             },
             "propertiesOrder":[
                 "earthObservation",
-                "owns",
                 "nilReason",
                 "remoteSchema",
                 "type",
@@ -467,7 +362,112 @@
                 "arcrole",
                 "title",
                 "show",
-                "actuate"
+                "actuate",
+                "owns"
+            ]
+        },
+        "EarthObservationResultType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationResultType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationResultType",
+                    "properties":{
+                        "cloudCoverPercentage":{
+                            "title":"cloudCoverPercentage",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"cloudCoverPercentage",
+                                "namespaceURI":"http://www.opengis.net/opt/2.0"
+                            }
+                        },
+                        "cloudCoverPercentageAssessmentConfidence":{
+                            "title":"cloudCoverPercentageAssessmentConfidence",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"cloudCoverPercentageAssessmentConfidence",
+                                "namespaceURI":"http://www.opengis.net/opt/2.0"
+                            }
+                        },
+                        "cloudCoverPercentageQuotationMode":{
+                            "title":"cloudCoverPercentageQuotationMode",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationResultPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"cloudCoverPercentageQuotationMode",
+                                "namespaceURI":"http://www.opengis.net/opt/2.0"
+                            }
+                        },
+                        "snowCoverPercentage":{
+                            "title":"snowCoverPercentage",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"snowCoverPercentage",
+                                "namespaceURI":"http://www.opengis.net/opt/2.0"
+                            }
+                        },
+                        "snowCoverPercentageAssessmentConfidence":{
+                            "title":"snowCoverPercentageAssessmentConfidence",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"snowCoverPercentageAssessmentConfidence",
+                                "namespaceURI":"http://www.opengis.net/opt/2.0"
+                            }
+                        },
+                        "snowCoverPercentageQuotationMode":{
+                            "title":"snowCoverPercentageQuotationMode",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationResultPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"snowCoverPercentageQuotationMode",
+                                "namespaceURI":"http://www.opengis.net/opt/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationResultType",
+                "namespaceURI":"http://www.opengis.net/opt/2.0"
+            },
+            "propertiesOrder":[
+                "cloudCoverPercentage",
+                "cloudCoverPercentageAssessmentConfidence",
+                "cloudCoverPercentageQuotationMode",
+                "snowCoverPercentage",
+                "snowCoverPercentageAssessmentConfidence",
+                "snowCoverPercentageQuotationMode"
             ]
         },
         "PercentageCoverQuotationModeValueEnumerationType":{
@@ -491,11 +491,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/EarthObservationResultType"
+                    "$ref":"#/definitions/EarthObservationType"
                 }
             },
             "elementName":{
-                "localPart":"EarthObservationResult",
+                "localPart":"EarthObservation",
                 "namespaceURI":"http://www.opengis.net/opt/2.0"
             }
         },
@@ -506,11 +506,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/EarthObservationType"
+                    "$ref":"#/definitions/EarthObservationResultType"
                 }
             },
             "elementName":{
-                "localPart":"EarthObservation",
+                "localPart":"EarthObservationResult",
                 "namespaceURI":"http://www.opengis.net/opt/2.0"
             }
         }

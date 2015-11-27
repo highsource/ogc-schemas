@@ -3,7 +3,7 @@ var OMEO_OPT_2_0_Module_Factory = function () {
     n: 'OMEO_OPT_2_0',
     dens: 'http:\/\/www.opengis.net\/opt\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'OMEO_EOP_2_0', 'GML_3_2_1'],
+    deps: ['XLink_1_0', 'GML_3_2_1', 'OMEO_EOP_2_0'],
     tis: [{
         ln: 'EarthObservationResultPropertyType',
         ps: [{
@@ -11,6 +11,64 @@ var OMEO_OPT_2_0_Module_Factory = function () {
             rq: true,
             en: 'EarthObservationResult',
             ti: '.EarthObservationResultType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EarthObservationType',
+        bti: 'OMEO_EOP_2_0.EarthObservationType'
+      }, {
+        ln: 'EarthObservationPropertyType',
+        ps: [{
+            n: 'earthObservation',
+            rq: true,
+            en: 'EarthObservation',
+            ti: '.EarthObservationType'
           }, {
             n: 'nilReason',
             ti: {
@@ -82,80 +140,22 @@ var OMEO_OPT_2_0_Module_Factory = function () {
             ti: 'OMEO_EOP_2_0.EarthObservationResultPropertyType'
           }]
       }, {
-        ln: 'EarthObservationType',
-        bti: 'OMEO_EOP_2_0.EarthObservationType'
-      }, {
-        ln: 'EarthObservationPropertyType',
-        ps: [{
-            n: 'earthObservation',
-            rq: true,
-            en: 'EarthObservation',
-            ti: '.EarthObservationType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
         t: 'enum',
         ln: 'PercentageCoverQuotationModeValueEnumerationType',
         vs: ['AUTOMATIC', 'MANUAL']
       }],
     eis: [{
-        en: 'EarthObservationResult',
-        ti: '.EarthObservationResultType',
-        sh: {
-          lp: 'EarthObservationResult',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
         en: 'EarthObservation',
         ti: '.EarthObservationType',
         sh: {
           lp: 'EarthObservation',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
+        en: 'EarthObservationResult',
+        ti: '.EarthObservationResultType',
+        sh: {
+          lp: 'EarthObservationResult',
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }]

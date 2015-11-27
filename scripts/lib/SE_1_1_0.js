@@ -4,122 +4,62 @@ var SE_1_1_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/se',
     deps: ['Filter_1_1_0', 'XLink_1_0'],
     tis: [{
-        ln: 'LegendGraphicType',
+        ln: 'BaseSymbolizerType',
+        ps: [{
+            n: 'onlineResource',
+            rq: true,
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }]
+      }, {
+        ln: 'ChannelSelectionType',
+        ps: [{
+            n: 'redChannel',
+            rq: true,
+            en: 'RedChannel',
+            ti: '.SelectedChannelType'
+          }, {
+            n: 'greenChannel',
+            rq: true,
+            en: 'GreenChannel',
+            ti: '.SelectedChannelType'
+          }, {
+            n: 'blueChannel',
+            rq: true,
+            en: 'BlueChannel',
+            ti: '.SelectedChannelType'
+          }, {
+            n: 'grayChannel',
+            rq: true,
+            en: 'GrayChannel',
+            ti: '.SelectedChannelType'
+          }]
+      }, {
+        ln: 'SelectedChannelType',
+        ps: [{
+            n: 'sourceChannelName',
+            rq: true,
+            en: 'SourceChannelName'
+          }, {
+            n: 'contrastEnhancement',
+            en: 'ContrastEnhancement',
+            ti: '.ContrastEnhancementType'
+          }]
+      }, {
+        ln: 'GraphicStrokeType',
         ps: [{
             n: 'graphic',
             rq: true,
             en: 'Graphic',
             ti: '.GraphicType'
-          }]
-      }, {
-        ln: 'AnchorPointType',
-        ps: [{
-            n: 'anchorPointX',
-            rq: true,
-            en: 'AnchorPointX',
+          }, {
+            n: 'initialGap',
+            en: 'InitialGap',
             ti: '.ParameterValueType'
           }, {
-            n: 'anchorPointY',
-            rq: true,
-            en: 'AnchorPointY',
+            n: 'gap',
+            en: 'Gap',
             ti: '.ParameterValueType'
-          }]
-      }, {
-        ln: 'ConcatenateType',
-        bti: '.FunctionType',
-        ps: [{
-            n: 'stringValue',
-            rq: true,
-            col: true,
-            en: 'StringValue',
-            ti: '.ParameterValueType'
-          }]
-      }, {
-        ln: 'FormatDateType',
-        bti: '.FunctionType',
-        ps: [{
-            n: 'dateValue',
-            rq: true,
-            en: 'DateValue',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'pattern',
-            rq: true,
-            en: 'Pattern'
-          }]
-      }, {
-        ln: 'FontType',
-        ps: [{
-            n: 'svgParameter',
-            mno: 0,
-            col: true,
-            en: 'SvgParameter',
-            ti: '.SvgParameterType'
-          }]
-      }, {
-        ln: 'RecodeType',
-        bti: '.FunctionType',
-        ps: [{
-            n: 'lookupValue',
-            rq: true,
-            en: 'LookupValue',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'mapItem',
-            rq: true,
-            col: true,
-            en: 'MapItem',
-            ti: '.MapItemType'
-          }]
-      }, {
-        ln: 'ColorMapType',
-        ps: [{
-            n: 'categorize',
-            rq: true,
-            en: 'Categorize',
-            ti: '.CategorizeType'
-          }, {
-            n: 'interpolate',
-            rq: true,
-            en: 'Interpolate',
-            ti: '.InterpolateType'
-          }]
-      }, {
-        ln: 'SymbolizerType',
-        ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'description',
-            en: 'Description',
-            ti: '.DescriptionType'
-          }, {
-            n: 'baseSymbolizer',
-            en: 'BaseSymbolizer',
-            ti: '.BaseSymbolizerType'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GeometryType',
-        ps: [{
-            n: 'propertyName',
-            rq: true,
-            en: {
-              lp: 'PropertyName',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'Filter_1_1_0.PropertyNameType'
           }]
       }, {
         ln: 'InterpolateType',
@@ -149,6 +89,20 @@ var SE_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'MapItemType',
+        bti: 'Filter_1_1_0.ExpressionType',
+        ps: [{
+            n: 'data',
+            rq: true,
+            en: 'Data',
+            ti: 'Double'
+          }, {
+            n: 'value',
+            rq: true,
+            en: 'Value',
+            ti: '.ParameterValueType'
+          }]
+      }, {
         ln: 'LabelPlacementType',
         ps: [{
             n: 'pointPlacement',
@@ -162,90 +116,199 @@ var SE_1_1_0_Module_Factory = function () {
             ti: '.LinePlacementType'
           }]
       }, {
-        ln: 'GraphicType',
+        ln: 'PolygonSymbolizerType',
+        bti: '.SymbolizerType',
         ps: [{
-            n: 'externalGraphicOrMark',
-            mno: 0,
-            col: true,
-            etis: [{
-                en: 'ExternalGraphic',
-                ti: '.ExternalGraphicType'
-              }, {
-                en: 'Mark',
-                ti: '.MarkType'
-              }],
-            t: 'es'
+            n: 'geometry',
+            en: 'Geometry',
+            ti: '.GeometryType'
           }, {
-            n: 'opacity',
-            en: 'Opacity',
-            ti: '.ParameterValueType'
+            n: 'fill',
+            en: 'Fill',
+            ti: '.FillType'
           }, {
-            n: 'size',
-            en: 'Size',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'rotation',
-            en: 'Rotation',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'anchorPoint',
-            en: 'AnchorPoint',
-            ti: '.AnchorPointType'
+            n: 'stroke',
+            en: 'Stroke',
+            ti: '.StrokeType'
           }, {
             n: 'displacement',
             en: 'Displacement',
             ti: '.DisplacementType'
+          }, {
+            n: 'perpendicularOffset',
+            en: 'PerpendicularOffset',
+            ti: '.ParameterValueType'
           }]
       }, {
-        ln: 'ColorReplacementType',
+        ln: 'PointSymbolizerType',
+        bti: '.SymbolizerType',
         ps: [{
-            n: 'recode',
-            rq: true,
-            en: 'Recode',
-            ti: '.RecodeType'
+            n: 'geometry',
+            en: 'Geometry',
+            ti: '.GeometryType'
+          }, {
+            n: 'graphic',
+            en: 'Graphic',
+            ti: '.GraphicType'
           }]
       }, {
-        ln: 'StrokeType',
+        ln: 'ShadedReliefType',
         ps: [{
-            n: 'graphicFill',
-            rq: true,
-            en: 'GraphicFill',
-            ti: '.GraphicFillType'
+            n: 'brightnessOnly',
+            en: 'BrightnessOnly',
+            ti: 'Boolean'
           }, {
-            n: 'graphicStroke',
+            n: 'reliefFactor',
+            en: 'ReliefFactor',
+            ti: 'Double'
+          }]
+      }, {
+        ln: 'MarkType',
+        ps: [{
+            n: 'wellKnownName',
             rq: true,
-            en: 'GraphicStroke',
-            ti: '.GraphicStrokeType'
+            en: 'WellKnownName'
           }, {
-            n: 'svgParameter',
+            n: 'onlineResource',
+            rq: true,
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'inlineContent',
+            rq: true,
+            en: 'InlineContent',
+            ti: '.InlineContentType'
+          }, {
+            n: 'format',
+            rq: true,
+            en: 'Format'
+          }, {
+            n: 'markIndex',
+            en: 'MarkIndex',
+            ti: 'Integer'
+          }, {
+            n: 'fill',
+            en: 'Fill',
+            ti: '.FillType'
+          }, {
+            n: 'stroke',
+            en: 'Stroke',
+            ti: '.StrokeType'
+          }]
+      }, {
+        ln: 'CoverageStyleType',
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'description',
+            en: 'Description',
+            ti: '.DescriptionType'
+          }, {
+            n: 'coverageName',
+            en: 'CoverageName'
+          }, {
+            n: 'semanticTypeIdentifier',
             mno: 0,
             col: true,
-            en: 'SvgParameter',
-            ti: '.SvgParameterType'
-          }]
-      }, {
-        ln: 'FunctionType',
-        bti: 'Filter_1_1_0.ExpressionType',
-        ps: [{
-            n: 'fallbackValue',
+            en: 'SemanticTypeIdentifier'
+          }, {
+            n: 'ruleOrOnlineResource',
             rq: true,
+            col: true,
+            etis: [{
+                en: 'Rule',
+                ti: '.RuleType'
+              }, {
+                en: 'OnlineResource',
+                ti: '.OnlineResourceType'
+              }],
+            t: 'es'
+          }, {
+            n: 'version',
             an: {
-              lp: 'fallbackValue'
+              lp: 'version'
             },
             t: 'a'
           }]
       }, {
-        ln: 'ParameterValueType',
+        ln: 'FeatureTypeStyleType',
         ps: [{
-            n: 'content',
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'description',
+            en: 'Description',
+            ti: '.DescriptionType'
+          }, {
+            n: 'featureTypeName',
+            en: 'FeatureTypeName',
+            ti: 'QName'
+          }, {
+            n: 'semanticTypeIdentifier',
+            mno: 0,
             col: true,
-            dom: false,
-            en: {
-              lp: 'expression',
-              ns: 'http:\/\/www.opengis.net\/ogc'
+            en: 'SemanticTypeIdentifier'
+          }, {
+            n: 'ruleOrOnlineResource',
+            rq: true,
+            col: true,
+            etis: [{
+                en: 'Rule',
+                ti: '.RuleType'
+              }, {
+                en: 'OnlineResource',
+                ti: '.OnlineResourceType'
+              }],
+            t: 'es'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
             },
-            ti: 'Filter_1_1_0.ExpressionType',
-            t: 'er'
+            t: 'a'
+          }]
+      }, {
+        ln: 'LineSymbolizerType',
+        bti: '.SymbolizerType',
+        ps: [{
+            n: 'geometry',
+            en: 'Geometry',
+            ti: '.GeometryType'
+          }, {
+            n: 'stroke',
+            en: 'Stroke',
+            ti: '.StrokeType'
+          }, {
+            n: 'perpendicularOffset',
+            en: 'PerpendicularOffset',
+            ti: '.ParameterValueType'
+          }]
+      }, {
+        ln: 'ColorMapType',
+        ps: [{
+            n: 'categorize',
+            rq: true,
+            en: 'Categorize',
+            ti: '.CategorizeType'
+          }, {
+            n: 'interpolate',
+            rq: true,
+            en: 'Interpolate',
+            ti: '.InterpolateType'
+          }]
+      }, {
+        ln: 'AnchorPointType',
+        ps: [{
+            n: 'anchorPointX',
+            rq: true,
+            en: 'AnchorPointX',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'anchorPointY',
+            rq: true,
+            en: 'AnchorPointY',
+            ti: '.ParameterValueType'
           }]
       }, {
         ln: 'ExternalGraphicType',
@@ -271,22 +334,6 @@ var SE_1_1_0_Module_Factory = function () {
             ti: '.ColorReplacementType'
           }]
       }, {
-        ln: 'LineSymbolizerType',
-        bti: '.SymbolizerType',
-        ps: [{
-            n: 'geometry',
-            en: 'Geometry',
-            ti: '.GeometryType'
-          }, {
-            n: 'stroke',
-            en: 'Stroke',
-            ti: '.StrokeType'
-          }, {
-            n: 'perpendicularOffset',
-            en: 'PerpendicularOffset',
-            ti: '.ParameterValueType'
-          }]
-      }, {
         ln: 'FillType',
         ps: [{
             n: 'graphicFill',
@@ -300,7 +347,7 @@ var SE_1_1_0_Module_Factory = function () {
             ti: '.SvgParameterType'
           }]
       }, {
-        ln: 'TrimType',
+        ln: 'ChangeCaseType',
         bti: '.FunctionType',
         ps: [{
             n: 'stringValue',
@@ -308,17 +355,199 @@ var SE_1_1_0_Module_Factory = function () {
             en: 'StringValue',
             ti: '.ParameterValueType'
           }, {
-            n: 'stripOffPosition',
+            n: 'direction',
             an: {
-              lp: 'stripOffPosition'
+              lp: 'direction'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'RecodeType',
+        bti: '.FunctionType',
+        ps: [{
+            n: 'lookupValue',
+            rq: true,
+            en: 'LookupValue',
+            ti: '.ParameterValueType'
           }, {
-            n: 'stripOffChar',
+            n: 'mapItem',
+            rq: true,
+            col: true,
+            en: 'MapItem',
+            ti: '.MapItemType'
+          }]
+      }, {
+        ln: 'CategorizeType',
+        bti: '.FunctionType',
+        ps: [{
+            n: 'lookupValue',
+            rq: true,
+            en: 'LookupValue',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'value',
+            rq: true,
+            en: 'Value',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'thresholdAndValue',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'Value',
+                ti: '.ParameterValueType'
+              }, {
+                en: 'Threshold',
+                ti: '.ParameterValueType'
+              }],
+            t: 'ers'
+          }, {
+            n: 'threshholdsBelongTo',
             an: {
-              lp: 'stripOffChar'
+              lp: 'threshholdsBelongTo'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'SvgParameterType',
+        bti: '.ParameterValueType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescriptionType',
+        ps: [{
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }]
+      }, {
+        ln: 'TextSymbolizerType',
+        bti: '.SymbolizerType',
+        ps: [{
+            n: 'geometry',
+            en: 'Geometry',
+            ti: '.GeometryType'
+          }, {
+            n: 'label',
+            en: 'Label',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'font',
+            en: 'Font',
+            ti: '.FontType'
+          }, {
+            n: 'labelPlacement',
+            en: 'LabelPlacement',
+            ti: '.LabelPlacementType'
+          }, {
+            n: 'halo',
+            en: 'Halo',
+            ti: '.HaloType'
+          }, {
+            n: 'fill',
+            en: 'Fill',
+            ti: '.FillType'
+          }]
+      }, {
+        ln: 'NormalizeType'
+      }, {
+        ln: 'ContrastEnhancementType',
+        ps: [{
+            n: 'normalize',
+            rq: true,
+            en: 'Normalize',
+            ti: '.NormalizeType'
+          }, {
+            n: 'histogram',
+            rq: true,
+            en: 'Histogram',
+            ti: '.HistogramType'
+          }, {
+            n: 'gammaValue',
+            en: 'GammaValue',
+            ti: 'Double'
+          }]
+      }, {
+        ln: 'LinePlacementType',
+        ps: [{
+            n: 'perpendicularOffset',
+            en: 'PerpendicularOffset',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'isRepeated',
+            en: 'IsRepeated',
+            ti: 'Boolean'
+          }, {
+            n: 'initialGap',
+            en: 'InitialGap',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'gap',
+            en: 'Gap',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'isAligned',
+            en: 'IsAligned',
+            ti: 'Boolean'
+          }, {
+            n: 'generalizeLine',
+            en: 'GeneralizeLine',
+            ti: 'Boolean'
+          }]
+      }, {
+        ln: 'StringPositionType',
+        bti: '.FunctionType',
+        ps: [{
+            n: 'lookupString',
+            rq: true,
+            en: 'LookupString',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'stringValue',
+            rq: true,
+            en: 'StringValue',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'searchDirection',
+            an: {
+              lp: 'searchDirection'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LegendGraphicType',
+        ps: [{
+            n: 'graphic',
+            rq: true,
+            en: 'Graphic',
+            ti: '.GraphicType'
+          }]
+      }, {
+        ln: 'HistogramType'
+      }, {
+        ln: 'ElseFilterType'
+      }, {
+        ln: 'ParameterValueType',
+        ps: [{
+            n: 'content',
+            col: true,
+            dom: false,
+            en: {
+              lp: 'expression',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'Filter_1_1_0.ExpressionType',
+            t: 'er'
           }]
       }, {
         ln: 'RasterSymbolizerType',
@@ -356,35 +585,17 @@ var SE_1_1_0_Module_Factory = function () {
             ti: '.ImageOutlineType'
           }]
       }, {
-        ln: 'HistogramType'
-      }, {
-        ln: 'MapItemType',
-        bti: 'Filter_1_1_0.ExpressionType',
+        ln: 'ImageOutlineType',
         ps: [{
-            n: 'data',
+            n: 'lineSymbolizer',
             rq: true,
-            en: 'Data',
-            ti: 'Double'
+            en: 'LineSymbolizer',
+            ti: '.LineSymbolizerType'
           }, {
-            n: 'value',
+            n: 'polygonSymbolizer',
             rq: true,
-            en: 'Value',
-            ti: '.ParameterValueType'
-          }]
-      }, {
-        ln: 'ChangeCaseType',
-        bti: '.FunctionType',
-        ps: [{
-            n: 'stringValue',
-            rq: true,
-            en: 'StringValue',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'direction',
-            an: {
-              lp: 'direction'
-            },
-            t: 'a'
+            en: 'PolygonSymbolizer',
+            ti: '.PolygonSymbolizerType'
           }]
       }, {
         ln: 'InterpolationPointType',
@@ -401,21 +612,36 @@ var SE_1_1_0_Module_Factory = function () {
             ti: '.ParameterValueType'
           }]
       }, {
-        ln: 'ContrastEnhancementType',
+        ln: 'FormatDateType',
+        bti: '.FunctionType',
         ps: [{
-            n: 'normalize',
+            n: 'dateValue',
             rq: true,
-            en: 'Normalize',
-            ti: '.NormalizeType'
+            en: 'DateValue',
+            ti: '.ParameterValueType'
           }, {
-            n: 'histogram',
+            n: 'pattern',
             rq: true,
-            en: 'Histogram',
-            ti: '.HistogramType'
+            en: 'Pattern'
+          }]
+      }, {
+        ln: 'ColorReplacementType',
+        ps: [{
+            n: 'recode',
+            rq: true,
+            en: 'Recode',
+            ti: '.RecodeType'
+          }]
+      }, {
+        ln: 'HaloType',
+        ps: [{
+            n: 'radius',
+            en: 'Radius',
+            ti: '.ParameterValueType'
           }, {
-            n: 'gammaValue',
-            en: 'GammaValue',
-            ti: 'Double'
+            n: 'fill',
+            en: 'Fill',
+            ti: '.FillType'
           }]
       }, {
         ln: 'RuleType',
@@ -460,430 +686,6 @@ var SE_1_1_0_Module_Factory = function () {
             en: 'Symbolizer',
             ti: '.SymbolizerType',
             t: 'er'
-          }]
-      }, {
-        ln: 'ElseFilterType'
-      }, {
-        ln: 'CoverageStyleType',
-        ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'description',
-            en: 'Description',
-            ti: '.DescriptionType'
-          }, {
-            n: 'coverageName',
-            en: 'CoverageName'
-          }, {
-            n: 'semanticTypeIdentifier',
-            mno: 0,
-            col: true,
-            en: 'SemanticTypeIdentifier'
-          }, {
-            n: 'ruleOrOnlineResource',
-            rq: true,
-            col: true,
-            etis: [{
-                en: 'Rule',
-                ti: '.RuleType'
-              }, {
-                en: 'OnlineResource',
-                ti: '.OnlineResourceType'
-              }],
-            t: 'es'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'HaloType',
-        ps: [{
-            n: 'radius',
-            en: 'Radius',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'fill',
-            en: 'Fill',
-            ti: '.FillType'
-          }]
-      }, {
-        ln: 'StringLengthType',
-        bti: '.FunctionType',
-        ps: [{
-            n: 'stringValue',
-            rq: true,
-            en: 'StringValue',
-            ti: '.ParameterValueType'
-          }]
-      }, {
-        ln: 'GraphicFillType',
-        ps: [{
-            n: 'graphic',
-            rq: true,
-            en: 'Graphic',
-            ti: '.GraphicType'
-          }]
-      }, {
-        ln: 'CategorizeType',
-        bti: '.FunctionType',
-        ps: [{
-            n: 'lookupValue',
-            rq: true,
-            en: 'LookupValue',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'value',
-            rq: true,
-            en: 'Value',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'thresholdAndValue',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'Threshold',
-                ti: '.ParameterValueType'
-              }, {
-                en: 'Value',
-                ti: '.ParameterValueType'
-              }],
-            t: 'ers'
-          }, {
-            n: 'threshholdsBelongTo',
-            an: {
-              lp: 'threshholdsBelongTo'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'FeatureTypeStyleType',
-        ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'description',
-            en: 'Description',
-            ti: '.DescriptionType'
-          }, {
-            n: 'featureTypeName',
-            en: 'FeatureTypeName',
-            ti: 'QName'
-          }, {
-            n: 'semanticTypeIdentifier',
-            mno: 0,
-            col: true,
-            en: 'SemanticTypeIdentifier'
-          }, {
-            n: 'ruleOrOnlineResource',
-            rq: true,
-            col: true,
-            etis: [{
-                en: 'Rule',
-                ti: '.RuleType'
-              }, {
-                en: 'OnlineResource',
-                ti: '.OnlineResourceType'
-              }],
-            t: 'es'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GraphicStrokeType',
-        ps: [{
-            n: 'graphic',
-            rq: true,
-            en: 'Graphic',
-            ti: '.GraphicType'
-          }, {
-            n: 'initialGap',
-            en: 'InitialGap',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'gap',
-            en: 'Gap',
-            ti: '.ParameterValueType'
-          }]
-      }, {
-        ln: 'BaseSymbolizerType',
-        ps: [{
-            n: 'onlineResource',
-            rq: true,
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }]
-      }, {
-        ln: 'ImageOutlineType',
-        ps: [{
-            n: 'lineSymbolizer',
-            rq: true,
-            en: 'LineSymbolizer',
-            ti: '.LineSymbolizerType'
-          }, {
-            n: 'polygonSymbolizer',
-            rq: true,
-            en: 'PolygonSymbolizer',
-            ti: '.PolygonSymbolizerType'
-          }]
-      }, {
-        ln: 'SubstringType',
-        bti: '.FunctionType',
-        ps: [{
-            n: 'stringValue',
-            rq: true,
-            en: 'StringValue',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'position',
-            en: 'Position',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'length',
-            en: 'Length',
-            ti: '.ParameterValueType'
-          }]
-      }, {
-        ln: 'DescriptionType',
-        ps: [{
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }]
-      }, {
-        ln: 'MarkType',
-        ps: [{
-            n: 'wellKnownName',
-            rq: true,
-            en: 'WellKnownName'
-          }, {
-            n: 'onlineResource',
-            rq: true,
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'inlineContent',
-            rq: true,
-            en: 'InlineContent',
-            ti: '.InlineContentType'
-          }, {
-            n: 'format',
-            rq: true,
-            en: 'Format'
-          }, {
-            n: 'markIndex',
-            en: 'MarkIndex',
-            ti: 'Integer'
-          }, {
-            n: 'fill',
-            en: 'Fill',
-            ti: '.FillType'
-          }, {
-            n: 'stroke',
-            en: 'Stroke',
-            ti: '.StrokeType'
-          }]
-      }, {
-        ln: 'PolygonSymbolizerType',
-        bti: '.SymbolizerType',
-        ps: [{
-            n: 'geometry',
-            en: 'Geometry',
-            ti: '.GeometryType'
-          }, {
-            n: 'fill',
-            en: 'Fill',
-            ti: '.FillType'
-          }, {
-            n: 'stroke',
-            en: 'Stroke',
-            ti: '.StrokeType'
-          }, {
-            n: 'displacement',
-            en: 'Displacement',
-            ti: '.DisplacementType'
-          }, {
-            n: 'perpendicularOffset',
-            en: 'PerpendicularOffset',
-            ti: '.ParameterValueType'
-          }]
-      }, {
-        ln: 'NormalizeType'
-      }, {
-        ln: 'FormatNumberType',
-        bti: '.FunctionType',
-        ps: [{
-            n: 'numericValue',
-            rq: true,
-            en: 'NumericValue',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'pattern',
-            rq: true,
-            en: 'Pattern'
-          }, {
-            n: 'negativePattern',
-            en: 'NegativePattern'
-          }, {
-            n: 'decimalPoint',
-            an: {
-              lp: 'decimalPoint'
-            },
-            t: 'a'
-          }, {
-            n: 'groupingSeparator',
-            an: {
-              lp: 'groupingSeparator'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'StringPositionType',
-        bti: '.FunctionType',
-        ps: [{
-            n: 'lookupString',
-            rq: true,
-            en: 'LookupString',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'stringValue',
-            rq: true,
-            en: 'StringValue',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'searchDirection',
-            an: {
-              lp: 'searchDirection'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PointSymbolizerType',
-        bti: '.SymbolizerType',
-        ps: [{
-            n: 'geometry',
-            en: 'Geometry',
-            ti: '.GeometryType'
-          }, {
-            n: 'graphic',
-            en: 'Graphic',
-            ti: '.GraphicType'
-          }]
-      }, {
-        ln: 'PointPlacementType',
-        ps: [{
-            n: 'anchorPoint',
-            en: 'AnchorPoint',
-            ti: '.AnchorPointType'
-          }, {
-            n: 'displacement',
-            en: 'Displacement',
-            ti: '.DisplacementType'
-          }, {
-            n: 'rotation',
-            en: 'Rotation',
-            ti: '.ParameterValueType'
-          }]
-      }, {
-        ln: 'InlineContentType',
-        ps: [{
-            n: 'content',
-            col: true,
-            dom: false,
-            t: 'ae'
-          }, {
-            n: 'encoding',
-            rq: true,
-            an: {
-              lp: 'encoding'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ShadedReliefType',
-        ps: [{
-            n: 'brightnessOnly',
-            en: 'BrightnessOnly',
-            ti: 'Boolean'
-          }, {
-            n: 'reliefFactor',
-            en: 'ReliefFactor',
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'DisplacementType',
-        ps: [{
-            n: 'displacementX',
-            rq: true,
-            en: 'DisplacementX',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'displacementY',
-            rq: true,
-            en: 'DisplacementY',
-            ti: '.ParameterValueType'
-          }]
-      }, {
-        ln: 'TextSymbolizerType',
-        bti: '.SymbolizerType',
-        ps: [{
-            n: 'geometry',
-            en: 'Geometry',
-            ti: '.GeometryType'
-          }, {
-            n: 'label',
-            en: 'Label',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'font',
-            en: 'Font',
-            ti: '.FontType'
-          }, {
-            n: 'labelPlacement',
-            en: 'LabelPlacement',
-            ti: '.LabelPlacementType'
-          }, {
-            n: 'halo',
-            en: 'Halo',
-            ti: '.HaloType'
-          }, {
-            n: 'fill',
-            en: 'Fill',
-            ti: '.FillType'
-          }]
-      }, {
-        ln: 'ChannelSelectionType',
-        ps: [{
-            n: 'redChannel',
-            rq: true,
-            en: 'RedChannel',
-            ti: '.SelectedChannelType'
-          }, {
-            n: 'greenChannel',
-            rq: true,
-            en: 'GreenChannel',
-            ti: '.SelectedChannelType'
-          }, {
-            n: 'blueChannel',
-            rq: true,
-            en: 'BlueChannel',
-            ti: '.SelectedChannelType'
-          }, {
-            n: 'grayChannel',
-            rq: true,
-            en: 'GrayChannel',
-            ti: '.SelectedChannelType'
           }]
       }, {
         ln: 'OnlineResourceType',
@@ -941,329 +743,287 @@ var SE_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LinePlacementType',
+        ln: 'GeometryType',
         ps: [{
-            n: 'perpendicularOffset',
-            en: 'PerpendicularOffset',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'isRepeated',
-            en: 'IsRepeated',
-            ti: 'Boolean'
-          }, {
-            n: 'initialGap',
-            en: 'InitialGap',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'gap',
-            en: 'Gap',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'isAligned',
-            en: 'IsAligned',
-            ti: 'Boolean'
-          }, {
-            n: 'generalizeLine',
-            en: 'GeneralizeLine',
-            ti: 'Boolean'
+            n: 'propertyName',
+            rq: true,
+            en: {
+              lp: 'PropertyName',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'Filter_1_1_0.PropertyNameType'
           }]
       }, {
-        ln: 'SvgParameterType',
-        bti: '.ParameterValueType',
+        ln: 'ConcatenateType',
+        bti: '.FunctionType',
         ps: [{
-            n: 'name',
+            n: 'stringValue',
+            rq: true,
+            col: true,
+            en: 'StringValue',
+            ti: '.ParameterValueType'
+          }]
+      }, {
+        ln: 'DisplacementType',
+        ps: [{
+            n: 'displacementX',
+            rq: true,
+            en: 'DisplacementX',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'displacementY',
+            rq: true,
+            en: 'DisplacementY',
+            ti: '.ParameterValueType'
+          }]
+      }, {
+        ln: 'InlineContentType',
+        ps: [{
+            n: 'content',
+            col: true,
+            dom: false,
+            t: 'ae'
+          }, {
+            n: 'encoding',
             rq: true,
             an: {
-              lp: 'name'
+              lp: 'encoding'
             },
             t: 'a'
           }]
       }, {
-        ln: 'SelectedChannelType',
+        ln: 'StringLengthType',
+        bti: '.FunctionType',
         ps: [{
-            n: 'sourceChannelName',
+            n: 'stringValue',
             rq: true,
-            en: 'SourceChannelName'
-          }, {
-            n: 'contrastEnhancement',
-            en: 'ContrastEnhancement',
-            ti: '.ContrastEnhancementType'
+            en: 'StringValue',
+            ti: '.ParameterValueType'
           }]
       }, {
-        t: 'enum',
-        ln: 'MethodType',
-        vs: ['numeric', 'color']
+        ln: 'FontType',
+        ps: [{
+            n: 'svgParameter',
+            mno: 0,
+            col: true,
+            en: 'SvgParameter',
+            ti: '.SvgParameterType'
+          }]
       }, {
-        t: 'enum',
-        ln: 'VersionType',
-        vs: ['1.1.0']
+        ln: 'PointPlacementType',
+        ps: [{
+            n: 'anchorPoint',
+            en: 'AnchorPoint',
+            ti: '.AnchorPointType'
+          }, {
+            n: 'displacement',
+            en: 'Displacement',
+            ti: '.DisplacementType'
+          }, {
+            n: 'rotation',
+            en: 'Rotation',
+            ti: '.ParameterValueType'
+          }]
+      }, {
+        ln: 'SubstringType',
+        bti: '.FunctionType',
+        ps: [{
+            n: 'stringValue',
+            rq: true,
+            en: 'StringValue',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'position',
+            en: 'Position',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'length',
+            en: 'Length',
+            ti: '.ParameterValueType'
+          }]
+      }, {
+        ln: 'GraphicType',
+        ps: [{
+            n: 'externalGraphicOrMark',
+            mno: 0,
+            col: true,
+            etis: [{
+                en: 'ExternalGraphic',
+                ti: '.ExternalGraphicType'
+              }, {
+                en: 'Mark',
+                ti: '.MarkType'
+              }],
+            t: 'es'
+          }, {
+            n: 'opacity',
+            en: 'Opacity',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'size',
+            en: 'Size',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'rotation',
+            en: 'Rotation',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'anchorPoint',
+            en: 'AnchorPoint',
+            ti: '.AnchorPointType'
+          }, {
+            n: 'displacement',
+            en: 'Displacement',
+            ti: '.DisplacementType'
+          }]
+      }, {
+        ln: 'FunctionType',
+        bti: 'Filter_1_1_0.ExpressionType',
+        ps: [{
+            n: 'fallbackValue',
+            rq: true,
+            an: {
+              lp: 'fallbackValue'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TrimType',
+        bti: '.FunctionType',
+        ps: [{
+            n: 'stringValue',
+            rq: true,
+            en: 'StringValue',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'stripOffPosition',
+            an: {
+              lp: 'stripOffPosition'
+            },
+            t: 'a'
+          }, {
+            n: 'stripOffChar',
+            an: {
+              lp: 'stripOffChar'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'StrokeType',
+        ps: [{
+            n: 'graphicFill',
+            rq: true,
+            en: 'GraphicFill',
+            ti: '.GraphicFillType'
+          }, {
+            n: 'graphicStroke',
+            rq: true,
+            en: 'GraphicStroke',
+            ti: '.GraphicStrokeType'
+          }, {
+            n: 'svgParameter',
+            mno: 0,
+            col: true,
+            en: 'SvgParameter',
+            ti: '.SvgParameterType'
+          }]
+      }, {
+        ln: 'FormatNumberType',
+        bti: '.FunctionType',
+        ps: [{
+            n: 'numericValue',
+            rq: true,
+            en: 'NumericValue',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'pattern',
+            rq: true,
+            en: 'Pattern'
+          }, {
+            n: 'negativePattern',
+            en: 'NegativePattern'
+          }, {
+            n: 'decimalPoint',
+            an: {
+              lp: 'decimalPoint'
+            },
+            t: 'a'
+          }, {
+            n: 'groupingSeparator',
+            an: {
+              lp: 'groupingSeparator'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SymbolizerType',
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'description',
+            en: 'Description',
+            ti: '.DescriptionType'
+          }, {
+            n: 'baseSymbolizer',
+            en: 'BaseSymbolizer',
+            ti: '.BaseSymbolizerType'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GraphicFillType',
+        ps: [{
+            n: 'graphic',
+            rq: true,
+            en: 'Graphic',
+            ti: '.GraphicType'
+          }]
       }, {
         t: 'enum',
         ln: 'SearchDirectionType',
         vs: ['frontToBack', 'backToFront']
       }, {
         t: 'enum',
-        ln: 'ModeType',
-        vs: ['linear', 'cosine', 'cubic']
-      }, {
-        t: 'enum',
-        ln: 'DirectionType',
-        vs: ['toUpper', 'toLower']
-      }, {
-        t: 'enum',
         ln: 'StripOffPositionType',
         vs: ['leading', 'trailing', 'both']
       }, {
         t: 'enum',
+        ln: 'MethodType',
+        vs: ['numeric', 'color']
+      }, {
+        t: 'enum',
+        ln: 'ModeType',
+        vs: ['linear', 'cosine', 'cubic']
+      }, {
+        t: 'enum',
         ln: 'ThreshholdsBelongToType',
         vs: ['succeeding', 'preceding']
+      }, {
+        t: 'enum',
+        ln: 'VersionType',
+        vs: ['1.1.0']
+      }, {
+        t: 'enum',
+        ln: 'DirectionType',
+        vs: ['toUpper', 'toLower']
       }],
     eis: [{
-        en: 'PerpendicularOffset',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'Description',
-        ti: '.DescriptionType'
-      }, {
-        en: 'Graphic',
-        ti: '.GraphicType'
-      }, {
-        en: 'MaxScaleDenominator',
-        ti: 'Double'
-      }, {
-        en: 'SvgParameter',
-        ti: '.SvgParameterType'
-      }, {
-        en: 'Gap',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'FormatNumber',
-        ti: '.FormatNumberType',
-        sh: 'Function'
-      }, {
-        en: 'WellKnownName'
-      }, {
-        en: 'Font',
-        ti: '.FontType'
-      }, {
-        en: 'Rotation',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'RedChannel',
-        ti: '.SelectedChannelType'
-      }, {
-        en: 'GrayChannel',
-        ti: '.SelectedChannelType'
-      }, {
-        en: 'StringLength',
-        ti: '.StringLengthType',
-        sh: 'Function'
-      }, {
-        en: 'MarkIndex',
-        ti: 'Integer'
-      }, {
-        en: 'IsRepeated',
-        ti: 'Boolean'
-      }, {
-        en: 'Normalize',
-        ti: '.NormalizeType'
-      }, {
-        en: 'MinScaleDenominator',
-        ti: 'Double'
-      }, {
-        en: 'Opacity',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'Length',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'LookupString',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'Name'
-      }, {
-        en: 'MapItem',
-        ti: '.MapItemType',
-        sh: {
-          lp: 'expression',
-          ns: 'http:\/\/www.opengis.net\/ogc'
-        }
-      }, {
-        en: 'GraphicStroke',
-        ti: '.GraphicStrokeType'
-      }, {
-        en: 'IsAligned',
-        ti: 'Boolean'
-      }, {
-        en: 'SemanticTypeIdentifier'
-      }, {
-        en: 'DisplacementY',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'Data',
-        ti: 'Double'
-      }, {
-        en: 'Format'
-      }, {
-        en: 'ExternalGraphic',
-        ti: '.ExternalGraphicType'
-      }, {
-        en: 'PointSymbolizer',
-        ti: '.PointSymbolizerType',
-        sh: 'Symbolizer'
-      }, {
-        en: 'AnchorPoint',
-        ti: '.AnchorPointType'
-      }, {
-        en: 'FeatureTypeStyle',
-        ti: '.FeatureTypeStyleType'
-      }, {
-        en: 'LegendGraphic',
-        ti: '.LegendGraphicType'
-      }, {
-        en: 'Function',
-        ti: '.FunctionType',
-        sh: {
-          lp: 'expression',
-          ns: 'http:\/\/www.opengis.net\/ogc'
-        }
-      }, {
-        en: 'InitialGap',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'ChangeCase',
-        ti: '.ChangeCaseType',
-        sh: 'Function'
-      }, {
-        en: 'Size',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'OnlineResource',
-        ti: '.OnlineResourceType'
-      }, {
-        en: 'AnchorPointX',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'LineSymbolizer',
-        ti: '.LineSymbolizerType',
-        sh: 'Symbolizer'
-      }, {
-        en: 'FormatDate',
-        ti: '.FormatDateType',
-        sh: 'Function'
-      }, {
-        en: 'LabelPlacement',
-        ti: '.LabelPlacementType'
-      }, {
-        en: 'Halo',
-        ti: '.HaloType'
-      }, {
-        en: 'Histogram',
-        ti: '.HistogramType'
-      }, {
-        en: 'Substring',
-        ti: '.SubstringType',
-        sh: 'Function'
-      }, {
-        en: 'NegativePattern'
-      }, {
-        en: 'RasterSymbolizer',
-        ti: '.RasterSymbolizerType',
-        sh: 'Symbolizer'
-      }, {
-        en: 'GammaValue',
-        ti: 'Double'
-      }, {
-        en: 'Interpolate',
-        ti: '.InterpolateType',
-        sh: 'Function'
-      }, {
-        en: 'StringValue',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'ContrastEnhancement',
-        ti: '.ContrastEnhancementType'
-      }, {
-        en: 'BlueChannel',
-        ti: '.SelectedChannelType'
-      }, {
-        en: 'LinePlacement',
-        ti: '.LinePlacementType'
-      }, {
-        en: 'ElseFilter',
-        ti: '.ElseFilterType'
-      }, {
-        en: 'Concatenate',
-        ti: '.ConcatenateType',
-        sh: 'Function'
-      }, {
-        en: 'Threshold',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'ImageOutline',
-        ti: '.ImageOutlineType'
-      }, {
-        en: 'PolygonSymbolizer',
-        ti: '.PolygonSymbolizerType',
-        sh: 'Symbolizer'
-      }, {
-        en: 'Pattern'
-      }, {
-        en: 'Geometry',
-        ti: '.GeometryType'
-      }, {
-        en: 'ColorMap',
-        ti: '.ColorMapType'
-      }, {
-        en: 'DateValue',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'GreenChannel',
-        ti: '.SelectedChannelType'
-      }, {
-        en: 'NumericValue',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'InlineContent',
-        ti: '.InlineContentType'
-      }, {
-        en: 'CoverageStyle',
-        ti: '.CoverageStyleType'
-      }, {
-        en: 'Radius',
+        en: 'Label',
         ti: '.ParameterValueType'
       }, {
         en: 'ShadedRelief',
         ti: '.ShadedReliefType'
-      }, {
-        en: 'CoverageName'
-      }, {
-        en: 'Value',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'Recode',
-        ti: '.RecodeType',
-        sh: 'Function'
-      }, {
-        en: 'BrightnessOnly',
-        ti: 'Boolean'
-      }, {
-        en: 'StringPosition',
-        ti: '.StringPositionType',
-        sh: 'Function'
-      }, {
-        en: 'Categorize',
-        ti: '.CategorizeType',
-        sh: 'Function'
-      }, {
-        en: 'Position',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'GeneralizeLine',
-        ti: 'Boolean'
-      }, {
-        en: 'ColorReplacement',
-        ti: '.ColorReplacementType'
       }, {
         en: 'AnchorPointY',
         ti: '.ParameterValueType'
@@ -1271,8 +1031,56 @@ var SE_1_1_0_Module_Factory = function () {
         en: 'PointPlacement',
         ti: '.PointPlacementType'
       }, {
-        en: 'Stroke',
-        ti: '.StrokeType'
+        en: 'Mark',
+        ti: '.MarkType'
+      }, {
+        en: 'DateValue',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'Normalize',
+        ti: '.NormalizeType'
+      }, {
+        en: 'Geometry',
+        ti: '.GeometryType'
+      }, {
+        en: 'ReliefFactor',
+        ti: 'Double'
+      }, {
+        en: 'ChangeCase',
+        ti: '.ChangeCaseType',
+        sh: 'Function'
+      }, {
+        en: 'StringLength',
+        ti: '.StringLengthType',
+        sh: 'Function'
+      }, {
+        en: 'PerpendicularOffset',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'Interpolate',
+        ti: '.InterpolateType',
+        sh: 'Function'
+      }, {
+        en: 'NumericValue',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'ImageOutline',
+        ti: '.ImageOutlineType'
+      }, {
+        en: 'Trim',
+        ti: '.TrimType',
+        sh: 'Function'
+      }, {
+        en: 'Rule',
+        ti: '.RuleType'
+      }, {
+        en: 'ColorReplacement',
+        ti: '.ColorReplacementType'
+      }, {
+        en: 'SourceChannelName'
+      }, {
+        en: 'IsRepeated',
+        ti: 'Boolean'
       }, {
         en: 'InterpolationPoint',
         ti: '.InterpolationPointType',
@@ -1281,56 +1089,248 @@ var SE_1_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/ogc'
         }
       }, {
-        en: 'Label',
+        en: 'StringPosition',
+        ti: '.StringPositionType',
+        sh: 'Function'
+      }, {
+        en: 'DisplacementY',
         ti: '.ParameterValueType'
       }, {
-        en: 'Mark',
-        ti: '.MarkType'
+        en: 'Description',
+        ti: '.DescriptionType'
+      }, {
+        en: 'BaseSymbolizer',
+        ti: '.BaseSymbolizerType'
+      }, {
+        en: 'Position',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'MaxScaleDenominator',
+        ti: 'Double'
+      }, {
+        en: 'NegativePattern'
+      }, {
+        en: 'Size',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'AnchorPointX',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'DisplacementX',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'Gap',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'Substring',
+        ti: '.SubstringType',
+        sh: 'Function'
+      }, {
+        en: 'ElseFilter',
+        ti: '.ElseFilterType'
+      }, {
+        en: 'IsAligned',
+        ti: 'Boolean'
+      }, {
+        en: 'GammaValue',
+        ti: 'Double'
+      }, {
+        en: 'FormatDate',
+        ti: '.FormatDateType',
+        sh: 'Function'
+      }, {
+        en: 'ExternalGraphic',
+        ti: '.ExternalGraphicType'
+      }, {
+        en: 'Graphic',
+        ti: '.GraphicType'
+      }, {
+        en: 'OnlineResource',
+        ti: '.OnlineResourceType'
+      }, {
+        en: 'GreenChannel',
+        ti: '.SelectedChannelType'
+      }, {
+        en: 'Halo',
+        ti: '.HaloType'
+      }, {
+        en: 'Displacement',
+        ti: '.DisplacementType'
+      }, {
+        en: 'RedChannel',
+        ti: '.SelectedChannelType'
+      }, {
+        en: 'LookupString',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'LegendGraphic',
+        ti: '.LegendGraphicType'
+      }, {
+        en: 'FeatureTypeStyle',
+        ti: '.FeatureTypeStyleType'
+      }, {
+        en: 'AnchorPoint',
+        ti: '.AnchorPointType'
+      }, {
+        en: 'Font',
+        ti: '.FontType'
+      }, {
+        en: 'RasterSymbolizer',
+        ti: '.RasterSymbolizerType',
+        sh: 'Symbolizer'
+      }, {
+        en: 'LineSymbolizer',
+        ti: '.LineSymbolizerType',
+        sh: 'Symbolizer'
+      }, {
+        en: 'InitialGap',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'ContrastEnhancement',
+        ti: '.ContrastEnhancementType'
       }, {
         en: 'FeatureTypeName',
         ti: 'QName'
+      }, {
+        en: 'Threshold',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'GrayChannel',
+        ti: '.SelectedChannelType'
+      }, {
+        en: 'LookupValue',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'Format'
+      }, {
+        en: 'CoverageName'
+      }, {
+        en: 'GraphicStroke',
+        ti: '.GraphicStrokeType'
+      }, {
+        en: 'WellKnownName'
+      }, {
+        en: 'LabelPlacement',
+        ti: '.LabelPlacementType'
+      }, {
+        en: 'ColorMap',
+        ti: '.ColorMapType'
+      }, {
+        en: 'Categorize',
+        ti: '.CategorizeType',
+        sh: 'Function'
+      }, {
+        en: 'Recode',
+        ti: '.RecodeType',
+        sh: 'Function'
+      }, {
+        en: 'Pattern'
+      }, {
+        en: 'Radius',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'Opacity',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'Value',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'MapItem',
+        ti: '.MapItemType',
+        sh: {
+          lp: 'expression',
+          ns: 'http:\/\/www.opengis.net\/ogc'
+        }
+      }, {
+        en: 'Length',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'FormatNumber',
+        ti: '.FormatNumberType',
+        sh: 'Function'
+      }, {
+        en: 'GraphicFill',
+        ti: '.GraphicFillType'
+      }, {
+        en: 'Fill',
+        ti: '.FillType'
+      }, {
+        en: 'Histogram',
+        ti: '.HistogramType'
+      }, {
+        en: 'CoverageStyle',
+        ti: '.CoverageStyleType'
       }, {
         en: 'TextSymbolizer',
         ti: '.TextSymbolizerType',
         sh: 'Symbolizer'
       }, {
-        en: 'ReliefFactor',
+        en: 'BlueChannel',
+        ti: '.SelectedChannelType'
+      }, {
+        en: 'Data',
         ti: 'Double'
       }, {
-        en: 'Displacement',
-        ti: '.DisplacementType'
+        en: 'BrightnessOnly',
+        ti: 'Boolean'
       }, {
         en: 'Symbolizer',
         ti: '.SymbolizerType'
       }, {
-        en: 'SourceChannelName'
+        en: 'Stroke',
+        ti: '.StrokeType'
       }, {
-        en: 'Rule',
-        ti: '.RuleType'
+        en: 'MarkIndex',
+        ti: 'Integer'
+      }, {
+        en: 'Name'
+      }, {
+        en: 'StringValue',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'Function',
+        ti: '.FunctionType',
+        sh: {
+          lp: 'expression',
+          ns: 'http:\/\/www.opengis.net\/ogc'
+        }
+      }, {
+        en: 'PointSymbolizer',
+        ti: '.PointSymbolizerType',
+        sh: 'Symbolizer'
+      }, {
+        en: 'SemanticTypeIdentifier'
+      }, {
+        en: 'Rotation',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'PolygonSymbolizer',
+        ti: '.PolygonSymbolizerType',
+        sh: 'Symbolizer'
+      }, {
+        en: 'MinScaleDenominator',
+        ti: 'Double'
       }, {
         en: 'ChannelSelection',
         ti: '.ChannelSelectionType'
       }, {
-        en: 'OverlapBehavior'
-      }, {
-        en: 'GraphicFill',
-        ti: '.GraphicFillType'
-      }, {
-        en: 'DisplacementX',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'Fill',
-        ti: '.FillType'
-      }, {
-        en: 'Trim',
-        ti: '.TrimType',
+        en: 'Concatenate',
+        ti: '.ConcatenateType',
         sh: 'Function'
       }, {
-        en: 'LookupValue',
-        ti: '.ParameterValueType'
+        en: 'InlineContent',
+        ti: '.InlineContentType'
       }, {
-        en: 'BaseSymbolizer',
-        ti: '.BaseSymbolizerType'
+        en: 'GeneralizeLine',
+        ti: 'Boolean'
+      }, {
+        en: 'SvgParameter',
+        ti: '.SvgParameterType'
+      }, {
+        en: 'OverlapBehavior'
+      }, {
+        en: 'LinePlacement',
+        ti: '.LinePlacementType'
       }]
   };
   return {
