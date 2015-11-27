@@ -2,7 +2,7 @@ var CityGML_CityFuntiture_1_0_Module_Factory = function () {
   var CityGML_CityFuntiture_1_0 = {
     n: 'CityGML_CityFuntiture_1_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/cityfurniture\/1.0',
-    deps: ['GML_3_1_1', 'CityGML_1_0'],
+    deps: ['CityGML_1_0', 'GML_3_1_1'],
     tis: [{
         ln: 'CityFurnitureType',
         bti: 'CityGML_1_0.AbstractCityObjectType',

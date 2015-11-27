@@ -60,12 +60,44 @@ var OMEO_OPT_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'EarthObservationResultType',
+        bti: 'OMEO_EOP_2_0.EarthObservationResultType',
+        ps: [{
+            n: 'cloudCoverPercentage',
+            ti: 'GML_3_2_1.MeasureType'
+          }, {
+            n: 'cloudCoverPercentageAssessmentConfidence',
+            ti: 'GML_3_2_1.MeasureType'
+          }, {
+            n: 'cloudCoverPercentageQuotationMode',
+            ti: 'OMEO_EOP_2_0.EarthObservationResultPropertyType'
+          }, {
+            n: 'snowCoverPercentage',
+            ti: 'GML_3_2_1.MeasureType'
+          }, {
+            n: 'snowCoverPercentageAssessmentConfidence',
+            ti: 'GML_3_2_1.MeasureType'
+          }, {
+            n: 'snowCoverPercentageQuotationMode',
+            ti: 'OMEO_EOP_2_0.EarthObservationResultPropertyType'
+          }]
+      }, {
+        ln: 'EarthObservationType',
+        bti: 'OMEO_EOP_2_0.EarthObservationType'
+      }, {
         ln: 'EarthObservationPropertyType',
         ps: [{
             n: 'earthObservation',
             rq: true,
             en: 'EarthObservation',
             ti: '.EarthObservationType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }, {
             n: 'nilReason',
             ti: {
@@ -106,39 +138,7 @@ var OMEO_OPT_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
           }]
-      }, {
-        ln: 'EarthObservationResultType',
-        bti: 'OMEO_EOP_2_0.EarthObservationResultType',
-        ps: [{
-            n: 'cloudCoverPercentage',
-            ti: 'GML_3_2_1.MeasureType'
-          }, {
-            n: 'cloudCoverPercentageAssessmentConfidence',
-            ti: 'GML_3_2_1.MeasureType'
-          }, {
-            n: 'cloudCoverPercentageQuotationMode',
-            ti: 'OMEO_EOP_2_0.EarthObservationResultPropertyType'
-          }, {
-            n: 'snowCoverPercentage',
-            ti: 'GML_3_2_1.MeasureType'
-          }, {
-            n: 'snowCoverPercentageAssessmentConfidence',
-            ti: 'GML_3_2_1.MeasureType'
-          }, {
-            n: 'snowCoverPercentageQuotationMode',
-            ti: 'OMEO_EOP_2_0.EarthObservationResultPropertyType'
-          }]
-      }, {
-        ln: 'EarthObservationType',
-        bti: 'OMEO_EOP_2_0.EarthObservationType'
       }, {
         t: 'enum',
         ln: 'PercentageCoverQuotationModeValueEnumerationType',

@@ -2,6 +2,142 @@
 {
     "id":"http://www.opengis.net/sar/2.0#",
     "definitions":{
+        "EarthObservationType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationType",
+                "namespaceURI":"http://www.opengis.net/sar/2.0"
+            }
+        },
+        "AcquisitionType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/AcquisitionType"
+                },
+                {
+                    "type":"object",
+                    "title":"AcquisitionType",
+                    "properties":{
+                        "polarisationMode":{
+                            "title":"polarisationMode",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"polarisationMode",
+                                "namespaceURI":"http://www.opengis.net/sar/2.0"
+                            }
+                        },
+                        "polarisationChannels":{
+                            "title":"polarisationChannels",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"polarisationChannels",
+                                "namespaceURI":"http://www.opengis.net/sar/2.0"
+                            }
+                        },
+                        "antennaLookDirection":{
+                            "title":"antennaLookDirection",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"antennaLookDirection",
+                                "namespaceURI":"http://www.opengis.net/sar/2.0"
+                            }
+                        },
+                        "minimumIncidenceAngle":{
+                            "title":"minimumIncidenceAngle",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/AngleType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"minimumIncidenceAngle",
+                                "namespaceURI":"http://www.opengis.net/sar/2.0"
+                            }
+                        },
+                        "maximumIncidenceAngle":{
+                            "title":"maximumIncidenceAngle",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/AngleType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"maximumIncidenceAngle",
+                                "namespaceURI":"http://www.opengis.net/sar/2.0"
+                            }
+                        },
+                        "incidenceAngleVariation":{
+                            "title":"incidenceAngleVariation",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/AngleType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"incidenceAngleVariation",
+                                "namespaceURI":"http://www.opengis.net/sar/2.0"
+                            }
+                        },
+                        "dopplerFrequency":{
+                            "title":"dopplerFrequency",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"dopplerFrequency",
+                                "namespaceURI":"http://www.opengis.net/sar/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AcquisitionType",
+                "namespaceURI":"http://www.opengis.net/sar/2.0"
+            },
+            "propertiesOrder":[
+                "polarisationMode",
+                "polarisationChannels",
+                "antennaLookDirection",
+                "minimumIncidenceAngle",
+                "maximumIncidenceAngle",
+                "incidenceAngleVariation",
+                "dopplerFrequency"
+            ]
+        },
         "AcquisitionPropertyType":{
             "type":"object",
             "title":"AcquisitionPropertyType",
@@ -57,24 +193,6 @@
                 "acquisition",
                 "owns"
             ]
-        },
-        "EarthObservationType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationType",
-                "namespaceURI":"http://www.opengis.net/sar/2.0"
-            }
         },
         "EarthObservationPropertyType":{
             "type":"object",
@@ -261,124 +379,6 @@
                 "actuate"
             ]
         },
-        "AcquisitionType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/AcquisitionType"
-                },
-                {
-                    "type":"object",
-                    "title":"AcquisitionType",
-                    "properties":{
-                        "polarisationMode":{
-                            "title":"polarisationMode",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"polarisationMode",
-                                "namespaceURI":"http://www.opengis.net/sar/2.0"
-                            }
-                        },
-                        "polarisationChannels":{
-                            "title":"polarisationChannels",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"polarisationChannels",
-                                "namespaceURI":"http://www.opengis.net/sar/2.0"
-                            }
-                        },
-                        "antennaLookDirection":{
-                            "title":"antennaLookDirection",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"antennaLookDirection",
-                                "namespaceURI":"http://www.opengis.net/sar/2.0"
-                            }
-                        },
-                        "minimumIncidenceAngle":{
-                            "title":"minimumIncidenceAngle",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/AngleType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"minimumIncidenceAngle",
-                                "namespaceURI":"http://www.opengis.net/sar/2.0"
-                            }
-                        },
-                        "maximumIncidenceAngle":{
-                            "title":"maximumIncidenceAngle",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/AngleType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"maximumIncidenceAngle",
-                                "namespaceURI":"http://www.opengis.net/sar/2.0"
-                            }
-                        },
-                        "incidenceAngleVariation":{
-                            "title":"incidenceAngleVariation",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/AngleType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"incidenceAngleVariation",
-                                "namespaceURI":"http://www.opengis.net/sar/2.0"
-                            }
-                        },
-                        "dopplerFrequency":{
-                            "title":"dopplerFrequency",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"dopplerFrequency",
-                                "namespaceURI":"http://www.opengis.net/sar/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AcquisitionType",
-                "namespaceURI":"http://www.opengis.net/sar/2.0"
-            },
-            "propertiesOrder":[
-                "polarisationMode",
-                "polarisationChannels",
-                "antennaLookDirection",
-                "minimumIncidenceAngle",
-                "maximumIncidenceAngle",
-                "incidenceAngleVariation",
-                "dopplerFrequency"
-            ]
-        },
         "PolarisationChannelsValueEnumerationType":{
             "allOf":[
                 {
@@ -391,18 +391,6 @@
                 "namespaceURI":"http://www.opengis.net/sar/2.0"
             }
         },
-        "PolarisationModeValueEnumerationType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"PolarisationModeValueEnumerationType",
-                "namespaceURI":"http://www.opengis.net/sar/2.0"
-            }
-        },
         "AntennaLookDirectionValueEnumerationType":{
             "allOf":[
                 {
@@ -412,6 +400,18 @@
             "typeType":"enumInfo",
             "typeName":{
                 "localPart":"AntennaLookDirectionValueEnumerationType",
+                "namespaceURI":"http://www.opengis.net/sar/2.0"
+            }
+        },
+        "PolarisationModeValueEnumerationType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"PolarisationModeValueEnumerationType",
                 "namespaceURI":"http://www.opengis.net/sar/2.0"
             }
         }

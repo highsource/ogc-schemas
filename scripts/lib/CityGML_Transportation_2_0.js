@@ -3,14 +3,14 @@ var CityGML_Transportation_2_0_Module_Factory = function () {
     n: 'CityGML_Transportation_2_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/transportation\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_1_1', 'CityGML_2_0'],
+    deps: ['XLink_1_0', 'CityGML_2_0', 'GML_3_1_1'],
     tis: [{
-        ln: 'TrafficAreaPropertyType',
+        ln: 'AuxiliaryTrafficAreaPropertyType',
         ps: [{
-            n: 'trafficArea',
+            n: 'auxiliaryTrafficArea',
             rq: true,
-            en: 'TrafficArea',
-            ti: '.TrafficAreaType'
+            en: 'AuxiliaryTrafficArea',
+            ti: '.AuxiliaryTrafficAreaType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -44,13 +44,13 @@ var CityGML_Transportation_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'RoadType',
-        bti: '.TransportationComplexType',
+        ln: 'AbstractTransportationObjectType',
+        bti: 'CityGML_2_0.AbstractCityObjectType',
         ps: [{
-            n: 'genericApplicationPropertyOfRoad',
+            n: 'genericApplicationPropertyOfTransportationObject',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfRoad',
+            en: '_GenericApplicationPropertyOfTransportationObject',
             ti: 'AnyType'
           }]
       }, {
@@ -64,7 +64,7 @@ var CityGML_Transportation_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'TrafficAreaType',
+        ln: 'AuxiliaryTrafficAreaType',
         bti: '.AbstractTransportationObjectType',
         ps: [{
             n: 'clazz',
@@ -93,10 +93,20 @@ var CityGML_Transportation_2_0_Module_Factory = function () {
             n: 'lod4MultiSurface',
             ti: 'GML_3_1_1.MultiSurfacePropertyType'
           }, {
-            n: 'genericApplicationPropertyOfTrafficArea',
+            n: 'genericApplicationPropertyOfAuxiliaryTrafficArea',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfTrafficArea',
+            en: '_GenericApplicationPropertyOfAuxiliaryTrafficArea',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'RoadType',
+        bti: '.TransportationComplexType',
+        ps: [{
+            n: 'genericApplicationPropertyOfRoad',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfRoad',
             ti: 'AnyType'
           }]
       }, {
@@ -107,6 +117,16 @@ var CityGML_Transportation_2_0_Module_Factory = function () {
             mno: 0,
             col: true,
             en: '_GenericApplicationPropertyOfTrack',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'SquareType',
+        bti: '.TransportationComplexType',
+        ps: [{
+            n: 'genericApplicationPropertyOfSquare',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfSquare',
             ti: 'AnyType'
           }]
       }, {
@@ -161,12 +181,12 @@ var CityGML_Transportation_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'AuxiliaryTrafficAreaPropertyType',
+        ln: 'TrafficAreaPropertyType',
         ps: [{
-            n: 'auxiliaryTrafficArea',
+            n: 'trafficArea',
             rq: true,
-            en: 'AuxiliaryTrafficArea',
-            ti: '.AuxiliaryTrafficAreaType'
+            en: 'TrafficArea',
+            ti: '.TrafficAreaType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -200,27 +220,7 @@ var CityGML_Transportation_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SquareType',
-        bti: '.TransportationComplexType',
-        ps: [{
-            n: 'genericApplicationPropertyOfSquare',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfSquare',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AbstractTransportationObjectType',
-        bti: 'CityGML_2_0.AbstractCityObjectType',
-        ps: [{
-            n: 'genericApplicationPropertyOfTransportationObject',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfTransportationObject',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AuxiliaryTrafficAreaType',
+        ln: 'TrafficAreaType',
         bti: '.AbstractTransportationObjectType',
         ps: [{
             n: 'clazz',
@@ -249,30 +249,40 @@ var CityGML_Transportation_2_0_Module_Factory = function () {
             n: 'lod4MultiSurface',
             ti: 'GML_3_1_1.MultiSurfacePropertyType'
           }, {
-            n: 'genericApplicationPropertyOfAuxiliaryTrafficArea',
+            n: 'genericApplicationPropertyOfTrafficArea',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfAuxiliaryTrafficArea',
+            en: '_GenericApplicationPropertyOfTrafficArea',
             ti: 'AnyType'
           }]
       }],
     eis: [{
-        en: '_GenericApplicationPropertyOfRailway',
-        ti: 'AnyType'
+        en: 'AuxiliaryTrafficArea',
+        ti: '.AuxiliaryTrafficAreaType',
+        sh: '_TransportationObject'
       }, {
         en: '_GenericApplicationPropertyOfTrack',
-        ti: 'AnyType'
-      }, {
-        en: 'Railway',
-        ti: '.RailwayType',
-        sh: 'TransportationComplex'
-      }, {
-        en: '_GenericApplicationPropertyOfTransportationObject',
         ti: 'AnyType'
       }, {
         en: 'TrafficArea',
         ti: '.TrafficAreaType',
         sh: '_TransportationObject'
+      }, {
+        en: 'TransportationComplex',
+        ti: '.TransportationComplexType',
+        sh: '_TransportationObject'
+      }, {
+        en: '_GenericApplicationPropertyOfRailway',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfTransportationObject',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfTransportationComplex',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfTrafficArea',
+        ti: 'AnyType'
       }, {
         en: '_GenericApplicationPropertyOfAuxiliaryTrafficArea',
         ti: 'AnyType'
@@ -281,25 +291,19 @@ var CityGML_Transportation_2_0_Module_Factory = function () {
         ti: '.SquareType',
         sh: 'TransportationComplex'
       }, {
-        en: '_GenericApplicationPropertyOfTransportationComplex',
-        ti: 'AnyType'
-      }, {
         en: '_GenericApplicationPropertyOfRoad',
         ti: 'AnyType'
       }, {
-        en: 'TransportationComplex',
-        ti: '.TransportationComplexType',
-        sh: '_TransportationObject'
+        en: 'Railway',
+        ti: '.RailwayType',
+        sh: 'TransportationComplex'
       }, {
-        en: '_GenericApplicationPropertyOfTrafficArea',
-        ti: 'AnyType'
+        en: 'Road',
+        ti: '.RoadType',
+        sh: 'TransportationComplex'
       }, {
         en: '_GenericApplicationPropertyOfSquare',
         ti: 'AnyType'
-      }, {
-        en: 'AuxiliaryTrafficArea',
-        ti: '.AuxiliaryTrafficAreaType',
-        sh: '_TransportationObject'
       }, {
         en: 'Track',
         ti: '.TrackType',
@@ -311,10 +315,6 @@ var CityGML_Transportation_2_0_Module_Factory = function () {
           lp: '_CityObject',
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
-      }, {
-        en: 'Road',
-        ti: '.RoadType',
-        sh: 'TransportationComplex'
       }]
   };
   return {

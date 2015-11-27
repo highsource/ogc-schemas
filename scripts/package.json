@@ -1,6 +1,6 @@
 {
 	"name": "ogc-schemas",
-	"version": "2.5.2-SNAPSHOT",
+	"version": "2.5.3",
 	"description": "Jsonix XML-JSON mappings for OGC Schemas.",
 	"keywords": [
 		"json",

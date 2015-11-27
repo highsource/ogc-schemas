@@ -3,9 +3,9 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
     n: 'CityGML_CityObjectGroup_2_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/cityobjectgroup\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_1_1', 'CityGML_2_0'],
+    deps: ['CityGML_2_0', 'GML_3_1_1', 'XLink_1_0'],
     tis: [{
-        ln: 'CityObjectGroupMemberType',
+        ln: 'CityObjectGroupParentType',
         ps: [{
             n: 'cityObject',
             rq: true,
@@ -17,12 +17,6 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
             },
             ti: 'CityGML_2_0.AbstractCityObjectType',
             t: 'er'
-          }, {
-            n: 'cityObjectGroupMemberRole',
-            an: {
-              lp: 'role'
-            },
-            t: 'a'
           }, {
             n: 'remoteSchema',
             an: {
@@ -56,7 +50,7 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CityObjectGroupParentType',
+        ln: 'CityObjectGroupMemberType',
         ps: [{
             n: 'cityObject',
             rq: true,
@@ -68,6 +62,12 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
             },
             ti: 'CityGML_2_0.AbstractCityObjectType',
             t: 'er'
+          }, {
+            n: 'cityObjectGroupMemberRole',
+            an: {
+              lp: 'role'
+            },
+            t: 'a'
           }, {
             n: 'remoteSchema',
             an: {
@@ -137,15 +137,15 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
           }]
       }],
     eis: [{
+        en: '_GenericApplicationPropertyOfCityObjectGroup',
+        ti: 'AnyType'
+      }, {
         en: 'CityObjectGroup',
         ti: '.CityObjectGroupType',
         sh: {
           lp: '_CityObject',
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
-      }, {
-        en: '_GenericApplicationPropertyOfCityObjectGroup',
-        ti: 'AnyType'
       }]
   };
   return {

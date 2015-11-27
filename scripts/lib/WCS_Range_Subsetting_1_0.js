@@ -12,15 +12,6 @@ var WCS_Range_Subsetting_1_0_Module_Factory = function () {
             ti: '.RangeItemType'
           }]
       }, {
-        ln: 'RangeIntervalType',
-        ps: [{
-            n: 'startComponent',
-            rq: true
-          }, {
-            n: 'endComponent',
-            rq: true
-          }]
-      }, {
         ln: 'RangeItemType',
         ps: [{
             n: 'rangeComponent',
@@ -31,6 +22,15 @@ var WCS_Range_Subsetting_1_0_Module_Factory = function () {
             rq: true,
             en: 'RangeInterval',
             ti: '.RangeIntervalType'
+          }]
+      }, {
+        ln: 'RangeIntervalType',
+        ps: [{
+            n: 'startComponent',
+            rq: true
+          }, {
+            n: 'endComponent',
+            rq: true
           }]
       }],
     eis: [{

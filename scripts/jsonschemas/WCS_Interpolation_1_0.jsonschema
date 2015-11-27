@@ -2,54 +2,6 @@
 {
     "id":"http://www.opengis.net/WCS_service-extension_interpolation/1.0#",
     "definitions":{
-        "InterpolationType":{
-            "type":"object",
-            "title":"InterpolationType",
-            "required":[
-                "globalInterpolation"
-            ],
-            "properties":{
-                "globalInterpolation":{
-                    "title":"globalInterpolation",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"globalInterpolation",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
-                    }
-                },
-                "interpolationPerAxis":{
-                    "title":"interpolationPerAxis",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InterpolationPerAxisType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"InterpolationPerAxis",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InterpolationType",
-                "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
-            },
-            "propertiesOrder":[
-                "globalInterpolation",
-                "interpolationPerAxis"
-            ]
-        },
         "InterpolationMetadataType":{
             "type":"object",
             "title":"InterpolationMetadataType",
@@ -124,6 +76,54 @@
             "propertiesOrder":[
                 "axis",
                 "interpolationMethod"
+            ]
+        },
+        "InterpolationType":{
+            "type":"object",
+            "title":"InterpolationType",
+            "required":[
+                "globalInterpolation"
+            ],
+            "properties":{
+                "globalInterpolation":{
+                    "title":"globalInterpolation",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"globalInterpolation",
+                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                    }
+                },
+                "interpolationPerAxis":{
+                    "title":"interpolationPerAxis",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InterpolationPerAxisType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"InterpolationPerAxis",
+                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InterpolationType",
+                "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+            },
+            "propertiesOrder":[
+                "globalInterpolation",
+                "interpolationPerAxis"
             ]
         }
     },

@@ -2,96 +2,6 @@
 {
     "id":"http://www.opengis.net/citygml/waterbody/2.0#",
     "definitions":{
-        "WaterSurfaceType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractWaterBoundarySurfaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"WaterSurfaceType",
-                    "properties":{
-                        "waterLevel":{
-                            "title":"waterLevel",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"waterLevel",
-                                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfWaterSurface":{
-                            "title":"genericApplicationPropertyOfWaterSurface",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfWaterSurface",
-                                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"WaterSurfaceType",
-                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
-            },
-            "propertiesOrder":[
-                "waterLevel",
-                "genericApplicationPropertyOfWaterSurface"
-            ]
-        },
-        "WaterClosureSurfaceType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractWaterBoundarySurfaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"WaterClosureSurfaceType",
-                    "properties":{
-                        "genericApplicationPropertyOfWaterClosureSurface":{
-                            "title":"genericApplicationPropertyOfWaterClosureSurface",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfWaterClosureSurface",
-                                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"WaterClosureSurfaceType",
-                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
-            },
-            "propertiesOrder":[
-                "genericApplicationPropertyOfWaterClosureSurface"
-            ]
-        },
         "WaterBodyType":{
             "allOf":[
                 {
@@ -310,6 +220,96 @@
                 "genericApplicationPropertyOfWaterBody"
             ]
         },
+        "WaterGroundSurfaceType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractWaterBoundarySurfaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"WaterGroundSurfaceType",
+                    "properties":{
+                        "genericApplicationPropertyOfWaterGroundSurface":{
+                            "title":"genericApplicationPropertyOfWaterGroundSurface",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfWaterGroundSurface",
+                                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"WaterGroundSurfaceType",
+                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
+            },
+            "propertiesOrder":[
+                "genericApplicationPropertyOfWaterGroundSurface"
+            ]
+        },
+        "WaterSurfaceType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractWaterBoundarySurfaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"WaterSurfaceType",
+                    "properties":{
+                        "waterLevel":{
+                            "title":"waterLevel",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"waterLevel",
+                                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfWaterSurface":{
+                            "title":"genericApplicationPropertyOfWaterSurface",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfWaterSurface",
+                                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"WaterSurfaceType",
+                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
+            },
+            "propertiesOrder":[
+                "waterLevel",
+                "genericApplicationPropertyOfWaterSurface"
+            ]
+        },
         "BoundedByWaterSurfacePropertyType":{
             "type":"object",
             "title":"BoundedByWaterSurfacePropertyType",
@@ -464,44 +464,6 @@
                 "actuate"
             ]
         },
-        "AbstractWaterObjectType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/citygml/2.0#/definitions/AbstractCityObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractWaterObjectType",
-                    "properties":{
-                        "genericApplicationPropertyOfWaterObject":{
-                            "title":"genericApplicationPropertyOfWaterObject",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfWaterObject",
-                                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractWaterObjectType",
-                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
-            },
-            "propertiesOrder":[
-                "genericApplicationPropertyOfWaterObject"
-            ]
-        },
         "AbstractWaterBoundarySurfaceType":{
             "allOf":[
                 {
@@ -582,17 +544,17 @@
                 "genericApplicationPropertyOfWaterBoundarySurface"
             ]
         },
-        "WaterGroundSurfaceType":{
+        "AbstractWaterObjectType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractWaterBoundarySurfaceType"
+                    "$ref":"http://www.opengis.net/citygml/2.0#/definitions/AbstractCityObjectType"
                 },
                 {
                     "type":"object",
-                    "title":"WaterGroundSurfaceType",
+                    "title":"AbstractWaterObjectType",
                     "properties":{
-                        "genericApplicationPropertyOfWaterGroundSurface":{
-                            "title":"genericApplicationPropertyOfWaterGroundSurface",
+                        "genericApplicationPropertyOfWaterObject":{
+                            "title":"genericApplicationPropertyOfWaterObject",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -604,7 +566,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfWaterGroundSurface",
+                                "localPart":"_GenericApplicationPropertyOfWaterObject",
                                 "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
                             }
                         }
@@ -613,15 +575,68 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"WaterGroundSurfaceType",
+                "localPart":"AbstractWaterObjectType",
                 "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
             },
             "propertiesOrder":[
-                "genericApplicationPropertyOfWaterGroundSurface"
+                "genericApplicationPropertyOfWaterObject"
+            ]
+        },
+        "WaterClosureSurfaceType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractWaterBoundarySurfaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"WaterClosureSurfaceType",
+                    "properties":{
+                        "genericApplicationPropertyOfWaterClosureSurface":{
+                            "title":"genericApplicationPropertyOfWaterClosureSurface",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfWaterClosureSurface",
+                                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"WaterClosureSurfaceType",
+                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
+            },
+            "propertiesOrder":[
+                "genericApplicationPropertyOfWaterClosureSurface"
             ]
         }
     },
     "anyOf":[
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractWaterObjectType"
+                }
+            },
+            "elementName":{
+                "localPart":"_WaterObject",
+                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
+            }
+        },
         {
             "type":"object",
             "properties":{
@@ -634,6 +649,51 @@
             },
             "elementName":{
                 "localPart":"_GenericApplicationPropertyOfWaterBody",
+                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/WaterSurfaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"WaterSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfWaterClosureSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/WaterGroundSurfaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"WaterGroundSurface",
                 "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
             }
         },
@@ -663,6 +723,21 @@
                 }
             },
             "elementName":{
+                "localPart":"_GenericApplicationPropertyOfWaterSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
                 "localPart":"_GenericApplicationPropertyOfWaterBoundarySurface",
                 "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
             }
@@ -674,26 +749,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/AbstractWaterObjectType"
+                    "$ref":"#/definitions/WaterClosureSurfaceType"
                 }
             },
             "elementName":{
-                "localPart":"_WaterObject",
-                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/WaterGroundSurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"WaterGroundSurface",
+                "localPart":"WaterClosureSurface",
                 "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
             }
         },
@@ -734,71 +794,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfWaterSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/WaterClosureSurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"WaterClosureSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/WaterSurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"WaterSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
                     "$ref":"#/definitions/WaterBodyType"
                 }
             },
             "elementName":{
                 "localPart":"WaterBody",
-                "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfWaterClosureSurface",
                 "namespaceURI":"http://www.opengis.net/citygml/waterbody/2.0"
             }
         }
