@@ -44,6 +44,7 @@ Supports the following schemas:
 * `GML_3_2_0`
 * `GML_3_2_1`
 * `GMLCOV_1_0`
+* `GMLCOV_GeoTIFF_1_0`
 * `SMIL_2_0`
 * `SMIL_2_0_Language`
 * `IC_2_0`

@@ -14,6 +14,7 @@
 * gml/3.2.0
 * gml/3.2.1
 * gmlcov/1.0
+* gmlcov/geotiff/1.0
 * ic/2.0
 * ic/2.1
 * indoorgml/1.0
@@ -83,7 +84,6 @@
 * eosps/2.0
 * gml/1.0.0
 * gml/3.3.0
-* gmlcov/geotiff/1.0
 * gmljp2/2.0
 * ImageCRSs/1.1.0
 * omx/1.0.0

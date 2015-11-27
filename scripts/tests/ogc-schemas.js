@@ -7,6 +7,7 @@ module.exports =
 		"Filter" : require('./Filter/Filter.js'),
 		"GML" : require('./GML/GML.js'),
 		"GMLCOV" : require('./GMLCOV/GMLCOV.js'),
+		"GMLCOV_GeoTIFF" : require('./GMLCOV_GeoTIFF/GMLCOV_GeoTIFF.js'),
 		"IndoorGML" : require('./IndoorGML/IndoorGML.js'),
 		"ISO19139" : require('./ISO19139/ISO19139.js'),
 		"ISO19139_2" : require('./ISO19139_2/ISO19139_2.js'),

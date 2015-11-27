@@ -29,6 +29,8 @@
 
 		<dependency><artifactId>gmlcov-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
+		<dependency><artifactId>gmlcov-geotiff-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+
 		<dependency><artifactId>indoorgml-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
 		<dependency><artifactId>iso19139-v_20070417</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>

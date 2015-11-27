@@ -29,6 +29,7 @@
                 "Filter", "Filter Encoding",
                 "GML",
                 "GMLCOV",
+                "GMLCOV GeoTIFF",
                 "GML Application Schema for Coverages",
 		"IC",
 		"IndoorGML",
