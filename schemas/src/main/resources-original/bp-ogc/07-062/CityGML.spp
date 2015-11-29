@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<Folder FolderName="CityGML_0.4.0">
+		<Folder FolderName="3.1.1">
+			<File FilePath="3.1.1\readme.txt" HomeFolder="Yes"/>
+			<Folder FolderName="base">
+				<File FilePath="3.1.1\base\basicTypes.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\coordinateOperations.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\coordinateReferenceSystems.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\coordinateSystems.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\coverage.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\dataQuality.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\datums.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\defaultStyle.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\dictionary.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\direction.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\dynamicFeature.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\feature.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\geometryAggregates.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\geometryBasic0d1d.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\geometryBasic2d.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\geometryComplexes.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\geometryPrimitives.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\gml.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\gmlBase.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\grids.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\measures.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\observation.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\ReadMe.txt" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\referenceSystems.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\temporal.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\temporalReferenceSystems.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\temporalTopology.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\topology.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\units.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\base\valueObjects.xsd" HomeFolder="Yes"/>
+			</Folder>
+			<Folder FolderName="smil">
+				<File FilePath="3.1.1\smil\smil20-language.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\smil\smil20.xsd" HomeFolder="Yes"/>
+				<File FilePath="3.1.1\smil\xml-mod.xsd" HomeFolder="Yes"/>
+			</Folder>
+			<Folder FolderName="xlink">
+				<File FilePath="3.1.1\xlink\xlinks.xsd" HomeFolder="Yes"/>
+			</Folder>
+		</Folder>
+		<Folder FolderName="Codelists">
+			<File FilePath="Codelists\CityGML_ExternalCodeLists.xml" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="Examples">
+			<File FilePath="Examples\GenericObjects.xml" HomeFolder="Yes"/>
+			<File FilePath="Examples\Groups.xml" HomeFolder="Yes"/>
+			<File FilePath="Examples\SimpleBuildings.xml" HomeFolder="Yes"/>
+			<File FilePath="Examples\Appearance.xml" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="NoiseADE">
+			<File FilePath="NoiseADE\building_example.xml" HomeFolder="Yes"/>
+			<File FilePath="NoiseADE\cityfurniture_example.xml" HomeFolder="Yes"/>
+			<File FilePath="NoiseADE\CityGML-NoiseADE-0-5-0.xsd" HomeFolder="Yes"/>
+			<File FilePath="NoiseADE\railway_example.xml" HomeFolder="Yes"/>
+			<File FilePath="NoiseADE\road_example.xml" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="xAL">
+			<File FilePath="xAL\xAL.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<File FilePath="CityGML.xsd" HomeFolder="Yes"/>
+		<File FilePath="history.txt" HomeFolder="Yes"/>
+		<File FilePath="readme.txt" HomeFolder="Yes"/>
+	</Folder>
+</Project>

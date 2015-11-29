@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <meta>
+        <filters directoryPatterns="" filePatterns=""
+            positiveFilePatterns=""/>
+    </meta>
+    <projectTree name="CityGML.xpr">
+        <folder name="CityGML_0.4.0">
+            <folder name="3.1.1">
+                <folder name="base">
+                    <file name="3.1.1/base/ReadMe.txt"/>
+                    <file name="3.1.1/base/basicTypes.xsd"/>
+                    <file name="3.1.1/base/coordinateOperations.xsd"/>
+                    <file
+                        name="3.1.1/base/coordinateReferenceSystems.xsd"/>
+                    <file name="3.1.1/base/coordinateSystems.xsd"/>
+                    <file name="3.1.1/base/coverage.xsd"/>
+                    <file name="3.1.1/base/dataQuality.xsd"/>
+                    <file name="3.1.1/base/datums.xsd"/>
+                    <file name="3.1.1/base/defaultStyle.xsd"/>
+                    <file name="3.1.1/base/dictionary.xsd"/>
+                    <file name="3.1.1/base/direction.xsd"/>
+                    <file name="3.1.1/base/dynamicFeature.xsd"/>
+                    <file name="3.1.1/base/feature.xsd"/>
+                    <file name="3.1.1/base/geometryAggregates.xsd"/>
+                    <file name="3.1.1/base/geometryBasic0d1d.xsd"/>
+                    <file name="3.1.1/base/geometryBasic2d.xsd"/>
+                    <file name="3.1.1/base/geometryComplexes.xsd"/>
+                    <file name="3.1.1/base/geometryPrimitives.xsd"/>
+                    <file name="3.1.1/base/gml.xsd"/>
+                    <file name="3.1.1/base/gmlBase.xsd"/>
+                    <file name="3.1.1/base/grids.xsd"/>
+                    <file name="3.1.1/base/measures.xsd"/>
+                    <file name="3.1.1/base/observation.xsd"/>
+                    <file name="3.1.1/base/referenceSystems.xsd"/>
+                    <file name="3.1.1/base/temporal.xsd"/>
+                    <file name="3.1.1/base/temporalReferenceSystems.xsd"/>
+                    <file name="3.1.1/base/temporalTopology.xsd"/>
+                    <file name="3.1.1/base/topology.xsd"/>
+                    <file name="3.1.1/base/units.xsd"/>
+                    <file name="3.1.1/base/valueObjects.xsd"/>
+                </folder>
+                <folder name="smil">
+                    <file name="3.1.1/smil/smil20-language.xsd"/>
+                    <file name="3.1.1/smil/smil20.xsd"/>
+                    <file name="3.1.1/smil/xml-mod.xsd"/>
+                </folder>
+                <folder name="xlink"/>
+                <file name="3.1.1/readme.txt"/>
+            </folder>
+            <folder name="Codelists">
+                <file name="Codelists/CityGML_ExternalCodeLists.xml"/>
+            </folder>
+            <folder name="Examples">
+                <file name="Examples/Appearance.xml"/>
+                <file name="Examples/GenericObjects.xml"/>
+                <file name="Examples/Groups.xml"/>
+                <file name="Examples/SimpleBuildings.xml"/>
+            </folder>
+            <folder name="NoiseADE">
+                <file name="NoiseADE/CityGML-NoiseADE-0-5-0.xsd"/>
+                <file name="NoiseADE/building_example.xml"/>
+                <file name="NoiseADE/cityfurniture_example.xml"/>
+                <file name="NoiseADE/railway_example.xml"/>
+                <file name="NoiseADE/road_example.xml"/>
+            </folder>
+            <folder name="xAL">
+                <file name="xAL/xAL.xsd"/>
+            </folder>
+            <file name="CityGML.xsd"/>
+            <file name="history.txt"/>
+            <file name="readme.txt"/>
+        </folder>
+    </projectTree>
+</project>

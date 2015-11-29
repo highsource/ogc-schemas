@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roseo:OrderedProducts xsi:schemaLocation="http://www.opengis.net/roseo/1.0 ../roseo.xsd" xmlns:oseo="http://www.opengis.net/oseo/1.0" xmlns:roseo="http://www.opengis.net/roseo/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<roseo:URL>
+		<oseo:itemId>item_0001</oseo:itemId>
+		<oseo:productId>
+			<oseo:identifier>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS/EN1-05121921114570-3322.XI</oseo:identifier>
+			<oseo:collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS</oseo:collectionId>
+		</oseo:productId>
+		<oseo:itemAddress>
+			<oseo:ResourceAddress>
+				<oseo:URL>http://roseo.example.com/ROSEO/1.0.0/product/aaaaa1</oseo:URL>
+			</oseo:ResourceAddress>
+		</oseo:itemAddress>
+		<oseo:expirationDate>2014-12-17T09:30:47Z</oseo:expirationDate>
+	</roseo:URL>
+	<roseo:URL>
+		<oseo:itemId>item_0002</oseo:itemId>
+		<oseo:productId>
+			<oseo:identifier>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS/EN1-05122021114570-3322.XI</oseo:identifier>
+			<oseo:collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS</oseo:collectionId>
+		</oseo:productId>
+		<oseo:itemAddress>
+			<oseo:ResourceAddress>
+				<oseo:URL>http://roseo.example.com/ROSEO/1.0.0/product/aaaaa2</oseo:URL>
+			</oseo:ResourceAddress>
+		</oseo:itemAddress>
+		<oseo:expirationDate>2014-12-17T09:30:47Z</oseo:expirationDate>
+	</roseo:URL>
+	<roseo:URL>
+		<oseo:itemId>item_0003</oseo:itemId>
+		<oseo:productId>
+			<oseo:identifier>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS/EN1-05122121114570-3322.XI</oseo:identifier>
+			<oseo:collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS</oseo:collectionId>
+		</oseo:productId>
+		<oseo:itemAddress>
+			<oseo:ResourceAddress>
+				<oseo:URL>http://roseo.example.com/ROSEO/1.0.0/product/aaaaa3</oseo:URL>
+			</oseo:ResourceAddress>
+		</oseo:itemAddress>
+		<oseo:expirationDate>2014-12-17T09:30:47Z</oseo:expirationDate>
+	</roseo:URL>
+</roseo:OrderedProducts>

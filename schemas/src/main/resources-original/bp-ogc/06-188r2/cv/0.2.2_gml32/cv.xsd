@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:cv="http://www.opengis.net/cv/0.2/gml32"
+	targetNamespace="http://www.opengis.net/cv/0.2/gml32"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0.2.2">
+	<xs:annotation>
+		<xs:documentation>All-components schema for cv</xs:documentation>
+	</xs:annotation>
+	<!--========================-->
+	<xs:include
+		schemaLocation="./compactDiscreteCoverage.xsd"/>
+	<xs:include
+		schemaLocation="./xmlData.xsd"/>
+	<!--========================-->
+	<xs:group
+		name="XMLRecord">
+		<xs:annotation>
+			<xs:documentation>Convenience group that bundles all the soft-typed XML-encoded aggregates and coverages into a choice group</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:group
+				ref="cv:XMLData"/>
+			<xs:element
+				ref="cv:CV_DiscreteCoverage"/>
+		</xs:choice>
+	</xs:group>
+	<!-- ============== -->
+</xs:schema>

@@ -1,0 +1,60 @@
+<roseo:Order xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/oseo/1.0" xmlns:roseo="http://www.opengis.net/roseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.opengis.net/roseo/1.0 ../roseo.xsd">
+	<orderReference>example_0001</orderReference>
+	<orderRemark>example</orderRemark>
+	<option>
+		<ParameterData>
+			<encoding>XMLEncoding</encoding>
+			<values xmlns:ns="http://www.opengis.net/oseo/1.0/dataset">
+				<ns:ProcessingLevel>GRD</ns:ProcessingLevel>
+				<ns:Resolution>MR</ns:Resolution>
+				<ns:Swath>CROSS_POL</ns:Swath>
+				<ns:Format>SAFE</ns:Format>
+			</values>
+		</ParameterData>
+	</option>
+	<deliveryOptions>
+		<onlineDataAccess>
+			<protocol>https</protocol>
+		</onlineDataAccess>
+	</deliveryOptions>
+	<orderType>PRODUCT_ORDER</orderType>
+	<roseo:orderItem>
+		<itemId>item_0001</itemId>
+		<productOrderOptionsId>S1_SAR_EW_DUAL_POL GRD</productOrderOptionsId>
+		<orderItemRemark>First product</orderItemRemark>
+		<payment>
+			<paymentMethod>quota</paymentMethod>
+			<orderAccount>project_10000</orderAccount>
+		</payment>
+		<productId>
+			<identifier>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.S1-14121921114570-3322.XI</identifier>
+			<collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.S1_SAR_EW_DUAL_POL</collectionId>
+		</productId>
+	</roseo:orderItem>
+	<roseo:orderItem>
+		<itemId>item_0002</itemId>
+		<productOrderOptionsId>S1_SAR_EW_DUAL_POL GRD</productOrderOptionsId>
+		<orderItemRemark>Second product</orderItemRemark>
+		<payment>
+			<paymentMethod>quota</paymentMethod>
+			<orderAccount>project_10000</orderAccount>
+		</payment>
+		<productId>
+			<identifier>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.S3-14122021114570-3322.XI</identifier>
+			<collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.S1_SAR_EW_DUAL_POL</collectionId>
+		</productId>
+	</roseo:orderItem>
+	<roseo:orderItem>
+		<itemId>item_0003</itemId>
+		<productOrderOptionsId>S1_SAR_EW_DUAL_POL GRD</productOrderOptionsId>
+		<orderItemRemark>Third product</orderItemRemark>
+		<payment>
+			<paymentMethod>quota</paymentMethod>
+			<orderAccount>project_10000</orderAccount>
+		</payment>
+		<productId>
+			<identifier>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.S3-14122121114570-3322.XI</identifier>
+			<collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.S1_SAR_EW_DUAL_POL</collectionId>
+		</productId>
+	</roseo:orderItem>
+</roseo:Order>

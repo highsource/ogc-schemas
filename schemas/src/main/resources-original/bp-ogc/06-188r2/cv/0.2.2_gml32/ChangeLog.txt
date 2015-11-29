@@ -1,0 +1,8 @@
+2008-08-22
+
+GML 3.2 implementation of Discrete Coverages schema - Simon Cox
+
+1. Changed target namespace to http://www.opengis.net/cv/0.2/gml32 in all documents
+2. Change GML dependency to <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/> in all documents
+3. Change SWE Common dependency to <xs:import namespace="http://www.opengis.net/swe/1.0/gml32" schemaLocation="../../sweCommon/1.0.1_gml32/swe.xsd"/> in all documents
+4. Replace local EX_Extent with gmd:EX_Extent

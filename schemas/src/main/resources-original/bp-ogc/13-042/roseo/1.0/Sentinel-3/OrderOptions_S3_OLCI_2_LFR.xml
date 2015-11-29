@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roseo:OrderOptions xsi:schemaLocation="http://www.opengis.net/roseo/1.0 ../roseo.xsd" xmlns:oseo="http://www.opengis.net/oseo/1.0" xmlns:roseo="http://www.opengis.net/roseo/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<roseo:OrderOptionGroup>
+		<oseo:productOrderOptionsId>S3_OLCI_2_LFR</oseo:productOrderOptionsId>
+		<oseo:orderType>PRODUCT_ORDER</oseo:orderType>
+		<oseo:option>
+			<swe:DataArray optional="true" updatable="false">
+				<swe:elementCount/>
+				<swe:elementType name="mdf">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>OGVI</swe:value>
+								<swe:value>OGVI+rc_ogvi</swe:value>
+								<swe:value>OTCI</swe:value>
+								<swe:value>IWV</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:elementType>
+			</swe:DataArray>
+			<oseo:grouping>Subsetting Option</oseo:grouping>
+		</oseo:option>
+		<oseo:option>
+			<swe:DataArray optional="true" updatable="false">
+				<swe:elementCount/>
+				<swe:elementType name="adf">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>timeCoordinates</swe:value>
+								<swe:value>geoCoordinates</swe:value>
+								<swe:value>tie_geometries</swe:value>
+								<swe:value>tie_meteo</swe:value>
+								<swe:value>instrumentData</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:elementType>
+			</swe:DataArray>
+			<oseo:grouping>Subsetting Option</oseo:grouping>
+		</oseo:option>
+		<oseo:productDeliveryOptions>
+			<oseo:onlineDataAccess>
+				<oseo:protocol>https</oseo:protocol>
+			</oseo:onlineDataAccess>
+		</oseo:productDeliveryOptions>
+		<roseo:downloadURL>http://some.roseo.server/ROSEO/1.0.0/options/S3_OLCI_2_LFR/osdd</roseo:downloadURL>
+	</roseo:OrderOptionGroup>
+</roseo:OrderOptions>

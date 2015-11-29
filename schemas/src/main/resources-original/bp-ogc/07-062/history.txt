@@ -1,0 +1,71 @@
+History of Changes and Additions to the CityGML schema
+<!-- History: 9/9/04: adoption to GML 3.1-->
+<!-- History: 9/9/04: TexturedSurfaces, Material and SimpleTextures added -->
+<!-- History: 9/9/04: Tins and Grids added -->
+<!-- History: 30/9/04: Attribute Group added to BuildingPropertyType restriction-->
+<!-- History: 30/9/04: enumeration values added to BuildingFunctionType-->
+<!-- History: 30/9/04: BuildingPartPropertyType: Type changed from _AbstractBuilding to BuildingPart -->
+<!-- History: 14/11/04: Type of Element ZipCode (Address) changed to string -->
+<!-- History: 14/11/04: Element TextureType added to SimpleTexture -->
+<!-- History: 14/11/04: ReliefFeatureType completed (extent, structurelines, mass points) -->
+<!-- History: 14/11/04: Texture coordinates: type changed from gml:DirectPositionListType  to gml:doubleList -->
+<!-- History: 24/03/05: Subelement ambientIntensity added to MaterialType (compatibility to X3D) -->
+<!-- History: 24/03/05: Typo apperaranceProperty in TexturedSurfaceType corrected -->
+<!-- History: 24/03/05: appearanceProperty in TexturedSurface changed (no impact on xml-files) -->
+<!-- History: 24/03/05: Color definition more compact, Color now is List of three double between 0 and 1, separated by spaces (this change will not yet be effective) -->
+<!-- History: 24/04/05: Types  'RoofType', 'BuildingFunction' and 'BuildingInstallationFunction' generalized by using GML's dictionary concept -->
+<!-- History: 24/04/05: Property for representing the geometry of buildings, which are not topologically clean solids, added -->
+<!-- History: 24/04/05: LoD3 and LoD4 added -->
+<!-- History: 01/06/05: Modifications to comply with UML diagram: Elements of _AbstractBuildingType or Room, which refer to features, changed: LoD removed (lod2HasOutside, lod2ClassifiedSurface) -->
+<!-- History: 01/06/05: Modifications to comply with UML diagram: lod3SurfaceProperty, lod4SurfaceProperty added to _BoundarySurfaceType  -->
+<!-- History: 01/06/05: Modifications to comply with UML diagram: opening added to _BoundarySurfaceType  -->
+<!-- History: 01/06/05: Modifications to comply with UML diagram: lod3GeometryProperty and lod4GeometryProperty added to BuildingInstallationType  -->
+<!-- History: 22/09/05: Transportation model added, as specified in the 23rd Meeting of the SIG 3D modeling working group, August 22nd, 2005  -->
+<!-- History: 22/09/05: Groups of CityObjects added (23rd Meeting of the SIG 3D modeling working group, August 22nd, 2005)  -->
+<!-- History: 22/12/05: Substitution group of CityModel changed to gml:_FeatureCollection  -->
+<!-- History: 22/12/05: Water- and vegetation model added, as well as generic objects/attributes and furnitures (Meeting of the SIG 3D modeling working group, December 9th, 2005  -->
+<!-- History: 22/12/05: Attribute LoD number added to ReliefFeature and ReliefComponent  -->
+<!-- History: 22/12/05: cityModelMember added to collection CityModel. This will replace the specialized siteMember,lod0TerrainMember... in the next versions-->
+<!-- History: 06/01/06: Element names storeyHeightsUnderground/storeysUnderground and changed to storeyHeightsBelowground/storeysBelowground-->
+<!-- History: 06/01/13: GML Version changed from 3.1.0 to 3.1.1. schemaLocation="GML-3.1.0/base/gml.xsd" replaced by  schemaLocation="3.1.1/base/gml.xsd"-->
+<!-- History: 06/01/13: Substitution group of Elevation changed to gml:Quantity. This was necessary to comply with version 3.1.1-->
+<!-- History: 06/01/28: Changes to fix errors: restrictions replaced by extensions. Sequence of Elements in CityModel has changed: description before name-->
+<!-- History: 06/02/15: Names "Opening" and "OpeningType" changed to "_Opening" and "_OpeningType"-->
+<!-- History: 06/02/15: lod4ImplicitRepresentationProperty added to BuildingFurnitures-->
+<!-- History: 06/02/15: FloorSurface replaced by GroundSurface and InnerFloorSurface replaced by FloorSurface-->
+<!-- History: 06/02/22: Implicit Geometry added to Generic City Object-->
+<!-- History: 06/02/22: GenericCityObject: Attribute "type" replaced by "function" and "class"-->
+<!-- History: 06/02/22: MimeType added to Implicit Geometry -->
+<!-- History: 06/02/22: Implicit Geometry and Terrain Intersection Curve added to GenericCityObject -->
+<!-- History: 06/04/03: xAL Schema for addresses added, address type in building and door changed to  xAL:AddressDetails-->
+<!-- History: 06/04/03: Address: Type of referencePoint changed to MultiPoint, multiplicity to 0..1-->
+<!-- History: 06/04/03: BuildingInstallation: Multiplicity of LoDXGeometry to _Geometry changed to 0..1-->
+<!-- History: 06/04/03: _AbstractBuilding: Multiplicity of LoDXSolidGeometry changed to 0..1-->
+<!-- History: 06/04/03: _AbstractBuilding: Relation LoDXSurfaceGeometry deleted (subsumed by LoDXMultiSurfaceGeometry-->
+<!-- History: 06/04/03: _AbstractBuilding: Relation Names  LoDXCurveGeometry changed to LoDXMultiCurveGeometry, Type to MultiCurvePropertyType, Multiplicity to 0..1-->
+<!-- History: 06/04/03: _AbstractBuilding: Relation  LoDXTerrainIntersection: type changed to MultiCurvePropertyType, Multiplicity to 0..1-->
+<!-- History: 06/04/03: ImplicitGeometry: Relation relativeGeometry added, Type is gml:GeometryPropertyType-->
+<!-- History: 06/04/03: CityFurniture: Name of Relation LoDXExplicitGeometryProperty changed to LoDXGeometry-->
+<!-- History: 06/04/03: SolitaryVegetationObject: Name of Relation LoDXExplicitGeometryProperty changed to LoDXGeometry-->
+<!-- History: 06/04/03: RoomType: interiorBuildingInstallation added-->
+<!-- History: 06/04/07: Typo in MassPoinRelief corrected-->
+<!-- History: 06/04/07: Multiplicity of lod in ReliefFeatureType changed to 1-->
+<!-- History: 06/04/07: Spelling of the following properties have been changed to lowerCamelCase:   GenericAttribute, IntAttribute, DoubleAttribute, URIAttribute, DateAttribute-->
+<!-- History: 06/04/07: Spelling of the following properties have been changed to lowerCamelCase:   LoDXGeometryProperty of GenericCityObjectType, TrafficAreaProperty, AuxillaryTrafficAreaProperty-->
+<!-- History: 06/04/07: Attributes height and diameter removed from CityFurniture-->
+<!-- History: 06/05/12: Major changes of property names-->
+<!-- History: 06/05/22: Namespace changed to www.citygml.org-->
+<!-- History: 06/05/27: tinPropertyType: changed reference from gml:Tin to gml:TriangulatedSurface (allows to use both gml:TriangulatedSurface and gml:Tin) -->
+<!-- History: 06/05/31: multiplicities changed in BreakLineReliefType -->
+<!-- History: 06/10/03: Generic abstract properties added to each feature class (to be substituted by application schemas ) -->
+<!-- History: 06/11/28: Generic abstract property added to CityModel (to be substituted by application schemas ) -->
+<!-- History: 07/05/30: Appearance model: new approach to represent observable properties of the feature’s surface added to CityGML -->
+<!-- History: 07/05/30: Material model of former CityGML versions has been marked as deprecated due to inherent limitations and is expected to be removed in future -->
+<!-- History: 07/05/30: CityObjectGroupType: Association parent added linking a CityObjectGroup to a CityObject -->
+<!-- History: 07/05/30: IntBuildingInstallation added to building model -->
+<!-- History: 07/05/30: _AbstractBuilding: Relation interiorBuildingInstallation added -->
+<!-- History: 07/05/30: RoomType: interiorBuildingInstallation changed to roomInstallation pointing to an IntBuildingInstallation -->
+<!-- History: 07/05/30: TransformationMatrixType changed to TransformationMatrix4x4Type -->
+<!-- History: 07/05/30: CityFurnitureType: Relation lodXTerrainIntersection added -->
+<!-- History: 07/06/04: Unification of generic abstract properties -->
+<!-- History: 07/06/14: _AbstractBuilding: Attribute yearOfDemolition added -->

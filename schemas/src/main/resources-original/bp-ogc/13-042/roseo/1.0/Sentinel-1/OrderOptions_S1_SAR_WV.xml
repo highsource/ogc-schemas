@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roseo:OrderOptions xsi:schemaLocation="http://www.opengis.net/roseo/1.0 ../roseo.xsd" xmlns:oseo="http://www.opengis.net/oseo/1.0" xmlns:roseo="http://www.opengis.net/roseo/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<roseo:OrderOptionGroup>
+		<oseo:productOrderOptionsId>S1_SAR_WV RAW, SLC, GRD, OCN</oseo:productOrderOptionsId>
+		<oseo:orderType>PRODUCT_ORDER</oseo:orderType>
+		<oseo:option>
+			<swe:DataRecord>
+				<swe:field name="ProcessingLevel">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/OGC-EO/0/ProcessingLevel">
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>RAW</swe:value>
+								<swe:value>SLC</swe:value>
+								<swe:value>GRD</swe:value>
+								<swe:value>OCN</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<oseo:grouping>Processing Option</oseo:grouping>
+		</oseo:option>
+		<oseo:option>
+			<swe:DataRecord>
+				<swe:field name="Format">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/OGC-EO/0/Format">
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>null</swe:value>
+								<swe:value>SAFE</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:field>
+			</swe:DataRecord>
+			<oseo:grouping>Processing Option</oseo:grouping>
+		</oseo:option>
+		<oseo:productDeliveryOptions>
+			<oseo:onlineDataAccess>
+				<oseo:protocol>https</oseo:protocol>
+			</oseo:onlineDataAccess>
+		</oseo:productDeliveryOptions>
+		<roseo:downloadURL>http://some.roseo.server/ROSEO/1.0.0/options/S1_SAR_WV/osdd</roseo:downloadURL>
+	</roseo:OrderOptionGroup>
+</roseo:OrderOptions>

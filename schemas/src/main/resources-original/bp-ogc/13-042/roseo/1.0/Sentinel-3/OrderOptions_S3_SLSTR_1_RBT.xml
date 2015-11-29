@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roseo:OrderOptions xsi:schemaLocation="http://www.opengis.net/roseo/1.0 ../roseo.xsd" xmlns:oseo="http://www.opengis.net/oseo/1.0" xmlns:roseo="http://www.opengis.net/roseo/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<roseo:OrderOptionGroup>
+		<oseo:productOrderOptionsId>S3_SLSTR_1_RBT standard options</oseo:productOrderOptionsId>
+		<oseo:orderType>PRODUCT_ORDER</oseo:orderType>
+		<oseo:option>
+			<swe:DataArray optional="true" updatable="false">
+				<swe:elementCount/>
+				<swe:elementType name="mdf_adf">
+					<swe:DataChoice>
+						<swe:item name="radiance_an">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>S1_radiance_an</swe:value>
+												<swe:value>S2_radiance_an</swe:value>
+												<swe:value>S3_radiance_an</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_an</swe:value>
+												<swe:value>flags_an</swe:value>
+												<swe:value>indices_an</swe:value>
+												<swe:value>geodetic_an</swe:value>
+												<swe:value>cartesian_an</swe:value>
+												<swe:value>time_an</swe:value>
+												<swe:value>geometry_tn</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+						<swe:item name="radiance_ao">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>S1_radiance_ao</swe:value>
+												<swe:value>S2_radiance_ao</swe:value>
+												<swe:value>S3_radiance_ao</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_ao</swe:value>
+												<swe:value>flags_ao</swe:value>
+												<swe:value>indices_ao</swe:value>
+												<swe:value>geodetic_ao</swe:value>
+												<swe:value>cartesian_ao</swe:value>
+												<swe:value>time_ao</swe:value>
+												<swe:value>geometry_to</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+						<swe:item name="radiance_bn">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>S1_radiance_bn</swe:value>
+												<swe:value>S2_radiance_bn</swe:value>
+												<swe:value>S3_radiance_bn</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_bn</swe:value>
+												<swe:value>flags_bn</swe:value>
+												<swe:value>indices_bn</swe:value>
+												<swe:value>geodetic_bn</swe:value>
+												<swe:value>cartesian_bn</swe:value>
+												<swe:value>time_bn</swe:value>
+												<swe:value>geometry_tn</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+						<swe:item name="radiance_bo">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>S1_radiance_bo</swe:value>
+												<swe:value>S2_radiance_bo</swe:value>
+												<swe:value>S3_radiance_bo</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_bo</swe:value>
+												<swe:value>flags_bo</swe:value>
+												<swe:value>indices_bo</swe:value>
+												<swe:value>geodetic_bo</swe:value>
+												<swe:value>cartesian_bo</swe:value>
+												<swe:value>time_bo</swe:value>
+												<swe:value>geometry_to</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+						<swe:item name="radiance_cn">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>S4_radiance_cn</swe:value>
+												<swe:value>S5_radiance_cn</swe:value>
+												<swe:value>S6_radiance_cn</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_cn</swe:value>
+												<swe:value>flags_cn</swe:value>
+												<swe:value>indices_cn</swe:value>
+												<swe:value>geodetic_cn</swe:value>
+												<swe:value>cartesian_cn</swe:value>
+												<swe:value>time_cn</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+						<swe:item name="radiance_co">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>S4_radiance_co</swe:value>
+												<swe:value>S5_radiance_co</swe:value>
+												<swe:value>S6_radiance_co</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_co</swe:value>
+												<swe:value>flags_co</swe:value>
+												<swe:value>indices_co</swe:value>
+												<swe:value>geodetic_co</swe:value>
+												<swe:value>cartesian_co</swe:value>
+												<swe:value>time_co</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+						<swe:item name="BT_in">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>S7_BT_in</swe:value>
+												<swe:value>S8_BT_in</swe:value>
+												<swe:value>S9_BT_in</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_in</swe:value>
+												<swe:value>flags_in</swe:value>
+												<swe:value>indices_in</swe:value>
+												<swe:value>geodetic_in</swe:value>
+												<swe:value>cartesian_in</swe:value>
+												<swe:value>time_in</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+						<swe:item name="BT_io">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>S7_BT_io</swe:value>
+												<swe:value>S8_BT_io</swe:value>
+												<swe:value>S9_BT_io</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_io</swe:value>
+												<swe:value>flags_io</swe:value>
+												<swe:value>indices_io</swe:value>
+												<swe:value>geodetic_io</swe:value>
+												<swe:value>cartesian_io</swe:value>
+												<swe:value>time_io</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+						<swe:item name="FBT_in">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>F1_BT_in</swe:value>
+												<swe:value>F2_BT_in</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_in</swe:value>
+												<swe:value>flags_in</swe:value>
+												<swe:value>indices_in</swe:value>
+												<swe:value>geodetic_in</swe:value>
+												<swe:value>cartesian_in</swe:value>
+												<swe:value>time_in</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+						<swe:item name="FBT_io">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>F1_BT_io</swe:value>
+												<swe:value>F2_BT_io</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_io</swe:value>
+												<swe:value>flags_io</swe:value>
+												<swe:value>indices_io</swe:value>
+												<swe:value>geodetic_io</swe:value>
+												<swe:value>cartesian_io</swe:value>
+												<swe:value>time_io</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+					</swe:DataChoice>
+				</swe:elementType>
+			</swe:DataArray>
+			<oseo:grouping>Subsetting Option</oseo:grouping>
+		</oseo:option>
+		<oseo:option>
+			<swe:DataArray optional="true" updatable="false">
+				<swe:elementCount/>
+				<swe:elementType name="adf">
+					<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+						<swe:constraint>
+							<swe:AllowedTokens>
+								<swe:value>met_tx.nc</swe:value>
+							</swe:AllowedTokens>
+						</swe:constraint>
+					</swe:Category>
+				</swe:elementType>
+			</swe:DataArray>
+			<oseo:grouping>Subsetting Option</oseo:grouping>
+		</oseo:option>
+		<oseo:productDeliveryOptions>
+			<oseo:onlineDataAccess>
+				<oseo:protocol>https</oseo:protocol>
+			</oseo:onlineDataAccess>
+		</oseo:productDeliveryOptions>
+		<roseo:downloadURL>http://some.roseo.server/ROSEO/1.0.0/options/S3_SLSTR_1_RBT/osdd</roseo:downloadURL>
+	</roseo:OrderOptionGroup>
+	<roseo:OrderOptionGroup>
+		<oseo:productOrderOptionsId>S3_SLSTR_1_RBT future options</oseo:productOrderOptionsId>
+		<oseo:orderType>PRODUCT_ORDER</oseo:orderType>
+		<oseo:option>
+			<swe:DataArray optional="true" updatable="false">
+				<swe:elementCount/>
+				<swe:elementType name="mdf_adf">
+					<swe:DataChoice>
+						<swe:item name="radiance_an">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>S4_radiance_an</swe:value>
+												<swe:value>S5_radiance_an</swe:value>
+												<swe:value>S6_radiance_an</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_an</swe:value>
+												<swe:value>flags_an</swe:value>
+												<swe:value>indices_an</swe:value>
+												<swe:value>geodetic_an</swe:value>
+												<swe:value>cartesian_an</swe:value>
+												<swe:value>time_an</swe:value>
+												<swe:value>geometry_tn</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+						<swe:item name="radiance_ao">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>S4_radiance_ao</swe:value>
+												<swe:value>S5_radiance_ao</swe:value>
+												<swe:value>S6_radiance_ao</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_ao</swe:value>
+												<swe:value>flags_ao</swe:value>
+												<swe:value>indices_ao</swe:value>
+												<swe:value>geodetic_ao</swe:value>
+												<swe:value>cartesian_ao</swe:value>
+												<swe:value>time_ao</swe:value>
+												<swe:value>geometry_to</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+						<swe:item name="radiance_bn">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>S4_radiance_bn</swe:value>
+												<swe:value>S5_radiance_bn</swe:value>
+												<swe:value>S6_radiance_bn</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_bn</swe:value>
+												<swe:value>flags_bn</swe:value>
+												<swe:value>indices_bn</swe:value>
+												<swe:value>geodetic_bn</swe:value>
+												<swe:value>cartesian_bn</swe:value>
+												<swe:value>time_bn</swe:value>
+												<swe:value>geometry_tn</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+						<swe:item name="radiance_bo">
+							<swe:DataRecord>
+								<swe:field name="mdf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/mdf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>S4_radiance_bo</swe:value>
+												<swe:value>S5_radiance_bo</swe:value>
+												<swe:value>S6_radiance_bo</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+								<swe:field name="adf">
+									<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/order/ESA-S3/0/adf">
+										<swe:constraint>
+											<swe:AllowedTokens>
+												<swe:value>quality_bo</swe:value>
+												<swe:value>flags_bo</swe:value>
+												<swe:value>indices_bo</swe:value>
+												<swe:value>geodetic_bo</swe:value>
+												<swe:value>cartesian_bo</swe:value>
+												<swe:value>time_bo</swe:value>
+												<swe:value>geometry_to</swe:value>
+											</swe:AllowedTokens>
+										</swe:constraint>
+									</swe:Category>
+								</swe:field>
+							</swe:DataRecord>
+						</swe:item>
+					</swe:DataChoice>
+				</swe:elementType>
+			</swe:DataArray>
+			<oseo:grouping>Subsetting Option</oseo:grouping>
+		</oseo:option>
+		<oseo:productDeliveryOptions>
+			<oseo:onlineDataAccess>
+				<oseo:protocol>https</oseo:protocol>
+			</oseo:onlineDataAccess>
+		</oseo:productDeliveryOptions>
+		<roseo:downloadURL>http://some.roseo.server/ROSEO/1.0.0/options/S3_SLSTR_1_RBT/osdd</roseo:downloadURL>
+	</roseo:OrderOptionGroup>
+</roseo:OrderOptions>

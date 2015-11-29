@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/dseo/1.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:dseo="http://www.opengis.net/dseo/1.0" targetNamespace="http://www.opengis.net/dseo/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
+	<xs:annotation>
+		<xs:documentation>
+			OGC Download Service for Earth Observation Products 1.0 is an OGC Standard.
+			
+			Copyright (c) 2014 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsAll.xsd"/>
+	<xs:element name="Capabilities">
+		<xs:annotation>
+			<xs:documentation>XML encoded DSEO GetCapabilities operation response. This document provides clients with service metadata about a specific service instance. If the server does not implement the updateSequence parameter, the server shall always return the complete Capabilities document, without the updateSequence parameter. When the server implements the updateSequence parameter and the GetCapabilities operation request included the updateSequence parameter with the current value, the server shall return this element with only the "version" and "updateSequence" attributes. Otherwise, all optional elements shall be included or not depending on the actual value of the Sections parameter in the GetCapabilities operation request. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ows:CapabilitiesBaseType"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProductDownloadResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResponseCode" type="dseo:ProductDownloadResponseType"/>
+				<xs:element name="ResponseMessage" type="xs:string" minOccurs="0"/>
+				<xs:element name="RetryAfter" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Number of seconds suggested before another request</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedShort">
+							<xs:minInclusive value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ETA" type="xs:dateTime" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Estimated completion time</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CompletionPercentage" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Task completion percentage</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedShort">
+							<xs:maxInclusive value="100"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="ProductDownloadResponseType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACCEPTED"/>
+			<xs:enumeration value="IN_PROGRESS"/>
+			<xs:enumeration value="SUSPENDED"/>
+			<xs:enumeration value="ERROR"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dseo:ProductDownloadResponse xmlns:dseo="http://www.opengis.net/dseo/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/dseo/1.0 ../dseo.xsd">
+	<dseo:ResponseCode>IN_PROGRESS</dseo:ResponseCode>
+	<dseo:RetryAfter>30</dseo:RetryAfter>
+</dseo:ProductDownloadResponse>
