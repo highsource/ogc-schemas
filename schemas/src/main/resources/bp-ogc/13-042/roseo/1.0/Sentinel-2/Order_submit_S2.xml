@@ -1,0 +1,36 @@
+<roseo:Order xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/oseo/1.0" xmlns:roseo="http://www.opengis.net/roseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.opengis.net/roseo/1.0 ../roseo.xsd">
+	<orderReference>example_0001</orderReference>
+	<orderRemark>example</orderRemark>
+	<option>
+		<ParameterData>
+			<encoding>XMLEncoding</encoding>
+			<values xmlns:ns="http://www.opengis.net/oseo/1.0/dataset">
+				<ns:SpectralBandComposition>band1</ns:SpectralBandComposition>
+				<ns:Format>DIMAP</ns:Format>
+				<ns:metadataLevel>EXPERT</ns:metadataLevel>
+				<ns:pvi>true</ns:pvi>
+				<ns:auxData>true</ns:auxData>
+				<ns:mergingFlag>true</ns:mergingFlag>
+			</values>
+		</ParameterData>
+	</option>
+	<deliveryOptions>
+		<onlineDataAccess>
+			<protocol>https</protocol>
+		</onlineDataAccess>
+	</deliveryOptions>
+	<orderType>PRODUCT_ORDER</orderType>
+	<roseo:orderItem>
+		<itemId>item_0001</itemId>
+		<productOrderOptionsId>Sentinel-2 options</productOrderOptionsId>
+		<orderItemRemark>First product</orderItemRemark>
+		<payment>
+			<paymentMethod>quota</paymentMethod>
+			<orderAccount>project_10000</orderAccount>
+		</payment>
+		<productId>
+			<identifier>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.S2-14121921114570-3322.XI</identifier>
+			<collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.S2_MSI_1B</collectionId>
+		</productId>
+	</roseo:orderItem>
+</roseo:Order>

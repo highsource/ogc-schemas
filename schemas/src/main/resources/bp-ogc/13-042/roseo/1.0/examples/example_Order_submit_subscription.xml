@@ -1,0 +1,57 @@
+<roseo:Order xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/oseo/1.0" xmlns:roseo="http://www.opengis.net/roseo/1.0" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.opengis.net/roseo/1.0 ../roseo.xsd">
+	<orderReference>example_0001</orderReference>
+	<orderRemark>example</orderRemark>
+	<option>
+		<ParameterData>
+			<encoding>XMLEncoding</encoding>
+			<values xmlns:ns="http://www.opengis.net/oseo/1.0/dataset">
+				<ns:regionOfInterest>
+					<ns:point>
+						<ns:latitude>0.0</ns:latitude>
+						<ns:longitude>0.0</ns:longitude>
+					</ns:point>
+					<ns:point>
+						<ns:latitude>50.0</ns:latitude>
+						<ns:longitude>0.0</ns:longitude>
+					</ns:point>
+					<ns:point>
+						<ns:latitude>50.0</ns:latitude>
+						<ns:longitude>20.0</ns:longitude>
+					</ns:point>
+					<ns:point>
+						<ns:latitude>0.0</ns:latitude>
+						<ns:longitude>20.0</ns:longitude>
+					</ns:point>
+					<ns:point>
+						<ns:latitude>0.0</ns:latitude>
+						<ns:longitude>0.0</ns:longitude>
+					</ns:point>
+				</ns:regionOfInterest>
+				<ns:dateRange>
+					<ns:min>2013-01-01T00:00:00.00Z</ns:min>
+					<ns:max>2015-01-01T23:59:59.99Z</ns:max>
+				</ns:dateRange>
+				<ns:numberOfObservations>20</ns:numberOfObservations>
+				<observationGap>35</observationGap>
+			</values>
+		</ParameterData>
+	</option>
+	<deliveryOptions>
+		<onlineDataAccess>
+			<protocol>https</protocol>
+		</onlineDataAccess>
+	</deliveryOptions>
+	<orderType>SUBSCRIPTION_ORDER</orderType>
+	<roseo:orderItem>
+		<itemId>item_0001</itemId>
+		<productOrderOptionsId>SubscriptionOptions</productOrderOptionsId>
+		<orderItemRemark>Subscribed collection</orderItemRemark>
+		<payment>
+			<paymentMethod>quota</paymentMethod>
+			<orderAccount>project_10000</orderAccount>
+		</payment>
+		<subscriptionId>
+			<collectionId>ESA:EECF:ENVISAT_ASA_IMx_xS:subscription</collectionId>
+		</subscriptionId>
+	</roseo:orderItem>
+</roseo:Order>

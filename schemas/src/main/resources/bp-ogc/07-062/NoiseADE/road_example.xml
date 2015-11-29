@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<citygml:CityModel xmlns:gml="http://www.opengis.net/gml"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xAL="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"
+	xmlns:noise="http://www.citygml.org/ade/noise_de"
+	xmlns:citygml="http://www.citygml.org/citygml/1/0/0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.citygml.org/citygml/1/0/0 ../CityGML.xsd http://www.citygml.org/ade/noise_de ./CityGML-NoiseADE-0-5-0.xsd">
+	<gml:name>Strassenmodell</gml:name>
+	<gml:boundedBy>
+		<gml:Envelope srsName="EPSG:31466">
+			<gml:pos srsDimension="3">2523800.0 5705800.0 140.4</gml:pos>
+			<gml:pos srsDimension="3">2526200.0 5708200.0 252.6</gml:pos>
+		</gml:Envelope>
+	</gml:boundedBy>
+	<citygml:cityObjectMember>
+		<citygml:Road gml:id="CR_0815">
+			<gml:name>B1</gml:name>
+			<gml:boundedBy>
+				<gml:Envelope srsName="EPSG:31466">
+					<gml:pos srsDimension="3">2523800.0 5705800.0 140.4</gml:pos>
+					<gml:pos srsDimension="3">2526200.0 5708200.0 252.6</gml:pos>
+				</gml:Envelope>
+			</gml:boundedBy>
+			<!--
+			<citygml:creationDate>1967-08-13</citygml:creationDate>
+			<citygml:terminationDate>1967-08-13</citygml:terminationDate>
+			-->
+			<citygml:function>B1303</citygml:function>
+			<!--
+			<citygml:lod0Network>
+				<gml:CompositeCurve srsName="EPSG:31466">
+					<gml:curveMember>
+								<gml:LineString>
+									<gml:coordinates decimal="." cs="," ts=" ">2524175,5707335,188 2524181,5707338,188 2524185,5707330,188 2524179,5707327,188</gml:coordinates>
+								</gml:LineString>
+					</gml:curveMember>
+					<gml:curveMember>
+								<gml:LineString>
+									<gml:coordinates decimal="." cs="," ts=" ">2524175,5707335,188 2524181,5707338,188 2524185,5707330,188 2524179,5707327,188</gml:coordinates>
+								</gml:LineString>
+					</gml:curveMember>					
+				</gml:CompositeCurve>
+			</citygml:lod0Network>
+			-->
+			<noise:noiseRoadSegmentProperty>
+				<noise:NoiseRoadSegment gml:id="CNRS_0815">
+					<gml:boundedBy>
+						<gml:Envelope srsName="EPSG:31466">
+							<gml:pos srsDimension="3">2523800.0 5705800.0 140.4</gml:pos>
+							<gml:pos srsDimension="3">2526200.0 5708200.0 252.6</gml:pos>
+						</gml:Envelope>
+					</gml:boundedBy>
+					<!--
+					<citygml:creationDate>1967-08-13</citygml:creationDate>
+					<citygml:terminationDate>1967-08-13</citygml:terminationDate>
+					-->
+					<citygml:externalReference>
+						<citygml:informationSystem>file:///L:/FB43_GeoDatZ/2006172_Laermkartierung MUNLV/Katasterbehoerde/SO/05974000.zip</citygml:informationSystem>
+						<citygml:externalObject>
+							<citygml:name>B21</citygml:name>
+						</citygml:externalObject>
+					</citygml:externalReference>
+					<citygml:stringAttribute name="Entstehung">
+						<citygml:value>Digitalisierung</citygml:value>
+					</citygml:stringAttribute>
+					<citygml:stringAttribute name="Aktualisierung">
+						<citygml:value>jährlich</citygml:value>
+					</citygml:stringAttribute>
+					<noise:mDay uom="kfzph">2564.123</noise:mDay>
+					<noise:mEvening uom="kfzph">145.123</noise:mEvening>
+					<noise:mNight uom="kfzph">1231.123</noise:mNight>
+					<noise:mDay16 uom="kfzph">2010.123</noise:mDay16>
+					<noise:pDay uom="percent">25.123</noise:pDay>
+					<noise:pEvening uom="percent">35.123</noise:pEvening>
+					<noise:pNight uom="percent">45.123</noise:pNight>
+					<noise:pDay16 uom="percent">30.123</noise:pDay16>
+					<noise:dtv uom="kfzp24h">20564.123</noise:dtv>
+					<noise:speedDayPkw uom="kmph">130.123</noise:speedDayPkw>
+					<noise:speedEveningPkw uom="kmph">100.123</noise:speedEveningPkw>
+					<noise:speedNightPkw uom="kmph">50.123</noise:speedNightPkw>
+					<noise:speedDayLkw uom="kmph">80.123</noise:speedDayLkw>
+					<noise:speedEveningLkw uom="kmph">80.123</noise:speedEveningLkw>
+					<noise:speedNightLkw uom="kmph">50.123</noise:speedNightLkw>
+					<noise:roadSurfaceMaterial>Pflaster mit ebener Oberfläche</noise:roadSurfaceMaterial>
+					<noise:roadSurfaceCorrection uom="dB">2.123</noise:roadSurfaceCorrection>
+					<noise:distanceCarriageway uom="m">15.123</noise:distanceCarriageway>
+					<noise:distanceD uom="m">10.123</noise:distanceD>
+					<noise:bridge>true</noise:bridge>
+					<noise:tunnel>false</noise:tunnel>
+					<noise:roadGradientPercent uom="percent">5.245</noise:roadGradientPercent>
+					<noise:lod0BaseLine>
+						<gml:LineString srsName="EPSG:31466" srsDimension="3">
+							<gml:coordinates decimal="." cs="," ts=" ">2524175,5707335,188 2524181,5707338,188 2524185,5707330,188 2524179,5707327,188</gml:coordinates>
+						</gml:LineString>
+					</noise:lod0BaseLine>
+					<noise:lineage>ATKIS und StraßenNRW-Daten</noise:lineage>
+				</noise:NoiseRoadSegment>
+			</noise:noiseRoadSegmentProperty>
+			
+			<noise:noiseRoadSegmentProperty>
+				<noise:NoiseRoadSegment gml:id="CNRS_0816">
+					<gml:boundedBy>
+						<gml:Envelope srsName="EPSG:31466">
+							<gml:pos srsDimension="3">2523800.0 5705800.0 140.4</gml:pos>
+							<gml:pos srsDimension="3">2526200.0 5708200.0 252.6</gml:pos>
+						</gml:Envelope>
+					</gml:boundedBy>
+					<citygml:externalReference>
+						<citygml:informationSystem>file:///L:/FB43_GeoDatZ/2006172_Laermkartierung MUNLV/Katasterbehoerde/SO/05974000.zip</citygml:informationSystem>
+						<citygml:externalObject>
+							<citygml:name>B21</citygml:name>
+						</citygml:externalObject>
+					</citygml:externalReference>
+					<citygml:stringAttribute name="Entstehung">
+						<citygml:value>Digitalisierung</citygml:value>
+					</citygml:stringAttribute>
+					<citygml:stringAttribute name="Aktualisierung">
+						<citygml:value>jährlich</citygml:value>
+					</citygml:stringAttribute>
+					<noise:mDay uom="kfzph">2564.123</noise:mDay>
+					<noise:mEvening uom="kfzph">145.123</noise:mEvening>
+					<noise:mNight uom="kfzph">1231.123</noise:mNight>
+					<noise:mDay16 uom="kfzph">2010.123</noise:mDay16>
+					<noise:pDay uom="percent">25.123</noise:pDay>
+					<noise:pEvening uom="percent">35.123</noise:pEvening>
+					<noise:pNight uom="percent">45.123</noise:pNight>
+					<noise:pDay16 uom="percent">30.123</noise:pDay16>
+					<noise:dtv uom="kfzp24h">20564.123</noise:dtv>
+					<noise:speedDayPkw uom="kmph">130.123</noise:speedDayPkw>
+					<noise:speedEveningPkw uom="kmph">100.123</noise:speedEveningPkw>
+					<noise:speedNightPkw uom="kmph">50.123</noise:speedNightPkw>
+					<noise:speedDayLkw uom="kmph">80.123</noise:speedDayLkw>
+					<noise:speedEveningLkw uom="kmph">80.123</noise:speedEveningLkw>
+					<noise:speedNightLkw uom="kmph">50.123</noise:speedNightLkw>
+					<noise:roadSurfaceMaterial>Pflaster mit ebener Oberfläche</noise:roadSurfaceMaterial>
+					<noise:roadSurfaceCorrection uom="dB">2.123</noise:roadSurfaceCorrection>
+					<noise:distanceCarriageway uom="m">15.123</noise:distanceCarriageway>
+					<noise:distanceD uom="m">10.123</noise:distanceD>
+					<noise:bridge>true</noise:bridge>
+					<noise:tunnel>false</noise:tunnel>
+					<noise:roadGradientPercent uom="percent">5.245</noise:roadGradientPercent>
+					<noise:lod0BaseLine>
+						<gml:LineString srsName="EPSG:31466" srsDimension="3">
+							<gml:coordinates decimal="." cs="," ts=" ">2524175,5707335,188 2524181,5707338,188 2524185,5707330,188 2524179,5707327,188</gml:coordinates>
+						</gml:LineString>
+					</noise:lod0BaseLine>
+					<noise:lineage>ATKIS und StraßenNRW-Daten</noise:lineage>
+				</noise:NoiseRoadSegment>
+			</noise:noiseRoadSegmentProperty>
+			
+		</citygml:Road>
+	</citygml:cityObjectMember>
+</citygml:CityModel>

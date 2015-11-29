@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roseo:Contents xsi:schemaLocation="http://www.opengis.net/roseo/1.0 ../roseo.xsd" xmlns:oseo="http://www.opengis.net/oseo/1.0" xmlns:roseo="http://www.opengis.net/roseo/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<oseo:ProductOrders supported="true"/>
+	<oseo:SubscriptionOrders supported="true"/>
+	<oseo:ProgrammingOrders supported="false"/>
+	<oseo:GetQuotationCapabilities supported="false" synchronous="false" asynchronous="false" monitoring="false" off-line="false"/>
+	<oseo:SubmitCapabilities asynchronous="false" maxNumberOfProducts="0" globalDeliveryOptions="true" localDeliveryOptions="true" globalOrderOptions="true" localOrderOptions="true"/>
+	<oseo:GetStatusCapabilities orderSearch="true" orderRetrieve="true" full="true"/>
+	<oseo:DescribeResultAccessCapabilities supported="true"/>
+	<oseo:CancelCapabilities supported="true" asynchronous="false"/>
+	<oseo:SupportedCollection>
+		<oseo:collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS</oseo:collectionId>
+		<oseo:DescribeResultAccessCapabilities supported="false"/>
+	</oseo:SupportedCollection>
+	<oseo:SupportedCollection>
+		<oseo:collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xF</oseo:collectionId>
+		<oseo:DescribeResultAccessCapabilities supported="false"/>
+	</oseo:SupportedCollection>
+		<roseo:resourceURL resource="capabilities" URL="http://roseo.example.com/ROSEO/1.0.0/"/>
+		<roseo:resourceURL resource="order options" URL="http://roseo.example.com/ROSEO/1.0.0/options/{product identifier}/{format}"/>
+		<roseo:resourceURL resource="order options" URL="http://roseo.example.com/ROSEO/1.0.0/options/{collection identifier}/{format}"/>
+		<roseo:resourceURL resource="order options" URL="http://roseo.example.com/ROSEO/1.0.0/options/{subscription identifier}/{format}"/>
+		<roseo:resourceURL resource="order" URL="http://roseo.example.com/ROSEO/1.0.0/order/"/>
+		<roseo:resourceURL resource="order" URL="http://roseo.example.com/ROSEO/1.0.0/order/{order identifier}"/>
+		<roseo:resourceURL resource="order" URL="http://roseo.example.com/ROSEO/1.0.0/order?{filter expression}"/>
+		<roseo:resourceURL resource="order" URL="http://roseo.example.com/ROSEO/1.0.0/order/{order identifier}/{order item identifier}"/>
+		<roseo:resourceURL resource="ordered product" URL="http://roseo.example.com/ROSEO/1.0.0/order/{order identifier}/file"/>
+		<roseo:resourceURL resource="ordered product" URL="http://roseo.example.com/ROSEO/1.0.0/order/{order identifier}/file?{filter expression}"/>
+		<roseo:resourceURL resource="ordered product" URL="http://roseo.example.com/ROSEO/1.0.0/order/{order identifier}/{order item identifier}/file"/>
+</roseo:Contents>

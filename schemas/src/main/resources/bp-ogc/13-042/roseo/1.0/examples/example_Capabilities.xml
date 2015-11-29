@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roseo:Capabilities version="0.0.0" updateSequence="String" xsi:schemaLocation="http://www.opengis.net/roseo/1.0 ../roseo.xsd" xmlns:oseo="http://www.opengis.net/oseo/1.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:roseo="http://www.opengis.net/roseo/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ows:ServiceIdentification>
+		<ows:Title xml:lang="en-us">ROSEO Test Server</ows:Title>
+		<ows:Abstract xml:lang="en-us">Test Server of ROSEO protocol</ows:Abstract>
+		<ows:Keywords>
+			<ows:Keyword xml:lang="en-us">roseo</ows:Keyword>
+		</ows:Keywords>
+		<ows:ServiceType codeSpace="http://www.altova.com">String</ows:ServiceType>
+		<ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
+		<ows:Profile>http://www.altova.com</ows:Profile>
+		<ows:Fees>String</ows:Fees>
+		<ows:AccessConstraints>String</ows:AccessConstraints>
+	</ows:ServiceIdentification>
+	<ows:ServiceProvider>
+		<ows:ProviderName>ESA EECF</ows:ProviderName>
+		<ows:ServiceContact>
+			<ows:IndividualName>John Smith</ows:IndividualName>
+			<ows:PositionName>Help Desk</ows:PositionName>
+			<ows:ContactInfo>
+				<ows:Phone>
+					<ows:Voice>+39 06 90 180 999</ows:Voice>
+				</ows:Phone>
+				<ows:HoursOfService>9:00 - 18:00</ows:HoursOfService>
+			</ows:ContactInfo>
+		</ows:ServiceContact>
+	</ows:ServiceProvider>
+	<ows:Languages>
+		<ows:Language>en-us</ows:Language>
+	</ows:Languages>
+	<roseo:Contents>
+		<oseo:ProductOrders supported="true"/>
+		<oseo:SubscriptionOrders supported="true"/>
+		<oseo:ProgrammingOrders supported="false"/>
+		<oseo:GetQuotationCapabilities supported="false" synchronous="false" asynchronous="false" monitoring="false" off-line="false"/>
+		<oseo:SubmitCapabilities asynchronous="false" maxNumberOfProducts="0" globalDeliveryOptions="true" localDeliveryOptions="true" globalOrderOptions="true" localOrderOptions="true"/>
+		<oseo:GetStatusCapabilities orderSearch="true" orderRetrieve="true" full="true"/>
+		<oseo:DescribeResultAccessCapabilities supported="true"/>
+		<oseo:CancelCapabilities supported="true" asynchronous="false"/>
+		<oseo:SupportedCollection>
+			<oseo:collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xS</oseo:collectionId>
+			<oseo:DescribeResultAccessCapabilities supported="false"/>
+		</oseo:SupportedCollection>
+		<oseo:SupportedCollection>
+			<oseo:collectionId>http://www.opengis.net/def/EOP/ESA/0/ESA.EECF.ENVISAT_ASA_IMx_xF</oseo:collectionId>
+			<oseo:DescribeResultAccessCapabilities supported="false"/>
+		</oseo:SupportedCollection>
+		<roseo:resourceURL resource="capabilities" URL="http://roseo.example.com/ROSEO/1.0.0/"/>
+		<roseo:resourceURL resource="order options" URL="http://roseo.example.com/ROSEO/1.0.0/options/{product identifier}/{format}"/>
+		<roseo:resourceURL resource="order options" URL="http://roseo.example.com/ROSEO/1.0.0/options/{collection identifier}/{format}"/>
+		<roseo:resourceURL resource="order options" URL="http://roseo.example.com/ROSEO/1.0.0/options/{subscription identifier}/{format}"/>
+		<roseo:resourceURL resource="order" URL="http://roseo.example.com/ROSEO/1.0.0/order/"/>
+		<roseo:resourceURL resource="order" URL="http://roseo.example.com/ROSEO/1.0.0/order/{order identifier}"/>
+		<roseo:resourceURL resource="order" URL="http://roseo.example.com/ROSEO/1.0.0/order?{filter expression}"/>
+		<roseo:resourceURL resource="order" URL="http://roseo.example.com/ROSEO/1.0.0/order/{order identifier}/{order item identifier}"/>
+		<roseo:resourceURL resource="ordered product" URL="http://roseo.example.com/ROSEO/1.0.0/order/{order identifier}/file"/>
+		<roseo:resourceURL resource="ordered product" URL="http://roseo.example.com/ROSEO/1.0.0/order/{order identifier}/file?{filter expression}"/>
+		<roseo:resourceURL resource="ordered product" URL="http://roseo.example.com/ROSEO/1.0.0/order/{order identifier}/{order item identifier}/file"/>
+	</roseo:Contents>
+</roseo:Capabilities>

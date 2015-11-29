@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metalink xmlns="http://www.metalinker.org/"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://www.metalinker.org/schema/3.0/metalink.xsd">
+<files>
+  <file name="product.SAFE/manifest.mf">
+    <copyright>European Space Agency</copyright>
+    <resources>
+      <url type="http">http://DSEOServer/product.SAFE?file=manifest</url>
+      <url type="http">http://DSEOServer_bis/product.SAFE?file=manifest</url>
+    </resources>
+  </file>
+  <file name="product.SAFE/image.jp2">
+    <copyright>European Space Agency</copyright>
+    <resources>
+      <url type="http">http://DSEOServer/product.SAFE?file=image</url>
+      <url type="http">http://DSEOServer_bis/product.SAFE?file=image</url>
+    </resources>
+  </file>
+</files>
+</metalink>

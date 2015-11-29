@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cv:CompactDiscreteTimeCoverage gml:id="dc4" 
+xmlns:cv="http://www.opengis.net/cv/0.2.1" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:gml="http://www.opengis.net/gml"
+                                xsi:schemaLocation="http://www.opengis.net/cv/0.2.1 ../cv.xsd">
+	<cv:domainExtent>
+		<cv:EX_Extent>
+			<cv:temporalElement>
+				<gml:TimePeriod>
+					<gml:beginPosition>2005-06-17T09:00:00.00+08:00</gml:beginPosition>
+					<gml:endPosition>2005-06-21T09:00:00.00+08:00</gml:endPosition>
+				</gml:TimePeriod>
+			</cv:temporalElement>
+		</cv:EX_Extent>
+	</cv:domainExtent>
+	<cv:rangeType xsi:type="gml:ReferenceType" xlink:href="http://www.flakey.org/properties/length"/>
+	<cv:element>
+		<cv:CompactTimeValuePair>
+			<cv:geometry>2005-06-17T09:00:00.00+08:00</cv:geometry>
+			<cv:value xsi:type="gml:MeasureType" uom="mm">10.1</cv:value>
+		</cv:CompactTimeValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CompactTimeValuePair>
+			<cv:geometry>2005-06-18T09:00:00.00+08:00</cv:geometry>
+			<cv:value xsi:type="gml:MeasureType" uom="mm">15.7</cv:value>
+		</cv:CompactTimeValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CompactTimeValuePair>
+			<cv:geometry>2005-06-19T09:00:00.00+08:00</cv:geometry>
+			<cv:value xsi:type="gml:MeasureType" uom="mm">20.2</cv:value>
+		</cv:CompactTimeValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CompactTimeValuePair>
+			<cv:geometry>2005-06-20T09:00:00.00+08:00</cv:geometry>
+			<cv:value xsi:type="gml:MeasureType" uom="mm">27.5</cv:value>
+		</cv:CompactTimeValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CompactTimeValuePair>
+			<cv:geometry>2005-06-21T09:00:00.00+08:00</cv:geometry>
+			<cv:value xsi:type="gml:MeasureType" uom="mm">45.2</cv:value>
+		</cv:CompactTimeValuePair>
+	</cv:element>
+</cv:CompactDiscreteTimeCoverage>

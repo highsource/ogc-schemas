@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cv:CV_DiscreteCoverage gml:id="dc3" xmlns:cv="http://www.opengis.net/cv/0.2" xmlns:swe="http://www.opengis.net/swe/1.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml"
+                        xsi:schemaLocation="http://www.opengis.net/cv/0.2 ../cv.xsd http://www.opengis.net/swe/1.0 http://schemas.opengis.net/sweCommon/1.0.0/swe.xsd">
+	<cv:domainExtent>
+		<cv:EX_Extent>
+			<cv:temporalElement>
+		<gml:TimePeriod>
+			<gml:beginPosition>2005-06-17T09:00:00.00+08:00</gml:beginPosition>
+			<gml:endPosition>2005-06-21T09:00:00.00+08:00</gml:endPosition>
+		</gml:TimePeriod>
+			
+			</cv:temporalElement>
+		</cv:EX_Extent>
+	</cv:domainExtent>
+	<cv:rangeType xsi:type="gml:ReferenceType" xlink:href="urn:x-ogc:def:recordType:NASA:TM7"/>
+	<cv:element>
+		<cv:CV_GeometryValuePair>
+			<cv:geometry>
+				<cv:CV_DomainObject>
+					<cv:spatialElement xlink:href="./foi.xml#st1"/>
+					<cv:temporalElement xlink:href="./toi.xml#ti1"/>
+				</cv:CV_DomainObject>
+			</cv:geometry>
+			<cv:value>
+				<swe:Record RS="urn:x-ogc:def:recordType:NASA:TM7" fieldCount="7">
+					<swe:field>						<swe:Item>9</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>8</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>7</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>6</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>5</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>4</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>3</swe:Item>					</swe:field>
+				</swe:Record>
+			</cv:value>
+		</cv:CV_GeometryValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CV_GeometryValuePair>
+			<cv:geometry>
+				<cv:CV_DomainObject>
+					<cv:spatialElement xlink:href="./foi.xml#st3"/>
+					<cv:temporalElement xlink:href="./toi.xml#ti1"/>
+				</cv:CV_DomainObject>
+			</cv:geometry>
+			<cv:value>
+				<swe:Record>
+					<swe:field>						<swe:Item>1</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>2</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>3</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>4</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>5</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>6</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>7</swe:Item>					</swe:field>
+				</swe:Record>
+			</cv:value>
+		</cv:CV_GeometryValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CV_GeometryValuePair>
+			<cv:geometry>
+				<cv:CV_DomainObject>
+					<cv:spatialElement xlink:href="./foi.xml#st2"/>
+					<cv:temporalElement xlink:href="./toi.xml#ti1"/>
+				</cv:CV_DomainObject>
+			</cv:geometry>
+			<cv:value>
+				<swe:Record>
+					<swe:field>						<swe:Item>1</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>9</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>2</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>8</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>3</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>7</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>4</swe:Item>					</swe:field>
+				</swe:Record>
+			</cv:value>
+		</cv:CV_GeometryValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CV_GeometryValuePair>
+			<cv:geometry>
+				<cv:CV_DomainObject>
+					<cv:spatialElement xlink:href="./foi.xml#st4"/>
+					<cv:temporalElement xlink:href="./toi.xml#ti1"/>
+				</cv:CV_DomainObject>
+			</cv:geometry>
+			<cv:value>
+				<swe:Record>
+					<swe:field>						<swe:Item>5</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>6</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>3</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>7</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>2</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>8</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>1</swe:Item>					</swe:field>
+				</swe:Record>
+			</cv:value>
+		</cv:CV_GeometryValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CV_GeometryValuePair>
+			<cv:geometry>
+				<cv:CV_DomainObject>
+					<cv:spatialElement xlink:href="./foi.xml#st1"/>
+					<cv:temporalElement xlink:href="./toi.xml#ti3"/>
+				</cv:CV_DomainObject>
+			</cv:geometry>
+			<cv:value>
+				<swe:Record>
+					<swe:field>						<swe:Item>9</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>8</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>7</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>6</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>5</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>4</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>3</swe:Item>					</swe:field>
+				</swe:Record>
+			</cv:value>
+		</cv:CV_GeometryValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CV_GeometryValuePair>
+			<cv:geometry>
+				<cv:CV_DomainObject>
+					<cv:spatialElement xlink:href="./foi.xml#st3"/>
+					<cv:temporalElement xlink:href="./toi.xml#ti3"/>
+				</cv:CV_DomainObject>
+			</cv:geometry>
+			<cv:value>
+				<swe:Record>
+					<swe:field>						<swe:Item>1</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>2</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>3</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>4</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>5</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>6</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>7</swe:Item>					</swe:field>
+				</swe:Record>
+			</cv:value>
+		</cv:CV_GeometryValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CV_GeometryValuePair>
+			<cv:geometry>
+				<cv:CV_DomainObject>
+					<cv:spatialElement xlink:href="./foi.xml#st2"/>
+					<cv:temporalElement xlink:href="./toi.xml#ti3"/>
+				</cv:CV_DomainObject>
+			</cv:geometry>
+			<cv:value>
+				<swe:Record>
+					<swe:field>						<swe:Item>1</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>9</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>2</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>8</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>3</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>7</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>4</swe:Item>					</swe:field>
+				</swe:Record>
+			</cv:value>
+		</cv:CV_GeometryValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CV_GeometryValuePair>
+			<cv:geometry>
+				<cv:CV_DomainObject>
+					<cv:spatialElement xlink:href="./foi.xml#st4"/>
+					<cv:temporalElement xlink:href="./toi.xml#ti3"/>
+				</cv:CV_DomainObject>
+			</cv:geometry>
+			<cv:value>
+				<swe:Record>
+					<swe:field>						<swe:Item>5</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>6</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>3</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>7</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>2</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>8</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>1</swe:Item>					</swe:field>
+				</swe:Record>
+			</cv:value>
+		</cv:CV_GeometryValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CV_GeometryValuePair>
+			<cv:geometry>
+				<cv:CV_DomainObject>
+					<cv:spatialElement xlink:href="./foi.xml#st1"/>
+					<cv:temporalElement xlink:href="./toi.xml#ti5"/>
+				</cv:CV_DomainObject>
+			</cv:geometry>
+			<cv:value>
+				<swe:Record>
+					<swe:field>						<swe:Item>9</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>8</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>7</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>6</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>5</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>4</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>3</swe:Item>					</swe:field>
+				</swe:Record>
+			</cv:value>
+		</cv:CV_GeometryValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CV_GeometryValuePair>
+			<cv:geometry>
+				<cv:CV_DomainObject>
+					<cv:spatialElement xlink:href="./foi.xml#st3"/>
+					<cv:temporalElement xlink:href="./toi.xml#ti5"/>
+				</cv:CV_DomainObject>
+			</cv:geometry>
+			<cv:value>
+				<swe:Record>
+					<swe:field>						<swe:Item>1</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>2</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>3</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>4</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>5</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>6</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>7</swe:Item>					</swe:field>
+				</swe:Record>
+			</cv:value>
+		</cv:CV_GeometryValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CV_GeometryValuePair>
+			<cv:geometry>
+				<cv:CV_DomainObject>
+					<cv:spatialElement xlink:href="./foi.xml#st2"/>
+					<cv:temporalElement xlink:href="./toi.xml#ti5"/>
+				</cv:CV_DomainObject>
+			</cv:geometry>
+			<cv:value>
+				<swe:Record>
+					<swe:field>						<swe:Item>1</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>9</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>2</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>8</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>3</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>7</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>4</swe:Item>					</swe:field>
+				</swe:Record>
+			</cv:value>
+		</cv:CV_GeometryValuePair>
+	</cv:element>
+	<cv:element>
+		<cv:CV_GeometryValuePair>
+			<cv:geometry>
+				<cv:CV_DomainObject>
+					<cv:spatialElement xlink:href="./foi.xml#st4"/>
+					<cv:temporalElement xlink:href="./toi.xml#ti5"/>
+				</cv:CV_DomainObject>
+			</cv:geometry>
+			<cv:value>
+				<swe:Record>
+					<swe:field>						<swe:Item>5</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>6</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>3</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>7</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>2</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>8</swe:Item>					</swe:field>
+					<swe:field>						<swe:Item>1</swe:Item>					</swe:field>
+				</swe:Record>
+			</cv:value>
+		</cv:CV_GeometryValuePair>
+	</cv:element>
+</cv:CV_DiscreteCoverage>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CityModel xmlns="http://www.citygml.org/citygml/1/0/0" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.citygml.org/citygml/1/0/0 ../CityGML.xsd">
+	<gml:description>
+		This CityGML file contains examples for transportation objects, water bodies, and groups. 
+		However, the geometries do not make sense; they are only included to
+		illustrate the document structuring.
+		One element of the group again is a group. The elements of this group are referenced by their ID. 
+	</gml:description>
+	<gml:name>Roads and Areas of the 3D City Model of Bonn being of interest for tourists</gml:name>
+	<gml:boundedBy>
+		<gml:Envelope srsName="urn:ogc:def:crs,crs:EPSG:6.12:31466,crs:EPSG:6.12:5783">
+			<gml:pos srsDimension="3">0.0 0.0 0.0 </gml:pos>
+			<gml:pos srsDimension="3">33.0 34.0 2.5</gml:pos>
+		</gml:Envelope>
+	</gml:boundedBy>
+	<cityObjectMember>
+		<CityObjectGroup>
+			<class>Group of Roads and Water bodies</class>
+			<function>Roads and Areas in Bonn being of interest for tourists</function>
+			<groupMember role="Famous museums and exhibitions">
+				<Road gml:id="ID_76">
+					<gml:name codeSpace="urn:OfficialRoadName"> Adenauerallee  </gml:name>
+					<gml:name codeSpace="urn:OfficialRoadNumber"> B 9 </gml:name>
+					<function>113</function>   <!-- code list yet to be defined; 113 should be in this case 'federal road' -->
+					<trafficArea>
+						<TrafficArea>
+							<function>1</function>   <!-- driving lane -->
+							<surfaceMaterial>1</surfaceMaterial>   <!-- asphalt -->
+							<lod2MultiSurface>
+								<gml:MultiSurface>
+									<gml:surfaceMember>
+										<gml:Polygon>
+											<gml:exterior>
+												<gml:LinearRing>
+													<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+													<gml:pos srsDimension="3">3.0 1.0 0.0</gml:pos>
+													<gml:pos srsDimension="3">3.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">2.0 1.0 2.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+												</gml:LinearRing>
+											</gml:exterior>
+										</gml:Polygon>
+									</gml:surfaceMember>
+								</gml:MultiSurface>
+							</lod2MultiSurface>
+						</TrafficArea>
+					</trafficArea>
+					<trafficArea>
+						<TrafficArea gml:id="I555">
+							<function>2</function>    <!-- footpath -->
+							<lod2MultiSurface>
+								<gml:MultiSurface>
+									<gml:surfaceMember>
+										<gml:Polygon>
+											<gml:exterior>
+												<gml:LinearRing>
+													<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+													<gml:pos srsDimension="3">3.0 1.0 0.0</gml:pos>
+													<gml:pos srsDimension="3">3.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">2.0 1.0 2.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+												</gml:LinearRing>
+											</gml:exterior>
+										</gml:Polygon>
+									</gml:surfaceMember>
+								</gml:MultiSurface>
+							</lod2MultiSurface>
+						</TrafficArea>
+					</trafficArea>
+					<trafficArea>
+						<TrafficArea gml:id="I554">
+							<function>3</function>    <!-- cycle path -->
+							<lod2MultiSurface>
+								<gml:MultiSurface>
+									<gml:surfaceMember>
+										<gml:Polygon>
+											<gml:exterior>
+												<gml:LinearRing>
+													<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+													<gml:pos srsDimension="3">3.0 1.0 0.0</gml:pos>
+													<gml:pos srsDimension="3">3.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">2.0 1.0 2.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+												</gml:LinearRing>
+											</gml:exterior>
+										</gml:Polygon>
+									</gml:surfaceMember>
+								</gml:MultiSurface>
+							</lod2MultiSurface>
+						</TrafficArea>
+					</trafficArea>
+					<auxiliaryTrafficArea>
+						<AuxiliaryTrafficArea>
+							<function>31</function>    <!-- green space -->
+							<lod2MultiSurface>
+								<gml:MultiSurface>
+									<gml:surfaceMember>
+										<gml:Polygon>
+											<gml:exterior>
+												<gml:LinearRing>
+													<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+													<gml:pos srsDimension="3">3.0 1.0 0.0</gml:pos>
+													<gml:pos srsDimension="3">3.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">2.0 1.0 2.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+												</gml:LinearRing>
+											</gml:exterior>
+										</gml:Polygon>
+									</gml:surfaceMember>
+								</gml:MultiSurface>
+							</lod2MultiSurface>
+						</AuxiliaryTrafficArea>
+					</auxiliaryTrafficArea>
+				</Road>
+			</groupMember>
+			<groupMember role="Road along the building where Beethoven was born">
+				<Road gml:id="ID_78">
+					<trafficArea>
+						<TrafficArea>
+							<gml:name codeSpace="urn:OfficialRoadName">Bonngasse</gml:name>
+							<lod2MultiSurface>
+								<gml:MultiSurface>
+									<gml:surfaceMember>
+										<gml:Polygon>
+											<gml:exterior>
+												<gml:LinearRing>
+													<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+													<gml:pos srsDimension="3">3.0 1.0 0.0</gml:pos>
+													<gml:pos srsDimension="3">3.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">2.0 1.0 2.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+												</gml:LinearRing>
+											</gml:exterior>
+										</gml:Polygon>
+									</gml:surfaceMember>
+								</gml:MultiSurface>
+							</lod2MultiSurface>
+						</TrafficArea>
+					</trafficArea>
+				</Road>
+			</groupMember>
+			<groupMember role="Nice place to walk, near the university">
+				<Square gml:id="ID_79">
+					<gml:name>Hofgarten</gml:name>
+					<trafficArea>
+						<TrafficArea>
+							<lod2MultiSurface>
+								<gml:MultiSurface>
+									<gml:surfaceMember>
+										<gml:Polygon>
+											<gml:exterior>
+												<gml:LinearRing>
+													<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+													<gml:pos srsDimension="3">3.0 1.0 0.0</gml:pos>
+													<gml:pos srsDimension="3">3.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">2.0 1.0 2.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+												</gml:LinearRing>
+											</gml:exterior>
+										</gml:Polygon>
+									</gml:surfaceMember>
+								</gml:MultiSurface>
+							</lod2MultiSurface>
+						</TrafficArea>
+					</trafficArea>
+				</Square>
+			</groupMember>
+			<groupMember role="Small river, suitable for rafting or rowing">
+				<WaterBody>
+					<gml:name>Ruhr</gml:name>
+					<class>20</class>    <!-- code list yet to be defined; in this case 20 should mean 'river' -->
+					<boundedBy>
+						<WaterSurface>
+							<lod2Surface>
+								<gml:Polygon>
+									<gml:exterior>
+										<gml:LinearRing>
+											<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+											<gml:pos srsDimension="3">3.0 1.0 0.0</gml:pos>
+											<gml:pos srsDimension="3">3.0 1.0 1.5</gml:pos>
+											<gml:pos srsDimension="3">2.0 1.0 2.5</gml:pos>
+											<gml:pos srsDimension="3">1.0 1.0 1.5</gml:pos>
+											<gml:pos srsDimension="3">1.0 1.0 0.0</gml:pos>
+										</gml:LinearRing>
+									</gml:exterior>
+								</gml:Polygon>
+							</lod2Surface>
+						</WaterSurface>
+					</boundedBy>
+				</WaterBody>
+			</groupMember>
+			<groupMember role="Roads and areas suitable for handicapped persons">
+				<CityObjectGroup>
+					<function>"Roads and Areas suitable for handicapped persons"</function>
+					<groupMember xlink:href="ID_76"/>
+					<groupMember xlink:href="ID_79"/>
+				</CityObjectGroup>
+			</groupMember>
+		</CityObjectGroup>
+	</cityObjectMember>
+</CityModel>

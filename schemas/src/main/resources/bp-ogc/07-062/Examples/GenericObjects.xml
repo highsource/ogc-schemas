@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Example data for the 3D application schema of the SIG 3D data model -->
+<!-- Editors: Dr. Gerhard Groeger & Dr. Thomas H. Kolbe, Institute for Cartography and Geoinformation, University of Bonn -->
+<CityModel xmlns="http://www.citygml.org/citygml/1/0/0" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.citygml.org/citygml/1/0/0  ../CityGML.xsd">
+	<gml:description> The CityModel contains a generic city object - a gas tank - with two generic
+		attributes, and a building with a generic attribute (the date of a renovation).
+		However, the geometries do not make sense; they are only included to
+		illustrate the document structuring.
+	</gml:description>
+	<gml:name>Example CityGML file - generic objects and attributes </gml:name>
+	<gml:boundedBy>
+		<gml:Envelope srsName="urn:ogc:def:crs,crs:EPSG:6.12:31466,crs:EPSG:6.12:5783">
+			<gml:pos srsDimension="3">0.0 0.0 0.0 </gml:pos>
+			<gml:pos srsDimension="3">33.0 34.0 2.5</gml:pos>
+		</gml:Envelope>
+	</gml:boundedBy>
+	<cityObjectMember>
+		<GenericCityObject>
+			<doubleAttribute name="Gas volume">
+				<value>4334.99</value>
+			</doubleAttribute>
+			<stringAttribute name="Gas Type">
+				<value>Type 55</value>
+			</stringAttribute>
+			<function>gas tank</function>
+			<lod1Geometry>
+				<gml:Solid srsName="urn:ogc:def:crs,crs:EPSG:6.12:31466,crs:EPSG:6.12:5783">
+					<gml:exterior>
+						<gml:CompositeSurface>
+							<gml:surfaceMember>
+								<gml:OrientableSurface orientation="+">
+									<gml:baseSurface>
+										<gml:Polygon>
+											<gml:exterior>
+												<gml:LinearRing>
+													<gml:posList srsDimension="3" count="5"> 1.0 1.0
+												0.0 1.0 4.0 0.0 3.0 4.0 0.0 3.0 1.0 0.0 1.0
+												1.0 0.0 </gml:posList>
+												</gml:LinearRing>
+											</gml:exterior>
+										</gml:Polygon>
+									</gml:baseSurface>
+								</gml:OrientableSurface>
+							</gml:surfaceMember>
+							<gml:surfaceMember>
+								<gml:OrientableSurface orientation="+">
+									<gml:baseSurface>
+										<gml:Polygon>
+											<gml:exterior>
+												<gml:LinearRing>
+													<gml:pos srsDimension="3">2.0 1.0 2.5</gml:pos>
+													<gml:pos srsDimension="3">2.0 4.0 2.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 4.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">1.0 1.0 1.5</gml:pos>
+													<gml:pos srsDimension="3">2.0 1.0 2.5</gml:pos>
+												</gml:LinearRing>
+											</gml:exterior>
+										</gml:Polygon>
+									</gml:baseSurface>
+								</gml:OrientableSurface>
+							</gml:surfaceMember>
+						</gml:CompositeSurface>
+					</gml:exterior>
+				</gml:Solid>
+			</lod1Geometry>
+		</GenericCityObject>
+	</cityObjectMember>
+	<cityObjectMember>
+		<Building gml:id="b32">
+			<dateAttribute name="Date of last renovation">
+				<value>2001-11-07</value>
+			</dateAttribute>
+			<generalizesTo xlink:href="http://www.some-wfs.com/..../buildings.xml#b117"/>
+			<lod1Solid>
+				<!-- definition of the solid to be inserted here -->
+			</lod1Solid>
+		</Building>
+	</cityObjectMember>
+	<cityObjectMember>
+		<CityFurniture>
+			<class>1000</class>
+			<function>1080</function>
+			<lod2ImplicitRepresentation>
+				<ImplicitGeometry>
+					<mimeType>model/vrml</mimeType>
+					<libraryObject>www.some-3D-library.com/3DCityModel/furnitures/TrafficLight434.wrl</libraryObject>
+					<referencePoint>
+						<gml:Point>
+							<gml:pos srsDimension="3">3603845.54 5793898.77 44.8</gml:pos>
+						</gml:Point>
+					</referencePoint>
+				</ImplicitGeometry>
+			</lod2ImplicitRepresentation>
+		</CityFurniture>
+	</cityObjectMember>
+	<cityObjectMember>
+		<CityFurniture>
+			<class>1000</class>
+			<function>1080</function>
+			<lod2ImplicitRepresentation>
+				<ImplicitGeometry>
+					<mimeType>model/vrml</mimeType>
+					<transformationMatrix> 0.866025 -0.5 0 0.5 0.5 0.866025 0 0.5 0 0 1 0 0 0 0 1 </transformationMatrix>
+					<libraryObject>www.some-3D-library.com/3DCityModel/furnitures/TrafficLight834.wrl</libraryObject>
+					<referencePoint>
+						<gml:Point>
+							<gml:pos srsDimension="3">3603820.54 5793801.77 45.8</gml:pos>
+						</gml:Point>
+					</referencePoint>
+				</ImplicitGeometry>
+			</lod2ImplicitRepresentation>
+		</CityFurniture>
+	</cityObjectMember>
+</CityModel>

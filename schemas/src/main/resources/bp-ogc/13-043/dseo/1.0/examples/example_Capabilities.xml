@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Capabilities version="1.0.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns="http://www.opengis.net/dseo/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/dseo/1.0 ../dseo.xsd">
+	<ows:ServiceProvider>
+		<ows:ProviderName>ESA</ows:ProviderName>
+		<ows:ProviderSite/>
+		<ows:ServiceContact>
+			<ows:IndividualName>John Smith</ows:IndividualName>
+			<ows:PositionName>EO Operator</ows:PositionName>
+			<ows:ContactInfo>
+				<ows:Phone/>
+			</ows:ContactInfo>
+			<ows:Role codeSpace="http://www.xmlspy.com">String</ows:Role>
+		</ows:ServiceContact>
+	</ows:ServiceProvider>
+	<ows:OperationsMetadata>
+		<ows:Operation name="GetCapabilities">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get/>
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+		<ows:Operation name="GetProduct">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get/>
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+	</ows:OperationsMetadata>
+</Capabilities>

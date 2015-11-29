@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mstns:OpenSearchDescription xmlns:oseo="http://www.opengis.net/oseo/1.0" xmlns:roseo="http://www.opengis.net/roseo/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mstns="http://a9.com/-/spec/opensearch/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<mstns:ShortName>Order Options</mstns:ShortName>
+	<mstns:Description>OSDD for Order Options</mstns:Description>
+	<mstns:Url type="application/atom+xml" template="http://some.eocat.server/ESA:EECF:ENVISAT_ASA_IMx_xS?q={searchTerm}&amp;count={count}&amp;startIndex={startIndex?}&amp;startPage={startPage?}&amp;language={language?}&amp;inputEncoding={inputEncoding?}&amp;outputEncoding={outputEncoding?}&amp;bbox={geo:box?}&amp;geom={geo:geometry?}&amp;id={geo:uid?}&amp;lat={geo:lat?}&amp;lon={geo:lon?}&amp;radius={geo:radius?}&amp;rel={geo:relation?}&amp;loc={geo:name&amp;}&amp;startdate={time:start?}&amp;stopdate={time:end?}&amp;prclv={roseo:ProcessingLevel}&amp;prdt={roseo:ProductType}&amp;qos={roseo:QualityOfService}"/>
+	<mstns:SyndicationRight>open</mstns:SyndicationRight>
+	<mstns:AdultContent>false</mstns:AdultContent>
+	<mstns:Language>*</mstns:Language>
+	<mstns:InputEncoding>UTF-8</mstns:InputEncoding>
+	<mstns:OutputEncoding>UTF-8</mstns:OutputEncoding>
+	<roseo:OrderOptions xsi:schemaLocation="http://www.opengis.net/roseo/1.0 ../roseo.xsd" xmlns:oseo="http://www.opengis.net/oseo/1.0" xmlns:roseo="http://www.opengis.net/roseo/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<roseo:OrderOptionGroup>
+			<oseo:productOrderOptionsId>Level 1,Product PRI (ASA_IMP)</oseo:productOrderOptionsId>
+			<oseo:description>Order Options for producing ASAR IMP 1P product</oseo:description>
+			<oseo:orderType>PRODUCT_ORDER</oseo:orderType>
+			<oseo:option>
+				<swe:DataRecord>
+					<swe:field name="processingLevel">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/processingLevel">
+							<swe:identifier>processing Level</swe:identifier>
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>1B</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<oseo:grouping>Processing Option</oseo:grouping>
+			</oseo:option>
+			<oseo:option>
+				<swe:DataRecord>
+					<swe:field name="productType">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/productType">
+							<swe:identifier>Product Type</swe:identifier>
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>ASA_IMP_1P</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<oseo:grouping>Processing Option</oseo:grouping>
+			</oseo:option>
+			<oseo:option>
+				<swe:DataRecord>
+					<swe:field name="qualityOfService">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/qualityOfService">
+							<swe:identifier>qualityOfService</swe:identifier>
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>STANDARD</swe:value>
+									<swe:value>NRT</swe:value>
+									<swe:value>RUSH</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<oseo:grouping>Processing Option</oseo:grouping>
+			</oseo:option>
+			<oseo:productDeliveryOptions>
+				<oseo:onlineDataAccess>
+					<oseo:protocol>https</oseo:protocol>
+				</oseo:onlineDataAccess>
+			</oseo:productDeliveryOptions>
+			<roseo:downloadURL>http://some.roseo.server/ROSEO/1.0.0/options/ESA:EECF:ENVISAT_ASA_IMx_xS/osdd</roseo:downloadURL>
+		</roseo:OrderOptionGroup>
+		<roseo:OrderOptionGroup>
+			<oseo:productOrderOptionsId>Level 1,Product GEC (ASA_IMG)</oseo:productOrderOptionsId>
+			<oseo:description>Order Options for producing ASAR IMG 1P product</oseo:description>
+			<oseo:orderType>PRODUCT_ORDER</oseo:orderType>
+			<oseo:option>
+				<swe:DataRecord>
+					<swe:field name="processingLevel">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/processingLevel">
+							<swe:identifier>processingLevel</swe:identifier>
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>1B</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<oseo:grouping>Processing Option</oseo:grouping>
+			</oseo:option>
+			<oseo:option>
+				<swe:DataRecord>
+					<swe:field name="productType">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/productType">
+							<swe:identifier>productType</swe:identifier>
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>ASA_IMG_1P</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<oseo:grouping>Processing Option</oseo:grouping>
+			</oseo:option>
+			<oseo:option>
+				<swe:DataRecord>
+					<swe:field name="qualityOfService">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/qualityOfService">
+							<swe:identifier>qualityOfService</swe:identifier>
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>STANDARD</swe:value>
+									<swe:value>NRT</swe:value>
+									<swe:value>RUSH</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<oseo:grouping>Processing Option</oseo:grouping>
+			</oseo:option>
+			<oseo:productDeliveryOptions>
+				<oseo:onlineDataAccess>
+					<oseo:protocol>https</oseo:protocol>
+				</oseo:onlineDataAccess>
+			</oseo:productDeliveryOptions>
+			<roseo:downloadURL>http://some.roseo.server/ROSEO/1.0.0/options/ESA:EECF:ENVISAT_ASA_IMx_xS/osdd</roseo:downloadURL>
+		</roseo:OrderOptionGroup>
+		<roseo:OrderOptionGroup>
+			<oseo:productOrderOptionsId>Level 1,Product SLC (ASA_IMS)</oseo:productOrderOptionsId>
+			<oseo:description>Order Options for producing ASAR IMS 1P product</oseo:description>
+			<oseo:orderType>PRODUCT_ORDER</oseo:orderType>
+			<oseo:option>
+				<swe:DataRecord>
+					<swe:field name="processingLevel">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/processingLevel">
+							<swe:identifier>processingLevel</swe:identifier>
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>1B</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<oseo:grouping>Processing Option</oseo:grouping>
+			</oseo:option>
+			<oseo:option>
+				<swe:DataRecord>
+					<swe:field name="productType">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/productType">
+							<swe:identifier>productType</swe:identifier>
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>ASA_IMS_1P</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<oseo:grouping>Processing Option</oseo:grouping>
+			</oseo:option>
+			<oseo:option>
+				<swe:DataRecord>
+					<swe:field name="qualityOfService">
+						<swe:Category updatable="false" optional="true" definition="http://www.opengis.net/def/parameter/ESA/1.0/qualityOfService">
+							<swe:identifier>qualityOfService</swe:identifier>
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:value>STANDARD</swe:value>
+									<swe:value>NRT</swe:value>
+									<swe:value>RUSH</swe:value>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+				<oseo:grouping>Processing Option</oseo:grouping>
+			</oseo:option>
+			<oseo:productDeliveryOptions>
+				<oseo:onlineDataAccess>
+					<oseo:protocol>https</oseo:protocol>
+				</oseo:onlineDataAccess>
+			</oseo:productDeliveryOptions>
+			<roseo:downloadURL>http://some.roseo.server/ROSEO/1.0.0/options/ESA:EECF:ENVISAT_ASA_IMx_xS/osdd</roseo:downloadURL>
+		</roseo:OrderOptionGroup>
+	</roseo:OrderOptions>
+</mstns:OpenSearchDescription>

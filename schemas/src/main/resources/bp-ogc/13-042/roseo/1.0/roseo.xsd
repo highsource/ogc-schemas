@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.opengis.net/roseo/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:roseo="http://www.opengis.net/roseo/1.0" xmlns:oseo="http://www.opengis.net/oseo/1.0" targetNamespace="http://www.opengis.net/roseo/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
+	<xs:annotation>
+		<xs:documentation>		
+RESTful Ordering Services For Earth Observation Products is an OGC Best Practice Document.
+Copyright (c) 2013 Open Geospatial Consortium. 
+To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://www.opengis.net/oseo/1.0" schemaLocation="http://schemas.opengis.net/oseo/1.0/oseo.xsd"/>
+	<xs:import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+	<xs:import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsAll.xsd"/>
+	<xs:import namespace="http://www.opengis.net/swes/2.0" schemaLocation="http://schemas.opengis.net/swes/2.0/swes.xsd"/>
+	<!-- ====================================================================== -->
+	<!-- ======================= Resources root elements ============================-->
+	<!-- ====================================================================== -->
+	<xs:element name="Capabilities">
+		<xs:annotation>
+			<xs:documentation>XML encoded Order Service GetCapabilities operation response. This document provides clients with service metadata about a specific service instance. If the server does not implement the updateSequence parameter, the server shall always return the complete Capabilities document, without the updateSequence parameter. When the server implements the updateSequence parameter and the GetCapabilities operation request included the updateSequence parameter with the current value, the server shall return this element with only the "version" and "updateSequence" attributes. Otherwise, all optional elements shall be included or not depending on the actual value of the Sections parameter in the GetCapabilities operation request. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ows:CapabilitiesBaseType">
+					<xs:sequence>
+						<xs:element ref="Contents" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OrderOptions" type="OrderOptionsType"/>
+	<xs:element name="Orders">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Order" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Order" type="CommonOrderMonitorSpecification"/>
+	<xs:element name="orderItem" type="CommonOrderStatusItemType"/>
+	<xs:element name="OrderedProducts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="URL" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="URL" type="oseo:ItemURLType"/>
+	<!--===================== ComplexType  Definition Section ======================= -->
+	<!--======================================================================= -->
+	<!-- ====================================================================== -->
+	<!-- Order resource section ======================= -->
+	<!-- ====================================================================== -->
+	<xs:complexType name="CommonOrderMonitorSpecification">
+		<xs:complexContent>
+			<xs:extension base="oseo:CommonOrderSpecification">
+				<xs:sequence>
+					<xs:element ref="oseo:orderId" minOccurs="0"/>
+					<xs:element name="downloadURL" type="xs:anyURI" minOccurs="0"/>
+					<xs:element name="orderStatusInfo" type="oseo:StatusType" minOccurs="0"/>
+					<xs:element name="orderDateTime" type="xs:dateTime" minOccurs="0"/>
+					<xs:element ref="orderItem" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ====================================================================== -->
+	<!-- Order Item resource section ======================= -->
+	<!-- ====================================================================== -->
+	<xs:complexType name="CommonOrderStatusItemType">
+		<xs:complexContent>
+			<xs:extension base="oseo:CommonOrderItemType">
+				<xs:sequence>
+					<xs:element name="itemIdURL" type="xs:anyURI" minOccurs="0"/>
+					<xs:element name="orderItemStatusInfo" type="oseo:StatusType" minOccurs="0"/>
+					<xs:element name="downloadURL" type="xs:anyURI" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ====================================================================== -->
+	<!-- Order Options resource section =======================-->
+	<!-- ====================================================================== -->
+	<xs:complexType name="OrderOptionsType">
+		<xs:sequence>
+			<xs:element name="OrderOptionGroup" type="OrderOptionsGroupType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrderOptionsGroupType">
+		<xs:complexContent>
+			<xs:extension base="oseo:CommonOrderOptionsType">
+				<xs:sequence>
+					<xs:element name="downloadURL" type="xs:anyURI" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ====================================================================== -->
+	<!-- Capabilities resource section.-->
+	<!-- ====================================================================== -->
+	<xs:element name="Contents" type="OrderingServiceContentsType"/>
+	<xs:complexType name="OrderingServiceContentsType">
+		<xs:complexContent>
+			<xs:extension base="oseo:OrderingServiceContentsType">
+				<xs:sequence>
+					<xs:element name="resourceURL" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="resource">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="capabilities"/>
+										<xs:enumeration value="order options"/>
+										<xs:enumeration value="order"/>
+										<xs:enumeration value="ordered product"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+							<xs:attribute name="URL" type="xs:anyURI"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
