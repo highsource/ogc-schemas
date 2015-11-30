@@ -29,6 +29,7 @@
 * om/1.0.0
 * om/2.0
 * omeo/1.0
+* omx/1.0.0
 * oseo/1.0
 * owc/0.3.1
 * ows/1.0.0
@@ -86,7 +87,6 @@
 * gml/3.3.0
 * gmljp2/2.0
 * ImageCRSs/1.1.0
-* omx/1.0.0
 
 # Won't fix
 

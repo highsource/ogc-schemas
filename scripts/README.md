@@ -81,6 +81,7 @@ Supports the following schemas:
 * `OMEO_SEN1_2_0`
 * `OMEO_ALT_2_0`
 * `OMEO_SSP_2_0`
+* `OMX_1_0_0`
 * `OSEO_1_0`
 * `OWC_0_3_1`
 * `OWS_1_0_0`
