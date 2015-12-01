@@ -2,6 +2,216 @@
 {
     "id":"http://www.opengis.net/citygml/2.0#",
     "definitions":{
+        "XalAddressPropertyType":{
+            "type":"object",
+            "title":"XalAddressPropertyType",
+            "required":[
+                "addressDetails"
+            ],
+            "properties":{
+                "addressDetails":{
+                    "title":"addressDetails",
+                    "allOf":[
+                        {
+                            "$ref":"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0#/definitions/AddressDetails"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"AddressDetails",
+                        "namespaceURI":"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"xalAddressPropertyType",
+                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+            },
+            "propertiesOrder":[
+                "addressDetails"
+            ]
+        },
+        "AbstractSiteType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractCityObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractSiteType",
+                    "properties":{
+                        "genericApplicationPropertyOfSite":{
+                            "title":"genericApplicationPropertyOfSite",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfSite",
+                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractSiteType",
+                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+            },
+            "propertiesOrder":[
+                "genericApplicationPropertyOfSite"
+            ]
+        },
+        "ImplicitRepresentationPropertyType":{
+            "type":"object",
+            "title":"ImplicitRepresentationPropertyType",
+            "required":[
+                "implicitGeometry"
+            ],
+            "properties":{
+                "implicitGeometry":{
+                    "title":"implicitGeometry",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ImplicitGeometryType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ImplicitGeometry",
+                        "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ImplicitRepresentationPropertyType",
+                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+            },
+            "propertiesOrder":[
+                "implicitGeometry",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
         "AddressType":{
             "required":[
                 "xalAddress"
@@ -71,147 +281,6 @@
                 "genericApplicationPropertyOfAddress"
             ]
         },
-        "ImplicitGeometryType":{
-            "required":[
-                "referencePoint"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGMLType"
-                },
-                {
-                    "type":"object",
-                    "title":"ImplicitGeometryType",
-                    "properties":{
-                        "mimeType":{
-                            "title":"mimeType",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"mimeType",
-                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                            }
-                        },
-                        "transformationMatrix":{
-                            "title":"transformationMatrix",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                    }
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"transformationMatrix",
-                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                            }
-                        },
-                        "libraryObject":{
-                            "title":"libraryObject",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"libraryObject",
-                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                            }
-                        },
-                        "relativeGMLGeometry":{
-                            "title":"relativeGMLGeometry",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/GeometryPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"relativeGMLGeometry",
-                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                            }
-                        },
-                        "referencePoint":{
-                            "title":"referencePoint",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PointPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"referencePoint",
-                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ImplicitGeometryType",
-                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-            },
-            "propertiesOrder":[
-                "mimeType",
-                "transformationMatrix",
-                "libraryObject",
-                "relativeGMLGeometry",
-                "referencePoint"
-            ]
-        },
-        "ExternalObjectReferenceType":{
-            "type":"object",
-            "title":"ExternalObjectReferenceType",
-            "required":[
-                "name",
-                "uri"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"name",
-                        "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                    }
-                },
-                "uri":{
-                    "title":"uri",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"uri",
-                        "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ExternalObjectReferenceType",
-                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-            },
-            "propertiesOrder":[
-                "name",
-                "uri"
-            ]
-        },
         "CityModelType":{
             "allOf":[
                 {
@@ -248,148 +317,6 @@
             },
             "propertiesOrder":[
                 "genericApplicationPropertyOfCityModel"
-            ]
-        },
-        "AbstractCityObjectType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractCityObjectType",
-                    "properties":{
-                        "creationDate":{
-                            "title":"creationDate",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"creationDate",
-                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                            }
-                        },
-                        "terminationDate":{
-                            "title":"terminationDate",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"terminationDate",
-                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                            }
-                        },
-                        "externalReference":{
-                            "title":"externalReference",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/ExternalReferenceType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"externalReference",
-                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                            }
-                        },
-                        "generalizesTo":{
-                            "title":"generalizesTo",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/GeneralizationRelationType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"generalizesTo",
-                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                            }
-                        },
-                        "relativeToTerrain":{
-                            "title":"relativeToTerrain",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/RelativeToTerrainType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"relativeToTerrain",
-                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                            }
-                        },
-                        "relativeToWater":{
-                            "title":"relativeToWater",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/RelativeToWaterType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"relativeToWater",
-                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfCityObject":{
-                            "title":"genericApplicationPropertyOfCityObject",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"_GenericApplicationPropertyOfCityObject",
-                                            "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                                        }
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfCityObject",
-                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractCityObjectType",
-                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-            },
-            "propertiesOrder":[
-                "creationDate",
-                "terminationDate",
-                "externalReference",
-                "generalizesTo",
-                "relativeToTerrain",
-                "relativeToWater",
-                "genericApplicationPropertyOfCityObject"
             ]
         },
         "AddressPropertyType":{
@@ -532,6 +459,192 @@
                 "title",
                 "show",
                 "actuate"
+            ]
+        },
+        "ExternalReferenceType":{
+            "type":"object",
+            "title":"ExternalReferenceType",
+            "required":[
+                "externalObject"
+            ],
+            "properties":{
+                "informationSystem":{
+                    "title":"informationSystem",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"informationSystem",
+                        "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                    }
+                },
+                "externalObject":{
+                    "title":"externalObject",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ExternalObjectReferenceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"externalObject",
+                        "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ExternalReferenceType",
+                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+            },
+            "propertiesOrder":[
+                "informationSystem",
+                "externalObject"
+            ]
+        },
+        "AbstractCityObjectType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractCityObjectType",
+                    "properties":{
+                        "creationDate":{
+                            "title":"creationDate",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"creationDate",
+                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                            }
+                        },
+                        "terminationDate":{
+                            "title":"terminationDate",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/calendar"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"terminationDate",
+                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                            }
+                        },
+                        "externalReference":{
+                            "title":"externalReference",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/ExternalReferenceType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"externalReference",
+                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                            }
+                        },
+                        "generalizesTo":{
+                            "title":"generalizesTo",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/GeneralizationRelationType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"generalizesTo",
+                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                            }
+                        },
+                        "relativeToTerrain":{
+                            "title":"relativeToTerrain",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/RelativeToTerrainType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"relativeToTerrain",
+                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                            }
+                        },
+                        "relativeToWater":{
+                            "title":"relativeToWater",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/RelativeToWaterType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"relativeToWater",
+                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfCityObject":{
+                            "title":"genericApplicationPropertyOfCityObject",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"_GenericApplicationPropertyOfCityObject",
+                                            "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                                        }
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfCityObject",
+                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractCityObjectType",
+                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+            },
+            "propertiesOrder":[
+                "creationDate",
+                "terminationDate",
+                "externalReference",
+                "generalizesTo",
+                "relativeToTerrain",
+                "relativeToWater",
+                "genericApplicationPropertyOfCityObject"
             ]
         },
         "GeneralizationRelationType":{
@@ -688,201 +801,128 @@
                 "actuate"
             ]
         },
-        "XalAddressPropertyType":{
+        "ExternalObjectReferenceType":{
             "type":"object",
-            "title":"XalAddressPropertyType",
+            "title":"ExternalObjectReferenceType",
             "required":[
-                "addressDetails"
+                "name",
+                "uri"
             ],
             "properties":{
-                "addressDetails":{
-                    "title":"addressDetails",
+                "name":{
+                    "title":"name",
                     "allOf":[
                         {
-                            "$ref":"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0#/definitions/AddressDetails"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"AddressDetails",
-                        "namespaceURI":"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"xalAddressPropertyType",
-                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-            },
-            "propertiesOrder":[
-                "addressDetails"
-            ]
-        },
-        "ImplicitRepresentationPropertyType":{
-            "type":"object",
-            "title":"ImplicitRepresentationPropertyType",
-            "required":[
-                "implicitGeometry"
-            ],
-            "properties":{
-                "implicitGeometry":{
-                    "title":"implicitGeometry",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ImplicitGeometryType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ImplicitGeometry",
+                        "localPart":"name",
                         "namespaceURI":"http://www.opengis.net/citygml/2.0"
                     }
                 },
-                "remoteSchema":{
-                    "title":"remoteSchema",
+                "uri":{
+                    "title":"uri",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"uri",
+                        "namespaceURI":"http://www.opengis.net/citygml/2.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ImplicitRepresentationPropertyType",
+                "localPart":"ExternalObjectReferenceType",
                 "namespaceURI":"http://www.opengis.net/citygml/2.0"
             },
             "propertiesOrder":[
-                "implicitGeometry",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
+                "name",
+                "uri"
             ]
         },
-        "AbstractSiteType":{
+        "ImplicitGeometryType":{
+            "required":[
+                "referencePoint"
+            ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractCityObjectType"
+                    "$ref":"#/definitions/AbstractGMLType"
                 },
                 {
                     "type":"object",
-                    "title":"AbstractSiteType",
+                    "title":"ImplicitGeometryType",
                     "properties":{
-                        "genericApplicationPropertyOfSite":{
-                            "title":"genericApplicationPropertyOfSite",
+                        "mimeType":{
+                            "title":"mimeType",
                             "allOf":[
                                 {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
+                                    "$ref":"#/definitions/CodeType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfSite",
+                                "localPart":"mimeType",
+                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                            }
+                        },
+                        "transformationMatrix":{
+                            "title":"transformationMatrix",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                    }
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"transformationMatrix",
+                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                            }
+                        },
+                        "libraryObject":{
+                            "title":"libraryObject",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"libraryObject",
+                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                            }
+                        },
+                        "relativeGMLGeometry":{
+                            "title":"relativeGMLGeometry",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/GeometryPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"relativeGMLGeometry",
+                                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+                            }
+                        },
+                        "referencePoint":{
+                            "title":"referencePoint",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/PointPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"referencePoint",
                                 "namespaceURI":"http://www.opengis.net/citygml/2.0"
                             }
                         }
@@ -891,55 +931,15 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AbstractSiteType",
+                "localPart":"ImplicitGeometryType",
                 "namespaceURI":"http://www.opengis.net/citygml/2.0"
             },
             "propertiesOrder":[
-                "genericApplicationPropertyOfSite"
-            ]
-        },
-        "ExternalReferenceType":{
-            "type":"object",
-            "title":"ExternalReferenceType",
-            "required":[
-                "externalObject"
-            ],
-            "properties":{
-                "informationSystem":{
-                    "title":"informationSystem",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"informationSystem",
-                        "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                    }
-                },
-                "externalObject":{
-                    "title":"externalObject",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ExternalObjectReferenceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"externalObject",
-                        "namespaceURI":"http://www.opengis.net/citygml/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ExternalReferenceType",
-                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-            },
-            "propertiesOrder":[
-                "informationSystem",
-                "externalObject"
+                "mimeType",
+                "transformationMatrix",
+                "libraryObject",
+                "relativeGMLGeometry",
+                "referencePoint"
             ]
         },
         "RelativeToTerrainType":{
@@ -975,11 +975,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/AbstractCityObjectType"
+                    "$ref":"#/definitions/AddressType"
                 }
             },
             "elementName":{
-                "localPart":"_CityObject",
+                "localPart":"Address",
+                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/FeaturePropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"cityObjectMember",
                 "namespaceURI":"http://www.opengis.net/citygml/2.0"
             }
         },
@@ -994,22 +1009,7 @@
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfCityModel",
-                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfAddress",
+                "localPart":"_GenericApplicationPropertyOfSite",
                 "namespaceURI":"http://www.opengis.net/citygml/2.0"
             }
         },
@@ -1050,6 +1050,21 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfAddress",
+                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/ImplicitGeometryType"
                 }
             },
@@ -1065,11 +1080,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/AddressType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"Address",
+                "localPart":"_GenericApplicationPropertyOfCityModel",
+                "namespaceURI":"http://www.opengis.net/citygml/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractCityObjectType"
+                }
+            },
+            "elementName":{
+                "localPart":"_CityObject",
                 "namespaceURI":"http://www.opengis.net/citygml/2.0"
             }
         },
@@ -1085,36 +1115,6 @@
             },
             "elementName":{
                 "localPart":"CityModel",
-                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/FeaturePropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"cityObjectMember",
-                "namespaceURI":"http://www.opengis.net/citygml/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfSite",
                 "namespaceURI":"http://www.opengis.net/citygml/2.0"
             }
         }

@@ -5,12 +5,30 @@ var GML4WCS_1_0_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0'],
     tis: [{
-        ln: 'AbstractGeometryType',
-        bti: '.AbstractGeometryBaseType',
+        ln: 'EnvelopeType',
+        bti: '.AbstractGeometryType',
         ps: [{
-            n: 'srsName',
+            n: 'pos',
+            rq: true,
+            mno: 2,
+            mxo: 2,
+            col: true,
+            ti: '.DirectPositionType'
+          }]
+      }, {
+        ln: 'EnvelopeWithTimePeriodType',
+        bti: '.EnvelopeType',
+        ps: [{
+            n: 'timePosition',
+            rq: true,
+            mno: 2,
+            mxo: 2,
+            col: true,
+            ti: '.TimePositionType'
+          }, {
+            n: 'frame',
             an: {
-              lp: 'srsName'
+              lp: 'frame'
             },
             t: 'a'
           }]
@@ -52,8 +70,19 @@ var GML4WCS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractSurfaceType',
-        bti: '.AbstractGeometricPrimitiveType'
+        ln: 'AbstractMetaDataType',
+        ps: [{
+            n: 'content',
+            t: 'v'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }]
       }, {
         ln: 'PolygonType',
         bti: '.AbstractSurfaceType',
@@ -67,12 +96,25 @@ var GML4WCS_1_0_0_Module_Factory = function () {
             ti: '.AbstractRingPropertyType'
           }]
       }, {
-        ln: 'PointType',
-        bti: '.AbstractGeometryType',
+        ln: 'GridLimitsType',
         ps: [{
-            n: 'pos',
+            n: 'gridEnvelope',
             rq: true,
-            ti: '.DirectPositionType'
+            en: 'GridEnvelope',
+            ti: '.GridEnvelopeType'
+          }]
+      }, {
+        ln: 'RectifiedGridType',
+        bti: '.GridType',
+        ps: [{
+            n: 'origin',
+            rq: true,
+            ti: '.PointType'
+          }, {
+            n: 'offsetVector',
+            rq: true,
+            col: true,
+            ti: '.VectorType'
           }]
       }, {
         ln: 'LinearRingType',
@@ -84,6 +126,75 @@ var GML4WCS_1_0_0_Module_Factory = function () {
             col: true,
             ti: '.DirectPositionType'
           }]
+      }, {
+        ln: 'AbstractGMLType',
+        ps: [{
+            n: 'metaDataProperty',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            ti: '.MetaDataPropertyType',
+            t: 'er'
+          }, {
+            n: 'description',
+            ti: '.StringOrRefType'
+          }, {
+            n: 'name',
+            mno: 0,
+            col: true,
+            ti: '.CodeType'
+          }]
+      }, {
+        ln: 'AbstractGeometryType',
+        bti: '.AbstractGeometryBaseType',
+        ps: [{
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GridType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'limits',
+            rq: true,
+            ti: '.GridLimitsType'
+          }, {
+            n: 'axisName',
+            rq: true,
+            col: true
+          }, {
+            n: 'dimension',
+            rq: true,
+            ti: 'Integer',
+            an: {
+              lp: 'dimension'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GridEnvelopeType',
+        ps: [{
+            n: 'low',
+            rq: true,
+            ti: {
+              t: 'l',
+              bti: 'Integer'
+            }
+          }, {
+            n: 'high',
+            rq: true,
+            ti: {
+              t: 'l',
+              bti: 'Integer'
+            }
+          }]
+      }, {
+        ln: 'AbstractRingType',
+        bti: '.AbstractGeometryType'
       }, {
         ln: 'CodeType',
         ps: [{
@@ -97,19 +208,55 @@ var GML4WCS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractRingType',
-        bti: '.AbstractGeometryType'
+        ln: 'AbstractGeometryBaseType',
+        bti: '.AbstractGMLType'
       }, {
-        ln: 'AbstractMetaDataType',
+        ln: 'VectorType',
+        bti: '.DirectPositionType'
+      }, {
+        ln: 'TimePositionType',
         ps: [{
-            n: 'content',
+            n: 'value',
             t: 'v'
           }, {
-            n: 'id',
-            ti: 'ID',
+            n: 'calendarEraName',
             an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml'
+              lp: 'calendarEraName'
+            },
+            t: 'a'
+          }, {
+            n: 'frame',
+            an: {
+              lp: 'frame'
+            },
+            t: 'a'
+          }, {
+            n: 'indeterminatePosition',
+            an: {
+              lp: 'indeterminatePosition'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PointType',
+        bti: '.AbstractGeometryType',
+        ps: [{
+            n: 'pos',
+            rq: true,
+            ti: '.DirectPositionType'
+          }]
+      }, {
+        ln: 'CodeListType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l'
+            },
+            t: 'v'
+          }, {
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
             },
             t: 'a'
           }]
@@ -158,191 +305,8 @@ var GML4WCS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'BoundingShapeType',
-        ps: [{
-            n: 'envelope',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'Envelope',
-            ti: '.EnvelopeType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'TimePositionType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'calendarEraName',
-            an: {
-              lp: 'calendarEraName'
-            },
-            t: 'a'
-          }, {
-            n: 'frame',
-            an: {
-              lp: 'frame'
-            },
-            t: 'a'
-          }, {
-            n: 'indeterminatePosition',
-            an: {
-              lp: 'indeterminatePosition'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EnvelopeType',
-        bti: '.AbstractGeometryType',
-        ps: [{
-            n: 'pos',
-            rq: true,
-            mno: 2,
-            mxo: 2,
-            col: true,
-            ti: '.DirectPositionType'
-          }]
-      }, {
-        ln: 'AbstractRingPropertyType',
-        ps: [{
-            n: 'linearRing',
-            rq: true,
-            en: 'LinearRing',
-            ti: '.LinearRingType'
-          }]
-      }, {
-        ln: 'GridEnvelopeType',
-        ps: [{
-            n: 'low',
-            rq: true,
-            ti: {
-              t: 'l',
-              bti: 'Integer'
-            }
-          }, {
-            n: 'high',
-            rq: true,
-            ti: {
-              t: 'l',
-              bti: 'Integer'
-            }
-          }]
-      }, {
-        ln: 'CodeListType',
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l'
-            },
-            t: 'v'
-          }, {
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GridType',
-        bti: '.AbstractGeometryType',
-        ps: [{
-            n: 'limits',
-            rq: true,
-            ti: '.GridLimitsType'
-          }, {
-            n: 'axisName',
-            rq: true,
-            col: true
-          }, {
-            n: 'dimension',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'dimension'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EnvelopeWithTimePeriodType',
-        bti: '.EnvelopeType',
-        ps: [{
-            n: 'timePosition',
-            rq: true,
-            mno: 2,
-            mxo: 2,
-            col: true,
-            ti: '.TimePositionType'
-          }, {
-            n: 'frame',
-            an: {
-              lp: 'frame'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DirectPositionType',
-        ps: [{
-            n: 'value',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            },
-            t: 'v'
-          }, {
-            n: 'dimension',
-            ti: 'Integer',
-            an: {
-              lp: 'dimension'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'VectorType',
-        bti: '.DirectPositionType'
-      }, {
-        ln: 'RectifiedGridType',
-        bti: '.GridType',
-        ps: [{
-            n: 'origin',
-            rq: true,
-            ti: '.PointType'
-          }, {
-            n: 'offsetVector',
-            rq: true,
-            col: true,
-            ti: '.VectorType'
-          }]
-      }, {
-        ln: 'AbstractGMLType',
-        ps: [{
-            n: 'metaDataProperty',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            ti: '.MetaDataPropertyType',
-            t: 'er'
-          }, {
-            n: 'description',
-            ti: '.StringOrRefType'
-          }, {
-            n: 'name',
-            mno: 0,
-            col: true,
-            ti: '.CodeType'
-          }]
-      }, {
-        ln: 'AbstractGeometryBaseType',
-        bti: '.AbstractGMLType'
-      }, {
-        ln: 'GridLimitsType',
-        ps: [{
-            n: 'gridEnvelope',
-            rq: true,
-            en: 'GridEnvelope',
-            ti: '.GridEnvelopeType'
-          }]
+        ln: 'AbstractSurfaceType',
+        bti: '.AbstractGeometricPrimitiveType'
       }, {
         ln: 'ReferenceType',
         ps: [{
@@ -381,26 +345,89 @@ var GML4WCS_1_0_0_Module_Factory = function () {
         ln: 'AbstractGeometricPrimitiveType',
         bti: '.AbstractGeometryType'
       }, {
+        ln: 'AbstractRingPropertyType',
+        ps: [{
+            n: 'linearRing',
+            rq: true,
+            en: 'LinearRing',
+            ti: '.LinearRingType'
+          }]
+      }, {
+        ln: 'BoundingShapeType',
+        ps: [{
+            n: 'envelope',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'Envelope',
+            ti: '.EnvelopeType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'DirectPositionType',
+        ps: [{
+            n: 'value',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            },
+            t: 'v'
+          }, {
+            n: 'dimension',
+            ti: 'Integer',
+            an: {
+              lp: 'dimension'
+            },
+            t: 'a'
+          }]
+      }, {
         t: 'enum',
         ln: 'TimeIndeterminateValueType',
         vs: ['after', 'before', 'now', 'unknown']
       }],
     eis: [{
-        en: 'Grid',
-        ti: '.GridType',
-        sh: '_Geometry'
+        en: 'Polygon',
+        ti: '.PolygonType',
+        sh: '_Surface'
       }, {
-        en: 'Envelope',
-        ti: '.EnvelopeType',
-        sh: '_Geometry'
+        en: 'metaDataProperty',
+        ti: '.MetaDataPropertyType'
+      }, {
+        en: 'boundedBy',
+        ti: '.BoundingShapeType'
+      }, {
+        en: 'timePosition',
+        ti: '.TimePositionType'
       }, {
         en: 'RectifiedGrid',
         ti: '.RectifiedGridType',
         sh: 'Grid'
       }, {
+        en: '_GML',
+        ti: '.AbstractGMLType',
+        sh: '_Object'
+      }, {
         en: '_MetaData',
         ti: '.AbstractMetaDataType',
         sh: '_Object'
+      }, {
+        en: 'Grid',
+        ti: '.GridType',
+        sh: '_Geometry'
+      }, {
+        en: 'pos',
+        ti: '.DirectPositionType'
+      }, {
+        en: '_Geometry',
+        ti: '.AbstractGeometryType',
+        sh: '_GML'
+      }, {
+        en: '_GeometricPrimitive',
+        ti: '.AbstractGeometricPrimitiveType',
+        sh: '_Geometry'
+      }, {
+        en: 'interior',
+        ti: '.AbstractRingPropertyType'
       }, {
         en: 'exterior',
         ti: '.AbstractRingPropertyType'
@@ -408,58 +435,31 @@ var GML4WCS_1_0_0_Module_Factory = function () {
         en: 'description',
         ti: '.StringOrRefType'
       }, {
-        en: 'Polygon',
-        ti: '.PolygonType',
-        sh: '_Surface'
+        en: '_Surface',
+        ti: '.AbstractSurfaceType',
+        sh: '_GeometricPrimitive'
+      }, {
+        en: 'Envelope',
+        ti: '.EnvelopeType',
+        sh: '_Geometry'
       }, {
         en: 'EnvelopeWithTimePeriod',
         ti: '.EnvelopeWithTimePeriodType',
         sh: 'Envelope'
       }, {
-        en: 'metaDataProperty',
-        ti: '.MetaDataPropertyType'
-      }, {
-        en: 'interior',
-        ti: '.AbstractRingPropertyType'
-      }, {
-        en: 'timePosition',
-        ti: '.TimePositionType'
-      }, {
-        en: '_Geometry',
-        ti: '.AbstractGeometryType',
-        sh: '_GML'
-      }, {
-        en: 'name',
-        ti: '.CodeType'
-      }, {
-        en: 'boundedBy',
-        ti: '.BoundingShapeType'
-      }, {
-        en: '_GeometricPrimitive',
-        ti: '.AbstractGeometricPrimitiveType',
-        sh: '_Geometry'
-      }, {
         en: '_Object',
         ti: 'AnyType'
-      }, {
-        en: 'LinearRing',
-        ti: '.LinearRingType',
-        sh: '_Ring'
       }, {
         en: '_Ring',
         ti: '.AbstractRingType',
         sh: '_Geometry'
       }, {
-        en: '_GML',
-        ti: '.AbstractGMLType',
-        sh: '_Object'
+        en: 'name',
+        ti: '.CodeType'
       }, {
-        en: '_Surface',
-        ti: '.AbstractSurfaceType',
-        sh: '_GeometricPrimitive'
-      }, {
-        en: 'pos',
-        ti: '.DirectPositionType'
+        en: 'LinearRing',
+        ti: '.LinearRingType',
+        sh: '_Ring'
       }]
   };
   return {

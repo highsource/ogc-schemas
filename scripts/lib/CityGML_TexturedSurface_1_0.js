@@ -5,6 +5,9 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_1_1'],
     tis: [{
+        ln: 'AbstractAppearanceType',
+        bti: 'GML_3_1_1.AbstractGMLType'
+      }, {
         ln: 'SimpleTextureType',
         bti: '.AbstractAppearanceType',
         ps: [{
@@ -22,49 +25,6 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
           }, {
             n: 'repeat',
             ti: 'Boolean'
-          }]
-      }, {
-        ln: 'MaterialType',
-        bti: '.AbstractAppearanceType',
-        ps: [{
-            n: 'shininess',
-            ti: 'Double'
-          }, {
-            n: 'transparency',
-            ti: 'Double'
-          }, {
-            n: 'ambientIntensity',
-            ti: 'Double'
-          }, {
-            n: 'specularColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'diffuseColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'emissiveColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }]
-      }, {
-        ln: 'AbstractAppearanceType',
-        bti: 'GML_3_1_1.AbstractGMLType'
-      }, {
-        ln: 'TexturedSurfaceType',
-        bti: 'GML_3_1_1.OrientableSurfaceType',
-        ps: [{
-            n: 'appearance',
-            rq: true,
-            col: true,
-            ti: '.AppearancePropertyType'
           }]
       }, {
         ln: 'AppearancePropertyType',
@@ -114,6 +74,46 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'MaterialType',
+        bti: '.AbstractAppearanceType',
+        ps: [{
+            n: 'shininess',
+            ti: 'Double'
+          }, {
+            n: 'transparency',
+            ti: 'Double'
+          }, {
+            n: 'ambientIntensity',
+            ti: 'Double'
+          }, {
+            n: 'specularColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'diffuseColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'emissiveColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }]
+      }, {
+        ln: 'TexturedSurfaceType',
+        bti: 'GML_3_1_1.OrientableSurfaceType',
+        ps: [{
+            n: 'appearance',
+            rq: true,
+            col: true,
+            ti: '.AppearancePropertyType'
           }]
       }, {
         t: 'enum',

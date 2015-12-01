@@ -39,43 +39,6 @@
                 "value"
             ]
         },
-        "DoubleAttributeType":{
-            "required":[
-                "value"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGenericAttributeType"
-                },
-                {
-                    "type":"object",
-                    "title":"DoubleAttributeType",
-                    "properties":{
-                        "value":{
-                            "title":"value",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"value",
-                                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DoubleAttributeType",
-                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
-            },
-            "propertiesOrder":[
-                "value"
-            ]
-        },
         "GenericCityObjectType":{
             "allOf":[
                 {
@@ -423,6 +386,43 @@
                 "name"
             ]
         },
+        "StringAttributeType":{
+            "required":[
+                "value"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGenericAttributeType"
+                },
+                {
+                    "type":"object",
+                    "title":"StringAttributeType",
+                    "properties":{
+                        "value":{
+                            "title":"value",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"value",
+                                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"StringAttributeType",
+                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
+            },
+            "propertiesOrder":[
+                "value"
+            ]
+        },
         "DateAttributeType":{
             "required":[
                 "value"
@@ -460,7 +460,7 @@
                 "value"
             ]
         },
-        "StringAttributeType":{
+        "DoubleAttributeType":{
             "required":[
                 "value"
             ],
@@ -470,13 +470,13 @@
                 },
                 {
                     "type":"object",
-                    "title":"StringAttributeType",
+                    "title":"DoubleAttributeType",
                     "properties":{
                         "value":{
                             "title":"value",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
                                 }
                             ],
                             "propertyType":"element",
@@ -490,7 +490,7 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"StringAttributeType",
+                "localPart":"DoubleAttributeType",
                 "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
             },
             "propertiesOrder":[
@@ -506,26 +506,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/DateAttributeType"
+                    "$ref":"#/definitions/UriAttributeType"
                 }
             },
             "elementName":{
-                "localPart":"dateAttribute",
-                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DoubleAttributeType"
-                }
-            },
-            "elementName":{
-                "localPart":"doubleAttribute",
+                "localPart":"uriAttribute",
                 "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
             }
         },
@@ -566,11 +551,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/UriAttributeType"
+                    "$ref":"#/definitions/DateAttributeType"
                 }
             },
             "elementName":{
-                "localPart":"uriAttribute",
+                "localPart":"dateAttribute",
+                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DoubleAttributeType"
+                }
+            },
+            "elementName":{
+                "localPart":"doubleAttribute",
                 "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
             }
         },

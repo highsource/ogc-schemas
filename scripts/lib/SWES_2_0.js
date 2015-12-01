@@ -3,391 +3,8 @@ var SWES_2_0_Module_Factory = function () {
     n: 'SWES_2_0',
     dens: 'http:\/\/www.opengis.net\/swes\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'OWS_1_1_0', 'WSN_T_1', 'GML_3_2_1', 'WS_Addr_1_0_Core'],
+    deps: ['XLink_1_0', 'GML_3_2_1', 'OWS_1_1_0', 'WS_Addr_1_0_Core', 'WSN_T_1'],
     tis: [{
-        ln: 'OfferingChangedType',
-        bti: '.SWESEventType',
-        ps: [{
-            n: 'offering',
-            rq: true
-          }]
-      }, {
-        ln: 'SensorChangedType',
-        bti: '.SWESEventType',
-        ps: [{
-            n: 'procedure',
-            rq: true
-          }]
-      }, {
-        ln: 'SWESEventPropertyType',
-        ps: [{
-            n: 'swesEvent',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'SWESEvent',
-            ti: '.SWESEventType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeSensorType.ValidTime',
-        tn: null,
-        ps: [{
-            n: 'abstractTimeGeometricPrimitive',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractTimeGeometricPrimitive',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.AbstractTimeGeometricPrimitiveType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'SensorDescriptionType.Data',
-        tn: null,
-        ps: [{
-            n: 'any',
-            rq: true,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'InsertSensorType.ProcedureDescription',
-        tn: null,
-        ps: [{
-            n: 'any',
-            rq: true,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'DeleteSensorPropertyType',
-        ps: [{
-            n: 'deleteSensor',
-            rq: true,
-            en: 'DeleteSensor',
-            ti: '.DeleteSensorType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractOfferingType.RelatedFeature',
-        tn: null,
-        ps: [{
-            n: 'featureRelationship',
-            rq: true,
-            en: 'FeatureRelationship',
-            ti: '.FeatureRelationshipType'
-          }]
-      }, {
-        ln: 'NotificationBrokerMetadataPropertyType',
-        ps: [{
-            n: 'notificationBrokerMetadata',
-            rq: true,
-            en: 'NotificationBrokerMetadata',
-            ti: '.NotificationBrokerMetadataType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeSensorPropertyType',
-        ps: [{
-            n: 'describeSensor',
-            rq: true,
-            en: 'DescribeSensor',
-            ti: '.DescribeSensorType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SensorDescriptionUpdatedType.ValidTime',
-        tn: null,
-        ps: [{
-            n: 'abstractTimeGeometricPrimitive',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractTimeGeometricPrimitive',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.AbstractTimeGeometricPrimitiveType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'NotificationProducerMetadataPropertyType',
-        ps: [{
-            n: 'notificationProducerMetadata',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'NotificationProducerMetadata',
-            ti: '.NotificationProducerMetadataType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'FeatureRelationshipType',
-        ps: [{
-            n: 'role'
-          }, {
-            n: 'target',
-            rq: true,
-            ti: 'GML_3_2_1.FeaturePropertyType'
-          }]
-      }, {
-        ln: 'SensorDescriptionUpdatedPropertyType',
-        ps: [{
-            n: 'sensorDescriptionUpdated',
-            rq: true,
-            en: 'SensorDescriptionUpdated',
-            ti: '.SensorDescriptionUpdatedType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'UpdateSensorDescriptionType.Description',
-        tn: null,
-        ps: [{
-            n: 'sensorDescription',
-            rq: true,
-            en: 'SensorDescription',
-            ti: '.SensorDescriptionType'
-          }]
-      }, {
         ln: 'OfferingChangedPropertyType',
         ps: [{
             n: 'offeringChanged',
@@ -434,6 +51,73 @@ var SWES_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'AbstractOfferingPropertyType',
+        ps: [{
+            n: 'abstractOffering',
+            rq: true,
+            en: 'AbstractOffering',
+            ti: '.AbstractOfferingType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeSensorResponseType',
+        bti: '.ExtensibleResponseType',
+        ps: [{
+            n: 'procedureDescriptionFormat',
+            rq: true
+          }, {
+            n: 'description',
+            mno: 0,
+            col: true,
+            ti: '.DescribeSensorResponseType.Description'
+          }]
+      }, {
+        ln: 'OfferingChangedType',
+        bti: '.SWESEventType',
+        ps: [{
+            n: 'offering',
+            rq: true
           }]
       }, {
         ln: 'FilterDialectMetadataPropertyType',
@@ -484,33 +168,246 @@ var SWES_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractContentsType.Offering',
+        ln: 'NotificationProducerMetadataType.ServedTopics',
         tn: null,
         ps: [{
-            n: 'abstractOffering',
+            n: 'topicSet',
             rq: true,
-            en: 'AbstractOffering',
-            ti: '.AbstractOfferingType'
+            en: {
+              lp: 'TopicSet',
+              ns: 'http:\/\/docs.oasis-open.org\/wsn\/t-1'
+            },
+            ti: 'WSN_T_1.TopicSetType'
           }]
       }, {
-        ln: 'DescribeSensorType',
+        ln: 'FeatureRelationshipPropertyType',
+        ps: [{
+            n: 'featureRelationship',
+            rq: true,
+            en: 'FeatureRelationship',
+            ti: '.FeatureRelationshipType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DeleteSensorResponsePropertyType',
+        ps: [{
+            n: 'deleteSensorResponse',
+            rq: true,
+            en: 'DeleteSensorResponse',
+            ti: '.DeleteSensorResponseType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ExtensibleResponsePropertyType',
+        ps: [{
+            n: 'extensibleResponse',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'ExtensibleResponse',
+            ti: '.ExtensibleResponseType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeSensorResponseType.Description',
+        tn: null,
+        ps: [{
+            n: 'sensorDescription',
+            rq: true,
+            en: 'SensorDescription',
+            ti: '.SensorDescriptionType'
+          }]
+      }, {
+        ln: 'SensorDescriptionType',
+        ps: [{
+            n: 'validTime',
+            ti: '.SensorDescriptionType.ValidTime'
+          }, {
+            n: 'data',
+            rq: true,
+            ti: '.SensorDescriptionType.Data'
+          }]
+      }, {
+        ln: 'ExtensibleResponseType',
+        ps: [{
+            n: 'extension',
+            mno: 0,
+            col: true,
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'DescribeSensorType.ValidTime',
+        tn: null,
+        ps: [{
+            n: 'abstractTimeGeometricPrimitive',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractTimeGeometricPrimitive',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.AbstractTimeGeometricPrimitiveType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'DeleteSensorType',
         bti: '.ExtensibleRequestType',
         ps: [{
             n: 'procedure',
             rq: true
-          }, {
-            n: 'procedureDescriptionFormat',
-            rq: true
-          }, {
-            n: 'validTime',
-            ti: '.DescribeSensorType.ValidTime'
           }]
       }, {
-        ln: 'UpdateSensorDescriptionResponseType',
-        bti: '.ExtensibleResponseType',
+        ln: 'NotificationProducerMetadataType',
+        bti: '.AbstractSWESType',
         ps: [{
-            n: 'updatedProcedure',
-            rq: true
+            n: 'producerEndpoint',
+            rq: true,
+            ti: '.NotificationProducerMetadataType.ProducerEndpoint'
+          }, {
+            n: 'supportedDialects',
+            rq: true,
+            ti: '.NotificationProducerMetadataType.SupportedDialects'
+          }, {
+            n: 'fixedTopicSet',
+            rq: true,
+            ti: 'Boolean'
+          }, {
+            n: 'servedTopics',
+            rq: true,
+            ti: '.NotificationProducerMetadataType.ServedTopics'
+          }, {
+            n: 'usedTopicNamespace',
+            mno: 0,
+            col: true,
+            ti: 'WSN_T_1.TopicNamespaceType'
+          }]
+      }, {
+        ln: 'AbstractOfferingType.RelatedFeature',
+        tn: null,
+        ps: [{
+            n: 'featureRelationship',
+            rq: true,
+            en: 'FeatureRelationship',
+            ti: '.FeatureRelationshipType'
           }]
       }, {
         ln: 'AbstractOfferingType',
@@ -533,12 +430,12 @@ var SWES_2_0_Module_Factory = function () {
             ti: '.AbstractOfferingType.RelatedFeature'
           }]
       }, {
-        ln: 'UpdateSensorDescriptionResponsePropertyType',
+        ln: 'AbstractContentsPropertyType',
         ps: [{
-            n: 'updateSensorDescriptionResponse',
+            n: 'abstractContents',
             rq: true,
-            en: 'UpdateSensorDescriptionResponse',
-            ti: '.UpdateSensorDescriptionResponseType'
+            en: 'AbstractContents',
+            ti: '.AbstractContentsType'
           }, {
             n: 'nilReason',
             ti: {
@@ -581,116 +478,29 @@ var SWES_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'InsertSensorPropertyType',
+        ln: 'SensorDescriptionType.ValidTime',
+        tn: null,
         ps: [{
-            n: 'insertSensor',
+            n: 'abstractTimeGeometricPrimitive',
             rq: true,
-            en: 'InsertSensor',
-            ti: '.InsertSensorType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractTimeGeometricPrimitive',
               ns: 'http:\/\/www.opengis.net\/gml\/3.2'
             },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            ti: 'GML_3_2_1.AbstractTimeGeometricPrimitiveType',
+            t: 'er'
           }]
       }, {
-        ln: 'InsertionMetadataPropertyType',
+        ln: 'InsertSensorResponseType',
+        bti: '.ExtensibleResponseType',
         ps: [{
-            n: 'insertionMetadata',
-            rq: true,
-            en: 'InsertionMetadata',
-            ti: '.InsertionMetadataType'
+            n: 'assignedProcedure',
+            rq: true
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'FilterDialectMetadataType',
-        bti: '.AbstractSWESType',
-        ps: [{
-            n: 'topicExpressionDialect',
-            mno: 0,
-            col: true
-          }, {
-            n: 'messageContentDialect',
-            mno: 0,
-            col: true
-          }, {
-            n: 'producerPropertiesDialect',
-            mno: 0,
-            col: true
+            n: 'assignedOffering',
+            rq: true
           }]
       }, {
         ln: 'ExtensibleRequestPropertyType',
@@ -702,6 +512,103 @@ var SWES_2_0_Module_Factory = function () {
             en: 'ExtensibleRequest',
             ti: '.ExtensibleRequestType',
             t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'UpdateSensorDescriptionType',
+        bti: '.ExtensibleRequestType',
+        ps: [{
+            n: 'procedure',
+            rq: true
+          }, {
+            n: 'procedureDescriptionFormat',
+            rq: true
+          }, {
+            n: 'description',
+            rq: true,
+            col: true,
+            ti: '.UpdateSensorDescriptionType.Description'
+          }]
+      }, {
+        ln: 'InsertSensorType.Metadata',
+        tn: null,
+        ps: [{
+            n: 'insertionMetadata',
+            rq: true,
+            en: 'InsertionMetadata',
+            ti: '.InsertionMetadataType'
+          }]
+      }, {
+        ln: 'AbstractSWESType',
+        ps: [{
+            n: 'description'
+          }, {
+            n: 'identifier'
+          }, {
+            n: 'name',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'extension',
+            mno: 0,
+            col: true,
+            ti: 'AnyType'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SensorDescriptionPropertyType',
+        ps: [{
+            n: 'sensorDescription',
+            rq: true,
+            en: 'SensorDescription',
+            ti: '.SensorDescriptionType'
           }, {
             n: 'nilReason',
             ti: {
@@ -756,11 +663,123 @@ var SWES_2_0_Module_Factory = function () {
             ti: 'WS_Addr_1_0_Core.EndpointReferenceType'
           }]
       }, {
-        ln: 'DeleteSensorResponseType',
-        bti: '.ExtensibleResponseType',
+        ln: 'AbstractContentsType.Offering',
+        tn: null,
         ps: [{
-            n: 'deletedProcedure',
+            n: 'abstractOffering',
+            rq: true,
+            en: 'AbstractOffering',
+            ti: '.AbstractOfferingType'
+          }]
+      }, {
+        ln: 'InsertSensorType',
+        bti: '.ExtensibleRequestType',
+        ps: [{
+            n: 'procedureDescriptionFormat',
             rq: true
+          }, {
+            n: 'procedureDescription',
+            rq: true,
+            ti: '.InsertSensorType.ProcedureDescription'
+          }, {
+            n: 'observableProperty',
+            rq: true,
+            col: true
+          }, {
+            n: 'relatedFeature',
+            mno: 0,
+            col: true,
+            ti: '.InsertSensorType.RelatedFeature'
+          }, {
+            n: 'metadata',
+            mno: 0,
+            col: true,
+            ti: '.InsertSensorType.Metadata'
+          }]
+      }, {
+        ln: 'UpdateSensorDescriptionResponsePropertyType',
+        ps: [{
+            n: 'updateSensorDescriptionResponse',
+            rq: true,
+            en: 'UpdateSensorDescriptionResponse',
+            ti: '.UpdateSensorDescriptionResponseType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractContentsType',
+        bti: '.AbstractSWESType',
+        ps: [{
+            n: 'procedureDescriptionFormat',
+            mno: 0,
+            col: true
+          }, {
+            n: 'observableProperty',
+            mno: 0,
+            col: true
+          }, {
+            n: 'relatedFeature',
+            mno: 0,
+            col: true,
+            ti: '.AbstractContentsType.RelatedFeature'
+          }, {
+            n: 'offering',
+            mno: 0,
+            col: true,
+            ti: '.AbstractContentsType.Offering'
+          }]
+      }, {
+        ln: 'SensorDescriptionUpdatedType.ValidTime',
+        tn: null,
+        ps: [{
+            n: 'abstractTimeGeometricPrimitive',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractTimeGeometricPrimitive',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.AbstractTimeGeometricPrimitiveType',
+            t: 'er'
           }]
       }, {
         ln: 'NotificationProducerMetadataType.SupportedDialects',
@@ -772,14 +791,22 @@ var SWES_2_0_Module_Factory = function () {
             ti: '.FilterDialectMetadataType'
           }]
       }, {
-        ln: 'ExtensibleResponsePropertyType',
+        ln: 'NotificationBrokerMetadataType',
+        bti: '.NotificationProducerMetadataType',
         ps: [{
-            n: 'extensibleResponse',
+            n: 'requiresRegistration',
+            rq: true,
+            ti: 'Boolean'
+          }]
+      }, {
+        ln: 'AbstractSWESPropertyType',
+        ps: [{
+            n: 'abstractSWES',
             rq: true,
             mx: false,
             dom: false,
-            en: 'ExtensibleResponse',
-            ti: '.ExtensibleResponseType',
+            en: 'AbstractSWES',
+            ti: '.AbstractSWESType',
             t: 'er'
           }, {
             n: 'nilReason',
@@ -823,12 +850,15 @@ var SWES_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'UpdateSensorDescriptionPropertyType',
+        ln: 'SensorChangedPropertyType',
         ps: [{
-            n: 'updateSensorDescription',
+            n: 'sensorChanged',
             rq: true,
-            en: 'UpdateSensorDescription',
-            ti: '.UpdateSensorDescriptionType'
+            mx: false,
+            dom: false,
+            en: 'SensorChanged',
+            ti: '.SensorChangedType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -871,34 +901,88 @@ var SWES_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ExtensibleRequestType',
+        ln: 'SensorChangedType',
+        bti: '.SWESEventType',
         ps: [{
-            n: 'extension',
-            mno: 0,
-            col: true,
-            ti: 'AnyType'
-          }, {
-            n: 'version',
+            n: 'procedure',
+            rq: true
+          }]
+      }, {
+        ln: 'AbstractContentsType.RelatedFeature',
+        tn: null,
+        ps: [{
+            n: 'featureRelationship',
             rq: true,
+            en: 'FeatureRelationship',
+            ti: '.FeatureRelationshipType'
+          }]
+      }, {
+        ln: 'SensorDescriptionType.Data',
+        tn: null,
+        ps: [{
+            n: 'any',
+            rq: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'InsertionMetadataPropertyType',
+        ps: [{
+            n: 'insertionMetadata',
+            rq: true,
+            en: 'InsertionMetadata',
+            ti: '.InsertionMetadataType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
             an: {
-              lp: 'version'
+              lp: 'nilReason'
             },
             t: 'a'
           }, {
-            n: 'service',
-            rq: true,
+            n: 'remoteSchema',
             an: {
-              lp: 'service'
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
             },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
-        ln: 'DescribeSensorResponsePropertyType',
+        ln: 'NotificationProducerMetadataPropertyType',
         ps: [{
-            n: 'describeSensorResponse',
+            n: 'notificationProducerMetadata',
             rq: true,
-            en: 'DescribeSensorResponse',
-            ti: '.DescribeSensorResponseType'
+            mx: false,
+            dom: false,
+            en: 'NotificationProducerMetadata',
+            ti: '.NotificationProducerMetadataType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -989,172 +1073,87 @@ var SWES_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractSWESType',
+        ln: 'ExtensibleRequestType',
         ps: [{
-            n: 'description'
-          }, {
-            n: 'identifier'
-          }, {
-            n: 'name',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
             n: 'extension',
             mno: 0,
             col: true,
             ti: 'AnyType'
           }, {
-            n: 'id',
-            ti: 'ID',
+            n: 'version',
+            rq: true,
             an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'service',
+            rq: true,
+            an: {
+              lp: 'service'
             },
             t: 'a'
           }]
       }, {
-        ln: 'InsertSensorType',
-        bti: '.ExtensibleRequestType',
+        ln: 'DeleteSensorPropertyType',
         ps: [{
-            n: 'procedureDescriptionFormat',
-            rq: true
-          }, {
-            n: 'procedureDescription',
+            n: 'deleteSensor',
             rq: true,
-            ti: '.InsertSensorType.ProcedureDescription'
+            en: 'DeleteSensor',
+            ti: '.DeleteSensorType'
           }, {
-            n: 'observableProperty',
-            rq: true,
-            col: true
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
           }, {
-            n: 'relatedFeature',
-            mno: 0,
-            col: true,
-            ti: '.InsertSensorType.RelatedFeature'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
           }, {
-            n: 'metadata',
-            mno: 0,
-            col: true,
-            ti: '.InsertSensorType.Metadata'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'DeleteSensorType',
+        ln: 'DescribeSensorType',
         bti: '.ExtensibleRequestType',
         ps: [{
             n: 'procedure',
             rq: true
-          }]
-      }, {
-        ln: 'SensorChangedPropertyType',
-        ps: [{
-            n: 'sensorChanged',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'SensorChanged',
-            ti: '.SensorChangedType',
-            t: 'er'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
+            n: 'procedureDescriptionFormat',
+            rq: true
           }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'NotificationProducerMetadataType.ServedTopics',
-        tn: null,
-        ps: [{
-            n: 'topicSet',
-            rq: true,
-            en: {
-              lp: 'TopicSet',
-              ns: 'http:\/\/docs.oasis-open.org\/wsn\/t-1'
-            },
-            ti: 'WSN_T_1.TopicSetType'
-          }]
-      }, {
-        ln: 'SensorDescriptionPropertyType',
-        ps: [{
-            n: 'sensorDescription',
-            rq: true,
-            en: 'SensorDescription',
-            ti: '.SensorDescriptionType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'validTime',
+            ti: '.DescribeSensorType.ValidTime'
           }]
       }, {
         ln: 'SWESEventType.Service',
@@ -1169,303 +1168,61 @@ var SWES_2_0_Module_Factory = function () {
             ti: 'WS_Addr_1_0_Core.EndpointReferenceType'
           }]
       }, {
-        ln: 'InsertionMetadataType'
+        ln: 'SensorDescriptionUpdatedPropertyType',
+        ps: [{
+            n: 'sensorDescriptionUpdated',
+            rq: true,
+            en: 'SensorDescriptionUpdated',
+            ti: '.SensorDescriptionUpdatedType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
       }, {
-        ln: 'FeatureRelationshipPropertyType',
+        ln: 'InsertSensorType.RelatedFeature',
+        tn: null,
         ps: [{
             n: 'featureRelationship',
             rq: true,
             en: 'FeatureRelationship',
             ti: '.FeatureRelationshipType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'UpdateSensorDescriptionType',
-        bti: '.ExtensibleRequestType',
-        ps: [{
-            n: 'procedure',
-            rq: true
-          }, {
-            n: 'procedureDescriptionFormat',
-            rq: true
-          }, {
-            n: 'description',
-            rq: true,
-            col: true,
-            ti: '.UpdateSensorDescriptionType.Description'
-          }]
-      }, {
-        ln: 'InsertSensorResponseType',
-        bti: '.ExtensibleResponseType',
-        ps: [{
-            n: 'assignedProcedure',
-            rq: true
-          }, {
-            n: 'assignedOffering',
-            rq: true
-          }]
-      }, {
-        ln: 'SensorDescriptionType.ValidTime',
-        tn: null,
-        ps: [{
-            n: 'abstractTimeGeometricPrimitive',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractTimeGeometricPrimitive',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.AbstractTimeGeometricPrimitiveType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'DescribeSensorResponseType',
-        bti: '.ExtensibleResponseType',
-        ps: [{
-            n: 'procedureDescriptionFormat',
-            rq: true
-          }, {
-            n: 'description',
-            mno: 0,
-            col: true,
-            ti: '.DescribeSensorResponseType.Description'
-          }]
-      }, {
-        ln: 'InsertSensorType.Metadata',
-        tn: null,
-        ps: [{
-            n: 'insertionMetadata',
-            rq: true,
-            en: 'InsertionMetadata',
-            ti: '.InsertionMetadataType'
-          }]
-      }, {
-        ln: 'DeleteSensorResponsePropertyType',
-        ps: [{
-            n: 'deleteSensorResponse',
-            rq: true,
-            en: 'DeleteSensorResponse',
-            ti: '.DeleteSensorResponseType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SensorDescriptionType',
-        ps: [{
-            n: 'validTime',
-            ti: '.SensorDescriptionType.ValidTime'
-          }, {
-            n: 'data',
-            rq: true,
-            ti: '.SensorDescriptionType.Data'
-          }]
-      }, {
-        ln: 'AbstractSWESPropertyType',
-        ps: [{
-            n: 'abstractSWES',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractSWES',
-            ti: '.AbstractSWESType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractContentsType',
-        bti: '.AbstractSWESType',
-        ps: [{
-            n: 'procedureDescriptionFormat',
-            mno: 0,
-            col: true
-          }, {
-            n: 'observableProperty',
-            mno: 0,
-            col: true
-          }, {
-            n: 'relatedFeature',
-            mno: 0,
-            col: true,
-            ti: '.AbstractContentsType.RelatedFeature'
-          }, {
-            n: 'offering',
-            mno: 0,
-            col: true,
-            ti: '.AbstractContentsType.Offering'
-          }]
-      }, {
-        ln: 'AbstractOfferingPropertyType',
-        ps: [{
-            n: 'abstractOffering',
-            rq: true,
-            en: 'AbstractOffering',
-            ti: '.AbstractOfferingType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeSensorResponseType.Description',
-        tn: null,
-        ps: [{
-            n: 'sensorDescription',
-            rq: true,
-            en: 'SensorDescription',
-            ti: '.SensorDescriptionType'
           }]
       }, {
         ln: 'SensorDescriptionUpdatedType',
@@ -1475,20 +1232,147 @@ var SWES_2_0_Module_Factory = function () {
             ti: '.SensorDescriptionUpdatedType.ValidTime'
           }]
       }, {
-        ln: 'ExtensibleResponseType',
+        ln: 'InsertSensorType.ProcedureDescription',
+        tn: null,
         ps: [{
-            n: 'extension',
-            mno: 0,
-            col: true,
-            ti: 'AnyType'
+            n: 'any',
+            rq: true,
+            mx: false,
+            t: 'ae'
           }]
       }, {
-        ln: 'AbstractContentsPropertyType',
+        ln: 'UpdateSensorDescriptionType.Description',
+        tn: null,
         ps: [{
-            n: 'abstractContents',
+            n: 'sensorDescription',
             rq: true,
-            en: 'AbstractContents',
-            ti: '.AbstractContentsType'
+            en: 'SensorDescription',
+            ti: '.SensorDescriptionType'
+          }]
+      }, {
+        ln: 'InsertSensorPropertyType',
+        ps: [{
+            n: 'insertSensor',
+            rq: true,
+            en: 'InsertSensor',
+            ti: '.InsertSensorType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'InsertionMetadataType'
+      }, {
+        ln: 'SWESEventPropertyType',
+        ps: [{
+            n: 'swesEvent',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'SWESEvent',
+            ti: '.SWESEventType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'FilterDialectMetadataType',
+        bti: '.AbstractSWESType',
+        ps: [{
+            n: 'topicExpressionDialect',
+            mno: 0,
+            col: true
+          }, {
+            n: 'messageContentDialect',
+            mno: 0,
+            col: true
+          }, {
+            n: 'producerPropertiesDialect',
+            mno: 0,
+            col: true
+          }]
+      }, {
+        ln: 'UpdateSensorDescriptionPropertyType',
+        ps: [{
+            n: 'updateSensorDescription',
+            rq: true,
+            en: 'UpdateSensorDescription',
+            ti: '.UpdateSensorDescriptionType'
           }, {
             n: 'nilReason',
             ti: {
@@ -1551,55 +1435,171 @@ var SWES_2_0_Module_Factory = function () {
             ti: '.SWESEventType.Service'
           }]
       }, {
-        ln: 'NotificationProducerMetadataType',
-        bti: '.AbstractSWESType',
+        ln: 'NotificationBrokerMetadataPropertyType',
         ps: [{
-            n: 'producerEndpoint',
+            n: 'notificationBrokerMetadata',
             rq: true,
-            ti: '.NotificationProducerMetadataType.ProducerEndpoint'
+            en: 'NotificationBrokerMetadata',
+            ti: '.NotificationBrokerMetadataType'
           }, {
-            n: 'supportedDialects',
-            rq: true,
-            ti: '.NotificationProducerMetadataType.SupportedDialects'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
           }, {
-            n: 'fixedTopicSet',
-            rq: true,
-            ti: 'Boolean'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
           }, {
-            n: 'servedTopics',
-            rq: true,
-            ti: '.NotificationProducerMetadataType.ServedTopics'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            n: 'usedTopicNamespace',
-            mno: 0,
-            col: true,
-            ti: 'WSN_T_1.TopicNamespaceType'
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'InsertSensorType.RelatedFeature',
-        tn: null,
+        ln: 'DeleteSensorResponseType',
+        bti: '.ExtensibleResponseType',
         ps: [{
-            n: 'featureRelationship',
-            rq: true,
-            en: 'FeatureRelationship',
-            ti: '.FeatureRelationshipType'
+            n: 'deletedProcedure',
+            rq: true
           }]
       }, {
-        ln: 'NotificationBrokerMetadataType',
-        bti: '.NotificationProducerMetadataType',
+        ln: 'UpdateSensorDescriptionResponseType',
+        bti: '.ExtensibleResponseType',
         ps: [{
-            n: 'requiresRegistration',
-            rq: true,
-            ti: 'Boolean'
+            n: 'updatedProcedure',
+            rq: true
           }]
       }, {
-        ln: 'AbstractContentsType.RelatedFeature',
-        tn: null,
+        ln: 'DescribeSensorPropertyType',
         ps: [{
-            n: 'featureRelationship',
+            n: 'describeSensor',
             rq: true,
-            en: 'FeatureRelationship',
-            ti: '.FeatureRelationshipType'
+            en: 'DescribeSensor',
+            ti: '.DescribeSensorType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeSensorResponsePropertyType',
+        ps: [{
+            n: 'describeSensorResponse',
+            rq: true,
+            en: 'DescribeSensorResponse',
+            ti: '.DescribeSensorResponseType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'FeatureRelationshipType',
+        ps: [{
+            n: 'role'
+          }, {
+            n: 'target',
+            rq: true,
+            ti: 'GML_3_2_1.FeaturePropertyType'
           }]
       }, {
         t: 'enum',
@@ -1607,87 +1607,87 @@ var SWES_2_0_Module_Factory = function () {
         vs: ['CapabilitiesChanged', 'OfferingAdded', 'OfferingDeleted', 'SensorDescriptionUpdated', 'SensorInserted']
       }],
     eis: [{
+        en: 'ExtensibleResponse',
+        ti: '.ExtensibleResponseType'
+      }, {
+        en: 'OfferingChanged',
+        ti: '.OfferingChangedType',
+        sh: 'SWESEvent'
+      }, {
         en: 'DescribeSensorResponse',
         ti: '.DescribeSensorResponseType',
+        sh: 'ExtensibleResponse'
+      }, {
+        en: 'FeatureRelationship',
+        ti: '.FeatureRelationshipType'
+      }, {
+        en: 'NotificationProducerMetadata',
+        ti: '.NotificationProducerMetadataType',
+        sh: 'AbstractSWES'
+      }, {
+        en: 'SensorDescriptionUpdated',
+        ti: '.SensorDescriptionUpdatedType',
+        sh: 'SensorChanged'
+      }, {
+        en: 'InsertSensorResponse',
+        ti: '.InsertSensorResponseType',
+        sh: 'ExtensibleResponse'
+      }, {
+        en: 'AbstractContents',
+        ti: '.AbstractContentsType',
+        sh: 'AbstractSWES'
+      }, {
+        en: 'SensorDescription',
+        ti: '.SensorDescriptionType'
+      }, {
+        en: 'SensorChanged',
+        ti: '.SensorChangedType',
+        sh: 'SWESEvent'
+      }, {
+        en: 'UpdateSensorDescription',
+        ti: '.UpdateSensorDescriptionType',
+        sh: 'ExtensibleRequest'
+      }, {
+        en: 'InsertionMetadata',
+        ti: '.InsertionMetadataType'
+      }, {
+        en: 'AbstractOffering',
+        ti: '.AbstractOfferingType',
+        sh: 'AbstractSWES'
+      }, {
+        en: 'NotificationBrokerMetadata',
+        ti: '.NotificationBrokerMetadataType',
+        sh: 'NotificationProducerMetadata'
+      }, {
+        en: 'UpdateSensorDescriptionResponse',
+        ti: '.UpdateSensorDescriptionResponseType',
         sh: 'ExtensibleResponse'
       }, {
         en: 'SWESEvent',
         ti: '.SWESEventType',
         sh: 'AbstractSWES'
       }, {
-        en: 'NotificationProducerMetadata',
-        ti: '.NotificationProducerMetadataType',
-        sh: 'AbstractSWES'
-      }, {
-        en: 'DescribeSensor',
-        ti: '.DescribeSensorType',
-        sh: 'ExtensibleRequest'
-      }, {
-        en: 'InsertSensorResponse',
-        ti: '.InsertSensorResponseType',
-        sh: 'ExtensibleResponse'
-      }, {
-        en: 'SensorChanged',
-        ti: '.SensorChangedType',
-        sh: 'SWESEvent'
-      }, {
-        en: 'AbstractOffering',
-        ti: '.AbstractOfferingType',
-        sh: 'AbstractSWES'
-      }, {
-        en: 'FeatureRelationship',
-        ti: '.FeatureRelationshipType'
-      }, {
-        en: 'SensorDescription',
-        ti: '.SensorDescriptionType'
-      }, {
-        en: 'AbstractContents',
-        ti: '.AbstractContentsType',
-        sh: 'AbstractSWES'
-      }, {
-        en: 'OfferingChanged',
-        ti: '.OfferingChangedType',
-        sh: 'SWESEvent'
-      }, {
-        en: 'AbstractSWES',
-        ti: '.AbstractSWESType'
-      }, {
-        en: 'SensorDescriptionUpdated',
-        ti: '.SensorDescriptionUpdatedType',
-        sh: 'SensorChanged'
-      }, {
         en: 'ExtensibleRequest',
         ti: '.ExtensibleRequestType'
-      }, {
-        en: 'ExtensibleResponse',
-        ti: '.ExtensibleResponseType'
-      }, {
-        en: 'NotificationBrokerMetadata',
-        ti: '.NotificationBrokerMetadataType',
-        sh: 'NotificationProducerMetadata'
-      }, {
-        en: 'DeleteSensorResponse',
-        ti: '.DeleteSensorResponseType',
-        sh: 'ExtensibleResponse'
       }, {
         en: 'InsertSensor',
         ti: '.InsertSensorType',
         sh: 'ExtensibleRequest'
       }, {
-        en: 'InsertionMetadata',
-        ti: '.InsertionMetadataType'
+        en: 'DescribeSensor',
+        ti: '.DescribeSensorType',
+        sh: 'ExtensibleRequest'
       }, {
-        en: 'UpdateSensorDescriptionResponse',
-        ti: '.UpdateSensorDescriptionResponseType',
+        en: 'AbstractSWES',
+        ti: '.AbstractSWESType'
+      }, {
+        en: 'DeleteSensorResponse',
+        ti: '.DeleteSensorResponseType',
         sh: 'ExtensibleResponse'
       }, {
         en: 'FilterDialectMetadata',
         ti: '.FilterDialectMetadataType',
         sh: 'AbstractSWES'
-      }, {
-        en: 'UpdateSensorDescription',
-        ti: '.UpdateSensorDescriptionType',
-        sh: 'ExtensibleRequest'
       }, {
         en: 'DeleteSensor',
         ti: '.DeleteSensorType',

@@ -3,20 +3,6 @@ var WSN_T_1_Module_Factory = function () {
     n: 'WSN_T_1',
     dens: 'http:\/\/docs.oasis-open.org\/wsn\/t-1',
     tis: [{
-        ln: 'QueryExpressionType',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }, {
-            n: 'dialect',
-            rq: true,
-            an: {
-              lp: 'Dialect'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'TopicNamespaceType.Topic',
         tn: null,
         bti: '.TopicType',
@@ -27,52 +13,6 @@ var WSN_T_1_Module_Factory = function () {
             n: 'parent',
             an: {
               lp: 'parent'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Documentation',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'TopicNamespaceType',
-        bti: '.ExtensibleDocumented',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'topic',
-            mno: 0,
-            col: true,
-            en: 'Topic',
-            ti: '.TopicNamespaceType.Topic'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'targetNamespace',
-            rq: true,
-            an: {
-              lp: 'targetNamespace'
-            },
-            t: 'a'
-          }, {
-            n: '_final',
-            ti: 'Boolean',
-            an: {
-              lp: 'final'
             },
             t: 'a'
           }]
@@ -125,6 +65,59 @@ var WSN_T_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'TopicNamespaceType',
+        bti: '.ExtensibleDocumented',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'topic',
+            mno: 0,
+            col: true,
+            en: 'Topic',
+            ti: '.TopicNamespaceType.Topic'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'targetNamespace',
+            rq: true,
+            an: {
+              lp: 'targetNamespace'
+            },
+            t: 'a'
+          }, {
+            n: '_final',
+            ti: 'Boolean',
+            an: {
+              lp: 'final'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'QueryExpressionType',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }, {
+            n: 'dialect',
+            rq: true,
+            an: {
+              lp: 'Dialect'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'TopicSetType',
         bti: '.ExtensibleDocumented',
         ps: [{
@@ -138,6 +131,13 @@ var WSN_T_1_Module_Factory = function () {
             t: 'ae'
           }]
       }, {
+        ln: 'Documentation',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }]
+      }, {
         ln: 'ExtensibleDocumented',
         ps: [{
             n: 'otherAttributes',
@@ -148,11 +148,11 @@ var WSN_T_1_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'TopicNamespace',
-        ti: '.TopicNamespaceType'
-      }, {
         en: 'TopicSet',
         ti: '.TopicSetType'
+      }, {
+        en: 'TopicNamespace',
+        ti: '.TopicNamespaceType'
       }]
   };
   return {

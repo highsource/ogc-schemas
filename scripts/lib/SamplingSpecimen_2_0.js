@@ -3,21 +3,63 @@ var SamplingSpecimen_2_0_Module_Factory = function () {
     n: 'SamplingSpecimen_2_0',
     dens: 'http:\/\/www.opengis.net\/samplingSpecimen\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'Sampling_2_0', 'ISO19139_GMD_20070417', 'GML_3_2_1', 'OM_2_0'],
+    deps: ['XLink_1_0', 'ISO19139_GMD_20070417', 'GML_3_2_1', 'Sampling_2_0', 'OM_2_0'],
     tis: [{
-        ln: 'PreparationStepType',
+        ln: 'SFSpecimenPropertyType',
+        tn: 'SF_SpecimenPropertyType',
         ps: [{
-            n: 'time',
+            n: 'sfSpecimen',
             rq: true,
-            ti: '.PreparationStepType.Time'
+            en: 'SF_Specimen',
+            ti: '.SFSpecimenType'
           }, {
-            n: 'processOperator',
-            rq: true,
-            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
           }, {
-            n: 'processingDetails',
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'PreparationStepPropertyType',
+        ps: [{
+            n: 'preparationStep',
             rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
+            en: 'PreparationStep',
+            ti: '.PreparationStepType'
           }]
       }, {
         ln: 'SFSpecimenType.Size',
@@ -65,6 +107,21 @@ var SamplingSpecimen_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'PreparationStepType',
+        ps: [{
+            n: 'time',
+            rq: true,
+            ti: '.PreparationStepType.Time'
+          }, {
+            n: 'processOperator',
+            rq: true,
+            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
+          }, {
+            n: 'processingDetails',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }]
+      }, {
         ln: 'LocationPropertyType',
         ps: [{
             n: 'abstractGeometry',
@@ -91,110 +148,6 @@ var SamplingSpecimen_2_0_Module_Factory = function () {
               lp: 'unionSemantics'
             },
             t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'PreparationStepType.Time',
-        tn: null,
-        ps: [{
-            n: 'abstractTimeObject',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractTimeObject',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.AbstractTimeObjectType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SFSpecimenPropertyType',
-        tn: 'SF_SpecimenPropertyType',
-        ps: [{
-            n: 'sfSpecimen',
-            rq: true,
-            en: 'SF_Specimen',
-            ti: '.SFSpecimenType'
           }, {
             n: 'nilReason',
             ti: {
@@ -270,12 +223,59 @@ var SamplingSpecimen_2_0_Module_Factory = function () {
             ti: 'GML_3_2_1.ReferenceType'
           }]
       }, {
-        ln: 'PreparationStepPropertyType',
+        ln: 'PreparationStepType.Time',
+        tn: null,
         ps: [{
-            n: 'preparationStep',
+            n: 'abstractTimeObject',
             rq: true,
-            en: 'PreparationStep',
-            ti: '.PreparationStepType'
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractTimeObject',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.AbstractTimeObjectType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }],
     eis: [{

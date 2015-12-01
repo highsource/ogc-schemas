@@ -2,248 +2,8 @@ var WMC_1_0_0_Module_Factory = function () {
   var WMC_1_0_0 = {
     n: 'WMC_1_0_0',
     dens: 'http:\/\/www.opengis.net\/context',
-    deps: ['XLink_1_0', 'SLD_1_0_0'],
+    deps: ['SLD_1_0_0', 'XLink_1_0'],
     tis: [{
-        ln: 'ViewContextReferenceType',
-        ps: [{
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: 'contextURL',
-            rq: true,
-            en: 'ContextURL',
-            ti: '.ContextURLType'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'id',
-            rq: true,
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'StyleListType',
-        ps: [{
-            n: 'style',
-            rq: true,
-            col: true,
-            en: 'Style',
-            ti: '.StyleType'
-          }]
-      }, {
-        ln: 'ContextURLType',
-        ps: [{
-            n: 'onlineResource',
-            rq: true,
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }]
-      }, {
-        ln: 'ContactPersonPrimaryType',
-        ps: [{
-            n: 'contactPerson',
-            rq: true,
-            en: 'ContactPerson'
-          }, {
-            n: 'contactOrganization',
-            rq: true,
-            en: 'ContactOrganization'
-          }]
-      }, {
-        ln: 'AddressType',
-        ps: [{
-            n: 'addressType',
-            rq: true,
-            en: 'AddressType'
-          }, {
-            n: 'address',
-            rq: true,
-            en: 'Address'
-          }, {
-            n: 'city',
-            rq: true,
-            en: 'City'
-          }, {
-            n: 'stateOrProvince',
-            rq: true,
-            en: 'StateOrProvince'
-          }, {
-            n: 'postCode',
-            rq: true,
-            en: 'PostCode'
-          }, {
-            n: 'country',
-            rq: true,
-            en: 'Country'
-          }]
-      }, {
-        ln: 'OnlineResourceType',
-        ps: [{
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            an: {
-              lp: 'type',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'href',
-            an: {
-              lp: 'href',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'role',
-            an: {
-              lp: 'role',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            an: {
-              lp: 'arcrole',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'title',
-            an: {
-              lp: 'title',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            an: {
-              lp: 'show',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            an: {
-              lp: 'actuate',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ContactInformationType',
-        ps: [{
-            n: 'contactPersonPrimary',
-            rq: true,
-            en: 'ContactPersonPrimary',
-            ti: '.ContactPersonPrimaryType'
-          }, {
-            n: 'contactPosition',
-            rq: true,
-            en: 'ContactPosition'
-          }, {
-            n: 'contactAddress',
-            rq: true,
-            en: 'ContactAddress',
-            ti: '.AddressType'
-          }, {
-            n: 'contactVoiceTelephone',
-            rq: true,
-            en: 'ContactVoiceTelephone'
-          }, {
-            n: 'contactFacsimileTelephone',
-            rq: true,
-            en: 'ContactFacsimileTelephone'
-          }, {
-            n: 'contactElectronicMailAddress',
-            rq: true,
-            en: 'ContactElectronicMailAddress'
-          }]
-      }, {
-        ln: 'ServerType',
-        ps: [{
-            n: 'onlineResource',
-            rq: true,
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'service',
-            rq: true,
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'title',
-            an: {
-              lp: 'title'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GeneralType',
-        ps: [{
-            n: 'window',
-            en: 'Window',
-            ti: '.WindowType'
-          }, {
-            n: 'boundingBox',
-            rq: true,
-            en: 'BoundingBox',
-            ti: '.BoundingBoxType'
-          }, {
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: 'keywordList',
-            en: 'KeywordList',
-            ti: '.KeywordListType'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'logoURL',
-            en: 'LogoURL',
-            ti: '.URLType'
-          }, {
-            n: 'descriptionURL',
-            en: 'DescriptionURL',
-            ti: '.URLType'
-          }, {
-            n: 'contactInformation',
-            en: 'ContactInformation',
-            ti: '.ContactInformationType'
-          }, {
-            n: 'extension',
-            en: 'Extension',
-            ti: '.ExtensionType'
-          }]
-      }, {
-        ln: 'KeywordListType',
-        ps: [{
-            n: 'keyword',
-            rq: true,
-            col: true,
-            en: 'Keyword'
-          }]
-      }, {
         ln: 'LayerType',
         ps: [{
             n: 'server',
@@ -302,50 +62,6 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ViewContextCollectionType',
-        ps: [{
-            n: 'viewContextReference',
-            rq: true,
-            col: true,
-            en: 'ViewContextReference',
-            ti: '.ViewContextReferenceType'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'URLType',
-        ps: [{
-            n: 'onlineResource',
-            rq: true,
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'width',
-            ti: 'Integer',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            ti: 'Integer',
-            an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }, {
-            n: 'format',
-            an: {
-              lp: 'format'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'BoundingBoxType',
         ps: [{
             n: 'srs',
@@ -388,26 +104,76 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ExtensionType',
+        ln: 'ContactInformationType',
         ps: [{
-            n: 'any',
+            n: 'contactPersonPrimary',
             rq: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
+            en: 'ContactPersonPrimary',
+            ti: '.ContactPersonPrimaryType'
+          }, {
+            n: 'contactPosition',
+            rq: true,
+            en: 'ContactPosition'
+          }, {
+            n: 'contactAddress',
+            rq: true,
+            en: 'ContactAddress',
+            ti: '.AddressType'
+          }, {
+            n: 'contactVoiceTelephone',
+            rq: true,
+            en: 'ContactVoiceTelephone'
+          }, {
+            n: 'contactFacsimileTelephone',
+            rq: true,
+            en: 'ContactFacsimileTelephone'
+          }, {
+            n: 'contactElectronicMailAddress',
+            rq: true,
+            en: 'ContactElectronicMailAddress'
           }]
       }, {
-        ln: 'FormatType',
+        ln: 'ViewContextCollectionType',
         ps: [{
-            n: 'value',
-            t: 'v'
+            n: 'viewContextReference',
+            rq: true,
+            col: true,
+            en: 'ViewContextReference',
+            ti: '.ViewContextReferenceType'
           }, {
-            n: 'current',
-            ti: 'Boolean',
+            n: 'version',
+            rq: true,
             an: {
-              lp: 'current'
+              lp: 'version'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'AddressType',
+        ps: [{
+            n: 'addressType',
+            rq: true,
+            en: 'AddressType'
+          }, {
+            n: 'address',
+            rq: true,
+            en: 'Address'
+          }, {
+            n: 'city',
+            rq: true,
+            en: 'City'
+          }, {
+            n: 'stateOrProvince',
+            rq: true,
+            en: 'StateOrProvince'
+          }, {
+            n: 'postCode',
+            rq: true,
+            en: 'PostCode'
+          }, {
+            n: 'country',
+            rq: true,
+            en: 'Country'
           }]
       }, {
         ln: 'ViewContextType',
@@ -437,31 +203,125 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'StyleType',
+        ln: 'URLType',
         ps: [{
-            n: 'name',
+            n: 'onlineResource',
             rq: true,
-            en: 'Name'
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'width',
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }, {
+            n: 'format',
+            an: {
+              lp: 'format'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeneralType',
+        ps: [{
+            n: 'window',
+            en: 'Window',
+            ti: '.WindowType'
+          }, {
+            n: 'boundingBox',
+            rq: true,
+            en: 'BoundingBox',
+            ti: '.BoundingBoxType'
           }, {
             n: 'title',
             rq: true,
             en: 'Title'
           }, {
+            n: 'keywordList',
+            en: 'KeywordList',
+            ti: '.KeywordListType'
+          }, {
             n: '_abstract',
             en: 'Abstract'
           }, {
-            n: 'legendURL',
-            en: 'LegendURL',
+            n: 'logoURL',
+            en: 'LogoURL',
             ti: '.URLType'
           }, {
-            n: 'sld',
-            en: 'SLD',
-            ti: '.SLDType'
+            n: 'descriptionURL',
+            en: 'DescriptionURL',
+            ti: '.URLType'
+          }, {
+            n: 'contactInformation',
+            en: 'ContactInformation',
+            ti: '.ContactInformationType'
+          }, {
+            n: 'extension',
+            en: 'Extension',
+            ti: '.ExtensionType'
+          }]
+      }, {
+        ln: 'FormatListType',
+        ps: [{
+            n: 'format',
+            rq: true,
+            col: true,
+            en: 'Format',
+            ti: '.FormatType'
+          }]
+      }, {
+        ln: 'FormatType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
             n: 'current',
             ti: 'Boolean',
             an: {
               lp: 'current'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ContextURLType',
+        ps: [{
+            n: 'onlineResource',
+            rq: true,
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }]
+      }, {
+        ln: 'ViewContextReferenceType',
+        ps: [{
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: 'contextURL',
+            rq: true,
+            en: 'ContextURL',
+            ti: '.ContextURLType'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'id',
+            rq: true,
+            an: {
+              lp: 'id'
             },
             t: 'a'
           }]
@@ -496,13 +356,42 @@ var WMC_1_0_0_Module_Factory = function () {
             ti: 'SLD_1_0_0.FeatureTypeStyle'
           }]
       }, {
-        ln: 'FormatListType',
+        ln: 'ExtensionType',
         ps: [{
-            n: 'format',
+            n: 'any',
             rq: true,
-            col: true,
-            en: 'Format',
-            ti: '.FormatType'
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'StyleType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            en: 'Name'
+          }, {
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'legendURL',
+            en: 'LegendURL',
+            ti: '.URLType'
+          }, {
+            n: 'sld',
+            en: 'SLD',
+            ti: '.SLDType'
+          }, {
+            n: 'current',
+            ti: 'Boolean',
+            an: {
+              lp: 'current'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'LayerListType',
@@ -531,6 +420,117 @@ var WMC_1_0_0_Module_Factory = function () {
               lp: 'height'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'OnlineResourceType',
+        ps: [{
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            an: {
+              lp: 'type',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'href',
+            an: {
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'role',
+            an: {
+              lp: 'role',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            an: {
+              lp: 'arcrole',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'title',
+            an: {
+              lp: 'title',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            an: {
+              lp: 'show',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            an: {
+              lp: 'actuate',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'KeywordListType',
+        ps: [{
+            n: 'keyword',
+            rq: true,
+            col: true,
+            en: 'Keyword'
+          }]
+      }, {
+        ln: 'ContactPersonPrimaryType',
+        ps: [{
+            n: 'contactPerson',
+            rq: true,
+            en: 'ContactPerson'
+          }, {
+            n: 'contactOrganization',
+            rq: true,
+            en: 'ContactOrganization'
+          }]
+      }, {
+        ln: 'ServerType',
+        ps: [{
+            n: 'onlineResource',
+            rq: true,
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'service',
+            rq: true,
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'title',
+            an: {
+              lp: 'title'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'StyleListType',
+        ps: [{
+            n: 'style',
+            rq: true,
+            col: true,
+            en: 'Style',
+            ti: '.StyleType'
           }]
       }],
     eis: [{
