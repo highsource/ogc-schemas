@@ -156,93 +156,6 @@
                 "actuate"
             ]
         },
-        "InstrumentType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ObservationProcessType"
-                },
-                {
-                    "type":"object",
-                    "title":"InstrumentType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InstrumentType",
-                "namespaceURI":"http://www.opengis.net/omx/1.0"
-            }
-        },
-        "ObservationProcessType":{
-            "required":[
-                "method"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/sensorML/1.0.1#/definitions/AbstractProcessType"
-                },
-                {
-                    "type":"object",
-                    "title":"ObservationProcessType",
-                    "properties":{
-                        "method":{
-                            "title":"method",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"method",
-                                "namespaceURI":"http://www.opengis.net/omx/1.0"
-                            }
-                        },
-                        "resultQuality":{
-                            "title":"resultQuality",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/om/1.0#/definitions/AnyOrReferenceType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"resultQuality",
-                                "namespaceURI":"http://www.opengis.net/omx/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ObservationProcessType",
-                "namespaceURI":"http://www.opengis.net/omx/1.0"
-            },
-            "propertiesOrder":[
-                "method",
-                "resultQuality"
-            ]
-        },
-        "CalculationProcessType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ObservationProcessType"
-                },
-                {
-                    "type":"object",
-                    "title":"CalculationProcessType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CalculationProcessType",
-                "namespaceURI":"http://www.opengis.net/omx/1.0"
-            }
-        },
         "InstrumentPropertyType":{
             "type":"object",
             "title":"InstrumentPropertyType",
@@ -383,6 +296,75 @@
                 "title",
                 "show",
                 "actuate"
+            ]
+        },
+        "InstrumentType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ObservationProcessType"
+                },
+                {
+                    "type":"object",
+                    "title":"InstrumentType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InstrumentType",
+                "namespaceURI":"http://www.opengis.net/omx/1.0"
+            }
+        },
+        "ObservationProcessType":{
+            "required":[
+                "method"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/sensorML/1.0.1#/definitions/AbstractProcessType"
+                },
+                {
+                    "type":"object",
+                    "title":"ObservationProcessType",
+                    "properties":{
+                        "method":{
+                            "title":"method",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"method",
+                                "namespaceURI":"http://www.opengis.net/omx/1.0"
+                            }
+                        },
+                        "resultQuality":{
+                            "title":"resultQuality",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/om/1.0#/definitions/AnyOrReferenceType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"resultQuality",
+                                "namespaceURI":"http://www.opengis.net/omx/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ObservationProcessType",
+                "namespaceURI":"http://www.opengis.net/omx/1.0"
+            },
+            "propertiesOrder":[
+                "method",
+                "resultQuality"
             ]
         },
         "CalculationProcessPropertyType":{
@@ -526,6 +508,24 @@
                 "show",
                 "actuate"
             ]
+        },
+        "CalculationProcessType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ObservationProcessType"
+                },
+                {
+                    "type":"object",
+                    "title":"CalculationProcessType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CalculationProcessType",
+                "namespaceURI":"http://www.opengis.net/omx/1.0"
+            }
         }
     },
     "anyOf":[
@@ -540,7 +540,7 @@
                 }
             },
             "elementName":{
-                "localPart":"TemporalObservation",
+                "localPart":"DiscreteCoverageObs",
                 "namespaceURI":"http://www.opengis.net/omx/1.0"
             }
         },
@@ -556,36 +556,6 @@
             },
             "elementName":{
                 "localPart":"Measurement",
-                "namespaceURI":"http://www.opengis.net/omx/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
-                }
-            },
-            "elementName":{
-                "localPart":"PointCoverageObs",
-                "namespaceURI":"http://www.opengis.net/omx/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
-                }
-            },
-            "elementName":{
-                "localPart":"DiscreteCoverageObs",
                 "namespaceURI":"http://www.opengis.net/omx/1.0"
             }
         },
@@ -615,7 +585,37 @@
                 }
             },
             "elementName":{
-                "localPart":"CategoryObservation",
+                "localPart":"TimeSeriesObservation",
+                "namespaceURI":"http://www.opengis.net/omx/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
+                }
+            },
+            "elementName":{
+                "localPart":"CountObservation",
+                "namespaceURI":"http://www.opengis.net/omx/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
+                }
+            },
+            "elementName":{
+                "localPart":"PointCoverageObs",
                 "namespaceURI":"http://www.opengis.net/omx/1.0"
             }
         },
@@ -645,22 +645,7 @@
                 }
             },
             "elementName":{
-                "localPart":"TimeSeriesObservation",
-                "namespaceURI":"http://www.opengis.net/omx/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
-                }
-            },
-            "elementName":{
-                "localPart":"ElementCoverageObservation",
+                "localPart":"DiscreteCoverageObservation",
                 "namespaceURI":"http://www.opengis.net/omx/1.0"
             }
         },
@@ -686,11 +671,41 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/ObservationProcessType"
+                }
+            },
+            "elementName":{
+                "localPart":"ObservationProcess",
+                "namespaceURI":"http://www.opengis.net/omx/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/CalculationProcessType"
+                }
+            },
+            "elementName":{
+                "localPart":"CalculationProcess",
+                "namespaceURI":"http://www.opengis.net/omx/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
                 }
             },
             "elementName":{
-                "localPart":"DiscreteCoverageObservation",
+                "localPart":"ElementCoverageObservation",
                 "namespaceURI":"http://www.opengis.net/omx/1.0"
             }
         },
@@ -731,36 +746,6 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/CalculationProcessType"
-                }
-            },
-            "elementName":{
-                "localPart":"CalculationProcess",
-                "namespaceURI":"http://www.opengis.net/omx/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
-                }
-            },
-            "elementName":{
-                "localPart":"CountObservation",
-                "namespaceURI":"http://www.opengis.net/omx/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
                     "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
                 }
             },
@@ -776,11 +761,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ObservationProcessType"
+                    "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
                 }
             },
             "elementName":{
-                "localPart":"ObservationProcess",
+                "localPart":"CategoryObservation",
+                "namespaceURI":"http://www.opengis.net/omx/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
+                }
+            },
+            "elementName":{
+                "localPart":"TemporalObservation",
                 "namespaceURI":"http://www.opengis.net/omx/1.0"
             }
         }

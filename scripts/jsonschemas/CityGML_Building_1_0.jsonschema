@@ -2,14 +2,14 @@
 {
     "id":"http://www.opengis.net/citygml/building/1.0#",
     "definitions":{
-        "BuildingInstallationType":{
+        "IntBuildingInstallationType":{
             "allOf":[
                 {
                     "$ref":"http://www.opengis.net/citygml/1.0#/definitions/AbstractCityObjectType"
                 },
                 {
                     "type":"object",
-                    "title":"BuildingInstallationType",
+                    "title":"IntBuildingInstallationType",
                     "properties":{
                         "clazz":{
                             "title":"clazz",
@@ -58,32 +58,6 @@
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         },
-                        "lod2Geometry":{
-                            "title":"lod2Geometry",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/GeometryPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lod2Geometry",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "lod3Geometry":{
-                            "title":"lod3Geometry",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/GeometryPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lod3Geometry",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
                         "lod4Geometry":{
                             "title":"lod4Geometry",
                             "allOf":[
@@ -97,8 +71,8 @@
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         },
-                        "genericApplicationPropertyOfBuildingInstallation":{
-                            "title":"genericApplicationPropertyOfBuildingInstallation",
+                        "genericApplicationPropertyOfIntBuildingInstallation":{
+                            "title":"genericApplicationPropertyOfIntBuildingInstallation",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -110,7 +84,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfBuildingInstallation",
+                                "localPart":"_GenericApplicationPropertyOfIntBuildingInstallation",
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         }
@@ -119,121 +93,110 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"BuildingInstallationType",
+                "localPart":"IntBuildingInstallationType",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             },
             "propertiesOrder":[
                 "clazz",
                 "function",
                 "usage",
-                "lod2Geometry",
-                "lod3Geometry",
                 "lod4Geometry",
-                "genericApplicationPropertyOfBuildingInstallation"
+                "genericApplicationPropertyOfIntBuildingInstallation"
             ]
         },
-        "BuildingInstallationPropertyType":{
+        "FloorSurfaceType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractBoundarySurfaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"FloorSurfaceType",
+                    "properties":{
+                        "genericApplicationPropertyOfFloorSurface":{
+                            "title":"genericApplicationPropertyOfFloorSurface",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfFloorSurface",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FloorSurfaceType",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            },
+            "propertiesOrder":[
+                "genericApplicationPropertyOfFloorSurface"
+            ]
+        },
+        "BuildingPartPropertyType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/AssociationType"
                 },
                 {
                     "type":"object",
-                    "title":"BuildingInstallationPropertyType",
+                    "title":"BuildingPartPropertyType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"BuildingInstallationPropertyType",
+                "localPart":"BuildingPartPropertyType",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             }
         },
-        "BuildingFurnitureType":{
+        "AbstractOpeningType":{
             "allOf":[
                 {
                     "$ref":"http://www.opengis.net/citygml/1.0#/definitions/AbstractCityObjectType"
                 },
                 {
                     "type":"object",
-                    "title":"BuildingFurnitureType",
+                    "title":"AbstractOpeningType",
                     "properties":{
-                        "clazz":{
-                            "title":"clazz",
+                        "lod3MultiSurface":{
+                            "title":"lod3MultiSurface",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "$ref":"#/definitions/MultiSurfacePropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"class",
+                                "localPart":"lod3MultiSurface",
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         },
-                        "function":{
-                            "title":"function",
+                        "lod4MultiSurface":{
+                            "title":"lod4MultiSurface",
                             "allOf":[
                                 {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    "minItems":0
+                                    "$ref":"#/definitions/MultiSurfacePropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"function",
+                                "localPart":"lod4MultiSurface",
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         },
-                        "usage":{
-                            "title":"usage",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"usage",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "lod4Geometry":{
-                            "title":"lod4Geometry",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/GeometryPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lod4Geometry",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "lod4ImplicitRepresentation":{
-                            "title":"lod4ImplicitRepresentation",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/citygml/1.0#/definitions/ImplicitRepresentationPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lod4ImplicitRepresentation",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfBuildingFurniture":{
-                            "title":"genericApplicationPropertyOfBuildingFurniture",
+                        "genericApplicationPropertyOfOpening":{
+                            "title":"genericApplicationPropertyOfOpening",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -245,7 +208,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfBuildingFurniture",
+                                "localPart":"_GenericApplicationPropertyOfOpening",
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         }
@@ -254,16 +217,51 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"BuildingFurnitureType",
+                "localPart":"AbstractOpeningType",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             },
             "propertiesOrder":[
-                "clazz",
-                "function",
-                "usage",
-                "lod4Geometry",
-                "lod4ImplicitRepresentation",
-                "genericApplicationPropertyOfBuildingFurniture"
+                "lod3MultiSurface",
+                "lod4MultiSurface",
+                "genericApplicationPropertyOfOpening"
+            ]
+        },
+        "InteriorWallSurfaceType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractBoundarySurfaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"InteriorWallSurfaceType",
+                    "properties":{
+                        "genericApplicationPropertyOfInteriorWallSurface":{
+                            "title":"genericApplicationPropertyOfInteriorWallSurface",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfInteriorWallSurface",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InteriorWallSurfaceType",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            },
+            "propertiesOrder":[
+                "genericApplicationPropertyOfInteriorWallSurface"
             ]
         },
         "RoofSurfaceType":{
@@ -304,35 +302,73 @@
                 "genericApplicationPropertyOfRoofSurface"
             ]
         },
-        "BoundarySurfacePropertyType":{
+        "AbstractBoundarySurfaceType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/AssociationType"
+                    "$ref":"http://www.opengis.net/citygml/1.0#/definitions/AbstractCityObjectType"
                 },
                 {
                     "type":"object",
-                    "title":"BoundarySurfacePropertyType",
+                    "title":"AbstractBoundarySurfaceType",
                     "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"BoundarySurfacePropertyType",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        "FloorSurfaceType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractBoundarySurfaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"FloorSurfaceType",
-                    "properties":{
-                        "genericApplicationPropertyOfFloorSurface":{
-                            "title":"genericApplicationPropertyOfFloorSurface",
+                        "lod2MultiSurface":{
+                            "title":"lod2MultiSurface",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MultiSurfacePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lod2MultiSurface",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "lod3MultiSurface":{
+                            "title":"lod3MultiSurface",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MultiSurfacePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lod3MultiSurface",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "lod4MultiSurface":{
+                            "title":"lod4MultiSurface",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MultiSurfacePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lod4MultiSurface",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "opening":{
+                            "title":"opening",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/OpeningPropertyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"opening",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfBoundarySurface":{
+                            "title":"genericApplicationPropertyOfBoundarySurface",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -344,7 +380,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfFloorSurface",
+                                "localPart":"_GenericApplicationPropertyOfBoundarySurface",
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         }
@@ -353,11 +389,89 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"FloorSurfaceType",
+                "localPart":"AbstractBoundarySurfaceType",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             },
             "propertiesOrder":[
-                "genericApplicationPropertyOfFloorSurface"
+                "lod2MultiSurface",
+                "lod3MultiSurface",
+                "lod4MultiSurface",
+                "opening",
+                "genericApplicationPropertyOfBoundarySurface"
+            ]
+        },
+        "IntBuildingInstallationPropertyType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AssociationType"
+                },
+                {
+                    "type":"object",
+                    "title":"IntBuildingInstallationPropertyType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"IntBuildingInstallationPropertyType",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        "BuildingInstallationPropertyType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AssociationType"
+                },
+                {
+                    "type":"object",
+                    "title":"BuildingInstallationPropertyType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"BuildingInstallationPropertyType",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        "BuildingType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractBuildingType"
+                },
+                {
+                    "type":"object",
+                    "title":"BuildingType",
+                    "properties":{
+                        "genericApplicationPropertyOfBuilding":{
+                            "title":"genericApplicationPropertyOfBuilding",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfBuilding",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"BuildingType",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            },
+            "propertiesOrder":[
+                "genericApplicationPropertyOfBuilding"
             ]
         },
         "OpeningPropertyType":{
@@ -378,34 +492,17 @@
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             }
         },
-        "DoorType":{
+        "ClosureSurfaceType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractOpeningType"
+                    "$ref":"#/definitions/AbstractBoundarySurfaceType"
                 },
                 {
                     "type":"object",
-                    "title":"DoorType",
+                    "title":"ClosureSurfaceType",
                     "properties":{
-                        "address":{
-                            "title":"address",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.opengis.net/citygml/1.0#/definitions/AddressPropertyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"address",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfDoor":{
-                            "title":"genericApplicationPropertyOfDoor",
+                        "genericApplicationPropertyOfClosureSurface":{
+                            "title":"genericApplicationPropertyOfClosureSurface",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -417,7 +514,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfDoor",
+                                "localPart":"_GenericApplicationPropertyOfClosureSurface",
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         }
@@ -426,31 +523,106 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DoorType",
+                "localPart":"ClosureSurfaceType",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             },
             "propertiesOrder":[
-                "address",
-                "genericApplicationPropertyOfDoor"
+                "genericApplicationPropertyOfClosureSurface"
             ]
         },
-        "InteriorFurniturePropertyType":{
+        "WallSurfaceType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractBoundarySurfaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"WallSurfaceType",
+                    "properties":{
+                        "genericApplicationPropertyOfWallSurface":{
+                            "title":"genericApplicationPropertyOfWallSurface",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfWallSurface",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"WallSurfaceType",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            },
+            "propertiesOrder":[
+                "genericApplicationPropertyOfWallSurface"
+            ]
+        },
+        "BoundarySurfacePropertyType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/AssociationType"
                 },
                 {
                     "type":"object",
-                    "title":"InteriorFurniturePropertyType",
+                    "title":"BoundarySurfacePropertyType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"InteriorFurniturePropertyType",
+                "localPart":"BoundarySurfacePropertyType",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             }
+        },
+        "BuildingPartType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractBuildingType"
+                },
+                {
+                    "type":"object",
+                    "title":"BuildingPartType",
+                    "properties":{
+                        "genericApplicationPropertyOfBuildingPart":{
+                            "title":"genericApplicationPropertyOfBuildingPart",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfBuildingPart",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"BuildingPartType",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            },
+            "propertiesOrder":[
+                "genericApplicationPropertyOfBuildingPart"
+            ]
         },
         "AbstractBuildingType":{
             "allOf":[
@@ -970,17 +1142,35 @@
                 "genericApplicationPropertyOfAbstractBuilding"
             ]
         },
-        "ClosureSurfaceType":{
+        "InteriorRoomPropertyType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AssociationType"
+                },
+                {
+                    "type":"object",
+                    "title":"InteriorRoomPropertyType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InteriorRoomPropertyType",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        "CeilingSurfaceType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/AbstractBoundarySurfaceType"
                 },
                 {
                     "type":"object",
-                    "title":"ClosureSurfaceType",
+                    "title":"CeilingSurfaceType",
                     "properties":{
-                        "genericApplicationPropertyOfClosureSurface":{
-                            "title":"genericApplicationPropertyOfClosureSurface",
+                        "genericApplicationPropertyOfCeilingSurface":{
+                            "title":"genericApplicationPropertyOfCeilingSurface",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -992,7 +1182,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfClosureSurface",
+                                "localPart":"_GenericApplicationPropertyOfCeilingSurface",
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         }
@@ -1001,118 +1191,97 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ClosureSurfaceType",
+                "localPart":"CeilingSurfaceType",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             },
             "propertiesOrder":[
-                "genericApplicationPropertyOfClosureSurface"
+                "genericApplicationPropertyOfCeilingSurface"
             ]
         },
-        "WallSurfaceType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractBoundarySurfaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"WallSurfaceType",
-                    "properties":{
-                        "genericApplicationPropertyOfWallSurface":{
-                            "title":"genericApplicationPropertyOfWallSurface",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfWallSurface",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"WallSurfaceType",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            },
-            "propertiesOrder":[
-                "genericApplicationPropertyOfWallSurface"
-            ]
-        },
-        "AbstractBoundarySurfaceType":{
+        "BuildingFurnitureType":{
             "allOf":[
                 {
                     "$ref":"http://www.opengis.net/citygml/1.0#/definitions/AbstractCityObjectType"
                 },
                 {
                     "type":"object",
-                    "title":"AbstractBoundarySurfaceType",
+                    "title":"BuildingFurnitureType",
                     "properties":{
-                        "lod2MultiSurface":{
-                            "title":"lod2MultiSurface",
+                        "clazz":{
+                            "title":"clazz",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/MultiSurfacePropertyType"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"lod2MultiSurface",
+                                "localPart":"class",
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         },
-                        "lod3MultiSurface":{
-                            "title":"lod3MultiSurface",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MultiSurfacePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lod3MultiSurface",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "lod4MultiSurface":{
-                            "title":"lod4MultiSurface",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MultiSurfacePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lod4MultiSurface",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "opening":{
-                            "title":"opening",
+                        "function":{
+                            "title":"function",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"#/definitions/OpeningPropertyType"
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                     },
                                     "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"opening",
+                                "localPart":"function",
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         },
-                        "genericApplicationPropertyOfBoundarySurface":{
-                            "title":"genericApplicationPropertyOfBoundarySurface",
+                        "usage":{
+                            "title":"usage",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"usage",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "lod4Geometry":{
+                            "title":"lod4Geometry",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/GeometryPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lod4Geometry",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "lod4ImplicitRepresentation":{
+                            "title":"lod4ImplicitRepresentation",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/citygml/1.0#/definitions/ImplicitRepresentationPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lod4ImplicitRepresentation",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfBuildingFurniture":{
+                            "title":"genericApplicationPropertyOfBuildingFurniture",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -1124,7 +1293,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfBoundarySurface",
+                                "localPart":"_GenericApplicationPropertyOfBuildingFurniture",
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         }
@@ -1133,28 +1302,115 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AbstractBoundarySurfaceType",
+                "localPart":"BuildingFurnitureType",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             },
             "propertiesOrder":[
-                "lod2MultiSurface",
-                "lod3MultiSurface",
-                "lod4MultiSurface",
-                "opening",
-                "genericApplicationPropertyOfBoundarySurface"
+                "clazz",
+                "function",
+                "usage",
+                "lod4Geometry",
+                "lod4ImplicitRepresentation",
+                "genericApplicationPropertyOfBuildingFurniture"
             ]
         },
-        "BuildingPartType":{
+        "BuildingInstallationType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractBuildingType"
+                    "$ref":"http://www.opengis.net/citygml/1.0#/definitions/AbstractCityObjectType"
                 },
                 {
                     "type":"object",
-                    "title":"BuildingPartType",
+                    "title":"BuildingInstallationType",
                     "properties":{
-                        "genericApplicationPropertyOfBuildingPart":{
-                            "title":"genericApplicationPropertyOfBuildingPart",
+                        "clazz":{
+                            "title":"clazz",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"class",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "function":{
+                            "title":"function",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"function",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "usage":{
+                            "title":"usage",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"usage",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "lod2Geometry":{
+                            "title":"lod2Geometry",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/GeometryPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lod2Geometry",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "lod3Geometry":{
+                            "title":"lod3Geometry",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/GeometryPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lod3Geometry",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "lod4Geometry":{
+                            "title":"lod4Geometry",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/GeometryPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lod4Geometry",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfBuildingInstallation":{
+                            "title":"genericApplicationPropertyOfBuildingInstallation",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -1166,7 +1422,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfBuildingPart",
+                                "localPart":"_GenericApplicationPropertyOfBuildingInstallation",
                                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
                             }
                         }
@@ -1175,11 +1431,17 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"BuildingPartType",
+                "localPart":"BuildingInstallationType",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             },
             "propertiesOrder":[
-                "genericApplicationPropertyOfBuildingPart"
+                "clazz",
+                "function",
+                "usage",
+                "lod2Geometry",
+                "lod3Geometry",
+                "lod4Geometry",
+                "genericApplicationPropertyOfBuildingInstallation"
             ]
         },
         "RoomType":{
@@ -1352,146 +1614,6 @@
                 "genericApplicationPropertyOfRoom"
             ]
         },
-        "AbstractOpeningType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/citygml/1.0#/definitions/AbstractCityObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractOpeningType",
-                    "properties":{
-                        "lod3MultiSurface":{
-                            "title":"lod3MultiSurface",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MultiSurfacePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lod3MultiSurface",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "lod4MultiSurface":{
-                            "title":"lod4MultiSurface",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MultiSurfacePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lod4MultiSurface",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfOpening":{
-                            "title":"genericApplicationPropertyOfOpening",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfOpening",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractOpeningType",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            },
-            "propertiesOrder":[
-                "lod3MultiSurface",
-                "lod4MultiSurface",
-                "genericApplicationPropertyOfOpening"
-            ]
-        },
-        "CeilingSurfaceType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractBoundarySurfaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"CeilingSurfaceType",
-                    "properties":{
-                        "genericApplicationPropertyOfCeilingSurface":{
-                            "title":"genericApplicationPropertyOfCeilingSurface",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfCeilingSurface",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CeilingSurfaceType",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            },
-            "propertiesOrder":[
-                "genericApplicationPropertyOfCeilingSurface"
-            ]
-        },
-        "InteriorRoomPropertyType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AssociationType"
-                },
-                {
-                    "type":"object",
-                    "title":"InteriorRoomPropertyType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InteriorRoomPropertyType",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        "IntBuildingInstallationPropertyType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AssociationType"
-                },
-                {
-                    "type":"object",
-                    "title":"IntBuildingInstallationPropertyType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"IntBuildingInstallationPropertyType",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
         "WindowType":{
             "allOf":[
                 {
@@ -1568,294 +1690,82 @@
                 "genericApplicationPropertyOfGroundSurface"
             ]
         },
-        "BuildingPartPropertyType":{
+        "DoorType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractOpeningType"
+                },
+                {
+                    "type":"object",
+                    "title":"DoorType",
+                    "properties":{
+                        "address":{
+                            "title":"address",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.opengis.net/citygml/1.0#/definitions/AddressPropertyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"address",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfDoor":{
+                            "title":"genericApplicationPropertyOfDoor",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfDoor",
+                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DoorType",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            },
+            "propertiesOrder":[
+                "address",
+                "genericApplicationPropertyOfDoor"
+            ]
+        },
+        "InteriorFurniturePropertyType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/AssociationType"
                 },
                 {
                     "type":"object",
-                    "title":"BuildingPartPropertyType",
+                    "title":"InteriorFurniturePropertyType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"BuildingPartPropertyType",
+                "localPart":"InteriorFurniturePropertyType",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             }
-        },
-        "InteriorWallSurfaceType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractBoundarySurfaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"InteriorWallSurfaceType",
-                    "properties":{
-                        "genericApplicationPropertyOfInteriorWallSurface":{
-                            "title":"genericApplicationPropertyOfInteriorWallSurface",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfInteriorWallSurface",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InteriorWallSurfaceType",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            },
-            "propertiesOrder":[
-                "genericApplicationPropertyOfInteriorWallSurface"
-            ]
-        },
-        "BuildingType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractBuildingType"
-                },
-                {
-                    "type":"object",
-                    "title":"BuildingType",
-                    "properties":{
-                        "genericApplicationPropertyOfBuilding":{
-                            "title":"genericApplicationPropertyOfBuilding",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfBuilding",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"BuildingType",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            },
-            "propertiesOrder":[
-                "genericApplicationPropertyOfBuilding"
-            ]
-        },
-        "IntBuildingInstallationType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/citygml/1.0#/definitions/AbstractCityObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"IntBuildingInstallationType",
-                    "properties":{
-                        "clazz":{
-                            "title":"clazz",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"class",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "function":{
-                            "title":"function",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"function",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "usage":{
-                            "title":"usage",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"usage",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "lod4Geometry":{
-                            "title":"lod4Geometry",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/GeometryPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lod4Geometry",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfIntBuildingInstallation":{
-                            "title":"genericApplicationPropertyOfIntBuildingInstallation",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfIntBuildingInstallation",
-                                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"IntBuildingInstallationType",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            },
-            "propertiesOrder":[
-                "clazz",
-                "function",
-                "usage",
-                "lod4Geometry",
-                "genericApplicationPropertyOfIntBuildingInstallation"
-            ]
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractBuildingType"
-                }
-            },
-            "elementName":{
-                "localPart":"_AbstractBuilding",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DoorType"
-                }
-            },
-            "elementName":{
-                "localPart":"Door",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfCeilingSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/IntBuildingInstallationType"
-                }
-            },
-            "elementName":{
-                "localPart":"IntBuildingInstallation",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ClosureSurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"ClosureSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfRoom",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -1878,281 +1788,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                    "$ref":"#/definitions/WindowType"
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfBuildingInstallation",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfBoundarySurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/FloorSurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"FloorSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfInteriorWallSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/InteriorWallSurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"InteriorWallSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/WallSurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"WallSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/CeilingSurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"CeilingSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfFloorSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfWindow",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfOpening",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractBoundarySurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"_BoundarySurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfRoofSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfClosureSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfGroundSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfAbstractBuilding",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfBuilding",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GroundSurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"GroundSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/BuildingFurnitureType"
-                }
-            },
-            "elementName":{
-                "localPart":"BuildingFurniture",
-                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/RoomType"
-                }
-            },
-            "elementName":{
-                "localPart":"Room",
+                "localPart":"Window",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             }
         },
@@ -2182,6 +1822,96 @@
                 }
             },
             "elementName":{
+                "localPart":"_GenericApplicationPropertyOfFloorSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfAbstractBuilding",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfWindow",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/IntBuildingInstallationType"
+                }
+            },
+            "elementName":{
+                "localPart":"IntBuildingInstallation",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DoorType"
+                }
+            },
+            "elementName":{
+                "localPart":"Door",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfOpening",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
                 "localPart":"_GenericApplicationPropertyOfIntBuildingInstallation",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             }
@@ -2197,7 +1927,217 @@
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfDoor",
+                "localPart":"_GenericApplicationPropertyOfRoofSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/FloorSurfaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"FloorSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GroundSurfaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"GroundSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfClosureSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractBuildingType"
+                }
+            },
+            "elementName":{
+                "localPart":"_AbstractBuilding",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfBoundarySurface",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BuildingFurnitureType"
+                }
+            },
+            "elementName":{
+                "localPart":"BuildingFurniture",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfBuildingPart",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/RoomType"
+                }
+            },
+            "elementName":{
+                "localPart":"Room",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfGroundSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/BuildingPartType"
+                }
+            },
+            "elementName":{
+                "localPart":"BuildingPart",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/CeilingSurfaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"CeilingSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfBuildingInstallation",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/RoofSurfaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"RoofSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ClosureSurfaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"ClosureSurface",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             }
         },
@@ -2227,7 +2167,7 @@
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfBuildingPart",
+                "localPart":"_GenericApplicationPropertyOfDoor",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             }
         },
@@ -2238,11 +2178,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/WindowType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"Window",
+                "localPart":"_GenericApplicationPropertyOfCeilingSurface",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             }
         },
@@ -2253,11 +2193,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/BuildingPartType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"BuildingPart",
+                "localPart":"_GenericApplicationPropertyOfInteriorWallSurface",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             }
         },
@@ -2283,6 +2223,51 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/AbstractBoundarySurfaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"_BoundarySurface",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/WallSurfaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"WallSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfRoom",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/BuildingInstallationType"
                 }
             },
@@ -2298,11 +2283,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/RoofSurfaceType"
+                    "$ref":"#/definitions/InteriorWallSurfaceType"
                 }
             },
             "elementName":{
-                "localPart":"RoofSurface",
+                "localPart":"InteriorWallSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfBuilding",
                 "namespaceURI":"http://www.opengis.net/citygml/building/1.0"
             }
         }

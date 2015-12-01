@@ -2,6 +2,126 @@
 {
     "id":"http://www.opengis.net/sos/1.0#",
     "definitions":{
+        "ObservationOfferingBaseType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"ObservationOfferingBaseType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ObservationOfferingBaseType",
+                "namespaceURI":"http://www.opengis.net/sos/1.0"
+            }
+        },
+        "GetObservation.Result":{
+            "type":"object",
+            "title":"GetObservation.Result",
+            "required":[
+                "comparisonOps"
+            ],
+            "properties":{
+                "comparisonOps":{
+                    "title":"comparisonOps",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"http://www.opengis.net/ogc#/definitions/ComparisonOpsType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"comparisonOps",
+                                "namespaceURI":"http://www.opengis.net/ogc"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"comparisonOps",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "comparisonOps"
+            ]
+        },
+        "GetObservation.EventTime":{
+            "type":"object",
+            "title":"GetObservation.EventTime",
+            "required":[
+                "temporalOps"
+            ],
+            "properties":{
+                "temporalOps":{
+                    "title":"temporalOps",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"http://www.opengis.net/ogc#/definitions/TemporalOpsType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"temporalOps",
+                                "namespaceURI":"http://www.opengis.net/ogc"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"temporalOps",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "temporalOps"
+            ]
+        },
+        "Contents":{
+            "type":"object",
+            "title":"Contents",
+            "required":[
+                "observationOfferingList"
+            ],
+            "properties":{
+                "observationOfferingList":{
+                    "title":"observationOfferingList",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Contents.ObservationOfferingList"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ObservationOfferingList",
+                        "namespaceURI":"http://www.opengis.net/sos/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "observationOfferingList"
+            ]
+        },
         "RegisterSensor":{
             "required":[
                 "sensorDescription",
@@ -50,66 +170,129 @@
                 "observationTemplate"
             ]
         },
-        "RegisterSensor.SensorDescription":{
-            "type":"object",
-            "title":"RegisterSensor.SensorDescription",
+        "InsertObservation":{
             "required":[
-                "any"
+                "assignedSensorId",
+                "observation"
             ],
-            "properties":{
-                "any":{
-                    "title":"any",
-                    "allOf":[
-                        {
-                            "anyOf":[
+            "allOf":[
+                {
+                    "$ref":"#/definitions/RequestBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"InsertObservation",
+                    "properties":{
+                        "assignedSensorId":{
+                            "title":"assignedSensorId",
+                            "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                },
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                        }
-                                    }
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
-                            ]
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"AssignedSensorId",
+                                "namespaceURI":"http://www.opengis.net/sos/1.0"
+                            }
+                        },
+                        "observation":{
+                            "title":"observation",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Observation",
+                                "namespaceURI":"http://www.opengis.net/om/1.0"
+                            }
                         }
-                    ],
-                    "propertyType":"anyElement"
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "any"
-            ]
-        },
-        "Contents":{
-            "type":"object",
-            "title":"Contents",
-            "required":[
-                "observationOfferingList"
-            ],
-            "properties":{
-                "observationOfferingList":{
-                    "title":"observationOfferingList",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Contents.ObservationOfferingList"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ObservationOfferingList",
-                        "namespaceURI":"http://www.opengis.net/sos/1.0"
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "propertiesOrder":[
-                "observationOfferingList"
+                "assignedSensorId",
+                "observation"
+            ]
+        },
+        "Capabilities":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CapabilitiesBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"Capabilities",
+                    "properties":{
+                        "filterCapabilities":{
+                            "title":"filterCapabilities",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/FilterCapabilities"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Filter_Capabilities",
+                                "namespaceURI":"http://www.opengis.net/sos/1.0"
+                            }
+                        },
+                        "contents":{
+                            "title":"contents",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/Contents"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Contents",
+                                "namespaceURI":"http://www.opengis.net/sos/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "filterCapabilities",
+                "contents"
+            ]
+        },
+        "GetCapabilities":{
+            "required":[
+                "service"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/GetCapabilitiesType"
+                },
+                {
+                    "type":"object",
+                    "title":"GetCapabilities",
+                    "properties":{
+                        "service":{
+                            "title":"service",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"service",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "service"
             ]
         },
         "DescribeResultModel":{
@@ -145,77 +328,15 @@
                 "resultName"
             ]
         },
-        "InsertObservationResponse":{
+        "GetResult.EventTime":{
             "type":"object",
-            "title":"InsertObservationResponse",
+            "title":"GetResult.EventTime",
             "required":[
-                "assignedObservationId"
+                "temporalOps"
             ],
             "properties":{
-                "assignedObservationId":{
-                    "title":"assignedObservationId",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"AssignedObservationId",
-                        "namespaceURI":"http://www.opengis.net/sos/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "assignedObservationId"
-            ]
-        },
-        "GetResultResponse.Result":{
-            "type":"object",
-            "title":"GetResultResponse.Result",
-            "required":[
-                "rs"
-            ],
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "rs":{
-                    "title":"rs",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"RS",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "value",
-                "rs"
-            ]
-        },
-        "GetFeatureOfInterest.Location":{
-            "type":"object",
-            "title":"GetFeatureOfInterest.Location",
-            "required":[
-                "spatialOps"
-            ],
-            "properties":{
-                "spatialOps":{
-                    "title":"spatialOps",
+                "temporalOps":{
+                    "title":"temporalOps",
                     "allOf":[
                         {
                             "type":"object",
@@ -224,224 +345,25 @@
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                                 },
                                 "value":{
-                                    "$ref":"http://www.opengis.net/ogc#/definitions/SpatialOpsType"
+                                    "$ref":"http://www.opengis.net/ogc#/definitions/TemporalOpsType"
                                 }
                             },
                             "elementName":{
-                                "localPart":"spatialOps",
+                                "localPart":"temporalOps",
                                 "namespaceURI":"http://www.opengis.net/ogc"
                             }
                         }
                     ],
                     "propertyType":"elementRef",
                     "elementName":{
-                        "localPart":"spatialOps",
+                        "localPart":"temporalOps",
                         "namespaceURI":"http://www.opengis.net/ogc"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "spatialOps"
-            ]
-        },
-        "GetObservationById":{
-            "required":[
-                "observationId"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/RequestBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetObservationById",
-                    "properties":{
-                        "observationId":{
-                            "title":"observationId",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ObservationId",
-                                "namespaceURI":"http://www.opengis.net/sos/1.0"
-                            }
-                        },
-                        "responseFormat":{
-                            "title":"responseFormat",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"responseFormat",
-                                "namespaceURI":"http://www.opengis.net/sos/1.0"
-                            }
-                        },
-                        "resultModel":{
-                            "title":"resultModel",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"resultModel",
-                                "namespaceURI":"http://www.opengis.net/sos/1.0"
-                            }
-                        },
-                        "responseMode":{
-                            "title":"responseMode",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ResponseModeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"responseMode",
-                                "namespaceURI":"http://www.opengis.net/sos/1.0"
-                            }
-                        },
-                        "srsName":{
-                            "title":"srsName",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"srsName",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "observationId",
-                "responseFormat",
-                "resultModel",
-                "responseMode",
-                "srsName"
-            ]
-        },
-        "ObservationOfferingBaseType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"ObservationOfferingBaseType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ObservationOfferingBaseType",
-                "namespaceURI":"http://www.opengis.net/sos/1.0"
-            }
-        },
-        "DescribeObservationType":{
-            "required":[
-                "observedProperty"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/RequestBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"DescribeObservationType",
-                    "properties":{
-                        "observedProperty":{
-                            "title":"observedProperty",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"observedProperty",
-                                "namespaceURI":"http://www.opengis.net/sos/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "observedProperty"
-            ]
-        },
-        "RegisterSensorResponse":{
-            "type":"object",
-            "title":"RegisterSensorResponse",
-            "required":[
-                "assignedSensorId"
-            ],
-            "properties":{
-                "assignedSensorId":{
-                    "title":"assignedSensorId",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"AssignedSensorId",
-                        "namespaceURI":"http://www.opengis.net/sos/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "assignedSensorId"
-            ]
-        },
-        "GetCapabilities":{
-            "required":[
-                "service"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/GetCapabilitiesType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetCapabilities",
-                    "properties":{
-                        "service":{
-                            "title":"service",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"service",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "service"
+                "temporalOps"
             ]
         },
         "DescribeSensor":{
@@ -490,6 +412,32 @@
             "propertiesOrder":[
                 "procedure",
                 "outputFormat"
+            ]
+        },
+        "GetResultResponse":{
+            "type":"object",
+            "title":"GetResultResponse",
+            "required":[
+                "result"
+            ],
+            "properties":{
+                "result":{
+                    "title":"result",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/GetResultResponse.Result"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"result",
+                        "namespaceURI":"http://www.opengis.net/sos/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "result"
             ]
         },
         "GetObservation":{
@@ -665,42 +613,55 @@
                 "srsName"
             ]
         },
-        "GetObservation.EventTime":{
-            "type":"object",
-            "title":"GetObservation.EventTime",
+        "GetResult":{
             "required":[
-                "temporalOps"
+                "observationTemplateId"
             ],
-            "properties":{
-                "temporalOps":{
-                    "title":"temporalOps",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"http://www.opengis.net/ogc#/definitions/TemporalOpsType"
+            "allOf":[
+                {
+                    "$ref":"#/definitions/RequestBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"GetResult",
+                    "properties":{
+                        "observationTemplateId":{
+                            "title":"observationTemplateId",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
-                            },
+                            ],
+                            "propertyType":"element",
                             "elementName":{
-                                "localPart":"temporalOps",
-                                "namespaceURI":"http://www.opengis.net/ogc"
+                                "localPart":"ObservationTemplateId",
+                                "namespaceURI":"http://www.opengis.net/sos/1.0"
+                            }
+                        },
+                        "eventTime":{
+                            "title":"eventTime",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/GetResult.EventTime"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"eventTime",
+                                "namespaceURI":"http://www.opengis.net/sos/1.0"
                             }
                         }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"temporalOps",
-                        "namespaceURI":"http://www.opengis.net/ogc"
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "propertiesOrder":[
-                "temporalOps"
+                "observationTemplateId",
+                "eventTime"
             ]
         },
         "GetFeatureOfInterest":{
@@ -773,6 +734,69 @@
                 "eventTime"
             ]
         },
+        "Contents.ObservationOfferingList":{
+            "type":"object",
+            "title":"Contents.ObservationOfferingList",
+            "required":[
+                "observationOffering"
+            ],
+            "properties":{
+                "observationOffering":{
+                    "title":"observationOffering",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ObservationOfferingType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ObservationOffering",
+                        "namespaceURI":"http://www.opengis.net/sos/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "observationOffering"
+            ]
+        },
+        "DescribeFeatureType":{
+            "required":[
+                "featureId"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/RequestBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"DescribeFeatureType",
+                    "properties":{
+                        "featureId":{
+                            "title":"featureId",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"FeatureId",
+                                "namespaceURI":"http://www.opengis.net/sos/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "featureId"
+            ]
+        },
         "RequestBaseType":{
             "type":"object",
             "title":"RequestBaseType",
@@ -816,6 +840,132 @@
             "propertiesOrder":[
                 "service",
                 "version"
+            ]
+        },
+        "GetResultResponse.Result":{
+            "type":"object",
+            "title":"GetResultResponse.Result",
+            "required":[
+                "rs"
+            ],
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "rs":{
+                    "title":"rs",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"RS",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "value",
+                "rs"
+            ]
+        },
+        "InsertObservationResponse":{
+            "type":"object",
+            "title":"InsertObservationResponse",
+            "required":[
+                "assignedObservationId"
+            ],
+            "properties":{
+                "assignedObservationId":{
+                    "title":"assignedObservationId",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"AssignedObservationId",
+                        "namespaceURI":"http://www.opengis.net/sos/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "assignedObservationId"
+            ]
+        },
+        "ObservationTemplate":{
+            "type":"object",
+            "title":"ObservationTemplate",
+            "required":[
+                "observation"
+            ],
+            "properties":{
+                "observation":{
+                    "title":"observation",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Observation",
+                        "namespaceURI":"http://www.opengis.net/om/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "observation"
+            ]
+        },
+        "GetFeatureOfInterest.EventTime":{
+            "type":"object",
+            "title":"GetFeatureOfInterest.EventTime",
+            "required":[
+                "temporalOps"
+            ],
+            "properties":{
+                "temporalOps":{
+                    "title":"temporalOps",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"http://www.opengis.net/ogc#/definitions/TemporalOpsType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"temporalOps",
+                                "namespaceURI":"http://www.opengis.net/ogc"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"temporalOps",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "temporalOps"
             ]
         },
         "GetObservation.FeatureOfInterest":{
@@ -875,101 +1025,37 @@
                 "objectID"
             ]
         },
-        "FilterCapabilities":{
-            "type":"object",
-            "title":"FilterCapabilities",
+        "DescribeObservationType":{
             "required":[
-                "spatialCapabilities",
-                "temporalCapabilities",
-                "scalarCapabilities",
-                "idCapabilities"
+                "observedProperty"
             ],
-            "properties":{
-                "spatialCapabilities":{
-                    "title":"spatialCapabilities",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ogc#/definitions/SpatialCapabilitiesType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Spatial_Capabilities",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
+            "allOf":[
+                {
+                    "$ref":"#/definitions/RequestBaseType"
                 },
-                "temporalCapabilities":{
-                    "title":"temporalCapabilities",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ogc#/definitions/TemporalCapabilitiesType"
+                {
+                    "type":"object",
+                    "title":"DescribeObservationType",
+                    "properties":{
+                        "observedProperty":{
+                            "title":"observedProperty",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"observedProperty",
+                                "namespaceURI":"http://www.opengis.net/sos/1.0"
+                            }
                         }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Temporal_Capabilities",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
-                },
-                "scalarCapabilities":{
-                    "title":"scalarCapabilities",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ogc#/definitions/ScalarCapabilitiesType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Scalar_Capabilities",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
-                },
-                "idCapabilities":{
-                    "title":"idCapabilities",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ogc#/definitions/IdCapabilitiesType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Id_Capabilities",
-                        "namespaceURI":"http://www.opengis.net/ogc"
                     }
                 }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "spatialCapabilities",
-                "temporalCapabilities",
-                "scalarCapabilities",
-                "idCapabilities"
-            ]
-        },
-        "ObservationTemplate":{
-            "type":"object",
-            "title":"ObservationTemplate",
-            "required":[
-                "observation"
             ],
-            "properties":{
-                "observation":{
-                    "title":"observation",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Observation",
-                        "namespaceURI":"http://www.opengis.net/om/1.0"
-                    }
-                }
-            },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "observation"
+                "observedProperty"
             ]
         },
         "ObservationOfferingType":{
@@ -1139,85 +1225,15 @@
                 "responseMode"
             ]
         },
-        "GetResultResponse":{
+        "GetFeatureOfInterest.Location":{
             "type":"object",
-            "title":"GetResultResponse",
+            "title":"GetFeatureOfInterest.Location",
             "required":[
-                "result"
+                "spatialOps"
             ],
             "properties":{
-                "result":{
-                    "title":"result",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/GetResultResponse.Result"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"result",
-                        "namespaceURI":"http://www.opengis.net/sos/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "result"
-            ]
-        },
-        "Capabilities":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CapabilitiesBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"Capabilities",
-                    "properties":{
-                        "filterCapabilities":{
-                            "title":"filterCapabilities",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/FilterCapabilities"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Filter_Capabilities",
-                                "namespaceURI":"http://www.opengis.net/sos/1.0"
-                            }
-                        },
-                        "contents":{
-                            "title":"contents",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/Contents"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Contents",
-                                "namespaceURI":"http://www.opengis.net/sos/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "filterCapabilities",
-                "contents"
-            ]
-        },
-        "GetResult.EventTime":{
-            "type":"object",
-            "title":"GetResult.EventTime",
-            "required":[
-                "temporalOps"
-            ],
-            "properties":{
-                "temporalOps":{
-                    "title":"temporalOps",
+                "spatialOps":{
+                    "title":"spatialOps",
                     "allOf":[
                         {
                             "type":"object",
@@ -1226,31 +1242,56 @@
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                                 },
                                 "value":{
-                                    "$ref":"http://www.opengis.net/ogc#/definitions/TemporalOpsType"
+                                    "$ref":"http://www.opengis.net/ogc#/definitions/SpatialOpsType"
                                 }
                             },
                             "elementName":{
-                                "localPart":"temporalOps",
+                                "localPart":"spatialOps",
                                 "namespaceURI":"http://www.opengis.net/ogc"
                             }
                         }
                     ],
                     "propertyType":"elementRef",
                     "elementName":{
-                        "localPart":"temporalOps",
+                        "localPart":"spatialOps",
                         "namespaceURI":"http://www.opengis.net/ogc"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "temporalOps"
+                "spatialOps"
             ]
         },
-        "InsertObservation":{
+        "RegisterSensorResponse":{
+            "type":"object",
+            "title":"RegisterSensorResponse",
             "required":[
-                "assignedSensorId",
-                "observation"
+                "assignedSensorId"
+            ],
+            "properties":{
+                "assignedSensorId":{
+                    "title":"assignedSensorId",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"AssignedSensorId",
+                        "namespaceURI":"http://www.opengis.net/sos/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "assignedSensorId"
+            ]
+        },
+        "GetObservationById":{
+            "required":[
+                "observationId"
             ],
             "allOf":[
                 {
@@ -1258,10 +1299,10 @@
                 },
                 {
                     "type":"object",
-                    "title":"InsertObservation",
+                    "title":"GetObservationById",
                     "properties":{
-                        "assignedSensorId":{
-                            "title":"assignedSensorId",
+                        "observationId":{
+                            "title":"observationId",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1269,21 +1310,60 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"AssignedSensorId",
+                                "localPart":"ObservationId",
                                 "namespaceURI":"http://www.opengis.net/sos/1.0"
                             }
                         },
-                        "observation":{
-                            "title":"observation",
+                        "responseFormat":{
+                            "title":"responseFormat",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.opengis.net/om/1.0#/definitions/ObservationType"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"Observation",
-                                "namespaceURI":"http://www.opengis.net/om/1.0"
+                                "localPart":"responseFormat",
+                                "namespaceURI":"http://www.opengis.net/sos/1.0"
+                            }
+                        },
+                        "resultModel":{
+                            "title":"resultModel",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"resultModel",
+                                "namespaceURI":"http://www.opengis.net/sos/1.0"
+                            }
+                        },
+                        "responseMode":{
+                            "title":"responseMode",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ResponseModeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"responseMode",
+                                "namespaceURI":"http://www.opengis.net/sos/1.0"
+                            }
+                        },
+                        "srsName":{
+                            "title":"srsName",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"srsName",
+                                "namespaceURI":""
                             }
                         }
                     }
@@ -1291,46 +1371,47 @@
             ],
             "typeType":"classInfo",
             "propertiesOrder":[
-                "assignedSensorId",
-                "observation"
+                "observationId",
+                "responseFormat",
+                "resultModel",
+                "responseMode",
+                "srsName"
             ]
         },
-        "GetObservation.Result":{
+        "RegisterSensor.SensorDescription":{
             "type":"object",
-            "title":"GetObservation.Result",
+            "title":"RegisterSensor.SensorDescription",
             "required":[
-                "comparisonOps"
+                "any"
             ],
             "properties":{
-                "comparisonOps":{
-                    "title":"comparisonOps",
+                "any":{
+                    "title":"any",
                     "allOf":[
                         {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                            "anyOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
                                 },
-                                "value":{
-                                    "$ref":"http://www.opengis.net/ogc#/definitions/ComparisonOpsType"
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                        }
+                                    }
                                 }
-                            },
-                            "elementName":{
-                                "localPart":"comparisonOps",
-                                "namespaceURI":"http://www.opengis.net/ogc"
-                            }
+                            ]
                         }
                     ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"comparisonOps",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
+                    "propertyType":"anyElement"
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "comparisonOps"
+                "any"
             ]
         },
         "GetFeatureOfInterestTime":{
@@ -1366,156 +1447,75 @@
                 "featureOfInterestId"
             ]
         },
-        "GetFeatureOfInterest.EventTime":{
+        "FilterCapabilities":{
             "type":"object",
-            "title":"GetFeatureOfInterest.EventTime",
+            "title":"FilterCapabilities",
             "required":[
-                "temporalOps"
+                "spatialCapabilities",
+                "temporalCapabilities",
+                "scalarCapabilities",
+                "idCapabilities"
             ],
             "properties":{
-                "temporalOps":{
-                    "title":"temporalOps",
+                "spatialCapabilities":{
+                    "title":"spatialCapabilities",
                     "allOf":[
                         {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"http://www.opengis.net/ogc#/definitions/TemporalOpsType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"temporalOps",
-                                "namespaceURI":"http://www.opengis.net/ogc"
-                            }
+                            "$ref":"http://www.opengis.net/ogc#/definitions/SpatialCapabilitiesType"
                         }
                     ],
-                    "propertyType":"elementRef",
+                    "propertyType":"element",
                     "elementName":{
-                        "localPart":"temporalOps",
+                        "localPart":"Spatial_Capabilities",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                },
+                "temporalCapabilities":{
+                    "title":"temporalCapabilities",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ogc#/definitions/TemporalCapabilitiesType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Temporal_Capabilities",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                },
+                "scalarCapabilities":{
+                    "title":"scalarCapabilities",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ogc#/definitions/ScalarCapabilitiesType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Scalar_Capabilities",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                },
+                "idCapabilities":{
+                    "title":"idCapabilities",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ogc#/definitions/IdCapabilitiesType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Id_Capabilities",
                         "namespaceURI":"http://www.opengis.net/ogc"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "temporalOps"
-            ]
-        },
-        "Contents.ObservationOfferingList":{
-            "type":"object",
-            "title":"Contents.ObservationOfferingList",
-            "required":[
-                "observationOffering"
-            ],
-            "properties":{
-                "observationOffering":{
-                    "title":"observationOffering",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ObservationOfferingType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ObservationOffering",
-                        "namespaceURI":"http://www.opengis.net/sos/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "observationOffering"
-            ]
-        },
-        "GetResult":{
-            "required":[
-                "observationTemplateId"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/RequestBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetResult",
-                    "properties":{
-                        "observationTemplateId":{
-                            "title":"observationTemplateId",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ObservationTemplateId",
-                                "namespaceURI":"http://www.opengis.net/sos/1.0"
-                            }
-                        },
-                        "eventTime":{
-                            "title":"eventTime",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/GetResult.EventTime"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"eventTime",
-                                "namespaceURI":"http://www.opengis.net/sos/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "observationTemplateId",
-                "eventTime"
-            ]
-        },
-        "DescribeFeatureType":{
-            "required":[
-                "featureId"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/RequestBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"DescribeFeatureType",
-                    "properties":{
-                        "featureId":{
-                            "title":"featureId",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"FeatureId",
-                                "namespaceURI":"http://www.opengis.net/sos/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "featureId"
+                "spatialCapabilities",
+                "temporalCapabilities",
+                "scalarCapabilities",
+                "idCapabilities"
             ]
         },
         "ResponseModeType":{
@@ -1539,26 +1539,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/GetResultResponse"
+                    "$ref":"#/definitions/GetCapabilities"
                 }
             },
             "elementName":{
-                "localPart":"GetResultResponse",
-                "namespaceURI":"http://www.opengis.net/sos/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetObservation"
-                }
-            },
-            "elementName":{
-                "localPart":"GetObservation",
+                "localPart":"GetCapabilities",
                 "namespaceURI":"http://www.opengis.net/sos/1.0"
             }
         },
@@ -1584,71 +1569,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/GetResult"
+                    "$ref":"#/definitions/DescribeFeatureType"
                 }
             },
             "elementName":{
-                "localPart":"GetResult",
-                "namespaceURI":"http://www.opengis.net/sos/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetFeatureOfInterestTime"
-                }
-            },
-            "elementName":{
-                "localPart":"GetFeatureOfInterestTime",
-                "namespaceURI":"http://www.opengis.net/sos/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Contents"
-                }
-            },
-            "elementName":{
-                "localPart":"Contents",
-                "namespaceURI":"http://www.opengis.net/sos/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetCapabilities"
-                }
-            },
-            "elementName":{
-                "localPart":"GetCapabilities",
-                "namespaceURI":"http://www.opengis.net/sos/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetFeatureOfInterest"
-                }
-            },
-            "elementName":{
-                "localPart":"GetFeatureOfInterest",
+                "localPart":"DescribeFeatureType",
                 "namespaceURI":"http://www.opengis.net/sos/1.0"
             }
         },
@@ -1674,56 +1599,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/DescribeSensor"
+                    "$ref":"#/definitions/DescribeObservationType"
                 }
             },
             "elementName":{
-                "localPart":"DescribeSensor",
-                "namespaceURI":"http://www.opengis.net/sos/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Capabilities"
-                }
-            },
-            "elementName":{
-                "localPart":"Capabilities",
-                "namespaceURI":"http://www.opengis.net/sos/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ObservationTemplate"
-                }
-            },
-            "elementName":{
-                "localPart":"ObservationTemplate",
-                "namespaceURI":"http://www.opengis.net/sos/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DescribeFeatureType"
-                }
-            },
-            "elementName":{
-                "localPart":"DescribeFeatureType",
+                "localPart":"DescribeObservationType",
                 "namespaceURI":"http://www.opengis.net/sos/1.0"
             }
         },
@@ -1749,6 +1629,21 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/RegisterSensor"
+                }
+            },
+            "elementName":{
+                "localPart":"RegisterSensor",
+                "namespaceURI":"http://www.opengis.net/sos/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/InsertObservation"
                 }
             },
@@ -1764,11 +1659,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/CodeType"
+                    "$ref":"#/definitions/Contents"
                 }
             },
             "elementName":{
-                "localPart":"supportedSRS",
+                "localPart":"Contents",
                 "namespaceURI":"http://www.opengis.net/sos/1.0"
             }
         },
@@ -1779,26 +1674,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/RegisterSensorResponse"
+                    "$ref":"#/definitions/Capabilities"
                 }
             },
             "elementName":{
-                "localPart":"RegisterSensorResponse",
-                "namespaceURI":"http://www.opengis.net/sos/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DescribeResultModel"
-                }
-            },
-            "elementName":{
-                "localPart":"DescribeResultModel",
+                "localPart":"Capabilities",
                 "namespaceURI":"http://www.opengis.net/sos/1.0"
             }
         },
@@ -1839,11 +1719,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/DescribeObservationType"
+                    "$ref":"#/definitions/ObservationTemplate"
                 }
             },
             "elementName":{
-                "localPart":"DescribeObservationType",
+                "localPart":"ObservationTemplate",
                 "namespaceURI":"http://www.opengis.net/sos/1.0"
             }
         },
@@ -1854,11 +1734,131 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/RegisterSensor"
+                    "$ref":"#/definitions/GetFeatureOfInterestTime"
                 }
             },
             "elementName":{
-                "localPart":"RegisterSensor",
+                "localPart":"GetFeatureOfInterestTime",
+                "namespaceURI":"http://www.opengis.net/sos/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DescribeSensor"
+                }
+            },
+            "elementName":{
+                "localPart":"DescribeSensor",
+                "namespaceURI":"http://www.opengis.net/sos/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DescribeResultModel"
+                }
+            },
+            "elementName":{
+                "localPart":"DescribeResultModel",
+                "namespaceURI":"http://www.opengis.net/sos/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetResult"
+                }
+            },
+            "elementName":{
+                "localPart":"GetResult",
+                "namespaceURI":"http://www.opengis.net/sos/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/RegisterSensorResponse"
+                }
+            },
+            "elementName":{
+                "localPart":"RegisterSensorResponse",
+                "namespaceURI":"http://www.opengis.net/sos/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetFeatureOfInterest"
+                }
+            },
+            "elementName":{
+                "localPart":"GetFeatureOfInterest",
+                "namespaceURI":"http://www.opengis.net/sos/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetObservation"
+                }
+            },
+            "elementName":{
+                "localPart":"GetObservation",
+                "namespaceURI":"http://www.opengis.net/sos/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetResultResponse"
+                }
+            },
+            "elementName":{
+                "localPart":"GetResultResponse",
+                "namespaceURI":"http://www.opengis.net/sos/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/CodeType"
+                }
+            },
+            "elementName":{
+                "localPart":"supportedSRS",
                 "namespaceURI":"http://www.opengis.net/sos/1.0"
             }
         }

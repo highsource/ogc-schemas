@@ -3,51 +3,14 @@ var OMEO_ATM_2_0_Module_Factory = function () {
     n: 'OMEO_ATM_2_0',
     dens: 'http:\/\/www.opengis.net\/atm\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['OMEO_EOP_2_0', 'GML_3_2_1', 'XLink_1_0'],
+    deps: ['XLink_1_0', 'GML_3_2_1', 'OMEO_EOP_2_0'],
     tis: [{
-        ln: 'AcquisitionType',
-        bti: 'OMEO_EOP_2_0.AcquisitionType',
+        ln: 'EarthObservationResultPropertyType',
         ps: [{
-            n: 'multiViewAngles',
+            n: 'earthObservationResult',
             rq: true,
-            ti: 'GML_3_2_1.MeasureOrNilReasonListType'
-          }, {
-            n: 'centreViewAngles',
-            rq: true,
-            ti: 'GML_3_2_1.MeasureOrNilReasonListType'
-          }]
-      }, {
-        ln: 'EarthObservationResultType',
-        bti: 'OMEO_EOP_2_0.EarthObservationResultType',
-        ps: [{
-            n: 'dataLayers',
-            mno: 0,
-            col: true,
-            ti: '.DataLayerPropertyType'
-          }, {
-            n: 'cloudCoverPercentage',
-            ti: 'GML_3_2_1.MeasureType'
-          }, {
-            n: 'cloudCoverPercentageAssessmentConfidence',
-            ti: 'GML_3_2_1.MeasureType'
-          }, {
-            n: 'cloudCoverPercentageQuotationMode'
-          }, {
-            n: 'snowCoverPercentage',
-            ti: 'GML_3_2_1.MeasureType'
-          }, {
-            n: 'snowCoverPercentageAssessmentConfidence',
-            ti: 'GML_3_2_1.MeasureType'
-          }, {
-            n: 'snowCoverPercentageQuotationMode'
-          }]
-      }, {
-        ln: 'EarthObservationEquipmentPropertyType',
-        ps: [{
-            n: 'earthObservationEquipment',
-            rq: true,
-            en: 'EarthObservationEquipment',
-            ti: '.EarthObservationEquipmentType'
+            en: 'EarthObservationResult',
+            ti: '.EarthObservationResultType'
           }, {
             n: 'nilReason',
             ti: {
@@ -104,74 +67,29 @@ var OMEO_ATM_2_0_Module_Factory = function () {
             ti: 'OMEO_EOP_2_0.AcquisitionPropertyType'
           }]
       }, {
-        ln: 'AcquisitionPropertyType',
+        ln: 'EarthObservationResultType',
+        bti: 'OMEO_EOP_2_0.EarthObservationResultType',
         ps: [{
-            n: 'acquisition',
-            rq: true,
-            en: 'Acquisition',
-            ti: '.AcquisitionType'
+            n: 'dataLayers',
+            mno: 0,
+            col: true,
+            ti: '.DataLayerPropertyType'
           }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'EarthObservationResultPropertyType',
-        ps: [{
-            n: 'earthObservationResult',
-            rq: true,
-            en: 'EarthObservationResult',
-            ti: '.EarthObservationResultType'
+            n: 'cloudCoverPercentage',
+            ti: 'GML_3_2_1.MeasureType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
+            n: 'cloudCoverPercentageAssessmentConfidence',
+            ti: 'GML_3_2_1.MeasureType'
           }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
+            n: 'cloudCoverPercentageQuotationMode'
           }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
+            n: 'snowCoverPercentage',
+            ti: 'GML_3_2_1.MeasureType'
           }, {
-            n: 'href',
-            t: 'a'
+            n: 'snowCoverPercentageAssessmentConfidence',
+            ti: 'GML_3_2_1.MeasureType'
           }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
+            n: 'snowCoverPercentageQuotationMode'
           }]
       }, {
         ln: 'DataLayerType',
@@ -209,12 +127,34 @@ var OMEO_ATM_2_0_Module_Factory = function () {
         ln: 'EarthObservationType',
         bti: 'OMEO_EOP_2_0.EarthObservationType'
       }, {
+        ln: 'AcquisitionPropertyType',
+        ps: [{
+            n: 'acquisition',
+            rq: true,
+            en: 'Acquisition',
+            ti: '.AcquisitionType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'EarthObservationPropertyType',
         ps: [{
             n: 'earthObservation',
             rq: true,
             en: 'EarthObservation',
             ti: '.EarthObservationType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }, {
             n: 'nilReason',
             ti: {
@@ -255,12 +195,72 @@ var OMEO_ATM_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'AcquisitionType',
+        bti: 'OMEO_EOP_2_0.AcquisitionType',
+        ps: [{
+            n: 'multiViewAngles',
+            rq: true,
+            ti: 'GML_3_2_1.MeasureOrNilReasonListType'
+          }, {
+            n: 'centreViewAngles',
+            rq: true,
+            ti: 'GML_3_2_1.MeasureOrNilReasonListType'
+          }]
+      }, {
+        ln: 'EarthObservationEquipmentPropertyType',
+        ps: [{
+            n: 'earthObservationEquipment',
+            rq: true,
+            en: 'EarthObservationEquipment',
+            ti: '.EarthObservationEquipmentType'
           }, {
             n: 'owns',
             ti: 'Boolean',
             an: {
               lp: 'owns'
             },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
@@ -269,11 +269,11 @@ var OMEO_ATM_2_0_Module_Factory = function () {
         vs: ['AUTOMATIC', 'MANUAL']
       }],
     eis: [{
-        en: 'DataLayer',
-        ti: '.DataLayerType',
+        en: 'Acquisition',
+        ti: '.AcquisitionType',
         sh: {
-          lp: 'AbstractObject',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+          lp: 'Acquisition',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }, {
         en: 'EarthObservationResult',
@@ -283,24 +283,24 @@ var OMEO_ATM_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }, {
-        en: 'EarthObservationEquipment',
-        ti: '.EarthObservationEquipmentType',
-        sh: {
-          lp: 'EarthObservationEquipment',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
-        en: 'Acquisition',
-        ti: '.AcquisitionType',
-        sh: {
-          lp: 'Acquisition',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
         en: 'EarthObservation',
         ti: '.EarthObservationType',
         sh: {
           lp: 'EarthObservation',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
+        en: 'DataLayer',
+        ti: '.DataLayerType',
+        sh: {
+          lp: 'AbstractObject',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'EarthObservationEquipment',
+        ti: '.EarthObservationEquipmentType',
+        sh: {
+          lp: 'EarthObservationEquipment',
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }]

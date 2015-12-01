@@ -4,50 +4,9 @@ var WCST_1_1_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/wcs\/1.1\/wcst',
     deps: ['OWS_1_1_0'],
     tis: [{
-        ln: 'AcknowledgementType',
-        ps: [{
-            n: 'timeStamp',
-            rq: true,
-            en: 'TimeStamp',
-            ti: 'Calendar'
-          }, {
-            n: 'requestId',
-            rq: true,
-            en: 'RequestId'
-          }, {
-            n: 'operationRequest',
-            en: 'OperationRequest',
-            ti: '.TransactionType'
-          }]
-      }, {
-        ln: 'TransactionResponseType',
-        ps: [{
-            n: 'requestId',
-            rq: true,
-            en: 'RequestId'
-          }, {
-            n: 'identifier',
-            rq: true,
-            col: true,
-            en: {
-              lp: 'Identifier',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.CodeType'
-          }]
-      }, {
         ln: 'Action',
         tn: null,
         bti: 'OWS_1_1_0.CodeType'
-      }, {
-        ln: 'CoverageType',
-        bti: 'OWS_1_1_0.ReferenceGroupType',
-        ps: [{
-            n: 'action',
-            rq: true,
-            en: 'Action',
-            ti: '.Action'
-          }]
       }, {
         ln: 'TransactionType',
         ps: [{
@@ -76,18 +35,56 @@ var WCST_1_1_Module_Factory = function () {
             },
             t: 'a'
           }]
+      }, {
+        ln: 'TransactionResponseType',
+        ps: [{
+            n: 'requestId',
+            rq: true,
+            en: 'RequestId'
+          }, {
+            n: 'identifier',
+            rq: true,
+            col: true,
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.CodeType'
+          }]
+      }, {
+        ln: 'AcknowledgementType',
+        ps: [{
+            n: 'timeStamp',
+            rq: true,
+            en: 'TimeStamp',
+            ti: 'Calendar'
+          }, {
+            n: 'requestId',
+            rq: true,
+            en: 'RequestId'
+          }, {
+            n: 'operationRequest',
+            en: 'OperationRequest',
+            ti: '.TransactionType'
+          }]
+      }, {
+        ln: 'CoverageType',
+        bti: 'OWS_1_1_0.ReferenceGroupType',
+        ps: [{
+            n: 'action',
+            rq: true,
+            en: 'Action',
+            ti: '.Action'
+          }]
       }],
     eis: [{
-        en: 'Transaction',
-        ti: '.TransactionType'
+        en: 'TransactionResponse',
+        ti: '.TransactionResponseType'
       }, {
         en: 'Action',
         ti: '.Action'
       }, {
         en: 'RequestId'
-      }, {
-        en: 'TransactionResponse',
-        ti: '.TransactionResponseType'
       }, {
         en: 'Coverage',
         ti: '.CoverageType',
@@ -98,6 +95,9 @@ var WCST_1_1_Module_Factory = function () {
       }, {
         en: 'Acknowledgement',
         ti: '.AcknowledgementType'
+      }, {
+        en: 'Transaction',
+        ti: '.TransactionType'
       }]
   };
   return {

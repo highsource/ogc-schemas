@@ -65,15 +65,15 @@ var CityGML_CityFuntiture_2_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: '_GenericApplicationPropertyOfCityFurniture',
-        ti: 'AnyType'
-      }, {
         en: 'CityFurniture',
         ti: '.CityFurnitureType',
         sh: {
           lp: '_CityObject',
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
+      }, {
+        en: '_GenericApplicationPropertyOfCityFurniture',
+        ti: 'AnyType'
       }]
   };
   return {

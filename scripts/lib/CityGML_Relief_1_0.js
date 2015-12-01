@@ -4,28 +4,6 @@ var CityGML_Relief_1_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/citygml\/relief\/1.0',
     deps: ['GML_3_1_1', 'CityGML_1_0'],
     tis: [{
-        ln: 'RasterReliefType',
-        bti: '.AbstractReliefComponentType',
-        ps: [{
-            n: 'grid',
-            rq: true,
-            ti: '.GridPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfRasterRelief',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfRasterRelief',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'GridPropertyType',
-        tn: 'gridPropertyType',
-        bti: 'GML_3_1_1.AssociationType'
-      }, {
-        ln: 'TinPropertyType',
-        tn: 'tinPropertyType',
-        bti: 'GML_3_1_1.AssociationType'
-      }, {
         ln: 'ReliefComponentPropertyType',
         bti: 'GML_3_1_1.AssociationType'
       }, {
@@ -40,20 +18,6 @@ var CityGML_Relief_1_0_Module_Factory = function () {
             mno: 0,
             col: true,
             en: '_GenericApplicationPropertyOfMassPointRelief',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'TINReliefType',
-        bti: '.AbstractReliefComponentType',
-        ps: [{
-            n: 'tin',
-            rq: true,
-            ti: '.TinPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfTinRelief',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfTinRelief',
             ti: 'AnyType'
           }]
       }, {
@@ -74,6 +38,40 @@ var CityGML_Relief_1_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
+        ln: 'BreaklineReliefType',
+        bti: '.AbstractReliefComponentType',
+        ps: [{
+            n: 'ridgeOrValleyLines',
+            ti: 'GML_3_1_1.MultiCurvePropertyType'
+          }, {
+            n: 'breaklines',
+            ti: 'GML_3_1_1.MultiCurvePropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfBreaklineRelief',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfBreaklineRelief',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TINReliefType',
+        bti: '.AbstractReliefComponentType',
+        ps: [{
+            n: 'tin',
+            rq: true,
+            ti: '.TinPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfTinRelief',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfTinRelief',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'GridPropertyType',
+        tn: 'gridPropertyType',
+        bti: 'GML_3_1_1.AssociationType'
+      }, {
         ln: 'ReliefFeatureType',
         bti: 'CityGML_1_0.AbstractCityObjectType',
         ps: [{
@@ -93,38 +91,30 @@ var CityGML_Relief_1_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'BreaklineReliefType',
+        ln: 'RasterReliefType',
         bti: '.AbstractReliefComponentType',
         ps: [{
-            n: 'ridgeOrValleyLines',
-            ti: 'GML_3_1_1.MultiCurvePropertyType'
+            n: 'grid',
+            rq: true,
+            ti: '.GridPropertyType'
           }, {
-            n: 'breaklines',
-            ti: 'GML_3_1_1.MultiCurvePropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfBreaklineRelief',
+            n: 'genericApplicationPropertyOfRasterRelief',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfBreaklineRelief',
+            en: '_GenericApplicationPropertyOfRasterRelief',
             ti: 'AnyType'
           }]
+      }, {
+        ln: 'TinPropertyType',
+        tn: 'tinPropertyType',
+        bti: 'GML_3_1_1.AssociationType'
       }],
     eis: [{
         en: 'MassPointRelief',
         ti: '.MassPointReliefType',
         sh: '_ReliefComponent'
       }, {
-        en: '_GenericApplicationPropertyOfReliefFeature',
-        ti: 'AnyType'
-      }, {
-        en: 'BreaklineRelief',
-        ti: '.BreaklineReliefType',
-        sh: '_ReliefComponent'
-      }, {
-        en: '_GenericApplicationPropertyOfRasterRelief',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfReliefComponent',
+        en: '_GenericApplicationPropertyOfBreaklineRelief',
         ti: 'AnyType'
       }, {
         en: 'Elevation',
@@ -141,9 +131,24 @@ var CityGML_Relief_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
         }
       }, {
-        en: 'RasterRelief',
-        ti: '.RasterReliefType',
+        en: 'BreaklineRelief',
+        ti: '.BreaklineReliefType',
         sh: '_ReliefComponent'
+      }, {
+        en: '_GenericApplicationPropertyOfReliefComponent',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfReliefFeature',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfMassPointRelief',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfTinRelief',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfRasterRelief',
+        ti: 'AnyType'
       }, {
         en: 'ReliefFeature',
         ti: '.ReliefFeatureType',
@@ -156,14 +161,9 @@ var CityGML_Relief_1_0_Module_Factory = function () {
         ti: '.TINReliefType',
         sh: '_ReliefComponent'
       }, {
-        en: '_GenericApplicationPropertyOfTinRelief',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfBreaklineRelief',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfMassPointRelief',
-        ti: 'AnyType'
+        en: 'RasterRelief',
+        ti: '.RasterReliefType',
+        sh: '_ReliefComponent'
       }]
   };
   return {

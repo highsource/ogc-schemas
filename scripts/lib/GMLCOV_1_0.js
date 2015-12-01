@@ -3,8 +3,14 @@ var GMLCOV_1_0_Module_Factory = function () {
     n: 'GMLCOV_1_0',
     dens: 'http:\/\/www.opengis.net\/gmlcov\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1', 'SWE_2_0'],
+    deps: ['GML_3_2_1', 'XLink_1_0', 'SWE_2_0'],
     tis: [{
+        ln: 'AbstractContinuousCoverageType',
+        bti: '.AbstractCoverageType'
+      }, {
+        ln: 'AbstractReferenceableGridType',
+        bti: 'GML_3_2_1.GridType'
+      }, {
         ln: 'ParameterValueType',
         bti: 'GML_3_2_1.AbstractGeneralParameterValueType',
         ps: [{
@@ -93,8 +99,25 @@ var GMLCOV_1_0_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'AbstractContinuousCoverageType',
-        bti: '.AbstractCoverageType'
+        ln: 'AbstractCoverageType',
+        bti: 'GML_3_2_1.AbstractCoverageType',
+        ps: [{
+            n: 'coverageFunction',
+            en: {
+              lp: 'coverageFunction',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.CoverageFunctionType'
+          }, {
+            n: 'rangeType',
+            rq: true,
+            ti: 'SWE_2_0.DataRecordPropertyType'
+          }, {
+            n: 'metadata',
+            mno: 0,
+            col: true,
+            ti: '.Metadata'
+          }]
       }, {
         ln: 'AbstractDiscreteCoverageType',
         bti: '.AbstractCoverageType'
@@ -203,26 +226,6 @@ var GMLCOV_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractCoverageType',
-        bti: 'GML_3_2_1.AbstractCoverageType',
-        ps: [{
-            n: 'coverageFunction',
-            en: {
-              lp: 'coverageFunction',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.CoverageFunctionType'
-          }, {
-            n: 'rangeType',
-            rq: true,
-            ti: 'SWE_2_0.DataRecordPropertyType'
-          }, {
-            n: 'metadata',
-            mno: 0,
-            col: true,
-            ti: '.Metadata'
-          }]
-      }, {
         ln: 'SimpleMultiPointType',
         bti: 'GML_3_2_1.AbstractGeometricAggregateType',
         ps: [{
@@ -239,9 +242,6 @@ var GMLCOV_1_0_Module_Factory = function () {
             mx: false,
             t: 'ae'
           }]
-      }, {
-        ln: 'AbstractReferenceableGridType',
-        bti: 'GML_3_2_1.GridType'
       }],
     eis: [{
         en: 'AbstractReferenceableGrid',
@@ -251,17 +251,13 @@ var GMLCOV_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'AbstractDiscreteCoverage',
-        ti: '.AbstractDiscreteCoverageType',
-        sh: 'AbstractCoverage'
-      }, {
-        en: 'rangeType',
-        ti: 'SWE_2_0.DataRecordPropertyType'
+        en: 'referenceableGridProperty',
+        ti: '.ReferenceableGridPropertyType'
       }, {
         en: 'vectorValue',
         ti: 'GML_3_2_1.VectorType'
       }, {
-        en: 'MultiSurfaceCoverage',
+        en: 'MultiSolidCoverage',
         ti: '.AbstractDiscreteCoverageType',
         sh: 'AbstractDiscreteCoverage'
       }, {
@@ -273,31 +269,17 @@ var GMLCOV_1_0_Module_Factory = function () {
         ti: '.AbstractDiscreteCoverageType',
         sh: 'AbstractCoverage'
       }, {
+        en: 'MultiPointCoverage',
+        ti: '.AbstractDiscreteCoverageType',
+        sh: 'AbstractDiscreteCoverage'
+      }, {
+        en: 'geometryValue',
+        ti: 'GML_3_2_1.GeometryPropertyType'
+      }, {
         en: 'ParameterValue',
         ti: '.ParameterValueType',
         sh: {
           lp: 'AbstractGeneralParameterValue',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'Extension',
-        ti: '.ExtensionType'
-      }, {
-        en: 'RectifiedGridCoverage',
-        ti: '.AbstractDiscreteCoverageType',
-        sh: 'AbstractCoverage'
-      }, {
-        en: 'MultiSolidCoverage',
-        ti: '.AbstractDiscreteCoverageType',
-        sh: 'AbstractDiscreteCoverage'
-      }, {
-        en: 'referenceableGridProperty',
-        ti: '.ReferenceableGridPropertyType'
-      }, {
-        en: 'AbstractContinuousCoverage',
-        ti: '.AbstractContinuousCoverageType',
-        sh: {
-          lp: 'AbstractCoverage',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
@@ -308,13 +290,6 @@ var GMLCOV_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'geometryValue',
-        ti: 'GML_3_2_1.GeometryPropertyType'
-      }, {
-        en: 'GridCoverage',
-        ti: '.AbstractDiscreteCoverageType',
-        sh: 'AbstractCoverage'
-      }, {
         en: 'SimpleMultiPoint',
         ti: '.SimpleMultiPointType',
         sh: {
@@ -322,12 +297,37 @@ var GMLCOV_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
+        en: 'GridCoverage',
+        ti: '.AbstractDiscreteCoverageType',
+        sh: 'AbstractCoverage'
+      }, {
+        en: 'RectifiedGridCoverage',
+        ti: '.AbstractDiscreteCoverageType',
+        sh: 'AbstractCoverage'
+      }, {
         en: 'metadata',
         ti: '.Metadata'
       }, {
-        en: 'MultiPointCoverage',
+        en: 'rangeType',
+        ti: 'SWE_2_0.DataRecordPropertyType'
+      }, {
+        en: 'Extension',
+        ti: '.ExtensionType'
+      }, {
+        en: 'AbstractContinuousCoverage',
+        ti: '.AbstractContinuousCoverageType',
+        sh: {
+          lp: 'AbstractCoverage',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'MultiSurfaceCoverage',
         ti: '.AbstractDiscreteCoverageType',
         sh: 'AbstractDiscreteCoverage'
+      }, {
+        en: 'AbstractDiscreteCoverage',
+        ti: '.AbstractDiscreteCoverageType',
+        sh: 'AbstractCoverage'
       }]
   };
   return {
