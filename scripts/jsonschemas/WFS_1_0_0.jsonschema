@@ -46,6 +46,96 @@
                 "value"
             ]
         },
+        "QueryType":{
+            "type":"object",
+            "title":"QueryType",
+            "required":[
+                "typeName"
+            ],
+            "properties":{
+                "propertyName":{
+                    "title":"propertyName",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/PropertyNameType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"PropertyName",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                },
+                "filter":{
+                    "title":"filter",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/FilterType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Filter",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                },
+                "handle":{
+                    "title":"handle",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"handle",
+                        "namespaceURI":""
+                    }
+                },
+                "typeName":{
+                    "title":"typeName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"typeName",
+                        "namespaceURI":""
+                    }
+                },
+                "featureVersion":{
+                    "title":"featureVersion",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"featureVersion",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"QueryType",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            },
+            "propertiesOrder":[
+                "propertyName",
+                "filter",
+                "handle",
+                "typeName",
+                "featureVersion"
+            ]
+        },
         "FeaturesNotLockedType":{
             "type":"object",
             "title":"FeaturesNotLockedType",
@@ -80,50 +170,58 @@
                 "featureId"
             ]
         },
-        "TransactionResultType":{
+        "FeatureCollectionType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/gml#/definitions/AbstractFeatureCollectionType"
+                },
+                {
+                    "type":"object",
+                    "title":"FeatureCollectionType",
+                    "properties":{
+                        "lockId":{
+                            "title":"lockId",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"lockId",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FeatureCollectionType",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            },
+            "propertiesOrder":[
+                "lockId"
+            ]
+        },
+        "LockType":{
             "type":"object",
-            "title":"TransactionResultType",
+            "title":"LockType",
             "required":[
-                "status"
+                "typeName"
             ],
             "properties":{
-                "status":{
-                    "title":"status",
+                "filter":{
+                    "title":"filter",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/StatusType"
+                            "$ref":"#/definitions/FilterType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Status",
-                        "namespaceURI":"http://www.opengis.net/wfs"
-                    }
-                },
-                "locator":{
-                    "title":"locator",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Locator",
-                        "namespaceURI":"http://www.opengis.net/wfs"
-                    }
-                },
-                "message":{
-                    "title":"message",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Message",
-                        "namespaceURI":"http://www.opengis.net/wfs"
+                        "localPart":"Filter",
+                        "namespaceURI":"http://www.opengis.net/ogc"
                     }
                 },
                 "handle":{
@@ -138,18 +236,75 @@
                         "localPart":"handle",
                         "namespaceURI":""
                     }
+                },
+                "typeName":{
+                    "title":"typeName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"typeName",
+                        "namespaceURI":""
+                    }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"TransactionResultType",
+                "localPart":"LockType",
                 "namespaceURI":"http://www.opengis.net/wfs"
             },
             "propertiesOrder":[
-                "status",
-                "locator",
-                "message",
-                "handle"
+                "filter",
+                "handle",
+                "typeName"
+            ]
+        },
+        "EmptyType":{
+            "type":"object",
+            "title":"EmptyType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EmptyType",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            }
+        },
+        "FeaturesLockedType":{
+            "type":"object",
+            "title":"FeaturesLockedType",
+            "required":[
+                "featureId"
+            ],
+            "properties":{
+                "featureId":{
+                    "title":"featureId",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/FeatureIdType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"FeatureId",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FeaturesLockedType",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            },
+            "propertiesOrder":[
+                "featureId"
             ]
         },
         "GetCapabilitiesType":{
@@ -196,46 +351,29 @@
                 "service"
             ]
         },
-        "WFSTransactionResponseType":{
+        "DeleteElementType":{
             "type":"object",
-            "title":"WFSTransactionResponseType",
+            "title":"DeleteElementType",
             "required":[
-                "transactionResult",
-                "version"
+                "filter",
+                "typeName"
             ],
             "properties":{
-                "insertResult":{
-                    "title":"insertResult",
+                "filter":{
+                    "title":"filter",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InsertResultType"
-                            },
-                            "minItems":0
+                            "$ref":"#/definitions/FilterType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"InsertResult",
-                        "namespaceURI":"http://www.opengis.net/wfs"
+                        "localPart":"Filter",
+                        "namespaceURI":"http://www.opengis.net/ogc"
                     }
                 },
-                "transactionResult":{
-                    "title":"transactionResult",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TransactionResultType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TransactionResult",
-                        "namespaceURI":"http://www.opengis.net/wfs"
-                    }
-                },
-                "version":{
-                    "title":"version",
+                "handle":{
+                    "title":"handle",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -243,20 +381,33 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"version",
+                        "localPart":"handle",
+                        "namespaceURI":""
+                    }
+                },
+                "typeName":{
+                    "title":"typeName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"typeName",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"WFS_TransactionResponseType",
+                "localPart":"DeleteElementType",
                 "namespaceURI":"http://www.opengis.net/wfs"
             },
             "propertiesOrder":[
-                "insertResult",
-                "transactionResult",
-                "version"
+                "filter",
+                "handle",
+                "typeName"
             ]
         },
         "TransactionType":{
@@ -405,6 +556,172 @@
                 "releaseAction"
             ]
         },
+        "GetFeatureType":{
+            "type":"object",
+            "title":"GetFeatureType",
+            "required":[
+                "query",
+                "version",
+                "service"
+            ],
+            "properties":{
+                "query":{
+                    "title":"query",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/QueryType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Query",
+                        "namespaceURI":"http://www.opengis.net/wfs"
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                },
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"service",
+                        "namespaceURI":""
+                    }
+                },
+                "handle":{
+                    "title":"handle",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"handle",
+                        "namespaceURI":""
+                    }
+                },
+                "outputFormat":{
+                    "title":"outputFormat",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"outputFormat",
+                        "namespaceURI":""
+                    }
+                },
+                "maxFeatures":{
+                    "title":"maxFeatures",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"maxFeatures",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetFeatureType",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            },
+            "propertiesOrder":[
+                "query",
+                "version",
+                "service",
+                "handle",
+                "outputFormat",
+                "maxFeatures"
+            ]
+        },
+        "InsertElementType":{
+            "type":"object",
+            "title":"InsertElementType",
+            "required":[
+                "feature"
+            ],
+            "properties":{
+                "feature":{
+                    "title":"feature",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                    },
+                                    "value":{
+                                        "$ref":"http://www.opengis.net/gml#/definitions/AbstractFeatureType"
+                                    }
+                                },
+                                "elementName":{
+                                    "localPart":"_Feature",
+                                    "namespaceURI":"http://www.opengis.net/gml"
+                                }
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"_Feature",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "handle":{
+                    "title":"handle",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"handle",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InsertElementType",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            },
+            "propertiesOrder":[
+                "feature",
+                "handle"
+            ]
+        },
         "GetFeatureWithLockType":{
             "type":"object",
             "title":"GetFeatureWithLockType",
@@ -525,109 +842,28 @@
                 "maxFeatures"
             ]
         },
-        "FeatureCollectionType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/gml#/definitions/AbstractFeatureCollectionType"
-                },
-                {
-                    "type":"object",
-                    "title":"FeatureCollectionType",
-                    "properties":{
-                        "lockId":{
-                            "title":"lockId",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"lockId",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"FeatureCollectionType",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            },
-            "propertiesOrder":[
-                "lockId"
-            ]
-        },
-        "StatusType":{
+        "TransactionResultType":{
             "type":"object",
-            "title":"StatusType",
+            "title":"TransactionResultType",
             "required":[
-                "success",
-                "failed",
-                "partial"
+                "status"
             ],
             "properties":{
-                "success":{
-                    "title":"success",
+                "status":{
+                    "title":"status",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/EmptyType"
+                            "$ref":"#/definitions/StatusType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"SUCCESS",
+                        "localPart":"Status",
                         "namespaceURI":"http://www.opengis.net/wfs"
                     }
                 },
-                "failed":{
-                    "title":"failed",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/EmptyType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"FAILED",
-                        "namespaceURI":"http://www.opengis.net/wfs"
-                    }
-                },
-                "partial":{
-                    "title":"partial",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/EmptyType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"PARTIAL",
-                        "namespaceURI":"http://www.opengis.net/wfs"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"StatusType",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            },
-            "propertiesOrder":[
-                "success",
-                "failed",
-                "partial"
-            ]
-        },
-        "WFSLockFeatureResponseType":{
-            "type":"object",
-            "title":"WFSLockFeatureResponseType",
-            "required":[
-                "lockId"
-            ],
-            "properties":{
-                "lockId":{
-                    "title":"lockId",
+                "locator":{
+                    "title":"locator",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -635,83 +871,21 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"LockId",
+                        "localPart":"Locator",
                         "namespaceURI":"http://www.opengis.net/wfs"
                     }
                 },
-                "featuresLocked":{
-                    "title":"featuresLocked",
+                "message":{
+                    "title":"message",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/FeaturesLockedType"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"FeaturesLocked",
+                        "localPart":"Message",
                         "namespaceURI":"http://www.opengis.net/wfs"
-                    }
-                },
-                "featuresNotLocked":{
-                    "title":"featuresNotLocked",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/FeaturesNotLockedType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"FeaturesNotLocked",
-                        "namespaceURI":"http://www.opengis.net/wfs"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"WFS_LockFeatureResponseType",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            },
-            "propertiesOrder":[
-                "lockId",
-                "featuresLocked",
-                "featuresNotLocked"
-            ]
-        },
-        "QueryType":{
-            "type":"object",
-            "title":"QueryType",
-            "required":[
-                "typeName"
-            ],
-            "properties":{
-                "propertyName":{
-                    "title":"propertyName",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/PropertyNameType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"PropertyName",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
-                },
-                "filter":{
-                    "title":"filter",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/FilterType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Filter",
-                        "namespaceURI":"http://www.opengis.net/ogc"
                     }
                 },
                 "handle":{
@@ -726,237 +900,19 @@
                         "localPart":"handle",
                         "namespaceURI":""
                     }
-                },
-                "typeName":{
-                    "title":"typeName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"typeName",
-                        "namespaceURI":""
-                    }
-                },
-                "featureVersion":{
-                    "title":"featureVersion",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"featureVersion",
-                        "namespaceURI":""
-                    }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"QueryType",
+                "localPart":"TransactionResultType",
                 "namespaceURI":"http://www.opengis.net/wfs"
             },
             "propertiesOrder":[
-                "propertyName",
-                "filter",
-                "handle",
-                "typeName",
-                "featureVersion"
+                "status",
+                "locator",
+                "message",
+                "handle"
             ]
-        },
-        "UpdateElementType":{
-            "type":"object",
-            "title":"UpdateElementType",
-            "required":[
-                "property",
-                "typeName"
-            ],
-            "properties":{
-                "property":{
-                    "title":"property",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/PropertyType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Property",
-                        "namespaceURI":"http://www.opengis.net/wfs"
-                    }
-                },
-                "filter":{
-                    "title":"filter",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/FilterType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Filter",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
-                },
-                "handle":{
-                    "title":"handle",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"handle",
-                        "namespaceURI":""
-                    }
-                },
-                "typeName":{
-                    "title":"typeName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"typeName",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"UpdateElementType",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            },
-            "propertiesOrder":[
-                "property",
-                "filter",
-                "handle",
-                "typeName"
-            ]
-        },
-        "NativeType":{
-            "type":"object",
-            "title":"NativeType",
-            "required":[
-                "vendorId",
-                "safeToIgnore"
-            ],
-            "properties":{
-                "vendorId":{
-                    "title":"vendorId",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"vendorId",
-                        "namespaceURI":""
-                    }
-                },
-                "safeToIgnore":{
-                    "title":"safeToIgnore",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"safeToIgnore",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"NativeType",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            },
-            "propertiesOrder":[
-                "vendorId",
-                "safeToIgnore"
-            ]
-        },
-        "LockType":{
-            "type":"object",
-            "title":"LockType",
-            "required":[
-                "typeName"
-            ],
-            "properties":{
-                "filter":{
-                    "title":"filter",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/FilterType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Filter",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
-                },
-                "handle":{
-                    "title":"handle",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"handle",
-                        "namespaceURI":""
-                    }
-                },
-                "typeName":{
-                    "title":"typeName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"typeName",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LockType",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            },
-            "propertiesOrder":[
-                "filter",
-                "handle",
-                "typeName"
-            ]
-        },
-        "EmptyType":{
-            "type":"object",
-            "title":"EmptyType",
-            "properties":{
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EmptyType",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            }
         },
         "LockFeatureType":{
             "type":"object",
@@ -1050,14 +1006,31 @@
                 "lockAction"
             ]
         },
-        "DeleteElementType":{
+        "UpdateElementType":{
             "type":"object",
-            "title":"DeleteElementType",
+            "title":"UpdateElementType",
             "required":[
-                "filter",
+                "property",
                 "typeName"
             ],
             "properties":{
+                "property":{
+                    "title":"property",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/PropertyType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Property",
+                        "namespaceURI":"http://www.opengis.net/wfs"
+                    }
+                },
                 "filter":{
                     "title":"filter",
                     "allOf":[
@@ -1100,101 +1073,56 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DeleteElementType",
+                "localPart":"UpdateElementType",
                 "namespaceURI":"http://www.opengis.net/wfs"
             },
             "propertiesOrder":[
+                "property",
                 "filter",
                 "handle",
                 "typeName"
             ]
         },
-        "InsertElementType":{
+        "WFSTransactionResponseType":{
             "type":"object",
-            "title":"InsertElementType",
+            "title":"WFSTransactionResponseType",
             "required":[
-                "feature"
+                "transactionResult",
+                "version"
             ],
             "properties":{
-                "feature":{
-                    "title":"feature",
+                "insertResult":{
+                    "title":"insertResult",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "type":"object",
-                                "properties":{
-                                    "name":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                    },
-                                    "value":{
-                                        "$ref":"http://www.opengis.net/gml#/definitions/AbstractFeatureType"
-                                    }
-                                },
-                                "elementName":{
-                                    "localPart":"_Feature",
-                                    "namespaceURI":"http://www.opengis.net/gml"
-                                }
+                                "$ref":"#/definitions/InsertResultType"
                             },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"_Feature",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "handle":{
-                    "title":"handle",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"handle",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InsertElementType",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            },
-            "propertiesOrder":[
-                "feature",
-                "handle"
-            ]
-        },
-        "InsertResultType":{
-            "type":"object",
-            "title":"InsertResultType",
-            "required":[
-                "featureId"
-            ],
-            "properties":{
-                "featureId":{
-                    "title":"featureId",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/FeatureIdType"
-                            },
-                            "minItems":1
+                            "minItems":0
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"FeatureId",
-                        "namespaceURI":"http://www.opengis.net/ogc"
+                        "localPart":"InsertResult",
+                        "namespaceURI":"http://www.opengis.net/wfs"
                     }
                 },
-                "handle":{
-                    "title":"handle",
+                "transactionResult":{
+                    "title":"transactionResult",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TransactionResultType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TransactionResult",
+                        "namespaceURI":"http://www.opengis.net/wfs"
+                    }
+                },
+                "version":{
+                    "title":"version",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1202,19 +1130,20 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"handle",
+                        "localPart":"version",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"InsertResultType",
+                "localPart":"WFS_TransactionResponseType",
                 "namespaceURI":"http://www.opengis.net/wfs"
             },
             "propertiesOrder":[
-                "featureId",
-                "handle"
+                "insertResult",
+                "transactionResult",
+                "version"
             ]
         },
         "DescribeFeatureTypeType":{
@@ -1294,115 +1223,9 @@
                 "outputFormat"
             ]
         },
-        "GetFeatureType":{
+        "InsertResultType":{
             "type":"object",
-            "title":"GetFeatureType",
-            "required":[
-                "query",
-                "version",
-                "service"
-            ],
-            "properties":{
-                "query":{
-                    "title":"query",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/QueryType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Query",
-                        "namespaceURI":"http://www.opengis.net/wfs"
-                    }
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
-                    }
-                },
-                "service":{
-                    "title":"service",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"service",
-                        "namespaceURI":""
-                    }
-                },
-                "handle":{
-                    "title":"handle",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"handle",
-                        "namespaceURI":""
-                    }
-                },
-                "outputFormat":{
-                    "title":"outputFormat",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"outputFormat",
-                        "namespaceURI":""
-                    }
-                },
-                "maxFeatures":{
-                    "title":"maxFeatures",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"maxFeatures",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetFeatureType",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            },
-            "propertiesOrder":[
-                "query",
-                "version",
-                "service",
-                "handle",
-                "outputFormat",
-                "maxFeatures"
-            ]
-        },
-        "FeaturesLockedType":{
-            "type":"object",
-            "title":"FeaturesLockedType",
+            "title":"InsertResultType",
             "required":[
                 "featureId"
             ],
@@ -1423,15 +1246,192 @@
                         "localPart":"FeatureId",
                         "namespaceURI":"http://www.opengis.net/ogc"
                     }
+                },
+                "handle":{
+                    "title":"handle",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"handle",
+                        "namespaceURI":""
+                    }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"FeaturesLockedType",
+                "localPart":"InsertResultType",
                 "namespaceURI":"http://www.opengis.net/wfs"
             },
             "propertiesOrder":[
-                "featureId"
+                "featureId",
+                "handle"
+            ]
+        },
+        "WFSLockFeatureResponseType":{
+            "type":"object",
+            "title":"WFSLockFeatureResponseType",
+            "required":[
+                "lockId"
+            ],
+            "properties":{
+                "lockId":{
+                    "title":"lockId",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LockId",
+                        "namespaceURI":"http://www.opengis.net/wfs"
+                    }
+                },
+                "featuresLocked":{
+                    "title":"featuresLocked",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/FeaturesLockedType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"FeaturesLocked",
+                        "namespaceURI":"http://www.opengis.net/wfs"
+                    }
+                },
+                "featuresNotLocked":{
+                    "title":"featuresNotLocked",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/FeaturesNotLockedType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"FeaturesNotLocked",
+                        "namespaceURI":"http://www.opengis.net/wfs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"WFS_LockFeatureResponseType",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            },
+            "propertiesOrder":[
+                "lockId",
+                "featuresLocked",
+                "featuresNotLocked"
+            ]
+        },
+        "StatusType":{
+            "type":"object",
+            "title":"StatusType",
+            "required":[
+                "success",
+                "failed",
+                "partial"
+            ],
+            "properties":{
+                "success":{
+                    "title":"success",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/EmptyType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SUCCESS",
+                        "namespaceURI":"http://www.opengis.net/wfs"
+                    }
+                },
+                "failed":{
+                    "title":"failed",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/EmptyType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"FAILED",
+                        "namespaceURI":"http://www.opengis.net/wfs"
+                    }
+                },
+                "partial":{
+                    "title":"partial",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/EmptyType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"PARTIAL",
+                        "namespaceURI":"http://www.opengis.net/wfs"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"StatusType",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            },
+            "propertiesOrder":[
+                "success",
+                "failed",
+                "partial"
+            ]
+        },
+        "NativeType":{
+            "type":"object",
+            "title":"NativeType",
+            "required":[
+                "vendorId",
+                "safeToIgnore"
+            ],
+            "properties":{
+                "vendorId":{
+                    "title":"vendorId",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"vendorId",
+                        "namespaceURI":""
+                    }
+                },
+                "safeToIgnore":{
+                    "title":"safeToIgnore",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"safeToIgnore",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"NativeType",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            },
+            "propertiesOrder":[
+                "vendorId",
+                "safeToIgnore"
             ]
         },
         "AllSomeType":{
@@ -1455,11 +1455,71 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/WFSLockFeatureResponseType"
+                    "$ref":"#/definitions/DescribeFeatureTypeType"
                 }
             },
             "elementName":{
-                "localPart":"WFS_LockFeatureResponse",
+                "localPart":"DescribeFeatureType",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/DeleteElementType"
+                }
+            },
+            "elementName":{
+                "localPart":"Delete",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/WFSTransactionResponseType"
+                }
+            },
+            "elementName":{
+                "localPart":"WFS_TransactionResponse",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetCapabilitiesType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetCapabilities",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/FeatureCollectionType"
+                }
+            },
+            "elementName":{
+                "localPart":"FeatureCollection",
                 "namespaceURI":"http://www.opengis.net/wfs"
             }
         },
@@ -1500,161 +1560,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/EmptyType"
-                }
-            },
-            "elementName":{
-                "localPart":"FAILED",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/WFSTransactionResponseType"
-                }
-            },
-            "elementName":{
-                "localPart":"WFS_TransactionResponse",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"LockId",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DeleteElementType"
-                }
-            },
-            "elementName":{
-                "localPart":"Delete",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/DescribeFeatureTypeType"
-                }
-            },
-            "elementName":{
-                "localPart":"DescribeFeatureType",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetCapabilitiesType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetCapabilities",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/EmptyType"
-                }
-            },
-            "elementName":{
-                "localPart":"SUCCESS",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/TransactionType"
-                }
-            },
-            "elementName":{
-                "localPart":"Transaction",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
                     "$ref":"#/definitions/InsertElementType"
                 }
             },
             "elementName":{
                 "localPart":"Insert",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/FeatureCollectionType"
-                }
-            },
-            "elementName":{
-                "localPart":"FeatureCollection",
-                "namespaceURI":"http://www.opengis.net/wfs"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GetFeatureWithLockType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetFeatureWithLock",
                 "namespaceURI":"http://www.opengis.net/wfs"
             }
         },
@@ -1695,11 +1605,86 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/UpdateElementType"
+                    "$ref":"#/definitions/WFSLockFeatureResponseType"
                 }
             },
             "elementName":{
-                "localPart":"Update",
+                "localPart":"WFS_LockFeatureResponse",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/EmptyType"
+                }
+            },
+            "elementName":{
+                "localPart":"SUCCESS",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/EmptyType"
+                }
+            },
+            "elementName":{
+                "localPart":"FAILED",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/NativeType"
+                }
+            },
+            "elementName":{
+                "localPart":"Native",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GetFeatureWithLockType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetFeatureWithLock",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"LockId",
                 "namespaceURI":"http://www.opengis.net/wfs"
             }
         },
@@ -1725,11 +1710,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/NativeType"
+                    "$ref":"#/definitions/UpdateElementType"
                 }
             },
             "elementName":{
-                "localPart":"Native",
+                "localPart":"Update",
+                "namespaceURI":"http://www.opengis.net/wfs"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TransactionType"
+                }
+            },
+            "elementName":{
+                "localPart":"Transaction",
                 "namespaceURI":"http://www.opengis.net/wfs"
             }
         }

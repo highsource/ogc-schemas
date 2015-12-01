@@ -4,9 +4,6 @@ var CityGML_Waterbody_1_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/citygml\/waterbody\/1.0',
     deps: ['GML_3_1_1', 'CityGML_1_0'],
     tis: [{
-        ln: 'BoundedByWaterSurfacePropertyType',
-        bti: 'GML_3_1_1.AssociationType'
-      }, {
         ln: 'WaterClosureSurfaceType',
         bti: '.AbstractWaterBoundarySurfaceType',
         ps: [{
@@ -14,6 +11,35 @@ var CityGML_Waterbody_1_0_Module_Factory = function () {
             mno: 0,
             col: true,
             en: '_GenericApplicationPropertyOfWaterClosureSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AbstractWaterBoundarySurfaceType',
+        bti: 'CityGML_1_0.AbstractCityObjectType',
+        ps: [{
+            n: 'lod2Surface',
+            ti: 'GML_3_1_1.SurfacePropertyType'
+          }, {
+            n: 'lod3Surface',
+            ti: 'GML_3_1_1.SurfacePropertyType'
+          }, {
+            n: 'lod4Surface',
+            ti: 'GML_3_1_1.SurfacePropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfWaterBoundarySurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfWaterBoundarySurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AbstractWaterObjectType',
+        bti: 'CityGML_1_0.AbstractCityObjectType',
+        ps: [{
+            n: 'genericApplicationPropertyOfWaterObject',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfWaterObject',
             ti: 'AnyType'
           }]
       }, {
@@ -80,15 +106,8 @@ var CityGML_Waterbody_1_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'AbstractWaterObjectType',
-        bti: 'CityGML_1_0.AbstractCityObjectType',
-        ps: [{
-            n: 'genericApplicationPropertyOfWaterObject',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfWaterObject',
-            ti: 'AnyType'
-          }]
+        ln: 'BoundedByWaterSurfacePropertyType',
+        bti: 'GML_3_1_1.AssociationType'
       }, {
         ln: 'WaterGroundSurfaceType',
         bti: '.AbstractWaterBoundarySurfaceType',
@@ -99,41 +118,21 @@ var CityGML_Waterbody_1_0_Module_Factory = function () {
             en: '_GenericApplicationPropertyOfWaterGroundSurface',
             ti: 'AnyType'
           }]
-      }, {
-        ln: 'AbstractWaterBoundarySurfaceType',
-        bti: 'CityGML_1_0.AbstractCityObjectType',
-        ps: [{
-            n: 'lod2Surface',
-            ti: 'GML_3_1_1.SurfacePropertyType'
-          }, {
-            n: 'lod3Surface',
-            ti: 'GML_3_1_1.SurfacePropertyType'
-          }, {
-            n: 'lod4Surface',
-            ti: 'GML_3_1_1.SurfacePropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfWaterBoundarySurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfWaterBoundarySurface',
-            ti: 'AnyType'
-          }]
       }],
     eis: [{
         en: '_GenericApplicationPropertyOfWaterClosureSurface',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfWaterSurface',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfWaterObject',
         ti: 'AnyType'
       }, {
         en: '_GenericApplicationPropertyOfWaterBoundarySurface',
         ti: 'AnyType'
       }, {
         en: '_GenericApplicationPropertyOfWaterBody',
-        ti: 'AnyType'
-      }, {
-        en: 'WaterClosureSurface',
-        ti: '.WaterClosureSurfaceType',
-        sh: '_WaterBoundarySurface'
-      }, {
-        en: '_GenericApplicationPropertyOfWaterSurface',
         ti: 'AnyType'
       }, {
         en: 'WaterBody',
@@ -143,13 +142,6 @@ var CityGML_Waterbody_1_0_Module_Factory = function () {
         en: 'WaterGroundSurface',
         ti: '.WaterGroundSurfaceType',
         sh: '_WaterBoundarySurface'
-      }, {
-        en: '_WaterObject',
-        ti: '.AbstractWaterObjectType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
-        }
       }, {
         en: '_WaterBoundarySurface',
         ti: '.AbstractWaterBoundarySurfaceType',
@@ -161,12 +153,20 @@ var CityGML_Waterbody_1_0_Module_Factory = function () {
         en: '_GenericApplicationPropertyOfWaterGroundSurface',
         ti: 'AnyType'
       }, {
+        en: 'WaterClosureSurface',
+        ti: '.WaterClosureSurfaceType',
+        sh: '_WaterBoundarySurface'
+      }, {
         en: 'WaterSurface',
         ti: '.WaterSurfaceType',
         sh: '_WaterBoundarySurface'
       }, {
-        en: '_GenericApplicationPropertyOfWaterObject',
-        ti: 'AnyType'
+        en: '_WaterObject',
+        ti: '.AbstractWaterObjectType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
+        }
       }]
   };
   return {

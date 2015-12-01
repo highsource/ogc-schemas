@@ -2,27 +2,37 @@
 {
     "id":"http://www.opengis.net/sld#",
     "definitions":{
-        "LinePlacement":{
-            "type":"object",
-            "title":"LinePlacement",
-            "properties":{
-                "perpendicularOffset":{
-                    "title":"perpendicularOffset",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ParameterValueType"
+        "CssParameter":{
+            "required":[
+                "name"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/ParameterValueType"
+                },
+                {
+                    "type":"object",
+                    "title":"CssParameter",
+                    "properties":{
+                        "name":{
+                            "title":"name",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"name",
+                                "namespaceURI":""
+                            }
                         }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"PerpendicularOffset",
-                        "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "propertiesOrder":[
-                "perpendicularOffset"
+                "name"
             ]
         },
         "UserStyle":{
@@ -111,72 +121,105 @@
                 "featureTypeStyle"
             ]
         },
-        "ColorMapEntry":{
+        "ChannelSelection":{
             "type":"object",
-            "title":"ColorMapEntry",
+            "title":"ChannelSelection",
             "required":[
-                "color"
+                "redChannel",
+                "greenChannel",
+                "blueChannel",
+                "grayChannel"
             ],
             "properties":{
-                "color":{
-                    "title":"color",
+                "redChannel":{
+                    "title":"redChannel",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/SelectedChannelType"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"color",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RedChannel",
+                        "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "opacity":{
-                    "title":"opacity",
+                "greenChannel":{
+                    "title":"greenChannel",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                            "$ref":"#/definitions/SelectedChannelType"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"opacity",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GreenChannel",
+                        "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "quantity":{
-                    "title":"quantity",
+                "blueChannel":{
+                    "title":"blueChannel",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                            "$ref":"#/definitions/SelectedChannelType"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"quantity",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"BlueChannel",
+                        "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "label":{
-                    "title":"label",
+                "grayChannel":{
+                    "title":"grayChannel",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/SelectedChannelType"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"label",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GrayChannel",
+                        "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "color",
-                "opacity",
-                "quantity",
-                "label"
+                "redChannel",
+                "greenChannel",
+                "blueChannel",
+                "grayChannel"
+            ]
+        },
+        "LayerFeatureConstraints":{
+            "type":"object",
+            "title":"LayerFeatureConstraints",
+            "required":[
+                "featureTypeConstraint"
+            ],
+            "properties":{
+                "featureTypeConstraint":{
+                    "title":"featureTypeConstraint",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/FeatureTypeConstraint"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"FeatureTypeConstraint",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "featureTypeConstraint"
             ]
         },
         "Transformation":{
@@ -205,10 +248,40 @@
                 "function"
             ]
         },
-        "Font":{
+        "Stroke":{
             "type":"object",
-            "title":"Font",
+            "title":"Stroke",
+            "required":[
+                "graphicFill",
+                "graphicStroke"
+            ],
             "properties":{
+                "graphicFill":{
+                    "title":"graphicFill",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/GraphicFill"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GraphicFill",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "graphicStroke":{
+                    "title":"graphicStroke",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/GraphicStroke"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GraphicStroke",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
                 "cssParameter":{
                     "title":"cssParameter",
                     "allOf":[
@@ -229,99 +302,168 @@
             },
             "typeType":"classInfo",
             "propertiesOrder":[
+                "graphicFill",
+                "graphicStroke",
                 "cssParameter"
             ]
         },
-        "RemoteOWS":{
+        "GraphicStroke":{
             "type":"object",
-            "title":"RemoteOWS",
+            "title":"GraphicStroke",
             "required":[
-                "service",
-                "onlineResource"
+                "graphic"
             ],
             "properties":{
-                "service":{
-                    "title":"service",
+                "graphic":{
+                    "title":"graphic",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/Graphic"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Service",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OnlineResource"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OnlineResource",
+                        "localPart":"Graphic",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "service",
-                "onlineResource"
+                "graphic"
             ]
         },
-        "LineSymbolizer":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SymbolizerType"
-                },
-                {
-                    "type":"object",
-                    "title":"LineSymbolizer",
-                    "properties":{
-                        "geometry":{
-                            "title":"geometry",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/Geometry"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Geometry",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        },
-                        "stroke":{
-                            "title":"stroke",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/Stroke"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Stroke",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
+        "Normalize":{
+            "type":"object",
+            "title":"Normalize",
+            "properties":{
+            },
+            "typeType":"classInfo"
+        },
+        "VendorOption":{
+            "type":"object",
+            "title":"VendorOption",
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
+                    ],
+                    "propertyType":"value"
+                },
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"name",
+                        "namespaceURI":""
                     }
                 }
-            ],
+            },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "geometry",
-                "stroke"
+                "value",
+                "name"
             ]
         },
-        "FeatureTypeStyle":{
+        "InlineFeature":{
             "type":"object",
-            "title":"FeatureTypeStyle",
+            "title":"InlineFeature",
+            "properties":{
+                "any":{
+                    "title":"any",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                    },
+                                    {
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "any"
+            ]
+        },
+        "ParameterValueType":{
+            "type":"object",
+            "title":"ParameterValueType",
+            "properties":{
+                "content":{
+                    "title":"content",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    {
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"http://www.opengis.net/ogc#/definitions/ExpressionType"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"expression",
+                                            "namespaceURI":"http://www.opengis.net/ogc"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"expression",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ParameterValueType",
+                "namespaceURI":"http://www.opengis.net/sld"
+            },
+            "propertiesOrder":[
+                "content"
+            ]
+        },
+        "StyledLayerDescriptor":{
+            "type":"object",
+            "title":"StyledLayerDescriptor",
             "required":[
-                "rule"
+                "version"
             ],
             "properties":{
                 "name":{
@@ -363,131 +505,8 @@
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "featureTypeName":{
-                    "title":"featureTypeName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"FeatureTypeName",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "semanticTypeIdentifier":{
-                    "title":"semanticTypeIdentifier",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SemanticTypeIdentifier",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "transformation":{
-                    "title":"transformation",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Transformation"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Transformation",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "rule":{
-                    "title":"rule",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/Rule"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Rule",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "vendorOption":{
-                    "title":"vendorOption",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/VendorOption"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"VendorOption",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "name",
-                "title",
-                "_abstract",
-                "featureTypeName",
-                "semanticTypeIdentifier",
-                "transformation",
-                "rule",
-                "vendorOption"
-            ]
-        },
-        "NamedLayer":{
-            "type":"object",
-            "title":"NamedLayer",
-            "required":[
-                "name"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "layerFeatureConstraints":{
-                    "title":"layerFeatureConstraints",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LayerFeatureConstraints"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LayerFeatureConstraints",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "namedStyleOrUserStyle":{
-                    "title":"namedStyleOrUserStyle",
+                "namedLayerOrUserLayer":{
+                    "title":"namedLayerOrUserLayer",
                     "allOf":[
                         {
                             "type":"array",
@@ -496,22 +515,22 @@
                                     {
                                         "anyOf":[
                                             {
-                                                "$ref":"#/definitions/NamedStyle"
+                                                "$ref":"#/definitions/NamedLayer"
                                             }
                                         ],
                                         "elementName":{
-                                            "localPart":"NamedStyle",
+                                            "localPart":"NamedLayer",
                                             "namespaceURI":"http://www.opengis.net/sld"
                                         }
                                     },
                                     {
                                         "anyOf":[
                                             {
-                                                "$ref":"#/definitions/UserStyle"
+                                                "$ref":"#/definitions/UserLayer"
                                             }
                                         ],
                                         "elementName":{
-                                            "localPart":"UserStyle",
+                                            "localPart":"UserLayer",
                                             "namespaceURI":"http://www.opengis.net/sld"
                                         }
                                     }
@@ -521,47 +540,9 @@
                         }
                     ],
                     "propertyType":"elements"
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "name",
-                "layerFeatureConstraints",
-                "namedStyleOrUserStyle"
-            ]
-        },
-        "NamedStyle":{
-            "type":"object",
-            "title":"NamedStyle",
-            "required":[
-                "name"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "name"
-            ]
-        },
-        "SymbolizerType":{
-            "type":"object",
-            "title":"SymbolizerType",
-            "properties":{
-                "uom":{
-                    "title":"uom",
+                },
+                "version":{
+                    "title":"version",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -569,434 +550,18 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"uom",
+                        "localPart":"version",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SymbolizerType",
-                "namespaceURI":"http://www.opengis.net/sld"
-            },
             "propertiesOrder":[
-                "uom"
-            ]
-        },
-        "RANDOM":{
-            "type":"object",
-            "title":"RANDOM",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
-        "PolygonSymbolizer":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SymbolizerType"
-                },
-                {
-                    "type":"object",
-                    "title":"PolygonSymbolizer",
-                    "properties":{
-                        "geometry":{
-                            "title":"geometry",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/Geometry"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Geometry",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        },
-                        "fill":{
-                            "title":"fill",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/Fill"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Fill",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        },
-                        "stroke":{
-                            "title":"stroke",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/Stroke"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Stroke",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "geometry",
-                "fill",
-                "stroke"
-            ]
-        },
-        "OnlineResource":{
-            "type":"object",
-            "title":"OnlineResource",
-            "properties":{
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "type",
-                "href",
-                "role",
-                "arcrole",
+                "name",
                 "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "AnchorPoint":{
-            "type":"object",
-            "title":"AnchorPoint",
-            "required":[
-                "anchorPointX",
-                "anchorPointY"
-            ],
-            "properties":{
-                "anchorPointX":{
-                    "title":"anchorPointX",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ParameterValueType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"AnchorPointX",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "anchorPointY":{
-                    "title":"anchorPointY",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ParameterValueType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"AnchorPointY",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "anchorPointX",
-                "anchorPointY"
-            ]
-        },
-        "GraphicFill":{
-            "type":"object",
-            "title":"GraphicFill",
-            "required":[
-                "graphic"
-            ],
-            "properties":{
-                "graphic":{
-                    "title":"graphic",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Graphic"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Graphic",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "graphic"
-            ]
-        },
-        "SelectedChannelType":{
-            "type":"object",
-            "title":"SelectedChannelType",
-            "required":[
-                "sourceChannelName"
-            ],
-            "properties":{
-                "sourceChannelName":{
-                    "title":"sourceChannelName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SourceChannelName",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "contrastEnhancement":{
-                    "title":"contrastEnhancement",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ContrastEnhancement"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ContrastEnhancement",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SelectedChannelType",
-                "namespaceURI":"http://www.opengis.net/sld"
-            },
-            "propertiesOrder":[
-                "sourceChannelName",
-                "contrastEnhancement"
-            ]
-        },
-        "Fill":{
-            "type":"object",
-            "title":"Fill",
-            "properties":{
-                "graphicFill":{
-                    "title":"graphicFill",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/GraphicFill"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"GraphicFill",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "cssParameter":{
-                    "title":"cssParameter",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/CssParameter"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"CssParameter",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "graphicFill",
-                "cssParameter"
-            ]
-        },
-        "Displacement":{
-            "type":"object",
-            "title":"Displacement",
-            "required":[
-                "displacementX",
-                "displacementY"
-            ],
-            "properties":{
-                "displacementX":{
-                    "title":"displacementX",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ParameterValueType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DisplacementX",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "displacementY":{
-                    "title":"displacementY",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ParameterValueType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DisplacementY",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "displacementX",
-                "displacementY"
-            ]
-        },
-        "PointPlacement":{
-            "type":"object",
-            "title":"PointPlacement",
-            "properties":{
-                "anchorPoint":{
-                    "title":"anchorPoint",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/AnchorPoint"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"AnchorPoint",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "displacement":{
-                    "title":"displacement",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Displacement"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Displacement",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "rotation":{
-                    "title":"rotation",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ParameterValueType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Rotation",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "anchorPoint",
-                "displacement",
-                "rotation"
+                "_abstract",
+                "namedLayerOrUserLayer",
+                "version"
             ]
         },
         "TextSymbolizer":{
@@ -1145,9 +710,77 @@
                 "vendorOption"
             ]
         },
-        "GraphicStroke":{
+        "ColorMapEntry":{
             "type":"object",
-            "title":"GraphicStroke",
+            "title":"ColorMapEntry",
+            "required":[
+                "color"
+            ],
+            "properties":{
+                "color":{
+                    "title":"color",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"color",
+                        "namespaceURI":""
+                    }
+                },
+                "opacity":{
+                    "title":"opacity",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"opacity",
+                        "namespaceURI":""
+                    }
+                },
+                "quantity":{
+                    "title":"quantity",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"quantity",
+                        "namespaceURI":""
+                    }
+                },
+                "label":{
+                    "title":"label",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"label",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "color",
+                "opacity",
+                "quantity",
+                "label"
+            ]
+        },
+        "GraphicFill":{
+            "type":"object",
+            "title":"GraphicFill",
             "required":[
                 "graphic"
             ],
@@ -1171,59 +804,59 @@
                 "graphic"
             ]
         },
-        "ContrastEnhancement":{
+        "ColorMap":{
             "type":"object",
-            "title":"ContrastEnhancement",
-            "required":[
-                "normalize",
-                "histogram"
-            ],
+            "title":"ColorMap",
             "properties":{
-                "normalize":{
-                    "title":"normalize",
+                "colorMapEntry":{
+                    "title":"colorMapEntry",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/Normalize"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ColorMapEntry"
+                            },
+                            "minItems":0
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Normalize",
+                        "localPart":"ColorMapEntry",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "histogram":{
-                    "title":"histogram",
+                "type":{
+                    "title":"type",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/Histogram"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Histogram",
-                        "namespaceURI":"http://www.opengis.net/sld"
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":""
                     }
                 },
-                "gammaValue":{
-                    "title":"gammaValue",
+                "extended":{
+                    "title":"extended",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"GammaValue",
-                        "namespaceURI":"http://www.opengis.net/sld"
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"extended",
+                        "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "normalize",
-                "histogram",
-                "gammaValue"
+                "colorMapEntry",
+                "type",
+                "extended"
             ]
         },
         "WellKnownName":{
@@ -1271,55 +904,19 @@
                 "content"
             ]
         },
-        "AVERAGE":{
+        "LATESTONTOP":{
             "type":"object",
-            "title":"AVERAGE",
+            "title":"LATESTONTOP",
             "properties":{
             },
             "typeType":"classInfo"
         },
-        "Graphic":{
+        "Halo":{
             "type":"object",
-            "title":"Graphic",
+            "title":"Halo",
             "properties":{
-                "externalGraphicOrMark":{
-                    "title":"externalGraphicOrMark",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/ExternalGraphic"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"ExternalGraphic",
-                                            "namespaceURI":"http://www.opengis.net/sld"
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/Mark"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"Mark",
-                                            "namespaceURI":"http://www.opengis.net/sld"
-                                        }
-                                    }
-                                ]
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"elements"
-                },
-                "opacity":{
-                    "title":"opacity",
+                "radius":{
+                    "title":"radius",
                     "allOf":[
                         {
                             "$ref":"#/definitions/ParameterValueType"
@@ -1327,353 +924,120 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Opacity",
+                        "localPart":"Radius",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "size":{
-                    "title":"size",
+                "fill":{
+                    "title":"fill",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/ParameterValueType"
+                            "$ref":"#/definitions/Fill"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Size",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "rotation":{
-                    "title":"rotation",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ParameterValueType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Rotation",
+                        "localPart":"Fill",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "externalGraphicOrMark",
-                "opacity",
-                "size",
-                "rotation"
+                "radius",
+                "fill"
             ]
         },
-        "VendorOption":{
+        "Mark":{
             "type":"object",
-            "title":"VendorOption",
+            "title":"Mark",
             "properties":{
-                "value":{
-                    "title":"value",
+                "wellKnownName":{
+                    "title":"wellKnownName",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/WellKnownName"
                         }
                     ],
-                    "propertyType":"value"
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"WellKnownName",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
                 },
-                "name":{
-                    "title":"name",
+                "fill":{
+                    "title":"fill",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/Fill"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"name",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Fill",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "stroke":{
+                    "title":"stroke",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Stroke"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Stroke",
+                        "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "value",
-                "name"
+                "wellKnownName",
+                "fill",
+                "stroke"
             ]
         },
-        "ChannelSelection":{
+        "Displacement":{
             "type":"object",
-            "title":"ChannelSelection",
+            "title":"Displacement",
             "required":[
-                "redChannel",
-                "greenChannel",
-                "blueChannel",
-                "grayChannel"
+                "displacementX",
+                "displacementY"
             ],
             "properties":{
-                "redChannel":{
-                    "title":"redChannel",
+                "displacementX":{
+                    "title":"displacementX",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/SelectedChannelType"
+                            "$ref":"#/definitions/ParameterValueType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"RedChannel",
+                        "localPart":"DisplacementX",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "greenChannel":{
-                    "title":"greenChannel",
+                "displacementY":{
+                    "title":"displacementY",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/SelectedChannelType"
+                            "$ref":"#/definitions/ParameterValueType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"GreenChannel",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "blueChannel":{
-                    "title":"blueChannel",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SelectedChannelType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"BlueChannel",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "grayChannel":{
-                    "title":"grayChannel",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SelectedChannelType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"GrayChannel",
+                        "localPart":"DisplacementY",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "redChannel",
-                "greenChannel",
-                "blueChannel",
-                "grayChannel"
-            ]
-        },
-        "EARLIESTONTOP":{
-            "type":"object",
-            "title":"EARLIESTONTOP",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
-        "RasterSymbolizer":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SymbolizerType"
-                },
-                {
-                    "type":"object",
-                    "title":"RasterSymbolizer",
-                    "properties":{
-                        "geometry":{
-                            "title":"geometry",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/Geometry"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Geometry",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        },
-                        "opacity":{
-                            "title":"opacity",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ParameterValueType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Opacity",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        },
-                        "channelSelection":{
-                            "title":"channelSelection",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ChannelSelection"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ChannelSelection",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        },
-                        "overlapBehavior":{
-                            "title":"overlapBehavior",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/OverlapBehavior"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"OverlapBehavior",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        },
-                        "colorMap":{
-                            "title":"colorMap",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ColorMap"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ColorMap",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        },
-                        "contrastEnhancement":{
-                            "title":"contrastEnhancement",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ContrastEnhancement"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ContrastEnhancement",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        },
-                        "shadedRelief":{
-                            "title":"shadedRelief",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ShadedRelief"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ShadedRelief",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        },
-                        "imageOutline":{
-                            "title":"imageOutline",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ImageOutline"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ImageOutline",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "geometry",
-                "opacity",
-                "channelSelection",
-                "overlapBehavior",
-                "colorMap",
-                "contrastEnhancement",
-                "shadedRelief",
-                "imageOutline"
-            ]
-        },
-        "OverlapBehavior":{
-            "type":"object",
-            "title":"OverlapBehavior",
-            "required":[
-                "latestontop",
-                "earliestontop",
-                "average",
-                "random"
-            ],
-            "properties":{
-                "latestontop":{
-                    "title":"latestontop",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LATESTONTOP"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LATEST_ON_TOP",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "earliestontop":{
-                    "title":"earliestontop",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/EARLIESTONTOP"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"EARLIEST_ON_TOP",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "average":{
-                    "title":"average",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/AVERAGE"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"AVERAGE",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "random":{
-                    "title":"random",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/RANDOM"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"RANDOM",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "latestontop",
-                "earliestontop",
-                "average",
-                "random"
+                "displacementX",
+                "displacementY"
             ]
         },
         "Rule":{
@@ -1832,14 +1196,145 @@
                 "symbolizer"
             ]
         },
-        "ExternalGraphic":{
+        "PointSymbolizer":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SymbolizerType"
+                },
+                {
+                    "type":"object",
+                    "title":"PointSymbolizer",
+                    "properties":{
+                        "geometry":{
+                            "title":"geometry",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/Geometry"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Geometry",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        },
+                        "graphic":{
+                            "title":"graphic",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/Graphic"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Graphic",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "geometry",
+                "graphic"
+            ]
+        },
+        "RANDOM":{
             "type":"object",
-            "title":"ExternalGraphic",
+            "title":"RANDOM",
+            "properties":{
+            },
+            "typeType":"classInfo"
+        },
+        "LegendGraphic":{
+            "type":"object",
+            "title":"LegendGraphic",
             "required":[
-                "onlineResource",
-                "format"
+                "graphic"
             ],
             "properties":{
+                "graphic":{
+                    "title":"graphic",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Graphic"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Graphic",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "graphic"
+            ]
+        },
+        "LabelPlacement":{
+            "type":"object",
+            "title":"LabelPlacement",
+            "required":[
+                "pointPlacement",
+                "linePlacement"
+            ],
+            "properties":{
+                "pointPlacement":{
+                    "title":"pointPlacement",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/PointPlacement"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"PointPlacement",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "linePlacement":{
+                    "title":"linePlacement",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/LinePlacement"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LinePlacement",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "pointPlacement",
+                "linePlacement"
+            ]
+        },
+        "RemoteOWS":{
+            "type":"object",
+            "title":"RemoteOWS",
+            "required":[
+                "service",
+                "onlineResource"
+            ],
+            "properties":{
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Service",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
                 "onlineResource":{
                     "title":"onlineResource",
                     "allOf":[
@@ -1852,9 +1347,399 @@
                         "localPart":"OnlineResource",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "service",
+                "onlineResource"
+            ]
+        },
+        "LineSymbolizer":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SymbolizerType"
                 },
-                "format":{
-                    "title":"format",
+                {
+                    "type":"object",
+                    "title":"LineSymbolizer",
+                    "properties":{
+                        "geometry":{
+                            "title":"geometry",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/Geometry"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Geometry",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        },
+                        "stroke":{
+                            "title":"stroke",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/Stroke"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Stroke",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "geometry",
+                "stroke"
+            ]
+        },
+        "Graphic":{
+            "type":"object",
+            "title":"Graphic",
+            "properties":{
+                "externalGraphicOrMark":{
+                    "title":"externalGraphicOrMark",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/ExternalGraphic"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"ExternalGraphic",
+                                            "namespaceURI":"http://www.opengis.net/sld"
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/Mark"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"Mark",
+                                            "namespaceURI":"http://www.opengis.net/sld"
+                                        }
+                                    }
+                                ]
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"elements"
+                },
+                "opacity":{
+                    "title":"opacity",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ParameterValueType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Opacity",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "size":{
+                    "title":"size",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ParameterValueType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Size",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "rotation":{
+                    "title":"rotation",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ParameterValueType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Rotation",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "externalGraphicOrMark",
+                "opacity",
+                "size",
+                "rotation"
+            ]
+        },
+        "Fill":{
+            "type":"object",
+            "title":"Fill",
+            "properties":{
+                "graphicFill":{
+                    "title":"graphicFill",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/GraphicFill"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GraphicFill",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "cssParameter":{
+                    "title":"cssParameter",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/CssParameter"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"CssParameter",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "graphicFill",
+                "cssParameter"
+            ]
+        },
+        "ImageOutline":{
+            "type":"object",
+            "title":"ImageOutline",
+            "required":[
+                "lineSymbolizer",
+                "polygonSymbolizer"
+            ],
+            "properties":{
+                "lineSymbolizer":{
+                    "title":"lineSymbolizer",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/LineSymbolizer"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LineSymbolizer",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "polygonSymbolizer":{
+                    "title":"polygonSymbolizer",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/PolygonSymbolizer"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"PolygonSymbolizer",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "lineSymbolizer",
+                "polygonSymbolizer"
+            ]
+        },
+        "ContrastEnhancement":{
+            "type":"object",
+            "title":"ContrastEnhancement",
+            "required":[
+                "normalize",
+                "histogram"
+            ],
+            "properties":{
+                "normalize":{
+                    "title":"normalize",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Normalize"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Normalize",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "histogram":{
+                    "title":"histogram",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Histogram"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Histogram",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "gammaValue":{
+                    "title":"gammaValue",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GammaValue",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "normalize",
+                "histogram",
+                "gammaValue"
+            ]
+        },
+        "ElseFilter":{
+            "type":"object",
+            "title":"ElseFilter",
+            "properties":{
+            },
+            "typeType":"classInfo"
+        },
+        "EARLIESTONTOP":{
+            "type":"object",
+            "title":"EARLIESTONTOP",
+            "properties":{
+            },
+            "typeType":"classInfo"
+        },
+        "AVERAGE":{
+            "type":"object",
+            "title":"AVERAGE",
+            "properties":{
+            },
+            "typeType":"classInfo"
+        },
+        "Font":{
+            "type":"object",
+            "title":"Font",
+            "properties":{
+                "cssParameter":{
+                    "title":"cssParameter",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/CssParameter"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"CssParameter",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "cssParameter"
+            ]
+        },
+        "PolygonSymbolizer":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SymbolizerType"
+                },
+                {
+                    "type":"object",
+                    "title":"PolygonSymbolizer",
+                    "properties":{
+                        "geometry":{
+                            "title":"geometry",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/Geometry"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Geometry",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        },
+                        "fill":{
+                            "title":"fill",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/Fill"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Fill",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        },
+                        "stroke":{
+                            "title":"stroke",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/Stroke"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Stroke",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "geometry",
+                "fill",
+                "stroke"
+            ]
+        },
+        "Extent":{
+            "type":"object",
+            "title":"Extent",
+            "required":[
+                "name",
+                "value"
+            ],
+            "properties":{
+                "name":{
+                    "title":"name",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1862,15 +1747,156 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Format",
+                        "localPart":"Name",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Value",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "onlineResource",
-                "format"
+                "name",
+                "value"
+            ]
+        },
+        "RasterSymbolizer":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SymbolizerType"
+                },
+                {
+                    "type":"object",
+                    "title":"RasterSymbolizer",
+                    "properties":{
+                        "geometry":{
+                            "title":"geometry",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/Geometry"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Geometry",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        },
+                        "opacity":{
+                            "title":"opacity",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ParameterValueType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Opacity",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        },
+                        "channelSelection":{
+                            "title":"channelSelection",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ChannelSelection"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ChannelSelection",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        },
+                        "overlapBehavior":{
+                            "title":"overlapBehavior",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/OverlapBehavior"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"OverlapBehavior",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        },
+                        "colorMap":{
+                            "title":"colorMap",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ColorMap"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ColorMap",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        },
+                        "contrastEnhancement":{
+                            "title":"contrastEnhancement",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ContrastEnhancement"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ContrastEnhancement",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        },
+                        "shadedRelief":{
+                            "title":"shadedRelief",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ShadedRelief"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ShadedRelief",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        },
+                        "imageOutline":{
+                            "title":"imageOutline",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ImageOutline"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ImageOutline",
+                                "namespaceURI":"http://www.opengis.net/sld"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "geometry",
+                "opacity",
+                "channelSelection",
+                "overlapBehavior",
+                "colorMap",
+                "contrastEnhancement",
+                "shadedRelief",
+                "imageOutline"
             ]
         },
         "FeatureTypeConstraint":{
@@ -1928,89 +1954,12 @@
                 "extent"
             ]
         },
-        "PointSymbolizer":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SymbolizerType"
-                },
-                {
-                    "type":"object",
-                    "title":"PointSymbolizer",
-                    "properties":{
-                        "geometry":{
-                            "title":"geometry",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/Geometry"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Geometry",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        },
-                        "graphic":{
-                            "title":"graphic",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/Graphic"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Graphic",
-                                "namespaceURI":"http://www.opengis.net/sld"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "geometry",
-                "graphic"
-            ]
-        },
-        "CssParameter":{
-            "required":[
-                "name"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/ParameterValueType"
-                },
-                {
-                    "type":"object",
-                    "title":"CssParameter",
-                    "properties":{
-                        "name":{
-                            "title":"name",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"name",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "name"
-            ]
-        },
-        "Halo":{
+        "LinePlacement":{
             "type":"object",
-            "title":"Halo",
+            "title":"LinePlacement",
             "properties":{
-                "radius":{
-                    "title":"radius",
+                "perpendicularOffset":{
+                    "title":"perpendicularOffset",
                     "allOf":[
                         {
                             "$ref":"#/definitions/ParameterValueType"
@@ -2018,84 +1967,230 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Radius",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "fill":{
-                    "title":"fill",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Fill"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Fill",
+                        "localPart":"PerpendicularOffset",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "radius",
-                "fill"
+                "perpendicularOffset"
             ]
         },
-        "LabelPlacement":{
+        "NamedStyle":{
             "type":"object",
-            "title":"LabelPlacement",
+            "title":"NamedStyle",
             "required":[
-                "pointPlacement",
-                "linePlacement"
+                "name"
             ],
             "properties":{
-                "pointPlacement":{
-                    "title":"pointPlacement",
+                "name":{
+                    "title":"name",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/PointPlacement"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"PointPlacement",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "linePlacement":{
-                    "title":"linePlacement",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LinePlacement"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LinePlacement",
+                        "localPart":"Name",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "pointPlacement",
-                "linePlacement"
+                "name"
             ]
         },
-        "Histogram":{
+        "ExternalGraphic":{
             "type":"object",
-            "title":"Histogram",
+            "title":"ExternalGraphic",
+            "required":[
+                "onlineResource",
+                "format"
+            ],
             "properties":{
+                "onlineResource":{
+                    "title":"onlineResource",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/OnlineResource"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OnlineResource",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "format":{
+                    "title":"format",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Format",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
             },
-            "typeType":"classInfo"
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "onlineResource",
+                "format"
+            ]
         },
-        "Normalize":{
+        "NamedLayer":{
             "type":"object",
-            "title":"Normalize",
+            "title":"NamedLayer",
+            "required":[
+                "name"
+            ],
             "properties":{
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Name",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "layerFeatureConstraints":{
+                    "title":"layerFeatureConstraints",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/LayerFeatureConstraints"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LayerFeatureConstraints",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "namedStyleOrUserStyle":{
+                    "title":"namedStyleOrUserStyle",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/NamedStyle"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"NamedStyle",
+                                            "namespaceURI":"http://www.opengis.net/sld"
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/UserStyle"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"UserStyle",
+                                            "namespaceURI":"http://www.opengis.net/sld"
+                                        }
+                                    }
+                                ]
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"elements"
+                }
             },
-            "typeType":"classInfo"
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "name",
+                "layerFeatureConstraints",
+                "namedStyleOrUserStyle"
+            ]
+        },
+        "SymbolizerType":{
+            "type":"object",
+            "title":"SymbolizerType",
+            "properties":{
+                "uom":{
+                    "title":"uom",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uom",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SymbolizerType",
+                "namespaceURI":"http://www.opengis.net/sld"
+            },
+            "propertiesOrder":[
+                "uom"
+            ]
+        },
+        "SelectedChannelType":{
+            "type":"object",
+            "title":"SelectedChannelType",
+            "required":[
+                "sourceChannelName"
+            ],
+            "properties":{
+                "sourceChannelName":{
+                    "title":"sourceChannelName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SourceChannelName",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "contrastEnhancement":{
+                    "title":"contrastEnhancement",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ContrastEnhancement"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ContrastEnhancement",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SelectedChannelType",
+                "namespaceURI":"http://www.opengis.net/sld"
+            },
+            "propertiesOrder":[
+                "sourceChannelName",
+                "contrastEnhancement"
+            ]
         },
         "ShadedRelief":{
             "type":"object",
@@ -2134,52 +2229,123 @@
                 "reliefFactor"
             ]
         },
-        "LATESTONTOP":{
+        "Histogram":{
             "type":"object",
-            "title":"LATESTONTOP",
+            "title":"Histogram",
             "properties":{
             },
             "typeType":"classInfo"
         },
-        "ImageOutline":{
+        "AnchorPoint":{
             "type":"object",
-            "title":"ImageOutline",
+            "title":"AnchorPoint",
             "required":[
-                "lineSymbolizer",
-                "polygonSymbolizer"
+                "anchorPointX",
+                "anchorPointY"
             ],
             "properties":{
-                "lineSymbolizer":{
-                    "title":"lineSymbolizer",
+                "anchorPointX":{
+                    "title":"anchorPointX",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/LineSymbolizer"
+                            "$ref":"#/definitions/ParameterValueType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"LineSymbolizer",
+                        "localPart":"AnchorPointX",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "polygonSymbolizer":{
-                    "title":"polygonSymbolizer",
+                "anchorPointY":{
+                    "title":"anchorPointY",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/PolygonSymbolizer"
+                            "$ref":"#/definitions/ParameterValueType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"PolygonSymbolizer",
+                        "localPart":"AnchorPointY",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "lineSymbolizer",
-                "polygonSymbolizer"
+                "anchorPointX",
+                "anchorPointY"
+            ]
+        },
+        "OverlapBehavior":{
+            "type":"object",
+            "title":"OverlapBehavior",
+            "required":[
+                "latestontop",
+                "earliestontop",
+                "average",
+                "random"
+            ],
+            "properties":{
+                "latestontop":{
+                    "title":"latestontop",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/LATESTONTOP"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LATEST_ON_TOP",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "earliestontop":{
+                    "title":"earliestontop",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/EARLIESTONTOP"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"EARLIEST_ON_TOP",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "average":{
+                    "title":"average",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/AVERAGE"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"AVERAGE",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "random":{
+                    "title":"random",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/RANDOM"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RANDOM",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "latestontop",
+                "earliestontop",
+                "average",
+                "random"
             ]
         },
         "Geometry":{
@@ -2220,218 +2386,140 @@
                 "expression"
             ]
         },
-        "ParameterValueType":{
+        "FeatureTypeStyle":{
             "type":"object",
-            "title":"ParameterValueType",
+            "title":"FeatureTypeStyle",
+            "required":[
+                "rule"
+            ],
             "properties":{
-                "content":{
-                    "title":"content",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    {
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"http://www.opengis.net/ogc#/definitions/ExpressionType"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"expression",
-                                            "namespaceURI":"http://www.opengis.net/ogc"
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"expression",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ParameterValueType",
-                "namespaceURI":"http://www.opengis.net/sld"
-            },
-            "propertiesOrder":[
-                "content"
-            ]
-        },
-        "ColorMap":{
-            "type":"object",
-            "title":"ColorMap",
-            "properties":{
-                "colorMapEntry":{
-                    "title":"colorMapEntry",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ColorMapEntry"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ColorMapEntry",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "type":{
-                    "title":"type",
+                "name":{
+                    "title":"name",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Name",
+                        "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "extended":{
-                    "title":"extended",
+                "title":{
+                    "title":"title",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"extended",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "colorMapEntry",
-                "type",
-                "extended"
-            ]
-        },
-        "Mark":{
-            "type":"object",
-            "title":"Mark",
-            "properties":{
-                "wellKnownName":{
-                    "title":"wellKnownName",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/WellKnownName"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"WellKnownName",
+                        "localPart":"Title",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "fill":{
-                    "title":"fill",
+                "_abstract":{
+                    "title":"_abstract",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/Fill"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Fill",
+                        "localPart":"Abstract",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "stroke":{
-                    "title":"stroke",
+                "featureTypeName":{
+                    "title":"featureTypeName",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/Stroke"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Stroke",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "wellKnownName",
-                "fill",
-                "stroke"
-            ]
-        },
-        "Stroke":{
-            "type":"object",
-            "title":"Stroke",
-            "required":[
-                "graphicFill",
-                "graphicStroke"
-            ],
-            "properties":{
-                "graphicFill":{
-                    "title":"graphicFill",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/GraphicFill"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"GraphicFill",
+                        "localPart":"FeatureTypeName",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "graphicStroke":{
-                    "title":"graphicStroke",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/GraphicStroke"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"GraphicStroke",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "cssParameter":{
-                    "title":"cssParameter",
+                "semanticTypeIdentifier":{
+                    "title":"semanticTypeIdentifier",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/CssParameter"
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                             },
                             "minItems":0
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"CssParameter",
+                        "localPart":"SemanticTypeIdentifier",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "transformation":{
+                    "title":"transformation",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Transformation"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Transformation",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "rule":{
+                    "title":"rule",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/Rule"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Rule",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "vendorOption":{
+                    "title":"vendorOption",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/VendorOption"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"VendorOption",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "graphicFill",
-                "graphicStroke",
-                "cssParameter"
+                "name",
+                "title",
+                "_abstract",
+                "featureTypeName",
+                "semanticTypeIdentifier",
+                "transformation",
+                "rule",
+                "vendorOption"
             ]
         },
         "UserLayer":{
@@ -2522,54 +2610,60 @@
                 "userStyle"
             ]
         },
-        "LayerFeatureConstraints":{
+        "OnlineResource":{
             "type":"object",
-            "title":"LayerFeatureConstraints",
-            "required":[
-                "featureTypeConstraint"
-            ],
+            "title":"OnlineResource",
             "properties":{
-                "featureTypeConstraint":{
-                    "title":"featureTypeConstraint",
+                "type":{
+                    "title":"type",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/FeatureTypeConstraint"
-                            },
-                            "minItems":1
+                            "$ref":"#/definitions/TypeType"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"FeatureTypeConstraint",
-                        "namespaceURI":"http://www.opengis.net/sld"
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "featureTypeConstraint"
-            ]
-        },
-        "StyledLayerDescriptor":{
-            "type":"object",
-            "title":"StyledLayerDescriptor",
-            "required":[
-                "version"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
+                },
+                "href":{
+                    "title":"href",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":"http://www.opengis.net/sld"
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 },
                 "title":{
@@ -2579,194 +2673,100 @@
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Title",
-                        "namespaceURI":"http://www.opengis.net/sld"
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 },
-                "_abstract":{
-                    "title":"_abstract",
+                "show":{
+                    "title":"show",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Abstract",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "namedLayerOrUserLayer":{
-                    "title":"namedLayerOrUserLayer",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/NamedLayer"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"NamedLayer",
-                                            "namespaceURI":"http://www.opengis.net/sld"
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/UserLayer"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"UserLayer",
-                                            "namespaceURI":"http://www.opengis.net/sld"
-                                        }
-                                    }
-                                ]
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"elements"
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/ShowType"
                         }
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "name",
+                "type",
+                "href",
+                "role",
+                "arcrole",
                 "title",
-                "_abstract",
-                "namedLayerOrUserLayer",
-                "version"
+                "show",
+                "actuate"
             ]
         },
-        "Extent":{
+        "PointPlacement":{
             "type":"object",
-            "title":"Extent",
-            "required":[
-                "name",
-                "value"
-            ],
+            "title":"PointPlacement",
             "properties":{
-                "name":{
-                    "title":"name",
+                "anchorPoint":{
+                    "title":"anchorPoint",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/AnchorPoint"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Name",
+                        "localPart":"AnchorPoint",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "value":{
-                    "title":"value",
+                "displacement":{
+                    "title":"displacement",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/Displacement"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Value",
+                        "localPart":"Displacement",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "rotation":{
+                    "title":"rotation",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ParameterValueType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Rotation",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "name",
-                "value"
+                "anchorPoint",
+                "displacement",
+                "rotation"
             ]
-        },
-        "LegendGraphic":{
-            "type":"object",
-            "title":"LegendGraphic",
-            "required":[
-                "graphic"
-            ],
-            "properties":{
-                "graphic":{
-                    "title":"graphic",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Graphic"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Graphic",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "graphic"
-            ]
-        },
-        "InlineFeature":{
-            "type":"object",
-            "title":"InlineFeature",
-            "properties":{
-                "any":{
-                    "title":"any",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                    },
-                                    {
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                            }
-                                        }
-                                    }
-                                ]
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"anyElement"
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "any"
-            ]
-        },
-        "ElseFilter":{
-            "type":"object",
-            "title":"ElseFilter",
-            "properties":{
-            },
-            "typeType":"classInfo"
         }
     },
     "anyOf":[
@@ -2777,11 +2777,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/SelectedChannelType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                 }
             },
             "elementName":{
-                "localPart":"GreenChannel",
+                "localPart":"SourceChannelName",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -2792,86 +2792,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                    "$ref":"#/definitions/Geometry"
                 }
             },
             "elementName":{
-                "localPart":"MaxScaleDenominator",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/TextSymbolizer"
-                }
-            },
-            "elementName":{
-                "localPart":"TextSymbolizer",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/UserLayer"
-                }
-            },
-            "elementName":{
-                "localPart":"UserLayer",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Font"
-                }
-            },
-            "elementName":{
-                "localPart":"Font",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GraphicFill"
-                }
-            },
-            "elementName":{
-                "localPart":"GraphicFill",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/LayerFeatureConstraints"
-                }
-            },
-            "elementName":{
-                "localPart":"LayerFeatureConstraints",
+                "localPart":"Geometry",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -2897,101 +2822,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/SymbolizerType"
+                    "$ref":"#/definitions/ColorMap"
                 }
             },
             "elementName":{
-                "localPart":"Symbolizer",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Graphic"
-                }
-            },
-            "elementName":{
-                "localPart":"Graphic",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"SourceChannelName",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ParameterValueType"
-                }
-            },
-            "elementName":{
-                "localPart":"Radius",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Rule"
-                }
-            },
-            "elementName":{
-                "localPart":"Rule",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ChannelSelection"
-                }
-            },
-            "elementName":{
-                "localPart":"ChannelSelection",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Mark"
-                }
-            },
-            "elementName":{
-                "localPart":"Mark",
+                "localPart":"ColorMap",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3017,146 +2852,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/Displacement"
+                    "$ref":"#/definitions/SelectedChannelType"
                 }
             },
             "elementName":{
-                "localPart":"Displacement",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                }
-            },
-            "elementName":{
-                "localPart":"BrightnessOnly",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                }
-            },
-            "elementName":{
-                "localPart":"GammaValue",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/OnlineResource"
-                }
-            },
-            "elementName":{
-                "localPart":"OnlineResource",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/RemoteOWS"
-                }
-            },
-            "elementName":{
-                "localPart":"RemoteOWS",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/LATESTONTOP"
-                }
-            },
-            "elementName":{
-                "localPart":"LATEST_ON_TOP",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Fill"
-                }
-            },
-            "elementName":{
-                "localPart":"Fill",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ExternalGraphic"
-                }
-            },
-            "elementName":{
-                "localPart":"ExternalGraphic",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ParameterValueType"
-                }
-            },
-            "elementName":{
-                "localPart":"DisplacementX",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Normalize"
-                }
-            },
-            "elementName":{
-                "localPart":"Normalize",
+                "localPart":"GreenChannel",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3197,11 +2897,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/LinePlacement"
+                    "$ref":"#/definitions/Graphic"
                 }
             },
             "elementName":{
-                "localPart":"LinePlacement",
+                "localPart":"Graphic",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3216,7 +2916,7 @@
                 }
             },
             "elementName":{
-                "localPart":"Opacity",
+                "localPart":"DisplacementX",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3231,7 +2931,7 @@
                 }
             },
             "elementName":{
-                "localPart":"Service",
+                "localPart":"Abstract",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3242,56 +2942,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
                 }
             },
             "elementName":{
-                "localPart":"SemanticTypeIdentifier",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Halo"
-                }
-            },
-            "elementName":{
-                "localPart":"Halo",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ParameterValueType"
-                }
-            },
-            "elementName":{
-                "localPart":"DisplacementY",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/LineSymbolizer"
-                }
-            },
-            "elementName":{
-                "localPart":"LineSymbolizer",
+                "localPart":"BrightnessOnly",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3321,7 +2976,7 @@
                 }
             },
             "elementName":{
-                "localPart":"Name",
+                "localPart":"IsDefault",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3332,11 +2987,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/WellKnownName"
+                    "$ref":"#/definitions/Displacement"
                 }
             },
             "elementName":{
-                "localPart":"WellKnownName",
+                "localPart":"Displacement",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3347,26 +3002,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/Stroke"
+                    "$ref":"#/definitions/InlineFeature"
                 }
             },
             "elementName":{
-                "localPart":"Stroke",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Extent"
-                }
-            },
-            "elementName":{
-                "localPart":"Extent",
+                "localPart":"InlineFeature",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3392,11 +3032,101 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/RasterSymbolizer"
+                    "$ref":"#/definitions/Font"
                 }
             },
             "elementName":{
-                "localPart":"RasterSymbolizer",
+                "localPart":"Font",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/StyledLayerDescriptor"
+                }
+            },
+            "elementName":{
+                "localPart":"StyledLayerDescriptor",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ParameterValueType"
+                }
+            },
+            "elementName":{
+                "localPart":"Radius",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ParameterValueType"
+                }
+            },
+            "elementName":{
+                "localPart":"PerpendicularOffset",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/SelectedChannelType"
+                }
+            },
+            "elementName":{
+                "localPart":"RedChannel",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/GraphicStroke"
+                }
+            },
+            "elementName":{
+                "localPart":"GraphicStroke",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                }
+            },
+            "elementName":{
+                "localPart":"ReliefFactor",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3422,26 +3152,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/PointSymbolizer"
-                }
-            },
-            "elementName":{
-                "localPart":"PointSymbolizer",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
                     "$ref":"#/definitions/ParameterValueType"
                 }
             },
             "elementName":{
-                "localPart":"AnchorPointY",
+                "localPart":"DisplacementY",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3452,11 +3167,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/AnchorPoint"
+                    "$ref":"#/definitions/FeatureTypeStyle"
                 }
             },
             "elementName":{
-                "localPart":"AnchorPoint",
+                "localPart":"FeatureTypeStyle",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3467,11 +3182,26 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/LATESTONTOP"
                 }
             },
             "elementName":{
-                "localPart":"Abstract",
+                "localPart":"LATEST_ON_TOP",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Fill"
+                }
+            },
+            "elementName":{
+                "localPart":"Fill",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3497,11 +3227,191 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/Transformation"
+                    "$ref":"#/definitions/PolygonSymbolizer"
                 }
             },
             "elementName":{
-                "localPart":"Transformation",
+                "localPart":"PolygonSymbolizer",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ContrastEnhancement"
+                }
+            },
+            "elementName":{
+                "localPart":"ContrastEnhancement",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/EARLIESTONTOP"
+                }
+            },
+            "elementName":{
+                "localPart":"EARLIEST_ON_TOP",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Normalize"
+                }
+            },
+            "elementName":{
+                "localPart":"Normalize",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"SemanticTypeIdentifier",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Rule"
+                }
+            },
+            "elementName":{
+                "localPart":"Rule",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/RemoteOWS"
+                }
+            },
+            "elementName":{
+                "localPart":"RemoteOWS",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/OverlapBehavior"
+                }
+            },
+            "elementName":{
+                "localPart":"OverlapBehavior",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/SymbolizerType"
+                }
+            },
+            "elementName":{
+                "localPart":"Symbolizer",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/VendorOption"
+                }
+            },
+            "elementName":{
+                "localPart":"VendorOption",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"FeatureTypeName",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/LayerFeatureConstraints"
+                }
+            },
+            "elementName":{
+                "localPart":"LayerFeatureConstraints",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Extent"
+                }
+            },
+            "elementName":{
+                "localPart":"Extent",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3527,131 +3437,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/SelectedChannelType"
+                    "$ref":"#/definitions/Mark"
                 }
             },
             "elementName":{
-                "localPart":"BlueChannel",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"Title",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/Geometry"
-                }
-            },
-            "elementName":{
-                "localPart":"Geometry",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"IsDefault",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/RANDOM"
-                }
-            },
-            "elementName":{
-                "localPart":"RANDOM",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ParameterValueType"
-                }
-            },
-            "elementName":{
-                "localPart":"Label",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/CssParameter"
-                }
-            },
-            "elementName":{
-                "localPart":"CssParameter",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/LabelPlacement"
-                }
-            },
-            "elementName":{
-                "localPart":"LabelPlacement",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ColorMapEntry"
-                }
-            },
-            "elementName":{
-                "localPart":"ColorMapEntry",
+                "localPart":"Mark",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3677,11 +3467,131 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ColorMap"
+                    "$ref":"#/definitions/RasterSymbolizer"
                 }
             },
             "elementName":{
-                "localPart":"ColorMap",
+                "localPart":"RasterSymbolizer",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"Title",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"Name",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ExternalGraphic"
+                }
+            },
+            "elementName":{
+                "localPart":"ExternalGraphic",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/FeatureTypeConstraint"
+                }
+            },
+            "elementName":{
+                "localPart":"FeatureTypeConstraint",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/PointSymbolizer"
+                }
+            },
+            "elementName":{
+                "localPart":"PointSymbolizer",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/RANDOM"
+                }
+            },
+            "elementName":{
+                "localPart":"RANDOM",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/TextSymbolizer"
+                }
+            },
+            "elementName":{
+                "localPart":"TextSymbolizer",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ParameterValueType"
+                }
+            },
+            "elementName":{
+                "localPart":"Label",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3707,11 +3617,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/ImageOutline"
+                    "$ref":"#/definitions/SelectedChannelType"
                 }
             },
             "elementName":{
-                "localPart":"ImageOutline",
+                "localPart":"BlueChannel",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3722,11 +3632,101 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/Stroke"
                 }
             },
             "elementName":{
-                "localPart":"Value",
+                "localPart":"Stroke",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AnchorPoint"
+                }
+            },
+            "elementName":{
+                "localPart":"AnchorPoint",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/UserLayer"
+                }
+            },
+            "elementName":{
+                "localPart":"UserLayer",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/Transformation"
+                }
+            },
+            "elementName":{
+                "localPart":"Transformation",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/OnlineResource"
+                }
+            },
+            "elementName":{
+                "localPart":"OnlineResource",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/WellKnownName"
+                }
+            },
+            "elementName":{
+                "localPart":"WellKnownName",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ChannelSelection"
+                }
+            },
+            "elementName":{
+                "localPart":"ChannelSelection",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3756,7 +3756,7 @@
                 }
             },
             "elementName":{
-                "localPart":"PerpendicularOffset",
+                "localPart":"Rotation",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3767,11 +3767,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/FeatureTypeConstraint"
+                    "$ref":"#/definitions/LineSymbolizer"
                 }
             },
             "elementName":{
-                "localPart":"FeatureTypeConstraint",
+                "localPart":"LineSymbolizer",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3782,56 +3782,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/Halo"
                 }
             },
             "elementName":{
-                "localPart":"FeatureTypeName",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GraphicStroke"
-                }
-            },
-            "elementName":{
-                "localPart":"GraphicStroke",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ContrastEnhancement"
-                }
-            },
-            "elementName":{
-                "localPart":"ContrastEnhancement",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/FeatureTypeStyle"
-                }
-            },
-            "elementName":{
-                "localPart":"FeatureTypeStyle",
+                "localPart":"Halo",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3846,7 +3801,7 @@
                 }
             },
             "elementName":{
-                "localPart":"ReliefFactor",
+                "localPart":"MaxScaleDenominator",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3857,11 +3812,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/InlineFeature"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                 }
             },
             "elementName":{
-                "localPart":"InlineFeature",
+                "localPart":"Value",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3872,11 +3827,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/SelectedChannelType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                 }
             },
             "elementName":{
-                "localPart":"RedChannel",
+                "localPart":"Service",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3887,11 +3842,56 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/SelectedChannelType"
+                    "$ref":"#/definitions/GraphicFill"
                 }
             },
             "elementName":{
-                "localPart":"GrayChannel",
+                "localPart":"GraphicFill",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ImageOutline"
+                }
+            },
+            "elementName":{
+                "localPart":"ImageOutline",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/LinePlacement"
+                }
+            },
+            "elementName":{
+                "localPart":"LinePlacement",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/LabelPlacement"
+                }
+            },
+            "elementName":{
+                "localPart":"LabelPlacement",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3906,52 +3906,7 @@
                 }
             },
             "elementName":{
-                "localPart":"Rotation",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/StyledLayerDescriptor"
-                }
-            },
-            "elementName":{
-                "localPart":"StyledLayerDescriptor",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/EARLIESTONTOP"
-                }
-            },
-            "elementName":{
-                "localPart":"EARLIEST_ON_TOP",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/OverlapBehavior"
-                }
-            },
-            "elementName":{
-                "localPart":"OverlapBehavior",
+                "localPart":"AnchorPointY",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3977,11 +3932,71 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/PolygonSymbolizer"
+                    "$ref":"#/definitions/SelectedChannelType"
                 }
             },
             "elementName":{
-                "localPart":"PolygonSymbolizer",
+                "localPart":"GrayChannel",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/CssParameter"
+                }
+            },
+            "elementName":{
+                "localPart":"CssParameter",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ParameterValueType"
+                }
+            },
+            "elementName":{
+                "localPart":"Opacity",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                }
+            },
+            "elementName":{
+                "localPart":"GammaValue",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/ColorMapEntry"
+                }
+            },
+            "elementName":{
+                "localPart":"ColorMapEntry",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -3997,21 +4012,6 @@
             },
             "elementName":{
                 "localPart":"Format",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/VendorOption"
-                }
-            },
-            "elementName":{
-                "localPart":"VendorOption",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         }

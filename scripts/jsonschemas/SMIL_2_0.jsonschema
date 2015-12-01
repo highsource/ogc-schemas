@@ -2,9 +2,9 @@
 {
     "id":"http://www.w3.org/2001/SMIL20/#",
     "definitions":{
-        "AnimateColorPrototype":{
+        "AnimatePrototype":{
             "type":"object",
-            "title":"AnimateColorPrototype",
+            "title":"AnimatePrototype",
             "required":[
                 "attributeName"
             ],
@@ -32,6 +32,32 @@
                     "propertyType":"attribute",
                     "attributeName":{
                         "localPart":"accumulate",
+                        "namespaceURI":""
+                    }
+                },
+                "attributeName":{
+                    "title":"attributeName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"attributeName",
+                        "namespaceURI":""
+                    }
+                },
+                "attributeType":{
+                    "title":"attributeType",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"attributeType",
                         "namespaceURI":""
                     }
                 },
@@ -86,48 +112,22 @@
                         "localPart":"to",
                         "namespaceURI":""
                     }
-                },
-                "attributeName":{
-                    "title":"attributeName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"attributeName",
-                        "namespaceURI":""
-                    }
-                },
-                "attributeType":{
-                    "title":"attributeType",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"attributeType",
-                        "namespaceURI":""
-                    }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"animateColorPrototype",
+                "localPart":"animatePrototype",
                 "namespaceURI":"http://www.w3.org/2001/SMIL20/"
             },
             "propertiesOrder":[
                 "additive",
                 "accumulate",
+                "attributeName",
+                "attributeType",
                 "from",
                 "by",
                 "values",
-                "to",
-                "attributeName",
-                "attributeType"
+                "to"
             ]
         },
         "AnimateMotionPrototype":{
@@ -147,32 +147,6 @@
                         "namespaceURI":""
                     }
                 },
-                "additive":{
-                    "title":"additive",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"additive",
-                        "namespaceURI":""
-                    }
-                },
-                "accumulate":{
-                    "title":"accumulate",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"accumulate",
-                        "namespaceURI":""
-                    }
-                },
                 "from":{
                     "title":"from",
                     "allOf":[
@@ -222,6 +196,32 @@
                     "propertyType":"attribute",
                     "attributeName":{
                         "localPart":"to",
+                        "namespaceURI":""
+                    }
+                },
+                "additive":{
+                    "title":"additive",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"additive",
+                        "namespaceURI":""
+                    }
+                },
+                "accumulate":{
+                    "title":"accumulate",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"accumulate",
                         "namespaceURI":""
                     }
                 }
@@ -233,17 +233,75 @@
             },
             "propertiesOrder":[
                 "origin",
-                "additive",
-                "accumulate",
                 "from",
                 "by",
                 "values",
-                "to"
+                "to",
+                "additive",
+                "accumulate"
             ]
         },
         "SetPrototype":{
             "type":"object",
             "title":"SetPrototype",
+            "required":[
+                "attributeName"
+            ],
+            "properties":{
+                "to":{
+                    "title":"to",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"to",
+                        "namespaceURI":""
+                    }
+                },
+                "attributeName":{
+                    "title":"attributeName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"attributeName",
+                        "namespaceURI":""
+                    }
+                },
+                "attributeType":{
+                    "title":"attributeType",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"attributeType",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"setPrototype",
+                "namespaceURI":"http://www.w3.org/2001/SMIL20/"
+            },
+            "propertiesOrder":[
+                "to",
+                "attributeName",
+                "attributeType"
+            ]
+        },
+        "AnimateColorPrototype":{
+            "type":"object",
+            "title":"AnimateColorPrototype",
             "required":[
                 "attributeName"
             ],
@@ -274,38 +332,6 @@
                         "namespaceURI":""
                     }
                 },
-                "to":{
-                    "title":"to",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"to",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"setPrototype",
-                "namespaceURI":"http://www.w3.org/2001/SMIL20/"
-            },
-            "propertiesOrder":[
-                "attributeName",
-                "attributeType",
-                "to"
-            ]
-        },
-        "AnimatePrototype":{
-            "type":"object",
-            "title":"AnimatePrototype",
-            "required":[
-                "attributeName"
-            ],
-            "properties":{
                 "from":{
                     "title":"from",
                     "allOf":[
@@ -358,32 +384,6 @@
                         "namespaceURI":""
                     }
                 },
-                "attributeName":{
-                    "title":"attributeName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"attributeName",
-                        "namespaceURI":""
-                    }
-                },
-                "attributeType":{
-                    "title":"attributeType",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"attributeType",
-                        "namespaceURI":""
-                    }
-                },
                 "additive":{
                     "title":"additive",
                     "allOf":[
@@ -413,19 +413,55 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"animatePrototype",
+                "localPart":"animateColorPrototype",
                 "namespaceURI":"http://www.w3.org/2001/SMIL20/"
             },
             "propertiesOrder":[
+                "attributeName",
+                "attributeType",
                 "from",
                 "by",
                 "values",
                 "to",
-                "attributeName",
-                "attributeType",
                 "additive",
                 "accumulate"
             ]
+        },
+        "RestartTimingType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"restartTimingType",
+                "namespaceURI":"http://www.w3.org/2001/SMIL20/"
+            }
+        },
+        "FillDefaultType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"fillDefaultType",
+                "namespaceURI":"http://www.w3.org/2001/SMIL20/"
+            }
+        },
+        "SyncBehaviorType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"syncBehaviorType",
+                "namespaceURI":"http://www.w3.org/2001/SMIL20/"
+            }
         },
         "RestartDefaultType":{
             "allOf":[
@@ -462,60 +498,9 @@
                 "localPart":"syncBehaviorDefaultType",
                 "namespaceURI":"http://www.w3.org/2001/SMIL20/"
             }
-        },
-        "FillDefaultType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"fillDefaultType",
-                "namespaceURI":"http://www.w3.org/2001/SMIL20/"
-            }
-        },
-        "SyncBehaviorType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"syncBehaviorType",
-                "namespaceURI":"http://www.w3.org/2001/SMIL20/"
-            }
-        },
-        "RestartTimingType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"restartTimingType",
-                "namespaceURI":"http://www.w3.org/2001/SMIL20/"
-            }
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.w3.org/2001/SMIL20/Language#/definitions/AnimateType"
-                }
-            },
-            "elementName":{
-                "localPart":"animate",
-                "namespaceURI":"http://www.w3.org/2001/SMIL20/"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -558,6 +543,21 @@
             },
             "elementName":{
                 "localPart":"animateMotion",
+                "namespaceURI":"http://www.w3.org/2001/SMIL20/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"http://www.w3.org/2001/SMIL20/Language#/definitions/AnimateType"
+                }
+            },
+            "elementName":{
+                "localPart":"animate",
                 "namespaceURI":"http://www.w3.org/2001/SMIL20/"
             }
         }

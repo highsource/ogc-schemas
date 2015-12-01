@@ -2,42 +2,19 @@
 {
     "id":"http://www.opengis.net/wcs/1.1/wcst#",
     "definitions":{
-        "CoverageType":{
-            "required":[
-                "action"
-            ],
+        "Action":{
             "allOf":[
                 {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/ReferenceGroupType"
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
                 },
                 {
                     "type":"object",
-                    "title":"CoverageType",
+                    "title":"Action",
                     "properties":{
-                        "action":{
-                            "title":"action",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/Action"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Action",
-                                "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
-                            }
-                        }
                     }
                 }
             ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CoverageType",
-                "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
-            },
-            "propertiesOrder":[
-                "action"
-            ]
+            "typeType":"classInfo"
         },
         "AcknowledgementType":{
             "type":"object",
@@ -98,67 +75,41 @@
                 "operationRequest"
             ]
         },
-        "Action":{
+        "CoverageType":{
+            "required":[
+                "action"
+            ],
             "allOf":[
                 {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/ReferenceGroupType"
                 },
                 {
                     "type":"object",
-                    "title":"Action",
+                    "title":"CoverageType",
                     "properties":{
+                        "action":{
+                            "title":"action",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/Action"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Action",
+                                "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
+                            }
+                        }
                     }
                 }
             ],
-            "typeType":"classInfo"
-        },
-        "TransactionResponseType":{
-            "type":"object",
-            "title":"TransactionResponseType",
-            "required":[
-                "requestId",
-                "identifier"
-            ],
-            "properties":{
-                "requestId":{
-                    "title":"requestId",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"RequestId",
-                        "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
-                    }
-                },
-                "identifier":{
-                    "title":"identifier",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Identifier",
-                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                    }
-                }
-            },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"TransactionResponseType",
+                "localPart":"CoverageType",
                 "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
             },
             "propertiesOrder":[
-                "requestId",
-                "identifier"
+                "action"
             ]
         },
         "TransactionType":{
@@ -248,9 +199,73 @@
                 "service",
                 "version"
             ]
+        },
+        "TransactionResponseType":{
+            "type":"object",
+            "title":"TransactionResponseType",
+            "required":[
+                "requestId",
+                "identifier"
+            ],
+            "properties":{
+                "requestId":{
+                    "title":"requestId",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RequestId",
+                        "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
+                    }
+                },
+                "identifier":{
+                    "title":"identifier",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Identifier",
+                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TransactionResponseType",
+                "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
+            },
+            "propertiesOrder":[
+                "requestId",
+                "identifier"
+            ]
         }
     },
     "anyOf":[
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
+                    "$ref":"#/definitions/AcknowledgementType"
+                }
+            },
+            "elementName":{
+                "localPart":"Acknowledgement",
+                "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
+            }
+        },
         {
             "type":"object",
             "properties":{
@@ -263,36 +278,6 @@
             },
             "elementName":{
                 "localPart":"Action",
-                "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"RequestId",
-                "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/CoverageType"
-                }
-            },
-            "elementName":{
-                "localPart":"Coverage",
                 "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
             }
         },
@@ -318,6 +303,21 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
+                    "$ref":"#/definitions/CoverageType"
+                }
+            },
+            "elementName":{
+                "localPart":"Coverage",
+                "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                },
+                "value":{
                     "$ref":"#/definitions/TransactionType"
                 }
             },
@@ -333,11 +333,11 @@
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                 },
                 "value":{
-                    "$ref":"#/definitions/AcknowledgementType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                 }
             },
             "elementName":{
-                "localPart":"Acknowledgement",
+                "localPart":"RequestId",
                 "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
             }
         }

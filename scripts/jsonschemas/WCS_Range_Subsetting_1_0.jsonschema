@@ -2,6 +2,40 @@
 {
     "id":"http://www.opengis.net/wcs/range-subsetting/1.0#",
     "definitions":{
+        "RangeSubsetType":{
+            "type":"object",
+            "title":"RangeSubsetType",
+            "required":[
+                "rangeItem"
+            ],
+            "properties":{
+                "rangeItem":{
+                    "title":"rangeItem",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/RangeItemType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RangeItem",
+                        "namespaceURI":"http://www.opengis.net/wcs/range-subsetting/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RangeSubsetType",
+                "namespaceURI":"http://www.opengis.net/wcs/range-subsetting/1.0"
+            },
+            "propertiesOrder":[
+                "rangeItem"
+            ]
+        },
         "RangeItemType":{
             "type":"object",
             "title":"RangeItemType",
@@ -45,40 +79,6 @@
             "propertiesOrder":[
                 "rangeComponent",
                 "rangeInterval"
-            ]
-        },
-        "RangeSubsetType":{
-            "type":"object",
-            "title":"RangeSubsetType",
-            "required":[
-                "rangeItem"
-            ],
-            "properties":{
-                "rangeItem":{
-                    "title":"rangeItem",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/RangeItemType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"RangeItem",
-                        "namespaceURI":"http://www.opengis.net/wcs/range-subsetting/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RangeSubsetType",
-                "namespaceURI":"http://www.opengis.net/wcs/range-subsetting/1.0"
-            },
-            "propertiesOrder":[
-                "rangeItem"
             ]
         },
         "RangeIntervalType":{
