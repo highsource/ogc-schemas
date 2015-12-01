@@ -1,0 +1,15 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:wildcard="http://jaxb2-commons.dev.java.net/basic/wildcard"
+	xmlns:annox="http://annox.dev.java.net"
+	jaxb:extensionBindingPrefixes="xjc wildcard annox">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/gml/3.3/tin.xsd" 
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.gml.v_3_3.tin"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+</jaxb:bindings>
