@@ -74,6 +74,7 @@
 								<artifactItem><artifactId>gml-v_3_1_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 								<artifactItem><artifactId>gml-v_3_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 								<artifactItem><artifactId>gml-v_3_2_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
+								<artifactItem><artifactId>gml-v_3_3</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 
 								<artifactItem><artifactId>gmlcov-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 
@@ -219,6 +220,7 @@
 								<artifactItem><artifactId>gml-v_3_1_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 								<artifactItem><artifactId>gml-v_3_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 								<artifactItem><artifactId>gml-v_3_2_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
+								<artifactItem><artifactId>gml-v_3_3</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 
 								<artifactItem><artifactId>gmlcov-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 

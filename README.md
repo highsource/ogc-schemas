@@ -47,6 +47,15 @@ Supports the following schemas:
 * `GML_2_1_2`
 * `GML_3_1_1`
 * `GML_3_2_1`
+* `GML_CE_3_3`
+* `GML_EXR_3_3`
+* `GML_LR_3_3`
+* `GML_LRO_3_3`
+* `GML_LROV_3_3`
+* `GML_LRTR_3_3`
+* `GML_RGRID_3_3`
+* `GML_TIN_3_3`
+* `GML_XBT_3_3`
 * `GMLCOV_1_0`
 * `GMLCOV_GeoTIFF_1_0`
 * `SMIL_2_0`
