@@ -33,7 +33,7 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>swecommon-v_2_0</artifactId>
+			<artifactId>sweCommon-v_2_0</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
