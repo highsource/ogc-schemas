@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns:scal="http://www.opengis.net/WCS_service-extension_scaling/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.opengis.net/wcs/2.0" targetNamespace="http://www.opengis.net/WCS_service-extension_scaling/1.0" elementFormDefault="qualified" version="1.0.0" xml:lang="en">
+<schema xmlns:scal="http://www.opengis.net/wcs/scaling/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wcs="http://www.opengis.net/wcs/2.0" targetNamespace="http://www.opengis.net/wcs/scaling/1.0" elementFormDefault="qualified" version="1.0.0" xml:lang="en">
 	<annotation>
 		<appinfo>scal.xsd</appinfo>
 		<documentation>This XML Schema Document is part of the WCS Scaling Extension [OGC 12-039]. It encodes the elements and types that allow expressing Scaling in WCS client/server communication.
