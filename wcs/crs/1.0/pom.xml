@@ -11,6 +11,13 @@
 		<version>2.5.5-SNAPSHOT</version>
 		<relativePath>../../../schema-parent/pom.xml</relativePath>
 	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>wcs-v_2_0</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<plugins>
@@ -29,6 +36,14 @@
 								<groupId>${project.groupId}</groupId>
 								<artifactId>ogc-schemas</artifactId>
 								<resource>ogc/globalBindings.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+						<binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>wcs-v_2_0</artifactId>
+								<resource>wcs-v_2_0.jsonix.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>
 						</binding>

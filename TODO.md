@@ -64,6 +64,7 @@
 * wcs/1.0.0
 * wcs/1.1
 * wcs/2.0
+* wcs/crs/1.0
 * wcs/interpolation/1.0
 * wcs/processing/2.0
 * wcs/range-subsetting/1.0

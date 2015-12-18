@@ -58,6 +58,7 @@
 		"WaterML",
                 "WCPS",
                 "WCS",
+		"WCS CRS",
 		"WCS Interpolation",
 		"WCS Processing",
 		"WCS Range Subsetting",
