@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://www.opengis.net/wcs_service-extension_processing/2.0"
-    xmlns:proc="http://www.opengis.net/wcs_service-extension_processing/2.0"
+<xs:schema targetNamespace="http://www.opengis.net/wcs/processing/2.0"
+    xmlns:proc="http://www.opengis.net/wcs/processing/2.0"
     xmlns:wcs="http://www.opengis.net/wcs/2.0"
     xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
     xmlns:gml="http://www.opengis.net/gml/3.2.1"
