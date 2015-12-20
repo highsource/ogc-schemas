@@ -31,6 +31,7 @@ module.exports.DCT                   = require('./lib/DCT'                      
 module.exports.Filter_1_0_0          = require('./lib/Filter_1_0_0'                 ).Filter_1_0_0         ;
 module.exports.Filter_1_1_0          = require('./lib/Filter_1_1_0'                 ).Filter_1_1_0         ;
 module.exports.Filter_2_0            = require('./lib/Filter_2_0'                   ).Filter_2_0           ;
+module.exports.GML_1_0_0             = require('./lib/GML_1_0_0'                    ).GML_1_0_0            ;
 module.exports.GML_2_1_2             = require('./lib/GML_2_1_2'                    ).GML_2_1_2            ;
 module.exports.GML_3_1_1             = require('./lib/GML_3_1_1'                    ).GML_3_1_1            ;
 module.exports.GML_3_2_0             = require('./lib/GML_3_2_0'                    ).GML_3_2_0            ;

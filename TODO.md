@@ -9,6 +9,7 @@
 * filter/1.0.0 + filter/1.0.20
 * filter/1.1.0
 * filter/2.0.
+* gml/1.0.0
 * gml/2.1.2
 * gml/3.1.1
 * gml/3.2.0
@@ -86,7 +87,6 @@
 
 * eosps/2.0
 * eop/1.0.0
-* gml/1.0.0
 * gmljp2/2.0
 
 # Won't fix

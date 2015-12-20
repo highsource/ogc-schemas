@@ -39,6 +39,7 @@
 		"scripts/lib/Filter_1_0_0.js",
 		"scripts/lib/Filter_1_1_0.js",
 		"scripts/lib/Filter_2_0.js",
+		"scripts/lib/GML_1_0_0.js",
 		"scripts/lib/GML_2_1_2.js",
 		"scripts/lib/GML_3_1_1.js",
 		"scripts/lib/GML_3_2_0.js",

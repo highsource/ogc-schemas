@@ -44,6 +44,7 @@ Supports the following schemas:
 * `Filter_1_0_0`
 * `Filter_1_1_0`
 * `Filter_2_0`
+* `GML_1_0_0`
 * `GML_2_1_2`
 * `GML_3_1_1`
 * `GML_3_2_1`
