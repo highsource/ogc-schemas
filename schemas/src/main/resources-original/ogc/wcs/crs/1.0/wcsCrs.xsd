@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/wcs/crs/1.0" 
+    xmlns:wcscrs="http://www.opengis.net/wcs/crs/1.0"
+    xmlns="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified" version="1.0.0" xml:lang="en">   
+    <annotation>
+        <appinfo>wcsCrs.xsd</appinfo>
+        <documentation>This XML Schema Document is part of the WCS CRS Extension [OGC 11-053]. It encodes the elements and types that allow expressing Coordinate Reference Sytems (CRSs) in WCS client/server communication.
+            Last updated: 2013-aug-30
+            Copyright (c) 2013 Open Geospatial Consortium, Inc. All Rights Reserved.
+            To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+        </documentation>
+    </annotation>
+
+    <!-- ============================================================== -->
+    <!-- includes and imports                                           -->
+    <!-- ============================================================== -->
+    <import namespace="http://www.opengis.net/wcs/2.0" schemaLocation="http://schemas.opengis.net/wcs/2.0/wcsAll.xsd"/>
+    <!-- ============================================================== -->
+    <!-- elements and types                                             -->
+    <!-- ============================================================== -->
+    <element name="CrsMetadata" type="wcscrs:CrsMetadataType"/>
+    <complexType name="CrsMetadataType">
+        <annotation>
+            <documentation>CRS information reported in the Capabilities document of a WCS service supporting the CRS Extension. </documentation>
+        </annotation>
+        <sequence>
+            <element name="crsSupported" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <!-- ============================================================== -->
+    <element name="Crs" type="wcscrs:CrsType"/>
+    <complexType name="CrsType">
+        <annotation>
+            <documentation>CRSs for the request bounding box and for the result coverage. </documentation>
+        </annotation>
+        <sequence>
+            <element name="subsettingCrs" type="anyURI" minOccurs="0"/>
+            <element name="outputCrs" type="anyURI" minOccurs="0"/>
+        </sequence>
+    </complexType>
+</schema>

@@ -44,6 +44,7 @@ module.exports =
 		"WMSC" : require('./WMSC/WMSC.js'),
 		"WCPS" : require('./WCPS/WCPS.js'),
 		"WCS" : require('./WCS/WCS.js'),
+		"WCS_CRS" : require('./WCS_CRS/WCS_CRS'),
 		"WCS_Interpolation" : require('./WCS_Interpolation/WCS_Interpolation'),
 		"WCS_Processing" : require('./WCS_Processing/WCS_Processing'),
 		"WCS_Range_Subsetting" : require('./WCS_Range_Subsetting/WCS_Range_Subsetting'),
