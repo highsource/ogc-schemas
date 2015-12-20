@@ -1,7 +1,7 @@
 var WCS_Processing_2_0_Module_Factory = function () {
   var WCS_Processing_2_0 = {
     n: 'WCS_Processing_2_0',
-    dens: 'http:\/\/www.opengis.net\/wcs_service-extension_processing\/2.0',
+    dens: 'http:\/\/www.opengis.net\/wcs\/processing\/2.0',
     deps: ['WCS_2_0'],
     tis: [{
         ln: 'ProcessCoveragesType',

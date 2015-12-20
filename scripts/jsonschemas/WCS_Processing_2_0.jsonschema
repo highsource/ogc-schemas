@@ -1,6 +1,6 @@
 
 {
-    "id":"http://www.opengis.net/wcs_service-extension_processing/2.0#",
+    "id":"http://www.opengis.net/wcs/processing/2.0#",
     "definitions":{
         "ProcessCoveragesType":{
             "required":[
@@ -24,7 +24,7 @@
                             "propertyType":"element",
                             "elementName":{
                                 "localPart":"query",
-                                "namespaceURI":"http://www.opengis.net/wcs_service-extension_processing/2.0"
+                                "namespaceURI":"http://www.opengis.net/wcs/processing/2.0"
                             }
                         },
                         "any":{
@@ -60,7 +60,7 @@
             "typeType":"classInfo",
             "typeName":{
                 "localPart":"ProcessCoveragesType",
-                "namespaceURI":"http://www.opengis.net/wcs_service-extension_processing/2.0"
+                "namespaceURI":"http://www.opengis.net/wcs/processing/2.0"
             },
             "propertiesOrder":[
                 "query",
@@ -81,7 +81,7 @@
             },
             "elementName":{
                 "localPart":"ProcessCoverages",
-                "namespaceURI":"http://www.opengis.net/wcs_service-extension_processing/2.0"
+                "namespaceURI":"http://www.opengis.net/wcs/processing/2.0"
             }
         }
     ]

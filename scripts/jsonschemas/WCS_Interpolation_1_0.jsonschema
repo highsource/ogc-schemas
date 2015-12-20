@@ -1,6 +1,6 @@
 
 {
-    "id":"http://www.opengis.net/WCS_service-extension_interpolation/1.0#",
+    "id":"http://www.opengis.net/wcs/interpolation/1.0#",
     "definitions":{
         "InterpolationType":{
             "type":"object",
@@ -19,7 +19,7 @@
                     "propertyType":"element",
                     "elementName":{
                         "localPart":"globalInterpolation",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
                     }
                 },
                 "interpolationPerAxis":{
@@ -36,14 +36,14 @@
                     "propertyType":"element",
                     "elementName":{
                         "localPart":"InterpolationPerAxis",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
                 "localPart":"InterpolationType",
-                "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
             },
             "propertiesOrder":[
                 "globalInterpolation",
@@ -68,14 +68,14 @@
                     "propertyType":"element",
                     "elementName":{
                         "localPart":"interpolationSupported",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
                 "localPart":"InterpolationMetadataType",
-                "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
             },
             "propertiesOrder":[
                 "interpolationSupported"
@@ -99,7 +99,7 @@
                     "propertyType":"element",
                     "elementName":{
                         "localPart":"axis",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
                     }
                 },
                 "interpolationMethod":{
@@ -112,14 +112,14 @@
                     "propertyType":"element",
                     "elementName":{
                         "localPart":"interpolationMethod",
-                        "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
                 "localPart":"InterpolationPerAxisType",
-                "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
             },
             "propertiesOrder":[
                 "axis",
@@ -140,7 +140,7 @@
             },
             "elementName":{
                 "localPart":"Interpolation",
-                "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
             }
         },
         {
@@ -155,7 +155,7 @@
             },
             "elementName":{
                 "localPart":"InterpolationMetadata",
-                "namespaceURI":"http://www.opengis.net/WCS_service-extension_interpolation/1.0"
+                "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
             }
         }
     ]

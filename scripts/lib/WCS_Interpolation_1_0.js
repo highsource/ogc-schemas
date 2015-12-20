@@ -1,7 +1,7 @@
 var WCS_Interpolation_1_0_Module_Factory = function () {
   var WCS_Interpolation_1_0 = {
     n: 'WCS_Interpolation_1_0',
-    dens: 'http:\/\/www.opengis.net\/WCS_service-extension_interpolation\/1.0',
+    dens: 'http:\/\/www.opengis.net\/wcs\/interpolation\/1.0',
     tis: [{
         ln: 'InterpolationType',
         ps: [{
