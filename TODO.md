@@ -85,13 +85,13 @@
 # Not yet supported schemas
 
 * eosps/2.0
+* eop/1.0.0
 * gml/1.0.0
 * gmljp2/2.0
-* ImageCRSs/1.1.0
 
 # Won't fix
 
-* eop/1.0.0
+* ImageCRSs/1.1.0 - no unzipped schemas, probably deprecated
 * gml/3.0.0
 * gml/3.0.1
 * gml/3.1.0
