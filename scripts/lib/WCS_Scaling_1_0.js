@@ -1,41 +1,8 @@
 var WCS_Scaling_1_0_Module_Factory = function () {
   var WCS_Scaling_1_0 = {
     n: 'WCS_Scaling_1_0',
-    dens: 'http:\/\/www.opengis.net\/WCS_service-extension_scaling\/1.0',
+    dens: 'http:\/\/www.opengis.net\/wcs\/scaling\/1.0',
     tis: [{
-        ln: 'TargetAxisExtentType',
-        ps: [{
-            n: 'axis',
-            rq: true
-          }, {
-            n: 'low',
-            rq: true,
-            ti: 'Decimal'
-          }, {
-            n: 'high',
-            rq: true,
-            ti: 'Decimal'
-          }]
-      }, {
-        ln: 'ScaleAxesByFactorType',
-        ps: [{
-            n: 'scaleAxis',
-            rq: true,
-            col: true,
-            en: 'ScaleAxis',
-            ti: '.ScaleAxisType'
-          }]
-      }, {
-        ln: 'TargetAxisSizeType',
-        ps: [{
-            n: 'axis',
-            rq: true
-          }, {
-            n: 'targetSize',
-            rq: true,
-            ti: 'Decimal'
-          }]
-      }, {
         ln: 'ScalingType',
         ps: [{
             n: 'scaleByFactor',
@@ -59,13 +26,53 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             ti: '.ScaleToExtentType'
           }]
       }, {
-        ln: 'ScaleToSizeType',
+        ln: 'ScaleToExtentType',
         ps: [{
-            n: 'targetAxisSize',
+            n: 'targetAxisExtent',
             rq: true,
             col: true,
-            en: 'TargetAxisSize',
-            ti: '.TargetAxisSizeType'
+            en: 'TargetAxisExtent',
+            ti: '.TargetAxisExtentType'
+          }]
+      }, {
+        ln: 'TargetAxisExtentType',
+        ps: [{
+            n: 'axis',
+            rq: true
+          }, {
+            n: 'low',
+            rq: true,
+            ti: 'Decimal'
+          }, {
+            n: 'high',
+            rq: true,
+            ti: 'Decimal'
+          }]
+      }, {
+        ln: 'TargetAxisSizeType',
+        ps: [{
+            n: 'axis',
+            rq: true
+          }, {
+            n: 'targetSize',
+            rq: true,
+            ti: 'Decimal'
+          }]
+      }, {
+        ln: 'ScaleByFactorType',
+        ps: [{
+            n: 'scaleFactor',
+            rq: true,
+            ti: 'Decimal'
+          }]
+      }, {
+        ln: 'ScaleAxesByFactorType',
+        ps: [{
+            n: 'scaleAxis',
+            rq: true,
+            col: true,
+            en: 'ScaleAxis',
+            ti: '.ScaleAxisType'
           }]
       }, {
         ln: 'ScaleAxisType',
@@ -78,20 +85,13 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             ti: 'Decimal'
           }]
       }, {
-        ln: 'ScaleByFactorType',
+        ln: 'ScaleToSizeType',
         ps: [{
-            n: 'scaleFactor',
-            rq: true,
-            ti: 'Decimal'
-          }]
-      }, {
-        ln: 'ScaleToExtentType',
-        ps: [{
-            n: 'targetAxisExtent',
+            n: 'targetAxisSize',
             rq: true,
             col: true,
-            en: 'TargetAxisExtent',
-            ti: '.TargetAxisExtentType'
+            en: 'TargetAxisSize',
+            ti: '.TargetAxisSizeType'
           }]
       }],
     eis: [{
