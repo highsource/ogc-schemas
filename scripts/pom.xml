@@ -81,6 +81,8 @@
 
 								<artifactItem><artifactId>gmlcov-geotiff-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 
+								<artifactItem><artifactId>gmljp2-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
+
 								<artifactItem><artifactId>indoorgml-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 
 								<artifactItem><artifactId>iso19139-v_20070417</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
@@ -229,6 +231,8 @@
 								<artifactItem><artifactId>gmlcov-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 
 								<artifactItem><artifactId>gmlcov-geotiff-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
+
+								<artifactItem><artifactId>gmljp2-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 
 								<artifactItem><artifactId>indoorgml-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 

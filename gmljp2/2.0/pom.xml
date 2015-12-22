@@ -2,9 +2,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>gmlcov-v_1_0</artifactId>
+	<artifactId>gmljp2-v_2_0</artifactId>
 	<packaging>jar</packaging>
-	<name>OGC GML Application Schema for Coverages 2.0</name>
+	<name>OGC GML in JPEG 2000 Encoding Standard 2.0</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schema-parent</artifactId>
@@ -18,12 +18,27 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
+			<artifactId>gmlcov-v_1_0</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>gml-v_3_2_1</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>sweCommon-v_2_0</artifactId>
+			<artifactId>iso19139-v_20070417</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>omeo-v_1_0</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>csw-v_2_0_2</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
@@ -36,7 +51,7 @@
 				<configuration>
 					<schemas>
 						<schema>
-							<url>http://schemas.opengis.net/gmlcov/1.0/gmlcovAll.xsd</url>
+							<url>http://schemas.opengis.net/gmljp2/2.0/gmljp2.xsd</url>
 						</schema>
 					</schemas>
 					<bindings>
@@ -67,6 +82,14 @@
 						<binding>
 							<dependencyResource>
 								<groupId>${project.groupId}</groupId>
+								<artifactId>gmlcov-v_1_0</artifactId>
+								<resource>gmlcov-v_1_0.jsonix.xjb</resource>
+								<version>${project.version}</version>
+							</dependencyResource>
+						</binding>
+						<!--binding>
+							<dependencyResource>
+								<groupId>${project.groupId}</groupId>
 								<artifactId>gml-v_3_2_1</artifactId>
 								<resource>iso19139-v_20070417.ignore.xjb</resource>
 								<version>${project.version}</version>
@@ -79,7 +102,7 @@
 								<resource>sweCommon-v_2_0.jsonix.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>
-						</binding>
+						</binding-->
 					</bindings>
 				</configuration>
 			</plugin>
@@ -91,6 +114,7 @@
 						<configuration>
 							<target>
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
+								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gmlcov"/>
 								<!--delete dir="${basedir}/target/generated-sources/xjc" includes="GML_*.*"/-->
 							</target>
 						</configuration>

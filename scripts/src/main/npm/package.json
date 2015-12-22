@@ -31,6 +31,8 @@
                 "GMLCOV",
                 "GMLCOV GeoTIFF",
                 "GML Application Schema for Coverages",
+		"GMLJP2",
+                "GML in JPEG 2000 Encoding Standard",
 		"IC",
 		"IndoorGML",
 		"ISO19139", "ISO 19139", "ISO19139-2", "ISO 19139-2",

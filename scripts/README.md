@@ -55,6 +55,7 @@ Supports the following schemas:
 * `GML_XBT_3_3`
 * `GMLCOV_1_0`
 * `GMLCOV_GeoTIFF_1_0`
+* `GMLJP2_2_0`
 * `SMIL_2_0`
 * `SMIL_2_0_Language`
 * `IC_2_0`

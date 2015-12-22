@@ -69,6 +69,7 @@
 		<module>filter</module>
 		<module>gml</module>
 		<module>gmlcov</module>
+		<module>gmljp2</module>
 		<module>ic</module>
 		<module>indoorgml</module>
 		<module>iso19139</module>

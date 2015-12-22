@@ -17,6 +17,7 @@
 * gml/3.3.0
 * gmlcov/1.0
 * gmlcov/geotiff/1.0
+* gmljp2/2.0
 * ic/2.0
 * ic/2.1
 * indoorgml/1.0
@@ -87,7 +88,6 @@
 
 * eosps/2.0
 * eop/1.0.0
-* gmljp2/2.0
 
 # Won't fix
 
