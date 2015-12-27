@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+  "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd" [
+
+<!-- OfficialOgcSchemaPath Examples
+  <!ENTITY OfficialOgcSchemaPath "file:///schemas/SCHEMAS_OPENGIS_NET">
+  <!ENTITY OfficialOgcSchemaPath "file:///C:/schemas/SCHEMAS_OPENGIS_NET">
+  -->
+  <!-- Extract Official OGC Schemas downloaded from http://schemas.opengis.net/SCHEMAS_OPENGIS_NET.zip -->
+<!ENTITY OfficialOgcSchemaPath "/home/devel/s.o.n">
+  
+<!-- MyLocalTestSchemaPath is the test sandbox -->
+<!ENTITY MyLocalTestSchemaPath "/home/devel/oxy">
+
+  ]>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <!-- updated: 2014-04-09 -->
+
+    <!-- ==========================================================
+           Utilizing Local OGC Schemas with Absolute Paths
+        ==========================================================
+    -->
+
+
+    <!-- === TEMP for eop-1_0_0-06-180r4-v1_2_1 2014-03-26 ===== -->
+    <rewriteURI uriStartString="http://schemas.opengis.net/eop/1.0"
+        rewritePrefix="&MyLocalTestSchemaPath;/eop/1.0"/>
+    <rewriteSystem systemIdStartString="http://schemas.opengis.net/eop/1.0"
+        rewritePrefix="&MyLocalTestSchemaPath;/eop/1.0"/>
+    <rewriteURI uriStartString="http://earth.esa.int/eop"
+        rewritePrefix="&MyLocalTestSchemaPath;/eop/1.0"/>
+    <rewriteSystem systemIdStartString="http://earth.esa.int/eop"
+        rewritePrefix="&MyLocalTestSchemaPath;/eop/1.0"/>
+
+
+    <!-- ==========================================================
+        ###  REDIRECTING ***OFFICIAL*** OGC SCHEMAS TO LOCAL COPY
+        downloaded from http://schemas.opengis.net/SCHEMAS_OPENGIS_NET.zip
+        ==========================================================
+    -->
+    <!--
+    <rewriteURI uriStartString="http://schemas.opengis.net" 
+        rewritePrefix="&OfficialOgcSchemaPath;"/>
+    <rewriteSystem systemIdStartString="http://schemas.opengis.net"
+        rewritePrefix="&OfficialOgcSchemaPath;"/>
+    -->
+</catalog>

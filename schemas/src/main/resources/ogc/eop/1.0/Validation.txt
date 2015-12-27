@@ -1,0 +1,25 @@
+OGC(r) GML 3.1.1 Application Schema for Earth Observation Products
+-----------------------------------------------------------------------
+
+The Geography Markup Language (GML) 3.1.1 Application Schema for Earth Observation
+Products Implementation Standard is defined in OGC document 06-080r4. 
+
+EOP 1.0 (1.2.2) does not validate. -- 2014-03-28
+
+It seems that 06-080r4 (EOP 1.0) is approved as an official OGC
+implementation standard. Unfortunately, it called for the use of a
+non-standard gmlSubset.xsd based on GML 3.1.1 (and using the GML 3.1.1
+namespace) but using some GML 3.2.1 definitions.  This means that EOP 1.0 
+is not GML 3.1.1 nor GML 3.2.1 but some modified version of the two.  
+This is not documented anyway in the standard.  The problem that the 
+EOP document was trying to overcome was corrected in 3.2.1.
+
+EOP 1.0 (06-080r4) is being published in a zip archive so that the schema 
+are available but not directly usable. Earth Observation Metadata profile 
+of Observations & Measurements (1.0) 10-157r3 should be a replacement.
+
+Further discussion points are documented on the OAB listserv:
+https://lists.opengeospatial.org/mailman/private/oab/2011-December/001997.html
+
+-----------------------------------------------------------------------
+

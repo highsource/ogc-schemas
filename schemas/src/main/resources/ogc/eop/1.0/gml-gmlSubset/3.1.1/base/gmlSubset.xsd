@@ -1,0 +1,1346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML Studio 1.0.8.0 (http://www.liquid-technologies.com) -->
+<xsd:schema xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.opengis.net/gml" version="3.1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="../../../xlink/1.0.0/xlinks.xsd" namespace="http://www.w3.org/1999/xlink" />
+  <xsd:annotation>
+    <xsd:documentation>GML Subset schema for gml:metaDataProperty,gml:Polygon,gml:Point,gml:LineString,gml:LinearRing,gml:exterior,gml:interior,gml:surfaceProperty,gml:multiSurfacePropertyType,gml:_Feature,gml:featureMember,gml:CodeListType,gml:AngleType,gml:MeasureListType,gml:centerOf,gml:extentOf,gml:_MetaData,gml:Observation,gml:validTime,gml:beginPosition,gml:endPosition,gml:TimePeriod,gml:multiExtentOf,gml:_FeatureCollection,gml:CircleByCenterPoint,gml:Curve, written by gmlSubset.xslt.
+</xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="metaDataProperty" type="gml:MetaDataPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>Contains or refers to a metadata package that contains metadata properties.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="MetaDataPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>Base type for complex metadata property types.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence minOccurs="0">
+      <xsd:any processContents="lax" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup" />
+    <xsd:attribute name="about" type="xsd:anyURI" use="optional" />
+  </xsd:complexType>
+  <xsd:attributeGroup name="AssociationAttributeGroup">
+    <xsd:annotation>
+      <xsd:documentation>Attribute group used to enable property elements to refer to their value remotely. It contains the simple link components from xlinks.xsd, with all members optional, and the remoteSchema attribute, which is also optional.  These attributes can be attached to any element, thus allowing it to act as a pointer. The 'remoteSchema' attribute allows an element  that carries link attributes to indicate that the element is declared  in a remote schema rather than by the schema that constrains the current document instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attributeGroup ref="xlink:simpleLink" />
+    <xsd:attribute ref="gml:remoteSchema" use="optional" />
+  </xsd:attributeGroup>
+  <xsd:attribute name="remoteSchema" type="xsd:anyURI">
+    <xsd:annotation>
+      <xsd:documentation>Reference to an XML Schema fragment that specifies the content model of the propertys value. This is in conformance with the XML Schema Section 4.14 Referencing Schemas from Elsewhere.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:element name="Polygon" substitutionGroup="gml:_Surface" type="gml:PolygonType" />
+  <xsd:complexType name="PolygonType">
+    <xsd:annotation>
+      <xsd:documentation>A Polygon is a special surface that is defined by a single surface patch. The boundary of this patch is coplanar and the polygon uses planar interpolation in its interior. It is backwards compatible with the Polygon of GML 2, GM_Polygon of ISO 19107 is implemented by PolygonPatch.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractSurfaceType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="gml:exterior" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" ref="gml:interior" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AbstractSurfaceType">
+    <xsd:annotation>
+      <xsd:documentation>An abstraction of a surface to support the different levels of complexity. A surface is always a continuous region of a plane.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractGeometricPrimitiveType" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AbstractGeometricPrimitiveType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>This is the abstract root type of the geometric primitives. A geometric primitive is a geometric object that is not 
+			decomposed further into other primitives in the system. All primitives are oriented in the direction implied by the sequence of their 
+			coordinate tuples.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractGeometryType" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AbstractGeometryType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>All geometry elements are derived directly or indirectly from this abstract supertype. A geometry element may 
+			have an identifying attribute ("gml:id"), a name (attribute "name") and a description (attribute "description"). It may be associated 
+			with a spatial reference system (attribute "srsName"). The following rules shall be adhered: - Every geometry type shall derive 
+			from this abstract type. - Every geometry element (i.e. an element of a geometry type) shall be directly or indirectly in the 
+			substitution group of _Geometry.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractGMLType">
+        <xsd:attribute name="gid" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>This attribute is included for backward compatibility with GML 2 and is deprecated with GML 3. 
+						This identifer is superceded by "gml:id" inherited from AbstractGMLType. The attribute "gid" should not be used 
+						anymore and may be deleted in future versions of GML without further notice.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attributeGroup ref="gml:SRSReferenceGroup" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AbstractGMLType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>All complexContent GML elements are directly or indirectly derived from this abstract supertype 
+	to establish a hierarchy of GML types that may be distinguished from other XML types by their ancestry. 
+	Elements in this hierarchy may have an ID and are thus referenceable.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="gml:StandardObjectProperties" />
+    </xsd:sequence>
+    <xsd:attribute ref="gml:id" use="optional" />
+  </xsd:complexType>
+  <xsd:group name="StandardObjectProperties">
+    <xsd:annotation>
+      <xsd:documentation>This content model group makes it easier to construct types that 
+      derive from AbstractGMLType and its descendents "by restriction".  
+      A reference to the group saves having to enumerate the standard object properties.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" ref="gml:metaDataProperty" />
+      <xsd:element minOccurs="0" ref="gml:description" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" ref="gml:name">
+        <xsd:annotation>
+          <xsd:documentation>Multiple names may be provided.  These will often be distinguished by being assigned by different authorities, as indicated by the value of the codeSpace attribute.  In an instance document there will usually only be one name per authority.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:element name="description" type="gml:StringOrRefType">
+    <xsd:annotation>
+      <xsd:documentation>Contains a simple text description of the object, or refers to an external description.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="StringOrRefType">
+    <xsd:annotation>
+      <xsd:documentation>This type is available wherever there is a need for a "text" type property. It is of string type, so the text can be included inline, but the value can also be referenced remotely via xlinks from the AssociationAttributeGroup. If the remote reference is present, then the value obtained by traversing the link should be used, and the string content of the element can be used for an annotation.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="gml:AssociationAttributeGroup" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element name="name" type="gml:CodeType">
+    <xsd:annotation>
+      <xsd:documentation>Label for the object, normally a descriptive name. An object may have several names, typically assigned by different authorities.  The authority for a name is indicated by the value of its (optional) codeSpace attribute.  The name may or may not be unique, as determined by the rules of the organization responsible for the codeSpace.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="CodeType">
+    <xsd:annotation>
+      <xsd:documentation>Name or code with an (optional) authority.  Text token.  
+      If the codeSpace attribute is present, then its value should identify a dictionary, thesaurus 
+      or authority for the term, such as the organisation who assigned the value, 
+      or the dictionary from which it is taken.  
+      A text string with an optional codeSpace attribute. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="codeSpace" type="xsd:anyURI" use="optional" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:attribute name="id" type="xsd:ID">
+    <xsd:annotation>
+      <xsd:documentation>Database handle for the object.  It is of XML type ID, so is constrained to be unique in the XML document within which it occurs.  An external identifier for the object in the form of a URI may be constructed using standard XML and XPointer methods.  This is done by concatenating the URI for the document, a fragment separator, and the value of the id attribute.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attributeGroup name="SRSReferenceGroup">
+    <xsd:annotation>
+      <xsd:documentation>Optional reference to the CRS used by this geometry, with optional additional information to simplify use when 
+			a more complete definition of the CRS is not needed.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="srsName" type="xsd:anyURI" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>In general this reference points to a CRS instance of gml:CoordinateReferenceSystemType 
+				(see coordinateReferenceSystems.xsd). For well known references it is not required that the CRS description exists at the 
+				location the URI points to. If no srsName attribute is given, the CRS must be specified as part of the larger context this 
+				geometry element is part of, e.g. a geometric element like point, curve, etc. It is expected that this attribute will be specified 
+				at the direct position level only in rare cases.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="srsDimension" type="xsd:positiveInteger" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The "srsDimension" is the length of coordinate sequence (the number of entries in the list). This dimension is 
+				specified by the coordinate reference system. When the srsName attribute is omitted, this attribute shall be omitted.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attributeGroup ref="gml:SRSInformationGroup" />
+  </xsd:attributeGroup>
+  <xsd:attributeGroup name="SRSInformationGroup">
+    <xsd:annotation>
+      <xsd:documentation>Optional additional and redundant information for a CRS to simplify use when a more complete definition of the 
+			CRS is not needed. This information shall be the same as included in the more complete definition of the CRS, referenced by the 
+			srsName attribute. When the srsName attribute is included, either both or neither of the axisLabels and uomLabels attributes 
+			shall be included. When the srsName attribute is omitted, both of these attributes shall be omitted.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="axisLabels" type="gml:NCNameList" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Ordered list of labels for all the axes of this CRS. The gml:axisAbbrev value should be used for these axis 
+				labels, after spaces and forbiddden characters are removed. When the srsName attribute is included, this attribute is optional. 
+				When the srsName attribute is omitted, this attribute shall also be omitted.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="uomLabels" type="gml:NCNameList" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Ordered list of unit of measure (uom) labels for all the axes of this CRS. The value of the string in the 
+				gml:catalogSymbol should be used for this uom labels, after spaces and forbiddden characters are removed. When the 
+				axisLabels attribute is included, this attribute shall also be included. When the axisLabels attribute is omitted, this attribute 
+				shall also be omitted.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:attributeGroup>
+  <xsd:simpleType name="NCNameList">
+    <xsd:annotation>
+      <xsd:documentation>A set of values, representing a list of token with the lexical value space of NCName. The tokens are seperated by whitespace.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:list itemType="xsd:NCName" />
+  </xsd:simpleType>
+  <xsd:element name="exterior" type="gml:AbstractRingPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A boundary of a surface consists of a number of rings. In the normal 2D case, one of these rings is distinguished as being the exterior boundary. In a general manifold this is not always possible, in which case all boundaries shall be listed as interior boundaries, and the exterior will be empty.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="AbstractRingPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>Encapsulates a ring to represent the surface boundary property of a surface.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ref="gml:_Ring" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element abstract="true" name="_Ring" substitutionGroup="gml:_Geometry" type="gml:AbstractRingType">
+    <xsd:annotation>
+      <xsd:documentation>The "_Ring" element is the abstract head of the substituition group for all closed boundaries of a surface patch.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="AbstractRingType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>An abstraction of a ring to support surface boundaries of different complexity.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractGeometryType" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="true" name="_Geometry" substitutionGroup="gml:_GML" type="gml:AbstractGeometryType">
+    <xsd:annotation>
+      <xsd:documentation>The "_Geometry" element is the abstract head of the substituition group for all geometry elements of GML 3. This 
+			includes pre-defined and user-defined geometry elements. Any geometry element must be a direct or indirect extension/restriction 
+			of AbstractGeometryType and must be directly or indirectly in the substitution group of "_Geometry".</xsd:documentation>
+      <xsd:appinfo>
+        <sch:pattern name="Check SRS tags" xmlns:sch="http://www.ascc.net/xml/schematron">
+          <sch:rule context="gml:_Geometry">
+            <sch:extends rule="CRSLabels" />
+          </sch:rule>
+        </sch:pattern>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="_GML" substitutionGroup="gml:_Object" type="gml:AbstractGMLType">
+    <xsd:annotation>
+      <xsd:documentation>Global element which acts as the head of a substitution group that may include any element which is a GML feature, object, geometry or complex value</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="_Object">
+    <xsd:annotation>
+      <xsd:documentation>This abstract element is the head of a substitutionGroup hierararchy which may contain either simpleContent or complexContent elements.  It is used to assert the model position of "class" elements declared in other GML schemas.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="interior" type="gml:AbstractRingPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A boundary of a surface consists of a number of rings. The "interior" rings seperate the surface / surface patch from the area enclosed by the rings.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="_Surface" substitutionGroup="gml:_GeometricPrimitive" type="gml:AbstractSurfaceType">
+    <xsd:annotation>
+      <xsd:documentation>The "_Surface" element is the abstract head of the substituition group for all (continuous) surface elements.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="_GeometricPrimitive" substitutionGroup="gml:_Geometry" type="gml:AbstractGeometricPrimitiveType">
+    <xsd:annotation>
+      <xsd:documentation>The "_GeometricPrimitive" element is the abstract head of the substituition group for all (pre- and user-defined) 
+			geometric primitives.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Point" substitutionGroup="gml:_GeometricPrimitive" type="gml:PointType" />
+  <xsd:complexType name="PointType">
+    <xsd:annotation>
+      <xsd:documentation>A Point is defined by a single coordinate tuple.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractGeometricPrimitiveType">
+        <xsd:sequence>
+          <xsd:choice>
+            <xsd:annotation>
+              <xsd:documentation>GML supports two different ways to specify the direct poisiton of a point. 1. The "pos" element is of type 
+							DirectPositionType.</xsd:documentation>
+            </xsd:annotation>
+            <xsd:element ref="gml:pos" />
+            <xsd:element ref="gml:coordinates">
+              <xsd:annotation>
+                <xsd:documentation>Deprecated with GML version 3.1.0 for coordinates with ordinate values that are numbers. Use "pos" 
+								instead. The "coordinates" element shall only be used for coordinates with ordinates that require a string 
+								representation, e.g. DMS representations.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element ref="gml:coord">
+              <xsd:annotation>
+                <xsd:documentation>Deprecated with GML version 3.0. Use "pos" instead. The "coord" element is included for 
+								backwards compatibility with GML 2.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:choice>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="pos" type="gml:DirectPositionType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <sch:pattern name="Check SRS tags">
+          <sch:rule context="gml:pos">
+            <sch:extends rule="CRSLabels" />
+          </sch:rule>
+        </sch:pattern>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="DirectPositionType">
+    <xsd:annotation>
+      <xsd:documentation>DirectPosition instances hold the coordinates for a position within some coordinate reference system (CRS). Since 
+			DirectPositions, as data types, will often be included in larger objects (such as geometry elements) that have references to CRS, the 
+			"srsName" attribute will in general be missing, if this particular DirectPosition is included in a larger element with such a reference to a 
+			CRS. In this case, the CRS is implicitly assumed to take on the value of the containing object's CRS.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="gml:doubleList">
+        <xsd:attributeGroup ref="gml:SRSReferenceGroup" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="doubleList">
+    <xsd:annotation>
+      <xsd:documentation>XML List based on XML Schema double type.  An element of this type contains a space-separated list of double values</xsd:documentation>
+    </xsd:annotation>
+    <xsd:list itemType="xsd:double" />
+  </xsd:simpleType>
+  <xsd:element name="coordinates" type="gml:CoordinatesType">
+    <xsd:annotation>
+      <xsd:documentation>Deprecated with GML version 3.1.0.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="CoordinatesType">
+    <xsd:annotation>
+      <xsd:documentation>Tables or arrays of tuples.  
+        May be used for text-encoding of values from a table.  
+        Actually just a string, but allows the user to indicate which characters are used as separators.  
+        The value of the 'cs' attribute is the separator for coordinate values, 
+        and the value of the 'ts' attribute gives the tuple separator (a single space by default); 
+        the default values may be changed to reflect local usage.
+        Defaults to CSV within a tuple, space between tuples.  
+        However, any string content will be schema-valid.  </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute default="." name="decimal" type="xsd:string" />
+        <xsd:attribute default="," name="cs" type="xsd:string" />
+        <xsd:attribute default=" " name="ts" type="xsd:string" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element name="coord" type="gml:CoordType">
+    <xsd:annotation>
+      <xsd:documentation>Deprecated with GML 3.0 and included for backwards compatibility with GML 2. Use the "pos" element instead.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="CoordType">
+    <xsd:annotation>
+      <xsd:documentation>Represents a coordinate tuple in one, two, or three dimensions. Deprecated with GML 3.0 and replaced by 
+			DirectPositionType.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="X" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="Y" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="Z" type="xsd:decimal" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="LineString" substitutionGroup="gml:_Curve" type="gml:LineStringType" />
+  <xsd:complexType name="LineStringType">
+    <xsd:annotation>
+      <xsd:documentation>A LineString is a special curve that consists of a single segment with linear interpolation. It is defined by two or more coordinate 
+			tuples, with linear interpolation between them. It is backwards compatible with the LineString of GML 2, GM_LineString of ISO 19107 is 
+			implemented by LineStringSegment.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractCurveType">
+        <xsd:sequence>
+          <xsd:choice>
+            <xsd:annotation>
+              <xsd:documentation>GML supports two different ways to specify the control points of a line string. 1. A sequence of "pos" 
+							(DirectPositionType) or "pointProperty" (PointPropertyType) elements. "pos" elements are control points that are only part 
+							of this curve, "pointProperty" elements contain a point that may be referenced from other geometry elements or reference 
+							another point defined outside of this curve (reuse of existing points). 2. The "posList" element allows for a compact way to 
+							specifiy the coordinates of the control points, if all control points are in the same coordinate reference systems and belong 
+							to this curve only. The number of direct positions in the list must be at least two.</xsd:documentation>
+            </xsd:annotation>
+            <xsd:choice minOccurs="2" maxOccurs="unbounded">
+              <xsd:element ref="gml:pos" />
+              <xsd:element ref="gml:pointProperty" />
+              <xsd:element ref="gml:pointRep">
+                <xsd:annotation>
+                  <xsd:documentation>Deprecated with GML version 3.1.0. Use "pointProperty" instead. Included for backwards compatibility 
+									with GML 3.0.0.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="gml:coord">
+                <xsd:annotation>
+                  <xsd:documentation>Deprecated with GML version 3.0. Use "pos" instead. The "coord" element is included for backwards 
+									compatibility with GML 2.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+            <xsd:element ref="gml:posList" />
+            <xsd:element ref="gml:coordinates">
+              <xsd:annotation>
+                <xsd:documentation>Deprecated with GML version 3.1.0. Use "posList" instead.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:choice>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AbstractCurveType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>An abstraction of a curve to support the different levels of complexity. The curve can always be viewed as a geometric 
+			primitive, i.e. is continuous.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractGeometricPrimitiveType" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="pointProperty" type="gml:PointPropertyType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <sch:pattern name="Check either href or content not both">
+          <sch:rule context="gml:pointProperty">
+            <sch:extends rule="hrefOrContent" />
+          </sch:rule>
+        </sch:pattern>
+      </xsd:appinfo>
+      <xsd:documentation>This property element either references a point via the XLink-attributes or contains the point element. pointProperty 
+			is the predefined property which can be used by GML Application Schemas whenever a GML Feature has a property with a value that 
+			is substitutable for Point.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="PointPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A property that has a point as its value domain can either be an appropriate geometry element encapsulated in an 
+			element of this type or an XLink reference to a remote geometry element (where remote includes geometry elements located 
+			elsewhere in the same document). Either the reference or the contained element must be given, but neither both nor none.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence minOccurs="0">
+      <xsd:element ref="gml:Point" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup">
+      <xsd:annotation>
+        <xsd:documentation>This attribute group includes the XLink attributes (see xlinks.xsd). XLink is used in GML to reference remote 
+				resources (including those elsewhere in the same document). A simple link element can be constructed by including a specific 
+				set of XLink attributes. The XML Linking Language (XLink) is currently a Proposed Recommendation of the World Wide Web Consortium. 
+				XLink allows elements to be inserted into XML documents so as to create sophisticated links between resources; such links can be 
+				used to reference remote properties. A simple link element can be used to implement pointer functionality, and this functionality has 
+				been built into various GML 3 elements by including the gml:AssociationAttributeGroup.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attributeGroup>
+  </xsd:complexType>
+  <xsd:element name="pointRep" type="gml:PointPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>Deprecated with GML version 3.1.0. Use "pointProperty" instead. Included for backwards compatibility with GML 3.0.0.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="posList" type="gml:DirectPositionListType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <sch:pattern name="Check SRS tags">
+          <sch:rule context="gml:posList">
+            <sch:extends rule="CRSLabels" />
+          </sch:rule>
+        </sch:pattern>
+      </xsd:appinfo>
+      <xsd:appinfo>
+        <sch:pattern name="Check Dimension">
+          <sch:rule context="gml:posList">
+            <sch:extends rule="Count" />
+          </sch:rule>
+        </sch:pattern>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="DirectPositionListType">
+    <xsd:annotation>
+      <xsd:documentation>DirectPositionList instances hold the coordinates for a sequence of direct positions within the same coordinate 
+			reference system (CRS).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="gml:doubleList">
+        <xsd:attributeGroup ref="gml:SRSReferenceGroup" />
+        <xsd:attribute name="count" type="xsd:positiveInteger" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>"count" allows to specify the number of direct positions in the list. If the attribute count is present then 
+						the attribute srsDimension shall be present, too.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element abstract="true" name="_Curve" substitutionGroup="gml:_GeometricPrimitive" type="gml:AbstractCurveType">
+    <xsd:annotation>
+      <xsd:documentation>The "_Curve" element is the abstract head of the substituition group for all (continuous) curve elements.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="LinearRing" substitutionGroup="gml:_Ring" type="gml:LinearRingType" />
+  <xsd:complexType name="LinearRingType">
+    <xsd:annotation>
+      <xsd:documentation>A LinearRing is defined by four or more coordinate tuples, with linear interpolation between them; the first and last coordinates must be coincident.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractRingType">
+        <xsd:sequence>
+          <xsd:choice>
+            <xsd:annotation>
+              <xsd:documentation>GML supports two different ways to specify the control points of a linear ring.
+1. A sequence of "pos" (DirectPositionType) or "pointProperty" (PointPropertyType) elements. "pos" elements are control points that are only part of this ring, "pointProperty" elements contain a point that may be referenced from other geometry elements or reference another point defined outside of this ring (reuse of existing points).
+2. The "posList" element allows for a compact way to specifiy the coordinates of the control points, if all control points are in the same coordinate reference systems and belong to this ring only. The number of direct positions in the list must be at least four.</xsd:documentation>
+            </xsd:annotation>
+            <xsd:choice minOccurs="4" maxOccurs="unbounded">
+              <xsd:element ref="gml:pos" />
+              <xsd:element ref="gml:pointProperty" />
+              <xsd:element ref="gml:pointRep">
+                <xsd:annotation>
+                  <xsd:documentation>Deprecated with GML version 3.1.0. Use "pointProperty" instead. Included for backwards compatibility with GML 3.0.0.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+            <xsd:element ref="gml:posList" />
+            <xsd:element ref="gml:coordinates">
+              <xsd:annotation>
+                <xsd:documentation>Deprecated with GML version 3.1.0. Use "posList" instead.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="4" maxOccurs="unbounded" ref="gml:coord">
+              <xsd:annotation>
+                <xsd:documentation>Deprecated with GML version 3.0 and included for backwards compatibility with GML 2. Use "pos" elements instead.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:choice>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="surfaceProperty" type="gml:SurfacePropertyType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <sch:pattern name="Check either href or content not both">
+          <sch:rule context="gml:surfaceProperty">
+            <sch:extends rule="hrefOrContent" />
+          </sch:rule>
+        </sch:pattern>
+      </xsd:appinfo>
+      <xsd:documentation>This property element either references a surface via the XLink-attributes or contains the surface element. surfaceProperty is the predefined property which can be used by GML Application Schemas whenever a GML Feature has a property with a value that is substitutable for _Surface.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="SurfacePropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A property that has a surface as its value domain can either be an appropriate geometry element encapsulated in an element of this type or an XLink reference to a remote geometry element (where remote includes geometry elements located elsewhere in the same document). Either the reference or the contained element must be given, but neither both nor none.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence minOccurs="0">
+      <xsd:element ref="gml:_Surface" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup">
+      <xsd:annotation>
+        <xsd:documentation>This attribute group includes the XLink attributes (see xlinks.xsd). XLink is used in GML to reference remote resources (including those elsewhere in the same document). A simple link element can be constructed by including a specific set of XLink attributes. The XML Linking Language (XLink) is currently a Proposed Recommendation of the World Wide Web Consortium. XLink allows elements to be inserted into XML documents so as to create sophisticated links between resources; such links can be used to reference remote properties.
+A simple link element can be used to implement pointer functionality, and this functionality has been built into various GML 3 elements by including the gml:AssociationAttributeGroup.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attributeGroup>
+  </xsd:complexType>
+  <xsd:element abstract="true" name="_Feature" substitutionGroup="gml:_GML" type="gml:AbstractFeatureType" />
+  <xsd:complexType name="AbstractFeatureType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>An abstract feature provides a set of common properties, including id, metaDataProperty, name and description inherited from AbstractGMLType, plus boundedBy.    A concrete feature type must derive from this type and specify additional  properties in an application schema. A feature must possess an identifying attribute ('id' - 'fid' has been deprecated).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractGMLType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="gml:boundedBy" />
+          <xsd:element minOccurs="0" ref="gml:location">
+            <xsd:annotation>
+              <xsd:appinfo>deprecated</xsd:appinfo>
+              <xsd:documentation>deprecated in GML version 3.1</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="boundedBy" type="gml:BoundingShapeType" />
+  <xsd:complexType name="BoundingShapeType">
+    <xsd:annotation>
+      <xsd:documentation>Bounding shape.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element ref="gml:Envelope" />
+        <xsd:element ref="gml:Null" />
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Envelope" type="gml:EnvelopeType" />
+  <xsd:complexType name="EnvelopeType">
+    <xsd:annotation>
+      <xsd:documentation>Envelope defines an extent using a pair of positions defining opposite corners in arbitrary dimensions. The first direct 
+			position is the "lower corner" (a coordinate position consisting of all the minimal ordinates for each dimension for all points within the envelope), 
+			the second one the "upper corner" (a coordinate position consisting of all the maximal ordinates for each dimension for all points within the 
+			envelope).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice>
+      <xsd:sequence>
+        <xsd:element name="lowerCorner" type="gml:DirectPositionType" />
+        <xsd:element name="upperCorner" type="gml:DirectPositionType" />
+      </xsd:sequence>
+      <xsd:element minOccurs="2" maxOccurs="2" ref="gml:coord">
+        <xsd:annotation>
+          <xsd:appinfo>deprecated</xsd:appinfo>
+          <xsd:documentation>deprecated with GML version 3.0</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="2" maxOccurs="2" ref="gml:pos">
+        <xsd:annotation>
+          <xsd:appinfo>deprecated</xsd:appinfo>
+          <xsd:documentation>Deprecated with GML version 3.1. Use the explicit properties "lowerCorner" and "upperCorner" instead.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ref="gml:coordinates">
+        <xsd:annotation>
+          <xsd:documentation>Deprecated with GML version 3.1.0. Use the explicit properties "lowerCorner" and "upperCorner" instead.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:choice>
+    <xsd:attributeGroup ref="gml:SRSReferenceGroup" />
+  </xsd:complexType>
+  <xsd:element name="Null" type="gml:NullType" />
+  <xsd:simpleType name="NullType">
+    <xsd:annotation>
+      <xsd:documentation>Utility type for null elements.  The value may be selected from one of the enumerated tokens, or may be a URI in which case this should identify a resource which describes the reason for the null. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:union memberTypes="gml:NullEnumeration xsd:anyURI" />
+  </xsd:simpleType>
+  <xsd:simpleType name="NullEnumeration">
+    <xsd:annotation>
+      <xsd:documentation> Some common reasons for a null value:   
+			
+        innapplicable - the object does not have a value
+        missing - The correct value is not readily available to the sender of this data.  
+                           Furthermore, a correct value may not exist.
+        template - the value will be available later
+        unknown - The correct value is not known to, and not computable by, the sender of this data. 
+                           However, a correct value probably exists.
+        withheld - the value is not divulged 
+        
+        other:reason - as indicated by "reason" string
+        
+        Specific communities may agree to assign more strict semantics when these terms are used in a particular context.  
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:union>
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="inapplicable" />
+          <xsd:enumeration value="missing" />
+          <xsd:enumeration value="template" />
+          <xsd:enumeration value="unknown" />
+          <xsd:enumeration value="withheld" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="other:\w{2,}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:union>
+  </xsd:simpleType>
+  <xsd:element name="location" type="gml:LocationPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>Deprecated in GML 3.1.0</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="LocationPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>Convenience property for generalised location.  
+      A representative location for plotting or analysis.  
+      Often augmented by one or more additional geometry properties with more specific semantics.</xsd:documentation>
+      <xsd:documentation>Deprecated in GML 3.1.0</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence minOccurs="0">
+      <xsd:choice>
+        <xsd:element ref="gml:_Geometry" />
+        <xsd:element ref="gml:LocationKeyWord" />
+        <xsd:element ref="gml:LocationString" />
+        <xsd:element ref="gml:Null" />
+      </xsd:choice>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup" />
+  </xsd:complexType>
+  <xsd:element name="LocationKeyWord" type="gml:CodeType" />
+  <xsd:element name="LocationString" type="gml:StringOrRefType" />
+  <xsd:element name="featureMember" type="gml:FeaturePropertyType" />
+  <xsd:complexType name="FeaturePropertyType">
+    <xsd:annotation>
+      <xsd:documentation>Container for a feature - follow gml:AssociationType pattern.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence minOccurs="0">
+      <xsd:element ref="gml:_Feature" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup" />
+  </xsd:complexType>
+  <xsd:complexType name="CodeListType">
+    <xsd:annotation>
+      <xsd:documentation>List of values on a uniform nominal scale.  List of text tokens.   
+      In a list context a token should not include any spaces, so xsd:Name is used instead of xsd:string.   
+      If a codeSpace attribute is present, then its value is a reference to 
+      a Reference System for the value, a dictionary or code list.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="gml:NameList">
+        <xsd:attribute name="codeSpace" type="xsd:anyURI" use="optional" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="NameList">
+    <xsd:annotation>
+      <xsd:documentation>XML List based on XML Schema Name type.  An element of this type contains a space-separated list of Name values</xsd:documentation>
+    </xsd:annotation>
+    <xsd:list itemType="xsd:Name" />
+  </xsd:simpleType>
+  <xsd:complexType name="AngleType">
+    <xsd:annotation>
+      <xsd:documentation>Value of an angle quantity recorded as a single number, with its units. Uses the MeasureType with the restriction that the unit of measure referenced by uom must be suitable for an angle, such as degrees or radians.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:restriction base="gml:MeasureType" />
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="MeasureType">
+    <xsd:annotation>
+      <xsd:documentation>[MODIFIED from GML 3.2] gml:MeasureType supports recording an amount encoded as a value of XML Schema double, together with a units of measure indicated by an attribute uom, short for “units Of measure”. The value of the uom attribute identifies a reference system for the amount, usually a ratio or interval scale.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:double">
+        <xsd:attribute name="uom" type="gml:UomIdentifier" use="required" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="UomIdentifier">
+    <xsd:annotation>
+      <xsd:documentation>The simple type gml:UomIdentifer defines the syntax and value space of the unit of measure identifier.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:union memberTypes="gml:UomSymbol gml:UomURI" />
+  </xsd:simpleType>
+  <xsd:simpleType name="UomSymbol">
+    <xsd:annotation>
+      <xsd:documentation>This type specifies a character string of length at least one, and restricted such that it must not contain any of the following characters: “:” (colon), “ “ (space), (newline), (carriage return), (tab). This allows values corresponding to familiar abbreviations, such as “kg”, “m/s”, etc. 
+It is recommended that the symbol be an identifier for a unit of measure as specified in the “Unified Code of Units of Measure" (UCUM) (http://aurora.regenstrief.org/UCUM). This provides a set of symbols and a grammar for constructing identifiers for units of measure that are unique, and may be easily entered with a keyboard supporting the limited character set known as 7-bit ASCII. ISO 2955 formerly provided a specification with this scope, but was withdrawn in 2001. UCUM largely follows ISO 2955 with modifications to remove ambiguities and other problems.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[^: \n\r\t]+" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="UomURI">
+    <xsd:annotation>
+      <xsd:documentation>This type specifies a URI, restricted such that it must start with one of the following sequences: “#”, “./”, “../”, or a string of characters followed by a “:”. These patterns ensure that the most common URI forms are supported, including absolute and relative URIs and URIs that are simple fragment identifiers, but prohibits certain forms of relative URI that could be mistaken for unit of measure symbol . 
+NOTE	It is possible to re-write such a relative URI to conform to the restriction (e.g. “./m/s”).
+In an instance document, on elements of type gml:MeasureType the mandatory uom attribute shall carry a value corresponding to either 
+-	a conventional unit of measure symbol,
+-	a link to a definition of a unit of measure that does not have a conventional symbol, or when it is desired to indicate a precise or variant definition.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:anyURI">
+      <xsd:pattern value="([a-zA-Z][a-zA-Z0-9\-\+\.]*:|\.\./|\./|#).*" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="MeasureListType">
+    <xsd:annotation>
+      <xsd:documentation>List of numbers with a uniform scale.  
+      The value of uom (Units Of Measure) attribute is a reference to 
+      a Reference System for the amount, either a ratio or position scale. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="gml:doubleList">
+        <xsd:attribute name="uom" type="xsd:anyURI" use="required" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element name="centerOf" type="gml:PointPropertyType" />
+  <xsd:element name="extentOf" type="gml:SurfacePropertyType" />
+  <xsd:element abstract="true" name="_MetaData" substitutionGroup="gml:_Object" type="gml:AbstractMetaDataType">
+    <xsd:annotation>
+      <xsd:documentation>Abstract element which acts as the head of a substitution group for packages of MetaData properties.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="AbstractMetaDataType" abstract="true" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation>An abstract base type for complex metadata types.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ref="gml:id" use="optional" />
+  </xsd:complexType>
+  <xsd:element name="Observation" substitutionGroup="gml:_Feature" type="gml:ObservationType" />
+  <xsd:complexType name="ObservationType">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element ref="gml:validTime" />
+          <xsd:element minOccurs="0" ref="gml:using" />
+          <xsd:element minOccurs="0" ref="gml:target" />
+          <xsd:element ref="gml:resultOf" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="validTime" type="gml:TimePrimitivePropertyType" />
+  <xsd:complexType name="TimePrimitivePropertyType">
+    <xsd:sequence minOccurs="0">
+      <xsd:element ref="gml:_TimePrimitive" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup" />
+  </xsd:complexType>
+  <xsd:element abstract="true" name="_TimePrimitive" substitutionGroup="gml:_TimeObject" type="gml:AbstractTimePrimitiveType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">This abstract element acts as the head of the substitution group for temporal primitives.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="AbstractTimePrimitiveType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">The abstract supertype for temporal primitives.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractTimeObjectType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="relatedTime" type="gml:RelatedTimeType" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AbstractTimeObjectType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">The abstract supertype for temporal objects.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractGMLType" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RelatedTimeType">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:TimePrimitivePropertyType">
+        <xsd:attribute name="relativePosition">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="Before" />
+              <xsd:enumeration value="After" />
+              <xsd:enumeration value="Begins" />
+              <xsd:enumeration value="Ends" />
+              <xsd:enumeration value="During" />
+              <xsd:enumeration value="Equals" />
+              <xsd:enumeration value="Contains" />
+              <xsd:enumeration value="Overlaps" />
+              <xsd:enumeration value="Meets" />
+              <xsd:enumeration value="OverlappedBy" />
+              <xsd:enumeration value="MetBy" />
+              <xsd:enumeration value="BegunBy" />
+              <xsd:enumeration value="EndedBy" />
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="true" name="_TimeObject" substitutionGroup="gml:_GML" type="gml:AbstractTimeObjectType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">This abstract element acts as the head of the substitution group for temporal primitives and complexes.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="using" type="gml:FeaturePropertyType">
+    <xsd:annotation>
+      <xsd:documentation>This element contains or points to a description of a sensor, instrument or procedure used for the observation</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="target" type="gml:TargetPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>This element contains or points to the specimen, region or station which is the object of the observation</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="TargetPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>Container for an object representing the target or subject of an observation.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence minOccurs="0">
+      <xsd:choice>
+        <xsd:element ref="gml:_Feature" />
+        <xsd:element ref="gml:_Geometry" />
+      </xsd:choice>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup" />
+  </xsd:complexType>
+  <xsd:element name="resultOf" type="gml:AssociationType">
+    <xsd:annotation>
+      <xsd:documentation>The result of the observation: an image, external object, etc</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="AssociationType">
+    <xsd:annotation>
+      <xsd:documentation>A pattern or base for derived types used to specify complex types corresponding to an  unspecified UML association - either composition or aggregation.  Restricts the cardinality of Objects contained in the association to a maximum of one.  An instance of this type can contain an element representing an Object, or serve as a pointer to a remote Object.  
+
+Descendents of this type can be restricted in an application schema to 
+* allow only specified classes as valid participants in the aggregation
+* allow only association by reference (i.e. empty the content model) or by value (i.e. remove the xlinks).    
+
+When used for association by reference, the value of the gml:remoteSchema attribute can be used to locate a schema fragment that constrains the target instance.   
+
+In many cases it is desirable to impose the constraint prohibiting the occurence of both reference and value in the same instance, as that would be ambiguous.  This is accomplished by adding a directive in the annotation element of the element declaration.  This directive can be in the form of normative prose, or can use a Schematron pattern to automatically constrain co-occurrence - see the declaration for _strictAssociation below.   
+
+If co-occurence is not prohibited, then both a link and content may be present.  If this occurs in an instance, then the rule for interpretation is that the instance found by traversing the href provides the normative value of the property, and should be used when possible.  The value(s) included as content may be used if the remote instance cannot be resolved.  This may be considered to be a "cached" version of the value(s).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence minOccurs="0">
+      <xsd:element ref="gml:_Object" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup" />
+  </xsd:complexType>
+  <xsd:element name="TimePeriod" substitutionGroup="gml:_TimeGeometricPrimitive" type="gml:TimePeriodType" />
+  <xsd:complexType name="TimePeriodType">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractTimeGeometricPrimitiveType">
+        <xsd:sequence>
+          <xsd:choice>
+            <xsd:element name="beginPosition" type="gml:TimePositionType" />
+            <xsd:element name="begin" type="gml:TimeInstantPropertyType" />
+          </xsd:choice>
+          <xsd:choice>
+            <xsd:element name="endPosition" type="gml:TimePositionType" />
+            <xsd:element name="end" type="gml:TimeInstantPropertyType" />
+          </xsd:choice>
+          <xsd:group minOccurs="0" ref="gml:timeLength" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AbstractTimeGeometricPrimitiveType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">The abstract supertype for temporal geometric primitives.
+       A temporal geometry must be associated with a temporal reference system via URI. 
+       The Gregorian calendar with UTC is the default reference system, following ISO 
+       8601. Other reference systems in common use include the GPS calendar and the 
+       Julian calendar.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractTimePrimitiveType">
+        <xsd:attribute default="#ISO-8601" name="frame" type="xsd:anyURI" use="optional" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TimePositionType" final="#all">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Direct representation of a temporal position. 
+      Indeterminate time values are also allowed, as described in ISO 19108. The indeterminatePosition 
+      attribute can be used alone or it can qualify a specific value for temporal position (e.g. before 
+      2002-12, after 1019624400). 
+      For time values that identify position within a calendar, the calendarEraName attribute provides 
+      the name of the calendar era to which the date is referenced (e.g. the Meiji era of the Japanese calendar).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="gml:TimePositionUnion">
+        <xsd:attribute default="#ISO-8601" name="frame" type="xsd:anyURI" use="optional" />
+        <xsd:attribute name="calendarEraName" type="xsd:string" use="optional" />
+        <xsd:attribute name="indeterminatePosition" type="gml:TimeIndeterminateValueType" use="optional" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="TimePositionUnion">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">The ISO 19108:2002 hierarchy of subtypes for temporal position are collapsed 
+      by defining a union of XML Schema simple types for indicating temporal position relative 
+      to a specific reference system. 
+      
+      Dates and dateTime may be indicated with varying degrees of precision.  
+      dateTime by itself does not allow right-truncation, except for fractions of seconds. 
+      When used with non-Gregorian calendars based on years, months, days, 
+      the same lexical representation should still be used, with leading zeros added if the 
+      year value would otherwise have fewer than four digits.  
+      
+      An ordinal position may be referenced via URI identifying the definition of an ordinal era.  
+      
+      A time coordinate value is indicated as a decimal (e.g. UNIX time, GPS calendar).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:union memberTypes="gml:CalDate xsd:time xsd:dateTime xsd:anyURI xsd:decimal" />
+  </xsd:simpleType>
+  <xsd:simpleType name="CalDate">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Calendar dates may be indicated with varying degrees of precision, 
+      using year, year-month, date. 
+      When used with non-Gregorian calendars based on years, months, days, 
+      the same lexical representation should still be used, with leading zeros added if the 
+      year value would otherwise have fewer than four digits.  
+      time is used for a position that recurs daily (see clause 5.4.4.2 of ISO 19108:2002).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:union memberTypes="xsd:date xsd:gYearMonth xsd:gYear" />
+  </xsd:simpleType>
+  <xsd:simpleType name="TimeIndeterminateValueType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">This enumerated data type specifies values for indeterminate positions.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="after" />
+      <xsd:enumeration value="before" />
+      <xsd:enumeration value="now" />
+      <xsd:enumeration value="unknown" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="TimeInstantPropertyType">
+    <xsd:sequence minOccurs="0">
+      <xsd:element ref="gml:TimeInstant" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup" />
+  </xsd:complexType>
+  <xsd:element name="TimeInstant" substitutionGroup="gml:_TimeGeometricPrimitive" type="gml:TimeInstantType" />
+  <xsd:complexType name="TimeInstantType">
+    <xsd:annotation>
+      <xsd:documentation>Omit back-pointers begunBy, endedBy.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractTimeGeometricPrimitiveType">
+        <xsd:sequence>
+          <xsd:element ref="gml:timePosition" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="timePosition" type="gml:TimePositionType">
+    <xsd:annotation>
+      <xsd:documentation>Direct representation of a temporal position</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="_TimeGeometricPrimitive" substitutionGroup="gml:_TimePrimitive" type="gml:AbstractTimeGeometricPrimitiveType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">This abstract element acts as the head of the substitution group for temporal geometric primitives.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:group name="timeLength">
+    <xsd:annotation>
+      <xsd:documentation>This model group is provided as an alternative to the abstract susbstitutionGroup head _timeLength.
+		ISO 19136 comment 411</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice>
+      <xsd:element ref="gml:duration" />
+      <xsd:element ref="gml:timeInterval" />
+    </xsd:choice>
+  </xsd:group>
+  <xsd:element name="duration" type="xsd:duration">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">This element is an instance of the primitive xsd:duration simple type to 
+      enable use of the ISO 8601 syntax for temporal length (e.g. P5DT4H30M). 
+      It is a valid subtype of TimeDurationType according to section 3.14.6, 
+      rule 2.2.4 in XML Schema, Part 1.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="timeInterval" type="gml:TimeIntervalLengthType">
+    <xsd:annotation>
+      <xsd:documentation>This element is a valid subtype of TimeDurationType 
+			according to section 3.14.6, rule 2.2.4 in XML Schema, Part 1.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="TimeIntervalLengthType" final="#all">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">This type extends the built-in xsd:decimal simple type to allow floating-point 
+      values for temporal length. According to  the ISO 11404 model you have to use 
+      positiveInteger together with appropriate values for radix and factor. The 
+      resolution of the time interval is to one radix ^(-factor) of the specified 
+      time unit (e.g. unit="second", radix="10", factor="3" specifies a resolution 
+      of milliseconds). It is a subtype of TimeDurationType.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:decimal">
+        <xsd:attribute name="unit" type="gml:TimeUnitType" use="required" />
+        <xsd:attribute name="radix" type="xsd:positiveInteger" use="optional" />
+        <xsd:attribute name="factor" type="xsd:integer" use="optional" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="TimeUnitType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Standard units for measuring time intervals (see ISO 31-1).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:union>
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="year" />
+          <xsd:enumeration value="day" />
+          <xsd:enumeration value="hour" />
+          <xsd:enumeration value="minute" />
+          <xsd:enumeration value="second" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="other:\w{2,}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:union>
+  </xsd:simpleType>
+  <xsd:element name="multiExtentOf" type="gml:MultiSurfacePropertyType" />
+  <xsd:complexType name="MultiSurfacePropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A property that has a collection of surfaces as its value domain can either be an appropriate geometry element encapsulated in an element of this type or an XLink reference to a remote geometry element (where remote includes geometry elements located elsewhere in the same document). Either the reference or the contained element must be given, but neither both nor none.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence minOccurs="0">
+      <xsd:element ref="gml:MultiSurface" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="gml:AssociationAttributeGroup">
+      <xsd:annotation>
+        <xsd:documentation>This attribute group includes the XLink attributes (see xlinks.xsd). XLink is used in GML to reference remote resources (including those elsewhere in the same document). A simple link element can be constructed by including a specific set of XLink attributes. The XML Linking Language (XLink) is currently a Proposed Recommendation of the World Wide Web Consortium. XLink allows elements to be inserted into XML documents so as to create sophisticated links between resources; such links can be used to reference remote properties.
+A simple link element can be used to implement pointer functionality, and this functionality has been built into various GML 3 elements by including the gml:AssociationAttributeGroup.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attributeGroup>
+  </xsd:complexType>
+  <xsd:element name="MultiSurface" substitutionGroup="gml:_GeometricAggregate" type="gml:MultiSurfaceType" />
+  <xsd:complexType name="MultiSurfaceType">
+    <xsd:annotation>
+      <xsd:documentation>A MultiSurface is defined by one or more Surfaces, referenced through surfaceMember elements.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractGeometricAggregateType">
+        <xsd:sequence>
+          <xsd:annotation>
+            <xsd:documentation>The members of the geometric aggregate can be specified either using the "standard" property or the array property style. It is also valid to use both the "standard" and the array property style in the same collection.
+NOTE: Array properties cannot reference remote geometry elements.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" ref="gml:surfaceMember" />
+          <xsd:element minOccurs="0" ref="gml:surfaceMembers" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AbstractGeometricAggregateType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>This is the abstract root type of the geometric aggregates.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractGeometryType" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="surfaceMember" type="gml:SurfacePropertyType">
+    <xsd:annotation>
+      <xsd:documentation>This property element either references a surface via the XLink-attributes or contains the surface element. A surface element is any element which is substitutable for "_Surface".</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="surfaceMembers" type="gml:SurfaceArrayPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>This property element contains a list of surfaces. The order of the elements is significant and shall be preserved when processing the array.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="SurfaceArrayPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A container for an array of surfaces. The elements are always contained in the array property, referencing geometry elements or arrays of geometry elements is not supported.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" ref="gml:_Surface" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element abstract="true" name="_GeometricAggregate" substitutionGroup="gml:_Geometry" type="gml:AbstractGeometricAggregateType">
+    <xsd:annotation>
+      <xsd:documentation>The "_GeometricAggregate" element is the abstract head of the substituition group for all geometric aggremates.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="_FeatureCollection" substitutionGroup="gml:_Feature" type="gml:AbstractFeatureCollectionType" />
+  <xsd:complexType name="AbstractFeatureCollectionType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A feature collection contains zero or more features.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" ref="gml:featureMember" />
+          <xsd:element minOccurs="0" ref="gml:featureMembers" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="featureMembers" type="gml:FeatureArrayPropertyType" />
+  <xsd:complexType name="FeatureArrayPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>Container for features - follow gml:ArrayAssociationType pattern.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" ref="gml:_Feature" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CircleByCenterPoint" substitutionGroup="gml:ArcByCenterPoint" type="gml:CircleByCenterPointType" />
+  <xsd:complexType name="CircleByCenterPointType">
+    <xsd:annotation>
+      <xsd:documentation>A CircleByCenterPoint is an ArcByCenterPoint with identical start and end angle to form a full circle. Again, this represenation can be used only in 2D.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:ArcByCenterPointType" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArcByCenterPointType">
+    <xsd:annotation>
+      <xsd:documentation>This variant of the arc requires that the points on the arc have to be computed instead of storing the coordinates directly. The control point is the center point of the arc plus the radius and the bearing at start and end. This represenation can be used only in 2D.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractCurveSegmentType">
+        <xsd:sequence>
+          <xsd:choice>
+            <xsd:annotation>
+              <xsd:documentation>GML supports two different ways to specify the control points of a curve segment.
+1. A "pos" (DirectPositionType) or "pointProperty" (PointPropertyType) element. The "pos" element contains a center point that is only part of this curve segment, a "pointProperty" element contains a point that may be referenced from other geometry elements or reference another point defined outside of this curve segment (reuse of existing points).
+2. The "posList" element can be used to specifiy the coordinates of the center point, too. The number of direct positions in the list must be one.</xsd:documentation>
+            </xsd:annotation>
+            <xsd:choice>
+              <xsd:element ref="gml:pos" />
+              <xsd:element ref="gml:pointProperty" />
+              <xsd:element ref="gml:pointRep">
+                <xsd:annotation>
+                  <xsd:documentation>Deprecated with GML version 3.1.0. Use "pointProperty" instead. Included for backwards compatibility with GML 3.0.0.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+            <xsd:element ref="gml:posList" />
+            <xsd:element ref="gml:coordinates">
+              <xsd:annotation>
+                <xsd:documentation>Deprecated with GML version 3.1.0. Use "posList" instead.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:choice>
+          <xsd:element name="radius" type="gml:LengthType">
+            <xsd:annotation>
+              <xsd:documentation>The radius of the arc.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="startAngle" type="gml:AngleType">
+            <xsd:annotation>
+              <xsd:documentation>The bearing of the arc at the start.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="endAngle" type="gml:AngleType">
+            <xsd:annotation>
+              <xsd:documentation>The bearing of the arc at the end.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute fixed="circularArcCenterPointWithRadius" name="interpolation" type="gml:CurveInterpolationType">
+          <xsd:annotation>
+            <xsd:documentation>The attribute "interpolation" specifies the curve interpolation mechanism used for this segment. This mechanism
+uses the control points and control parameters to determine the position of this curve segment. For an ArcByCenterPoint the interpolation is fixed as "circularArcCenterPointWithRadius".</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute fixed="1" name="numArc" type="xsd:integer" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Since this type describes always a single arc, the attribute is fixed to "1".</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AbstractCurveSegmentType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Curve segment defines a homogeneous segment of a curve.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence />
+    <xsd:attribute default="0" name="numDerivativesAtStart" type="xsd:integer" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The attribute "numDerivativesAtStart" specifies the type of continuity between this curve segment and its predecessor. If this is the first curve segment in the curve, one of these values, as appropriate, is ignored. The default value of "0" means simple continuity, which is a mandatory minimum level of continuity. This level is referred to as "C 0 " in mathematical texts. A value of 1 means that the function and its first derivative are continuous at the appropriate end point: "C 1 " continuity. A value of "n" for any integer means the function and its first n derivatives are continuous: "C n " continuity.
+NOTE: Use of these values is only appropriate when the basic curve definition is an underdetermined system. For example, line string segments cannot support continuity above C 0 , since there is no spare control parameter to adjust the incoming angle at the end points of the segment. Spline functions on the other hand often have extra degrees of freedom on end segments that allow them to adjust the values of the derivatives to support C 1 or higher continuity.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute default="0" name="numDerivativesAtEnd" type="xsd:integer" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The attribute "numDerivativesAtEnd" specifies the type of continuity between this curve segment and its successor. If this is the last curve segment in the curve, one of these values, as appropriate, is ignored. The default value of "0" means simple continuity, which is a mandatory minimum level of continuity. This level is referred to as "C 0 " in mathematical texts. A value of 1 means that the function and its first derivative are continuous at the appropriate end point: "C 1 " continuity. A value of "n" for any integer means the function and its first n derivatives are continuous: "C n " continuity.
+NOTE: Use of these values is only appropriate when the basic curve definition is an underdetermined system. For example, line string segments cannot support continuity above C 0 , since there is no spare control parameter to adjust the incoming angle at the end points of the segment. Spline functions on the other hand often have extra degrees of freedom on end segments that allow them to adjust the values of the derivatives to support C 1 or higher continuity.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute default="0" name="numDerivativeInterior" type="xsd:integer" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The attribute "numDerivativesInterior" specifies the type of continuity that is guaranteed interior to the curve. The default value of "0" means simple continuity, which is a mandatory minimum level of continuity. This level is referred to as "C 0 " in mathematical texts. A value of 1 means that the function and its first derivative are continuous at the appropriate end point: "C 1 " continuity. A value of "n" for any integer means the function and its first n derivatives are continuous: "C n " continuity.
+NOTE: Use of these values is only appropriate when the basic curve definition is an underdetermined system. For example, line string segments cannot support continuity above C 0 , since there is no spare control parameter to adjust the incoming angle at the end points of the segment. Spline functions on the other hand often have extra degrees of freedom on end segments that allow them to adjust the values of the derivatives to support C 1 or higher continuity.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="LengthType">
+    <xsd:annotation>
+      <xsd:documentation>Value of a length (or distance) quantity, with its units. Uses the MeasureType with the restriction that the unit of measure referenced by uom must be suitable for a length, such as metres or feet.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:restriction base="gml:MeasureType" />
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="CurveInterpolationType">
+    <xsd:annotation>
+      <xsd:documentation>CurveInterpolationType is a list of codes that may be used to identify the interpolation mechanisms specified by an
+application schema.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="linear" />
+      <xsd:enumeration value="geodesic" />
+      <xsd:enumeration value="circularArc3Points" />
+      <xsd:enumeration value="circularArc2PointWithBulge" />
+      <xsd:enumeration value="circularArcCenterPointWithRadius" />
+      <xsd:enumeration value="elliptical" />
+      <xsd:enumeration value="clothoid" />
+      <xsd:enumeration value="conic" />
+      <xsd:enumeration value="polynomialSpline" />
+      <xsd:enumeration value="cubicSpline" />
+      <xsd:enumeration value="rationalSpline" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="ArcByCenterPoint" substitutionGroup="gml:_CurveSegment" type="gml:ArcByCenterPointType" />
+  <xsd:element abstract="true" name="_CurveSegment" type="gml:AbstractCurveSegmentType">
+    <xsd:annotation>
+      <xsd:documentation>The "_CurveSegment" element is the abstract head of the substituition group for all curve segment elements, i.e. continuous segments of the same interpolation mechanism.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Curve" substitutionGroup="gml:_Curve" type="gml:CurveType" />
+  <xsd:complexType name="CurveType">
+    <xsd:annotation>
+      <xsd:documentation>Curve is a 1-dimensional primitive. Curves are continuous, connected, and have a measurable length in terms of the coordinate system. 
+				A curve is composed of one or more curve segments. Each curve segment within a curve may be defined using a different interpolation method. The curve segments are connected to one another, with the end point of each segment except the last being the start point of the next segment in the segment list.
+				The orientation of the curve is positive.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="gml:AbstractCurveType">
+        <xsd:sequence>
+          <xsd:element ref="gml:segments">
+            <xsd:annotation>
+              <xsd:documentation>This element encapsulates the segments of the curve.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="segments" type="gml:CurveSegmentArrayPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>This property element contains a list of curve segments. The order of the elements is significant and shall be preserved when processing the array.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="CurveSegmentArrayPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A container for an array of curve segments.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" ref="gml:_CurveSegment" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
