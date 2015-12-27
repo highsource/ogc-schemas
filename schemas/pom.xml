@@ -40,12 +40,38 @@
 										<exclude name="**/*.zip"/>
 									</patternset>
 								</unzip>
+								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources-original/ogc">
+									<patternset>
+										<include name="eop/eop-1_0_0.zip"/>
+									</patternset>
+								</unzip>
+								<unzip src="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip" dest="src/main/resources-original/ogc"/>
+								<delete file="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip"/>
+								<move file="${basedir}/src/main/resources-original/ogc/eop/1.0.0" tofile="src/main/resources-original/ogc/eop/1.0"/>
 							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>
 						</goals>
 					</execution>
+					<!--execution>
+						<id>unpack-eop</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<target>
+								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources-original/ogc">
+									<patternset>
+										<include name="eop/eop-1_0_0.zip"/>
+									</patternset>
+								</unzip>
+								<unzip src="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip" dest="src/main/resources-original/ogc"/>
+								<delete file="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip"/>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution-->
 					<execution>
 						<id>copy-original-resources</id>
 						<phase>generate-sources</phase>

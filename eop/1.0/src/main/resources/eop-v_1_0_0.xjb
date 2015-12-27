@@ -1,0 +1,33 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/eop/1.0/atm.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.eop.atm.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/eop/1.0/eop.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.eop.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/eop/1.0/opt.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.eop.opt.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/eop/1.0/sar.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.eop.sar.v_1_0"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<!--jaxb:bindings schemaLocation="http://schemas.opengis.net/eop/1.0/eop.xsd" node="/xs:schema">
+		<jaxb:bindings node="xs:complexType[@name='EarthObservationType']/xs:complexContent/xs:extension/xs:sequence/xs:element[@name='metaDataProperty']">
+			<jaxb:property name="earthObservationMetaDataProperty"/>
+		</jaxb:bindings>
+	</jaxb:bindings-->
+
+</jaxb:bindings>
