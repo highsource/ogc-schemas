@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sps:DescribeTaskingResponse xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <sps:taskingParameters name="CoverageProgrammingRequest">
+    <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/CoverageProgrammingRequest">
+      <swe:field name="QualityOfService">
+        <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/QualityOfService" optional="true">
+          <swe:label>Quality of Service</swe:label>
+          <swe:field name="PriorityLevel">
+            <swe:Category definition="http://www.opengis.net/def/property/OGC-EO/0/PriorityLevel">
+              <swe:constraint>
+                <swe:AllowedTokens>
+                  <swe:value>STANDARD</swe:value>
+                  <swe:value>HIGH</swe:value>
+                </swe:AllowedTokens>
+              </swe:constraint>
+              <swe:value>STANDARD</swe:value>
+            </swe:Category>
+          </swe:field>
+        </swe:DataRecord>
+      </swe:field>
+      <swe:field name="RegionOfInterest">
+        <swe:DataChoice definition="http://www.opengis.net/def/property/OGC-EO/0/RegionOfInterest" updatable="false">
+          <swe:label>Region of Interest</swe:label>
+          <swe:item name="Polygon">
+            <swe:DataRecord definition="http://www.opengis.net/def/objectType/ISO-19107/2003/GM_Polygon">
+              <swe:field name="Exterior">
+                <swe:DataArray definition="http://www.opengis.net/def/objectType/ISO-19107/2003/GM_Ring">
+                  <swe:elementCount>
+                    <swe:Count/>
+                  </swe:elementCount>
+                  <swe:elementType name="Point">
+                    <swe:Vector referenceFrame="http://www.opengis.net/def/crs/EPSG/0/4326">
+                      <swe:coordinate name="Lat">
+                        <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/GeodeticLatitude" axisID="Lat">
+                          <swe:uom code="deg"/>
+                        </swe:Quantity>
+                      </swe:coordinate>
+                      <swe:coordinate name="Lon">
+                        <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/Longitude" axisID="Long">
+                          <swe:uom code="deg"/>
+                        </swe:Quantity>
+                      </swe:coordinate>
+                    </swe:Vector>
+                  </swe:elementType>
+                </swe:DataArray>
+              </swe:field>
+            </swe:DataRecord>
+          </swe:item>
+          <swe:item name="Circle">
+            <swe:DataRecord definition="http://www.opengis.net/def/objectType/ISO-19107/2003/GM_Circle">
+              <swe:field name="Center">
+                <swe:Vector referenceFrame="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <swe:coordinate name="Lat">
+                    <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/GeodeticLatitude" axisID="Lat">
+                      <swe:uom code="deg"/>
+                    </swe:Quantity>
+                  </swe:coordinate>
+                  <swe:coordinate name="Lon">
+                    <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/Longitude" axisID="Long">
+                      <swe:uom code="deg"/>
+                    </swe:Quantity>
+                  </swe:coordinate>
+                </swe:Vector>
+              </swe:field>
+              <swe:field name="Radius">
+                <swe:Quantity definition="http://www.opengis.net/def/property/OGC-EO/0/Radius">
+                  <swe:uom code="km"/>
+                </swe:Quantity>
+              </swe:field>
+            </swe:DataRecord>
+          </swe:item>
+        </swe:DataChoice>
+      </swe:field>
+      <swe:field name="TimeOfInterest">
+        <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/TimeOfInterest">
+          <swe:field name="SurveyPeriod">
+            <swe:TimeRange definition="http://www.opengis.net/def/property/OGC-EO/0/SurveyPeriod">
+              <swe:label>Survey Period</swe:label>
+              <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+            </swe:TimeRange>
+          </swe:field>
+        </swe:DataRecord>
+      </swe:field>
+      <!-- Acquisition Type and Parameters -->
+      <swe:field name="AcquisitionType">
+        <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/AcquisitionType">
+          <swe:field name="MonoscopicAcquisition">
+            <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/MonoscopicAcquisition">
+              <swe:field name="AcquisitionAngle">
+                <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/IncidenceRange">
+                  <swe:field name="ElevationAngle">
+                    <swe:QuantityRange definition="http://www.opengis.net/def/property/OGC-EO/0/ElevationAngle">
+                      <swe:label>Elevation Incidence Angle Range</swe:label>
+                      <swe:description>Range of acceptable elevation incidence angles</swe:description>
+                      <swe:uom code="deg"/>
+                      <swe:constraint>
+                        <swe:AllowedValues>
+                          <swe:interval>0 31</swe:interval>
+                        </swe:AllowedValues>
+                      </swe:constraint>
+                      <swe:value>0 31</swe:value>
+                    </swe:QuantityRange>
+                  </swe:field>
+                </swe:DataRecord>
+              </swe:field>
+              <swe:field name="AcquisitionParameters">
+                <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/sar/AcquisitionParametersSAR">
+                  <swe:field name="InstrumentMode">
+                    <swe:Category definition="http://www.opengis.net/def/property/OGC-EO/0/InstrumentMode">
+                      <gml:name>Instrument Mode</gml:name>
+                      <swe:codeSpace xlink:href="http://www.dlr.de/ogc-def/TerraSARX/Modes/"/>
+                      <swe:constraint>
+                        <swe:AllowedTokens>
+                          <swe:value>ScanSAR</swe:value>
+                          <swe:value>StripMap</swe:value>
+                          <swe:value>SpotLight</swe:value>
+                        </swe:AllowedTokens>
+                      </swe:constraint>
+                      <swe:value>StripMap</swe:value>
+                    </swe:Category>
+                  </swe:field>
+                  <swe:field name="PolarizationMode">
+                    <swe:Category definition="http://www.opengis.net/def/property/OGC-EO/0/sar/PolarizationMode">
+                      <gml:name>Polarization Mode</gml:name>
+                      <swe:codeSpace xlink:href="http://www.opengis.net/def/property/OGC-EO/0/sar/PolarizationModes/"/>
+                      <swe:constraint>
+                        <swe:AllowedTokens>
+                          <swe:value>HH</swe:value>
+                          <swe:value>VV</swe:value>
+                          <swe:value>HH-HV</swe:value>
+                          <swe:value>VV-VH</swe:value>
+                        </swe:AllowedTokens>
+                      </swe:constraint>
+                      <swe:value>HH</swe:value>
+                    </swe:Category>
+                  </swe:field>
+                </swe:DataRecord>
+              </swe:field>
+            </swe:DataRecord>
+          </swe:field>
+        </swe:DataRecord>
+      </swe:field>      
+    </swe:DataRecord>
+  </sps:taskingParameters>
+</sps:DescribeTaskingResponse>   

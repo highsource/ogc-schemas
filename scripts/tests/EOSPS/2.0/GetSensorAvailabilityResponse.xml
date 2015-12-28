@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epsps:GetSensorAvailabilityResponse
+  xmlns:epsps="http://www.opengis.net/eosps/2.0"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/eosps/2.0 http://schemas.opengis.net/eosps/2.0/eosps.xsd">
+  <epsps:responsePeriod>
+    <gml:TimePeriod gml:id="PERIOD">
+      <gml:beginPosition>2010-06-01</gml:beginPosition>
+      <gml:endPosition>2010-08-31</gml:endPosition>
+    </gml:TimePeriod>
+  </epsps:responsePeriod>
+  <epsps:availabilityPeriod>
+    <gml:TimePeriod gml:id="A1">
+      <gml:beginPosition>2010-06-21</gml:beginPosition>
+      <gml:endPosition>2010-07-04</gml:endPosition>
+    </gml:TimePeriod>
+  </epsps:availabilityPeriod>
+  <epsps:availabilityPeriod>
+    <gml:TimePeriod gml:id="A2">
+      <gml:beginPosition>2010-08-21</gml:beginPosition>
+      <gml:endPosition>2010-08-28</gml:endPosition>
+    </gml:TimePeriod>
+  </epsps:availabilityPeriod>
+</epsps:GetSensorAvailabilityResponse>

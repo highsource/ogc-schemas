@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sps:DescribeTaskingResponse xsi:schemaLocation="http://www.opengis.net/sps/2.0 http://schemas.opengis.net/sps/2.0/sps.xsd" xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <sps:taskingParameters name="CoverageProgrammingRequest">
+    <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/CoverageProgrammingRequest">
+      <swe:field name="QualityOfService">
+        <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/QualityOfService" optional="true">
+          <swe:label>Quality of Service</swe:label>
+          <swe:field name="PriorityLevel">
+            <swe:Category definition="http://www.opengis.net/def/property/OGC-EO/0/PriorityLevel">
+              <swe:constraint>
+                <swe:AllowedTokens>
+                  <swe:value>STANDARD</swe:value>
+                  <swe:value>HIGH</swe:value>
+                  <swe:value>P0</swe:value>
+                  <swe:value>P1</swe:value>
+                </swe:AllowedTokens>
+              </swe:constraint>
+              <swe:value>STANDARD</swe:value>
+            </swe:Category>
+          </swe:field>
+        </swe:DataRecord>
+      </swe:field>
+      <swe:field name="RegionOfInterest">
+        <swe:DataChoice definition="http://www.opengis.net/def/property/OGC-EO/0/RegionOfInterest" updatable="false">
+          <swe:label>Region of Interest</swe:label>
+          <swe:item name="Polygon">
+            <swe:DataRecord definition="http://www.opengis.net/def/objectType/ISO-19107/2003/GM_Polygon">
+              <swe:field name="Exterior">
+                <swe:DataArray definition="http://www.opengis.net/def/objectType/ISO-19107/2003/GM_Ring">
+                  <swe:elementCount>
+                    <swe:Count/>
+                  </swe:elementCount>
+                  <swe:elementType name="Point">
+                    <swe:Vector referenceFrame="http://www.opengis.net/def/crs/EPSG/0/4326">
+                      <swe:coordinate name="Lat">
+                        <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/GeodeticLatitude" axisID="Lat">
+                          <swe:uom code="deg"/>
+                        </swe:Quantity>
+                      </swe:coordinate>
+                      <swe:coordinate name="Lon">
+                        <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/Longitude" axisID="Long">
+                          <swe:uom code="deg"/>
+                        </swe:Quantity>
+                      </swe:coordinate>
+                    </swe:Vector>
+                  </swe:elementType>
+                </swe:DataArray>
+              </swe:field>
+            </swe:DataRecord>
+          </swe:item>
+          <swe:item name="Circle">
+            <swe:DataRecord definition="http://www.opengis.net/def/objectType/ISO-19107/2003/GM_Circle">
+              <swe:field name="Center">
+                <swe:Vector referenceFrame="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <swe:coordinate name="Lat">
+                    <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/GeodeticLatitude" axisID="Lat">
+                      <swe:uom code="deg"/>
+                    </swe:Quantity>
+                  </swe:coordinate>
+                  <swe:coordinate name="Lon">
+                    <swe:Quantity definition="http://www.opengis.net/def/property/OGC/0/Longitude" axisID="Long">
+                      <swe:uom code="deg"/>
+                    </swe:Quantity>
+                  </swe:coordinate>
+                </swe:Vector>
+              </swe:field>
+              <swe:field name="Radius">
+                <swe:Quantity definition="http://www.opengis.net/def/property/OGC-EO/0/Radius">
+                  <swe:uom code="km"/>
+                </swe:Quantity>
+              </swe:field>
+            </swe:DataRecord>
+          </swe:item>
+        </swe:DataChoice>
+      </swe:field>
+      <swe:field name="TimeOfInterest">
+        <swe:DataChoice definition="http://www.opengis.net/def/property/OGC-EO/0/TimeOfInterest">
+          <swe:item name="SurveyPeriod">
+            <swe:TimeRange definition="http://www.opengis.net/def/property/OGC-EO/0/SurveyPeriod">
+              <swe:label>Survey Period</swe:label>
+              <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+            </swe:TimeRange>
+          </swe:item>
+          <swe:item name="TimeSeries">
+            <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/TimeSeries">
+              <swe:field name="SurveyPeriod">
+                <swe:TimeRange definition="http://www.opengis.net/def/property/OGC-EO/0/SurveyPeriod">
+                  <swe:label>Survey Period</swe:label>
+                  <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                </swe:TimeRange>
+              </swe:field>
+              <swe:field name="Occurences">
+                <swe:Count definition="http://www.opengis.net/def/property/OGC-EO/0/Occurences">
+                  <swe:label>Number of Occurences</swe:label>
+                  <swe:description>Number of times the region should be fully covered</swe:description>                  
+                </swe:Count>
+              </swe:field>
+              <swe:field name="PeriodicityRange">
+                <swe:QuantityRange definition="http://www.opengis.net/def/property/OGC-EO/0/PeriodicityRange">
+                  <swe:label>Acquisition Periodicity Range</swe:label>
+                  <swe:description>Acceptable periodicity range for the temporal series</swe:description>
+                  <swe:uom code="d"/>
+                </swe:QuantityRange>
+              </swe:field>
+              <swe:field name="LatestStart">
+                <swe:Time definition="http://www.opengis.net/def/property/OGC-EO/0/LatestStart">
+                  <swe:label>Latest Start</swe:label>
+                  <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                </swe:Time>
+              </swe:field>
+            </swe:DataRecord>
+          </swe:item>
+        </swe:DataChoice>
+      </swe:field>
+      <!-- Acquisition Type and Parameters -->
+      <swe:field name="AcquisitionType">
+        <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/AcquisitionType">
+          <swe:field name="MonoscopicAcquisition">
+            <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/MonoscopicAcquisition">
+              <swe:field name="CoverageType">
+                <swe:Category definition="http://www.opengis.net/def/property/OGC-EO/0/CoverageType">
+                  <swe:label>Coverage Type</swe:label>
+                  <swe:codeSpace xlink:href="http://www.opengis.net/def/property/OGC-EO/0/CoverageTypes"/>
+                  <swe:constraint>
+                    <swe:AllowedTokens>
+                      <swe:value>SINGLE SWATH</swe:value>
+                      <swe:value>MONOPASS</swe:value>
+                      <swe:value>MULTIPASS</swe:value>                      
+                    </swe:AllowedTokens>
+                  </swe:constraint>
+                  <swe:value>MULTIPASS</swe:value>
+                </swe:Category>
+              </swe:field>
+              <swe:field name="AcquisitionAngle">
+                <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/IncidenceRange">
+                  <swe:field name="AzimuthAngle">
+                    <swe:QuantityRange definition="http://www.opengis.net/def/property/OGC-EO/0/AzimuthAngle">
+                      <swe:label>Azimuth Incidence Angle Range</swe:label>
+                      <swe:description>Range of acceptable azimuth incidence angles</swe:description>
+                      <swe:uom code="deg"/>
+                      <swe:constraint>
+                        <swe:AllowedValues>
+                          <swe:interval>-180 +180</swe:interval>
+                        </swe:AllowedValues>
+                      </swe:constraint>
+                      <swe:value>-180 +180</swe:value>
+                    </swe:QuantityRange>
+                  </swe:field>
+                  <swe:field name="ElevationAngle">
+                    <swe:QuantityRange definition="http://www.opengis.net/def/property/OGC-EO/0/ElevationAngle">
+                      <swe:label>Elevation Incidence Angle Range</swe:label>
+                      <swe:description>Range of acceptable elevation incidence angles</swe:description>
+                      <swe:uom code="deg"/>
+                      <swe:constraint>
+                        <swe:AllowedValues>
+                          <swe:interval>0 31</swe:interval>
+                        </swe:AllowedValues>
+                      </swe:constraint>
+                      <swe:value>0 31</swe:value>
+                    </swe:QuantityRange>
+                  </swe:field>
+                </swe:DataRecord>
+              </swe:field>
+              <swe:field name="AcquisitionParameters">
+                <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/opt/AcquisitionParametersOPT">
+                  <swe:field name="GroundResolution">
+                    <swe:QuantityRange definition="http://www.opengis.net/def/property/OGC-EO/0/GroundResolution">
+                      <swe:label>Ground Resolution</swe:label>
+                      <swe:description>Range of acceptable ground resolutions</swe:description>
+                      <swe:uom code="m"/>
+                      <swe:constraint>
+                        <swe:AllowedValues>
+                          <swe:interval>2.5 20</swe:interval>
+                        </swe:AllowedValues>
+                      </swe:constraint>
+                      <swe:value>2.5 20</swe:value>
+                    </swe:QuantityRange>
+                  </swe:field>
+                  <swe:field name="InstrumentMode">
+                    <swe:Category definition="http://www.opengis.net/def/property/OGC-EO/0/InstrumentMode">
+                      <swe:label>Instrument Mode</swe:label>
+                      <swe:codeSpace xlink:href="http://www.opengis.net/def/property/OGC-EO/0/opt/SpectralModes"/>
+                      <swe:constraint>
+                        <swe:AllowedTokens>
+                          <swe:value>PANCHROMATIC</swe:value>
+                          <swe:value>MULTISPECTRAL</swe:value>
+                        </swe:AllowedTokens>
+                      </swe:constraint>
+                      <swe:value>MULTISPECTRAL</swe:value>
+                    </swe:Category>
+                  </swe:field>
+                  <swe:field name="FusionAccepted">
+                    <swe:Boolean definition="http://www.opengis.net/def/property/OGC-EO/0/FusionAccepted" optional="true">
+                      <swe:label>Fusion Accepted</swe:label>
+                      <swe:value>true</swe:value>
+                    </swe:Boolean>
+                  </swe:field>
+                </swe:DataRecord>
+              </swe:field>
+            </swe:DataRecord>
+          </swe:field>
+        </swe:DataRecord>
+      </swe:field>
+      <!-- Validation Parameters -->
+      <swe:field name="ValidationParameters">
+        <swe:DataRecord definition="http://www.opengis.net/def/property/OGC-EO/0/opt/ValidationParametersOPT">
+          <swe:field name="MaxCloudCover">
+            <swe:Quantity definition="http://www.opengis.net/def/property/OGC-EO/0/opt/MaxCloudCover">
+              <swe:label>Max Cloud Cover</swe:label>
+              <swe:description>Maximum acceptable cloud coverage</swe:description>
+              <swe:uom code="%"/>
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:interval>0 100</swe:interval>
+                </swe:AllowedValues>
+              </swe:constraint>
+              <swe:value>50</swe:value>
+            </swe:Quantity>
+          </swe:field>
+          <swe:field name="MaxSnowCover">
+            <swe:Quantity definition="http://www.opengis.net/def/property/OGC-EO/0/opt/MaxSnowCover" optional="true">
+              <swe:label>Max Snow Cover</swe:label>
+              <swe:description>Maximum acceptable snow coverage</swe:description>
+              <swe:uom code="%"/>
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:interval>0 100</swe:interval>
+                </swe:AllowedValues>
+              </swe:constraint>
+              <swe:value>0</swe:value>
+            </swe:Quantity>
+          </swe:field>
+          <swe:field name="HazeAccepted">
+            <swe:Boolean definition="http://www.opengis.net/def/property/OGC-EO/0/opt/HazeAccepted" optional="true">
+              <swe:label>Haze Accepted</swe:label>
+              <swe:description>Specifies if haze is acceptable</swe:description>
+              <swe:value>true</swe:value>
+            </swe:Boolean>
+          </swe:field>
+          <swe:field name="SandWindAccepted">
+            <swe:Boolean definition="http://www.opengis.net/def/property/OGC-EO/0/opt/SandWindAccepted" optional="true">
+              <swe:label>Sand Wind Accepted</swe:label>
+              <swe:description>Specifies of sand winds are acceptable</swe:description>
+              <swe:value>true</swe:value>
+            </swe:Boolean>
+          </swe:field>
+        </swe:DataRecord>
+      </swe:field>
+    </swe:DataRecord>
+  </sps:taskingParameters>
+</sps:DescribeTaskingResponse>

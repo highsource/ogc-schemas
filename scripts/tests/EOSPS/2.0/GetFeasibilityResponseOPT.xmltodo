@@ -1,0 +1,1214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sps:GetFeasibilityResponse xmlns:sps="http://www.opengis.net/sps/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:eot="http://www.opengis.net/eosps/2.0">
+  <sps:result>
+    <sps:StatusReport>
+      <swes:name>Automatic Feasibility Results</swes:name>
+      <swes:extension>
+        <eot:FeasibilityStudy>
+          <eot:expirationDate>2011-01-29T14:53:57Z</eot:expirationDate>
+          <eot:estimatedCost uom="http://www.opengis.net/def/unit/OGC/0/currency/EUR">64800.0</eot:estimatedCost>
+          <eot:successRate>0.0</eot:successRate>
+          <eot:informationUsed>KINEMATIC MODEL</eot:informationUsed>
+          <eot:informationUsed>CLIMATE STATISTICS</eot:informationUsed>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_0" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_0" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.824491 0.818339 1.401331 0.947083 1.316751 1.49501 0.739961 1.366222 0.824491 0.818339</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-01-24T10:25:29.726Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-01-24T10:25:39.526Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_0" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">3.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_1" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_1" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.327088 -0.498625 0.249647 -0.369845 0.164895 0.180006 -0.411909 0.051278 -0.327088 -0.498625</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-01-24T10:25:51.972Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-01-24T10:26:01.772Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_1" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">4.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_2" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.827785 0.290672 1.404621 0.419359 1.320479 0.965265 0.743642 0.836525 0.827785 0.290672</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-01-24T10:25:31Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-01-24T10:25:40.800Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_2" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG1</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">1.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_3" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_3" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.329169 0.560967 0.247654 0.68964 0.163165 1.237536 -0.413626 1.108931 -0.329169 0.560967</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-01-24T10:25:49.326Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-01-24T10:25:59.126Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_3" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG1</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">3.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_4" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_4" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.829494 0.810578 1.406178 0.939422 1.318207 1.507561 0.741672 1.378687 0.829494 0.810578</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-01-29T10:29:15.530Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-01-29T10:29:25.330Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_4" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">10.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_5" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_5" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.326601 0.030117 0.250168 0.158739 0.164592 0.713495 -0.412099 0.584949 -0.326601 0.030117</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-01-29T10:29:36.502Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-01-29T10:29:46.302Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_5" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">7.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_6" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_6" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.826966 0.287416 1.403735 0.416204 1.317979 0.970977 0.741304 0.842152 0.826966 0.287416</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-01-29T10:29:16.902Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-01-29T10:29:26.702Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_6" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG1</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">7.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_7" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_7" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.328771 -0.496115 0.24802 -0.36744 0.163604 0.18 -0.41316 0.051392 -0.328771 -0.496115</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-01-29T10:29:37.874Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-01-29T10:29:47.674Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_7" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG1</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">3.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_8" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_8" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.838486 0.747854 1.414098 0.876166 1.310728 1.551971 0.73472 1.423534 0.838486 0.747854</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-01-30T10:09:55.942Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-01-30T10:10:05.742Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_8" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">23.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_9" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_9" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.262804 0.619219 0.838347 0.747896 0.734586 1.423572 0.158638 1.294838 0.262804 0.619219</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-01-30T10:10:05.742Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-01-30T10:10:15.542Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_9" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">23.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_10" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_10" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.317902 0.489432 0.257567 0.618496 0.153381 1.294076 -0.422505 1.165025 -0.317902 0.489432</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-01-30T10:10:15.640Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-01-30T10:10:25.440Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_10" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">23.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_11" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_11" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.832678 0.791625 1.409046 0.920569 1.31432 1.530303 0.738216 1.401345 0.832678 0.791625</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-03T10:33:00.844Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-03T10:33:10.644Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_11" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">17.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_12" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_12" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.323786 0.016966 0.252784 0.145486 0.16248 0.730368 -0.413908 0.601945 -0.323786 0.016966</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-03T10:33:21.816Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-03T10:33:31.616Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_12" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">14.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_13" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_13" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.829444 0.274082 1.405984 0.40297 1.31529 0.987832 0.738951 0.858922 0.829444 0.274082</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-03T10:33:02.216Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-03T10:33:12.016Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_13" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG1</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">14.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_14" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_14" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.25282 0.145537 0.829377 0.274232 0.738882 0.859079 0.162517 0.730421 0.25282 0.145537</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-03T10:33:12.016Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-03T10:33:21.816Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_14" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG1</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">14.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_15" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_15" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.829554 0.781569 1.4057 0.909986 1.311957 1.521589 0.735559 1.393074 0.829554 0.781569</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-04T10:13:41.236Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-04T10:13:51.036Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_15" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">17.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_16" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_16" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.25339 0.65288 0.829482 0.781557 0.735489 1.393063 0.159135 1.26435 0.25339 0.65288</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-04T10:13:51.036Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-04T10:14:00.836Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_16" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">17.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_17" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_17" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.322757 0.524166 0.253279 0.653122 0.159027 1.264578 -0.41728 1.13565 -0.322757 0.524166</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-04T10:14:00.836Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-04T10:14:10.636Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_17" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">17.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_18" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_18" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.835365 0.236618 1.411232 0.364975 1.312762 1.008185 0.736571 0.879716 0.835365 0.236618</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-04T10:13:42.510Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-04T10:13:52.310Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_18" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG1</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">21.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_19" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_19" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.259454 0.107957 0.835258 0.23663 0.736467 0.879726 0.160328 0.751007 0.259454 0.107957</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-04T10:13:52.310Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-04T10:14:02.110Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_19" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG1</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">21.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_20" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_20" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.321489 -0.021858 0.254251 0.107152 0.155106 0.750173 -0.420978 0.621183 -0.321489 -0.021858</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-04T10:14:02.208Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-04T10:14:12.008Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_20" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG1</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">21.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_21" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_21" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.836011 0.761915 1.411912 0.89096 1.306968 1.564113 0.731474 1.435072 0.836011 0.761915</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-08T10:36:45.628Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-08T10:36:55.428Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_21" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">23.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_22" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_22" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.324413 -0.521883 0.251996 -0.39341 0.158366 0.212762 -0.417807 0.084398 -0.324413 -0.521883</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-08T10:37:07.972Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-08T10:37:17.772Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_22" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG2</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">17.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_23" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_23" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.832095 0.250046 1.408251 0.379035 1.309228 1.015474 0.733399 0.886478 0.832095 0.250046</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-08T10:36:47Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-08T10:36:56.800Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_23" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG1</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">20.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_24" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_24" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.255771 0.121619 0.831958 0.250316 0.733256 0.886768 0.157386 0.758129 0.255771 0.121619</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-08T10:36:56.800Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-08T10:37:06.600Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_24" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG1</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">20.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:segment>
+            <eot:Segment gml:id="SCENE_25" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FSCENE_25" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.320537 -0.006831 0.25568 0.121591 0.157293 0.7581 -0.418617 0.629801 -0.320537 -0.006831</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:acquisitionStartTime>2011-02-08T10:37:06.600Z</eot:acquisitionStartTime>
+              <eot:acquisitionStopTime>2011-02-08T10:37:16.400Z</eot:acquisitionStopTime>
+              <eot:acquisitionMethod>
+                <eop:EarthObservationEquipment gml:id="MSCENE_25" xmlns:eop="http://earth.esa.int/eop">
+                  <eop:platform>
+                    <eop:Platform>
+                      <eop:shortName>SPOT-5</eop:shortName>
+                    </eop:Platform>
+                  </eop:platform>
+                  <eop:instrument>
+                    <eop:Instrument>
+                      <eop:shortName>HRG1</eop:shortName>
+                    </eop:Instrument>
+                  </eop:instrument>
+                  <eop:sensor>
+                    <eop:Sensor>
+                      <eop:operationalMode>PANCHROMATIC</eop:operationalMode>
+                    </eop:Sensor>
+                  </eop:sensor>
+                  <eop:acquisitionParameters>
+                    <eop:Acquisition>
+                      <eop:incidenceAngle uom="deg">20.0</eop:incidenceAngle>
+                    </eop:Acquisition>
+                  </eop:acquisitionParameters>
+                </eop:EarthObservationEquipment>
+              </eot:acquisitionMethod>
+              <eot:status>POTENTIAL</eot:status>
+            </eot:Segment>
+          </eot:segment>
+          <eot:cell>
+            <eot:GridCell gml:id="CELL_0" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FCELL_0" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.815168 0.305983 0.757624 0.821791 1.334462 0.950496 1.392006 0.434687 0.815168 0.305983</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:status>POTENTIAL</eot:status>
+              <eot:successRate>18.0</eot:successRate>
+              <eot:nextAttemptDate>2011-01-24T10:25:35.900Z</eot:nextAttemptDate>
+              <eot:remainingAttempts>10</eot:remainingAttempts>
+            </eot:GridCell>
+          </eot:cell>
+          <eot:cell>
+            <eot:GridCell gml:id="CELL_1" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FCELL_1" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.238334 0.177281 0.180792 0.693091 0.757619 0.821787 0.81516 0.305978 0.238334 0.177281</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:status>POTENTIAL</eot:status>
+              <eot:successRate>12.0</eot:successRate>
+              <eot:nextAttemptDate>2011-01-24T10:25:45.700Z</eot:nextAttemptDate>
+              <eot:remainingAttempts>10</eot:remainingAttempts>
+            </eot:GridCell>
+          </eot:cell>
+          <eot:cell>
+            <eot:GridCell gml:id="CELL_2" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FCELL_2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.338482 0.048581 -0.396029 0.564389 0.180782 0.693094 0.238329 0.177287 -0.338482 0.048581</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:status>POTENTIAL</eot:status>
+              <eot:successRate>22.0</eot:successRate>
+              <eot:nextAttemptDate>2011-01-24T10:25:55.500Z</eot:nextAttemptDate>
+              <eot:remainingAttempts>10</eot:remainingAttempts>
+            </eot:GridCell>
+          </eot:cell>
+          <eot:cell>
+            <eot:GridCell gml:id="CELL_3" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FCELL_3" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.815168 0.83463 0.757624 1.350439 1.334462 1.479144 1.392006 0.963335 0.815168 0.83463</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:status>POTENTIAL</eot:status>
+              <eot:successRate>22.0</eot:successRate>
+              <eot:nextAttemptDate>2011-01-24T10:25:34.626Z</eot:nextAttemptDate>
+              <eot:remainingAttempts>12</eot:remainingAttempts>
+            </eot:GridCell>
+          </eot:cell>
+          <eot:cell>
+            <eot:GridCell gml:id="CELL_4" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FCELL_4" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.238334 0.705929 0.180792 1.221739 0.757619 1.350435 0.81516 0.834626 0.238334 0.705929</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:status>POTENTIAL</eot:status>
+              <eot:successRate>8.0</eot:successRate>
+              <eot:nextAttemptDate>2011-01-24T10:25:44.426Z</eot:nextAttemptDate>
+              <eot:remainingAttempts>16</eot:remainingAttempts>
+            </eot:GridCell>
+          </eot:cell>
+          <eot:cell>
+            <eot:GridCell gml:id="CELL_5" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FCELL_5" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.338482 0.577229 -0.396029 1.093036 0.180782 1.221742 0.238329 0.705935 -0.338482 0.577229</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:status>POTENTIAL</eot:status>
+              <eot:successRate>17.0</eot:successRate>
+              <eot:nextAttemptDate>2011-01-24T10:25:54.226Z</eot:nextAttemptDate>
+              <eot:remainingAttempts>14</eot:remainingAttempts>
+            </eot:GridCell>
+          </eot:cell>
+          <eot:cell>
+            <eot:GridCell gml:id="CELL_6" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FCELL_6" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.815168 -0.222665 0.757624 0.293143 1.334462 0.421848 1.392006 -0.09396 0.815168 -0.222665</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:status>POTENTIAL</eot:status>
+              <eot:successRate>0.0</eot:successRate>
+              <eot:nextAttemptDate>2011-01-24T10:25:37.272Z</eot:nextAttemptDate>
+              <eot:remainingAttempts>10</eot:remainingAttempts>
+            </eot:GridCell>
+          </eot:cell>
+          <eot:cell>
+            <eot:GridCell gml:id="CELL_7" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FCELL_7" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>0.238334 -0.351366 0.180792 0.164443 0.757619 0.29314 0.81516 -0.22267 0.238334 -0.351366</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:status>POTENTIAL</eot:status>
+              <eot:successRate>0.0</eot:successRate>
+              <eot:nextAttemptDate>2011-01-24T10:25:47.072Z</eot:nextAttemptDate>
+              <eot:remainingAttempts>10</eot:remainingAttempts>
+            </eot:GridCell>
+          </eot:cell>
+          <eot:cell>
+            <eot:GridCell gml:id="CELL_8" xmlns:gml="http://www.opengis.net/gml/3.2">
+              <eot:footprint>
+                <gml:Polygon gml:id="FCELL_8" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList>-0.338482 -0.480066 -0.396029 0.035741 0.180782 0.164446 0.238329 -0.351361 -0.338482 -0.480066</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </eot:footprint>
+              <eot:status>POTENTIAL</eot:status>
+              <eot:successRate>25.0</eot:successRate>
+              <eot:nextAttemptDate>2011-01-24T10:25:56.872Z</eot:nextAttemptDate>
+              <eot:remainingAttempts>10</eot:remainingAttempts>
+            </eot:GridCell>
+          </eot:cell>
+        </eot:FeasibilityStudy>
+      </swes:extension>
+      <sps:task>http://ws.spotimage.com/sps/FS-c1987a86-ce6c-47dc-b0b8-61d9d29ac1f6</sps:task>
+      <sps:procedure>urn:spot:sensors:SPOT5:HRG</sps:procedure>
+      <sps:requestStatus>Accepted</sps:requestStatus>
+      <sps:updateTime>2011-01-19T14:53:58Z</sps:updateTime>
+    </sps:StatusReport>
+  </sps:result>
+</sps:GetFeasibilityResponse>

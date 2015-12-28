@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eosps:ValidateResponse
+  xmlns:eosps="http://www.opengis.net/eosps/2.0"
+  xmlns:sps="http://www.opengis.net/sps/2.0"
+  xmlns:swes="http://www.opengis.net/swes/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/eosps/2.0 http://schemas.opengis.net/eosps/2.0/eosps.xsd">
+  <eosps:result>
+    <sps:StatusReport>
+      <swes:name>SPOT Validation Report</swes:name>
+      <sps:task>http://ws.spotimage.com/sps/tasks/T45EF36C23D4C89AB</sps:task>
+      <sps:estimatedToC>2010-02-26T10:30:00Z</sps:estimatedToC>
+      <sps:procedure>http://ws.spotimage.com/sps/sensors/SPOT-Constellation</sps:procedure>
+      <sps:requestStatus>Accepted</sps:requestStatus>
+      <sps:statusMessage>3 segments validated successfully</sps:statusMessage>
+      <sps:taskStatus>InExecution</sps:taskStatus>
+      <sps:updateTime>2010-02-03T13:00:56Z</sps:updateTime>      
+    </sps:StatusReport>
+  </eosps:result>
+</eosps:ValidateResponse>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sps:GetStatus service="SPS" version="2.0.0" xmlns:sps="http://www.opengis.net/sps/2.0">
+  <sps:task>http://ws.spotimage.com/sps/PR-decbbda4-4071-45f5-845d-c167c30fc515</sps:task>
+</sps:GetStatus>

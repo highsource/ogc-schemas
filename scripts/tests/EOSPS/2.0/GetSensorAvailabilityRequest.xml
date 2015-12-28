@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epsps:GetSensorAvailability
+  xmlns:epsps="http://www.opengis.net/eosps/2.0"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/eosps/2.0 http://schemas.opengis.net/eosps/2.0/eosps.xsd"
+  service="EOSPS" version="2.0">
+  <!-- -->
+  <epsps:sensor>http://ws.spotimage.com/sps/sensors/SPOT-Constellation</epsps:sensor>
+  <!-- -->
+  <epsps:requestPeriod>
+    <gml:TimePeriod gml:id="PERIOD">
+      <gml:beginPosition>2010-06-01</gml:beginPosition>
+      <gml:endPosition>2010-08-31</gml:endPosition>
+    </gml:TimePeriod>
+  </epsps:requestPeriod>
+  <!-- -->
+</epsps:GetSensorAvailability>
