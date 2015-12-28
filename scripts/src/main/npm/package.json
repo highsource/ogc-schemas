@@ -26,6 +26,8 @@
 		"WMC",
 		"CityGML",
 		"CSW",
+                "EOP", "Earth Observation",
+                "EOSPS",
                 "Filter", "Filter Encoding",
                 "GML",
                 "GMLCOV",

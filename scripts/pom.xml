@@ -66,6 +66,10 @@
 								<artifactItem><artifactId>citygml-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 								<artifactItem><artifactId>citygml-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 
+								<artifactItem><artifactId>eop-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
+
+								<artifactItem><artifactId>eosps-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
+
 								<artifactItem><artifactId>filter-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 								<artifactItem><artifactId>filter-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 								<artifactItem><artifactId>filter-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
@@ -216,6 +220,10 @@
 								<artifactItem><artifactId>citygml-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 
 								<artifactItem><artifactId>csw-v_2_0_2</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
+
+								<artifactItem><artifactId>eop-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
+
+								<artifactItem><artifactId>eosps-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 
 								<artifactItem><artifactId>filter-v_1_0_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 								<artifactItem><artifactId>filter-v_1_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>

@@ -6,6 +6,8 @@
 * context/1.0.0
 * context/1.1.0
 * csw/2.0.2
+* eop/1.0.0
+* eosps/2.0
 * filter/1.0.0 + filter/1.0.20
 * filter/1.1.0
 * filter/2.0.
@@ -83,11 +85,6 @@
 * wps/1.0.0
 * wps/2.0
 * wcst/1.1
-
-# Not yet supported schemas
-
-* eosps/2.0
-* eop/1.0.0
 
 # Won't fix
 

@@ -36,6 +36,11 @@ Supports the following schemas:
 * `CSW_2_0_2`
   * `DC_1_1`
   * `DCT`
+* `EOP_1_0`
+* `EOP_ATM_1_0`
+* `EOP_OPT_1_0`
+* `EOP_SAR_1_0`
+* `EOSPS_2_0`
 * `Filter_1_0_0`
 * `Filter_1_1_0`
 * `Filter_2_0`
