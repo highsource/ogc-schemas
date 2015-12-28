@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="schematron_result_for_eop.xsl"?>
+<eop:EarthObservation version="1.2.1" gml:id="DS_PHR1A_20010822110247_TLS_PX_E123N45_0101_01234" xmlns:gml="http://www.opengis.net/gml" xmlns:eop="http://earth.esa.int/eop" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://earth.esa.int/eop ../eop.xsd">
+	<gml:metaDataProperty>
+		<eop:EarthObservationMetaData>
+			<eop:identifier>DS_PHR1A_20010822110247_TLS_PX_E123N45_0101_01234</eop:identifier>
+			<eop:acquisitionType>NOMINAL</eop:acquisitionType>
+			<eop:productType>TBD</eop:productType>
+			<eop:status>ACQUIRED</eop:status>
+			<eop:downlinkedTo>
+				<eop:DownlinkInformation>
+					<eop:acquisitionStation codeSpace="urn:eop:PHR:stationCode">TLS</eop:acquisitionStation>
+				</eop:DownlinkInformation>
+			</eop:downlinkedTo>
+			<eop:archivedIn>
+				<eop:ArchivingInformation>
+					<eop:archivingCenter codeSpace="urn:eop:PHR:stationCode">TLS</eop:archivingCenter>
+					<eop:archivingDate>2001-08-22T11:02:47.999</eop:archivingDate>
+				</eop:ArchivingInformation>
+			</eop:archivedIn>
+			<eop:processing>
+				<eop:ProcessingInformation/>
+			</eop:processing>
+		</eop:EarthObservationMetaData>
+	</gml:metaDataProperty>
+	<gml:validTime>
+		<gml:TimePeriod>
+			<gml:beginPosition>2001-08-22T11:02:47.000</gml:beginPosition>
+			<gml:endPosition>2001-08-22T11:02:47.999</gml:endPosition>
+		</gml:TimePeriod>
+	</gml:validTime>
+	<gml:using>
+		<eop:EarthObservationEquipment>
+			<eop:platform>
+				<eop:Platform>
+					<eop:shortName>PHR</eop:shortName>
+					<eop:serialIdentifier>1A</eop:serialIdentifier>
+				</eop:Platform>
+			</eop:platform>
+			<eop:instrument>
+				<eop:Instrument>
+					<eop:shortName>PHR</eop:shortName>
+				</eop:Instrument>
+			</eop:instrument>
+			<eop:sensor>
+				<eop:Sensor>
+					<eop:sensorType>OPTICAL</eop:sensorType>
+					<eop:operationalMode codeSpace="urn:eop:PHR:sensorMode">PX</eop:operationalMode>
+					<eop:resolution uom="m">0.7</eop:resolution>
+				</eop:Sensor>
+			</eop:sensor>
+			<eop:acquisitionParameters>
+				<eop:Acquisition>
+					<eop:orbitNumber>12</eop:orbitNumber>
+					<eop:lastOrbitNumber>13</eop:lastOrbitNumber>
+					<eop:orbitDirection>ASCENDING</eop:orbitDirection>
+					<eop:wrsLatitudeGrid>14</eop:wrsLatitudeGrid>
+					<eop:acrossTrackIncidenceAngle uom="deg">-14.0</eop:acrossTrackIncidenceAngle>
+					<eop:alongTrackIncidenceAngle uom="deg">-13.9</eop:alongTrackIncidenceAngle>
+					<eop:pitch uom="deg">0</eop:pitch>
+					<eop:roll uom="deg">0</eop:roll>
+					<eop:yaw uom="deg">0</eop:yaw>
+				</eop:Acquisition>
+			</eop:acquisitionParameters>
+		</eop:EarthObservationEquipment>
+	</gml:using>
+	<gml:target>
+		<eop:Footprint>
+			<gml:multiExtentOf>
+				<gml:MultiSurface srsName="EPSG:4326"> 
+					<gml:surfaceMembers>
+						<gml:Polygon>
+							<gml:exterior>
+								<gml:LinearRing>
+									<gml:posList>2.1025 43.516667 2.861667 43.381667 2.65 42.862778 1.896944 42.996389 2.1025 43.516667</gml:posList>
+								</gml:LinearRing>
+							</gml:exterior>
+						</gml:Polygon>
+					</gml:surfaceMembers>
+				</gml:MultiSurface>
+			</gml:multiExtentOf>
+			<gml:centerOf>
+				<gml:Point srsName="EPSG:4326">
+					<gml:pos>2.374167 43.190833</gml:pos>
+				</gml:Point>
+			</gml:centerOf>
+		</eop:Footprint>
+	</gml:target>
+	<gml:resultOf>
+		<eop:EarthObservationResult>
+			<eop:browse>
+				<eop:BrowseInformation>
+					<eop:type>QUICKLOOK</eop:type>
+					<eop:referenceSystemIdentifier codeSpace="EPSG">epsg:4326</eop:referenceSystemIdentifier>
+					<eop:fileName>http://eop.cnes.fr/catalog/DS_PHR1A_20010822110247_TLS_PX_E123N45_0101_01234.jpg</eop:fileName>
+				</eop:BrowseInformation>
+			</eop:browse>
+			<eop:mask>
+				<eop:MaskInformation>
+					<eop:type>CLOUD</eop:type>
+					<eop:format>VECTOR</eop:format>
+					<eop:fileName>http://eop.cnes.fr/catalog/DS_PHR1A_20010822110247_TLS_PX_E123N45_0101_01234.gml</eop:fileName>
+				</eop:MaskInformation>
+			</eop:mask>
+		</eop:EarthObservationResult>
+	</gml:resultOf>
+</eop:EarthObservation>
