@@ -4,42 +4,100 @@ var TML_1_0_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/tml',
     deps: ['IC_2_0'],
     tis: [{
-        ln: 'ProcessType.OtherProperties',
+        ln: 'ClusterDesc.BinHeaderEncode.HeaderAttrib.DataUnitFieldSize',
         tn: null,
         ps: [{
-            n: 'property',
-            mno: 0,
-            col: true,
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'SystemType.Relations.DataToDataRelation.DataSink.DataUidRef',
-        tn: null,
-        bti: '.BindType'
-      }, {
-        ln: 'TemporalModel.CfOffsetTime',
-        tn: null,
-        bti: '.ValueType',
-        ps: [{
-            n: 'dataUidRef',
+            n: 'numBits',
             ti: '.BindType'
           }, {
-            n: 'cfSubSampling',
-            mno: 0,
-            col: true,
-            ti: '.CfSubSampling'
-          }]
-      }, {
-        ln: 'SystemType.Relations.TimeRelation.TimeCoordinate',
-        tn: null,
-        ps: [{
-            n: 'timeCoordType',
+            n: 'numSigBits',
             ti: '.BindType'
           }, {
-            n: 'absTimeUidRef',
+            n: 'justification',
+            ti: '.BindType'
+          }, {
+            n: 'beginTextDelimiter',
+            ti: '.BindType'
+          }, {
+            n: 'endTextDelimiter',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'SystemType.Transducers',
+        tn: null,
+        ps: [{
+            n: 'transducer',
             mno: 0,
             col: true,
+            ti: '.TransducerType'
+          }]
+      }, {
+        ln: 'ResponseModels.SteadyStateResponse.PropValues.PropName',
+        tn: null,
+        bti: '.BindType',
+        ps: [{
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SpatialCoordType.SpaceCoords',
+        tn: null,
+        ps: [{
+            n: 'posVelAccel',
             ti: '.BindType'
+          }, {
+            n: 'coordName',
+            ti: '.BindType'
+          }, {
+            n: 'coords',
+            ti: '.ValueType'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'IdentificationType.Calibration',
+        tn: null,
+        ps: [{
+            n: 'calibratedBy',
+            mno: 0,
+            col: true,
+            ti: '.IdentificationType.Calibration.CalibratedBy'
+          }, {
+            n: 'validatedBy',
+            mno: 0,
+            col: true,
+            ti: '.IdentificationType.Calibration.ValidatedBy'
           }]
       }, {
         ln: 'DataArrayType.DataSet',
@@ -88,14 +146,38 @@ var TML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SpatialModel.AmbiguitySpace.Shape.SpaceLocCoords',
+        ln: 'TransducerType.Identification',
         tn: null,
+        bti: '.IdentificationType',
         ps: [{
-            n: 'coordName',
+            n: 'manufacture',
             ti: '.BindType'
           }, {
-            n: 'coords',
-            ti: '.ValueType'
+            n: 'modelNumber',
+            ti: '.BindType'
+          }, {
+            n: 'serialNumber',
+            ti: '.BindType'
+          }, {
+            n: 'ownedBy',
+            mno: 0,
+            col: true,
+            ti: '.TransducerType.Identification.OwnedBy'
+          }]
+      }, {
+        ln: 'ObjToObjRelation.Object',
+        tn: null,
+        ps: [{
+            n: 'name'
+          }, {
+            n: 'objType',
+            ti: '.BindType'
+          }, {
+            n: 'dirIndirSubj',
+            ti: '.BindType'
+          }, {
+            n: 'objUidRef',
+            ti: '.BindType'
           }, {
             n: 'refName',
             an: {
@@ -116,300 +198,7 @@ var TML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ResponseModels.SteadyStateResponse.PropValues.UOM',
-        tn: null,
-        bti: '.BindType',
-        ps: [{
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SpatialModel',
-        tn: null,
-        ps: [{
-            n: 'dataUidRef',
-            ti: '.BindType'
-          }, {
-            n: 'cfSubSampling',
-            mno: 0,
-            col: true,
-            ti: '.CfSubSampling'
-          }, {
-            n: 'ambiguitySpace',
-            mno: 0,
-            col: true,
-            ti: '.SpatialModel.AmbiguitySpace'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ClusterDesc',
-        tn: null,
-        ps: [{
-            n: 'description',
-            ti: '.BindType'
-          }, {
-            n: 'idMapping',
-            ti: '.ClusterDesc.IdMapping'
-          }, {
-            n: 'clusterProperties',
-            ti: '.ClusterDesc.ClusterProperties'
-          }, {
-            n: 'binHeaderEncode',
-            ti: '.ClusterDesc.BinHeaderEncode'
-          }, {
-            n: 'timeTag',
-            ti: '.ClusterDesc.TimeTag'
-          }, {
-            n: 'dataUnitEncoding',
-            mno: 0,
-            col: true,
-            ti: '.ClusterDesc.DataUnitEncoding'
-          }, {
-            n: 'numCfInCluster',
-            ti: '.BindType'
-          }, {
-            n: 'transSeq',
-            mno: 0,
-            col: true,
-            ti: '.ClusterDesc.TransSeq'
-          }, {
-            n: 'classification',
-            ti: 'IC_2_0.ClassificationType',
-            an: {
-              lp: 'classification',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'ownerProducer',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'ownerProducer',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'scIcontrols',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'SCIcontrols',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'sarIdentifier',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'SARIdentifier',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'disseminationControls',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'disseminationControls',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'fgIsourceOpen',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'FGIsourceOpen',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'fgIsourceProtected',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'FGIsourceProtected',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'releasableTo',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'releasableTo',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'nonICmarkings',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nonICmarkings',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'classifiedBy',
-            an: {
-              lp: 'classifiedBy',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'classificationReason',
-            an: {
-              lp: 'classificationReason',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'derivedFrom',
-            an: {
-              lp: 'derivedFrom',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassDate',
-            ti: 'Calendar',
-            an: {
-              lp: 'declassDate',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassEvent',
-            an: {
-              lp: 'declassEvent',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassException',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'declassException',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'typeOfExemptedSource',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'typeOfExemptedSource',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'dateOfExemptedSource',
-            ti: 'Calendar',
-            an: {
-              lp: 'dateOfExemptedSource',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassManualReview',
-            ti: 'Boolean',
-            an: {
-              lp: 'declassManualReview',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ResponseModels.ImpulseResponse.Amplitude',
-        tn: null,
-        bti: '.ValueType'
-      }, {
-        ln: 'IdentificationType',
-        ps: [{
-            n: 'uid',
-            ti: '.BindType'
-          }, {
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'description',
-            ti: '.BindType'
-          }, {
-            n: 'complexity',
-            ti: '.BindType'
-          }, {
-            n: 'characterization',
-            ti: '.IdentificationType.Characterization'
-          }, {
-            n: 'calibration',
-            ti: '.IdentificationType.Calibration'
-          }]
-      }, {
-        ln: 'SystemType.Identification.Operator',
+        ln: 'IdentificationType.Characterization.ValidatedBy',
         tn: null,
         ps: [{
             n: 'name',
@@ -428,132 +217,23 @@ var TML_1_0_0_Module_Factory = function () {
             ti: '.BindType'
           }]
       }, {
-        ln: 'ClusterDesc.TimeTag',
+        ln: 'ResponseModels.ImpulseResponse',
         tn: null,
         ps: [{
-            n: 'sysClkUidRef',
+            n: 'dataUidRef',
             ti: '.BindType'
           }, {
-            n: 'accuracy',
-            ti: '.Accuracy'
-          }]
-      }, {
-        ln: 'SystemType.Identification',
-        tn: null,
-        bti: '.IdentificationType',
-        ps: [{
-            n: 'manufacture',
+            n: 'freqTime',
             ti: '.BindType'
           }, {
-            n: 'modelNumber',
-            ti: '.BindType'
+            n: 'amplitude',
+            ti: '.ResponseModels.ImpulseResponse.Amplitude'
           }, {
-            n: 'serialNumber',
-            ti: '.BindType'
+            n: 'time',
+            ti: '.ResponseModels.ImpulseResponse.Time'
           }, {
-            n: 'owner',
-            ti: '.SystemType.Identification.Owner'
-          }, {
-            n: 'operator',
-            ti: '.SystemType.Identification.Operator'
-          }]
-      }, {
-        ln: 'ResponseModels.FrequencyResponse.Frequency',
-        tn: null,
-        bti: '.ValueType'
-      }, {
-        ln: 'CfSubSampling',
-        tn: null,
-        ps: [{
-            n: 'cfStructComp',
-            ti: '.BindType'
-          }, {
-            n: 'numOfSubSampleIndexPoints',
-            ti: '.BindType'
-          }, {
-            n: 'subSampleCfIndexPts',
-            ti: '.BindType'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ClusterDesc.DataUnitEncoding.DataUnitFieldSize',
-        tn: null,
-        ps: [{
-            n: 'numBits',
-            ti: '.BindType'
-          }, {
-            n: 'numSigBits',
-            ti: '.BindType'
-          }, {
-            n: 'justification',
-            ti: '.BindType'
-          }, {
-            n: 'beginTextDelimiter',
-            ti: '.BindType'
-          }, {
-            n: 'endTextDelimiter',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'SystemType.SysClk',
-        tn: null,
-        ps: [{
-            n: 'uid',
-            ti: '.BindType'
-          }, {
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'period',
+            n: 'frequency',
             ti: '.ValueType'
-          }, {
-            n: 'countNumBase',
-            ti: '.BindType'
-          }, {
-            n: 'min',
-            ti: '.BindType'
-          }, {
-            n: 'max',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'ObjToDataRelation.Object',
-        tn: null,
-        ps: [{
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'objType',
-            ti: '.BindType'
-          }, {
-            n: 'cfSubSampling',
-            ti: '.CfSubSampling'
-          }, {
-            n: 'objUidRef',
-            ti: '.BindType'
-          }, {
-            n: 'objLocalID',
-            ti: '.BindType'
-          }, {
-            n: 'confidence',
-            ti: '.BindType'
           }, {
             n: 'refName',
             an: {
@@ -634,151 +314,20 @@ var TML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ProcessType.Input',
+        ln: 'ResponseModels.ImpulseResponse.Amplitude',
+        tn: null,
+        bti: '.ValueType'
+      }, {
+        ln: 'ClusterDesc.IdMapping',
         tn: null,
         ps: [{
-            n: 'inputIdent',
-            ti: '.ProcessType.Input.InputIdent'
-          }, {
-            n: 'logicalDataStructure',
+            n: 'tapPointUidRef',
             mno: 0,
             col: true,
-            ti: '.LogicalDataStructure'
-          }, {
-            n: 'dataValue',
             ti: '.BindType'
           }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TemporalModel',
-        tn: null,
-        ps: [{
-            n: 'cfTrigger',
-            ti: '.TemporalModel.CfTrigger'
-          }, {
-            n: 'cfDuration',
-            ti: '.ValueType'
-          }, {
-            n: 'latencyTime',
-            ti: '.ValueType'
-          }, {
-            n: 'ambiguityTime',
-            mno: 0,
-            col: true,
-            ti: '.TemporalModel.AmbiguityTime'
-          }, {
-            n: 'cfOffsetTime',
-            mno: 0,
-            col: true,
-            ti: '.TemporalModel.CfOffsetTime'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ObjToDataRelation.RelationDescription',
-        tn: null,
-        bti: '.BindType'
-      }, {
-        ln: 'ClusterDesc.TransSeq.Sequence',
-        tn: null,
-        bti: '.BindType',
-        ps: [{
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ResponseModels.ImpulseResponse',
-        tn: null,
-        ps: [{
-            n: 'dataUidRef',
+            n: 'localID',
             ti: '.BindType'
-          }, {
-            n: 'freqTime',
-            ti: '.BindType'
-          }, {
-            n: 'amplitude',
-            ti: '.ResponseModels.ImpulseResponse.Amplitude'
-          }, {
-            n: 'time',
-            ti: '.ResponseModels.ImpulseResponse.Time'
-          }, {
-            n: 'frequency',
-            ti: '.ValueType'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SystemType.Systems',
-        tn: null,
-        ps: [{
-            n: 'system',
-            mno: 0,
-            col: true,
-            ti: '.SystemType'
           }]
       }, {
         ln: 'SystemType.Relations.DataToDataRelation',
@@ -817,242 +366,149 @@ var TML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SystemType.Relations.DataToDataRelation.DataSource.DataUidRef',
-        tn: null,
-        bti: '.BindType'
-      }, {
-        ln: 'ClusterDesc.BinHeaderEncode',
+        ln: 'ResponseModels.SteadyStateResponse.Code',
         tn: null,
         ps: [{
-            n: 'headerAttrib',
+            n: 'properties',
+            ti: '.ResponseModels.SteadyStateResponse.Code.Properties'
+          }, {
+            n: 'listing',
+            ti: '.ResponseModels.SteadyStateResponse.Code.Listing'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SystemType.Identification',
+        tn: null,
+        bti: '.IdentificationType',
+        ps: [{
+            n: 'manufacture',
+            ti: '.BindType'
+          }, {
+            n: 'modelNumber',
+            ti: '.BindType'
+          }, {
+            n: 'serialNumber',
+            ti: '.BindType'
+          }, {
+            n: 'owner',
+            ti: '.SystemType.Identification.Owner'
+          }, {
+            n: 'operator',
+            ti: '.SystemType.Identification.Operator'
+          }]
+      }, {
+        ln: 'TransducerType.Identification.OwnedBy',
+        tn: null,
+        ps: [{
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'organization',
+            ti: '.BindType'
+          }, {
+            n: 'email',
+            ti: '.BindType'
+          }, {
+            n: 'phone',
+            ti: '.BindType'
+          }, {
+            n: 'date',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'ProcessType.Identification',
+        tn: null,
+        bti: '.IdentificationType',
+        ps: [{
+            n: 'manufacture',
+            ti: '.BindType'
+          }, {
+            n: 'modelNumber',
+            ti: '.BindType'
+          }, {
+            n: 'serialNumber',
+            ti: '.BindType'
+          }, {
+            n: 'processVersion',
+            ti: '.BindType'
+          }, {
+            n: 'ownedBy',
             mno: 0,
             col: true,
-            ti: '.ClusterDesc.BinHeaderEncode.HeaderAttrib'
+            ti: '.ProcessType.Identification.OwnedBy'
+          }]
+      }, {
+        ln: 'ResponseModels.SteadyStateResponse',
+        tn: null,
+        ps: [{
+            n: 'responseParameters',
+            ti: '.ResponseModels.SteadyStateResponse.ResponseParameters'
+          }, {
+            n: 'propValues',
+            mno: 0,
+            col: true,
+            ti: '.ResponseModels.SteadyStateResponse.PropValues'
+          }, {
+            n: 'dataValues',
+            mno: 0,
+            col: true,
+            ti: '.ResponseModels.SteadyStateResponse.DataValues'
+          }, {
+            n: 'code',
+            ti: '.ResponseModels.SteadyStateResponse.Code'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'SpatialModel.AmbiguitySpace.Position',
         tn: null,
         bti: '.SpatialCoordType'
       }, {
-        ln: 'ResponseModels',
+        ln: 'ProcessType.Input',
         tn: null,
         ps: [{
-            n: 'cfSubSampling',
-            ti: '.CfSubSampling'
-          }, {
-            n: 'steadyStateResponse',
-            mno: 0,
-            col: true,
-            ti: '.ResponseModels.SteadyStateResponse'
-          }, {
-            n: 'impulseResponse',
-            mno: 0,
-            col: true,
-            ti: '.ResponseModels.ImpulseResponse'
-          }, {
-            n: 'frequencyResponse',
-            mno: 0,
-            col: true,
-            ti: '.ResponseModels.FrequencyResponse'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProcessType.Input.InputIdent',
-        tn: null,
-        ps: [{
-            n: 'uid',
-            ti: '.BindType'
-          }, {
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'description',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'ResponseModels.SteadyStateResponse.PropValues.PropName',
-        tn: null,
-        bti: '.BindType',
-        ps: [{
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'IdentificationType.Calibration',
-        tn: null,
-        ps: [{
-            n: 'calibratedBy',
-            mno: 0,
-            col: true,
-            ti: '.IdentificationType.Calibration.CalibratedBy'
-          }, {
-            n: 'validatedBy',
-            mno: 0,
-            col: true,
-            ti: '.IdentificationType.Calibration.ValidatedBy'
-          }]
-      }, {
-        ln: 'TemporalModel.AmbiguityTime',
-        tn: null,
-        bti: '.ValueType',
-        ps: [{
-            n: 'dataUidRef',
-            ti: '.BindType'
-          }, {
-            n: 'cfSubSampling',
-            mno: 0,
-            col: true,
-            ti: '.CfSubSampling'
-          }]
-      }, {
-        ln: 'ClusterDesc.DataUnitEncoding',
-        tn: null,
-        ps: [{
-            n: 'dataUnitUidRef',
-            ti: '.BindType'
-          }, {
-            n: 'dataType',
-            ti: '.BindType'
-          }, {
-            n: 'dataUnitFieldSize',
-            ti: '.ClusterDesc.DataUnitEncoding.DataUnitFieldSize'
-          }, {
-            n: 'endian',
-            ti: '.BindType'
-          }, {
-            n: 'encode',
-            ti: '.BindType'
-          }, {
-            n: 'numBase',
-            ti: '.BindType'
-          }, {
-            n: 'handleAsType',
-            ti: '.BindType'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ClusterDesc.TransSeq',
-        tn: null,
-        ps: [{
-            n: 'seqOfThisDataStruct',
-            mno: 0,
-            col: true,
-            ti: '.BindType'
-          }, {
-            n: 'inThisDataStruct',
-            mno: 0,
-            col: true,
-            ti: '.BindType'
-          }, {
-            n: 'sequence',
-            ti: '.ClusterDesc.TransSeq.Sequence'
-          }]
-      }, {
-        ln: 'ProcessType.Output',
-        tn: null,
-        ps: [{
-            n: 'outputIdent',
-            ti: '.ProcessType.Output.OutputIdent'
+            n: 'inputIdent',
+            ti: '.ProcessType.Input.InputIdent'
           }, {
             n: 'logicalDataStructure',
             mno: 0,
             col: true,
             ti: '.LogicalDataStructure'
           }, {
-            n: 'responseModels',
-            ti: '.ResponseModels'
-          }, {
-            n: 'spatialModel',
-            mno: 0,
-            col: true,
-            ti: '.SpatialModel'
-          }, {
-            n: 'temporalModel',
-            ti: '.TemporalModel'
-          }, {
-            n: 'other',
-            ti: 'AnyType'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ObjToObjRelation.Object',
-        tn: null,
-        ps: [{
-            n: 'name'
-          }, {
-            n: 'objType',
-            ti: '.BindType'
-          }, {
-            n: 'dirIndirSubj',
-            ti: '.BindType'
-          }, {
-            n: 'objUidRef',
+            n: 'dataValue',
             ti: '.BindType'
           }, {
             n: 'refName',
@@ -1074,273 +530,20 @@ var TML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ResponseModels.SteadyStateResponse.Code.Properties',
+        ln: 'ClusterDesc.ClusterProperties',
         tn: null,
         ps: [{
-            n: 'codeType',
+            n: 'direction',
             ti: '.BindType'
           }, {
-            n: 'codeLanguage',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'Tml',
-        tn: null,
-        ps: [{
-            n: 'systemOrSubjectOrTransducer',
-            mno: 0,
-            col: true,
-            etis: [{
-                en: 'system',
-                ti: '.SystemType'
-              }, {
-                en: 'subject',
-                ti: '.Subject'
-              }, {
-                en: 'transducer',
-                ti: '.TransducerType'
-              }, {
-                en: 'process',
-                ti: '.ProcessType'
-              }, {
-                en: 'extSysRelations',
-                ti: '.Tml.ExtSysRelations'
-              }, {
-                en: 'data',
-                ti: '.Data'
-              }],
-            t: 'es'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'classification',
-            ti: 'IC_2_0.ClassificationType',
-            an: {
-              lp: 'classification',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'ownerProducer',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'ownerProducer',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'scIcontrols',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'SCIcontrols',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'sarIdentifier',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'SARIdentifier',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'disseminationControls',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'disseminationControls',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'fgIsourceOpen',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'FGIsourceOpen',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'fgIsourceProtected',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'FGIsourceProtected',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'releasableTo',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'releasableTo',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'nonICmarkings',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nonICmarkings',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'classifiedBy',
-            an: {
-              lp: 'classifiedBy',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'classificationReason',
-            an: {
-              lp: 'classificationReason',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'derivedFrom',
-            an: {
-              lp: 'derivedFrom',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassDate',
-            ti: 'Calendar',
-            an: {
-              lp: 'declassDate',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassEvent',
-            an: {
-              lp: 'declassEvent',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassException',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'declassException',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'typeOfExemptedSource',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'typeOfExemptedSource',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'dateOfExemptedSource',
-            ti: 'Calendar',
-            an: {
-              lp: 'dateOfExemptedSource',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassManualReview',
-            ti: 'Boolean',
-            an: {
-              lp: 'declassManualReview',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TransducerType.TransducerClass',
-        tn: null,
-        ps: [{
-            n: 'transmitterReceiver',
+            n: 'complexity',
             ti: '.BindType'
           }, {
-            n: 'insituRemote',
+            n: 'clusterType',
             ti: '.BindType'
           }, {
-            n: 'spatialDependancy',
+            n: 'clusterSize',
             ti: '.BindType'
-          }]
-      }, {
-        ln: 'SpatialModel.AmbiguitySpace.Shape',
-        tn: null,
-        ps: [{
-            n: 'pwrProfile',
-            ti: '.SpatialModel.AmbiguitySpace.Shape.PwrProfile'
-          }, {
-            n: 'spaceCoordSystem',
-            ti: '.BindType'
-          }, {
-            n: 'spaceLocCoords',
-            mno: 0,
-            col: true,
-            ti: '.SpatialModel.AmbiguitySpace.Shape.SpaceLocCoords'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'SystemType.Relations.PropToPropRelation',
@@ -1386,629 +589,32 @@ var TML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ClusterDesc.IdMapping',
+        ln: 'ClusterDesc.DataUnitEncoding.DataUnitFieldSize',
         tn: null,
         ps: [{
-            n: 'tapPointUidRef',
+            n: 'numBits',
+            ti: '.BindType'
+          }, {
+            n: 'numSigBits',
+            ti: '.BindType'
+          }, {
+            n: 'justification',
+            ti: '.BindType'
+          }, {
+            n: 'beginTextDelimiter',
+            ti: '.BindType'
+          }, {
+            n: 'endTextDelimiter',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'SystemType.Processes',
+        tn: null,
+        ps: [{
+            n: 'process',
             mno: 0,
             col: true,
-            ti: '.BindType'
-          }, {
-            n: 'localID',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'ResponseModels.ImpulseResponse.Time',
-        tn: null,
-        bti: '.ValueType'
-      }, {
-        ln: 'SystemType.Relations.DataToDataRelation.DataSink',
-        tn: null,
-        ps: [{
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'dataUidRef',
-            ti: '.SystemType.Relations.DataToDataRelation.DataSink.DataUidRef'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProcessType.Identification',
-        tn: null,
-        bti: '.IdentificationType',
-        ps: [{
-            n: 'manufacture',
-            ti: '.BindType'
-          }, {
-            n: 'modelNumber',
-            ti: '.BindType'
-          }, {
-            n: 'serialNumber',
-            ti: '.BindType'
-          }, {
-            n: 'processVersion',
-            ti: '.BindType'
-          }, {
-            n: 'ownedBy',
-            mno: 0,
-            col: true,
-            ti: '.ProcessType.Identification.OwnedBy'
-          }]
-      }, {
-        ln: 'Subject',
-        tn: null,
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            typed: false,
-            mx: false,
-            t: 'ae'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SystemType.Relations.TimeRelation',
-        tn: null,
-        ps: [{
-            n: 'sysClkUidRef',
-            ti: '.BindType'
-          }, {
-            n: 'timeReference',
-            ti: '.BindType'
-          }, {
-            n: 'timeCoordinate',
-            mno: 0,
-            col: true,
-            ti: '.SystemType.Relations.TimeRelation.TimeCoordinate'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SystemType.Identification.Owner',
-        tn: null,
-        ps: [{
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'organization',
-            ti: '.BindType'
-          }, {
-            n: 'email',
-            ti: '.BindType'
-          }, {
-            n: 'phone',
-            ti: '.BindType'
-          }, {
-            n: 'date',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'SystemType.Relations',
-        tn: null,
-        ps: [{
-            n: 'positionRelationAndTimeRelationAndObjToObjRelation',
-            mno: 0,
-            col: true,
-            etis: [{
-                en: 'positionRelation',
-                ti: '.SystemType.Relations.PositionRelation'
-              }, {
-                en: 'timeRelation',
-                ti: '.SystemType.Relations.TimeRelation'
-              }, {
-                en: 'objToObjRelation',
-                ti: '.ObjToObjRelation'
-              }, {
-                en: 'objToDataRelation',
-                ti: '.ObjToDataRelation'
-              }, {
-                en: 'dataToDataRelation',
-                ti: '.SystemType.Relations.DataToDataRelation'
-              }, {
-                en: 'propToPropRelation',
-                ti: '.SystemType.Relations.PropToPropRelation'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'ResponseModels.SteadyStateResponse.Code.Listing',
-        tn: null,
-        bti: '.BindType'
-      }, {
-        ln: 'ProcessType.Identification.OwnedBy',
-        tn: null,
-        ps: [{
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'organization',
-            ti: '.BindType'
-          }, {
-            n: 'email',
-            ti: '.BindType'
-          }, {
-            n: 'phone',
-            ti: '.BindType'
-          }, {
-            n: 'date',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'TemporalModel.CfTrigger',
-        tn: null,
-        ps: [{
-            n: 'trigType',
-            ti: '.BindType'
-          }, {
-            n: 'publicTrigger',
-            ti: '.BindType'
-          }, {
-            n: 'period',
-            ti: '.ValueType'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SystemType.OtherProperties',
-        tn: null,
-        ps: [{
-            n: 'property',
-            mno: 0,
-            col: true,
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'Tml.ExtSysRelations',
-        tn: null,
-        ps: [{
-            n: 'objToObjRelation',
-            mno: 0,
-            col: true,
-            ti: '.ObjToObjRelation'
-          }, {
-            n: 'objToDataRelation',
-            mno: 0,
-            col: true,
-            ti: '.ObjToDataRelation'
-          }, {
-            n: 'otherRelations',
-            mno: 0,
-            col: true,
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'SystemType.Subjects',
-        tn: null,
-        ps: [{
-            n: 'subject',
-            mno: 0,
-            col: true,
-            ti: '.Subject'
-          }]
-      }, {
-        ln: 'SystemType',
-        ps: [{
-            n: 'identification',
-            ti: '.SystemType.Identification'
-          }, {
-            n: 'sysClk',
-            ti: '.SystemType.SysClk'
-          }, {
-            n: 'systems',
-            ti: '.SystemType.Systems'
-          }, {
-            n: 'subjects',
-            ti: '.SystemType.Subjects'
-          }, {
-            n: 'transducers',
-            ti: '.SystemType.Transducers'
-          }, {
-            n: 'processes',
-            ti: '.SystemType.Processes'
-          }, {
-            n: 'relations',
-            ti: '.SystemType.Relations'
-          }, {
-            n: 'clusterDescriptions',
-            ti: '.SystemType.ClusterDescriptions'
-          }, {
-            n: 'otherProperties',
-            ti: '.SystemType.OtherProperties'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }, {
-            n: 'classification',
-            ti: 'IC_2_0.ClassificationType',
-            an: {
-              lp: 'classification',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'ownerProducer',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'ownerProducer',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'scIcontrols',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'SCIcontrols',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'sarIdentifier',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'SARIdentifier',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'disseminationControls',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'disseminationControls',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'fgIsourceOpen',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'FGIsourceOpen',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'fgIsourceProtected',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'FGIsourceProtected',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'releasableTo',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'releasableTo',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'nonICmarkings',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nonICmarkings',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'classifiedBy',
-            an: {
-              lp: 'classifiedBy',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'classificationReason',
-            an: {
-              lp: 'classificationReason',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'derivedFrom',
-            an: {
-              lp: 'derivedFrom',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassDate',
-            ti: 'Calendar',
-            an: {
-              lp: 'declassDate',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassEvent',
-            an: {
-              lp: 'declassEvent',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassException',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'declassException',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'typeOfExemptedSource',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'typeOfExemptedSource',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'dateOfExemptedSource',
-            ti: 'Calendar',
-            an: {
-              lp: 'dateOfExemptedSource',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassManualReview',
-            ti: 'Boolean',
-            an: {
-              lp: 'declassManualReview',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProcessType.Output.OutputIdent',
-        tn: null,
-        ps: [{
-            n: 'uid',
-            ti: '.BindType'
-          }, {
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'description',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'ResponseModels.FrequencyResponse',
-        tn: null,
-        ps: [{
-            n: 'dataUidRef',
-            ti: '.BindType'
-          }, {
-            n: 'freqRespType',
-            ti: '.BindType'
-          }, {
-            n: 'amplitude',
-            ti: '.ResponseModels.FrequencyResponse.Amplitude'
-          }, {
-            n: 'phase',
-            ti: '.ResponseModels.FrequencyResponse.Phase'
-          }, {
-            n: 'frequency',
-            ti: '.ResponseModels.FrequencyResponse.Frequency'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SystemType.ClusterDescriptions',
-        tn: null,
-        ps: [{
-            n: 'clusterDesc',
-            mno: 0,
-            col: true,
-            ti: '.ClusterDesc'
-          }]
-      }, {
-        ln: 'ResponseModels.FrequencyResponse.Amplitude',
-        tn: null,
-        bti: '.ValueType'
-      }, {
-        ln: 'ResponseModels.SteadyStateResponse',
-        tn: null,
-        ps: [{
-            n: 'responseParameters',
-            ti: '.ResponseModels.SteadyStateResponse.ResponseParameters'
-          }, {
-            n: 'propValues',
-            mno: 0,
-            col: true,
-            ti: '.ResponseModels.SteadyStateResponse.PropValues'
-          }, {
-            n: 'dataValues',
-            mno: 0,
-            col: true,
-            ti: '.ResponseModels.SteadyStateResponse.DataValues'
-          }, {
-            n: 'code',
-            ti: '.ResponseModels.SteadyStateResponse.Code'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DataUnit',
-        tn: null,
-        ps: [{
-            n: 'uid',
-            ti: '.BindType'
-          }, {
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'variableName',
-            ti: '.BindType'
-          }, {
-            n: 'dataType',
-            ti: '.BindType'
-          }, {
-            n: 'bytesInBlob',
-            ti: '.BindType'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'IdentificationType.Characterization',
-        tn: null,
-        ps: [{
-            n: 'characterizedBy',
-            ti: '.IdentificationType.Characterization.CharacterizedBy'
-          }, {
-            n: 'validatedBy',
-            ti: '.IdentificationType.Characterization.ValidatedBy'
+            ti: '.ProcessType'
           }]
       }, {
         ln: 'DataArrayType',
@@ -2055,75 +661,6 @@ var TML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SpatialCoordType.SpaceCoords',
-        tn: null,
-        ps: [{
-            n: 'posVelAccel',
-            ti: '.BindType'
-          }, {
-            n: 'coordName',
-            ti: '.BindType'
-          }, {
-            n: 'coords',
-            ti: '.ValueType'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TransducerType.Identification.OwnedBy',
-        tn: null,
-        ps: [{
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'organization',
-            ti: '.BindType'
-          }, {
-            n: 'email',
-            ti: '.BindType'
-          }, {
-            n: 'phone',
-            ti: '.BindType'
-          }, {
-            n: 'date',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'IdentificationType.Characterization.ValidatedBy',
-        tn: null,
-        ps: [{
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'organization',
-            ti: '.BindType'
-          }, {
-            n: 'email',
-            ti: '.BindType'
-          }, {
-            n: 'phone',
-            ti: '.BindType'
-          }, {
-            n: 'date',
-            ti: '.BindType'
-          }]
-      }, {
         ln: 'TransducerType.OtherProperties',
         tn: null,
         ps: [{
@@ -2133,17 +670,17 @@ var TML_1_0_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'ClusterDesc.BinHeaderEncode.HeaderAttrib',
+        ln: 'ClusterDesc.DataUnitEncoding',
         tn: null,
         ps: [{
-            n: 'headerAttribName',
+            n: 'dataUnitUidRef',
             ti: '.BindType'
           }, {
             n: 'dataType',
             ti: '.BindType'
           }, {
             n: 'dataUnitFieldSize',
-            ti: '.ClusterDesc.BinHeaderEncode.HeaderAttrib.DataUnitFieldSize'
+            ti: '.ClusterDesc.DataUnitEncoding.DataUnitFieldSize'
           }, {
             n: 'endian',
             ti: '.BindType'
@@ -2176,13 +713,180 @@ var TML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SystemType.Transducers',
+        ln: 'LogicalDataStructure',
         tn: null,
         ps: [{
-            n: 'transducer',
+            n: 'uid',
+            ti: '.BindType'
+          }, {
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'ldsDimensionality',
+            ti: '.BindType'
+          }, {
+            n: 'numOfDataSetsInCf',
+            ti: '.BindType'
+          }, {
+            n: 'cfDataArray',
+            ti: '.DataArrayType'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ResponseModels',
+        tn: null,
+        ps: [{
+            n: 'cfSubSampling',
+            ti: '.CfSubSampling'
+          }, {
+            n: 'steadyStateResponse',
             mno: 0,
             col: true,
-            ti: '.TransducerType'
+            ti: '.ResponseModels.SteadyStateResponse'
+          }, {
+            n: 'impulseResponse',
+            mno: 0,
+            col: true,
+            ti: '.ResponseModels.ImpulseResponse'
+          }, {
+            n: 'frequencyResponse',
+            mno: 0,
+            col: true,
+            ti: '.ResponseModels.FrequencyResponse'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TemporalModel.CfOffsetTime',
+        tn: null,
+        bti: '.ValueType',
+        ps: [{
+            n: 'dataUidRef',
+            ti: '.BindType'
+          }, {
+            n: 'cfSubSampling',
+            mno: 0,
+            col: true,
+            ti: '.CfSubSampling'
+          }]
+      }, {
+        ln: 'IdentificationType.Characterization.CharacterizedBy',
+        tn: null,
+        ps: [{
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'organization',
+            ti: '.BindType'
+          }, {
+            n: 'email',
+            ti: '.BindType'
+          }, {
+            n: 'phone',
+            ti: '.BindType'
+          }, {
+            n: 'date',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'ClusterDesc.TransSeq',
+        tn: null,
+        ps: [{
+            n: 'seqOfThisDataStruct',
+            mno: 0,
+            col: true,
+            ti: '.BindType'
+          }, {
+            n: 'inThisDataStruct',
+            mno: 0,
+            col: true,
+            ti: '.BindType'
+          }, {
+            n: 'sequence',
+            ti: '.ClusterDesc.TransSeq.Sequence'
+          }]
+      }, {
+        ln: 'DataUnit',
+        tn: null,
+        ps: [{
+            n: 'uid',
+            ti: '.BindType'
+          }, {
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'variableName',
+            ti: '.BindType'
+          }, {
+            n: 'dataType',
+            ti: '.BindType'
+          }, {
+            n: 'bytesInBlob',
+            ti: '.BindType'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TemporalModel.AmbiguityTime',
+        tn: null,
+        bti: '.ValueType',
+        ps: [{
+            n: 'dataUidRef',
+            ti: '.BindType'
+          }, {
+            n: 'cfSubSampling',
+            mno: 0,
+            col: true,
+            ti: '.CfSubSampling'
           }]
       }, {
         ln: 'ProcessType',
@@ -2382,82 +1086,10 @@ var TML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'IdentificationType.Characterization.CharacterizedBy',
+        ln: 'ResponseModels.SteadyStateResponse.PropValues.UOM',
         tn: null,
+        bti: '.BindType',
         ps: [{
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'organization',
-            ti: '.BindType'
-          }, {
-            n: 'email',
-            ti: '.BindType'
-          }, {
-            n: 'phone',
-            ti: '.BindType'
-          }, {
-            n: 'date',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'ResponseModels.SteadyStateResponse.PropValues',
-        tn: null,
-        bti: '.ValueType',
-        ps: [{
-            n: 'inputOutput',
-            ti: '.BindType'
-          }, {
-            n: 'propName',
-            ti: '.ResponseModels.SteadyStateResponse.PropValues.PropName'
-          }, {
-            n: 'propQualifier',
-            ti: '.BindType'
-          }, {
-            n: 'uom',
-            en: 'UOM',
-            ti: '.ResponseModels.SteadyStateResponse.PropValues.UOM'
-          }, {
-            n: 'direction',
-            ti: '.BindType'
-          }, {
-            n: 'variableName',
-            ti: '.BindType'
-          }, {
-            n: 'calibProp',
-            mno: 0,
-            col: true,
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'ClusterDesc.ClusterProperties',
-        tn: null,
-        ps: [{
-            n: 'direction',
-            ti: '.BindType'
-          }, {
-            n: 'complexity',
-            ti: '.BindType'
-          }, {
-            n: 'clusterType',
-            ti: '.BindType'
-          }, {
-            n: 'clusterSize',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'SystemType.Relations.DataToDataRelation.DataSource',
-        tn: null,
-        ps: [{
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'dataUidRef',
-            ti: '.SystemType.Relations.DataToDataRelation.DataSource.DataUidRef'
-          }, {
-            n: 'value',
-            ti: '.BindType'
-          }, {
             n: 'refName',
             an: {
               lp: 'name'
@@ -2477,23 +1109,36 @@ var TML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ClusterDesc.BinHeaderEncode.HeaderAttrib.DataUnitFieldSize',
+        ln: 'SystemType.Relations.DataToDataRelation.DataSink.DataUidRef',
+        tn: null,
+        bti: '.BindType'
+      }, {
+        ln: 'ProcessType.Identification.OwnedBy',
         tn: null,
         ps: [{
-            n: 'numBits',
+            n: 'name',
             ti: '.BindType'
           }, {
-            n: 'numSigBits',
+            n: 'organization',
             ti: '.BindType'
           }, {
-            n: 'justification',
+            n: 'email',
             ti: '.BindType'
           }, {
-            n: 'beginTextDelimiter',
+            n: 'phone',
             ti: '.BindType'
           }, {
-            n: 'endTextDelimiter',
+            n: 'date',
             ti: '.BindType'
+          }]
+      }, {
+        ln: 'SystemType.OtherProperties',
+        tn: null,
+        ps: [{
+            n: 'property',
+            mno: 0,
+            col: true,
+            ti: 'AnyType'
           }]
       }, {
         ln: 'SpatialCoordType',
@@ -2511,624 +1156,6 @@ var TML_1_0_0_Module_Factory = function () {
             mno: 0,
             col: true,
             ti: '.SpatialCoordType.SpaceCoords'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ResponseModels.FrequencyResponse.Phase',
-        tn: null,
-        bti: '.ValueType'
-      }, {
-        ln: 'BindType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'bindUid',
-            an: {
-              lp: 'bindUid'
-            },
-            t: 'a'
-          }, {
-            n: 'bindUidRef',
-            an: {
-              lp: 'bindUidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Accuracy',
-        tn: null,
-        ps: [{
-            n: 'type',
-            ti: '.BindType'
-          }, {
-            n: 'errorDistribution',
-            ti: '.BindType'
-          }, {
-            n: 'factor',
-            ti: '.BindType'
-          }, {
-            n: 'accyValues',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'SystemType.Processes',
-        tn: null,
-        ps: [{
-            n: 'process',
-            mno: 0,
-            col: true,
-            ti: '.ProcessType'
-          }]
-      }, {
-        ln: 'ObjToObjRelation',
-        tn: null,
-        ps: [{
-            n: 'relationDescription',
-            ti: '.BindType'
-          }, {
-            n: 'uid',
-            ti: '.BindType'
-          }, {
-            n: 'object',
-            mno: 0,
-            col: true,
-            ti: '.ObjToObjRelation.Object'
-          }, {
-            n: 'confidence',
-            ti: '.BindType'
-          }, {
-            n: 'classification',
-            ti: 'IC_2_0.ClassificationType',
-            an: {
-              lp: 'classification',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'ownerProducer',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'ownerProducer',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'scIcontrols',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'SCIcontrols',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'sarIdentifier',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'SARIdentifier',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'disseminationControls',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'disseminationControls',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'fgIsourceOpen',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'FGIsourceOpen',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'fgIsourceProtected',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'FGIsourceProtected',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'releasableTo',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'releasableTo',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'nonICmarkings',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nonICmarkings',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'classifiedBy',
-            an: {
-              lp: 'classifiedBy',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'classificationReason',
-            an: {
-              lp: 'classificationReason',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'derivedFrom',
-            an: {
-              lp: 'derivedFrom',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassDate',
-            ti: 'Calendar',
-            an: {
-              lp: 'declassDate',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassEvent',
-            an: {
-              lp: 'declassEvent',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassException',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'declassException',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'typeOfExemptedSource',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'typeOfExemptedSource',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'dateOfExemptedSource',
-            ti: 'Calendar',
-            an: {
-              lp: 'dateOfExemptedSource',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassManualReview',
-            ti: 'Boolean',
-            an: {
-              lp: 'declassManualReview',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'IdentificationType.Calibration.CalibratedBy',
-        tn: null,
-        ps: [{
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'organization',
-            ti: '.BindType'
-          }, {
-            n: 'email',
-            ti: '.BindType'
-          }, {
-            n: 'phone',
-            ti: '.BindType'
-          }, {
-            n: 'date',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'TransducerType.Identification',
-        tn: null,
-        bti: '.IdentificationType',
-        ps: [{
-            n: 'manufacture',
-            ti: '.BindType'
-          }, {
-            n: 'modelNumber',
-            ti: '.BindType'
-          }, {
-            n: 'serialNumber',
-            ti: '.BindType'
-          }, {
-            n: 'ownedBy',
-            mno: 0,
-            col: true,
-            ti: '.TransducerType.Identification.OwnedBy'
-          }]
-      }, {
-        ln: 'ObjToDataRelation',
-        tn: null,
-        ps: [{
-            n: 'relationDescription',
-            ti: '.ObjToDataRelation.RelationDescription'
-          }, {
-            n: 'uid',
-            ti: '.BindType'
-          }, {
-            n: 'object',
-            mno: 0,
-            col: true,
-            ti: '.ObjToDataRelation.Object'
-          }, {
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'dataUidRef',
-            ti: '.BindType'
-          }, {
-            n: 'value',
-            ti: '.BindType'
-          }, {
-            n: 'classification',
-            ti: 'IC_2_0.ClassificationType',
-            an: {
-              lp: 'classification',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'ownerProducer',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'ownerProducer',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'scIcontrols',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'SCIcontrols',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'sarIdentifier',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'SARIdentifier',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'disseminationControls',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'disseminationControls',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'fgIsourceOpen',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'FGIsourceOpen',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'fgIsourceProtected',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'FGIsourceProtected',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'releasableTo',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'releasableTo',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'nonICmarkings',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nonICmarkings',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'classifiedBy',
-            an: {
-              lp: 'classifiedBy',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'classificationReason',
-            an: {
-              lp: 'classificationReason',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'derivedFrom',
-            an: {
-              lp: 'derivedFrom',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassDate',
-            ti: 'Calendar',
-            an: {
-              lp: 'declassDate',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassEvent',
-            an: {
-              lp: 'declassEvent',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassException',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'declassException',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'typeOfExemptedSource',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'typeOfExemptedSource',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'dateOfExemptedSource',
-            ti: 'Calendar',
-            an: {
-              lp: 'dateOfExemptedSource',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'declassManualReview',
-            ti: 'Boolean',
-            an: {
-              lp: 'declassManualReview',
-              ns: 'urn:us:gov:ic:ism:v2'
-            },
-            t: 'a'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SpatialModel.AmbiguitySpace',
-        tn: null,
-        ps: [{
-            n: 'shape',
-            mno: 0,
-            col: true,
-            ti: '.SpatialModel.AmbiguitySpace.Shape'
-          }, {
-            n: 'position',
-            mno: 0,
-            col: true,
-            ti: '.SpatialModel.AmbiguitySpace.Position'
-          }, {
-            n: 'refName',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'refUid',
-            an: {
-              lp: 'uid'
-            },
-            t: 'a'
-          }, {
-            n: 'refUidRef',
-            an: {
-              lp: 'uidRef'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SystemType.Relations.PositionRelation',
-        tn: null,
-        bti: '.SpatialCoordType',
-        ps: [{
-            n: 'objUidRef',
-            mno: 0,
-            col: true,
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'IdentificationType.Calibration.ValidatedBy',
-        tn: null,
-        ps: [{
-            n: 'name',
-            ti: '.BindType'
-          }, {
-            n: 'organization',
-            ti: '.BindType'
-          }, {
-            n: 'email',
-            ti: '.BindType'
-          }, {
-            n: 'phone',
-            ti: '.BindType'
-          }, {
-            n: 'date',
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'ResponseModels.SteadyStateResponse.DataValues',
-        tn: null,
-        bti: '.ValueType',
-        ps: [{
-            n: 'inputOutput',
-            ti: '.BindType'
-          }, {
-            n: 'dataUidRef',
-            ti: '.BindType'
-          }, {
-            n: 'variableName',
-            ti: '.BindType'
-          }, {
-            n: 'calibData',
-            mno: 0,
-            col: true,
-            ti: '.BindType'
-          }]
-      }, {
-        ln: 'SpatialModel.AmbiguitySpace.Shape.PwrProfile',
-        tn: null,
-        bti: '.BindType'
-      }, {
-        ln: 'ValueType',
-        ps: [{
-            n: 'numValues',
-            ti: '.BindType'
-          }, {
-            n: 'arrayType',
-            ti: '.BindType'
-          }, {
-            n: 'fcnInterpol',
-            ti: '.BindType'
-          }, {
-            n: 'valueDataType',
-            ti: '.BindType'
-          }, {
-            n: 'values',
-            ti: '.BindType'
-          }, {
-            n: 'mult',
-            mno: 0,
-            col: true,
-            ti: '.BindType'
-          }, {
-            n: 'offset',
-            mno: 0,
-            col: true,
-            ti: '.BindType'
-          }, {
-            n: 'accuracy',
-            mno: 0,
-            col: true,
-            ti: '.Accuracy'
           }, {
             n: 'refName',
             an: {
@@ -3357,14 +1384,45 @@ var TML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ResponseModels.SteadyStateResponse.Code',
+        ln: 'ClusterDesc.BinHeaderEncode',
         tn: null,
         ps: [{
-            n: 'properties',
-            ti: '.ResponseModels.SteadyStateResponse.Code.Properties'
+            n: 'headerAttrib',
+            mno: 0,
+            col: true,
+            ti: '.ClusterDesc.BinHeaderEncode.HeaderAttrib'
+          }]
+      }, {
+        ln: 'IdentificationType.Calibration.ValidatedBy',
+        tn: null,
+        ps: [{
+            n: 'name',
+            ti: '.BindType'
           }, {
-            n: 'listing',
-            ti: '.ResponseModels.SteadyStateResponse.Code.Listing'
+            n: 'organization',
+            ti: '.BindType'
+          }, {
+            n: 'email',
+            ti: '.BindType'
+          }, {
+            n: 'phone',
+            ti: '.BindType'
+          }, {
+            n: 'date',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'TemporalModel.CfTrigger',
+        tn: null,
+        ps: [{
+            n: 'trigType',
+            ti: '.BindType'
+          }, {
+            n: 'publicTrigger',
+            ti: '.BindType'
+          }, {
+            n: 'period',
+            ti: '.ValueType'
           }, {
             n: 'refName',
             an: {
@@ -3385,23 +1443,31 @@ var TML_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LogicalDataStructure',
+        ln: 'ClusterDesc.TimeTag',
         tn: null,
         ps: [{
-            n: 'uid',
+            n: 'sysClkUidRef',
             ti: '.BindType'
           }, {
+            n: 'accuracy',
+            ti: '.Accuracy'
+          }]
+      }, {
+        ln: 'ResponseModels.ImpulseResponse.Time',
+        tn: null,
+        bti: '.ValueType'
+      }, {
+        ln: 'SystemType.Relations.DataToDataRelation.DataSource',
+        tn: null,
+        ps: [{
             n: 'name',
             ti: '.BindType'
           }, {
-            n: 'ldsDimensionality',
-            ti: '.BindType'
+            n: 'dataUidRef',
+            ti: '.SystemType.Relations.DataToDataRelation.DataSource.DataUidRef'
           }, {
-            n: 'numOfDataSetsInCf',
+            n: 'value',
             ti: '.BindType'
-          }, {
-            n: 'cfDataArray',
-            ti: '.DataArrayType'
           }, {
             n: 'refName',
             an: {
@@ -3421,6 +1487,1377 @@ var TML_1_0_0_Module_Factory = function () {
             },
             t: 'a'
           }]
+      }, {
+        ln: 'SystemType',
+        ps: [{
+            n: 'identification',
+            ti: '.SystemType.Identification'
+          }, {
+            n: 'sysClk',
+            ti: '.SystemType.SysClk'
+          }, {
+            n: 'systems',
+            ti: '.SystemType.Systems'
+          }, {
+            n: 'subjects',
+            ti: '.SystemType.Subjects'
+          }, {
+            n: 'transducers',
+            ti: '.SystemType.Transducers'
+          }, {
+            n: 'processes',
+            ti: '.SystemType.Processes'
+          }, {
+            n: 'relations',
+            ti: '.SystemType.Relations'
+          }, {
+            n: 'clusterDescriptions',
+            ti: '.SystemType.ClusterDescriptions'
+          }, {
+            n: 'otherProperties',
+            ti: '.SystemType.OtherProperties'
+          }, {
+            n: 'classification',
+            ti: 'IC_2_0.ClassificationType',
+            an: {
+              lp: 'classification',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'ownerProducer',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'ownerProducer',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'scIcontrols',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'SCIcontrols',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'sarIdentifier',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'SARIdentifier',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'disseminationControls',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'disseminationControls',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'fgIsourceOpen',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'FGIsourceOpen',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'fgIsourceProtected',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'FGIsourceProtected',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'releasableTo',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'releasableTo',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'nonICmarkings',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nonICmarkings',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'classifiedBy',
+            an: {
+              lp: 'classifiedBy',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'classificationReason',
+            an: {
+              lp: 'classificationReason',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'derivedFrom',
+            an: {
+              lp: 'derivedFrom',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassDate',
+            ti: 'Calendar',
+            an: {
+              lp: 'declassDate',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassEvent',
+            an: {
+              lp: 'declassEvent',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassException',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'declassException',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'typeOfExemptedSource',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'typeOfExemptedSource',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'dateOfExemptedSource',
+            ti: 'Calendar',
+            an: {
+              lp: 'dateOfExemptedSource',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassManualReview',
+            ti: 'Boolean',
+            an: {
+              lp: 'declassManualReview',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'BindType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'bindUid',
+            an: {
+              lp: 'bindUid'
+            },
+            t: 'a'
+          }, {
+            n: 'bindUidRef',
+            an: {
+              lp: 'bindUidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ObjToDataRelation',
+        tn: null,
+        ps: [{
+            n: 'relationDescription',
+            ti: '.ObjToDataRelation.RelationDescription'
+          }, {
+            n: 'uid',
+            ti: '.BindType'
+          }, {
+            n: 'object',
+            mno: 0,
+            col: true,
+            ti: '.ObjToDataRelation.Object'
+          }, {
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'dataUidRef',
+            ti: '.BindType'
+          }, {
+            n: 'value',
+            ti: '.BindType'
+          }, {
+            n: 'classification',
+            ti: 'IC_2_0.ClassificationType',
+            an: {
+              lp: 'classification',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'ownerProducer',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'ownerProducer',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'scIcontrols',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'SCIcontrols',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'sarIdentifier',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'SARIdentifier',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'disseminationControls',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'disseminationControls',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'fgIsourceOpen',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'FGIsourceOpen',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'fgIsourceProtected',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'FGIsourceProtected',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'releasableTo',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'releasableTo',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'nonICmarkings',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nonICmarkings',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'classifiedBy',
+            an: {
+              lp: 'classifiedBy',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'classificationReason',
+            an: {
+              lp: 'classificationReason',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'derivedFrom',
+            an: {
+              lp: 'derivedFrom',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassDate',
+            ti: 'Calendar',
+            an: {
+              lp: 'declassDate',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassEvent',
+            an: {
+              lp: 'declassEvent',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassException',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'declassException',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'typeOfExemptedSource',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'typeOfExemptedSource',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'dateOfExemptedSource',
+            ti: 'Calendar',
+            an: {
+              lp: 'dateOfExemptedSource',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassManualReview',
+            ti: 'Boolean',
+            an: {
+              lp: 'declassManualReview',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ResponseModels.FrequencyResponse.Amplitude',
+        tn: null,
+        bti: '.ValueType'
+      }, {
+        ln: 'SystemType.Relations.DataToDataRelation.DataSink',
+        tn: null,
+        ps: [{
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'dataUidRef',
+            ti: '.SystemType.Relations.DataToDataRelation.DataSink.DataUidRef'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ValueType',
+        ps: [{
+            n: 'numValues',
+            ti: '.BindType'
+          }, {
+            n: 'arrayType',
+            ti: '.BindType'
+          }, {
+            n: 'fcnInterpol',
+            ti: '.BindType'
+          }, {
+            n: 'valueDataType',
+            ti: '.BindType'
+          }, {
+            n: 'values',
+            ti: '.BindType'
+          }, {
+            n: 'mult',
+            mno: 0,
+            col: true,
+            ti: '.BindType'
+          }, {
+            n: 'offset',
+            mno: 0,
+            col: true,
+            ti: '.BindType'
+          }, {
+            n: 'accuracy',
+            mno: 0,
+            col: true,
+            ti: '.Accuracy'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessType.Input.InputIdent',
+        tn: null,
+        ps: [{
+            n: 'uid',
+            ti: '.BindType'
+          }, {
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'description',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'SystemType.Subjects',
+        tn: null,
+        ps: [{
+            n: 'subject',
+            mno: 0,
+            col: true,
+            ti: '.Subject'
+          }]
+      }, {
+        ln: 'ProcessType.OtherProperties',
+        tn: null,
+        ps: [{
+            n: 'property',
+            mno: 0,
+            col: true,
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'ObjToDataRelation.RelationDescription',
+        tn: null,
+        bti: '.BindType'
+      }, {
+        ln: 'ResponseModels.SteadyStateResponse.PropValues',
+        tn: null,
+        bti: '.ValueType',
+        ps: [{
+            n: 'inputOutput',
+            ti: '.BindType'
+          }, {
+            n: 'propName',
+            ti: '.ResponseModels.SteadyStateResponse.PropValues.PropName'
+          }, {
+            n: 'propQualifier',
+            ti: '.BindType'
+          }, {
+            n: 'uom',
+            en: 'UOM',
+            ti: '.ResponseModels.SteadyStateResponse.PropValues.UOM'
+          }, {
+            n: 'direction',
+            ti: '.BindType'
+          }, {
+            n: 'variableName',
+            ti: '.BindType'
+          }, {
+            n: 'calibProp',
+            mno: 0,
+            col: true,
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'ResponseModels.FrequencyResponse',
+        tn: null,
+        ps: [{
+            n: 'dataUidRef',
+            ti: '.BindType'
+          }, {
+            n: 'freqRespType',
+            ti: '.BindType'
+          }, {
+            n: 'amplitude',
+            ti: '.ResponseModels.FrequencyResponse.Amplitude'
+          }, {
+            n: 'phase',
+            ti: '.ResponseModels.FrequencyResponse.Phase'
+          }, {
+            n: 'frequency',
+            ti: '.ResponseModels.FrequencyResponse.Frequency'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ResponseModels.SteadyStateResponse.Code.Properties',
+        tn: null,
+        ps: [{
+            n: 'codeType',
+            ti: '.BindType'
+          }, {
+            n: 'codeLanguage',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'IdentificationType',
+        ps: [{
+            n: 'uid',
+            ti: '.BindType'
+          }, {
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'description',
+            ti: '.BindType'
+          }, {
+            n: 'complexity',
+            ti: '.BindType'
+          }, {
+            n: 'characterization',
+            ti: '.IdentificationType.Characterization'
+          }, {
+            n: 'calibration',
+            ti: '.IdentificationType.Calibration'
+          }]
+      }, {
+        ln: 'SystemType.SysClk',
+        tn: null,
+        ps: [{
+            n: 'uid',
+            ti: '.BindType'
+          }, {
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'period',
+            ti: '.ValueType'
+          }, {
+            n: 'countNumBase',
+            ti: '.BindType'
+          }, {
+            n: 'min',
+            ti: '.BindType'
+          }, {
+            n: 'max',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'SystemType.Relations.TimeRelation',
+        tn: null,
+        ps: [{
+            n: 'sysClkUidRef',
+            ti: '.BindType'
+          }, {
+            n: 'timeReference',
+            ti: '.BindType'
+          }, {
+            n: 'timeCoordinate',
+            mno: 0,
+            col: true,
+            ti: '.SystemType.Relations.TimeRelation.TimeCoordinate'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ObjToObjRelation',
+        tn: null,
+        ps: [{
+            n: 'relationDescription',
+            ti: '.BindType'
+          }, {
+            n: 'uid',
+            ti: '.BindType'
+          }, {
+            n: 'object',
+            mno: 0,
+            col: true,
+            ti: '.ObjToObjRelation.Object'
+          }, {
+            n: 'confidence',
+            ti: '.BindType'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }, {
+            n: 'classification',
+            ti: 'IC_2_0.ClassificationType',
+            an: {
+              lp: 'classification',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'ownerProducer',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'ownerProducer',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'scIcontrols',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'SCIcontrols',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'sarIdentifier',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'SARIdentifier',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'disseminationControls',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'disseminationControls',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'fgIsourceOpen',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'FGIsourceOpen',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'fgIsourceProtected',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'FGIsourceProtected',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'releasableTo',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'releasableTo',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'nonICmarkings',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nonICmarkings',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'classifiedBy',
+            an: {
+              lp: 'classifiedBy',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'classificationReason',
+            an: {
+              lp: 'classificationReason',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'derivedFrom',
+            an: {
+              lp: 'derivedFrom',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassDate',
+            ti: 'Calendar',
+            an: {
+              lp: 'declassDate',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassEvent',
+            an: {
+              lp: 'declassEvent',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassException',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'declassException',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'typeOfExemptedSource',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'typeOfExemptedSource',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'dateOfExemptedSource',
+            ti: 'Calendar',
+            an: {
+              lp: 'dateOfExemptedSource',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassManualReview',
+            ti: 'Boolean',
+            an: {
+              lp: 'declassManualReview',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ClusterDesc',
+        tn: null,
+        ps: [{
+            n: 'description',
+            ti: '.BindType'
+          }, {
+            n: 'idMapping',
+            ti: '.ClusterDesc.IdMapping'
+          }, {
+            n: 'clusterProperties',
+            ti: '.ClusterDesc.ClusterProperties'
+          }, {
+            n: 'binHeaderEncode',
+            ti: '.ClusterDesc.BinHeaderEncode'
+          }, {
+            n: 'timeTag',
+            ti: '.ClusterDesc.TimeTag'
+          }, {
+            n: 'dataUnitEncoding',
+            mno: 0,
+            col: true,
+            ti: '.ClusterDesc.DataUnitEncoding'
+          }, {
+            n: 'numCfInCluster',
+            ti: '.BindType'
+          }, {
+            n: 'transSeq',
+            mno: 0,
+            col: true,
+            ti: '.ClusterDesc.TransSeq'
+          }, {
+            n: 'classification',
+            ti: 'IC_2_0.ClassificationType',
+            an: {
+              lp: 'classification',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'ownerProducer',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'ownerProducer',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'scIcontrols',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'SCIcontrols',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'sarIdentifier',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'SARIdentifier',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'disseminationControls',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'disseminationControls',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'fgIsourceOpen',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'FGIsourceOpen',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'fgIsourceProtected',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'FGIsourceProtected',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'releasableTo',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'releasableTo',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'nonICmarkings',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nonICmarkings',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'classifiedBy',
+            an: {
+              lp: 'classifiedBy',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'classificationReason',
+            an: {
+              lp: 'classificationReason',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'derivedFrom',
+            an: {
+              lp: 'derivedFrom',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassDate',
+            ti: 'Calendar',
+            an: {
+              lp: 'declassDate',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassEvent',
+            an: {
+              lp: 'declassEvent',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassException',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'declassException',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'typeOfExemptedSource',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'typeOfExemptedSource',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'dateOfExemptedSource',
+            ti: 'Calendar',
+            an: {
+              lp: 'dateOfExemptedSource',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassManualReview',
+            ti: 'Boolean',
+            an: {
+              lp: 'declassManualReview',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ObjToDataRelation.Object',
+        tn: null,
+        ps: [{
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'objType',
+            ti: '.BindType'
+          }, {
+            n: 'cfSubSampling',
+            ti: '.CfSubSampling'
+          }, {
+            n: 'objUidRef',
+            ti: '.BindType'
+          }, {
+            n: 'objLocalID',
+            ti: '.BindType'
+          }, {
+            n: 'confidence',
+            ti: '.BindType'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Tml',
+        tn: null,
+        ps: [{
+            n: 'systemOrSubjectOrTransducer',
+            mno: 0,
+            col: true,
+            etis: [{
+                en: 'system',
+                ti: '.SystemType'
+              }, {
+                en: 'subject',
+                ti: '.Subject'
+              }, {
+                en: 'transducer',
+                ti: '.TransducerType'
+              }, {
+                en: 'process',
+                ti: '.ProcessType'
+              }, {
+                en: 'extSysRelations',
+                ti: '.Tml.ExtSysRelations'
+              }, {
+                en: 'data',
+                ti: '.Data'
+              }],
+            t: 'es'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'classification',
+            ti: 'IC_2_0.ClassificationType',
+            an: {
+              lp: 'classification',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'ownerProducer',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'ownerProducer',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'scIcontrols',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'SCIcontrols',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'sarIdentifier',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'SARIdentifier',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'disseminationControls',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'disseminationControls',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'fgIsourceOpen',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'FGIsourceOpen',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'fgIsourceProtected',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'FGIsourceProtected',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'releasableTo',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'releasableTo',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'nonICmarkings',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nonICmarkings',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'classifiedBy',
+            an: {
+              lp: 'classifiedBy',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'classificationReason',
+            an: {
+              lp: 'classificationReason',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'derivedFrom',
+            an: {
+              lp: 'derivedFrom',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassDate',
+            ti: 'Calendar',
+            an: {
+              lp: 'declassDate',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassEvent',
+            an: {
+              lp: 'declassEvent',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassException',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'declassException',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'typeOfExemptedSource',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'typeOfExemptedSource',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'dateOfExemptedSource',
+            ti: 'Calendar',
+            an: {
+              lp: 'dateOfExemptedSource',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'declassManualReview',
+            ti: 'Boolean',
+            an: {
+              lp: 'declassManualReview',
+              ns: 'urn:us:gov:ic:ism:v2'
+            },
+            t: 'a'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'IdentificationType.Characterization',
+        tn: null,
+        ps: [{
+            n: 'characterizedBy',
+            ti: '.IdentificationType.Characterization.CharacterizedBy'
+          }, {
+            n: 'validatedBy',
+            ti: '.IdentificationType.Characterization.ValidatedBy'
+          }]
+      }, {
+        ln: 'ResponseModels.FrequencyResponse.Phase',
+        tn: null,
+        bti: '.ValueType'
       }, {
         ln: 'ResponseModels.SteadyStateResponse.ResponseParameters',
         tn: null,
@@ -3452,61 +2889,624 @@ var TML_1_0_0_Module_Factory = function () {
             n: 'intraCfInterpolate',
             ti: '.BindType'
           }]
+      }, {
+        ln: 'SpatialModel.AmbiguitySpace.Shape.PwrProfile',
+        tn: null,
+        bti: '.BindType'
+      }, {
+        ln: 'SpatialModel.AmbiguitySpace',
+        tn: null,
+        ps: [{
+            n: 'shape',
+            mno: 0,
+            col: true,
+            ti: '.SpatialModel.AmbiguitySpace.Shape'
+          }, {
+            n: 'position',
+            mno: 0,
+            col: true,
+            ti: '.SpatialModel.AmbiguitySpace.Position'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SystemType.Identification.Owner',
+        tn: null,
+        ps: [{
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'organization',
+            ti: '.BindType'
+          }, {
+            n: 'email',
+            ti: '.BindType'
+          }, {
+            n: 'phone',
+            ti: '.BindType'
+          }, {
+            n: 'date',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'ClusterDesc.TransSeq.Sequence',
+        tn: null,
+        bti: '.BindType',
+        ps: [{
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessType.Output.OutputIdent',
+        tn: null,
+        ps: [{
+            n: 'uid',
+            ti: '.BindType'
+          }, {
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'description',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'Accuracy',
+        tn: null,
+        ps: [{
+            n: 'type',
+            ti: '.BindType'
+          }, {
+            n: 'errorDistribution',
+            ti: '.BindType'
+          }, {
+            n: 'factor',
+            ti: '.BindType'
+          }, {
+            n: 'accyValues',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'ResponseModels.SteadyStateResponse.Code.Listing',
+        tn: null,
+        bti: '.BindType'
+      }, {
+        ln: 'SystemType.Relations.DataToDataRelation.DataSource.DataUidRef',
+        tn: null,
+        bti: '.BindType'
+      }, {
+        ln: 'IdentificationType.Calibration.CalibratedBy',
+        tn: null,
+        ps: [{
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'organization',
+            ti: '.BindType'
+          }, {
+            n: 'email',
+            ti: '.BindType'
+          }, {
+            n: 'phone',
+            ti: '.BindType'
+          }, {
+            n: 'date',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'SpatialModel',
+        tn: null,
+        ps: [{
+            n: 'dataUidRef',
+            ti: '.BindType'
+          }, {
+            n: 'cfSubSampling',
+            mno: 0,
+            col: true,
+            ti: '.CfSubSampling'
+          }, {
+            n: 'ambiguitySpace',
+            mno: 0,
+            col: true,
+            ti: '.SpatialModel.AmbiguitySpace'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SystemType.Identification.Operator',
+        tn: null,
+        ps: [{
+            n: 'name',
+            ti: '.BindType'
+          }, {
+            n: 'organization',
+            ti: '.BindType'
+          }, {
+            n: 'email',
+            ti: '.BindType'
+          }, {
+            n: 'phone',
+            ti: '.BindType'
+          }, {
+            n: 'date',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'ResponseModels.SteadyStateResponse.DataValues',
+        tn: null,
+        bti: '.ValueType',
+        ps: [{
+            n: 'inputOutput',
+            ti: '.BindType'
+          }, {
+            n: 'dataUidRef',
+            ti: '.BindType'
+          }, {
+            n: 'variableName',
+            ti: '.BindType'
+          }, {
+            n: 'calibData',
+            mno: 0,
+            col: true,
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'TransducerType.TransducerClass',
+        tn: null,
+        ps: [{
+            n: 'transmitterReceiver',
+            ti: '.BindType'
+          }, {
+            n: 'insituRemote',
+            ti: '.BindType'
+          }, {
+            n: 'spatialDependancy',
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'CfSubSampling',
+        tn: null,
+        ps: [{
+            n: 'cfStructComp',
+            ti: '.BindType'
+          }, {
+            n: 'numOfSubSampleIndexPoints',
+            ti: '.BindType'
+          }, {
+            n: 'subSampleCfIndexPts',
+            ti: '.BindType'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Tml.ExtSysRelations',
+        tn: null,
+        ps: [{
+            n: 'objToObjRelation',
+            mno: 0,
+            col: true,
+            ti: '.ObjToObjRelation'
+          }, {
+            n: 'objToDataRelation',
+            mno: 0,
+            col: true,
+            ti: '.ObjToDataRelation'
+          }, {
+            n: 'otherRelations',
+            mno: 0,
+            col: true,
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'ProcessType.Output',
+        tn: null,
+        ps: [{
+            n: 'outputIdent',
+            ti: '.ProcessType.Output.OutputIdent'
+          }, {
+            n: 'logicalDataStructure',
+            mno: 0,
+            col: true,
+            ti: '.LogicalDataStructure'
+          }, {
+            n: 'responseModels',
+            ti: '.ResponseModels'
+          }, {
+            n: 'spatialModel',
+            mno: 0,
+            col: true,
+            ti: '.SpatialModel'
+          }, {
+            n: 'temporalModel',
+            ti: '.TemporalModel'
+          }, {
+            n: 'other',
+            ti: 'AnyType'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ClusterDesc.BinHeaderEncode.HeaderAttrib',
+        tn: null,
+        ps: [{
+            n: 'headerAttribName',
+            ti: '.BindType'
+          }, {
+            n: 'dataType',
+            ti: '.BindType'
+          }, {
+            n: 'dataUnitFieldSize',
+            ti: '.ClusterDesc.BinHeaderEncode.HeaderAttrib.DataUnitFieldSize'
+          }, {
+            n: 'endian',
+            ti: '.BindType'
+          }, {
+            n: 'encode',
+            ti: '.BindType'
+          }, {
+            n: 'numBase',
+            ti: '.BindType'
+          }, {
+            n: 'handleAsType',
+            ti: '.BindType'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Subject',
+        tn: null,
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            typed: false,
+            mx: false,
+            t: 'ae'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SpatialModel.AmbiguitySpace.Shape.SpaceLocCoords',
+        tn: null,
+        ps: [{
+            n: 'coordName',
+            ti: '.BindType'
+          }, {
+            n: 'coords',
+            ti: '.ValueType'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SystemType.Relations.TimeRelation.TimeCoordinate',
+        tn: null,
+        ps: [{
+            n: 'timeCoordType',
+            ti: '.BindType'
+          }, {
+            n: 'absTimeUidRef',
+            mno: 0,
+            col: true,
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'SystemType.Relations.PositionRelation',
+        tn: null,
+        bti: '.SpatialCoordType',
+        ps: [{
+            n: 'objUidRef',
+            mno: 0,
+            col: true,
+            ti: '.BindType'
+          }]
+      }, {
+        ln: 'SystemType.Relations',
+        tn: null,
+        ps: [{
+            n: 'positionRelationAndTimeRelationAndObjToObjRelation',
+            mno: 0,
+            col: true,
+            etis: [{
+                en: 'positionRelation',
+                ti: '.SystemType.Relations.PositionRelation'
+              }, {
+                en: 'timeRelation',
+                ti: '.SystemType.Relations.TimeRelation'
+              }, {
+                en: 'objToObjRelation',
+                ti: '.ObjToObjRelation'
+              }, {
+                en: 'objToDataRelation',
+                ti: '.ObjToDataRelation'
+              }, {
+                en: 'dataToDataRelation',
+                ti: '.SystemType.Relations.DataToDataRelation'
+              }, {
+                en: 'propToPropRelation',
+                ti: '.SystemType.Relations.PropToPropRelation'
+              }],
+            t: 'es'
+          }]
+      }, {
+        ln: 'SpatialModel.AmbiguitySpace.Shape',
+        tn: null,
+        ps: [{
+            n: 'pwrProfile',
+            ti: '.SpatialModel.AmbiguitySpace.Shape.PwrProfile'
+          }, {
+            n: 'spaceCoordSystem',
+            ti: '.BindType'
+          }, {
+            n: 'spaceLocCoords',
+            mno: 0,
+            col: true,
+            ti: '.SpatialModel.AmbiguitySpace.Shape.SpaceLocCoords'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SystemType.Systems',
+        tn: null,
+        ps: [{
+            n: 'system',
+            mno: 0,
+            col: true,
+            ti: '.SystemType'
+          }]
+      }, {
+        ln: 'ResponseModels.FrequencyResponse.Frequency',
+        tn: null,
+        bti: '.ValueType'
+      }, {
+        ln: 'TemporalModel',
+        tn: null,
+        ps: [{
+            n: 'cfTrigger',
+            ti: '.TemporalModel.CfTrigger'
+          }, {
+            n: 'cfDuration',
+            ti: '.ValueType'
+          }, {
+            n: 'latencyTime',
+            ti: '.ValueType'
+          }, {
+            n: 'ambiguityTime',
+            mno: 0,
+            col: true,
+            ti: '.TemporalModel.AmbiguityTime'
+          }, {
+            n: 'cfOffsetTime',
+            mno: 0,
+            col: true,
+            ti: '.TemporalModel.CfOffsetTime'
+          }, {
+            n: 'refName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'refUid',
+            an: {
+              lp: 'uid'
+            },
+            t: 'a'
+          }, {
+            n: 'refUidRef',
+            an: {
+              lp: 'uidRef'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SystemType.ClusterDescriptions',
+        tn: null,
+        ps: [{
+            n: 'clusterDesc',
+            mno: 0,
+            col: true,
+            ti: '.ClusterDesc'
+          }]
       }],
     eis: [{
-        en: 'spaceCoordSystem',
-        ti: '.BindType'
+        en: 'cfSubSampling',
+        ti: '.CfSubSampling'
       }, {
-        en: 'subject',
-        ti: '.Subject'
-      }, {
-        en: 'data',
-        ti: '.Data'
-      }, {
-        en: 'clusterDesc',
-        ti: '.ClusterDesc'
-      }, {
-        en: 'logicalDataStructure',
-        ti: '.LogicalDataStructure'
-      }, {
-        en: 'responseModels',
-        ti: '.ResponseModels'
+        en: 'dataUnit',
+        ti: '.DataUnit'
       }, {
         en: 'complexity',
         ti: '.BindType'
       }, {
-        en: 'tml',
-        ti: '.Tml'
-      }, {
-        en: 'objToObjRelation',
-        ti: '.ObjToObjRelation'
-      }, {
-        en: 'spatialModel',
-        ti: '.SpatialModel'
-      }, {
-        en: 'process',
-        ti: '.ProcessType'
-      }, {
-        en: 'objToDataRelation',
-        ti: '.ObjToDataRelation'
-      }, {
-        en: 'cfSubSampling',
-        ti: '.CfSubSampling'
-      }, {
-        en: 'accuracy',
-        ti: '.Accuracy'
-      }, {
-        en: 'system',
-        ti: '.SystemType'
-      }, {
         en: 'temporalModel',
         ti: '.TemporalModel'
+      }, {
+        en: 'spaceCoordSystem',
+        ti: '.BindType'
       }, {
         en: 'transducer',
         ti: '.TransducerType'
       }, {
-        en: 'dataUnit',
-        ti: '.DataUnit'
+        en: 'objToObjRelation',
+        ti: '.ObjToObjRelation'
+      }, {
+        en: 'process',
+        ti: '.ProcessType'
+      }, {
+        en: 'subject',
+        ti: '.Subject'
+      }, {
+        en: 'spatialModel',
+        ti: '.SpatialModel'
+      }, {
+        en: 'tml',
+        ti: '.Tml'
+      }, {
+        en: 'responseModels',
+        ti: '.ResponseModels'
+      }, {
+        en: 'accuracy',
+        ti: '.Accuracy'
+      }, {
+        en: 'clusterDesc',
+        ti: '.ClusterDesc'
+      }, {
+        en: 'objToDataRelation',
+        ti: '.ObjToDataRelation'
+      }, {
+        en: 'data',
+        ti: '.Data'
+      }, {
+        en: 'logicalDataStructure',
+        ti: '.LogicalDataStructure'
+      }, {
+        en: 'system',
+        ti: '.SystemType'
       }]
   };
   return {

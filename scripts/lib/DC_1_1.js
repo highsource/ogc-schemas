@@ -31,15 +31,31 @@ var DC_1_1_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'title',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
         en: 'source',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'date',
+        en: 'identifier',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'title',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'rights',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'format',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'description',
+        ti: '.SimpleLiteral',
+        sh: 'DC-element'
+      }, {
+        en: 'relation',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -51,7 +67,7 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'rights',
+        en: 'date',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
@@ -63,36 +79,20 @@ var DC_1_1_Module_Factory = function () {
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'description',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'DC-element',
-        ti: '.SimpleLiteral'
-      }, {
-        en: 'language',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'relation',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
-        en: 'format',
-        ti: '.SimpleLiteral',
-        sh: 'DC-element'
-      }, {
         en: 'creator',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
-        en: 'identifier',
+        en: 'language',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
       }, {
         en: 'subject',
         ti: '.SimpleLiteral',
         sh: 'DC-element'
+      }, {
+        en: 'DC-element',
+        ti: '.SimpleLiteral'
       }]
   };
   return {

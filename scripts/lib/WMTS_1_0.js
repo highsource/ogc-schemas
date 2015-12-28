@@ -2,8 +2,45 @@ var WMTS_1_0_Module_Factory = function () {
   var WMTS_1_0 = {
     n: 'WMTS_1_0',
     dens: 'http:\/\/www.opengis.net\/wmts\/1.0',
-    deps: ['OWS_1_1_0', 'GML_3_1_1'],
+    deps: ['GML_3_1_1', 'OWS_1_1_0'],
     tis: [{
+        ln: 'GetFeatureInfo',
+        tn: null,
+        ps: [{
+            n: 'getTile',
+            rq: true,
+            en: 'GetTile',
+            ti: '.GetTile'
+          }, {
+            n: 'j',
+            rq: true,
+            en: 'J',
+            ti: 'NonNegativeInteger'
+          }, {
+            n: 'i',
+            rq: true,
+            en: 'I',
+            ti: 'NonNegativeInteger'
+          }, {
+            n: 'infoFormat',
+            rq: true,
+            en: 'InfoFormat'
+          }, {
+            n: 'service',
+            rq: true,
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'TileMatrixSet',
         tn: null,
         bti: 'OWS_1_1_0.DescriptionType',
@@ -43,81 +80,6 @@ var WMTS_1_0_Module_Factory = function () {
             ti: '.TileMatrix'
           }]
       }, {
-        ln: 'ContentsType',
-        bti: 'OWS_1_1_0.ContentsBaseType',
-        ps: [{
-            n: 'tileMatrixSet',
-            mno: 0,
-            col: true,
-            en: 'TileMatrixSet',
-            ti: '.TileMatrixSet'
-          }]
-      }, {
-        ln: 'FeatureInfoResponse',
-        tn: null,
-        ps: [{
-            n: 'featureCollection',
-            rq: true,
-            en: {
-              lp: '_FeatureCollection',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.AbstractFeatureCollectionType'
-          }, {
-            n: 'textPayload',
-            rq: true,
-            en: 'TextPayload',
-            ti: '.TextPayload'
-          }, {
-            n: 'binaryPayload',
-            rq: true,
-            en: 'BinaryPayload',
-            ti: '.BinaryPayload'
-          }, {
-            n: 'anyContent',
-            rq: true,
-            en: 'AnyContent',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'Themes',
-        tn: null,
-        ps: [{
-            n: 'theme',
-            mno: 0,
-            col: true,
-            en: 'Theme',
-            ti: '.Theme'
-          }]
-      }, {
-        ln: 'TileMatrixLimits',
-        tn: null,
-        ps: [{
-            n: 'tileMatrix',
-            rq: true,
-            en: 'TileMatrix'
-          }, {
-            n: 'minTileRow',
-            rq: true,
-            en: 'MinTileRow',
-            ti: 'PositiveInteger'
-          }, {
-            n: 'maxTileRow',
-            rq: true,
-            en: 'MaxTileRow',
-            ti: 'PositiveInteger'
-          }, {
-            n: 'minTileCol',
-            rq: true,
-            en: 'MinTileCol',
-            ti: 'PositiveInteger'
-          }, {
-            n: 'maxTileCol',
-            rq: true,
-            en: 'MaxTileCol',
-            ti: 'PositiveInteger'
-          }]
-      }, {
         ln: 'TileMatrixSetLink',
         tn: null,
         ps: [{
@@ -128,6 +90,20 @@ var WMTS_1_0_Module_Factory = function () {
             n: 'tileMatrixSetLimits',
             en: 'TileMatrixSetLimits',
             ti: '.TileMatrixSetLimits'
+          }]
+      }, {
+        ln: 'DimensionNameValue',
+        tn: null,
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'Style',
@@ -156,38 +132,78 @@ var WMTS_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TileMatrixSetLimits',
+        ln: 'LegendURL',
         tn: null,
-        ps: [{
-            n: 'tileMatrixLimits',
-            rq: true,
-            col: true,
-            en: 'TileMatrixLimits',
-            ti: '.TileMatrixLimits'
-          }]
-      }, {
-        ln: 'TextPayload',
-        tn: null,
+        bti: 'OWS_1_1_0.OnlineResourceType',
         ps: [{
             n: 'format',
-            rq: true,
-            en: 'Format'
-          }, {
-            n: 'textContent',
-            rq: true,
-            en: 'TextContent'
-          }]
-      }, {
-        ln: 'GetCapabilities',
-        tn: null,
-        bti: 'OWS_1_1_0.GetCapabilitiesType',
-        ps: [{
-            n: 'service',
-            rq: true,
             an: {
-              lp: 'service'
+              lp: 'format'
             },
             t: 'a'
+          }, {
+            n: 'minScaleDenominator',
+            ti: 'Double',
+            an: {
+              lp: 'minScaleDenominator'
+            },
+            t: 'a'
+          }, {
+            n: 'maxScaleDenominator',
+            ti: 'Double',
+            an: {
+              lp: 'maxScaleDenominator'
+            },
+            t: 'a'
+          }, {
+            n: 'width',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'PositiveInteger',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Dimension',
+        tn: null,
+        bti: 'OWS_1_1_0.DescriptionType',
+        ps: [{
+            n: 'identifier',
+            rq: true,
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.CodeType'
+          }, {
+            n: 'uom',
+            en: {
+              lp: 'UOM',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.DomainMetadataType'
+          }, {
+            n: 'unitSymbol',
+            en: 'UnitSymbol'
+          }, {
+            n: '_default',
+            en: 'Default'
+          }, {
+            n: 'current',
+            en: 'Current',
+            ti: 'Boolean'
+          }, {
+            n: 'value',
+            rq: true,
+            col: true,
+            en: 'Value'
           }]
       }, {
         ln: 'Theme',
@@ -212,153 +228,6 @@ var WMTS_1_0_Module_Factory = function () {
             mno: 0,
             col: true,
             en: 'LayerRef'
-          }]
-      }, {
-        ln: 'TileMatrix',
-        tn: null,
-        bti: 'OWS_1_1_0.DescriptionType',
-        ps: [{
-            n: 'identifier',
-            rq: true,
-            en: {
-              lp: 'Identifier',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.CodeType'
-          }, {
-            n: 'scaleDenominator',
-            rq: true,
-            en: 'ScaleDenominator',
-            ti: 'Double'
-          }, {
-            n: 'topLeftCorner',
-            rq: true,
-            en: 'TopLeftCorner',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'tileWidth',
-            rq: true,
-            en: 'TileWidth',
-            ti: 'PositiveInteger'
-          }, {
-            n: 'tileHeight',
-            rq: true,
-            en: 'TileHeight',
-            ti: 'PositiveInteger'
-          }, {
-            n: 'matrixWidth',
-            rq: true,
-            en: 'MatrixWidth',
-            ti: 'PositiveInteger'
-          }, {
-            n: 'matrixHeight',
-            rq: true,
-            en: 'MatrixHeight',
-            ti: 'PositiveInteger'
-          }]
-      }, {
-        ln: 'URLTemplateType',
-        ps: [{
-            n: 'format',
-            rq: true,
-            an: {
-              lp: 'format'
-            },
-            t: 'a'
-          }, {
-            n: 'resourceType',
-            rq: true,
-            an: {
-              lp: 'resourceType'
-            },
-            t: 'a'
-          }, {
-            n: 'template',
-            rq: true,
-            an: {
-              lp: 'template'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Capabilities',
-        tn: null,
-        bti: 'OWS_1_1_0.CapabilitiesBaseType',
-        ps: [{
-            n: 'contents',
-            en: 'Contents',
-            ti: '.ContentsType'
-          }, {
-            n: 'themes',
-            mno: 0,
-            col: true,
-            en: 'Themes',
-            ti: '.Themes'
-          }, {
-            n: 'wsdl',
-            mno: 0,
-            col: true,
-            en: 'WSDL',
-            ti: 'OWS_1_1_0.OnlineResourceType'
-          }, {
-            n: 'serviceMetadataURL',
-            mno: 0,
-            col: true,
-            en: 'ServiceMetadataURL',
-            ti: 'OWS_1_1_0.OnlineResourceType'
-          }]
-      }, {
-        ln: 'BinaryPayload',
-        tn: null,
-        ps: [{
-            n: 'format',
-            rq: true,
-            en: 'Format'
-          }, {
-            n: 'binaryContent',
-            rq: true,
-            en: 'BinaryContent',
-            ti: 'Base64Binary'
-          }]
-      }, {
-        ln: 'GetFeatureInfo',
-        tn: null,
-        ps: [{
-            n: 'getTile',
-            rq: true,
-            en: 'GetTile',
-            ti: '.GetTile'
-          }, {
-            n: 'j',
-            rq: true,
-            en: 'J',
-            ti: 'NonNegativeInteger'
-          }, {
-            n: 'i',
-            rq: true,
-            en: 'I',
-            ti: 'NonNegativeInteger'
-          }, {
-            n: 'infoFormat',
-            rq: true,
-            en: 'InfoFormat'
-          }, {
-            n: 'service',
-            rq: true,
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'GetTile',
@@ -415,39 +284,16 @@ var WMTS_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Dimension',
+        ln: 'GetCapabilities',
         tn: null,
-        bti: 'OWS_1_1_0.DescriptionType',
+        bti: 'OWS_1_1_0.GetCapabilitiesType',
         ps: [{
-            n: 'identifier',
+            n: 'service',
             rq: true,
-            en: {
-              lp: 'Identifier',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            an: {
+              lp: 'service'
             },
-            ti: 'OWS_1_1_0.CodeType'
-          }, {
-            n: 'uom',
-            en: {
-              lp: 'UOM',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.DomainMetadataType'
-          }, {
-            n: 'unitSymbol',
-            en: 'UnitSymbol'
-          }, {
-            n: '_default',
-            en: 'Default'
-          }, {
-            n: 'current',
-            en: 'Current',
-            ti: 'Boolean'
-          }, {
-            n: 'value',
-            rq: true,
-            col: true,
-            en: 'Value'
+            t: 'a'
           }]
       }, {
         ln: 'LayerType',
@@ -488,66 +334,212 @@ var WMTS_1_0_Module_Factory = function () {
             ti: '.URLTemplateType'
           }]
       }, {
-        ln: 'LegendURL',
+        ln: 'TileMatrixLimits',
         tn: null,
-        bti: 'OWS_1_1_0.OnlineResourceType',
+        ps: [{
+            n: 'tileMatrix',
+            rq: true,
+            en: 'TileMatrix'
+          }, {
+            n: 'minTileRow',
+            rq: true,
+            en: 'MinTileRow',
+            ti: 'PositiveInteger'
+          }, {
+            n: 'maxTileRow',
+            rq: true,
+            en: 'MaxTileRow',
+            ti: 'PositiveInteger'
+          }, {
+            n: 'minTileCol',
+            rq: true,
+            en: 'MinTileCol',
+            ti: 'PositiveInteger'
+          }, {
+            n: 'maxTileCol',
+            rq: true,
+            en: 'MaxTileCol',
+            ti: 'PositiveInteger'
+          }]
+      }, {
+        ln: 'TileMatrixSetLimits',
+        tn: null,
+        ps: [{
+            n: 'tileMatrixLimits',
+            rq: true,
+            col: true,
+            en: 'TileMatrixLimits',
+            ti: '.TileMatrixLimits'
+          }]
+      }, {
+        ln: 'BinaryPayload',
+        tn: null,
         ps: [{
             n: 'format',
+            rq: true,
+            en: 'Format'
+          }, {
+            n: 'binaryContent',
+            rq: true,
+            en: 'BinaryContent',
+            ti: 'Base64Binary'
+          }]
+      }, {
+        ln: 'ContentsType',
+        bti: 'OWS_1_1_0.ContentsBaseType',
+        ps: [{
+            n: 'tileMatrixSet',
+            mno: 0,
+            col: true,
+            en: 'TileMatrixSet',
+            ti: '.TileMatrixSet'
+          }]
+      }, {
+        ln: 'FeatureInfoResponse',
+        tn: null,
+        ps: [{
+            n: 'featureCollection',
+            rq: true,
+            en: {
+              lp: '_FeatureCollection',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.AbstractFeatureCollectionType'
+          }, {
+            n: 'textPayload',
+            rq: true,
+            en: 'TextPayload',
+            ti: '.TextPayload'
+          }, {
+            n: 'binaryPayload',
+            rq: true,
+            en: 'BinaryPayload',
+            ti: '.BinaryPayload'
+          }, {
+            n: 'anyContent',
+            rq: true,
+            en: 'AnyContent',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TextPayload',
+        tn: null,
+        ps: [{
+            n: 'format',
+            rq: true,
+            en: 'Format'
+          }, {
+            n: 'textContent',
+            rq: true,
+            en: 'TextContent'
+          }]
+      }, {
+        ln: 'Themes',
+        tn: null,
+        ps: [{
+            n: 'theme',
+            mno: 0,
+            col: true,
+            en: 'Theme',
+            ti: '.Theme'
+          }]
+      }, {
+        ln: 'URLTemplateType',
+        ps: [{
+            n: 'format',
+            rq: true,
             an: {
               lp: 'format'
             },
             t: 'a'
           }, {
-            n: 'minScaleDenominator',
-            ti: 'Double',
-            an: {
-              lp: 'minScaleDenominator'
-            },
-            t: 'a'
-          }, {
-            n: 'maxScaleDenominator',
-            ti: 'Double',
-            an: {
-              lp: 'maxScaleDenominator'
-            },
-            t: 'a'
-          }, {
-            n: 'width',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            ti: 'PositiveInteger',
-            an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DimensionNameValue',
-        tn: null,
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'name',
+            n: 'resourceType',
             rq: true,
             an: {
-              lp: 'name'
+              lp: 'resourceType'
+            },
+            t: 'a'
+          }, {
+            n: 'template',
+            rq: true,
+            an: {
+              lp: 'template'
             },
             t: 'a'
           }]
       }, {
-        t: 'enum',
-        ln: 'GetTileValueType',
-        vs: ['GetTile']
+        ln: 'Capabilities',
+        tn: null,
+        bti: 'OWS_1_1_0.CapabilitiesBaseType',
+        ps: [{
+            n: 'contents',
+            en: 'Contents',
+            ti: '.ContentsType'
+          }, {
+            n: 'themes',
+            mno: 0,
+            col: true,
+            en: 'Themes',
+            ti: '.Themes'
+          }, {
+            n: 'wsdl',
+            mno: 0,
+            col: true,
+            en: 'WSDL',
+            ti: 'OWS_1_1_0.OnlineResourceType'
+          }, {
+            n: 'serviceMetadataURL',
+            mno: 0,
+            col: true,
+            en: 'ServiceMetadataURL',
+            ti: 'OWS_1_1_0.OnlineResourceType'
+          }]
       }, {
-        t: 'enum',
-        ln: 'GetFeatureInfoValueType',
-        vs: ['GetFeatureInfo']
+        ln: 'TileMatrix',
+        tn: null,
+        bti: 'OWS_1_1_0.DescriptionType',
+        ps: [{
+            n: 'identifier',
+            rq: true,
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.CodeType'
+          }, {
+            n: 'scaleDenominator',
+            rq: true,
+            en: 'ScaleDenominator',
+            ti: 'Double'
+          }, {
+            n: 'topLeftCorner',
+            rq: true,
+            en: 'TopLeftCorner',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'tileWidth',
+            rq: true,
+            en: 'TileWidth',
+            ti: 'PositiveInteger'
+          }, {
+            n: 'tileHeight',
+            rq: true,
+            en: 'TileHeight',
+            ti: 'PositiveInteger'
+          }, {
+            n: 'matrixWidth',
+            rq: true,
+            en: 'MatrixWidth',
+            ti: 'PositiveInteger'
+          }, {
+            n: 'matrixHeight',
+            rq: true,
+            en: 'MatrixHeight',
+            ti: 'PositiveInteger'
+          }]
       }, {
         t: 'enum',
         ln: 'RequestServiceType',
@@ -558,15 +550,41 @@ var WMTS_1_0_Module_Factory = function () {
         vs: ['1.0.0']
       }, {
         t: 'enum',
+        ln: 'GetTileValueType',
+        vs: ['GetTile']
+      }, {
+        t: 'enum',
+        ln: 'GetFeatureInfoValueType',
+        vs: ['GetFeatureInfo']
+      }, {
+        t: 'enum',
         ln: 'GetCapabilitiesValueType',
         vs: ['GetCapabilities']
       }],
     eis: [{
-        en: 'TileMatrixSetLimits',
-        ti: '.TileMatrixSetLimits'
+        en: 'Themes',
+        ti: '.Themes'
       }, {
-        en: 'GetFeatureInfo',
-        ti: '.GetFeatureInfo'
+        en: 'Style',
+        ti: '.Style'
+      }, {
+        en: 'DimensionNameValue',
+        ti: '.DimensionNameValue'
+      }, {
+        en: 'Capabilities',
+        ti: '.Capabilities'
+      }, {
+        en: 'TileMatrixLimits',
+        ti: '.TileMatrixLimits'
+      }, {
+        en: 'TileMatrix',
+        ti: '.TileMatrix'
+      }, {
+        en: 'GetCapabilities',
+        ti: '.GetCapabilities'
+      }, {
+        en: 'Theme',
+        ti: '.Theme'
       }, {
         en: 'Layer',
         ti: '.LayerType',
@@ -575,53 +593,35 @@ var WMTS_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/ows\/1.1'
         }
       }, {
+        en: 'TextPayload',
+        ti: '.TextPayload'
+      }, {
+        en: 'TileMatrixSet',
+        ti: '.TileMatrixSet'
+      }, {
+        en: 'FeatureInfoResponse',
+        ti: '.FeatureInfoResponse'
+      }, {
+        en: 'GetFeatureInfo',
+        ti: '.GetFeatureInfo'
+      }, {
+        en: 'TileMatrixSetLimits',
+        ti: '.TileMatrixSetLimits'
+      }, {
+        en: 'GetTile',
+        ti: '.GetTile'
+      }, {
+        en: 'BinaryPayload',
+        ti: '.BinaryPayload'
+      }, {
+        en: 'LegendURL',
+        ti: '.LegendURL'
+      }, {
         en: 'Dimension',
         ti: '.Dimension'
       }, {
         en: 'TileMatrixSetLink',
         ti: '.TileMatrixSetLink'
-      }, {
-        en: 'Style',
-        ti: '.Style'
-      }, {
-        en: 'TextPayload',
-        ti: '.TextPayload'
-      }, {
-        en: 'LegendURL',
-        ti: '.LegendURL'
-      }, {
-        en: 'BinaryPayload',
-        ti: '.BinaryPayload'
-      }, {
-        en: 'TileMatrix',
-        ti: '.TileMatrix'
-      }, {
-        en: 'Capabilities',
-        ti: '.Capabilities'
-      }, {
-        en: 'TileMatrixSet',
-        ti: '.TileMatrixSet'
-      }, {
-        en: 'TileMatrixLimits',
-        ti: '.TileMatrixLimits'
-      }, {
-        en: 'FeatureInfoResponse',
-        ti: '.FeatureInfoResponse'
-      }, {
-        en: 'DimensionNameValue',
-        ti: '.DimensionNameValue'
-      }, {
-        en: 'Theme',
-        ti: '.Theme'
-      }, {
-        en: 'GetTile',
-        ti: '.GetTile'
-      }, {
-        en: 'Themes',
-        ti: '.Themes'
-      }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilities'
       }]
   };
   return {

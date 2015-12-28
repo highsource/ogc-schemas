@@ -3,8 +3,524 @@ var WaterML_2_0_Module_Factory = function () {
     n: 'WaterML_2_0',
     dens: 'http:\/\/www.opengis.net\/waterml\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'ISO19139_GMD_20070417', 'GML_3_2_1', 'SWE_2_0', 'OM_2_0', 'Sampling_2_0', 'SamplingSpatial_2_0'],
+    deps: ['XLink_1_0', 'GML_3_2_1', 'ISO19139_GMD_20070417', 'SWE_2_0', 'SamplingSpatial_2_0', 'OM_2_0', 'Sampling_2_0'],
     tis: [{
+        ln: 'TimeseriesMetadataPropertyType',
+        ps: [{
+            n: 'timeseriesMetadata',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'TimeseriesMetadata',
+            ti: '.TimeseriesMetadataType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DocumentMetadataPropertyType',
+        ps: [{
+            n: 'documentMetadata',
+            rq: true,
+            en: 'DocumentMetadata',
+            ti: '.DocumentMetadataType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MeasurementTSMetadataPropertyType',
+        ps: [{
+            n: 'measurementTimeseriesMetadata',
+            rq: true,
+            en: 'MeasurementTimeseriesMetadata',
+            ti: '.MeasurementTimeseriesMetadataType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CategoricalTimeseriesType',
+        bti: '.TimeseriesType',
+        ps: [{
+            n: 'point',
+            mno: 0,
+            col: true,
+            ti: '.CategoricalTimeseriesType.Point'
+          }]
+      }, {
+        ln: 'DefaultCategoricalTVPMetadataType',
+        bti: '.TVPMetadataType',
+        ps: [{
+            n: 'codeSpace'
+          }]
+      }, {
+        ln: 'MonitoringPointPropertyType',
+        ps: [{
+            n: 'monitoringPoint',
+            rq: true,
+            en: 'MonitoringPoint',
+            ti: '.MonitoringPointType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CollectionType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'metadata',
+            rq: true,
+            ti: '.DocumentMetadataPropertyType'
+          }, {
+            n: 'temporalExtent',
+            ti: '.CollectionType.TemporalExtent'
+          }, {
+            n: 'sourceDefinition',
+            mno: 0,
+            col: true,
+            ti: '.CollectionType.SourceDefinition'
+          }, {
+            n: 'parameter',
+            mno: 0,
+            col: true,
+            ti: 'OM_2_0.NamedValuePropertyType'
+          }, {
+            n: 'localDictionary',
+            mno: 0,
+            col: true,
+            ti: '.CollectionType.LocalDictionary'
+          }, {
+            n: 'samplingFeatureMember',
+            mno: 0,
+            col: true,
+            ti: '.SamplingFeatureMemberPropertyType'
+          }, {
+            n: 'observationMember',
+            mno: 0,
+            col: true,
+            ti: 'OM_2_0.OMObservationPropertyType'
+          }, {
+            n: 'communityExtension',
+            mno: 0,
+            col: true,
+            ti: 'AnyType'
+          }, {
+            n: 'internalExtension',
+            mno: 0,
+            col: true,
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TVPMeasurementMetadataPropertyType',
+        ps: [{
+            n: 'tvpMeasurementMetadata',
+            rq: true,
+            en: 'TVPMeasurementMetadata',
+            ti: '.TVPMeasurementMetadataType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MeasurementTimeseriesType',
+        bti: '.TimeseriesType',
+        ps: [{
+            n: 'point',
+            mno: 0,
+            col: true,
+            ti: '.MeasurementTimeseriesType.Point'
+          }]
+      }, {
+        ln: 'TVPMetadataType',
+        ps: [{
+            n: 'quality',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'nilReason',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'comment'
+          }, {
+            n: 'relatedObservation',
+            mno: 0,
+            col: true,
+            ti: 'OM_2_0.ObservationContextPropertyType'
+          }, {
+            n: 'qualifier',
+            mno: 0,
+            col: true,
+            ti: 'SWE_2_0.QualityPropertyType'
+          }, {
+            n: 'processing',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'source',
+            ti: 'GML_3_2_1.ReferenceType'
+          }]
+      }, {
+        ln: 'CommentBlockType',
+        ps: [{
+            n: 'applicablePeriod',
+            rq: true,
+            ti: 'GML_3_2_1.TimePeriodPropertyType'
+          }, {
+            n: 'comment',
+            rq: true
+          }]
+      }, {
+        ln: 'SamplingFeatureMemberPropertyType',
+        ps: [{
+            n: 'sfSpatialSamplingFeature',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'SF_SpatialSamplingFeature',
+              ns: 'http:\/\/www.opengis.net\/samplingSpatial\/2.0'
+            },
+            ti: 'SamplingSpatial_2_0.SFSpatialSamplingFeatureType',
+            t: 'er'
+          }, {
+            n: 'sfSamplingFeatureCollection',
+            rq: true,
+            en: {
+              lp: 'SF_SamplingFeatureCollection',
+              ns: 'http:\/\/www.opengis.net\/sampling\/2.0'
+            },
+            ti: 'Sampling_2_0.SFSamplingFeatureCollectionType'
+          }, {
+            n: 'unionSemantics',
+            an: {
+              lp: 'unionSemantics'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CollectionType.TemporalExtent',
+        tn: null,
+        ps: [{
+            n: 'timePeriod',
+            rq: true,
+            en: {
+              lp: 'TimePeriod',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePeriodType'
+          }]
+      }, {
+        ln: 'CollectionType.SourceDefinition',
+        tn: null,
+        ps: [{
+            n: 'mdDataIdentification',
+            rq: true,
+            en: {
+              lp: 'MD_DataIdentification',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gmd'
+            },
+            ti: 'ISO19139_GMD_20070417.MDDataIdentificationType'
+          }]
+      }, {
+        ln: 'MeasurementTimeseriesType.Point',
+        tn: null,
+        ps: [{
+            n: 'measurementTVP',
+            rq: true,
+            en: 'MeasurementTVP',
+            ti: '.MeasureTVPType'
+          }]
+      }, {
+        ln: 'ObservationProcessType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'processType',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'originatingProcess',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'aggregationDuration',
+            ti: 'Duration'
+          }, {
+            n: 'verticalDatum',
+            ti: 'GML_3_2_1.VerticalDatumPropertyType'
+          }, {
+            n: 'comment',
+            mno: 0,
+            col: true
+          }, {
+            n: 'processReference',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'input',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'parameter',
+            mno: 0,
+            col: true,
+            ti: 'OM_2_0.NamedValuePropertyType'
+          }, {
+            n: 'operator',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
+          }]
+      }, {
+        ln: 'TimeZoneType',
+        ps: [{
+            n: 'zoneOffset',
+            rq: true
+          }, {
+            n: 'zoneAbbreviation'
+          }]
+      }, {
+        ln: 'TimeValuePairType',
+        ps: [{
+            n: 'time',
+            ti: 'GML_3_2_1.TimePositionType'
+          }]
+      }, {
+        ln: 'ObservationProcessPropertyType',
+        ps: [{
+            n: 'observationProcess',
+            rq: true,
+            en: 'ObservationProcess',
+            ti: '.ObservationProcessType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'MeasureTVPType',
+        bti: '.TimeValuePairType',
+        ps: [{
+            n: 'value',
+            mx: false,
+            dom: false,
+            ti: '.MeasureType',
+            t: 'er'
+          }, {
+            n: 'metadata',
+            ti: '.TVPMeasurementMetadataPropertyType'
+          }]
+      }, {
+        ln: 'MeasurementTimeseriesMetadataType',
+        bti: '.TimeseriesMetadataType',
+        ps: [{
+            n: 'startAnchorPoint',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'endAnchorPoint',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'cumulative',
+            ti: 'Boolean'
+          }, {
+            n: 'accumulationAnchorTime',
+            ti: 'GML_3_2_1.TimePositionType'
+          }, {
+            n: 'accumulationIntervalLength',
+            ti: 'Duration'
+          }, {
+            n: 'maxGapPeriod',
+            ti: 'Duration'
+          }]
+      }, {
         ln: 'TVPMeasurementMetadataType',
         bti: '.TVPMetadataType',
         ps: [{
@@ -24,35 +540,77 @@ var WaterML_2_0_Module_Factory = function () {
             ti: 'Duration'
           }]
       }, {
-        ln: 'MonitoringPointType',
-        bti: 'SamplingSpatial_2_0.SFSpatialSamplingFeatureType',
+        ln: 'TVPMetadataPropertyType',
         ps: [{
-            n: 'relatedParty',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
+            n: 'tvpMetadata',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'TVPMetadata',
+            ti: '.TVPMetadataType',
+            t: 'er'
           }, {
-            n: 'monitoringType',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_2_1.ReferenceType'
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ObservationMetadataPropertyType',
+        ps: [{
+            n: 'observationMetadata',
+            rq: true,
+            en: 'ObservationMetadata',
+            ti: '.ObservationMetadataType'
           }, {
-            n: 'monitoringPointDescriptionReference',
-            mno: 0,
-            col: true,
-            en: 'descriptionReference',
-            ti: 'GML_3_2_1.ReferenceType'
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }, {
-            n: 'verticalDatum',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_2_1.VerticalDatumPropertyType'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
           }, {
-            n: 'timeZone',
-            ti: '.TimeZonePropertyType'
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
           }, {
-            n: 'daylightSavingTimeZone',
-            ti: '.TimeZonePropertyType'
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'DefaultTVPMetadataPropertyType',
@@ -128,546 +686,13 @@ var WaterML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'MeasurementTimeseriesType.Point',
+        ln: 'CategoricalTimeseriesType.Point',
         tn: null,
         ps: [{
-            n: 'measurementTVP',
+            n: 'categoricalTVP',
             rq: true,
-            en: 'MeasurementTVP',
-            ti: '.MeasureTVPType'
-          }]
-      }, {
-        ln: 'CommentBlockPropertyType',
-        ps: [{
-            n: 'commentBlock',
-            rq: true,
-            en: 'CommentBlock',
-            ti: '.CommentBlockType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TVPDefaultMetadataPropertyType',
-        ps: [{
-            n: 'defaultTVPMetadata',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'DefaultTVPMetadata',
-            ti: '.TVPMetadataType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SamplingFeatureMemberPropertyType',
-        ps: [{
-            n: 'sfSpatialSamplingFeature',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'SF_SpatialSamplingFeature',
-              ns: 'http:\/\/www.opengis.net\/samplingSpatial\/2.0'
-            },
-            ti: 'SamplingSpatial_2_0.SFSpatialSamplingFeatureType',
-            t: 'er'
-          }, {
-            n: 'sfSamplingFeatureCollection',
-            rq: true,
-            en: {
-              lp: 'SF_SamplingFeatureCollection',
-              ns: 'http:\/\/www.opengis.net\/sampling\/2.0'
-            },
-            ti: 'Sampling_2_0.SFSamplingFeatureCollectionType'
-          }, {
-            n: 'unionSemantics',
-            an: {
-              lp: 'unionSemantics'
-            },
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MonitoringPointPropertyType',
-        ps: [{
-            n: 'monitoringPoint',
-            rq: true,
-            en: 'MonitoringPoint',
-            ti: '.MonitoringPointType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeseriesPropertyType',
-        ps: [{
-            n: 'timeseries',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'Timeseries',
-            ti: '.TimeseriesType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DocumentMetadataType',
-        bti: 'GML_3_2_1.AbstractGMLType',
-        ps: [{
-            n: 'generationDate',
-            rq: true,
-            ti: 'DateTime'
-          }, {
-            n: 'version',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'generationSystem'
-          }, {
-            n: 'profile',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }]
-      }, {
-        ln: 'TVPMeasurementMetadataPropertyType',
-        ps: [{
-            n: 'tvpMeasurementMetadata',
-            rq: true,
-            en: 'TVPMeasurementMetadata',
-            ti: '.TVPMeasurementMetadataType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeseriesType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'metadata',
-            ti: '.TimeseriesMetadataPropertyType'
-          }, {
-            n: 'defaultPointMetadata',
-            mno: 0,
-            col: true,
-            ti: '.TVPDefaultMetadataPropertyType'
-          }]
-      }, {
-        ln: 'CollectionType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'metadata',
-            rq: true,
-            ti: '.DocumentMetadataPropertyType'
-          }, {
-            n: 'temporalExtent',
-            ti: '.CollectionType.TemporalExtent'
-          }, {
-            n: 'sourceDefinition',
-            mno: 0,
-            col: true,
-            ti: '.CollectionType.SourceDefinition'
-          }, {
-            n: 'parameter',
-            mno: 0,
-            col: true,
-            ti: 'OM_2_0.NamedValuePropertyType'
-          }, {
-            n: 'localDictionary',
-            mno: 0,
-            col: true,
-            ti: '.CollectionType.LocalDictionary'
-          }, {
-            n: 'samplingFeatureMember',
-            mno: 0,
-            col: true,
-            ti: '.SamplingFeatureMemberPropertyType'
-          }, {
-            n: 'observationMember',
-            mno: 0,
-            col: true,
-            ti: 'OM_2_0.OMObservationPropertyType'
-          }, {
-            n: 'communityExtension',
-            mno: 0,
-            col: true,
-            ti: 'AnyType'
-          }, {
-            n: 'internalExtension',
-            mno: 0,
-            col: true,
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'ObservationMetadataPropertyType',
-        ps: [{
-            n: 'observationMetadata',
-            rq: true,
-            en: 'ObservationMetadata',
-            ti: '.ObservationMetadataType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ObservationProcessType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'processType',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'originatingProcess',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'aggregationDuration',
-            ti: 'Duration'
-          }, {
-            n: 'verticalDatum',
-            ti: 'GML_3_2_1.VerticalDatumPropertyType'
-          }, {
-            n: 'comment',
-            mno: 0,
-            col: true
-          }, {
-            n: 'processReference',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'input',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'parameter',
-            mno: 0,
-            col: true,
-            ti: 'OM_2_0.NamedValuePropertyType'
-          }, {
-            n: 'operator',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
-          }]
-      }, {
-        ln: 'ObservationMetadataType',
-        bti: 'ISO19139_GMD_20070417.MDMetadataType',
-        ps: [{
-            n: 'intendedObservationSpacing',
-            ti: 'Duration'
-          }, {
-            n: 'status',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'sampledMedium',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'maximumGap',
-            ti: 'Duration'
-          }, {
-            n: 'parameter',
-            mno: 0,
-            col: true,
-            ti: 'OM_2_0.NamedValuePropertyType'
-          }]
-      }, {
-        ln: 'MeasurementTimeseriesMetadataType',
-        bti: '.TimeseriesMetadataType',
-        ps: [{
-            n: 'startAnchorPoint',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'endAnchorPoint',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'cumulative',
-            ti: 'Boolean'
-          }, {
-            n: 'accumulationAnchorTime',
-            ti: 'GML_3_2_1.TimePositionType'
-          }, {
-            n: 'accumulationIntervalLength',
-            ti: 'Duration'
-          }, {
-            n: 'maxGapPeriod',
-            ti: 'Duration'
-          }]
-      }, {
-        ln: 'TimeZoneType',
-        ps: [{
-            n: 'zoneOffset',
-            rq: true
-          }, {
-            n: 'zoneAbbreviation'
-          }]
-      }, {
-        ln: 'ObservationProcessPropertyType',
-        ps: [{
-            n: 'observationProcess',
-            rq: true,
-            en: 'ObservationProcess',
-            ti: '.ObservationProcessType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DefaultCategoricalTVPMetadataType',
-        bti: '.TVPMetadataType',
-        ps: [{
-            n: 'codeSpace'
-          }]
-      }, {
-        ln: 'MeasurementTSMetadataPropertyType',
-        ps: [{
-            n: 'measurementTimeseriesMetadata',
-            rq: true,
-            en: 'MeasurementTimeseriesMetadata',
-            ti: '.MeasurementTimeseriesMetadataType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
+            en: 'CategoricalTVP',
+            ti: '.CategoricalTVPType'
           }]
       }, {
         ln: 'MeasureType',
@@ -683,86 +708,17 @@ var WaterML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CategoricalTimeseriesType.Point',
-        tn: null,
-        ps: [{
-            n: 'categoricalTVP',
-            rq: true,
-            en: 'CategoricalTVP',
-            ti: '.CategoricalTVPType'
-          }]
-      }, {
-        ln: 'CollectionType.LocalDictionary',
-        tn: null,
-        ps: [{
-            n: 'dictionary',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'Dictionary',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.DictionaryType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'MeasureTVPType',
+        ln: 'CategoricalTVPType',
         bti: '.TimeValuePairType',
         ps: [{
             n: 'value',
             mx: false,
             dom: false,
-            ti: '.MeasureType',
+            ti: 'SWE_2_0.CategoryPropertyType',
             t: 'er'
           }, {
             n: 'metadata',
-            ti: '.TVPMeasurementMetadataPropertyType'
-          }]
-      }, {
-        ln: 'TVPMetadataPropertyType',
-        ps: [{
-            n: 'tvpMetadata',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'TVPMetadata',
-            ti: '.TVPMetadataType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TVPMetadataType',
-        ps: [{
-            n: 'quality',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'nilReason',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'comment'
-          }, {
-            n: 'relatedObservation',
-            mno: 0,
-            col: true,
-            ti: 'OM_2_0.ObservationContextPropertyType'
-          }, {
-            n: 'qualifier',
-            mno: 0,
-            col: true,
-            ti: 'SWE_2_0.QualityPropertyType'
-          }, {
-            n: 'processing',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'source',
-            ti: 'GML_3_2_1.ReferenceType'
+            ti: '.TVPMetadataPropertyType'
           }]
       }, {
         ln: 'TimeseriesMetadataType',
@@ -788,45 +744,84 @@ var WaterML_2_0_Module_Factory = function () {
             ti: 'OM_2_0.NamedValuePropertyType'
           }]
       }, {
-        ln: 'CommentBlockType',
+        ln: 'DocumentMetadataType',
+        bti: 'GML_3_2_1.AbstractGMLType',
         ps: [{
-            n: 'applicablePeriod',
+            n: 'generationDate',
             rq: true,
-            ti: 'GML_3_2_1.TimePeriodPropertyType'
+            ti: 'DateTime'
           }, {
-            n: 'comment',
-            rq: true
-          }]
-      }, {
-        ln: 'CollectionType.SourceDefinition',
-        tn: null,
-        ps: [{
-            n: 'mdDataIdentification',
-            rq: true,
-            en: {
-              lp: 'MD_DataIdentification',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gmd'
-            },
-            ti: 'ISO19139_GMD_20070417.MDDataIdentificationType'
-          }]
-      }, {
-        ln: 'MeasurementTimeseriesType',
-        bti: '.TimeseriesType',
-        ps: [{
-            n: 'point',
+            n: 'version',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'generationSystem'
+          }, {
+            n: 'profile',
             mno: 0,
             col: true,
-            ti: '.MeasurementTimeseriesType.Point'
+            ti: 'GML_3_2_1.ReferenceType'
           }]
       }, {
-        ln: 'TimeseriesMetadataPropertyType',
+        ln: 'ObservationMetadataType',
+        bti: 'ISO19139_GMD_20070417.MDMetadataType',
         ps: [{
-            n: 'timeseriesMetadata',
+            n: 'intendedObservationSpacing',
+            ti: 'Duration'
+          }, {
+            n: 'status',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'sampledMedium',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'maximumGap',
+            ti: 'Duration'
+          }, {
+            n: 'parameter',
+            mno: 0,
+            col: true,
+            ti: 'OM_2_0.NamedValuePropertyType'
+          }]
+      }, {
+        ln: 'MonitoringPointType',
+        bti: 'SamplingSpatial_2_0.SFSpatialSamplingFeatureType',
+        ps: [{
+            n: 'relatedParty',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GMD_20070417.CIResponsiblePartyPropertyType'
+          }, {
+            n: 'monitoringType',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'monitoringPointDescriptionReference',
+            mno: 0,
+            col: true,
+            en: 'descriptionReference',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'verticalDatum',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_2_1.VerticalDatumPropertyType'
+          }, {
+            n: 'timeZone',
+            ti: '.TimeZonePropertyType'
+          }, {
+            n: 'daylightSavingTimeZone',
+            ti: '.TimeZonePropertyType'
+          }]
+      }, {
+        ln: 'TVPDefaultMetadataPropertyType',
+        ps: [{
+            n: 'defaultTVPMetadata',
             rq: true,
             mx: false,
             dom: false,
-            en: 'TimeseriesMetadata',
-            ti: '.TimeseriesMetadataType',
+            en: 'DefaultTVPMetadata',
+            ti: '.TVPMetadataType',
             t: 'er'
           }, {
             n: 'owns',
@@ -844,13 +839,6 @@ var WaterML_2_0_Module_Factory = function () {
             en: 'Collection',
             ti: '.CollectionType'
           }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
             n: 'nilReason',
             ti: {
               t: 'l'
@@ -890,42 +878,51 @@ var WaterML_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'CategoricalTimeseriesType',
-        bti: '.TimeseriesType',
+        ln: 'TimeseriesType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
-            n: 'point',
+            n: 'metadata',
+            ti: '.TimeseriesMetadataPropertyType'
+          }, {
+            n: 'defaultPointMetadata',
             mno: 0,
             col: true,
-            ti: '.CategoricalTimeseriesType.Point'
+            ti: '.TVPDefaultMetadataPropertyType'
           }]
       }, {
-        ln: 'TimeValuePairType',
+        ln: 'CommentBlockPropertyType',
         ps: [{
-            n: 'time',
-            ti: 'GML_3_2_1.TimePositionType'
+            n: 'commentBlock',
+            rq: true,
+            en: 'CommentBlock',
+            ti: '.CommentBlockType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'CategoricalTVPType',
-        bti: '.TimeValuePairType',
+        ln: 'TimeseriesPropertyType',
         ps: [{
-            n: 'value',
+            n: 'timeseries',
+            rq: true,
             mx: false,
             dom: false,
-            ti: 'SWE_2_0.CategoryPropertyType',
+            en: 'Timeseries',
+            ti: '.TimeseriesType',
             t: 'er'
-          }, {
-            n: 'metadata',
-            ti: '.TVPMetadataPropertyType'
-          }]
-      }, {
-        ln: 'DocumentMetadataPropertyType',
-        ps: [{
-            n: 'documentMetadata',
-            rq: true,
-            en: 'DocumentMetadata',
-            ti: '.DocumentMetadataType'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -975,16 +972,19 @@ var WaterML_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CollectionType.TemporalExtent',
+        ln: 'CollectionType.LocalDictionary',
         tn: null,
         ps: [{
-            n: 'timePeriod',
+            n: 'dictionary',
             rq: true,
+            mx: false,
+            dom: false,
             en: {
-              lp: 'TimePeriod',
+              lp: 'Dictionary',
               ns: 'http:\/\/www.opengis.net\/gml\/3.2'
             },
-            ti: 'GML_3_2_1.TimePeriodType'
+            ti: 'GML_3_2_1.DictionaryType',
+            t: 'er'
           }]
       }, {
         t: 'enum',
@@ -992,51 +992,12 @@ var WaterML_2_0_Module_Factory = function () {
         vs: ['byFeature', 'byGroup']
       }],
     eis: [{
-        en: 'CategoricalTimeseries',
-        ti: '.CategoricalTimeseriesType',
-        sh: 'Timeseries'
-      }, {
-        en: 'DocumentMetadata',
-        ti: '.DocumentMetadataType',
-        sh: {
-          lp: 'AbstractGML',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'DefaultTVPMeasurementMetadata',
-        ti: '.TVPMeasurementMetadataType',
-        sh: 'DefaultTVPMetadata'
-      }, {
-        en: 'MeasurementTimeseries',
-        ti: '.MeasurementTimeseriesType',
-        sh: 'Timeseries'
-      }, {
-        en: 'MeasurementTVP',
-        ti: '.MeasureTVPType',
-        sh: 'TimeValuePair'
-      }, {
-        en: 'Timeseries',
-        ti: '.TimeseriesType',
+        en: 'Collection',
+        ti: '.CollectionType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
-      }, {
-        en: 'DefaultTVPMetadata',
-        ti: '.TVPMetadataType'
-      }, {
-        en: 'TimeValuePair',
-        ti: '.TimeValuePairType'
-      }, {
-        en: 'TVPMetadata',
-        ti: '.TVPMetadataType'
-      }, {
-        en: 'value',
-        ti: '.MeasureType',
-        sc: '.MeasureTVPType'
-      }, {
-        en: 'value',
-        ti: '.MeasureType'
       }, {
         en: 'MonitoringPoint',
         ti: '.MonitoringPointType',
@@ -1045,41 +1006,17 @@ var WaterML_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/samplingSpatial\/2.0'
         }
       }, {
-        en: 'TimeseriesMetadata',
-        ti: '.TimeseriesMetadataType'
+        en: 'CategoricalTimeseries',
+        ti: '.CategoricalTimeseriesType',
+        sh: 'Timeseries'
       }, {
-        en: 'Collection',
-        ti: '.CollectionType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'ObservationProcess',
-        ti: '.ObservationProcessType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
+        en: 'CategoricalTVP',
+        ti: '.CategoricalTVPType',
+        sh: 'TimeValuePair'
       }, {
         en: 'DefaultTVPCategoricalMetadata',
         ti: '.DefaultCategoricalTVPMetadataType',
         sh: 'DefaultTVPMetadata'
-      }, {
-        en: 'TVPMeasurementMetadata',
-        ti: '.TVPMeasurementMetadataType',
-        sh: 'TVPMetadata'
-      }, {
-        en: 'CommentBlock',
-        ti: '.CommentBlockType',
-        sh: {
-          lp: 'AbstractObject',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'MeasurementTimeseriesMetadata',
-        ti: '.MeasurementTimeseriesMetadataType',
-        sh: 'TimeseriesMetadata'
       }, {
         en: 'ObservationMetadata',
         ti: '.ObservationMetadataType',
@@ -1088,18 +1025,81 @@ var WaterML_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.isotc211.org\/2005\/gmd'
         }
       }, {
+        en: 'DocumentMetadata',
+        ti: '.DocumentMetadataType',
+        sh: {
+          lp: 'AbstractGML',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'MeasurementTimeseriesMetadata',
+        ti: '.MeasurementTimeseriesMetadataType',
+        sh: 'TimeseriesMetadata'
+      }, {
+        en: 'ObservationProcess',
+        ti: '.ObservationProcessType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'MeasurementTVP',
+        ti: '.MeasureTVPType',
+        sh: 'TimeValuePair'
+      }, {
         en: 'value',
         ti: 'SWE_2_0.CategoryPropertyType',
         sc: '.CategoricalTVPType'
       }, {
-        en: 'CategoricalTVP',
-        ti: '.CategoricalTVPType',
-        sh: 'TimeValuePair'
+        en: 'CommentBlock',
+        ti: '.CommentBlockType',
+        sh: {
+          lp: 'AbstractObject',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'TVPMetadata',
+        ti: '.TVPMetadataType'
+      }, {
+        en: 'value',
+        ti: '.MeasureType',
+        sc: '.MeasureTVPType'
+      }, {
+        en: 'DefaultTVPMeasurementMetadata',
+        ti: '.TVPMeasurementMetadataType',
+        sh: 'DefaultTVPMetadata'
       }, {
         en: 'TimeZone',
         ti: '.TimeZoneType',
         sh: {
           lp: 'AbstractObject',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'value',
+        ti: '.MeasureType'
+      }, {
+        en: 'DefaultTVPMetadata',
+        ti: '.TVPMetadataType'
+      }, {
+        en: 'TimeseriesMetadata',
+        ti: '.TimeseriesMetadataType'
+      }, {
+        en: 'TVPMeasurementMetadata',
+        ti: '.TVPMeasurementMetadataType',
+        sh: 'TVPMetadata'
+      }, {
+        en: 'MeasurementTimeseries',
+        ti: '.MeasurementTimeseriesType',
+        sh: 'Timeseries'
+      }, {
+        en: 'TimeValuePair',
+        ti: '.TimeValuePairType'
+      }, {
+        en: 'Timeseries',
+        ti: '.TimeseriesType',
+        sh: {
+          lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }]

@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schema-parent</artifactId>
-		<version>2.5.5-SNAPSHOT</version>
+		<version>2.6.0</version>
 		<relativePath>../../schema-parent/pom.xml</relativePath>
 	</parent>
 	<dependencies>

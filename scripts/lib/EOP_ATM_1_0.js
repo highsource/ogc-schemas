@@ -13,9 +13,6 @@ var EOP_ATM_1_0_Module_Factory = function () {
             ti: '.DataLayerType'
           }]
       }, {
-        ln: 'EarthObservationType',
-        bti: 'EOP_1_0.EarthObservationType'
-      }, {
         ln: 'DataLayerType',
         ps: [{
             n: 'specy'
@@ -33,6 +30,9 @@ var EOP_ATM_1_0_Module_Factory = function () {
             n: 'algorithmVersion'
           }]
       }, {
+        ln: 'EarthObservationType',
+        bti: 'EOP_1_0.EarthObservationType'
+      }, {
         ln: 'EarthObservationResultType',
         bti: 'EOP_1_0.EarthObservationResultType',
         ps: [{
@@ -41,9 +41,6 @@ var EOP_ATM_1_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'DataLayer',
-        ti: '.DataLayerType'
-      }, {
         en: 'EarthObservationResult',
         ti: '.EarthObservationResultType',
         sh: {
@@ -51,15 +48,18 @@ var EOP_ATM_1_0_Module_Factory = function () {
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }, {
-        en: 'dataLayers',
-        ti: '.DataLayerPropertyType'
-      }, {
         en: 'EarthObservation',
         ti: '.EarthObservationType',
         sh: {
           lp: 'EarthObservation',
           ns: 'http:\/\/earth.esa.int\/eop'
         }
+      }, {
+        en: 'DataLayer',
+        ti: '.DataLayerType'
+      }, {
+        en: 'dataLayers',
+        ti: '.DataLayerPropertyType'
       }]
   };
   return {

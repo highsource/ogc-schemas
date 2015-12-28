@@ -2,213 +2,49 @@
 {
     "id":"http://www.opengis.net/cat/csw/2.0.2#",
     "definitions":{
-        "TransactionResponseType":{
+        "ElementSetNameType":{
             "type":"object",
-            "title":"TransactionResponseType",
-            "required":[
-                "transactionSummary"
-            ],
+            "title":"ElementSetNameType",
             "properties":{
-                "transactionSummary":{
-                    "title":"transactionSummary",
+                "value":{
+                    "title":"value",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/TransactionSummaryType"
+                            "$ref":"#/definitions/ElementSetType"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TransactionSummary",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
+                    "propertyType":"value"
                 },
-                "insertResult":{
-                    "title":"insertResult",
+                "typeNames":{
+                    "title":"typeNames",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/InsertResultType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"InsertResult",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                            }
                         }
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"version",
+                        "localPart":"typeNames",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"TransactionResponseType",
+                "localPart":"ElementSetNameType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             },
             "propertiesOrder":[
-                "transactionSummary",
-                "insertResult",
-                "version"
+                "value",
+                "typeNames"
             ]
         },
-        "CapabilitiesType":{
+        "TransactionType":{
             "required":[
-                "filterCapabilities"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows#/definitions/CapabilitiesBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"CapabilitiesType",
-                    "properties":{
-                        "filterCapabilities":{
-                            "title":"filterCapabilities",
-                            "allOf":[
-                                {
-                                    "anyOf":[
-                                        {
-                                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                        },
-                                        {
-                                            "type":"object",
-                                            "properties":{
-                                                "name":{
-                                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                },
-                                                "value":{
-                                                }
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            "propertyType":"anyElement"
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CapabilitiesType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "filterCapabilities"
-            ]
-        },
-        "ListOfValuesType":{
-            "type":"object",
-            "title":"ListOfValuesType",
-            "required":[
-                "value"
-            ],
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Value",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ListOfValuesType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "value"
-            ]
-        },
-        "ConceptualSchemeType":{
-            "type":"object",
-            "title":"ConceptualSchemeType",
-            "required":[
-                "name",
-                "document",
-                "authority"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "document":{
-                    "title":"document",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Document",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "authority":{
-                    "title":"authority",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Authority",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ConceptualSchemeType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "name",
-                "document",
-                "authority"
-            ]
-        },
-        "HarvestType":{
-            "required":[
-                "source",
-                "resourceType"
+                "insertOrUpdateOrDelete"
             ],
             "allOf":[
                 {
@@ -216,75 +52,79 @@
                 },
                 {
                     "type":"object",
-                    "title":"HarvestType",
+                    "title":"TransactionType",
                     "properties":{
-                        "source":{
-                            "title":"source",
+                        "insertOrUpdateOrDelete":{
+                            "title":"insertOrUpdateOrDelete",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "anyOf":[
+                                            {
+                                                "anyOf":[
+                                                    {
+                                                        "$ref":"#/definitions/InsertType"
+                                                    }
+                                                ],
+                                                "elementName":{
+                                                    "localPart":"Insert",
+                                                    "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                                                }
+                                            },
+                                            {
+                                                "anyOf":[
+                                                    {
+                                                        "$ref":"#/definitions/UpdateType"
+                                                    }
+                                                ],
+                                                "elementName":{
+                                                    "localPart":"Update",
+                                                    "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                                                }
+                                            },
+                                            {
+                                                "anyOf":[
+                                                    {
+                                                        "$ref":"#/definitions/DeleteType"
+                                                    }
+                                                ],
+                                                "elementName":{
+                                                    "localPart":"Delete",
+                                                    "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"elements"
+                        },
+                        "verboseResponse":{
+                            "title":"verboseResponse",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"verboseResponse",
+                                "namespaceURI":""
+                            }
+                        },
+                        "requestId":{
+                            "title":"requestId",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                                 }
                             ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Source",
-                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                            }
-                        },
-                        "resourceType":{
-                            "title":"resourceType",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ResourceType",
-                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                            }
-                        },
-                        "resourceFormat":{
-                            "title":"resourceFormat",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ResourceFormat",
-                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                            }
-                        },
-                        "harvestInterval":{
-                            "title":"harvestInterval",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/duration"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"HarvestInterval",
-                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                            }
-                        },
-                        "responseHandler":{
-                            "title":"responseHandler",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ResponseHandler",
-                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"requestId",
+                                "namespaceURI":""
                             }
                         }
                     }
@@ -292,412 +132,142 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"HarvestType",
+                "localPart":"TransactionType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             },
             "propertiesOrder":[
-                "source",
-                "resourceType",
-                "resourceFormat",
-                "harvestInterval",
-                "responseHandler"
+                "insertOrUpdateOrDelete",
+                "verboseResponse",
+                "requestId"
             ]
         },
-        "AbstractQueryType":{
+        "EchoedRequestType":{
             "type":"object",
-            "title":"AbstractQueryType",
-            "properties":{
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractQueryType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
-        },
-        "UpdateType":{
-            "type":"object",
-            "title":"UpdateType",
+            "title":"EchoedRequestType",
             "required":[
-                "any",
-                "recordProperty",
-                "constraint"
+                "any"
             ],
             "properties":{
                 "any":{
                     "title":"any",
                     "allOf":[
                         {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                            "anyOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
                                 },
-                                "value":{
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                        }
+                                    }
                                 }
+                            ]
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EchoedRequestType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "any"
+            ]
+        },
+        "SchemaComponentType":{
+            "type":"object",
+            "title":"SchemaComponentType",
+            "required":[
+                "targetNamespace",
+                "schemaLanguage"
+            ],
+            "properties":{
+                "content":{
+                    "title":"content",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                    },
+                                    {
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                            }
+                                        }
+                                    }
+                                ]
                             }
                         }
                     ],
                     "propertyType":"anyElement"
                 },
-                "recordProperty":{
-                    "title":"recordProperty",
+                "targetNamespace":{
+                    "title":"targetNamespace",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/RecordPropertyType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"RecordProperty",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "constraint":{
-                    "title":"constraint",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/QueryConstraintType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Constraint",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "handle":{
-                    "title":"handle",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"handle",
+                        "localPart":"targetNamespace",
+                        "namespaceURI":""
+                    }
+                },
+                "parentSchema":{
+                    "title":"parentSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"parentSchema",
+                        "namespaceURI":""
+                    }
+                },
+                "schemaLanguage":{
+                    "title":"schemaLanguage",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"schemaLanguage",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"UpdateType",
+                "localPart":"SchemaComponentType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             },
             "propertiesOrder":[
-                "any",
-                "recordProperty",
-                "constraint",
-                "handle"
-            ]
-        },
-        "RecordPropertyType":{
-            "type":"object",
-            "title":"RecordPropertyType",
-            "required":[
-                "name"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Value",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RecordPropertyType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "name",
-                "value"
-            ]
-        },
-        "DCMIRecordType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractRecordType"
-                },
-                {
-                    "type":"object",
-                    "title":"DCMIRecordType",
-                    "properties":{
-                        "dcElement":{
-                            "title":"dcElement",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"DC-element",
-                                            "namespaceURI":"http://purl.org/dc/elements/1.1/"
-                                        }
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"DC-element",
-                                "namespaceURI":"http://purl.org/dc/elements/1.1/"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DCMIRecordType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "dcElement"
-            ]
-        },
-        "GetRecordByIdType":{
-            "required":[
-                "id"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/RequestBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetRecordByIdType",
-                    "properties":{
-                        "id":{
-                            "title":"id",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Id",
-                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                            }
-                        },
-                        "elementSetName":{
-                            "title":"elementSetName",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ElementSetNameType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ElementSetName",
-                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                            }
-                        },
-                        "outputFormat":{
-                            "title":"outputFormat",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"outputFormat",
-                                "namespaceURI":""
-                            }
-                        },
-                        "outputSchema":{
-                            "title":"outputSchema",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"outputSchema",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetRecordByIdType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "id",
-                "elementSetName",
-                "outputFormat",
-                "outputSchema"
-            ]
-        },
-        "BriefRecordType":{
-            "required":[
-                "identifier",
-                "title"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractRecordType"
-                },
-                {
-                    "type":"object",
-                    "title":"BriefRecordType",
-                    "properties":{
-                        "identifier":{
-                            "title":"identifier",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"identifier",
-                                            "namespaceURI":"http://purl.org/dc/elements/1.1/"
-                                        }
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"identifier",
-                                "namespaceURI":"http://purl.org/dc/elements/1.1/"
-                            }
-                        },
-                        "title":{
-                            "title":"title",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"title",
-                                            "namespaceURI":"http://purl.org/dc/elements/1.1/"
-                                        }
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"title",
-                                "namespaceURI":"http://purl.org/dc/elements/1.1/"
-                            }
-                        },
-                        "type":{
-                            "title":"type",
-                            "allOf":[
-                                {
-                                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"type",
-                                "namespaceURI":"http://purl.org/dc/elements/1.1/"
-                            }
-                        },
-                        "boundingBox":{
-                            "title":"boundingBox",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"http://www.opengis.net/ows#/definitions/BoundingBoxType"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"BoundingBox",
-                                            "namespaceURI":"http://www.opengis.net/ows"
-                                        }
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"BoundingBox",
-                                "namespaceURI":"http://www.opengis.net/ows"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"BriefRecordType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "identifier",
-                "title",
-                "type",
-                "boundingBox"
+                "content",
+                "targetNamespace",
+                "parentSchema",
+                "schemaLanguage"
             ]
         },
         "QueryType":{
@@ -812,143 +382,185 @@
                 "typeNames"
             ]
         },
-        "SearchResultsType":{
+        "GetRecordsResponseType":{
             "type":"object",
-            "title":"SearchResultsType",
+            "title":"GetRecordsResponseType",
             "required":[
-                "numberOfRecordsMatched",
-                "numberOfRecordsReturned"
+                "searchStatus",
+                "searchResults"
             ],
             "properties":{
-                "abstractRecord":{
-                    "title":"abstractRecord",
+                "requestId":{
+                    "title":"requestId",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "type":"object",
-                                "properties":{
-                                    "name":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                    },
-                                    "value":{
-                                        "$ref":"#/definitions/AbstractRecordType"
-                                    }
-                                },
-                                "elementName":{
-                                    "localPart":"AbstractRecord",
-                                    "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                                }
-                            },
-                            "minItems":0
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
-                    "propertyType":"elementRef",
+                    "propertyType":"element",
                     "elementName":{
-                        "localPart":"AbstractRecord",
+                        "localPart":"RequestId",
                         "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
                     }
                 },
-                "any":{
-                    "title":"any",
+                "searchStatus":{
+                    "title":"searchStatus",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "type":"object",
-                                "properties":{
-                                    "name":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                    },
-                                    "value":{
+                            "$ref":"#/definitions/RequestStatusType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SearchStatus",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "searchResults":{
+                    "title":"searchResults",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SearchResultsType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SearchResults",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetRecordsResponseType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "requestId",
+                "searchStatus",
+                "searchResults",
+                "version"
+            ]
+        },
+        "QueryConstraintType":{
+            "type":"object",
+            "title":"QueryConstraintType",
+            "required":[
+                "filter",
+                "cqlText",
+                "version"
+            ],
+            "properties":{
+                "filter":{
+                    "title":"filter",
+                    "allOf":[
+                        {
+                            "anyOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                },
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                        }
                                     }
                                 }
-                            },
-                            "minItems":0
+                            ]
                         }
                     ],
                     "propertyType":"anyElement"
                 },
-                "resultSetId":{
-                    "title":"resultSetId",
+                "cqlText":{
+                    "title":"cqlText",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"CqlText",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"QueryConstraintType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "filter",
+                "cqlText",
+                "version"
+            ]
+        },
+        "AcknowledgementType":{
+            "type":"object",
+            "title":"AcknowledgementType",
+            "required":[
+                "echoedRequest",
+                "timeStamp"
+            ],
+            "properties":{
+                "echoedRequest":{
+                    "title":"echoedRequest",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/EchoedRequestType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"EchoedRequest",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "requestId":{
+                    "title":"requestId",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"resultSetId",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RequestId",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
                     }
                 },
-                "elementSet":{
-                    "title":"elementSet",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ElementSetType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"elementSet",
-                        "namespaceURI":""
-                    }
-                },
-                "recordSchema":{
-                    "title":"recordSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"recordSchema",
-                        "namespaceURI":""
-                    }
-                },
-                "numberOfRecordsMatched":{
-                    "title":"numberOfRecordsMatched",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"numberOfRecordsMatched",
-                        "namespaceURI":""
-                    }
-                },
-                "numberOfRecordsReturned":{
-                    "title":"numberOfRecordsReturned",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"numberOfRecordsReturned",
-                        "namespaceURI":""
-                    }
-                },
-                "nextRecord":{
-                    "title":"nextRecord",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nextRecord",
-                        "namespaceURI":""
-                    }
-                },
-                "expires":{
-                    "title":"expires",
+                "timeStamp":{
+                    "title":"timeStamp",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/dateTime"
@@ -956,185 +568,20 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"expires",
+                        "localPart":"timeStamp",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SearchResultsType",
+                "localPart":"AcknowledgementType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             },
             "propertiesOrder":[
-                "abstractRecord",
-                "any",
-                "resultSetId",
-                "elementSet",
-                "recordSchema",
-                "numberOfRecordsMatched",
-                "numberOfRecordsReturned",
-                "nextRecord",
-                "expires"
-            ]
-        },
-        "DomainValuesType":{
-            "type":"object",
-            "title":"DomainValuesType",
-            "required":[
-                "propertyName",
-                "parameterName",
-                "listOfValues",
-                "conceptualScheme",
-                "rangeOfValues",
-                "type"
-            ],
-            "properties":{
-                "propertyName":{
-                    "title":"propertyName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"PropertyName",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "parameterName":{
-                    "title":"parameterName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ParameterName",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "listOfValues":{
-                    "title":"listOfValues",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ListOfValuesType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ListOfValues",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "conceptualScheme":{
-                    "title":"conceptualScheme",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ConceptualSchemeType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ConceptualScheme",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "rangeOfValues":{
-                    "title":"rangeOfValues",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/RangeOfValuesType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"RangeOfValues",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":""
-                    }
-                },
-                "uom":{
-                    "title":"uom",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uom",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DomainValuesType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "propertyName",
-                "parameterName",
-                "listOfValues",
-                "conceptualScheme",
-                "rangeOfValues",
-                "type",
-                "uom"
-            ]
-        },
-        "ElementSetNameType":{
-            "type":"object",
-            "title":"ElementSetNameType",
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ElementSetType"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "typeNames":{
-                    "title":"typeNames",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"typeNames",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ElementSetNameType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "value",
-                "typeNames"
+                "echoedRequest",
+                "requestId",
+                "timeStamp"
             ]
         },
         "SummaryRecordType":{
@@ -1397,82 +844,98 @@
                 "boundingBox"
             ]
         },
-        "DescribeRecordResponseType":{
+        "DomainValuesType":{
             "type":"object",
-            "title":"DescribeRecordResponseType",
+            "title":"DomainValuesType",
+            "required":[
+                "propertyName",
+                "parameterName",
+                "listOfValues",
+                "conceptualScheme",
+                "rangeOfValues",
+                "type"
+            ],
             "properties":{
-                "schemaComponent":{
-                    "title":"schemaComponent",
+                "propertyName":{
+                    "title":"propertyName",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/SchemaComponentType"
-                            },
-                            "minItems":0
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"SchemaComponent",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DescribeRecordResponseType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "schemaComponent"
-            ]
-        },
-        "TransactionSummaryType":{
-            "type":"object",
-            "title":"TransactionSummaryType",
-            "properties":{
-                "totalInserted":{
-                    "title":"totalInserted",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"totalInserted",
+                        "localPart":"PropertyName",
                         "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
                     }
                 },
-                "totalUpdated":{
-                    "title":"totalUpdated",
+                "parameterName":{
+                    "title":"parameterName",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"totalUpdated",
+                        "localPart":"ParameterName",
                         "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
                     }
                 },
-                "totalDeleted":{
-                    "title":"totalDeleted",
+                "listOfValues":{
+                    "title":"listOfValues",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                            "$ref":"#/definitions/ListOfValuesType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"totalDeleted",
+                        "localPart":"ListOfValues",
                         "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
                     }
                 },
-                "requestId":{
-                    "title":"requestId",
+                "conceptualScheme":{
+                    "title":"conceptualScheme",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ConceptualSchemeType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ConceptualScheme",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "rangeOfValues":{
+                    "title":"rangeOfValues",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/RangeOfValuesType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RangeOfValues",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":""
+                    }
+                },
+                "uom":{
+                    "title":"uom",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
@@ -1480,202 +943,74 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"requestId",
+                        "localPart":"uom",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"TransactionSummaryType",
+                "localPart":"DomainValuesType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             },
             "propertiesOrder":[
-                "totalInserted",
-                "totalUpdated",
-                "totalDeleted",
-                "requestId"
+                "propertyName",
+                "parameterName",
+                "listOfValues",
+                "conceptualScheme",
+                "rangeOfValues",
+                "type",
+                "uom"
             ]
         },
-        "InsertType":{
-            "type":"object",
-            "title":"InsertType",
-            "required":[
-                "any"
-            ],
-            "properties":{
-                "any":{
-                    "title":"any",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "type":"object",
-                                "properties":{
-                                    "name":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                    },
-                                    "value":{
-                                    }
-                                }
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"anyElement"
+        "DCMIRecordType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractRecordType"
                 },
-                "typeName":{
-                    "title":"typeName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"typeName",
-                        "namespaceURI":""
-                    }
-                },
-                "handle":{
-                    "title":"handle",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"handle",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InsertType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "any",
-                "typeName",
-                "handle"
-            ]
-        },
-        "SchemaComponentType":{
-            "type":"object",
-            "title":"SchemaComponentType",
-            "required":[
-                "targetNamespace",
-                "schemaLanguage"
-            ],
-            "properties":{
-                "content":{
-                    "title":"content",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                    },
-                                    {
+                {
+                    "type":"object",
+                    "title":"DCMIRecordType",
+                    "properties":{
+                        "dcElement":{
+                            "title":"dcElement",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
                                         "type":"object",
                                         "properties":{
                                             "name":{
                                                 "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                                             },
                                             "value":{
+                                                "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
                                             }
+                                        },
+                                        "elementName":{
+                                            "localPart":"DC-element",
+                                            "namespaceURI":"http://purl.org/dc/elements/1.1/"
                                         }
-                                    }
-                                ]
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"DC-element",
+                                "namespaceURI":"http://purl.org/dc/elements/1.1/"
                             }
                         }
-                    ],
-                    "propertyType":"anyElement"
-                },
-                "targetNamespace":{
-                    "title":"targetNamespace",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"targetNamespace",
-                        "namespaceURI":""
-                    }
-                },
-                "parentSchema":{
-                    "title":"parentSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"parentSchema",
-                        "namespaceURI":""
-                    }
-                },
-                "schemaLanguage":{
-                    "title":"schemaLanguage",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"schemaLanguage",
-                        "namespaceURI":""
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SchemaComponentType",
+                "localPart":"DCMIRecordType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             },
             "propertiesOrder":[
-                "content",
-                "targetNamespace",
-                "parentSchema",
-                "schemaLanguage"
-            ]
-        },
-        "DistributedSearchType":{
-            "type":"object",
-            "title":"DistributedSearchType",
-            "properties":{
-                "hopCount":{
-                    "title":"hopCount",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"hopCount",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DistributedSearchType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "hopCount"
+                "dcElement"
             ]
         },
         "GetRecordsType":{
@@ -1861,379 +1196,6 @@
                 "maxRecords"
             ]
         },
-        "GetRecordsResponseType":{
-            "type":"object",
-            "title":"GetRecordsResponseType",
-            "required":[
-                "searchStatus",
-                "searchResults"
-            ],
-            "properties":{
-                "requestId":{
-                    "title":"requestId",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"RequestId",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "searchStatus":{
-                    "title":"searchStatus",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/RequestStatusType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SearchStatus",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "searchResults":{
-                    "title":"searchResults",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SearchResultsType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SearchResults",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetRecordsResponseType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "requestId",
-                "searchStatus",
-                "searchResults",
-                "version"
-            ]
-        },
-        "GetCapabilitiesType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows#/definitions/GetCapabilitiesType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetCapabilitiesType",
-                    "properties":{
-                        "service":{
-                            "title":"service",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"service",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetCapabilitiesType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "service"
-            ]
-        },
-        "AcknowledgementType":{
-            "type":"object",
-            "title":"AcknowledgementType",
-            "required":[
-                "echoedRequest",
-                "timeStamp"
-            ],
-            "properties":{
-                "echoedRequest":{
-                    "title":"echoedRequest",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/EchoedRequestType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"EchoedRequest",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "requestId":{
-                    "title":"requestId",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"RequestId",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "timeStamp":{
-                    "title":"timeStamp",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/dateTime"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"timeStamp",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AcknowledgementType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "echoedRequest",
-                "requestId",
-                "timeStamp"
-            ]
-        },
-        "AbstractRecordType":{
-            "type":"object",
-            "title":"AbstractRecordType",
-            "properties":{
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractRecordType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
-        },
-        "HarvestResponseType":{
-            "type":"object",
-            "title":"HarvestResponseType",
-            "required":[
-                "acknowledgement",
-                "transactionResponse"
-            ],
-            "properties":{
-                "acknowledgement":{
-                    "title":"acknowledgement",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/AcknowledgementType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Acknowledgement",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "transactionResponse":{
-                    "title":"transactionResponse",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TransactionResponseType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TransactionResponse",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"HarvestResponseType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "acknowledgement",
-                "transactionResponse"
-            ]
-        },
-        "TransactionType":{
-            "required":[
-                "insertOrUpdateOrDelete"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/RequestBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"TransactionType",
-                    "properties":{
-                        "insertOrUpdateOrDelete":{
-                            "title":"insertOrUpdateOrDelete",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "anyOf":[
-                                            {
-                                                "anyOf":[
-                                                    {
-                                                        "$ref":"#/definitions/InsertType"
-                                                    }
-                                                ],
-                                                "elementName":{
-                                                    "localPart":"Insert",
-                                                    "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                                                }
-                                            },
-                                            {
-                                                "anyOf":[
-                                                    {
-                                                        "$ref":"#/definitions/UpdateType"
-                                                    }
-                                                ],
-                                                "elementName":{
-                                                    "localPart":"Update",
-                                                    "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                                                }
-                                            },
-                                            {
-                                                "anyOf":[
-                                                    {
-                                                        "$ref":"#/definitions/DeleteType"
-                                                    }
-                                                ],
-                                                "elementName":{
-                                                    "localPart":"Delete",
-                                                    "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"elements"
-                        },
-                        "verboseResponse":{
-                            "title":"verboseResponse",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"verboseResponse",
-                                "namespaceURI":""
-                            }
-                        },
-                        "requestId":{
-                            "title":"requestId",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"requestId",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TransactionType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "insertOrUpdateOrDelete",
-                "verboseResponse",
-                "requestId"
-            ]
-        },
-        "GetDomainType":{
-            "required":[
-                "propertyName",
-                "parameterName"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/RequestBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"GetDomainType",
-                    "properties":{
-                        "propertyName":{
-                            "title":"propertyName",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"PropertyName",
-                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                            }
-                        },
-                        "parameterName":{
-                            "title":"parameterName",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ParameterName",
-                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetDomainType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "propertyName",
-                "parameterName"
-            ]
-        },
         "DescribeRecordType":{
             "allOf":[
                 {
@@ -2300,12 +1262,232 @@
                 "schemaLanguage"
             ]
         },
-        "RequestStatusType":{
+        "RecordPropertyType":{
             "type":"object",
-            "title":"RequestStatusType",
+            "title":"RecordPropertyType",
+            "required":[
+                "name"
+            ],
             "properties":{
-                "timestamp":{
-                    "title":"timestamp",
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Name",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Value",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RecordPropertyType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "name",
+                "value"
+            ]
+        },
+        "GetDomainResponseType":{
+            "type":"object",
+            "title":"GetDomainResponseType",
+            "required":[
+                "domainValues"
+            ],
+            "properties":{
+                "domainValues":{
+                    "title":"domainValues",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DomainValuesType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DomainValues",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetDomainResponseType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "domainValues"
+            ]
+        },
+        "AbstractQueryType":{
+            "type":"object",
+            "title":"AbstractQueryType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractQueryType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        "SearchResultsType":{
+            "type":"object",
+            "title":"SearchResultsType",
+            "required":[
+                "numberOfRecordsMatched",
+                "numberOfRecordsReturned"
+            ],
+            "properties":{
+                "abstractRecord":{
+                    "title":"abstractRecord",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                    },
+                                    "value":{
+                                        "$ref":"#/definitions/AbstractRecordType"
+                                    }
+                                },
+                                "elementName":{
+                                    "localPart":"AbstractRecord",
+                                    "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                                }
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"AbstractRecord",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "any":{
+                    "title":"any",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                    },
+                                    "value":{
+                                    }
+                                }
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                },
+                "resultSetId":{
+                    "title":"resultSetId",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"resultSetId",
+                        "namespaceURI":""
+                    }
+                },
+                "elementSet":{
+                    "title":"elementSet",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ElementSetType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"elementSet",
+                        "namespaceURI":""
+                    }
+                },
+                "recordSchema":{
+                    "title":"recordSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"recordSchema",
+                        "namespaceURI":""
+                    }
+                },
+                "numberOfRecordsMatched":{
+                    "title":"numberOfRecordsMatched",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"numberOfRecordsMatched",
+                        "namespaceURI":""
+                    }
+                },
+                "numberOfRecordsReturned":{
+                    "title":"numberOfRecordsReturned",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"numberOfRecordsReturned",
+                        "namespaceURI":""
+                    }
+                },
+                "nextRecord":{
+                    "title":"nextRecord",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nextRecord",
+                        "namespaceURI":""
+                    }
+                },
+                "expires":{
+                    "title":"expires",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/dateTime"
@@ -2313,70 +1495,536 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"timestamp",
+                        "localPart":"expires",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"RequestStatusType",
+                "localPart":"SearchResultsType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             },
             "propertiesOrder":[
-                "timestamp"
+                "abstractRecord",
+                "any",
+                "resultSetId",
+                "elementSet",
+                "recordSchema",
+                "numberOfRecordsMatched",
+                "numberOfRecordsReturned",
+                "nextRecord",
+                "expires"
             ]
         },
-        "EchoedRequestType":{
-            "type":"object",
-            "title":"EchoedRequestType",
+        "BriefRecordType":{
             "required":[
-                "any"
+                "identifier",
+                "title"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractRecordType"
+                },
+                {
+                    "type":"object",
+                    "title":"BriefRecordType",
+                    "properties":{
+                        "identifier":{
+                            "title":"identifier",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"identifier",
+                                            "namespaceURI":"http://purl.org/dc/elements/1.1/"
+                                        }
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"identifier",
+                                "namespaceURI":"http://purl.org/dc/elements/1.1/"
+                            }
+                        },
+                        "title":{
+                            "title":"title",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"title",
+                                            "namespaceURI":"http://purl.org/dc/elements/1.1/"
+                                        }
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"title",
+                                "namespaceURI":"http://purl.org/dc/elements/1.1/"
+                            }
+                        },
+                        "type":{
+                            "title":"type",
+                            "allOf":[
+                                {
+                                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"type",
+                                "namespaceURI":"http://purl.org/dc/elements/1.1/"
+                            }
+                        },
+                        "boundingBox":{
+                            "title":"boundingBox",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"http://www.opengis.net/ows#/definitions/BoundingBoxType"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"BoundingBox",
+                                            "namespaceURI":"http://www.opengis.net/ows"
+                                        }
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"BoundingBox",
+                                "namespaceURI":"http://www.opengis.net/ows"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"BriefRecordType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "identifier",
+                "title",
+                "type",
+                "boundingBox"
+            ]
+        },
+        "AbstractRecordType":{
+            "type":"object",
+            "title":"AbstractRecordType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractRecordType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        "HarvestResponseType":{
+            "type":"object",
+            "title":"HarvestResponseType",
+            "required":[
+                "acknowledgement",
+                "transactionResponse"
             ],
             "properties":{
-                "any":{
-                    "title":"any",
+                "acknowledgement":{
+                    "title":"acknowledgement",
                     "allOf":[
                         {
-                            "anyOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                },
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                        }
-                                    }
-                                }
-                            ]
+                            "$ref":"#/definitions/AcknowledgementType"
                         }
                     ],
-                    "propertyType":"anyElement"
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Acknowledgement",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "transactionResponse":{
+                    "title":"transactionResponse",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TransactionResponseType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TransactionResponse",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"EchoedRequestType",
+                "localPart":"HarvestResponseType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             },
             "propertiesOrder":[
-                "any"
+                "acknowledgement",
+                "transactionResponse"
             ]
         },
-        "EmptyType":{
+        "ConceptualSchemeType":{
             "type":"object",
-            "title":"EmptyType",
+            "title":"ConceptualSchemeType",
+            "required":[
+                "name",
+                "document",
+                "authority"
+            ],
             "properties":{
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Name",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "document":{
+                    "title":"document",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Document",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "authority":{
+                    "title":"authority",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Authority",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"EmptyType",
+                "localPart":"ConceptualSchemeType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
+            },
+            "propertiesOrder":[
+                "name",
+                "document",
+                "authority"
+            ]
+        },
+        "TransactionSummaryType":{
+            "type":"object",
+            "title":"TransactionSummaryType",
+            "properties":{
+                "totalInserted":{
+                    "title":"totalInserted",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"totalInserted",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "totalUpdated":{
+                    "title":"totalUpdated",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"totalUpdated",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "totalDeleted":{
+                    "title":"totalDeleted",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"totalDeleted",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "requestId":{
+                    "title":"requestId",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"requestId",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TransactionSummaryType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "totalInserted",
+                "totalUpdated",
+                "totalDeleted",
+                "requestId"
+            ]
+        },
+        "InsertResultType":{
+            "type":"object",
+            "title":"InsertResultType",
+            "required":[
+                "briefRecord"
+            ],
+            "properties":{
+                "briefRecord":{
+                    "title":"briefRecord",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/BriefRecordType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"BriefRecord",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "handleRef":{
+                    "title":"handleRef",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"handleRef",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InsertResultType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "briefRecord",
+                "handleRef"
+            ]
+        },
+        "DescribeRecordResponseType":{
+            "type":"object",
+            "title":"DescribeRecordResponseType",
+            "properties":{
+                "schemaComponent":{
+                    "title":"schemaComponent",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/SchemaComponentType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SchemaComponent",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DescribeRecordResponseType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "schemaComponent"
+            ]
+        },
+        "GetCapabilitiesType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows#/definitions/GetCapabilitiesType"
+                },
+                {
+                    "type":"object",
+                    "title":"GetCapabilitiesType",
+                    "properties":{
+                        "service":{
+                            "title":"service",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"service",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetCapabilitiesType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "service"
+            ]
+        },
+        "GetRecordByIdType":{
+            "required":[
+                "id"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/RequestBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"GetRecordByIdType",
+                    "properties":{
+                        "id":{
+                            "title":"id",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Id",
+                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                            }
+                        },
+                        "elementSetName":{
+                            "title":"elementSetName",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ElementSetNameType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ElementSetName",
+                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                            }
+                        },
+                        "outputFormat":{
+                            "title":"outputFormat",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"outputFormat",
+                                "namespaceURI":""
+                            }
+                        },
+                        "outputSchema":{
+                            "title":"outputSchema",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"outputSchema",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetRecordByIdType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "id",
+                "elementSetName",
+                "outputFormat",
+                "outputSchema"
+            ]
         },
         "RangeOfValuesType":{
             "type":"object",
@@ -2487,82 +2135,40 @@
                 "any"
             ]
         },
-        "GetDomainResponseType":{
+        "TransactionResponseType":{
             "type":"object",
-            "title":"GetDomainResponseType",
+            "title":"TransactionResponseType",
             "required":[
-                "domainValues"
+                "transactionSummary"
             ],
             "properties":{
-                "domainValues":{
-                    "title":"domainValues",
+                "transactionSummary":{
+                    "title":"transactionSummary",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TransactionSummaryType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TransactionSummary",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "insertResult":{
+                    "title":"insertResult",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/DomainValuesType"
+                                "$ref":"#/definitions/InsertResultType"
                             },
-                            "minItems":1
+                            "minItems":0
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"DomainValues",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetDomainResponseType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "domainValues"
-            ]
-        },
-        "QueryConstraintType":{
-            "type":"object",
-            "title":"QueryConstraintType",
-            "required":[
-                "filter",
-                "cqlText",
-                "version"
-            ],
-            "properties":{
-                "filter":{
-                    "title":"filter",
-                    "allOf":[
-                        {
-                            "anyOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                },
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    ],
-                    "propertyType":"anyElement"
-                },
-                "cqlText":{
-                    "title":"cqlText",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"CqlText",
+                        "localPart":"InsertResult",
                         "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
                     }
                 },
@@ -2582,61 +2188,13 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"QueryConstraintType",
+                "localPart":"TransactionResponseType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             },
             "propertiesOrder":[
-                "filter",
-                "cqlText",
+                "transactionSummary",
+                "insertResult",
                 "version"
-            ]
-        },
-        "InsertResultType":{
-            "type":"object",
-            "title":"InsertResultType",
-            "required":[
-                "briefRecord"
-            ],
-            "properties":{
-                "briefRecord":{
-                    "title":"briefRecord",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/BriefRecordType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"BriefRecord",
-                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-                    }
-                },
-                "handleRef":{
-                    "title":"handleRef",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"handleRef",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InsertResultType",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            },
-            "propertiesOrder":[
-                "briefRecord",
-                "handleRef"
             ]
         },
         "RequestBaseType":{
@@ -2682,6 +2240,308 @@
             "propertiesOrder":[
                 "service",
                 "version"
+            ]
+        },
+        "InsertType":{
+            "type":"object",
+            "title":"InsertType",
+            "required":[
+                "any"
+            ],
+            "properties":{
+                "any":{
+                    "title":"any",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                    },
+                                    "value":{
+                                    }
+                                }
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                },
+                "typeName":{
+                    "title":"typeName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"typeName",
+                        "namespaceURI":""
+                    }
+                },
+                "handle":{
+                    "title":"handle",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"handle",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InsertType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "any",
+                "typeName",
+                "handle"
+            ]
+        },
+        "UpdateType":{
+            "type":"object",
+            "title":"UpdateType",
+            "required":[
+                "any",
+                "recordProperty",
+                "constraint"
+            ],
+            "properties":{
+                "any":{
+                    "title":"any",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                }
+                            }
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                },
+                "recordProperty":{
+                    "title":"recordProperty",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/RecordPropertyType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RecordProperty",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "constraint":{
+                    "title":"constraint",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/QueryConstraintType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Constraint",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "handle":{
+                    "title":"handle",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"handle",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"UpdateType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "any",
+                "recordProperty",
+                "constraint",
+                "handle"
+            ]
+        },
+        "HarvestType":{
+            "required":[
+                "source",
+                "resourceType"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/RequestBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"HarvestType",
+                    "properties":{
+                        "source":{
+                            "title":"source",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Source",
+                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                            }
+                        },
+                        "resourceType":{
+                            "title":"resourceType",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ResourceType",
+                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                            }
+                        },
+                        "resourceFormat":{
+                            "title":"resourceFormat",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ResourceFormat",
+                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                            }
+                        },
+                        "harvestInterval":{
+                            "title":"harvestInterval",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/duration"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"HarvestInterval",
+                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                            }
+                        },
+                        "responseHandler":{
+                            "title":"responseHandler",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ResponseHandler",
+                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"HarvestType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "source",
+                "resourceType",
+                "resourceFormat",
+                "harvestInterval",
+                "responseHandler"
+            ]
+        },
+        "DeleteType":{
+            "type":"object",
+            "title":"DeleteType",
+            "required":[
+                "constraint"
+            ],
+            "properties":{
+                "constraint":{
+                    "title":"constraint",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/QueryConstraintType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Constraint",
+                        "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                    }
+                },
+                "typeName":{
+                    "title":"typeName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"typeName",
+                        "namespaceURI":""
+                    }
+                },
+                "handle":{
+                    "title":"handle",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"handle",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DeleteType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "constraint",
+                "typeName",
+                "handle"
             ]
         },
         "RecordType":{
@@ -2752,75 +2612,203 @@
                 "boundingBox"
             ]
         },
-        "DeleteType":{
+        "EmptyType":{
             "type":"object",
-            "title":"DeleteType",
+            "title":"EmptyType",
+            "properties":{
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EmptyType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        "CapabilitiesType":{
             "required":[
-                "constraint"
+                "filterCapabilities"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows#/definitions/CapabilitiesBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"CapabilitiesType",
+                    "properties":{
+                        "filterCapabilities":{
+                            "title":"filterCapabilities",
+                            "allOf":[
+                                {
+                                    "anyOf":[
+                                        {
+                                            "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                        },
+                                        {
+                                            "type":"object",
+                                            "properties":{
+                                                "name":{
+                                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                },
+                                                "value":{
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "propertyType":"anyElement"
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CapabilitiesType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "filterCapabilities"
+            ]
+        },
+        "ListOfValuesType":{
+            "type":"object",
+            "title":"ListOfValuesType",
+            "required":[
+                "value"
             ],
             "properties":{
-                "constraint":{
-                    "title":"constraint",
+                "value":{
+                    "title":"value",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/QueryConstraintType"
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                            },
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Constraint",
+                        "localPart":"Value",
                         "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
                     }
-                },
-                "typeName":{
-                    "title":"typeName",
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ListOfValuesType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "value"
+            ]
+        },
+        "DistributedSearchType":{
+            "type":"object",
+            "title":"DistributedSearchType",
+            "properties":{
+                "hopCount":{
+                    "title":"hopCount",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
                         }
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"typeName",
-                        "namespaceURI":""
-                    }
-                },
-                "handle":{
-                    "title":"handle",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"handle",
+                        "localPart":"hopCount",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DeleteType",
+                "localPart":"DistributedSearchType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             },
             "propertiesOrder":[
-                "constraint",
-                "typeName",
-                "handle"
+                "hopCount"
             ]
         },
-        "ResultType":{
+        "GetDomainType":{
+            "required":[
+                "propertyName",
+                "parameterName"
+            ],
             "allOf":[
                 {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/RequestBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"GetDomainType",
+                    "properties":{
+                        "propertyName":{
+                            "title":"propertyName",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"PropertyName",
+                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                            }
+                        },
+                        "parameterName":{
+                            "title":"parameterName",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ParameterName",
+                                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+                            }
+                        }
+                    }
                 }
             ],
-            "typeType":"enumInfo",
+            "typeType":"classInfo",
             "typeName":{
-                "localPart":"ResultType",
+                "localPart":"GetDomainType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
+            },
+            "propertiesOrder":[
+                "propertyName",
+                "parameterName"
+            ]
+        },
+        "RequestStatusType":{
+            "type":"object",
+            "title":"RequestStatusType",
+            "properties":{
+                "timestamp":{
+                    "title":"timestamp",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/dateTime"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"timestamp",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RequestStatusType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            },
+            "propertiesOrder":[
+                "timestamp"
+            ]
         },
         "ElementSetType":{
             "allOf":[
@@ -2831,6 +2819,18 @@
             "typeType":"enumInfo",
             "typeName":{
                 "localPart":"ElementSetType",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        "ResultType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"ResultType",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             }
         }
@@ -2849,7 +2849,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "AbstractQuery"
+                                        "GetDomainResponse"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2862,11 +2862,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/AbstractQueryType"
+                    "$ref":"#/definitions/GetDomainResponseType"
                 }
             },
             "elementName":{
-                "localPart":"AbstractQuery",
+                "localPart":"GetDomainResponse",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             }
         },
@@ -2883,7 +2883,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Transaction"
+                                        "Acknowledgement"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2896,11 +2896,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/TransactionType"
+                    "$ref":"#/definitions/AcknowledgementType"
                 }
             },
             "elementName":{
-                "localPart":"Transaction",
+                "localPart":"Acknowledgement",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             }
         },
@@ -2917,7 +2917,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SummaryRecord"
+                                        "BriefRecord"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2930,11 +2930,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SummaryRecordType"
+                    "$ref":"#/definitions/BriefRecordType"
                 }
             },
             "elementName":{
-                "localPart":"SummaryRecord",
+                "localPart":"BriefRecord",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             }
         },
@@ -2951,7 +2951,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "DCMIRecord"
+                                        "Harvest"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2964,11 +2964,79 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/DCMIRecordType"
+                    "$ref":"#/definitions/HarvestType"
                 }
             },
             "elementName":{
-                "localPart":"DCMIRecord",
+                "localPart":"Harvest",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "GetDomain"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/cat/csw/2.0.2"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GetDomainType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetDomain",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Capabilities"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/cat/csw/2.0.2"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/CapabilitiesType"
+                }
+            },
+            "elementName":{
+                "localPart":"Capabilities",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             }
         },
@@ -3003,40 +3071,6 @@
             },
             "elementName":{
                 "localPart":"ElementSetName",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "DescribeRecordResponse"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/cat/csw/2.0.2"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/DescribeRecordResponseType"
-                }
-            },
-            "elementName":{
-                "localPart":"DescribeRecordResponse",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             }
         },
@@ -3121,40 +3155,6 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "GetRecords"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/cat/csw/2.0.2"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GetRecordsType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetRecords",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
                                         "TransactionResponse"
                                     ]
                                 },
@@ -3189,7 +3189,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Harvest"
+                                        "Constraint"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -3202,11 +3202,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/HarvestType"
+                    "$ref":"#/definitions/QueryConstraintType"
                 }
             },
             "elementName":{
-                "localPart":"Harvest",
+                "localPart":"Constraint",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             }
         },
@@ -3223,7 +3223,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "RecordProperty"
+                                        "GetRecords"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -3236,283 +3236,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/RecordPropertyType"
+                    "$ref":"#/definitions/GetRecordsType"
                 }
             },
             "elementName":{
-                "localPart":"RecordProperty",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "BriefRecord"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/cat/csw/2.0.2"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/BriefRecordType"
-                }
-            },
-            "elementName":{
-                "localPart":"BriefRecord",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "GetDomain"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/cat/csw/2.0.2"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GetDomainType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetDomain",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "GetRecordByIdResponse"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/cat/csw/2.0.2"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GetRecordByIdResponseType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetRecordByIdResponse",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Query"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/cat/csw/2.0.2"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/QueryType"
-                }
-            },
-            "elementName":{
-                "localPart":"Query",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "GetRecordsResponse"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/cat/csw/2.0.2"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GetRecordsResponseType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetRecordsResponse",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Capabilities"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/cat/csw/2.0.2"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/CapabilitiesType"
-                }
-            },
-            "elementName":{
-                "localPart":"Capabilities",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "GetDomainResponse"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/cat/csw/2.0.2"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GetDomainResponseType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetDomainResponse",
-                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Acknowledgement"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/cat/csw/2.0.2"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/AcknowledgementType"
-                }
-            },
-            "elementName":{
-                "localPart":"Acknowledgement",
+                "localPart":"GetRecords",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             }
         },
@@ -3597,7 +3325,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Constraint"
+                                        "RecordProperty"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -3610,11 +3338,215 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/QueryConstraintType"
+                    "$ref":"#/definitions/RecordPropertyType"
                 }
             },
             "elementName":{
-                "localPart":"Constraint",
+                "localPart":"RecordProperty",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Record"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/cat/csw/2.0.2"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/RecordType"
+                }
+            },
+            "elementName":{
+                "localPart":"Record",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "DCMIRecord"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/cat/csw/2.0.2"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/DCMIRecordType"
+                }
+            },
+            "elementName":{
+                "localPart":"DCMIRecord",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "AbstractQuery"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/cat/csw/2.0.2"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractQueryType"
+                }
+            },
+            "elementName":{
+                "localPart":"AbstractQuery",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "GetRecordsResponse"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/cat/csw/2.0.2"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GetRecordsResponseType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetRecordsResponse",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Query"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/cat/csw/2.0.2"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/QueryType"
+                }
+            },
+            "elementName":{
+                "localPart":"Query",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Transaction"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/cat/csw/2.0.2"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/TransactionType"
+                }
+            },
+            "elementName":{
+                "localPart":"Transaction",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             }
         },
@@ -3665,7 +3597,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Record"
+                                        "DescribeRecordResponse"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -3678,11 +3610,79 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/RecordType"
+                    "$ref":"#/definitions/DescribeRecordResponseType"
                 }
             },
             "elementName":{
-                "localPart":"Record",
+                "localPart":"DescribeRecordResponse",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SummaryRecord"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/cat/csw/2.0.2"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SummaryRecordType"
+                }
+            },
+            "elementName":{
+                "localPart":"SummaryRecord",
+                "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "GetRecordByIdResponse"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/cat/csw/2.0.2"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GetRecordByIdResponseType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetRecordByIdResponse",
                 "namespaceURI":"http://www.opengis.net/cat/csw/2.0.2"
             }
         }
